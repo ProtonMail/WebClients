@@ -711,7 +711,7 @@
         "Retirer le calendrier"
       ],
       "Remove gift code": [
-        "Retirer le code cadeau"
+        "Retirer le code-cadeau"
       ],
       "Remove this label": [
         "Retirer ce label"
@@ -5833,15 +5833,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boite de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } prend en charge les signatures DKIM pour les domaines personnalisés. Pour utiliser l'authentification DKIM, vous devez ajouter l'enregistrement CNAME suivant dans les paramètres DNS de votre domaine. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
-      ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresses"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } n'a aucun effet sur la distribution des messages, mais nous recommandons ${ quarantine } pour une meilleure sécurité."
       ],
       "${ number } city": [
         "${ number } ville",
@@ -6202,9 +6196,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Pour recevoir des messages sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
       ],
@@ -6551,9 +6542,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si le fuseau horaire du système ne correspond pas à vos préférences actuelles, il vous sera demandé de le mettre à jour (une fois par jour au plus)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Si ce domaine reçoit actuellement des messages, sélectionnez l'onglet ${ boldAddresses } et ajoutez toutes les adresses email actives avant de modifier l'enregistrement MX pour assurer une transition fluide."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si cela est lié à une ancienne réinitialisation du mot de passe, vous pouvez empêcher le message de s'afficher à nouveau."
       ],
@@ -6573,13 +6561,10 @@
         "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez configurer une adresse e-mail catch-all qui recevra les messages envoyés à votre domaine, mais également à une adresse inexistante ou avec une faute de frappe."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Si vous avez un code cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
+        "Si vous avez un code-cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Si vous n'avez jamais utilisé l'authentification à deux facteurs, nous vous recommandons vivement de ${ guideButton }."
-      ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si vous avez configuré SPF et DKIM, DMARC vous permet de spécifier comment les autres services de messagerie devraient envoyer des messages pour votre domaine si les vérifications SPF et DKIM échouent. Ceci peut compliquer la tâche des spammeurs qui se font passer pour vous, mais peut aussi causer des problèmes de distribution si ce n'est pas fait correctement."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si vous perdez votre mot de passe et que vous devez réinitialiser votre compte, ${ boldImperative } que vous ayez ${ boldAccountRecovery } en place."
@@ -6601,9 +6586,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez utiliser une méthode de récupération de données pour déverrouiller vos données."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Si vous voulez sauvegarder un enregistrement SPF existant, vous pouvez simplement lui ajouter ${ spf } après le ${ spfValue }. Ne créez pas plusieurs enregistrements SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si vous voulez associer ce compte à un autre, ne le supprimez pas."
@@ -6635,9 +6617,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : assurez-vous de sauvegarder les codes de récupération. Vous risquez sinon de perdre définitivement l'accès à votre compte si vous perdez votre dispositif d'authentification à deux facteurs."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANT : certains registraires n'acceptent pas les valeurs CNAME avec un point à la fin (alors que d'autres l'exigent). Si votre registraire n'accepte pas vos enregistrements CNAME, supprimez le point à la fin de chaque valeur CNAME et réessayez."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
@@ -6702,9 +6681,6 @@
       ],
       "Just send them your personal referral link.": [
         "Envoyez-leur simplement votre lien personnel de parrainage."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Conservez cet enregistrement dans votre DNS aussi longtemps que vous souhaiterez utiliser DKIM."
       ],
       "Key deletion is irreversible!": [
         "Attention, la suppression de clé est irréversible."
@@ -7203,9 +7179,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Certains des serveurs disponibles peuvent uniquement être utilisés dans certains pays en raison de suppressions récentes."
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF est utilisé pour spécifier qui est autorisé à envoyer des messages depuis ce domaine et nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
       ],
       "Stay tuned for future promotions.": [
         "Ne manquez pas les prochaines promotions."
@@ -7986,14 +7959,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Ajoutez une nouvelle adresse pour chaque utilisateur de votre organisation."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Ajoutez un nouvel utilisateur à votre organisation et créez-lui une adresse."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Pour des raisons de sécurité, nous devons vérifier que vous êtes le propriétaire de ${ domainName }. Veuillez ajouter l'enregistrement DNS TXT suivant à votre domaine. Ceci peut généralement être fait depuis le panneau de contrôle du registraire de votre nom de domaine."
       ]
     },
     "Info for payment methods": {
@@ -8811,10 +8778,7 @@
         "Nom de la Passerelle"
       ],
       "Gift code": [
-        "Code cadeau"
-      ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Voici un enregistrement DMARC dont la seule fonction est de vous envoyer des rapports par e-mail."
+        "Code-cadeau"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -9034,15 +8998,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Ajoutez les 3 enregistrements CNAME suivants. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Ajoutez l'enregistrement MX suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Veuillez ajouter l'enregistrement TXT suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
       ],
       "Please select files to upload": [
         "Sélectionnez les fichiers à charger."
@@ -9287,11 +9242,6 @@
         "Durée"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Ajoutez l'enregistrement TXT suivant :"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -9434,10 +9384,10 @@
     },
     "Link": {
       "Add a gift code": [
-        "Ajouter un code cadeau"
+        "Ajouter un code-cadeau"
       ],
       "Add gift code": [
-        "Ajouter un code cadeau"
+        "Ajouter un code-cadeau"
       ],
       "Apps and extensions": [
         "Applications et extensions"
@@ -11580,7 +11530,7 @@
         "Ajoutez un nom de calendrier."
       ],
       "Add gift code": [
-        "Ajoutez un code cadeau."
+        "Ajoutez un code-cadeau."
       ],
       "Address": [
         "Adresse"
@@ -11610,7 +11560,7 @@
         "Votre avis"
       ],
       "Gift code": [
-        "Code cadeau"
+        "Code-cadeau"
       ],
       "Link": [
         "Lien"
@@ -12847,7 +12797,7 @@
         "L'empreinte a été copiée dans le presse-papiers."
       ],
       "Gift code applied": [
-        "Le code cadeau a été appliqué."
+        "Le code-cadeau a été appliqué."
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
         "Si vous avez saisi une adresse e-mail de récupération valide, nous vous enverrons un message avec vos noms d'utilisateur dans une minute."
@@ -13204,6 +13154,9 @@
       "4. Select a server to connect to": [
         "4. Sélectionnez le serveur auquel se connecter"
       ],
+      "A filter with this name already exists": [
+        "Un filtre portant ce nom existe déjà"
+      ],
       "Accessibility": [
         "Accessibilité"
       ],
@@ -13301,7 +13254,7 @@
         "Appliquer le filtre aux messages existants"
       ],
       "Apply gift code": [
-        "Appliquer un code cadeau"
+        "Appliquer un code-cadeau"
       ],
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
@@ -13673,7 +13626,7 @@
         "Cadeau"
       ],
       "Gift code": [
-        "Code cadeau"
+        "Code-cadeau"
       ],
       "History": [
         "Historique"
@@ -14286,6 +14239,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "L'activation des journaux avancés enregistre l'adresse IP de chaque événement dans le journal de sécurité."
       ],
+      "Feature in early access": [
+        "Fonctionnalité en accès anticipé"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail catégorise automatiquement certains messages comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces messages."
       ],
@@ -14293,7 +14249,7 @@
         "Groupez les messages d'une même conversation dans votre boite de réception ou affichez-les séparément."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si vous avez acheté un code cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+        "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."
@@ -14712,9 +14668,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "La mise à jour des modifications DNS peut prendre jusqu'à une journée."
       ]
     },
     "Weak personal key warning": {

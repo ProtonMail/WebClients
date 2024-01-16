@@ -5154,14 +5154,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也允许只用一个密码代替登录和邮箱密码。输入您要使用的密码并点击保存即可转为单密码模式。"
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } 支持对自有域名予以 DKIM 数字签名。在您的域名 DNS 中加入下面的 CNAME 记录即可使用 DKIM，通常可以在域名注册商网站上设置。"
-      ],
       "${ n } addresses": [
         "${ n } 个地址"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } 对邮件送达没有影响，但我们建议${ quarantine }以提高安全性。"
       ],
       "${ number } cities": [
         "${ number } 个城市"
@@ -5483,9 +5477,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
-      ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "您需要先将下列 MX 记录添加到 DNS 中，才能通过自有域名收取 ${ MAIL_APP_NAME } 邮件。此操作通常可以在域名注册商网站上完成。"
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "使用新地址收发邮件前，您需要先为其创建密钥。"
@@ -5811,9 +5802,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "若系统时区与当前配置时区不一致，则询问是否更改（每天最多一次）。"
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "若此域名正接收邮件，请在更改 MX 记录前点选 ${ boldAddresses } 选项卡并添加所有活跃中的邮件地址以确保平稳转移服务。"
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "如果这是由于密码重置造成的问题，您可以要求不再展示这条信息。"
       ],
@@ -5838,9 +5826,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "如果您从未使用过双重验证技术，我们强烈建议您${ guideButton }。"
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "若您同时设定了 SPF 和 DKIM，可以使用 DMARC 来指定其他邮件系统遇到来自您域名的邮件无法通过 SPF 和 DKIM 检查时应采取的措施，这样他人就更难以伪装成您发送垃圾邮件，但如果操作不当也可能导致投递出现问题。"
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "如果您丢失了密码并需要重置您的账户, ${ boldImperative } 您已准备好 ${ boldAccountRecovery } 。"
       ],
@@ -5861,9 +5846,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您近期重置了您的密码，您可以使用数据恢复手段解锁您的数据。"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "若您需要保留现有的 SPF 记录，可在 ${ spfValue } 之后插入 ${ spf }，但不要创建多个 SPF 记录。"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "如果您想将此账户与其他账户合并，请不要删除此账户。"
@@ -5894,9 +5876,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "注意：请务必妥善保管恢复码，否则一旦丢失双重验证设备，您可能再也无法登录此账户。"
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "注意：某些域名注册商不允许 CNAME 以句点结尾（但某些注册商又要求必须如此）。如果您的注册商不接受这种格式的 CNAME，请将末尾的句点全部删除后再试一次。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
@@ -5960,9 +5939,6 @@
       ],
       "Just send them your personal referral link.": [
         "只需将您的专属邀请链接发给他们即可。"
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "只要你想使用DKIM，就在DNS中保留这些记录。"
       ],
       "Key deletion is irreversible!": [
         "密钥删除不可恢复！"
@@ -6410,9 +6386,6 @@
       ],
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF 用于指定谁有权为该域名发送邮件，因此我们强烈建议将 ${ MAIL_APP_NAME } 加入 SPF 信息中。请在 DNS 中添加下面的 TXT 记录，通常可以在您的域名注册商网站上设置。"
       ],
       "Step ${ step }": [
         "步骤 ${ step }"
@@ -7134,14 +7107,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "为您单位的任何用户添加新地址。"
-      ],
       "Add a new user to your organization and create an address for it.": [
         "向您的单位添加新用户并为其创建地址。"
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "出于安全考虑，我们需要验证您是否持有域名 ${ domainName }。请将下列 DNS TXT 记录加入您的域名中，通常可以在域名注册商的控制面板上设置。"
       ]
     },
     "Info for payment methods": {
@@ -7929,9 +7896,6 @@
       "Gift code": [
         "礼品码"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "下面是一条简单的 DMARC 记录，表示只将错误报告发送给您，不采取其他操作。"
-      ],
       "Hide password": [
         "隐藏密码"
       ],
@@ -8147,15 +8111,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "密语由特定顺序的 12 个独特单词组成"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "请添加下列三条 CNAME 记录。注意：DNS 记录更新可能需要若干小时。"
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "请添加下列 MX 记录。注意：DNS 记录更新可能需要若干小时。"
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "请添加下面的 TXT 记录。注意：DNS 记录更新可能需要若干小时。"
       ],
       "Please select files to upload": [
         "请选择要上传的文件"
@@ -8393,11 +8348,6 @@
       ],
       "Notifications": [
         "通知"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "请添加下面的 TXT 记录："
       ]
     },
     "Label for new member": {
@@ -12989,9 +12939,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证成功后请勿删除该 TXT 记录，我们需要根据它确认您是否仍持有该域名。"
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS 更新可能需要一天的时间。"
       ]
     },
     "Weak personal key warning": {

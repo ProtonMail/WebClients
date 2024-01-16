@@ -1270,6 +1270,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "კონტაქტის გამოსახულება"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "ფაქსი"
@@ -2755,6 +2760,11 @@
         "მოწვეული მისამართი არ არსებობს"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "პასუხის შეცვლის შეცდომა"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
@@ -3823,6 +3833,9 @@
       "Discard changes?": [
         "გავაუქმო ცვლილებები?"
       ],
+      "Display events for calendar ${ Name }": [
+        "მოვლენების ჩვენება კალენდრისთვის ${ Name }"
+      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
@@ -4257,6 +4270,9 @@
       ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
+      ],
+      "You can now return to the application to continue": [
+        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -5660,6 +5676,9 @@
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
       ],
+      "Search parent folder": [
+        "მშობელ საქაღალდეში ძებნა"
+      ],
       "Select": [
         "აირჩიეთ"
       ],
@@ -6068,6 +6087,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "ფასიანი ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
@@ -6531,7 +6553,7 @@
         "მონაწილეების დამატება"
       ],
       "Add some color to your day": [
-        "დაამატეთ ფერები თქვენს დღეს"
+        "გაიფერადეთ დღე"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } ჯგუფში ჩამატება",

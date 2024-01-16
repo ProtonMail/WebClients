@@ -324,7 +324,7 @@
         "Hesabınızı silin"
       ],
       "Details": [
-        "Ayrıntılar"
+        "Bilgiler"
       ],
       "Didn't receive a code?": [
         "Bir kod almadınız mı?"
@@ -345,7 +345,7 @@
         "Parolanızı bilmiyor musunuz?"
       ],
       "Don't show again": [
-        "Bir daha gösterme"
+        "Bir daha görüntülenmesin"
       ],
       "Done": [
         "Tamam"
@@ -873,16 +873,16 @@
         "Paylaşım seçenekleri"
       ],
       "Show": [
-        "Göster"
+        "Görüntüle"
       ],
       "Show less": [
-        "Daha az göster"
+        "Daha az görüntüle"
       ],
       "Show more": [
-        "Daha fazla göster"
+        "Daha fazla görüntüle"
       ],
       "Show preview": [
-        "Ön izlemeyi göster"
+        "Ön izlemeyi görüntüle"
       ],
       "Sign in": [
         "Oturum aç"
@@ -1712,8 +1712,8 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "${ remainingItems } öge daha göster",
-        "${ remainingItems } öge daha göster"
+        "${ remainingItems } öge daha görüntüle",
+        "${ remainingItems } öge daha görüntüle"
       ]
     },
     "Calendar share permission label": {
@@ -4207,8 +4207,8 @@
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var."
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -5454,7 +5454,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, bilgilerini ve biçimlerini desteklemiyor."
       ],
       "vCard versions < 3.0": [
         "vCard 3.0 sürümü öncesi"
@@ -5462,7 +5462,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
       "This file contains an event invitation:": [
         "Bu dosyada bir etkinlik daveti bulunuyor:",
@@ -5672,7 +5672,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Bir kişisel anahtarı içe aktarmak istediğinize emin misiniz? Güvenli olmayan şekilde oluşturulmuş ya da sızdırılmış bir kişisel anahtarı içe aktarmak e-posta kişisel güvenliğinize zarar verebilir.\n\nAyrıca bu kişisel anahtara karşılık gelen herkese açık anahtarın, anahtar sunucumuzda herkese açık olarak yayınlanacağını da unutmayın. Anahtarda, paylaşmak istemediğiniz kişisel ayrıntılar varsa (tam adınız gibi) içe aktarmadan önce bunları düzenleyin."
+        "Bir kişisel anahtarı içe aktarmak istediğinize emin misiniz? Güvenli olmayan şekilde oluşturulmuş ya da sızdırılmış bir kişisel anahtarı içe aktarmak e-posta kişisel güvenliğinize zarar verebilir.\n\nAyrıca bu kişisel anahtara karşılık gelen herkese açık anahtarın, anahtar sunucumuzda herkese açık olarak yayınlanacağını da unutmayın. Anahtarda, paylaşmak istemediğiniz kişisel bilgiler varsa (tam adınız gibi) içe aktarmadan önce bunları düzenleyin."
       ]
     },
     "Import provider": {
@@ -5736,14 +5736,14 @@
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
       ],
       "No contact can be imported. Click for details": [
-        "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
+        "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
       ],
       "No event can be imported. Expand for details.": [
-        "Herhangi bir etkinlik içe aktarılamadı. Ayrıntılar için genişletin."
+        "Herhangi bir etkinlik içe aktarılamadı. Bilgi almak için genişletin."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
@@ -5817,15 +5817,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME }, özel etki alanları için DKIM imzalamasını destekler. DKIM kimlik doğrulamasını kullanmak için lütfen bu etki alanının DNS kayıtlarına aşağıdaki CNAME kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
-      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adres"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } seçeneğinin e-posta teslimi üzerinde herhangi bir etkisi yoktur. Ancak daha iyi güvenlik için ${ quarantine } öneririz."
       ],
       "${ number } city": [
         "${ number } il",
@@ -6082,10 +6076,10 @@
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm ayrıntılarını görebilir."
+        "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm bilgileri görebilir."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik ayrıntılarını göremez."
+        "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik bilgilerini göremez."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Bu bağlantıya sahip olan kimseler takviminizi eşitleyemeyecek ya da gelecekteki güncellemeleri alamayacak. Bu kişilere yeniden erişim vermek için yeni bir bağlantı oluşturmalısınız."
@@ -6186,9 +6180,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
       ],
@@ -6211,7 +6202,7 @@
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
+        "Bu takvimin tüm etkinlik bilgilerini paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
       "Cancel anytime": [
         "İstediğiniz zaman iptal edin"
@@ -6532,9 +6523,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Sistem saat dilimi geçerli saat dilimi ayarıyla aynı değilse, güncellemeniz istenir (günde en fazla bir kez)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Bu etki alanı şu anda e-posta alıyorsa, ${ boldAddresses } sekmesini açın ve sorunsuz bir geçiş sağlamak için MX kaydını değiştirmeden önce tüm etkin e-posta adreslerini ekleyin."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Bu durum eski bir parola sıfırlamasından kaynaklanıyorsa iletinin yeniden görüntülenmesini engelleyebilirsiniz"
       ],
@@ -6559,9 +6547,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "İki adımlı kimlik doğrulamayı daha önce kullanmadıysanız, kesinlikle ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Hem SPF hem de DKIM ayarlarını yaptıysanız ve iki denetim de başarısız olursa, DMARC kullanarak diğer e-posta hizmetlerinin etki alanınız için nasıl e-posta sunması gerektiğini belirtebilirsiniz. Böylece istenmeyen e-posta göndericilerinin sizmiş gibi davranmasını zorlaştırabilirsiniz. Ancak bu işlem doğru şekilde yapılmazsa teslim sorunlarına da neden olabilir."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı sıfırlamanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
       ],
@@ -6582,9 +6567,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Var olan bir SPF kaydını korumak istiyorsanız, ${ spfValue } sonrasına yalnızca ${ spf } ekleyebilirsiniz. Birden çok SPF kaydı eklemeyin."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
@@ -6616,9 +6598,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ÖNEMLİ: Bazı kayıt kuruluşları, sonunda nokta bulunan CNAME değerlerini kabul etmez (bazıları ise bulunmasını ister). Kayıt kuruluşunuz CNAME kayıtlarınızı kabul etmiyorsa, her CNAME değerinin sonundaki noktayı silerek yeniden deneyin."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -6683,9 +6662,6 @@
       ],
       "Just send them your personal referral link.": [
         "Onlara kişisel öneri bağlantınızı gönderin."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Bu DNS kayıtlarını DKIM kullanmak istediğiniz sürece koruyun."
       ],
       "Key deletion is irreversible!": [
         "Anahtar silme işlemi geri alınamaz!"
@@ -7159,7 +7135,7 @@
         "Ayarlar güncellendi"
       ],
       "Show original message": [
-        "Özgün iletiyi göster"
+        "Özgün iletiyi görüntüle"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
@@ -7181,9 +7157,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Kullanılabileceğiniz sunuculardan bazıları, son kaldırma işlemleri nedeniyle yalnızca belirli ülkelerde kullanılabilir"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
       ],
       "Stay tuned for future promotions.": [
         "Gelecekteki fırsatları kaçırmayın."
@@ -7763,6 +7736,9 @@
       "You can now close this window.": [
         "Şimdi bu pencereyi kapatabilirsiniz."
       ],
+      "You can now return to the application to continue": [
+        "Şimdi uygulamaya dönebilirsiniz"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -7961,14 +7937,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Kuruluşunuzdaki kullanıcılara ayrı e-posta adresleri verin."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Kuruluşunuza yeni bir kullanıcı ve e-posta adresi ekleyin."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Güvenlik nedeniyle, ${ domainName } etki alanının sahibi olduğunuzu doğrulamamız gerekiyor. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını Bu işlem, genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
       ]
     },
     "Info for payment methods": {
@@ -7983,7 +7953,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Ayrıntılar için tıklayın"
+        "Bilgiler için tıklayın"
       ]
     },
     "Info subscription": {
@@ -8273,13 +8243,13 @@
         "E-posta gönder"
       ],
       "Show all emails": [
-        "Tüm e-postaları göster"
+        "Tüm e-postaları görüntüle"
       ],
       "Show original message": [
-        "Özgün iletiyi göster"
+        "Özgün iletiyi görüntüle"
       ],
       "Show unread emails": [
-        "Okunmamış e-postaları göster"
+        "Okunmamış e-postaları görüntüle"
       ],
       "Star": [
         "Yıldız koy/kaldır"
@@ -8788,9 +8758,6 @@
       "Gift code": [
         "Hediye kodu"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Bildirimlerinizi e-postayla göndermekten başka bir şey yapmayan temel bir DMARC kaydını burada görebilirsiniz."
-      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -9009,15 +8976,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "İfade belirli bir sıradaki 12 benzersiz sözcükten oluşur"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Lütfen aşağıdaki 3 CNAME kaydını da ekleyin. DNS kayıtlarının güncellenmesi birkaç saat alabilir."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Lütfen aşağıdaki MX kaydını ekleyin. DNS kayıtlarının güncellenmesi birkaç saat alabilir."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Lütfen aşağıdaki TXT kaydını ekleyin. DNS kayıtlarının güncellenmesi birkaç saat alabilir."
       ],
       "Please select files to upload": [
         "Lütfen yüklenecek dosyaları seçin"
@@ -9262,11 +9220,6 @@
         "Süre"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Lütfen aşağıdaki TXT kaydını ekleyin:"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Yönetici"
@@ -9388,6 +9341,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Kimden: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Nereye: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -11607,6 +11563,9 @@
       "Search for a user or address": [
         "Bir kullanıcı ya da adres arayın"
       ],
+      "Search parent folder": [
+        "Üst klasörü ara"
+      ],
       "Search users": [
         "Kullanıcı arama"
       ],
@@ -12320,7 +12279,7 @@
         "Kapat"
       ],
       "Don't show this offer again": [
-        "Bu teklifi bir daha gösterme"
+        "Bu teklif bir daha görüntülenmesin"
       ],
       "Special offer": [
         "Özel teklif"
@@ -12382,6 +12341,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Ücretli ${ appName1 } ve ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 } ve ${ appName3 }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -12978,7 +12940,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Dışa aktarılamayan etkinliklerle ilgili ayrıntılar"
+        "Dışa aktarılamayan etkinliklerle ilgili bilgiler"
       ]
     },
     "summer2023: Tooltip": {
@@ -13483,7 +13445,7 @@
         "Etki alanları"
       ],
       "Don't show again?": [
-        "Bir daha gösterilmesin mi?"
+        "Bir daha görüntülenmesin mi?"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
@@ -14649,9 +14611,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS değişikliklerinin güncellenmesi bir gün sürebilir."
       ]
     },
     "Weak personal key warning": {

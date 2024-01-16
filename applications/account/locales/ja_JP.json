@@ -1303,6 +1303,9 @@
       "Add ${ plan } for ${ price } per month": [
         "月額 ${ plan } で ${ price } を追加"
       ],
+      "Become a Visionary": [
+        "ビジョナリーになる"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -3044,6 +3047,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "アップロードされたCSVファイルから以下のフィールドを検出しました。インポートされたいものを選択してください。"
+      ]
+    },
+    "Desktop app upsell": {
+      "Upgrade today or check again in early 2024 for access.": [
+        "今すぐアップグレードするか、2024 年初めに再度アクセスして確認してください。"
       ]
     },
     "Disable account": {
@@ -5044,6 +5052,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "既にアカウントを持っている場合: ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "すでにアカウントをお持ちですか？ ${ signIn } または ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5624,14 +5635,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } は独自ドメインの DKIM 署名に対応しています。 DKIM 認証を使用するには、次の CNAME レコードをこのドメインを管轄する DNS へ追加してください。これは通常、ドメイン名登録のコントロールパネルから行えます。"
-      ],
       "${ n } addresses": [
         "${ n } 件のアドレス"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } はメールの配信に影響を与えません。セキュリティ向上のため ${ quarantine } をおすすめします。"
       ],
       "${ number } cities": [
         "${ number } つの都市"
@@ -5965,9 +5970,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
-      ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } で独自ドメイン宛のメールを受信するには、まず次の MX レコードを DNS に追加する必要があります。 これは通常、ドメイン名登録のコントロールパネルから行うことができます。"
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
@@ -6305,9 +6307,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "システムのタイムゾーンが現在のタイムゾーン設定と一致しない場合は、更新するように求められます (最大で 1 日に 1 回)。"
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "このドメインで現在メールを受信している場合は、MX レコード変更前に${ boldAddresses }タブで使用しているすべてのメールアドレスを追加しておくと、スムーズに移行できます。"
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
       ],
@@ -6332,9 +6331,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "2 要素認証を初めて使う場合、${ guideButton }。"
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "パスワードを失いアカウントをリセットする場合、${ boldAccountRecovery }の両方を用意することが${ boldImperative }。"
       ],
@@ -6355,9 +6351,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "既存の SPF レコードを維持したい場合は、${ spfValue } の後に ${ spf } を追加してください。SPF レコードは複数作成しないでください。"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "他のアカウントと統合する場合は、このアカウントを削除しないでください。"
@@ -6388,9 +6381,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "重要: レジストラーによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
@@ -6454,9 +6444,6 @@
       ],
       "Just send them your personal referral link.": [
         "個人用の招待リンクを送信します。"
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "DKIM を使用し続ける限り、これらのレコードを DNS に登録したままにしておいてください。"
       ],
       "Key deletion is irreversible!": [
         "キーの削除は元に戻せません!"
@@ -6946,9 +6933,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "最近削除されたため、特定の国でのみ使用可能なサーバーがあります。"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF は送信元のドメインを明示するために使用されます。そのため、SPFレコードに ${ MAIL_APP_NAME } を含めることを強く推奨します。次の TXT レコードを DNS に追加してください。これは通常、ドメイン名登録のコントロールパネルから設定できます。"
       ],
       "Stay tuned for future promotions.": [
         "今後のプロモーションにご期待ください。"
@@ -7712,14 +7696,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "組織の任意のユーザーに新しいアドレスを追加します。"
-      ],
       "Add a new user to your organization and create an address for it.": [
         "組織に新しいユーザーを追加し、そのアドレスを作成します。"
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "セキュリティ上の理由から、あなたが ${ domainName } の所有者であることを検証する必要があります。次の TXT レコードをあなたのドメインの DNS に追加してください。これは通常、ドメイン名登録事業者のコントロールパネルで行うことができます。"
       ]
     },
     "Info for payment methods": {
@@ -8530,9 +8508,6 @@
       "Gift code": [
         "ギフトコード"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "ここにはあなたへレポート送信するためだけの、基本的な DMARC レコードが記載されます。"
-      ],
       "Hide password": [
         "パスワードを隠す"
       ],
@@ -8751,15 +8726,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "フレーズは、特定の順序で12の一意の単語で構成されます"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "次の3つの CNAME レコードを追加してください。（注: DNS レコードの更新には数時間を要する場合があります。）"
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "次の MX レコードを追加してください。（注: DNS レコードの更新には数時間を要する場合があります。）"
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "次の TXT レコードを追加してください。（注: DNS レコードの更新には数時間を要する場合があります。）"
       ],
       "Please select files to upload": [
         "アップロードするファイルを選択してください"
@@ -8996,11 +8962,6 @@
         "通知"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "次の TXT レコードを追加してください:"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "管理者"
@@ -9226,6 +9187,9 @@
       "Sign in": [
         "サインイン"
       ],
+      "switch account": [
+        "アカウントを切り替える"
+      ],
       "Terms": [
         "利用規約"
       ],
@@ -9306,6 +9270,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "ビジョナリーになって ${ BRAND_NAME } のストーリーに参加しましょう"
+      ],
       "Secure email that protects your privacy": [
         "プライバシーを保護する安全なメール"
       ]
@@ -10748,6 +10715,9 @@
       "No parent folder": [
         "親フォルダーなし"
       ],
+      "No permission": [
+        "権限がありません"
+      ],
       "Normal": [
         "標準"
       ],
@@ -10756,6 +10726,9 @@
       ],
       "On": [
         "オン"
+      ],
+      "Organization only": [
+        "組織のみ"
       ],
       "Permanent": [
         "永続"
@@ -12703,6 +12676,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Mac または Windows 用 ${ MAIL_APP_NAME } を入手"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13021,6 +12997,9 @@
       "Delete calendar": [
         "カレンダーを削除する"
       ],
+      "Delete filter?": [
+        "フィルターを削除しますか?"
+      ],
       "Delete key permanently?": [
         "キーを完全に削除しますか?"
       ],
@@ -13038,6 +13017,9 @@
       ],
       "Delete version history?": [
         "バージョン履歴を削除しますか？"
+      ],
+      "Desktop app": [
+        "デスクトップアプリ"
       ],
       "Disable ${ email }": [
         "${ email } を無効化"
@@ -13527,6 +13509,9 @@
       ],
       "Summary": [
         "概要"
+      ],
+      "Switch account": [
+        "アカウントを切り替える"
       ],
       "Switch to one-password mode": [
         "標準のパスワードモードに切り替える"
@@ -14201,9 +14186,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "検証に成功しても、この TXT レコードを削除しないでください。ドメインを引き続き所有していることを確認するためにこの TXT レコードが必要です。"
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS の更新には最大1日かかる場合があります。"
       ]
     },
     "Weak personal key warning": {

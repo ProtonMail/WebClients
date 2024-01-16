@@ -3399,6 +3399,18 @@
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } zaszyfrowany plik",
+        "${ nbFile } zaszyfrowane pliki",
+        "${ nbFile } zaszyfrowanych plików",
+        "${ nbFile } zaszyfrowanych plików"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } zaszyfrowany plik...",
+        "${ nbFile } zaszyfrowane pliki...",
+        "${ nbFile } zaszyfrowanych plików...",
+        "${ nbFile } zaszyfrowanych plików..."
+      ],
       "${ pausedCount } paused": [
         "Transfer ${ pausedCount } pliku został wstrzymany",
         "Transfer ${ pausedCount } plików został wstrzymany",
@@ -3448,7 +3460,7 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
       "${ skippedCount } skipped": [
-        "Pominięto transfer ${ skippedCount } plików",
+        "Pominięto transfer ${ skippedCount } pliku",
         "Pominięto transfer ${ skippedCount } plików",
         "Pominięto transfer ${ skippedCount } plików",
         "Pominięto transfer ${ skippedCount } plików"
@@ -3497,6 +3509,9 @@
         "Wszystkie (${ totalFoldersCount } etykiety)",
         "Wszystkie (${ totalFoldersCount } etykiet)",
         "Wszystkie (${ totalFoldersCount } etykiety)"
+      ],
+      "All encrypted files": [
+        "Wszystkie zaszyfrowane pliki"
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
@@ -3696,11 +3711,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Pobieranie zostało wstrzymane z powodu problemu z połączeniem. Proces zostanie automatycznie wznowiony"
       ],
+      "Download ready": [
+        "Pobieranie gotowe"
+      ],
       "Downloaded": [
         "Pobrano"
       ],
       "Downloading": [
         "Pobieranie"
+      ],
+      "Downloading all encrypted files": [
+        "Pobierz wszystkie zaszyfrowane pliki"
       ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
@@ -3872,6 +3893,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "W międzyczasie zarejestruj własne konto ${ DRIVE_APP_NAME } i chroń swoje dane za pomocą szyfrowania end-to-end i bezpiecznie je udostępniaj."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksowanie elementów (${ esProgress }/${ totalProgressToShow })"
@@ -4155,11 +4179,26 @@
       "Restoring Photos... Please keep the tab open": [
         "Przywracanie zdjęć... Pozostaw kartę otwartą"
       ],
+      "Retry now": [
+        "Spróbuj ponownie"
+      ],
       "Search cannot be enabled in this browser": [
         "Nie można włączyć wyszukiwania w tej przeglądarce"
       ],
       "Search Enabled": [
         "Wyszukiwanie zostało włączone"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "Bezpieczne pobranie ${ nbFile } pliku",
+        "Bezpieczne pobranie ${ nbFile } plików",
+        "Bezpieczne pobranie ${ nbFile } plików",
+        "Bezpieczne pobranie ${ nbFile } plików"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Bezpieczne pobieranie wszystkich zaszyfrowanych plików"
+      ],
+      "Securely downloaded all files": [
+        "Bezpieczne pobieranie wszystkich plików"
       ],
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
@@ -4203,6 +4242,9 @@
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Zaloguj się do konta ${ DRIVE_APP_NAME }, aby chronić swoje dane za pomocą szyfrowania end-to-end i udostępniaj je bezpiecznie."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."
       ],
@@ -4211,6 +4253,9 @@
       ],
       "Signature issue": [
         "Błąd podpisu"
+      ],
+      "Skipped": [
+        "Pominięto"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Pobieranie niektórych plików nie powiodło się. Spróbuj pobrać pliki ponownie."
@@ -4271,6 +4316,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Plik mógł zostać usunięty, przeniesiony lub jest niedostępny. Skontaktuj się z właścicielem pliku."
+      ],
+      "This item already exists in your library": [
+        "Ten element już istnieje"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
@@ -4527,6 +4575,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Pobieranie jest w toku"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
@@ -4775,6 +4826,9 @@
       ],
       "Download anyway": [
         "Pobierz mimo to"
+      ],
+      "Downloading": [
+        "Pobieranie"
       ],
       "Downloading ${ percentageValue }%": [
         "Pobieranie ${ percentageValue }%"

@@ -447,6 +447,9 @@
       "Authentication error": [
         "Authentifizierungsfehler"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Authentifizierung fehlgeschlagen. Bestätige dein ${ BRAND_NAME }-Passwort, um mit dem Export fortzufahren."
+      ],
       "Auto-lock could not be activated": [
         "Automatisches Sperren konnte nicht aktiviert werden."
       ],
@@ -996,6 +999,12 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-Code erfolgreich registriert. Verwende ihn, um ${ PASS_APP_NAME } zu entsperren."
       ],
+      "Pinning item...": [
+        "Eintrag wird angeheftet..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Bitte bestätige dein ${ BRAND_NAME }-Passwort, um deine ${ PASS_APP_NAME }-Daten zu exportieren."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Bitte bestätige deinen PIN-Code, um die aktuelle Sperre aufzuheben.\n${ PASS_APP_NAME } wird dann nicht mehr gesperrt."
       ],
@@ -1104,6 +1113,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
+      ],
+      "Unpinning item...": [
+        "Eintrag wird losgelöst..."
       ],
       "Update login": [
         "Anmeldedaten aktualisieren"
@@ -1374,6 +1386,9 @@
       "Invitations": [
         "Einladungen"
       ],
+      "Item ID": [
+        "Artikel ID"
+      ],
       "Language": [
         "Sprache"
       ],
@@ -1575,6 +1590,9 @@
       "Vault": [
         "Tresor"
       ],
+      "Vault ID": [
+        "Tresor-ID"
+      ],
       "View details": [
         "Details anzeigen"
       ],
@@ -1668,6 +1686,9 @@
       ],
       "Full Name": [
         "Vollständiger Name"
+      ],
+      "MM/YY": [
+        "MM/JJ"
       ],
       "Other": [
         "Weitere"
@@ -1903,6 +1924,9 @@
       "Empty note": [
         "Leere Notiz"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Ablaufdatum ist nicht im Format MM/JJ."
+      ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
       ],
@@ -2008,9 +2032,6 @@
       ],
       "Your session could not be resumed.": [
         "Deine Sitzung konnte nicht fortgesetzt werden."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
       ],
       "Your session was locked.": [
         "Deine Sitzung wurde gesperrt."

@@ -227,7 +227,7 @@
         "Tümünü bırak"
       ],
       "Details": [
-        "Ayrıntılar"
+        "Bilgiler"
       ],
       "Discard": [
         "Sil"
@@ -311,6 +311,9 @@
         "Bağlantıyı al"
       ],
       "Get started": [
+        "Başlayalım"
+      ],
+      "Get Started": [
         "Başlayalım"
       ],
       "Get verification code": [
@@ -596,10 +599,10 @@
         "Paylaşım seçenekleri"
       ],
       "Show advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını göster"
+        "Gelişmiş PGP ayarlarını görüntüle"
       ],
       "Show preview": [
-        "Ön izlemeyi göster"
+        "Ön izlemeyi görüntüle"
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
@@ -1126,6 +1129,11 @@
       ],
       "URL": [
         "İnternet adresi"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kişi görseli"
       ]
     },
     "Contact type label": {
@@ -2429,8 +2437,8 @@
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var."
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -2972,7 +2980,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, bilgilerini ve biçimlerini desteklemiyor."
       ],
       "vCard versions < 3.0": [
         "vCard 3.0 sürümü öncesi"
@@ -2980,7 +2988,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
       "This file contains an event invitation:": [
         "Bu dosyada bir etkinlik daveti bulunuyor:",
@@ -3196,14 +3204,14 @@
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
       ],
       "No contact can be imported. Click for details": [
-        "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
+        "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
       ],
       "No event can be imported. Expand for details.": [
-        "Herhangi bir etkinlik içe aktarılamadı. Ayrıntılar için genişletin."
+        "Herhangi bir etkinlik içe aktarılamadı. Bilgi almak için genişletin."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
@@ -3326,6 +3334,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } atlandı",
+        "${ skippedCount } atlandı"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -4064,6 +4076,9 @@
       "Signature issue": [
         "İmza sorunu"
       ],
+      "Skipped": [
+        "Atlanan"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Bazı dosyalar indirilemedi. Dosyaları yeniden indirmeyi deneyin."
       ],
@@ -4203,6 +4218,9 @@
       "Trash is empty": [
         "Çöp kutusu boş"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "${ DRIVE_APP_NAME } deneyin: Sonsuza dek ücretsiz"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -4287,6 +4305,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } sürümünden geri yüklenecek. Diğer tüm sürümler bulunmayı sürdürecek."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "${ DRIVE_APP_NAME } ile verileriniz uçtan uca şifreleme ile korunur."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
       ],
@@ -4316,6 +4337,9 @@
       ],
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
+      ],
+      "You can now return to the application to continue": [
+        "Şimdi uygulamaya dönebilirsiniz"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
@@ -4398,7 +4422,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Ayrıntılar için tıklayın"
+        "Bilgiler için tıklayın"
       ]
     },
     "Info: partial": {
@@ -4789,7 +4813,7 @@
         "Fotoğraf"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Uygun işlemi yapabilmemiz için lütfen tüm ayrıntıları yazın"
+        "Uygun işlemi yapabilmemiz için lütfen tüm bilgileri yazın"
       ],
       "Port": [
         "Bağlantı noktası"
@@ -4944,6 +4968,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Kimden: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Nereye: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5327,6 +5354,10 @@
         "${ n } dosyayı taşı",
         "${ n } dosyayı taşı"
       ],
+      "Move ${ n } folder": [
+        "${ n } klasörü taşı",
+        "${ n } klasörü taşı"
+      ],
       "Move ${ n } item": [
         "${ n } ögeyi taşı",
         "${ n } ögeyi taşı"
@@ -5544,6 +5575,9 @@
       ],
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
+      ],
+      "Search parent folder": [
+        "Üst klasörü ara"
       ],
       "Select": [
         "Seçin"
@@ -5829,7 +5863,7 @@
         "Kapat"
       ],
       "Don't show this offer again": [
-        "Bu teklifi bir daha gösterme"
+        "Bu teklif bir daha görüntülenmesin"
       ],
       "Special offer": [
         "Özel teklif"
@@ -5891,6 +5925,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Ücretli ${ appName1 } ve ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 } ve ${ appName3 }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -6453,7 +6490,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Item details": [
-        "Öge ayrıntıları"
+        "Öge bilgileri"
       ],
       "Link confirmation": [
         "Bağlantı onayı"
@@ -6588,7 +6625,7 @@
         "Paylaşılan"
       ],
       "Show actions": [
-        "İşlemleri göster"
+        "İşlemleri görüntüle"
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
@@ -6627,10 +6664,10 @@
         "Bağlantının geçerlilik süresi dolmuş"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
+        "Bu dosyanın imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Bu klasörün imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
+        "Bu klasörün imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Bilgiler bölümüne gidin."
       ],
       "This link is password protected": [
         "Bu bağlantı parola ile korunmuş"
@@ -6743,6 +6780,9 @@
       ],
       "Hide side panel": [
         "Yan panoyu gizle"
+      ],
+      "Load image": [
+        "Görsel yükle"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"

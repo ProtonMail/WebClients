@@ -310,6 +310,9 @@
       "Get started": [
         "시작하기"
       ],
+      "Get Started": [
+        "시작하기"
+      ],
       "Get verification code": [
         "인증코드 전송"
       ],
@@ -1117,6 +1120,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "연락처 이미지"
       ]
     },
     "Contact type label": {
@@ -2061,7 +2069,7 @@
         "6 TB"
       ],
       "6 users": [
-        "6 명의 사용자"
+        "6명의 사용자"
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
@@ -2276,7 +2284,7 @@
         "연락처 중 하나에 이메일 주소가 없어요 : ${ noEmailsContactNamesList } "
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "지원되지 않는 사진이 있어 일부 파일이 누락되었습니다."
+        "Photos에서 지원하지 않는 일부 파일이 무시되었습니다."
       ],
       "Some groups could not be deleted": [
         "일부 그룹은 삭제할 수 없었습니다."
@@ -3271,6 +3279,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount }개 건너뜀"
+      ],
       "${ speed }/s": [
         "${ speed }/초"
       ],
@@ -3997,6 +4008,9 @@
       "Signature issue": [
         "서명 문제 발생"
       ],
+      "Skipped": [
+        "건너뜀"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "다운로드에 실패한 파일들이 있습니다. 나중에 다시 다운로드 해 주십시오."
       ],
@@ -4254,6 +4268,9 @@
       ],
       "You can import one data type at a time.": [
         "한 번에 하나의 데이터 유형을 가져올 수 있어요."
+      ],
+      "You can now return to the application to continue": [
+        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
@@ -4876,6 +4893,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "보낸 사람: ${ from }"
+      ],
+      "To: ${ to }": [
+        "받는 사람: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5237,6 +5257,9 @@
       "Move ${ n } files": [
         "파일 ${ n }개 이동"
       ],
+      "Move ${ n } folders": [
+        "폴더 ${ n }개 이동"
+      ],
       "Move ${ n } items": [
         "항목 ${ n }개 이동"
       ],
@@ -5453,6 +5476,9 @@
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
       ],
+      "Search parent folder": [
+        "상위 폴더 검색"
+      ],
       "Select": [
         "선택"
       ],
@@ -5553,13 +5579,13 @@
     },
     "session_recovery:available:info": {
       " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
       ],
       " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
       ],
       " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
@@ -5589,7 +5615,7 @@
         "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
       ],
       "You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -5780,6 +5806,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -6609,6 +6638,9 @@
       ],
       "Hide side panel": [
         "사이드 패널 숨기기"
+      ],
+      "Load image": [
+        "이미지 불러오기"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"

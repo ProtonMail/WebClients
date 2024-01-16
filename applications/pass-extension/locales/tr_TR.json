@@ -336,7 +336,7 @@
         "Kasayı paylaş"
       ],
       "Show": [
-        "Göster"
+        "Görüntüle"
       ],
       "Sign back in": [
         "Yeniden oturum aç"
@@ -999,6 +999,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
       ],
+      "Pinning item...": [
+        "Öge sabitleniyor..."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
+      ],
+      "Unpinning item...": [
+        "Ögenin sabitlemesi kaldırılıyor..."
       ],
       "Update login": [
         "Oturum açma kaydını güncelle"
@@ -1380,6 +1386,9 @@
       "Invitations": [
         "Davetler"
       ],
+      "Item ID": [
+        "Öge kimliği"
+      ],
       "Language": [
         "Dil"
       ],
@@ -1581,8 +1590,11 @@
       "Vault": [
         "Kasa"
       ],
+      "Vault ID": [
+        "Kasa kimliği"
+      ],
       "View details": [
-        "Ayrıntıları görüntüle"
+        "Bilgileri görüntüle"
       ],
       "View logs": [
         "Günlükleri görüntüle"
@@ -1674,6 +1686,9 @@
       ],
       "Full Name": [
         "Ad Soyad"
+      ],
+      "MM/YY": [
+        "AA/YY"
       ],
       "Other": [
         "Diğer"
@@ -1909,6 +1924,9 @@
       "Empty note": [
         "Boş not"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Geçerlilik süresi AA/YY biçiminde değil"
+      ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
       ],
@@ -2014,9 +2032,6 @@
       ],
       "Your session could not be resumed.": [
         "Oturumunuz sürdürülemiyor."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "Oturumunuz etkin değil. Lütfen yeniden oturum açın."
       ],
       "Your session was locked.": [
         "Oturumunuz kilitlenmiş."

@@ -946,6 +946,9 @@
       "Item successfully moved": [
         "Articolul s-a mutat."
       ],
+      "Item successfully pinned": [
+        "Elementul a fost fixat."
+      ],
       "Item successfully unpinned": [
         "Fixarea elementului s-a anulat."
       ],
@@ -1695,6 +1698,9 @@
       "Full Name": [
         "Numele complet"
       ],
+      "MM/YY": [
+        "LL/AA"
+      ],
       "Other": [
         "Altele"
       ],
@@ -1930,6 +1936,9 @@
       "Empty note": [
         "Notă goală."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data de expirare nu este în format LL/AA."
+      ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
       ],
@@ -2036,9 +2045,6 @@
       ],
       "Your session could not be resumed.": [
         "Sesiunea nu a putut fi reluată."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "Sesiunea nu este activă. Reautentificați-vă."
       ],
       "Your session was locked.": [
         "Sesiunea a fost blocată."

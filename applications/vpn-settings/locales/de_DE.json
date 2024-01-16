@@ -407,6 +407,9 @@
       "Search countries": [
         "Länder durchsuchen"
       ],
+      "See DNS TXT record": [
+        "Siehe DNS TXT-Eintrag"
+      ],
       "See how": [
         "Siehe wie"
       ],
@@ -2760,6 +2763,11 @@
         "Benutzername"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Füge diesen Eintrag zu deiner Domain im Kontrollpanel deines Domain-Namen-Registrars hinzu"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-Mail"
@@ -2975,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Abgerechnet zum Preis von ${ price }"
       ],
@@ -2995,6 +3006,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Konfiguriere die SAML-Authentifizierung für deine Organisation über einen Identitätsanbieter (IdP). Dadurch wird SAML für die gesamte Organisation aktiviert."
       ],
       "Continue with ${ freeName }": [
         "Mit ${ freeName } fortfahren"
@@ -3187,7 +3201,7 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } holen"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
       "here": [
@@ -4358,6 +4372,9 @@
       "Metadata URL for ${ appName }": [
         "Metadaten-URL für ${ appName }"
       ],
+      "Method for importing metadata": [
+        "Methode zum Importieren von Metadaten"
+      ],
       "Moderate NAT": [
         "Moderates NAT"
       ],
@@ -4483,9 +4500,6 @@
       ],
       "Select your plan": [
         "Wähle dein Abonnement"
-      ],
-      "Single sign-on Entity ID": [
-        "Single Sign-on-Entitäts-ID"
       ],
       "Single sign-on entity ID": [
         "Single Sign-on-Entitäts-ID"
@@ -7215,6 +7229,9 @@
       ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Eingabe von Endpunkten bei deinem Identitätsanbieter"
       ],
       "Enter SAML metadata": [
         "SAML-Metadaten eingeben"
