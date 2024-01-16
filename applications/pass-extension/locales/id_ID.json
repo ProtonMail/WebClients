@@ -986,6 +986,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kode PIN berhasil didaftarkan. Gunakan kode PIN Anda untuk membuka kunci ${ PASS_APP_NAME }"
       ],
+      "Pinning item...": [
+        "Menyematkan item..."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
@@ -1096,6 +1099,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
+      ],
+      "Unpinning item...": [
+        "Melepas sematan item..."
       ],
       "Update login": [
         "Perbarui entri masuk"
@@ -1363,6 +1369,9 @@
       "Invitations": [
         "Undangan"
       ],
+      "Item ID": [
+        "ID Item"
+      ],
       "Language": [
         "Bahasa"
       ],
@@ -1564,6 +1573,9 @@
       "Vault": [
         "Brankas"
       ],
+      "Vault ID": [
+        "ID Brankas"
+      ],
       "View details": [
         "Lihat rincian"
       ],
@@ -1657,6 +1669,9 @@
       ],
       "Full Name": [
         "Nama Lengkap"
+      ],
+      "MM/YY": [
+        "BB/TT"
       ],
       "Other": [
         "Lainnya"
@@ -1891,6 +1906,9 @@
       "Empty note": [
         "Catatan kosong"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Tanggal Kedaluwarsa bukan dalam format BB/TT"
+      ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
       ],
@@ -1996,8 +2014,8 @@
       "Your session could not be resumed.": [
         "Sesi Anda tidak dapat dilanjutkan."
       ],
-      "Your session is inactive. Please log back in.": [
-        "Sesi Anda tidak aktif. Silakan masuk kembali."
+      "Your session is inactive.": [
+        "Sesi Anda tidak aktif."
       ],
       "Your session was locked.": [
         "Sesi Anda dikunci."
