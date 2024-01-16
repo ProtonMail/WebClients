@@ -41,10 +41,9 @@ interface SaveEventHelperArguments {
     hasDefaultNotifications: boolean;
     selfAddress?: Address;
     canEditOnlyPersonalPart: boolean;
-    isOrganizer: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
-    onSaveConfirmation: OnSaveConfirmationCb;
+    onSaveConfirmation?: OnSaveConfirmationCb;
     getCalendarKeys: GetCalendarKeys;
     sendIcs: (
         data: SendIcsActionData,
@@ -210,7 +209,7 @@ const getSaveSingleEventActions = async ({
         let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
 
         if (isSendType) {
-            await onSaveConfirmation({
+            await onSaveConfirmation?.({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
                 isAttendee: false,
@@ -273,7 +272,7 @@ const getSaveSingleEventActions = async ({
             throw new Error('Cannot create an event without user address');
         }
 
-        await onSaveConfirmation({
+        await onSaveConfirmation?.({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
             isAttendee: false,
