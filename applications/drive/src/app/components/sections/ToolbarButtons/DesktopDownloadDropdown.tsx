@@ -31,6 +31,7 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
                 shape="ghost"
                 size="small"
                 className={className}
+                data-testid="toolbar-dropdown-button"
             >
                 {c('Action').t`Download apps`}
             </DropdownButton>
