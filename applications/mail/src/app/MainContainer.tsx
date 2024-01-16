@@ -33,7 +33,6 @@ const MainContainer = () => {
         FeatureCode.ScheduledSendFreemium,
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
-        FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
         FeatureCode.LegacyMessageMigrationEnabled,
         FeatureCode.ESUserInterface,
