@@ -713,10 +713,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3303,6 +3303,10 @@
       "Choose a date in the future.": [
         "Valitse päiväys tulevaisuudesta."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Valitse päiväys seuraavan ${ n } päivän sisällä.",
+        "Valitse päiväys seuraavan ${ n } päivän sisällä."
+      ],
       "Condition incomplete": [
         "Puutteellinen ehto"
       ],
@@ -4854,6 +4858,46 @@
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } keskustelulle lisätään tunniste:",
+        "${ elementsCount } keskustelulle lisätään tunniste:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } keskustelu merkitään luetuksi.",
+        "${ elementsCount } keskustelua merkitään luetuksi."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } keskustelu merkitään lukemattomaksi.",
+        "${ elementsCount } keskustelua merkitään lukemattomaksi."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } keskustelu siirretään",
+        "${ elementsCount } keskustelua siirretään"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } keskustelulta poistetaan tunniste:",
+        "${ elementsCount } keskustelulta poistetaan tunniste:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } viestille lisätään tunniste:",
+        "${ elementsCount } viestille lisätään tunniste:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } viesti merkitään luetuksi.",
+        "${ elementsCount } viestiä merkitään luetuksi."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } viesti merkitään lukemattomaksi.",
+        "${ elementsCount } viestiä merkitään lukemattomaksi."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } viesti siirretään",
+        "${ elementsCount } viestiä siirretään"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } viestiltä poistetaan tunniste:",
+        "${ elementsCount } viestiltä poistetaan tunniste:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } upotettu kuva",
         "${ embeddedAttachmentsCount } upotettua kuvaa"
@@ -5018,8 +5062,17 @@
       "and": [
         "ja"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Kaikki ajoitetut tai torkutetut viestit perutaan."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansioon ${ nameDeleted } tallennettuja sähköpostiviestejä ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
+      ],
+      "Applying actions to conversations": [
+        "Käytetään toimintoa kaikille keskusteluille"
+      ],
+      "Applying actions to messages": [
+        "Käytetään toimintoa kaikille viesteille"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Haluatko varmasti poistaa kaikki tämän kansion viestit?"
@@ -5462,6 +5515,9 @@
       "Merged": [
         "Yhdistetty"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Viestitoiminnot käynnissä. Tämä voi kestää hetken."
+      ],
       "Message download status:": [
         "Viestin lataustila:"
       ],
@@ -5700,6 +5756,10 @@
       "Select a service provider to start": [
         "Aloita valitsemalla palveluntarjoaja"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Valitse kaikki ${ elementsCount } sijainnissa ${ location }",
+        "Valitse kaikki ${ elementsCount } sijainnissa ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
       ],
@@ -5930,6 +5990,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Tämän lähettäjän julkiseen avaimeen ei ole vielä luotettu."
+      ],
+      "to ${ destinationElement } folder.": [
+        "kohdekansioon ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -6184,6 +6247,22 @@
       "You selected **${ count } message** with this label": [
         "Valitsit **${ count } viestin** tällä tunnisteella",
         "Valitsit **${ count } viestiä** tällä tunnisteella"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Valitsit **${ elementsCount } keskustelun** sijainnissa ${ location }",
+        "Valitsit **${ elementsCount } keskustelua** sijainnissa ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Valitsit **${ elementsCount } keskustelun**.",
+        "Valitsit **${ elementsCount } keskustelua**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Valitsit **${ elementsCount } viestin** sijainnissa ${ location }",
+        "Valitsit **${ elementsCount } viestiä** sijainnissa ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Valitsit **${ elementsCount } viestin**.",
+        "Valitsit **${ elementsCount } viestiä**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Kirjoitit \"${ attachmentsFoundKeyword }\", mutta yhtään liitettä ei ole lisätty. Haluatko silti lähettää viestin?"
@@ -7011,6 +7090,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Lähettäjä: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Vastaanottaja: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7845,6 +7927,9 @@
       "Search name, email or group": [
         "Etsi nimeä, sähköpostiosoitetta tai ryhmän nimeä"
       ],
+      "Search parent folder": [
+        "Etsi yläkansiosta"
+      ],
       "Select": [
         "Valitse"
       ],
@@ -8419,6 +8504,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } ja ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } ja ${ appName3 }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
@@ -9012,6 +9100,12 @@
       "Account suspended": [
         "Tili on jäädytetty"
       ],
+      "Action all conversations": [
+        "Käytä kaikkiin keskusteluihin"
+      ],
+      "Action all messages": [
+        "Käytä kaikkiin viesteihin"
+      ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
       ],
@@ -9286,8 +9380,20 @@
       "Mark as unread": [
         "Merkitse lukemattomaksi"
       ],
+      "Mark conversations as read": [
+        "Merkitse keskustelut luetuiksi"
+      ],
+      "Mark conversations as unread": [
+        "Merkitse keskustelut lukemattomiksi"
+      ],
       "Mark email as legitimate": [
         "Merkitse viesti kelvolliseksi"
+      ],
+      "Mark messages as read": [
+        "Merkitse viestit luetuiksi"
+      ],
+      "Mark messages as unread": [
+        "Merkitse viestit lukemattomiksi"
       ],
       "Merge contacts": [
         "Yhdistä yhteystietoja"
@@ -9318,6 +9424,12 @@
       ],
       "More selections": [
         "Lisää valintoja"
+      ],
+      "Move all conversations": [
+        "Siirrä kaikki keskustelut"
+      ],
+      "Move all messages": [
+        "Siirrä kaikki viestit"
       ],
       "Move all messages to Archive": [
         "Siirrä kaikki viestit arkistoon"
