@@ -7,11 +7,12 @@ import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronOnInboxApps } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
+import { InboxDesktopAppSwitcher } from '../desktop';
 import ProductLink, { apps } from './ProductLink';
 
 interface AppsDropdownProps {
@@ -23,7 +24,6 @@ interface AppsDropdownProps {
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
-        const isElectron = isElectronApp();
         const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
 
         const availableApps = apps(user);
@@ -47,7 +47,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 ref={ref}
                 as="button"
             >
-                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectron ? '2' : '3' }}>
+                <ul className="unstyled my-0 p-4">
                     {availableApps.map((appToLinkTo) => {
                         const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
@@ -102,6 +102,13 @@ export const UnAuthenticatedAppsDropdown = AppsDropdown;
 const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     (props: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const [user] = useUser();
+        const { APP_NAME } = useConfig();
+
+        // The app swicher on Mail, Calendar and account desktop application is different
+        if (isElectronOnInboxApps(APP_NAME)) {
+            return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
+        }
+
         return <AppsDropdown ref={ref} {...props} user={user} />;
     }
 );
