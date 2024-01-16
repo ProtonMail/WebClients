@@ -1258,6 +1258,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "연락처 이미지"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "팩스"
@@ -2091,7 +2096,7 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "종일, ${ untilString }"
+        "매일, ${ untilString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "매 ${ interval }일, ${ untilString }"
@@ -2332,7 +2337,7 @@
         "6 TB"
       ],
       "6 users": [
-        "6 명의 사용자"
+        "6명의 사용자"
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
@@ -2724,6 +2729,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "초대된 주소가 존재하지 않습니다"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "답변 변경 중 오류가 발생했습니다."
       ]
     },
     "Error importing calendar": {
@@ -3757,6 +3767,9 @@
       "Discard changes?": [
         "변경 사항 취소"
       ],
+      "Display events for calendar ${ Name }": [
+        "${ Name } 캘린더의 이벤트 표시"
+      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
@@ -4188,6 +4201,9 @@
       ],
       "You can import one data type at a time.": [
         "한 번에 하나의 데이터 유형을 가져올 수 있어요."
+      ],
+      "You can now return to the application to continue": [
+        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
@@ -4766,6 +4782,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "보낸 사람: ${ from }"
+      ],
+      "To: ${ to }": [
+        "받는 사람: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5547,6 +5566,9 @@
       "Search for name or email": [
         "이름 및 이메일을 위해 검색"
       ],
+      "Search parent folder": [
+        "상위 폴더 검색"
+      ],
       "Select": [
         "선택"
       ],
@@ -5660,13 +5682,13 @@
     },
     "session_recovery:available:info": {
       " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
       ],
       " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
       ],
       " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
@@ -5696,7 +5718,7 @@
         "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
       ],
       "You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -5935,6 +5957,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -6789,6 +6814,9 @@
       "Hide side panel": [
         "사이드 패널 숨기기"
       ],
+      "Load image": [
+        "이미지 불러오기"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
       ],
@@ -7010,7 +7038,7 @@
         "주의 ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "주의 종일, ${ timesString }"
+        "주의 모든 요일, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
         "주의 금요일, ${ timesString }"
@@ -7066,7 +7094,7 @@
         "주의 ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "주의 종일, ${ untilString }"
+        "주의 모든 요일, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "주의 금요일, ${ untilString }"
@@ -7126,7 +7154,7 @@
         "매 ${ interval }년, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
-        "년간, ${ timesString }"
+        "연간, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -7134,7 +7162,7 @@
         "매 ${ interval }년, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
-        "년간, ${ untilString }"
+        "연간, ${ untilString }"
       ]
     }
   }
