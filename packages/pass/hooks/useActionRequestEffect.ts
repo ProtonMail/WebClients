@@ -25,7 +25,7 @@ export const useActionRequestEffect = (requestId: string, options: Options) => {
     })();
 
     useEffect(() => {
-        if (!request) return;
+        if (!request) return setLoading(false);
 
         switch (request.status) {
             case 'start':
