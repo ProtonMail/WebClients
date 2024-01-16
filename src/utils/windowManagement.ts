@@ -1,6 +1,6 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import log from "electron-log/main";
-import { getWindowState, setWindowState } from "../store/windowsStore";
+import { getWindowState } from "../store/windowsStore";
 import { handleBeforeHandle } from "./beforeUnload";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
@@ -85,25 +85,54 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     log.info("createGenericWindow", url, mapKey, visible, windowConfig);
     const window = createWindow(session, url, visible, windowConfig);
 
-    window.on("close", (ev) => {
-        log.info("close", mapKey);
-        setWindowState(window.getBounds(), mapKey);
-        if (isWindows) {
-            ev.preventDefault();
-            window.hide();
-            window.setOpacity(0);
+    // Used to keep track of closing windows on macOS and hide them during leave-full-screen callback
+    let closingMacOSFullscreen = false;
 
-            // Close the application if all windows are closed
-            if (areAllWindowsClosedOrHidden()) {
-                log.info("close, areAllWindowsClosedOrHidden on Windows");
-                BrowserWindow.getAllWindows().forEach((window) => window.destroy());
-                app.quit();
-            }
-        } else if (isMac) {
-            ev.preventDefault();
+    // TODO handle Linux close events
+    // Windows on close event
+    window.on("close", (ev) => {
+        if (!isWindows) {
+            return;
+        }
+
+        ev.preventDefault();
+        window.hide();
+        window.setOpacity(0);
+
+        // Close the application if all windows are closed
+        if (areAllWindowsClosedOrHidden()) {
+            log.info("close, areAllWindowsClosedOrHidden on Windows");
+            BrowserWindow.getAllWindows().forEach((window) => window.destroy());
+            app.quit();
+        }
+    });
+
+    // macOS on close event
+    window.on("close", (ev) => {
+        if (!isMac) {
+            return;
+        }
+
+        ev.preventDefault();
+        if (window.isFullScreen()) {
+            log.info("close, isFullScreen on macOS");
+            closingMacOSFullscreen = true;
+            window.setFullScreen(false);
+        } else {
             window.hide();
             window.setOpacity(0);
         }
+    });
+
+    // Handle macOS fullscreen close event
+    window.on("leave-full-screen", () => {
+        if (!closingMacOSFullscreen || !isMac) {
+            return;
+        }
+        log.info("close, leave-full-screen on macOS");
+        window.hide();
+        window.setOpacity(0);
+        closingMacOSFullscreen = false;
     });
 
     windowMap.set(mapKey, window);
