@@ -3,7 +3,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 import { useApi } from '@proton/components/hooks';
 import { getSLAccountLinked } from '@proton/shared/lib/api/simpleLogin';
 import { SIMPLE_LOGIN_TAGS } from '@proton/shared/lib/constants';
-import { isEdge, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isChromiumBased, isEdge, isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 const { EXTENSION_INSTALLED_QUERY, EXTENSION_INSTALLED_RESPONSE } = SIMPLE_LOGIN_TAGS;
 
@@ -39,7 +39,7 @@ export const SimpleLoginExtensionProvider = ({ children }: { children: ReactNode
     const [numberOfTries, setNumberOfTries] = useState(1);
     const maxNumberOfTries = 5;
 
-    const canUseExtension = isEdge() || 'chrome' in window || isFirefox();
+    const canUseExtension = isEdge() || isChromiumBased() || isFirefox();
 
     // We don't need to present SL feature to users
     // Having the extension on Firefox or Chromium browsers
