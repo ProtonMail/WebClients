@@ -253,7 +253,10 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     // If the error is 429 (rate limited), we should not continue
                     // with other uploads in the queue and fail fast, otherwise
                     // it just triggers more strict jails and leads to nowhere.
-                    if (error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                    if (
+                        error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS ||
+                        error?.statusCode === HTTP_ERROR_CODES.TOO_MANY_REQUESTS
+                    ) {
                         log(nextFileUpload.id, `Got 429, canceling ongoing uploads`);
                         control.cancelUploads(isTransferOngoing);
                     }
