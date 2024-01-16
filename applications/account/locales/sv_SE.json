@@ -5829,15 +5829,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan också användas med ett enda lösenord som ersätter både inloggnings- och brevlådans lösenord. För att växla till läge med ett enda lösenord, ange det enda lösenord du vill använda och klicka på “Spara“."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } stöder DKIM-signering för anpassade domäner. För att använda DKIM-autentisering, lägg till följande CNAME-post i dina DNS-inställningar för denna domän. Detta kan vanligtvis göras i kontrollpanelen hos din domännamnsregistrator."
-      ],
       "${ n } address": [
         "${ n } adress",
         "${ n } adresser"
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } har ingen effekt på e-postleverans, men vi rekommenderar ${ quarantine } för bättre säkerhet."
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: sätt inte i karantän eller avvisa ej oauktoriserade e-postmeddelanden. Vanligtvis använder människor bara denna policy för felsökning eller testning."
       ],
       "${ number } city": [
         "${ number } ort",
@@ -5871,6 +5868,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }.",
         "${ provisioningCounter } servrar håller fortfarande på att ställas in. Detta tar vanligtvis cirka ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: ber mottagarplattformarna att markera de oauktoriserade e-postmeddelandena som skräppost eller sätta dem i karantän."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: ber mottagarplattformarna att avvisa de oauktoriserade e-postmeddelandena."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } till",
@@ -6198,8 +6201,8 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Innan du kan ta emot e-postmeddelanden för dina anpassade domänadresser på ${ MAIL_APP_NAME } måste du lägga till följande MX-poster i din DNS. Detta kan vanligtvis göras i kontrollpanelen för din domännamnsregistrator."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Innan du kan ta emot e-postmeddelanden för dina anpassade domänadresser på ${ MAIL_APP_NAME } måste du lägga till följande två MX-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen). Du kan hitta ett exempel och några användbara tips ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
@@ -6348,6 +6351,9 @@
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM tillåter ${ BRAND_NAME } att kryptografiskt signera din e-post och förhindra angripare från att manipulera din e-post. Se till att du lägger till följande tre CNAME-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
@@ -6393,6 +6399,9 @@
       ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Varje domän kan endast ha en SPF (TXT)-post. Om du vill behålla den befintliga SPF-posten (TXT) kan du lägga till ${ spf } till din nuvarande post (lägg den efter ${ spfValue })."
       ],
       "Edit email address": [
         "Redigera e-postadress"
@@ -6478,6 +6487,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Händelseinbjudningar och OSA kommer att skickas på detta språk."
       ],
+      "Example: ${ spfExample }": [
+        "Exempel: ${ spfExample }"
+      ],
       "Expired": [
         "Löpt ut"
       ],
@@ -6498,6 +6510,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "För medlemmar i organisationer som använder enkel inloggning (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "För användare som byter till ${ MAIL_APP_NAME } från en annan e-posttjänst, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
@@ -6547,9 +6562,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Om systemets tidszon inte matchar den nuvarande tidszonen kommer du att bli ombedd att uppdatera den (högst en gång per dag)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Om denna domän för närvarande tar emot e-post, välj fliken ${ boldAddresses } och lägg till alla aktiva e-postadresser innan du ändrar MX-posten för att säkerställa en smidig övergång."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Om detta beror på en gammal lösenordsåterställning kan du stoppa meddelandet från att visas igen"
       ],
@@ -6574,9 +6586,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Om du aldrig har använt tvåfaktorsautentisering tidigare rekommenderar vi starkt dig ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Om du har ställt in både SPF och DKIM så låter DMARC dig specificera hur andra e-posttjänster ska leverera e-post åt din domän om både SPF och DKIM-kontroller misslyckats. Detta kan göra det svårare för spammare som låtsas vara du men också orsaka leveransproblem om det inte görs rätt."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Om du tappar bort ditt lösenord och behöver återställa ditt konto, ${ boldImperative } att du har en ${ boldAccountRecovery } tillhands."
       ],
@@ -6597,9 +6606,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Om du nyligen har återställt ditt lösenord kan du använda en dataåterställningsmetod för att låsa upp dina data"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Om du vill behålla en befintlig SPF-post kan du bara lägga till ${ spf } till den efter ${ spfValue }. Skapa inte flera SPF-poster."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Om du vill kombinera detta konto med ett annat, ta INTE bort det."
@@ -6629,11 +6635,11 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "VIKTIGT: Om din DNS-konsol inte tillåter att CNAME-värden slutar med en punkt kan du ta bort den sista punkten i CNAME-värdena."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktigt: Se till att du sparar återställningskoderna. Annars kan du permanent förlora åtkomst till ditt konto om du förlorar din tvåfaktorsautentiseringsenhet."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VIKTIGT: Vissa registratorer accepterar inte CNAME-värden med en punkt i slutet (medan andra kräver det). Om din registrator inte accepterar dina CNAME-poster, ta bort punkten i slutet av varje CNAME-värde och försök igen."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
@@ -6699,9 +6705,6 @@
       "Just send them your personal referral link.": [
         "Skicka bara din personliga referenslänk till dem."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Behåll dessa poster i din DNS så länge du vill använda DKIM."
-      ],
       "Key deletion is irreversible!": [
         "Borttagning av nyckel är oåterkalleligt!"
       ],
@@ -6764,6 +6767,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Loggar inkluderar autentiseringsförsök för alla ${ BRAND_NAME }-tjänster som använder dina ${ BRAND_NAME_TWO }-inloggningsuppgifter."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Stora e-posttjänster kan avvisa eller filtrera din e-post till skräppost om SPF/DKIM/DMARC saknas eller inte är korrekt inställda."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Säkerställ att du ${ addARecoveryMethod } så du kan komma åt ditt konto ifall du glömmer ditt lösenord."
@@ -7203,8 +7212,8 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Vissa av dina tillgängliga servrar kan endast användas i specifika länder på grund av de senaste borttagningarna"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF används för att ange vem som får skicka e-post för domänen så vi rekommenderar starkt att du lägger till ${ MAIL_APP_NAME } till din SPF-post. Lägg till följande TXT-post i din DNS. Detta kan oftast göras i Kontrollpanelen hos din domännamnsregistrator."
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klargör vem som får skicka e-post för din domän. Se till att du lägger till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
       "Stay tuned for future promotions.": [
         "Håll ögonen öppna för framtida kampanjer."
@@ -7985,14 +7994,14 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Lägg till en ny adress för alla användare i din organisation."
+      "Add a new address for the existing users of your organization.": [
+        "Lägg till en ny adress för befintliga användare i din organisation."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Lägg till en ny användare till din organisation och skapa en adress för den."
       ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Av säkerhetsskäl måste vi verifiera att du är ägare till ${ domainName }. Lägg till följande DNS TXT-post till din domän. Detta kan vanligtvis göras i kontrollpanelen hos din domännamnsregistrator."
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Av säkerhetsskäl måste vi verifiera att du är ägare till ${ domainName }. Lägg till följande TXT-post i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen). Du kan hitta ett exempel och några användbara tips ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8812,9 +8821,6 @@
       "Gift code": [
         "Presentkod"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Här är en grundläggande DMARC-post som inte gör något förutom att skicka rapporter till dig."
-      ],
       "Hide password": [
         "Dölj lösenord"
       ],
@@ -9034,14 +9040,14 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fras består av 12 unika ord i en specifik ordning"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Lägg till alla tre följande CNAME-poster. Observera att det kan ta flera timmar att uppdatera DNS-poster."
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lägg till alla tre av följande CNAME-poster. Obs! DNS-poster kan ta flera timmar att uppdatera."
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Lägg till följande MX-post. Observera att DNS-poster kan ta flera timmar att uppdatera."
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lägg till följande två MX-poster. Obs! DNS-poster kan ta flera timmar att uppdatera."
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Lägg till följande TXT-post. Observera att DNS-poster kan ta flera timmar att uppdatera."
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
       ],
       "Please select files to upload": [
         "Välj filer att ladda upp"
@@ -9290,8 +9296,8 @@
       ]
     },
     "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Lägg till följande TXT-post:"
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
       ]
     },
     "Label for new member": {
@@ -9479,6 +9485,9 @@
       ],
       "Help translate": [
         "Hjälp till att översätta"
+      ],
+      "here": [
+        "här"
       ],
       "How to pay with Bitcoin?": [
         "Hur betalar man med Bitcoin?"
@@ -10638,6 +10647,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På arbetsdagar får du support från ${ BRAND_NAME } kundsupportteam inom 24 timmar efter förfrågan"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "En VPN-anslutning tillåter en enhet att ansluta till ${ VPN_APP_NAME } när som helst. Till exempel, för att ansluta en telefon och en bärbar dator till ${ VPN_APP_NAME } samtidigt, behöver du två VPN-anslutningar."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
@@ -13216,6 +13228,12 @@
       "4. Select a server to connect to": [
         "4. Välj en server att ansluta till"
       ],
+      "A filter name is required": [
+        "Ett filternamn är obligatoriskt"
+      ],
+      "A filter with this name already exists": [
+        "Ett filter med detta namn finns redan"
+      ],
       "Accessibility": [
         "Tillgänglighet"
       ],
@@ -13642,6 +13660,9 @@
         "Misslyckades att skapa ${ failedUsers.length } användarkonto.",
         "Misslyckades att skapa ${ failedUsers.length } användarkonton."
       ],
+      "Filter name cannot contain only spaces": [
+        "Filternamn kan inte bara innehålla mellanslag"
+      ],
       "Filters": [
         "Filter"
       ],
@@ -14049,6 +14070,12 @@
       "Theme": [
         "Tema"
       ],
+      "This field cannot be empty": [
+        "Detta fält kan inte vara tomt"
+      ],
+      "This field cannot contain only spaces": [
+        "Detta fält kan inte bara innehålla mellanslag"
+      ],
       "Time zone": [
         "Tidszon"
       ],
@@ -14297,6 +14324,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering av avancerade loggar registrerar IP-adressen för varje händelse i säkerhetsloggen."
+      ],
+      "Feature in early access": [
+        "Funktion i förhandstillgång"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelanden som sociala eller kampanjer. Du kan välja var du vill importera dessa e-postmeddelanden till."
@@ -14747,9 +14777,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Det kan ta upp till en dag för DNS-ändringar för att uppdateras."
       ]
     },
     "Weak personal key warning": {

@@ -3004,11 +3004,21 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Zilnic, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "La fiecare ${ interval } zi, ${ timesString }",
+        "La fiecare ${ interval } zile, ${ timesString }",
+        "La fiecare ${ interval } de zile, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Zilnic, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "La fiecare ${ interval } zi, ${ untilString }",
+        "La fiecare ${ interval } zile, ${ untilString }",
+        "La fiecare ${ interval } de zile, ${ untilString }"
       ]
     },
     "Day": {
@@ -4213,6 +4223,11 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } eveniment.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } evenimente.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } de evenimente."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
@@ -5841,16 +5856,10 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } suportă semnarea DKIM pentru domenii personale. Pentru a utiliza autentificarea DKIM, adăugați următoarea înregistrare CNAME în setările DNS pentru acest domeniu. Acest lucru se poate face de obicei în panoul de control al registratorului domeniului."
-      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
         "${ n } de adrese"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nu are efect asupra livrării de e-mail, dar vă recomandăm ${ quarantine } pentru o securitate mai bună."
       ],
       "${ number } city": [
         "Un oraș",
@@ -5907,14 +5916,14 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "Este selectat un folder",
-        "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
-        "Sunt selectate ${ selectedFoldersCountLocalized } de foldere"
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
-        "S-a selectat o etichetă",
-        "S-au selectat ${ selectedFoldersCountLocalized } etichete",
-        "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }"
       ],
       "${ storage } storage": [
         "Stocare ${ storage }"
@@ -6230,9 +6239,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
-      ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Înainte de a putea primi mesaje pentru domeniul personal la ${ MAIL_APP_NAME }, trebuie să adăugați următoarele înregistrări MX în DNS. Această operație poate fi făcută de obicei în panoul de control disponibil unde ați înregistrat domeniul."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
@@ -6581,9 +6587,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Dacă fusul orar al sistemului nu se potrivește cu cel din preferințe, vi se va solicita să-l actualizați (maxim o dată pe zi)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Dacă acest domeniu primește în prezent e-mailuri, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție fără probleme."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Dacă aceasta se datorează unei resetări anterioare a parolei, puteți opri afișarea din nou a mesajului."
       ],
@@ -6608,9 +6611,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Dacă nu ați mai folosit autentificarea cu doi factori, vă recomandăm insistent să ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Dacă aveți setate atât SPF cât și DKIM, DMARC vă permite să specificați felul în care celelalte servicii de e-mail ar trebui să livreze mesajele pentru domeniul dvs. dacă verificarea SPF și DKIM a eșuat. Aceasta va îngreuna acțiunile celor care trimit mesaje nedorite de a pretinde că sunteți dvs., dar ar putea și cauza probleme de livrare dacă nu e executată corect."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Dacă vă pierdeți parola și trebuie să vă resetați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
       ],
@@ -6631,9 +6631,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Dacă v-ați resetat recent parola, puteți utiliza o metodă de recuperare a datelor pentru a vă debloca datele."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Dacă doriți să păstrați o înregistrare SPF existentă, puteți adăuga ${ spf } la sfârșit după ${ spfValue }. Nu creați multiple înregistrări SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Dacă doriți să combinați acest cont cu un altul, NU îl ștergeți."
@@ -6666,9 +6663,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: Asigurați-vă că ați salvat codurile de recuperare. Altfel veți putea pierde permanent accesul la cont dacă vă veți pierde dispozitivul pentru autentificarea cu doi factori."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANT: Unii registratori nu acceptă valorile CNAME cu punct la sfârșit (în timp ce alții o impun). Dacă registratorul nu vă acceptă înregistrările CNAME, ștergeți punctul de la sfârșitul fiecărei valori CNAME și să încercați din nou."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
@@ -6734,9 +6728,6 @@
       ],
       "Just send them your personal referral link.": [
         "Doar trimiteți-le legătua personală de recomandare."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Păstrați aceste înregistrări în DNS atât timp cât doriți să utilizați DKIM."
       ],
       "Key deletion is irreversible!": [
         "Ștergerea cheilor este ireversibilă!"
@@ -7241,9 +7232,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF este folosit pentru a stabili cui îi este permis să trimită mesaje pentru domeniu astfel încât vă recomandăm includerea ${ MAIL_APP_NAME } în înregistrarea SPF. Adăugați următoarea înregistrare TXT în DNS. Această operație poate fi realizată din panoul de control al celui care v-a înregistrat domeniul."
       ],
       "Stay tuned for future promotions.": [
         "Rămâneți pe fază pentru viitoarele promoții."
@@ -8035,14 +8023,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Adăugați o adresă nouă pentru orice utilizator din organizație."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Adăugați un utilizator nou în organizație și creați o adresă pentru acesta."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Din motive de securitate, trebuie să verificăm dacă sunteți proprietarul domeniului ${ domainName }. Adăugați următoarea înregistrare DNS TXT la domeniu. Acest lucru se poate face de obicei în panoul de control al registratorului domeniului."
       ]
     },
     "Info for payment methods": {
@@ -8068,6 +8050,18 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Pentru a evita orice întrerupere a serviciilor din cauza facturilor neplătite, asigurați-vă că aveți cel puțin o metodă de plată validă salvată în orice moment."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -8856,9 +8850,6 @@
       "Gift code": [
         "Cod cadou"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Aici este o simplă înregistrare DMARC care doar vă trimite rapoarte pe e-mail."
-      ],
       "Hide password": [
         "Ascundere parolă"
       ],
@@ -9077,15 +9068,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Adăugați toate 3 câmpurile CNAME. Atenție, înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Adăugați următoarea înregistrare MX. Atenție, înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Adăugați următoarea înregistrare TXT. Atenție, înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
       ],
       "Please select files to upload": [
         "Selectați fișierele de încărcat"
@@ -9331,11 +9313,6 @@
     "Label for default event settings": {
       "Duration": [
         "Durata"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Adăugați următoarea înregistrare TXT:"
       ]
     },
     "Label for new member": {
@@ -9826,11 +9803,21 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ onDayString }, la fiecare ${ interval } lună, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Lunar, ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ onDayString }, la fiecare ${ interval } lună, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
+        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Lunar, ${ onDayString }, ${ untilString }"
       ]
@@ -14859,9 +14846,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Actualizarea schimbării DNS poate dura până la o zi."
       ]
     },
     "Weak personal key warning": {
@@ -14959,6 +14943,36 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "La fiecare ${ interval } săptămână, ${ multipleDaysString }, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Toate zilele, la fiecare ${ interval } săptămână, ${ timesString }",
+        "Toate zilele, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Toate zilele, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Vineri, la fiecare ${ interval } săptămână, ${ timesString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Sâmbătă, la fiecare ${ interval } săptămână, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Joi, la fiecare ${ interval } săptămână, ${ timesString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Miercuri, la fiecare ${ interval } săptămână, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Săptămânal, ${ multipleDaysString }, ${ timesString }"
       ],
@@ -14988,6 +15002,51 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "La fiecare ${ interval } săptămână, ${ multipleDaysString }, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Toate zilele, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Toate zilele, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Toate zilele, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Vineri, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Luni, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Sâmbătă, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Duminică, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Joi, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Marți, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Miercuri, la fiecare ${ interval } săptămână, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
+        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Săptămânal, ${ multipleDaysString }, ${ untilString }"
       ],
@@ -15050,11 +15109,21 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "La fiecare ${ interval } an, ${ timesString }",
+        "La fiecare ${ interval } ani, ${ timesString }",
+        "La fiecare ${ interval } de ani, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Anual, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "La fiecare ${ interval } an, ${ untilString }",
+        "La fiecare ${ interval } ani, ${ untilString }",
+        "La fiecare ${ interval } de ani, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
       ]
