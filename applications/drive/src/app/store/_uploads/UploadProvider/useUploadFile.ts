@@ -288,7 +288,7 @@ export default function useUploadFile() {
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
                 if (draftLinkId && clientUid) {
-                    log(`Automatically replacing draft`);
+                    log(`Automatically replacing draft link ID: ${draftLinkId}`);
                     // Careful: uploading duplicate file has different name and
                     // this newName has to be used, not file.name.
                     // Example: upload A, then do it again with adding number
