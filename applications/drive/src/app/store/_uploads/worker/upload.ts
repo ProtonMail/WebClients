@@ -58,9 +58,12 @@ async function startUploadJob(
             pauser,
             progressCallback,
             networkErrorCallback,
-            (message: string) => log(`block ${block.index}: ${message}`),
+            (message: string) => log(`upload block ${block.index}: ${message}`),
             uploadBlockDataCallback
-        );
+        ).catch((e) => {
+            log(`upload block ${block.index} failed: ${e}`);
+            throw e;
+        });
     }
 }
 
