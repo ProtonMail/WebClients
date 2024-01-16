@@ -4,12 +4,14 @@ import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components/
 import {
     DefaultQuickSettings,
     QuickSettingsButtonSection,
-    QuickSettingsMain,
-    QuickSettingsSection,
-    QuickSettingsSectionHeadline,
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import {
+    DrawerAppHeadline,
+    DrawerAppScrollContainer,
+    DrawerAppSection,
+} from '@proton/components/components/drawer/views/shared';
 import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
 import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
 import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';
@@ -57,10 +59,10 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
     }
 
     return (
-        <QuickSettingsMain>
+        <DrawerAppScrollContainer>
             <DrawerAllSettingsView />
 
-            <QuickSettingsSection>
+            <DrawerAppSection>
                 <QuickSettingsSectionRow
                     label={c('Label').t`Default view`}
                     labelInfo={<Info title={c('Info').t`Week and month views only apply to desktop.`} />}
@@ -97,10 +99,10 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                         />
                     }
                 />
-            </QuickSettingsSection>
+            </DrawerAppSection>
 
-            <QuickSettingsSection>
-                <QuickSettingsSectionHeadline>{c('Label').t`Time zone`}</QuickSettingsSectionHeadline>
+            <DrawerAppSection>
+                <DrawerAppHeadline>{c('Label').t`Time zone`}</DrawerAppHeadline>
 
                 <QuickSettingsSectionRow
                     // translator: As in Primary time zone
@@ -143,13 +145,13 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                         }
                     />
                 )}
-            </QuickSettingsSection>
+            </DrawerAppSection>
             <DefaultQuickSettings />
             <QuickSettingsButtonSection>
                 <NukeSearchIndexButton showConfirmModal={showConfirmModal} onBackFromSearch={onBackFromSearch} />
             </QuickSettingsButtonSection>
             {confirmModal}
-        </QuickSettingsMain>
+        </DrawerAppScrollContainer>
     );
 };
 

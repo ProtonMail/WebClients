@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useContactModals } from '@proton/components/containers/contacts/hooks/useContactModals';
 import { useDrawer } from '@proton/components/hooks/drawer';
 import { getIsDrawerPostMessage, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS, DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 
 const DrawerContactModals = () => {
     const { iframeSrcMap } = useDrawer();
@@ -16,7 +16,7 @@ const DrawerContactModals = () => {
         onChange: () => {
             if (iframeSrcMap) {
                 Object.keys(iframeSrcMap).map((app) => {
-                    postMessageToIframe({ type: DRAWER_EVENTS.CALL_EVENT_MANAGER_FROM_OUTSIDE }, app as DRAWER_APPS);
+                    postMessageToIframe({ type: DRAWER_EVENTS.CALL_EVENT_MANAGER_FROM_OUTSIDE }, app as DrawerApp);
                 });
             }
         },
