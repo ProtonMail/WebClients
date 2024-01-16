@@ -226,7 +226,9 @@ export const hasBlackFridayDiscount = (subscription: Subscription | undefined) =
 };
 
 export const getHas2023OfferCoupon = (coupon: string | undefined | null): boolean => {
-    return [COUPON_CODES.END_OF_YEAR_2023, COUPON_CODES.BLACK_FRIDAY_2023].includes(coupon as any);
+    return [COUPON_CODES.END_OF_YEAR_2023, COUPON_CODES.BLACK_FRIDAY_2023, COUPON_CODES.EOY_2023_1M_INTRO].includes(
+        coupon as any
+    );
 };
 
 export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
