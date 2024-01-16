@@ -25,7 +25,7 @@ export const isElectronOnSupportedApps = (app: APP_NAMES) => {
 };
 
 export const isElectronOnInboxApps = (app: APP_NAMES) => {
-    return isElectronApp() && (app === APPS.PROTONCALENDAR || app === APPS.PROTONMAIL);
+    return isElectronApp() && (app === APPS.PROTONCALENDAR || app === APPS.PROTONMAIL || app === APPS.PROTONACCOUNT);
 };
 
 export const getTypeformDesktopUrl = (appVersion: string, appName: APP_NAMES) => {
