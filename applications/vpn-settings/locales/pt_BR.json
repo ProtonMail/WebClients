@@ -2978,6 +2978,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Cobrado a ${ price }"
       ],
@@ -3189,9 +3192,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
-      ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
-        "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
       ],
       "here": [
         "aqui"
@@ -4300,6 +4300,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "Você tem alguma sugestão para nossa equipe?"
+      ],
+      "e.g. example.com": [
+        "por exemplo exemplo.com"
       ],
       "Email": [
         "E-mail"
@@ -5429,6 +5432,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Uma conexão VPN permite que um dispositivo se conecte a ${ VPN_APP_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ VPN_APP_NAME } em simultâneo, você precisa de duas conexões VPN."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
       ],
@@ -5871,6 +5877,15 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "por exemplo https://exemplo.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "por exemplo https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "por exemplo https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -7204,6 +7219,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "Enter SAML metadata": [
+        "Insira os metadados do SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
       ],
@@ -7361,6 +7379,9 @@
       "Revoke certificate": [
         "Revogar certificado"
       ],
+      "SAML authentication": [
+        "Autenticação SAML"
+      ],
       "Select a plan": [
         "Selecione um plano"
       ],
@@ -7405,6 +7426,9 @@
       ],
       "Signed in to member account": [
         "Iniciado sessão à conta de membro"
+      ],
+      "Single Sign-On": [
+        "Início de sessão único (SSO)"
       ],
       "Status": [
         "Status"
@@ -7543,11 +7567,20 @@
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copie e cole este URL no campo ID do seu provedor de identidade"
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL do Endpoint URL do provedor de identidade (por exemplo, https://idp.example.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Recurso em acesso antecipado"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Os membros que não usam A2F receberão um e-mail pedindo que eles ativem o mais rápido possível."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Especifique o domínio com permissão para autenticação SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "O novo ciclo de assinatura começa em ${ formattedTime }"

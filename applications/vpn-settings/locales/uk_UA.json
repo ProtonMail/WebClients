@@ -44,6 +44,9 @@
       "Authenticate": [
         "Автентифікація"
       ],
+      "Authenticating": [
+        "Автентифікація"
+      ],
       "Back": [
         "Назад"
       ],
@@ -94,6 +97,9 @@
       ],
       "Copy address": [
         "Копіювати адресу"
+      ],
+      "Copy key to the clipboard": [
+        "Скопіювати ключ до буфера обміну"
       ],
       "Create": [
         "Створити"
@@ -259,6 +265,9 @@
       ],
       "Invite user": [
         "Запросити користувача"
+      ],
+      "Keep my Plus subscription": [
+        "Зберегти передплату Plus"
       ],
       "Let's talk": [
         "Поговорімо"
@@ -1997,6 +2006,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Щоб створити неприватних користувачів і отримати доступ до їхніх облікових записів, вам потрібно активувати ключі організації."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
@@ -2640,6 +2652,9 @@
         "${ number } серверів",
         "${ number } серверів"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Тарифний план ${ plan } вилучено. Пакетна пропозиція не доступна для 1-місячного тарифного плану."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
@@ -2654,6 +2669,12 @@
         "ще ${ remainingAddresses.length }",
         "ще ${ remainingAddresses.length }",
         "ще ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "ще ${ remainingAddresses.length } адреса",
+        "ще ${ remainingAddresses.length } адреси",
+        "ще ${ remainingAddresses.length } адрес",
+        "ще ${ remainingAddresses.length } адрес"
       ],
       "${ storage } storage": [
         "${ storage } сховища"
@@ -2826,6 +2847,9 @@
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
       ],
+      "Cancel anytime": [
+        "Скасувати будь-коли"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -2984,6 +3008,9 @@
       ],
       "for choosing ${ product }": [
         "за вибір ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Для членів організацій, що користуються єдиним входом (SAML SSO)"
       ],
       "Free forever": [
         "Безплатно назавжди"
@@ -3360,6 +3387,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Передплата автоматично подовжується що 12 місяців."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Передплата автоматично подовжується що 24 місяці."
+      ],
+      "Subscription auto-renews every month.": [
+        "Передплата автоматично подовжується щомісяця."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
       ],
@@ -3374,6 +3410,9 @@
       ],
       "Thank you": [
         "Дякуємо"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Дякуємо за підтримку нашої місії створити кращий інтернет, де конфіденційність і свобода стоять на першому місці."
       ],
       "The following address is invalid.": [
         "Ця адреса недійсна.",
@@ -3416,6 +3455,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "Їх буде вилучено з вашої організації"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -3567,6 +3609,9 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Перегляд, завантаження та керування інвойсами."
+      ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
@@ -3681,6 +3726,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Ви можете негайно розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до кількості IP-адрес у вашому тарифному плані, або звернутися до нас по індивідуальні рішення."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -3735,6 +3783,12 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
       ],
+      "You will lose access to Plus features on this date.": [
+        "З цієї дати ви втратите доступ до функцій Plus."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "З цієї дати ви втратите доступ до серверів і функцій Plus."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
@@ -3765,6 +3819,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ваш обліковий запис має несплачені рахунки, тому його роботу обмежено. Подальша несплата призведе до блокування ваших електронних листів і посилань спільного доступу. ${ payInvoiceLink }"
       ],
+      "Your account was successfully updated with this promotion": [
+        "Ваш обліковий запис успішно оновлено за цією акцією"
+      ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
@@ -3783,8 +3840,14 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Наступна дата оплати – ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашої організації можна надати іншим учасникам, яких ви бажаєте зробити адміністраторами. Він також може бути резервним кодом відновлення для отримання доступу до організації у випадку втрати доступу до облікового запису. Зберігайте цей пароль у надійному місці."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ваша організація користується єдиним входом (SSO). Натисніть Увійти, щоб продовжити роботу з постачальником SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Подробиці вашого платежу захищені TLS-шифруванням та швейцарським законодавством."
@@ -4917,6 +4980,12 @@
       ],
       "User session management": [
         "Керування сеансами користувачів"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Спільне використання сховища (до ${ n } особи)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)"
       ]
     },
     "new_plans: feature info": {
@@ -5573,6 +5642,14 @@
         "Оберіть причину"
       ]
     },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адресу, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адреси, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адрес, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адрес, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "зверніться"
@@ -5783,6 +5860,14 @@
         "Докладніше"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годину",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } години",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годин",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годин"
+      ]
+    },
     "session_recovery:in_progress:link": {
       "View request": [
         "Переглянути запит"
@@ -5796,6 +5881,14 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Зрозуміло"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годину",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } години",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин"
       ]
     },
     "session_recovery:sign_out:action": {

@@ -77,6 +77,9 @@
       "Close this banner": [
         "Закрыть этот баннер"
       ],
+      "Configure SAML": [
+        "Настройка SAML"
+      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -257,6 +260,9 @@
       "Hide plan features": [
         "Скрыть возможности тарифа"
       ],
+      "Import new SAML metadata": [
+        "Импорт новых метаданных SAML"
+      ],
       "Increase": [
         "Увеличить"
       ],
@@ -335,6 +341,9 @@
       "Remove bonuses": [
         "Удалить бонусы"
       ],
+      "Remove domain": [
+        "Удалить домен"
+      ],
       "Remove gift code": [
         "Удалить подарочный код"
       ],
@@ -386,6 +395,9 @@
       "Save address": [
         "Сохранить адрес"
       ],
+      "Save SAML configuration": [
+        "Сохранить конфигурацию SAML"
+      ],
       "Search": [
         "Поиск"
       ],
@@ -400,6 +412,9 @@
       ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
+      ],
+      "Select file": [
+        "Выбрать файл"
       ],
       "Send code": [
         "Отправить код"
@@ -2068,6 +2083,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
+      "Please upload an xml file": [
+        "Загрузите файл xml"
+      ],
+      "Please upload only 1 file": [
+        "Пожалуйста, загрузите только 1 файл"
+      ],
       "Process aborted": [
         "Процесс прерван"
       ],
@@ -2118,6 +2139,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
+      ],
+      "Unable to upload file": [
+        "Невозможно загрузить файл"
       ],
       "Unknown error": [
         "Неизвестная ошибка"
@@ -2888,6 +2912,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Добавьте дополнительный слой безопасности к вашему аккаунту. Вам надо будет удостоверять себя с помощью 2FA при каждом входе."
       ],
+      "Add domain": [
+        "Добавить домен"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Добавить сервер (доступен ${ availableAddedCount })",
         "Добавить сервер (доступно ${ availableAddedCount })",
@@ -2950,6 +2977,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
+      ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Вы уверены, что хотите удалить домен ${ boldDomain }?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Попросите администратора вашей организации настроить Шлюзы."
@@ -3067,6 +3097,15 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете авторизоваться или расшифровать свои сообщения."
+      ],
+      "Domain ownership failed verification.": [
+        "Проверка владения доменом не удалась."
+      ],
+      "Domain ownership not verified.": [
+        "Владение доменом не подтверждено."
+      ],
+      "Domain ownership verified.": [
+        "Владение доменом подтверждено."
       ],
       "Done": [
         "Готово"
@@ -3473,6 +3512,9 @@
       "Revoke certificate ${ name }": [
         "Отозвать сертификат ${ name }"
       ],
+      "SAML configuration saved": [
+        "Конфигурация SAML сохранена"
+      ],
       "Save ${ percentage }": [
         "Сэкономьте ${ percentage }"
       ],
@@ -3520,6 +3562,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Укажите домен, которому разрешена аутентификация с помощью SAML SSO."
       ],
       "Step ${ step }": [
         "Шаг ${ step }",
@@ -3631,6 +3676,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
+      ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Эта проверка может занять до одного часа. Вы можете безопасно перейти к следующим шагам."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Это отменит вашу текущую платную подписку и вы потеряете все льготы по лояльности, которые вы накопили."
@@ -3757,6 +3805,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
+      ],
+      "Verify domain": [
+        "Проверить домен"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Проверьте свою личность с помощью временного одноразового пароля из приложения-аутентификаторв"
@@ -4147,6 +4198,12 @@
       "Allow recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
+      "Allowed domain": [
+        "Разрешенный домен"
+      ],
+      "Allowed Domain": [
+        "Разрешенный Домен"
+      ],
       "Amount": [
         "Сумма"
       ],
@@ -4276,6 +4333,9 @@
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
+      "e.g. example.com": [
+        "например, primer.com"
+      ],
       "Email": [
         "Электронная почта"
       ],
@@ -4306,6 +4366,9 @@
       "Interval": [
         "Интервал"
       ],
+      "Issuer ID": [
+        "ID эмитента"
+      ],
       "Keep me signed in": [
         "Оставаться в системе"
       ],
@@ -4323,6 +4386,15 @@
       ],
       "Main": [
         "Главная"
+      ],
+      "Metadata file for ${ appName }": [
+        "Файл метаданных для ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL метаданных для ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Метод импорта метаданных"
       ],
       "Moderate NAT": [
         "Умеренный NAT"
@@ -7166,6 +7238,9 @@
       "Email subscriptions": [
         "Подписки на рассылки"
       ],
+      "Enter SAML metadata": [
+        "Ввод метаданных SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
       ],
@@ -7291,6 +7366,9 @@
       ],
       "Recovery": [
         "Восстановление"
+      ],
+      "Remove domain": [
+        "Удалить домен"
       ],
       "Remove user?": [
         "Удалить пользователя?"

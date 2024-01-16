@@ -721,11 +721,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -2158,6 +2158,11 @@
         "Odkaz"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Obrázok kontaktu"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -3331,6 +3336,12 @@
       ],
       "Choose a date in the future.": [
         "Vyberte budúci dátum."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Vyberte dátum v budúcom ${ n } dni.",
+        "Vyberte dátum v nasledujúcich ${ n } dňoch.",
+        "Vyberte dátum v nasledujúcich ${ n } dňoch.",
+        "Vyberte dátum v rámci nasledujúcich ${ n } dní."
       ],
       "Condition incomplete": [
         "Neúplná podmienka"
@@ -4939,6 +4950,54 @@
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } z ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } konverzácia bude označená ako:",
+        "${ elementsCount } konverzácie budú označené ako:",
+        "${ elementsCount } konverzácií bude označené ako:",
+        "${ elementsCount } konverzácií bude označených ako:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } konverzácia bude označená ako prečítaná.",
+        "${ elementsCount } konverzácie budú označené ako prečítané.",
+        "${ elementsCount } konverzácií bude označené ako prečítané.",
+        "${ elementsCount } konverzácií bude označených ako prečítané."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } konverzácia bude označená ako neprečítaná.",
+        "${ elementsCount } konverzácie budú označené ako neprečítané.",
+        "${ elementsCount } konverzácií bude označené ako neprečítané.",
+        "${ elementsCount } konverzácií bude označených ako neprečítané."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } konverzácia bude presunutá",
+        "${ elementsCount } konverzácie budú presunuté",
+        "${ elementsCount } konverzácií bude presunuté",
+        "${ elementsCount } konverzácií bude presunutých"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } správa bude označená ako:",
+        "${ elementsCount } správy budú označené ako:",
+        "${ elementsCount } správ bude označené ako:",
+        "${ elementsCount } správ bude označených ako:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } správa bude označená ako prečítaná.",
+        "${ elementsCount } správy budú označené ako prečítané.",
+        "${ elementsCount } správ bude označené ako prečítané.",
+        "${ elementsCount } správ bude označených ako prečítané."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } správa bude označená ako neprečítaná.",
+        "${ elementsCount } správy budú označené ako neprečítané.",
+        "${ elementsCount } správ bude označené ako neprečítané.",
+        "${ elementsCount } správ bude označených ako neprečítané."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } správa bude presunutá",
+        "${ elementsCount } správy budú presunuté",
+        "${ elementsCount } správ bude presunuté",
+        "${ elementsCount } správ bude presunutých"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázok",
         "${ embeddedAttachmentsCount } vložené obrázky",
@@ -5863,6 +5922,12 @@
       "Select a service provider to start": [
         "Vyberte poskytovateľa služieb a začnite"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Vybrať celý ${ elementsCount } v ${ location }",
+        "Vybrať všetky ${ elementsCount } v ${ location }",
+        "Vybrať všetkých ${ elementsCount } v ${ location }",
+        "Vybrať všetkých ${ elementsCount } v ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
       ],
@@ -6100,6 +6165,9 @@
       "This sender's public key has not been trusted yet.": [
         "Verejný kľúč tohto odosielateľa nebol doposiaľ overený."
       ],
+      "to ${ destinationElement } folder.": [
+        "do priečinka ${ destinationElement }."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
@@ -6289,6 +6357,9 @@
       "You can import one data type at a time.": [
         "Importovať môžete vždy jeden typ údajov."
       ],
+      "You can now return to the application to continue": [
+        "Teraz sa môžete vrátiť do aplikácie a pokračovať"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -6366,6 +6437,30 @@
         "Vybrali ste **${ count } správy** s týmto štítkom",
         "Vybrali ste **${ count } správ** s týmto štítkom",
         "Vybrali ste **${ count } správ** s týmto štítkom"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Vybrali ste **${ elementsCount } konverzáciu** v ${ location }",
+        "Vybrali ste **${ elementsCount } konverzácie** v ${ location }",
+        "Vybrali ste **${ elementsCount } konverzácií** v ${ location }",
+        "Vybrali ste **${ elementsCount } konverzácií** v ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Vybrali ste **${ elementsCount } konverzáciu**.",
+        "Vybrali ste **${ elementsCount } konverzácie**.",
+        "Vybrali ste **${ elementsCount } konverzácií**.",
+        "Vybrali ste **${ elementsCount } konverzácií**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Vybrali ste **${ elementsCount } správu** v ${ location }",
+        "Vybrali ste **${ elementsCount } správy** v ${ location }",
+        "Vybrali ste **${ elementsCount } správ** v ${ location }",
+        "Vybrali ste **${ elementsCount } správ** v ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Vybrali ste **${ elementsCount } správu**.",
+        "Vybrali ste **${ elementsCount } správy**.",
+        "Vybrali ste **${ elementsCount } správ**.",
+        "Vybrali ste **${ elementsCount } správ**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
@@ -6446,7 +6541,7 @@
         "${ selectedFoldersCount } vybratá zložka",
         "${ selectedFoldersCount } vybraté zložky",
         "${ selectedFoldersCount } vybratých zložiek",
-        "${ selectedFoldersCount } vybratých zložiek"
+        "${ selectedFoldersCount } vybratých priečinkov"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } vybratý štítok",
@@ -7205,6 +7300,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
       ]
     },
     "Landmarks": {
@@ -8685,10 +8783,13 @@
         "Najvyššia rýchlosť VPN"
       ],
       "Premium ${ appName1 }": [
-        "Prémiový ${ appName1 }"
+        "Prémiové funkcie ${ appName1 }"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Prémiový ${ appName1 } a ${ appName2 }"
+        "Prémiové funkcie ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkcie ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
       "Premium early access": [
         "Prémiový predbežný prístup"
@@ -9640,8 +9741,20 @@
       "Mark as unread": [
         "Označiť ako neprečítané"
       ],
+      "Mark conversations as read": [
+        "Označiť konverzácie ako prečítané"
+      ],
+      "Mark conversations as unread": [
+        "Označiť konverzácie ako neprečítané"
+      ],
       "Mark email as legitimate": [
         "Označiť email ako legitímny"
+      ],
+      "Mark messages as read": [
+        "Označiť správy ako prečítané"
+      ],
+      "Mark messages as unread": [
+        "Označiť správy ako neprečítané"
       ],
       "Merge contacts": [
         "Zlúčiť kontakty"
@@ -9672,6 +9785,12 @@
       ],
       "More selections": [
         "Viac možností výberu"
+      ],
+      "Move all conversations": [
+        "Presunúť všetky konverzácie"
+      ],
+      "Move all messages": [
+        "Presunúť všetky správy"
       ],
       "Move all messages to Archive": [
         "Presunúť všetky správy do Archívu"
@@ -9973,6 +10092,9 @@
       ],
       "Hide side panel": [
         "Skryť bočný panel"
+      ],
+      "Load image": [
+        "Načítať obrázok"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schému, ktorá sa použije pri podpisovaní, alebo šifrovanie užívateľa. Nezabudnite, že PGP/Inline vyžaduje správy vo formáte obyčajného textu"

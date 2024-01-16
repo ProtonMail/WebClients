@@ -2452,6 +2452,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } eveniment.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } evenimente.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } de evenimente."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
       ],
@@ -3346,6 +3351,16 @@
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } fișier criptat.",
+        "${ nbFile } fișiere criptate.",
+        "${ nbFile } de fișiere criptate."
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } fișier criptat...",
+        "${ nbFile } fișiere criptate...",
+        "${ nbFile } de fișiere criptate..."
+      ],
       "${ pausedCount } paused": [
         "Unul suspendat",
         "${ pausedCount } suspendate",
@@ -3377,14 +3392,14 @@
         "${ selectedCount } selectate"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
-        "Este selectat un folder",
-        "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
-        "Sunt selectate ${ selectedFoldersCountLocalized } de foldere"
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }"
       ],
       "${ selectedFoldersCountLocalized } label selected": [
-        "S-a selectat o etichetă",
-        "S-au selectat ${ selectedFoldersCountLocalized } etichete",
-        "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }"
       ],
       "${ skippedCount } skipped": [
         "${ skippedCount } ignorat",
@@ -3626,6 +3641,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Descărcare întreruptă din cauza conectării cu probleme; se va relua automat."
+      ],
+      "Download ready": [
+        "Descărcare pregătită"
       ],
       "Downloaded": [
         "Descărcat"
@@ -4088,6 +4106,11 @@
       "Search Enabled": [
         "Căutare actvată."
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "S-a descărcat în siguranță ${ nbFile } fișier.",
+        "S-au descărcat în siguranță ${ nbFile } fișiere.",
+        "S-au descărcat în siguranță ${ nbFile } de fișiere."
+      ],
       "Select a folder to move to.": [
         "Selectați folderul sursă."
       ],
@@ -4198,6 +4221,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Acest fișier a fost probabil șters, mutat sau făcut indisponibil. Contactați proprietarul."
+      ],
+      "This item already exists in your library": [
+        "Articolul există deja în librăria proprie."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -4488,6 +4514,18 @@
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }"
       ]
     },
     "Item": {
@@ -5429,10 +5467,20 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Move ${ n } file": [
+        "Mutare ${ n } fișier.",
+        "Mutare ${ n } fișiere.",
+        "Mutare ${ n } de fișiere."
+      ],
       "Move ${ n } folder": [
         "Mutare ${ n } folder",
         "Mutare ${ n } foldere",
         "Mutare ${ n } de foldere"
+      ],
+      "Move ${ n } item": [
+        "Mutare ${ n } element.",
+        "Mutare ${ n } elemente.",
+        "Mutare ${ n } de elemente."
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."

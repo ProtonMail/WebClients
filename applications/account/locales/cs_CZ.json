@@ -5911,17 +5911,11 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jednotné heslo\", které chcete použít a klikněte Uložit."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } podporuje podepisování DKIM pro vlastní domény. Chcete-li použít ověřování DKIM, přidejte prosím následující CNAME záznam do nastavení DNS u této domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
-      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
         "${ n } adres",
         "${ n } adres"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nemá žádný vliv na doručení e-mailu, ale doporučujeme ${ quarantine } pro lepší bezpečnost."
       ],
       "${ number } city": [
         "${ number } město",
@@ -6322,9 +6316,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ${ MAIL_APP_NAME }, je potřeba přidat následující záznamy MX a DNS. To lze obvykle provést v ovládacích panelech u registrátora názvu domény."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
       ],
@@ -6676,9 +6667,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Pokud časové pásmo nastavené v systému neodpovídá aktuálnímu nastavení časového pásma, budete vyzváni k aktualizaci (maximálně jednou denně)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Pokud tato doména aktuálně přijímá e-maily, vyberte kartu ${ boldAddresses } a přidejte všechny aktivní e-mailové adresy před změnou MX záznamu, aby byl zajištěn hladký přechod."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Pokud je to způsobeno resetováním starého hesla, můžete zastavit opětovné zobrazování zprávy"
       ],
@@ -6703,9 +6691,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Pokud jste ještě nikdy nepoužívali dvoufázové ověřování, důrazně doporučujeme ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Pokud jste nastavili SPF i DKIM, DMARC Vám umožní určit, jak by ostatní e-mailoví poskytovatelé měli doručovat e-maily pro Vaši doménu v případě, že se nepodaří provést kontrolu SPF ani DKIM. Pro spammery je pak těžší předstírat Vaši totožnost, ale špatné nastavení může způsobit problémy s doručováním."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Pokud ztratíte své heslo a potřebujete resetovat svůj účet, ${ boldImperative } že máte ${ boldAccountRecovery } na svém místě."
       ],
@@ -6726,9 +6711,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Pokud jste nedávno resetovali heslo, můžete svá data odemknout pomocí metody obnovy dat"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Chcete-li zachovat existující SPF záznam, jednoduše k němu přidejte ${ spf } a potom ${ spfValue }. Nevytvářejte více SPF záznamů."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jestliže si přejete kombinovat tento účet s dalším, nemažte jej."
@@ -6762,9 +6744,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "DŮLEŽITÉ: Někteří registrátoři nepřijímají hodnoty CNAME s tečkou na konci (zatímco jiní to vyžadují). Pokud váš registrátor nepřijímá vaše CNAME záznamy, smažte tečku na konci každého CNAME záznamu a zkuste to znovu."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
@@ -6831,9 +6810,6 @@
       ],
       "Just send them your personal referral link.": [
         "Stačí jim poslat svůj osobní doporučující odkaz."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Uchovávejte tyto záznamy ve Vaší DNS tak dlouho, jak dlouho chcete používat DKIM."
       ],
       "Key deletion is irreversible!": [
         "Smazání klíče je nevratné!"
@@ -7341,9 +7317,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Některé z vašich dostupných serverů lze kvůli nedávnému odstranění používat pouze v určitých zemích."
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ${ MAIL_APP_NAME } mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ],
       "Stay tuned for future promotions.": [
         "Vyčkejte na budoucí propagační akce."
@@ -8146,14 +8119,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Přidejte nové adresy pro uživatele své organizace."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Přidejte nového uživatele do své organizace a vytvořte mu adresu."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Z bezpečnostních důvodů musíme ověřit, že jste vlastníkem domény ${ domainName }. Přidejte k doméně následující DNS TXT záznam. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ]
     },
     "Info for payment methods": {
@@ -8985,9 +8952,6 @@
       "Gift code": [
         "Dárkový kód"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Zde je základní DMARC záznam, který pouze odesílá reporty."
-      ],
       "Hide password": [
         "Skrýt heslo"
       ],
@@ -9206,15 +9170,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Fráze se skládá z 12 jedinečných slov v určitém pořadí"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím všechny 3 následující CNAME záznamy. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím následující MX záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Přidejte prosím následující TXT záznam. Pamatujte, že změna v DNS záznamech se může projevit až za několik hodin."
       ],
       "Please select files to upload": [
         "Prosím vyberte soubory k nahrání"
@@ -9460,11 +9415,6 @@
     "Label for default event settings": {
       "Duration": [
         "Doba trvání"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Přidejte prosím následující TXT záznam:"
       ]
     },
     "Label for new member": {
@@ -11320,7 +11270,7 @@
         "Automaticky"
       ],
       "Automatic (${ value })": [
-        "Automatické (${ value })"
+        "Automaticky (${ value })"
       ],
       "Country configs": [
         "Konfigurace země"
@@ -15111,9 +15061,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspěšném ověření, neodstraňujte TXT záznam, je potřebný k ověření, že doménu stále vlastníte."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Můžete to trvat den, než se projeví změna v DNS záznamech."
       ]
     },
     "Weak personal key warning": {

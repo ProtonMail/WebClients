@@ -5001,15 +5001,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } कस्टम डोमेन के लिए DKIM हस्ताक्षर करने का समर्थन करता है। DKIM प्रमाणीकरण का उपयोग करने के लिए, कृपया इस डोमेन के लिए निम्नलिखित CNAME रिकॉर्ड को अपनी DNS सेटिंग्स में जोड़ें। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में किया जा सकता है।"
-      ],
       "${ n } address": [
         "${ n } पता",
         "${ n } पते"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } का ईमेल डिलीवरी पर कोई प्रभाव नहीं है, लेकिन हम बेहतर सुरक्षा के लिए ${ quarantine } की सलाह देते हैं।"
       ],
       "${ number } city": [
         "${ number } शहर",
@@ -5313,9 +5307,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "नए सत्यापन कोड का अनुरोध करने से पहले, अपना स्पैम फ़ोल्डर जांचें और जांचें कि ${ strong } सही पता है।"
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } पर अपने कस्टम डोमेन पते के लिए ईमेल प्राप्त करने से पहले, आपको अपने DNS में निम्नलिखित MX रिकॉर्ड जोड़ने होंगे। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में किया जा सकता है।"
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "इससे पहले कि आप अपने नए पते से ईमेल भेजना और प्राप्त करना शुरू कर सकें, आपको उनके लिए एन्क्रिप्शन कुंजी बनाने की आवश्यकता है।"
       ],
@@ -5603,9 +5594,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "अगर आपका सिस्टम समय क्षेत्र आपके मनपसंद समय क्षेत्र से मेल नहीं खाता, तो आपको वो अपडेट करने के लिए बोला जाएगा (ज़्यादा-से-ज़्यादा दिन में एक बार)।"
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "यदि यह डोमेन वर्तमान में ईमेल प्राप्त कर रहा है, तो ${ boldAddresses } टैब चुनें और एक चिकनी संक्रमण सुनिश्चित करने के लिए MX रिकॉर्ड बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें।"
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "यदि यह पुराने पासवर्ड रीसेट के कारण है, तो आप संदेश को फिर से प्रदर्शित होने से रोक सकते हैं"
       ],
@@ -5627,9 +5615,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "यदि आपने एसपीएफ और डीकेआईएम दोनों निर्धारित किए हैं, तो डीएमएआरसी आपको यह निर्दिष्ट करने की अनुमति देता है कि यदि एसपीएफ और डीकेआईएम दोनों चेक विफल हो गए हों तो अन्य ईमेल सेवाओं को आपके डोमेन के लिए ईमेल कैसे वितरित करना चाहिए। यह आपके होने का दिखावा करने वाले स्पैमर के लिए कठिन बना सकता है, लेकिन अगर ठीक से नहीं किया गया तो डिलीवरी के मुद्दे भी हो सकते हैं।"
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "अगर आप अपना पासवर्ड खो देते हैं और आपको अपना खाता रिसेट करने की ज़रूरत हैं, तो ${ boldImperative } की आपके पास ${ boldAccountRecovery } हैं।"
       ],
@@ -5650,9 +5635,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "यदि आपने हाल ही में अपना पासवर्ड रीसेट किया है, तो आप अपने डेटा को अनलॉक करने के लिए डेटा पुनर्प्राप्ति विधि का उपयोग कर सकते हैं"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "यदि आप एक मौजूदा एसपीएफ़ रिकॉर्ड रखना चाहते हैं, तो आप ${ spfValue } के बाद इसमें ${ spf } जोड़ सकते हैं। कई एसपीएफ़ रिकॉर्ड न बनाएं।"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "यदि आप इस खाते को किसी अन्य खाते से जोड़ना चाहते हैं, तो इसे न हटाएं।"
@@ -5684,9 +5666,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "महत्वपूर्ण: कृपया सुनिश्चित करें कि आपने पुनर्प्राप्ति कोड सहेजे हैं। यदि आप अपना दो-कारक प्रमाणीकरण उपकरण खो देते हैं, तो आप स्थायी रूप से अपने खाते तक पहुंच खो सकते हैं।"
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "महत्वपूर्ण: कुछ रजिस्ट्रार अंत में एक अवधि के साथ CNAME मान स्वीकार नहीं करते हैं (जबकि अन्य को इसकी आवश्यकता होती है)। यदि आपका रजिस्ट्रार आपके CNAME रिकॉर्ड को स्वीकार नहीं करता है, तो कृपया प्रत्येक CNAME मान के अंत में अवधि हटाएं और पुनः प्रयास करें।"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
@@ -5739,9 +5718,6 @@
       ],
       "Just send them your personal referral link.": [
         "बस उन्हें अपना व्यक्तिगत रेफरल लिंक भेजें।"
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "जब तक आप DKIM का उपयोग करना चाहते हैं, तब तक उन रिकॉर्ड्स को अपने DNS में रखें।"
       ],
       "Key deletion is irreversible!": [
         "कुंजी हटाना अपरिवर्तनीय है!"
@@ -6153,9 +6129,6 @@
       ],
       "Some keys successfully reactivated": [
         "कुछ कुंजियाँ सफलतापूर्वक पुन: सक्रिय हो गईं"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF का उपयोग यह देखने के लिए किया जाता है कि डोमेन के लिए किसे ईमेल भेजने की अनुमति है, इसलिए हम आपके SPF रिकॉर्ड में ${ MAIL_APP_NAME } जोड़ने की ज़ोर से अनुशंसा करते है। कृपया अपने DNS में निम्नलिखित TXT रिकॉर्ड जोड़ें। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में किया जा सकता है।"
       ],
       "Step ${ step }": [
         "कदम ${ step }",
@@ -6783,14 +6756,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "अपने संगठन के किसी भी उपयोगकर्ता के लिए एक नया पता जोड़ें।"
-      ],
       "Add a new user to your organization and create an address for it.": [
         "अपने संगठन में एक नया उपयोगकर्ता जोड़ें और इसके लिए एक पता बनाएँ।"
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "सुरक्षा कारणों से, हमें यह सत्यापित करने की आवश्यकता है कि आप ${ domainName } के मालिक हैं। कृपया अपने डोमेन में निम्नलिखित DNS TXT रिकॉर्ड जोड़ें। यह आमतौर पर आपके डोमेन नाम रजिस्ट्रार के नियंत्रण कक्ष में किया जा सकता है।"
       ]
     },
     "Info for payment methods": {
@@ -7557,9 +7524,6 @@
       "Gift code": [
         "उपहार कोड"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "यहां एक मूल DMARC रिकॉर्ड है जो आपके द्वारा रिपोर्ट की गई ईमेल के अलावा कुछ नहीं करता है।"
-      ],
       "Hide password": [
         "पासवर्ड छिपाएं"
       ],
@@ -7767,15 +7731,6 @@
       "Phrase consists of 12 unique words in a specific order": [
         "वाक्यांश में एक विशिष्ट क्रम में 12 अद्वितीय शब्द होते हैं"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "कृपया निम्नलिखित CNAME रिकॉर्ड के सभी 3 जोड़ें। ध्यान दें, DNS रिकॉर्ड को अपडेट करने में कई घंटे लग सकते हैं।"
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "कृपया निम्नलिखित एमएक्स रिकॉर्ड जोड़ें। ध्यान दें, DNS रिकॉर्ड को अपडेट करने में कई घंटे लग सकते हैं।"
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें। ध्यान दें, DNS रिकॉर्ड को अपडेट करने में कई घंटे लग सकते हैं।"
-      ],
       "Please select files to upload": [
         "कृपया अपलोड करने के लिए फ़ाइलों का चयन करें"
       ],
@@ -7981,11 +7936,6 @@
     "Label for default event settings": {
       "Duration": [
         "अवधि"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें:"
       ]
     },
     "Label for new member": {
@@ -12202,9 +12152,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "सफल सत्यापन के बाद, इस TXT रिकॉर्ड को न हटाएं क्योंकि यह पुष्टि करने के लिए आवश्यक है कि आप डोमेन के मालिक हैं।"
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "अद्यतन करने के लिए DNS परिवर्तनों में एक दिन तक का समय लग सकता है।"
       ]
     },
     "Weak personal key warning": {

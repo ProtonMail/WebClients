@@ -406,6 +406,9 @@
       "Mark for deletion": [
         "Пазначыць для выдалення"
       ],
+      "Maximize": [
+        "Разгарнуць"
+      ],
       "Maximize transfers": [
         "Разгарнуць перадачы"
       ],
@@ -414,6 +417,9 @@
       ],
       "Merge contacts": [
         "Аб'яднаць кантакты"
+      ],
+      "Minimize": [
+        "Згарнуць"
       ],
       "Minimize transfers": [
         "Згарнуць перадачы"
@@ -3461,9 +3467,9 @@
       ],
       "${ skippedCount } skipped": [
         "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны",
-        "${ skippedCount } прапушчаны"
+        "${ skippedCount } прапушчана",
+        "${ skippedCount } прапушчана",
+        "${ skippedCount } прапушчана"
       ],
       "${ speed }/s": [
         "${ speed }/с"
@@ -3509,6 +3515,9 @@
         "Усе (${ totalFoldersCount } меткі)",
         "Усе (${ totalFoldersCount } метак)",
         "Усе (${ totalFoldersCount } меткі)"
+      ],
+      "All encrypted files": [
+        "Усе зашыфраваныя файлы"
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
@@ -3708,11 +3717,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Спампоўванне прыпынена па прычыне праблем з падключэннем; яно будзе ўзноўлена аўтаматычна"
       ],
+      "Download ready": [
+        "Завершаныя спампоўванні"
+      ],
       "Downloaded": [
         "Спампавана"
       ],
       "Downloading": [
         "Спампоўваецца"
+      ],
+      "Downloading all encrypted files": [
+        "Спампоўванне ўсіх зашыфраваных файлаў"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -3884,6 +3899,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "А да таго часу вы можаце зарэгістраваць уласны ўліковы запіс ${ DRIVE_APP_NAME }, абараніць свае даныя з дапамогай скразнога шыфравання і бяспечна дзяліцца імі з іншымі ўдзельнікамі."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Індэксаванне элементаў ${ esProgress } з ${ totalProgressToShow }"
@@ -4167,11 +4185,26 @@
       "Restoring Photos... Please keep the tab open": [
         "Аднаўленне фатаграфій... Не закрывайце ўкладку браўзера"
       ],
+      "Retry now": [
+        "Паўтарыць зараз"
+      ],
       "Search cannot be enabled in this browser": [
         "Немагчыма ўключыць пошук у гэтым браўзеры"
       ],
       "Search Enabled": [
         "Пошук уключаны"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } файл быў бяспечна спампаваны",
+        "${ nbFile } файлы былі бяспечна спампаваны",
+        "${ nbFile } файлаў былі бяспечна спампаваны",
+        "${ nbFile } файлаў былі бяспечна спампаваны"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Бяспечна спампаваць усе зашыфраваныя файлы"
+      ],
+      "Securely downloaded all files": [
+        "Усе файлы былі бяспечна спампаваны"
       ],
       "Select a folder to move to.": [
         "Выберыце папку для перамяшчэння."
@@ -4215,6 +4248,9 @@
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Зарэгіструйце ўласны ўліковы запіс ${ DRIVE_APP_NAME }, абараніце свае даныя з дапамогай скразнога шыфравання і бяспечна дзяліцеся імі з іншымі ўдзельнікамі."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Немагчыма выканаць праверку подпісу па прычыне памылкі сеткі. Паспрабуйце яшчэ раз пазней."
       ],
@@ -4238,6 +4274,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз пазней."
+      ],
+      "Something went wrong...": [
+        "Нешта пайшло не так..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
@@ -4542,6 +4581,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Адбываецца спампоўванне"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -4790,6 +4832,9 @@
       ],
       "Download anyway": [
         "Усё роўна спампаваць"
+      ],
+      "Downloading": [
+        "Спампоўванне"
       ],
       "Downloading ${ percentageValue }%": [
         "Спампавана ${ percentageValue }%"

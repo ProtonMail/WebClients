@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Marcar para eliminar"
       ],
+      "Maximize": [
+        "Maximizar"
+      ],
       "Maximize transfers": [
         "Maximizar transferencias"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Combinar contactos"
+      ],
+      "Minimize": [
+        "Minimizar"
       ],
       "Minimize transfers": [
         "Minimizar transferencias"
@@ -3303,6 +3309,14 @@
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } archivo cifrado",
+        "${ nbFile } archivos cifrados"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } archivo cifrado...",
+        "${ nbFile } archivos cifrados..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -3375,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
+      ],
+      "All encrypted files": [
+        "Todos los archivos cifrados"
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -3568,11 +3585,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "La descarga se ha pausado por un incidente en la conexión. Se reanudará automáticamente."
       ],
+      "Download ready": [
+        "La descarga está lista."
+      ],
       "Downloaded": [
         "Descargado"
       ],
       "Downloading": [
         "Descargando"
+      ],
+      "Downloading all encrypted files": [
+        "Descargando todos los archivos cifrados"
       ],
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
@@ -3740,6 +3763,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando tus datos desde ${ fromEmail } a ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Mientras tanto, obtén una cuenta de ${ DRIVE_APP_NAME }, protege tus datos con cifrado de extremo a extremo y compártelos de forma segura."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando elementos ${ esProgress } completados de ${ totalProgressToShow }"
@@ -4019,11 +4045,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Restaurando Fotos... Deja la pestaña abierta."
       ],
+      "Retry now": [
+        "Reintentar ahora"
+      ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador."
       ],
       "Search Enabled": [
         "Búsqueda activada"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } archivo descargado de forma segura",
+        "${ nbFile } archivos descargados de forma segura"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Todos los archivos cifrados han sido descargados de forma segura."
+      ],
+      "Securely downloaded all files": [
+        "Todos los archivos han sido descargados de forma segura."
       ],
       "Select a folder to move to.": [
         "Selecciona una carpeta para mover."
@@ -4067,6 +4106,9 @@
       "Shared link not found": [
         "Enlace compartido no encontrado"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Obtén una cuenta de ${ DRIVE_APP_NAME }, protege tus datos con cifrado de extremo a extremo y compártelos de forma segura."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Error al validar la firma debido a errores de red. Inténtalo de nuevo más tarde."
       ],
@@ -4075,6 +4117,9 @@
       ],
       "Signature issue": [
         "Problema de firma"
+      ],
+      "Skipped": [
+        "Omitido"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Error al descargar algunos archivos. Intenta descargar los archivos de nuevo."
@@ -4087,6 +4132,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Se ha producido un error. Inténtalo de nuevo más tarde."
+      ],
+      "Something went wrong...": [
+        "Se ha producido un error..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
@@ -4132,6 +4180,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Es posible que este archivo se haya eliminado, movido o no esté disponible. Ponte en contacto con el propietario del archivo."
+      ],
+      "This item already exists in your library": [
+        "Este elemento ya existe en tu librería."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
@@ -4384,6 +4435,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Tus datos están listos para ser importados desde ${ importedEmailAddressStrong } a tu cuenta ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Tu descarga está en progreso."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
@@ -4622,6 +4676,9 @@
       ],
       "Download anyway": [
         "Descargar de todos modos"
+      ],
+      "Downloading": [
+        "Descargando"
       ],
       "Downloading ${ percentageValue }%": [
         "Descargando ${ percentageValue }%"

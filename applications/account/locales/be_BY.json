@@ -5911,17 +5911,14 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і паштовай скрыні. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } падтрымлівае падпісанне DKIM для карыстальніцкіх даменаў. Для таго, каб скарыстацца аўтэнтыфікацыяй DKIM, дадайце наступны запіс CNAME у налады вашага DNS для гэтага дамена. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
-      ],
       "${ n } address": [
         "${ n } адрас",
         "${ n } адрасы",
         "${ n } адрасоў",
         "${ n } адрасы"
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } не ўплывае на дастаўку электроннай пошты, але мы рэкамендуем ${ quarantine } для большай бяспекі."
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: патрабуе не змяшчаць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна людзі выкарыстоўваюць гэтую палітыку толькі для прыбірання непаладак ці тэставання."
       ],
       "${ number } city": [
         "${ number } горад",
@@ -5967,6 +5964,12 @@
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: патрабуе ад платформаў атрымальніка пазначаць несанкцыянаваныя электронныя лісты як спам або змяшчаць іх у каранцін."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: патрабуе ад платформаў атрымальніка адхіляць несанкцыянаваныя электронныя лісты."
       ],
       "${ remainingAddresses.length } more": [
         "яшчэ ${ remainingAddresses.length }",
@@ -6322,11 +6325,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Перад тым, як вы зможаце атрымліваць электронную пошту на адрасы свайго карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам неабходна дадаць наступныя запісы MX у DNS. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
+      ],
+      "Beta": [
+        "Бэта"
       ],
       "Billed at ${ price }": [
         "Аплачваецца ${ price }"
@@ -6475,6 +6481,12 @@
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашыя электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Упэўніцеся, што вы дадалі наступныя тры запісы CNAME у вашую кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўшчыка менавіта з вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена дзеля выдачы яго за ваш. \"p=\" (палітыка) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя электронныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Упэўніцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
@@ -6509,7 +6521,7 @@
         "Спампаваць файл аднаўлення"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Спампуйце вашу ўлюблёную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
+        "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Спампуйце вашы ключы PGP, каб выкарыстоўваць іх з іншымі сумяшчальнымі сэрвісамі PGP."
@@ -6522,6 +6534,9 @@
       ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Кожны дамен можа мець толькі адзін запіс SPF (TXT). Калі вы хочаце захаваць існуючы запіс SPF (TXT), вы можаце дадаць ${ spf } да вашага бягучага запісу (пастаўце яго пасля ${ spfValue })."
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
@@ -6607,6 +6622,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Запрашэнні на падзею і RSVP будзе адпраўлена на гэтай мове."
       ],
+      "Example: ${ spfExample }": [
+        "Прыклад: ${ spfExample }"
+      ],
       "Expired": [
         "Пратэрмінавана"
       ],
@@ -6627,6 +6645,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Для карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншай службы электроннай пошты, каб забяспечыць плаўны пераход выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
@@ -6676,9 +6697,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Калі часавы пояс сістэмы не супадае з параметрамі бягучага часавага пояса, вам будзе прапанавана абнавіць яго (не часцей за адзін раз у дзень)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Калі гэты дамен у цяперашні час атрымлівае лісты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX для забеспячэння плаўнасці пераходу."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Калі гэта звязана са скіданнем старога пароля, то вы можаце спыніць паўторны паказ паведамлення"
       ],
@@ -6703,9 +6721,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Калі ў вас зададзены абодва SPF і DKIM, то DMARC дазволіць вам паказаць, як іншыя паштовыя службы павінны дастаўляць пошту для вашага дамена, калі дзве праверкі SPF і DKIM былі няўдалыя. Гэта можа перашкаджаць спамерам прадстаўляцца вашым імем, але таксама можа выклікаць праблемы дастаўкі ў выпадку няправільнай налады."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Калі вы страціце свой пароль і вам неабходна будзе скінуць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
       ],
@@ -6726,9 +6741,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Калі вы нядаўна скінулі пароль, то вы можаце скарыстацца метадам аднаўлення даных, каб разблакіраваць свае даныя"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Калі вы хочаце пакінуць існуючы запіс SPF, то можаце проста дадаць ${ spf } да яго пасля ${ spfValue }. Не стварайце некалькі запісаў SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Калі вы хочаце аб'яднаць гэты ўліковы запіс з іншым, то НЕ выдаляйце яго."
@@ -6760,11 +6772,11 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖНА: Калі кансоль DNS не дазваляе значэнням CNAME заканчвацца на кропку, вы можаце выдаліць апошнюю кропку ў значэннях CNAME."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ВАЖНА! Некаторыя рэгістратары не прымаюць значэнне CNAME з кропкай у канцы (а некаторыя патрабуюць яе). Калі ваш рэгістратар не прымае ваш запіс CNAME, выдаліце ​​кропку ў канцы кожнага значэння CNAME і паспрабуйце яшчэ раз."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
@@ -6832,9 +6844,6 @@
       "Just send them your personal referral link.": [
         "Проста адпраўце ім вашу рэферальную спасылку."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Захоўвайце гэтыя запісы ў вашым DNS на ўвесь час карыстання DKIM."
-      ],
       "Key deletion is irreversible!": [
         "Выдаленне ключа з'яўляецца незваротным!"
       ],
@@ -6897,6 +6906,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "У журнале пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашыя электронныя лісты або лічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць ці настроены няправільна."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашыя электронныя лісты або лічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць ці настроены няправільна."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
@@ -7339,8 +7354,8 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF выкарыстоўваецца для пазначэння тых, каму дазволена адпраўляць пошту ад імя дамена. Мы настойліва рэкамендуем дадаць ${ MAIL_APP_NAME } у ваш запіс SPF. Дадайце наступны запіс TXT у ваш DNS. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Упэўніцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
@@ -8143,14 +8158,14 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Дадайце новы адрас для любога карыстальніка ў вашай арганізацыі."
+      "Add a new address for the existing users of your organization.": [
+        "Дадаць новы адрас для існуючых карыстальнікаў вашай арганізацыі."
       ],
       "Add a new user to your organization and create an address for it.": [
         "Дадайце новага карыстальніка ў вашу арганізацыю і стварыце для яго адрас."
       ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "У мэтах бяспекі нам неабходна пераканацца, што вы з'яўляецеся ўладальнікам ${ domainName }. Дадайце наступны запіс DNS TXT у свой дамен. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "У мэтах бяспекі нам трэба праверыць, што вы з'яўляецеся ўладальнікам ${ domainName }. Калі ласка, дадайце наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8982,9 +8997,6 @@
       "Gift code": [
         "Падарункавы код"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Гэта базавы запіс DMARC, які нічога не робіць, акрамя адпраўкі справаздач."
-      ],
       "Hide password": [
         "Схаваць пароль"
       ],
@@ -9204,14 +9216,14 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складаецца з 12 унікальных слоў у вызначаным парадку"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Дадайце ўсе 3 наступныя запісы CNAME. Звярніце ўвагу, што запісы DNS могуць абнаўляцца на працягу некалькіх гадзін."
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Дадайце ўсе 3 наступных запісаў CNAME. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
       ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Дадайце гэты запіс MX. Звярніце ўвагу, што запісы DNS могуць абнаўляцца на працягу некалькіх гадзін."
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Дадйце наступныя два запісы MX. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
       ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Дадайце наступны запіс TXT. Звярніце ўвагу, што запісы DNS могуць абнаўляцца на працягу некалькіх гадзін."
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Дадайце наступны запіс TXT. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
       ],
       "Please select files to upload": [
         "Выберыце файлы для запампоўвання"
@@ -9457,8 +9469,8 @@
       ]
     },
     "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Дадайце наступны запіс TXT:"
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Дадайце наступны запіс TXT. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
       ]
     },
     "Label for new member": {
@@ -9646,6 +9658,9 @@
       ],
       "Help translate": [
         "Дапамагчы з перакладам"
+      ],
+      "here": [
+        "тут"
       ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
@@ -10909,7 +10924,7 @@
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый улюбёнага змесціва"
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -13537,6 +13552,12 @@
       "4. Select a server to connect to": [
         "4. Выберыце сервер для падключэння"
       ],
+      "A filter name is required": [
+        "Патрабуецца назва фільтра"
+      ],
+      "A filter with this name already exists": [
+        "Фільтр з такой назвай ужо існуе"
+      ],
       "Accessibility": [
         "Спецыяльныя магчымасці"
       ],
@@ -13969,6 +13990,9 @@
         "Не ўдалося стварыць ${ failedUsers.length } карыстальнікаў.",
         "Не ўдалося стварыць ${ failedUsers.length } карыстальнікі."
       ],
+      "Filter name cannot contain only spaces": [
+        "Назва фільтра не можа змяшчаць толькі прабелы"
+      ],
       "Filters": [
         "Фільтры"
       ],
@@ -14380,6 +14404,12 @@
       "Theme": [
         "Тэма"
       ],
+      "This field cannot be empty": [
+        "Гэтае поле не можа быць пустым"
+      ],
+      "This field cannot contain only spaces": [
+        "Гэта поле не можа змяшчаць толькі прабелы"
+      ],
       "Time zone": [
         "Часавы пояс"
       ],
@@ -14628,6 +14658,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Уключэнне пашыранага журнала запісвае IP-адрас кожнай падзеі ў журнале бяспекі."
+      ],
+      "Feature in early access": [
+        "Функцыю можна паспрабаваць у раннім доступе"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
@@ -15073,9 +15106,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Налады DNS зменяцца на працягу аднаго дня."
       ]
     },
     "Weak personal key warning": {
