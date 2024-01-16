@@ -1,3 +1,11 @@
+### Version 1.10.1
+
+-   Preserve cached data on extension updates
+-   Fix crash on non-latin character search queries
+-   Fix inactive/locked session detection during boot sequence
+-   Fix enpass import edge-case where fields are undefined
+-   Fix random logouts due to browser alarms triggered on idle service-worker
+
 ### Version 1.10.0
 
 -   Enable item pinning (behind feature flag)
