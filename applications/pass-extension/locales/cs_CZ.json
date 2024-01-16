@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "Proton Pass pro iOS"
       ],
+      "Pin item": [
+        "Připnout položku"
+      ],
       "Refresh the page": [
         "Obnovit stránku"
       ],
@@ -361,6 +364,9 @@
       ],
       "Try again": [
         "Zkuste to znovu"
+      ],
+      "Unpin item": [
+        "Odepnout položku"
       ],
       "Update": [
         "Aktualizovat"
@@ -1397,7 +1403,7 @@
         "Pozvánky"
       ],
       "Item ID": [
-        "ID Položky"
+        "ID položky"
       ],
       "Language": [
         "Jazyk"
@@ -1697,6 +1703,9 @@
       "Full Name": [
         "Celé jméno"
       ],
+      "MM/YY": [
+        "MM/RR"
+      ],
       "Other": [
         "Ostatní"
       ],
@@ -1835,6 +1844,9 @@
       ],
       "Pin the extension": [
         "Připněte rozšíření"
+      ],
+      "Pinned (${ items.length })": [
+        "Připnuto (${ items.length })"
       ],
       "Secure your data": [
         "Zabezpečte svá data"
@@ -2037,9 +2049,6 @@
       ],
       "Your session could not be resumed.": [
         "Vaše relace nemohla být obnovena."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "Vaše relace je neaktivní. Přihlaste se prosím zpět."
       ],
       "Your session was locked.": [
         "Vaše relace byla uzamčena."
