@@ -108,6 +108,10 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
     const parsedCycle = cycleParam ? getValidCycle(cycleParam) : undefined;
+
+    const minimumCycleParam = parseInt(searchParams.get('minimumCycle') as any, 10);
+    const parsedMinimumCycle = cycleParam ? getValidCycle(minimumCycleParam) : undefined;
+
     const coupon = searchParams.get('coupon') || undefined;
 
     const currencyParam = searchParams.get('currency')?.toUpperCase();
@@ -266,6 +270,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 organization={organization}
                                 step={step}
                                 cycle={parsedCycle}
+                                minimumCycle={parsedMinimumCycle}
                                 currency={parsedCurrency}
                                 plan={plan}
                                 coupon={coupon}
