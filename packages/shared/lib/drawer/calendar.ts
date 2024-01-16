@@ -4,13 +4,13 @@ import { getAppHref } from '../apps/helper';
 import { getLinkToCalendarEvent } from '../calendar/helper';
 import { APPS, APP_NAMES } from '../constants';
 import { addParentAppToUrl, postMessageToIframe } from './helpers';
-import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap } from './interfaces';
+import { DRAWER_EVENTS, DrawerApp, IframeSrcMap } from './interfaces';
 
 const { PROTONCALENDAR: calendarApp } = APPS;
 
 interface OpenCalendarEventProps {
     currentApp: APP_NAMES;
-    setAppInView: Dispatch<SetStateAction<DRAWER_APPS | undefined>>;
+    setAppInView: Dispatch<SetStateAction<DrawerApp | undefined>>;
     iframeSrcMap: IframeSrcMap;
     setIframeSrcMap: Dispatch<SetStateAction<IframeSrcMap>>;
     localID?: number;

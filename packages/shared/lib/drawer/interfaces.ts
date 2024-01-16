@@ -11,19 +11,16 @@ export enum DRAWER_NATIVE_APPS {
     QUICK_SETTINGS = 'quick-settings',
     CONTACTS = 'contacts',
 }
-export type DRAWER_APPS =
-    | typeof APPS.PROTONCALENDAR
-    | typeof DRAWER_NATIVE_APPS.QUICK_SETTINGS
-    | typeof DRAWER_NATIVE_APPS.CONTACTS;
-export type IframeSrcMap = Partial<Record<DRAWER_APPS, string | undefined>>;
+export type DrawerApp = typeof APPS.PROTONCALENDAR | `${DRAWER_NATIVE_APPS}`;
+export type IframeSrcMap = Partial<Record<DrawerApp, string | undefined>>;
 
 export interface OpenDrawerArgs {
-    app: DRAWER_APPS;
+    app: DrawerApp;
     path?: string;
 }
 
 export interface DrawerLocalStorageValue {
-    app: DRAWER_APPS;
+    app: DrawerApp;
     url?: string;
 }
 
@@ -64,7 +61,7 @@ export enum DRAWER_EVENTS {
 interface CLOSE {
     type: DRAWER_EVENTS.CLOSE;
     payload?: {
-        app: DRAWER_APPS;
+        app: DrawerApp;
         closeDefinitely?: boolean;
     };
 }
@@ -129,7 +126,7 @@ interface CHILD_URL_UPDATE {
     type: DRAWER_EVENTS.CHILD_URL_UPDATE;
     payload: {
         url: string;
-        app: DRAWER_APPS;
+        app: DrawerApp;
     };
 }
 
