@@ -12,9 +12,9 @@ import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
+import DrawerAppHeadline from '../shared/DrawerAppHeadline';
+import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';
-import QuickSettingsSection from './QuickSettingsSection';
-import QuickSettingsSectionHeadline from './QuickSettingsSectionHeadline';
 import QuickSettingsSectionRow from './QuickSettingsSectionRow';
 
 interface Props {
@@ -44,15 +44,15 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
         <>
             {/* We hide the theme section in the electron app since theme are fixed */}
             {!isElectron && (
-                <QuickSettingsSection className="pb-4">
+                <DrawerAppSection className="pb-4">
                     <div>
                         {settings.Mode === ThemeModeSetting.Auto ? (
                             <>
-                                <QuickSettingsSectionHeadline>{c('Label').t`Theme`}</QuickSettingsSectionHeadline>
+                                <DrawerAppHeadline>{c('Label').t`Theme`}</DrawerAppHeadline>
                             </>
                         ) : (
                             <>
-                                <QuickSettingsSectionHeadline>
+                                <DrawerAppHeadline>
                                     {c('Label').t`Theme`}:
                                     <span
                                         className="color-weak ml-1 text-no-bold"
@@ -60,7 +60,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                     >
                                         {PROTON_THEMES_MAP[information.theme].label}
                                     </span>
-                                </QuickSettingsSectionHeadline>
+                                </DrawerAppHeadline>
                             </>
                         )}
                     </div>
@@ -121,7 +121,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                             }}
                         />
                     )}
-                </QuickSettingsSection>
+                </DrawerAppSection>
             )}
 
             <Tooltip
@@ -130,7 +130,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
             >
                 {/* additional div needed for tooltip */}
                 <div className="w-full shrink-0">
-                    <QuickSettingsSection>
+                    <DrawerAppSection>
                         <QuickSettingsSectionRow
                             label={c('Label').t`Beta Access`}
                             action={
@@ -143,7 +143,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 />
                             }
                         />
-                    </QuickSettingsSection>
+                    </DrawerAppSection>
                 </div>
             </Tooltip>
 

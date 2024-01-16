@@ -23,7 +23,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { getIsDrawerPostMessage, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS, DrawerApp, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
@@ -32,8 +32,8 @@ export const DrawerContext = createContext<{
     /**
      * App currently opened in the Drawer
      */
-    appInView: DRAWER_APPS | undefined;
-    setAppInView: Dispatch<SetStateAction<DRAWER_APPS | undefined>>;
+    appInView: DrawerApp | undefined;
+    setAppInView: Dispatch<SetStateAction<DrawerApp | undefined>>;
     /**
      * Map of the srcs we use on the iframe to open it
      */
@@ -117,7 +117,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
     const getUser = useGetUser();
 
     // App currently in view in the drawer
-    const [appInView, setAppInView] = useState<DRAWER_APPS | undefined>();
+    const [appInView, setAppInView] = useState<DrawerApp | undefined>();
     // Iframe src's for all apps opened in the drawer => Map of the src we use on the iframe to open it
     const [iframeSrcMap, setIframeSrcMap] = useState<IframeSrcMap>({});
     // Iframe urls for all apps opened in the drawer => Map we use to store the url of the app opened inside the iframe
@@ -286,9 +286,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
                 case DRAWER_EVENTS.ABORT_REQUEST:
                     const { id } = event.data.payload;
 
-                    const controller = requestsAbortControllers.find(
-                        (controller) => controller.id === id
-                    )?.abortController;
+                    const controller = requestsAbortControllers.find((controller) => controller.id === id)
+                        ?.abortController;
 
                     if (controller) {
                         controller.abort();
@@ -324,8 +323,8 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
     }, [handleReceived]);
 
     // We close definitely cached drawer apps if unused for a certain period of time (3 days)
-    const hideAtMapRef = useRef<Partial<Record<DRAWER_APPS, number>>>({});
-    const intervalMapRef = useRef<Partial<Record<DRAWER_APPS, number>>>({});
+    const hideAtMapRef = useRef<Partial<Record<DrawerApp, number>>>({});
+    const intervalMapRef = useRef<Partial<Record<DrawerApp, number>>>({});
 
     useEffect(() => {
         // forced to use this workaround for iframeSrcMap key types due to https://github.com/microsoft/TypeScript/issues/50096
