@@ -1925,7 +1925,7 @@
         "6 TB"
       ],
       "6 users": [
-        "6 명의 사용자"
+        "6명의 사용자"
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
@@ -2976,6 +2976,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "인증 제공자(IdP)를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
       ],
@@ -3165,7 +3168,7 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } 받기"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
       ],
       "here": [
@@ -3661,7 +3664,7 @@
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
       "to continue to ${ product }": [
-        "${ product } 로 진행하기 위해서"
+        "${ product }로 계속하기"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
@@ -3890,6 +3893,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "이제 관리자로써 계정에 접근하고 관리할 수 있습니다."
+      ],
+      "You can now return to the application to continue": [
+        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "한 번에 하나의 채팅 인스턴스만 열 수 있습니다. 새 대화를 시작하기 전에 이전 대화를 닫으십시오."
@@ -4437,10 +4443,10 @@
         "Reply (ACS) URL"
       ],
       "Require 2FA for administrators": [
-        "관리자에 2FA가 필요합니다."
+        "관리자에 2FA가 필요"
       ],
       "Require 2FA for everyone": [
-        "모두에게 2FA가 필요합니다."
+        "전체 구성원에 2FA가 필요"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -4450,9 +4456,6 @@
       ],
       "Select your plan": [
         "플랜을 선택하세요."
-      ],
-      "Single sign-on Entity ID": [
-        "싱글 사인 온 엔티티 ID"
       ],
       "Single sign-on entity ID": [
         "싱글 사인 온 엔티티 ID"
@@ -5625,7 +5628,7 @@
         "조직 전용"
       ],
       "Receive from all": [
-        "전체로 부터 받기"
+        "모두에게서 받기"
       ],
       "Router": [
         "라우터"
@@ -5731,7 +5734,7 @@
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
@@ -5800,7 +5803,7 @@
         "조직 전용"
       ],
       "Receive from all": [
-        "전체로 부터 받기"
+        "모두에게서 받기"
       ],
       "Send to all": [
         "모두에게 보내기"
@@ -6042,13 +6045,13 @@
     },
     "session_recovery:available:info": {
       " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
       ],
       " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
       ],
       " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
@@ -6090,7 +6093,7 @@
         "${ boldDate }까지 비밀번호 재설정이 가능합니다."
       ],
       "You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -6363,6 +6366,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -7362,7 +7368,7 @@
         "2단계 인증"
       ],
       "Two-factor authentication enforcement": [
-        "2단계 인증을 활성화 했습니다."
+        "2단계 인증 활성화 시행 사항"
       ],
       "Two-factor authentication reminders": [
         "2단계 인증 알리미"
@@ -7511,7 +7517,7 @@
     },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따근한 프라이버시 뉴스를 받아보세요."
+        "${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따끈한 프라이버시 뉴스를 받아보세요."
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
