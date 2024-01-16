@@ -86,6 +86,7 @@ export const useApplyEncryptedSearch = ({
                     });
                     dispatch(manualFulfilled());
                     onPage(0);
+                    void dispatch(loadAction({ page: 0, pageSize, params, abortController: undefined }));
                 } else {
                     void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
                 }
