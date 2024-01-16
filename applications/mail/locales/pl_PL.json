@@ -721,11 +721,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
@@ -3482,7 +3482,7 @@
         "Brak podpisu"
       ],
       "Network error: Please check your connection and try again.": [
-        "Błąd sieci. Sprawdź połączenie z Internetem i spróbuj ponownie."
+        "Błąd sieci. Sprawdź połączenie i spróbuj ponownie."
       ],
       "No address with keys available to compose a message": [
         "Brak adresu z dostępnymi kluczami do utworzenia wiadomości"
@@ -9487,6 +9487,9 @@
       "(active)": [
         "(aktywny)"
       ],
+      "A filter with this name already exists": [
+        "Filtr o tej nazwie już istnieje"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -10026,6 +10029,12 @@
       ],
       "Subject missing": [
         "Brak tematu"
+      ],
+      "This field cannot be empty": [
+        "To pole nie może być puste"
+      ],
+      "This field cannot contain only spaces": [
+        "To pole nie może zawierać wyłącznie spacji"
       ],
       "To": [
         "Do"
