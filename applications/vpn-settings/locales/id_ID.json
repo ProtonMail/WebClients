@@ -2955,6 +2955,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Tertagih dengan harga ${ price }"
       ],
@@ -2975,6 +2978,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas (IdP). Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
       ],
       "Continue with ${ freeName }": [
         "Lanjutkan dengan ${ freeName }"
@@ -3164,9 +3170,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
-      ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
-        "Tuju penyedia identitas Anda, dapatkan metadata SAML milik ${ appName }, dan impor metadata tersebut di sini."
       ],
       "here": [
         "di sini"
@@ -4451,9 +4454,6 @@
       "Select your plan": [
         "Pilih paket Anda"
       ],
-      "Single sign-on Entity ID": [
-        "ID entitas single sign-on"
-      ],
       "Single sign-on entity ID": [
         "ID entitas single sign-on"
       ],
@@ -5379,6 +5379,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Dapatkan dukungan dari tim Layanan Dukungan ${ BRAND_NAME } dalam rentang waktu 1 x 24 jam pada hari kerja"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Masing-masing koneksi VPN memungkinkan satu perangkat untuk dapat terhubung ke ${ VPN_APP_NAME } dalam satu waktu. Semisal Anda ingin menghubungkan ponsel dan laptop Anda ke ${ VPN_APP_NAME } secara bersamaan, Anda akan butuh dua koneksi VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
@@ -6533,6 +6536,9 @@
       "${ n } calendars per user": [
         "${ n } kalender per pengguna"
       ],
+      "${ n } free VPN connections per user": [
+        "${ n } koneksi VPN gratis per pengguna"
+      ],
       "${ n } high-speed VPN connections": [
         "${ n } koneksi VPN berkecepatan tinggi"
       ],
@@ -7466,6 +7472,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Fitur dalam masa akses dini"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kunci publik milik penyedia identitas yang digunakan untuk menandatangani pernyataan autentikasi. Dapatkan hash sertifikat ini dari penyedia identitas Anda."
