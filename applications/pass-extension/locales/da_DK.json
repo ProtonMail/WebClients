@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "Pass til iOS"
       ],
+      "Pin item": [
+        "Fastgør element"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -361,6 +364,9 @@
       ],
       "Try again": [
         "Prøv igen"
+      ],
+      "Unpin item": [
+        "Frigør element"
       ],
       "Update": [
         "Opdatér"
@@ -517,11 +523,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Kunne ikke fastgøre element"
+      ],
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
       ],
       "Failed to transfer this vault's ownership.": [
         "Det lykkedes ikke at overføre ejerskabet af denne boks."
+      ],
+      "Failed to unpin item": [
+        "Kunne ikke frigøre element"
       ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
@@ -920,6 +932,12 @@
       ],
       "Item successfully moved": [
         "Element flyttet"
+      ],
+      "Item successfully pinned": [
+        "Element fastgjort"
+      ],
+      "Item successfully unpinned": [
+        "Element frigjort"
       ],
       "Leaving vault...": [
         "Forlader boks..."
@@ -1362,6 +1380,9 @@
       "Invitations": [
         "Invitationer"
       ],
+      "Item ID": [
+        "Element-ID"
+      ],
       "Language": [
         "Sprog"
       ],
@@ -1563,6 +1584,9 @@
       "Vault": [
         "Boks"
       ],
+      "Vault ID": [
+        "Boks-ID"
+      ],
       "View details": [
         "Vis detaljer"
       ],
@@ -1656,6 +1680,9 @@
       ],
       "Full Name": [
         "Fuldt navn"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
       ],
       "Other": [
         "Andet"
@@ -1794,6 +1821,9 @@
       "Pin the extension": [
         "Fastgør udvidelsen"
       ],
+      "Pinned (${ items.length })": [
+        "Fastgjorde (${ items.length })"
+      ],
       "Secure your data": [
         "Beskyt dine data"
       ],
@@ -1887,6 +1917,9 @@
       ],
       "Empty note": [
         "Tom note"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
@@ -1993,9 +2026,6 @@
       ],
       "Your session could not be resumed.": [
         "Din session kunne ikke fortsættes."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "Din session er inaktiv. Log ind igen."
       ],
       "Your session was locked.": [
         "Din session blev låst."

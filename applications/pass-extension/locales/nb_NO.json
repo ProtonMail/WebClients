@@ -999,6 +999,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-koden er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }."
       ],
+      "Pinning item...": [
+        "Fester element..."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
@@ -1110,6 +1113,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
+      ],
+      "Unpinning item...": [
+        "Løser element..."
       ],
       "Update login": [
         "Oppdater pålogging"
@@ -2027,8 +2033,8 @@
       "Your session could not be resumed.": [
         "Økten din kunne ikke gjenopptas."
       ],
-      "Your session is inactive. Please log back in.": [
-        "Økten din er inaktiv. Vennligst logg på igjen."
+      "Your session is inactive.": [
+        "Økten er inaktiv"
       ],
       "Your session was locked.": [
         "Økten din ble låst."

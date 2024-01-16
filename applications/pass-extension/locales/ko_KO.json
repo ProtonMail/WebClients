@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "iOS용 Pass"
       ],
+      "Pin item": [
+        "항목 고정"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -361,6 +364,9 @@
       ],
       "Try again": [
         "다시 시도"
+      ],
+      "Unpin item": [
+        "항목 고정 해제"
       ],
       "Update": [
         "업데이트"
@@ -516,11 +522,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
       ],
+      "Failed to pin item": [
+        "항목 고정 실패"
+      ],
       "Failed to remove user's access.": [
         "사용자 접근 삭제 실패."
       ],
       "Failed to transfer this vault's ownership.": [
         "금고 소유권 이전 실패."
+      ],
+      "Failed to unpin item": [
+        "항목 고정 해제 실패"
       ],
       "File could not be parsed": [
         "파일을 분석할 수 없음."
@@ -905,6 +917,12 @@
       "Item successfully moved": [
         "항목을 성공적으로 이동했습니다."
       ],
+      "Item successfully pinned": [
+        "항목을 성공적으로 고정했습니다."
+      ],
+      "Item successfully unpinned": [
+        "항목을 성공적으로 고정 해제했습니다."
+      ],
       "items": [
         "항목"
       ],
@@ -967,6 +985,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN 코드가 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
+      ],
+      "Pinning item...": [
+        "항목 고정 중..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
@@ -1078,6 +1099,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
+      ],
+      "Unpinning item...": [
+        "항목 고정 해제 중..."
       ],
       "Update login": [
         "로그인 업데이트"
@@ -1345,6 +1369,9 @@
       "Invitations": [
         "초대"
       ],
+      "Item ID": [
+        "항목 ID"
+      ],
       "Language": [
         "언어"
       ],
@@ -1546,6 +1573,9 @@
       "Vault": [
         "금고"
       ],
+      "Vault ID": [
+        "금고 ID"
+      ],
       "View details": [
         "세부사항 보기"
       ],
@@ -1639,6 +1669,9 @@
       ],
       "Full Name": [
         "성명"
+      ],
+      "MM/YY": [
+        "MM/YY (월/년)"
       ],
       "Other": [
         "기타"
@@ -1776,6 +1809,9 @@
       "Pin the extension": [
         "확장 프로그램 고정"
       ],
+      "Pinned (${ items.length })": [
+        "고정됨 (${ items.length })"
+      ],
       "Secure your data": [
         "데이터를 보호하세요"
       ],
@@ -1869,6 +1905,9 @@
       ],
       "Empty note": [
         "빈 메모"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
@@ -1974,9 +2013,6 @@
       ],
       "Your session could not be resumed.": [
         "사용자 세션을 재게할 수 없습니다."
-      ],
-      "Your session is inactive. Please log back in.": [
-        "세션이 비활성화됨. 다시 로그인 하세요."
       ],
       "Your session was locked.": [
         "사용자의 세션이 잠겼습니다."

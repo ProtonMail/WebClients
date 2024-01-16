@@ -1675,6 +1675,9 @@
       "Full Name": [
         "Fullständigt namn"
       ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
       "Other": [
         "Annat"
       ],
@@ -1812,6 +1815,9 @@
       "Pin the extension": [
         "Fäst tillägget"
       ],
+      "Pinned (${ items.length })": [
+        "Fäst (${ items.length })"
+      ],
       "Secure your data": [
         "Säkra dina data"
       ],
@@ -1905,6 +1911,9 @@
       ],
       "Empty note": [
         "Tom anteckning"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "Utgångsdatum är inte i formatet MM/ÅÅ"
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
@@ -2012,8 +2021,8 @@
       "Your session could not be resumed.": [
         "Din session kunde inte återupptas."
       ],
-      "Your session is inactive. Please log back in.": [
-        "Din session är inaktiv. Logga in igen."
+      "Your session is inactive.": [
+        "Din session är inaktiv."
       ],
       "Your session was locked.": [
         "Din session var låst."

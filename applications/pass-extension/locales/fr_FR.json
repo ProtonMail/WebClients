@@ -1918,6 +1918,9 @@
       "Empty note": [
         "Note vide"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La date d'expiration n'est pas au format MM/AA"
+      ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
       ],
@@ -2024,8 +2027,8 @@
       "Your session could not be resumed.": [
         "Votre session n'a pas pu être relancée."
       ],
-      "Your session is inactive. Please log back in.": [
-        "Votre session est inactive. Reconnectez-vous."
+      "Your session is inactive.": [
+        "Votre session est inactive."
       ],
       "Your session was locked.": [
         "Votre session a été verrouillée."
