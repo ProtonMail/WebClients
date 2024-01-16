@@ -103,11 +103,7 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
 
                 {locked && (
                     <div className="mb-8">
-                        <Unlock
-                            loading={unlocking}
-                            onFailure={() => setUnlocking(false)}
-                            onStart={() => setUnlocking(true)}
-                        />
+                        <Unlock onLoading={setUnlocking} />
                         {unlocking && <CircleLoader size="small" className="mt-12" />}
                     </div>
                 )}
