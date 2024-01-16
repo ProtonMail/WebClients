@@ -348,7 +348,7 @@
         "Retirer le domaine"
       ],
       "Remove gift code": [
-        "Retirer le code cadeau"
+        "Retirer le code-cadeau"
       ],
       "Rename": [
         "Renommer"
@@ -3007,6 +3007,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configurez l'authentification SAML pour votre organisation via un fournisseur d'identité (IdP). Cela permettra d'activer SAML pour l'ensemble de l'organisation."
+      ],
       "Continue with ${ freeName }": [
         "Continuer avec ${ freeName }"
       ],
@@ -3198,7 +3201,7 @@
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
       ],
       "here": [
@@ -3226,7 +3229,7 @@
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Si vous avez un code cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
+        "Si vous avez un code-cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Si vous n'avez jamais utilisé l'authentification à deux facteurs, nous vous recommandons vivement de ${ guideButton }."
@@ -4334,7 +4337,7 @@
         "Nom de la Passerelle"
       ],
       "Gift code": [
-        "Code cadeau"
+        "Code-cadeau"
       ],
       "Hide password": [
         "Masquer le mot de passe"
@@ -4498,9 +4501,6 @@
       "Select your plan": [
         "Choisissez votre abonnement"
       ],
-      "Single sign-on Entity ID": [
-        "ID de l'entité d'authentification unique"
-      ],
       "Single sign-on entity ID": [
         "ID de l'entité d'authentification unique"
       ],
@@ -4625,10 +4625,10 @@
     },
     "Link": {
       "Add a gift code": [
-        "Ajouter un code cadeau"
+        "Ajouter un code-cadeau"
       ],
       "Add gift code": [
-        "Ajouter un code cadeau"
+        "Ajouter un code-cadeau"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
@@ -5872,7 +5872,7 @@
         "Un moyen de vous contacter"
       ],
       "Add gift code": [
-        "Ajoutez un code cadeau."
+        "Ajoutez un code-cadeau."
       ],
       "Address": [
         "Adresse"
@@ -5902,7 +5902,7 @@
         "Votre avis"
       ],
       "Gift code": [
-        "Code cadeau"
+        "Code-cadeau"
       ],
       "Other": [
         "Autre"
@@ -6788,7 +6788,7 @@
         "L'adresse a été mise à jour."
       ],
       "Gift code applied": [
-        "Le code cadeau a été appliqué."
+        "Le code-cadeau a été appliqué."
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
         "Si vous avez saisi une adresse e-mail de récupération valide, nous vous enverrons un message avec vos noms d'utilisateur dans une minute."
@@ -7055,7 +7055,7 @@
         "Montant à payer"
       ],
       "Apply gift code": [
-        "Appliquer un code cadeau"
+        "Appliquer un code-cadeau"
       ],
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
@@ -7271,7 +7271,7 @@
         "Cadeau"
       ],
       "Gift code": [
-        "Code cadeau"
+        "Code-cadeau"
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
@@ -7584,11 +7584,14 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "L'URL des points de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
       ],
+      "Feature in early access": [
+        "Fonctionnalité en accès anticipé"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Vous avez besoin du hash du certificat de votre fournisseur d'identité."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si vous avez acheté un code cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
+        "Si vous avez acheté un code-cadeau ou si vous en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."

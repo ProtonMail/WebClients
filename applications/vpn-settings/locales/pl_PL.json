@@ -2793,7 +2793,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Dodaj ten rekord do swojej domeny w panelu sterowania rejestratora nazw domen."
+        "Dodaj ten rekord do swojej domeny w panelu sterowania u rejestratora domeny"
       ]
     },
     "Human verification method": {
@@ -3033,6 +3033,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Zanim zaczniesz wysyłać i odbierać wiadomości e-mail z nowych adresów, musisz utworzyć dla nich klucze szyfrowania."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Płatne ${ price }"
       ],
@@ -3054,6 +3057,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Skonfiguruj uwierzytelnianie SAML dla swojej organizacji przy pomocy dostawcy tożsamości (IdP). Spowoduje to włączenie SAML dla całej organizacji."
+      ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
       ],
@@ -3061,7 +3067,7 @@
         "Skopiowano do schowka"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Skopiuj i wklej ten adres URL do pola adresu URL ACS (Assertion Consumer Service) swojego dostawcy tożsamości"
+        "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
@@ -3175,7 +3181,7 @@
         "Ustawienia list mailingowych zostały zapisane"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
-        "Adres URL punktu końcowego otrzymany od dostawcy tożsamości \n(np. https://idp.example.com/sso/saml)."
+        "Adres URL punktu końcowego otrzymany od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)."
       ],
       "Enhance your network security": [
         "Zwiększ bezpieczeństwo sieci"
@@ -3249,14 +3255,14 @@
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
       ],
       "here": [
         "tutaj"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Klucz publiczny dostawcy tożsamości do podpisywania asercji uwierzytelniania. Powinno być miejsce do pobrania lub skopiowania skrótu certyfikatu od dostawcy tożsamości. Wystarczy wkleić skrót certyfikatu w polu obszaru tekstowego."
+        "Klucz publiczny dostawcy tożsamości do podpisywania potwierdzeń uwierzytelniania. Pobierz lub skopiuj kryptograficzny skrót certyfikatu od dostawcy tożsamości. Wklej skrót certyfikatu do pola tekstowego."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
@@ -3604,7 +3610,7 @@
         "Niektóre z dostępnych serwerów mogą być używane tylko w określonych krajach z powodu niedawnych usunięć"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
-        "Określ domenę, która może uwierzytelniać się za pomocą SAML SSO."
+        "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -3718,7 +3724,7 @@
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Ta weryfikacja może potrwać do godziny. Możesz bezpiecznie przejść do kolejnych kroków."
+        "Weryfikacja może potrwać do godziny. Możesz bezpiecznie przejść do kolejnych kroków."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych."
@@ -3748,7 +3754,7 @@
         "w ${ product } Business"
       ],
       "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
-        "Aby zezwolić domenie ${ boldDomainName } na korzystanie z SAML SSO, należy zweryfikować jej własność, dodając następujący rekord DNS TXT do domeny u dostawcy DNS."
+        "Zweryfikuj domenę ${ boldDomainName } za pomocą rekordu TXT, aby zezwolić na logowanie SSO (SAML)."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Skontaktuj się z nami, aby anulować subskrypcję."
@@ -3811,7 +3817,7 @@
         "Brak zapisanych metod odzyskiwania dla tego konta."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
-        "Unikalny identyfikator generowany przez dostawcę tożsamości, zwykle w postaci adresu URL zawierającego nazwę dostawcy tożsamości (np. https://idp.example.com/XXXXX)."
+        "Unikalny identyfikator wygenerowany przez dostawcę tożsamości zazwyczaj w formie adresu URL zawierającego nazwę dostawcy tożsamości (np. https://idp.przyklad.pl/XXXXX)."
       ],
       "Unsaved changes": [
         "Niezapisane zmiany"
@@ -3931,7 +3937,7 @@
         "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Podczas włączania SAML dla ${ appName } w dostawcy tożsamości może zostać wyświetlony monit o użycie adresu URL wywołania zwrotnego (ACS) i identyfikatora wystawcy. Wystarczy skopiować i wkleić poniższe dane do pól dostawcy tożsamości."
+        "Po włączeniu uwierzytelniania SAML dla ${ appName } może być koniecznie użycie adresu URL odpowiedzi usługi ACS i identyfikatora dostawcy. Kopiuj i wklej poniższe dane do pól dostawcy tożsamości."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
@@ -4559,6 +4565,9 @@
       "Recovery phrase": [
         "Hasło odzyskiwania"
       ],
+      "Reply (ACS) URL": [
+        "Adres URL odpowiedzi usługi ACS"
+      ],
       "Require 2FA for administrators": [
         "Wymagaj uwierzytelniania dwustopniowego od administratorów"
       ],
@@ -4573,9 +4582,6 @@
       ],
       "Select your plan": [
         "Wybierz plan"
-      ],
-      "Single sign-on Entity ID": [
-        "Identyfikator jednostki"
       ],
       "Single sign-on entity ID": [
         "Identyfikator jednostki"
@@ -7431,7 +7437,7 @@
         "Listy mailingowe"
       ],
       "Enter endpoints into your identity provider": [
-        "Wprowadzanie punktów końcowych do dostawcy tożsamości"
+        "Wpisz punkty końcowe do dostawcy tożsamości"
       ],
       "Enter SAML metadata": [
         "Wpisz metadane SAML"
@@ -7780,16 +7786,19 @@
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Skopiuj i wklej ten adres URL do pola adresu URL ACS (Assertion Consumer Service) swojego dostawcy tożsamości"
+        "Kopiuj i wklej ten adres URL do pola adresu URL usługi ACS (Assertion Consumer Service) u swojego dostawcy tożsamości"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.example.com/sso/saml)"
+        "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Funkcja dostępna we wcześniejszym dostępie"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Klucz publiczny dostawcy tożsamości do podpisywania asercji uwierzytelniania. Pobierz skrót certyfikatu od dostawcy tożsamości."
+        "Klucz publiczny dostawcy tożsamości do podpisywania potwierdzeń uwierzytelniania. Pobierz kryptograficzny skrót certyfikatu od dostawcy tożsamości."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
@@ -7798,7 +7807,7 @@
         "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
-        "Określ domenę, która może uwierzytelniać się za pomocą SAML SSO."
+        "Wybierz dozwoloną domenę dla logowania SSO (SAML)."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"

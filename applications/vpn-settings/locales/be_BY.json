@@ -3039,6 +3039,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
       ],
+      "Beta": [
+        "Бэта"
+      ],
       "Billed at ${ price }": [
         "Аплачваецца ${ price }"
       ],
@@ -3059,6 +3062,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (ldP). Гэта ўключыць SAML для ўсёй арганізацыі."
       ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
@@ -3157,7 +3163,7 @@
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Спампуйце вашу ўлюблёную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
+        "Спампуйце вашу абраную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -3255,14 +3261,14 @@
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
       ],
       "here": [
         "тут"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Павінна быць месца для спампоўвання ці капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -3937,7 +3943,7 @@
         "Мы паляпшаем ваш бягучы тарыфны план на больш прасунуты, які прапануе больш функцый за тую ж самую плату. Пакуль наша сістэма абнаўляе тарыфны план, вы не зможаце яго змяніць. Мы адправім вам ліст, як толькі ўсё будзе гатова."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL-адраса (ACS) і ідэнтыфікатарам імітэнта. Проста скапіюйце, а потым устаўце даныя ніжэй у палі вашага пастаўшчыка пасведчанняў."
+        "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL (ACS) і ідэнтыфікатарам эмітэнта. Проста скапіюйце даныя знізу, а потым устаўце іх у палі вашага пастаўшчыка пасведчанняў."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -4395,7 +4401,7 @@
         "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "e.g. example.com": [
-        "напрыклад, pryklad.com"
+        "напрыклад, example.com"
       ],
       "Email": [
         "Электронная пошта"
@@ -4452,7 +4458,7 @@
         "Метаданыя файла для ${ appName }"
       ],
       "Metadata URL for ${ appName }": [
-        "Метаданыя URL-адрас для ${ appName }"
+        "Метаданыя URL-адраса для ${ appName }"
       ],
       "Method for importing metadata": [
         "Метад для імпартавання метаданых"
@@ -4582,9 +4588,6 @@
       ],
       "Select your plan": [
         "Выберыце тарыфны план"
-      ],
-      "Single sign-on Entity ID": [
-        "Адзіны ўваход Entity ID"
       ],
       "Single sign-on entity ID": [
         "Адзіны ўваход Entity ID"
@@ -5609,7 +5612,7 @@
         "Абараніце кожную прыладу, якая падключана да вашай сеткі Wi-Fi. Гэта таксама будзе карысным, калі некаторыя вашы прылады не падтрымліваюць прамое падключэнне да VPN."
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
-        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый улюбёнага змесціва"
+        "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для трансляцый абранага змесціва"
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -7792,13 +7795,16 @@
         "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў."
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў"
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
       ],
+      "Feature in early access": [
+        "Функцыю можна паспрабаваць у раннім доступе"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
