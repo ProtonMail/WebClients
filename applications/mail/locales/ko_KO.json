@@ -709,10 +709,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -2125,6 +2125,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "연락처 이미지"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "팩스"
@@ -2959,7 +2964,7 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "종일, ${ untilString }"
+        "매일, ${ untilString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "매 ${ interval }일, ${ untilString }"
@@ -3232,7 +3237,7 @@
         "6 TB"
       ],
       "6 users": [
-        "6 명의 사용자"
+        "6명의 사용자"
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
@@ -3280,6 +3285,9 @@
       ],
       "Choose a date in the future.": [
         "미래의 날짜를 선택하세요."
+      ],
+      "Choose a date within the next ${ n } days.": [
+        "다음 ${ n }일 내의 날짜를 선택하세요."
       ],
       "Condition incomplete": [
         "조건 미완료"
@@ -3639,7 +3647,7 @@
         "이름을 반드시 설정해야 합니다"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "최대 메시지 글자수 도달. 메시지를 글자수를 줄여보세요."
+        "최대 메시지 글자수 도달. 메시지의 글자 수를 줄여보세요."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "최근 비밀번호 재설정으로 인해 이메일을 복호화 할 수 없습니다. 이전 비밀번호를 기억하고 계시다면, 메시지에서 접근을 위해 ${ reActivateKeyLink } 하실 수 있습니다. ${ learnMoreLink }"
@@ -4780,6 +4788,36 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }"
       ],
+      "${ elementsCount } conversations will be labelled as:": [
+        "${ elementsCount }개 대화가 다음으로 라벨됩니다:"
+      ],
+      "${ elementsCount } conversations will be marked as read.": [
+        "${ elementsCount }개 대회가 읽음으로 표시됩니다."
+      ],
+      "${ elementsCount } conversations will be marked as unread.": [
+        "${ elementsCount }개 대화가 읽지 않음으로 표시됩니다."
+      ],
+      "${ elementsCount } conversations will be moved": [
+        "${ elementsCount }개 메시지가 이동됩니다"
+      ],
+      "${ elementsCount } conversations will be unlabelled from:": [
+        "${ elementsCount }개 대화가 다음으로 라벨 해제됩니다:"
+      ],
+      "${ elementsCount } messages will be labelled as:": [
+        "${ elementsCount }개 메시지가 다음으로 라벨됩니다:"
+      ],
+      "${ elementsCount } messages will be marked as read.": [
+        "${ elementsCount }개 메시지가 읽음으로 표시됩니다."
+      ],
+      "${ elementsCount } messages will be marked as unread.": [
+        "${ elementsCount }개 메시지가 읽지 않음으로 표시됩니다."
+      ],
+      "${ elementsCount } messages will be moved": [
+        "${ elementsCount }개 메시지가 이동됩니다"
+      ],
+      "${ elementsCount } messages will be unlabelled from:": [
+        "${ elementsCount }개 메시지가 라벨 해제됩니다:"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 삽입된 이미지"
       ],
@@ -4918,8 +4956,17 @@
       "and": [
         "그리고"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "예약하거나 방해 금지된 메시지가 취소됩니다."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted } 에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
+      ],
+      "Applying actions to conversations": [
+        "대화에 조치 적용하기"
+      ],
+      "Applying actions to messages": [
+        "메시지에 조치 적용하기"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "정말 모든 메시지를 이 폴더에서 삭제하시겠습니까?"
@@ -5350,6 +5397,9 @@
       "Merged": [
         "합쳤음"
       ],
+      "Message actions in progress. This may take a while.": [
+        "메시지 조치 진행 중. 시간이 조금 걸립니다."
+      ],
       "Message download status:": [
         "메시지 다운로드 상태:"
       ],
@@ -5552,7 +5602,7 @@
         "옵션을 위해 마우스 오른쪽 클릭"
       ],
       "Sat, ${ formatTime }": [
-        "9월, ${ formatTime }"
+        "토요일, ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "${ dateString }에 저장됨"
@@ -5586,6 +5636,9 @@
       ],
       "Select a service provider to start": [
         "시작하려면 서비스 제공자를 선택하십시오"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location }(에)서 모두 ${ elementsCount } 선택"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
@@ -5815,6 +5868,9 @@
       "This sender's public key has not been trusted yet.": [
         "이 발신자의 공개 키는 아직 신뢰되지 않았습니다."
       ],
+      "to ${ destinationElement } folder.": [
+        "(${ destinationElement } 폴더)"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
       ],
@@ -6004,6 +6060,9 @@
       "You can import one data type at a time.": [
         "한 번에 하나의 데이터 유형을 가져올 수 있어요."
       ],
+      "You can now return to the application to continue": [
+        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -6017,7 +6076,7 @@
         "여기엔 아무런 메시지가 없습니다"
       ],
       "You have ${ unread } in your inbox.": [
-        "받은 편지함에 ${ unread } 를 가지고 있습니다."
+        "받은 메일함에 ${ unread }가 있습니다."
       ],
       "You have **${ count } conversations** stored in this folder": [
         "이 폴더에 **대화 ${ count }**개를 저장했습니다"
@@ -6057,6 +6116,18 @@
       ],
       "You selected **${ count } messages** with this label": [
         "이 라벨에 있는 **메시지 ${ count }개**를 선택했습니다"
+      ],
+      "You selected **${ elementsCount } conversations** in ${ location }": [
+        "${ location }(에)서 **${ elementsCount }개 대화**를 선택했습니다."
+      ],
+      "You selected **${ elementsCount } conversations**.": [
+        "**${ elementsCount }개 대화**를 선택했습니다."
+      ],
+      "You selected **${ elementsCount } messages** in ${ location }": [
+        "${ location }(에)서 **${ elementsCount }개 메시지**를 선택했습니다."
+      ],
+      "You selected **${ elementsCount } messages**.": [
+        "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "\"${ attachmentsFoundKeyword }\" 으로 작성하였지만, 추가된 첨부 파일이 없습니다. 이 메시지를 그대로 전송하시겠습니까?"
@@ -6878,6 +6949,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "보낸 사람: ${ from }"
+      ],
+      "To: ${ to }": [
+        "받는 사람: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7700,6 +7774,9 @@
       "Search name, email or group": [
         "이름, 이메일 및 그룹 검색"
       ],
+      "Search parent folder": [
+        "상위 폴더 검색"
+      ],
       "Select": [
         "선택"
       ],
@@ -7884,7 +7961,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "다음 주소의 연락처가 해당 계정에 종단 간 암호화를 비활성화 했으므로 해당 암호화 기본 설정이 그에 따라 변경되었습니ㅣ다."
+        "다음 주소의 연락처가 해당 계정에 종단 간 암호화를 비활성화 했으므로 해당 암호화 기본 설정이 그에 따라 변경되었습니다."
       ]
     },
     "Send email with errors": {
@@ -7979,13 +8056,13 @@
     },
     "session_recovery:available:info": {
       " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
       ],
       " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
       ],
       " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
@@ -8015,7 +8092,7 @@
         "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
       ],
       "You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -8248,6 +8325,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -8803,6 +8883,12 @@
       "Account suspended": [
         "계정이 정지되었습니다."
       ],
+      "Action all conversations": [
+        "전체 대화 조치"
+      ],
+      "Action all messages": [
+        "모든 메시지 조치"
+      ],
       "Add contact group name": [
         "연락처 그룹 이름 추가"
       ],
@@ -9070,8 +9156,20 @@
       "Mark as unread": [
         "읽지 않음으로 표시"
       ],
+      "Mark conversations as read": [
+        "대화를 읽음으로 표시"
+      ],
+      "Mark conversations as unread": [
+        "대화를 읽지 않음으로 표시"
+      ],
       "Mark email as legitimate": [
         "스팸이 아님"
+      ],
+      "Mark messages as read": [
+        "읽음으로 메시지 표시"
+      ],
+      "Mark messages as unread": [
+        "메시지를 읽지 않음으로 표시"
       ],
       "Merge contacts": [
         "연락처 병합"
@@ -9102,6 +9200,12 @@
       ],
       "More selections": [
         "더 보기"
+      ],
+      "Move all conversations": [
+        "모든 대화 이동"
+      ],
+      "Move all messages": [
+        "모든 메시지 이동"
       ],
       "Move all messages to Archive": [
         "모든 메시지를 보관함으로 이동"
@@ -9398,6 +9502,9 @@
       "Hide side panel": [
         "사이드 패널 숨기기"
       ],
+      "Load image": [
+        "이미지 불러오기"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "사용자에게 서명하거나 암호화 할 때 사용할 PGP 체계를 선택해주세요. PGP/Inline은 일반 텍스트 메시지를 강제합니다"
       ],
@@ -9543,7 +9650,7 @@
         "월요일, ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
-        "9월, ${ formatTime }"
+        "토요일, ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
         "일요일, ${ formatTime }"
@@ -9637,7 +9744,7 @@
         "주의 ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "주의 종일, ${ timesString }"
+        "주의 모든 요일, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
         "주의 금요일, ${ timesString }"
@@ -9693,7 +9800,7 @@
         "주의 ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "주의 종일, ${ untilString }"
+        "주의 모든 요일, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "주의 금요일, ${ untilString }"
@@ -9753,7 +9860,7 @@
         "매 ${ interval }년, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
-        "년간, ${ timesString }"
+        "연간, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -9761,7 +9868,7 @@
         "매 ${ interval }년, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
-        "년간, ${ untilString }"
+        "연간, ${ untilString }"
       ]
     }
   }

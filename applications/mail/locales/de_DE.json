@@ -713,11 +713,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -4866,6 +4866,10 @@
         "${ elementsCount } Unterhaltung wird verschoben",
         "${ elementsCount } Unterhaltungen werden verschoben"
       ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } Konversation wird ungekennzeichnet von:",
+        "${ elementsCount } Konversationen werden ungekennzeichnet von:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } Nachricht wird kategorisiert als:",
         "${ elementsCount } Nachrichten werden kategorisiert als:"
@@ -4881,6 +4885,10 @@
       "${ elementsCount } message will be moved": [
         "${ elementsCount } Nachricht wird verschoben",
         "${ elementsCount } Nachrichten werden verschoben"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } Nachricht wird etikettfrei von:",
+        "${ elementsCount } Nachrichten werden etikettfrei von:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } eingebettetes Bild",
@@ -5045,6 +5053,9 @@
       ],
       "and": [
         "und"
+      ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Alle geplanten oder im Schlummer-Modus befindlichen Nachrichten werden gelöscht."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
@@ -5495,6 +5506,9 @@
       ],
       "Merged": [
         "Zusammengeführt"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Nachrichtenaktionen in Bearbeitung. Dies kann einen Moment dauern."
       ],
       "Message download status:": [
         "Status des Nachrichten-Downloads:"
@@ -5968,6 +5982,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
+      ],
+      "to ${ destinationElement } folder.": [
+        "zum ${ destinationElement } Ordner."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -9072,8 +9089,20 @@
       "(active)": [
         "(aktiv)"
       ],
+      "A filter name is required": [
+        "Ein Filtername ist erforderlich."
+      ],
+      "A filter with this name already exists": [
+        "Ein Filter mit diesem Namen existiert bereits."
+      ],
       "Account suspended": [
         "Konto gesperrt"
+      ],
+      "Action all conversations": [
+        "Aktion für alle Konversationen ausführen"
+      ],
+      "Action all messages": [
+        "Aktion für alle Nachrichten ausführen"
       ],
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"
@@ -9284,6 +9313,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Der Filtername darf nicht nur Leerzeichen enthalten."
       ],
       "Filter on...": [
         "Filtern nach..."
@@ -9591,6 +9623,12 @@
       ],
       "Subject missing": [
         "Betreff fehlt"
+      ],
+      "This field cannot be empty": [
+        "Dieses Feld darf nicht leer sein."
+      ],
+      "This field cannot contain only spaces": [
+        "Dieses Feld darf nicht nur Leerzeichen enthalten."
       ],
       "To": [
         "An"
