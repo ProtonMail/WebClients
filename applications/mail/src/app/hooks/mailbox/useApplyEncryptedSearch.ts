@@ -75,6 +75,7 @@ export const useApplyEncryptedSearch = ({
                 success = await encryptedSearch(setEncryptedSearchResults);
             }
             if (!success) {
+                // We limit the number of results to max 10000 items to avoid API issues
                 if (page >= MAX_TOTAL_RESULTS / pageSize) {
                     // This block will most likely be called two times
                     // Fortunately notification system use a de-duplication system
