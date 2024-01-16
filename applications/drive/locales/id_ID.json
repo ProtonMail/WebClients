@@ -3255,6 +3255,12 @@
       "${ groupCounts } groups found": [
         "${ groupCounts } grup ditemukan"
       ],
+      "${ nbFile } encrypted file.": [
+        "${ nbFile } berkas terenkripsi"
+      ],
+      "${ nbFile } encrypted files...": [
+        "${ nbFile } berkas terenkripsi..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } dijeda"
       ],
@@ -3279,6 +3285,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } dilewati"
+      ],
       "${ speed }/s": [
         "${ speed }/dtk"
       ],
@@ -3286,7 +3295,7 @@
         "${ updated } kontak berhasil diperbarui."
       ],
       "${ uploadName } already exists in this location.": [
-        "${ uploadName } sudah ada di lokasi ini."
+        "${ uploadName } telah ada pada lokasi ini."
       ],
       "(${ memberCount } members)": [
         "(${ memberCount } anggota)"
@@ -3500,6 +3509,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Unduhan dijeda karena masalah koneksi; unduhan akan berlanjut secara otomatis ketika koneksi pulih"
+      ],
+      "Download ready": [
+        "Unduhan telah siap"
       ],
       "Downloaded": [
         "Diunduh"
@@ -3954,6 +3966,9 @@
       "Search Enabled": [
         "Pencarian Diaktifkan"
       ],
+      "Securely downloaded ${ nbFile } files": [
+        "${ nbFile } berkas diunduh secara aman"
+      ],
       "Select a folder to move to.": [
         "Pilih folder tujuan."
       ],
@@ -4004,6 +4019,9 @@
       ],
       "Signature issue": [
         "Masalah tanda tangan"
+      ],
+      "Skipped": [
+        "Dilewati"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Sebagian berkas gagal diunduh. Coba unduh kembali berkas yang bersangkutan."
@@ -4061,6 +4079,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Berkas ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik berkas yang bersangkutan."
+      ],
+      "This item already exists in your library": [
+        "Item ini telah ada pada pustaka Anda"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
@@ -4310,6 +4331,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
+      ],
+      "Your download is in progress": [
+        "Unduhan Anda sedang berlangsung"
       ],
       "Your email will only be used for this one-time verification.": [
         "Surel Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."

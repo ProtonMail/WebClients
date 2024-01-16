@@ -1131,6 +1131,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "კონტაქტის გამოსახულება"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "ფაქსი"
@@ -3330,6 +3335,10 @@
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } გამოტოვებულია",
+        "${ skippedCount } გამოტოვებულია"
+      ],
       "${ speed }/s": [
         "${ speed }/წმ"
       ],
@@ -4067,6 +4076,9 @@
       "Signature issue": [
         "ხელმოწერის შეცდომა"
       ],
+      "Skipped": [
+        "გამოტოვებული"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "ზოგიერთი ფაილის გადმოწერის შეცდომა. სცადეთ თავიდან გადმოწეროთ."
       ],
@@ -4206,6 +4218,9 @@
       "Trash is empty": [
         "სანაგვე ყუთი ცარიელია"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "სცაეთ ${ DRIVE_APP_NAME }. ის სამუდამოდ უფასოა"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -4290,6 +4305,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate }-დან ამ ვერსიამდე აღდგება. ყველა დანარჩენი ვერსია ჯერ კიდევ დაგრჩებათ."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "${ DRIVE_APP_NAME }-თან ერთად, თქვენი მონაცემები გამჭოლი დაშიფვრით იქნება დაცული."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "გნებავთ შემოწმების ახალი კოდის მიღება, თუ შემოწმების ალტერნატიულ მეთოდს გამოიყენებთ?"
       ],
@@ -4319,6 +4337,9 @@
       ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
+      ],
+      "You can now return to the application to continue": [
+        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
@@ -5333,6 +5354,10 @@
         "${ n } ფაილის გადატანა",
         "${ n } ფაილის გადატანა"
       ],
+      "Move ${ n } folder": [
+        "${ n } საქაღალდის გადატანა",
+        "${ n } საქაღალდის გადატანა"
+      ],
       "Move ${ n } item": [
         "${ n } ელემენტის გადატანა",
         "${ n } ელემენტის გადატანა"
@@ -5550,6 +5575,9 @@
       ],
       "Search for name or email": [
         "სახელის ან ელფოსტის ძებნა"
+      ],
+      "Search parent folder": [
+        "მშობელ საქაღალდეში ძებნა"
       ],
       "Select": [
         "აირჩიეთ"
@@ -5897,6 +5925,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "ფასიანი ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
