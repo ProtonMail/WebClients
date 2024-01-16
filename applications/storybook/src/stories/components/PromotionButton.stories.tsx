@@ -25,6 +25,12 @@ export const ExampleIconOnly = () => (
     </PromotionButton>
 );
 
+export const ExampleResponsive = () => (
+    <PromotionButton iconName="upgrade" icon={true} responsive>
+        Icon Ghost
+    </PromotionButton>
+);
+
 export const ExampleIconSmall = () => (
     <PromotionButton iconName="brand-proton-mail-filled-plus" icon={true} upsell>
         Upsell

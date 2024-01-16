@@ -95,6 +95,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     as="button"
                     type="button"
                     color="norm"
+                    responsive
                     shape={offerConfig.shapeButton || 'solid'}
                     iconName={offerConfig.icon || 'bag-percent'}
                     onClick={() => {
