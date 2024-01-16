@@ -5825,15 +5825,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } unterstützt DKIM-Signierung für eigene Domains. Um die DKIM-Authentifizierung zu verwenden, füge bitte den folgenden CNAME-Eintrag zu deinen DNS-Einstellungen für diese Domain hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
-      ],
       "${ n } address": [
         "${ n } Adresse",
         "${ n } Adressen"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } hat keinen Einfluss auf die Zustellung von E-Mails, aber es wird empfohlen, ${ quarantine } für eine bessere Sicherheit zu verwenden."
       ],
       "${ number } city": [
         "${ number } Stadt",
@@ -6194,11 +6188,11 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Bevor du E-Mails unter deinen eigenen Domain-Adressen in ${ MAIL_APP_NAME } empfangen kannst, musst du zuerst folgenden MX-Eintrag zu deiner DNS-Zone hinzufügen. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Abgerechnet zum Preis von ${ price }"
@@ -6540,9 +6534,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Wenn die Zeitzone des Systems nicht mit der aktuellen Zeitzoneneinstellung übereinstimmt, wirst du aufgefordert, diese zu aktualisieren (höchstens einmal täglich)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Wenn diese Domain derzeit E-Mails empfängt, wähle den Tab „${ boldAddresses }“ und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, um einen reibungslosen Übergang zu gewährleisten."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Wenn dies auf eine alte Kennwortzurücksetzung zurückzuführen ist, kannst du verhindern, dass die Meldung erneut angezeigt wird."
       ],
@@ -6567,9 +6558,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Wenn du Zwei-Faktor-Authentifizierung noch nie zuvor verwendet hast, empfehlen wir dir dringend ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Wenn du sowohl SPF als auch DKIM eingerichtet hast, kannst du mit DMARC festlegen, wie andere E-Mail-Dienste Nachrichten für deine Domain zustellen sollen, wenn sowohl SPF- als auch DKIM-Prüfungen fehlgeschlagen sind. Dies kann es Spammern erschweren, deine Identität vorzutäuschen - kann aber auch zu Zustellungsproblemen führen, wenn dies nicht ordnungsgemäß eingestellt ist."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Wenn du dein Passwort verlierst und deshalb dein Konto zurücksetzen musst, ist es ${ boldImperative } dass du eine ${ boldAccountRecovery } eingerichtet hast."
       ],
@@ -6590,9 +6578,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Wenn du einen bestehenden SPF-Eintrag behalten möchtest, kannst du einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstelle keinesfalls mehrere SPF-Einträge."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
@@ -6624,9 +6609,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "WICHTIG: Einige Registrare akzeptieren keine CNAME-Werte mit einem Punkt am Ende (während andere dies wiederum vorschreiben). Wenn dein Registrar deine CNAME-Einträge nicht akzeptiert, lösche bitte den Punkt am Ende jedes CNAME-Wertes und versuche es erneut."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
@@ -6692,9 +6674,6 @@
       "Just send them your personal referral link.": [
         "Sende ihnen einfach deinen persönlichen Empfehlungslink."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Belasse diese Einträge so lange in deiner DNS-Zone, wie du DKIM verwenden möchtest."
-      ],
       "Key deletion is irreversible!": [
         "Das Löschen eines Schlüssels kann nicht rückgängig gemacht werden!"
       ],
@@ -6757,6 +6736,9 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Protokolle enthalten Authentifizierungsversuche aller ${ BRAND_NAME }-Dienste die deine ${ BRAND_NAME_TWO }-Anmeldedaten verwenden."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Große E-Mail-Dienste können deine E-Mails zurückweisen oder als Spam filtern, wenn SPF/DKIM/DMARC fehlen oder nicht richtig eingerichtet sind."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
@@ -7192,9 +7174,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF wird benutzt um anzugeben, wem es erlaubt ist E-Mails von einer Domain zu versenden. Wir empfehlen dringend, ${ MAIL_APP_NAME } deinem SPF-Eintrag hinzuzufügen. Bitte füge den folgenden TXT-Eintrag deiner DNS-Zone hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
       "Stay tuned for future promotions.": [
         "Bleibe auf dem Laufenden für zukünftige Werbeaktionen."
@@ -7975,14 +7954,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Füge für jeden Benutzer deiner Organisation eine neue E-Mail-Adresse hinzu."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Füge einen neuen Benutzer deiner Organisation hinzu und erstelle für ihn eine E-Mail-Adresse."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Aus Sicherheitsgründen müssen wir überprüfen, ob du der Eigentümer von ${ domainName } bist. Bitte füge den folgenden DNS-TXT-Eintrag zu deiner Domain hinzu. Dies kann normalerweise im Verwaltungsportal deines Domainnamen-Registrars erfolgen."
       ]
     },
     "Info for payment methods": {
@@ -8802,9 +8775,6 @@
       "Gift code": [
         "Gutscheincode"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Hier ist ein einfacher DMARC-Eintrag, der dir ausschließlich Berichte zusendet."
-      ],
       "Hide password": [
         "Passwort ausblenden"
       ],
@@ -9024,14 +8994,8 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Die Phrase besteht aus 12 einzigartigen Wörtern in einer bestimmten Reihenfolge."
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Bitte füge alle 3 der folgenden CNAME-Einträge hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Bitte füge den folgenden MX-Eintrag hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Bitte füge die folgenden beiden MX-Einträge hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
       ],
       "Please select files to upload": [
         "Bitte Dateien zum Hochladen auswählen"
@@ -9276,11 +9240,6 @@
         "Dauer"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Bitte füge folgenden TXT-Eintrag hinzu:"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -9466,6 +9425,9 @@
       ],
       "Help translate": [
         "Beim Übersetzen helfen"
+      ],
+      "here": [
+        "hier"
       ],
       "How to pay with Bitcoin?": [
         "Wie bezahlt man mit Bitcoin?"
@@ -13193,6 +13155,12 @@
       "4. Select a server to connect to": [
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
       ],
+      "A filter name is required": [
+        "Ein Filtername ist erforderlich."
+      ],
+      "A filter with this name already exists": [
+        "Ein Filter mit diesem Namen existiert bereits."
+      ],
       "Accessibility": [
         "Barrierefreiheit"
       ],
@@ -13619,6 +13587,9 @@
         "Das Erstellen von ${ failedUsers.length } Benutzerkonto ist fehlgeschlagen.",
         "Das Erstellen von ${ failedUsers.length } Benutzerkonten ist fehlgeschlagen."
       ],
+      "Filter name cannot contain only spaces": [
+        "Der Filtername darf nicht nur Leerzeichen enthalten."
+      ],
       "Filters": [
         "Filter"
       ],
@@ -14025,6 +13996,12 @@
       ],
       "Theme": [
         "Farbschema"
+      ],
+      "This field cannot be empty": [
+        "Dieses Feld darf nicht leer sein."
+      ],
+      "This field cannot contain only spaces": [
+        "Dieses Feld darf nicht nur Leerzeichen enthalten."
       ],
       "Time zone": [
         "Zeitzone"
@@ -14701,9 +14678,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Es kann bis zu einem Tag dauern, bis DNS-Änderungen aktualisiert werden."
       ]
     },
     "Weak personal key warning": {

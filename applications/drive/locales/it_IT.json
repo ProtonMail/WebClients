@@ -401,7 +401,7 @@
         "Seleziona per l'eliminazione"
       ],
       "Maximize": [
-        "Ingrandisci"
+        "Massimizza"
       ],
       "Maximize transfers": [
         "Massimizza i trasferimenti"
@@ -413,7 +413,7 @@
         "Unisci contatti"
       ],
       "Minimize": [
-        "Riduci"
+        "Minimizza"
       ],
       "Minimize transfers": [
         "Minimizza i trasferimenti"
@@ -3350,7 +3350,7 @@
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } ignorati",
+        "${ skippedCount } ignorato",
         "${ skippedCount } ignorati"
       ],
       "${ speed }/s": [
@@ -3391,7 +3391,7 @@
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
       "All encrypted files": [
-        "Tutti i file crittografati"
+        "File crittografati"
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
@@ -3586,7 +3586,7 @@
         "Download in pausa a causa di un problema di connessione; verrà ripreso automaticamente"
       ],
       "Download ready": [
-        "Download pronto"
+        "Scaricamento pronto"
       ],
       "Downloaded": [
         "Scaricato"
@@ -3595,7 +3595,7 @@
         "Scaricamento"
       ],
       "Downloading all encrypted files": [
-        "Download di tutti i file crittografati"
+        "Scaricamento di tutti i file crittografati in corso"
       ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
@@ -4059,10 +4059,10 @@
         "${ nbFile } file scaricati in modo sicuro"
       ],
       "Securely downloaded all encrypted files": [
-        "Tutti i file crittografati sono stati scaricati in modo sicuro"
+        "File scaricati in modo sicuro"
       ],
       "Securely downloaded all files": [
-        "Tutti i file sono stati scaricati in modo sicuro"
+        "File scaricati in modo sicuro"
       ],
       "Select a folder to move to.": [
         "Seleziona la cartella di destinazione."
@@ -4436,7 +4436,7 @@
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
       "Your download is in progress": [
-        "Download in corso"
+        "Scaricamento in corso"
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
@@ -4678,7 +4678,7 @@
         "Scarica comunque"
       ],
       "Downloading": [
-        "Download in corso"
+        "Scaricamento in corso"
       ],
       "Downloading ${ percentageValue }%": [
         "Download ${ percentageValue }%"

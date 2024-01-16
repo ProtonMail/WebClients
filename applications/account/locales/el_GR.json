@@ -5817,15 +5817,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Το ${ MAIL_APP_NAME } υποστηρίζει υπογραφές DKIM για προσαρμοσμένους τομείς. Για χρήση ταυτοποίησης DKIM, παρακαλούμε προσθέστε την ακόλουθη εγγραφή CNAME στις ρυθμίσεις DNS για αυτόν τον τομέα, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
-      ],
       "${ n } address": [
         "${ n } διεύθυνση",
         "${ n } διευθύνσεις"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } δεν έχει καμία επίδραση στην παράδοση ηλεκτρονικού ταχυδρομείου, αλλά προτείνουμε ${ quarantine } για καλύτερη ασφάλεια."
       ],
       "${ number } city": [
         "${ number } πόλη",
@@ -6186,9 +6180,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Προτού μπορέσετε να λάβετε μηνύματα σε διευθύνσεις των προσαρμοσμένων τομέων σας ${ MAIL_APP_NAME }, χρειάζεται να προσθέσετε τις ακόλουθες εγγραφές MX στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
@@ -6532,9 +6523,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Εάν η ζώνη ώρας του συστήματος δεν ταιριάζει με την τρέχουσα προτίμηση ζώνης ώρας, θα σας ζητηθεί να την ενημερώσετε (το πολύ μία φορά την ημέρα)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Εάν αυτός ο τομέας λαμβάνει αυτή τη στιγμή email, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις email πριν αλλάξετε την εγγραφή MX για να εξασφαλίσετε μια ομαλή μετάβαση."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Εάν αυτό είναι εξαιτίας μιας παλιάς επαναφοράς κωδικού, μπορείτε να σταματήσετε την επανεμφάνιση του μηνύματος"
       ],
@@ -6559,9 +6547,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Αν δεν έχετε χρησιμοποιήσει ποτέ έλεγχο ταυτότητας δύο παραγόντων (2FA) πριν, σας συνιστούμε ανεπιφύλακτα ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Αν έχετε ρυθμίσει και SPF και DKIM, το DMARC σάς επιτρέπει να καθορίσετε τον τρόπο με τον οποίο άλλες υπηρεσίες ηλεκτρονικού ταχυδρομείου πρέπει να παραδίδουν ηλεκτρονικό ταχυδρομείο για τον domain σας, αν και οι δύο έλεγχοι SPF και DKIM απέτυχαν. Αυτό μπορεί να δυσκολέψει την αποστολή ανεπιθύμητων μηνυμάτων που υποτίθεται ότι είστε εσείς, αλλά μπορεί επίσης να προκαλέσει και προβλήματα παράδοσης εάν δεν γίνει σωστά."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Εάν χάσετε τον κωδικό πρόσβασης σας και πρέπει να επαναφέρετε τον λογαριασμό σας, ${ boldImperative } ότι έχετε ${ boldAccountRecovery } ορισμένα."
       ],
@@ -6582,9 +6567,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Εάν πρόσφατα έχετε επαναφέρει τον κωδικό σας, μπορείτε να χρησιμοποιήσετε μία μέθοδο επαναφοράς δεδομένων για να ξεκλειδώσετε τα δεδομένα σας"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Εάν θέλετε να διατηρήσετε μια υπάρχουσα εγγραφή SPF, μπορείτε να προσθέσετε ${ spf } σε αυτήν μετά από το ${ spfValue }. Μην δημιουργείτε πολλαπλές εγγραφές SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
@@ -6616,9 +6598,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ΣΗΜΑΝΤΙΚΟ: Ορισμένοι καταχωρητές δεν αποδέχονται τιμές CNAME με τελεία στο τέλος (ενώ άλλοι το απαιτούν αυτό). Εάν ο καταχωρητής σας δεν αποδέχεται τα αρχεία CNAME, διαγράψτε την περίοδο στο τέλος της κάθε τιμής CNAME και δοκιμάστε ξανά."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
@@ -6683,9 +6662,6 @@
       ],
       "Just send them your personal referral link.": [
         "Απλώς αποστείλετε τους τον προσωπικό σας σύνδεσμο παραπομπής."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Διατηρήστε αυτές τις εγγραφές στο DNS σας για όσο διάστημα θέλετε να χρησιμοποιήσετε το DKIM."
       ],
       "Key deletion is irreversible!": [
         "Η διαγραφή κλειδιών είναι μη αναστρέψιμη!"
@@ -7184,9 +7160,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Ορισμένοι από τους διαθέσιμους διακομιστές σας μπορούν να χρησιμοποιηθούν μόνο σε συγκεκριμένες χώρες λόγω πρόσφατων καταργήσεων"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Το SPF χρησιμοποιείται για να καθορίσει ποιος επιτρέπεται να στείλει μηνύματα για τον τομέα, για αυτό συνιστούμε έντονα να συμπεριλάβετε το ${ MAIL_APP_NAME } στην εγγραφή σας SPF. Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
       "Stay tuned for future promotions.": [
         "Μείνετε συντονισμένοι για μελλοντικές προσφορές."
@@ -7967,14 +7940,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Προσθέστε μια νέα διεύθυνση για οποιονδήποτε χρήστη του οργανισμού σας."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Προσθέστε ένα νέο χρήστη στον οργανισμό σας και δημιουργήστε μια διεύθυνση γι 'αυτόν."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Για λόγους ασφαλείας, πρέπει να επαληθεύσουμε ότι είστε ο κάτοχος του τομέα ${ domainName }. Προσθέστε την ακόλουθη εγγραφή DNS TXT στο domain σας. Αυτό μπορεί να γίνει συνήθως στον πίνακα ελέγχου του καταχωρητή ονομάτων τομέα σας domain name registrar."
       ]
     },
     "Info for payment methods": {
@@ -8794,9 +8761,6 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Ακολουθεί μια βασική εγγραφή DMARC που δεν κάνει τίποτα άλλο εκτός από τα μηνύματα που αναφέρετε."
-      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
@@ -9015,15 +8979,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Η φράση αποτελείται από 12 μοναδικές λέξεις σε συγκεκριμένη σειρά"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Προσθέστε και τις 3 από τις ακόλουθες εγγραφές CNAME. Σημειώστε ότι για την ενημέρωση των εγγραφών DNS ενδέχεται να χρειαστούν αρκετές ώρες."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Προσθέστε την ακόλουθη εγγραφή MX. Σημειώστε ότι οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε ότι οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
       ],
       "Please select files to upload": [
         "Παρακαλούμε επιλέξτε αρχεία για ανέβασμα"
@@ -9266,11 +9221,6 @@
     "Label for default event settings": {
       "Duration": [
         "Διάρκεια"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Προσθέστε την ακόλουθη εγγραφή TXT:"
       ]
     },
     "Label for new member": {
@@ -14664,9 +14614,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Μπορεί να χρειαστεί έως και μια ημέρα για να ενημερωθούν οι αλλαγές DNS."
       ]
     },
     "Weak personal key warning": {

@@ -5674,14 +5674,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } 支援自訂網域的 DKIM 簽章。如要使用 DKIM 驗證，請在此網域的 DNS 設定中加入以下的 CNAME 記錄。這通常可以在您的網域名稱註冊商提供的控制面板上完成。"
-      ],
       "${ n } addresses": [
         "${ n } 個電郵位址"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } 對電郵遞送沒有影響，但我們建議 ${ quarantine } 來提昇安全性。"
       ],
       "${ number } cities": [
         "${ number } 座城市"
@@ -6019,9 +6013,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "要在 ${ MAIL_APP_NAME } 以自訂網域位址接收電子郵件，您需要新增以下 MX 記錄到您的 DNS 中。這通常可以在您的網域名稱註冊機構的控制台中設定完成。"
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需創建加密金鑰，才可用來傳送和接收電郵。"
       ],
@@ -6355,9 +6346,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "若系統時區與目前時區偏好設定不符，將詢問您是否更新 (最多每天一次)。"
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "如果此網域目前正在接收電郵，請選取 ${ boldAddresses } 分頁並加入所有作用中的電郵位址，然後再更動 MX 紀錄以確保平穩過渡。"
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "如果這是由於舊的密碼重設所造成，您可以停止該消息再次顯示"
       ],
@@ -6382,9 +6370,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "如果您先前從未用過兩步驟驗證，我們強烈推薦您閱讀 ${ guideButton }。"
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其它電郵服務該如何遞送屬於您的網域的電郵。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "若您遺失您的密碼並需要重設您的帳號，請${ boldImperative }您備妥${ boldAccountRecovery }。"
       ],
@@ -6405,9 +6390,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您最近重設了您的密碼，您可以使用資料復原方法去解鎖您的資料"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "若您希望保留既有的 SPF 記錄，您可選擇僅在 ${ spfValue } 之後加入 ${ spf } 到其中。不要創建多個 SPF 記錄。"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "若您想要將此帳號與其它的結合，則請不要刪除它。"
@@ -6438,9 +6420,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "重要提示：一些註冊機構不接受 (相反某些則要求) CNAME 數值以英文句號作結尾。如果您的註冊機構不接受您的 CNAME 記錄，請刪除每個 CNAME 數值結尾的英文句號，然後再試一次。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -6504,9 +6483,6 @@
       ],
       "Just send them your personal referral link.": [
         "只需將您的個人推介連結傳送給他們即可。"
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "請在您的 DNS 一直保留這些記錄，直到您不欲再使用 DKIM 為止。"
       ],
       "Key deletion is irreversible!": [
         "密鑰刪除是無法還原的！"
@@ -6999,9 +6975,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "因為近期的移除，部份可用的伺服器僅能在特定國家使用"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF 是用來指定使用者，已獲授權足以網域身分進行傳送電子郵件。因此，我們強烈建議將 ${ MAIL_APP_NAME } 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊商的控制台完成。"
       ],
       "Stay tuned for future promotions.": [
         "持續關注未來的促銷活動。"
@@ -7747,14 +7720,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "為您組織的任何一個使用者加入位址。"
-      ],
       "Add a new user to your organization and create an address for it.": [
         "將新使用者加入到您的組織並為其創建位址。"
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "基於安全理由，我們需要驗證您是 ${ domainName } 的擁有者。請加入以下的 DNS TXT 記錄到您的網域中。這通常可以在您的網域名稱註冊機構提供的控制台中達成。"
       ]
     },
     "Info for payment methods": {
@@ -8563,9 +8530,6 @@
       "Gift code": [
         "禮品代碼"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "這是一個基本的 DMARC 記錄，唯一的作用是以電郵發送報告給您。"
-      ],
       "Hide password": [
         "隱藏密碼"
       ],
@@ -8784,15 +8748,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "短語包含12個獨一無二的單字以特定的順序排列"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "請加入下列全部三個 CNAME 記錄。請注意：DNS 記錄可能需時數小時更新。"
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "請加入以下的 MX 記錄。請注意：DNS 記錄可能需時數小時更新。"
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "請加入以下的 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ],
       "Please select files to upload": [
         "請選取要上傳的檔案"
@@ -9035,11 +8990,6 @@
     "Label for default event settings": {
       "Duration": [
         "為期"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "請加入以下的 TXT 記錄："
       ]
     },
     "Label for new member": {
@@ -12070,6 +12020,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "進階版 ${ appName1 } 與 ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "進階 ${ appName1 }、${ appName2 } 與 ${ appName3 }"
+      ],
       "Premium early access": [
         "進階版搶先體驗"
       ],
@@ -14296,9 +14249,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "成功驗證之後，請勿移除此 TXT 記錄，因為這是用來確認您繼續擁有此網域。"
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS 變更可能需時長達一天才更新。"
       ]
     },
     "Weak personal key warning": {
