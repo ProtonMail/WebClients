@@ -38,7 +38,7 @@ export const createAuthStore = (store: Store) => {
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
-            if (session.LocalID) authStore.setLocalID(session.LocalID);
+            if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
