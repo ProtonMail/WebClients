@@ -22,7 +22,7 @@ export default async function startUploadJobs(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
-    networkErrorCallback: (error: string) => void,
+    networkErrorCallback: (error: Error) => void,
     log: LogCallback,
     uploadBlockDataCallback = uploadBlockData
 ) {
@@ -39,7 +39,7 @@ async function startUploadJob(
     pauser: Pauser,
     generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
-    networkErrorCallback: (error: string) => void,
+    networkErrorCallback: (error: Error) => void,
     log: LogCallback,
     uploadBlockDataCallback = uploadBlockData
 ) {
@@ -71,7 +71,7 @@ async function uploadBlock(
     block: UploadingBlockControl,
     pauser: Pauser,
     progressCallback: (progress: number) => void,
-    networkErrorCallback: (error: string) => void,
+    networkErrorCallback: (error: Error) => void,
     log: LogCallback,
     uploadBlockDataCallback = uploadBlockData,
     numRetries = 0
@@ -189,7 +189,7 @@ async function uploadBlock(
         if (networkErrorCallback && getIsConnectionIssue(err)) {
             log(`Connection issue, waiting for network: ${err}`);
             pauser.pause();
-            networkErrorCallback(err.message || err.status);
+            networkErrorCallback(err);
             await pauser.waitIfPaused();
             log(`Resuming upload`);
             return uploadBlock(block, pauser, progressCallback, networkErrorCallback, log, uploadBlockDataCallback, 0);
