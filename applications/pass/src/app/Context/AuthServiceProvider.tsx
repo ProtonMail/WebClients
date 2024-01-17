@@ -13,6 +13,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import {
@@ -107,12 +108,14 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onAuthorized: (_, localID) => {
+                client.current.setStatus(AppStatus.AUTHORIZED);
+
                 const redirect = stripLocalBasenameFromPathname(redirectPath.current);
                 history.replace((getBasename(localID) ?? '/') + redirect);
                 onboarding.init().catch(noop);
-                client.current.setStatus(AppStatus.AUTHORIZED);
-                store.dispatch(bootIntent());
                 client.current.setStatus(AppStatus.BOOTING);
+
+                store.dispatch(bootIntent());
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
@@ -201,7 +204,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onNotification: (notification) =>
                 createNotification({
                     ...notification,
-                    key: 'authservice',
+                    key: notification.key ?? NotificationKey.AUTH,
                     type: 'error',
                     deduplicate: true,
                 }),
