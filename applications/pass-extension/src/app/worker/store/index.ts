@@ -9,7 +9,7 @@ import createSagaMiddleware from 'redux-saga';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/actions';
+import { draftsGarbageCollect, settingsEditIntent, startEventPolling } from '@proton/pass/store/actions';
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
@@ -116,6 +116,11 @@ const options: RootSagaOptions = {
 
     /* Update the extension's badge count on every item state change */
     onItemsUpdated: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+
+    onLocaleUpdated: withContext((ctx, locale) => {
+        store.dispatch(settingsEditIntent('locale', { locale }));
+        return ctx.service.i18n.setLocale(locale);
+    }),
 
     /* Either broadcast notification or buffer it
      * if no target ports are opened. Assume that if no

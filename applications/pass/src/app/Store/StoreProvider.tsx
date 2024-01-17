@@ -10,6 +10,7 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
     draftsGarbageCollect,
     passwordHistoryGarbageCollect,
+    settingsEditIntent,
     startEventPolling,
     stateSync,
     stopEventPolling,
@@ -20,6 +21,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
+import { i18n } from '../../lib/i18n';
 import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClientRef } from '../Context/ClientProvider';
@@ -56,6 +58,10 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         client.current.setStatus(AppStatus.ERROR);
                         if (res.clearCache) void deletePassDB(authStore.getUserID()!);
                     }
+                },
+                onLocaleUpdated: (locale: string) => {
+                    store.dispatch(settingsEditIntent('locale', { locale }));
+                    void i18n.setLocale(locale);
                 },
                 onNotification: pipe(enhance, createNotification),
                 setCache: async (encryptedCache) => {
