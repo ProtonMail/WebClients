@@ -38,7 +38,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
-        <div className="flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg">
+        <div className="flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg">
             <PublicTopBanners />
             <ElectronDraggeableHeaderWrapper />
             <header

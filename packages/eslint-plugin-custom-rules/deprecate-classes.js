@@ -188,15 +188,15 @@ const deprecatedClassNames = [
     },
     {
         deprecatedClassName: 'flex-flex-children',
-        suggestedClassName: 'flex and children-flex',
+        suggestedClassName: 'flex and *:flex',
     },
     {
         deprecatedClassName: 'flex-items-center',
-        suggestedClassName: 'children-items-center',
+        suggestedClassName: '*:items-center',
     },
     {
         deprecatedClassName: 'inline-flex-vcenter',
-        suggestedClassName: 'inline-flex and children-self-center',
+        suggestedClassName: 'inline-flex and *:self-center',
     },
     {
         deprecatedClassName: 'flex-item-centered-vert',
@@ -204,7 +204,7 @@ const deprecatedClassNames = [
     },
     {
         deprecatedClassName: 'flex-no-min-children',
-        suggestedClassName: 'flex and children-min-size-auto',
+        suggestedClassName: 'flex and *:min-size-auto',
     },
     {
         deprecatedClassName: 'hidden-empty',
@@ -233,6 +233,14 @@ const deprecatedClassNames = [
     {
         deprecatedClassName: 'ratio-container-5-1',
         suggestedClassName: 'ratio-5/1',
+    },
+    {
+        deprecatedClassName: 'no-pointer-events',
+        suggestedClassName: 'pointer-events-none',
+    },
+    {
+        deprecatedClassName: 'increase-click-surface',
+        suggestedClassName: 'expand-click-area',
     },
 ];
 

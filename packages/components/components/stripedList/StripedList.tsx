@@ -9,7 +9,7 @@ interface StripedListProps {
 }
 
 const StripedList = ({ children, alternate = 'even', className }: StripedListProps) => (
-    <ul className={clsx(alternate === 'even' ? 'bg-weak-even' : 'bg-weak-odd', 'unstyled', className)}>
+    <ul className={clsx(alternate === 'even' ? 'even:bg-weak' : 'odd:bg-weak', 'unstyled', className)}>
         {Children.map(children, (child) => {
             if (isValidElement(child)) {
                 return child;

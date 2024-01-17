@@ -187,7 +187,7 @@ const EventForm = ({
     const descriptionRow = (
         <IconRow
             icon="text-align-left"
-            iconClassName="on-rtl-mirror"
+            iconClassName="rtl:mirror"
             title={c('Label').t`Description`}
             id={DESCRIPTION_INPUT_ID}
         >
@@ -360,7 +360,12 @@ const EventForm = ({
                 isColorPerEventEnabled={isColorPerEventEnabled}
             />
             {isColorPerEventEnabled && (
-                <EventColorSelect model={model} setModel={setModel} isSmallViewport={isSmallViewport} isDrawerApp={isDrawerApp} />
+                <EventColorSelect
+                    model={model}
+                    setModel={setModel}
+                    isSmallViewport={isSmallViewport}
+                    isDrawerApp={isDrawerApp}
+                />
             )}
         </IconRow>
     );
