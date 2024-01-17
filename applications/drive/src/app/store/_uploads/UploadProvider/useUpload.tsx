@@ -3,9 +3,11 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { FileThresholdModalType, useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
@@ -57,8 +59,9 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
         const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
         const remaining = control.calculateRemainingUploadBytes();
         await call(); // Process events to get updated UsedSpace.
-        const { MaxSpace, UsedSpace } = await getUser();
-        const hasEnoughSpace = MaxSpace > UsedSpace + remaining + totalFileListSize;
+        const user = await getUser();
+        const space = getAppSpace(getSpace(user, storageSplitEnabled), APPS.PROTONDRIVE);
+        const hasEnoughSpace = space.maxSpace > space.usedSpace + remaining + totalFileListSize;
         return { hasEnoughSpace, total: totalFileListSize };
     };
 
