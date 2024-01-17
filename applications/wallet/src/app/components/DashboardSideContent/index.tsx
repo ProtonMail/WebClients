@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import { isNumber } from 'lodash';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
@@ -21,7 +22,7 @@ export const DashboardSideContent = ({ transactions, walletId }: Props) => {
 
                 <ButtonLike
                     as={Link}
-                    to={walletId ? `/transfer#mode=send&walletId=${walletId}` : '/transfer#mode=send'}
+                    to={isNumber(walletId)! ? `/transfer#mode=send&walletId=${walletId}` : '/transfer#mode=send'}
                     size="large"
                     className="w-full mt-3"
                 >
@@ -29,7 +30,7 @@ export const DashboardSideContent = ({ transactions, walletId }: Props) => {
                 </ButtonLike>
                 <ButtonLike
                     as={Link}
-                    to={walletId ? `/transfer#walletId=${walletId}` : '/transfer'}
+                    to={isNumber(walletId) ? `/transfer#walletId=${walletId}` : '/transfer'}
                     size="large"
                     className="w-full mt-3"
                 >
@@ -47,7 +48,7 @@ export const DashboardSideContent = ({ transactions, walletId }: Props) => {
                     <div>
                         <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard')
                             .t`Last transactions`}</h2>
-                        <TransactionHistoryOverview transactions={transactions} />
+                        <TransactionHistoryOverview walletId={walletId} transactions={transactions} />
                     </div>
                 </>
             )}

@@ -31,12 +31,12 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
         <div className="mt-14">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
 
-            <div className="flex flex-row justify-space-evenly">
+            <div className="flex flex-row">
                 <Card
                     data-testid="lightning-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom mr-6 mt-4 py-3"
-                    style={{ '--w-custom': '16rem' }}
+                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mx-auto mt-4 py-3"
+                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
                     <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
@@ -56,8 +56,8 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                 <Card
                     data-testid="onchain-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom mr-6 mt-4 py-3"
-                    style={{ '--w-custom': '16rem' }}
+                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mx-auto mt-4 py-3"
+                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
                     <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
@@ -76,7 +76,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
 
                 <ButtonLike
                     rounded
-                    className="light-gradient-card flex w-custom h-custom mr-6 mt-4"
+                    className="light-gradient-card flex w-custom h-custom mx-auto mt-4"
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                     as={Card}
                     onClick={() => {

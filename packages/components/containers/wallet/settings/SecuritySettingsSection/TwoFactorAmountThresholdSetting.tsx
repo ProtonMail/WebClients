@@ -17,7 +17,7 @@ export const TwoFactorAmountThresholdSetting = () => {
                 </label>
             </SettingsLayoutLeft>
             {/* TODO: Connect this selector to API */}
-            <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
+            <SettingsLayoutRight className="pt-2 flex items-center">
                 <InputFieldTwo type="number" min={0} id="2fa-amount-threshold" />
             </SettingsLayoutRight>
         </SettingsLayout>

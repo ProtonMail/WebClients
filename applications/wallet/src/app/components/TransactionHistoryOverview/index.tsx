@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
+import { isNumber } from 'lodash';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
+import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
@@ -9,11 +12,12 @@ import { BitcoinAmount } from '../../atoms';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
 
 interface Props {
+    walletId?: number;
     transactions: IWasmSimpleTransactionArray;
     max?: number;
 }
 
-export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => {
+export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: Props) => {
     return (
         <>
             <ul className="p-0 mt-2">
@@ -51,8 +55,13 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                     })}
             </ul>
 
-            {/* TODO: connect with transaction history page when done */}
-            <Button shape="underline">{c('Wallet Dashboard').t`See all transactions`} </Button>
+            <ButtonLike
+                as={Link}
+                to={isNumber(walletId)! ? `/transactions#walletId=${walletId}` : '/transactions'}
+                shape="underline"
+            >
+                {c('Wallet Dashboard').t`See all transactions`}{' '}
+            </ButtonLike>
         </>
     );
 };
