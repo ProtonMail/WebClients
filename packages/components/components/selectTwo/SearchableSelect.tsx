@@ -194,9 +194,20 @@ const SearchableSelect = <V extends any>({
                                 }
 
                                 if (e.key === 'Enter' && pressedDown.current) {
-                                    if (focusedIndex) {
+                                    if (focusedIndex === null) {
+                                        return;
+                                    }
+
+                                    const focusedOptionComponentProps = optionChildren[focusedIndex].props;
+                                    const focusedOptionValue = optionValues[focusedIndex];
+
+                                    if (focusedOptionComponentProps.disabled === true) {
+                                        return;
+                                    }
+
+                                    if (focusedOptionValue) {
                                         handleChange({
-                                            value: optionValues[focusedIndex],
+                                            value: focusedOptionValue,
                                             selectedIndex: focusedIndex,
                                         });
 
