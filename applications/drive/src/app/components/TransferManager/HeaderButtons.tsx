@@ -12,6 +12,7 @@ import {
     isTransferSkipped,
 } from '../../utils/transfer';
 import Buttons from './Buttons';
+import DownloadLogsButton from './DownloadLogsButton';
 import { TransferManagerButtonProps } from './interfaces';
 import { Download, TransferType, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
@@ -21,6 +22,7 @@ type TransferManagerEntry = { transfer: Upload | Download; type: TransferType };
 interface HeaderButtonProps {
     entries: TransferManagerEntry[];
     className: string;
+    showDownloadLog: boolean;
 }
 
 const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfer;
@@ -32,7 +34,7 @@ const isInvalidForCancellation = (transfer: Upload | Download) =>
     isTransferFinalizing(transfer) ||
     isTransferDone(transfer);
 
-const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
+const HeaderButton = ({ entries, className, showDownloadLog = false }: HeaderButtonProps) => {
     const transferManagerControls = useTransferControls();
 
     const areAllActiveTransfersPaused = entries
@@ -103,7 +105,9 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
 
     return (
         <div className={clsx(['flex', 'flex-nowrap', 'justify-end', 'overflow-hidden', 'shrink-0', className])}>
-            <Buttons buttons={buttons} className="shrink-0" />
+            <Buttons buttons={buttons} className="shrink-0">
+                {showDownloadLog && <DownloadLogsButton onClick={transferManagerControls.downloadLogs} />}
+            </Buttons>
         </div>
     );
 };
