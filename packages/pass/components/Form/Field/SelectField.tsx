@@ -34,7 +34,7 @@ export const SelectField: FC<SelectFieldProps> = ({
                 assistContainerClassName="empty:hidden"
                 caretIconName="chevron-down"
                 error={error}
-                labelContainerClassName="increase-click-surface color-weak m-0 text-normal text-sm"
+                labelContainerClassName="expand-click-area color-weak m-0 text-normal text-sm"
                 originalPlacement="bottom"
                 renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
                 anchorRef={fieldBoxRef as MutableRefObject<any>}

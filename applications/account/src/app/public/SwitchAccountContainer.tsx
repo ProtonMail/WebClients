@@ -207,7 +207,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                         >
                             <button
                                 type="button"
-                                className="text-left increase-click-surface outline-none--at-all"
+                                className="text-left expand-click-area outline-none--at-all"
                                 title={continueWithText}
                                 aria-label={continueWithText}
                                 onClick={() => {

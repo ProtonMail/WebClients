@@ -17,7 +17,7 @@ const Buttons = ({ className, buttons, id, children }: TransfersManagerButtonsPr
                         type="button"
                         disabled={disabled}
                         onClick={onClick}
-                        className="transfers-manager-list-item-controls-button on-rtl-mirror"
+                        className="transfers-manager-list-item-controls-button rtl:mirror"
                         data-testid={testId ? testId : undefined}
                     >
                         <Icon size={12} name={iconName} alt={title} />

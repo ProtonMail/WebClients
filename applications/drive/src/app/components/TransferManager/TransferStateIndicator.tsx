@@ -92,7 +92,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
     return (
         <div
             className={clsx([
-                'text-ellipsis flex children-min-size-auto items-center flex-nowrap',
+                'text-ellipsis flex *:min-size-auto items-center flex-nowrap',
                 isTransferManuallyPaused(transfer) && 'color-info',
                 isTransferDone(transfer) && 'color-success',
                 isTransferError(transfer) && 'color-danger',

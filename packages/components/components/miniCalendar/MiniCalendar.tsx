@@ -183,7 +183,7 @@ const MiniCalendar = ({
                             <Button
                                 icon
                                 shape="ghost"
-                                className="on-rtl-mirror"
+                                className="rtl:mirror"
                                 color="weak"
                                 size="small"
                                 disabled={min && startOfMonth(addMonths(activeDate, -1)) < startOfMonth(min)}
@@ -197,7 +197,7 @@ const MiniCalendar = ({
                             <Button
                                 icon
                                 shape="ghost"
-                                className="on-rtl-mirror"
+                                className="rtl:mirror"
                                 color="weak"
                                 size="small"
                                 disabled={max && endOfMonth(addMonths(activeDate, 1)) > endOfMonth(max)}

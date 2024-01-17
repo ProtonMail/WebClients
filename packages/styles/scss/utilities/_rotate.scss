@@ -1,0 +1,29 @@
+@use 'sass:string';
+
+@mixin gen-rotate($axis, $angle) {
+	$test: 'rotate: x 90deg';
+	@supports not (#{$test}) {
+		transform: #{'rotate' + string.to-upper-case($axis) }(#{$angle}deg);
+	}
+	@supports (#{$test}) {
+		rotate: $axis #{$angle}deg;
+	}
+}
+
+.rotateX-180 {
+	@include gen-rotate(x, 180);
+}
+
+.rotateY-180,
+.mirror,
+[dir='rtl'] .rtl\:mirror {
+	@include gen-rotate(y, 180);
+}
+
+.rotateZ-90 {
+	@include gen-rotate(z, 90);
+}
+
+.rotateZ-270 {
+	@include gen-rotate(z, 270);
+}

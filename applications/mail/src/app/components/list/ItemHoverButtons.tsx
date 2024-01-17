@@ -119,12 +119,12 @@ const ItemHoverButtons = ({
                     className
                 )}
             >
-                <Tooltip title={unreadAlt} tooltipClassName="no-pointer-events">
+                <Tooltip title={unreadAlt} tooltipClassName="pointer-events-none">
                     <Button icon shape="ghost" size={size} className="color-inherit" onClick={handleMarkAs}>
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to trash`} tooltipClassName="no-pointer-events">
+                <Tooltip title={c('Action').t`Move to trash`} tooltipClassName="pointer-events-none">
                     <Button
                         icon
                         shape="ghost"
@@ -136,7 +136,7 @@ const ItemHoverButtons = ({
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={c('Action').t`Move to archive`} tooltipClassName="no-pointer-events">
+                <Tooltip title={c('Action').t`Move to archive`} tooltipClassName="pointer-events-none">
                     <Button
                         icon
                         shape="ghost"
@@ -151,7 +151,7 @@ const ItemHoverButtons = ({
 
                 <SnoozeDropdown elements={[element]} size={size} labelID={labelID} />
                 {hasStar && (
-                    <Tooltip title={starAlt} tooltipClassName="no-pointer-events">
+                    <Tooltip title={starAlt} tooltipClassName="pointer-events-none">
                         <Button
                             icon
                             shape="ghost"

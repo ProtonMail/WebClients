@@ -71,7 +71,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                         ref={containerRef}
                         className={clsx(['relative flex', hasError && 'field-icon-container--invalid'])}
                     >
-                        <Icon name="magnifier" className="absolute no-pointer-events left-icon" />
+                        <Icon name="magnifier" className="absolute pointer-events-none left-icon" />
                         {child}
                     </div>
                 );

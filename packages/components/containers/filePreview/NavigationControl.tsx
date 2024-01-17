@@ -45,7 +45,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
             <Button
                 icon
                 shape="ghost"
-                className="on-rtl-mirror"
+                className="rtl:mirror"
                 disabled={isPrevDisabled}
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
@@ -61,7 +61,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
             <Button
                 icon
                 shape="ghost"
-                className="on-rtl-mirror"
+                className="rtl:mirror"
                 disabled={isNextDisabled}
                 onClick={onNext}
                 title={c('Action').t`Next`}

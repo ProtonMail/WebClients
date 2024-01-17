@@ -45,7 +45,7 @@ const GridViewItemBase = ({
                 {!disableSelection ? (
                     <Checkbox
                         disabled={item.isLocked}
-                        className="increase-click-surface file-browser-grid-item-checkbox"
+                        className="expand-click-area file-browser-grid-item-checkbox"
                         checked={selectionControls.isSelected(item.id)}
                         onChange={handleCheckboxChange}
                         onClick={handleCheckboxClick}

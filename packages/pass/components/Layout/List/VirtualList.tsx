@@ -34,11 +34,14 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
     return (
         <div className="h-full scroll-outer-vertical">
             <div
-                className={clsx('scroll-start-shadow no-pointer-events', shadows.top && 'scroll-start-shadow-visible')}
+                className={clsx(
+                    'scroll-start-shadow pointer-events-none',
+                    shadows.top && 'scroll-start-shadow-visible'
+                )}
                 aria-hidden="true"
             />
             <div
-                className={clsx('scroll-end-shadow no-pointer-events', shadows.bottom && 'scroll-end-shadow-visible')}
+                className={clsx('scroll-end-shadow pointer-events-none', shadows.bottom && 'scroll-end-shadow-visible')}
                 aria-hidden="true"
             />
 

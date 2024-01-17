@@ -213,10 +213,7 @@ const HeaderExpanded = ({
                     </span>
                 </div>
             )}
-            <div
-                className="flex flex-nowrap items-center message-header-from-container"
-                onClick={handleClick}
-            >
+            <div className="flex flex-nowrap items-center message-header-from-container" onClick={handleClick}>
                 <span className="flex flex-1 flex-nowrap mr-2">
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         {viewportWidth['<=small'] ? (
@@ -331,11 +328,7 @@ const HeaderExpanded = ({
                                 onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
                                 data-testid="message-view:reply"
                             >
-                                <Icon
-                                    name="arrow-up-and-left-big"
-                                    className="on-rtl-mirror"
-                                    alt={c('Title').t`Reply`}
-                                />
+                                <Icon name="arrow-up-and-left-big" className="rtl:mirror" alt={c('Title').t`Reply`} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={titleReplyAll}>
@@ -347,7 +340,7 @@ const HeaderExpanded = ({
                             >
                                 <Icon
                                     name="arrows-up-and-left-big"
-                                    className="on-rtl-mirror"
+                                    className="rtl:mirror"
                                     alt={c('Title').t`Reply all`}
                                 />
                             </Button>
@@ -361,7 +354,7 @@ const HeaderExpanded = ({
                             >
                                 <Icon
                                     name="arrow-up-and-right-big"
-                                    className="on-rtl-mirror"
+                                    className="rtl:mirror"
                                     alt={c('Title').t`Forward`}
                                 />
                             </Button>
