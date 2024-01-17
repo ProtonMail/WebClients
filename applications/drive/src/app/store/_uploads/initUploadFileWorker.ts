@@ -96,11 +96,11 @@ export function initUploadFileWorker(
                     onFinalize?.();
                     finalize(signature, signatureAddress, xattr, photo).then(resolve).catch(reject);
                 },
-                onNetworkError: (error: string) => {
+                onNetworkError: (error: Error) => {
                     onNetworkError?.(error);
                 },
-                onError: (error: string) => {
-                    reject(new Error(error));
+                onError: (error: Error) => {
+                    reject(error);
                 },
                 notifySentry: (error: Error) => {
                     sendErrorReport(error);
