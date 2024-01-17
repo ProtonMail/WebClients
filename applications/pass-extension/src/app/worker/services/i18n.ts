@@ -1,10 +1,7 @@
+import { createCoreI18nService } from '@proton/pass/lib/i18n/service';
 import { WorkerMessageType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
-import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import noop from '@proton/utils/noop';
 
 import locales from '../../locales';
 import WorkerMessageBroker from '../channel';
@@ -20,8 +17,8 @@ export const createI18nService = () => {
         return !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst;
     };
 
-    const getLocale = withContext<() => Promise<{ locale: string }>>(async (ctx) => ({
-        locale: getClosestLocaleCode(
+    const getLocale = withContext<() => Promise<string>>(async (ctx) =>
+        getClosestLocaleCode(
             await (async () => {
                 try {
                     const { locale } = await ctx.service.settings.resolve();
@@ -31,22 +28,14 @@ export const createI18nService = () => {
                 }
             })(),
             locales
-        ),
+        )
+    );
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.LOCALE_REQUEST, async () => ({
+        locale: await getLocale(),
     }));
 
-    const setLocale = async (locale?: string) => {
-        logger.info(`[I18nService] changing locale to ${locale}`);
-        await loadLocale(locale ?? getDefaultLocale(), locales).catch(noop);
-    };
-
-    const init = async () => {
-        setTtagLocales(locales);
-        await setLocale((await getLocale()).locale);
-    };
-
-    WorkerMessageBroker.registerMessage(WorkerMessageType.LOCALE_REQUEST, getLocale);
-
-    return { init, setLocale };
+    return createCoreI18nService(locales, getLocale);
 };
 
 export type I18NService = ReturnType<typeof createI18nService>;
