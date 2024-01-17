@@ -22,9 +22,6 @@ export const useResizeMessageView = (
     const [defaultRatio, setDefaultRatio] = useState<number>(+(getItem('messageListRatio') || realDefaultRatio));
     const [defaultWindowWidth, setDefaultWindowWidth] = useState(windowWidth);
 
-    // Get left of container to have the size of the sidebar
-    const sidebarWidth = containerRef.current ? containerRef.current.getBoundingClientRect().left : 0;
-
     const saveRatio = useHandler(
         (newWidth: number) => {
             const newRatio = newWidth / windowWidth;
@@ -51,6 +48,8 @@ export const useResizeMessageView = (
     const resizeWithMouse = useCallback(
         (e) => {
             if (isResizing) {
+                // Get left of container to have the size of the sidebar
+                const sidebarWidth = containerRef.current ? containerRef.current.getBoundingClientRect().left : 0;
                 const newWidth = e.clientX - sidebarWidth + scrollBarWidth;
                 saveRatio(newWidth);
                 resize(newWidth);
@@ -67,9 +66,9 @@ export const useResizeMessageView = (
         setIsResizing(false);
     }, [setIsResizing]);
 
-    const resetWidth = () => {
+    const resetWidth = useCallback(() => {
         resize(windowWidth * realDefaultRatio);
-    };
+    }, [windowWidth]);
 
     useHotkeys(resizeAreaRef, [
         [
