@@ -70,16 +70,23 @@ const formatCCExpirationDate = (item: BitwardenCCItem) => {
 
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
-        const { items, encrypted, folders = [] } = JSON.parse(data) as BitwardenData;
+        const parsedData = JSON.parse(data) as BitwardenData;
+        const { items, encrypted, folders = [], collections = [] } = parsedData;
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);
-        if (!Array.isArray(items) || !Array.isArray(folders)) {
+        if (!Array.isArray(items) || !Array.isArray(folders) || !Array.isArray(collections)) {
             throw new ImportReaderError(c('Error').t`Importing items failed`);
         }
 
         const ignored: string[] = [];
-        const groupedItems = groupBy(items, 'folderId');
-        const folderMap = keyBy(folders, 'id');
 
+        // Collections and folders are mutually exclusive ** after exporting **,
+        // ie. items beloging to an organization will have a null folderId (even
+        // if they are also in a folder).
+        const isB2B = Object.hasOwn(parsedData, 'collections');
+        const folderMap = keyBy(isB2B ? collections : folders, 'id');
+        const mappedItems = isB2B ? items.map((i) => ({ ...i, folderId: i.collectionIds?.at(0) || null })) : items;
+
+        const groupedItems = groupBy(mappedItems, 'folderId');
         const vaults: ImportVault[] = Object.entries(groupedItems).map(([folderId, items]) => ({
             name: getImportedVaultName(folderMap[folderId ?? '']?.name),
             shareId: null,

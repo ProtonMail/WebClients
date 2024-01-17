@@ -22,7 +22,13 @@ type BitwardenBaseItem = {
     name: string;
     notes: MaybeNull<string>;
     fields?: BitwardenCustomField[];
+
+    /** Always `null` on org exports, see `collectionIds` instead */
     folderId: MaybeNull<string>;
+
+    /** Specific to org exports, has precedence over `folderId`
+     * which will be present but always null. */
+    collectionIds?: string[];
 };
 
 type BitwardenFolder = { id: string; name: string };
@@ -61,4 +67,5 @@ export type BitwardenData = {
     encrypted: boolean;
     items: BitwardenItem[];
     folders?: BitwardenFolder[];
+    collections?: BitwardenFolder[];
 };
