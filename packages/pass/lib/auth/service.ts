@@ -4,6 +4,7 @@ import type { CreateNotificationOptions } from '@proton/components/containers';
 import { SESSION_LOCK_CODE } from '@proton/pass/lib/api/utils';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api, SessionLockStatus } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
@@ -254,8 +255,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     const { code, status } = getApiError(error);
                     if (code === SESSION_LOCK_CODE && status === 400) {
                         config.onNotification?.({
+                            key: NotificationKey.SESSION_LOCK,
                             text: c('Error').t`Your PIN code was removed by another ${PASS_APP_NAME} client`,
-                            expiration: -1,
                         });
                         return undefined;
                     }
@@ -398,7 +399,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                     if (event.status === 'locked') {
                         if (authStore.getLockStatus() !== SessionLockStatus.LOCKED) {
-                            config.onNotification?.({ text: c('Warning').t`Your session was locked.` });
+                            config.onNotification?.({
+                                key: NotificationKey.SESSION_LOCK,
+                                text: c('Warning').t`Your session was locked.`,
+                            });
                         }
 
                         await authService.lock({ soft: true, broadcast: true });

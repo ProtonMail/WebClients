@@ -14,7 +14,7 @@ function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNo
      * correctly de-duplicate them */
     if (isActionWithRequest(action)) {
         notification.deduplicate = true;
-        notification.key = action.meta.request.id;
+        notification.key = notification.key ?? action.meta.request.id;
     }
 
     onNotification?.(notification);
