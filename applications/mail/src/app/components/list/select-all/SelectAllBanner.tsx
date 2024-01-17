@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,17 +22,17 @@ const SelectAllBanner = ({ labelID, onCheckAll }: Props) => {
     const buttonText = getButtonText();
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightSelectAll);
 
-    const handleClickButton = () => {
+    const handleClickButton = useCallback(() => {
         const currentValue = selectAll;
         setSelectAll(!selectAll);
 
         if (currentValue) {
             onCheckAll(false);
         }
-    };
+    }, [selectAll, setSelectAll, onCheckAll]);
 
     return (
-        <div className="flex flex-item-noshrink text-center bg-norm">
+        <div className="flex shrink-0 text-center bg-norm">
             <div className="mx-auto m-2 px-2">
                 <span className="m-0 mr-2 text-center text-ellipsis max-w-full inline-block align-middle">
                     {getBannerText()}
