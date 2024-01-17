@@ -72,7 +72,10 @@ export function* synchronize(options: SynchronizationOptions, { onShareDeleted }
         /* update the disabled shareIds list with any inactive remote shares */
         disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
 
-        if (totalInactiveShares > 0) {
+        /* Check if PassCrypto may have been cleared due to
+         * an inactive or locked session during this sequence,
+         * which could result in detecting  inactive shares  */
+        if (totalInactiveShares > 0 && PassCrypto.ready) {
             yield put(
                 notification({
                     endpoint: 'popup',
