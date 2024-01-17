@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -36,11 +36,11 @@ export const useSelectAll = ({ labelID }: Props) => {
         return getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
     }, [conversationCounts, messageCounts, labelID]);
 
-    const getBannerText = () => {
+    const getBannerText = useCallback(() => {
         return getBoldFormattedText(getSelectAllBannerText(isConversation, selectAll ? locationCount : mailPageSize));
-    };
+    }, [isConversation, locationCount, mailPageSize, selectAll]);
 
-    const getBannerTextWithLocation = () => {
+    const getBannerTextWithLocation = useCallback(() => {
         return getSelectAllBannerTextWithLocation(
             isConversation,
             selectAll ? locationCount : mailPageSize,
@@ -48,11 +48,11 @@ export const useSelectAll = ({ labelID }: Props) => {
             labels,
             folders
         );
-    };
+    }, [isConversation, locationCount, mailPageSize, selectAll, labelID, labels, folders]);
 
-    const getButtonText = () => {
+    const getButtonText = useCallback(() => {
         return getSelectAllButtonText(selectAll, locationCount, labelID, labels, folders);
-    };
+    }, [selectAll, locationCount, labelID, labels, folders]);
 
     const setSelectAll = (value: boolean) => {
         dispatch(layoutActions.setSelectAll(value));
