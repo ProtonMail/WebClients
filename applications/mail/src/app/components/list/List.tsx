@@ -115,6 +115,15 @@ const List = (
     const mailSettings = useMailModel('MailSettings');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
+    const checkedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
+        return checkedIDs.reduce(
+            (acc, ID) => {
+                acc[ID] = true;
+                return acc;
+            },
+            {} as { [ID: string]: boolean }
+        );
+    }, [checkedIDs]);
 
     // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
@@ -187,6 +196,16 @@ const List = (
         },
         selectAll // Pass the select all so that the callback knows when to display location count
     );
+
+    const draggedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
+        return draggedIDs.reduce(
+            (acc, ID) => {
+                acc[ID] = true;
+                return acc;
+            },
+            {} as { [ID: string]: boolean }
+        );
+    }, [draggedIDs]);
 
     const { contextMenu, onContextMenu, blockSenderModal } = useItemContextMenu({
         elementID,
@@ -299,13 +318,13 @@ const List = (
                                                         columnLayout={columnLayout}
                                                         elementID={elementID}
                                                         element={element}
-                                                        checked={checkedIDs.includes(element.ID || '')}
+                                                        checked={!!checkedIDsMap[element.ID || '']}
                                                         onCheck={onCheckOne}
                                                         onClick={onClick}
                                                         onContextMenu={onContextMenu}
                                                         onDragStart={handleDragStart}
                                                         onDragEnd={handleDragEnd}
-                                                        dragged={draggedIDs.includes(element.ID || '')}
+                                                        dragged={!!draggedIDsMap[element.ID || '']}
                                                         index={index}
                                                         breakpoints={breakpoints}
                                                         onFocus={onFocus}
