@@ -1,6 +1,6 @@
 import { Ref } from 'react';
 
-import { endOfDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../../containers/calendar/interface';
 import FullDayEvent from '../../events/FullDayEvent';
@@ -46,7 +46,7 @@ const RowEvents = ({
     targetEventData,
 }: Props) => {
     const startWindow = days[0];
-    const lastWindow = endOfDay(days[days.length - 1]);
+    const lastWindow = addDays(days[days.length - 1], 1);
 
     const result = eventsInRowStyles.map(({ idx, type, style }) => {
         if (type === 'more') {
@@ -75,6 +75,8 @@ const RowEvents = ({
 
         const isBeforeNow = getIsBeforeNow(event, now);
 
+        const modifiedEnd = event.isAllDay && !event.isAllPartDay ? addDays(event.end, 1) : event.end;
+
         return (
             <FullDayEvent
                 tzid={tzid}
@@ -85,7 +87,7 @@ const RowEvents = ({
                 formatTime={formatTime}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
-                isOutsideEnd={event.isAllDay ? event.end > lastWindow : false}
+                isOutsideEnd={event.isAllDay ? modifiedEnd > lastWindow : false}
                 isOutsideStart={event.isAllDay ? event.start < startWindow : false}
             />
         );
