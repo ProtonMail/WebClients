@@ -1,0 +1,63 @@
+{
+    "encrypted": false,
+    "collections": [
+        {
+            "id": "9bb98033-f669-446d-91e6-b0d100d40295",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "collection 1",
+            "externalId": null
+        },
+        {
+            "id": "6bb61a48-3723-4ab8-b9ad-b0f900f09ce3",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "name": "Collection 2",
+            "externalId": null
+        }
+    ],
+    "items": [
+        {
+            "passwordHistory": null,
+            "revisionDate": "2024-01-16T14:36:15.273Z",
+            "creationDate": "2024-01-16T14:36:15.273Z",
+            "deletedDate": null,
+            "id": "8078d339-0d22-40d2-80f3-b0f900f0aba7",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "item 2",
+            "notes": null,
+            "favorite": false,
+            "login": {
+                "fido2Credentials": [],
+                "uris": [],
+                "username": null,
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": ["6bb61a48-3723-4ab8-b9ad-b0f900f09ce3"]
+        },
+        {
+            "passwordHistory": null,
+            "revisionDate": "2023-12-07T15:00:28.230Z",
+            "creationDate": "2023-12-07T14:55:52.410Z",
+            "deletedDate": null,
+            "id": "edd07e1f-d217-4cf4-9f4d-b0d100f60f1e",
+            "organizationId": "04674602-95a1-4977-8e60-b0d100d4007b",
+            "folderId": null,
+            "type": 1,
+            "reprompt": 0,
+            "name": "so hard ",
+            "notes": null,
+            "favorite": false,
+            "login": {
+                "fido2Credentials": [],
+                "uris": [],
+                "username": "uu",
+                "password": null,
+                "totp": null
+            },
+            "collectionIds": ["9bb98033-f669-446d-91e6-b0d100d40295"]
+        }
+    ]
+}
