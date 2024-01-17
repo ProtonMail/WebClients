@@ -153,6 +153,16 @@ const walletAccountOneB: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
+const walletAccountOneC: WalletAccount = {
+    WalletAccountID: 91,
+    WalletID: 0,
+    Index: 0,
+    Label: 'Account 2',
+    ScriptType: WasmScriptType.Taproot,
+    CreateTime: 1701139393899,
+    ModifyTime: 1701139393899,
+};
+
 const walletAccountTwoA: WalletAccount = {
     WalletAccountID: 10,
     WalletID: 1,
@@ -184,7 +194,12 @@ const walletAccountThree: WalletAccount = {
 };
 
 export const wallets: ApiWallet[] = [
-    { ...walletOne, accounts: [walletAccountOneA, walletAccountOneB], settings: walletSettingsOne, key: walletKeyOne },
+    {
+        ...walletOne,
+        accounts: [walletAccountOneA, walletAccountOneB, walletAccountOneC],
+        settings: walletSettingsOne,
+        key: walletKeyOne,
+    },
     { ...walletTwo, accounts: [walletAccountTwoA, walletAccountTwoB], settings: walletSettingsTwo, key: walletKeyTwo },
     { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
 ];
