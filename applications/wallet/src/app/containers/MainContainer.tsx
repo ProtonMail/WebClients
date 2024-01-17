@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
-import { PrivateWalletLayout } from '../components';
+import { withLayout } from '../components';
 import { OnchainWalletContextProvider } from '../contexts';
 import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
@@ -16,26 +16,18 @@ const MainContainer = () => {
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>
                 <OnchainWalletContextProvider>
-                    <PrivateWalletLayout>
-                        <Switch>
-                            <Route path={'/transfer'}>
-                                <BitcoinTransferContainer />
-                            </Route>
-                            <Route path={'/buy'}>
-                                <BitcoinOnRampContainer />
-                            </Route>
-                            <Route path={'/transactions'} exact>
-                                <TransactionHistoryContainer />
-                            </Route>
-                            <Route path={'/wallets/:walletId'}>
-                                <SingleWalletDashboardContainer />
-                            </Route>
-                            <Route path={'/wallets'} exact>
-                                <MultiWalletDashboardContainer />
-                            </Route>
-                            <Redirect to="/wallets" />
-                        </Switch>
-                    </PrivateWalletLayout>
+                    <Switch>
+                        <Route path={'/transfer'}>{withLayout(<BitcoinTransferContainer />)}</Route>
+                        <Route path={'/buy'}>{withLayout(<BitcoinOnRampContainer />)}</Route>
+                        <Route path={'/transactions'} exact>
+                            {withLayout(<TransactionHistoryContainer />)}
+                        </Route>
+                        <Route path={'/wallets/:walletId'}>{withLayout(<SingleWalletDashboardContainer />)}</Route>
+                        <Route path={'/wallets'} exact>
+                            {withLayout(<MultiWalletDashboardContainer />)}
+                        </Route>
+                        <Redirect to="/wallets" />
+                    </Switch>
                 </OnchainWalletContextProvider>
             </QuickSettingsRemindersProvider>
         </ErrorBoundary>

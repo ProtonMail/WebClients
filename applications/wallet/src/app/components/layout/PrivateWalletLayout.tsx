@@ -1,12 +1,14 @@
 import { ReactNode } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners, useToggle } from '@proton/components';
+import { DrawerSidebar, PrivateAppContainer, PrivateMainArea, TopBanners, useToggle } from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 
 import { useOnchainWalletContext } from '../../contexts';
+import { WalletDrawerApp } from './WalletDrawerApp';
 import WalletHeader from './WalletHeader';
-import WalletQuickSettings from './WalletQuickSettings';
 import WalletSidebar from './WalletSidebar';
+import { useWalletDrawer } from './useWalletDrawer';
 
 interface Props {
     children: ReactNode;
@@ -15,15 +17,23 @@ interface Props {
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const { wallets, isInitialised } = useOnchainWalletContext();
+    const { drawerSidebarButtons, showDrawerSidebar } = useWalletDrawer();
 
     return (
         <PrivateAppContainer
             top={<TopBanners />}
             header={<WalletHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />}
             sidebar={<WalletSidebar wallets={wallets} />}
-            drawerApp={<DrawerApp customAppSettings={<WalletQuickSettings />} />}
+            drawerApp={<WalletDrawerApp />}
         >
-            <PrivateMainArea hasToolbar className="full-height-content" data-testid="wallet-view:events-area">
+            <PrivateMainArea
+                hasToolbar
+                className="full-height-content"
+                data-testid="wallet-view:events-area"
+                drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
+                drawerVisibilityButton={<DrawerVisibilityButton />}
+                mainBordered={!!showDrawerSidebar}
+            >
                 {isInitialised ? (
                     children
                 ) : (
@@ -35,3 +45,5 @@ export const PrivateWalletLayout = ({ children }: Props) => {
         </PrivateAppContainer>
     );
 };
+
+export const withLayout = (component: ReactNode) => <PrivateWalletLayout>{component}</PrivateWalletLayout>;
