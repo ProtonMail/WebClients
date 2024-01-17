@@ -1,5 +1,6 @@
 import type { AnyAction } from 'redux';
 import { put, race, take, takeLeading } from 'redux-saga/effects';
+import { c } from 'ttag';
 
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import {
@@ -54,7 +55,7 @@ export default function* watcher(options: RootSagaOptions) {
 
         if (caching || destroyed) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
-            yield put(bootFailure({}));
+            yield put(bootFailure(new Error(c('Action').t`Sign back in`)));
             options.onBoot?.({ ok: false, clearCache: false });
         } else yield put(cacheRequest({ throttle: false }));
     });
