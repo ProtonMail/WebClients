@@ -1,10 +1,12 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
+import { put, select, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt';
+import { PassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { getUserState } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
+    cacheRequest,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     startEventPolling,
@@ -17,6 +19,7 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { userAccessRequest, userFeaturesRequest } from '../../actions/requests';
 
@@ -46,6 +49,10 @@ export function* hydrateFromCache(
 
     const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
     const cache: Maybe<PassCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
+
+    const failure = (encryptedCache.state && !cache?.state) || (encryptedCache.snapshot && !cache?.snapshot);
+    if (failure) throw new PassCryptoError();
+
     const userState: SafeUserState = cache?.state.user ?? (yield resolveUserState(userID));
 
     const state: State = { ...(cache?.state ? merge(currentState, cache.state) : currentState), user: userState };
@@ -62,11 +69,23 @@ function* hydrateWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
         yield put(cacheCancel());
+
+        /* Throttle the cache hydration in case multiple
+         * requests are made concurrently, e.g., when
+         * the user is rapidly switching tabs. Ideally, we should
+         * implement a real caching mutex via the service worker
+         * to avoid this and the error handling below. */
+        yield wait(500);
+
         yield hydrateFromCache((_, incoming) => incoming, options);
         yield put(startEventPolling());
-    } catch {}
+    } catch {
+        /** If hydrating from cache failed : encryption scheme may
+         * have changed, as such trigger a cache request immediately */
+        yield put(cacheRequest({ throttle: false }));
+    }
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(stateSync.match, hydrateWorker, options);
+    yield takeLatest(stateSync.match, hydrateWorker, options);
 }
