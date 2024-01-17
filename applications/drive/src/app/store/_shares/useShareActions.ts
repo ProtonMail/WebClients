@@ -2,7 +2,7 @@ import { usePreventLeave } from '@proton/components';
 import { queryCreateShare, queryDeleteShare } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import { generateNodeKeys } from '@proton/shared/lib/keys/driveKeys';
+import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
@@ -20,15 +20,17 @@ export default function useShareActions() {
     const { getShareCreatorKeys } = useShare();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
-        const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link] = await Promise.all([
-            getShareCreatorKeys(abortSignal, shareId),
-            getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
-            getLink(abortSignal, shareId, linkId),
-        ]);
+        const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link, linkPrivateKey] =
+            await Promise.all([
+                getShareCreatorKeys(abortSignal, shareId),
+                getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
+                getLink(abortSignal, shareId, linkId),
+                getLinkPrivateKey(abortSignal, shareId, linkId),
+            ]);
 
         const [parentPrivateKey, keyInfo] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateNodeKeys(addressPrivateKey).catch((e) =>
+            generateShareKeys(linkPrivateKey, addressPrivateKey).catch((e) =>
                 Promise.reject(
                     new EnrichedError('Failed to generate share node keys during share creation', {
                         tags: {
@@ -46,6 +48,7 @@ export default function useShareActions() {
             NodeKey: ShareKey,
             NodePassphrase: SharePassphrase,
             privateKey: sharePrivateKey,
+            sessionKey: shareSessionKey,
             NodePassphraseSignature: SharePassphraseSignature,
         } = keyInfo;
 
@@ -117,7 +120,7 @@ export default function useShareActions() {
 
         return {
             shareId: Share.ID,
-            sessionKey: keyInfo.sessionKey,
+            sessionKey: shareSessionKey,
         };
     };
 

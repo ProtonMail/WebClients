@@ -127,8 +127,8 @@ export const generateNodeHashKey = async (publicKey: PublicKeyReference, address
 };
 
 export const encryptPassphrase = async (
-    parentKey: PrivateKeyReference,
-    addressKey: PrivateKeyReference = parentKey,
+    parentKey: PrivateKeyReference | PrivateKeyReference[],
+    addressKey: PrivateKeyReference | PrivateKeyReference[] = parentKey,
     rawPassphrase = generatePassphrase(),
     passphraseSessionKey?: SessionKey
 ) => {
@@ -150,7 +150,17 @@ export const generateNodeKeys = async (parentKey: PrivateKeyReference, addressKe
     const rawPassphrase = generatePassphrase();
     const [{ NodePassphrase, NodePassphraseSignature, sessionKey }, { privateKey, privateKeyArmored: NodeKey }] =
         await Promise.all([encryptPassphrase(parentKey, addressKey, rawPassphrase), generateDriveKey(rawPassphrase)]);
+    return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature, sessionKey };
+};
 
+export const generateShareKeys = async (linkNodeKey: PrivateKeyReference, addressKey: PrivateKeyReference) => {
+    const rawPassphrase = generatePassphrase();
+    const { privateKey, privateKeyArmored: NodeKey } = await generateDriveKey(rawPassphrase);
+    const { NodePassphrase, NodePassphraseSignature, sessionKey } = await encryptPassphrase(
+        [linkNodeKey, addressKey], // NodeKey always needs to be first
+        addressKey,
+        rawPassphrase
+    );
     return { privateKey, NodeKey, NodePassphrase, NodePassphraseSignature, sessionKey };
 };
 
