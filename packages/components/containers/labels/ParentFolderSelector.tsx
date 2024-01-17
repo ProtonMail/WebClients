@@ -27,8 +27,25 @@ const ParentFolderSelector = ({ id, value, label, onChange, className, disableOp
             return [];
         }
 
-        const formatOption = ({ Name, ID }: FolderWithSubFolders, level = 0): OptionProps => ({
-            disabled: disableOptions.includes(ID),
+        const isDisabledOption = (() => {
+            const disabledOptionIdsCache = [...disableOptions];
+            return (ID: string, ParentID: string | number | undefined) => {
+                const isDisabled =
+                    disabledOptionIdsCache.includes(ID) ||
+                    (ParentID !== undefined &&
+                        typeof ParentID === 'string' &&
+                        disabledOptionIdsCache.includes(ParentID));
+
+                if (isDisabled) {
+                    disabledOptionIdsCache.push(ID);
+                }
+
+                return isDisabled;
+            };
+        })();
+
+        const formatOption = ({ Name, ID, ParentID }: FolderWithSubFolders, level = 0): OptionProps => ({
+            disabled: isDisabledOption(ID, ParentID),
             value: ID,
             text: formatFolderName(level, Name, ' ∙ '),
         });
