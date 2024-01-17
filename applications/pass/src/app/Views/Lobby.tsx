@@ -3,6 +3,7 @@ import { type FC } from 'react';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
+import { clientErrored } from '@proton/pass/lib/client';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -20,7 +21,11 @@ export const Lobby: FC = () => {
         <LobbyLayout overlay>
             <LobbyContent
                 status={client.state.status}
-                onLogin={() => authService.requestFork({ host, app })}
+                onLogin={() =>
+                    clientErrored(client.state.status)
+                        ? authService.init({ forceLock: true })
+                        : authService.requestFork({ host, app })
+                }
                 onLogout={() => authService.logout({ soft: true })}
                 onRegister={() => authService.requestFork({ host, app, type: FORK_TYPE.SIGNUP })}
                 renderError={() => <></>}
