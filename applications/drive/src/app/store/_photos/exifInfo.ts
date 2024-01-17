@@ -38,8 +38,27 @@ export async function encryptExifInfo(
     return encodeBase64(message);
 }
 
+export const getFormattedDateTime = (exif?: ExifTags) => {
+    if (!exif) {
+        return undefined;
+    }
+    const sources = [exif.DateTimeOriginal, exif.DateTimeDigitized, exif.DateTime];
+    for (let i = 0; i < sources.length; i++) {
+        const source = sources[i];
+        if (!source?.value[0]) {
+            continue;
+        }
+        try {
+            return formatExifDateTime(source.value[0]);
+        } catch {
+            continue;
+        }
+    }
+    return undefined;
+};
+
 export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
-    const formattedDateTime = exif?.DateTime?.value[0] ? formatExifDateTime(exif?.DateTime?.value[0]) : undefined;
+    const formattedDateTime = getFormattedDateTime(exif);
 
     // If file.lastModified is not know, current date will be returned:
     // https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified
@@ -53,6 +72,11 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
     height: exif?.ImageLength?.value || exif?.PixelYDimension?.value || png?.['Image Height']?.value,
 });
 
+export const getCaptureDateTimeString = (exif?: ExifTags) => {
+    const formattedDateTime = getFormattedDateTime(exif);
+    return formattedDateTime ? new Date(formattedDateTime).toISOString() : undefined;
+};
+
 export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
     location:
         gps?.Latitude && gps?.Longitude
@@ -65,9 +89,7 @@ export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
         ? {
               device: exif.Model?.value[0],
               orientation: exif.Orientation?.value,
-              captureTime: exif?.DateTime?.value[0]
-                  ? new Date(formatExifDateTime(exif?.DateTime?.value[0])).toISOString()
-                  : undefined,
+              captureTime: getCaptureDateTimeString(exif),
               subjectCoordinates: exif.SubjectArea?.value
                   ? convertSubjectAreaToSubjectCoordinates(exif.SubjectArea.value)
                   : undefined,
