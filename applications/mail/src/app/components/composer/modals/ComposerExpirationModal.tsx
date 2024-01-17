@@ -177,7 +177,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     ? c('Info').t`Edit expiration time`
                     : c('Adding expiration to a message will create an expiring message').t`Expiring message`
             }
-            disabled={!isValidDate(date)}
+            disabled={!isValidDate(date) || !!timeError}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
