@@ -1,19 +1,101 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+*/
+export function setPanicHook(): void;
+/**
 * @returns {string}
 */
 export function library_version(): string;
 /**
 */
-export function setPanicHook(): void;
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmError {
+  InvalidSecretKey = 0,
+  InvalidNetwork = 1,
+  InvalidDescriptor = 2,
+  InvalidDerivationPath = 3,
+  InvalidAccountIndex = 4,
+  InvalidScriptType = 5,
+  DerivationError = 6,
+  SyncError = 7,
+  OutpointParsingError = 8,
+  InvalidData = 9,
+  InvalidAddress = 10,
+  InvalidTxId = 11,
+  CannotComputeTxFees = 12,
+  InvalidMnemonic = 13,
+  InvalidSeed = 14,
+  CannotGetFeeEstimation = 15,
+  CannotSignPsbt = 16,
+  NoWindowContext = 17,
+  CannotGetLocalStorage = 18,
+  CannotSerializePersistedData = 19,
+  CannotPersistData = 20,
+  CannotFindPersistedData = 21,
+  CannotParsePersistedData = 22,
+  CannotGetAddressFromScript = 23,
+  CannotCreateDescriptor = 24,
+  DescriptorError = 25,
+  LoadError = 26,
+  CannotCreateAddressFromScript = 27,
+  AccountNotFound = 28,
+  Generic = 29,
+  NoRecipients = 30,
+  NoUtxosSelected = 31,
+  OutputBelowDustLimit = 32,
+  InsufficientFunds = 33,
+  BnBTotalTriesExceeded = 34,
+  BnBNoExactMatch = 35,
+  UnknownUtxo = 36,
+  TransactionNotFound = 37,
+  TransactionConfirmed = 38,
+  IrreplaceableTransaction = 39,
+  FeeRateTooLow = 40,
+  FeeTooLow = 41,
+  FeeRateUnavailable = 42,
+  MissingKeyOrigin = 43,
+  Key = 44,
+  ChecksumMismatch = 45,
+  SpendingPolicyRequired = 46,
+  InvalidPolicyPathError = 47,
+  Signer = 48,
+  InvalidOutpoint = 49,
+  Descriptor = 50,
+  Miniscript = 51,
+  MiniscriptPsbt = 52,
+  Bip32 = 53,
+  Bip39 = 54,
+  Psbt = 55,
+  ConnectionFailed = 56,
+  CreateTxError = 57,
+  CoinSelectionError = 58,
+  BuildFeeBumpError = 59,
+  AddUtxoError = 60,
+  NewError = 61,
+  NewOrLoadError = 62,
+  LockError = 63,
 }
 /**
 */
@@ -37,12 +119,10 @@ export enum WasmNetwork {
 }
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -53,99 +133,11 @@ export enum WasmBitcoinUnit {
 }
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmError {
-  InvalidSecretKey = 0,
-  InvalidNetwork = 1,
-  InvalidDescriptor = 2,
-  InvalidDerivationPath = 3,
-  InvalidAccountIndex = 4,
-  DerivationError = 5,
-  SyncError = 6,
-  OutpointParsingError = 7,
-  InvalidData = 8,
-  InvalidAddress = 9,
-  InvalidTxId = 10,
-  CannotComputeTxFees = 11,
-  InvalidMnemonic = 12,
-  InvalidSeed = 13,
-  CannotGetFeeEstimation = 14,
-  CannotSignPsbt = 15,
-  NoWindowContext = 16,
-  CannotGetLocalStorage = 17,
-  CannotSerializePersistedData = 18,
-  CannotPersistData = 19,
-  CannotFindPersistedData = 20,
-  CannotParsePersistedData = 21,
-  CannotGetAddressFromScript = 22,
-  CannotCreateDescriptor = 23,
-  DescriptorError = 24,
-  LoadError = 25,
-  CannotCreateAddressFromScript = 26,
-  AccountNotFound = 27,
-  Generic = 28,
-  NoRecipients = 29,
-  NoUtxosSelected = 30,
-  OutputBelowDustLimit = 31,
-  InsufficientFunds = 32,
-  BnBTotalTriesExceeded = 33,
-  BnBNoExactMatch = 34,
-  UnknownUtxo = 35,
-  TransactionNotFound = 36,
-  TransactionConfirmed = 37,
-  IrreplaceableTransaction = 38,
-  FeeRateTooLow = 39,
-  FeeTooLow = 40,
-  FeeRateUnavailable = 41,
-  MissingKeyOrigin = 42,
-  Key = 43,
-  ChecksumMismatch = 44,
-  SpendingPolicyRequired = 45,
-  InvalidPolicyPathError = 46,
-  Signer = 47,
-  InvalidOutpoint = 48,
-  Descriptor = 49,
-  Miniscript = 50,
-  MiniscriptPsbt = 51,
-  Bip32 = 52,
-  Bip39 = 53,
-  Psbt = 54,
-  LockError = 55,
-}
-/**
-*/
 export enum WasmScriptType {
   Legacy = 0,
   NestedSegwit = 1,
   NativeSegwit = 2,
   Taproot = 3,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
 }
 /**
 */
@@ -158,6 +150,22 @@ export enum WasmKeychainKind {
 * Internal keychain, used for deriving change addresses.
 */
   Internal = 1,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 
 interface IWasmTransactionTime {
