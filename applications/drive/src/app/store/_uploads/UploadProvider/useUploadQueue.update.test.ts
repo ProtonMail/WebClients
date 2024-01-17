@@ -7,6 +7,8 @@ import { FileUpload, FolderUpload, UpdateCallback, UpdateData, UpdateFilter, Upd
 import useUploadQueue from './useUploadQueue';
 
 describe("useUploadQueue's update functions", () => {
+    const mockLogCallback = jest.fn();
+
     let hook: {
         current: {
             fileUploads: FileUpload[];
@@ -29,7 +31,7 @@ describe("useUploadQueue's update functions", () => {
 
     beforeEach(() => {
         mockGlobalFile();
-        const { result } = renderHook(() => useUploadQueue());
+        const { result } = renderHook(() => useUploadQueue(mockLogCallback));
         hook = result;
 
         act(() => {

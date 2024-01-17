@@ -7,6 +7,7 @@ import useUploadQueue from './useUploadQueue';
 
 describe('useUploadQueue::remove', () => {
     const mockCallback = jest.fn();
+    const mockLogCallback = jest.fn();
 
     let hook: {
         current: {
@@ -26,7 +27,7 @@ describe('useUploadQueue::remove', () => {
 
         mockGlobalFile();
 
-        const { result } = renderHook(() => useUploadQueue());
+        const { result } = renderHook(() => useUploadQueue(mockLogCallback));
         hook = result;
 
         act(() => {

@@ -7,6 +7,8 @@ import { FileUpload, FolderUpload } from './interface';
 import useUploadQueue from './useUploadQueue';
 
 describe("useUploadQueue' attributes", () => {
+    const mockLogCallback = jest.fn();
+
     let hook: {
         current: {
             hasUploads: boolean;
@@ -19,7 +21,7 @@ describe("useUploadQueue' attributes", () => {
 
     beforeEach(() => {
         mockGlobalFile();
-        const { result } = renderHook(() => useUploadQueue());
+        const { result } = renderHook(() => useUploadQueue(mockLogCallback));
         hook = result;
     });
 

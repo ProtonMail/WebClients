@@ -4,11 +4,12 @@ import clsx from '@proton/utils/clsx';
 
 import { TransfersManagerButtonsProps } from './interfaces';
 
-const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
+const Buttons = ({ className, buttons, id, children }: TransfersManagerButtonsProps) => {
     const elClassName = clsx(['flex flex-nowrap justify-end', className]);
 
     return (
         <div className={elClassName} id={id}>
+            {children}
             {buttons.map(({ disabled, onClick, title, testId, iconName }) => (
                 <Tooltip title={title} key={title}>
                     <Button
