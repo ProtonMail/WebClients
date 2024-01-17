@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { IconName } from '@proton/components';
 
 import { Download, TransferType, Upload } from './transfer';
@@ -29,4 +31,5 @@ export interface TransfersManagerButtonsProps {
     buttons: TransferManagerButtonProps[];
     className?: string;
     id?: string;
+    children?: ReactNode;
 }
