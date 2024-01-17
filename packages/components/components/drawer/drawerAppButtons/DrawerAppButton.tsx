@@ -29,7 +29,7 @@ const DrawerAppButton = ({
     const button = (
         <button
             className={clsx(
-                'drawer-sidebar-button rounded flex interactive no-pointer-events-children relative',
+                'drawer-sidebar-button rounded flex interactive *:pointer-events-none relative',
                 notificationDotColor && 'drawer-sidebar-button--notification'
             )}
             type="button"

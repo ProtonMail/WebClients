@@ -1,0 +1,17 @@
+/* to hide text with accessibility… a11y */
+.invisible,
+.sr-only {
+	position: absolute;
+	inset-block-start: 0; // needed for Safari dumb and 💩 behaviour
+	block-size: 1px;
+	inline-size: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}

@@ -10,7 +10,7 @@ type Props = { enabled: boolean; percent: number; period?: number };
 
 export const OTPDonut: VFC<Props> = ({ enabled, percent, period = 0 }) => (
     <div
-        className={clsx('pass-otp--donut no-pointer-events')}
+        className={clsx('pass-otp--donut pointer-events-none')}
         style={{ '--countdown-value': `"${Math.round(percent * period)}"` }}
     >
         {enabled && (

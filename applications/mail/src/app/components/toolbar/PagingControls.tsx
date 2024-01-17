@@ -68,7 +68,7 @@ const PagingControls = ({
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
-                className="on-rtl-mirror toolbar-button--small toolbar-button--small-icon"
+                className="rtl:mirror toolbar-button--small toolbar-button--small-icon"
                 icon={<Icon name="chevron-left" alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
@@ -113,7 +113,7 @@ const PagingControls = ({
                 disabled={loading || page >= total}
                 title={c('Action').t`Next page`}
                 onClick={onNext}
-                className="on-rtl-mirror toolbar-button--small toolbar-button--small-icon"
+                className="rtl:mirror toolbar-button--small toolbar-button--small-icon"
                 icon={<Icon name="chevron-right" alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />

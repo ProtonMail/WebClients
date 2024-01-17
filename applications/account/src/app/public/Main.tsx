@@ -10,7 +10,7 @@ const Main = ({ padding = true, children, className, center = true, disableShado
     return (
         <div
             className={clsx(
-                'ui-standard w-full max-w-custom relative sign-layout pt-1 pb-6 sm:p-11 hardware-accelerated',
+                'ui-standard w-full max-w-custom relative sign-layout pt-1 pb-6 sm:p-11',
                 padding && 'px-6',
                 center && 'mx-auto',
                 disableShadow ? '' : 'sm:shadow-lifted shadow-color-primary',

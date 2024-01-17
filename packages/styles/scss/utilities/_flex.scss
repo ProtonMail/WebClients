@@ -1,10 +1,10 @@
 @use 'sass:map';
 
-.children-items-center > * {
+.\*\:items-center > * {
 	align-items: center;
 }
 
-.children-self-center > * {
+.\*\:self-center > * {
 	margin-block: auto;
 	align-self: center;
 }

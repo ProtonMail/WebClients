@@ -42,7 +42,7 @@ export const PlanCardFeatureList = ({
             className={clsx(
                 'unstyled flex flex-column',
                 className,
-                odd && 'bg-weak-odd',
+                odd && 'odd:bg-weak',
                 margin ? 'mt-4 mb-0 md:mb-6' : 'm-0'
             )}
         >
@@ -75,7 +75,7 @@ export const PlanCardFeatureList = ({
                     <li key={key} className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}>
                         <div
                             className={clsx(
-                                'flex children-min-size-auto flex-nowrap',
+                                'flex *:min-size-auto flex-nowrap',
                                 !feature.included && 'color-hint',
                                 feature.included && feature.status === 'coming-soon' && 'color-weak'
                             )}
