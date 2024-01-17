@@ -24,12 +24,12 @@ export const getRefreshError = () =>
  *
  * You should use `getRefreshError` to build a Refresh Error.
  *
- * If you are in a context where ttag is not available (worker), you can use this constructor directly
- * and rebuild it on the main thread.
+ * If you are in a context where ttag is not available (i.e. worker), you can use this
+ * constructor directly and rebuild it on the main thread for localization.
  */
 export class RefreshError extends Error {
-    constructor(message: string) {
-        super(message);
+    constructor(message?: string) {
+        super(message || 'Please refresh');
         this.name = 'RefreshError';
     }
 }
