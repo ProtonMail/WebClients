@@ -13,4 +13,5 @@ export interface UploadProviderState {
     removeUploads: (idOrFilter: UpdateFilter) => void;
     clearUploads: () => void;
     getUploadsProgresses: () => TransferProgresses;
+    downloadUploadLogs: () => void;
 }

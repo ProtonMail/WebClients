@@ -7,6 +7,8 @@ import { TransferConflictStrategy, UploadFolderControls } from '../interface';
 import { ConflictStrategyHandler } from './interface';
 import useUploadHelper from './useUploadHelper';
 
+type LogCallback = (message: string) => void;
+
 interface Folder {
     isNewFolder: boolean;
     folderId: string;
@@ -73,7 +75,8 @@ export default function useUploadFolder() {
         parentId: string,
         folderName: string,
         modificationTime: Date | undefined,
-        getFolderConflictStrategy: ConflictStrategyHandler
+        getFolderConflictStrategy: ConflictStrategyHandler,
+        log: LogCallback
     ): Promise<Folder> => {
         const lowercaseName = folderName.toLowerCase();
 
@@ -87,23 +90,31 @@ export default function useUploadFolder() {
             // Automatically replace file - previous draft was uploaded
             // by the same client.
             if (draftLinkId && clientUid) {
+                log(`Automatically replacing draft`);
                 return replaceDraft(abortSignal, shareId, parentId, draftLinkId, newName, modificationTime);
             }
             if (folderName === newName) {
+                log(`Creating new folder`);
                 return createEmptyFolder(abortSignal, shareId, parentId, folderName, modificationTime);
             }
 
+            log(`Name conflict`);
             const link = await getLinkByName(abortSignal, shareId, parentId, folderName);
             const originalIsFolder = link ? !link.isFile : false;
+
             checkSignal(abortSignal, folderName);
             const conflictStrategy = await getFolderConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
+            log(`Conflict resolved with: ${conflictStrategy}`);
             if (conflictStrategy === TransferConflictStrategy.Rename) {
+                log(`Creating new folder`);
                 return createEmptyFolder(abortSignal, shareId, parentId, newName, modificationTime);
             }
             if (conflictStrategy === TransferConflictStrategy.Replace) {
                 if (draftLinkId) {
+                    log(`Replacing draft`);
                     return replaceDraft(abortSignal, shareId, parentId, draftLinkId, folderName, modificationTime);
                 }
+                log(`Merging folders`);
                 return getFolder(abortSignal, shareId, parentId, folderName);
             }
             if (conflictStrategy === TransferConflictStrategy.Skip) {
@@ -118,7 +129,8 @@ export default function useUploadFolder() {
         parentId: string,
         folderName: string,
         modificationTime: Date | undefined,
-        getFolderConflictStrategy: ConflictStrategyHandler
+        getFolderConflictStrategy: ConflictStrategyHandler,
+        log: LogCallback
     ): UploadFolderControls => {
         const abortController = new AbortController();
         return {
@@ -129,7 +141,8 @@ export default function useUploadFolder() {
                     parentId,
                     folderName,
                     modificationTime,
-                    getFolderConflictStrategy
+                    getFolderConflictStrategy,
+                    log
                 );
             },
             cancel: () => {

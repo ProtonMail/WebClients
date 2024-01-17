@@ -9,6 +9,7 @@ describe('upload jobs', () => {
     const mockUploadBlockExpiredCallback = jest.fn();
     const mockProgressCallback = jest.fn();
     const mockNetworkErrorCallback = jest.fn();
+    const mockLogCallback = jest.fn();
 
     let pauser: Pauser;
 
@@ -43,6 +44,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
 
@@ -70,6 +72,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         expect(pauser.isPaused).toBe(false);
@@ -94,6 +97,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         await expect(promise).rejects.toBe(err);
@@ -121,6 +125,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         // First call + automatic retry.
@@ -151,6 +156,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         // First call + automatic retry + after resume.
@@ -175,6 +181,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         expect(mockUploadBlockCallback).toBeCalledTimes(1);
@@ -202,6 +209,7 @@ describe('upload jobs', () => {
             generator(),
             mockProgressCallback,
             mockNetworkErrorCallback,
+            mockLogCallback,
             mockUploadBlockCallback
         );
         expect(mockUploadBlockCallback).toBeCalledTimes(2);
