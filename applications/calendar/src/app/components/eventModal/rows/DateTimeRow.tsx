@@ -76,10 +76,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
             <div className={clsx([isAllDay && 'w-full md:w-1/2'])}>
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
                     <div className="flex flex-nowrap md:flex-1 grow">
-                        <div
-                            className="flex children-min-size-auto flex-1 grow-custom"
-                            style={{ '--grow-custom': '1.25' }}
-                        >
+                        <div className="flex *:min-size-auto flex-1 grow-custom" style={{ '--grow-custom': '1.25' }}>
                             <DateInput
                                 id={DATE_INPUT_ID}
                                 className={clsx(['flex-1', viewportWidth['<=small'] && 'h-full'])}
@@ -122,10 +119,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
                     <div className="flex flex-nowrap md:flex-1 grow">
-                        <div
-                            className="flex children-min-size-auto flex-1 grow-custom"
-                            style={{ '--grow-custom': '1.25' }}
-                        >
+                        <div className="flex *:min-size-auto flex-1 grow-custom" style={{ '--grow-custom': '1.25' }}>
                             <DateInput
                                 id="event-endDate"
                                 className={clsx(['flex-1', viewportWidth['<=small'] && 'h-full'])}

@@ -22,7 +22,7 @@ const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }:
             name="layoutCard"
             shape="outline"
             color={selected ? 'norm' : 'weak'}
-            className={clsx(['mr-4 mb-4 layout-card-button', selected && 'is-active no-pointer-events text-bold'])}
+            className={clsx(['mr-4 mb-4 layout-card-button', selected && 'is-active pointer-events-none text-bold'])}
             aria-pressed={selected}
             onClick={onChange}
             disabled={disabled}
@@ -33,7 +33,7 @@ const LayoutCard = ({ label, src, selected, onChange, disabled, describedByID }:
             data-testid={`layout:${label}`}
         >
             <span className="flex flex-nowrap flex-column">
-                <img alt="" src={src} className="mb-2 layout-card-image on-rtl-mirror" width={122} height={78} />
+                <img alt="" src={src} className="mb-2 layout-card-image rtl:mirror" width={122} height={78} />
                 <span>{label}</span>
             </span>
         </Button>

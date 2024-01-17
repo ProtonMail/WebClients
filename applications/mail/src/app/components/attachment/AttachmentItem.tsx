@@ -133,30 +133,30 @@ const AttachmentItem = ({
                         )}
                     </button>
                     <Tooltip title={primaryActionTitle}>
-                    <button
-                        aria-label={primaryActionTitle}
-                        className="flex-1 flex flex-nowrap outline-none--at-all"
-                        title={primaryActionTitle}
-                        type="button"
-                        onClick={handleAction(true)}
-                        data-testid={`attachment-item:${name}--primary-action`}
-                    >
-                        <span className="my-auto flex items-baseline flex-nowrap pr-2">
-                            <FileNameDisplay text={name} displayTooltip={false} />
-                            <span
-                                className="message-attachmentSize sr-only align-baseline inline-block shrink-0 ml-1"
-                                data-testid="attachment-item:size"
-                            >
-                                {humanAttachmentSize}
+                        <button
+                            aria-label={primaryActionTitle}
+                            className="flex-1 flex flex-nowrap outline-none--at-all"
+                            title={primaryActionTitle}
+                            type="button"
+                            onClick={handleAction(true)}
+                            data-testid={`attachment-item:${name}--primary-action`}
+                        >
+                            <span className="my-auto flex items-baseline flex-nowrap pr-2">
+                                <FileNameDisplay text={name} displayTooltip={false} />
+                                <span
+                                    className="message-attachmentSize sr-only align-baseline inline-block shrink-0 ml-1"
+                                    data-testid="attachment-item:size"
+                                >
+                                    {humanAttachmentSize}
+                                </span>
                             </span>
-                        </span>
                         </button>
                     </Tooltip>
                 </span>
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex pr-2 pl-1 no-pointer-events-children rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
+                        className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}

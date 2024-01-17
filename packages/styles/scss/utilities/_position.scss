@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 @include responsive-classes(
 	(
@@ -114,8 +114,10 @@
 	z-index: 1;
 }
 
-.z-up {
-	z-index: map.get($z-indexes, 'up');
+@each $layer, $index in $z-indexes {
+	.z-#{$layer} {
+		z-index: $index;
+	}
 }
 
 .z-custom {

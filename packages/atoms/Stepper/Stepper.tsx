@@ -43,7 +43,7 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
     const contextValue = useMemo(() => ({ activeStep }), [activeStep]);
 
     const sharedUlClasses = clsx(
-        'unstyled flex children-min-size-auto gap-2 flex-nowrap m-0',
+        'unstyled flex *:min-size-auto gap-2 flex-nowrap m-0',
         `justify-${position}`
     );
 

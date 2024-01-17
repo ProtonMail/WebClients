@@ -42,7 +42,7 @@ const ThemeCard = ({
             id={id}
             className={clsx(
                 'theme-card-button p-0 flex flex-nowrap flex-column gap-1 items-center',
-                selected && 'is-active no-pointer-events text-bold',
+                selected && 'is-active pointer-events-none text-bold',
                 Component === Button && 'w-full interactive-pseudo',
                 borderRadius === 'sm' && 'rounded-sm',
                 borderRadius === 'md' && 'rounded',
@@ -57,7 +57,7 @@ const ThemeCard = ({
             title={c('Action').t`Use ${label} theme`}
             data-testid={dataTestId}
         >
-            <ThemeSvg className={clsx('block theme-card-image on-rtl-mirror')} size={size} colors={colors} />
+            <ThemeSvg className={clsx('block theme-card-image rtl:mirror')} size={size} colors={colors} />
             <span
                 className={clsx(
                     size === 'small' && 'sr-only',

@@ -48,7 +48,7 @@ export const Screenreaders = () => (
 
 export const PointerEventsNone = () => (
     <div className="p-7 bg-weak">
-        <Button className="no-pointer-events mr-8">Hover me (no-pointer-events)</Button>
+        <Button className="pointer-events-none mr-8">Hover me (pointer-events-none)</Button>
         <Button>Hover me (default)</Button>
     </div>
 );
@@ -60,7 +60,7 @@ export const PointerEventsNone = () => (
         Applies <code>pointer-events: none</code> to element.
         <br />
         If you need to remove pointer events on all children of an element, you may use{' '}
-        <code>no-pointer-events-children</code> class.
+        <code>*:pointer-events-none</code> class.
     </div>
     <div class="w-1/2">
         <Source
@@ -68,7 +68,7 @@ export const PointerEventsNone = () => (
             light
             format
             code={`
-<a className="no-pointer-events">Lorem ipsum dolor</a>
+<a className="pointer-events-none">Lorem ipsum dolor</a>
 `}
         />
     </div>

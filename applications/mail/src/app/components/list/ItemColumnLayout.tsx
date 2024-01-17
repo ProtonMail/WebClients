@@ -213,7 +213,7 @@ const ItemColumnLayout = ({
                                             className="self-center"
                                         />
                                     )}
-                                    <span className="flex children-flex self-center my-auto empty:hidden">
+                                    <span className="flex *:flex self-center my-auto empty:hidden">
                                         {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
                                     </span>
                                 </span>
@@ -232,7 +232,7 @@ const ItemColumnLayout = ({
                                     element={element}
                                     className="ml-1 self-center"
                                 />
-                                <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
+                                <span className="ml-1 flex *:flex self-center my-auto empty:hidden">
                                     <ItemStar element={element} />
                                 </span>
                             </div>
@@ -374,7 +374,7 @@ const ItemColumnLayout = ({
                                         className="ml-1 self-center"
                                     />
                                 )}
-                                <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
+                                <span className="ml-1 flex *:flex self-center my-auto empty:hidden">
                                     {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
                                 </span>
                             </span>
@@ -393,7 +393,7 @@ const ItemColumnLayout = ({
                                 element={element}
                                 className="ml-1 self-center"
                             />
-                            <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
+                            <span className="ml-1 flex *:flex self-center my-auto empty:hidden">
                                 <ItemStar element={element} />
                             </span>
                         </div>
