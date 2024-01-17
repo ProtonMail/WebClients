@@ -36,6 +36,8 @@ interface EncryptedSearchParams {
     onPage: (page: number) => void;
 }
 
+const MAX_TOTAL_RESULTS = 10000;
+
 export const useApplyEncryptedSearch = ({
     conversationMode,
     labelID,
@@ -73,7 +75,8 @@ export const useApplyEncryptedSearch = ({
                 success = await encryptedSearch(setEncryptedSearchResults);
             }
             if (!success) {
-                if (page >= 200) {
+                // We limit the number of results to max 10000 items to avoid API issues
+                if (page >= MAX_TOTAL_RESULTS / pageSize) {
                     // This block will most likely be called two times
                     // Fortunately notification system use a de-duplication system
                     createNotification({
@@ -83,6 +86,7 @@ export const useApplyEncryptedSearch = ({
                     });
                     dispatch(manualFulfilled());
                     onPage(0);
+                    void dispatch(loadAction({ page: 0, pageSize, params, abortController: undefined }));
                 } else {
                     void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
                 }
