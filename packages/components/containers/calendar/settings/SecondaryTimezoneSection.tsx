@@ -26,6 +26,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings }: Props) => {
                     id={timeZoneSelectorId}
                     calendarUserSettings={calendarUserSettings}
                     data-testid="settings/secondary-time-zone:dropdown"
+                    ariaDescribedBy="label-secondary-timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>
