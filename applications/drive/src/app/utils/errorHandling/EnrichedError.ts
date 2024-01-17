@@ -1,5 +1,7 @@
 import type { CaptureContext } from '@sentry/types';
 
+import { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
+
 export const isEnrichedError = (err: any): err is EnrichedError => {
     return err.name === 'EnrichedError';
 };
@@ -24,3 +26,20 @@ export class EnrichedError extends Error {
         this.context = context;
     }
 }
+
+/**
+ * Converts a `SafeErrorObject` to the appropriate `Error` or `EnrichedError`.
+ */
+export const convertSafeError = (obj: SafeErrorObject) => {
+    let error;
+
+    if (obj.name === 'EnrichedError') {
+        error = new EnrichedError(obj.message, obj.context);
+    } else {
+        error = new Error(obj.message);
+    }
+    error.name = obj.name;
+    error.stack = obj.stack;
+
+    return error;
+};
