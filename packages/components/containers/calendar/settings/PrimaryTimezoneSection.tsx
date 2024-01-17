@@ -26,6 +26,7 @@ const PrimaryTimezoneSection = ({ calendarUserSettings }: Props) => {
                     id={timeZoneSelectorId}
                     calendarUserSettings={calendarUserSettings}
                     data-testid="settings/primary-time-zone:dropdown"
+                    ariaDescribedBy="label-primary-timezone"
                 />
             </SettingsLayoutRight>
         </SettingsLayout>
