@@ -7,12 +7,14 @@ import type { ImportPayload } from '../types';
 import { readBitwardenData } from './bitwarden.reader';
 
 describe('Import bitwarden json', () => {
-    let sourceData: string;
-    let payload: ImportPayload;
+    let sourceFiles = [`${__dirname}/mocks/bitwarden.json`, `${__dirname}/mocks/bitwarden-b2b.json`];
+    let payloads: Record<string, ImportPayload> = {};
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/bitwarden.json', 'utf8');
-        payload = readBitwardenData(sourceData);
+        for (let sourceFile of sourceFiles) {
+            const sourceData = await fs.promises.readFile(sourceFile, 'utf-8');
+            payloads[sourceFile] = await readBitwardenData(sourceData);
+        }
     });
 
     it('should throw on encrypted json payload', () => {
@@ -26,9 +28,11 @@ describe('Import bitwarden json', () => {
     });
 
     it('should correctly parse items', () => {
-        const [primary, secondary] = payload.vaults;
+        const [source] = sourceFiles;
+        const { vaults } = payloads[source];
+        const [primary, secondary] = vaults;
 
-        expect(payload.vaults.length).toEqual(2);
+        expect(vaults.length).toEqual(2);
 
         expect(primary.items.length).toEqual(5);
         expect(primary.name).not.toBeUndefined();
@@ -96,8 +100,21 @@ describe('Import bitwarden json', () => {
         expect(ccItem1.content.expirationDate).toBe('012025');
     });
 
-    test('correctly keeps a reference to ignored items', () => {
+    it('correctly keeps a reference to ignored items', () => {
+        const [source] = sourceFiles;
+        const payload = payloads[source];
         expect(payload.ignored).not.toEqual([]);
         expect(payload.ignored[0]).toEqual('[Identification] IdentityItem');
+    });
+
+    it('correctly parses b2b exports', () => {
+        const [, source] = sourceFiles;
+        const payload = payloads[source];
+        const { vaults } = payload;
+        const [primary, secondary] = vaults;
+
+        expect(vaults.length).toBe(2);
+        expect(primary.name).toBe('Collection 2');
+        expect(secondary.name).toBe('collection 1');
     });
 });
