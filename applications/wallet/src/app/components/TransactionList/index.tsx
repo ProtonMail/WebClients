@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -26,6 +27,7 @@ interface Props {
 export const TransactionList = ({ wallet }: Props) => {
     const [transactions, setTransactions] = useState<IWasmSimpleTransactionArray>([]);
     const [modalData, setModalData] = useState<OnchainTransactionDetailsProps>();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const { currentPage, handleNext, handlePrev, handleGoFirst } = useLocalPagination();
 
@@ -54,16 +56,32 @@ export const TransactionList = ({ wallet }: Props) => {
 
     useEffect(() => {
         const pagination = new WasmPagination(currentPage * ITEMS_PER_PAGE, ITEMS_PER_PAGE);
-        wallet?.wasmWallet.getTransactions(pagination).then((transactions) => {
-            setTransactions(transactions);
-        });
+        if (wallet?.wasmWallet) {
+            setIsLoading(true);
+            void wallet.wasmWallet
+                .getTransactions(pagination)
+                .then((transactions) => {
+                    setTransactions(transactions);
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
+        } else {
+            setTransactions([]);
+        }
     }, [currentPage, wallet?.wasmWallet]);
 
     return (
         <>
             <div className="flex flex-column mt-4 flex-nowrap grow">
-                <div className="flex flex-column flex-nowrap mb-2">
-                    <div className="overflow-auto">
+                <div className="flex flex-column flex-nowrap mb-2 grow overflow-auto">
+                    {isLoading ? (
+                        <div className="m-auto flex flex-row items-center">
+                            <CircleLoader className="color-primary mr-2" />
+                            <span className="text-sm color-hint">{c('Wallet Transaction List')
+                                .t`Syncing wallet to get latest transactions.`}</span>
+                        </div>
+                    ) : (
                         <Table className="text-sm" borderWeak>
                             <TableHeader>
                                 <TableRow>
@@ -128,16 +146,16 @@ export const TransactionList = ({ wallet }: Props) => {
                                 ))}
                             </TableBody>
                         </Table>
-                    </div>
+                    )}
                 </div>
 
                 <div className="flex flex-row mt-auto shrink-0 justify-end items-center pr-4">
                     <span className="block mr-4">{c('Wallet Dashboard').t`Page ${currentPage}`}</span>
 
                     <SimplePaginator
-                        canGoPrev={currentPage > 0}
+                        canGoPrev={!isLoading && currentPage > 0}
                         onNext={handleNext}
-                        canGoNext={transactions.length >= ITEMS_PER_PAGE}
+                        canGoNext={!isLoading && transactions.length >= ITEMS_PER_PAGE}
                         onPrev={handlePrev}
                     />
                 </div>

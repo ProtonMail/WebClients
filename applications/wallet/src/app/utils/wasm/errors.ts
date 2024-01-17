@@ -39,6 +39,7 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.InvalidNetwork]: () => c('Wasm Error').t`You are using an address for another network`,
     [WasmError.InvalidOutpoint]: () => c('Wasm Error').t`Provided outpoint is invalid`,
     [WasmError.InvalidPolicyPathError]: () => c('Wasm Error').t`Policy path is invalid`,
+    [WasmError.InvalidScriptType]: () => c('Wasm Error').t`Provided script type is invalid`,
     [WasmError.InvalidSecretKey]: () => c('Wasm Error').t`Provided secret key is invalid`,
     [WasmError.InvalidSeed]: () => c('Wasm Error').t`Provided seed is invalid`,
     [WasmError.InvalidTxId]: () => c('Wasm Error').t`Invalid transaction id provided`,
@@ -61,6 +62,13 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.TransactionConfirmed]: () => c('Wasm Error').t`Transaction is already confirmed`,
     [WasmError.TransactionNotFound]: () => c('Wasm Error').t`The transaction was not found`,
     [WasmError.UnknownUtxo]: () => c('Wasm Error').t`Provided utxo is unknow`,
+    [WasmError.ConnectionFailed]: () => c('Wasm Error').t`Failed to connect to node`,
+    [WasmError.CreateTxError]: () => c('Wasm Error').t`Failed to create transaction`,
+    [WasmError.CoinSelectionError]: () => c('Wasm Error').t`An error occured during coin selection `,
+    [WasmError.BuildFeeBumpError]: () => c('Wasm Error').t`Failed to build fee bump transaction`,
+    [WasmError.AddUtxoError]: () => c('Wasm Error').t`Could not add utxo`,
+    [WasmError.NewError]: () => c('Wasm Error').t`Could not create wallet`,
+    [WasmError.NewOrLoadError]: () => c('Wasm Error').t`Could not create nor load wallet`,
 };
 
 export const getHumanReadableErrorFromWasmError = (error: WasmError) => {

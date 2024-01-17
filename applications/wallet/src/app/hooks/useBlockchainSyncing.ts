@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
-import { MINUTE } from '@proton/shared/lib/constants';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { WasmAccount, WasmChain, WasmNetwork, WasmPagination, WasmWallet, WasmWalletConfig } from '../../pkg';
@@ -150,7 +150,7 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
         }
 
         setBlockchainWalletRecord(tmpWallets);
-    }, [handleError, wallets]);
+    }, [handleError, network, wallets]);
 
     const syncSingleWalletAccountBlockchainData = useCallback(
         async (walletId: number, accountId: number, shouldSync = false) => {
@@ -204,14 +204,15 @@ export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]
         currentTimeoutId.current = setTimeout(async () => {
             await syncAllWalletsBlockchainData(true);
             void pollAccountsBlockchainData();
-        }, 1 * MINUTE);
+        }, 10 * MINUTE);
     }, [syncAllWalletsBlockchainData]);
 
     useEffect(() => {
-        initAccountsBlockchainData();
+        void initAccountsBlockchainData();
+
         const ts = setTimeout(() => {
             void syncAllWalletsBlockchainData(true);
-        }, 1000);
+        }, 1 * SECOND);
         return () => {
             clearTimeout(ts);
         };

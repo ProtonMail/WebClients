@@ -1,3 +1,5 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import { render, screen, within } from '@testing-library/react';
 
 import { TransactionHistoryOverview } from '.';
@@ -5,7 +7,7 @@ import { simpleTransactions } from '../../tests';
 
 describe('TransactionHistoryOverview', () => {
     it('should display 7 last transactions by default, sorted from newest to oldest', () => {
-        render(<TransactionHistoryOverview transactions={simpleTransactions} />);
+        render(<TransactionHistoryOverview transactions={simpleTransactions} />, { wrapper: BrowserRouter });
 
         const listItems = screen.getAllByRole('listitem');
         expect(listItems).toHaveLength(7);
@@ -59,7 +61,10 @@ describe('TransactionHistoryOverview', () => {
 
     describe('when max is provided', () => {
         it('should display max or less transactions', () => {
-            render(<TransactionHistoryOverview transactions={simpleTransactions} max={2} />);
+            render(<TransactionHistoryOverview transactions={simpleTransactions} max={2} />, {
+                wrapper: BrowserRouter,
+            });
+
             expect(screen.getAllByRole('listitem')).toHaveLength(2);
         });
     });
