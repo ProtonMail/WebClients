@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
@@ -18,32 +18,35 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
     const [open, setOpen] = useControlled(controlledOpen);
     const [render, setRender] = useState(open);
 
-    const handleSetOpen = (newValue: boolean) => {
+    const handleSetOpen = useCallback((newValue: boolean) => {
         if (newValue) {
             setOpen(true);
             setRender(true);
         } else {
             setOpen(false);
         }
-    };
+    }, []);
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         handleSetOpen(false);
         onClose?.();
-    };
+    }, [handleSetOpen, onClose]);
 
-    const handleExit = () => {
+    const handleExit = useCallback(() => {
         setRender(false);
         setKey(generateUID());
         onExit?.();
-    };
+    }, [onExit]);
 
-    const modalProps: ModalStateProps = {
-        key,
-        open: !!open,
-        onClose: handleClose,
-        onExit: handleExit,
-    };
+    const modalProps: ModalStateProps = useMemo(
+        () => ({
+            key,
+            open: !!open,
+            onClose: handleClose,
+            onExit: handleExit,
+        }),
+        [key, open, handleClose, handleExit]
+    );
 
     return [modalProps, handleSetOpen, render] as const;
 };
