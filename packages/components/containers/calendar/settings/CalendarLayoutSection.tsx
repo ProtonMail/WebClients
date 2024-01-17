@@ -35,7 +35,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
         <SettingsSection>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="text-semibold" htmlFor="view-select">
+                    <label className="text-semibold" htmlFor="view-select" id="label-view-select">
                         {c('Label').t`Default view`}{' '}
                         <Info
                             buttonClass="ml-2 inline-flex"
@@ -46,6 +46,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                 <SettingsLayoutRight>
                     <ViewPreferenceSelector
                         id="view-select"
+                        aria-describedby="label-view-select"
                         view={ViewPreference}
                         loading={loadingView}
                         onChange={(ViewPreference) => withLoadingView(handleChange({ ViewPreference }))}

@@ -39,7 +39,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
         <SettingsSection>
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label className="text-semibold" htmlFor="invite-locale">
+                    <label className="text-semibold" htmlFor="invite-locale" id="label-invite-local">
                         {
                             // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
                             c('Label').t`Send in`
@@ -53,6 +53,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                 <SettingsLayoutRight>
                     <InviteLocaleSelector
                         id="invite-locale"
+                        aria-describedby="label-invite-local"
                         locale={displayedLocale}
                         locales={locales}
                         loading={loadingInviteLocale}
