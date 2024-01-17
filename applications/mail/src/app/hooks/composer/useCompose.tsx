@@ -17,11 +17,12 @@ import {
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { forceSend } from '@proton/shared/lib/api/messages';
-import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
+import { SpaceState, getAppSpace, getSpace, getSpaceDetails } from '@proton/shared/lib/user/storage';
 
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
@@ -187,7 +188,8 @@ export const useCompose = ({
             return;
         }
 
-        const spacePercentage = (user.UsedSpace * 100) / user.MaxSpace;
+        const appSpace = getAppSpace(getSpace(user, storageSplitEnabled), APPS.PROTONMAIL);
+        const details = getSpaceDetails(appSpace.usedSpace, appSpace.maxSpace);
 
         if (!Number.isNaN(spacePercentage) && spacePercentage >= 100) {
             setStorageCapacityModalOpen(true);

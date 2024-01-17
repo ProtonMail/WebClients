@@ -71,7 +71,7 @@ const Sidebar = ({
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const appSpace = getAppSpace(user, getSpace(user), app);
+    const appSpace = getAppSpace(getSpace(user), app);
     const { viewportWidth } = useActiveBreakpoint();
 
     return (
