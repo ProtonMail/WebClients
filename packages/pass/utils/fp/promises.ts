@@ -6,8 +6,23 @@ export type UnwrapPromise<T> = T extends any[]
       ? U
       : T;
 
-export type Awaiter<T> = Promise<T> & { resolve: (value: T | PromiseLike<T>) => void };
+export type Awaiter<T> = Promise<T> & { resolve: (value: T | PromiseLike<T>) => void; reject: (err: unknown) => void };
 export type AsyncResult<F extends (...args: any[]) => Promise<any>> = Promise<Awaited<ReturnType<F>>>;
+
+export const awaiter = <T>(): Awaiter<T> => {
+    let resolver: (value: T | PromiseLike<T>) => void = noop;
+    let rejector: (err: unknown) => void = noop;
+
+    const promise = new Promise<T>((resolve, reject) => {
+        resolver = resolve;
+        rejector = reject;
+    }) as Awaiter<T>;
+
+    promise.resolve = resolver;
+    promise.reject = rejector;
+
+    return promise;
+};
 
 /**
  * this util will recursively unwrap promises in any
@@ -20,15 +35,6 @@ export type AsyncResult<F extends (...args: any[]) => Promise<any>> = Promise<Aw
  */
 export const unwrap = async <T extends any[]>(arr: [...T]): Promise<UnwrapPromise<T>> =>
     Promise.all(arr.map((value) => (Array.isArray(value) ? unwrap(value) : value))) as Promise<UnwrapPromise<T>>;
-
-export const awaiter = <T>(): Awaiter<T> => {
-    let resolver: (value: T | PromiseLike<T>) => void = noop;
-
-    const promise = new Promise<T>((resolve) => (resolver = resolve)) as Awaiter<T>;
-    promise.resolve = resolver;
-
-    return promise;
-};
 
 /** Defines options for asynchronous function locking to manage concurrent executions */
 type AsyncLockOptions<F extends (...args: any[]) => Promise<any>> = {
@@ -49,4 +55,30 @@ export const asyncLock = <F extends (...args: any[]) => Promise<any>>(fn: F, opt
 
         return pending;
     };
+};
+
+type AsyncQueueOptions<F extends (...args: any[]) => Promise<any>> = AsyncLockOptions<F>;
+
+export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, options?: AsyncQueueOptions<F>) => {
+    const handlers = new Map<string, Promise<void>>();
+
+    return (async (...args: Parameters<F>) => {
+        const key = options?.key?.(...args) ?? '';
+        const queue = handlers.get(key) ?? Promise.resolve();
+        const job = awaiter<ReturnType<F>>();
+
+        handlers.set(
+            key,
+            queue.then(async () => {
+                try {
+                    const result = await fn(...args);
+                    job.resolve(result);
+                } catch (err) {
+                    job.reject(err);
+                }
+            })
+        );
+
+        return job;
+    }) as F;
 };
