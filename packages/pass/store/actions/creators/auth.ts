@@ -8,13 +8,13 @@ import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ClientEndpoint } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { sessionLockDisableRequest, sessionLockEnableRequest, sessionUnlockRequest } from '../requests';
 
 export const signoutIntent = createAction('auth::signout::intent', (payload: { soft: boolean }) => ({ payload }));
-
 export const signoutSuccess = createAction('auth::signout::success', (payload: { soft: boolean }) => ({ payload }));
 
 export const sessionLockIntent = createAction('session::lock::intent', () => ({ payload: {} }));
@@ -30,6 +30,7 @@ export const sessionLockEnableFailure = createAction(
     'session::lock::enable::failure',
     withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
+            key: NotificationKey.SESSION_LOCK,
             type: 'error',
             endpoint,
             text: c('Error').t`Auto-lock could not be activated`,
@@ -44,6 +45,7 @@ export const sessionLockEnableSuccess = createAction(
         pipe(
             withCache,
             withNotification({
+                key: NotificationKey.SESSION_LOCK,
                 type: 'info',
                 endpoint,
                 text: c('Info').t`PIN code successfully registered. Use it to unlock ${PASS_APP_NAME}`,
@@ -60,6 +62,7 @@ export const sessionLockDisableFailure = createAction(
     'session::lock::disable::failure',
     withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
+            key: NotificationKey.SESSION_LOCK,
             type: 'error',
             endpoint,
             text: c('Error').t`Auto-lock could not be disabled`,
@@ -74,6 +77,7 @@ export const sessionLockDisableSuccess = createAction(
         pipe(
             withCache,
             withNotification({
+                key: NotificationKey.SESSION_LOCK,
                 type: 'info',
                 endpoint,
                 text: c('Info').t`Auto-lock successfully disabled`,
@@ -93,7 +97,12 @@ export const sessionUnlockIntent = createAction(
 export const sessionUnlockFailure = createAction(
     'session::unlock::failure',
     withRequestFailure((error: unknown, payload: { error: string; canRetry: boolean }) =>
-        withNotification({ type: 'error', text: payload.error, error })({ payload, error })
+        withNotification({
+            key: NotificationKey.SESSION_LOCK,
+            type: 'error',
+            text: payload.error,
+            error,
+        })({ payload, error })
     )
 );
 
