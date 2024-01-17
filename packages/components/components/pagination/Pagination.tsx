@@ -61,7 +61,7 @@ const Pagination = ({
             {hasPrevious ? (
                 <Button
                     icon
-                    className="previous-button on-rtl-mirror"
+                    className="previous-button rtl:mirror"
                     disabled={disablePrevious}
                     onClick={onPrevious}
                     title={c('Title').t`Previous`}
@@ -75,7 +75,7 @@ const Pagination = ({
             {hasNext ? (
                 <Button
                     icon
-                    className="next-button on-rtl-mirror"
+                    className="next-button rtl:mirror"
                     disabled={disableNext}
                     onClick={onNext}
                     title={c('Title').t`Next`}

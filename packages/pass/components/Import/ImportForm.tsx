@@ -108,7 +108,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                             {form.values.file ? (
                                 <AttachedFile
                                     file={form.values.file}
-                                    className={clsx('border-none', busy && 'no-pointer-events')}
+                                    className={clsx('border-none', busy && 'pointer-events-none')}
                                     iconName="file-lines"
                                     clear={c('Action').t`Delete`}
                                     onClear={() => form.setFieldValue('file', undefined)}

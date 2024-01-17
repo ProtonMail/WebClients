@@ -39,18 +39,13 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
             disabled={!canReply}
             data-testid="eoreply:button"
         >
-            <Icon name="arrow-up-and-left-big" className="on-rtl-mirror mr-2" alt={c('Title').t`Reply`} />
+            <Icon name="arrow-up-and-left-big" className="rtl:mirror mr-2" alt={c('Title').t`Reply`} />
             <span>{c('Action').t`Reply securely`}</span>
         </Button>
     );
 
     return (
-        <div
-            className={clsx([
-                'flex items-center border-bottom px-7 py-5',
-                !canReply && 'justify-space-between',
-            ])}
-        >
+        <div className={clsx(['flex items-center border-bottom px-7 py-5', !canReply && 'justify-space-between'])}>
             <h1 className="text-ellipsis m-0 mb-2 eo-layout-title" title={subject} data-testid="eo:subject">
                 {subject}
             </h1>

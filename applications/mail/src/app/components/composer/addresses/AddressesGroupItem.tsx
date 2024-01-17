@@ -104,7 +104,7 @@ const AddressesGroupItem = ({
                 {...dragHandlers}
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
-                    <span className="inline-flex shrink-0 composer-addresses-item-icon px-2 ml-0.5 no-pointer-events-children h-full">
+                    <span className="inline-flex shrink-0 composer-addresses-item-icon px-2 ml-0.5 *:pointer-events-none h-full">
                         <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
@@ -121,7 +121,7 @@ const AddressesGroupItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove inline-flex shrink-0 p-2 no-pointer-events-children h-full relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove inline-flex shrink-0 p-2 *:pointer-events-none h-full relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
                         <Icon name="cross" size={12} className="m-auto" />
@@ -145,10 +145,7 @@ const AddressesGroupItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton
-                        className="text-left flex flex-nowrap items-center"
-                        onClick={handleCopy}
-                    >
+                    <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleCopy}>
                         <Icon name="squares" className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>

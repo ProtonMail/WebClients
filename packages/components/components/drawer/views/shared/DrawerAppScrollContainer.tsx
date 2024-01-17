@@ -9,7 +9,7 @@ interface Props {
 const DrawerAppScrollContainer = ({ children }: Props) => {
     return (
         <Scroll>
-            <div className="h-full p-3 pt-0.5 flex children-min-size-auto flex-column flex-nowrap items-start gap-3">
+            <div className="h-full p-3 pt-0.5 flex *:min-size-auto flex-column flex-nowrap items-start gap-3">
                 {children}
             </div>
         </Scroll>

@@ -41,7 +41,7 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
+                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 theme.background === 'bf' ? 'signup-v2-bg--bf2023' : 'signup-v2-bg',
                 theme.intent && `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
                 className
