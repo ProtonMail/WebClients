@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { Location } from 'history';
 
 import { FeatureCode } from '@proton/components/containers';
@@ -17,7 +19,7 @@ export const useMailboxFavicon = (labelID: string, location: Location) => {
     const conversationMode = isConversationMode(labelID, mailSettings, location);
     const counters = conversationMode ? conversationCounts : messageCounts;
 
-    const countersByLabelId = getCountersByLabelId(counters);
+    const countersByLabelId = useMemo(() => getCountersByLabelId(counters), [counters]);
     const unreads = countersByLabelId[labelID]?.Unread ?? 0;
 
     const shouldDisplayUnreadFavicon =
