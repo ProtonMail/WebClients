@@ -1,4 +1,4 @@
-import { Route, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import {
     CompatibilityCheck,
@@ -35,8 +35,7 @@ import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerPro
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
-import { Lobby } from './Views/Lobby';
-import { Main } from './Views/Main';
+import { AuthSwitch } from './Views/AuthSwitch';
 import * as config from './config';
 
 const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
@@ -113,10 +112,7 @@ export const App = () => {
                                                         <NavigationProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <Route
-                                                                        path="*"
-                                                                        render={() => (loggedIn ? <Main /> : <Lobby />)}
-                                                                    />
+                                                                    <AuthSwitch loggedIn={loggedIn} />
                                                                     <Portal>
                                                                         <ModalsChildren />
                                                                         <NotificationsChildren />
