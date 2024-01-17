@@ -1,6 +1,6 @@
-import { fork, put, takeLeading } from 'redux-saga/effects';
+import { fork, takeLeading } from 'redux-saga/effects';
 
-import { cacheRequest, sessionLockIntent } from '@proton/pass/store/actions';
+import { sessionLockIntent } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import noop from '@proton/utils/noop';
 
@@ -9,8 +9,6 @@ import noop from '@proton/utils/noop';
  * no effect */
 function* lockSessionImmediateWorker({ getAuthService, getAuthStore: getAuth }: RootSagaOptions) {
     if (getAuth().getLockToken() !== undefined) {
-        yield put(cacheRequest({ throttle: false }));
-
         yield fork(function* () {
             /* fork for non-blocking action -> immediate UI effect */
             yield getAuthService().lock({ soft: false }).catch(noop);

@@ -42,6 +42,7 @@ export const updatePauseListItem = createAction(
     (payload: { hostname: string; criteria: CriteriaMasks }) => withCache({ payload })
 );
 
-export const syncLocalSettings = createAction('settings::local::sync', (payload: RecursivePartial<ProxiedSettings>) =>
-    withCache({ payload })
+export const syncLocalSettings = createAction(
+    'settings::local::sync',
+    (payload: RecursivePartial<ProxiedSettings>) => ({ payload })
 );

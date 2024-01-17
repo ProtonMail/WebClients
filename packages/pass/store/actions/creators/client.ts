@@ -48,7 +48,7 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
 );
 
 export const bootSuccess = createAction('boot::success', (payload: Maybe<SynchronizationResult>) =>
-    pipe(withCache, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
+    withRequest({ id: bootRequest(), type: 'success' })({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', () =>
