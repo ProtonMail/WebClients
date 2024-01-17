@@ -1,20 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-import {
-    BalanceOverview,
-    DashboardSideContent,
-    ExploreProtonWalletSection,
-    WalletSetupModal,
-    YourWalletsSection,
-} from '../components';
+import { BalanceOverview, ExploreProtonWalletSection, WalletSetupModal, YourWalletsSection } from '../components';
 import { useOnchainWalletContext } from '../contexts';
 
 export const MultiWalletDashboardContainer = () => {
     const { wallets } = useOnchainWalletContext();
 
     const [isSetupModalOpenned, setIsSetupModalOpenned] = useState(false);
-    const accounts = wallets?.flatMap(({ accounts }) => accounts) ?? [];
-    const transactions = accounts.flatMap(({ transactions }) => transactions);
 
     useEffect(() => {
         setIsSetupModalOpenned(!wallets?.length);
@@ -32,13 +24,8 @@ export const MultiWalletDashboardContainer = () => {
                     />
                     <ExploreProtonWalletSection />
                 </div>
-
-                <div>
-                    <div className="w-custom h-full" style={{ '--w-custom': '21rem' }}>
-                        <DashboardSideContent transactions={transactions} />
-                    </div>
-                </div>
             </div>
+
             <WalletSetupModal isOpen={isSetupModalOpenned} onClose={() => setIsSetupModalOpenned(false)} />
         </>
     );
