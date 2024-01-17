@@ -17,6 +17,7 @@ interface Props {
     selectMaxHeight?: DropdownSizeUnit.Viewport | Unit;
     tooltip?: boolean;
     ['data-testid']?: string;
+    ariaDescribedBy?: string;
 }
 const PrimaryTimezoneSelector = ({
     id,
@@ -27,6 +28,7 @@ const PrimaryTimezoneSelector = ({
     selectMaxHeight,
     tooltip,
     'data-testid': dataTestId,
+    ariaDescribedBy,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -52,6 +54,7 @@ const PrimaryTimezoneSelector = ({
             unstyledSelect={unstyledSelect}
             selectMaxHeight={selectMaxHeight}
             tooltip={tooltip}
+            aria-describedby={ariaDescribedBy}
         />
     );
 };
