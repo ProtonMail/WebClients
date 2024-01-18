@@ -9,6 +9,10 @@ export const getDomainError = () => {
     return c('Error').t`Please configure a custom domain before adding users to your organization.`;
 };
 
+export const getDomainAdressError = () => {
+    return c('Error').t`Please configure a custom domain before adding addresses.`;
+};
+
 const validateAddUser = ({
     privateUser,
     organization,

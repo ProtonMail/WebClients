@@ -6,7 +6,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult from './useCachedModelResult';
 
-const useDomains = (): [Domain[], boolean, Error] => {
+const useCustomDomains = (): [Domain[], boolean, Error] => {
     const cache = useCache();
     const api = useApi();
 
@@ -22,4 +22,4 @@ const useDomains = (): [Domain[], boolean, Error] => {
     return useCachedModelResult(cache, DomainsModel.key, miss);
 };
 
-export default useDomains;
+export default useCustomDomains;

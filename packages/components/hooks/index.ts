@@ -28,7 +28,7 @@ export { default as useContactEmailsSortedByName } from './useContactEmailsSorte
 export { default as useContacts } from './useContacts';
 export * from './useConversationCounts';
 export { default as useDocumentTitle } from './useDocumentTitle';
-export { default as useDomains } from './useDomains';
+export { default as useCustomDomains } from './useCustomDomains';
 export { default as useDomainsAddresses } from './useDomainsAddresses';
 export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './useDeviceRecovery';
 export { default as useDragMove } from './useDragMove';
@@ -89,7 +89,7 @@ export { default as useIsPaidUserCookie } from './useIsPaidUserCookie';
 export { default as useIsProtonUserCookie } from './useIsProtonUserCookie';
 export { default as usePaymentMethods } from './usePaymentMethods';
 export { default as usePlans } from './usePlans';
-export { default as usePremiumDomains } from './usePremiumDomains';
+export { default as useProtonDomains } from './useProtonDomains';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as usePrimaryRecoverySecret } from './usePrimaryRecoverySecret';
 export { default as usePromiseResult } from './usePromiseResult';
