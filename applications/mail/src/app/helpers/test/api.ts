@@ -1,4 +1,3 @@
-import { FeatureCode } from '@proton/components';
 import { addApiMock, addApiResolver, apiMock, apiMocksMap, clearApiMocks } from '@proton/testing';
 
 /**
@@ -47,9 +46,7 @@ export const registerFeatureFlagsApiMock = () => {
     );
 };
 
-export const registerMinimalFlags = () => {
-    setFeatureFlags(FeatureCode.SpotlightEncryptedSearch, false);
-};
+export const registerMinimalFlags = () => {};
 
 export const parseFormData = (data: any) => {
     const result: any = {};
