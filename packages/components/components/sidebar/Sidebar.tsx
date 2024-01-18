@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,6 +21,75 @@ import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';
 
+const Storage = ({
+    appSpace,
+    app,
+    user,
+    subscription,
+    version,
+}: {
+    appSpace: ReturnType<typeof getAppSpace>;
+    app: APP_NAMES;
+    user: UserModel;
+    subscription?: Subscription;
+    version?: ReactNode;
+}) => {
+    const spacePercentage = percentage(appSpace.maxSpace, appSpace.usedSpace);
+    const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
+
+    const canAddStorage = getCanAddStorage({ user, subscription });
+
+    const upsellRef = getUpsellRefFromApp({
+        app,
+        feature: SHARED_UPSELL_PATHS.STORAGE,
+        component: UPSELL_COMPONENT.BUTTON,
+        fromApp: app,
+    });
+
+    const humanUsedSpace = humanSize(appSpace.usedSpace);
+    const humanMaxSpace = humanSize(appSpace.maxSpace);
+
+    const storageText = (
+        <>
+            <span
+                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
+                style={{ '--signal-success': 'initial' }}
+                // Used by Drive E2E tests
+                data-testid="app-used-space"
+            >
+                {humanUsedSpace}
+            </span>
+            &nbsp;/&nbsp;<span className="max-space">{humanMaxSpace}</span>
+        </>
+    );
+
+    return (
+        <>
+            <SidebarStorageMeter
+                label={`${c('Storage').t`Your current storage:`} ${humanUsedSpace} / ${humanMaxSpace}`}
+                value={spacePercentagePrecision}
+            />
+            <div className="flex flex-nowrap justify-space-between py-2">
+                <span>
+                    {canAddStorage ? (
+                        <Tooltip title={c('Storage').t`Upgrade storage`}>
+                            <SettingsLink
+                                path={addUpsellPath(getUpgradePath({ user, subscription }), upsellRef)}
+                                className="app-infos-storage text-no-decoration text-xs m-0"
+                            >
+                                {storageText}
+                            </SettingsLink>
+                        </Tooltip>
+                    ) : (
+                        <span className="app-infos-storage text-xs m-0">{storageText}</span>
+                    )}
+                </span>
+                <span className="app-infos-compact">{version}</span>
+            </div>
+        </>
+    );
+};
+
 interface Props extends ComponentPropsWithoutRef<'div'> {
     app: APP_NAMES;
     logo?: ReactNode;
@@ -35,7 +104,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
-    extraFooter?: ReactNode;
+    preFooter?: ReactNode;
+    postFooter?: ReactNode;
     /**
      * If `true`, the sidebar children container will grow to the maximum
      * available size.
@@ -59,7 +129,8 @@ const Sidebar = ({
     children,
     version,
     contactsButton,
-    extraFooter,
+    preFooter,
+    postFooter,
     growContent = true,
     ...rest
 }: Props) => {
@@ -134,31 +205,15 @@ const Sidebar = ({
                 </div>
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
-                        <SidebarStorageMeter
-                            label={`${c('Storage').t`Your current storage:`} ${humanSize(
-                                appSpace.usedSpace
-                            )} / ${humanSize(appSpace.maxSpace)}`}
-                            value={spacePercentagePrecision}
+                        {preFooter}
+                        <Storage
+                            appSpace={appSpace}
+                            app={app}
+                            user={user}
+                            subscription={subscription}
+                            version={version}
                         />
-                        <div className="flex flex-nowrap justify-space-between py-2">
-                            <span>
-                                {canAddStorage ? (
-                                    <Tooltip title={c('Storage').t`Upgrade storage`}>
-                                        <SettingsLink
-                                            path={addUpsellPath('/upgrade', upsellRef)}
-                                            className="app-infos-storage text-no-decoration text-xs m-0"
-                                        >
-                                            {storageText}
-                                        </SettingsLink>
-                                    </Tooltip>
-                                ) : (
-                                    <span className="app-infos-storage text-xs m-0">{storageText}</span>
-                                )}
-                            </span>
-
-                            <span className="app-infos-compact">{version}</span>
-                        </div>
-                        {extraFooter}
+                        {postFooter}
                     </div>
                 ) : (
                     <div className="border-top">
