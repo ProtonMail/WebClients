@@ -229,6 +229,7 @@ const Item = ({
                     userSettings={userSettings}
                     isHovered={isHovered}
                     showAttachmentThumbnails={showAttachmentThumbnails}
+                    isDelightMailListEnabled={isDelightMailListEnabled}
                 />
             </div>
         </div>
