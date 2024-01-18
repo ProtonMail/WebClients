@@ -2100,6 +2100,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Chcete-li spravovat více uživatelů, přejděte na firemní tarif."
       ],
+      "Please upload an xml file": [
+        "Nahrejte prosím soubor xml"
+      ],
+      "Please upload only 1 file": [
+        "Nahrajte prosím pouze 1 soubor"
+      ],
       "Process aborted": [
         "Proces přerušen"
       ],
@@ -2791,6 +2797,11 @@
         "Uživatelské jméno"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Přidejte tento záznam do své domény v ovládacím panelu svého registrátora doménových jmen"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2995,6 +3006,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Opravdu chcete tomuto uživatelovi odebrat oprávnění správce?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Opravdu chcete odebrat doménu ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Požádejte správce organizace o nastavení bran."
       ],
@@ -3024,6 +3038,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Účtováno ${ price }"
@@ -3114,6 +3131,15 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
+      ],
+      "Domain ownership failed verification.": [
+        "Vlastnictví domény se nepodařilo ověřit."
+      ],
+      "Domain ownership not verified.": [
+        "Vlastnictví domény není ověřeno."
+      ],
+      "Domain ownership verified.": [
+        "Vlastnictví domény ověřeno."
       ],
       "Done": [
         "Hotovo"
@@ -3523,6 +3549,9 @@
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
       ],
+      "SAML configuration saved": [
+        "Nastavení SAML uloženo"
+      ],
       "Save ${ percentage }": [
         "Ušetřete ${ percentage }"
       ],
@@ -3888,6 +3917,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Váš současný tarif aktualizujeme na vylepšený tarif, který nabízí více za stejnou cenu. Během aktualizace našich systémů jej nebudete moci změnit. Jakmile to bude hotové, pošleme vám e-mail."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Při povolování SAML pro ${ appName } u poskytovatele identit můžete být vyzváni k použití zpětné adresy URL (ACS) a ID vydavatele. Níže uvedené údaje stačí zkopírovat a vložit do polí poskytovatele identit."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
@@ -4341,6 +4373,9 @@
       "Do you have any suggestions for our team?": [
         "Máte pro náš tým nějaké návrhy?"
       ],
+      "e.g. example.com": [
+        "např. example.com"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4388,6 +4423,9 @@
       ],
       "Main": [
         "Hlavní"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL metadat pro ${ appName }"
       ],
       "Moderate NAT": [
         "Moderate NAT"
@@ -5500,6 +5538,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Jedno VPN připojení umožňuje v jednom okamžiku připojit se k ${ VPN_APP_NAME } pouze jednomu zařízení. Chcete-li například připojit telefon a notebook k ${ VPN_APP_NAME } současně, potřebujete dvě připojení VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -6746,6 +6787,12 @@
         "${ n } kalendáře na uživatele",
         "${ n } kalendářů na uživatele",
         "${ n } kalendářů na uživatele"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } vysokorychlostní připojení VPN",
