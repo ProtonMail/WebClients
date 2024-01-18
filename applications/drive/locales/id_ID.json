@@ -397,6 +397,9 @@
       "Mark for deletion": [
         "Tandai untuk dihapus"
       ],
+      "Maximize": [
+        "Perbesar"
+      ],
       "Maximize transfers": [
         "Perbesar jendela transfer"
       ],
@@ -405,6 +408,9 @@
       ],
       "Merge contacts": [
         "Gabungkan kontak"
+      ],
+      "Minimize": [
+        "Perkecil"
       ],
       "Minimize transfers": [
         "Sembunyikan jendela transfer"
@@ -3321,6 +3327,9 @@
       "All (${ totalFoldersCount } labels)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All encrypted files": [
+        "Seluruh berkas terenkripsi"
+      ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
@@ -3519,6 +3528,9 @@
       "Downloading": [
         "Mengunduh"
       ],
+      "Downloading all encrypted files": [
+        "Mengunduh seluruh berkas terenkripsi"
+      ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
       ],
@@ -3683,6 +3695,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Selagi Anda menunggu, daftarkan diri Anda ke ${ DRIVE_APP_NAME } dan lindungi data Anda dengan enkripsi end-to-end yang memungkinkan Anda untuk berbagi data secara aman."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Mengindeks item ${ esProgress } dari ${ totalProgressToShow }"
@@ -3960,6 +3975,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Memulihkan Foto... Mohon biarkan tab ini terbuka"
       ],
+      "Retry now": [
+        "Coba lagi sekarang"
+      ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
       ],
@@ -3968,6 +3986,12 @@
       ],
       "Securely downloaded ${ nbFile } files": [
         "${ nbFile } berkas diunduh secara aman"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Seluruh berkas terenkripsi berhasil diunduh secara aman"
+      ],
+      "Securely downloaded all files": [
+        "Seluruh berkas berhasil diunduh secara aman"
       ],
       "Select a folder to move to.": [
         "Pilih folder tujuan."
@@ -4011,6 +4035,9 @@
       "Shared link not found": [
         "Tautan yang dibagikan tidak ditemukan"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Daftarkan diri Anda ke ${ DRIVE_APP_NAME } dan lindungi data Anda dengan enkripsi end-to-end yang memungkinkan Anda untuk berbagi data secara aman."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Tanda tangan tidak dapat divalidasi karena kesalahan jaringan. Silakan coba lagi nanti."
       ],
@@ -4034,6 +4061,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Ada sesuatu yang salah, silakan coba lagi nanti."
+      ],
+      "Something went wrong...": [
+        "Terdapat suatu kesalahan..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
@@ -4568,6 +4598,9 @@
       ],
       "Download anyway": [
         "Tetap unduh"
+      ],
+      "Downloading": [
+        "Mengunduh"
       ],
       "Downloading ${ percentageValue }%": [
         "Unduhan ${ percentageValue }%"
