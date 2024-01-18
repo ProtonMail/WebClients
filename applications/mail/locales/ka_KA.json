@@ -4264,6 +4264,22 @@
         "ვარსკვლავიანი"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "ელ-ფოსტა გაგზავნილია ${ label }"
+      ],
+      "with attachments": [
+        "მიმაგრებებით"
+      ],
+      "without attachments": [
+        "მიმაგრების გარეშე"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "ელ-ფოსტა გაგზავნილია ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "ნაგულისხმევი"

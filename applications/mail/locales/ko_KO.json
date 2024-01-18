@@ -4228,6 +4228,22 @@
         "별표 표시됨"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "이메일이 ${ label } 으(로) 전송되었습니다"
+      ],
+      "with attachments": [
+        "첨부 파일 있음"
+      ],
+      "without attachments": [
+        "첨부 파일 없음"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "이메일이 ${ label } 으(로) 전송되었습니다"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "기본"
