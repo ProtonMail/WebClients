@@ -21,7 +21,7 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
-import { useApi, useCache, useDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
+import { useApi, useCache, useCustomDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import CatchAllModal from './CatchAllModal';
@@ -42,8 +42,8 @@ const DomainsSectionText = () => {
 const DomainsSectionInternal = () => {
     const api = useApi();
     const cache = useCache();
-    const [domains, loadingDomains] = useDomains();
-    const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(domains);
+    const [customDomains, loadingCustomDomains] = useCustomDomains();
+    const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
 
@@ -55,9 +55,9 @@ const DomainsSectionInternal = () => {
     const [deleteDomainModalProps, setDeleteDomainModalOpen, renderDeleteDomain] = useModalState();
     const [catchAllDomainModalProps, setCatchAllDomainModalOpen, renderCatchAllDomain] = useModalState();
 
-    const allModelsArePresent = domains && domainsAddressesMap && organization;
+    const allModelsArePresent = customDomains && domainsAddressesMap && organization;
 
-    const loading = !allModelsArePresent && (loadingDomains || loadingDomainsAddressesMap || loadingOrganization);
+    const loading = !allModelsArePresent && (loadingCustomDomains || loadingDomainsAddressesMap || loadingOrganization);
 
     const UsedDomains = organization?.UsedDomains || 0;
     const MaxDomains = organization?.MaxDomains || 0;
@@ -108,7 +108,7 @@ const DomainsSectionInternal = () => {
                             onClick={() => withLoadingRefresh(handleRefresh())}
                         >{c('Action').t`Refresh status`}</Button>
                     </div>
-                    {!!domains?.length && domainsAddressesMap && (
+                    {!!customDomains?.length && domainsAddressesMap && (
                         <Table hasActions responsive="cards">
                             <TableHeader
                                 cells={[
@@ -118,7 +118,7 @@ const DomainsSectionInternal = () => {
                                 ]}
                             />
                             <TableBody loading={loading} colSpan={4}>
-                                {domains.map((domain) => {
+                                {customDomains.map((domain) => {
                                     const domainAddresses = domainsAddressesMap[domain.ID] || [];
                                     return (
                                         <TableRow
