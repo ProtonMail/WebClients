@@ -1,5 +1,4 @@
 import { type FC, useMemo, useState } from 'react';
-import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -16,25 +15,38 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { UpsellRef } from '@proton/pass/constants';
 import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
-import { selectVaultLimits } from '@proton/pass/store/selectors';
+import {
+    selectVaultLimits,
+    selectWritableSharedVaultsWithItemsCount,
+    selectWritableVaultsWithItemsCount,
+} from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
-import type { State } from '@proton/pass/store/types';
+import type { MaybeNull } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
-type OptionsSelector = Selector<State, WithItemCount<VaultShareItem>[]>;
+export enum VaultSelectMode {
+    Writable = 1,
+    Shared,
+}
 
-export type Props = Omit<ModalProps, 'onSubmit'> & {
+export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;
-    onSubmit: (shareId: string) => void;
-    optionsSelector: OptionsSelector;
     shareId: string;
     title?: string;
+    mode: MaybeNull<VaultSelectMode>;
+    onSubmit: (shareId: string) => void;
+};
+
+const vaultSelector = {
+    [VaultSelectMode.Writable]: selectWritableVaultsWithItemsCount,
+    [VaultSelectMode.Shared]: selectWritableSharedVaultsWithItemsCount,
 };
 
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelect: FC<Props> = ({ downgradeMessage, onSubmit, optionsSelector, shareId, title, ...props }) => {
-    const vaults = useSelector(optionsSelector);
+export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, onSubmit, mode, shareId, title, ...props }) => {
+    const vaults = useSelector(mode ? vaultSelector[mode] : NOOP_LIST_SELECTOR<WithItemCount<VaultShareItem>>);
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     const sortedVaults = useMemo(
@@ -101,11 +113,14 @@ export const VaultSelect: FC<Props> = ({ downgradeMessage, onSubmit, optionsSele
     );
 };
 
+type VaultSelectState = Pick<VaultSelectProps, 'shareId' | 'open' | 'mode' | 'onSubmit'>;
+
 export const useVaultSelectModalHandles = () => {
-    const [modalState, setModalState] = useState<Pick<Props, 'shareId' | 'open' | 'optionsSelector'>>({
+    const [modalState, setModalState] = useState<VaultSelectState>({
+        mode: null,
         open: false,
         shareId: '',
-        optionsSelector: NOOP_LIST_SELECTOR,
+        onSubmit: noop,
     });
 
     return {
@@ -115,15 +130,11 @@ export const useVaultSelectModalHandles = () => {
                 closeVaultSelect: () =>
                     setModalState((state) => ({
                         ...state,
+                        mode: null,
                         open: false,
-                        optionsSelector: NOOP_LIST_SELECTOR,
+                        onSubmit: noop,
                     })),
-                openVaultSelect: (shareId: string, optionsSelector: OptionsSelector) =>
-                    setModalState({
-                        shareId,
-                        open: true,
-                        optionsSelector,
-                    }),
+                openVaultSelect: (options: Omit<VaultSelectState, 'open'>) => setModalState({ ...options, open: true }),
             }),
             []
         ),

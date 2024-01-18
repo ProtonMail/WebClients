@@ -84,7 +84,7 @@ const getSettings =
                 extra: (
                     <VaultSetting
                         label={c('Label').t`Autosave vault`}
-                        optionsSelector={selectWritableVaults}
+                        optionsSelector={selectWritableVaults} //  FIXME: use VaultSelectMode
                         valueSelector={selectAutosaveVault}
                         onSubmit={({ shareId }) => onSettingsUpdate({ autosave: { shareId } })}
                     />
