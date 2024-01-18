@@ -5070,6 +5070,22 @@
         "ვარსკვლავიანი"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "ელ-ფოსტა გაგზავნილია ${ label }"
+      ],
+      "with attachments": [
+        "მიმაგრებებით"
+      ],
+      "without attachments": [
+        "მიმაგრების გარეშე"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "ელ-ფოსტა გაგზავნილია ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "დაამატეთ თქვენი ფილტრი ჭდეების დადების და შეტყობინებების დაარქივების მსგავსი ქმედებების ავტომატურად განსახორციელებლად."
@@ -6183,6 +6199,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
+      "Beta": [
+        "ბეტა"
+      ],
       "Billed at ${ price }": [
         "გადაიხადეთ ${ price }"
       ],
@@ -6454,6 +6473,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "მოვლენების მოსაწვევებისა და RSVP-ები გაგზავნილი იქნება ამ ენით."
       ],
+      "Example: ${ spfExample }": [
+        "მაგ: ${ spfExample }"
+      ],
       "Expired": [
         "ვადაგასულია"
       ],
@@ -6596,6 +6618,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "მნიშვნელოვანია: თუ თქვენს DNS კონსოლს CNAME მნიშვნელობების, რომლებიც მძიმით მთავრდება, მხარდაჭერა არ აქვს, CNAME-ის მნიშვნელობებში ბოლო წერტილი შეგიძლიათ წაშალოთ."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "მნიშვნელოვანია: დარწმუნდით, რომ აღდგენის კოდები საიმედოდ შეინახეთ. წინააღმდეგ შემთხვევაში თუ 2FA მოწყობილობას დაკარგავთ, თქვენს ანგარიშზე წვდომა სამუდამოდ გაგიუქმდებათ."
       ],
@@ -6725,6 +6750,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "ჟურნალი შეიცავს ავთენტიკაციის მცდელობებს ${ BRAND_NAME }-ის სერვისებთან, სადაც ${ BRAND_NAME_TWO }-ის მომხმარებელს და პაროლს იყენებთ."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ SPF/DKIM/DMARC აკლია ან არასწორია."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "ელფოსტის ძირითადი სერვისები უარყოფებ ან გაფილტრავენ თქვენ ელფოსტას სპამში, თუ  SPF/DKIM/DMARC აკლია ან არასწორია."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "დარწმუნდით, რომ თქვენ ${ addARecoveryMethod } იმისათვის, რომ, თუ პაროლი დაგავიწყდათ, თქვენს ანგარიშში შესვლა მაინც შეძლოთ."
@@ -7937,6 +7968,9 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "დაამატეთ თქვენი ორგანიზაციის არსებულ მომხმარებელს ახალი მისამართი."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "დაამატეთ ორგანიზაციის ახალი მომხმარებელი და მისამართი."
       ]
@@ -8977,6 +9011,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "ფრაზა მითითებული მიმდევრობით დალაგებული 12 უნიკალური სიტყვისგან შედგება"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს 3 CNAME ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს ორი MX ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება დასჭირდეს."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ],
       "Please select files to upload": [
         "აირჩიეთ ასატვირთი ფაილი"
       ],
@@ -9220,6 +9263,11 @@
         "ხანგრძლივობა"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "ადმინისტრატორი"
@@ -9232,6 +9280,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app }-ის პროდუქტის განახლებები"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }-ის ბეტა განცხადებები"
       ],
@@ -9403,6 +9454,9 @@
       "Help translate": [
         "თარგმანში დახმარება"
       ],
+      "here": [
+        "აქ"
+      ],
       "How to pay with Bitcoin?": [
         "როგორ გადავიხადო ბიტკოინით?"
       ],
@@ -9539,6 +9593,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "ასწიეთ ტრაფიკი Visionary-ზე და გახდით ${ BRAND_NAME }-ის ისტორიის ნაწილი"
+      ],
+      "Limited time offer": [
+        "დროში შეზღუდული შეთავაზება"
       ],
       "Secure email that protects your privacy": [
         "დაცული ელფოსტა, რომელიც თქვენს კონფიდენციალობას იცავს"
@@ -10253,6 +10310,10 @@
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
       ],
+      "Up to ${ n } user": [
+        "${ n }-მდე მომხმარებელი",
+        "${ n }-მდე მომხმარებელი"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
       ],
@@ -10562,6 +10623,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "სამუშაო დღეებში ${ BRAND_NAME }-ის მხარდაჭერის გუნდისგან პასუხს მოთხოვნიდან 24 საათის განმავლობაში მიიღებთ"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "ერთი VPN შეერთება საშუალებას გაძლევთ ${ VPN_APP_NAME } VPN-თან ერთდროულად, მხოლოდ, ერთი მოწყობილობა მიუერთოთ. მაგალითად, ტელეფონისა და ლეპტოპის ${ VPN_APP_NAME } VPN-თან ერთდროულად მისაერთებლად 2 VPN შეერთება გჭირდებათ."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
@@ -12564,6 +12628,10 @@
         "${ n } კალენდარი თითოეული მომხმარებლისათვის",
         "${ n } კალენდარი თითოეული მომხმარებლისათვის"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } ჩქაროსნული VPN შეერთება",
         "${ n } ჩქაროსნული VPN შეერთება"
@@ -13923,6 +13991,10 @@
       "Success": [
         "წარმატება"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
+        "${ n } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
+      ],
       "Summary": [
         "შეჯამება"
       ],
@@ -14190,6 +14262,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "დამატებითი ჟურნალის ჩაწერისას IP მისამართის თითოეულ მოვლენაზე მიწერა."
       ],
+      "Feature in early access": [
+        "თვისება ადრეულ წვდომაში"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail-ი ავტომატურად ახდენს ზოგიერთი ელფოსტისთვის კატეგორიების მინიჭებას, როგორიცაა, მაგალითად, სოციალური ან რეკლამები. შეგიძლიათ, აირჩიოთ, ასეთი ელფოსტები სად შემოიტანოთ."
       ],
@@ -14411,6 +14486,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
       ]
     },
     "Validation": {
