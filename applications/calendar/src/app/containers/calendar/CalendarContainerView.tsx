@@ -394,7 +394,7 @@ const CalendarContainerView = ({
 
     const top = !isDrawerApp && (
         <>
-            {isElectronApp() && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
             <TopBanners />
         </>
     );
