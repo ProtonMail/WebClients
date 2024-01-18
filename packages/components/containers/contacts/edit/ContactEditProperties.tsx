@@ -86,6 +86,7 @@ const ContactEditProperties = (
     const excluded = [
         getSortedProperties(vCardContact, 'fn')[0]?.uid,
         getSortedProperties(vCardContact, 'photo')[0]?.uid,
+        getSortedProperties(vCardContact, 'geo')[0]?.uid,
     ];
     const properties: VCardProperty[] = getVCardProperties(vCardContact)
         .filter(({ field }) => fields.includes(field))
