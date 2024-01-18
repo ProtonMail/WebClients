@@ -26,12 +26,16 @@ const ThemeInjector = () => {
     const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
-        if (isElectronApp()) {
-            setThemeSetting(electronAppTheme);
-            return;
-        }
+        const theme = isElectronApp()
+            ? {
+                  ...electronAppTheme,
+                  FontSize: themeSetting.FontSize,
+                  FontFace: themeSetting.FontFace,
+                  Features: themeSetting.Features,
+              }
+            : themeSetting;
 
-        setThemeSetting(themeSetting);
+        setThemeSetting(theme);
     }, [themeSetting]);
 
     useLayoutEffect(() => {
