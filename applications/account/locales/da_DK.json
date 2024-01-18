@@ -5070,6 +5070,22 @@
         "stjernemarkeret"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-mailen blev sendt ${ label }"
+      ],
+      "with attachments": [
+        "med vedhæftninger"
+      ],
+      "without attachments": [
+        "uden vedhæftninger"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-mailen blev sendt ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Brug et brugerdefineret filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
@@ -9229,6 +9245,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app }-produktopdateringer"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } beta-annonceringer"
       ],
@@ -9533,6 +9552,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Bliv en Visionary og vær en del af ${ BRAND_NAME }'s historie"
+      ],
+      "Limited time offer": [
+        "Tidsbegrænset tilbud"
       ],
       "Secure email that protects your privacy": [
         "Sikker e-mail, der beskytter dit privatliv"
