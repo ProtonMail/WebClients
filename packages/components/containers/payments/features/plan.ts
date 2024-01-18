@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, FAMILY_MAX_USERS, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
@@ -84,7 +84,7 @@ export const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;
 };
 
-export const getFreePlan = (): ShortPlan => {
+export const getFreePlan = (freePlan: FreePlanDefault): ShortPlan => {
     return {
         plan: PLANS.FREE,
         title: PLAN_NAMES[PLANS.FREE],
@@ -93,8 +93,8 @@ export const getFreePlan = (): ShortPlan => {
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
         features: [
-            getFreeMailStorageFeature(),
-            getFreeDriveStorageFeature(),
+            getFreeMailStorageFeature(freePlan),
+            getFreeDriveStorageFeature(freePlan),
             getNAddressesFeature({ n: 1 }),
             getFoldersAndLabelsFeature(3),
             getNMessagesFeature(150),
@@ -103,7 +103,15 @@ export const getFreePlan = (): ShortPlan => {
     };
 };
 
-export const getBundlePlan = (plan: Plan, vpnServersCountData: VPNServersCountData): ShortPlan => {
+export const getBundlePlan = ({
+    plan,
+    vpnServersCountData,
+    freePlan,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    vpnServersCountData: VPNServersCountData;
+}): ShortPlan => {
     return {
         plan: PLANS.BUNDLE,
         title: plan.Title,
@@ -112,7 +120,7 @@ export const getBundlePlan = (plan: Plan, vpnServersCountData: VPNServersCountDa
             .t`Comprehensive privacy and security with all ${BRAND_NAME} services combined.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace),
+            getStorageFeature(plan.MaxSpace, { freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses }),
             getFoldersAndLabelsFeature('unlimited'),
             getNMessagesFeature('unlimited'),
@@ -127,7 +135,15 @@ export const getBundlePlan = (plan: Plan, vpnServersCountData: VPNServersCountDa
     };
 };
 
-export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan => {
+export const getDrivePlan = ({
+    plan,
+    boldStorageSize,
+    freePlan,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    boldStorageSize?: boolean;
+}): ShortPlan => {
     return {
         plan: PLANS.DRIVE,
         title: plan.Title,
@@ -136,7 +152,7 @@ export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan =
             .t`Secure cloud storage that lets you store, sync, and share files easily and securely.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace, { boldStorageSize }),
+            getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
             getVPNConnections(1),
@@ -177,7 +193,7 @@ export const getFreePassPlan = (): ShortPlan => {
     };
 };
 
-export const getMailPlan = (plan: Plan): ShortPlan => {
+export const getMailPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
     return {
         plan: PLANS.MAIL,
         title: plan.Title,
@@ -185,7 +201,7 @@ export const getMailPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`Secure email with advanced features for your everyday communications.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace),
+            getStorageFeature(plan.MaxSpace, { freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses }),
             getFoldersAndLabelsFeature('unlimited'),
             getNMessagesFeature('unlimited'),
@@ -209,7 +225,7 @@ export const getFreeVPNPlan = (serversCount: VPNServersCountData): ShortPlan => 
     };
 };
 
-export const getFreeDrivePlan = (): ShortPlan => {
+export const getFreeDrivePlan = (freePlan: FreePlanDefault): ShortPlan => {
     return {
         plan: PLANS.FREE,
         title: PLAN_NAMES[PLANS.FREE],
@@ -217,7 +233,7 @@ export const getFreeDrivePlan = (): ShortPlan => {
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getFreeDriveStorageFeature(), getNAddressesFeature({ n: 1 })],
+        features: [getFreeDriveStorageFeature(freePlan), getNAddressesFeature({ n: 1 })],
     };
 };
 
@@ -312,7 +328,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
+export const getNewVisionaryPlan = ({ plan, freePlan }: { plan: Plan; freePlan: FreePlanDefault }): ShortPlan => {
     return {
         plan: PLANS.NEW_VISIONARY,
         title: plan.Title,
@@ -320,7 +336,7 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
         description: '',
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace),
+            getStorageFeature(plan.MaxSpace, { freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getFoldersAndLabelsFeature('unlimited'),
@@ -335,7 +351,15 @@ export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getFamilyPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
+export const getFamilyPlan = ({
+    freePlan,
+    plan,
+    serversCount,
+}: {
+    freePlan: FreePlanDefault;
+    plan: Plan;
+    serversCount: VPNServersCountData;
+}): ShortPlan => {
     return {
         plan: PLANS.FAMILY,
         title: plan.Title,
@@ -344,7 +368,7 @@ export const getFamilyPlan = (plan: Plan, serversCount: VPNServersCountData): Sh
         cta: getCTA(plan.Title),
         features: [
             getUsersFeature(FAMILY_MAX_USERS),
-            getStorageFeature(plan.MaxSpace, { family: true }),
+            getStorageFeature(plan.MaxSpace, { family: true, freePlan }),
             getNAddressesFeature({ n: plan.MaxAddresses, family: true }),
             getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
             getNMessagesFeature(Number.POSITIVE_INFINITY),
@@ -453,10 +477,11 @@ export const getShortPlan = (
     options: {
         boldStorageSize?: boolean;
         vpnServers: VPNServersCountData;
+        freePlan: FreePlanDefault;
     }
 ) => {
     if (plan === PLANS.FREE) {
-        return getFreePlan();
+        return getFreePlan(options.freePlan);
     }
 
     const planData = plansMap[plan];
@@ -464,29 +489,29 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize } = options;
+    const { vpnServers, boldStorageSize, freePlan } = options;
 
     switch (plan) {
         case PLANS.MAIL:
-            return getMailPlan(planData);
+            return getMailPlan({ plan: planData, freePlan });
         case PLANS.VPN:
             return getVPNPlan(planData, vpnServers);
         case PLANS.VPN_PASS_BUNDLE:
             return getVPNPassPlan(planData, vpnServers);
         case PLANS.DRIVE:
-            return getDrivePlan(planData, boldStorageSize);
+            return getDrivePlan({ plan: planData, boldStorageSize, freePlan });
         case PLANS.PASS_PLUS:
             return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
-            return getBundlePlan(planData, vpnServers);
+            return getBundlePlan({ plan: planData, vpnServersCountData: vpnServers, freePlan });
         case PLANS.BUNDLE_PRO:
             return getBundleProPlan(planData);
         case PLANS.NEW_VISIONARY:
-            return getNewVisionaryPlan(planData);
+            return getNewVisionaryPlan({ plan: planData, freePlan });
         case PLANS.FAMILY:
-            return getFamilyPlan(planData, vpnServers);
+            return getFamilyPlan({ plan: planData, serversCount: vpnServers, freePlan });
         case PLANS.VPN_PRO:
             return getVPNProPlan(planData, vpnServers);
         case PLANS.VPN_BUSINESS:

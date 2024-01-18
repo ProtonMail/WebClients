@@ -42,7 +42,7 @@ const HighlightPlanDowngradeModal = ({
     periodEnd,
     ...rest
 }: Props) => {
-    const downgradedShortPlan = getFreePlan();
+    const downgradedShortPlan = getFreePlan(freePlan);
     const downgradedPlanName = `${downgradedShortPlan.title}`;
     const currentPlanName = shortPlan.title;
 

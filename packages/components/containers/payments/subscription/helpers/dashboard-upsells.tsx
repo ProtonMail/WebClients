@@ -31,7 +31,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { Currency, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Currency, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -122,6 +122,7 @@ export interface Upsell {
 type MaybeUpsell = Upsell | null;
 
 type GetUpsellArgs = {
+    freePlan: FreePlanDefault;
     plan: PLANS;
     plansMap: { [key in PLANS]: Plan };
     currency: Currency;
@@ -136,9 +137,18 @@ type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'
     openSubscriptionModal: OpenSubscriptionModalCallback;
 };
 
-const getUpsell = ({ plan, plansMap, serversCount, currency, upsellPath, app, ...upsellFields }: GetUpsellArgs) => {
+const getUpsell = ({
+    plan,
+    plansMap,
+    serversCount,
+    currency,
+    upsellPath,
+    freePlan,
+    app,
+    ...upsellFields
+}: GetUpsellArgs) => {
     const fullPlan = plansMap[plan];
-    const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount });
+    const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount, freePlan });
 
     if (!shortPlan) {
         return null;
@@ -169,12 +179,13 @@ const getMailPlusUpsell = ({
     plansMap,
     openSubscriptionModal,
     isTrialEnding,
+    freePlan,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const mailPlusPlan = plansMap[PLANS.MAIL];
 
     const features: MaybeUpsellFeature[] = [
-        getStorageFeature(mailPlusPlan?.MaxSpace ?? 15),
+        getStorageFeature(mailPlusPlan?.MaxSpace ?? 15, { freePlan }),
         getNAddressesFeature({ n: 10 }),
         getNDomainsFeature({ n: 1 }),
         getFoldersAndLabelsFeature('unlimited'),
@@ -188,6 +199,7 @@ const getMailPlusUpsell = ({
         plansMap,
         upsellPath: DASHBOARD_UPSELL_PATHS.MAILPLUS,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
+        freePlan,
         otherCtas: isTrialEnding
             ? [
                   {
@@ -283,12 +295,13 @@ const getBundleUpsell = ({
     hasPaidMail,
     hasVPN,
     openSubscriptionModal,
+    freePlan,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundlePlan = plansMap[PLANS.BUNDLE];
 
     const features: MaybeUpsellFeature[] = [
-        getStorageFeature(bundlePlan?.MaxSpace ?? 500),
+        getStorageFeature(bundlePlan?.MaxSpace ?? 500, { freePlan }),
         getNAddressesFeature({ n: 15 }),
         getNDomainsFeature({ n: 3 }),
         getSentinel(),
@@ -301,6 +314,7 @@ const getBundleUpsell = ({
     return getUpsell({
         plan: PLANS.BUNDLE,
         plansMap,
+        freePlan,
         upsellPath: DASHBOARD_UPSELL_PATHS.UNLIMITED,
         features: features.filter((item): item is UpsellFeature => isTruthy(item)),
         onUpgrade: () =>
@@ -319,6 +333,7 @@ const getBundleUpsell = ({
 
 const getFamilyUpsell = ({
     plansMap,
+    freePlan,
     hasVPN,
     hasPaidMail,
     openSubscriptionModal,
@@ -332,7 +347,7 @@ const getFamilyUpsell = ({
     }
 
     const features: MaybeUpsellFeature[] = [
-        getStorageFeature(familyPlan.MaxSpace, { family: true }),
+        getStorageFeature(familyPlan.MaxSpace, { family: true, freePlan }),
         getUsersFeature(FAMILY_MAX_USERS),
         getNAddressesFeature({ n: familyPlan.MaxAddresses, family: true }),
         getFoldersAndLabelsFeature('unlimited'),
@@ -344,6 +359,7 @@ const getFamilyUpsell = ({
     return getUpsell({
         plan: PLANS.FAMILY,
         plansMap,
+        freePlan,
         currency,
         serversCount,
         app,
@@ -449,6 +465,7 @@ export const resolveUpsellsToDisplay = ({
     subscription,
     plans,
     serversCount,
+    freePlan,
     canPay,
     isFree,
     ...rest
@@ -457,6 +474,7 @@ export const resolveUpsellsToDisplay = ({
     currency: Currency;
     subscription?: Subscription;
     plans: Plan[];
+    freePlan: FreePlanDefault;
     serversCount: VPNServersCountData;
     canPay?: boolean;
     isFree?: boolean;
@@ -473,6 +491,7 @@ export const resolveUpsellsToDisplay = ({
             plansMap: toMap(plans, 'Name'),
             hasVPN: hasVPN(subscription) || hasVPNPassBundle(subscription),
             serversCount,
+            freePlan,
             ...rest,
         };
 

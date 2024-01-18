@@ -1,12 +1,13 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 
 import { SignupModel } from './interfaces';
 
 export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     domains: [],
+    freePlan: FREE_PLAN,
     subscriptionData: {
         skipUpsell: false,
         currency: 'EUR',

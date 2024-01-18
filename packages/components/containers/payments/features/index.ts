@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/shared/lib/constants';
-import { Audience, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, FreePlanDefault, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getSupportFeatures, getTeamManagementFeatures } from './b2b';
@@ -14,15 +14,17 @@ import { getVPNFeatures } from './vpn';
 export const getAllFeatures = ({
     plansMap,
     serversCount,
+    freePlan,
 }: {
     plansMap: PlansMap;
     serversCount: VPNServersCountData;
+    freePlan: FreePlanDefault;
 }) => {
     return {
-        highlight: getHighlightFeatures(plansMap),
+        highlight: getHighlightFeatures(plansMap, freePlan),
         mail: getMailFeatures(plansMap),
         calendar: getCalendarFeatures(plansMap),
-        drive: getDriveFeatures(plansMap),
+        drive: getDriveFeatures(plansMap, freePlan),
         pass: getPassFeatures(),
         vpn: getVPNFeatures(serversCount),
         team: getTeamManagementFeatures(),
