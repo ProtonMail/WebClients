@@ -2,7 +2,6 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useFlag } from '@proton/components/containers/unleash';
 import { Breakpoints } from '@proton/components/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
@@ -46,8 +45,9 @@ interface Props {
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
     hideUnreadButton?: boolean;
-    userSettings: UserSettings;
-    isHovered: boolean;
+    userSettings?: UserSettings;
+    isHovered?: boolean;
+    showAttachmentThumbnails?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -66,11 +66,11 @@ const ItemColumnLayout = ({
     hideUnreadButton,
     userSettings,
     isHovered,
+    showAttachmentThumbnails,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
     const snoozedElement = useAppSelector(selectSnoozeElement);
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
@@ -107,14 +107,14 @@ const ItemColumnLayout = ({
     }, [element, labels, labelID]);
 
     const isStarred = testIsStarred(element || ({} as Element));
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
+    const isCompactView = userSettings?.Density === DENSITY.COMPACT;
     const isSnoozeDropdownOpen = snoozeDropdownState && snoozedElement?.ID === element.ID;
 
     const showThumbnails = canShowAttachmentThumbnails(
         isCompactView,
         element,
         attachmentsMetadata,
-        canSeeThumbnailsFeature
+        showAttachmentThumbnails
     );
 
     return (
