@@ -99,6 +99,10 @@ export interface ContactPublicKeyModel {
     ktVerificationResult?: KeyTransparencyVerificationResult;
 }
 
+export interface ContactPublicKeyModelWithApiKeySource extends ContactPublicKeyModel {
+    apiKeysSourceMap: Partial<{ [source in API_KEY_SOURCE]: Set<string> }> // map source to fingerprints
+}
+
 export interface PublicKeyModel {
     emailAddress: string;
     publicKeys: {

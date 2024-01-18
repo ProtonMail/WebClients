@@ -1,7 +1,7 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
-import { API_CODES, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
+import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -559,7 +559,7 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN')).toBe(false);
     });
 
-    it('shoul display WKD keys but not internal address keys for external account with internal address keys', async () => {
+    it('should display WKD keys but not internal address keys for external account with internal address keys', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
             importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
@@ -672,5 +672,148 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.KEY;PREF=1:data:application/pgp-keys')).toBe(true);
         expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT:true')).toBe(true);
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN:true')).toBe(true);
+    });
+
+    describe('contact key origin label', () => {
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@example.com
+END:VCARD`;
+
+        beforeEach(() =>
+            CryptoProxy.setEndpoint({
+                ...mockedCryptoApi,
+                importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
+                    getFingerprint: () => armoredKey,
+                    getCreationTime: () => new Date(0),
+                    getExpirationTime: () => new Date(0),
+                    getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
+                    subkeys: [],
+                    getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                })),
+                canKeyEncrypt: jest.fn().mockImplementation(() => true),
+                exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
+                isExpiredKey: jest.fn().mockImplementation(() => false),
+                isRevokedKey: jest.fn().mockImplementation(() => false),
+            })
+        );
+
+        it('should display no origin label for internal keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [
+                        {
+                            PublicKey: 'internally mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                        },
+                    ],
+                },
+                ProtonMX: true, // internal address
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email?.[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const wkdKeyFingerprint = screen.getByText('internally mocked armored key');
+                return expect(wkdKeyFingerprint).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+            expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+        });
+        it('should display WKD label for WKD keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [],
+                },
+                Unverified: {
+                    Keys: [
+                        {
+                            PublicKey: 'externally fetched mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Source: API_KEY_SOURCE.WKD,
+                        },
+                    ],
+                },
+                ProtonMX: false, // external account
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email?.[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const wkdOriginLabel = screen.getByTestId('wkd-origin-label');
+                return expect(wkdOriginLabel).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+        });
+
+        it('should display KOO label for KOO keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [],
+                },
+                Unverified: {
+                    Keys: [
+                        {
+                            PublicKey: 'externally fetched mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Source: API_KEY_SOURCE.KOO,
+                        },
+                    ],
+                },
+                ProtonMX: false, // external account
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email?.[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const kooOriginLabel = screen.getByTestId('koo-origin-label');
+                return expect(kooOriginLabel).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+        });
     });
 });
