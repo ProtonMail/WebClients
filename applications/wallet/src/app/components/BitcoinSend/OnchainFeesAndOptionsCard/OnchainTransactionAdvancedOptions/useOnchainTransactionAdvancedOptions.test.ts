@@ -4,7 +4,13 @@ import { act } from 'react-dom/test-utils';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, WasmTxBuilder } from '../../../../pkg';
+import {
+    WasmChangeSpendPolicy,
+    WasmCoinSelection,
+    WasmLockTime,
+    WasmOutPoint,
+    WasmTxBuilder,
+} from '../../../../../pkg';
 import { useOnchainTransactionAdvancedOptions } from './useOnchainTransactionAdvancedOptions';
 
 const outpointA = '89e48f05368f62c554f5e945d5a337550dbd2387fb74f7437302074feac04455:0';

@@ -2,8 +2,8 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
-import { WasmTxBuilder } from '../../../../pkg';
-import { getFeesEstimationMap, mockUseOnchainWalletContext } from '../../../tests';
+import { WasmTxBuilder } from '../../../../../pkg';
+import { getFeesEstimationMap, mockUseOnchainWalletContext } from '../../../../tests';
 import { useOnChainFeesSelector } from './useOnChainFeesSelector';
 
 describe('useOnChainFeesSelector', () => {

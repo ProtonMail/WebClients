@@ -8,7 +8,7 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import Icon from '@proton/components/components/icon/Icon';
 
-import { WasmTxBuilder } from '../../../../pkg';
+import { WasmTxBuilder } from '../../../../../pkg';
 import { FeeSelectionModal } from './FeeSelectionModal';
 import { FeeRateNote, useOnChainFeesSelector } from './useOnChainFeesSelector';
 
