@@ -4383,6 +4383,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } productupdates"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }-bèta-aankondigingen"
       ],
@@ -5875,6 +5878,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "U kan uw wachtwoord resetten tot ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {
