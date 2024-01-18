@@ -1,14 +1,14 @@
-import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
 
-import { Breakpoints, ItemCheckbox, useFlag, useLabels } from '@proton/components';
+import { Breakpoints, ItemCheckbox } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
@@ -48,6 +48,10 @@ interface Props {
     index: number;
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
+    hideUnreadButton?: boolean;
+    userSettings: UserSettings;
+    mailSettings: MailSettings;
+    labels?: Label[];
 }
 
 const Item = ({
@@ -69,15 +73,17 @@ const Item = ({
     index,
     breakpoints,
     onFocus,
+    hideUnreadButton,
+    mailSettings,
+    userSettings,
+    labels,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
-    const [labels] = useLabels();
+    const [isHovered, setHover] = useState(false);
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
-
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
     const elementRef = useRef<HTMLDivElement>(null);
@@ -141,34 +147,23 @@ const Item = ({
         />
     );
 
-    const isDelightMailListEnabled = useFlag('DelightMailList');
-
     return (
-        <div
-            className={clsx(
-                'item-container-wrapper relative',
-                !isDelightMailListEnabled && (isCompactView || !columnLayout) && 'border-bottom border-weak'
-            )}
-            data-shortcut-target="item-container-wrapper"
-        >
+        <div className="item-container-wrapper relative" data-shortcut-target="item-container-wrapper">
             <div
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
                 draggable
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
                 className={clsx([
-                    ...(isDelightMailListEnabled
-                        ? [
-                              'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
-                              columnLayout
-                                  ? 'delight-item-container delight-item-container--column'
-                                  : 'delight-item-container delight-item-container--row',
-                          ]
-                        : [
-                              'flex-1 flex flex-nowrap cursor-pointer',
-                              columnLayout ? 'item-container item-container-column' : 'item-container-row',
-                          ]),
+                    ...[
+                        'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
+                        columnLayout
+                            ? 'delight-item-container delight-item-container--column'
+                            : 'delight-item-container delight-item-container--row',
+                    ],
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
@@ -195,10 +190,8 @@ const Item = ({
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr-3 stop-propagation"
-                    normalClassName={
-                        isDelightMailListEnabled ? 'mr-3' : clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])
-                    }
-                    variant={isDelightMailListEnabled ? 'small' : undefined}
+                    normalClassName="mr-3"
+                    variant="small"
                 />
                 <ItemLayout
                     isCompactView={isCompactView}
@@ -215,6 +208,9 @@ const Item = ({
                     onBack={onBack}
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
+                    hideUnreadButton={hideUnreadButton}
+                    userSettings={userSettings}
+                    isHovered={isHovered}
                 />
             </div>
         </div>
