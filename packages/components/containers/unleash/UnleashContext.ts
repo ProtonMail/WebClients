@@ -37,6 +37,7 @@ enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
+    DelightMailList = 'DelightMailList',
     DelightMailListHideUnreadButton = 'DelightMailListHideUnreadButton',
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
