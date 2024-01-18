@@ -4,7 +4,7 @@ import {
     FetchedSignedKeyList,
     KeyTransparencyActivation,
     KeyTransparencyVerificationResult,
-    ProcessedApiAddressKey,
+    ProcessedApiKey,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
 
@@ -23,11 +23,11 @@ const useVerifyOutboundPublicKeys = () => {
         email: string,
         skipVerificationOfExternalDomains: boolean,
         address: {
-            keyList: ProcessedApiAddressKey[];
+            keyList: ProcessedApiKey[];
             signedKeyList: FetchedSignedKeyList | null;
         },
         catchAll?: {
-            keyList: ProcessedApiAddressKey[];
+            keyList: ProcessedApiKey[];
             signedKeyList: FetchedSignedKeyList | null;
         }
     ): Promise<{
