@@ -1,6 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 
 import {
+    API_KEY_SOURCE,
     CONTACT_MIME_TYPES,
     CONTACT_PGP_SCHEMES,
     KEY_FLAG,
@@ -28,7 +29,8 @@ export type MimeTypeVcard = MIME_TYPES.PLAINTEXT;
 export interface ProcessedApiKey {
     armoredKey: string;
     flags: KEY_FLAG;
-    publicKey?: PublicKeyReference;
+    publicKey: PublicKeyReference;
+    source: API_KEY_SOURCE;
 }
 
 export interface ApiKeysConfig {
