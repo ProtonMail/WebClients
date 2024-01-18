@@ -2,9 +2,9 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useFlag } from '@proton/components/containers/unleash';
-import { Breakpoints, useUserSettings } from '@proton/components/hooks';
+import { Breakpoints } from '@proton/components/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
@@ -44,6 +44,11 @@ interface Props {
     onBack?: () => void;
     isSelected: boolean;
     attachmentsMetadata?: AttachmentsMetadata[];
+    isDelightMailListEnabled?: boolean;
+    hideUnreadButton?: boolean;
+    userSettings?: UserSettings;
+    isHovered?: boolean;
+    showAttachmentThumbnails?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -59,12 +64,15 @@ const ItemColumnLayout = ({
     isSelected,
     senders,
     attachmentsMetadata = [],
+    hideUnreadButton,
+    userSettings,
+    isHovered,
+    showAttachmentThumbnails,
+    isDelightMailListEnabled,
 }: Props) => {
-    const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
     const snoozedElement = useAppSelector(selectSnoozeElement);
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
@@ -101,19 +109,15 @@ const ItemColumnLayout = ({
     }, [element, labels, labelID]);
 
     const isStarred = testIsStarred(element || ({} as Element));
-    const isCompactView = userSettings.Density === DENSITY.COMPACT;
+    const isCompactView = userSettings?.Density === DENSITY.COMPACT;
     const isSnoozeDropdownOpen = snoozeDropdownState && snoozedElement?.ID === element.ID;
 
     const showThumbnails = canShowAttachmentThumbnails(
         isCompactView,
         element,
         attachmentsMetadata,
-        canSeeThumbnailsFeature
+        showAttachmentThumbnails
     );
-
-    const isDelightMailListEnabled = useFlag('DelightMailList');
-
-    const DelightMailListHideUnreadButton = useFlag('DelightMailListHideUnreadButton');
 
     if (isDelightMailListEnabled) {
         return (
@@ -133,10 +137,7 @@ const ItemColumnLayout = ({
                                 <ItemUnread
                                     element={element}
                                     labelID={labelID}
-                                    className={clsx(
-                                        'delight-item-unread-dot',
-                                        DelightMailListHideUnreadButton && 'sr-only'
-                                    )}
+                                    className={clsx('delight-item-unread-dot', hideUnreadButton && 'sr-only')}
                                     isSelected={isSelected}
                                 />
                                 <ItemAction element={element} className="mr-1 my-auto shrink-0" />
@@ -238,13 +239,16 @@ const ItemColumnLayout = ({
                             </div>
                         </div>
                     </div>
-                    <ItemHoverButtons
-                        element={element}
-                        labelID={labelID}
-                        elementID={elementID}
-                        onBack={onBack}
-                        size="small"
-                    />
+                    {isHovered ? (
+                        <ItemHoverButtons
+                            element={element}
+                            labelID={labelID}
+                            elementID={elementID}
+                            onBack={onBack}
+                            size="small"
+                            isDelightMailListEnabled={isDelightMailListEnabled}
+                        />
+                    ) : null}
                 </div>
 
                 {hasLabels && !isCompactView && (
@@ -399,7 +403,15 @@ const ItemColumnLayout = ({
                         </div>
                     </div>
                 </div>
-                <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
+                {isHovered ? (
+                    <ItemHoverButtons
+                        element={element}
+                        labelID={labelID}
+                        elementID={elementID}
+                        onBack={onBack}
+                        isDelightMailListEnabled={isDelightMailListEnabled}
+                    />
+                ) : null}
             </div>
 
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}

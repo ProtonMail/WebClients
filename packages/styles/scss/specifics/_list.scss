@@ -6,6 +6,8 @@
  */
 
 .view-column-detail {
+	contain: content;
+
 	.scroll-inner {
 		@supports (overflow-y: overlay) {
 			overflow-y: overlay; // Deprecated, but didn't have the choice

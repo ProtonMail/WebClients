@@ -3,6 +3,7 @@
 @import '~@proton/styles/scss/lib';
 
 .delight-items-column-list {
+	contain: content;
 	background-color: var(--background-lowered, var(--bg-weak));
 
 	&.is-column {
