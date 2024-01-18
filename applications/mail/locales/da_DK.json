@@ -4255,6 +4255,22 @@
         "stjernemarkeret"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-mailen blev sendt ${ label }"
+      ],
+      "with attachments": [
+        "med vedhæftninger"
+      ],
+      "without attachments": [
+        "uden vedhæftninger"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-mailen blev sendt ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Standard"

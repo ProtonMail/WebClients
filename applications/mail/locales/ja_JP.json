@@ -4101,6 +4101,22 @@
         "星印付き"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "${ label } でメールを送信"
+      ],
+      "with attachments": [
+        "添付ファイルあり"
+      ],
+      "without attachments": [
+        "添付ファイルなし"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "${ label } でメールを送信"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "既定"

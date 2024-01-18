@@ -4336,6 +4336,22 @@
         "s hviezdičkou"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "email bol odoslaný ${ label }"
+      ],
+      "with attachments": [
+        "s prílohami"
+      ],
+      "without attachments": [
+        "bez príloh"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "email bol odoslaný ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Predvolená"
