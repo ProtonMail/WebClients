@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { describe } from 'vitest';
 
-import { feesEstimations } from '../../../tests';
+import { feesEstimations } from '../../../../tests';
 import { MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
 import { useFeeSelectionModal } from './useFeeSelectionModal';
 

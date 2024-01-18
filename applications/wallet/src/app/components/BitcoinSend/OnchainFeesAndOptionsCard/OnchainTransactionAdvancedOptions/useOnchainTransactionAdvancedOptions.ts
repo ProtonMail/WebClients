@@ -1,10 +1,17 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, WasmTxBuilder } from '../../../../pkg';
+import {
+    WasmChangeSpendPolicy,
+    WasmCoinSelection,
+    WasmLockTime,
+    WasmOutPoint,
+    WasmTxBuilder,
+} from '../../../../../pkg';
 
 const getCoinSelectionOptions = () => {
     return [
@@ -28,9 +35,20 @@ export const useOnchainTransactionAdvancedOptions = (
     updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
 ) => {
     const coinSelectionOptions = getCoinSelectionOptions();
-    const [isManualCoinSelectionModalOpen, setIsManualCoinSelectionModalOpen] = useState(false);
-    const openManualCoinSelectionModal = () => setIsManualCoinSelectionModalOpen(true);
-    const closeManualCoinSelectionModal = () => setIsManualCoinSelectionModalOpen(false);
+    const [advancedOptionsModal, setAdvancedOptionsModalOpened] = useModalState();
+    const openAdvancedOptionsModal = useCallback(
+        () => setAdvancedOptionsModalOpened(true),
+        [setAdvancedOptionsModalOpened]
+    );
+
+    const [manualCoinSelectionModal, setManualCoinSelectionModal] = useModalState({
+        onClose: openAdvancedOptionsModal,
+    });
+
+    const switchToCoinSelectionModal = useCallback(() => {
+        advancedOptionsModal.onClose();
+        setManualCoinSelectionModal(true);
+    }, [advancedOptionsModal, setManualCoinSelectionModal]);
 
     const handleManualCoinSelection = async (outpoints: WasmOutPoint[]) => {
         updateTxBuilder((txBuilder) => txBuilder.clearUtxosToSpend());
@@ -38,7 +56,7 @@ export const useOnchainTransactionAdvancedOptions = (
             await updateTxBuilder((txBuilder) => txBuilder.addUtxoToSpend(outpoint));
         }
 
-        closeManualCoinSelectionModal();
+        manualCoinSelectionModal.onClose();
     };
 
     const toggleEnableRBF = () => {
@@ -73,10 +91,12 @@ export const useOnchainTransactionAdvancedOptions = (
     };
 
     return {
+        advancedOptionsModal,
+        openAdvancedOptionsModal,
+
         coinSelectionOptions,
-        isManualCoinSelectionModalOpen,
-        openManualCoinSelectionModal,
-        closeManualCoinSelectionModal,
+        manualCoinSelectionModal,
+        switchToCoinSelectionModal,
 
         changePolicyOptions,
         handleChangePolicySelect,

@@ -1,13 +1,11 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
 import Card from '@proton/atoms/Card/Card';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { WalletSelector } from '../../../atoms';
 import { useOnchainWalletContext } from '../../../contexts';
-import { OnChainFeesSelector } from '../OnchainFeesSelector';
-import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
+import { OnchainFeesAndOptionsCard } from '../OnchainFeesAndOptionsCard';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
 import { RecipientList } from '../RecipientList';
@@ -73,48 +71,29 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
     }
 
     return (
-        <div className="pb-6 px-8 h-full flex flex-column">
+        <div className="pb-6 px-8 h-full flex flex-column flex-nowrap">
             <div className="flex flex-row">
                 <WalletSelector wallets={wallets} value={walletAndAccount} onSelect={handleSelectWalletAndAccount} />
             </div>
 
+            <hr className="mt-4 mb-0" />
+
             {/* Recipients list */}
-            <div className="mt-6">
-                <h3 className="text-rg text-semibold">{c('Wallet Send').t`Send to Recipient(s)`}</h3>
+            <RecipientList
+                title={c('Wallet Send').t`Send to Recipient(s)`}
+                recipients={txBuilder.getRecipients()}
+                onRecipientAddition={addRecipient}
+                onRecipientRemove={removeRecipient}
+                onRecipientUpdate={updateRecipient}
+                onRecipientMaxAmount={updateRecipientAmountToMax}
+            />
 
-                <RecipientList
-                    recipients={txBuilder.getRecipients()}
-                    onRecipientAddition={addRecipient}
-                    onRecipientRemove={removeRecipient}
-                    onRecipientUpdate={updateRecipient}
-                    onRecipientMaxAmount={updateRecipientAmountToMax}
-                />
-            </div>
-
-            <Card
-                className="flex flex-column transaction-builder-card bg-norm flex-1 overflow-y-auto flex-nowrap"
-                bordered={false}
-                background={false}
-                rounded
-            >
-                <OnChainFeesSelector txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} />
-                <hr className="my-2 bg-weak" />
-                <OnchainTransactionAdvancedOptions
-                    txBuilder={txBuilder}
-                    updateTxBuilder={updateTxBuilder}
-                    account={account}
-                />
-                <hr className="my-2 bg-weak" />
-                <Button
-                    color="norm"
-                    className="mt-4 ml-auto"
-                    onClick={() => {
-                        void createPsbt();
-                    }}
-                >
-                    {c('Wallet Send').t`Review transaction`}
-                </Button>
-            </Card>
+            <OnchainFeesAndOptionsCard
+                txBuilder={txBuilder}
+                updateTxBuilder={updateTxBuilder}
+                account={walletAndAccount.account}
+                createPsbt={createPsbt}
+            />
         </div>
     );
 };

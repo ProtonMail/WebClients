@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { WasmTxBuilder } from '../../../../pkg';
-import { useOnchainWalletContext } from '../../../contexts';
+import { WasmTxBuilder } from '../../../../../pkg';
+import { useOnchainWalletContext } from '../../../../contexts';
 import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
 import { FeeRateByBlockTarget } from './type';
 import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';

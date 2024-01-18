@@ -15,6 +15,7 @@ describe('RecipientList', () => {
 
     beforeEach(() => {
         baseProps = {
+            title: 'Test recipient list',
             recipients,
             onRecipientUpdate: vi.fn(),
             onRecipientAddition: vi.fn(),

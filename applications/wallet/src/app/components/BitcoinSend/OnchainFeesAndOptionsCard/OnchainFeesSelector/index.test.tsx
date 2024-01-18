@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Mock, vi } from 'vitest';
 
 import { OnChainFeesSelector } from '.';
-import { WasmTxBuilder } from '../../../../pkg';
+import { WasmTxBuilder } from '../../../../../pkg';
 import * as useOnChainFeesSelectorModule from './useOnChainFeesSelector';
 
 const baseMock: ReturnType<typeof useOnChainFeesSelectorModule.useOnChainFeesSelector> = {
