@@ -1,5 +1,7 @@
 import { ChangeEvent, DependencyList, useEffect, useMemo, useState } from 'react';
 
+import unique from '@proton/utils/unique';
+
 import useHandler from '../../hooks/useHandler';
 
 /**
@@ -42,9 +44,12 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
      * Uncheck others if *replace* is true
      */
     const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
-        if (IDs.length === 0) {
+        // Items can be checked and included in a new selection (select all/select range).
+        // In that case they will be duplicated in the array, which could break the length we expect in the 2nd condition
+        const uniqueIDs = unique(IDs);
+        if (uniqueIDs.length === 0) {
             setCheckedMap({});
-        } else if (IDs.length === allIDs.length) {
+        } else if (uniqueIDs.length === allIDs.length) {
             setCheckedMap(
                 allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
                     acc[ID] = checked;
