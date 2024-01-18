@@ -4264,6 +4264,22 @@
         "με αστέρι"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "το email στάλθηκε ${ label }"
+      ],
+      "with attachments": [
+        "με συνημμένα"
+      ],
+      "without attachments": [
+        "χωρίς συνημμένα"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "το email στάλθηκε ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Προεπιλεγμένο"

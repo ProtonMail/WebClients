@@ -1081,6 +1081,9 @@
       "Unordered list": [
         "Ненумерованный список"
       ],
+      "Unsnooze": [
+        "Не откладывать"
+      ],
       "Unstar": [
         "Снять звёздочку"
       ],
@@ -4283,6 +4286,22 @@
       ],
       "starred": [
         "со звёздами"
+      ]
+    },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "письмо было отправлено ${ label }"
+      ],
+      "with attachments": [
+        "с вложениями"
+      ],
+      "without attachments": [
+        "без вложений"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "письмо было отправлено ${ label }"
       ]
     },
     "Font Face Default": {

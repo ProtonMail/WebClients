@@ -2983,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
+      "Beta": [
+        "ბეტა"
+      ],
       "Billed at ${ price }": [
         "გადაიხადეთ ${ price }"
       ],
@@ -4576,6 +4579,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app }-ის პროდუქტის განახლებები"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }-ის ბეტა განცხადებები"
       ],
@@ -5177,6 +5183,10 @@
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
       ],
+      "Up to ${ n } user": [
+        "${ n }-მდე მომხმარებელი",
+        "${ n }-მდე მომხმარებელი"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
       ],
@@ -5438,6 +5448,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "სამუშაო დღეებში ${ BRAND_NAME }-ის მხარდაჭერის გუნდისგან პასუხს მოთხოვნიდან 24 საათის განმავლობაში მიიღებთ"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "ერთი VPN შეერთება საშუალებას გაძლევთ ${ VPN_APP_NAME } VPN-თან ერთდროულად, მხოლოდ, ერთი მოწყობილობა მიუერთოთ. მაგალითად, ტელეფონისა და ლეპტოპის ${ VPN_APP_NAME } VPN-თან ერთდროულად მისაერთებლად 2 VPN შეერთება გჭირდებათ."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "შესაძლებლობა დაათვალიეროთ საჯარო საქაღალდეები შემოსული შეტყობინებებით და კონტაქტის დეტალებით"
@@ -6619,6 +6632,10 @@
         "${ n } კალენდარი თითოეული მომხმარებლისათვის",
         "${ n } კალენდარი თითოეული მომხმარებლისათვის"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } ჩქაროსნული VPN შეერთება",
         "${ n } ჩქაროსნული VPN შეერთება"
@@ -7433,6 +7450,10 @@
       "Subscription": [
         "გამოწერა"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
+        "${ n } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
+      ],
       "Summary": [
         "შეჯამება"
       ],
@@ -7563,6 +7584,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "ბოლოწერტილის ბმული იდენტიფიკატორის მომწოდებლისგან (მაგ: https://idp.example.com/sso/saml)"
       ],
+      "Feature in early access": [
+        "თვისება ადრეულ წვდომაში"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "იდენტიფიკაციის მომწოდებლის საჯარო გასაღების ავთენტიკაციის ბილეთების ხელმოსაწერად. მიიღეთ სერტიფიკატის ჰეში თქვენი იდენტიფიკატორის მომწოდებლიდან."
       ],
@@ -7631,6 +7655,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
       ]
     },
     "Validation": {

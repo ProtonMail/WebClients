@@ -4366,6 +4366,22 @@
         "csillagozott"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "az e-mail ${ label }"
+      ],
+      "with attachments": [
+        "mellékletet tartalmaz"
+      ],
+      "without attachments": [
+        "nem tartalmaz mellékletet"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "az e-mail ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Létrehozhat saját szűrőket, hogy olyan automatikus műveleteket hajtson végre a leveleken, mint például címkével ellátás, archiválás."
@@ -8465,6 +8481,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
         "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Korlátozott idejű ajánlat"
       ]
     },
     "Maintenance mode": {
