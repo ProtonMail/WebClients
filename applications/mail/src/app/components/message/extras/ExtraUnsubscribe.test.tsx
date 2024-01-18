@@ -25,6 +25,7 @@ import ExtraUnsubscribe from './ExtraUnsubscribe';
 loudRejection();
 
 jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    ua: { ua: 'UserAgent' },
     isMac: jest.fn(() => false),
     openNewTab: jest.fn(),
     isMobile: jest.fn(),

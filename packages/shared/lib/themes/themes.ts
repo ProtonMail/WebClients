@@ -22,8 +22,6 @@ import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/enc
 
 import { isElectronApp } from '../helpers/desktop';
 
-const isElectron = isElectronApp();
-
 export enum ThemeTypes {
     Duotone = 0,
     Carbon = 1,
@@ -310,7 +308,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
     };
 
     // Electron follow system settings and only Snow and Carbon theme
-    if (isElectron) {
+    if (isElectronApp) {
         return electronAppTheme;
     }
     return theme;
@@ -364,7 +362,7 @@ const getValidatedFeatures = (maybeFeatures: number | undefined) => {
 
 export const getParsedThemeSetting = (storedThemeSetting: string | undefined): ThemeSetting => {
     // Electron follow system settings and only Snow and Carbon theme
-    if (isElectron) {
+    if (isElectronApp) {
         return getDefaultThemeSetting();
     }
 

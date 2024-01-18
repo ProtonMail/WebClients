@@ -36,7 +36,7 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
             return;
         }
 
-        if (isElectronApp()) {
+        if (isElectronApp) {
             setStartupModalState({ hasModal: false, isOpen: false });
             return;
         }
