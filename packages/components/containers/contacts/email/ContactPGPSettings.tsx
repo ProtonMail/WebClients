@@ -40,7 +40,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     const hasCompromisedPinnedKeys = model.publicKeys.pinnedKeys.some((key) =>
         model.compromisedFingerprints.has(key.getFingerprint())
     );
-    const canUploadKeys = model.isPGPExternalWithoutWKDKeys;
+    const canUploadKeys = model.isPGPExternalWithoutExternallyFetchedKeys;
 
     /**
      * Add / update keys to model
