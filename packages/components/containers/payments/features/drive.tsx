@@ -14,7 +14,7 @@ import {
     PLANS,
 } from '@proton/shared/lib/constants';
 import humanSize, { getSizeFormat } from '@proton/shared/lib/helpers/humanSize';
-import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -22,11 +22,8 @@ const getTb = (n: number) => {
     return `${n} ${getSizeFormat('TB', n)}`;
 };
 
-export const getFreeDriveStorage = () => {
-    return 2 * 1024 ** 3;
-};
-export const getFreeDriveStorageFeature = (): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(getFreeDriveStorage(), undefined, undefined, 0);
+export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
+    const totalStorageSize = humanSize(freePlan.MaxDriveSpace + freePlan.MaxDriveRewardSpace, undefined, undefined, 0);
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Drive storage`,
         tooltip: '',
@@ -35,12 +32,8 @@ export const getFreeDriveStorageFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getFreeMailStorage = () => {
-    return 1 * 1024 ** 3;
-};
-
-export const getFreeMailStorageFeature = (): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(getFreeMailStorage(), undefined, undefined, 0);
+export const getFreeMailStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
+    const totalStorageSize = humanSize(freePlan.MaxBaseSpace + freePlan.MaxBaseRewardSpace, undefined, undefined, 0);
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Mail storage`,
         tooltip: c('storage_split: feature')
@@ -53,24 +46,25 @@ export const getFreeMailStorageFeature = (): PlanCardFeatureDefinition => {
 export const getStorageFeature = (
     bytes: number,
     options: {
+        freePlan: FreePlanDefault;
         highlight?: boolean;
         boldStorageSize?: boolean;
         family?: boolean;
         visionary?: boolean;
         subtext?: boolean;
-    } = {}
+    }
 ): PlanCardFeatureDefinition => {
     const { highlight = false, boldStorageSize = false } = options;
-    const freeMailStorage = getFreeMailStorage();
-    const freeDriveStorage = getFreeDriveStorage();
+    const freeBaseStorage = options.freePlan.MaxBaseSpace + options.freePlan.MaxBaseRewardSpace;
+    const freeDriveStorage = options.freePlan.MaxDriveSpace + options.freePlan.MaxDriveRewardSpace;
     if (bytes === -1) {
-        const driveStorageSize = humanSize(freeDriveStorage, undefined, undefined, 0);
-        const mailStorageSize = humanSize(freeMailStorage, undefined, undefined, 0);
-        const totalStorageSize = humanSize(freeDriveStorage + freeMailStorage, undefined, undefined, 0);
+        const driveStorageSize = humanSize(freeDriveStorage, undefined, undefined, 1);
+        const baseStorageSize = humanSize(freeBaseStorage, undefined, undefined, 1);
+        const totalStorageSize = humanSize(freeDriveStorage + freeBaseStorage, undefined, undefined, 1);
         return {
             text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
             subtext: options.subtext
-                ? `${mailStorageSize} ${MAIL_SHORT_APP_NAME} + ${driveStorageSize} ${DRIVE_SHORT_APP_NAME}`
+                ? `${baseStorageSize} ${MAIL_SHORT_APP_NAME} + ${driveStorageSize} ${DRIVE_SHORT_APP_NAME}`
                 : undefined,
             included: true,
             icon: 'storage',
@@ -187,19 +181,26 @@ const getDocumentEditor = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
+export const getStorage = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature => {
     return {
         name: 'storage',
         plans: {
-            [PLANS.FREE]: getStorageFeature(-1, { subtext: true }),
-            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000, { subtext: true }),
-            [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360, { subtext: true }),
-            [PLANS.VPN]: getStorageFeature(-1, { subtext: true }),
-            [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800, { subtext: true }),
-            [PLANS.PASS_PLUS]: getStorageFeature(-1, { subtext: true }),
+            [PLANS.FREE]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.BUNDLE]: getStorageFeature(plansMap[PLANS.BUNDLE]?.MaxSpace ?? 536870912000, {
+                subtext: true,
+                freePlan,
+            }),
+            [PLANS.MAIL]: getStorageFeature(plansMap[PLANS.MAIL]?.MaxSpace ?? 16106127360, { subtext: true, freePlan }),
+            [PLANS.VPN]: getStorageFeature(-1, { subtext: true, freePlan }),
+            [PLANS.DRIVE]: getStorageFeature(plansMap[PLANS.DRIVE]?.MaxSpace ?? 214748364800, {
+                subtext: true,
+                freePlan,
+            }),
+            [PLANS.PASS_PLUS]: getStorageFeature(-1, { subtext: true, freePlan }),
             [PLANS.FAMILY]: getStorageFeature(plansMap[PLANS.FAMILY]?.MaxSpace ?? 2748779069440, {
                 family: true,
                 subtext: true,
+                freePlan,
             }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360, {
                 subtext: true,
@@ -213,9 +214,9 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
     };
 };
 
-export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature[] => {
     return [
-        getStorage(plansMap),
+        getStorage(plansMap, freePlan),
         {
             name: 'encryption',
             plans: {

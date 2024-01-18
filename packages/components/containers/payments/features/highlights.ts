@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience, FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
@@ -74,10 +74,10 @@ export const getSentinel = (included: boolean = true): PlanCardFeatureDefinition
     };
 };
 
-export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature[] => {
     return [
         getUsers(),
-        getStorage(plansMap),
+        getStorage(plansMap, freePlan),
         {
             name: 'support',
             plans: {

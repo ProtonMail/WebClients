@@ -7,6 +7,7 @@ import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
+    useFreePlan,
     useLoad,
     useOrganization,
     usePendingUserInvitations,
@@ -34,6 +35,7 @@ interface Props {
 const YourPlanSection = ({ app }: Props) => {
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
+    const [freePlan] = useFreePlan();
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
@@ -62,6 +64,7 @@ const YourPlanSection = ({ app }: Props) => {
         currency,
         subscription,
         plans,
+        freePlan,
         serversCount,
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),

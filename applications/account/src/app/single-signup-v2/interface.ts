@@ -9,6 +9,7 @@ import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout'
 import type {
     Currency,
     CycleMapping,
+    FreePlanDefault,
     HumanVerificationMethodType,
     Plan,
     PlanIDs,
@@ -57,6 +58,7 @@ export interface SubscriptionDataCycleMapping {
 }
 
 export interface SignupModelV2 {
+    freePlan: FreePlanDefault;
     session: SessionData | undefined;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;

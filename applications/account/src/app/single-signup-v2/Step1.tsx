@@ -487,6 +487,7 @@ const Step1 = ({
                                     relativePrice={relativePrice}
                                     plansMap={model.plansMap}
                                     currentPlan={currentPlan}
+                                    freePlan={model.freePlan}
                                     subscription={model.session?.subscription}
                                     checkout={checkout}
                                     plan={options.plan}

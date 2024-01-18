@@ -57,6 +57,8 @@ export interface FreePlanDefault extends Plan {
     MaxBaseSpace: number;
     MaxDriveSpace: number;
     MaxRewardSpace: number;
+    MaxDriveRewardSpace: number;
+    MaxBaseRewardSpace: number;
 }
 
 export const getPlanMaxIPs = (plan: Plan) => {
