@@ -91,9 +91,8 @@ const LoginForm = ({
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState<string | null>(null);
-    const isElectron = isElectronApp();
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
-    const persistent = isElectron ? true : maybePersistent;
+    const persistent = isElectronApp ? true : maybePersistent;
     const { createNotification } = useNotifications();
 
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -393,7 +392,7 @@ const LoginForm = ({
                     </Alert>
                 )}
 
-                {hasRemember && authType !== AuthType.ExternalSSO && !isElectron && (
+                {hasRemember && authType !== AuthType.ExternalSSO && !isElectronApp && (
                     <div className="flex flex-row items-start">
                         <Checkbox
                             id="staySignedIn"
