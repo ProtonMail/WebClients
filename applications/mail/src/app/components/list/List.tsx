@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts, useLabels } from '@proton/components';
 import useInboxDesktopBadgeCount from '@proton/components/hooks/useInboxDesktopBadgeCount';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
@@ -113,6 +113,8 @@ const List = (
     ref: Ref<HTMLDivElement>
 ) => {
     const mailSettings = useMailModel('MailSettings');
+    const [labels] = useLabels();
+    const hideUnreadButton = useFlag('DelightMailListHideUnreadButton');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
     const checkedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
@@ -329,6 +331,10 @@ const List = (
                                                         breakpoints={breakpoints}
                                                         onFocus={onFocus}
                                                         onBack={onBack}
+                                                        userSettings={userSettings}
+                                                        mailSettings={mailSettings}
+                                                        labels={labels}
+                                                        hideUnreadButton={hideUnreadButton}
                                                     />
                                                 )}
                                             </Fragment>
