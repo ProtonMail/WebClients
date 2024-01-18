@@ -27,13 +27,22 @@ export const settingsEditFailure = createAction(
 
 export const settingsEditSuccess = createAction(
     'settings::edit::success',
-    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, endpoint?: ClientEndpoint) =>
-        pipe(
-            withCache,
-            withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, endpoint })
-        )({
-            payload,
-        })
+    withRequestSuccess(
+        (payload: RecursivePartial<ProxiedSettings>, showNotification: boolean, endpoint?: ClientEndpoint) =>
+            showNotification
+                ? pipe(
+                      withCache,
+                      withNotification({
+                          type: 'success',
+                          text: c('Info').t`Settings successfully updated`,
+                          endpoint,
+                      })
+                  )({
+                      payload,
+                  })
+                : withCache({
+                      payload,
+                  })
     )
 );
 
