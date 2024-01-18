@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { ItemCheckbox, useFlag } from '@proton/components/containers';
+import { ItemCheckbox } from '@proton/components/containers';
 import { Breakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -18,6 +18,7 @@ interface Props {
     element: Element;
     index: number;
     breakpoints: Breakpoints;
+    isDelightMailListEnabled?: boolean;
 }
 
 const SkeletonItem = ({
@@ -29,10 +30,9 @@ const SkeletonItem = ({
     columnLayout,
     index,
     breakpoints,
+    isDelightMailListEnabled,
 }: Props) => {
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
-
-    const isDelightMailListEnabled = useFlag('DelightMailList');
 
     return (
         <div
@@ -79,6 +79,7 @@ const SkeletonItem = ({
                     unread={false}
                     breakpoints={breakpoints}
                     isSelected={false}
+                    isHovered={false}
                 />
             </div>
         </div>

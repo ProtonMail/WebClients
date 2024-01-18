@@ -3,7 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, useFlag } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -29,6 +29,7 @@ interface Props {
     onBack: () => void;
     hasStar?: boolean;
     size?: 'small' | 'medium';
+    isDelightMailListEnabled?: boolean;
 }
 
 const ItemHoverButtons = ({
@@ -39,6 +40,7 @@ const ItemHoverButtons = ({
     onBack,
     hasStar = true,
     size = 'medium',
+    isDelightMailListEnabled,
 }: Props) => {
     const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
@@ -104,8 +106,6 @@ const ItemHoverButtons = ({
           : c('Alt').t`Star conversation`;
 
     const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
-
-    const isDelightMailListEnabled = useFlag('DelightMailList');
 
     return (
         <>

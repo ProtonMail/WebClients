@@ -1,5 +1,7 @@
 import { ChangeEvent, DependencyList, useEffect, useMemo, useState } from 'react';
 
+import unique from '@proton/utils/unique';
+
 import useHandler from '../../hooks/useHandler';
 
 /**
@@ -24,13 +26,7 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
     useEffect(() => setCheckedMap({}), resetDependencies);
 
     const checkedIDs = useMemo(() => {
-        return Object.entries(checkedMap).reduce<string[]>((acc, [ID, isChecked]) => {
-            if (!isChecked) {
-                return acc;
-            }
-            acc.push(ID);
-            return acc;
-        }, []);
+        return Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
     }, [checkedMap]);
 
     const selectedIDs = useMemo(() => {
@@ -48,22 +44,37 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
      * Uncheck others if *replace* is true
      */
     const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
-        setCheckedMap(
-            allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
-                const wasChecked = isChecked(ID);
-                const toCheck = IDs.includes(ID);
-                let value: boolean;
-                if (toCheck) {
-                    value = checked;
-                } else if (replace) {
-                    value = !checked;
-                } else {
-                    value = wasChecked;
-                }
-                acc[ID] = value;
-                return acc;
-            }, {})
-        );
+        // Items can be checked and included in a new selection (select all/select range).
+        // In that case they will be duplicated in the array, which could break the length we expect in the 2nd condition
+        const uniqueIDs = unique(IDs);
+        if (uniqueIDs.length === 0) {
+            setCheckedMap({});
+        } else if (uniqueIDs.length === allIDs.length) {
+            setCheckedMap(
+                allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
+                    acc[ID] = checked;
+                    return acc;
+                }, {})
+            );
+        } else {
+            setCheckedMap(
+                allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
+                    const wasChecked = isChecked(ID);
+                    const toCheck = IDs.includes(ID);
+                    let value: boolean;
+                    if (toCheck) {
+                        value = checked;
+                    } else if (replace) {
+                        value = !checked;
+                    } else {
+                        value = wasChecked;
+                    }
+                    acc[ID] = value;
+                    return acc;
+                }, {})
+            );
+        }
+
         setLastChecked('');
     });
 

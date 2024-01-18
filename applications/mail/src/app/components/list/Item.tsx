@@ -1,14 +1,14 @@
-import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
 
-import { Breakpoints, ItemCheckbox, useFlag, useLabels } from '@proton/components';
+import { Breakpoints, ItemCheckbox } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
@@ -48,6 +48,12 @@ interface Props {
     index: number;
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
+    hideUnreadButton?: boolean;
+    isDelightMailListEnabled?: boolean;
+    showAttachmentThumbnails?: boolean;
+    userSettings: UserSettings;
+    mailSettings: MailSettings;
+    labels?: Label[];
 }
 
 const Item = ({
@@ -69,15 +75,19 @@ const Item = ({
     index,
     breakpoints,
     onFocus,
+    hideUnreadButton,
+    mailSettings,
+    userSettings,
+    labels,
+    showAttachmentThumbnails,
+    isDelightMailListEnabled,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
-    const [labels] = useLabels();
+    const [isHovered, setHover] = useState(false);
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
-
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
     const elementRef = useRef<HTMLDivElement>(null);
@@ -141,8 +151,6 @@ const Item = ({
         />
     );
 
-    const isDelightMailListEnabled = useFlag('DelightMailList');
-
     return (
         <div
             className={clsx(
@@ -152,6 +160,8 @@ const Item = ({
             data-shortcut-target="item-container-wrapper"
         >
             <div
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
                 draggable
@@ -215,6 +225,11 @@ const Item = ({
                     onBack={onBack}
                     isSelected={isSelected}
                     attachmentsMetadata={filteredThumbnails}
+                    hideUnreadButton={hideUnreadButton}
+                    userSettings={userSettings}
+                    isHovered={isHovered}
+                    showAttachmentThumbnails={showAttachmentThumbnails}
+                    isDelightMailListEnabled={isDelightMailListEnabled}
                 />
             </div>
         </div>

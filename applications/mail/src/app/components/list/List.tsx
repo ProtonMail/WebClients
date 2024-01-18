@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts, useLabels } from '@proton/components';
 import useInboxDesktopBadgeCount from '@proton/components/hooks/useInboxDesktopBadgeCount';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
@@ -113,8 +113,21 @@ const List = (
     ref: Ref<HTMLDivElement>
 ) => {
     const mailSettings = useMailModel('MailSettings');
+    const [labels] = useLabels();
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+    const hideUnreadButton = useFlag('DelightMailListHideUnreadButton');
+    const showAttachmentThumbnails = useFlag('AttachmentThumbnails');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
+    const checkedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
+        return checkedIDs.reduce(
+            (acc, ID) => {
+                acc[ID] = true;
+                return acc;
+            },
+            {} as { [ID: string]: boolean }
+        );
+    }, [checkedIDs]);
 
     // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
@@ -188,6 +201,16 @@ const List = (
         selectAll // Pass the select all so that the callback knows when to display location count
     );
 
+    const draggedIDsMap = useMemo<{ [ID: string]: boolean }>(() => {
+        return draggedIDs.reduce(
+            (acc, ID) => {
+                acc[ID] = true;
+                return acc;
+            },
+            {} as { [ID: string]: boolean }
+        );
+    }, [draggedIDs]);
+
     const { contextMenu, onContextMenu, blockSenderModal } = useItemContextMenu({
         elementID,
         labelID,
@@ -204,8 +227,6 @@ const List = (
         const counters = conversationMode ? conversationCounts : messageCounts;
         return (counters || []).find((counter) => counter.LabelID === labelID)?.Unread || 0;
     }, [conversationMode, labelID, conversationCounts, messageCounts]);
-
-    const isDelightMailListEnabled = useFlag('DelightMailList');
 
     return (
         <div
@@ -289,6 +310,7 @@ const List = (
                                                         element={element}
                                                         index={index}
                                                         breakpoints={breakpoints}
+                                                        isDelightMailListEnabled={isDelightMailListEnabled}
                                                     />
                                                 ) : (
                                                     <Item
@@ -299,17 +321,23 @@ const List = (
                                                         columnLayout={columnLayout}
                                                         elementID={elementID}
                                                         element={element}
-                                                        checked={checkedIDs.includes(element.ID || '')}
+                                                        checked={!!checkedIDsMap[element.ID || '']}
                                                         onCheck={onCheckOne}
                                                         onClick={onClick}
                                                         onContextMenu={onContextMenu}
                                                         onDragStart={handleDragStart}
                                                         onDragEnd={handleDragEnd}
-                                                        dragged={draggedIDs.includes(element.ID || '')}
+                                                        dragged={!!draggedIDsMap[element.ID || '']}
                                                         index={index}
                                                         breakpoints={breakpoints}
                                                         onFocus={onFocus}
                                                         onBack={onBack}
+                                                        userSettings={userSettings}
+                                                        mailSettings={mailSettings}
+                                                        labels={labels}
+                                                        isDelightMailListEnabled={isDelightMailListEnabled}
+                                                        hideUnreadButton={hideUnreadButton}
+                                                        showAttachmentThumbnails={showAttachmentThumbnails}
                                                     />
                                                 )}
                                             </Fragment>

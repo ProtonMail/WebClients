@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 :root {
@@ -11,6 +11,7 @@
 
 .drawer-app {
 	inline-size: var(--drawer-width);
+	contain: content;
 
 	&-inner {
 		animation: 0.5s easing(ease-out-quart) anime-drawer-app-inner forwards;
