@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
 
@@ -45,6 +45,7 @@ html,
 }
 
 .header {
+	contain: content;
 	padding-block: var(--space-1);
 	padding-inline: var(--space-3) var(--space-2);
 	block-size: rem($header-height-small);
@@ -111,6 +112,7 @@ html,
 }
 
 .sidebar {
+	contain: content;
 	inline-size: rem($width-sidebar);
 	visibility: visible;
 	transition:

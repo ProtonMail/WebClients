@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { LabelStack } from '@proton/components';
@@ -30,14 +31,15 @@ const ItemLabels = ({
     maxNumber,
     showDropdown = true,
 }: Props) => {
+    const history = useHistory();
     const { applyLabels } = useApplyLabels();
 
-    const labelIDs = Object.keys(getLabelIDs(element, labelID));
-    const labelsMap = toMap(labels);
-    const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
-    const labelsSorted = orderBy(labelsObjects, 'Order') as Label[];
-
-    const history = useHistory();
+    const labelsSorted = useMemo<Label[]>(() => {
+        const labelIDs = Object.keys(getLabelIDs(element, labelID));
+        const labelsMap = toMap(labels);
+        const labelsObjects = labelIDs.map((ID) => labelsMap[ID]).filter(isTruthy);
+        return orderBy(labelsObjects, 'Order');
+    }, [element, labelID, labels]);
 
     if (!labelsSorted.length) {
         return null;
