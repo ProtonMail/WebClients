@@ -3729,6 +3729,22 @@
         "s yitran"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "imayl yettwazen ${ label }"
+      ],
+      "with attachments": [
+        "s ifuyla yeddan"
+      ],
+      "without attachments": [
+        "war ifuyla yeddan"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "imayl yettwazen ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Amezwar"

@@ -5837,6 +5837,9 @@
         "${ n } osoite",
         "${ n } osoitetta"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: älä merkitse roskapostiksi tai hylkää luvattomia sähköposteja. Tätä politiikkaa käytetään yleensä vianhakuun ja testaamiseen."
+      ],
       "${ number } city": [
         "${ number } kaupungissa",
         "${ number } kaupungissa"
@@ -5869,6 +5872,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: pyytää vastaanottavia järjestelmiä merkitsemään luvattomat sähköpostit roskapostiksi tai siirtämään ne karanteeniin."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: pyytää vastaanottavia järjestelmiä hylkäämään luvattomat sähköpostit."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } lisää",
@@ -6196,8 +6205,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Ennen kuin voit vastaanottaa sähköpostia räätälöityyn verkkotunnuksesi ${ MAIL_APP_NAME }, sinun täytyy lisätä seuraavat kaksi MX-tietuetta DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Laskutettu ${ price }"
@@ -6340,6 +6355,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM mahdollistaa ${ BRAND_NAME }in allekirjoittaa sähköpostisi kryptografisesti ja estää hyökkääjiä muuttamasta sähköpostejasi. Huomaa lisätä seuraavat kolme CNAME tietuetta DNS hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC tarkastaa, että lähettäjän SPF ja DKIM tietueet kuuluvat verkkotunnuksellesi. Tämä voi estää hyökkääjiä käyttämästä muiden verkkotunnusten SPF ja DKIM tietoja verkkotunnuksesi muuttamiseksi. Tietueen \"p=\" (politiikka) kertoo, miten haluat vastaanottavan järjestelmän käsittelevän luvatta lähetettyjä sähköposteja. Suosittelemme käyttämään \"p=quarantine\" -politiikkaa useimmille verkkotunnuksille. Huomaa lisätä seuraava TXT tietue DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ÄLÄ kadota tätä salasanaa. Mikäli kadotat sen, et voi hallita organisaatiotasi."
       ],
@@ -6385,6 +6406,9 @@
       ],
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
       ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
@@ -6470,6 +6494,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Tapahtumakutsut ja osanottovahvistukset lähetetään tällä kielellä."
       ],
+      "Example: ${ spfExample }": [
+        "Esimerkki: ${ spfExample }"
+      ],
       "Expired": [
         "Voimassaolo päättynyt"
       ],
@@ -6490,6 +6517,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Kertakirjautumista (SAML SSO) käyttävien organisaatioiden jäsenille"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
@@ -6611,6 +6641,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Tuo viestit, kalenterit ja yhteystiedot muista palveluista ${ BRAND_NAME }iin."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "TÄRKEÄÄ: Mikäli DNS-hallintasi ei anna CNAME-tietueen päättyä pisteeseen, voit poistaa viimeisen pisteen CNAME tiedoista."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
@@ -6741,6 +6774,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Lokitietoihin sisältyvät todennusyritykset kaikkiin ${ BRAND_NAME }-tunnustasi käyttäviin ${ BRAND_NAME_TWO }-palveluihin."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Monet sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostiksi, jos SPF/DKIM/DMARC puuttuvat tai niitä ei ole määritetty oikein."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Useat sähköpostipalvelut saattavat hylätä tai suodattaa sähköpostisi roskapostina, mikäli SPF/DKIM/MARC-tietueet puuttuvat tai niitä ei ole määritetty oikealla tavalla."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Varmista, että ${ addARecoveryMethod }, jotta pääset tilillesi takaisin, mikäli unohdat salasanasi."
@@ -7176,6 +7215,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Osaa palvelimistasi voidaan hiljattaisten poistojen vuoksi käyttää vain tietyissä maissa"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF määrittää verkkotunnuksesi hyväksytyt lähettäjät. Varmista, että lisäät seuraavan TXT-tietueen DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi)."
       ],
       "Stay tuned for future promotions.": [
         "Pysy kuulolla tulevista kampanjoista."
@@ -7956,8 +7998,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Lisää uusi osoite organisaatiosi olemassaolevalle käyttäjälle."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Lisää organisaatioosi uusi käyttäjä ja luo hänelle uusi osoite."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Turvallisuussyistä johtuen meidän tulee varmistaa, että olet verkkotunnuksen ${ domainName } haltija. Lisää seuraava TXT-tietue DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8996,6 +9044,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lisää seuraavat kolme CNAME -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lisää seuraavat kaksi MX -tietuetta. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lisää seuraava TXT -tietue. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ],
       "Please select files to upload": [
         "Valitse ladattavat tiedostot"
       ],
@@ -9239,6 +9296,11 @@
         "Kesto"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lisää seuraava TXT -tietue. Huomaa DNS -tietueiden päivittymisen saattavan kestää useita tunteja."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Ylläpitäjä"
@@ -9424,6 +9486,9 @@
       ],
       "Help translate": [
         "Osallistu käännökseen"
+      ],
+      "here": [
+        "tässä"
       ],
       "How to pay with Bitcoin?": [
         "Miten maksan Bitcoineilla?"
@@ -10591,6 +10656,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
@@ -12593,6 +12661,10 @@
         "${ n } kalenteri/käyttäjä",
         "${ n } kalenteria/käyttäjä"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } ilmainen VPN-yhteys per käyttäjä",
+        "${ n } ilmaista VPN-yhteyttä per käyttäjä"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } nopea VPN-yhteys",
         "${ n } nopeaa VPN-yhteyttä"
@@ -13977,6 +14049,9 @@
       "Theme": [
         "Teema"
       ],
+      "This field cannot be empty": [
+        "Kenttä ei voi olla tyhjä"
+      ],
       "Time zone": [
         "Aikavyöhyke"
       ],
@@ -14226,6 +14301,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Laajan lokikirjauksen ollessa käytössä, kirjataan jokaisen tapahtuman IP-osoite suojauslokiin."
       ],
+      "Feature in early access": [
+        "Ominaisuus on varhaisessa käytössä"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
@@ -14447,6 +14525,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Identiteetinhallintasi SSO-käyttäjä"
       ]
     },
     "Validation": {

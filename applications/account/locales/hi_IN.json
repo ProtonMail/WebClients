@@ -4352,6 +4352,22 @@
         "तारांकित किआ हुआ"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "ईमेल भेजा गया था ${ label }"
+      ],
+      "with attachments": [
+        "संलग्नक के साथ"
+      ],
+      "without attachments": [
+        "संलग्नक के बिना"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "ईमेल भेजा गया था ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Allow:": [
         "अनुमति:"
@@ -8212,6 +8228,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "सीमित समय ऑफर"
       ]
     },
     "Maximum calendar links reached warning": {

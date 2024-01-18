@@ -2978,11 +2978,11 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "Cada dia a les ${ untilString }"
+        "Cada dia, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Cada ${ interval } dia fins ${ untilString }",
-        "Cada ${ interval } dias fins ${ untilString }"
+        "Cada ${ interval } dies fins ${ untilString }"
       ]
     },
     "Date label": {
@@ -3726,7 +3726,7 @@
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més d'${ MAX_IMPORT_EVENTS } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -4258,6 +4258,22 @@
       ],
       "starred": [
         "destacat"
+      ]
+    },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "el correu ha estat enviat ${ label }"
+      ],
+      "with attachments": [
+        "amb fitxers adjunts"
+      ],
+      "without attachments": [
+        "sense fitxers adjunts"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "el correu ha estat enviat ${ label }"
       ]
     },
     "Font Face Default": {
@@ -5011,7 +5027,7 @@
         "i"
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "També se suprimiran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no se suprimiran i es poden trobar a la carpeta Tot el correu."
+        "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Segur que voleu eliminar tots els missatges d'aquesta carpeta?"
@@ -5020,7 +5036,7 @@
         "Segur que voleu eliminar tots els missatges amb aquesta etiqueta?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Segur que voleu suprimir aquesta carpeta?"
+        "Segur que voleu eliminar aquesta carpeta?"
       ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
@@ -5241,7 +5257,7 @@
         "Els correus se signen automàticament"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Els correus electrònics etiquetats amb aquesta etiqueta ${ nameDeleted } no s'esborraran i continuaran trobant-se a la carpeta respectiva."
+        "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
       ],
       "embedded image": [
         "imatge integrade",
@@ -7005,7 +7021,7 @@
         "De: ${ from }"
       ],
       "To: ${ to }": [
-        "Per a: ${ to }"
+        "A: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7340,7 +7356,7 @@
         "Cada ${ interval } mesos, el ${ onDayString } a les ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Cada mes el ${ onDayString } a les ${ timesString }"
+        "Cada mes el ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
@@ -7349,7 +7365,7 @@
         "Cada ${ interval } mesos, el ${ onDayString } fins ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Cada mes el ${ onDayString } fins ${ untilString }"
+        "Cada mes el ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -9868,7 +9884,7 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Cada ${ interval } setmana, cada dia a les ${ timesString }",
-        "Cada ${ interval } setmanas, cada dia a les ${ timesString }"
+        "Cada ${ interval } setmanes, cada dia a les ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Cada ${ interval } setmana, el divendres a les ${ timesString }",
@@ -9884,34 +9900,34 @@
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Cada ${ interval } setmana, el dimecres a les ${ timesString }",
-        "Cada ${ interval } setmanas, el dimecres a les ${ timesString }"
+        "Cada ${ interval } setmanes, el dimecres a les ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalment els ${ multipleDaysString }, ${ timesString }"
+        "Cada setmana el ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Cada setmana, cada dia a les ${ timesString }"
+        "Cada setmana tots els dies, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Cada setmana el divendres a les ${ timesString }"
+        "Cada setmana el divendres, ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Cada setmana el dilluns a les ${ timesString }"
+        "Cada setmana el dilluns, ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Cada setmana el dissabte a les ${ timesString }"
+        "Cada setmana el dissabte, ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Cada setmana el diumenge a les ${ timesString }"
+        "Cada setmana el diumenge, ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Cada setmana el dijous a les ${ timesString }"
+        "Cada setmana el dijous, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Cada setmana el dimarts a les ${ timesString }"
+        "Cada setmana el dimarts, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Cada setmana el dimecres a les ${ timesString }"
+        "Cada setmana el dimecres, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -9944,39 +9960,39 @@
         "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+        "Cada ${ interval } setmana, el dimarts fins ${ untilString }",
+        "Cada ${ interval } setmanes, el dimarts fins ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
-        "Cada ${ interval } setmanas, el dimecres fins ${ untilString }"
+        "Cada ${ interval } setmanes, el dimecres fins ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Semanalment els ${ multipleDaysString }, ${ untilString }"
+        "Cada setmana el ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Cada setmana, cada dia fins ${ untilString }"
+        "Cada setmana tots els dies, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Cada setmana el divendres fins ${ untilString }"
+        "Cada setmana el divendres, ${ untilString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Cada setmana el dilluns fins ${ untilString }"
+        "Cada setmana el dilluns, ${ untilString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Cada setmana el dissabte fins ${ untilString }"
+        "Cada setmana el dissabte, ${ untilString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Cada setmana el diumenge fins ${ untilString }"
+        "Cada setmana el diumenge, ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Cada setmana el dijous fins ${ untilString }"
+        "Cada setmana el dijous, ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Cada setmana el dimarts fins ${ untilString }"
+        "Cada setmana el dimarts, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Cada setmana el dimecres fins ${ untilString }"
+        "Cada setmana el dimecres, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10026,7 +10042,7 @@
         "Cada ${ interval } anys, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
-        "Cada any fins ${ untilString }"
+        "Cada any, ${ untilString }"
       ]
     }
   }

@@ -4165,6 +4165,22 @@
         "позначені зірочкою"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "лист було надіслано ${ label }"
+      ],
+      "with attachments": [
+        "має вкладення"
+      ],
+      "without attachments": [
+        "без вкладень"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "лист було надіслано ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Типовий"

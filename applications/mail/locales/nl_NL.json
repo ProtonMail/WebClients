@@ -4207,6 +4207,22 @@
         "Met ster"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "de e-mail was verzonden ${ label }"
+      ],
+      "with attachments": [
+        "met bijlagen"
+      ],
+      "without attachments": [
+        "zonder bijlagen"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "de e-mail was verzonden ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Standaard"
@@ -6103,6 +6119,10 @@
       "You selected **${ count } message** with this label": [
         "U heeft **${ count } bericht** geselecteerd met dit label",
         "U heeft **${ count } berichten** geselecteerd met dit label"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "U selecteerde **${ elementsCount } gesprek**.",
+        "U selecteerde **${ elementsCount } gesprekken**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "U schreef \"${ attachmentsFoundKeyword }\", maar er is geen bijlage toegevoegd. Wilt u uw bericht toch verzenden?"
@@ -8043,6 +8063,18 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {

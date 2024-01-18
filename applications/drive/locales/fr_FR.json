@@ -253,6 +253,9 @@
       "Download apps": [
         "Télécharger les applications"
       ],
+      "Download logs": [
+        "Télécharger les journaux"
+      ],
       "Drive Locked": [
         "Disque verrouillé"
       ],
@@ -3350,7 +3353,7 @@
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } ignorés",
+        "${ skippedCount } ignoré",
         "${ skippedCount } ignorés"
       ],
       "${ speed }/s": [
@@ -4118,6 +4121,9 @@
       "Signature issue": [
         "Problème de signature"
       ],
+      "Skipped": [
+        "Ignoré"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Certains fichiers n'ont pas pu être téléchargés. Essayez à nouveau de les télécharger."
       ],
@@ -4179,7 +4185,7 @@
         "Ce fichier a peut-être été supprimé, déplacé ou rendu indisponible. Prenez contact avec le propriétaire du fichier."
       ],
       "This item already exists in your library": [
-        "Ce document existe déjà dans votre bibliothèque"
+        "Cet élément existe déjà dans votre bibliothèque."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."

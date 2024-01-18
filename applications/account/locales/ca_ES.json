@@ -2971,11 +2971,11 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "Cada dia a les ${ untilString }"
+        "Cada dia, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Cada ${ interval } dia fins ${ untilString }",
-        "Cada ${ interval } dias fins ${ untilString }"
+        "Cada ${ interval } dies fins ${ untilString }"
       ]
     },
     "Day": {
@@ -4108,7 +4108,7 @@
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més d'${ MAX_IMPORT_EVENTS } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -4966,6 +4966,22 @@
       ],
       "starred": [
         "destacat"
+      ]
+    },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "el correu ha estat enviat ${ label }"
+      ],
+      "with attachments": [
+        "amb fitxers adjunts"
+      ],
+      "without attachments": [
+        "sense fitxers adjunts"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "el correu ha estat enviat ${ label }"
       ]
     },
     "FilterSettings": {
@@ -5952,7 +5968,7 @@
         "Qualsevol mètode ${ twoFa } del vostre compte es desactivarà."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "També se suprimiran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no se suprimiran i es poden trobar a la carpeta Tot el correu."
+        "També s'eliminaran les subcarpetes. Tanmateix, els correus electrònics emmagatzemats en aquesta carpeta ${ nameDeleted } no s'eliminaran i es poden trobar a la carpeta Tot el correu."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Qualsevol amb aquest enllaç pot veure tots els detalls dels esdeveniments d'aquest calendari com ara títol, localització o participants."
@@ -5985,7 +6001,7 @@
         "Segur que voleu eliminar aquest filtre?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Segur que voleu suprimir aquesta carpeta?"
+        "Segur que voleu eliminar aquesta carpeta?"
       ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
@@ -6058,6 +6074,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Facturat a ${ price }"
@@ -6257,7 +6276,7 @@
         "Preferència de correu desada"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Els correus electrònics etiquetats amb aquesta etiqueta ${ nameDeleted } no s'esborraran i continuaran trobant-se a la carpeta respectiva."
+        "Els correus electrònics amb aquesta etiqueta ${ nameDeleted } no s'eliminaran i continuaran trobant-se a la carpeta respectiva."
       ],
       "Enable this address to join this calendar": [
         "Habiliteu aquesta adreça per a unir-vos a aquest calendari."
@@ -6997,7 +7016,7 @@
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un testimoni."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per a utilitzar aquesta característica, comenceu generant un testimoni."
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
@@ -7340,7 +7359,7 @@
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Milloreu al pla ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per accedir a ${ PROTON_SENTINEL_NAME }."
+        "Milloreu al pla ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per a accedir a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Milloreu per afegir una adreça @pm.me més curta al vostre compte que sigui més fàcil de compartir. Vol dir «${ MAIL_APP_NAME } me» o «Private Message me»."
@@ -7623,7 +7642,7 @@
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "Hauríeu d'exportar una còpia de seguretat d'aquesta clau per si necessiteu restaurar les dades que va xifrar."
+        "És recomanable que exporteu una còpia de seguretat d'aquesta clau per si necessiteu restaurar les dades que va xifrar."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
@@ -8271,7 +8290,7 @@
         "Elimina automàticament els missatges no desitjats"
       ],
       "Auto-detect primary time zone": [
-        "Detecta automàticament el fus horari principal"
+        "Detecció automàtica del fus horari principal"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -8805,7 +8824,7 @@
         "Seleccioneu els fitxers que voleu carregar"
       ],
       "Please share any feedback to help us improve.": [
-        "Compartiu qualsevol comentari per ajudar-nos a millorar."
+        "Compartiu qualsevol comentari per a ajudar-nos a millorar."
       ],
       "Port": [
         "Port"
@@ -9056,6 +9075,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Actualitzacions del producte ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Anuncis de la versió beta de ${ BRAND_NAME }"
       ],
@@ -9167,7 +9189,7 @@
         "De: ${ from }"
       ],
       "To: ${ to }": [
-        "Per a: ${ to }"
+        "A: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9226,6 +9248,9 @@
       ],
       "Help translate": [
         "Ajudeu a traduir"
+      ],
+      "here": [
+        "aquí"
       ],
       "How to pay with Bitcoin?": [
         "Com pagar amb Bitcoin?"
@@ -9361,6 +9386,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Oferta per temps limitat"
+      ],
       "Secure email that protects your privacy": [
         "Correu electrònic segur que protegeix la vostra privadesa"
       ]
@@ -9525,7 +9553,7 @@
         "Cada ${ interval } mesos, el ${ onDayString } a les ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Cada mes el ${ onDayString } a les ${ timesString }"
+        "Cada mes el ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
@@ -9534,7 +9562,7 @@
         "Cada ${ interval } mesos, el ${ onDayString } fins ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Cada mes el ${ onDayString } fins ${ untilString }"
+        "Cada mes el ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -12851,7 +12879,7 @@
     },
     "Title": {
       " Get ${ MAIL_APP_NAME } for Mac or Windows": [
-        " Obtén ${ MAIL_APP_NAME } per Mac o Windows"
+        " Obteniu ${ MAIL_APP_NAME } per a Mac o Windows"
       ],
       "${ appName } Free": [
         "${ appName } Free"
@@ -13167,7 +13195,7 @@
         "Elimina el calendari"
       ],
       "Delete filter?": [
-        "Voleu esborrar el filtre?"
+        "Voleu eliminar el filtre?"
       ],
       "Delete folder?": [
         "Voleu eliminar la carpeta?"
@@ -13722,7 +13750,7 @@
         "Millora el pla"
       ],
       "Upload CSV file to create multiple accounts": [
-        "Puja el fitxer CSV per a crear múltiples comptes"
+        "Carregueu un fitxer CSV per a crear múltiples comptes"
       ],
       "Users": [
         "Usuaris"
@@ -14445,7 +14473,7 @@
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Cada ${ interval } setmana, cada dia a les ${ timesString }",
-        "Cada ${ interval } setmanas, cada dia a les ${ timesString }"
+        "Cada ${ interval } setmanes, cada dia a les ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Cada ${ interval } setmana, el divendres a les ${ timesString }",
@@ -14461,34 +14489,34 @@
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Cada ${ interval } setmana, el dimecres a les ${ timesString }",
-        "Cada ${ interval } setmanas, el dimecres a les ${ timesString }"
+        "Cada ${ interval } setmanes, el dimecres a les ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalment els ${ multipleDaysString }, ${ timesString }"
+        "Cada setmana el ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Cada setmana, cada dia a les ${ timesString }"
+        "Cada setmana tots els dies, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Cada setmana el divendres a les ${ timesString }"
+        "Cada setmana el divendres, ${ timesString }"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Cada setmana el dilluns a les ${ timesString }"
+        "Cada setmana el dilluns, ${ timesString }"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Cada setmana el dissabte a les ${ timesString }"
+        "Cada setmana el dissabte, ${ timesString }"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Cada setmana el diumenge a les ${ timesString }"
+        "Cada setmana el diumenge, ${ timesString }"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Cada setmana el dijous a les ${ timesString }"
+        "Cada setmana el dijous, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Cada setmana el dimarts a les ${ timesString }"
+        "Cada setmana el dimarts, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Cada setmana el dimecres a les ${ timesString }"
+        "Cada setmana el dimecres, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -14521,39 +14549,39 @@
         "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+        "Cada ${ interval } setmana, el dimarts fins ${ untilString }",
+        "Cada ${ interval } setmanes, el dimarts fins ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
-        "Cada ${ interval } setmanas, el dimecres fins ${ untilString }"
+        "Cada ${ interval } setmanes, el dimecres fins ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Semanalment els ${ multipleDaysString }, ${ untilString }"
+        "Cada setmana el ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Cada setmana, cada dia fins ${ untilString }"
+        "Cada setmana tots els dies, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Cada setmana el divendres fins ${ untilString }"
+        "Cada setmana el divendres, ${ untilString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Cada setmana el dilluns fins ${ untilString }"
+        "Cada setmana el dilluns, ${ untilString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Cada setmana el dissabte fins ${ untilString }"
+        "Cada setmana el dissabte, ${ untilString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Cada setmana el diumenge fins ${ untilString }"
+        "Cada setmana el diumenge, ${ untilString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Cada setmana el dijous fins ${ untilString }"
+        "Cada setmana el dijous, ${ untilString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Cada setmana el dimarts fins ${ untilString }"
+        "Cada setmana el dimarts, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Cada setmana el dimecres fins ${ untilString }"
+        "Cada setmana el dimecres, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14603,7 +14631,7 @@
         "Cada ${ interval } anys, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
-        "Cada any fins ${ untilString }"
+        "Cada any, ${ untilString }"
       ]
     }
   }

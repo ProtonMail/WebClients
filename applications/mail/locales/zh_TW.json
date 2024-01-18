@@ -4199,6 +4199,22 @@
         "已加星號"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "電郵${ label }送出"
+      ],
+      "with attachments": [
+        "連同附件"
+      ],
+      "without attachments": [
+        "不帶附件"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "電郵${ label }送出"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "預設"

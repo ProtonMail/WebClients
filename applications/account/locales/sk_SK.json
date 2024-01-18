@@ -5128,6 +5128,22 @@
         "s hviezdičkou"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "email bol odoslaný ${ label }"
+      ],
+      "with attachments": [
+        "s prílohami"
+      ],
+      "without attachments": [
+        "bez príloh"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "email bol odoslaný ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Pridajte vlastný filter, ktorý automaticky vykoná určité akcie, napríklad označovanie alebo archiváciu správ."
@@ -9407,6 +9423,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Aktualizácie produktu ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Beta oznámenia ${ BRAND_NAME }"
       ],
@@ -9726,6 +9745,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Staňte sa Vizionárom a buďte súčasťou príbehu ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Časovo obmedzená ponuka"
       ],
       "Secure email that protects your privacy": [
         "Zabezpečený email, ktorý chráni vaše súkromie"
@@ -14213,7 +14235,7 @@
         "Nastavenia"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Nastavenie dedikovaných serverov prechodom na Biznis plán"
+        "Nastavenie dedikovaných serverov prechodom na Business plán"
       ],
       "Short domain (@pm.me)": [
         "Skrátený tvar domény (@pm.me)"
