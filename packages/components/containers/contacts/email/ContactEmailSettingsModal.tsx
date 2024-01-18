@@ -14,7 +14,7 @@ import {
     fromVCardProperties,
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
-import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
+import { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import {
     getContactPublicKeyModel,
@@ -65,7 +65,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
 
     const api = useApi();
     const { call } = useEventManager();
-    const [model, setModel] = useState<ContactPublicKeyModel>();
+    const [model, setModel] = useState<ContactPublicKeyModelWithApiKeySource>();
     const [showPgpSettings, setShowPgpSettings] = useState(false);
     const [loadingPgpSettings, withLoadingPgpSettings] = useLoading(true);
     const [loadingSave, withLoadingSave] = useLoading(false);
@@ -97,6 +97,14 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             verifyOutboundPublicKeys,
             silence: true,
         });
+        const apiKeysSourceMap = apiKeysConfig.publicKeys.reduce<ContactPublicKeyModelWithApiKeySource['apiKeysSourceMap']>((map, { publicKey, source }) => {
+            const fingerprint = publicKey.getFingerprint();
+            if (!map[source]) {
+                map[source] = new Set();
+            }
+            map[source]!.add(fingerprint);
+            return map;
+        }, {});
         const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,
@@ -108,6 +116,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             // Encryption enforces signing, so we can ignore the signing preference so that if the user
             // disables encryption, the global default signing setting is automatically selected.
             sign: publicKeyModel.encrypt ? undefined : publicKeyModel.sign,
+            apiKeysSourceMap
         });
     };
 
@@ -116,7 +125,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
      * @param group attached to the current email address
      * @returns key properties to save in the vCard
      */
-    const getKeysProperties = (group: string, model: ContactPublicKeyModel) => {
+    const getKeysProperties = (group: string, model: ContactPublicKeyModelWithApiKeySource) => {
         const allKeys = model?.isPGPInternal
             ? [...model.publicKeys.apiKeys]
             : [...model.publicKeys?.apiKeys, ...model.publicKeys.pinnedKeys];
@@ -128,7 +137,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     /**
      * Save relevant key properties in the vCard
      */
-    const handleSubmit = async (model?: ContactPublicKeyModel) => {
+    const handleSubmit = async (model?: ContactPublicKeyModelWithApiKeySource) => {
         if (!model) {
             return;
         }
@@ -211,7 +220,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
          * * move expired keys to the bottom of the list
          */
 
-        setModel((model?: ContactPublicKeyModel) => {
+        setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
             if (!model) {
                 return;
             }
@@ -255,7 +264,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
         }
         // PGP/Inline should force the email format to plaintext
         if (hasPGPInline) {
-            return setModel((model?: ContactPublicKeyModel) => {
+            return setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
                 if (!model) {
                     return;
                 }
@@ -263,7 +272,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
             });
         }
         // If PGP/Inline is not selected, go back to automatic
-        setModel((model?: ContactPublicKeyModel) => {
+        setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
             if (!model) {
                 return;
             }
@@ -307,7 +316,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                             disabled={loadingSave || isMimeTypeFixed}
                             value={model?.mimeType || ''}
                             onChange={(mimeType: CONTACT_MIME_TYPES) =>
-                                setModel((model?: ContactPublicKeyModel) => {
+                                setModel((model?: ContactPublicKeyModelWithApiKeySource) => {
                                     if (!model) {
                                         return;
                                     }
