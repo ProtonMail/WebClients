@@ -482,6 +482,12 @@ export enum IGNORE_KT {
     CATCH_ALL = 2,
 }
 
+export enum API_KEY_SOURCE {
+    PROTON = 0,
+    WKD = 1,
+    KOO = 2,
+}
+
 export enum DRAFT_TYPE {
     NORMAL = 'text/html',
     PLAIN_TEXT = 'text/plain',

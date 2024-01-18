@@ -1,6 +1,6 @@
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 
-import { RECIPIENT_TYPES } from '../../lib/constants';
+import { API_KEY_SOURCE, RECIPIENT_TYPES } from '../../lib/constants';
 import { getContactPublicKeyModel, sortApiKeys, sortPinnedKeys } from '../../lib/keys/publicKeys';
 import { ExpiredPublicKey, SignOnlyPublicKey, ValidPublicKey } from './keys.data';
 
@@ -58,7 +58,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -75,7 +75,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [],
@@ -92,7 +92,7 @@ describe('get contact public key model', () => {
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             apiKeysConfig: {
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.WKD }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -127,7 +127,7 @@ describe('get contact public key model', () => {
             apiKeysConfig: {
                 ...publicKeyConfig,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                publicKeys: [{ publicKey, armoredKey: '', flags: 1 }],
+                publicKeys: [{ publicKey, armoredKey: '', flags: 1, source: API_KEY_SOURCE.PROTON }],
             },
             pinnedKeysConfig: {
                 pinnedKeys: [publicKey],
@@ -146,7 +146,7 @@ describe('sortApiKeys', () => {
             getFingerprint() {
                 return fingerprint;
             },
-        } as PublicKeyReference);
+        }) as PublicKeyReference;
     it('sort keys as expected', () => {
         const fingerprints = [
             'trustedObsoleteNotCompromised',
@@ -198,7 +198,7 @@ describe('sortPinnedKeys', () => {
             getFingerprint() {
                 return fingerprint;
             },
-        } as PublicKeyReference);
+        }) as PublicKeyReference;
     it('sort keys as expected', () => {
         const fingerprints = [
             'cannotEncryptObsoleteNotCompromised',
