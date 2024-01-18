@@ -518,24 +518,6 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'logo',
         });
     }
-    if (property === 'location') {
-        return (value: ContactValue) => ({
-            header,
-            value,
-            checked: true,
-            field: 'geo',
-            type: 'main',
-        });
-    }
-    if (property === 'office location') {
-        return (value: ContactValue) => ({
-            header,
-            value,
-            checked: true,
-            field: 'geo',
-            type: 'work',
-        });
-    }
     if (property === 'gender') {
         return (value: ContactValue) => ({
             header,

@@ -38,8 +38,6 @@ export const getAllFields = () => [
     { text: c('Contact field label').t`Language`, value: 'lang' },
     // translator: this field is used to specify the timezone of the contact
     { text: c('Contact field label').t`Time zone`, value: 'tz' },
-    // translator: this field is used to specify geographic information about the contact (e.g. latitude + longitude)
-    { text: c('Contact field label').t`Geo`, value: 'geo' },
     // translator: this field is used to add a logo for the contact
     { text: c('Contact field label').t`Logo`, value: 'logo' },
     // translator: this field is used to specify the group a contact would be a member of
@@ -65,7 +63,6 @@ export const getEditableFields = () => [
     { text: c('Contact field label').t`Gender`, value: 'gender' },
     { text: c('Contact field label').t`Language`, value: 'lang' },
     { text: c('Contact field label').t`Time zone`, value: 'tz' },
-    { text: c('Contact field label').t`Geo`, value: 'geo' },
     { text: c('Contact field label').t`Logo`, value: 'logo' },
 ];
 export const getOtherInformationFields = () => [
@@ -80,7 +77,6 @@ export const getOtherInformationFields = () => [
     { text: c('Contact field label').t`Gender`, value: 'gender' },
     { text: c('Contact field label').t`Language`, value: 'lang' },
     { text: c('Contact field label').t`Time zone`, value: 'tz' },
-    { text: c('Contact field label').t`Geo`, value: 'geo' },
     { text: c('Contact field label').t`Logo`, value: 'logo' },
 ];
 
@@ -106,7 +102,6 @@ export const getAllFieldLabels = () => ({
     gender: c('Contact field label').t`Gender`,
     lang: c('Contact field label').t`Language`,
     tz: c('Contact field label').t`Time zone`,
-    geo: c('Contact field label').t`Geo`,
     logo: c('Contact field label').t`Logo`,
     member: c('Contact field label').t`Member`,
 });
@@ -154,7 +149,6 @@ export const getAllTypes: () => { [key: string]: { text: string; value: string }
     gender: [],
     lang: [],
     tz: [],
-    geo: [],
     title: [],
     role: [],
     logo: [],
@@ -175,7 +169,6 @@ export const getTypeValues: () => { [key: string]: string[] } = () => ({
     gender: [],
     lang: [],
     tz: [],
-    geo: [],
     title: [],
     role: [],
     logo: [],
