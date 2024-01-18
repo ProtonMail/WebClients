@@ -1,7 +1,14 @@
 import { ReactNode, Ref, forwardRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { Breakpoints, DrawerApp, PrivateAppContainer, TopBanners } from '@proton/components';
+import {
+    Breakpoints,
+    DrawerApp,
+    InboxDesktopOutdatedAppTopBanner,
+    PrivateAppContainer,
+    TopBanners,
+} from '@proton/components';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -37,7 +44,12 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         dispatch(layoutActions.setSidebarExpanded(false));
     }, [location.pathname, location.hash]);
 
-    const top = <TopBanners />;
+    const top = (
+        <>
+            {isElectronApp() && <InboxDesktopOutdatedAppTopBanner />}
+            <TopBanners />
+        </>
+    );
 
     const sidebar = <MailSidebar labelID={labelID} />;
 
