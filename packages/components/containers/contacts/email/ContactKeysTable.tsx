@@ -8,7 +8,7 @@ import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
+import { ContactPublicKeyModelWithApiKeySource } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import clsx from '@proton/utils/clsx';
@@ -19,8 +19,8 @@ import { Badge, ContactKeyWarningIcon, DropdownActions, Table, TableBody, TableR
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 
 interface Props {
-    model: ContactPublicKeyModel;
-    setModel: Dispatch<SetStateAction<ContactPublicKeyModel | undefined>>;
+    model: ContactPublicKeyModelWithApiKeySource;
+    setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
 }
 
 type LocalKeyModel = {
@@ -32,6 +32,7 @@ type LocalKeyModel = {
     expirationTime: any;
     isPrimary?: boolean;
     isWKD: boolean;
+    isKOO: boolean;
     isExpired: boolean;
     isRevoked: boolean;
     isTrusted: boolean;
@@ -59,6 +60,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
     const compromisedText = c('Key badge').t`Compromised`;
     // translator: WKD stands for Web Key Directory (https://wiki.gnupg.org/WKD). You might not need to translate it
     const wkdText = c('Key badge').t`WKD`;
+    // translator: KOO stands for keys.openpgp.org. You might not need to translate it
+    const kooText = c('Key badge').t`KOO`;
     // translator: Please translate as in the sentence "this key is trusted"
     const trustedText = c('Key badge').t`Trusted`;
     // translator: Please translate as in the sentence "this key is revoked"
@@ -100,7 +103,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     !isObsolete &&
                     !isCompromised &&
                     (totalApiKeys ? true : model.encrypt);
-                const isWKD = model.isPGPExternal && index < totalApiKeys;
+                const isWKD = !!model.apiKeysSourceMap[API_KEY_SOURCE.WKD]?.has(fingerprint);
+                const isKOO = !!model.apiKeysSourceMap[API_KEY_SOURCE.KOO]?.has(fingerprint);
                 const isUploaded = index >= totalApiKeys;
                 const canBePrimary =
                     !isPrimary &&
@@ -119,6 +123,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     expirationTime,
                     isPrimary,
                     isWKD,
+                    isKOO,
                     isExpired,
                     isRevoked,
                     isTrusted,
@@ -179,6 +184,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         expirationTime,
                         isPrimary,
                         isWKD,
+                        isKOO,
                         publicKey,
                         armoredPublicKey,
                         isExpired,
@@ -194,6 +200,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     }) => {
                         const creation = new Date(creationTime);
                         const expiration = new Date(expirationTime);
+                        const primaryKeyTooltipText = c('PGP Key info')
+                            .t`This key is used to encrypt messages to this contact`;
                         const untrustKeyText = c('PGP Key info').t`We recommend that you "untrust" this key.`;
                         const obsoleteTooltipText = c('PGP Key info')
                             .t`${emailAddress} has marked this key as obsolete. This key can only be used for signature verification.`;
@@ -202,6 +210,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         if (isTrusted) {
                             compromisedTooltipText += ' ' + untrustKeyText;
                         }
+                        const wkdKeyTooltipText = c('PGP Key info').t`External key automatically fetched via WKD.`;
+                        const kooKeyTooltipText = c('PGP Key info')
+                            .t`External key automatically fetched from keys.openpgp.org.`;
 
                         const list = [
                             {
@@ -351,7 +362,14 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
                             !viewportWidth['<=small'] && algo,
                             <Fragment key={fingerprint}>
-                                {isPrimary ? <Badge type="primary">{primaryText}</Badge> : null}
+                                {isPrimary ? (
+                                    <Badge
+                                        type="primary"
+                                        tooltip={primaryKeyTooltipText}
+                                    >
+                                        {primaryText}
+                                    </Badge>
+                                ) : null}
                                 {isObsolete && !isCompromised ? (
                                     <Badge
                                         type="warning"
@@ -370,7 +388,16 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                         {compromisedText}
                                     </Badge>
                                 ) : null}
-                                {isWKD ? <Badge type="origin">{wkdText}</Badge> : null}
+                                {isWKD ? (
+                                    <Badge type="origin" tooltip={wkdKeyTooltipText} data-testid="wkd-origin-label">
+                                        {wkdText}
+                                    </Badge>
+                                ) : null}
+                                {isKOO ? (
+                                    <Badge type="origin" tooltip={kooKeyTooltipText} data-testid="koo-origin-label">
+                                        {kooText}
+                                    </Badge>
+                                ) : null}
                                 {isTrusted ? <Badge type="success">{trustedText}</Badge> : null}
                                 {isRevoked ? <Badge type="error">{revokedText}</Badge> : null}
                                 {isExpired ? <Badge type="error">{expiredText}</Badge> : null}
