@@ -16,7 +16,7 @@ export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification e
 
 /**
  * Ask the API for public keys for a given email address. The response will contain keys both
- * for internal users and for external users with WKD keys
+ * for internal users and for external users with e.g. WKD keys
  */
 const getPublicKeysEmailHelper = async ({
     email,

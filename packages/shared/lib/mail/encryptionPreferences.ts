@@ -19,7 +19,7 @@ export enum ENCRYPTION_PREFERENCES_ERROR_TYPES {
     INTERNAL_USER_NO_API_KEY,
     PRIMARY_CANNOT_SEND,
     PRIMARY_NOT_PINNED,
-    WKD_USER_NO_VALID_WKD_KEY,
+    EXTERNAL_USER_NO_VALID_EXTERNALLY_FETCHED_KEY,
     EXTERNAL_USER_NO_VALID_PINNED_KEY,
     CONTACT_SIGNATURE_NOT_VERIFIED,
 }
@@ -231,7 +231,9 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
-const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
+const extractEncryptionPreferencesExternalWithExternallyFetchedKeys = (
+    publicKeyModel: PublicKeyModel
+): EncryptionPreferences => {
     const {
         encrypt,
         sign,
@@ -283,7 +285,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
             ),
         };
     }
-    // WKD keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
+    // WKD and KOO keys are ordered in terms of user preference. The primary key (first in the list) will be used for sending
     const [primaryKey] = apiKeys;
     const primaryKeyFingerprint = primaryKey.getFingerprint();
     const validApiSendKey = apiKeys.find((key) => getIsValidForSending(key.getFingerprint(), publicKeyModel));
@@ -291,8 +293,8 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         return {
             ...result,
             error: new EncryptionPreferencesError(
-                ENCRYPTION_PREFERENCES_ERROR_TYPES.WKD_USER_NO_VALID_WKD_KEY,
-                c('Error').t`No WKD key retrieved for user is valid for sending`
+                ENCRYPTION_PREFERENCES_ERROR_TYPES.EXTERNAL_USER_NO_VALID_EXTERNALLY_FETCHED_KEY,
+                c('Error').t`No external key retrieved for user is valid for sending`
             ),
         };
     }
@@ -320,7 +322,9 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
     return { ...result, sendKey, isSendKeyPinned: true, warnings };
 };
 
-const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: PublicKeyModel): EncryptionPreferences => {
+const extractEncryptionPreferencesExternalWithoutExternallyFetchedKeys = (
+    publicKeyModel: PublicKeyModel
+): EncryptionPreferences => {
     const {
         emailAddress,
         publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -421,11 +425,11 @@ const extractEncryptionPreferences = (
         return extractEncryptionPreferencesInternal(publicKeyModel);
     }
     // case of external user with WKD keys
-    if (model.isPGPExternalWithWKDKeys) {
-        return extractEncryptionPreferencesExternalWithWKDKeys(publicKeyModel);
+    if (model.isPGPExternalWithExternallyFetchedKeys) {
+        return extractEncryptionPreferencesExternalWithExternallyFetchedKeys(publicKeyModel);
     }
     // case of external user without WKD keys
-    return extractEncryptionPreferencesExternalWithoutWKDKeys(publicKeyModel);
+    return extractEncryptionPreferencesExternalWithoutExternallyFetchedKeys(publicKeyModel);
 };
 
 export default extractEncryptionPreferences;
