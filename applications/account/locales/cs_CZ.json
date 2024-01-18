@@ -6316,8 +6316,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ${ MAIL_APP_NAME }, je potřeba přidat následující dva záznamy MX do konzole DNS (nachází se na platformě, kde jste zakoupili vlastní doménu). Příklad a několik užitečných tipů naleznete ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Účtováno ${ price }"
@@ -6466,6 +6472,12 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM umožňuje ${ BRAND_NAME } kryptograficky podepisovat vaše e-maily a zabránit útočníkům v manipulaci s vašimi e-maily. Ujistěte se, že jste v konzoli DNS (umístěné na platformě, kde jste zakoupili vlastní doménu) přidali následující tři záznamy CNAME."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontroluje, zda záznamy SPF a DKIM odesílatele pocházejí z vaší domény. To může zabránit útočníkům v použití záznamů SPF a DKIM jiné domény k vydávání se za vaši doménu. Parametr \"p=\" (policy) v tomto záznamu udává, jak mají platformy příjemce zacházet s neautorizovanými e-maily. Pro většinu domén doporučujeme použít zásadu \"p=quarantine\". Ujistěte se, že jste v konzoli DNS (umístěné na platformě, kde jste zakoupili vlastní doménu) přidali následující záznam TXT."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
       ],
@@ -6513,6 +6525,9 @@
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Každá doména může mít pouze jeden záznam SPF (TXT). Pokud chcete zachovat stávající záznam SPF (TXT), můžete ke stávajícímu záznamu přidat ${ spf } (vložte jej za ${ spfValue })."
       ],
       "Edit email address": [
         "Upravit e-mailovou adresu"
@@ -6598,6 +6613,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Pozvánky na události a RSVP budou zaslány v tomto jazyce."
       ],
+      "Example: ${ spfExample }": [
+        "Příklad: ${ spfExample }"
+      ],
       "Expired": [
         "Platnost vypršela"
       ],
@@ -6618,6 +6636,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Pro členy organizací používajících jednotné přihlášení (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Pro uživatele, kteří přecházejí na ${ MAIL_APP_NAME } z jiné e-mailové služby, vyberte kartu ${ boldAddresses } a před změnou záznamu MX přidejte všechny aktivní e-mailové adresy, aby byl zajištěn plynulý přechod."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
@@ -6741,6 +6762,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "DŮLEŽITÉ: Pokud vaše konzola DNS neumožňuje, aby hodnoty CNAME končily tečkou, můžete poslední tečku v hodnotách CNAME odebrat."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
@@ -6873,6 +6897,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logy zaznamenávají pokusy o přihlášení do všech služeb ${ BRAND_NAME } s použitím vašich přístupových údajů ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Velké e-mailové služby mohou odmítnout nebo filtrovat vaše e-maily jako spam, pokud chybí nebo není správně nastaven SPF/DKIM/DMARC."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Velké e-mailové služby mohou odmítnout nebo filtrovat vaše e-maily jako spam, pokud chybí nebo není správně nastaven SPF/DKIM/DMARC."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Ujistěte se, že jste ${ addARecoveryMethod }, abyste se mohli vrátit ke svému účtu, pokud zapomenete heslo."
@@ -7317,6 +7347,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Některé z vašich dostupných serverů lze kvůli nedávnému odstranění používat pouze v určitých zemích."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF upřesňuje, kdo smí odesílat e-maily pro vaši doménu. Ujistěte se, že jste do konzole DNS (umístěné na platformě, kde jste zakoupili vlastní doménu) přidali následující záznam TXT."
       ],
       "Stay tuned for future promotions.": [
         "Vyčkejte na budoucí propagační akce."
@@ -8119,8 +8152,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Přidejte novou adresu pro stávající uživatele vaší organizace."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Přidejte nového uživatele do své organizace a vytvořte mu adresu."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Z bezpečnostních důvodů potřebujeme ověřit, zda jste vlastníkem domény ${ domainName }. Přidejte prosím následující záznam TXT do konzole DNS (umístěné na platformě, kde jste zakoupili vlastní doménu). Příklad a několik užitečných tipů naleznete ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -9171,6 +9210,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fráze se skládá z 12 jedinečných slov v určitém pořadí"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Přidejte prosím všechny 3 následující CNAME záznamy. Poznámka: Změna v DNS záznamech se může projevit až za několik hodin."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Přidejte prosím následující dva záznamy MX. Poznámka: Změna v DNS záznamech se může projevit až za několik hodin."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Přidejte prosím následující TXT záznam. Poznámka: Změna v DNS záznamech se může projevit až za několik hodin."
+      ],
       "Please select files to upload": [
         "Prosím vyberte soubory k nahrání"
       ],
@@ -9417,6 +9465,11 @@
         "Doba trvání"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Přidejte prosím následující TXT záznam. Poznámka: Změna v DNS záznamech se může projevit až za několik hodin."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Správce"
@@ -9602,6 +9655,9 @@
       ],
       "Help translate": [
         "Pomoc s překladem"
+      ],
+      "here": [
+        "zde"
       ],
       "How to pay with Bitcoin?": [
         "Jak platit pomocí Bitcoinu?"
@@ -10834,6 +10890,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Jedno VPN připojení umožňuje v jednom okamžiku připojit se k ${ VPN_APP_NAME } pouze jednomu zařízení. Chcete-li například připojit telefon a notebook k ${ VPN_APP_NAME } současně, potřebujete dvě připojení VPN."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
@@ -11872,6 +11931,9 @@
       ],
       "Search for a user or address": [
         "Hledat uživatele nebo adresu"
+      ],
+      "Search parent folder": [
+        "Prohledat nadřazenou složku"
       ],
       "Search users": [
         "Vyhledat uživatele"
@@ -12918,6 +12980,12 @@
         "${ n } kalendáře na uživatele",
         "${ n } kalendářů na uživatele",
         "${ n } kalendářů na uživatele"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } vysokorychlostní připojení VPN",
