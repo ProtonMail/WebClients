@@ -2,7 +2,6 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useFlag } from '@proton/components/containers/unleash';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
@@ -43,7 +42,8 @@ interface Props {
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
     hideUnreadButton?: boolean;
-    isHovered: boolean;
+    isHovered?: boolean;
+    showAttachmentThumbnails?: boolean;
 }
 
 const ItemRowLayout = ({
@@ -59,13 +59,13 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
+    showAttachmentThumbnails,
     hideUnreadButton,
     isHovered,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
 
     const snoozedElement = useAppSelector(selectSnoozeElement);
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
@@ -97,7 +97,7 @@ const ItemRowLayout = ({
         isCompactView,
         element,
         attachmentsMetadata,
-        canSeeThumbnailsFeature
+        showAttachmentThumbnails
     );
 
     return (
