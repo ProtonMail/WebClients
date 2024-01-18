@@ -88,8 +88,8 @@ export interface ContactPublicKeyModel {
     compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
     isPGPExternal: boolean;
     isPGPInternal: boolean;
-    isPGPExternalWithWKDKeys: boolean;
-    isPGPExternalWithoutWKDKeys: boolean;
+    isPGPExternalWithExternallyFetchedKeys: boolean; // Keys from e.g. WKD or keys.openpgp.org (KOO)
+    isPGPExternalWithoutExternallyFetchedKeys: boolean;
     pgpAddressDisabled: boolean;
     isContact: boolean;
     isContactSignatureVerified?: boolean;
@@ -100,7 +100,7 @@ export interface ContactPublicKeyModel {
 }
 
 export interface ContactPublicKeyModelWithApiKeySource extends ContactPublicKeyModel {
-    apiKeysSourceMap: Partial<{ [source in API_KEY_SOURCE]: Set<string> }> // map source to fingerprints
+    apiKeysSourceMap: Partial<{ [source in API_KEY_SOURCE]: Set<string> }>; // map source to fingerprints
 }
 
 export interface PublicKeyModel {
@@ -121,8 +121,8 @@ export interface PublicKeyModel {
     compromisedFingerprints: Set<string>;
     isPGPExternal: boolean;
     isPGPInternal: boolean;
-    isPGPExternalWithWKDKeys: boolean;
-    isPGPExternalWithoutWKDKeys: boolean;
+    isPGPExternalWithExternallyFetchedKeys: boolean; // Keys from e.g. WKD or keys.openpgp.org (KOO)
+    isPGPExternalWithoutExternallyFetchedKeys: boolean;
     pgpAddressDisabled: boolean;
     isContact: boolean;
     isContactSignatureVerified?: boolean;
