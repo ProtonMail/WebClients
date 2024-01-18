@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, BasicModal } from '@proton/components';
+import { Alert, BasicModal, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
@@ -242,19 +242,17 @@ const EditRecurringConfirmModal = ({
     };
 
     return (
-        <BasicModal
+        <Prompt
             title={title}
-            footer={
-                <>
-                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                    <Button color="norm" onClick={handleSubmit}>
-                        {confirm}
-                    </Button>
-                </>
-            }
+            buttons={[
+                <Button color="norm" onClick={handleSubmit}>
+                    {confirm}
+                </Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
             onSubmit={handleSubmit}
             onClose={onClose}
-            isOpen={isOpen}
+            open={isOpen}
         >
             <div className="mb-4">{alertText}</div>
             {types.length > 1 ? (
@@ -275,7 +273,7 @@ const EditRecurringConfirmModal = ({
                     {rruleWarningText}
                 </Alert>
             ) : null}
-        </BasicModal>
+        </Prompt>
     );
 };
 
