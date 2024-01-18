@@ -6595,6 +6595,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Zaproszenia zostaną wysłane w tym języku."
       ],
+      "Example: ${ spfExample }": [
+        "Przykład: ${ spfExample }"
+      ],
       "Expired": [
         "Wygasła"
       ],
@@ -6870,6 +6873,9 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Większość usług pocztowych może odrzucić lub oznaczyć jako spam wiadomości niezabezpieczone prawidłowymi rekordami SPF / DKIM / DMARC."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
@@ -9593,6 +9599,9 @@
       ],
       "Help translate": [
         "Pomóż w tłumaczeniu"
+      ],
+      "here": [
+        "tutaj"
       ],
       "How to pay with Bitcoin?": [
         "Jak zapłacić Bitcoinami?"
@@ -13484,6 +13493,9 @@
       "4. Select a server to connect to": [
         "4. Wybierz serwer"
       ],
+      "A filter name is required": [
+        "Nazwa filtra jest wymagana"
+      ],
       "A filter with this name already exists": [
         "Filtr o tej nazwie już istnieje"
       ],
@@ -13919,6 +13931,9 @@
         "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników.",
         "Nie udało się utworzyć ${ failedUsers.length } kont użytkowników."
       ],
+      "Filter name cannot contain only spaces": [
+        "Nazwa filtra nie może zawierać tylko spacji"
+      ],
       "Filters": [
         "Filtry"
       ],
@@ -14331,10 +14346,10 @@
         "Motyw"
       ],
       "This field cannot be empty": [
-        "To pole nie może być puste"
+        "Pole nie może być puste"
       ],
       "This field cannot contain only spaces": [
-        "To pole nie może zawierać wyłącznie spacji"
+        "Pole nie może zawierać tylko spacji"
       ],
       "Time zone": [
         "Strefa czasu"

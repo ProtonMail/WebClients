@@ -5070,6 +5070,22 @@
         "με αστέρι"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "το email στάλθηκε ${ label }"
+      ],
+      "with attachments": [
+        "με συνημμένα"
+      ],
+      "without attachments": [
+        "χωρίς συνημμένα"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "το email στάλθηκε ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Προσθέστε ένα προσαρμοσμένο φίλτρο για αυτόματη εκτέλεση ορισμένων ενεργειών, όπως η προσθήκη ετικετών ή η αρχειοθέτηση μηνυμάτων."
@@ -5821,6 +5837,9 @@
         "${ n } διεύθυνση",
         "${ n } διευθύνσεις"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: μη βάζετε σε καραντίνα ή απορρίπτετε μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνήθως, οι χρήστες χρησιμοποιούν αυτήν την πολιτική μόνο για την αντιμετώπιση προβλημάτων ή τη δοκιμή."
+      ],
       "${ number } city": [
         "${ number } πόλη",
         "${ number } πόλεις"
@@ -5853,6 +5872,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
         "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: ζητώντας από τις πλατφόρμες παραληπτών να επισημάνουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου ως ανεπιθύμητα ή να τα θέσουν σε καραντίνα."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: ζητώντας από τις πλατφόρμες παραληπτών να απορρίψουν τα μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } επιπλέον",
@@ -6180,8 +6205,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Για να μπορέσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου για τις διευθύνσεις προσαρμοσμένου τομέα σας στο ${ MAIL_APP_NAME }, πρέπει να προσθέσετε τις ακόλουθες δύο εγγραφές MX στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα όπου αγοράσατε τον προσαρμοσμένο τομέα). Μπορείτε να βρείτε ένα παράδειγμα και μερικές χρήσιμες συμβουλές ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
+      ],
+      "Beta": [
+        "Beta (Δοκιμαστική)"
       ],
       "Billed at ${ price }": [
         "Χρεώνεται σε τιμή ${ price }"
@@ -6324,6 +6355,12 @@
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Το DKIM επιτρέπει στο ${ BRAND_NAME } να υπογράφει κρυπτογραφικά τα μηνύματα ηλεκτρονικού ταχυδρομείου σας και να εμποδίζει τους εισβολείς να αλλοιώνουν τα μηνύματα ηλεκτρονικού ταχυδρομείου σας. Βεβαιωθείτε ότι έχετε προσθέσει τις ακόλουθες τρεις εγγραφές CNAME στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα από την οποία αγοράσατε τον προσαρμοσμένο τομέα)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Το DMARC ελέγχει εάν οι εγγραφές SPF και DKIM του αποστολέα προέρχονται από τον τομέα σας. Αυτό μπορεί να εμποδίσει τους εισβολείς να χρησιμοποιήσουν το SPF και το DKIM άλλου τομέα για να μιμηθούν τον τομέα σας. Το \"p=\" (πολιτική) σε αυτήν την καρτέλα υποδεικνύει τον τρόπο με τον οποίο θέλετε οι πλατφόρμες παραληπτών να χειρίζονται μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνιστούμε να χρησιμοποιήσετε την πολιτική \"p=quarantine\" για τους περισσότερους τομείς. Βεβαιωθείτε ότι έχετε προσθέσει την ακόλουθη εγγραφή TXT στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα από την οποία αγοράσατε τον προσαρμοσμένο τομέα)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
       ],
@@ -6369,6 +6406,9 @@
       ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Κάθε τομέας μπορεί να έχει μόνο μία εγγραφή SPF (TXT). Εάν θέλετε να διατηρήσετε την υπάρχουσα εγγραφή SPF (TXT), μπορείτε να προσθέσετε ${ spf } στην τρέχουσα εγγραφή σας (τοποθετήστε τη μετά το ${ spfValue })."
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
@@ -6454,6 +6494,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Οι προσκλήσεις συμβάντων και τα RSVP θα αποσταλλούν σε αυτή τη γλώσσα."
       ],
+      "Example: ${ spfExample }": [
+        "Παράδειγμα: ${ spfExample }"
+      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -6474,6 +6517,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Για μέλη οργανισμών που χρησιμοποιούν καθολική σύνδεση (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Για χρήστες που μεταβαίνουν σε ${ MAIL_APP_NAME } από άλλη υπηρεσία ηλεκτρονικού ταχυδρομείου, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις ηλεκτρονικού ταχυδρομείου πριν αλλάξετε την εγγραφή MX για να διασφαλίσετε την ομαλή μετάβαση."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
@@ -6595,6 +6641,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ΣΗΜΑΝΤΙΚΟ: Εάν η κονσόλα DNS δεν επιτρέπει στις τιμές CNAME να τελειώνουν με τελεία, μπορείτε να καταργήσετε την τελευταία κουκκίδα στις τιμές CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
@@ -6725,6 +6774,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Τα αρχεία καταγραφής περιλαμβάνουν προσπάθειες ταυτοποίησης για όλες τις υπηρεσίες ${ BRAND_NAME } που χρησιμοποιούν τα διαπιστευτήριά σας ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Οι μεγάλες υπηρεσίες ηλεκτρονικού ταχυδρομείου ενδέχεται να απορρίψουν ή να φιλτράρουν τα μηνύματα ηλεκτρονικού ταχυδρομείου σας σε ανεπιθύμητα μηνύματα εάν λείπουν ή δεν έχουν ρυθμιστεί σωστά τα SPF / DKIM / DMARC."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Οι μεγάλες υπηρεσίες ηλεκτρονικού ταχυδρομείου ενδέχεται να απορρίψουν ή να φιλτράρουν τα μηνύματα ηλεκτρονικού ταχυδρομείου σας σε ανεπιθύμητα μηνύματα εάν λείπουν ή δεν έχουν ρυθμιστεί σωστά τα SPF / DKIM / DMARC."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Βεβαιωθείτε ότι έχετε ${ addARecoveryMethod }, ώστε να μπορείτε να αποκτήσετε ξανά πρόσβαση στο λογαριασμό σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
@@ -7160,6 +7215,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Ορισμένοι από τους διαθέσιμους διακομιστές σας μπορούν να χρησιμοποιηθούν μόνο σε συγκεκριμένες χώρες λόγω πρόσφατων καταργήσεων"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Το SPF διευκρινίζει ποιος επιτρέπεται να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου για τον τομέα σας. Βεβαιωθείτε ότι έχετε προσθέσει την ακόλουθη εγγραφή TXT στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα από την οποία αγοράσατε τον προσαρμοσμένο τομέα)."
       ],
       "Stay tuned for future promotions.": [
         "Μείνετε συντονισμένοι για μελλοντικές προσφορές."
@@ -7940,8 +7998,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Προσθέστε μια νέα διεύθυνση για τους υπάρχοντες χρήστες του οργανισμού σας."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Προσθέστε ένα νέο χρήστη στον οργανισμό σας και δημιουργήστε μια διεύθυνση γι 'αυτόν."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Για λόγους ασφαλείας, πρέπει να επαληθεύσουμε ότι είστε ο κάτοχος του ${ domainName }. Προσθέστε την ακόλουθη εγγραφή TXT στην κονσόλα DNS (βρίσκεται στην πλατφόρμα όπου αγοράσατε τον προσαρμοσμένο τομέα). Μπορείτε να βρείτε ένα παράδειγμα και μερικές χρήσιμες συμβουλές ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8980,6 +9044,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Η φράση αποτελείται από 12 μοναδικές λέξεις σε συγκεκριμένη σειρά"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Παρακαλούμε προσθέστε και τις 3 από τις ακόλουθες εγγραφές CNAME. Σημειώστε: για την ενημέρωση των εγγραφών DNS ενδέχεται να χρειαστούν αρκετές ώρες."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή MX. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
+      ],
       "Please select files to upload": [
         "Παρακαλούμε επιλέξτε αρχεία για ανέβασμα"
       ],
@@ -9223,6 +9296,11 @@
         "Διάρκεια"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Διαχειριστής"
@@ -9235,6 +9313,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } ενημερώσεις προϊόντων"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Ανακοινώσεις beta της ${ BRAND_NAME }"
       ],
@@ -9406,6 +9487,9 @@
       "Help translate": [
         "Βοηθήστε στη μετάφραση"
       ],
+      "here": [
+        "εδώ"
+      ],
       "How to pay with Bitcoin?": [
         "Πώς να πληρώσετε με Bitcoin;"
       ],
@@ -9542,6 +9626,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Γίνετε Visionary και γίνετε μέρος της ιστορίας του ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Προσφορά περιορισμένου χρόνου"
       ],
       "Secure email that protects your privacy": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο που προστατεύει το απόρρητό σας"
@@ -10256,6 +10343,10 @@
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
       ],
+      "Up to ${ n } user": [
+        "Μέχρι και ${ n } χρήστη",
+        "Μέχρι και ${ n } χρήστες"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
@@ -10565,6 +10656,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Τις εργάσιμες ημέρες, λάβετε υποστήριξη από την ομάδα υποστήριξης πελατών ${ BRAND_NAME } εντός 24 ωρών από τα αιτήματα"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Μία σύνδεση VPN επιτρέπει σε μία συσκευή να συνδεθεί στο ${ VPN_APP_NAME } ανά πάσα στιγμή. Για παράδειγμα, για να συνδέσετε ένα τηλέφωνο και ένα φορητό υπολογιστή στο ${ VPN_APP_NAME } ταυτόχρονα, χρειάζεστε δύο συνδέσεις VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
@@ -12567,6 +12661,10 @@
         "${ n } ημερολόγιο ανά χρήστη",
         "${ n } ημερολόγια ανά χρήστη"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } δωρεάν σύνδεση VPN ανά χρήστη",
+        "${ n } δωρεάν συνδέσεις VPN ανά χρήστη"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } σύνδεση VPN υψηλής ταχύτητας",
         "${ n } συνδέσεις VPN υψηλής ταχύτητας"
@@ -13926,6 +14024,10 @@
       "Success": [
         "Επιτυχία"
       ],
+      "Successfully created ${ n } user account": [
+        "Επιτυχής δημιουργία ${ n } λογαριασμού χρήστη",
+        "Επιτυχής δημιουργία ${ n } λογαριασμών χρηστών"
+      ],
       "Summary": [
         "Περίληψη"
       ],
@@ -14193,6 +14295,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Η ενεργοποίηση προηγμένων αρχείων καταγραφής, καταγράφουν τη διεύθυνση IP για κάθε συμβάν στο αρχείο καταγραφής ασφαλείας."
       ],
+      "Feature in early access": [
+        "Δυνατότητα σε πρώιμη πρόσβαση"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Το Gmail κατηγοριοποιεί αυτόματα ορισμένα μηνύματα ηλεκτρονικού ταχυδρομείου, όπως Κοινωνικά δίκτυα ή Προσφορές. Μπορείτε να επιλέξετε πού θα εισαγάγετε αυτά τα μηνύματα ηλεκτρονικού ταχυδρομείου."
       ],
@@ -14414,6 +14519,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Χρήστης SSO που παρέχεται από τον πάροχο ταυτότητάς σας"
       ]
     },
     "Validation": {

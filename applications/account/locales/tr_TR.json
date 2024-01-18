@@ -5070,6 +5070,22 @@
         "yıldızlı"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "gönderilen e-postada ${ label }"
+      ],
+      "with attachments": [
+        "ek dosyası olan"
+      ],
+      "without attachments": [
+        "ek dosyaları olmayan"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "gönderilen e-postada ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapmak için özel bir süzgeç ekleyin."
@@ -9232,6 +9248,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } ürün güncellemeleri"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } beta sürümü duyuruları"
       ],
@@ -9539,6 +9558,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Visionary tarifesine geçin ve ${ BRAND_NAME } öyküsünün bir parçası olun"
+      ],
+      "Limited time offer": [
+        "Sınırlı süreli teklif"
       ],
       "Secure email that protects your privacy": [
         "Gizliliğinizi koruyan güvenli e-posta"
