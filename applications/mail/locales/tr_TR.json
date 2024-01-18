@@ -4264,6 +4264,22 @@
         "yıldızlı"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "gönderilen e-postada ${ label }"
+      ],
+      "with attachments": [
+        "ek dosyası olan"
+      ],
+      "without attachments": [
+        "ek dosyaları olmayan"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "gönderilen e-postada ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Varsayılan"
