@@ -47,7 +47,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
 
     const top = (
         <>
-            {isElectronApp() && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
             <TopBanners />
         </>
     );

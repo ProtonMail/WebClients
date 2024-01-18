@@ -455,7 +455,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
     };
 
-    const esErrorMessage = isElectronApp()
+    const esErrorMessage = isElectronApp
         ? c('Error').t`Content search cannot be enabled. Please restart the application or clear data.`
         : c('Error')
               .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`;
