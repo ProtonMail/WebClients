@@ -3262,6 +3262,22 @@
         "označeno zvijezdicom"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-pošta je poslana ${ label }"
+      ],
+      "with attachments": [
+        "s privitcima"
+      ],
+      "without attachments": [
+        "bez privitaka"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-pošta je poslana ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Zadano"

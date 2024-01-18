@@ -5230,6 +5230,9 @@
       "and": [
         "a"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Všechny naplánované nebo odložené zprávy budou zrušeny."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Všechny podsložky budou rovněž smazány. E-maily uložené ve složce ${ nameDeleted } však smazány nebudou a lze je nalézt ve složce Všechna pošta."
       ],
@@ -8170,6 +8173,9 @@
       ],
       "Search name, email or group": [
         "Hledat jméno, e-mail nebo skupinu"
+      ],
+      "Search parent folder": [
+        "Prohledat nadřazenou složku"
       ],
       "Select": [
         "Vybrat"
