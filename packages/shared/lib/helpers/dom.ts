@@ -143,6 +143,16 @@ export const getIsEventModified = (event: MouseEvent) => {
     return event.metaKey || event.altKey || event.ctrlKey || event.shiftKey;
 };
 
+export const isVisibleOnScreen = (element: HTMLElement | null) => {
+    if (!element) {
+        return false;
+    }
+
+    var rect = element.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+};
+
 export const isVisible = (element: HTMLElement | null) => {
     if (!element) {
         return false;
