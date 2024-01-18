@@ -2983,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
       ],
+      "Beta": [
+        "Beta (Δοκιμαστική)"
+      ],
       "Billed at ${ price }": [
         "Χρεώνεται σε τιμή ${ price }"
       ],
@@ -4576,6 +4579,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } ενημερώσεις προϊόντων"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Ανακοινώσεις beta της ${ BRAND_NAME }"
       ],
@@ -5177,6 +5183,10 @@
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
       ],
+      "Up to ${ n } user": [
+        "Μέχρι και ${ n } χρήστη",
+        "Μέχρι και ${ n } χρήστες"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
@@ -5438,6 +5448,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Τις εργάσιμες ημέρες, λάβετε υποστήριξη από την ομάδα υποστήριξης πελατών ${ BRAND_NAME } εντός 24 ωρών από τα αιτήματα"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Μία σύνδεση VPN επιτρέπει σε μία συσκευή να συνδεθεί στο ${ VPN_APP_NAME } ανά πάσα στιγμή. Για παράδειγμα, για να συνδέσετε ένα τηλέφωνο και ένα φορητό υπολογιστή στο ${ VPN_APP_NAME } ταυτόχρονα, χρειάζεστε δύο συνδέσεις VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
@@ -6619,6 +6632,10 @@
         "${ n } ημερολόγιο ανά χρήστη",
         "${ n } ημερολόγια ανά χρήστη"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } δωρεάν σύνδεση VPN ανά χρήστη",
+        "${ n } δωρεάν συνδέσεις VPN ανά χρήστη"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } σύνδεση VPN υψηλής ταχύτητας",
         "${ n } συνδέσεις VPN υψηλής ταχύτητας"
@@ -7430,6 +7447,10 @@
       "Subscription": [
         "Συνδρομή"
       ],
+      "Successfully created ${ n } user account": [
+        "Επιτυχής δημιουργία ${ n } λογαριασμού χρήστη",
+        "Επιτυχής δημιουργία ${ n } λογαριασμών χρηστών"
+      ],
       "Summary": [
         "Περίληψη"
       ],
@@ -7560,6 +7581,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"
       ],
+      "Feature in early access": [
+        "Δυνατότητα σε πρώιμη πρόσβαση"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Λάβετε τον κατακερματισμό πιστοποιητικού από την υπηρεσία παροχής ταυτότητάς σας."
       ],
@@ -7628,6 +7652,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Χρήστης SSO που παρέχεται από τον πάροχο ταυτότητάς σας"
       ]
     },
     "Validation": {

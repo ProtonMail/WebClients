@@ -4294,6 +4294,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 製品のアップデート"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } ベータのお知らせ"
       ],
@@ -4873,6 +4876,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
+      ],
+      "Up to ${ n } users": [
+        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
