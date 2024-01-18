@@ -3,6 +3,7 @@ import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Editor, EditorActions, EditorMetadata, useHandler } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
@@ -175,8 +176,7 @@ const EditorWrapper = ({
             return;
         }
         const content = editorActionsRef.current.getContent();
-        const contentDocument = document.createElement('div');
-        contentDocument.innerHTML = content;
+        const contentDocument = parseStringToDOM(content).body;
 
         if (contentDocument) {
             removeEmbeddedHTML(contentDocument, attachment);
