@@ -49,6 +49,7 @@ interface Props {
     breakpoints: Breakpoints;
     onFocus: (index: number) => void;
     hideUnreadButton?: boolean;
+    showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
     mailSettings: MailSettings;
     labels?: Label[];
@@ -77,6 +78,7 @@ const Item = ({
     mailSettings,
     userSettings,
     labels,
+    showAttachmentThumbnails,
 }: Props) => {
     const [isHovered, setHover] = useState(false);
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
@@ -211,6 +213,7 @@ const Item = ({
                     hideUnreadButton={hideUnreadButton}
                     userSettings={userSettings}
                     isHovered={isHovered}
+                    showAttachmentThumbnails={showAttachmentThumbnails}
                 />
             </div>
         </div>
