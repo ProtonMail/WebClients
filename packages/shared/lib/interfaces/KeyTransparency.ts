@@ -52,25 +52,6 @@ export interface PreAuthKTVerifier {
     preAuthKTCommit: (userID: string) => Promise<void>;
 }
 
-export enum ApiAddressKeySource {
-    PROTON = 0,
-    WKD = 1,
-    UNKNOWN,
-}
-
-export interface ApiAddressKey {
-    PublicKey: string;
-    Flags: number;
-    Source: number;
-}
-
-export interface ProcessedApiAddressKey {
-    armoredPublicKey: string;
-    flags: number;
-    publicKeyRef: PublicKeyReference;
-    source: ApiAddressKeySource;
-}
-
 export type VerifyOutboundPublicKeys = (
     email: string,
     /**
@@ -78,11 +59,11 @@ export type VerifyOutboundPublicKeys = (
      */
     skipVerificationOfExternalDomains: boolean,
     address: {
-        keyList: ProcessedApiAddressKey[];
+        keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
     },
     catchAll?: {
-        keyList: ProcessedApiAddressKey[];
+        keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
     }
 ) => Promise<{

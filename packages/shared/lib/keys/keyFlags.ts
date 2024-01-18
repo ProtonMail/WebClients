@@ -1,4 +1,4 @@
-import { Address, ProcessedApiAddressKey } from '@proton/shared/lib/interfaces';
+import { Address, ProcessedApiKey } from '@proton/shared/lib/interfaces';
 
 import { ADDRESS_FLAGS, ADDRESS_TYPE, KEY_FLAG } from '../constants';
 import { clearBit, hasBit, setBit } from '../helpers/bitset';
@@ -41,6 +41,6 @@ export const supportsMail = (flags: number): Boolean => {
     return !hasBit(flags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 };
 
-export const getMailCapableKeys = (keys: ProcessedApiAddressKey[]) => {
+export const getMailCapableKeys = (keys: ProcessedApiKey[]) => {
     return keys.filter(({ flags }) => supportsMail(flags));
 };
