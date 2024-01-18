@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 
 import { AppsDropdown, MainLogo, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
+import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -38,34 +39,33 @@ const MailSidebar = ({ labelID }: Props) => {
     const displayContactsInHeader = useDisplayContactsWidget();
 
     return (
-        <>
-            <Sidebar
-                app={APPS.PROTONMAIL}
-                appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
-                expanded={expanded}
-                onToggleExpand={() => {
-                    dispatch(layoutActions.toggleSidebarExpand());
-                }}
-                primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
-                logo={logo}
-                version={<SidebarVersion />}
-                contactsButton={
-                    displayContactsInHeader && (
-                        <SidebarContactItem
-                            onClick={() => {
-                                dispatch(layoutActions.setSidebarExpanded(false));
-                                toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
-                            }}
-                        />
-                    )
-                }
-            >
-                <SidebarNav className="flex">
-                    <MailSidebarList labelID={labelID} />
-                    {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && <UsersOnboardingChecklist smallVariant />}
-                </SidebarNav>
-            </Sidebar>
-        </>
+        <Sidebar
+            app={APPS.PROTONMAIL}
+            appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
+            expanded={expanded}
+            onToggleExpand={() => {
+                dispatch(layoutActions.toggleSidebarExpand());
+            }}
+            primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
+            logo={logo}
+            version={<SidebarVersion />}
+            contactsButton={
+                displayContactsInHeader && (
+                    <SidebarContactItem
+                        onClick={() => {
+                            dispatch(layoutActions.setSidebarExpanded(false));
+                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
+                        }}
+                    />
+                )
+            }
+            preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
+        >
+            <SidebarNav className="flex">
+                <MailSidebarList labelID={labelID} />
+                {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && <UsersOnboardingChecklist smallVariant />}
+            </SidebarNav>
+        </Sidebar>
     );
 };
 
