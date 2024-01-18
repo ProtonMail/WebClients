@@ -4,8 +4,9 @@ import { Link, type LinkProps } from 'react-router-dom';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Icon, Marks } from '@proton/components/components';
+import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { OptimisticItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
+import { ItemIcon, OptimisticItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
@@ -32,6 +33,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
     const { heading, subheading } = presentListItem(item);
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
+    const bulk = useBulkSelect();
 
     return (
         <ButtonLike
@@ -52,6 +54,20 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                     size={5}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
                 />
+                {bulk.isBulk && (
+                    <ItemIcon
+                        icon="checkmark"
+                        alt=""
+                        size={20}
+                        className={clsx(
+                            'pass-item-icon mr-3 shrink-0 absolute bulk-select-check',
+                            bulk.isSelected(item) && 'selected'
+                        )}
+                        pill
+                        loadImage={false}
+                        normColor={false}
+                    />
+                )}
                 {pinningEnabled && item.pinned && (
                     <IconBox
                         size={2.5}
@@ -65,6 +81,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                         <Icon name="pin-angled-filled" size={2.75} className="absolute-center" color="black" />
                     </IconBox>
                 )}
+
                 <div className="text-left">
                     <span className="flex items-center">
                         {search && (
