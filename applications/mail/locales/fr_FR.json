@@ -9097,8 +9097,11 @@
       "(active)": [
         "(actif)"
       ],
+      "A filter name is required": [
+        "Le nom du filtre est requis."
+      ],
       "A filter with this name already exists": [
-        "Un filtre portant ce nom existe déjà"
+        "Un filtre portant ce nom existe déjà."
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -9318,6 +9321,9 @@
       ],
       "Feedback": [
         "Votre avis"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Le nom de ce champ ne doit pas contenir uniquement des espaces."
       ],
       "Filter on...": [
         "Filtrer"
@@ -9625,6 +9631,12 @@
       ],
       "Subject missing": [
         "Il manque l'objet."
+      ],
+      "This field cannot be empty": [
+        "Ce champ ne doit pas être vide."
+      ],
+      "This field cannot contain only spaces": [
+        "Ce champ ne doit contenir uniquement des espaces."
       ],
       "To": [
         "À"

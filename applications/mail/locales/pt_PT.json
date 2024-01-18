@@ -4170,6 +4170,22 @@
         "com estrela"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ],
+      "with attachments": [
+        "com anexos"
+      ],
+      "without attachments": [
+        "sem anexos"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Predefinição"

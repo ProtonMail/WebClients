@@ -4024,6 +4024,22 @@
         "s yitran"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "imayl yettwazen ${ label }"
+      ],
+      "with attachments": [
+        "s ifuyla yeddan"
+      ],
+      "without attachments": [
+        "war ifuyla yeddan"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "imayl yettwazen ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Rnu amsizdeg udmawan i useddu n kra n tigawin s wudem awurman, am ucraḍ d uḥraz n yiznan."
@@ -7465,6 +7481,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Talast n wakud yettwamudden"
       ]
     },
     "Maximum calendar links reached warning": {

@@ -1871,7 +1871,7 @@
         "L'accès à l'application de bureau est limité."
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement limitée aux utilisateurs ayant souscrit au plan ${ BRAND_NAME } Visionary. Elle sera disponible à tous les utilisateurs début 2024."
+        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement réservée aux utilisateurs ayant un abonnement ${ BRAND_NAME } Visionary. Elle sera disponible pour tous les utilisateurs début 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Changez d'abonnement dès aujourd'hui ou vérifiez à nouveau début 2024 pour y accéder."
@@ -2951,7 +2951,7 @@
         "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Êtes-vous sûr de vouloir retirer le domaine ${ boldDomain } ?"
+        "Voulez-vous vraiment retirer le domaine ${ boldDomain } ?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
@@ -3082,7 +3082,7 @@
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus vous connecter ou déchiffrer vos messages."
       ],
       "Domain ownership failed verification.": [
-        "La vérification de la propriété du domaine n'a pas abouti."
+        "La propriété du domaine n'a pas pu être vérifiée."
       ],
       "Domain ownership not verified.": [
         "La propriété du domaine n'a pas été vérifiée."
@@ -3501,7 +3501,7 @@
         "Révoquer le certificat ${ name }"
       ],
       "SAML configuration saved": [
-        "Configuration SAML enregistrée."
+        "La configuration SAML a été enregistrée."
       ],
       "Save ${ percentage }": [
         "Économisez ${ percentage }"
@@ -3658,7 +3658,7 @@
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Cette vérification peut prendre jusqu'à 1 heure. Vous pouvez poursuivre les étapes suivantes en toute sécurité."
+        "Cette vérification peut prendre jusqu'à une heure. Vous pouvez poursuivre les étapes suivantes en toute sécurité."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
@@ -3871,7 +3871,7 @@
         "Nous passons votre abonnement actuel à un abonnement plus avantageux pour le même prix. Pendant la mise à jour de nos systèmes, vous ne pourrez pas le modifier. Nous vous enverrons un message dès que ce sera fait."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Lorsque vous activez le langage SAML pour ${ appName } pour votre fournisseur d'identité, vous pouvez être invité à utiliser une URL (ACS) de redirection et un ID d'émetteur. Il vous suffit de copier et coller les données dans les champs de votre fournisseur d'identité."
+        "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quand vous configurez l'authentification à deux facteurs, nous fournissons des codes de récupération que vous pouvez utiliser pour vous connecter si vous perdez l'accès à votre application d'authentification."
@@ -4313,7 +4313,7 @@
         "Avez-vous des suggestions pour notre équipe ?"
       ],
       "e.g. example.com": [
-        "ex. : example.com"
+        "ex. : exemple.fr"
       ],
       "Email": [
         "Adresse e-mail"
@@ -4370,7 +4370,7 @@
         "Fichier de métadonnées pour ${ appName }"
       ],
       "Metadata URL for ${ appName }": [
-        "URL des métadonnées pour ${ appName }"
+        "URL de métadonnées pour ${ appName }"
       ],
       "Method for importing metadata": [
         "Méthode d'importation des métadonnées"
@@ -7361,7 +7361,7 @@
         "Récupération"
       ],
       "Remove domain": [
-        "Supprimer le domaine"
+        "Retirer le domaine"
       ],
       "Remove user?": [
         "Retirer l'utilisateur ?"
@@ -7582,10 +7582,10 @@
         "Copiez et collez cette URL dans le champ ID de l'émetteur de votre fournisseur d'identité."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
-        "L'URL des points de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
+        "L'URL du point de terminaison de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)"
       ],
       "Feature in early access": [
-        "Fonctionnalité en accès anticipé"
+        "Fonctionnalité en avant-première"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Il s'agit de la clé publique de votre fournisseur d'identité pour signer les déclarations d'authentification. Vous avez besoin du hash du certificat de votre fournisseur d'identité."
@@ -7597,7 +7597,7 @@
         "Les membres qui n'utilisent pas l'authentification à deux facteurs (A2F) recevront un message leur demandant de l'activer dès que possible."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
-        "Indiquez le domaine autorisant l'authentification unique (SSO) SAML."
+        "Indiquez le domaine autorisé à s'authentifier avec SAML SSO."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Le nouveau cycle d'abonnement commence le ${ formattedTime }."
@@ -7609,7 +7609,7 @@
         "Le thème sélectionné sera activé quand votre système sera en « thème clair »."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "Il s'agit généralement d'une URL qui comporte le l nom de votre fournisseur d'identité."
+        "Il s'agit généralement d'une URL qui comporte le nom de votre fournisseur d'identité."
       ],
       "Verified email address": [
         "Adresse e-mail vérifiée"
@@ -7659,7 +7659,7 @@
     },
     "Users table: single sign-on tooltip": {
       "SSO user provided by your identity provider": [
-        "Authentification unique (SSO) de l'utilisateur indiquée par votre fournisseur d'identité"
+        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
       ]
     },
     "Validation": {

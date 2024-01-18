@@ -4822,6 +4822,22 @@
         "com estrela"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ],
+      "with attachments": [
+        "com anexos"
+      ],
+      "without attachments": [
+        "sem anexos"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adicione um filtro personalizado para executar automaticamente certas ações, como etiquetar ou arquivar mensagens."
@@ -8944,6 +8960,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "atualizações de produto da ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Comunicados do ${ BRAND_NAME } beta"
       ],
@@ -9234,6 +9253,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta e etiquetá-la como",
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Oferta por tempo limitado"
       ]
     },
     "Maintenance mode": {

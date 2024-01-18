@@ -5071,11 +5071,19 @@
       ]
     },
     "filter: Label": {
+      "the email was sent ${ label }": [
+        "Die E-Mail wurde gesendet ${ label }"
+      ],
       "with attachments": [
         "mit Anhang"
       ],
       "without attachments": [
         "ohne Anhang"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "Die E-Mail wurde gesendet ${ label }"
       ]
     },
     "FilterSettings": {
@@ -5829,6 +5837,9 @@
         "${ n } Adresse",
         "${ n } Adressen"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: Keine Quarantäne oder Ablehnung nicht autorisierter E-Mails. Normalerweise wird diese Richtlinie nur zum Troubleshooting oder Testen verwendet."
+      ],
       "${ number } city": [
         "${ number } Stadt",
         "${ number } Städte"
@@ -5861,6 +5872,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails als Spam zu markieren oder sie zu isolieren."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: Fordert die Empfängerplattformen dazu auf, nicht autorisierte E-Mails abzulehnen."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } weitere",
@@ -6188,6 +6205,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Bevor du E-Mails für deine individuellen Domain-Adressen bei ${ MAIL_APP_NAME } empfangen kannst, musst du die folgenden beiden MX-Einträge in deiner DNS-Konsole hinzufügen (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast). Ein Beispiel und nützliche Tipps findest du unter ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
       ],
@@ -6335,6 +6355,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM ermöglicht es ${ BRAND_NAME } deine Mails kryptografisch zu signieren und schützt vor Manipulation durch Angreifer. Stelle sicher, dass du die folgenden drei CNAME-Einträge in deiner DNS-Konsole hinzufügst (findet sich auf der Plattform, wo du die individuelle Domain gekauft hast)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC prüft, ob die SPF- und DKIM-Einträge des Absenders von deiner Domain stammen. Dadurch wird verhindert, dass Angreifer eine andere Domain für SPF und DKIM verwenden, um sich als deine Domain auszugeben. Das \"p=\" (Richtlinie) in diesem Eintrag gibt an, wie die Empfängerplattformen mit nicht autorisierten E-Mails umgehen sollen. Wir empfehlen die Verwendung der \"p=quarantine\"-Richtlinie für die meisten Domains. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
       ],
@@ -6380,6 +6406,9 @@
       ],
       "Each code can only be used once": [
         "Jeder Code kann nur einmal verwendet werden"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Jede Domain kann nur einen SPF (TXT)-Eintrag haben. Wenn du den bestehenden SPF (TXT)-Eintrag behalten möchtest, kannst du ${ spf } zu deinem aktuellen Eintrag hinzufügen (platziere es nach ${ spfValue })."
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
@@ -6465,6 +6494,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Termin-Einladungen und Antworten darauf werden in dieser Sprache versendet."
       ],
+      "Example: ${ spfExample }": [
+        "Beispiel: ${ spfExample }"
+      ],
       "Expired": [
         "Abgelaufen"
       ],
@@ -6485,6 +6517,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Für Mitglieder von Organisationen, die Single Sign-on (SAML SSO) verwenden."
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Für Benutzer, die von einem anderen E-Mail-Anbieter zu ${ MAIL_APP_NAME } wechseln, wähle den Tab ${ boldAddresses } aus und füge alle aktiven E-Mail-Adressen hinzu, bevor du den MX-Eintrag änderst, damit ein reibungsloser Übergang gewährleistet ist."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
@@ -6606,6 +6641,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "WICHTIG: Falls deine DNS-Konsole nicht zulässt CNAME-Einträge mit einem Punkt abzuschließen, kannst du den letzten Punkt in den CNAME-Einträgen entfernen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
@@ -6739,6 +6777,9 @@
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Große E-Mail-Dienste können deine E-Mails zurückweisen oder als Spam filtern, wenn SPF/DKIM/DMARC fehlen oder nicht richtig eingerichtet sind."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Große E-Mail-Anbieter können deine E-Mails als Spam ablehnen oder filtern, wenn SPF/DKIM/DMARC-Einträge fehlen oder nicht richtig eingerichtet sind."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Stelle sicher, dass du ${ addARecoveryMethod }, damit du wieder Zugriff auf dein Konto erhältst, wenn du dein Passwort vergessen hast."
@@ -7174,6 +7215,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klärt, wer berechtigt ist, E-Mails über deine Domain zu senden. Stelle sicher, dass du den folgenden TXT-Eintrag in deiner DNS-Konsole hinzufügst (befindet sich auf der Plattform, wo du die individuelle Domain erworben hast)."
       ],
       "Stay tuned for future promotions.": [
         "Bleibe auf dem Laufenden für zukünftige Werbeaktionen."
@@ -7954,8 +7998,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Füge für die bestehenden Benutzer deiner Organisation eine neue E-Mail-Adresse hinzu."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Füge einen neuen Benutzer deiner Organisation hinzu und erstelle für ihn eine E-Mail-Adresse."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Aus Sicherheitsgründen müssen wir überprüfen, dass du der Eigentümer von ${ domainName } bist. Füge bitte den folgenden TXT-Eintrag in deiner DNS-Konsole hinzu (befindet sich auf der Plattform, auf der du die individuelle Domain erworben hast). Ein Beispiel und nützliche Tipps findest du unter ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8994,8 +9044,14 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Die Phrase besteht aus 12 einzigartigen Wörtern in einer bestimmten Reihenfolge."
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Bitte füge alle 3 folgenden CNAME-Einträge hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
+      ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
         "Bitte füge die folgenden beiden MX-Einträge hinzu. Beachte, dass die Aktualisierung von DNS-Einträgen mehrere Stunden dauern kann."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
       ],
       "Please select files to upload": [
         "Bitte Dateien zum Hochladen auswählen"
@@ -9238,6 +9294,11 @@
     "Label for default event settings": {
       "Duration": [
         "Dauer"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
       ]
     },
     "Label for new member": {

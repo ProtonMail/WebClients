@@ -5041,6 +5041,22 @@
         "별표 표시됨"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "이메일이 ${ label } 으(로) 전송되었습니다"
+      ],
+      "with attachments": [
+        "첨부 파일 있음"
+      ],
+      "without attachments": [
+        "첨부 파일 없음"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "이메일이 ${ label } 으(로) 전송되었습니다"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "사용자 지정 필터를 추가하여 라벨링이나 메시지 보관과 같은 특정 작업을 자동으로 수행합니다."
@@ -5781,6 +5797,9 @@
       "${ n } addresses": [
         "${ n } 주소"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: 무단 이메일을 격리하거나 거부하지 마세요. 보통, 이 정책을 문제 해결이나 테스트에만 사용합니다."
+      ],
       "${ number } cities": [
         "${ number } 도시"
       ],
@@ -5807,6 +5826,12 @@
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } 서버는 아직 설정 중입니다. ${ provisioningDuration } 정도 소요됩니다."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: 수신자 플랫폼에 승인되지 않은 이메일을 스팸으로 표시하거나 분리하도록 요청합니다."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: 수신자 플랫폼에 승인되지 않은 이메일을 거부하도록 요청합니다."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 더"
@@ -6120,8 +6145,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME }에서 사용자 지정 도메인 주소에 대한 이메일을 받기 전에, DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 두 개의 MX 레코드를 추가해야 합니다. 예시와 몇 가지 유용한 팁을 찾을 수 있습니다 ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "새 주소에서 이메일을 주고 받기 전에 암호화 키를 만들어야 합니다."
+      ],
+      "Beta": [
+        "베타"
       ],
       "Billed at ${ price }": [
         "${ price }에 결제됨"
@@ -6261,6 +6292,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM은 ${ BRAND_NAME }이 이메일에 암호화로 서명하고 공격자가 이메일을 조작하는 것을 방지할 수 있습니다. 다음 세 개의 CNAME 레코드 값을 DNS 콘솔에 추가하십시오. (커스템 도매인을 구매한 플랫폼에 위치해 있습니다.)"
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC는 발신자의 SPF와 DKIM 레코드가 사용자의 도메인에서 소속되었는지 확인합니다. 이로서 공격자가 다른 도메인의 SPF와 DKIM을 사용하여 도메인을 사칭하는 것을 방지할 수 있습니다. 이 기록의 \"p=\"(정책)는 수신자 플랫폼이 승인되지 않은 이메일을 처리하는 방법을 나타냅니다. 대부분의 도메인에 대해 \"p=quarantine\" 정책을 사용하는 것이 좋습니다. 다음 TXT 레코드를 사용자의 DNS 콘솔에 입력하십시오. (커스텀 도메인을 구매한 곳에 위치해 있음.)"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
       ],
@@ -6305,6 +6342,9 @@
       ],
       "Each code can only be used once": [
         "각각의 코드는 한 번만 사용 가능합니다"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "각 도메인은 하나의 SPF (TXT) 레코드만 저장할 수 있습니다. 만약 SPF (TXT) 레코드를 계속 저장하고자 한다면, 현재 레코드에 ${ spf }을(를) 추가하실 수 있습니다. (나중에 ${ spfValue } 저장하세요.)"
       ],
       "Edit email address": [
         "이메일 주소 변경"
@@ -6390,6 +6430,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "이벤트 초대 및 답변은 이 언어로 발송됩니다."
       ],
+      "Example: ${ spfExample }": [
+        "예시: ${ spfExample }"
+      ],
       "Expired": [
         "만료됨"
       ],
@@ -6410,6 +6453,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "${ MAIL_APP_NAME }에서 타 이메일 서비스로 전환하는 사용자라면, 매끄러운 전환을 위해 ${ boldAddresses } 탭을 선택한 뒤 활성화된 모든 이메일 주소를 추가하세요."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
@@ -6530,6 +6576,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "중요 사항: 만일 사용자의 DNS 콘솔이 온 점으로 끝나는 것을 허용하지 않을시, 뒷 편의 CNAME 값에서 온 점 (.) 제거가 가능합니다."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실형 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
@@ -6659,6 +6708,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "로그는 ${ BRAND_NAME_TWO } 자격 증명을 사용하는 모든 ${ BRAND_NAME } 서비스의 인증 시도를 포함합니다."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "주요 이메일 서비스는 SPF/DKIM/DMARC가 누락되었거나 제대로 설정되지 않은 경우 스팸으로 이메일을 거부하거나 필터링할 수 있습니다."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
@@ -7091,6 +7146,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF는 누가 사용자의 도메인에 대한 이메일을 보낼 수 있는지 명확히 합니다. DNS 콘솔(사용자 지정 도메인을 구매한 플랫폼에 위치)에 다음 TXT 레코드를 추가해야 합니다."
       ],
       "Stay tuned for future promotions.": [
         "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
@@ -7860,8 +7918,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "조직의 존재하는 모든 사용자를 위해 새 주소를 추가하세요."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "조직에 새로운 사용자를 추가하여 주소를 생성하세요."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "보안 상의 이유로, ${ domainName }의 소유자인지 확인이 필요합니다. 다음 TXT 레코드를 (커스텀 도메인을 구매한 플랫폼에 위치한) DNS 콘솔에 입력하십시오. 이 링크에서 몇 가지 도움 되는 정보를 찾을 수 있습니다 ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8894,6 +8958,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "구문은 특정 순서로 12개의 독특한 단어로 구성되어 있습니다."
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "다음의 모든 세가지 CNAME 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "다음 두 MX 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "다음 TXT 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ],
       "Please select files to upload": [
         "업로드할 파일을 선택하세요"
       ],
@@ -9140,6 +9213,11 @@
         "기간"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "다음 TXT 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "관리자"
@@ -9152,6 +9230,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 제품 업데이트"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } 베타 소개"
       ],
@@ -9323,6 +9404,9 @@
       "Help translate": [
         "번역 돕기"
       ],
+      "here": [
+        "."
+      ],
       "How to pay with Bitcoin?": [
         "Bitcoin으로 어떻게 결제하나요?"
       ],
@@ -9453,6 +9537,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "${ BRAND_NAME }의 스토리 중 일부가 되고 싶으시면 Visionary가 되어 주세요."
+      ],
+      "Limited time offer": [
+        "기간 한정 세일"
       ],
       "Secure email that protects your privacy": [
         "프라이버시를 지켜주는 이메일로 보호하세요."
@@ -10145,6 +10232,9 @@
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
       ],
+      "Up to ${ n } users": [
+        "사용자 최대 ${ n }명"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
@@ -10451,6 +10541,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "영업일 기준, 요청 24시간 내에 ${ BRAND_NAME } 고객 지원팀으로부터 지원을 받습니다"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "하나의 VPN 연결은 한 장치가 ${ VPN_APP_NAME } VPN에 동시에 연결될 수 있도록 합니다. 예를 들어, 전화와 노트북을 동시에 ${ VPN_APP_NAME } VPN에 연결하기 위해서는 두 개의 VPN 연결이 필요합니다."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
@@ -12441,6 +12534,9 @@
       "${ n } calendars per user": [
         "사용자 당 ${ n } 캘린더"
       ],
+      "${ n } free VPN connections per user": [
+        "사용자 당 ${ n }개 무료 VPN 연결"
+      ],
       "${ n } high-speed VPN connections": [
         "${ n } 빠른 속도의 VPN 연결"
       ],
@@ -13103,7 +13199,7 @@
         "구독 취소"
       ],
       "Cancel subscription?": [
-        "구독 취소?"
+        "구독을 취소하시겠어요?"
       ],
       "Card verification": [
         "카드 확인"
@@ -13777,6 +13873,9 @@
       "Success": [
         "성공"
       ],
+      "Successfully created ${ n } user accounts": [
+        "성공적으로 ${ n } 사용자 계정을 생성했습니다."
+      ],
       "Summary": [
         "요약"
       ],
@@ -14044,6 +14143,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "고급 로그를 활성화하면 보안 로그의 각 이벤트에 IP 주소를 기록하게 됩니다."
       ],
+      "Feature in early access": [
+        "얼리 엑세스 기능"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail은 자동으로 일부 이메일을 소셜 및 프로모션 등으로 카테코리화 합니다. 이 이메일을 어디에 불러올지 선택하실 수 있습니다."
       ],
@@ -14264,6 +14366,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO 사용자는 사용자의 정보 제공사로 부터 제공되었습니다."
       ]
     },
     "Validation": {

@@ -4464,6 +4464,22 @@
         "星标邮件"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "邮件${ label }"
+      ],
+      "with attachments": [
+        "含有附件"
+      ],
+      "without attachments": [
+        "不含附件"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "邮件${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "定制筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
@@ -8362,6 +8378,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 产品资讯"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } 公测通知"
       ],
@@ -8646,6 +8665,11 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
         "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "限时优惠"
       ]
     },
     "Maintenance mode": {
@@ -9248,6 +9272,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
+      ],
+      "Up to ${ n } users": [
+        "最多 ${ n } 名用户"
       ],
       "Up to ${ totalStorageSize } storage": [
         "升级容量至 ${ totalStorageSize }"
