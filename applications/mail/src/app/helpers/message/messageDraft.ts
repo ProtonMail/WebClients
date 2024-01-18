@@ -5,6 +5,7 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -28,7 +29,6 @@ import { MessageStateWithData, PartialMessageState } from '../../logic/messages/
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';
-import { parseInDiv } from '../dom';
 import { getDate } from '../elements';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, getRemoteImages, restoreImages, updateImages } from './messageImages';
@@ -314,7 +314,7 @@ export const createNewDraft = (
             : insertSignature(content, senderAddress?.Signature, action, mailSettings, userSettings, fontStyle);
 
     const plain = isPlainText({ MIMEType });
-    const document = plain ? undefined : parseInDiv(content);
+    const document = plain ? undefined : parseStringToDOM(content).body;
 
     // Prevent nested ternary
     const getPlainTextContent = (content: string) => {
