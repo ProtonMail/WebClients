@@ -20,7 +20,7 @@ import {
     MAIL_SHORT_APP_NAME,
     PLANS,
 } from '@proton/shared/lib/constants';
-import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
@@ -52,21 +52,21 @@ export const getMailBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getFreeMailFeatures = () => {
+export const getFreeMailFeatures = (freePlan: FreePlanDefault) => {
     return [
-        getFreeMailStorageFeature(),
+        getFreeMailStorageFeature(freePlan),
         getNAddressesFeature({ n: 1 }),
         getFoldersAndLabelsFeature(3),
         getNMessagesFeature(150),
     ];
 };
 
-export const getCustomMailFeatures = (plan: Plan | undefined) => {
+export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
     if (!plan) {
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace),
+        getStorageFeature(plan.MaxSpace, { freePlan }),
         getNAddressesFeature({ n: plan.MaxAddresses }),
         getFoldersAndLabelsFeature('unlimited'),
         getNMessagesFeature('unlimited'),
@@ -86,6 +86,7 @@ export const getPlanTitle = (plan: Plan | undefined) => {
 };
 
 export const getMailConfiguration = ({
+    freePlan,
     mode,
     plan,
     isLargeViewport,
@@ -94,6 +95,7 @@ export const getMailConfiguration = ({
     hideFreePlan,
     plansMap,
 }: {
+    freePlan: FreePlanDefault;
     mode: SignupMode;
     plan: Plan | undefined;
     hideFreePlan: boolean;
@@ -122,7 +124,7 @@ export const getMailConfiguration = ({
     let planCards: PlanCard[] = [
         !hideFreePlan && {
             plan: PLANS.FREE,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures(freePlan)} />,
             type: 'standard' as const,
             guarantee: false,
         },
@@ -131,7 +133,7 @@ export const getMailConfiguration = ({
             subsection: (
                 <PlanCardFeatureList
                     {...planCardFeatureProps}
-                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL])}
+                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
                 />
             ),
             type: 'best' as const,
@@ -149,7 +151,7 @@ export const getMailConfiguration = ({
         planCards = [
             {
                 plan: PLANS.FREE,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
+                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures(freePlan)} />,
                 type: 'standard' as const,
                 guarantee: false,
             },
@@ -158,7 +160,7 @@ export const getMailConfiguration = ({
                 subsection: (
                     <PlanCardFeatureList
                         {...planCardFeatureProps}
-                        features={getCustomMailFeatures(plansMap?.[PLANS.MAIL])}
+                        features={getCustomMailFeatures(plansMap?.[PLANS.MAIL], freePlan)}
                     />
                 ),
                 type: 'best' as const,

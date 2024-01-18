@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
-import useFreePlan from '@proton/components/hooks/useFreePlan';
 import { useLoading } from '@proton/hooks';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -22,6 +21,7 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import {
     useApi,
     useEventManager,
+    useFreePlan,
     useGetCalendars,
     useGetOrganization,
     useGetSubscription,
@@ -118,7 +118,12 @@ const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
         }
 
         const currentPlan = getPlan(subscription);
-        const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, { vpnServers }) : undefined;
+        const shortPlan = currentPlan
+            ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
+                  vpnServers,
+                  freePlan,
+              })
+            : undefined;
         const { PeriodEnd = 0 } = subscription || {};
 
         // We only show the plan downgrade modal for plans that are defined with features
@@ -180,7 +185,7 @@ const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
 
     return (
         <Button
-            disabled={loading || loadingPlans}
+            disabled={loading || loadingPlans || loadingFreePlan}
             className={className}
             onClick={() => withLoading(handleClick())}
             data-testid="UnsubscribeButton"

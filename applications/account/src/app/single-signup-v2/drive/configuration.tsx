@@ -9,7 +9,7 @@ import { getVPNConnections } from '@proton/components/containers/payments/featur
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
@@ -41,16 +41,16 @@ export const getDriveBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getFreeDriveFeatures = () => {
-    return [getFreeDriveStorageFeature()];
+export const getFreeDriveFeatures = ({ freePlan }: { freePlan: FreePlanDefault }) => {
+    return [getFreeDriveStorageFeature(freePlan)];
 };
 
-export const getCustomDriveFeatures = (plan: Plan | undefined) => {
+export const getCustomDriveFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
     if (!plan) {
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace, { boldStorageSize: false }),
+        getStorageFeature(plan.MaxSpace, { boldStorageSize: false, freePlan }),
         getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
         getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
         getVPNConnections(1),
@@ -63,11 +63,13 @@ export const getDriveConfiguration = ({
     plansMap,
     vpnServersCountData,
     hideFreePlan,
+    freePlan,
 }: {
     hideFreePlan: boolean;
     plansMap?: PlansMap;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
+    freePlan: FreePlanDefault;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
 
@@ -78,7 +80,7 @@ export const getDriveConfiguration = ({
     const planCards: PlanCard[] = [
         !hideFreePlan && {
             plan: PLANS.FREE,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeDriveFeatures()} />,
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeDriveFeatures({ freePlan })} />,
             type: 'standard' as const,
             guarantee: false,
         },
@@ -87,7 +89,7 @@ export const getDriveConfiguration = ({
             subsection: (
                 <PlanCardFeatureList
                     {...planCardFeatureProps}
-                    features={getCustomDriveFeatures(plansMap?.[PLANS.DRIVE])}
+                    features={getCustomDriveFeatures({ plan: plansMap?.[PLANS.DRIVE], freePlan })}
                 />
             ),
             type: 'best' as const,
