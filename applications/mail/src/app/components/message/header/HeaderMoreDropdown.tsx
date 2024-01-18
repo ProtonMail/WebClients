@@ -60,6 +60,7 @@ import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
 import MessagePhishingModal from '../modals/MessagePhishingModal';
 import MessagePrintModal from '../modals/MessagePrintModal';
 import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
+import { MESSAGE_FILTER_DROPDOWN_ID, MESSAGE_FOLDER_DROPDOWN_ID, MESSAGE_LABEL_DROPDOWN_ID } from './constants';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 
@@ -361,7 +362,8 @@ const HeaderMoreDropdown = ({
                 )}
                 {!viewportWidth['<=small'] && [
                     <HeaderDropdown
-                        key="message-header-expanded:folder-dropdown"
+                        key={MESSAGE_FOLDER_DROPDOWN_ID}
+                        id={MESSAGE_FOLDER_DROPDOWN_ID}
                         icon
                         autoClose={false}
                         dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
@@ -371,7 +373,7 @@ const HeaderMoreDropdown = ({
                         title={titleMoveTo}
                         loading={!messageLoaded}
                         externalToggleRef={moveDropdownToggleRef}
-                        data-testid="message-header-expanded:folder-dropdown"
+                        data-testid={MESSAGE_FOLDER_DROPDOWN_ID}
                     >
                         {{
                             contentProps: moveDropdownContentProps,
@@ -388,7 +390,8 @@ const HeaderMoreDropdown = ({
                         }}
                     </HeaderDropdown>,
                     <HeaderDropdown
-                        key="message-header-expanded:label-dropdown"
+                        key={MESSAGE_LABEL_DROPDOWN_ID}
+                        id={MESSAGE_LABEL_DROPDOWN_ID}
                         icon
                         autoClose={false}
                         dropdownSize={{ maxWidth: '22em', maxHeight: DropdownSizeUnit.Viewport }}
@@ -398,7 +401,7 @@ const HeaderMoreDropdown = ({
                         title={titleLabelAs}
                         loading={!messageLoaded}
                         externalToggleRef={labelDropdownToggleRef}
-                        data-testid="message-header-expanded:label-dropdown"
+                        data-testid={MESSAGE_LABEL_DROPDOWN_ID}
                     >
                         {{
                             contentProps: labelDropdownContentProps,
@@ -414,7 +417,8 @@ const HeaderMoreDropdown = ({
                         }}
                     </HeaderDropdown>,
                     <HeaderDropdown
-                        key="message-header-expanded:filter-dropdown"
+                        key={MESSAGE_FILTER_DROPDOWN_ID}
+                        id={MESSAGE_FILTER_DROPDOWN_ID}
                         icon
                         autoClose={false}
                         dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
@@ -424,7 +428,7 @@ const HeaderMoreDropdown = ({
                         title={titleFilterOn}
                         loading={!messageLoaded}
                         externalToggleRef={filterDropdownToggleRef}
-                        data-testid="message-header-expanded:filter-dropdown"
+                        data-testid={MESSAGE_FILTER_DROPDOWN_ID}
                     >
                         {{
                             render: ({ onClose, onLock }) => (

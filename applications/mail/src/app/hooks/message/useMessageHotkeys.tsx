@@ -1,12 +1,18 @@
-import { useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { HotkeyTuple, useEventManager, useFolders, useHotkeys } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
+import {
+    MESSAGE_FILTER_DROPDOWN_ID,
+    MESSAGE_FOLDER_DROPDOWN_ID,
+    MESSAGE_LABEL_DROPDOWN_ID,
+} from 'proton-mail/components/message/header/constants';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -130,6 +136,28 @@ export const useMessageHotkeys = (
 
         if (direction === ARROW_SCROLL_DIRECTIONS.DOWN && distanceFromBottom < THRESHOLD) {
             e.stopPropagation();
+        }
+    };
+
+    const openMessageToolbarDropdown = (
+        toolbarDropdownButtonRef: RefObject<() => void>,
+        keyboardEvent: KeyboardEvent,
+        shouldScrollIntoView = false
+    ) => {
+        if (hotkeysEnabledAndMessageReady) {
+            keyboardEvent.stopPropagation();
+            keyboardEvent.preventDefault();
+
+            if (shouldScrollIntoView) {
+                messageRef.current?.scrollIntoView({ behavior: 'instant', block: 'start' });
+            }
+
+            // FF has an issue when we propagate custom events
+            // adding a timeout there ensure event is done when
+            // other components are rendered
+            setTimeout(() => {
+                toolbarDropdownButtonRef.current?.();
+            }, 0);
         }
     };
 
@@ -301,42 +329,24 @@ export const useMessageHotkeys = (
         [
             'L',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    e.preventDefault();
+                const isVisibleElement = isVisibleOnScreen(document.getElementById(MESSAGE_LABEL_DROPDOWN_ID));
+                console.log('L', isVisibleElement);
 
-                    // FF has an issue when we propagate custom events
-                    // adding a timeout there ensure event is done when
-                    // other components are rendered
-                    setTimeout(() => {
-                        labelDropdownToggleRef.current?.();
-                    }, 0);
-                }
+                openMessageToolbarDropdown(labelDropdownToggleRef, e, !isVisibleElement);
             },
         ],
         [
             'M',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    e.preventDefault();
-
-                    // FF has an issue when we propagate custom events
-                    // adding a timeout there ensure event is done when
-                    // other components are rendered
-                    setTimeout(() => {
-                        moveDropdownToggleRef.current?.();
-                    });
-                }
+                const isVisibleElement = isVisibleOnScreen(document.getElementById(MESSAGE_FOLDER_DROPDOWN_ID));
+                openMessageToolbarDropdown(moveDropdownToggleRef, e, !isVisibleElement);
             },
         ],
         [
             'F',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    filterDropdownToggleRef.current?.();
-                }
+                const isVisibleElement = isVisibleOnScreen(document.getElementById(MESSAGE_FILTER_DROPDOWN_ID));
+                openMessageToolbarDropdown(filterDropdownToggleRef, e, !isVisibleElement);
             },
         ],
     ];
