@@ -12,6 +12,7 @@ import {
     Api,
     Currency,
     Cycle,
+    FreePlanDefault,
     HumanVerificationMethodType,
     KeyTransparencyActivation,
     Organization,
@@ -91,6 +92,7 @@ export enum SignupType {
 }
 
 export interface SignupModel {
+    freePlan: FreePlanDefault;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     subscriptionData: SubscriptionData;

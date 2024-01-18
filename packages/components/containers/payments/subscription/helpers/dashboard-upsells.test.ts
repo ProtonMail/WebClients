@@ -1,5 +1,6 @@
 import { APPS, COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { Subscription } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import {
     businessUpsell,
@@ -28,6 +29,7 @@ describe('resolveUpsellsToDisplay', () => {
             currency: 'EUR',
             subscription,
             plans,
+            freePlan: FREE_PLAN,
             serversCount: {
                 paid: {
                     servers: 100,

@@ -165,7 +165,7 @@ const AccountStepPayment = ({
         </Href>
     );
 
-    const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData);
+    const summaryPlan = getSummaryPlan({ plan: options.plan, vpnServersCountData, freePlan: model.freePlan });
 
     const currentCheckout = getCheckout({
         planIDs: options.planIDs,

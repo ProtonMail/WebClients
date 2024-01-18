@@ -67,6 +67,7 @@ import {
     useApi,
     useConfig,
     useEventManager,
+    useFreePlan,
     useGetCalendars,
     useModals,
     useNotifications,
@@ -216,6 +217,7 @@ const SubscriptionContainer = ({
     });
     const plansMap = toMap(plans, 'Name');
     const [vpnServers] = useVPNServersCount();
+    const [freePlan] = useFreePlan();
     const getCalendars = useGetCalendars();
     const { APP_NAME } = useConfig();
 
@@ -738,6 +740,7 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                 <PlanSelection
                     app={app}
+                    freePlan={freePlan}
                     loading={loadingCheck}
                     plans={plans}
                     plansMap={plansMap}
