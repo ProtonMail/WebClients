@@ -5,10 +5,12 @@ import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
+import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { getCacheEncryptionKey } from './cache.encrypt';
 import { decryptData } from './crypto-helpers';
+import { PassCryptoError } from './errors';
 
 const decrypt = async <T extends object>(options: {
     data: string;
@@ -65,6 +67,18 @@ export const decryptCachedState = async (
             }
 
             return { state, snapshot };
-        }
+        } else throw new PassCryptoError('Cache decryption failure');
     }
+};
+
+/** `PassCache` state and snapshot should be in sync : remove any shares
+ * from state that have no share manager reference in the crypto snapshot */
+export const sanitizeCache = (cache: Maybe<PassCache>): Maybe<PassCache> => {
+    if (!cache) return;
+
+    const state = { ...cache.state };
+    const shareManagers = Object.fromEntries(cache.snapshot.shareManagers);
+
+    state.shares = objectFilter(state.shares, (shareId) => shareId in shareManagers);
+    return { state, snapshot: cache.snapshot };
 };
