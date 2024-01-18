@@ -3465,6 +3465,12 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } přeskočen",
+        "${ skippedCount } přeskočeny",
+        "${ skippedCount } přeskočeno",
+        "${ skippedCount } přeskočeno"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4235,6 +4241,9 @@
       ],
       "Signature issue": [
         "Problém s podpisem"
+      ],
+      "Skipped": [
+        "Přeskočeno"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Některé soubory nebyly staženy. Zkuste soubory znovu stáhnout."
@@ -5799,6 +5808,9 @@
       ],
       "Search for name or email": [
         "Vyhledat jméno nebo e-mail"
+      ],
+      "Search parent folder": [
+        "Prohledat nadřazenou složku"
       ],
       "Select": [
         "Vybrat"
