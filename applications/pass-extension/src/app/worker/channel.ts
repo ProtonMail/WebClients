@@ -1,3 +1,4 @@
+import { clientReady } from '@proton/pass/lib/client';
 import { createMessageBroker } from '@proton/pass/lib/extension/message';
 import { cacheRequest } from '@proton/pass/store/actions';
 import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
@@ -40,7 +41,9 @@ const WorkerMessageBroker = createMessageBroker({
         const isPopup = portName.startsWith('popup');
         const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
 
-        if (isPopup) {
+        /** check if the client is ready before triggering this
+         * cache request as we may be in an on-going boot */
+        if (isPopup && clientReady(ctx.getState().status)) {
             store.dispatch(cacheRequest({ throttle: true }));
             if (hasRegisteredLock) ctx.service.auth.checkLock().catch(noop);
         }
