@@ -2,7 +2,6 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { useFlag } from '@proton/components/containers/unleash';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
@@ -42,6 +41,10 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
+    isDelightMailListEnabled?: boolean;
+    hideUnreadButton?: boolean;
+    isHovered?: boolean;
+    showAttachmentThumbnails?: boolean;
 }
 
 const ItemRowLayout = ({
@@ -57,11 +60,14 @@ const ItemRowLayout = ({
     unread,
     onBack = () => {},
     attachmentsMetadata = [],
+    showAttachmentThumbnails,
+    hideUnreadButton,
+    isHovered,
+    isDelightMailListEnabled,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
 
     const snoozedElement = useAppSelector(selectSnoozeElement);
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
@@ -93,12 +99,8 @@ const ItemRowLayout = ({
         isCompactView,
         element,
         attachmentsMetadata,
-        canSeeThumbnailsFeature
+        showAttachmentThumbnails
     );
-
-    const isDelightMailListEnabled = useFlag('DelightMailList');
-
-    const DelightMailListHideUnreadButton = useFlag('DelightMailListHideUnreadButton');
 
     if (isDelightMailListEnabled) {
         return (
@@ -114,7 +116,7 @@ const ItemRowLayout = ({
                         <ItemUnread
                             element={element}
                             labelID={labelID}
-                            className={clsx('delight-item-unread-dot', DelightMailListHideUnreadButton && 'sr-only')}
+                            className={clsx('delight-item-unread-dot', hideUnreadButton && 'sr-only')}
                         />
                         <ItemAction element={element} className="mr-2 shrink-0 my-auto" />
                         <span
@@ -174,14 +176,17 @@ const ItemRowLayout = ({
                     <span className="m-auto" />
 
                     <span className="flex flex-nowrap items-center shrink-0 justify-end">
-                        <ItemHoverButtons
-                            element={element}
-                            labelID={labelID}
-                            elementID={elementID}
-                            onBack={onBack}
-                            hasStar={false}
-                            size="small"
-                        />
+                        {isHovered ? (
+                            <ItemHoverButtons
+                                element={element}
+                                labelID={labelID}
+                                elementID={elementID}
+                                onBack={onBack}
+                                hasStar={false}
+                                size="small"
+                                isDelightMailListEnabled={isDelightMailListEnabled}
+                            />
+                        ) : null}
                         <span
                             className={clsx(
                                 'item-senddate-row flex flex-nowrap items-center gap-3',
@@ -315,14 +320,17 @@ const ItemRowLayout = ({
                     className="ml-4 flex w-custom flex-nowrap items-center justify-end"
                     style={{ '--w-custom': '13em' }}
                 >
-                    <ItemHoverButtons
-                        element={element}
-                        labelID={labelID}
-                        elementID={elementID}
-                        onBack={onBack}
-                        hasStar={false}
-                        size={isCompactView ? 'small' : 'medium'}
-                    />
+                    {isHovered ? (
+                        <ItemHoverButtons
+                            element={element}
+                            labelID={labelID}
+                            elementID={elementID}
+                            onBack={onBack}
+                            hasStar={false}
+                            size={isCompactView ? 'small' : 'medium'}
+                            isDelightMailListEnabled={isDelightMailListEnabled}
+                        />
+                    ) : null}
                     <span
                         className={clsx(
                             'item-senddate-row ml-2 flex flex-1 flex-nowrap justify-end items-center',
