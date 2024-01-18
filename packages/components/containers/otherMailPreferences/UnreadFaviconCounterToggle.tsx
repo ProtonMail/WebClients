@@ -1,10 +1,16 @@
 import { c } from 'ttag';
 
+import { Toggle } from '@proton/components';
+import {
+    useApi,
+    useEventManager,
+    useInboxDesktopBadgeCount,
+    useMailSettings,
+    useNotifications,
+    useToggle,
+} from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateDisplayUnreadFavicon } from '@proton/shared/lib/api/mailSettings';
-
-import { Toggle } from '../../components';
-import { useApi, useEventManager, useMailSettings, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id?: string;
@@ -19,6 +25,9 @@ export const UnreadFaviconCounterToggle = ({ id, className }: Props) => {
     const { state, toggle } = useToggle(!!mailSettings?.UnreadFavicon);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
+
+    // We want to update the unread count in the application badge when the user changes the setting
+    useInboxDesktopBadgeCount();
 
     const handleChange = async (checked: boolean) => {
         await api(updateDisplayUnreadFavicon(+checked));
