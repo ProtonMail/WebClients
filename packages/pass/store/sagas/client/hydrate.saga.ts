@@ -1,7 +1,7 @@
 import { put, select, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt';
+import { decryptCachedState, sanitizeCache } from '@proton/pass/lib/crypto/utils/cache.decrypt';
 import { getUserState } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
@@ -15,45 +15,49 @@ import type { SafeUserState } from '@proton/pass/store/reducers';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
+import { throwError } from '@proton/pass/utils/fp/throw';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-type HydrateCacheOptions = {
-    merge: (existing: State, incoming: State) => State;
-    onError?: () => Generator;
-};
+/** `allowFailure` defines how we should treat cache decryption errors.
+ * If `true` they will be by-passed - else you can pass a custom error
+ * generator function that will be triggered */
+type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State } & (
+    | { allowFailure: true }
+    | { allowFailure: false; onError?: () => Generator }
+);
+
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
-export function* hydrateFromCache(
-    /** define how we should merge the incoming state */
-    { merge, onError }: HydrateCacheOptions,
-    { getCache, getAuthStore }: RootSagaOptions
-) {
-    const currentState: State = yield select();
+export function* hydrateFromCache(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
+    try {
+        const currentState: State = yield select();
 
-    const authStore = getAuthStore();
-    const keyPassword = authStore.getPassword();
-    const sessionLockToken = authStore.getLockToken();
+        const authStore = getAuthStore();
+        const keyPassword = authStore.getPassword();
+        const sessionLockToken = authStore.getLockToken();
+        const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
 
-    const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
-    const cache: Maybe<PassCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
+        const cache: Maybe<PassCache> = yield decryptCachedState(encryptedCache, sessionLockToken)
+            .then(sanitizeCache)
+            .catch((err) => (config.allowFailure ? undefined : throwError(err)));
 
-    const decryptionFailure = (encryptedCache.state && !cache?.state) || (encryptedCache.snapshot && !cache?.snapshot);
+        const userState: SafeUserState = cache?.state.user ?? (yield getUserState());
+        const user = userState.user;
+        const addresses = Object.values(userState.addresses);
 
-    if (decryptionFailure && onError) {
-        yield onError();
+        const state: State = {
+            ...(cache?.state ? config.merge(currentState, cache.state) : currentState),
+            user: userState,
+        };
+
+        yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot });
+        yield put(stateHydrate(state));
+
+        return cache?.state !== undefined && cache?.snapshot !== undefined;
+    } catch {
+        yield !config.allowFailure && config.onError?.();
         return false;
     }
-
-    const userState: SafeUserState = cache?.state.user ?? (yield getUserState());
-
-    const state: State = { ...(cache?.state ? merge(currentState, cache.state) : currentState), user: userState };
-    const user = userState.user;
-    const addresses = Object.values(userState.addresses);
-
-    yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot });
-    yield put(stateHydrate(state));
-
-    return cache?.state !== undefined && cache?.snapshot !== undefined;
 }
 
 function* hydrateWorker(options: RootSagaOptions) {
@@ -69,6 +73,7 @@ function* hydrateWorker(options: RootSagaOptions) {
 
     yield hydrateFromCache(
         {
+            allowFailure: false,
             merge: (_, incoming) => incoming,
             onError: function* onError() {
                 /** If hydrating from cache failed during a state sync : encryption
