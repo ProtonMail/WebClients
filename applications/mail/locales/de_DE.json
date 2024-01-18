@@ -4265,11 +4265,19 @@
       ]
     },
     "filter: Label": {
+      "the email was sent ${ label }": [
+        "Die E-Mail wurde gesendet ${ label }"
+      ],
       "with attachments": [
         "mit Anhang"
       ],
       "without attachments": [
         "ohne Anhang"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "Die E-Mail wurde gesendet ${ label }"
       ]
     },
     "Font Face Default": {
@@ -4856,19 +4864,19 @@
       ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } Unterhaltung wird als gelesen markiert.",
-        "${ elementsCount } Unterhaltungen werden als gelesen markieren."
+        "${ elementsCount } Unterhaltungen werden als gelesen markiert."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } Unterhaltung wird als ungelesen markiert.",
         "${ elementsCount } Unterhaltungen werden als ungelesen markiert."
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } Unterhaltung wird verschoben",
-        "${ elementsCount } Unterhaltungen werden verschoben"
+        "${ elementsCount } Unterhaltung wird",
+        "${ elementsCount } Unterhaltungen werden"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } Konversation wird ungekennzeichnet von:",
-        "${ elementsCount } Konversationen werden ungekennzeichnet von:"
+        "Bei ${ elementsCount } Unterhaltung wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Unterhaltungen wird die Kategorie entfernt:"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } Nachricht wird kategorisiert als:",
@@ -4883,12 +4891,12 @@
         "${ elementsCount } Nachrichten werden als ungelesen markiert."
       ],
       "${ elementsCount } message will be moved": [
-        "${ elementsCount } Nachricht wird verschoben",
-        "${ elementsCount } Nachrichten werden verschoben"
+        "${ elementsCount } Nachricht wird",
+        "${ elementsCount } Nachrichten werden"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } Nachricht wird etikettfrei von:",
-        "${ elementsCount } Nachrichten werden etikettfrei von:"
+        "Bei ${ elementsCount } Nachricht wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Nachrichten wird die Kategorie entfernt:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } eingebettetes Bild",
@@ -5801,13 +5809,13 @@
         "SimpleLogin bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Stumm geschaltet bis ${ dateString } um ${ formattedTime }"
+        "Stumm geschaltet bis zum ${ dateString } um ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Bis heute Stumm geschaltet, ${ formattedTime }"
+        "Stumm geschaltet bis heute, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Bis morgen Stumm geschaltet, ${ formattedTime }"
+        "Stumm geschaltet bis morgen, ${ formattedTime }"
       ],
       "Snoozing this conversation will be cancelled.": [
         "Das Stummschalten dieser Unterhaltung wird abgebrochen."
@@ -5984,7 +5992,7 @@
         "Dem öffentlichen Schlüssel dieses Absenders wurde noch nicht vertraut."
       ],
       "to ${ destinationElement } folder.": [
-        "zum ${ destinationElement } Ordner."
+        "in den Ordner ${ destinationElement } verschoben."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -8753,10 +8761,6 @@
         "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } Unterhaltung stumm geschaltet",
-        "${ elementsCount } Unterhaltungen stumm geschaltet"
-      ],
-      "${ elementsCount } conversation unsnoozed": [
         "${ elementsCount } Unterhaltung stumm geschaltet",
         "${ elementsCount } Unterhaltungen stumm geschaltet"
       ],
