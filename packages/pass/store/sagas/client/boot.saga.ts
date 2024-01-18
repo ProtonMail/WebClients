@@ -27,7 +27,7 @@ function* bootWorker(options: RootSagaOptions) {
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
         const mergeCache = (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true });
-        const hydratedFromCache: boolean = yield hydrateFromCache({ merge: mergeCache }, options);
+        const hydratedFromCache: boolean = yield hydrateFromCache({ allowFailure: true, merge: mergeCache }, options);
 
         /* Force sync the proxied settings from local storage */
         if (options.endpoint !== 'web') yield put(syncLocalSettings(yield options.getLocalSettings()));

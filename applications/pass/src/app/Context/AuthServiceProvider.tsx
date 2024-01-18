@@ -239,7 +239,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 authStore.setLockTTL(undefined);
                 authStore.setLockStatus(SessionLockStatus.NONE);
                 authStore.setLockToken(undefined);
-                if (locked) void authService.init({ forceLock: false });
+                if (locked) void authService.login(authStore.getSession());
             }
         };
 
