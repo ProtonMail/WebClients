@@ -34,7 +34,7 @@ const DownloadButton = ({ app }: { app: DesktopClient }) => {
             className="link align-baseline text-left"
             href={app.early.File.Url}
         >
-            {c('Action').t`Download updated version`}
+            {c('Action').t`Download now`}
         </a>
     );
 };
@@ -50,16 +50,16 @@ const InboxDesktopOutdatedAppTopBanner = () => {
     if (isElectronOnMac() && macosApp && doesEarlyVersionNeedsManualUpdate(macosApp, version)) {
         const downloadUpdate = <DownloadButton app={macosApp} key="download-update-macos" />;
         return (
-            <TopBanner className="bg-warning">{c('Action')
-                .jt`Your application is outdated and needs to be manually updated to work properly. ${downloadUpdate}`}</TopBanner>
+            <TopBanner className="bg-info">{c('Action')
+                .jt`Important update available. To continue to use the app, please update to the latest version. ${downloadUpdate}`}</TopBanner>
         );
     }
 
     if (isElectronOnWindows() && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) {
         const downloadUpdate = <DownloadButton app={windowsApp} key="download-update-windows" />;
         return (
-            <TopBanner className="bg-warning">{c('Action')
-                .jt`Your application is outdated and needs to be manually updated to work properly. ${downloadUpdate}`}</TopBanner>
+            <TopBanner className="bg-info">{c('Action')
+                .jt`Important update available. To continue to use the app, please update to the latest version. ${downloadUpdate}`}</TopBanner>
         );
     }
 
