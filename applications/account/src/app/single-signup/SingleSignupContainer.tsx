@@ -10,6 +10,7 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { getFreePlan } from '@proton/components/hooks/useFreePlan';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -139,7 +140,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, Plans] = await Promise.all([
+            const [{ Domains: domains }, paymentMethodStatus, Plans, freePlan] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
                 silentApi<{ Plans: Plan[] }>(
@@ -151,6 +152,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
+                getFreePlan(silentApi),
             ]);
 
             const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles({
@@ -176,6 +178,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             setModelDiff({
                 domains,
                 plans: Plans,
+                freePlan,
                 plansMap,
                 paymentMethodStatus,
                 subscriptionData,

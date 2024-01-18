@@ -1,5 +1,5 @@
 import { ProtonLogo } from '@proton/components/components';
-import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import { SignupType } from '../../signup/interfaces';
 import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
@@ -13,8 +13,10 @@ export const getGenericConfiguration = ({
     planParameters,
     vpnServersCountData,
     hideFreePlan,
+    freePlan,
 }: {
     mode: SignupMode;
+    freePlan: FreePlanDefault;
     plan: Plan;
     planParameters: PlanParameters | undefined;
     hideFreePlan: boolean;
@@ -32,6 +34,7 @@ export const getGenericConfiguration = ({
         plansMap,
         vpnServersCountData,
         hideFreePlan,
+        freePlan,
     });
 
     return {

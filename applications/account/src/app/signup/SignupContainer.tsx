@@ -8,6 +8,7 @@ import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/cont
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
+import { getFreePlan } from '@proton/components/hooks/useFreePlan';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -257,7 +258,7 @@ const SignupContainer = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
+            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans, freePlan] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
                 referrer
@@ -277,6 +278,7 @@ const SignupContainer = ({
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
+                getFreePlan(silentApi),
             ]);
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
@@ -288,6 +290,7 @@ const SignupContainer = ({
             setModelDiff({
                 domains,
                 plans: Plans,
+                freePlan,
                 plansMap: toMap(model.plans, 'Name') as PlansMap,
                 paymentMethodStatus,
                 referralData,
@@ -743,6 +746,7 @@ const SignupContainer = ({
             )}
             {step === Upsell && (
                 <UpsellStep
+                    freePlan={model.freePlan}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}

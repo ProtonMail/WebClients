@@ -108,6 +108,7 @@ export { default as useUserSettings } from './useUserSettings';
 export { default as useUserVPN } from './useUserVPN';
 export { default as useVPNLogicals } from './useVPNLogicals';
 export { default as useVPNServersCount } from './useVPNServersCount';
+export { default as useFreePlan } from './useFreePlan';
 export { useWelcomeFlags } from './useWelcomeFlags';
 export { default as useWindowSize } from './useWindowSize';
 export { default as useSearchParamsEffect } from './useSearchParamsEffect';

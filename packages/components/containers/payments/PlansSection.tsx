@@ -20,7 +20,16 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader } from '../../components';
-import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
+import {
+    useApi,
+    useFreePlan,
+    useLoad,
+    useOrganization,
+    usePlans,
+    useSubscription,
+    useUser,
+    useVPNServersCount,
+} from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
@@ -41,6 +50,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
+    const [freePlan] = useFreePlan();
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
@@ -124,6 +134,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 audience={audience}
                 onChangeAudience={setAudience}
                 loading={loading}
+                freePlan={freePlan}
                 plans={plans}
                 plansMap={plansMap}
                 vpnServers={vpnServers}
