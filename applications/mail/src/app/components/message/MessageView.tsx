@@ -14,6 +14,7 @@ import {
 
 import { Breakpoints, FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -243,7 +244,17 @@ const MessageView = (
 
     // Manage loading the message
     useEffect(() => {
-        if (!loading && !messageLoaded) {
+        if (
+            !loading &&
+            !messageLoaded &&
+            /**
+             * Draft content is not displayed, metadata is enough
+             * So we don't load draft message if we are in the drafts folder
+             * Composer will load it if we open it
+             */
+            labelID !== MAILBOX_LABEL_IDS.DRAFTS &&
+            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS
+        ) {
             void load();
         }
 
