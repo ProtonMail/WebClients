@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { feesEstimations } from '../../../tests';
+import { feesEstimations } from '../../../../tests';
 import { FeeSelectionModal } from './FeeSelectionModal';
 import { DEFAULT_TARGET_BLOCK, MIN_FEE_RATE } from './constant';
 import * as useFeeSelectionModalModule from './useFeeSelectionModal';

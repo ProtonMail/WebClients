@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { WasmOutPoint } from '../../../../pkg';
-import { AccountWithBlockchainData } from '../../../types';
+import { WasmOutPoint } from '../../../../../pkg';
+import { AccountWithBlockchainData } from '../../../../types';
 
 export const useManualCoinSelectionModal = (
     isOpen: boolean,

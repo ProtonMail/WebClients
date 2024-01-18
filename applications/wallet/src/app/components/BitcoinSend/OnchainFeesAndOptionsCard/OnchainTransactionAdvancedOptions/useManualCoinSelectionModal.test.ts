@@ -2,8 +2,8 @@ import { act } from 'react-dom/test-utils';
 
 import { renderHook } from '@testing-library/react-hooks';
 
-import { WasmOutPoint } from '../../../../pkg';
-import { AccountWithBlockchainData } from '../../../types';
+import { WasmOutPoint } from '../../../../../pkg';
+import { AccountWithBlockchainData } from '../../../../types';
 import { useManualCoinSelectionModal } from './useManualCoinSelectionModal';
 
 const outpointA = '89e48f05368f62c554f5e945d5a337550dbd2387fb74f7437302074feac04455:0';
