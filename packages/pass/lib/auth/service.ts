@@ -103,7 +103,7 @@ export interface AuthServiceConfig {
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
     /** Called when resuming the session failed for any reason excluding inactive
      * session error. */
-    onSessionResumeFailure?: (options: AuthResumeOptions) => void;
+    onSessionFailure?: (options: AuthResumeOptions) => void;
     /** Called when session tokens have been refreshed. The`broadcast` flag indicates
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
@@ -130,11 +130,16 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         login: async (session: AuthSession) => {
             config.onAuthorize?.();
-            authStore.setSession(session);
-
-            await api.reset();
 
             try {
+                if (!isValidSession(session)) {
+                    authStore.clear();
+                    throw new Error('invalid session');
+                }
+
+                authStore.setSession(session);
+                await api.reset();
+
                 const lockStatus = authStore.getLockStatus() ?? (await authService.checkLock()).status;
                 const locked = lockStatus === SessionLockStatus.LOCKED;
                 const hasToken = session.sessionLockToken !== undefined;
@@ -146,6 +151,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     return false;
                 }
             } catch {
+                logger.warn(`[AuthService] Logging in session failed`);
+                config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` });
+                config?.onSessionFailure?.({ forceLock: true, retryable: true });
                 return false;
             }
 
@@ -355,10 +363,11 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         return await authService.login(session);
                     } catch (error: unknown) {
                         if (error instanceof Error) {
-                            const reason = ` (${getApiErrorMessage(error) ?? error?.message})`;
-                            const message = c('Warning').t`Your session could not be resumed.` + reason;
+                            const message = getApiErrorMessage(error) ?? error?.message;
+                            const reason = message ? ` (${message})` : '';
+                            const text = c('Warning').t`Your session could not be resumed.` + reason;
                             logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                            config.onNotification?.({ text: message });
+                            config.onNotification?.({ text });
                         }
 
                         const locked = api.getState().sessionLocked;
@@ -367,7 +376,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         /** if resume failed for any other reason than a locked or
                          * inactive session, trigger the session resume sequence.
                          * Session errors will be handled by the API listener */
-                        if (!locked && !inactive) config.onSessionResumeFailure?.(options);
+                        if (!locked && !inactive) config.onSessionFailure?.(options);
 
                         return false;
                     }

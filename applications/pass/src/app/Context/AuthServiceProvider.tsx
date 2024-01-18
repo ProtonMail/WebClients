@@ -8,7 +8,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
-import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
+import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
@@ -93,10 +93,15 @@ export const AuthServiceProvider: FC = ({ children }) => {
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true }));
 
-                /* If the session could not be resumed from the LocalID from path,
-                 * we are likely dealing with an app-switch request from another client.
-                 * In this case, redirect to account through a fork request */
-                if (!loggedIn && client.current.state.status !== AppStatus.LOCKED && pathLocalID !== undefined) {
+                const notLocked = client.current.state.status !== AppStatus.LOCKED;
+                const hasLocalID = pathLocalID !== undefined;
+                const validSession = isValidSession(session) && session.LocalID === initialLocalID;
+                const autoFork = !loggedIn && notLocked && hasLocalID && !validSession;
+
+                if (autoFork) {
+                    /* If the session could not be resumed from the LocalID from path,
+                     * we are likely dealing with an app-switch request from another client.
+                     * In this case, redirect to account through a fork request */
                     authService.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL, localID: pathLocalID });
                 }
 
@@ -200,7 +205,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 }
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
-            onSessionResumeFailure: () => client.current.setStatus(AppStatus.ERROR),
+            onSessionFailure: () => client.current.setStatus(AppStatus.ERROR),
             onNotification: (notification) =>
                 createNotification({
                     ...notification,
