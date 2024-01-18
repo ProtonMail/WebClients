@@ -8,6 +8,7 @@ import {
     PrivateAppContainer,
     TopBanners,
 } from '@proton/components';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -45,7 +46,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
 
     const top = (
         <>
-            <InboxDesktopOutdatedAppTopBanner />
+            {isElectronApp() && <InboxDesktopOutdatedAppTopBanner />}
             <TopBanners />
         </>
     );
