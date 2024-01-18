@@ -39,7 +39,7 @@ const PrivateMainAreaBase = (
                 hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                 hasRowMode ? 'main-area--row-mode' : undefined,
                 !drawerSidebar && !isProminent ? 'main-area-border' : undefined,
-                'flex-auto relative h-full reset4print',
+                'flex-auto relative h-full reset4print outline-none--at-all',
                 className,
             ])}
             ref={ref}
