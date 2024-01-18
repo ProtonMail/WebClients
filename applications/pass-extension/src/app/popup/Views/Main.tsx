@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
 
 import { useNotifications } from '@proton/components/hooks';
+import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
@@ -26,31 +27,33 @@ export const Main: FC = () => {
 
     return (
         <ItemsProvider>
-            <InviteProvider>
-                <PasswordProvider>
-                    <SpotlightProvider>
-                        <main
-                            key="main"
-                            id="main"
-                            className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
-                            style={{ '--anime-delay': '50ms' }}
-                        >
-                            <Header />
-                            <div
-                                id="pass-layout"
-                                className="flex items-center justify-center flex-nowrap w-full h-full"
+            <BulkSelectProvider>
+                <InviteProvider>
+                    <PasswordProvider>
+                        <SpotlightProvider>
+                            <main
+                                key="main"
+                                id="main"
+                                className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
+                                style={{ '--anime-delay': '50ms' }}
                             >
-                                <SubSidebar>
-                                    <ItemsList />
-                                </SubSidebar>
-                                <Content>
-                                    <Route component={ItemSwitch} />
-                                </Content>
-                            </div>
-                        </main>
-                    </SpotlightProvider>
-                </PasswordProvider>
-            </InviteProvider>
+                                <Header />
+                                <div
+                                    id="pass-layout"
+                                    className="flex items-center justify-center flex-nowrap w-full h-full"
+                                >
+                                    <SubSidebar>
+                                        <ItemsList />
+                                    </SubSidebar>
+                                    <Content>
+                                        <Route component={ItemSwitch} />
+                                    </Content>
+                                </div>
+                            </main>
+                        </SpotlightProvider>
+                    </PasswordProvider>
+                </InviteProvider>
+            </BulkSelectProvider>
         </ItemsProvider>
     );
 };

@@ -5,4 +5,21 @@
 	&--has-image {
 		background: white;
 	}
+
+	&.bulk-select-check {
+		opacity: 0;
+
+		&.selected {
+			background: var(--interaction-norm);
+			color: var(--text-invert);
+			opacity: 1;
+		}
+
+		&:hover,
+		&.selected:hover {
+			background: var(--interaction-weak);
+			color: var(--interaction-norm);
+			opacity: 1;
+		}
+	}
 }
