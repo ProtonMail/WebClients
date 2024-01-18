@@ -4,6 +4,7 @@ import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -94,7 +95,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const isObsolete = model.obsoleteFingerprints.has(fingerprint);
                 const isCompromised = model.compromisedFingerprints.has(fingerprint);
                 const isPrimary =
-                    !index &&
+                    index === 0 &&
                     supportsEncryption &&
                     !isObsolete &&
                     !isCompromised &&
@@ -102,11 +103,11 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const isWKD = model.isPGPExternal && index < totalApiKeys;
                 const isUploaded = index >= totalApiKeys;
                 const canBePrimary =
-                    !!index &&
+                    !isPrimary &&
                     supportsEncryption &&
                     !isObsolete &&
                     !isCompromised &&
-                    (index < totalApiKeys ? isTrusted : !totalApiKeys && model.encrypt);
+                    (isUploaded ? totalApiKeys === 0 && model.encrypt : isTrusted);
                 const canBeTrusted = !isTrusted && !isUploaded && !isCompromised;
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
