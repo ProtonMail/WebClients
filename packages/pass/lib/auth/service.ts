@@ -132,6 +132,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
             config.onAuthorize?.();
             authStore.setSession(session);
 
+            await api.reset();
+
             try {
                 const lockStatus = authStore.getLockStatus() ?? (await authService.checkLock()).status;
                 const locked = lockStatus === SessionLockStatus.LOCKED;
@@ -398,7 +400,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
 
                     if (event.status === 'locked') {
-                        if (authStore.getLockStatus() !== SessionLockStatus.LOCKED) {
+                        const locked = authStore.getLockStatus() === SessionLockStatus.LOCKED;
+
+                        if (!locked) {
                             config.onNotification?.({
                                 key: NotificationKey.SESSION_LOCK,
                                 text: c('Warning').t`Your session was locked.`,
