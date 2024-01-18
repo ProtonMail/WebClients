@@ -31,6 +31,7 @@ type BaseItemIconProps = {
     size: IconSize;
     url?: MaybeNull<string>;
     renderIndicators?: () => ReactNode;
+    normColor?: boolean;
 };
 
 export const ItemIcon: FC<BaseItemIconProps> = ({
@@ -43,6 +44,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
     size,
     url,
     renderIndicators,
+    normColor = true,
 }) => {
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
@@ -73,7 +75,7 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
             {imageStatus !== ImageStatus.READY && (
                 <Icon
                     className={clsx('absolute inset-center', iconClassName)}
-                    color="var(--interaction-norm)"
+                    color={normColor ? 'var(--interaction-norm)' : ''}
                     name={icon}
                     size={size}
                 />
