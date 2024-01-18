@@ -122,3 +122,4 @@ export * from './useDriveWindowsGASpotlight';
 export { useDragToScroll } from './useDragToScroll';
 export { default as useIsInboxElectronApp } from './useIsInboxElectronApp';
 export { default as useISESEnabledElectron } from './useISESEnabledElectron';
+export { default as useInboxDesktopBadgeCount } from './useInboxDesktopBadgeCount';
