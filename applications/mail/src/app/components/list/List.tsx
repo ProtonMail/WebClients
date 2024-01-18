@@ -114,6 +114,7 @@ const List = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
+    const isDelightMailListEnabled = useFlag('DelightMailList');
     const hideUnreadButton = useFlag('DelightMailListHideUnreadButton');
     const showAttachmentThumbnails = useFlag('AttachmentThumbnails');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
@@ -232,7 +233,7 @@ const List = (
             className={clsx([
                 'relative',
                 !show && 'hidden',
-                'delight-items-column-list',
+                isDelightMailListEnabled ? 'delight-items-column-list' : 'items-column-list',
                 showContentPanel ? 'is-column' : 'is-row',
             ])}
         >
@@ -244,12 +245,14 @@ const List = (
 
                 <div
                     className={clsx(
-                        breakpoints.viewportWidth['>=large']
+                        breakpoints.viewportWidth['>=large'] && isDelightMailListEnabled
                             ? 'delight-items-column-list-inner'
                             : 'items-column-list-inner',
                         !columnLayout && 'border-none',
                         'flex flex-nowrap flex-column relative overflow-hidden h-full',
-                        'delight-items-column-list-inner--mail'
+                        isDelightMailListEnabled
+                            ? 'delight-items-column-list-inner--mail'
+                            : 'items-column-list-inner--mail'
                     )}
                     data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
                     data-shortcut-target="items-column-list-inner"
@@ -270,7 +273,12 @@ const List = (
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
 
-                    <div className="delight-items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full">
+                    <div
+                        className={clsx(
+                            isDelightMailListEnabled && 'delight-items-column-list-container',
+                            'h-full overflow-auto flex flex-column flex-nowrap w-full'
+                        )}
+                    >
                         {elements.length === 0 && displayState !== FULL && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
@@ -282,7 +290,12 @@ const List = (
                         {elements.length > 0 && (
                             <>
                                 {/* div needed here for focus management */}
-                                <div className="w-full shrink-0">
+                                <div
+                                    className={clsx(
+                                        !isDelightMailListEnabled && 'border-right border-weak',
+                                        'w-full shrink-0'
+                                    )}
+                                >
                                     {elements.map((element, index) => {
                                         return (
                                             <Fragment key={element.ID}>
@@ -297,6 +310,7 @@ const List = (
                                                         element={element}
                                                         index={index}
                                                         breakpoints={breakpoints}
+                                                        isDelightMailListEnabled={isDelightMailListEnabled}
                                                     />
                                                 ) : (
                                                     <Item
@@ -321,6 +335,7 @@ const List = (
                                                         userSettings={userSettings}
                                                         mailSettings={mailSettings}
                                                         labels={labels}
+                                                        isDelightMailListEnabled={isDelightMailListEnabled}
                                                         hideUnreadButton={hideUnreadButton}
                                                         showAttachmentThumbnails={showAttachmentThumbnails}
                                                     />
