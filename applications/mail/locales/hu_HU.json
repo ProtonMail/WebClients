@@ -4135,6 +4135,22 @@
         "csillagozott"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "az e-mail ${ label }"
+      ],
+      "with attachments": [
+        "mellékletet tartalmaz"
+      ],
+      "without attachments": [
+        "nem tartalmaz mellékletet"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "az e-mail ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Alapértelmezett"

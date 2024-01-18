@@ -5099,6 +5099,22 @@
         "cu stea"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "mesajul a fost trimis ${ label }"
+      ],
+      "with attachments": [
+        "cu atașamente"
+      ],
+      "without attachments": [
+        "fără atașamente"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "mesajul a fost trimis ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adăugați un filtru personal pentru a efectua în mod automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor."
@@ -5861,6 +5877,9 @@
         "${ n } adrese",
         "${ n } de adrese"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: nu se pun în carantină sau nu se resping e-mailurile neautorizate. De obicei, se folosește această politică doar pentru depanare sau testare."
+      ],
       "${ number } city": [
         "Un oraș",
         "${ number } orașe",
@@ -5899,6 +5918,12 @@
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: se cere platformelor destinatare să marcheze e-mailurile neautorizate ca fiind nedorite sau să le pună în carantină."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: se cere platformelor destinatare să respingă e-mailurile neautorizate."
       ],
       "${ remainingAddresses.length } more": [
         "încă ${ remainingAddresses.length }",
@@ -6240,8 +6265,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Înainte de a putea primi e-mailuri pentru adresele de domeniu personale la ${ MAIL_APP_NAME }, trebuie să adăugați următoarele două înregistrări MX în consola DNS (situată pe platforma de unde ați achiziționat domeniul personalizat). Puteți găsi un exemplu și câteva sfaturi utile ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Facturat cu ${ price }"
@@ -6387,6 +6418,12 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM permite ca ${ BRAND_NAME } să vă semneze criptografic mesajele și să împiedice atacatorii să vă modifice conținutul acestora. Asigurați-vă că adăugați următoarele trei înregistrări CNAME în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC verifică dacă înregistrările SPF și DKIM ale expeditorului provin din domeniul dvs. Acest lucru poate împiedica atacatorii să folosească SPF și DKIM ale altui domeniu pentru a vă compromite identitatea domeniului. „p=\" (politica) din această înregistrare indică modul în care doriți ca platformele destinatare să gestioneze e-mailurile neautorizate. Vă recomandăm să utilizați politica „p=quarantine” pentru majoritatea domeniilor. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
       ],
@@ -6433,6 +6470,9 @@
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Fiecare domeniu poate avea o singură înregistrare SPF (TXT). Dacă doriți să păstrați înregistrarea SPF (TXT) existentă, puteți adăuga ${ spf } la înregistrarea curentă (puneți-o după ${ spfValue })."
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -6518,6 +6558,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Invitațiile la evenimente și RSVP vor fi trimise în această limbă."
       ],
+      "Example: ${ spfExample }": [
+        "Exemplu: ${ spfExample }"
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -6538,6 +6581,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Pentru membrii organizației care folosesc conectarea unică (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Pentru utilizatorii care trec la ${ MAIL_APP_NAME } de la un alt serviciu de e-mail, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție ușoară."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
@@ -6660,6 +6706,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANT: dacă în consola DNS nu se permite câmpurilor CNAME să se termine cu un punct, puteți elimina ultimul punct din valorile CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: Asigurați-vă că ați salvat codurile de recuperare. Altfel veți putea pierde permanent accesul la cont dacă vă veți pierde dispozitivul pentru autentificarea cu doi factori."
@@ -6791,6 +6840,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Jurnalele conțin încercările de autentificare pentru toate serviciile ${ BRAND_NAME } care folosesc informațiile dvs. de autentificare ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Serviciile de e-mail majore v-ar putea refuza sau considera mesajele ca fiind nedorite dacă SPF/DKIM/DMARC/ lipsesc sau nu sunt setate corespunzător."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Asigurați-vă că ați ${ addARecoveryMethod } astfel încât să puteți accesa contul chiar dacă uitați parola."
@@ -7232,6 +7287,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF clarifică cine are permisiunea de a trimite mesaje pentru domeniul dvs. Asigurați-vă că adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal)."
       ],
       "Stay tuned for future promotions.": [
         "Rămâneți pe fază pentru viitoarele promoții."
@@ -8023,8 +8081,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Adăugare adresă nouă pentru utilizatorii existenți din organizație."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Adăugați un utilizator nou în organizație și creați o adresă pentru acesta."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Din motive de securitate, trebuie să avem dovada că dețineți domeniul ${ domainName }. Adăugați următoarea înregistrare TXT în consola DNS (situată pe platforma de unde ați achiziționat domeniul personal). Puteți găsi un exemplu și câteva sfaturi utile ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -9069,6 +9133,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Fraza conține 12 cuvinte unice într-o anumită ordine"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Adăugați toate trei câmpurile CNAME. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarele două înregistrări MX. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ],
       "Please select files to upload": [
         "Selectați fișierele de încărcat"
       ],
@@ -9315,6 +9388,11 @@
         "Durata"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -9327,6 +9405,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Actualizări ale produsului ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Anunțuri beta ${ BRAND_NAME }"
       ],
@@ -9498,6 +9579,9 @@
       "Help translate": [
         "Ajutați la traducere"
       ],
+      "here": [
+        "aici"
+      ],
       "How to pay with Bitcoin?": [
         "Cum să plătiți cu Bitcoin?"
       ],
@@ -9640,6 +9724,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Ofertă limitată"
       ],
       "Secure email that protects your privacy": [
         "E-mail securizat care vă protejează confidențialitatea"
@@ -10376,6 +10463,11 @@
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
+      "Up to ${ n } user": [
+        "Până la ${ n } utilizator",
+        "Până la ${ n } utilizatori",
+        "Până la ${ n } utilizatori"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
@@ -10688,6 +10780,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți ${ BRAND_NAME } în termen de 24 de ore de la solicitări."
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "O conexiune VPN permite conectarea unui dispozitiv la ${ VPN_APP_NAME } la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la ${ VPN_APP_NAME } simultan, aveți nevoie de două conexiuni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
@@ -12744,6 +12839,11 @@
         "${ n } calendare per utilizator",
         "${ n } de calendare per utilizator"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } conexiune VPN gratuită per utilizator",
+        "${ n } conexiuni VPN gratuite per utilizator",
+        "${ n } de conexiuni VPN gratuite per utilizator"
+      ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
         "${ n } conexiuni VPN de mare viteză",
@@ -14126,6 +14226,11 @@
       "Success": [
         "Operație reușită"
       ],
+      "Successfully created ${ n } user account": [
+        "S-a creat ${ n } cont.",
+        "S-au creat ${ n } conturi.",
+        "S-au creat ${ n } de conturi."
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -14393,6 +14498,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
       ],
+      "Feature in early access": [
+        "Funcție disponibilă în acces timpuriu."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
@@ -14615,6 +14723,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Autentificare unică (SSO)"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
       ]
     },
     "Validation": {

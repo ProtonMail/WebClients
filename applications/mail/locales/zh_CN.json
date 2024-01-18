@@ -4111,6 +4111,22 @@
         "星标邮件"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "邮件${ label }"
+      ],
+      "with attachments": [
+        "含有附件"
+      ],
+      "without attachments": [
+        "不含附件"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "邮件${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "默认"

@@ -4940,6 +4940,22 @@
         "已加星號"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "電郵${ label }送出"
+      ],
+      "with attachments": [
+        "連同附件"
+      ],
+      "without attachments": [
+        "不帶附件"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "電郵${ label }送出"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
@@ -9004,6 +9020,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 產品更新"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta 公告"
       ],
@@ -9299,6 +9318,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "成為Visionary並成為${ BRAND_NAME }的故事"
+      ],
+      "Limited time offer": [
+        "限時促銷"
       ],
       "Secure email that protects your privacy": [
         "安全防護的電子郵件保護隱私"
@@ -9990,6 +10012,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Up to ${ n } users": [
+        "多達 ${ n } 位使用者"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"

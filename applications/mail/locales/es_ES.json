@@ -9097,6 +9097,9 @@
       "(active)": [
         "(activo)"
       ],
+      "A filter name is required": [
+        "El nombre del filtro es obligatorio."
+      ],
       "A filter with this name already exists": [
         "Ya existe un filtro con este nombre."
       ],
@@ -9318,6 +9321,9 @@
       ],
       "Feedback": [
         "Comentarios"
+      ],
+      "Filter name cannot contain only spaces": [
+        "El nombre del filtro no puede contener solo espacios."
       ],
       "Filter on...": [
         "Filtrar por..."
@@ -9625,6 +9631,12 @@
       ],
       "Subject missing": [
         "Falta el asunto."
+      ],
+      "This field cannot be empty": [
+        "Este campo no puede estar vacío."
+      ],
+      "This field cannot contain only spaces": [
+        "Este campo no puede contener solo espacios."
       ],
       "To": [
         "Para"

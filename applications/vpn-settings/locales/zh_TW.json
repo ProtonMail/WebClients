@@ -4350,6 +4350,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 產品更新"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta 公告"
       ],
@@ -4929,6 +4932,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
+      ],
+      "Up to ${ n } users": [
+        "多達 ${ n } 位使用者"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
