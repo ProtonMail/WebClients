@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon } from '@proton/components/components';
+import { useFlag } from '@proton/components/containers';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
@@ -18,6 +19,8 @@ const AlmostAllMailBanner = ({ className }: Props) => {
     const history = useHistory();
     const { push, location } = history;
 
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     const displayAllMailButton = (
         <InlineLinkButton
             key="redirect-all-mail"
@@ -28,7 +31,13 @@ const AlmostAllMailBanner = ({ className }: Props) => {
     );
 
     return (
-        <div className={clsx(['rounded mx-2 px-4 py-2 flex flex-nowrap mb-2', className])}>
+        <div
+            className={clsx([
+                'rounded mx-2 px-4 py-2 flex flex-nowrap mb-2',
+                !isDelightMailListEnabled && 'bg-weak',
+                className,
+            ])}
+        >
             <div className="shrink-0">
                 <Icon name="magnifier" className="mr-2" />
             </div>
