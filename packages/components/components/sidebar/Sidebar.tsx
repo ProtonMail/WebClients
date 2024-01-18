@@ -203,7 +203,7 @@ const Sidebar = ({
                     {contactsButton}
                     {children}
                 </div>
-                {APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
+                {app !== APPS.PROTONVPN_SETTINGS && APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         {preFooter}
                         <Storage
