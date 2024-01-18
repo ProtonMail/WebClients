@@ -10,7 +10,7 @@ export default {
     },
 };
 
-export const FlexItemFluid = () => {
+export const Flex1 = () => {
     return (
         <div className="flex rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -22,7 +22,7 @@ export const FlexItemFluid = () => {
     );
 };
 
-export const FlexItemFluidAuto = () => {
+export const FlexAuto = () => {
     return (
         <div className="flex rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -34,7 +34,7 @@ export const FlexItemFluidAuto = () => {
     );
 };
 
-export const FlexItemGrow = () => {
+export const Grow = () => {
     return (
         <div className="flex rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -46,7 +46,7 @@ export const FlexItemGrow = () => {
     );
 };
 
-export const FlexItemNoShrink = () => {
+export const Shrink0 = () => {
     return (
         <div className="flex flex-nowrap rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -58,7 +58,7 @@ export const FlexItemNoShrink = () => {
     );
 };
 
-export const FlexItemNoGrow = () => {
+export const Grow0 = () => {
     return (
         <div className="flex flex-nowrap rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -70,7 +70,7 @@ export const FlexItemNoGrow = () => {
     );
 };
 
-export const FlexItemNoGrowNoShrink = () => {
+export const Grow0Shrink0 = () => {
     return (
         <div className="flex flex-nowrap rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
@@ -82,7 +82,7 @@ export const FlexItemNoGrowNoShrink = () => {
     );
 };
 
-export const FlexItemNoFlex = () => {
+export const FlexNone = () => {
     return (
         <div className="flex flex-nowrap rounded overflow-hidden border">
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
