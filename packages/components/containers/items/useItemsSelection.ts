@@ -24,13 +24,7 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
     useEffect(() => setCheckedMap({}), resetDependencies);
 
     const checkedIDs = useMemo(() => {
-        return Object.entries(checkedMap).reduce<string[]>((acc, [ID, isChecked]) => {
-            if (!isChecked) {
-                return acc;
-            }
-            acc.push(ID);
-            return acc;
-        }, []);
+        return Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
     }, [checkedMap]);
 
     const selectedIDs = useMemo(() => {
@@ -48,22 +42,34 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
      * Uncheck others if *replace* is true
      */
     const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
-        setCheckedMap(
-            allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
-                const wasChecked = isChecked(ID);
-                const toCheck = IDs.includes(ID);
-                let value: boolean;
-                if (toCheck) {
-                    value = checked;
-                } else if (replace) {
-                    value = !checked;
-                } else {
-                    value = wasChecked;
-                }
-                acc[ID] = value;
-                return acc;
-            }, {})
-        );
+        if (IDs.length === 0) {
+            setCheckedMap({});
+        } else if (IDs.length === allIDs.length) {
+            setCheckedMap(
+                allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
+                    acc[ID] = checked;
+                    return acc;
+                }, {})
+            );
+        } else {
+            setCheckedMap(
+                allIDs.reduce<{ [ID: string]: boolean }>((acc, ID) => {
+                    const wasChecked = isChecked(ID);
+                    const toCheck = IDs.includes(ID);
+                    let value: boolean;
+                    if (toCheck) {
+                        value = checked;
+                    } else if (replace) {
+                        value = !checked;
+                    } else {
+                        value = wasChecked;
+                    }
+                    acc[ID] = value;
+                    return acc;
+                }, {})
+            );
+        }
+
         setLastChecked('');
     });
 
