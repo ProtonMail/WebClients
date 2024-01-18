@@ -1,4 +1,4 @@
-import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
+import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import {
     getDeviceVerificationHeaders,
@@ -56,6 +56,7 @@ export default ({ call, onMissingScopes, onVerification }) => {
                     headers,
                     retriesOnOffline = OFFLINE_RETRY_ATTEMPTS_MAX,
                     retriesOnTimeout = OFFLINE_RETRY_ATTEMPTS_MAX,
+                    maxRetryWaitSeconds = RETRY_DELAY_MAX,
                 } = options || {};
 
                 if (name === 'OfflineError') {
@@ -117,7 +118,7 @@ export default ({ call, onMissingScopes, onVerification }) => {
                 const ignoreTooManyRequests =
                     Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.TOO_MANY_REQUESTS);
                 if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS && !ignoreTooManyRequests) {
-                    return retryHandler(e).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX));
+                    return retryHandler(e, maxRetryWaitSeconds).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX));
                 }
 
                 const { code } = getApiError(e);
