@@ -105,7 +105,7 @@
         "Добавить PayPal"
       ],
       "Add public holidays": [
-        "Добавить праздничные дни"
+        "Добавить государственные праздники"
       ],
       "Add sieve filter": [
         "Добавить sieve-фильтр"
@@ -5102,6 +5102,22 @@
         "со звёздами"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "письмо было отправлено ${ label }"
+      ],
+      "with attachments": [
+        "с вложениями"
+      ],
+      "without attachments": [
+        "без вложений"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "письмо было отправлено ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Добавьте собственный фильтр для автоматического выполнения определенных действий, таких как пометка или архивирование сообщений."
@@ -6273,6 +6289,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
+      ],
+      "Beta": [
+        "Бета"
       ],
       "Billed at ${ price }": [
         "Счет выставлен на ${ price }"
@@ -9372,6 +9391,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Обновления продукта от ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Бета-объявления ${ BRAND_NAME }"
       ],
@@ -9689,6 +9711,9 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Перейдите на тариф Visionary и станьте частью истории ${ BRAND_NAME }"
       ],
+      "Limited time offer": [
+        "Limited time offer"
+      ],
       "Secure email that protects your privacy": [
         "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
       ]
@@ -9799,7 +9824,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Добавить праздничные дни"
+        "Добавить государственные праздники"
       ],
       "Edit calendar": [
         "Редактировать календарь"
@@ -10987,7 +11012,7 @@
         "Календарь добавлен"
       ],
       "Calendar updated": [
-        "Календарь обновлен"
+        "Календарь обновлён"
       ]
     },
     "Notification in share calendar modal": {

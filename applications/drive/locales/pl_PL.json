@@ -3400,16 +3400,16 @@
         "${ groupCounts } znalezionych grup"
       ],
       "${ nbFile } encrypted file": [
-        "${ nbFile } zaszyfrowany plik",
-        "${ nbFile } zaszyfrowane pliki",
-        "${ nbFile } zaszyfrowanych plików",
-        "${ nbFile } zaszyfrowanych plików"
+        "Zaszyfrowano ${ nbFile } plik",
+        "Zaszyfrowano ${ nbFile } pliki",
+        "Zaszyfrowano ${ nbFile } plików",
+        "Zaszyfrowano ${ nbFile } plików"
       ],
       "${ nbFile } encrypted file...": [
-        "${ nbFile } zaszyfrowany plik...",
-        "${ nbFile } zaszyfrowane pliki...",
-        "${ nbFile } zaszyfrowanych plików...",
-        "${ nbFile } zaszyfrowanych plików..."
+        "Zaszyfrowano ${ nbFile } plik...",
+        "Zaszyfrowano ${ nbFile } pliki...",
+        "Zaszyfrowano ${ nbFile } plików...",
+        "Zaszyfrowano ${ nbFile } plików..."
       ],
       "${ pausedCount } paused": [
         "Transfer ${ pausedCount } pliku został wstrzymany",
@@ -3511,7 +3511,7 @@
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
       "All encrypted files": [
-        "Wszystkie zaszyfrowane pliki"
+        "Zaszyfrowano wszystkie pliki"
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
@@ -3895,7 +3895,7 @@
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "W międzyczasie zarejestruj własne konto ${ DRIVE_APP_NAME } i chroń swoje dane za pomocą szyfrowania end-to-end i bezpiecznie je udostępniaj."
+        "Załóż konto ${ DRIVE_APP_NAME }, aby chronić swoje dane za pomocą szyfrowania end-to-end i udostępniać je bezpiecznie."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksowanie elementów (${ esProgress }/${ totalProgressToShow })"
@@ -4189,16 +4189,16 @@
         "Wyszukiwanie zostało włączone"
       ],
       "Securely downloaded ${ nbFile } file": [
-        "Bezpieczne pobranie ${ nbFile } pliku",
-        "Bezpieczne pobranie ${ nbFile } plików",
-        "Bezpieczne pobranie ${ nbFile } plików",
-        "Bezpieczne pobranie ${ nbFile } plików"
+        "Pobrano bezpiecznie ${ nbFile } plik",
+        "Pobrano bezpiecznie ${ nbFile } pliki",
+        "Pobrano bezpiecznie ${ nbFile } plików",
+        "Pobrano bezpiecznie ${ nbFile } plików"
       ],
       "Securely downloaded all encrypted files": [
-        "Bezpieczne pobieranie wszystkich zaszyfrowanych plików"
+        "Pobrano bezpiecznie wszystkie zaszyfrowane pliki"
       ],
       "Securely downloaded all files": [
-        "Bezpieczne pobieranie wszystkich plików"
+        "Pobrano bezpiecznie wszystkie pliki"
       ],
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
@@ -4243,7 +4243,7 @@
         "Udostępniony link nie został znaleziony"
       ],
       "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Zaloguj się do konta ${ DRIVE_APP_NAME }, aby chronić swoje dane za pomocą szyfrowania end-to-end i udostępniaj je bezpiecznie."
+        "Załóż konto ${ DRIVE_APP_NAME }, aby chronić swoje dane za pomocą szyfrowania end-to-end i udostępniać je bezpiecznie."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nie może zostać zweryfikowany z powodu błędu sieci. Spróbuj ponownie później."

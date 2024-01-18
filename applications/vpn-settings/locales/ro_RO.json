@@ -3011,6 +3011,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Facturat cu ${ price }"
       ],
@@ -3227,6 +3230,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
+      ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
       ],
       "here": [
         "aici"
@@ -4623,6 +4629,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Actualizări ale produsului ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Anunțuri beta ${ BRAND_NAME }"
       ],
@@ -5242,6 +5251,11 @@
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
+      "Up to ${ n } user": [
+        "Până la ${ n } utilizator",
+        "Până la ${ n } utilizatori",
+        "Până la ${ n } utilizatori"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
@@ -5506,6 +5520,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți ${ BRAND_NAME } în termen de 24 de ore de la solicitări."
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "O conexiune VPN permite conectarea unui dispozitiv la ${ VPN_APP_NAME } la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la ${ VPN_APP_NAME } simultan, aveți nevoie de două conexiuni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
@@ -6735,6 +6752,11 @@
         "${ n } calendare per utilizator",
         "${ n } de calendare per utilizator"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } conexiune VPN gratuită per utilizator",
+        "${ n } conexiuni VPN gratuite per utilizator",
+        "${ n } de conexiuni VPN gratuite per utilizator"
+      ],
       "${ n } high-speed VPN connection": [
         "O conexiune VPN de mare viteză",
         "${ n } conexiuni VPN de mare viteză",
@@ -7562,6 +7584,11 @@
       "Subscription": [
         "Abonament"
       ],
+      "Successfully created ${ n } user account": [
+        "S-a creat ${ n } cont.",
+        "S-au creat ${ n } conturi.",
+        "S-au creat ${ n } de conturi."
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -7692,6 +7719,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
       ],
+      "Feature in early access": [
+        "Funcție disponibilă în acces timpuriu."
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Cheia publică a furnizorului de identitate pentru a semna declarațiile de autentificare. Obțineți hash-ul certificatului de la furnizorul propriu de identitate."
       ],
@@ -7760,6 +7790,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Autentificare unică (SSO)"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
       ]
     },
     "Validation": {

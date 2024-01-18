@@ -5837,6 +5837,9 @@
         "${ n } adresse",
         "${ n } adresser"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
+      ],
       "${ number } city": [
         "${ number } by",
         "${ number } byer"
@@ -5869,6 +5872,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } tjener er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
         "${ provisioningCounter } tjenere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: be mottakerplattformene om å avvise de uautoriserte e-postene."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } til",
@@ -6196,6 +6205,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Før du kan motta e-postmeldinger for de egendefinerte domeneadressene dine på ${ MAIL_APP_NAME }, må du legge til følgende to MX-poster i DNS-konsollen (som du finner på plattformen der du kjøpte det egendefinerte domenet). Du kan finne et eksempel og noen nyttige tips ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Før du kan starte med å sende og motta e-poster fra dine nye adresser må du opprette krypteringsnøkler for dem."
       ],
@@ -6343,6 +6355,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM lar ${ BRAND_NAME } kryptografisk signere e-postene dine og forhindre angripere i å manipulere e-posten din. Pass på at du legger til følgende tre CNAME-poster i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontrollerer om avsenderens SPF- og DKIM-poster kommer fra domenet ditt. Dette kan hindre angripere i å bruke SPF og DKIM fra et annet domene til å utgi seg for å være domenet ditt. \"p =\" (policy) i denne posten indikerer hvordan du vil at mottakerplattformene skal håndtere uautoriserte e-postmeldinger. Vi anbefaler at du bruker \"p=karantene\"-policyen for de fleste domener. Pass på at du legger til følgende TXT-post i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ikke glem dette passordet. Hvis du glemmer det vil du ikke være i stand til å håndtere organisasjonen."
       ],
@@ -6388,6 +6406,9 @@
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bli brukt en gang"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Hvert domene kan bare ha én SPF-post (TXT). Hvis du vil beholde den eksisterende SPF-posten (TXT), kan du legge til ${ spf } i gjeldende post (plasser den etter ${ spfValue })."
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -6473,6 +6494,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Hendelseinvitasjoner og RSVP-er vil bli sendt på dette språket."
       ],
+      "Example: ${ spfExample }": [
+        "Eksempel: ${ spfExample }"
+      ],
       "Expired": [
         "Utløpt"
       ],
@@ -6493,6 +6517,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "For medlemmer av organisasjoner som bruker enkel pålogging (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "For brukere som bytter til ${ MAIL_APP_NAME } fra en annen e-posttjeneste, velger du ${ boldAddresses }-fanen og legger til alle aktive e-postadresser før du endrer MX-posten for å sikre en jevn overgang."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
@@ -6614,6 +6641,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "VIKTIG: Hvis DNS-konsollen ikke tillater at CNAME-verdier slutter med en prikk, kan du fjerne den siste prikken i CNAME-verdiene."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktig: Vennligst sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
@@ -6744,6 +6774,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logger inkluderer autentiseringsforsøk for alle ${ BRAND_NAME }s tjenester som bruker din ${ BRAND_NAME_TWO }-identifikasjon."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Store e-posttjenester kan avvise eller filtrere e-postene dine til søppelpost hvis SPF / DKIM / DMARC mangler eller ikke er konfigurert riktig."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for at du ${ addARecoveryMethod } slik at du kan få komme inn på kontoen din igjen hvis du glemmer passordet."
@@ -7182,6 +7218,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Noen av de tilgjengelige tjenerne dine kan bare brukes i bestemte land på grunn av nylige fjerninger."
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF klargjør hvem som har tillatelse til å sende e-post for domenet ditt. Pass på at du legger til følgende TXT-post i DNS-konsollen (på plattformen der du kjøpte det egendefinerte domenet)."
       ],
       "Stay tuned for future promotions.": [
         "Følg med for fremtidige kampanjer."
@@ -7962,8 +8001,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Legg til en ny adresse for eksisterende brukere av organisasjonen."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Legg til en ny bruker til din organisasjon og opprett en adresse for den."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Av sikkerhetsgrunner må vi bekrefte at du er eieren av ${ domainName }. Legg til følgende TXT-post i DNS-konsollen (som du finner på plattformen der du kjøpte det egendefinerte domenet). Du kan finne et eksempel og noen nyttige tips ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -9002,6 +9047,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Frase består av 12 unike ord i en spesifikk rekkefølge"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til de 3 følgende CNAME-postene. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende to MX-poster. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ],
       "Please select files to upload": [
         "Vennligst velg filer for opplasting"
       ],
@@ -9248,6 +9302,11 @@
         "Varighet"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Vennligst legg til følgende TXT-post. Merk: det kan ta flere timer å oppdatere DNS-poster."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrator"
@@ -9433,6 +9492,9 @@
       ],
       "Help translate": [
         "Hjelp med å oversette"
+      ],
+      "here": [
+        "her"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betale med Bitcoin?"
@@ -13178,6 +13240,9 @@
       "4. Select a server to connect to": [
         "4. Velg en tjener å koble til"
       ],
+      "A filter name is required": [
+        "Et filternavn kreves"
+      ],
       "A filter with this name already exists": [
         "Et filter med dette navnet eksisterer allerede"
       ],
@@ -13606,6 +13671,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Kunne ikke opprette ${ failedUsers.length } brukerkonto",
         "Kunne ikke opprette ${ failedUsers.length } brukerkontoer."
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternavnet kan ikke kun inneholde mellomrom"
       ],
       "Filters": [
         "Filtre"

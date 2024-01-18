@@ -276,7 +276,7 @@
         "Pass para iOS"
       ],
       "Pin item": [
-        "Fijar elemento"
+        "Anclar elemento"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -366,7 +366,7 @@
         "Volver a intentar"
       ],
       "Unpin item": [
-        "Desfijar elemento"
+        "Desanclar elemento"
       ],
       "Update": [
         "Actualizar"
@@ -524,7 +524,7 @@
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
       ],
       "Failed to pin item": [
-        "Error al fijar el elemento"
+        "Error al anclar el elemento"
       ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
@@ -533,7 +533,7 @@
         "Error al transferir la propiedad de esta bóveda."
       ],
       "Failed to unpin item": [
-        "Error al desfijar el elemento"
+        "Error al desanclar el elemento"
       ],
       "File could not be parsed": [
         "No se pudo analizar el archivo"
@@ -934,10 +934,10 @@
         "Elemento movido con éxito"
       ],
       "Item successfully pinned": [
-        "Elemento fijado con éxito"
+        "Elemento anclado con éxito"
       ],
       "Item successfully unpinned": [
-        "Elemento desfijado con éxito"
+        "Elemento desanclado con éxito"
       ],
       "Leaving vault...": [
         "Dejando la bóveda..."
@@ -1828,7 +1828,7 @@
         "Fije la extensión"
       ],
       "Pinned (${ items.length })": [
-        "Fijados (${ items.length })"
+        "Anclados (${ items.length })"
       ],
       "Secure your data": [
         "Asegure sus datos"

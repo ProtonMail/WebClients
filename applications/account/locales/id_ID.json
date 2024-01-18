@@ -5797,6 +5797,9 @@
       "${ n } addresses": [
         "${ n } alamat"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: meminta platform penerima untuk tidak mengarantina ataupun menolak email yang tidak berizin. Pada umumnya, pengaturan kebijakan ini hanya digunakan untuk menangani masalah atau menguji sesuatu."
+      ],
       "${ number } cities": [
         "${ number } kota"
       ],
@@ -5823,6 +5826,12 @@
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "Server ${ provisioningCounter } masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: meminta platform penerima untuk mengarantina atau menandai email yang tidak berizin sebagai spam."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: meminta platform penerima untuk menolak email yang tidak berizin."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } lainnya"
@@ -6136,6 +6145,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Sebelum Anda dapat menerima email pada alamat domain khusus Anda di ${ MAIL_APP_NAME }, Anda perlu untuk menambahkan kedua rekaman MX berikut pada konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini). Anda dapat menemukan contoh pengisian rekaman ini serta berbagai tips bermanfaat lainnya ${ kbLink }"
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
       ],
@@ -6280,6 +6292,12 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM memungkinkan ${ BRAND_NAME } untuk menandatangani email Anda secara kriptografis dan mencegah para penyusup untuk dapat mengubah isi email Anda. Pastikan Anda menambahkan ketiga rekaman CNAME berikut ke konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC memeriksa apakah rekaman SPF dan DKIM milik pengirim benar-benar bersumber dari domain Anda. Hal ini dapat mencegah para penyusup untuk berpura-pura menjadi domain Anda dengan SPF dan DKIM milik domain lain. Parameter \"p=\" (policy/kebijakan) yang terdapat pada rekaman menerangkan bagaimana Anda ingin platform penerima menangani email yang tidak berizin. Kami menyarankan Anda untuk menggunakan pengaturan \"p=quarantine\" untuk sebagian besar domain. Pastikan Anda menambahkan rekaman TXT berikut pada konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
       ],
@@ -6324,6 +6342,9 @@
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Masing-masing domain hanya dapat memiliki satu rekaman SPF (TXT). Apabila Anda ingin mempertahankan rekaman SPF (TXT) yang telah ada, Anda dapat menambahkan ${ spf } ke rekaman Anda saat ini (tempatkan rekaman ini setelah ${ spfValue })."
       ],
       "Edit email address": [
         "Sunting alamat surel"
@@ -6409,6 +6430,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Undangan dan konfirmasi kehadiran (RSVP) acara akan dikirim dalam bahasa ini."
       ],
+      "Example: ${ spfExample }": [
+        "Contoh: ${ spfExample }"
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -6429,6 +6453,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Untuk anggota organisasi yang menggunakan single sign-on (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Bagi para pengguna yang beralih ke ${ MAIL_APP_NAME } dari layanan email lain, pilih tab ${ boldAddresses } dan tambahkan seluruh alamat email yang aktif sebelum mengubah rekaman MX yang ada untuk memastikan agar proses peralihan berlangsung tanpa masalah."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
@@ -6549,6 +6576,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "PENTING: Apabila konsol DNS Anda tidak mengizinkan nilai CNAME yang diakhiri dengan tanda titik, Anda dapat menghapus tanda titik terakhir pada nilai CNAME yang bersangkutan."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
@@ -6678,6 +6708,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Log keamanan meliputi percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Layanan email terkemuka tertentu dapat menolak atau menyaring email Anda sebagai spam apabila SPF/DKIM/DRC Anda tidak ada atatu tidak diatur dengan benar."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Layanan email terkemuka tertentu dapat menolak atau menyaring email Anda sebagai spam apabila SPF/DKIM/DRC Anda tidak ada atatu tidak diatur dengan benar."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Pastikan Anda ${ addARecoveryMethod } agar Anda dapat kembali mengakses akun apabila Anda lupa kata sandi."
@@ -7110,6 +7146,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sebagian server milik Anda yang tersedia hanya dapat digunakan di negara tertentu karena pemutusan yang berlangsung baru-baru ini"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF menentukan alamat-alamat mana saja yang dapat mengirim email kepada domain Anda. Pastikan Anda menambahkan rekaman TXT berikut pada konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini)."
       ],
       "Stay tuned for future promotions.": [
         "Jangan lewatkan promosi lainnya yang akan datang."
@@ -7879,8 +7918,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Tambahkan alamat baru untuk pengguna yang telah terdaftar pada organisasi Anda."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Demi alasan keamanan, kami perlu untuk memastikan bahwa Anda adalah pemilik dari domain ${ domainName }. Silakan tambahkan rekaman TXT berikut ke konsol DNS Anda (yang terletak pada platform tempat Anda membeli domain khusus ini). Anda dapat menemukan contoh pengisian rekaman ini serta berbagai tips bermanfaat lainnya ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8913,6 +8958,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Frasa tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Silakan tambahkan ketiga rekaman CNAME berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Silakan tambahkan kedua rekaman MX berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Silakan tambahkan rekaman TXT berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
+      ],
       "Please select files to upload": [
         "Silakan pilih berkas untuk diunggah"
       ],
@@ -9156,6 +9210,11 @@
         "Durasi"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Silakan tambahkan rekaman TXT berikut. Catatan: Rekaman DNS dapat memakan waktu hingga beberapa jam untuk diperbarui."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -9341,6 +9400,9 @@
       ],
       "Help translate": [
         "Bantu terjemahkan"
+      ],
+      "here": [
+        "di sini"
       ],
       "How to pay with Bitcoin?": [
         "Bagaimana cara membayar dengan Bitcoin?"
@@ -12986,6 +13048,9 @@
       "4. Select a server to connect to": [
         "4. Pilih sebuah server untuk disambungkan"
       ],
+      "A filter name is required": [
+        "Nama filter dibutuhkan"
+      ],
       "A filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -13411,6 +13476,9 @@
       ],
       "Failed to create ${ failedUsers.length } user accounts.": [
         "${ failedUsers.length } akun pengguna gagal dibuat."
+      ],
+      "Filter name cannot contain only spaces": [
+        "Nama filter tidak boleh diisi hanya dengan spasi"
       ],
       "Filters": [
         "Filter"

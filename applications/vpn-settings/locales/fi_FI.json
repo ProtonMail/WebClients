@@ -2763,6 +2763,11 @@
         "Käyttäjätunnus"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Lisää tämä tietue verkkotunnuksesi DNS-palveluun."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Sähköposti"
@@ -2978,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Laskutettu ${ price }"
       ],
@@ -3007,6 +3015,12 @@
       ],
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -3187,8 +3201,14 @@
       "Get ${ upsellPlanName }": [
         "Hanki ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+      ],
       "here": [
         "tässä"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetinhallinnassasi pitäisi olla kohta, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä heitä toimittamaan organisaation uusi salasana."
@@ -3850,6 +3870,9 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Nykyinen tilauksesi päivitetään parempaan tilaukseen, joka tarjoaa enemmän samaan hintaan. Järjestelmiemme päivittyessä et voi muuttaa sitä. Saat sähköposti-ilmoituksen heti sen valmistuttua."
       ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "${ appName } SAML-toiminnallisuuden lisäämiseksi identiteetinhallintaasi, sinun on mahdollisesti lisättävä takaisinkutsun (ACS) URL sekä myöntäjän ID. Kopioi ja liitä allaolevat tiedot identiteetinhallintasi soveltuviin tietokenttiin."
+      ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen todennuksen saat myös palautuskoodit, joiden avulla voit kirjautua vaikka menettäisit pääsyn todennussovellukseesi."
       ],
@@ -4163,6 +4186,9 @@
       "Amount due": [
         "Erääntyvä summa"
       ],
+      "Assertion Consumer Service URL": [
+        "Valtuutuksen käyttäjäpalvelun (Assertion Consumer Service, ACS) URL"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -4319,6 +4345,9 @@
       "Interval": [
         "Aikaväli"
       ],
+      "Issuer ID": [
+        "Myöntäjän ID"
+      ],
       "Keep me signed in": [
         "Pysy kirjautuneena"
       ],
@@ -4454,6 +4483,9 @@
       "Recovery phrase": [
         "Palautuslauseke"
       ],
+      "Reply (ACS) URL": [
+        "Vastaus URL (ACS)"
+      ],
       "Require 2FA for administrators": [
         "Vaadi 2FA ylläpitäjiltä"
       ],
@@ -4468,6 +4500,9 @@
       ],
       "Select your plan": [
         "Valitse tilauksesi"
+      ],
+      "Single sign-on entity ID": [
+        "Kertakirjautumisen entiteetin ID (SSO entity ID)"
       ],
       "Single sign-on URL": [
         "Kertakirjautumisen URL-osoite"
@@ -5413,6 +5448,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Yksi VPN-yhteys mahdollistaa yhden laitteen ${ VPN_APP_NAME } VPN-yhteyden kerrallaan. Esimerkiksi puhelimen ja tietokoneen samanaikainen ${ VPN_APP_NAME } -käyttö vaatii kaksi VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
@@ -6594,6 +6632,10 @@
         "${ n } kalenteri/käyttäjä",
         "${ n } kalenteria/käyttäjä"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } ilmainen VPN-yhteys per käyttäjä",
+        "${ n } ilmaista VPN-yhteyttä per käyttäjä"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } nopea VPN-yhteys",
         "${ n } nopeaa VPN-yhteyttä"
@@ -7533,14 +7575,29 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopioi ja liitä tämä URL identiteetinhallintasi ACS (Assertion Consumer Service) URL -kenttään."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopio ja liitä tämä URL identiteetinhallintasi Entiteetin ID -kenttään."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteettipalveluntarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
+      ],
+      "Feature in early access": [
+        "Ominaisuus on varhaisessa käytössä"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identiteetinhallinnan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Hae varmenteen tiiviste identiteetinhallinnastasi."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Jäsenet, jotka eivät käytä 2FA:ta, saavat sähköpostin, jossa heitä pyydetään ottamaan se käyttöön mahdollisimman pian."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Määritä verkkotunnus, joka on sallittu todentaa SAML SSO kertakirjautumisella."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Uusi tilausjakso alkaa ${ formattedTime }"
@@ -7598,6 +7655,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Identiteetinhallintasi SSO-käyttäjä"
       ]
     },
     "Validation": {
