@@ -159,7 +159,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void ctx.service.storage.session.setItems(authStore.getSession());
         }),
 
-        onSessionResumeFailure: withContext(async (ctx, options) => {
+        onSessionFailure: withContext(async (ctx, options) => {
             ctx.setStatus(AppStatus.ERROR);
 
             if (options.retryable) {
