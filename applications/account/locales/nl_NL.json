@@ -5002,6 +5002,22 @@
         "Met ster"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "de e-mail was verzonden ${ label }"
+      ],
+      "with attachments": [
+        "met bijlagen"
+      ],
+      "without attachments": [
+        "zonder bijlagen"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "de e-mail was verzonden ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Voeg een aangepaste filter toe om bepaalde acties, zoals berichten labelen of archiveren, automatisch uit te voeren."
@@ -9125,6 +9141,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } productupdates"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }-bèta-aankondigingen"
       ],
@@ -9424,6 +9443,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Tijdelijke aanbieding"
+      ],
       "Secure email that protects your privacy": [
         "Beveiligde e-mail die uw privacy beschermt"
       ]
@@ -11725,6 +11747,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "U kan uw wachtwoord resetten tot ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {

@@ -4901,6 +4901,22 @@
         "星印付き"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "${ label } でメールを送信"
+      ],
+      "with attachments": [
+        "添付ファイルあり"
+      ],
+      "without attachments": [
+        "添付ファイルなし"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "${ label } でメールを送信"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなどの操作を自動で実行できます。"
@@ -8974,6 +8990,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } 製品のアップデート"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } ベータのお知らせ"
       ],
@@ -9272,6 +9291,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "ビジョナリーになって ${ BRAND_NAME } のストーリーに参加しましょう"
+      ],
+      "Limited time offer": [
+        "期間限定の特別な特典"
       ],
       "Secure email that protects your privacy": [
         "プライバシーを保護する安全なメール"
@@ -9960,6 +9982,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
+      ],
+      "Up to ${ n } users": [
+        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"

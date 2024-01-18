@@ -4718,6 +4718,22 @@
         "позначені зірочкою"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "лист було надіслано ${ label }"
+      ],
+      "with attachments": [
+        "має вкладення"
+      ],
+      "without attachments": [
+        "без вкладень"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "лист було надіслано ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Додайте власний фільтр для автоматичного виконання певних дій, як-от позначення міткою чи архівування повідомлень."
@@ -8917,6 +8933,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Оновлення продукту ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Оголошення ${ BRAND_NAME } бета"
       ],
@@ -9219,6 +9238,11 @@
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
         "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Limited time offer": [
+        "Пропозиція обмежена"
       ]
     },
     "Maintenance mode": {
