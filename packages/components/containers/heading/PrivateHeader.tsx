@@ -48,7 +48,7 @@ const PrivateHeader = ({
     const theme = useTheme();
     const isProminent = theme.information.prominentHeader;
 
-    const isCalendarOnElectron = APP_NAME === APPS.PROTONCALENDAR && isElectronApp();
+    const isCalendarOnElectron = APP_NAME === APPS.PROTONCALENDAR && isElectronApp;
 
     return (
         <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2')}>

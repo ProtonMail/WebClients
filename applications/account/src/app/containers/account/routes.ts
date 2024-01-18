@@ -242,7 +242,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Theme`,
                         id: 'theme',
-                        available: !isElectronApp(),
+                        available: !isElectronApp,
                     },
                     {
                         text: c('Title').t`Accessibility`,

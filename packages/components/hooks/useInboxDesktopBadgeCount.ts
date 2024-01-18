@@ -13,14 +13,13 @@ declare global {
 }
 
 const useInboxDesktopBadgeCount = () => {
-    const isDesktop = isElectronApp();
     const [conversationCounts] = useConversationCounts();
     const [settings] = useMailSettings();
 
     // Updates the notification badge on the desktop app icon depending on the unread count
     // Respect user settings for the unread favicon
     useEffect(() => {
-        if (!isDesktop || !window.ipcInboxMessageBroker) {
+        if (!isElectronApp || !window.ipcInboxMessageBroker) {
             return;
         }
 

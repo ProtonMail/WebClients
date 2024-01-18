@@ -16,14 +16,13 @@ interface Props {
 }
 
 const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
-    const isElectronOnMacComputers = isElectronOnMac();
     return (
         <div
             role="alert"
             className={clsx([
                 'flex shrink-0 flex-nowrap text-center relative text-bold no-print',
                 className,
-                isElectronOnMacComputers && 'pt-4',
+                isElectronOnMac && 'pt-4',
             ])}
             {...rest}
         >

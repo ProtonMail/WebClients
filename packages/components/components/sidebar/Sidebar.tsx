@@ -74,9 +74,6 @@ const Sidebar = ({
     const spacePercentage = percentage(MaxSpace, UsedSpace);
     const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
     const { viewportWidth } = useActiveBreakpoint();
-    const isElectron = isElectronApp();
-    const isElectronMac = isElectronOnMac();
-    const isElectronWindows = isElectronOnWindows();
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -119,7 +116,7 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectron && 'mt-2')}
+                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectronApp && 'mt-2')}
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
@@ -132,21 +129,21 @@ const Sidebar = ({
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
 
-                {!isElectron && (
+                {!isElectronApp && (
                     <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                         {logo}
                         <div className="hidden md:block">{appsDropdown}</div>
                     </div>
                 )}
 
-                {isElectronMac && (
+                {isElectronOnMac && (
                     <div className="flex flex-column">
                         <div className="ml-auto mr-3 mb-1 mt-1 z-1">{appsDropdown}</div>
                         {primary && <div className="px-3 pb-2 pt-1">{primary}</div>}
                     </div>
                 )}
 
-                {isElectronWindows && (
+                {isElectronOnWindows && (
                     <div className="flex gap-4 justify-between items-center flex-nowrap px-3 pb-2 pt-1">
                         {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
                         <div className="shrink-0">{appsDropdown}</div>
@@ -159,7 +156,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronMac && !isElectronWindows ? (
+                {primary && !isElectronOnMac && !isElectronOnWindows ? (
                     <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
                 ) : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
