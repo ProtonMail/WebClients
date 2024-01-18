@@ -14,7 +14,7 @@ export default {
 
 export const ExpandClickArea = () => (
     <div className="relative p-7 bg-weak">
-        <Checkbox className="expand-click-area" />
+        <Checkbox className="expand-click-area mr-2" />
         parent element (grey background)
     </div>
 );
