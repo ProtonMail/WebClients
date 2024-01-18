@@ -314,7 +314,7 @@
         "Comença"
       ],
       "Get Started": [
-        "Començar"
+        "Comença"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
@@ -2437,7 +2437,7 @@
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més d'${ MAX_IMPORT_EVENTS } esdeveniment.",
         "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -4299,7 +4299,7 @@
         "es restaurarà a la versió de ${ formattedRevisionDate }. Les altres versions seguiran desades."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Amb ${ DRIVE_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem."
+        "Amb ${ DRIVE_APP_NAME }, les vostres dades estan protegides amb xifratge d'extrem a extrem."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -4963,7 +4963,7 @@
         "De: ${ from }"
       ],
       "To: ${ to }": [
-        "Per a: ${ to }"
+        "A: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5348,8 +5348,8 @@
         "Mou ${ n } fitxers"
       ],
       "Move ${ n } item": [
-        "Mou ${ n } article",
-        "Mou ${ n } articles"
+        "Mou ${ n } element",
+        "Mou ${ n } elements"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
@@ -6384,7 +6384,7 @@
         "Voleu descartar els canvis?"
       ],
       "Download ${ date }": [
-        "Baixa ${ date }"
+        "Descarrega ${ date }"
       ],
       "Download unverified file?": [
         "Baixa un fitxer no verificat?"
