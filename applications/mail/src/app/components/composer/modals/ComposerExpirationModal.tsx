@@ -108,7 +108,6 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     };
 
     const handleCancel = () => {
-        onChange({ draftFlags: { expiresIn: undefined } });
         onClose();
     };
 
