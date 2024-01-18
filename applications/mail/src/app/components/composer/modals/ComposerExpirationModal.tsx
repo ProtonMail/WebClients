@@ -6,12 +6,14 @@ import {
     differenceInSeconds,
     endOfDay,
     format,
+    isAfter,
     isBefore,
+    isSameDay,
     isToday,
     isTomorrow,
     roundToNearestMinutes,
     set,
-    startOfToday,
+    startOfDay,
 } from 'date-fns';
 import { c } from 'ttag';
 
@@ -80,10 +82,16 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         }
     }, []);
 
-    const minDate = startOfToday();
-    const maxDate = endOfDay(addHours(minDate, MAX_EXPIRATION_TIME));
-    const timeError = isBefore(date, currentDate) ? c('Error').t`Choose a date in the future.` : undefined;
-    const minTime = isToday(date) ? roundToNearestMinutes(currentDate, { nearestTo: 30 }) : startOfToday();
+    const minDate = startOfDay(currentDate);
+    const maxDate = addHours(currentDate, MAX_EXPIRATION_TIME);
+
+    const timeError = isBefore(date, currentDate)
+        ? c('Error').t`Choose a date in the future.`
+        : isAfter(date, maxDate)
+          ? c('Error').t`Maximum expiration time reached.`
+          : undefined;
+    const minTime = isToday(date) ? roundToNearestMinutes(currentDate, { nearestTo: 30 }) : startOfDay(date);
+    const maxTime = isSameDay(date, maxDate) ? maxDate : endOfDay(date);
 
     const handleChange = (type: 'date' | 'time', newDate?: Date) => {
         if (!newDate) {
@@ -169,7 +177,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                     ? c('Info').t`Edit expiration time`
                     : c('Adding expiration to a message will create an expiring message').t`Expiring message`
             }
-            disabled={!isValidDate(date)}
+            disabled={!isValidDate(date) || !!timeError}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         >
@@ -208,7 +216,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                             onChange={(date?: Date) => handleChange('time', date)}
                             value={date}
                             min={minTime}
-                            max={endOfDay(date)}
+                            max={maxTime}
                             error={timeError}
                             data-testid="composer:expiration-hours"
                             required
