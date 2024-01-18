@@ -6,6 +6,7 @@ import { useToggle } from '@proton/components/hooks';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
+import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
@@ -28,54 +29,56 @@ export const Main: FC = () => {
     return (
         <ItemsProvider>
             <BulkSelectProvider>
-                <InviteProvider>
-                    <PasswordProvider>
-                        <SpotlightProvider>
-                            <div className="content-container flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
-                                <Sidebar expanded={expanded} onToggle={toggle}>
-                                    <VaultActionsProvider>
-                                        <Menu onToggle={toggle} />
-                                    </VaultActionsProvider>
-                                </Sidebar>
+                <ItemActionsProvider>
+                    <InviteProvider>
+                        <PasswordProvider>
+                            <SpotlightProvider>
+                                <div className="content-container flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
+                                    <Sidebar expanded={expanded} onToggle={toggle}>
+                                        <VaultActionsProvider>
+                                            <Menu onToggle={toggle} />
+                                        </VaultActionsProvider>
+                                    </Sidebar>
 
-                                <Route path={`/${getLocalIDPath(client.state.localID)}`}>
-                                    {(route) => (
-                                        <main id="main" className="content flex-1 overflow-hidden">
-                                            <div className="flex flex-nowrap flex-column h-full">
-                                                <Header
-                                                    hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
-                                                />
-                                                <div className="flex items-center justify-center flex-nowrap w-full h-full">
-                                                    {route.match && (
-                                                        <Switch>
-                                                            <Route
-                                                                exact
-                                                                path={`${route.match.path}/settings`}
-                                                                component={Settings}
-                                                            />
-                                                            <Route>
-                                                                {(subRoute) => (
-                                                                    <>
-                                                                        <SubSidebar>
-                                                                            <ItemsList />
-                                                                        </SubSidebar>
-                                                                        <Content>
-                                                                            <ItemSwitch {...subRoute} />
-                                                                        </Content>
-                                                                    </>
-                                                                )}
-                                                            </Route>
-                                                        </Switch>
-                                                    )}
+                                    <Route path={`/${getLocalIDPath(client.state.localID)}`}>
+                                        {(route) => (
+                                            <main id="main" className="content flex-1 overflow-hidden">
+                                                <div className="flex flex-nowrap flex-column h-full">
+                                                    <Header
+                                                        hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
+                                                    />
+                                                    <div className="flex items-center justify-center flex-nowrap w-full h-full">
+                                                        {route.match && (
+                                                            <Switch>
+                                                                <Route
+                                                                    exact
+                                                                    path={`${route.match.path}/settings`}
+                                                                    component={Settings}
+                                                                />
+                                                                <Route>
+                                                                    {(subRoute) => (
+                                                                        <>
+                                                                            <SubSidebar>
+                                                                                <ItemsList />
+                                                                            </SubSidebar>
+                                                                            <Content>
+                                                                                <ItemSwitch {...subRoute} />
+                                                                            </Content>
+                                                                        </>
+                                                                    )}
+                                                                </Route>
+                                                            </Switch>
+                                                        )}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </main>
-                                    )}
-                                </Route>
-                            </div>
-                        </SpotlightProvider>
-                    </PasswordProvider>
-                </InviteProvider>
+                                            </main>
+                                        )}
+                                    </Route>
+                                </div>
+                            </SpotlightProvider>
+                        </PasswordProvider>
+                    </InviteProvider>
+                </ItemActionsProvider>
             </BulkSelectProvider>
         </ItemsProvider>
     );
