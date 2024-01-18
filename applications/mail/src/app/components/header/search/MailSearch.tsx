@@ -23,7 +23,6 @@ import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import AdvancedSearch from './AdvancedSearch';
 import MailSearchInput from './MailSearchInput';
-import MailSearchSpotlight from './MailSearchSpotlight';
 import SearchOverlay from './SearchOverlay';
 
 import './Search.scss';
@@ -98,22 +97,20 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
 
     return (
         <>
-            <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
-                {breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium ? (
-                    <div className="topnav-listItem flex shrink-0 pl-1">
-                        <TopNavbarListItemSearchButton onClick={handleOpen} />
-                    </div>
-                ) : (
-                    <MailSearchInput
-                        loading={loading}
-                        ref={anchorRef}
-                        value={searchInputValue}
-                        onChange={setSearchInputValue}
-                        onOpen={handleOpen}
-                        adaptWidth={columnMode}
-                    />
-                )}
-            </MailSearchSpotlight>
+            {breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium ? (
+                <div className="topnav-listItem flex shrink-0 pl-1">
+                    <TopNavbarListItemSearchButton onClick={handleOpen} />
+                </div>
+            ) : (
+                <MailSearchInput
+                    loading={loading}
+                    ref={anchorRef}
+                    value={searchInputValue}
+                    onChange={setSearchInputValue}
+                    onOpen={handleOpen}
+                    adaptWidth={columnMode}
+                />
+            )}
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
                     isSmallViewport={breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium}
