@@ -1,4 +1,5 @@
 import { type VFC, useCallback, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,6 +10,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
+import { passwordOptionsEdit } from '@proton/pass/store/actions';
 
 import { PasswordGenerator } from './PasswordGenerator';
 import { usePasswordContext } from './PasswordProvider';
@@ -17,8 +19,14 @@ export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (
 export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
 export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...props }) => {
-    const passwordContext = usePasswordContext();
-    const passwordGenerator = usePasswordGenerator(passwordContext.options);
+    const dispatch = useDispatch();
+    const { config, history } = usePasswordContext();
+
+    const passwordGenerator = usePasswordGenerator({
+        initial: config,
+        onConfigChange: (next) => dispatch(passwordOptionsEdit(next)),
+    });
+
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);
 
     useEffect(() => {
@@ -66,10 +74,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
 
                 <hr className="my-2" />
 
-                <button
-                    className="w-full flex items-center justify-space-between"
-                    onClick={passwordContext.history.open}
-                >
+                <button className="w-full flex items-center justify-space-between" onClick={history.open}>
                     <span>{c('Label').t`Password history`}</span>
                     <Icon name="chevron-right" />
                 </button>

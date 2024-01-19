@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     itemCreationSuccess,
@@ -30,7 +30,7 @@ export type SettingsState = {
     disallowedDomains: DomainCriterias;
     loadDomainImages: boolean;
     locale?: string;
-    passwordOptions: MaybeNull<GeneratePasswordOptions>;
+    passwordOptions: MaybeNull<GeneratePasswordConfig>;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
 };
