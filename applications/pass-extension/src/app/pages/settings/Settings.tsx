@@ -17,6 +17,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellRef } from '@proton/pass/constants';
+import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import {
     selectPassPlan,
@@ -65,6 +66,11 @@ const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
             title: c('Label').t`Support`,
             content: <Support />,
         },
+        {
+            pathname: '/account',
+            title: c('Label').t`Account`,
+            content: <></>,
+        },
     ];
 
     if (ENV === 'development') {
@@ -84,6 +90,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
     const tabs = useMemo(getSettingsTabs, []);
+    const navigateToAccount = useNavigateToAccount();
 
     const pathnameToIndex = (pathname: string) => {
         const idx = tabs.findIndex((tab) => tab.pathname === pathname);
@@ -93,7 +100,10 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const history = useHistory();
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname));
 
-    const handleOnChange = (nextTab: number) => history.push(tabs[nextTab].pathname);
+    const handleOnChange = (nextTab: number) => {
+        if (tabs[nextTab].pathname === '/account') navigateToAccount();
+        else history.push(tabs[nextTab].pathname);
+    };
 
     useEffect(() => {
         setActiveTab(pathnameToIndex(pathname));
