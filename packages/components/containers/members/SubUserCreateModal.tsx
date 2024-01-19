@@ -235,8 +235,7 @@ const SubUserCreateModal = ({
     }
 
     const addressSuffix = (() => {
-        if (domainOptions.length === 0) {
-            // there is no domains for vpn-b2b mode
+        if (domainOptions.length === 0 || isVpnB2B) {
             return null;
         }
 
