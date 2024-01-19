@@ -40,6 +40,7 @@
     --interaction-default-active: rgb(186 190 199 / 0.3);
 
     --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
     --shadow-lifted-opacity: 0.16;
 
     --backdrop-norm: rgb(38 42 51 / 0.48);
@@ -55,6 +56,7 @@
 
     --optional-main-border-width: 0;
 
+    --optional-email-item-read-text-color: #484E5B;
     --optional-email-item-read-background-color: #F7F8FA;
 
     /* Reset because prominent part overrides those colors */
