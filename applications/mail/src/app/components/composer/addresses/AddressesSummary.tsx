@@ -8,11 +8,12 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { selectComposer } from '../../../logic/composers/composerSelectors';
-import { useAppSelector } from '../../../logic/store';
 import { RecipientType, recipientTypes } from '../../../models/address';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
+import { selectComposer } from '../../../store/composers/composerSelectors';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 import AddressesCCButton from './AddressesCCButton';
 
@@ -34,7 +35,7 @@ const AddressesSummary = ({
     handleContactModal,
 }: Props) => {
     const { getRecipientsOrGroups, getRecipientsOrGroupsLabels, getRecipientOrGroupLabel } = useRecipientLabel();
-    const composer = useAppSelector((store) => selectComposer(store, composerID));
+    const composer = useMailSelector((store) => selectComposer(store, composerID));
     const recipients = getRecipients(composer.recipients);
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 

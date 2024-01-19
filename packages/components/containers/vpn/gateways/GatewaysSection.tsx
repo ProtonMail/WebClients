@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { EmptyViewContainer, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
 import { Organization } from '@proton/shared/lib/interfaces';
 import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
@@ -273,10 +273,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 } catch (error) {
                     createNotification({
                         key,
-                        text:
-                            getApiErrorMessage(error as Error) ||
-                            (error as Error)?.message ||
-                            c('Error').t`Unknown error`,
+                        text: getNonEmptyErrorMessage(error),
                         type: 'warning',
                     });
 

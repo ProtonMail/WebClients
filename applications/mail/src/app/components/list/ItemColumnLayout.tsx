@@ -12,14 +12,14 @@ import clsx from '@proton/utils/clsx';
 
 import ItemAttachmentThumbnails from 'proton-mail/components/list/ItemAttachmentThumbnails';
 import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
-import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
-import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -73,8 +73,8 @@ const ItemColumnLayout = ({
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
-    const snoozedElement = useAppSelector(selectSnoozeElement);
-    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
+    const snoozedElement = useMailSelector(selectSnoozeElement);
+    const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 

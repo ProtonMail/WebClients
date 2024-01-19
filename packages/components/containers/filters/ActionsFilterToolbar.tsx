@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Filter } from '@proton/components/containers/filters/interfaces';
 import { useFilters } from '@proton/components/hooks';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
 
@@ -14,7 +13,7 @@ function ActionsFilterToolbar() {
     const [user] = useUser();
     const [filterModalProps, setFilterModalOpen] = useModalState();
     const [advancedFilterModalProps, setAdvancedFilterModalOpen] = useModalState();
-    const [filters = []] = useFilters() as [Filter[], boolean, Error];
+    const [filters = []] = useFilters();
 
     const canCreateFilters = !hasReachedFiltersLimit(user, filters);
 

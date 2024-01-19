@@ -1,52 +1,75 @@
-import { StandardPrivateApp } from '@proton/components';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import { FunctionComponent, useState } from 'react';
+
+import FlagProvider from '@protontech/proxy-client-react';
+
 import {
-    AddressesModel,
-    DomainsModel,
-    MailSettingsModel,
-    MembersModel,
-    OrganizationModel,
-    PaymentMethodsModel,
-    SamlSSOModel,
-    SubscriptionModel,
-    UserModel,
-    UserSettingsModel,
-} from '@proton/shared/lib/models';
+    ErrorBoundary,
+    EventManagerProvider,
+    LoaderPage,
+    StandardErrorPage,
+    StandardLoadErrorPage,
+} from '@proton/components';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
-import AccountLoaderPage from './AccountLoaderPage';
-
-const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
-
-const EVENT_MODELS = [
-    UserModel,
-    AddressesModel,
-    MailSettingsModel,
-    UserSettingsModel,
-    SubscriptionModel,
-    PaymentMethodsModel,
-    OrganizationModel,
-    DomainsModel,
-    MembersModel,
-    SamlSSOModel,
-];
-
-const PRELOAD_MODELS = [UserModel, UserSettingsModel];
+import { bootstrapApp } from './bootstrap';
+import type { AccountStore } from './store/store';
+import { extraThunkArguments } from './store/thunk';
 
 interface Props {
-    onLogout: () => void;
     locales: TtagLocaleMap;
+    store: AccountStore;
 }
 
-const PrivateApp = ({ onLogout, locales }: Props) => {
+const defaultState: {
+    MainContainer?: FunctionComponent;
+    error?: { message: string } | undefined;
+} = {
+    error: undefined,
+};
+
+const PrivateApp = ({ store, locales }: Props) => {
+    const [state, setState] = useState(defaultState);
+
+    useEffectOnce(() => {
+        (async () => {
+            try {
+                const result = await bootstrapApp({ store, locales });
+                setState({ MainContainer: result.MainContainer });
+            } catch (error: any) {
+                setState({
+                    error: {
+                        message: getNonEmptyErrorMessage(error),
+                    },
+                });
+            }
+        })();
+    });
+
+    if (state.error) {
+        return <StandardLoadErrorPage errorMessage={state.error.message} />;
+    }
+
+    if (!state.MainContainer) {
+        return <LoaderPage />;
+    }
+
     return (
-        <StandardPrivateApp
-            loader={<AccountLoaderPage />}
-            onLogout={onLogout}
-            locales={locales}
-            preloadModels={PRELOAD_MODELS}
-            eventModels={EVENT_MODELS}
-            app={getAppContainer}
-        />
+        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                <ErrorBoundary big component={<StandardErrorPage big />}>
+                    <StandardPrivateApp
+                        hasPrivateMemberKeyGeneration
+                        hasReadableMemberKeyActivation
+                        hasMemberKeyMigration
+                    >
+                        <state.MainContainer />
+                    </StandardPrivateApp>
+                </ErrorBoundary>
+            </EventManagerProvider>
+        </FlagProvider>
     );
 };
 

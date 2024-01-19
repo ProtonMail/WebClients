@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef } from 'react';
 import { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
-import useOnLogout from '@proton/components/containers/app/useOnLogout';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUser from '@proton/components/hooks/useUser';
@@ -179,8 +178,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         esCacheRef.current.isCacheLimited = false;
         esCacheRef.current.isCacheReady = false;
     };
-
-    useOnLogout(async () => resetCache());
 
     /**
      * Wipe all local data related to ES

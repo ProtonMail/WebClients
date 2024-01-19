@@ -67,7 +67,17 @@ interface ForkState {
     url: string;
 }
 
-export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TYPE) => {
+export const requestFork = ({
+    fromApp,
+    localID,
+    type,
+    reason,
+}: {
+    fromApp: APP_NAMES;
+    localID?: number;
+    type?: FORK_TYPE;
+    reason?: 'signout' | 'session-expired';
+}) => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
@@ -78,6 +88,9 @@ export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TY
     }
     if (type !== undefined) {
         searchParams.append('t', type);
+    }
+    if (reason !== undefined) {
+        searchParams.append('reason', reason);
     }
 
     const url = type === FORK_TYPE.SWITCH ? getAppHref('/', fromApp) : window.location.href;

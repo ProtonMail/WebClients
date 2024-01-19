@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 
@@ -11,11 +12,12 @@ import useEventManager from './useEventManager';
 import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
 import { useGetUser } from './useUser';
 import { useGetUserKeys, useUserKeys } from './useUserKeys';
-import useUserSettings from './useUserSettings';
+import useUserSettings, { useGetUserSettings } from './useUserSettings';
 
 export const useIsDeviceRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();
-    return getIsDeviceRecoveryEnabled(userSettings);
+    const authentication = useAuthentication();
+    return getIsDeviceRecoveryEnabled(userSettings, authentication);
 };
 
 export const useIsDeviceRecoveryAvailable = () => {
@@ -29,8 +31,9 @@ export const useDeviceRecovery = () => {
     const getUserKeys = useGetUserKeys();
     const getUser = useGetUser();
     const getAddresses = useGetAddresses();
+    const getUserSettings = useGetUserSettings();
+    const authentication = useAuthentication();
     const { call } = useEventManager();
-    const [userSettings] = useUserSettings();
     const api = useApi();
     const { APP_NAME } = useConfig();
 
@@ -40,7 +43,15 @@ export const useDeviceRecovery = () => {
         }
         const abortController = new AbortController();
         const run = async () => {
-            const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+            const [user, userKeys, addresses, userSettings] = await Promise.all([
+                getUser(),
+                getUserKeys(),
+                getAddresses(),
+                getUserSettings(),
+            ]);
+            if (!userKeys) {
+                return;
+            }
             const result = await syncDeviceRecovery({
                 api,
                 user,
@@ -49,6 +60,7 @@ export const useDeviceRecovery = () => {
                 userSettings,
                 appName: APP_NAME,
                 signal: abortController.signal,
+                authentication,
             });
             if (result) {
                 await call();

@@ -8,7 +8,7 @@ import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
+import { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 
 export const getVerificationStatusFromKeys = (
     decryptedAttachment: WorkerDecryptionResult<Uint8Array>,

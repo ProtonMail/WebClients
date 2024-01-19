@@ -1,21 +1,13 @@
 import { fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import {
-    addApiMock,
-    addToCache,
-    assertFocus,
-    clearAll,
-    minimalCache,
-    onCompose,
-    render,
-    tick,
-} from '../helpers/test/helper';
+import { addApiMock, assertFocus, clearAll, minimalCache, onCompose, render, tick } from '../helpers/test/helper';
 import PageContainer from './PageContainer';
 
 jest.setTimeout(20000);
@@ -47,9 +39,15 @@ describe('PageContainer', () => {
         }));
 
         minimalCache();
-        addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED, PageSize: MAIL_PAGE_SIZE.FIFTY } as MailSettings);
 
-        const renderResult = await render(<Component {...props} />, false);
+        const renderResult = await render(<Component {...props} />, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    Shortcuts: SHORTCUTS.ENABLED,
+                    PageSize: MAIL_PAGE_SIZE.FIFTY,
+                } as MailSettings),
+            },
+        });
         const { container } = renderResult;
         return {
             ...renderResult,

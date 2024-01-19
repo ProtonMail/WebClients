@@ -9,16 +9,16 @@ import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } fro
 import clsx from '@proton/utils/clsx';
 
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { selectSnoozeDropdownState } from '../../logic/snooze/snoozeSliceSelectors';
-import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
+import { selectSnoozeDropdownState } from '../../store/snooze/snoozeSliceSelectors';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -88,7 +88,7 @@ const Item = ({
 
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
-    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
+    const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
     const elementRef = useRef<HTMLDivElement>(null);
 

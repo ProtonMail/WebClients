@@ -10,7 +10,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     organization?: Organization;
-    subscription: Subscription;
+    subscription?: Subscription;
     isOrgSpamBlockListEnabled: boolean;
     isOrgTwoFactorEnabled: boolean;
 }

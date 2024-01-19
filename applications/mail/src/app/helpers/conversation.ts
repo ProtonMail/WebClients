@@ -1,5 +1,5 @@
-import { ConversationState } from '../logic/conversations/conversationsTypes';
 import { Conversation } from '../models/conversation';
+import { ConversationState } from '../store/conversations/conversationsTypes';
 
 type LabelValue = 'NumMessages' | 'NumUnread' | 'Time' | 'Size' | 'NumAttachments';
 type LabelContextValue =

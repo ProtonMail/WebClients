@@ -1,7 +1,8 @@
 import { Matcher, fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { PublicKeyReference } from '@proton/crypto';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
@@ -9,15 +10,15 @@ import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiMock,
-    addToCache,
     clearAll,
     generateKeys,
+    getCompleteAddress,
     minimalCache,
     render,
     tick,
 } from '../../../helpers/test/helper';
 import { message } from '../../../helpers/test/pinKeys';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraPinKey from './ExtraPinKey';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = VERIFICATION_STATUS;
@@ -30,15 +31,14 @@ const setup = async (
 ) => {
     minimalCache();
 
-    if (isOwnAddress) {
-        addToCache('Addresses', [{ Email: 'sender@protonmail.com' } as Address]);
-    }
-
-    if (isAutoPrompt) {
-        addToCache('MailSettings', { PromptPin: PROMPT_PIN.ENABLED } as MailSettings);
-    }
-
-    const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, false);
+    const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
+        preloadedState: {
+            addresses: getModelState(isOwnAddress ? [getCompleteAddress({ Email: 'sender@protonmail.com' })] : []),
+            mailSettings: getModelState({
+                PromptPin: isAutoPrompt ? PROMPT_PIN.ENABLED : PROMPT_PIN.DISABLED,
+            } as MailSettings),
+        },
+    });
 
     return component;
 };

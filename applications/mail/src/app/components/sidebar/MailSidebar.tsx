@@ -6,13 +6,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { layoutActions } from '../../logic/layout/layoutSlice';
-import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
-import { useAppDispatch, useAppSelector } from '../../logic/store';
+import { layoutActions } from '../../store/layout/layoutSlice';
+import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
@@ -24,8 +25,8 @@ interface Props {
 
 const MailSidebar = ({ labelID }: Props) => {
     const onCompose = useOnCompose();
-    const dispatch = useAppDispatch();
-    const expanded = useAppSelector(selectLayoutIsExpanded);
+    const dispatch = useMailDispatch();
+    const expanded = useMailSelector(selectLayoutIsExpanded);
     const { toggleDrawerApp } = useDrawer();
     const { displayState } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {

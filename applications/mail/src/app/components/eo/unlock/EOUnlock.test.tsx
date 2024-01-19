@@ -4,7 +4,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { addApiMock } from '../../../helpers/test/api';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import { EOGetHistory, EORender, EOResetHistory } from '../../../helpers/test/eo/EORender';
+import { EORender } from '../../../helpers/test/eo/EORender';
 import {
     EOClearAll,
     EODecryptedToken,
@@ -15,9 +15,7 @@ import {
     validID,
 } from '../../../helpers/test/eo/helpers';
 import { waitForNotification } from '../../../helpers/test/helper';
-import { init } from '../../../logic/eo/eoActions';
-import { store } from '../../../logic/eo/eoStore';
-import { EOMessage } from '../../../logic/eo/eoType';
+import { EOMessage } from '../../../store/eo/eoType';
 import EOUnlock from './EOUnlock';
 
 const props = {
@@ -33,14 +31,10 @@ describe('Encrypted Outside Unlock', () => {
         await releaseCryptoProxy();
     });
 
-    beforeEach(async () => {
-        await store.dispatch(init({ get: jest.fn() }));
-    });
-
     afterEach(EOClearAll);
 
     it('should display an error if the EO id is not present', async () => {
-        const { getByText } = await EORender(<EOUnlock {...props} />);
+        const { getByText } = await EORender(<EOUnlock {...props} />, { invalid: true });
 
         getByText('Error');
         getByText('Sorry, this message does not exist or has already expired.');
@@ -49,9 +43,11 @@ describe('Encrypted Outside Unlock', () => {
     it('should display an error if the EO id is invalid', async () => {
         addApiMock('mail/v4/eo/token/invalidID', () => ({}));
 
-        EOResetHistory(['/eo/invalidID']);
-
-        const { getByText } = await EORender(<EOUnlock {...props} />, '/eo/:id');
+        const { getByText } = await EORender(<EOUnlock {...props} />, {
+            routePath: '/eo/:id',
+            initialEntries: ['/eo/invalidID'],
+            invalid: true,
+        });
 
         getByText('Error');
         getByText('Sorry, this message does not exist or has already expired.');
@@ -60,12 +56,13 @@ describe('Encrypted Outside Unlock', () => {
     it('should see the form if the EO id is valid and an error if password is invalid', async () => {
         mockConsole();
 
-        EOResetHistory([`/eo/${validID}`]);
-
         // Get token from id mock
         addApiMock(`mail/v4/eo/token/${validID}`, () => ({ Token: 'token' }));
 
-        const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, '/eo/:id');
+        const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, {
+            routePath: '/eo/:id',
+            initialEntries: [`/eo/${validID}`],
+        });
 
         // Unlock form is displayed
         getByText('Unlock message');
@@ -84,8 +81,6 @@ describe('Encrypted Outside Unlock', () => {
 
         const token = await getEOEncryptedMessage(EODecryptedToken, EOPassword);
 
-        EOResetHistory([`/eo/${validID}`]);
-
         // Get token from id mock
         addApiMock(`mail/v4/eo/token/${validID}`, () => ({ Token: token }));
 
@@ -95,7 +90,10 @@ describe('Encrypted Outside Unlock', () => {
             PublicKey: '',
         }));
 
-        const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, '/eo/:id');
+        const { getByText, getByTestId, history } = await EORender(<EOUnlock {...props} />, {
+            routePath: '/eo/:id',
+            initialEntries: [`/eo/${validID}`],
+        });
 
         // Unlock form is displayed
         getByText('Unlock message');
@@ -112,7 +110,6 @@ describe('Encrypted Outside Unlock', () => {
         });
 
         // Redirects to /eo/message/validID
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo/message/${validID}`);
     });
 });

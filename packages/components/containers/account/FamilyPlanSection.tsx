@@ -18,7 +18,7 @@ const FamilyPlanSection = () => {
 
     const [leaveFamilyModal, setLeaveFamilyModal, renderLeaveFamilyModal] = useModalState();
 
-    const isLoading = organisationLoading || userLoading || calendarsLoading || addressLoading;
+    const isLoading = !organization || organisationLoading || userLoading || calendarsLoading || addressLoading;
 
     const isFamilyPlan = isOrganizationFamily(organization);
 

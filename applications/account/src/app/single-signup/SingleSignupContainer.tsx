@@ -7,7 +7,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useVPNServersCount,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -28,6 +27,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHas2023OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
 
@@ -72,7 +72,6 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const silentApi = getSilentApi(unauthApi);
     const { APP_NAME } = useConfig();
     const [error, setError] = useState<any>();
-    const [vpnServersCountData] = useVPNServersCount();
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
 
@@ -127,6 +126,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         }));
     };
 
+    const vpnServersCountData = model.vpnServersCountData;
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellShortPlan = getUpsellShortPlan(model.plansMap[PLANS.VPN], vpnServersCountData);
 
@@ -136,6 +136,8 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     useEffect(() => {
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
+
+            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [{ Domains: domains }, paymentMethodStatus, Plans] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),

@@ -62,7 +62,7 @@ export const getConversation = (conversationID: string, MessageID?: string) => (
     params: { MessageID },
 });
 
-export const queryConversationCount = (AddressID: string) => ({
+export const queryConversationCount = (AddressID?: string) => ({
     method: 'get',
     url: 'mail/v4/conversations/count',
     params: { AddressID },

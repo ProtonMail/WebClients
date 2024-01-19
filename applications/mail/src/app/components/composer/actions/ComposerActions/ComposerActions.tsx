@@ -9,7 +9,7 @@ import { hasFlag } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { getAttachmentCounts } from '../../../../helpers/message/messages';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 import AttachmentsButton from '../../../attachment/AttachmentsButton';
 import { MessageChange, MessageChangeFlag } from '../../Composer';
 import { ExternalEditorActions } from '../../editor/EditorWrapper';

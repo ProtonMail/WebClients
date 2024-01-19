@@ -3,23 +3,22 @@ import { act } from 'react-dom/test-utils';
 import { fireEvent } from '@testing-library/react';
 import { RenderResult, queryByTestId } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { INCOMING_DEFAULTS_LOCATION, MIME_TYPES } from '@proton/shared/lib/constants';
 import { IncomingDefault, MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import {
     addApiMock,
-    addToCache,
     clearAll,
+    getCompleteAddress,
     getDropdown,
     minimalCache,
     render,
-    setFeatureFlags,
     waitForNotification,
 } from '../../../../helpers/test/helper';
-import { load } from '../../../../logic/incomingDefaults/incomingDefaultsActions';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
-import { store } from '../../../../logic/store';
+import { load } from '../../../../store/incomingDefaults/incomingDefaultsActions';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const meAddress = 'me@protonmail.com';
@@ -63,20 +62,6 @@ const openDropdown = async (container: RenderResult, sender: Recipient) => {
 
 const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfimationChecked = false) => {
     minimalCache();
-    addToCache('MailSettings', {
-        BlockSenderConfirmation: hasBlockSenderConfimationChecked ? BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK : undefined,
-    } as MailSettings);
-
-    addToCache('Addresses', [
-        {
-            Email: meAddress,
-        },
-        {
-            Email: me2Address,
-        },
-    ]);
-
-    setFeatureFlags('BlockSender', true);
 
     addApiMock('mail/v4/incomingdefaults', () => {
         return {
@@ -105,11 +90,23 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
 
     const container = await render(
         <MailRecipientItemSingle message={message} recipient={sender} isRecipient={isRecipient} {...modalsHandlers} />,
-        false
+        {
+            preloadedState: {
+                addresses: getModelState([
+                    getCompleteAddress({ Email: meAddress }),
+                    getCompleteAddress({ Email: me2Address }),
+                ]),
+                mailSettings: getModelState({
+                    BlockSenderConfirmation: hasBlockSenderConfimationChecked
+                        ? BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK
+                        : undefined,
+                } as MailSettings),
+            },
+        }
     );
 
     // Load manually incoming defaults
-    await store.dispatch(load());
+    await container.store.dispatch(load());
 
     const dropdown = await openDropdown(container, sender);
 

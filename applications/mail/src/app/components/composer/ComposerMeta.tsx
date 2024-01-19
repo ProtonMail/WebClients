@@ -7,8 +7,8 @@ import { Label, generateUID } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { MessageSendInfo } from '../../hooks/useSendInfo';
-import { ComposerID } from '../../logic/composers/composerTypes';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { ComposerID } from '../../store/composers/composerTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import { MessageChange } from './Composer';
 import ComposerExpirationTime from './ComposerExpirationTime';
 import ComposerAddresses from './addresses/Addresses';

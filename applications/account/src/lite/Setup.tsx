@@ -1,18 +1,28 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import FlagProvider from '@protontech/proxy-client-react';
+import { UnleashClient } from 'unleash-proxy-client';
+
+import { serverEvent, userThunk } from '@proton/account';
 import {
+    ApiProvider,
     EventManagerProvider,
     ModalsChildren,
+    NotificationsChildren,
     StandardLoadErrorPage,
-    useApi,
-    useCache,
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
+import {
+    createCustomFetch,
+    createUnleashReadyPromise,
+    getUnleashConfig,
+} from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
+import { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getLatestID } from '@proton/shared/lib/api/events';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -20,14 +30,16 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { UserModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { useAccountDispatch } from '../app/store/hooks';
+import { extendStore } from '../app/store/store';
+import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 import LiteLayout from './components/LiteLayout';
@@ -50,19 +62,16 @@ interface Props {
     onLogin: (UID: string) => void;
     UID?: string;
     children: ReactNode;
+    api: ApiWithListener;
 }
 
-const Setup = ({ onLogin, UID, children }: Props) => {
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+const Setup = ({ api, onLogin, UID, children }: Props) => {
     const errorHandler = useErrorHandler();
+    const dispatch = useAccountDispatch();
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const [expiredLinkError, setExpiredLinkError] = useState<boolean>(false);
-
-    const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
-    const cache = useCache();
 
     useThemeQueryParameter();
 
@@ -70,10 +79,11 @@ const Setup = ({ onLogin, UID, children }: Props) => {
 
     useEffect(() => {
         const setupCookies = async ({ UID, RefreshToken }: { UID: string; RefreshToken: string }) => {
-            const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } =
-                await silentApi<RefreshSessionResponse>(withUIDHeaders(UID, setRefreshCookies({ RefreshToken })));
+            const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>(
+                withUIDHeaders(UID, setRefreshCookies({ RefreshToken }))
+            );
 
-            await silentApi(
+            await api(
                 withAuthHeaders(
                     UID,
                     newAccessToken,
@@ -88,7 +98,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupFork = async (selector: string) => {
-            const { UID, RefreshToken } = await silentApi<PullForkResponse>(pullForkSession(selector));
+            const { UID, RefreshToken } = await api<PullForkResponse>(pullForkSession(selector));
 
             await setupCookies({ UID, RefreshToken });
 
@@ -96,7 +106,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupJwt = async (jwt: string) => {
-            const { UID, RefreshToken } = await silentApi<{
+            const { UID, RefreshToken } = await api<{
                 UID: string;
                 AccessToken: string;
                 RefreshToken?: string;
@@ -112,18 +122,22 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupApp = async (UID: string) => {
-            const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
+            api.UID = UID;
 
-            const eventManagerPromise = uidApi<{ EventID: string }>(getLatestID())
+            const unleashClient = new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
+
+            extendStore({ unleashClient });
+
+            const eventManagerPromise = api<{ EventID: string }>(getLatestID())
                 .then(({ EventID }) => EventID)
                 .then((eventID) => {
-                    eventManagerRef.current = createEventManager({ api: uidApi, eventID });
+                    return createEventManager({ api, eventID });
                 });
 
-            const modelsPromise = loadModels([UserModel], {
-                api: uidApi,
-                cache,
-            });
+            const setupModels = async () => {
+                const [user] = await Promise.all([dispatch(userThunk())]);
+                return { user };
+            };
 
             const loadLocales = () => {
                 const languageParams = searchParams.get('language');
@@ -133,7 +147,19 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                 return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
             };
 
-            await Promise.all([eventManagerPromise, modelsPromise, loadLocales(), loadCryptoWorker({ poolSize: 1 })]);
+            const [eventManager] = await Promise.all([
+                eventManagerPromise,
+                setupModels(),
+                loadLocales(),
+                loadCryptoWorker({ poolSize: 1 }),
+                createUnleashReadyPromise(unleashClient).promise,
+            ]);
+
+            extendStore({ eventManager });
+            eventManager.subscribe((event) => {
+                dispatch(serverEvent(event));
+            });
+            eventManager.start();
 
             flushSync(() => {
                 onLogin(UID);
@@ -158,7 +184,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
             } else {
                 errorHandler(error);
                 setError({
-                    message: getApiErrorMessage(error) || error?.message,
+                    message: getNonEmptyErrorMessage(error),
                 });
             }
         };
@@ -211,7 +237,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    if (loading || !eventManagerRef.current) {
+    if (loading) {
         return (
             <LiteLayout searchParams={searchParams}>
                 <LiteLoaderPage />
@@ -220,10 +246,15 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     }
 
     return (
-        <EventManagerProvider eventManager={eventManagerRef.current}>
-            <ModalsChildren />
-            {children}
-        </EventManagerProvider>
+        <ApiProvider api={extraThunkArguments.api}>
+            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                    <ModalsChildren />
+                    <NotificationsChildren />
+                    {children}
+                </EventManagerProvider>
+            </FlagProvider>
+        </ApiProvider>
     );
 };
 

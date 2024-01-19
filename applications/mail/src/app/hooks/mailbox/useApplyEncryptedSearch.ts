@@ -1,29 +1,30 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
 import { parseSearchParams } from '../../helpers/encryptedSearch';
+import { Element } from '../../models/element';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
 import {
     addESResults,
     load as loadAction,
     manualFulfilled,
     manualPending,
     updatePage,
-} from '../../logic/elements/elementsActions';
+} from '../../store/elements/elementsActions';
 import {
     isES as isESSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldLoadElements as shouldSendRequestSelector,
-} from '../../logic/elements/elementsSelectors';
-import { RootState, useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+} from '../../store/elements/elementsSelectors';
+import { MailState } from '../../store/store';
 
 interface EncryptedSearchParams {
     conversationMode: boolean;
@@ -50,16 +51,18 @@ export const useApplyEncryptedSearch = ({
 }: EncryptedSearchParams) => {
     const history = useHistory();
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const { esStatus, encryptedSearch } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
 
     const params = { labelID, conversationMode, sort, filter, search, esEnabled };
 
-    const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
-    const shouldLoadElements = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
-    const messagesToLoadMoreES = useSelector((state: RootState) =>
+    const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
+    const shouldLoadElements = useMailSelector((state: MailState) =>
+        shouldSendRequestSelector(state, { page, params })
+    );
+    const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
 

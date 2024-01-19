@@ -1,20 +1,18 @@
 import { c } from 'ttag';
 
-import { useGetAddressKeys, useGetAddresses } from '@proton/components';
+import type { useGetAddressKeys, useGetAddresses, useGetCalendars } from '@proton/components';
 
 import { getSilentApi } from '../../../api/helpers/customConfig';
 import getHasSharedCalendars from '../../../calendar/sharing/getHasSharedCalendars';
 import { Api } from '../../../interfaces';
 import { VisualCalendar } from '../../../interfaces/calendar';
-import { CalendarsModel } from '../../../models';
-import { loadModels } from '../../../models/helper';
 import { getIsOwnedCalendar } from '../../calendar';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
 import { resetCalendarKeys } from './resetCalendarKeys';
 
 interface ProcessArguments {
     api: Api;
-    cache: any;
+    getCalendars: ReturnType<typeof useGetCalendars>;
     getAddresses: ReturnType<typeof useGetAddresses>;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     calendarsToReset?: VisualCalendar[];
@@ -24,7 +22,7 @@ interface ProcessArguments {
 
 export const process = async ({
     api,
-    cache,
+    getCalendars,
     getAddresses,
     getAddressKeys,
     calendarsToReset = [],
@@ -68,7 +66,7 @@ export const process = async ({
     }
 
     // Refresh the calendar model to be able to get the new flags since it's not updated through the event manager
-    await loadModels([CalendarsModel], { api, cache, useCache: false });
+    await getCalendars({ forceFetch: true });
 
     return hasSharedCalendars;
 };

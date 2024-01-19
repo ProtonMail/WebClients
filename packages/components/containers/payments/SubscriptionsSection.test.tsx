@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
-
-import { mockPlansCache, mockSubscriptionCache, mockUserCache } from '@proton/components/hooks/helpers/test';
+import { getModelState } from '@proton/account/test';
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
@@ -27,6 +27,7 @@ describe('SubscriptionsSection', () => {
             Amount: 1299,
             Discount: 0,
             RenewAmount: 1299,
+            RenewDiscount: 0,
             Plans: [
                 {
                     ID: '1',
@@ -46,13 +47,8 @@ describe('SubscriptionsSection', () => {
                     Cycle: 1,
                     Currency: 'CHF',
                     Amount: 1299,
-                    Offers: [],
+                    Offer: 'default',
                     Quantity: 1,
-                    Pricing: {
-                        1: 1299,
-                        12: 11988,
-                        24: 19176,
-                    },
                 },
             ],
             Renew: 1,
@@ -73,6 +69,7 @@ describe('SubscriptionsSection', () => {
             Amount: 11988,
             Discount: 0,
             RenewAmount: 11988,
+            RenewDiscount: 0,
             Plans: [
                 {
                     ID: '1',
@@ -93,12 +90,7 @@ describe('SubscriptionsSection', () => {
                     Currency: 'CHF',
                     Amount: 11988,
                     Quantity: 1,
-                    Offers: [],
-                    Pricing: {
-                        1: 1299,
-                        12: 11988,
-                        24: 19176,
-                    },
+                    Offer: 'default',
                 },
             ],
             Renew: 1,
@@ -106,20 +98,26 @@ describe('SubscriptionsSection', () => {
         };
 
         jest.clearAllMocks();
-
-        mockUserCache();
-        mockPlansCache();
-        mockSubscriptionCache(subscription);
     });
 
     it('should return MozillaInfoPanel if isManagedByMozilla is true', () => {
         subscription.isManagedByMozilla = true;
-        const { container } = render(<ContextSubscriptionSection />);
+        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(container).toHaveTextContent('Your subscription is managed by Mozilla');
     });
 
     it('should render current subscription', () => {
-        const { getByTestId } = render(<ContextSubscriptionSection />);
+        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
@@ -128,7 +126,12 @@ describe('SubscriptionsSection', () => {
 
     it('should display Expiring badge if renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByTestId } = render(<ContextSubscriptionSection />);
+        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Expiring');
@@ -138,7 +141,12 @@ describe('SubscriptionsSection', () => {
     it('should render end date of upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
 
-        const { getByTestId } = render(<ContextSubscriptionSection />);
+        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
 
         expect(getByTestId('planNameId')).toHaveTextContent('Proton Unlimited');
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
@@ -146,44 +154,79 @@ describe('SubscriptionsSection', () => {
     });
 
     it('should show renewal notice if there is no upcoming subscription', () => {
-        const { getByTestId } = render(<ContextSubscriptionSection />);
+        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 12.99, for 1 month');
     });
 
     it('should show renewal notice if there is upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
-        const { getByTestId } = render(<ContextSubscriptionSection />);
+        const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 119.88, for 12 months');
     });
 
     it('should now show renewal notice if subscription is expiring', () => {
         subscription.Renew = Renew.Disabled;
-        const { container } = render(<ContextSubscriptionSection />);
+        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(container).not.toHaveTextContent('Renews automatically');
     });
 
     it('should display Reactivate button when Renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByText } = render(<ContextSubscriptionSection />);
+        const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(getByText('Reactivate')).toBeInTheDocument();
     });
 
     it('should display warning icon when renewal is disabled', () => {
         subscription.Renew = Renew.Disabled;
-        const { queryByTestId } = render(<ContextSubscriptionSection />);
+        const { queryByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(queryByTestId('periodEndWarning')).toBeInTheDocument();
     });
 
     it('should not display date of upcoming subscription if renew is disabled', () => {
         subscription.Renew = Renew.Disabled;
         subscription.UpcomingSubscription = upcoming;
-        const { container } = render(<ContextSubscriptionSection />);
+        const { container } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         expect(container).not.toHaveTextContent('Upcoming');
     });
 
     it('should call API when user presses reactivate button', () => {
         subscription.Renew = Renew.Disabled;
-        const { getByText } = render(<ContextSubscriptionSection />);
+        const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
+            preloadedState: {
+                subscription: getModelState(subscription),
+                plans: getModelState(plansDefaultResponse.Plans),
+            },
+        });
         getByText('Reactivate').click();
         expect(apiMock).toHaveBeenCalledWith(
             changeRenewState({

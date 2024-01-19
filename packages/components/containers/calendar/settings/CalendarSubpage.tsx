@@ -38,7 +38,7 @@ interface Props {
     subscribedCalendars: SubscribedCalendar[];
     holidaysCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
-    addresses: Address[];
+    addresses?: Address[];
     user: UserModel;
 }
 
@@ -173,7 +173,7 @@ const CalendarSubpage = ({
                     bootstrap={bootstrap}
                     canEdit={user.hasNonDelinquentScope}
                 />
-                {isOwner && isPersonalCalendar && (
+                {isOwner && isPersonalCalendar && addresses && (
                     <CalendarShareSection
                         calendar={calendar}
                         addresses={addresses}

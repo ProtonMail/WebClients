@@ -1,4 +1,4 @@
-import * as useFeatureModule from '@proton/components/hooks/useFeature';
+import * as useFeatureModule from '@proton/features/useFeature';
 import { DeepPartial } from '@proton/shared/lib/interfaces';
 
 type HookReturnType = ReturnType<typeof useFeatureModule.default>;
@@ -39,7 +39,7 @@ export const mockUseFeature = (value?: DeepPartial<ReturnType<typeof useFeatureM
                 update: jest.fn(),
                 ...value,
                 code,
-            } as HookReturnType)
+            }) as HookReturnType
     );
 
     return mockedUseFeature;

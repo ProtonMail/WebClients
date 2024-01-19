@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { signoutAction } from '@proton/account';
 import { Button } from '@proton/atoms';
+import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -38,7 +40,7 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
-    useGetOrganizationKeyRaw,
+    useGetOrganizationKey,
     useGetUserKeys,
     useNotifications,
     useUser,
@@ -92,11 +94,12 @@ interface Props extends ModalProps {
 }
 
 const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...rest }: Props) => {
+    const dispatch = useDispatch();
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
-    const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
+    const getOrganizationKey = useGetOrganizationKey();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
@@ -109,7 +112,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
 
     const [User] = useUser();
 
-    const { isSubUser, isAdmin, Name, Email } = User;
+    const { isSubUser, Name, Email } = User;
 
     const [inputs, setInputs] = useState<Inputs>({
         oldPassword: '',
@@ -319,7 +322,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
                         const [addresses, userKeysList, organizationKey] = await Promise.all([
                             getAddresses(),
                             getUserKeys(),
-                            isAdmin ? getOrganizationKeyRaw() : undefined,
+                            getOrganizationKey(),
                         ]);
 
                         validateNewPasswords();
@@ -366,7 +369,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
                 const [addresses, userKeysList, organizationKey] = await Promise.all([
                     getAddresses(),
                     getUserKeys(),
-                    isAdmin ? getOrganizationKeyRaw() : undefined,
+                    getOrganizationKey(),
                 ]);
 
                 /**
@@ -491,8 +494,8 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
     if (errors.fatalError) {
         const handleFatalErrorClose = () => {
             if (errors.persistError) {
-                // If there was an error with persisting the session, we have no choice but to logout
-                authentication.logout();
+                // If there was an error persisting the session, we have no choice but to logout
+                dispatch(signoutAction({ clearDeviceRecovery: true }));
             }
             lockAndClose();
         };

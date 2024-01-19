@@ -2,9 +2,10 @@ import { fireEvent, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES } from '@proton/shared/lib/constants';
+import { addApiMock } from '@proton/testing/lib/api';
 import range from '@proton/utils/range';
 
-import { api, clearAll, getCard, mockedCryptoApi, render } from '../tests/render';
+import { clearAll, getCard, mockedCryptoApi, renderWithProviders } from '../tests/render';
 import ContactImportModal from './ContactImportModal';
 
 jest.mock('../../../hooks/useFeature', () => () => ({ feature: {}, update: jest.fn() }));
@@ -33,14 +34,12 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
             Index: 0,
             Response: { Code: API_CODES.SINGLE_SUCCESS, Contact: { ID: `ContactID${i}`, ContactEmails: [] } },
         }));
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses };
-            }
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses };
         });
 
-        const { getByText } = render(<ContactImportModal open={true} />);
+        const { getByText } = renderWithProviders(<ContactImportModal open={true} />);
 
         const input = document.querySelector('input[type="file"]') as HTMLInputElement;
         fireEvent.change(input, { target: { files: [file] } });

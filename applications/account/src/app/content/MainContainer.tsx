@@ -29,7 +29,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import useIncomingAddressForwarding from '@proton/components/hooks/useIncomingAddressForwarding';
+import { useIncomingAddressForwardings } from '@proton/components/hooks';
 import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -111,7 +111,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
-    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwarding();
+    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwardings();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { viewportWidth } = useActiveBreakpoint();

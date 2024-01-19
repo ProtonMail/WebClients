@@ -1,15 +1,15 @@
 import { fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
-    addToCache,
     clearAll,
     clearCache,
     createDocument,
@@ -17,8 +17,7 @@ import {
     minimalCache,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
-import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
 const orignalGetSelection = global.getSelection;
 
@@ -51,29 +50,27 @@ describe('Composer hotkeys', () => {
 
     const setup = async (hasShortcutsEnabled = true) => {
         minimalCache();
-        if (hasShortcutsEnabled) {
-            addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
-        } else {
-            addToCache('MailSettings', { Shortcuts: SHORTCUTS.DISABLED });
-        }
-
-        addKeysToAddressKeysCache(AddressID, fromKeys);
-
-        prepareMessage({
-            messageDocument: { document: createDocument('test') },
-            data: { MIMEType: MIME_TYPES.DEFAULT },
-        });
 
         addApiKeys(false, toAddress, []);
 
-        const composerID = Object.keys(store.getState().composers.composers)[0];
+        const { container, ...rest } = await renderComposer({
+            preloadedState: {
+                mailSettings: getModelState({
+                    Shortcuts: hasShortcutsEnabled ? SHORTCUTS.ENABLED : SHORTCUTS.DISABLED,
+                } as MailSettings),
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+            message: {
+                messageDocument: { document: createDocument('test') },
+                data: { MIMEType: MIME_TYPES.DEFAULT },
+            },
+        });
 
-        const result = await renderComposer(composerID, false);
-
-        const iframe = result.container.querySelector('iframe') as HTMLIFrameElement;
+        const iframe = container.querySelector('iframe') as HTMLIFrameElement;
 
         return {
-            ...result,
+            ...rest,
+            container,
             iframe,
             esc: () => fireEvent.keyDown(iframe, { key: 'Escape' }),
             ctrlEnter: () => fireEvent.keyDown(iframe, { key: 'Enter', ctrlKey: true }),

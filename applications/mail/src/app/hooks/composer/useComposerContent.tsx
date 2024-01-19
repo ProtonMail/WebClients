@@ -5,15 +5,16 @@ import { c } from 'ttag';
 import { EditorActions, EditorMetadata } from '@proton/components/components';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { selectComposer } from 'proton-mail/logic/composers/composerSelectors';
-import { composerActions } from 'proton-mail/logic/composers/composersSlice';
-import { messageByID } from 'proton-mail/logic/messages/messagesSelectors';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
+import { composerActions } from 'proton-mail/store/composers/composersSlice';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { messageByID } from 'proton-mail/store/messages/messagesSelectors';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
@@ -25,16 +26,15 @@ import { getContent, getContentWithBlockquotes, setContent } from '../../helpers
 import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
 import { mergeMessages } from '../../helpers/message/messages';
-import { ComposerID } from '../../logic/composers/composerTypes';
+import { ComposerID } from '../../store/composers/composerTypes';
 import {
     deleteDraft as deleteDraftAction,
     removeInitialAttachments,
     removeQuickReplyFlag,
     updateDraftContent,
     updateIsSavingFlag,
-} from '../../logic/messages/draft/messagesDraftActions';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch, useAppStore } from '../../logic/store';
+} from '../../store/messages/draft/messagesDraftActions';
+import { MessageState } from '../../store/messages/messagesTypes';
 import { useInitializeMessage } from '../message/useInitializeMessage';
 import { useGetMessage, useMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -84,14 +84,14 @@ export type EditorArgs = (EditorComposer | EditorQuickReply) & {
 };
 
 export const useComposerContent = (args: EditorArgs) => {
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
     const onCompose = useOnCompose();
-    const dispatch = useAppDispatch();
-    const store = useAppStore();
+    const dispatch = useMailDispatch();
+    const store = useMailStore();
     const skipNextInputRef = useRef(false);
 
     const { onClose, composerFrameRef, type: editorType, isFocused, editorReady } = args;

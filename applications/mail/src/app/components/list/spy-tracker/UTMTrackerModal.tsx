@@ -16,7 +16,7 @@ import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trac
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageState;

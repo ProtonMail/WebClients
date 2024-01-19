@@ -1,6 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
-import { useFlag } from '@proton/components/index';
+import { getModelState } from '@proton/account/test';
+import { useFlag } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -19,18 +20,18 @@ import { addApiMock } from 'proton-mail/helpers/test/api';
 import {
     GeneratedKey,
     addApiKeys,
-    addKeysToAddressKeysCache,
     assertIcon,
     clearAll,
     createAttachment,
     generateKeys,
+    getAddressKeyCache,
+    getCompleteAddress,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from 'proton-mail/helpers/test/helper';
 import { render } from 'proton-mail/helpers/test/render';
-import { addAttachment } from 'proton-mail/logic/attachments/attachmentsActions';
-import { store } from 'proton-mail/logic/store';
 import { Conversation } from 'proton-mail/models/conversation';
+import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
 const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
@@ -59,7 +60,7 @@ const generateAttachmentsMetadata = (numberOfAttachments: number, extension = 'p
 const setup = async (
     attachmentsMetadata: AttachmentsMetadata[],
     numAttachments: number,
-    showAttachmentThumbnails = true
+    { AddressID, fromAddress, fromKeys, showAttachmentThumbnails = true }: { AddressID: string; fromAddress: string; fromKeys: GeneratedKey; showAttachmentThumbnails?: boolean }
 ) => {
     const element = {
         ID: 'conversationID',
@@ -72,7 +73,7 @@ const setup = async (
         AttachmentsMetadata: attachmentsMetadata,
     } as Conversation;
 
-    await render(
+    return render(
         <ItemColumnLayout
             labelID={MAILBOX_LABEL_IDS.INBOX}
             element={element}
@@ -85,24 +86,44 @@ const setup = async (
             isSelected={false}
             showAttachmentThumbnails={showAttachmentThumbnails}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
-        />
+        />,
+        {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+        }
     );
 };
 
 describe('ItemAttachmentThumbnails', () => {
-    beforeAll(() => {
-        // Mock feature flag
-        // TODO update when we'll have a better solution
+    const AddressID = 'AddressID';
+    const fromAddress = 'me@home.net';
+
+    let fromKeys: GeneratedKey;
+
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+        addApiKeys(false, fromAddress, []);
+    });
+
+    beforeEach(async () => {
+        clearAll();
         mockUseFlag.mockReturnValue(true);
+        fromKeys = await generateKeys('me', fromAddress);
     });
 
     afterEach(() => clearAll());
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
 
     it('should not display attachment thumbnails', async () => {
         const elementTotalAttachments = 0;
 
         // The conversation has no attachments.
-        await setup([], elementTotalAttachments);
+        await setup([], elementTotalAttachments, { AddressID, fromKeys, fromAddress });
 
         // No attachment thumbnail displayed
         expect(screen.queryByText(`Attachment-`)).toBeNull();
@@ -120,7 +141,7 @@ describe('ItemAttachmentThumbnails', () => {
         const attachmentsMetadata = generateAttachmentsMetadata(numberOfReceivedMetadata);
 
         // We received the metadata for 5 attachments, and we can display 2 thumbnails
-        await setup(attachmentsMetadata, numberOfReceivedMetadata);
+        await setup(attachmentsMetadata, numberOfReceivedMetadata, { AddressID, fromKeys, fromAddress });
 
         const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
@@ -148,7 +169,7 @@ describe('ItemAttachmentThumbnails', () => {
 
         // The conversation has 1 attachment in total.
         // We received the metadata for 1 of them, which will display 1 thumbnail
-        await setup(attachmentsMetadata, numberOfReceivedMetadata);
+        await setup(attachmentsMetadata, numberOfReceivedMetadata, { AddressID, fromKeys, fromAddress });
 
         const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
@@ -174,7 +195,7 @@ describe('ItemAttachmentThumbnails', () => {
 
         // The conversation has 10 attachment in total.
         // We received no metadata, so no thumbnail will be displayed
-        await setup([], elementTotalAttachments);
+        await setup([], elementTotalAttachments, { AddressID, fromKeys, fromAddress });
 
         // No attachment thumbnail displayed
         expect(screen.queryByText(`Attachment-`)).toBeNull();
@@ -208,7 +229,7 @@ describe('ItemAttachmentThumbnails', () => {
         const icons = ['sm-image', 'sm-pdf'];
         const extensions = ['png', 'pdf'];
 
-        await setup(attachmentsMetadata, numAttachments);
+        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const items = screen.getAllByTestId('attachment-thumbnail');
         for (let i = 0; i < 2; i++) {
@@ -241,7 +262,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     beforeEach(async () => {
         clearAll();
         fromKeys = await generateKeys('me', fromAddress);
-        addKeysToAddressKeysCache(AddressID, fromKeys);
     });
 
     afterEach(async () => {
@@ -315,6 +335,11 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        // Mock to check that if attachment is in the state, no api call is done
+        const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
+
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
@@ -323,11 +348,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        // Mock to check that if attachment is in the state, no api call is done
-        const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
-
-        await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -347,7 +367,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
 
-        await setup(attachmentsMetadata, numAttachments);
+        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -384,6 +404,8 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment1.ID as string,
@@ -401,8 +423,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getAllByTestId('attachment-thumbnail');
 
@@ -427,7 +447,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys, true);
 
-        await setup(attachmentsMetadata, numAttachments);
+        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -451,7 +471,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
 
-        await setup(attachmentsMetadata, numAttachments);
+        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getAllByTestId('attachment-thumbnail');
 
@@ -493,6 +513,8 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
@@ -501,8 +523,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -531,7 +551,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys, true);
 
-        await setup(attachmentsMetadata, numAttachments);
+        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -554,6 +574,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         const blob = new Blob([mocks[0].attachmentPackets.data], {
             type: 'application/pgp-encrypted',
         });
+        await waitFor(() => expect(downloadFile).toHaveBeenCalledTimes(1));
         expect(downloadFile).toHaveBeenCalledWith(blob, 'Attachment-0.txt.pgp');
     });
 });

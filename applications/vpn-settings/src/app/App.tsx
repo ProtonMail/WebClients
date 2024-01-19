@@ -1,47 +1,59 @@
-import {
-    ErrorBoundary,
-    PrivateAuthenticationStore,
-    ProtonApp,
-    PublicAuthenticationStore,
-    StandardErrorPage,
-    getSessionTrackingEnabled,
-    useAuthentication,
-} from '@proton/components';
-import metrics from '@proton/metrics';
-import { getClientID } from '@proton/shared/lib/apps/helper';
-import authentication from '@proton/shared/lib/authentication/authentication';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
-import sentry from '@proton/shared/lib/helpers/sentry';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
+import { Router } from 'react-router-dom';
+
+import { createBrowserHistory as createHistory } from 'history';
+
+import * as bootstrap from '@proton/account/bootstrap';
+import { ApiProvider, ErrorBoundary, ProtonApp, StandardErrorPage } from '@proton/components';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import useInstance from '@proton/hooks/useInstance';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import createApi from '@proton/shared/lib/api/createApi';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 
 import PrivateApp from './PrivateApp';
 import PublicApp from './PublicApp';
 import * as config from './config';
 import locales from './locales';
+import { extendStore, setupStore } from './store/store';
+import { extraThunkArguments } from './store/thunk';
 
-import './app.scss';
-
-setTtagLocales(locales);
-newVersionUpdater(config);
-sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
-initLogicalProperties();
-
-metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-
-const Setup = () => {
-    const { UID, login, logout } = useAuthentication() as PublicAuthenticationStore & PrivateAuthenticationStore;
-    if (UID) {
-        return <PrivateApp onLogout={logout} locales={locales} />;
-    }
-    return <PublicApp onLogin={login} locales={locales} />;
+const bootstrapApp = () => {
+    const history = createHistory();
+    const api = createApi({ config });
+    const authentication = bootstrap.createAuthentication();
+    bootstrap.init({ config, authentication, locales });
+    initLogicalProperties();
+    extendStore({ authentication, api, history, config });
+    return setupStore();
 };
 
 const App = () => {
+    const store = useInstance(() => {
+        return bootstrapApp();
+    });
     return (
-        <ProtonApp authentication={authentication} config={config}>
+        <ProtonApp config={config}>
             <ErrorBoundary component={<StandardErrorPage />}>
-                <Setup />
+                <AuthenticationProvider store={extraThunkArguments.authentication}>
+                    <ApiProvider api={extraThunkArguments.api}>
+                        <Router history={extraThunkArguments.history}>
+                            <ProtonStoreProvider store={store}>
+                                {extraThunkArguments.authentication.UID ? (
+                                    <PrivateApp store={store} locales={locales} />
+                                ) : (
+                                    <PublicApp
+                                        onLogin={(args) => {
+                                            const url = extraThunkArguments.authentication.login(args);
+                                            replaceUrl(url);
+                                        }}
+                                        locales={locales}
+                                    />
+                                )}
+                            </ProtonStoreProvider>
+                        </Router>
+                    </ApiProvider>
+                </AuthenticationProvider>
             </ErrorBoundary>
         </ProtonApp>
     );

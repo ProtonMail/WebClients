@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 
-import { FeatureCode } from '../containers/features/FeaturesContext';
-import getLikelyHasKeysToReactivate from '../containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
+import { FeatureCode } from '../containers/features';
 import getOverallStatus from '../containers/recovery/getOverallStatus';
 import useAddresses from './useAddresses';
 import useFeature from './useFeature';

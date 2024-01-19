@@ -1,36 +1,41 @@
-import { useCache, useHandler } from '@proton/components';
+import { useHandler } from '@proton/components';
+import {
+    conversationCountsActions,
+    messageCountsActions,
+    selectConversationCounts,
+    selectMessageCounts,
+} from '@proton/mail';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
+import { Element } from '../../models/element';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages,
     optimisticRestore as optimisticRestoreConversationsAction,
-} from '../../logic/conversations/conversationsActions';
-import { ConversationState } from '../../logic/conversations/conversationsTypes';
+} from '../../store/conversations/conversationsActions';
+import { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
-} from '../../logic/elements/elementsActions';
-import { MessageState } from '../../logic/messages/messagesTypes';
+} from '../../store/elements/elementsActions';
+import { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,
-} from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { CacheEntry } from '../../models/tools';
+} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetAllConversations } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 import { useGetMessage } from '../message/useMessage';
 
 const useOptimisticDelete = () => {
-    const dispatch = useAppDispatch();
+    const store = useMailStore();
+    const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
-    const globalCache = useCache();
     const getAllConversations = useGetAllConversations();
     const getMessage = useGetMessage();
 
@@ -72,48 +77,54 @@ const useOptimisticDelete = () => {
         dispatch(optimisticDeleteElementAction({ elementIDs }));
 
         if (conversationMode) {
+            let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
+
             // Conversation counters
-            const conversationCounters = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
-            const currentConversationCounter = conversationCounters.value.find(
+            const currentConversationCounter = conversationCounters.find(
                 (counter: any) => counter.LabelID === labelID
             ) as LabelCount;
-            rollbackCounters[ConversationCountsModel.key] = currentConversationCounter;
-            globalCache.set(ConversationCountsModel.key, {
-                ...conversationCounters,
-                value: replaceCounter(conversationCounters.value, {
-                    LabelID: labelID,
-                    Total: (currentConversationCounter.Total || 0) - total,
-                    Unread: (currentConversationCounter.Unread || 0) - totalUnread,
-                }),
-            });
+            rollbackCounters.conversations = currentConversationCounter;
+            store.dispatch(
+                conversationCountsActions.set(
+                    replaceCounter(conversationCounters, {
+                        LabelID: labelID,
+                        Total: (currentConversationCounter.Total || 0) - total,
+                        Unread: (currentConversationCounter.Unread || 0) - totalUnread,
+                    })
+                )
+            );
         } else {
+            let { value: messageCounters = [] } = selectMessageCounts(store.getState());
             // Message counters
-            const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
-            const currentMessageCounter = messageCounters.value.find(
+            const currentMessageCounter = messageCounters.find(
                 (counter: any) => counter.LabelID === labelID
             ) as LabelCount;
-            rollbackCounters[MessageCountsModel.key] = currentMessageCounter;
-            globalCache.set(MessageCountsModel.key, {
-                ...messageCounters,
-                value: replaceCounter(messageCounters.value, {
-                    LabelID: labelID,
-                    Total: (currentMessageCounter.Total || 0) - total,
-                    Unread: (currentMessageCounter.Unread || 0) - totalUnread,
-                }),
-            });
+            rollbackCounters.messages = currentMessageCounter;
+            store.dispatch(
+                messageCountsActions.set(
+                    replaceCounter(messageCounters, {
+                        LabelID: labelID,
+                        Total: (currentMessageCounter.Total || 0) - total,
+                        Unread: (currentMessageCounter.Unread || 0) - totalUnread,
+                    })
+                )
+            );
         }
 
         return () => {
             dispatch(optimisticRestoreMessageAction(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
             dispatch(optimisticRestoreDeleteElementAction({ elements: rollbackElements }));
-            Object.entries(rollbackCounters).forEach(([key, value]) => {
-                const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
-                globalCache.set(key, {
-                    ...entry,
-                    value: replaceCounter(entry.value, value),
-                });
-            });
+            if (rollbackCounters.conversations) {
+                let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
+                store.dispatch(
+                    conversationCountsActions.set(replaceCounter(conversationCounters, rollbackCounters.conversations))
+                );
+            }
+            if (rollbackCounters.messages) {
+                let { value: messageCounters = [] } = selectMessageCounts(store.getState());
+                store.dispatch(messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages)));
+            }
         };
     });
 };

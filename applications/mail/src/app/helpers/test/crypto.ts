@@ -1,10 +1,11 @@
+import { getModelState } from '@proton/account/test';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
+import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 
 import { base64ToArray } from '../base64';
 import { addApiMock } from './api';
-import { addressKeysCache, mockCache, resolvedRequest } from './cache';
 
 export interface GeneratedKey {
     name: string;
@@ -110,14 +111,16 @@ export const generateCalendarKeysAndPassphrase = async (addressKey: GeneratedKey
     };
 };
 
-export const addKeysToUserKeysCache = (key: GeneratedKey) => {
-    mockCache.set('USER_KEYS', resolvedRequest([{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }]));
+export const getStoredKey = (key: GeneratedKey | undefined): DecryptedAddressKey[] => {
+    return key
+        ? [{ ID: '123', publicKey: key.publicKeys[0], privateKey: key.privateKeys[0], Flags: 0, Primary: 0 }]
+        : [];
 };
 
-export const addKeysToAddressKeysCache = (addressID: string, key: GeneratedKey | undefined) => {
-    const currentValue = addressKeysCache.get(addressID)?.value || [];
-    const newValue = key ? [{ publicKey: key.publicKeys[0], privateKey: key.privateKeys[0] }] : [];
-    addressKeysCache.set(addressID, resolvedRequest([...currentValue, ...newValue]));
+export const getAddressKeyCache = (id: string, key: Parameters<typeof getStoredKey>[0]) => {
+    return {
+        [id]: getModelState(getStoredKey(key)),
+    };
 };
 
 export const encryptSessionKey = async ({ data, algorithm }: SessionKey, publicKey: PublicKeyReference) => {

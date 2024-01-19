@@ -4,8 +4,9 @@ import path from 'path';
 import webpack from 'webpack';
 import 'webpack-dev-server';
 
-import getConfig, { mergeEntry } from '@proton/pack/webpack.config';
+import getConfig from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
+import { addDevEntry, getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
 
 import { HrefLang } from './pages/interface';
 import { getPages } from './pages/pages';
@@ -51,10 +52,15 @@ const result = async (env: any): Promise<webpack.Configuration> => {
     }
     const htmlIndex = plugins.indexOf(htmlPlugin);
 
-    config.entry = mergeEntry(config.entry, {
-        lite: [path.resolve('./src/lite/index.tsx'), require.resolve('@proton/shared/lib/supported/supported.ts')],
+    const { pre, unsupported } = config.entry as any;
+    config.entry = {
+        pre,
+        private: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
+        public: [path.resolve('./src/app/public.tsx'), getSupportedEntry()],
+        lite: [path.resolve('./src/lite/index.tsx'), getSupportedEntry()],
         storage: path.resolve('./src/app/storage.ts'),
-    });
+        unsupported,
+    };
 
     const rewrites: any[] = [];
     // @ts-ignore
@@ -67,11 +73,26 @@ const result = async (env: any): Promise<webpack.Configuration> => {
         htmlIndex,
         1,
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.resolve('./src/app.ejs'),
+            filename: 'private.html',
+            template: path.resolve('./src/private.ejs'),
+            templateParameters: originalTemplateParameters,
             scriptLoading: 'defer' as const,
-            excludeChunks: ['storage', 'lite'],
+            chunks: getIndexChunks('private'),
             inject: 'body' as const,
+        })
+    );
+    rewrites.push({ from: /^\/u\//, to: '/private.html' });
+
+    plugins.splice(
+        htmlIndex,
+        0,
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.resolve('./src/public.ejs'),
+            templateParameters: originalTemplateParameters,
+            scriptLoading: 'defer',
+            chunks: getIndexChunks('public'),
+            inject: 'body',
         })
     );
 
@@ -97,7 +118,7 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             template: path.resolve('./src/lite.ejs'),
             templateParameters: originalTemplateParameters,
             scriptLoading: 'defer',
-            chunks: ['pre', 'lite', 'unsupported'],
+            chunks: getIndexChunks('lite'),
             inject: 'body',
         })
     );
@@ -144,6 +165,10 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             return [index, ...rest];
         })
     );
+
+    if (env.appMode === 'standalone') {
+        addDevEntry(config);
+    }
 
     return config;
 };

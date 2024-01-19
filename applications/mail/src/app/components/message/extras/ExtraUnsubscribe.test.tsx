@@ -1,24 +1,25 @@
 import { act, fireEvent, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
+import { FeatureCode } from '@proton/features';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 
 import { mergeMessages } from '../../../helpers/message/messages';
-import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getCompleteAddress, minimalCache } from '../../../helpers/test/cache';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
     clearAll,
     generateKeys,
+    getFeatureFlags,
     render,
-    setFeatureFlags,
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
 import * as useSimpleLoginExtension from '../../../hooks/simpleLogin/useSimpleLoginExtension';
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();
@@ -58,7 +59,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
@@ -68,7 +68,11 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -102,9 +106,7 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ ID: toAddressID, Email: toAddress });
         addApiKeys(false, mailto, []);
-        addKeysToAddressKeysCache(toAddressID, keys);
         addApiMock(`mail/v4/messages`, createCall);
         addApiMock(`mail/v4/messages/messageID`, sendCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
@@ -115,7 +117,12 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+                addressKeys: getAddressKeyCache(toAddressID, keys),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -142,7 +149,6 @@ describe('Unsubscribe banner', () => {
         const openNewTabMock = openNewTab as jest.Mock;
 
         minimalCache();
-        addAddressToCache({ ID: toAddressID, Email: toAddress });
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
         const message = mergeMessages(defaultMessage, {
@@ -151,7 +157,11 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -177,7 +187,6 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should show an extra modal when the user has no SimpleLogin extension', async () => {
-        setFeatureFlags('SLIntegration', true);
         jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
             hasSimpleLogin: false,
             hasSLExtension: false,
@@ -190,7 +199,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
@@ -200,7 +208,12 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -225,7 +238,6 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should not show an extra modal when the user has SimpleLogin extension', async () => {
-        setFeatureFlags('SLIntegration', true);
         jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
             hasSimpleLogin: true,
             hasSLExtension: true,
@@ -238,7 +250,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
@@ -248,7 +259,12 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -273,7 +289,6 @@ describe('Unsubscribe banner', () => {
     });
 
     it('should not show an extra modal when the user has no SimpleLogin extension but the message is from SimpleLogin', async () => {
-        setFeatureFlags('SLIntegration', true);
         jest.spyOn(useSimpleLoginExtension, 'useSimpleLoginExtension').mockReturnValue({
             hasSimpleLogin: false,
             hasSLExtension: false,
@@ -286,7 +301,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
@@ -297,7 +311,12 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+                features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 
@@ -326,7 +345,6 @@ describe('Unsubscribe banner', () => {
         const markUnsubscribedCall = jest.fn();
 
         minimalCache();
-        addAddressToCache({ Email: toAddress });
         addApiMock(`mail/v4/messages/${messageID}/unsubscribe`, unsubscribeCall);
         addApiMock(`mail/v4/messages/mark/unsubscribed`, markUnsubscribedCall);
 
@@ -337,7 +355,11 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false);
+        await render(<ExtraUnsubscribe message={message.data} />, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
+            },
+        });
 
         const button = screen.getByTestId('unsubscribe-banner');
 

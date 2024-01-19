@@ -21,12 +21,12 @@ import {
     useBeforeUnload,
     useEventManager,
     useGetAddresses,
+    useGetOrganization,
+    useGetOrganizationKey,
+    useGetUser,
     useGetUserKeys,
     useKTVerifier,
     useNotifications,
-    useOrganization,
-    useOrganizationKey,
-    useUser,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -102,12 +102,12 @@ interface Props extends ModalProps {
 const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose, mode, ...rest }: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
-    const [organization, loadingOrganization] = useOrganization();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const getOrganization = useGetOrganization();
+    const getOrganizationKey = useGetOrganizationKey();
     const [organizationCapacityError, setOrganizationCapacityError] = useState<OrganizationCapacityError>();
-    const [user] = useUser();
     const getUserKeys = useGetUserKeys();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
+    const getUser = useGetUser();
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => getUser());
 
     const abortControllerRef = useRef<AbortController>();
     const { createNotification } = useNotifications();
@@ -197,6 +197,8 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
         const selectedUsers = usersToImport.filter((user) => selectedUserIds.includes(user.id));
 
+        const organization = await getOrganization();
+        const organizationKey = await getOrganizationKey();
         const error = validateAddUser({
             privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
             organization,
@@ -332,8 +334,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
         size?: ModalProps['size'];
     } = (() => {
         if (step === STEPS.SELECT_USERS) {
-            const isCreateUsersButtonDisabled =
-                loadingOrganization || loadingOrganizationKey || !selectedUserIds.length;
+            const isCreateUsersButtonDisabled = !selectedUserIds.length;
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (

@@ -7,10 +7,11 @@ import { Icon, Tooltip, useApi } from '@proton/components';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { getAnchor } from '../../helpers/message/messageImages';
-import { failedRemoteDirectLoading, loadRemoteProxy } from '../../logic/messages/images/messagesImagesActions';
-import { MessageImage } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { failedRemoteDirectLoading, loadRemoteProxy } from '../../store/messages/images/messagesImagesActions';
+import { MessageImage } from '../../store/messages/messagesTypes';
 
 const sizeProps: ['width', 'height'] = ['width', 'height'];
 
@@ -80,7 +81,7 @@ const MessageBodyImage = ({
     localID,
     useProxy,
 }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
     const imageRef = useRef<HTMLImageElement>(null);
     // Ref used to trigger an action after a onError while trying to load the image

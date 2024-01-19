@@ -12,7 +12,11 @@ const AddressesSection = ({ isOnlySelf }: Props) => {
 
     return (
         <SettingsSectionWide>
-            {loadingOrganization ? <Loader /> : <Addresses isOnlySelf={isOnlySelf} organization={organization} />}
+            {!organization || loadingOrganization ? (
+                <Loader />
+            ) : (
+                <Addresses isOnlySelf={isOnlySelf} organization={organization} />
+            )}
         </SettingsSectionWide>
     );
 };
