@@ -18,7 +18,7 @@ type Props = {
     iconSize?: IconSize;
 };
 
-export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count, iconSize = 12 }) => {
+export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count, iconSize = 3 }) => {
     return (
         <div
             className={clsx(

@@ -166,7 +166,7 @@ export const Autosave: FC<Props> = ({ settings, submission, visible, onClose }) 
                         <ItemIcon
                             url={submission.domain}
                             icon={'user'}
-                            size={20}
+                            size={5}
                             alt=""
                             className="shrink-0"
                             loadImage={settings.loadDomainImages}

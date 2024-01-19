@@ -87,7 +87,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     {children}
                     {hasDecoration && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
-                            <LayoutLogos size={48} />
+                            <LayoutLogos size={12} />
                         </div>
                     )}
                 </main>

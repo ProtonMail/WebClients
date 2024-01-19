@@ -9,7 +9,7 @@ export function GridViewItemDevice({ item }: { item: DeviceItem }) {
 
     return (
         <GridViewItemBase
-            IconComponent={<Icon name="tv" size={42} alt={iconText}></Icon>}
+            IconComponent={<Icon name="tv" size={10} alt={iconText}></Icon>}
             item={item}
             disableSelection
         />

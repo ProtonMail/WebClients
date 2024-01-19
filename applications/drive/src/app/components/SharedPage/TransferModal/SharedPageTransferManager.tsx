@@ -33,14 +33,14 @@ const getHeaderText = ({
         case TransferState.NetworkError:
             return (
                 <>
-                    <Icon size={24} name="exclamation-circle-filled" className="color-danger" />
+                    <Icon size={6} name="exclamation-circle-filled" className="color-danger" />
                     <span className="text-bold">{c('Info').t`Download failed`}</span>
                 </>
             );
         case TransferState.Canceled:
             return (
                 <>
-                    <Icon size={24} name="minus-circle-filled" className="color-weak" />
+                    <Icon size={6} name="minus-circle-filled" className="color-weak" />
                     <span className="text-bold">{c('Info').t`Download canceled`}</span>
                 </>
             );
@@ -54,7 +54,7 @@ const getHeaderText = ({
         default:
             return (
                 <>
-                    <Icon size={24} name="checkmark-circle-filled" className="color-success" />
+                    <Icon size={6} name="checkmark-circle-filled" className="color-success" />
                     <span className="text-bold">{c('Info').t`Download ready`}</span>
                 </>
             );
@@ -308,7 +308,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     </div>
                 ) : (
                     <div className="px-4 py-5 flex items-center gap-2">
-                        <FileIcon size={32} mimeType={currentDownload.meta.mimeType} />
+                        <FileIcon size={8} mimeType={currentDownload.meta.mimeType} />
                         {getContentText({
                             transferState: currentDownload.state,
                             onRetry: () => restartDownloads(currentDownload.id),

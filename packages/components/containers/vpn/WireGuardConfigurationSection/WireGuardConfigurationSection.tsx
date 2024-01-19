@@ -718,7 +718,7 @@ const WireGuardConfigurationSection = () => {
                                                     >
                                                         <Icon
                                                             name="cross"
-                                                            size={12}
+                                                            size={3}
                                                             className="label-stack-item-delete-icon"
                                                             alt={c('Action').t`Revoke`}
                                                         />

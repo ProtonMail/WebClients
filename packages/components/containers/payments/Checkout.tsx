@@ -50,7 +50,7 @@ const Checkout = ({
                 {hasPayments && !hiddenRenewNotice && renewNotice && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
-                            <Icon name="info-circle" size={16} />
+                            <Icon name="info-circle" size={4} />
                         </span>
                         <span className="flex-1">{renewNotice}</span>
                     </div>

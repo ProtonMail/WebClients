@@ -11,7 +11,7 @@ interface Props {
     aside?: ReactNode;
 }
 
-const SidebarItemContent = ({ icon, iconColor, iconSize = 16, title, text, aside }: Props) => {
+const SidebarItemContent = ({ icon, iconColor, iconSize = 4, title, text, aside }: Props) => {
     return (
         <span className="flex flex-nowrap w-full items-center gap-2" title={title}>
             {icon && (

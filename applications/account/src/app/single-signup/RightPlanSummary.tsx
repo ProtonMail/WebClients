@@ -24,7 +24,7 @@ const RightPlanSummary = ({ logo, title, features, bundle, removeBundle }: Props
                 features={features}
                 icon={false}
                 highlight={false}
-                iconSize={16}
+                iconSize={4}
                 className="mb-5 gap-1"
                 itemClassName="color-weak"
             />
@@ -47,7 +47,7 @@ const RightPlanSummary = ({ logo, title, features, bundle, removeBundle }: Props
                             features={features}
                             icon={false}
                             highlight={false}
-                            iconSize={16}
+                            iconSize={4}
                             className="mb-5 gap-1"
                             itemClassName="color-weak"
                         />

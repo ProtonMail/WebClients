@@ -82,7 +82,7 @@ export const VaultSelect: FC<Props> = ({ downgradeMessage, onSubmit, optionsSele
                             disabled={vault.shareId === shareId}
                         >
                             <VaultIcon
-                                size={20}
+                                size={5}
                                 background
                                 color={vault.content.display.color}
                                 icon={vault.content.display.icon}

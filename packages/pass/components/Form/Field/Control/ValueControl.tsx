@@ -42,7 +42,7 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
         shape="solid"
         title={hidden ? c('Action').t`Show` : c('Action').t`Hide`}
     >
-        <Icon size={20} name={hidden ? 'eye' : 'eye-slash'} />
+        <Icon size={5} name={hidden ? 'eye' : 'eye-slash'} />
     </Button>
 );
 

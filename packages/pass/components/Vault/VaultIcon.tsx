@@ -28,7 +28,7 @@ export const VaultIcon: FC<Props> = ({
     className,
     background,
     highlighted,
-    size = 20,
+    size = 5,
     color,
     icon = 'pass-all-vaults',
 }) => (
@@ -36,7 +36,7 @@ export const VaultIcon: FC<Props> = ({
         className={clsx([
             `pass-vault-icon rounded-xl relative w-custom h-custom`,
             background && 'background',
-            size >= 20 && 'rounded-full',
+            size >= 5 && 'rounded-full',
             className,
         ])}
         style={{

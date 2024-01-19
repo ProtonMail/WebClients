@@ -101,7 +101,7 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
                         <StripedItem
                             key={key}
                             className={clsx(status === 'coming-soon' && 'color-weak')}
-                            left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
+                            left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
                         >
                             <div className="flex justify-space-between items-baseline" data-testid={dataTestId}>
                                 {text}
@@ -245,7 +245,7 @@ const SubscriptionPanel = ({
     }
 
     const storageItem = (
-        <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
+        <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
             <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
             <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
         </StripedItem>

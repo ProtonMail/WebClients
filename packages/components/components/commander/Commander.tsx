@@ -106,7 +106,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                         value={value}
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
-                        prefix={<Icon name="magnifier" size={18} alt={c('action').t`Search messages`} />}
+                        prefix={<Icon name="magnifier" size={4.5} alt={c('action').t`Search messages`} />}
                         suffix={
                             <Button
                                 type="button"

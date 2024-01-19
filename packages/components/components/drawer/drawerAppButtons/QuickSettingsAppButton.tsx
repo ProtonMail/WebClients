@@ -26,7 +26,7 @@ const QuickSettingsAppButton = ({ onClick }: Optional<Omit<Props, 'tooltipText' 
             tooltipText={c('Title').t`Settings`}
             tooltipPlacement="bottom"
             data-testid="settings-drawer-app-button:settings-icon"
-            buttonContent={<Icon name="cog-drawer" size={20} />}
+            buttonContent={<Icon name="cog-drawer" size={5} />}
             onClick={handleClick}
             alt={c('Action').t`Toggle settings`}
             aria-controls="drawer-app-proton-settings"

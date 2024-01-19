@@ -65,7 +65,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     return (
         <Panel title={c('new_plans: Title').t`Your account's usage`} data-testid="your-account-usage">
             <StripedList>
-                <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
+                <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter
@@ -78,7 +78,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
                     return (
                         <StripedItem
                             key={item.icon}
-                            left={<Icon className="color-success" name={item.icon} size={20} />}
+                            left={<Icon className="color-success" name={item.icon} size={5} />}
                         >
                             {item.text}
                         </StripedItem>
