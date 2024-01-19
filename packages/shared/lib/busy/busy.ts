@@ -1,5 +1,6 @@
 import noop from '@proton/utils/noop';
 
+import { isElectronApp } from '../helpers/desktop';
 import { traceError } from '../helpers/sentry';
 import { ProtonConfig } from '../interfaces';
 
@@ -96,6 +97,7 @@ export const domIsBusy = () => {
 };
 
 const THIRTY_MINUTES = 30 * 60 * 1000;
+const FIVE_MINUTES = 5 * 60 * 1000;
 
 const isDifferent = (a?: string, b?: string) => !!a && !!b && b !== a;
 
@@ -104,6 +106,7 @@ export const newVersionUpdater = (config: ProtonConfig) => {
 
     let reloadTimeoutId: number | null = null;
     let versionIntervalId: number | null = null;
+    let electronFocusTimeoutId: number | null = null;
 
     const getVersion = () => fetch(VERSION_PATH).then((response) => response.json());
 
@@ -121,6 +124,11 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         if (reloadTimeoutId) {
             window.clearTimeout(reloadTimeoutId);
             reloadTimeoutId = null;
+        }
+
+        if (electronFocusTimeoutId) {
+            window.clearTimeout(electronFocusTimeoutId);
+            electronFocusTimeoutId = null;
         }
     };
 
@@ -141,7 +149,8 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         clearReload();
         reloadTimeoutId = window.setTimeout(() => {
             // If the user turns out to be busy here for some reason, abort the reload, and await a new visibilitychange event
-            if (domIsBusy() || getIsBusy()) {
+            // In the case of the electron app, we also check if the app is focused, we abort reloading if that's the case
+            if (domIsBusy() || getIsBusy() || document.hasFocus()) {
                 return;
             }
             window.location.reload();
@@ -167,10 +176,25 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         document.addEventListener('visibilitychange', handleVisibilityChange);
     };
 
+    // The 'visibilitychange' event is different on Electron and only triggered when the app is completely hidden
+    // This happens when the reduce the app in the dock or switch to a full screen application
+    // To mitigate this we set a 5 minute timeout that checks if the app is not focused, if that's the case we schedule a reload
+    const handleElectronFocus = () => {
+        electronFocusTimeoutId = window.setTimeout(() => {
+            if (!document.hasFocus()) {
+                scheduleReload();
+            }
+        }, FIVE_MINUTES);
+    };
+
     const checkForNewVersion = async () => {
         if (await isNewVersionAvailable()) {
             clearVersionCheck();
-            registerVisibilityChangeListener();
+            if (isElectronApp()) {
+                handleElectronFocus();
+            } else {
+                registerVisibilityChangeListener();
+            }
         }
     };
 
