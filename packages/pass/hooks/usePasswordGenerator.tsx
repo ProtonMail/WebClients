@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars } from '@proton/pass/lib/password/constants';
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig, GeneratePasswordMode } from '@proton/pass/lib/password/generator';
 import { generatePassword } from '@proton/pass/lib/password/generator';
 import { SeperatorOptions } from '@proton/pass/lib/password/memorable';
-import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
@@ -57,7 +55,7 @@ export const getCharsGroupedByColor = (password: string) => {
         ));
 };
 
-export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordOptions = {
+export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordConfig<'memorable'> = {
     type: 'memorable',
     options: {
         wordCount: 4,
@@ -67,7 +65,7 @@ export const DEFAULT_MEMORABLE_PW_OPTIONS: GeneratePasswordOptions = {
     },
 };
 
-export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordOptions = {
+export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordConfig<'random'> = {
     type: 'random',
     options: {
         length: DEFAULT_PASSWORD_LENGTH,
@@ -77,25 +75,25 @@ export const DEFAULT_RANDOM_PW_OPTIONS: GeneratePasswordOptions = {
     },
 };
 
-export const usePasswordGenerator = (initial: MaybeNull<GeneratePasswordOptions>) => {
-    const dispatch = useDispatch();
+type UsePasswordGeneratorOptions = {
+    initial: MaybeNull<GeneratePasswordConfig>;
+    onConfigChange: (options: GeneratePasswordConfig) => void;
+};
 
-    const [passwordOptions, setOptions] = useState<GeneratePasswordOptions>(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS);
-    const [password, setPassword] = useState(() => generatePassword(passwordOptions));
-    const regeneratePassword = () => setPassword(generatePassword(passwordOptions));
+export const usePasswordGenerator = ({ initial, onConfigChange }: UsePasswordGeneratorOptions) => {
+    const [config, setConfig] = useState<GeneratePasswordConfig>(initial ?? DEFAULT_MEMORABLE_PW_OPTIONS);
+    const [password, setPassword] = useState(() => generatePassword(config));
+    const regeneratePassword = () => setPassword(generatePassword(config));
 
-    const savePasswordOptions = useCallback(
-        /** debounce the pw options dispatch in order to avoid swarming the
-         * store with updates when using the length slider */
-        debounce((opts: GeneratePasswordOptions) => dispatch(passwordOptionsEdit(opts)), 250),
-        []
-    );
+    /** debounce the pw options dispatch in order to avoid swarming the
+     * store with updates when using the length slider */
+    const savePasswordOptions = useCallback(debounce(onConfigChange, 250), []);
 
-    const setPasswordOptions = <T extends GeneratePasswordOptions['type']>(
+    const setPasswordOptions = <T extends GeneratePasswordConfig['type']>(
         type: T,
-        update?: Partial<Extract<GeneratePasswordOptions, { type: T }>['options']>
+        update?: Partial<Extract<GeneratePasswordConfig, { type: T }>['options']>
     ) => {
-        setOptions((options) => {
+        setConfig((options) => {
             const newOptions = (() => {
                 if (update) return merge(options, { options: update });
                 if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
@@ -109,15 +107,26 @@ export const usePasswordGenerator = (initial: MaybeNull<GeneratePasswordOptions>
     };
 
     /* regenerate the password on each options change */
-    useEffect(() => regeneratePassword(), Object.values(passwordOptions.options));
+    useEffect(() => regeneratePassword(), Object.values(config.options));
 
     return {
+        config,
         password,
-        passwordOptions,
         setPassword,
         setPasswordOptions,
         regeneratePassword,
     };
 };
 
-export type UsePasswordGeneratorResult = ReturnType<typeof usePasswordGenerator>;
+export type UsePasswordGeneratorResult<T extends GeneratePasswordMode = GeneratePasswordMode> = Omit<
+    ReturnType<typeof usePasswordGenerator>,
+    'config'
+> & { config: GeneratePasswordConfig<T> };
+
+export const isUsingRandomPassword = (
+    result: UsePasswordGeneratorResult
+): result is UsePasswordGeneratorResult<'random'> => result.config.type === 'random';
+
+export const isUsingMemorablePassword = (
+    result: UsePasswordGeneratorResult
+): result is UsePasswordGeneratorResult<'memorable'> => result.config.type === 'memorable';

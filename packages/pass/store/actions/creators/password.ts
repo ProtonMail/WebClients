@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { type GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import { type GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { withCache } from '@proton/pass/store/actions/with-cache';
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 
@@ -9,6 +9,6 @@ export const passwordDelete = createAction('password::delete', (payload: { id: s
 export const passwordHistoryClear = createAction('password::history::clear', () => withCache({ payload: {} }));
 export const passwordHistoryGarbageCollect = createAction('password::history::gc', () => withCache({ payload: {} }));
 
-export const passwordOptionsEdit = createAction('password::options::edit', (payload: GeneratePasswordOptions) =>
+export const passwordOptionsEdit = createAction('password::options::edit', (payload: GeneratePasswordConfig) =>
     withCache({ payload })
 );
