@@ -97,21 +97,19 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
                 const isObsolete = model.obsoleteFingerprints.has(fingerprint);
                 const isCompromised = model.compromisedFingerprints.has(fingerprint);
-                const isPrimary =
-                    index === 0 &&
-                    supportsEncryption &&
-                    !isObsolete &&
-                    !isCompromised &&
-                    (totalApiKeys ? true : model.encrypt);
+                const isPrimary = model.encrypt && index === 0 && supportsEncryption && !isObsolete && !isCompromised;
                 const isWKD = !!model.apiKeysSourceMap[API_KEY_SOURCE.WKD]?.has(fingerprint);
                 const isKOO = !!model.apiKeysSourceMap[API_KEY_SOURCE.KOO]?.has(fingerprint);
                 const isUploaded = index >= totalApiKeys;
                 const canBePrimary =
+                    // the option is only relevant if no API keys are present:
+                    // if the key was manually uploaded in the past, but now API keys are also present, the uploaded key can no longer be used for sending
+                    // (the user will be prompted to trust one of the API keys when sending)
+                    model.isPGPExternalWithoutExternallyFetchedKeys &&
                     !isPrimary &&
-                    supportsEncryption &&
-                    !isObsolete &&
-                    !isCompromised &&
-                    (isUploaded ? totalApiKeys === 0 && model.encrypt : isTrusted);
+                    isUploaded &&
+                    model.encrypt &&
+                    supportsEncryption;
                 const canBeTrusted = !isTrusted && !isUploaded && !isCompromised;
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
@@ -175,7 +173,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     >{c('Table header').t`Actions`}</th>
                 </tr>
             </thead>
-            <TableBody>
+            <TableBody data-testid="contact-keys-table">
                 {keys.map(
                     ({
                         fingerprint,
@@ -233,16 +231,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                             list.push({
                                 text: c('Action').t`Use for sending`,
                                 onClick: () => {
-                                    const apiKeyIndex = model.publicKeys.apiKeys.findIndex(
-                                        (key) => key.getFingerprint() === fingerprint
-                                    );
                                     const pinnedKeyIndex = model.publicKeys.pinnedKeys.findIndex(
                                         (key) => key.getFingerprint() === fingerprint
                                     );
-                                    const reOrderedApiKeys =
-                                        apiKeyIndex !== -1
-                                            ? move(model.publicKeys.apiKeys, apiKeyIndex, 0)
-                                            : model.publicKeys.apiKeys;
                                     const reOrderedPinnedKeys =
                                         pinnedKeyIndex !== -1
                                             ? move(model.publicKeys.pinnedKeys, pinnedKeyIndex, 0)
@@ -250,10 +241,10 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     setModel({
                                         ...model,
                                         publicKeys: {
-                                            apiKeys: reOrderedApiKeys,
+                                            ...model.publicKeys,
                                             pinnedKeys: reOrderedPinnedKeys,
                                             verifyingPinnedKeys: getVerifyingKeys(
-                                                reOrderedApiKeys,
+                                                reOrderedPinnedKeys,
                                                 model.compromisedFingerprints
                                             ),
                                         },
@@ -365,6 +356,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isPrimary ? (
                                     <Badge
                                         type="primary"
+                                        data-testid="primary-key-label"
                                         tooltip={primaryKeyTooltipText}
                                     >
                                         {primaryText}
