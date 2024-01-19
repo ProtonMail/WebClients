@@ -1,14 +1,12 @@
 import { useMemo } from 'react';
 
-import { ChartData, ChartDataset } from 'chart.js';
+import { ChartDataset } from 'chart.js';
 
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { getNewRandomColor, getWalletBalance, getWalletTransactions } from '../../utils';
+import { DoughnutChartData } from '../charts/DoughnutChart';
 
-type WalletBalanceAcc = [string[], { label: string; data: number[]; backgroundColor: string[]; borderWidth: number }[]];
-
-type BalanceDistributionChartData = ChartData<'doughnut', number[], unknown>;
 type WalletBalanceEvolutionChartDataset = ChartDataset<
     'line',
     {
@@ -23,34 +21,21 @@ type WalletBalanceEvolutionChartDataset = ChartDataset<
  */
 const formatWalletToDoughnutChart = (
     data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
-) => {
+): DoughnutChartData => {
     const raw = data && 'accounts' in data ? data.accounts : data;
 
-    const init: WalletBalanceAcc = [[], [{ label: 'Balance', data: [], backgroundColor: [], borderWidth: 0 }]];
+    const chartData = (raw ?? []).reduce((acc: DoughnutChartData, walletOrAccount) => {
+        const [label, balance] =
+            'accounts' in walletOrAccount
+                ? [walletOrAccount.Name, getWalletBalance(walletOrAccount)]
+                : [walletOrAccount.Label, Number(walletOrAccount.balance.confirmed)];
 
-    const [labels, datasets] =
-        raw?.reduce(([accLabels, [accDataset]]: WalletBalanceAcc, walletOrAccount) => {
-            const [label, balance] =
-                'accounts' in walletOrAccount
-                    ? [walletOrAccount.Name, getWalletBalance(walletOrAccount)]
-                    : [walletOrAccount.Label, Number(walletOrAccount.balance.confirmed)];
+        const color = getNewRandomColor(acc.map(([, color]) => color));
 
-            const color = getNewRandomColor(accDataset.backgroundColor);
+        return [...acc, [balance, color, label] as [number, string, string]];
+    }, []);
 
-            return [
-                [...accLabels, label],
-                [
-                    {
-                        ...accDataset,
-                        data: [...accDataset.data, balance],
-                        backgroundColor: [...accDataset.backgroundColor, color],
-                        cutout: '70%',
-                    },
-                ],
-            ];
-        }, init) ?? init;
-
-    return { labels, datasets };
+    return chartData;
 };
 
 /**
@@ -67,7 +52,7 @@ export const useBalanceOverview = (
           ]
         : [getWalletTransactions(data), getWalletBalance(data), data?.accounts.length ?? 0];
 
-    const balanceDistributionDoughnutChartData: BalanceDistributionChartData = useMemo(
+    const balanceDistributionDoughnutChartData: DoughnutChartData = useMemo(
         () => formatWalletToDoughnutChart(data),
         [data]
     );
