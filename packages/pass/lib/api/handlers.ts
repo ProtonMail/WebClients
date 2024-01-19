@@ -1,7 +1,7 @@
 import type { ApiAuth, ApiCallFn, ApiOptions, ApiState, Maybe } from '@proton/pass/types';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
-import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';

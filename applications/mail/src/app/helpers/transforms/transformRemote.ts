@@ -7,7 +7,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 
-import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageRemoteImage, MessageState } from '../../store/messages/messagesTypes';
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import {

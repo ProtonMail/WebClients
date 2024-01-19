@@ -8,6 +8,14 @@ import ReportsTable from './ReportsTable';
 
 const server = setupServer();
 
+jest.mock('@proton/components/hooks/useApiEnvironmentConfig', () => () => [
+    {
+        'importer.google.client_id': 'string',
+        'importer.outlook.client_id': 'string',
+    },
+    false,
+]);
+
 beforeAll(() => {
     server.listen();
 });
@@ -117,21 +125,11 @@ describe('Reports table testing', () => {
             },
         };
 
-        const apiCallSpy = jest.fn();
         const importersSpy = jest.fn();
         const singleImporterSpy = jest.fn();
 
         server.use(
-            rest.get('/core/v4/features', (req, res, ctx) => {
-                apiCallSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            }),
             rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                apiCallSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            }),
-            rest.get('/core/v4/system/config', (req, res, ctx) => {
-                apiCallSpy();
                 return res(ctx.set('date', '01/01/2022'), ctx.json({}));
             }),
             rest.get('importer/v1/importers', (req, res, ctx) => {
@@ -158,8 +156,7 @@ describe('Reports table testing', () => {
 
         easySwitchRender(<ReportsTable />);
 
-        await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
-        await waitFor(() => expect(apiCallSpy).toHaveBeenCalled());
+        await waitFor(() => screen.getByTestId('ReportsTable:reconnectImporter'));
 
         const reconnectButton = screen.getByTestId('ReportsTable:reconnectImporter');
         fireEvent.click(reconnectButton);
@@ -199,22 +196,9 @@ describe('Reports table testing', () => {
             ],
         };
 
-        const apiCallSpy = jest.fn();
         const importersSpy = jest.fn();
 
         server.use(
-            rest.get('/core/v4/features', (req, res, ctx) => {
-                apiCallSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            }),
-            rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                apiCallSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            }),
-            rest.get('/core/v4/system/config', (req, res, ctx) => {
-                apiCallSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
-            }),
             rest.get('importer/v1/sync', (req, res, ctx) => {
                 importersSpy();
                 return res(ctx.set('date', '01/01/2022'), ctx.json(ongoingForward));
@@ -223,7 +207,6 @@ describe('Reports table testing', () => {
 
         easySwitchRender(<ReportsTable />);
 
-        await waitFor(() => expect(apiCallSpy).toHaveBeenCalled());
         await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
         const reportRows = screen.getAllByTestId('reportsTable:syncRow');
         expect(reportRows).toHaveLength(1);

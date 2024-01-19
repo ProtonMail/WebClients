@@ -11,9 +11,9 @@ interface Props {
 }
 
 const OrganizationTwoFAHeader = ({ organization }: Props) => {
-    const [members, loadingMembers] = useMembers();
+    const [members] = useMembers();
 
-    if (!organization || loadingMembers) {
+    if (!organization || !members) {
         return <Loader />;
     }
 

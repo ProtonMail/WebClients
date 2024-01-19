@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useModalState } from '@proton/components/components';
-import { useCache } from '@proton/components/hooks';
+import { useGetUserInvitations } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';
 import { PendingInvitation } from '@proton/shared/lib/interfaces';
-import { UserInvitationModel } from '@proton/shared/lib/models';
+import noop from '@proton/utils/noop';
 
 import PendingInvitationModal from '../PendingInvitationModal';
 
@@ -19,13 +19,11 @@ const PendingInvitationPanel = ({ invites }: Props) => {
     const [selectedInvitation, setSelectedInvitation] = useState<PendingInvitation>();
     const [invitationModal, setInvitationModal, renderInvitationModal] = useModalState();
     const uid = useUid('pending-invitation-dashboard');
-    const cache = useCache();
+    const getUserInvitations = useGetUserInvitations();
 
     useEffect(() => {
         // Force refresh the invitations when user navigates back to the dashboard
-        if (cache.get(UserInvitationModel.key)) {
-            cache.delete(UserInvitationModel.key);
-        }
+        getUserInvitations({ forceFetch: true }).catch(noop);
     }, []);
 
     const handleInvitationClick = (invitation: PendingInvitation) => {

@@ -22,11 +22,11 @@ import {
     useApi,
     useEventManager,
     useGetCalendars,
+    useGetOrganization,
+    useGetSubscription,
     useModals,
     useNotifications,
-    useOrganization,
     usePlans,
-    useSubscription,
     useUser,
     useVPNServersCount,
 } from '../../../hooks';
@@ -54,8 +54,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const api = useApi();
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
-    const [subscription, loadingSubscription] = useSubscription();
-    const [organization] = useOrganization();
+    const getSubscription = useGetSubscription();
+    const getOrganization = useGetOrganization();
     const [plans, loadingPlans] = usePlans();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
@@ -63,8 +63,6 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
 
-    const { PeriodEnd = 0 } = subscription || {};
-    const currentPlan = getPlan(subscription);
     const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -87,6 +85,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         if (user.isFree) {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
+
+        const subscription = await getSubscription();
 
         // Start promise early
         const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
@@ -114,7 +114,9 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
+        const currentPlan = getPlan(subscription);
         const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, { vpnServers }) : undefined;
+        const { PeriodEnd = 0 } = subscription || {};
 
         // We only show the plan downgrade modal for plans that are defined with features
         if (shortPlan) {
@@ -135,6 +137,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
                 createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={reject} />);
             });
         }
+
+        const organization = await getOrganization();
 
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
@@ -169,7 +173,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
 
     return (
         <Button
-            disabled={loading || loadingPlans || loadingSubscription}
+            disabled={loading || loadingPlans}
             className={className}
             onClick={() => withLoading(handleClick())}
             data-testid="UnsubscribeButton"

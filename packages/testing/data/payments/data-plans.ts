@@ -4,6 +4,7 @@ import { PlansMap } from '@proton/shared/lib/interfaces';
 export const PLANS_MAP: PlansMap = {
     [PLANS.MAIL_PRO]: {
         ID: 'BKiAUbkGnUPiy2c3b0sBCK557OBnWD7ACqqX3VPoZqOOyeMdupoWcjrPDBHy3ANfFKHnJs6qdQrdvHj7zjon_g==',
+        ParentMetaPlanID: '',
         Type: 1,
         Name: PLANS.MAIL_PRO,
         Title: 'Mail Essentials',
@@ -27,6 +28,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 8388,
             '24': 15576,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -35,6 +41,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.MEMBER_MAIL_PRO]: {
         ID: 'FK4MKKIVJqOC9Pg_sAxCjNWf8PM9yGzrXO3eXq8sk5RJB6HtaRBNUEcnvJBrQVPAtrDSoTNq4Du3FpqIxyMhHQ==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.MEMBER_MAIL_PRO,
         Title: '+1 User',
@@ -58,6 +65,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 8388,
             '24': 15576,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -66,6 +78,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [PLANS.BUNDLE_PRO]: {
         ID: 'q6fRrEIn0nyJBE_-YSIiVf80M2VZhOuUHW5In4heCyOdV_nGibV38tK76fPKm7lTHQLcDiZtEblk0t55wbuw4w==',
+        ParentMetaPlanID: '',
         Type: 1,
         Name: PLANS.BUNDLE_PRO,
         Title: 'Business',
@@ -89,6 +102,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 13188,
             '24': 23976,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -97,6 +115,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: {
         ID: '39hry1jlHiPzhXRXrWjfS6t3fqA14QbYfrbF30l2PYYWOhVpyJ33nhujM4z4SHtfuQqTx6e7oSQokrqhLMD8LQ==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.DOMAIN_BUNDLE_PRO,
         Title: '+1 Domain for Business',
@@ -120,6 +139,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 1680,
             '24': 3120,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -128,6 +152,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: {
         ID: '0WjWEbOmKh7F2a1Snx2FJKA7a3Fm05p-nIZ0TqiHjDDUa6oHnsyWeeVXgSuzumCmFE8_asJsom9ZzGbx-eDecw==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.MEMBER_BUNDLE_PRO,
         Title: '+1 User for Business',
@@ -151,6 +176,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 13188,
             '24': 23976,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -159,6 +189,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [PLANS.FAMILY]: {
         ID: 'UOZXnOXW6gC7xjRiJC14rn0UazL4M7wuHDdMILF1H6xnTW41x2ka_MY4XikenQOyBAk4r6ra5jfPzs2FybDKTg==',
+        ParentMetaPlanID: '',
         Type: 1,
         Name: PLANS.FAMILY,
         Title: 'Proton Family',
@@ -182,6 +213,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 28788,
             '24': 47976,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -190,6 +226,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [PLANS.VPN_PRO]: {
         ID: 'AzampIHTO3xrN5LwsFXdd4fNyasQ4pojbycVaupg7I2pKhr5pzwQGxuFUgTF_fvUZiNZ_tVjjeCs8_DnOfADYQ==',
+        ParentMetaPlanID: '',
         Type: 1,
         Name: PLANS.VPN_PRO,
         Title: 'VPN Essentials',
@@ -213,6 +250,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 16776,
             '24': 28752,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -221,6 +263,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.MEMBER_VPN_PRO]: {
         ID: 'XPnq2M_XbuLj7ct30C-hy0AwvPSjV_uMmbzrNeNRLQ63L8lOU7oSO1fRbjZhn0x4GFfypOHwInBKGFkS90AUKQ==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.MEMBER_VPN_PRO,
         Title: '+1 User',
@@ -244,6 +287,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 8388,
             '24': 14376,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -252,6 +300,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [PLANS.VPN_BUSINESS]: {
         ID: 'Br7AescivJNN22BCAqgq1aDCH0gvGXseztEeC2wurDH43gNMNfu77T3Y-kVZdp9wQH8r5nmycmQXLhBlh_gv9g==',
+        ParentMetaPlanID: '',
         Type: 1,
         Name: PLANS.VPN_BUSINESS,
         Title: 'VPN Business',
@@ -275,6 +324,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 71964,
             '24': 129528,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -283,6 +337,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: {
         ID: '2XuG4XQN__aa3uie3ijJ1xVPs9vJP_9TJdY34ky3hJHsMajkQshefL7AXOfW1Z5_wV-GQ3fCg9lCskuJ92wHKg==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.MEMBER_VPN_BUSINESS,
         Title: '+1 User',
@@ -306,6 +361,11 @@ export const PLANS_MAP: PlansMap = {
             '12': 11988,
             '24': 21576,
         },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
+        },
         Currency: 'CHF',
         Quantity: 1,
         Offers: [],
@@ -314,6 +374,7 @@ export const PLANS_MAP: PlansMap = {
     },
     [ADDON_NAMES.IP_VPN_BUSINESS]: {
         ID: '3pf-EZUUjPtbBvBREF0TOxA4Cq6lYozP7fyUhCa0NnU3Im_QCoihoHN1vJKFWd7_hOx1lR35tAG3C8NjPr70RQ==',
+        ParentMetaPlanID: '',
         Type: 0,
         Name: ADDON_NAMES.IP_VPN_BUSINESS,
         Title: '+1 Ip',
@@ -336,6 +397,11 @@ export const PLANS_MAP: PlansMap = {
             '1': 4999,
             '12': 47988,
             '24': 86376,
+        },
+        PeriodEnd: {
+            '1': 1702849536,
+            '12': 1731879936,
+            '24': 1763415936,
         },
         Currency: 'CHF',
         Quantity: 1,

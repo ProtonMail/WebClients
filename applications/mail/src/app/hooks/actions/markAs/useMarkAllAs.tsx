@@ -10,10 +10,10 @@ import SelectAllMarkModal from 'proton-mail/components/list/select-all/modals/Se
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticMarkAs } from 'proton-mail/hooks/optimistic/useOptimisticMarkAs';
-import { backendActionStarted, markAll } from 'proton-mail/logic/elements/elementsActions';
-import { elementsMap as elementsMapSelector } from 'proton-mail/logic/elements/elementsSelectors';
-import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
-import { store, useAppDispatch } from 'proton-mail/logic/store';
+import { backendActionStarted, markAll } from 'proton-mail/store/elements/elementsActions';
+import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
 interface MarkAllParams {
     isMessage: boolean;
@@ -29,7 +29,8 @@ export const useMarkAllAs = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [folders = []] = useFolders();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
+    const store = useMailStore();
     const optimisticMarkAs = useOptimisticMarkAs();
     const canUseOptimistic = useFlag('SelectAllOptimistic');
 

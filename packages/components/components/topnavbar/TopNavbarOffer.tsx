@@ -69,7 +69,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
             onceRef.current ||
             // Hide for paid mail cycle 12/24
             (user.hasPaidMail &&
-                [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(subscription?.Cycle) &&
+                [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(subscription?.Cycle as any) &&
                 !combinedIgnoreVisited) ||
             // Hide the autopopup during the welcome flow and re-trigger it when the welcome flow completes.
             (!welcomeFlags.isDone && !ignoreOnboarding) ||

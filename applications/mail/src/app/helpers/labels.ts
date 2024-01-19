@@ -10,9 +10,9 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN } from '../constants';
-import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
+import { MessageWithOptionalBody } from '../store/messages/messagesTypes';
 import { getLabelIDs } from './elements';
 
 const {

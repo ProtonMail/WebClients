@@ -11,7 +11,6 @@ import {
     useModals,
     usePaymentMethods,
     useSubscription,
-    useTypedSubscription,
 } from '../..';
 
 jest.mock('../../hooks/useConfig', () => () => ({
@@ -29,9 +28,8 @@ jest.mock('./PaymentMethodsTable');
 describe('PaymentMethodsSection', () => {
     beforeEach(() => {
         jest.resetAllMocks();
-        jest.mocked(usePaymentMethods).mockReturnValue([[], false, undefined as any]);
-        jest.mocked(useSubscription).mockReturnValue([{} as any, false, undefined as any]);
-        jest.mocked(useTypedSubscription).mockReturnValue([FREE_SUBSCRIPTION, false]);
+        jest.mocked(usePaymentMethods).mockReturnValue([[], false]);
+        jest.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION as any, false]);
         jest.mocked(useModals).mockReturnValue({
             createModal: jest.fn(),
         } as any);
@@ -43,7 +41,7 @@ describe('PaymentMethodsSection', () => {
 
     it('should render <Loading> if payment methods are loading', () => {
         const usePaymentMethodsMock = jest.mocked(usePaymentMethods);
-        usePaymentMethodsMock.mockReturnValue([[], true, undefined as any]);
+        usePaymentMethodsMock.mockReturnValue([[], true]);
 
         const { container } = render(<PaymentMethodsSection />);
 
@@ -51,7 +49,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <Loading> if subscriptions are loading', () => {
-        jest.mocked(useTypedSubscription).mockReturnValue([undefined, true]);
+        jest.mocked(useSubscription).mockReturnValue([undefined as any, true]);
 
         const { container } = render(<PaymentMethodsSection />);
 
@@ -59,7 +57,7 @@ describe('PaymentMethodsSection', () => {
     });
 
     it('should render <MozillaInfoPanel> if subscription is managed by mozilla', () => {
-        jest.mocked(useTypedSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
+        jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
 
         const { container } = render(<PaymentMethodsSection />);
 
@@ -92,7 +90,6 @@ describe('PaymentMethodsSection', () => {
                 },
             ],
             false,
-            undefined as any,
         ]);
 
         const { container } = render(<PaymentMethodsSection />);

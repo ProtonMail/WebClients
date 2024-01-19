@@ -26,7 +26,6 @@ describe('MessagesSection', () => {
         mockUseApi(mockedApi);
         mockUseEventManager({ call: mockedCall });
 
-        mockUseMailSettings();
         mockUseNotifications();
 
         mockUseFlag().mockImplementation((code) => {
@@ -34,6 +33,7 @@ describe('MessagesSection', () => {
         });
 
         mockUseUser();
+        mockUseMailSettings();
     });
 
     describe('AlmostAllMail', () => {
@@ -70,28 +70,28 @@ describe('MessagesSection', () => {
                 const setting = screen.getByText('Exclude Spam/Trash from All mail');
                 await userEvent.click(setting);
 
-            await waitFor(() => {
-                expect(mockedApi).toHaveBeenCalledTimes(1);
-            });
-            expect(mockedApi).toHaveBeenCalledWith({
-                data: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED },
-                method: 'put',
-                url: 'mail/v4/settings/almost-all-mail',
-            });
+                await waitFor(() => {
+                    expect(mockedApi).toHaveBeenCalledTimes(1);
+                });
+                expect(mockedApi).toHaveBeenCalledWith({
+                    data: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED },
+                    method: 'put',
+                    url: 'mail/v4/settings/almost-all-mail',
+                });
 
                 await userEvent.click(setting);
 
-            await waitFor(() => {
-                expect(mockedApi).toHaveBeenCalledTimes(2);
-            });
-            expect(mockedApi).toHaveBeenLastCalledWith({
-                data: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED },
-                method: 'put',
-                url: 'mail/v4/settings/almost-all-mail',
+                await waitFor(() => {
+                    expect(mockedApi).toHaveBeenCalledTimes(2);
+                });
+                expect(mockedApi).toHaveBeenLastCalledWith({
+                    data: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED },
+                    method: 'put',
+                    url: 'mail/v4/settings/almost-all-mail',
+                });
             });
         });
     });
-});
 
     describe('PageSize', () => {
         beforeEach(() => {

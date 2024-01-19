@@ -9,11 +9,11 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { ContactGroupsMap, ContactsMap } from '../../logic/contacts/contactsTypes';
-import { MessageState } from '../../logic/messages/messagesTypes';
 import { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
+import { ContactGroupsMap, ContactsMap } from '../../store/contacts/contactsTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import { isSelfAddress } from '../addresses';
 import { isMessage, isConversation as testIsConversation } from '../elements';
 

@@ -26,8 +26,8 @@ import { EditorTypes, useComposerContent } from '../../hooks/composer/useCompose
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
 import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
 import { useHasScroll } from '../../hooks/useHasScroll';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { Event } from '../../models/event';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import ComposerContent from './ComposerContent';
 import ComposerMeta from './ComposerMeta';
 import ComposerActions from './actions/ComposerActions/ComposerActions';

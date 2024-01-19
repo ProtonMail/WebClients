@@ -1,15 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
+import { FunctionComponent, useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import {
-    ErrorBoundary,
-    FeatureCode,
-    ModalsChildren,
-    StandardErrorPage,
-    useActiveBreakpoint,
-    useFeatures,
-} from '@proton/components';
+import { FeatureCode, ModalsChildren, useActiveBreakpoint, useFeatures } from '@proton/components';
+import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -21,10 +14,8 @@ import PageContainer from './containers/PageContainer';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
-import { store, useSetReduxThunkExtraArgs } from './logic/store';
 
-const MainContainer = () => {
-    useSetReduxThunkExtraArgs();
+const MainContainer: FunctionComponent = () => {
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
@@ -69,39 +60,30 @@ const MainContainer = () => {
 
     return (
         <QuickSettingsRemindersProvider>
-            <ReduxProvider store={store}>
-                <EncryptedSearchProvider>
-                    <SimpleLoginExtensionProvider>
-                        <MailContentRefProvider mailContentRef={mailContentRef}>
-                            <ChecklistsProvider>
-                                <ComposerContainer breakpoints={breakpoints}>
-                                    <CheckAllRefProvider>
-                                        <ModalsChildren />
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                )}
-                                            />
-                                        </Switch>
-                                    </CheckAllRefProvider>
-                                </ComposerContainer>
-                            </ChecklistsProvider>
-                        </MailContentRefProvider>
-                    </SimpleLoginExtensionProvider>
-                </EncryptedSearchProvider>
-            </ReduxProvider>
+            <DrawerThemeInjector />
+            <EncryptedSearchProvider>
+                <SimpleLoginExtensionProvider>
+                    <MailContentRefProvider mailContentRef={mailContentRef}>
+                        <ChecklistsProvider>
+                            <ComposerContainer breakpoints={breakpoints}>
+                                <CheckAllRefProvider>
+                                    <ModalsChildren />
+                                    <Switch>
+                                        <Route
+                                            path={MAIN_ROUTE_PATH}
+                                            render={() => (
+                                                <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                            )}
+                                        />
+                                    </Switch>
+                                </CheckAllRefProvider>
+                            </ComposerContainer>
+                        </ChecklistsProvider>
+                    </MailContentRefProvider>
+                </SimpleLoginExtensionProvider>
+            </EncryptedSearchProvider>
         </QuickSettingsRemindersProvider>
     );
 };
 
-const WrappedMainContainer = () => {
-    return (
-        <ErrorBoundary component={<StandardErrorPage big />}>
-            <MainContainer />
-        </ErrorBoundary>
-    );
-};
-
-export default WrappedMainContainer;
+export default MainContainer;

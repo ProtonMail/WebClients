@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
 import { Breakpoints, useHotkeys, useLabels } from '@proton/components';
@@ -9,12 +8,14 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
-import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
+import { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import ConversationHeader from '../conversation/ConversationHeader';
 import MessageView, { MessageViewRef } from './MessageView';
 
@@ -52,7 +53,7 @@ const MessageOnlyView = ({
     const { message, messageLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
-    const dispatch = useDispatch();
+    const dispatch = useMailDispatch();
 
     useShouldMoveOut({ elementIDs, elementID: messageID, loadingElements, onBack });
 

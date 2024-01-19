@@ -37,6 +37,7 @@ beforeEach(() => {
     const plans: Props['plans'] = [
         {
             ID: '1',
+            ParentMetaPlanID: '',
             Type: PLAN_TYPES.PLAN,
             Cycle: CYCLE.MONTHLY,
             Name: PLANS.BUNDLE,
@@ -57,6 +58,11 @@ beforeEach(() => {
                 [CYCLE.MONTHLY]: 1099,
                 [CYCLE.YEARLY]: 1099 * 12,
                 [CYCLE.TWO_YEARS]: 1099 * 24,
+            },
+            PeriodEnd: {
+                '1': 1678452604,
+                '12': 1707569404,
+                '24': 1739191804,
             },
             State: 1,
             Offers: [],

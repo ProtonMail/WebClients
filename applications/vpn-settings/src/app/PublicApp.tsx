@@ -11,6 +11,7 @@ import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/S
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
 import {
+    NotificationsChildren,
     ProtonLoginCallback,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
@@ -19,7 +20,6 @@ import {
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
@@ -30,8 +30,6 @@ import signupPage from '../pages/signup';
 import AccountLoaderPage from './AccountLoaderPage';
 import VPNPublicApp from './VPNPublicApp';
 import LoginContainer from './containers/LoginContainer';
-
-setMetricsEnabled(true);
 
 const getPaths = (maybeLocalePrefix: string): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
@@ -59,6 +57,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
 
     return (
         <>
+            <NotificationsChildren />
             <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
                 <UnleashFlagProvider>

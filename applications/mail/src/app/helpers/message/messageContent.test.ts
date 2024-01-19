@@ -6,7 +6,7 @@ import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { data, fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageDecryption, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageDecryption, MessageState } from '../../store/messages/messagesTypes';
 import { generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { clearAll, removeLineBreaks } from '../test/helper';
 import { createDocument } from '../test/message';

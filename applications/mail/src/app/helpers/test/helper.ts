@@ -2,14 +2,11 @@ import { waitFor, act } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
 
-import { globalReset } from '../../logic/actions';
-import { store } from '../../logic/store';
 import { api, clearApiMocks } from './api';
-import { addressKeysCache, base64Cache, clearCache } from './cache';
+import { base64Cache, clearCache } from './cache';
 import { clearApiContacts } from './contact';
 import { clearApiKeys } from './crypto';
 import { eventManagerListeners } from './event-manager';
-import { resetHistory } from './render';
 
 export * from './cache';
 export * from './crypto';
@@ -24,15 +21,13 @@ const savedConsole = { ...console };
 export const clearAll = () => {
     jest.clearAllMocks();
     api.mockClear();
-    store.dispatch(globalReset());
+    //store.dispatch(globalReset());
     clearApiMocks();
     clearCache();
     clearApiKeys();
     clearApiContacts();
-    addressKeysCache.clear();
     base64Cache.clear();
     eventManagerListeners.splice(0, eventManagerListeners.length);
-    resetHistory();
     console = { ...savedConsole };
 };
 

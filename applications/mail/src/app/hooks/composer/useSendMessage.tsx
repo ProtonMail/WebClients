@@ -14,6 +14,8 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import unique from '@proton/utils/unique';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
 import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
 import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
@@ -23,14 +25,13 @@ import { encryptPackages } from '../../helpers/send/sendEncrypt';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { cancelSendMessage, endUndo, sent, updateExpires } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageStateWithData, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
-import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions';
-import { useAppDispatch } from '../../logic/store';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import { cancelSendMessage, endUndo, sent, updateExpires } from '../../store/messages/draft/messagesDraftActions';
+import { MessageStateWithData, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
+import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
+import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
-import { useGetAttachment } from '../attachments/useAttachment';
 import useDelaySendSeconds from '../useDelaySendSeconds';
 import { ComposeTypes, OnCompose } from './useCompose';
 import { useSendModifications } from './useSendModifications';
@@ -51,7 +52,7 @@ export const useSendMessage = () => {
     const api = useApi();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { call } = useEventManager();
     const getMessage = useGetMessage();
     const history = useHistory<any>();

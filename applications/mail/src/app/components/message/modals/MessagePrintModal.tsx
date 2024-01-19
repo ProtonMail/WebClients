@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Form, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import MessageBody from '../MessageBody';
 
 import './MessagePrint.scss';

@@ -1,23 +1,23 @@
 import { fireEvent, getByTitle, act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 
 import { arrayToBase64 } from '../../../helpers/base64';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
-    addAddressToCache,
     addApiKeys,
     addApiMock,
     addApiResolver,
-    addKeysToAddressKeysCache,
     clearAll,
     createAttachment,
     createDocument,
     decryptSessionKey,
     generateKeys,
+    getCompleteAddress,
     getDropdown,
     minimalCache,
     parseFormData,
@@ -27,9 +27,8 @@ import {
     waitForNotification,
     waitForSpyCall,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
 import Composer from '../Composer';
-import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
+import { ID, getMessage, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -49,6 +48,8 @@ describe('Composer attachments', () => {
 
     let updateSpy: jest.Mock;
     let sendSpy: jest.Mock;
+
+    const composerID = 'composer-test-id';
 
     const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
         const { attachment, sessionKey: generatedSessionKey } = await createAttachment(
@@ -73,19 +74,26 @@ describe('Composer attachments', () => {
 
         minimalCache();
 
-        const message = prepareMessage({
+        const message = getMessage({
             localID: ID,
             data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.Email, Name: address1.ID } },
             messageDocument: { plainText: 'test', document: createDocument('hello') },
         });
 
+        const result = await render(<Composer {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(store, message, composerID);
+            },
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress(address1), getCompleteAddress(address2)]),
+                addressKeys: {
+                    ...getAddressKeyCache(address1.ID, address1Keys),
+                    ...getAddressKeyCache(address2.ID, address2Keys),
+                },
+            },
+        });
+
         addApiKeys(false, toAddress, []);
-        addAddressToCache(address1);
-        addAddressToCache(address2);
-
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const result = await render(<Composer {...props} composerID={composerID} />, false);
 
         props.onClose.mockImplementation(result.unmount);
 
@@ -129,8 +137,6 @@ describe('Composer attachments', () => {
 
     beforeEach(() => {
         clearAll();
-        addKeysToAddressKeysCache(address1.ID, address1Keys);
-        addKeysToAddressKeysCache(address2.ID, address2Keys);
     });
 
     it('should not show embedded modal when plaintext mode', async () => {

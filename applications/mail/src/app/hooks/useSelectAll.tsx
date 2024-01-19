@@ -12,9 +12,9 @@ import {
     getSelectAllButtonText,
 } from 'proton-mail/helpers/selectAll';
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
-import { selectSelectAll } from 'proton-mail/logic/layout/layoutSliceSelectors';
-import { useAppDispatch, useAppSelector } from 'proton-mail/logic/store';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
+import { selectSelectAll } from 'proton-mail/store/layout/layoutSliceSelectors';
 
 interface Props {
     labelID: string;
@@ -28,12 +28,12 @@ export const useSelectAll = ({ labelID }: Props) => {
     const isConversation = isConversationMode(labelID, mailSettings);
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const dispatch = useAppDispatch();
-    const selectAll = useAppSelector(selectSelectAll);
+    const dispatch = useMailDispatch();
+    const selectAll = useMailSelector(selectSelectAll);
     const selectAllAvailable = useFlag('SelectAll');
 
     const locationCount = useMemo(() => {
-        return getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
+        return getLocationElementsCount(labelID, conversationCounts || [], messageCounts || [], isConversation);
     }, [conversationCounts, messageCounts, labelID]);
 
     const getBannerText = useCallback(() => {

@@ -1,14 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
-import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import * as bootstrap from '@proton/account/bootstrap';
+import { NotificationsChildren } from '@proton/components/containers';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { useConfig } from '../../hooks';
@@ -29,25 +24,15 @@ const StandardPublicApp = ({ loader, locales = {}, children }: Props) => {
     const history = useHistory();
 
     useEffect(() => {
-        const run = () => {
+        const run = async () => {
             const searchParams = new URLSearchParams(history.location.search);
-            const languageParams = searchParams.get('language');
-            const languageCookie = getCookie('Locale');
-            const browserLocale = getBrowserLocale();
-            const localeCode =
-                getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
-                getClosestLocaleCode(browserLocale, locales);
-            return Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME, {})),
-                loadLocale(localeCode, locales),
-                loadDateLocale(localeCode, browserLocale),
-            ]);
+            await bootstrap.publicApp({ app: APP_NAME, locales, searchParams, pathLocale: '' });
         };
         wrapUnloadError(run())
             .then(() => setLoading(false))
             .catch((error) => {
                 setError({
-                    message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    message: getNonEmptyErrorMessage(error),
                 });
             });
     }, []);
@@ -62,6 +47,7 @@ const StandardPublicApp = ({ loader, locales = {}, children }: Props) => {
 
     return (
         <>
+            <NotificationsChildren />
             <ModalsChildren />
             {children}
         </>

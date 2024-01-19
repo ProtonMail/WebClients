@@ -1,19 +1,22 @@
-import { getAllKeysReactivationRequests } from '@proton/components/containers/keys/reactivateKeys/getAllKeysToReactive';
-import getLikelyHasKeysToReactivate from '@proton/components/containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
-import { KeyReactivationRequestStateData } from '@proton/components/containers/keys/reactivateKeys/interface';
-import { getInitialStates } from '@proton/components/containers/keys/reactivateKeys/state';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
-import authentication from '../authentication/authentication';
+import { APP_NAMES } from '../constants';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { Address, Api, DecryptedKey, KeyPair, PreAuthKTVerify, User, UserSettings } from '../interfaces';
+import { Address, Api, DecryptedKey, InactiveKey, KeyPair, PreAuthKTVerify, User, UserSettings } from '../interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
+import {
+    getAllKeysReactivationRequests,
+    getInactiveKeys,
+    getInitialStates,
+    getLikelyHasKeysToReactivate,
+} from '../keys/getInactiveKeys';
+import { KeyReactivationRequestStateData } from '../keys/reactivation/interface';
 import {
     generateRecoveryFileMessage,
     generateRecoverySecret,
@@ -82,15 +85,28 @@ export const attemptDeviceRecovery = async ({
     const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
     const addressesKeys = await Promise.all(
         addresses.map(async (address) => {
+            const keys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword);
             return {
                 address,
-                keys: await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword),
+                keys,
+                inactiveKeys: await getInactiveKeys(address.Keys, keys),
             };
         })
     );
 
-    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, user, userKeys);
-    const initialStates = await getInitialStates(allKeysToReactivate);
+    const inactiveKeys = {
+        user: await getInactiveKeys(user.Keys, userKeys),
+        addresses: addressesKeys.reduce<{ [key: string]: InactiveKey[] }>((acc, { address, inactiveKeys }) => {
+            acc[address.ID] = inactiveKeys;
+            return acc;
+        }, {}),
+    };
+    const allKeysToReactivate = getAllKeysReactivationRequests({
+        addresses,
+        user,
+        inactiveKeys,
+    });
+    const initialStates = getInitialStates(allKeysToReactivate);
     const keys = await getKeysFromDeviceRecovery(user);
 
     if (!keys) {
@@ -136,6 +152,7 @@ export const attemptDeviceRecovery = async ({
         user,
         userKeys,
         addresses,
+        addressesKeys,
         keyReactivationRecords,
         keyPassword,
         onReactivation: (_, result) => {
@@ -217,7 +234,7 @@ export const storeDeviceRecovery = async ({
 
 export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
 
-export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings) => {
+export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings, authentication: AuthenticationStore) => {
     return userSettings.DeviceRecovery && authentication.getTrusted();
 };
 
@@ -229,6 +246,7 @@ export const syncDeviceRecovery = async ({
     appName,
     addresses,
     signal,
+    authentication,
 }: {
     api: Api;
     user: User;
@@ -237,9 +255,10 @@ export const syncDeviceRecovery = async ({
     appName: APP_NAMES;
     addresses: Address[];
     signal?: AbortSignal;
+    authentication: AuthenticationStore;
 }) => {
     const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
-    const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings);
+    const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, authentication);
 
     const shouldRemoveDeviceRecovery = hasRecoveryMessage && !isDeviceRecoveryEnabled;
     if (shouldRemoveDeviceRecovery) {

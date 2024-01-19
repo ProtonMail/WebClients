@@ -1,10 +1,19 @@
-import { EOGetHistory, EORender } from '../../helpers/test/eo/EORender';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from 'proton-mail/helpers/test/crypto';
+
+import { EORender } from '../../helpers/test/eo/EORender';
 import { EOClearAll } from '../../helpers/test/eo/helpers';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import EORedirect from './EORedirect';
 
 describe('Encrypted Outside Redirection', () => {
     afterEach(EOClearAll);
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
 
     const getProps = (id?: string) => {
         return {
@@ -18,40 +27,36 @@ describe('Encrypted Outside Redirection', () => {
     it('should redirect to Unlock page from /message if no id', async () => {
         const props = getProps();
 
-        await EORender(<EORedirect {...props} />, '/eo/message/:id');
+        const { history } = await EORender(<EORedirect {...props} />, { routePath: '/eo/message/:id' });
 
         // Redirects to /eo
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo`);
     });
 
     it('should redirect to Unlock page from /reply if no id', async () => {
         const props = getProps();
 
-        await EORender(<EORedirect {...props} />, '/eo/reply/:id');
+        const { history } = await EORender(<EORedirect {...props} />, { routePath: '/eo/reply/:id' });
 
         // Redirects to /eo
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo`);
     });
 
     it('should redirect to Unlock page from /message if invalid id', async () => {
         const props = getProps('invalidID');
 
-        await EORender(<EORedirect {...props} />, '/eo/message/:id');
+        const { history } = await EORender(<EORedirect {...props} />, { routePath: '/eo/message/:id' });
 
         // Redirects to /eo
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo`);
     });
 
     it('should redirect to Unlock page from /reply if invalid id', async () => {
         const props = getProps('invalidID');
 
-        await EORender(<EORedirect {...props} />, '/eo/reply/:id');
+        const { history } = await EORender(<EORedirect {...props} />, { routePath: '/eo/reply/:id' });
 
         // Redirects to /eo
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo`);
     });
 });

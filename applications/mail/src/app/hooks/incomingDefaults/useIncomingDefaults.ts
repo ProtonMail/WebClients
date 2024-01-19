@@ -1,15 +1,15 @@
-import { useSelector } from 'react-redux';
-
 import { IncomingDefault, IncomingDefaultStatus } from '@proton/shared/lib/interfaces';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
     getIncomingDefaultStatus,
     getIncomingDefaultsAddresses,
-} from '../../logic/incomingDefaults/incomingDefaultsSelectors';
-import { RootState } from '../../logic/store';
+} from '../../store/incomingDefaults/incomingDefaultsSelectors';
+import { MailState } from '../../store/store';
 
 export const useIncomingDefaultsAddresses = (): IncomingDefault[] =>
-    useSelector((state: RootState) => getIncomingDefaultsAddresses(state));
+    useMailSelector((state: MailState) => getIncomingDefaultsAddresses(state));
 
 export const useIncomingDefaultsStatus = (): IncomingDefaultStatus =>
-    useSelector((state: RootState) => getIncomingDefaultStatus(state));
+    useMailSelector((state: MailState) => getIncomingDefaultStatus(state));

@@ -9,13 +9,13 @@ import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useApi, useConfig, useErrorHandler, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
-import useKTActivation from '../keyTransparency/useKTActivation';
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
@@ -266,7 +266,6 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const ktActivation = useKTActivation();
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -349,7 +348,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 hasTrustedDeviceRecovery: false,
                                 persistent: false,
                                 setupVPN: false,
-                                ktActivation,
+                                ktActivation: KeyTransparencyActivation.DISABLED,
                             });
                             return await handleResult(result);
                         } catch (e) {

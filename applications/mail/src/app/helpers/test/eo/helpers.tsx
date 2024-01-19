@@ -3,16 +3,14 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { globalReset } from '../../../logic/actions';
-import { init, loadEOMessage, loadEOToken } from '../../../logic/eo/eoActions';
-import { store } from '../../../logic/eo/eoStore';
-import { EOMessage, EOMessageReply } from '../../../logic/eo/eoType';
+import { EOStore } from 'proton-mail/store/eo/eoStore';
+
+import { loadEOMessage, loadEOToken } from '../../../store/eo/eoActions';
+import { EOMessage, EOMessageReply } from '../../../store/eo/eoType';
 import { convertEOtoMessageState } from '../../eo/message';
 import { addApiMock, api, clearApiMocks } from '../api';
 import { base64Cache, clearCache } from '../cache';
 import { generateKeys } from '../crypto';
-import { resetHistory } from '../render';
-import { EOResetHistory } from './EORender';
 
 const savedConsole = { ...console };
 
@@ -24,11 +22,9 @@ export const reply = {
 export const EOClearAll = () => {
     jest.clearAllMocks();
     api.mockClear();
-    store.dispatch(globalReset());
     clearApiMocks();
     clearCache();
     base64Cache.clear();
-    resetHistory();
     console = { ...savedConsole };
 };
 
@@ -89,10 +85,8 @@ export const getEOMessageState = async () => {
     return convertEOtoMessageState(EOOriginalMessage, EOLocalID);
 };
 
-export const EOInitStore = async (initialRoute: string, options?: EOOriginalMessageOptions) => {
+export const EOInitStore = async ({ options, store }: { options?: EOOriginalMessageOptions; store: EOStore }) => {
     const publicKey = await generateKeys(EOSender.Name, EOSender.Address);
-
-    EOResetHistory([`/eo/${initialRoute}/${validID}`]);
 
     const EOOriginalMessage = await getEOOriginalMessage(options);
     const EOEncryptedToken = await getEOEncryptedMessage(EODecryptedToken, EOPassword);
@@ -104,7 +98,6 @@ export const EOInitStore = async (initialRoute: string, options?: EOOriginalMess
         PublicKey: publicKey.publicKeyArmored,
     }));
 
-    await store.dispatch(init({ get: jest.fn() }));
     await store.dispatch(loadEOToken({ api, id: validID, set: jest.fn() }));
     await store.dispatch(
         loadEOMessage({ api, id: validID, set: jest.fn(), token: EOEncryptedToken, password: EOPassword })

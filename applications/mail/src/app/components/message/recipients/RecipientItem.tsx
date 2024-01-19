@@ -6,9 +6,9 @@ import { ContactEditProps } from '@proton/components/containers/contacts/edit/Co
 import { PublicKeyReference } from '@proton/crypto';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { RecipientOrGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
 import RecipientItemGroup from './RecipientItemGroup';

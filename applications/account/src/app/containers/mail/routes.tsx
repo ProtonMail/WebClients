@@ -8,8 +8,8 @@ import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address'
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
-export const getHasPmMeAddress = (addresses: Address[]) => {
-    return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
+export const getHasPmMeAddress = (addresses?: Address[]) => {
+    return !!addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
 };
 
 export const getShowPmMeSection = (user: UserModel, addresses: Address[] | undefined) => {
@@ -37,7 +37,7 @@ export const getMailAppRoutes = ({
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
-    organization: Organization;
+    organization?: Organization;
     isSmtpTokenEnabled: boolean;
     isEmailForwardingEnabled: boolean;
     hasUserAccessToInboxDesktop: boolean;

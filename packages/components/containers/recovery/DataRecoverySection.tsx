@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useGetUserSettings } from '@proton/components/hooks/useUserSettings';
 import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -12,6 +13,7 @@ import { Icon, Info, Toggle, useModalState } from '../../components';
 import { useFlag } from '../../containers/unleash';
 import {
     useApi,
+    useAuthentication,
     useConfig,
     useEventManager,
     useGetAddresses,
@@ -40,12 +42,14 @@ const DataRecoverySection = () => {
     const { call } = useEventManager();
     const api = useApi();
     const { APP_NAME } = useConfig();
+    const authentication = useAuthentication();
 
     const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
 
     const getUser = useGetUser();
     const getUserKeys = useGetUserKeys();
     const getAddresses = useGetAddresses();
+    const getUserSettings = useGetUserSettings();
     const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
@@ -87,7 +91,12 @@ const DataRecoverySection = () => {
     );
 
     const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
-        const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+        const [user, userKeys, addresses, userSettings] = await Promise.all([
+            getUser(),
+            getUserKeys(),
+            getAddresses(),
+            getUserSettings(),
+        ]);
         return syncDeviceRecovery({
             api,
             user,
@@ -95,6 +104,7 @@ const DataRecoverySection = () => {
             appName: APP_NAME,
             userSettings: { ...userSettings, ...partialUserSettings },
             userKeys,
+            authentication,
         });
     };
 

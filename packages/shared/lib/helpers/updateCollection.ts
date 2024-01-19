@@ -2,25 +2,15 @@ import { EVENT_ACTIONS } from '../constants';
 
 const { DELETE, CREATE, UPDATE } = EVENT_ACTIONS;
 
-function getKeyToSortBy<T>(sortByKey: boolean | keyof T, todos: Partial<T>[]) {
-    if (sortByKey === true) {
-        const itemFromTodos = todos?.[0];
-        if (!itemFromTodos) {
-            return undefined;
-        }
-        return ['Order', 'Priority'].find((sortProperty) => sortProperty in itemFromTodos) as keyof T;
-    }
-    if (sortByKey === false) {
-        return undefined;
-    }
-    return sortByKey;
-}
-
-const defaultMerge = <T>(oldModel: T, newModel: Partial<T>): T => {
+const defaultMerge = <T, Y>(oldModel: T, newModel: Partial<Y>): T => {
     return {
         ...oldModel,
         ...newModel,
     };
+};
+
+const defaultCreate = <T, Y>(newModel: T): Y => {
+    return newModel as unknown as Y;
 };
 
 export type EventItemModelPartial<EventItemModel> = Partial<EventItemModel>;
@@ -49,31 +39,44 @@ interface Model {
     ID: string;
 }
 
+export const sortCollection = <T>(sortByKey: keyof T | undefined, array: T[]) => {
+    if (!sortByKey) {
+        return array;
+    }
+    return array.sort((a, b) => Number(a[sortByKey]) - Number(b[sortByKey]));
+};
+
 /**
  * Update a model collection with incoming events.
  */
-const updateCollection = <EventItemModel extends Model, EventItemKey extends string>({
+const updateCollection = <
+    EventItemUpdateModel extends Model,
+    EventItemModel extends Model,
+    EventItemKey extends string,
+>({
     model = [],
     events = [],
     item,
     itemKey,
     merge = defaultMerge,
-    sortByKey: maybeSortByKey = true,
+    create = defaultCreate,
 }: {
-    model: readonly EventItemModel[];
-    events: readonly EventItemUpdate<EventItemModel, EventItemKey>[];
+    model: readonly EventItemModel[] | undefined;
+    events: readonly EventItemUpdate<EventItemUpdateModel, EventItemKey>[];
     item?: (
-        event: CreateEventItemUpdate<EventItemModel, EventItemKey> | UpdateEventItemUpdate<EventItemModel, EventItemKey>
-    ) => EventItemModelPartial<EventItemModel> | undefined;
-    merge?: (a: EventItemModel, B: EventItemModelPartial<EventItemModel>) => EventItemModel;
+        event:
+            | CreateEventItemUpdate<EventItemUpdateModel, EventItemKey>
+            | UpdateEventItemUpdate<EventItemUpdateModel, EventItemKey>
+    ) => EventItemModelPartial<EventItemUpdateModel> | undefined;
+    create?: (a: EventItemUpdateModel) => EventItemModel;
+    merge?: (a: EventItemModel, B: EventItemModelPartial<EventItemUpdateModel>) => EventItemModel;
     itemKey: EventItemKey;
-    sortByKey?: boolean | keyof EventItemModel;
 }): EventItemModel[] => {
     const copy = [...model];
 
     const todo = events.reduce<{
-        [UPDATE]: EventItemModelPartial<EventItemModel>[];
-        [CREATE]: EventItemModelPartial<EventItemModel>[];
+        [UPDATE]: EventItemModelPartial<EventItemUpdateModel>[];
+        [CREATE]: EventItemModelPartial<EventItemUpdateModel>[];
         [DELETE]: { [key: string]: boolean };
     }>(
         (acc, task) => {
@@ -119,7 +122,7 @@ const updateCollection = <EventItemModel extends Model, EventItemKey extends str
             }
 
             // Create. Assume it is never partial.
-            const length = acc.collection.push(element as EventItemModel);
+            const length = acc.collection.push(create(element as EventItemUpdateModel));
             // Set index in case there is an UPDATE on this CREATEd item afterwards.
             acc.map[id] = length - 1; // index
 
@@ -131,11 +134,7 @@ const updateCollection = <EventItemModel extends Model, EventItemKey extends str
         }
     );
 
-    const filteredArray = collection.filter(({ ID }) => !todo[DELETE][ID]);
-    const sortByKey = getKeyToSortBy(maybeSortByKey, todos);
-    return sortByKey
-        ? filteredArray.sort((itemA, itemB) => Number(itemA[sortByKey]) - Number(itemB[sortByKey]))
-        : filteredArray;
+    return collection.filter(({ ID }) => !todo[DELETE][ID]);
 };
 
 export default updateCollection;

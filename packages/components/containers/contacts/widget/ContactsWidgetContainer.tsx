@@ -3,8 +3,8 @@ import { RefObject, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { SearchInput, useMailSettings } from '@proton/components';
-import { useApi, useNotifications, useUser, useUserKeys } from '@proton/components/hooks';
+import { SearchInput, useGetUserKeys, useMailSettings } from '@proton/components';
+import { useApi, useNotifications, useUser } from '@proton/components/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -67,7 +67,7 @@ const ContactsWidgetContainer = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [user, loadingUser] = useUser();
-    const [userKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
     const { createNotification } = useNotifications();
     const api = useApi();
 
@@ -168,6 +168,7 @@ const ContactsWidgetContainer = ({
         }
 
         try {
+            const userKeys = await getUserKeys();
             const exportedContacts = await exportContacts(selectedIDs, userKeys, api);
 
             const files = exportedContacts.map(

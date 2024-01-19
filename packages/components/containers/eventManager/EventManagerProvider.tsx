@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 
@@ -10,14 +10,6 @@ interface Props {
 }
 
 const EventManagerProvider = ({ eventManager, children }: Props) => {
-    useEffect(() => {
-        eventManager.start();
-        return () => {
-            eventManager.stop();
-            eventManager.reset();
-        };
-    }, []);
-
     return <EventManagerContext.Provider value={eventManager}>{children}</EventManagerContext.Provider>;
 };
 

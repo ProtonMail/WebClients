@@ -14,7 +14,6 @@ import {
     useErrorHandler,
     useFlag,
     useModalState,
-    useVPNServersCount,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -59,6 +58,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
+import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -171,6 +171,7 @@ export const defaultSignupModel: SignupModelV2 = {
     step: Steps.Account,
     cache: undefined,
     optimistic: {},
+    vpnServersCountData: defaultVPNServersCountData,
 };
 
 interface Props {
@@ -231,7 +232,7 @@ const SingleSignupContainerV2 = ({
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
     const [error, setError] = useState<any>();
-    const [vpnServersCountData] = useVPNServersCount();
+    const vpnServersCountData = model.vpnServersCountData;
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
     const [switchModalProps, setSwitchModal, renderSwitchModal] = useModalState();
@@ -535,6 +536,8 @@ const SingleSignupContainerV2 = ({
             const invite = signupParameters.invite;
 
             const plansMap = toMap(plans, 'Name') as PlansMap;
+
+            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [{ Domains: domains }, paymentMethodStatus, referralData, { subscriptionData, upsell, ...userInfo }] =
                 await Promise.all([

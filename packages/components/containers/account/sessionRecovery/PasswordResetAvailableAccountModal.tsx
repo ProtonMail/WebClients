@@ -39,7 +39,7 @@ import {
     useErrorHandler,
     useEventManager,
     useGetAddresses,
-    useGetOrganizationKeyRaw,
+    useGetOrganizationKey,
     useGetUserKeys,
     useNotifications,
     useUser,
@@ -62,7 +62,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     const api = useApi();
     const { call, stop, start } = useEventManager();
 
-    const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
+    const getOrganizationKey = useGetOrganizationKey();
     const getUserKeys = useGetUserKeys();
     const getAddresses = useGetAddresses();
 
@@ -260,7 +260,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                     const [addresses, userKeysList, organizationKey] = await Promise.all([
                         getAddresses(),
                         getUserKeys(),
-                        user.isAdmin ? getOrganizationKeyRaw() : undefined,
+                        getOrganizationKey(),
                     ]);
 
                     /**

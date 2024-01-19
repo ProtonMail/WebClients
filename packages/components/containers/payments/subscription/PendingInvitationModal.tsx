@@ -9,13 +9,13 @@ import {
     ModalTwoHeader,
     useSettingsLink,
 } from '@proton/components/components';
-import { useApi, useCache, useConfig, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useApi, useConfig, useEventManager, useGetOrganization, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { PendingInvitation } from '@proton/shared/lib/interfaces';
-import { OrganizationModel } from '@proton/shared/lib/models';
+import noop from '@proton/utils/noop';
 
 import PendingInvitationModalErrors from './PendingInvitationModalErrors';
 
@@ -25,9 +25,9 @@ interface Props extends ModalStateProps {
 
 const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     const api = useApi();
-    const cache = useCache();
     const goToSettings = useSettingsLink();
     const protonConfig = useConfig();
+    const getOrganization = useGetOrganization();
 
     const { createNotification } = useNotifications();
 
@@ -51,7 +51,8 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
             text: c('familyOffer_2023:Family plan').t`You have successfully joined the Family plan`,
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
-            cache.delete(OrganizationModel.key); // Force refresh the organization since it's not present in the event manager
+            // Force refresh the organization since it's not present in the event manager
+            getOrganization({ forceFetch: true }).catch(noop);
             goToSettings('/account-password', APPS.PROTONACCOUNT);
         }
     };

@@ -8,11 +8,12 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
-import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../logic/store';
+import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -47,7 +48,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
     const { password, setPassword, passwordHint, setPasswordHint, validator, onFormSubmit } =
         useExternalExpiration(message);
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const isEdition = message?.draftFlags?.expiresIn;
 

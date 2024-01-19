@@ -53,6 +53,9 @@ const useOAuthModal = () => {
             provider,
             scope: finalScopes,
             callback: async (oAuthProps: OAuthProps) => {
+                if (!defaultAddress) {
+                    throw new Error('Missing address');
+                }
                 const source = storeSource ?? EASY_SWITCH_SOURCES.UNKNOWN;
                 dispatch(changeOAuthStep('loading-importer'));
                 await dispatch(createImporterThunk({ oAuthProps, source, user, defaultAddress }));

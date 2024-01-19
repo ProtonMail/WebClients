@@ -32,6 +32,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
@@ -45,11 +46,10 @@ import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
-import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
-import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
+import { updateAttachment } from '../../../store/attachments/attachmentsActions';
+import { expireMessages } from '../../../store/messages/expire/messagesExpireActions';
+import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
@@ -105,7 +105,7 @@ const HeaderMoreDropdown = ({
     const api = useApi();
     const getAttachment = useGetAttachment();
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const [loading, withLoading] = useLoading();
     const star = useStar();
     const [user] = useUser();

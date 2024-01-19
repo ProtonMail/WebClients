@@ -1,6 +1,6 @@
-import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
+import { FeatureCode } from '../../../../containers/features';
 import { getVisionaryInboxFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import sideImage from './BF-Mail-App-Modal-400x1200.png';
