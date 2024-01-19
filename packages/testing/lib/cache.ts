@@ -10,8 +10,4 @@ export const resolvedRequest = <T>(value: T): ResolvedRequest<T> => ({ status: S
 
 export const mockCache = createCache();
 
-export const addToCache = (key: string, value: any) => {
-    mockCache.set(key, resolvedRequest(value));
-};
-
 export const clearCache = () => mockCache.clear();

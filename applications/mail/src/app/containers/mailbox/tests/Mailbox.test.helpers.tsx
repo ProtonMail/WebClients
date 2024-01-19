@@ -3,6 +3,8 @@ import { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { serverEvent } from '@proton/account';
+import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -13,7 +15,7 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, addToCache, getHistory, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
+import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
 import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';
@@ -109,9 +111,7 @@ export const getProps = ({
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
     }
 
-    getHistory().push(`#${urlSearchParams.toString()}`);
-
-    return { ...props, labelID, elementID, mailSettings };
+    return { ...props, labelID, elementID, mailSettings, initialPath: `#${urlSearchParams.toString()}` };
 };
 
 export const baseApiMocks = () => {
@@ -133,8 +133,7 @@ export const setup = async ({
 }: SetupArgs = {}) => {
     minimalCache();
     baseApiMocks();
-    const props = getProps(propsArgs);
-    addToCache('Labels', [{ ID: props.labelID }]);
+    const { initialPath, ...props } = getProps(propsArgs);
     if (mockMessages) {
         addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
     }
@@ -143,21 +142,33 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    addToCache('Labels', [...labels, ...folders]);
-    addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);
-    addToCache('ConversationCounts', [
-        { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
-    ]);
-    addToCache('MailSettings', props.mailSettings);
-    addToCache('Calendars', []);
-    const result = await render(<Component {...props} />, false);
-    const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
+    const result = await render(<Component {...props} />, {
+        preloadedState: {
+            mailSettings: getModelState(props.mailSettings),
+            categories: getModelState([...labels, ...folders]),
+            messageCounts: getModelState([{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]),
+            conversationCounts: getModelState([
+                {
+                    LabelID: props.labelID,
+                    Total: totalConversations,
+                    Unread: totalConversations,
+                },
+            ]),
+        },
+        initialPath,
+    });
+    const rerender = (propsArgs: PropsArgs) => {
+        const { initialPath, ...props } = getProps(propsArgs);
+        result.history.push(initialPath);
+        return result.rerender(<Component {...props} />);
+    };
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
     return { ...result, rerender, getItems };
 };
 
-export const sendEvent = async (event: Event) => {
+export const sendEvent = async (store: any, event: Event) => {
     await act(async () => {
+        store.dispatch(serverEvent(event as any));
         triggerEvent(event);
         await wait(0);
     });

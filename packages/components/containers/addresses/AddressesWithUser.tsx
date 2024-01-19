@@ -10,6 +10,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import move from '@proton/utils/move';
 
 import {
@@ -25,7 +26,7 @@ import {
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
-import { formatAddresses, getIsNonDefault, getPermissions, getStatus } from './helper';
+import { getPermissions, getStatus } from './helper';
 
 interface Props {
     user: UserModel;
@@ -34,13 +35,13 @@ interface Props {
     hasDescription?: boolean;
 }
 
-const AddressesUser = ({ user, member, organizationKey, hasDescription = true }: Props) => {
+const AddressesUser = ({ user, organizationKey, member, hasDescription = true }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
-    const [list, setAddresses] = useState<Address[]>(formatAddresses(addresses));
+    const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -52,7 +53,9 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     useEffect(() => {
-        setAddresses(formatAddresses(addresses));
+        if (addresses) {
+            setAddresses(sortAddresses(addresses));
+        }
     }, [addresses]);
 
     const handleSortEnd = useCallback(
@@ -80,7 +83,7 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
                             text: errorMessage,
                         });
                     }
-                    setAddresses(formatAddresses(addresses));
+                    setAddresses(sortAddresses(addresses));
                     return;
                 }
 
@@ -93,7 +96,7 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
                 setSavingIndex(undefined);
             } catch (e: any) {
                 setSavingIndex(undefined);
-                setAddresses(formatAddresses(addresses));
+                setAddresses(sortAddresses(addresses));
             }
         },
         [list, addresses]
@@ -108,7 +111,7 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
         [list, addresses]
     );
 
-    if (!loadingAddresses && !addresses.length) {
+    if (!loadingAddresses && !addresses?.length) {
         return <Alert className="mb-4">{c('Info').t`No addresses exist`}</Alert>;
     }
 
@@ -162,7 +165,6 @@ const AddressesUser = ({ user, member, organizationKey, hasDescription = true }:
                                             address={address}
                                             member={member}
                                             user={user}
-                                            organizationKey={organizationKey}
                                             onSetDefault={setDefaultAddress(i)}
                                             savingIndex={savingIndex}
                                             addressIndex={i}

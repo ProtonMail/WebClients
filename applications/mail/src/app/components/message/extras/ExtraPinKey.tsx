@@ -19,7 +19,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
@@ -34,7 +34,7 @@ enum PROMPT_KEY_PINNING_TYPE {
 interface Params {
     messageVerification: MessageVerification;
     mailSettings: MailSettings;
-    addresses: Address[];
+    addresses: Address[] | undefined;
     senderAddress: string;
 }
 
@@ -44,7 +44,7 @@ const getPromptKeyPinningType = ({
     addresses,
     senderAddress,
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
-    if (addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(senderAddress))) {
+    if (addresses?.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(senderAddress))) {
         // Do not pin keys for own addresses
         return undefined;
     }

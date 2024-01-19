@@ -20,6 +20,7 @@ import {
     Subscription,
     SubscriptionCheckResponse,
     User,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
 export enum SignupSteps {
@@ -100,6 +101,7 @@ export interface SignupModel {
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
+    vpnServersCountData: VPNServersCountData;
 }
 
 export class HumanVerificationError extends Error {

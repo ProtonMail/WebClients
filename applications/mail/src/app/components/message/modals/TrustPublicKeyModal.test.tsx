@@ -1,10 +1,11 @@
 import { fireEvent, waitFor } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { PublicKeyReference } from '@proton/crypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 import { addApiMock } from '../../../helpers/test/api';
-import { GeneratedKey, addKeysToUserKeysCache, generateKeys } from '../../../helpers/test/crypto';
+import { GeneratedKey, generateKeys, getStoredKey } from '../../../helpers/test/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
@@ -34,10 +35,10 @@ describe('Trust public key modal', () => {
 
     afterEach(clearAll);
 
-    const setup = async (senderKeys: GeneratedKey, isContact: boolean) => {
+    const setup = async (senderKeys: GeneratedKey, isContact: boolean, options?: Parameters<typeof render>[1]) => {
         const contact = getContact(senderKeys.publicKeys[0], isContact);
 
-        const component = await render(<TrustPublicKeyModal contact={contact} open />);
+        const component = await render(<TrustPublicKeyModal contact={contact} open />, options);
 
         return component;
     };
@@ -46,9 +47,11 @@ describe('Trust public key modal', () => {
         // Create the contact
         const { senderKeys, receiverKeys, updateSpy } = await setupContactsForPinKeys();
 
-        addKeysToUserKeysCache(receiverKeys);
-
-        const { getByText, getByTestId } = await setup(senderKeys, true);
+        const { getByText, getByTestId } = await setup(senderKeys, true, {
+            preloadedState: {
+                userKeys: getModelState(getStoredKey(receiverKeys)),
+            },
+        });
 
         // Modal is displayed
         getByText('Trust public key?');
@@ -66,8 +69,6 @@ describe('Trust public key modal', () => {
         const senderKeys = await generateKeys('sender', sender.Address);
         const receiverKeys = await generateKeys('me', receiver.Address);
 
-        addKeysToUserKeysCache(receiverKeys);
-
         const createSpy = jest.fn(() => {
             return {
                 Responses: [
@@ -79,7 +80,11 @@ describe('Trust public key modal', () => {
         });
         addApiMock('contacts/v4/contacts', createSpy, 'post');
 
-        const { getByText, getByTestId } = await setup(senderKeys, false);
+        const { getByText, getByTestId } = await setup(senderKeys, false, {
+            preloadedState: {
+                userKeys: getModelState(getStoredKey(receiverKeys)),
+            },
+        });
 
         // Modal is displayed
         getByText('Trust public key?');
@@ -96,8 +101,6 @@ describe('Trust public key modal', () => {
         const senderKeys = await generateKeys('sender', sender.Address);
         const receiverKeys = await generateKeys('me', receiver.Address);
 
-        addKeysToUserKeysCache(receiverKeys);
-
         const createSpy = jest.fn(() => {
             return {
                 Responses: [
@@ -109,7 +112,11 @@ describe('Trust public key modal', () => {
         });
         addApiMock('contacts/v4/contacts', createSpy, 'post');
 
-        const { getByText, getByTestId } = await setup(senderKeys, false);
+        const { getByText, getByTestId } = await setup(senderKeys, false, {
+            preloadedState: {
+                userKeys: getModelState(getStoredKey(receiverKeys)),
+            },
+        });
 
         // Modal is displayed
         getByText('Trust public key?');

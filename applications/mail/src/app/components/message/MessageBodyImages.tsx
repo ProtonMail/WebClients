@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef } from 'react';
 
-import { MessageImages } from '../../logic/messages/messagesTypes';
+import { MessageImages } from '../../store/messages/messagesTypes';
 import MessageBodyImage from './MessageBodyImage';
 
 interface Props {

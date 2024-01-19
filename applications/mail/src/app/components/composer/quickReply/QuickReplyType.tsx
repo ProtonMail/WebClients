@@ -9,7 +9,7 @@ import { useAddresses } from '@proton/components/hooks';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 
 const { REPLY, REPLY_ALL } = MESSAGE_ACTIONS;
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }: Props) => {
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
     const contactEmailsMap = useContactsMap();
     const [replyType, setReplyType] = useState<MESSAGE_ACTIONS>(modelMessage.draftFlags?.action || REPLY);
 

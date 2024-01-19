@@ -8,7 +8,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import ContactResignModal from '../modals/ContactResignModal';
 
 interface Props {

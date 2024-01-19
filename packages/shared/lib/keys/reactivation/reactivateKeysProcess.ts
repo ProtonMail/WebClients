@@ -9,6 +9,7 @@ export const reactivateKeysProcess = async ({
     user,
     userKeys,
     addresses,
+    addressesKeys,
     keyReactivationRecords,
     keyPassword,
     onReactivation,
@@ -32,8 +33,10 @@ export const reactivateKeysProcess = async ({
     return reactivateKeysProcessLegacy({
         api,
         keyReactivationRecords,
+        userKeys,
         keyPassword,
         onReactivation,
+        addressesKeys,
         keyTransparencyVerify,
     });
 };

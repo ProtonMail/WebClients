@@ -54,8 +54,8 @@ export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string;
     return !!Token && !!Signature;
 };
 
-export const getHasMigratedAddressKeys = (addresses: Address[]) => {
-    return addresses.some((address) => address.Keys?.some(getHasMigratedAddressKey));
+export const getHasMigratedAddressKeys = (addresses?: Address[]) => {
+    return !!addresses?.some((address) => address.Keys?.some(getHasMigratedAddressKey));
 };
 
 export const getHasMemberMigratedAddressKeys = (memberAddresses: Address[], ownerAddresses: Address[]) => {
@@ -80,6 +80,7 @@ interface MigrationResult<T extends MigrateAddressKeyPayload> {
     SignedKeyLists: { [id: string]: SignedKeyList };
     AddressKeys: T[];
 }
+
 interface AddressKeyMigrationValue<T extends MigrateAddressKeyPayload> {
     Address: Address;
     AddressKeys: T[];

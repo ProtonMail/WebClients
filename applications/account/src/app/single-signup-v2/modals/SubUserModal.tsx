@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import { getFreeTitle } from '../helper';
 import PlanComparison from './PlanComparison';
@@ -12,7 +12,7 @@ interface Props extends ModalProps {
     appName: string;
     plansMap: PlansMap;
     dark: boolean;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     upsellPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
     onContinue: () => void;

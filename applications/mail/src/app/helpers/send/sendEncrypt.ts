@@ -8,7 +8,7 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MessageState, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { MessageState, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { arrayToBase64 } from '../base64';
 
 const MEGABYTE = 1024 * 1024;

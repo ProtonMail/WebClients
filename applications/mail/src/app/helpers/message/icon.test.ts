@@ -9,8 +9,8 @@ import {
 } from '@proton/shared/lib/mail/encryptionPreferences';
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
-import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 import { STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
+import { MessageState, MessageVerification } from '../../store/messages/messagesTypes';
 import {
     getReceivedStatusIcon,
     getSendStatusIcon,

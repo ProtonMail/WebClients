@@ -1,7 +1,7 @@
 import { addWeeks } from 'date-fns';
 
 import { pick } from '@proton/shared/lib/helpers/object';
-import { External, Plan, PlanIDs, PlansMap, Renew, Subscription } from '@proton/shared/lib/interfaces';
+import { External, PlanIDs, PlansMap, Renew, Subscription, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 // that has to be a very granular import, because in general @proton/testing depends on jest while @proton/shared
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
 import { PLANS_MAP } from '@proton/testing/data';
@@ -20,7 +20,7 @@ import {
 } from '../../lib/helpers/subscription';
 
 let subscription: Subscription;
-let defaultPlan: Plan;
+let defaultPlan: SubscriptionPlan;
 
 beforeEach(() => {
     subscription = {
@@ -35,6 +35,7 @@ beforeEach(() => {
         Amount: 123,
         RenewAmount: 123,
         Discount: 123,
+        RenewDiscount: 123,
         Plans: [],
         External: External.Default,
         Renew: Renew.Enabled,
@@ -58,13 +59,8 @@ beforeEach(() => {
         Services: 123,
         Features: 123,
         Quantity: 123,
-        Pricing: {
-            [CYCLE.MONTHLY]: 123,
-            [CYCLE.YEARLY]: 123,
-            [CYCLE.TWO_YEARS]: 123,
-        },
         State: 123,
-        Offers: [],
+        Offer: 'default',
     };
 });
 
@@ -209,6 +205,7 @@ describe('getPricingFromPlanIDs', () => {
         const plansMap: PlansMap = {
             pass2023: {
                 ID: 'id123',
+                ParentMetaPlanID: '',
                 Type: 1,
                 Name: PLANS.PASS_PLUS,
                 Title: 'Pass Plus',
@@ -226,6 +223,11 @@ describe('getPricingFromPlanIDs', () => {
                     '1': 499,
                     '12': 1200,
                     '24': 7176,
+                },
+                PeriodEnd: {
+                    '1': 1678452604,
+                    '12': 1707569404,
+                    '24': 1739191804,
                 },
                 Currency: 'CHF',
                 Quantity: 1,

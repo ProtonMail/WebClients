@@ -7,7 +7,7 @@ import {
     loadFakeProxy,
     loadRemoteDirectFromURL,
     loadRemoteProxyFromURL,
-} from '../../logic/messages/images/messagesImagesActions';
+} from '../../store/messages/images/messagesImagesActions';
 import {
     LoadRemoteResults,
     MessageEmbeddedImage,
@@ -16,7 +16,7 @@ import {
     MessageRemoteImage,
     MessageState,
     PartialMessageState,
-} from '../../logic/messages/messagesTypes';
+} from '../../store/messages/messagesTypes';
 import { getDocumentContent } from './messageContent';
 import { setEmbeddedAttr } from './messageEmbeddeds';
 import { ATTRIBUTES_TO_LOAD } from './messageRemotes';

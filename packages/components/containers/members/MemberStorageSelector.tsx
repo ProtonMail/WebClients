@@ -16,7 +16,7 @@ import { useElementRect } from '../../hooks';
 
 export const getTotalStorage = (
     { UsedSpace: memberUsedSpace = 0, MaxSpace: memberMaxSpace = 0 } = {},
-    { MaxSpace: organizationMaxSpace = 0, AssignedSpace: organizationAssignedSpace = 0 }
+    { MaxSpace: organizationMaxSpace = 0, AssignedSpace: organizationAssignedSpace = 0 } = {}
 ) => {
     return {
         memberUsedSpace: memberUsedSpace,
@@ -27,7 +27,7 @@ export const getTotalStorage = (
 
 export const getStorageRange = (
     { UsedSpace: memberUsedSpace = 0, MaxSpace: memberMaxSpace = 0 } = {},
-    { MaxSpace: organizationMaxSpace = 0, AssignedSpace: organizationAssignedSpace = 0 }
+    { MaxSpace: organizationMaxSpace = 0, AssignedSpace: organizationAssignedSpace = 0 } = {}
 ) => {
     return {
         min: memberUsedSpace,

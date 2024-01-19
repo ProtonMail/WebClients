@@ -19,7 +19,15 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    Currency,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    SubscriptionPlan,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
@@ -325,7 +333,7 @@ export const UpsellCardSelector = ({
     checkout: SubscriptionCheckoutData;
     relativePrice: string | undefined;
     plan: Plan | undefined;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     subscription: Subscription | undefined;
     plansMap: PlansMap;
     cycle: CYCLE;

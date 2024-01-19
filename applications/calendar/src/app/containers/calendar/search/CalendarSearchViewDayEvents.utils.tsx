@@ -5,7 +5,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 
 import { VisualSearchItem } from './interface';
 
-export const getEventTraits = (event: VisualSearchItem, addresses: Address[]) => {
+export const getEventTraits = (event: VisualSearchItem, addresses?: Address[]) => {
     const { Status, Attendees, Organizer } = event;
     const eventStatus = getVeventStatus({ status: { value: Status } });
     const isCancelled = eventStatus === ICAL_EVENT_STATUS.CANCELLED;

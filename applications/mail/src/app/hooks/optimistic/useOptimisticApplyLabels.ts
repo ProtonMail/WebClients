@@ -1,10 +1,15 @@
-import { useCache, useFolders, useHandler } from '@proton/components';
+import { useFolders, useHandler } from '@proton/components';
+import {
+    conversationCountsActions,
+    messageCountsActions,
+    selectConversationCounts,
+    selectMessageCounts,
+} from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
-import { STATUS } from '@proton/shared/lib/models/cache';
+
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
 import { getCurrentFolderIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
@@ -15,16 +20,14 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
-} from '../../logic/conversations/conversationsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { useAppDispatch } from '../../logic/store';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
-import { CacheEntry } from '../../models/tools';
+} from '../../store/conversations/conversationsActions';
+import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../store/elements/elementsActions';
+import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -46,10 +49,10 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 };
 
 export const useOptimisticApplyLabels = () => {
-    const dispatch = useAppDispatch();
+    const store = useMailStore();
+    const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
     const [folders = []] = useFolders();
-    const globalCache = useCache();
     const getConversation = useGetConversation();
 
     /**
@@ -73,10 +76,8 @@ export const useOptimisticApplyLabels = () => {
             const updatedElements = [] as Element[];
             const elementsUnreadStatuses = [] as UnreadStatus[];
             const isMessage = testIsMessage(elements[0]);
-            let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
-            let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<
-                LabelCount[]
-            >;
+            let { value: messageCounters = [] } = selectMessageCounts(store.getState());
+            let { value: conversationCounters = [] } = selectConversationCounts(store.getState());
 
             // Updates in message cache
             elements.forEach((element, index) => {
@@ -193,8 +194,8 @@ export const useOptimisticApplyLabels = () => {
                 dispatch(optimisticApplyLabelsElementsAction({ elements: updatedElements, isMove }));
             }
 
-            globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
-            globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
+            store.dispatch(messageCountsActions.set(messageCounters));
+            store.dispatch(conversationCountsActions.set(conversationCounters));
 
             return () => {
                 // Building elements and changes so that we do the optimistic update in a single call

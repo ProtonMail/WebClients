@@ -20,7 +20,7 @@ import { isSelfAddress } from '../../../helpers/addresses';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

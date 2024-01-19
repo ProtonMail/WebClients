@@ -4,16 +4,17 @@ import { nextMonday } from 'date-fns';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import useSnooze from '../../../../hooks/actions/useSnooze';
-import { useAppDispatch } from '../../../../logic/store';
 import { Element } from '../../../../models/element';
 import SnoozeDropdown from './SnoozeDropdown';
 
 jest.mock('@proton/components/hooks/useUser');
 jest.mock('@proton/components/hooks/useUserSettings');
 jest.mock('@proton/components/components/link/useSettingsLink');
-jest.mock('proton-mail/logic/store', () => ({
-    useAppDispatch: jest.fn().mockReturnValue(jest.fn()),
+jest.mock('proton-mail/store/hooks', () => ({
+    useMailDispatch: jest.fn().mockReturnValue(jest.fn()),
 }));
 jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
     __esModule: true,
@@ -48,7 +49,7 @@ const element: Element = {
 describe('Snooze dropdown', () => {
     const useUserMock = useUser as jest.Mock;
     const useSnoozeMock = useSnooze as jest.Mock;
-    const useAppDispatchMock = useAppDispatch as jest.Mock;
+    const useAppDispatchMock = useMailDispatch as jest.Mock;
     const useUserSettingsMock = useUserSettings as jest.Mock;
 
     beforeAll(() => {

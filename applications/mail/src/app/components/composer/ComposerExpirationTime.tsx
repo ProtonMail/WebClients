@@ -5,7 +5,7 @@ import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import { getExpiresOnMessage, getMessageExpirationDate } from '../../helpers/message/messageExpirationTime';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     onEditExpiration: () => void;

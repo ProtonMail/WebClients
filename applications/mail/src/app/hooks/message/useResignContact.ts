@@ -2,16 +2,17 @@ import { useCallback } from 'react';
 
 import { useApi, useGetEncryptionPreferences } from '@proton/components';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { loadMessage } from '../../helpers/message/messageRead';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { resign } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+import { MessageState } from '../../store/messages/messagesTypes';
+import { resign } from '../../store/messages/read/messagesReadActions';
 import { useGetMessage } from './useMessage';
 
 export const useResignContact = (localID: string) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessage = useGetMessage();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
 
     return useCallback(async () => {

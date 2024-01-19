@@ -1,26 +1,33 @@
-import { ReactElement, ReactNode } from 'react';
+import { PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 
-import { RenderResult, render as originalRender } from '@testing-library/react';
-import { MemoryHistory, createMemoryHistory } from 'history';
+import { render as originalRender } from '@testing-library/react';
+import type { RenderOptions } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 
+import { getModelState } from '@proton/account/test';
 import { CryptoApiInterface, VERIFICATION_STATUS } from '@proton/crypto';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import createCache from '@proton/shared/lib/helpers/cache';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { STATUS } from '@proton/shared/lib/models/cache';
-
-import { resolvedRequest } from 'proton-mail/src/app/helpers/test/cache';
+import {
+    ApiEnvironmentConfig,
+    CachedOrganizationKey,
+    Organization,
+    Plan,
+    ProtonConfig,
+} from '@proton/shared/lib/interfaces';
+import { DecryptedKey, MailSettings, SubscriptionModel, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import { apiMock, mockCache } from '@proton/testing';
 
 import ApiContext from '../../api/apiContext';
 import { CacheProvider } from '../../cache';
 import { ConfigProvider } from '../../config';
 import EventManagerContext from '../../eventManager/context';
-import FeaturesProvider from '../../features/FeaturesProvider';
 import { NotificationsContext } from '../../notifications';
 import ContactProvider from '../ContactProvider';
+import { extendStore, setupStore } from './store';
 
 export const mockedCryptoApi = {
     encryptMessage: jest.fn().mockImplementation(async ({ textData }) => ({
@@ -49,8 +56,6 @@ window.ResizeObserver = jest.fn(() => ({
 const { getComputedStyle } = window;
 window.getComputedStyle = (elt) => getComputedStyle(elt);
 
-export const cache = createCache();
-export const api = jest.fn();
 export const notificationManager = {
     createNotification: jest.fn(),
     removeNotification: jest.fn(),
@@ -59,13 +64,6 @@ export const notificationManager = {
     clearNotifications: jest.fn(),
     setOffset: jest.fn(),
 };
-
-let history: MemoryHistory;
-export const getHistory = () => history;
-export const resetHistory = () => {
-    history = createMemoryHistory({ initialEntries: ['/inbox'] });
-};
-resetHistory();
 
 export const config = {
     APP_NAME: APPS.PROTONMAIL,
@@ -80,11 +78,14 @@ export const eventManager = {
     subscribe: jest.fn(),
 } as any;
 
-const TestProvider = ({ children }: { children: ReactNode }) => (
-    <ConfigProvider config={config}>
-        <ApiContext.Provider value={api}>
-            <CacheProvider cache={cache}>
-                <FeaturesProvider>
+extendStore({ api: apiMock as unknown as any, eventManager });
+
+const TestProvider = ({ children }: { children: ReactNode }) => {
+    const history = createMemoryHistory();
+    return (
+        <ConfigProvider config={config}>
+            <ApiContext.Provider value={apiMock}>
+                <CacheProvider cache={mockCache}>
                     <NotificationsContext.Provider value={notificationManager}>
                         <EventManagerContext.Provider value={eventManager}>
                             <Router history={history}>
@@ -92,46 +93,63 @@ const TestProvider = ({ children }: { children: ReactNode }) => (
                             </Router>
                         </EventManagerContext.Provider>
                     </NotificationsContext.Provider>
-                </FeaturesProvider>
-            </CacheProvider>
-        </ApiContext.Provider>
-    </ConfigProvider>
-);
-
-export const addToCache = (key: string, value: any) => {
-    cache.set(key, resolvedRequest(value));
+                </CacheProvider>
+            </ApiContext.Provider>
+        </ConfigProvider>
+    );
 };
 
-export const minimalCache = () => {
-    cache.set('User', { status: STATUS.RESOLVED, value: {} });
-    cache.set('MailSettings', { status: STATUS.RESOLVED, value: {} });
-    cache.set('Addresses', { status: STATUS.RESOLVED, value: [] });
-    cache.set('Labels', { status: STATUS.RESOLVED, value: [] });
-    cache.set('Contacts', { status: STATUS.RESOLVED, value: [] });
-    cache.set('ContactEmails', { status: STATUS.RESOLVED, value: [] });
-    cache.set('USER_KEYS', {
-        status: STATUS.RESOLVED,
-        value: [{ publicKey: {}, privateKey: {} }],
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+    preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;
+}
+
+export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
+    const store = setupStore({
+        preloadedState: {
+            user: getModelState({} as UserModel),
+            addresses: getModelState([]),
+            addressKeys: {},
+            contacts: getModelState([]),
+            categories: getModelState([]),
+            contactEmails: getModelState([]),
+            userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
+            userSettings: getModelState({} as UserSettings),
+            mailSettings: getModelState({} as MailSettings),
+            subscription: getModelState({} as SubscriptionModel),
+            organization: getModelState({} as Organization),
+            organizationKey: getModelState({} as CachedOrganizationKey),
+            userInvitations: getModelState([]),
+            plans: getModelState<Plan[]>([]),
+            features: {},
+            importerConfig: getModelState({} as ApiEnvironmentConfig),
+            ...preloadedState,
+        },
     });
-};
 
-export const render = (ui: ReactElement, useMinimalCache = true): RenderResult => {
-    if (useMinimalCache) {
-        minimalCache();
+    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return (
+            <ProtonStoreProvider store={store}>
+                <TestProvider>{children}</TestProvider>
+            </ProtonStoreProvider>
+        );
     }
 
-    const result = originalRender(<TestProvider>{ui}</TestProvider>);
-
-    const rerender = async (ui: ReactElement) => {
-        result.rerender(<TestProvider>{ui}</TestProvider>);
-    };
-
-    return { ...result, rerender };
+    return { Wrapper, store };
 };
+
+export function renderWithProviders(
+    ui: ReactElement,
+    { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
+) {
+    const { store, Wrapper } = getStoreWrapper(preloadedState);
+    return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions }) };
+}
+
+export const minimalCache = () => {};
 
 export const clearAll = () => {
     jest.clearAllMocks();
-    cache.clear();
+    mockCache.clear();
 };
 
 export const prepareContact = async (vcard: string) => {

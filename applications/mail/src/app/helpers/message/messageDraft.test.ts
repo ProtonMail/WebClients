@@ -4,7 +4,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { formatFullDate } from '../date';
 import {
     createNewDraft,

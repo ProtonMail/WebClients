@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 import { Autopay, CardModel } from '@proton/components/payments/core';
 import { updatePaymentMethod } from '@proton/shared/lib/api/payments';
@@ -12,6 +12,7 @@ import {
     withNotifications,
 } from '@proton/testing';
 
+import { renderWithProviders } from '../contacts/tests/render';
 import EditCardModal from './EditCardModal';
 
 jest.mock('@proton/components/components/portal/Portal');
@@ -39,7 +40,7 @@ const ContextEditCardModal = applyHOCs(
 )(EditCardModal);
 
 it('should render', () => {
-    const { container } = render(<ContextEditCardModal open={true} />);
+    const { container } = renderWithProviders(<ContextEditCardModal open={true} />);
 
     expect(container).not.toBeEmptyDOMElement();
 });
@@ -47,7 +48,7 @@ it('should render', () => {
 it('should update Autopay and close modal if user edits the existing payment method', async () => {
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithProviders(
         <ContextEditCardModal
             card={defaultCard}
             renewState={Autopay.DISABLE}
@@ -70,7 +71,7 @@ it('should update Autopay and close modal if user edits the existing payment met
 it('should update Autopay and close modal if user edits the existing payment method (toggle off)', async () => {
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithProviders(
         <ContextEditCardModal
             card={defaultCard}
             renewState={Autopay.ENABLE}
@@ -93,7 +94,7 @@ it('should update Autopay and close modal if user edits the existing payment met
 
 it('should not update autopay if this is Add Credit card mode', async () => {
     const onClose = jest.fn();
-    const { getByTestId } = render(<ContextEditCardModal open={true} onClose={onClose} />);
+    const { getByTestId } = renderWithProviders(<ContextEditCardModal open={true} onClose={onClose} />);
 
     fireEvent.click(getByTestId('toggle-subscription-renew'));
     fireEvent.click(getByTestId('action-disable-autopay'));
@@ -109,7 +110,7 @@ it('should toggle back if API returned error', async () => {
 
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithProviders(
         <ContextEditCardModal
             card={defaultCard}
             renewState={Autopay.DISABLE}
@@ -139,7 +140,7 @@ it('should disable Save button while updating the toggle status', async () => {
 
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const { getByTestId } = render(
+    const { getByTestId } = renderWithProviders(
         <ContextEditCardModal
             card={defaultCard}
             renewState={Autopay.DISABLE}

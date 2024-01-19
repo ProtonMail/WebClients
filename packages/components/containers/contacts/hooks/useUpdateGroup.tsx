@@ -10,7 +10,7 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { Label } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { useApi, useEventManager, useNotifications, useUserKeys } from '../../../hooks';
+import { useApi, useEventManager, useGetUserKeys, useNotifications } from '../../../hooks';
 
 export type UpdateGroupOptions = {
     groupID: string | undefined;
@@ -26,7 +26,7 @@ const useUpdateGroup = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [userKeysList] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     return useCallback(
         async ({ groupID, name, color, toAdd, toRemove, toCreate, onDelayedSave }: UpdateGroupOptions) => {
@@ -49,7 +49,8 @@ const useUpdateGroup = () => {
                     email: [{ field: 'email', value: Email, group: 'item1', uid: createContactPropertyUid() }],
                     categories: [{ field: 'categories', value: name, group: 'item1', uid: createContactPropertyUid() }],
                 }));
-                const Contacts = await prepareVCardContacts(vCardContacts, userKeysList[0]);
+                const userKeys = await getUserKeys();
+                const Contacts = await prepareVCardContacts(vCardContacts, userKeys[0]);
                 await api(
                     addContacts({
                         Contacts,

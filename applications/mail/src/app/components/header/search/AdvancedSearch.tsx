@@ -123,7 +123,7 @@ const AdvancedSearch = ({
 }: Props) => {
     const searchInputRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
 
     const { AlmostAllMail } = useMailModel('MailSettings');
 

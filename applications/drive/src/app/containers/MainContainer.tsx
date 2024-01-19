@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import {
@@ -111,7 +111,7 @@ const InitContainer = () => {
     );
 };
 
-const MainContainer = () => {
+const MainContainer: FunctionComponent = () => {
     return (
         <GlobalLoaderProvider>
             <GlobalLoader />

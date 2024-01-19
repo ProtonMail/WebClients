@@ -61,7 +61,7 @@ const QuickReplyContainer = ({
     };
 
     const recipientsAsString = referenceMessage
-        ? getReplyRecipientListAsString(referenceMessage, MESSAGE_ACTIONS.REPLY, addresses, contactEmailsMap)
+        ? getReplyRecipientListAsString(referenceMessage, MESSAGE_ACTIONS.REPLY, addresses || [], contactEmailsMap)
         : '';
 
     /*

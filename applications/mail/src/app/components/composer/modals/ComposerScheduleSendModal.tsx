@@ -8,12 +8,13 @@ import { DateInputTwo, InputFieldTwo, TimeInput, generateUID, useUserSettings } 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import useFutureTimeDate from '../../../hooks/message/useFutureTimeDate';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateScheduled } from '../../../logic/messages/scheduled/scheduledActions';
-import { useAppDispatch } from '../../../logic/store';
+import { MessageState } from '../../../store/messages/messagesTypes';
+import { updateScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import ComposerInnerModal from './ComposerInnerModal';
 import { getChooseDateText } from './helper';
 
@@ -24,7 +25,7 @@ interface Props {
 }
 
 const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const [userSettings] = useUserSettings();
 
     const [uid] = useState(generateUID('schedule-send-modal'));

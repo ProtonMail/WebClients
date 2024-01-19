@@ -1,6 +1,1 @@
-import { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
-import { ApiEnvironmentConfigModel } from '@proton/shared/lib/models/apiEnvironmentConfigModel';
-
-import createUseModelHook from './helpers/createModelHook';
-
-export default createUseModelHook<ApiEnvironmentConfig>(ApiEnvironmentConfigModel);
+export { useApiEnvironmentConfig as default } from '@proton/mail/importerConfig/hooks';

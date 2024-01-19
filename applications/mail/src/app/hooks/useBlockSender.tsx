@@ -8,12 +8,12 @@ import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettin
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/message/messageRecipients';
-import { addBlockAddresses } from '../logic/incomingDefaults/incomingDefaultsActions';
-import { useAppDispatch } from '../logic/store';
 import { Element } from '../models/element';
+import { addBlockAddresses } from '../store/incomingDefaults/incomingDefaultsActions';
 import { useIncomingDefaultsAddresses, useIncomingDefaultsStatus } from './incomingDefaults/useIncomingDefaults';
 
 interface Props {
@@ -23,7 +23,7 @@ interface Props {
 
 const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const [addresses] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
     const { createNotification } = useNotifications();
@@ -34,7 +34,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const [blockSenderModal, handleShowBlockSenderModal] = useModalTwo(BlockSenderModal);
 
     const senders = useMemo(() => {
-        return getSendersToBlock(elements, incomingDefaultsAddresses, addresses);
+        return getSendersToBlock(elements, incomingDefaultsAddresses, addresses || []);
     }, [elements, incomingDefaultsAddresses, addresses]);
 
     // We can display the block sender option if:

@@ -87,8 +87,8 @@ export const disableAddress = (addressID: string) => ({
 });
 
 export const deleteAddress = (addressID: string) => ({
-    url: `core/v4/addresses/${addressID}`,
-    method: 'delete',
+    url: `core/v4/addresses/${addressID}/delete`,
+    method: 'put',
 });
 
 interface RenamedAddressKey {

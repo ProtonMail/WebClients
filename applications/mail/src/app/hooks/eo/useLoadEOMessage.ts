@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo } from 'react';
-import { useSelector, useStore } from 'react-redux';
 
 import { useApi } from '@proton/components';
 
-import { loadEOToken } from '../../logic/eo/eoActions';
+import { useEOMailDispatch, useEOMailSelector, useEOMailStore } from 'proton-mail/store/eo/hooks';
+
+import { loadEOToken } from '../../store/eo/eoActions';
 import {
     eoDecryptedTokenSelector,
     eoMessageSelector,
@@ -11,33 +12,32 @@ import {
     eoTokenSelector,
     isStoreInitializedSelector,
     passwordSelector,
-} from '../../logic/eo/eoSelectors';
-import { RootState } from '../../logic/eo/eoStore';
-import { OutsideKey } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+} from '../../store/eo/eoSelectors';
+import { OutsideKey } from '../../store/messages/messagesTypes';
 
 export const useGetEOMessage = () => {
-    const store = useStore<RootState>();
+    const store = useEOMailStore();
     return useCallback(() => eoMessageSelector(store.getState()), []);
 };
 
 export const useGetEOToken = () => {
-    const store = useStore<RootState>();
+    const store = useEOMailStore();
     return useCallback(() => eoTokenSelector(store.getState()), []);
 };
 
 export const useGetEODecryptedToken = () => {
-    const store = useStore<RootState>();
+    const store = useEOMailStore();
     return useCallback(() => eoDecryptedTokenSelector(store.getState()), []);
 };
 
 export const useGetEOMessageState = () => {
-    const store = useStore<RootState>();
+    const store = useEOMailStore();
+
     return useCallback(() => eoMessageStateSelector(store.getState()), []);
 };
 
 export const useGetEOPassword = () => {
-    const store = useStore<RootState>();
+    const store = useEOMailStore();
     return useCallback(() => passwordSelector(store.getState()), []);
 };
 
@@ -47,15 +47,15 @@ interface Props {
 }
 
 export const useLoadEOMessage = ({ id, setSessionStorage }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useEOMailDispatch();
     const api = useApi();
 
-    const encryptedToken = useSelector((state: RootState) => eoTokenSelector(state));
-    const decryptedToken = useSelector((state: RootState) => eoDecryptedTokenSelector(state));
-    const eoMessageState = useSelector((state: RootState) => eoMessageSelector(state));
-    const isStoreInitialized = useSelector((state: RootState) => isStoreInitializedSelector(state));
-    const password = useSelector((state: RootState) => passwordSelector(state));
-    const messageState = useSelector((state: RootState) => eoMessageStateSelector(state));
+    const encryptedToken = useEOMailSelector((state) => eoTokenSelector(state));
+    const decryptedToken = useEOMailSelector((state) => eoDecryptedTokenSelector(state));
+    const eoMessageState = useEOMailSelector((state) => eoMessageSelector(state));
+    const isStoreInitialized = useEOMailSelector((state) => isStoreInitializedSelector(state));
+    const password = useEOMailSelector((state) => passwordSelector(state));
+    const messageState = useEOMailSelector((state) => eoMessageStateSelector(state));
 
     const outsideKey = useMemo(() => {
         return {

@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react';
 
 import { addApiResolver, clearAll } from '../../../helpers/test/helper';
-import { initMessage, messageID, setup } from './Message.test.helpers';
+import { messageID, setup } from './Message.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -11,7 +11,7 @@ describe('Message display modes', () => {
     it('loading mode', async () => {
         addApiResolver(`mail/v4/messages/${messageID}`);
 
-        const { ref, getByTestId } = await setup();
+        const { ref, getByTestId } = await setup(undefined);
 
         const messageView = getByTestId('message-view-0');
 
@@ -25,9 +25,10 @@ describe('Message display modes', () => {
     it('encrypted mode', async () => {
         const encryptedBody = 'body-test';
 
-        initMessage({ data: { Body: encryptedBody }, errors: { decryption: [new Error('test')] } });
-
-        const { getByTestId } = await setup();
+        const { getByTestId } = await setup({
+            data: { Body: encryptedBody },
+            errors: { decryption: [new Error('test')] },
+        });
 
         const errorsBanner = getByTestId('errors-banner');
         expect(errorsBanner.textContent).toContain('Decryption error');
@@ -39,13 +40,11 @@ describe('Message display modes', () => {
     it('source mode on processing error', async () => {
         const decryptedBody = 'decrypted-test';
 
-        initMessage({
+        const { getByTestId } = await setup({
             data: { Body: 'test' },
             errors: { processing: [new Error('test')] },
             decryption: { decryptedBody },
         });
-
-        const { getByTestId } = await setup();
 
         const errorsBanner = getByTestId('errors-banner');
         expect(errorsBanner.textContent).toContain('processing error');

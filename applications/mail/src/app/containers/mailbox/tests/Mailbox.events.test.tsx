@@ -1,10 +1,11 @@
 import { act } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
-import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
+import { addApiResolver, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation } from '../../../models/conversation';
 import { MessageEvent } from '../../../models/event';
 import MailboxContainer from '../MailboxContainer';
@@ -21,7 +22,7 @@ describe('Mailbox elements list reacting to events', () => {
         // Usefull to receive incoming mail or draft without having to reload the list
 
         const total = 3;
-        const { getItems } = await setup({ conversations: getElements(total) });
+        const { getItems, store } = await setup({ conversations: getElements(total) });
 
         const element = {
             ID: 'id3',
@@ -29,7 +30,7 @@ describe('Mailbox elements list reacting to events', () => {
             LabelIDs: [labelID],
         };
 
-        await sendEvent({
+        await sendEvent(store, {
             ConversationCounts: [{ LabelID: labelID, Total: total + 1, Unread: 0 }],
             Conversations: [
                 {
@@ -49,7 +50,7 @@ describe('Mailbox elements list reacting to events', () => {
 
         const total = 3;
         const search = { keyword: 'test' };
-        const { getItems } = await setup({
+        const { getItems, store } = await setup({
             messages: getElements(total),
             search,
         });
@@ -59,7 +60,7 @@ describe('Mailbox elements list reacting to events', () => {
             Labels: [{ ID: labelID }],
             LabelIDs: [labelID],
         } as any as Message;
-        await sendEvent({
+        await sendEvent(store, {
             Messages: [
                 {
                     ID: message.ID,
@@ -70,7 +71,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(5);
+        expect(api.mock.calls.length).toBe(4);
     });
 
     it('should not reload the list on an update event if a filter is active', async () => {
@@ -78,10 +79,10 @@ describe('Mailbox elements list reacting to events', () => {
         const filter = { Unread: 1 };
         const conversations = getElements(total, labelID, { NumUnread: 1 });
 
-        const { getItems } = await setup({ conversations, filter });
+        const { getItems, store } = await setup({ conversations, filter });
 
         const ID = 'id0';
-        await sendEvent({
+        await sendEvent(store, {
             Conversations: [
                 {
                     ID,
@@ -92,15 +93,15 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(3);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
         const total = 3;
-        const { getItems } = await setup({ conversations: getElements(total) });
+        const { getItems, store } = await setup({ conversations: getElements(total) });
 
         const ID = 'id0';
-        await sendEvent({
+        await sendEvent(store, {
             Conversations: [
                 {
                     ID,
@@ -111,13 +112,13 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(3);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
         const page = 2;
         const total = DEFAULT_MAIL_PAGE_SIZE * 6 + 2;
-        const { getItems } = await setup({
+        const { getItems, store } = await setup({
             conversations: getElements(DEFAULT_MAIL_PAGE_SIZE),
             page,
             totalConversations: total,
@@ -125,7 +126,7 @@ describe('Mailbox elements list reacting to events', () => {
 
         const ID = 'id0';
 
-        await sendEvent({
+        await sendEvent(store, {
             Conversations: [
                 {
                     ID,
@@ -140,19 +141,19 @@ describe('Mailbox elements list reacting to events', () => {
         /**
          * `/get conversations` should be called twice at render and twice on reload
          */
-        expect(api).toHaveBeenCalledTimes(7);
+        expect(api).toHaveBeenCalledTimes(6);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
         const total = 3;
         const search = { keyword: 'test' };
-        const { getItems } = await setup({
+        const { getItems, store } = await setup({
             messages: getElements(total),
             search,
         });
 
         const ID = 'id10';
-        await sendEvent({
+        await sendEvent(store, {
             Messages: [
                 {
                     ID,
@@ -163,7 +164,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(5);
+        expect(api.mock.calls.length).toBe(4);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -172,13 +173,13 @@ describe('Mailbox elements list reacting to events', () => {
         const total = 3;
         const search = { keyword: 'test' };
         const messages = getElements(total);
-        await setup({ messages, search });
+        const { store } = await setup({ messages, search });
 
-        await sendEvent({
+        await sendEvent(store, {
             MessageCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(4);
+        expect(api.mock.calls.length).toBe(3);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
@@ -188,12 +189,16 @@ describe('Mailbox elements list reacting to events', () => {
 
         baseApiMocks();
 
-        addToCache('ConversationCounts', []);
-        addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
-        addToCache('Calendars', []);
         const { resolve } = addApiResolver('mail/v4/messages');
 
-        const { getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
+        const { initialPath, ...props } = getProps({ search });
+
+        const { getAllByTestId, store } = await render(<MailboxContainer {...props} />, {
+            preloadedState: {
+                messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+            },
+            initialPath,
+        });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending
@@ -207,7 +212,7 @@ describe('Mailbox elements list reacting to events', () => {
         expectElements(getItems, total, false);
 
         const message = messages[0] as Message;
-        await sendEvent({
+        await sendEvent(store, {
             Messages: [
                 {
                     ID: message.ID || '',
@@ -234,11 +239,16 @@ describe('Mailbox elements list reacting to events', () => {
 
         baseApiMocks();
 
-        addToCache('ConversationCounts', []);
-        addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
         let { resolve } = addApiResolver('mail/v4/messages');
 
-        const { rerender, getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
+        const { initialPath, ...props } = getProps({ search });
+        const { rerender, getAllByTestId, history } = await render(<MailboxContainer {...props} />, {
+            preloadedState: {
+                conversationCounts: getModelState([]),
+                messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+            },
+            initialPath,
+        });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending
@@ -252,8 +262,9 @@ describe('Mailbox elements list reacting to events', () => {
         expectElements(getItems, total, false);
 
         resolve = addApiResolver('mail/v4/messages').resolve;
-
-        await rerender(<MailboxContainer {...getProps({ search: { keyword: 'changed' } })} />);
+        const { initialPath: rerenderInitialPath, ...rerenderProps } = getProps({ search: { keyword: 'changed' } });
+        history.push(rerenderInitialPath);
+        await rerender(<MailboxContainer {...rerenderProps} />);
 
         // Params has changed, cache is reset
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);

@@ -63,6 +63,9 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         // TODO properly type this
         callback: (oauthProps: any) => void | Promise<void>;
     }) => {
+        if (!config) {
+            return;
+        }
         let interval: number;
         const authorizationUrl = getOAuthAuthorizationUrl({ provider, scope, config, loginHint });
         const RedirectUri = getOAuthRedirectURL(provider);

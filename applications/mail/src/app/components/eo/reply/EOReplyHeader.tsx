@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';
 
@@ -22,10 +22,7 @@ const EOReplyHeader = ({ message }: Props) => {
                 </h1>
             </div>
             <div className="message-header eo-message-header message-header-expanded is-outbound border-top border-bottom px-7 py-4">
-                <RecipientType
-                    label={c('Label').t`From:`}
-                    className={clsx(['flex items-start flex-nowrap mb-3'])}
-                >
+                <RecipientType label={c('Label').t`From:`} className={clsx(['flex items-start flex-nowrap mb-3'])}>
                     <RecipientItem
                         recipientOrGroup={{ recipient: message.data?.EORecipient }}
                         isLoading={false}

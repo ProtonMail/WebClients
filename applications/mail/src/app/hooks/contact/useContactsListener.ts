@@ -11,10 +11,11 @@ import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { refresh } from '../../logic/contacts/contactsActions';
-import { resetVerification } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { Event } from '../../models/event';
+import { refresh } from '../../store/contacts/contactsActions';
+import { resetVerification } from '../../store/messages/read/messagesReadActions';
 
 /**
  * Deal with contact update from the event manager
@@ -54,7 +55,7 @@ const processContactUpdate = async (
 
 export const useContactsListener = () => {
     const globalCache = useCache();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { subscribe } = useEventManager();
     const [userKeys = []] = useUserKeys();
     const [contacts = []] = useContactEmails();

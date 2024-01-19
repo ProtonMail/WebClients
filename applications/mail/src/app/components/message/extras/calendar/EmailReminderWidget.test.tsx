@@ -3,7 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { FeaturesProvider, useAddresses, useUserSettings } from '@proton/components';
+import { getModelState } from '@proton/account/test';
+import { useAddresses, useGetAddresses, useUserSettings } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
@@ -15,11 +16,13 @@ import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { DRAWER_VISIBILITY, Nullable, UserSettings } from '@proton/shared/lib/interfaces';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import {
     addressBuilder,
     calendarBuilder,
     calendarEventBuilder,
+    calendarUserSettingsBuilder,
     messageBuilder,
     mockApiWithServer,
     mockDefaultBreakpoints,
@@ -29,10 +32,9 @@ import {
     veventBuilder,
 } from '@proton/testing';
 
-import { refresh } from 'proton-mail/logic/contacts/contactsActions';
-import { store } from 'proton-mail/logic/store';
+import { refresh } from 'proton-mail/store/contacts/contactsActions';
 
-import { ReduxProviderWrapper, authentication, tick } from '../../../../helpers/test/render';
+import { authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
 import EmailReminderWidget from './EmailReminderWidget';
 
 jest.mock('@proton/components/hooks/useNotifications');
@@ -87,24 +89,30 @@ const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
 const mockedUseAddresses = mocked(useAddresses);
+const mockedUseGetAddresses = mocked(useGetAddresses);
 const mockedUserSettings = mocked(useUserSettings);
 
-function renderComponent(overrides?: any) {
+function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]) {
     window.history.pushState({}, 'Calendar', '/');
 
+    const { Wrapper: ReduxWrapper, store } = getStoreWrapper({
+        calendars: getModelState([calendarBuilder()]),
+        calendarUserSettings: getModelState(calendarUserSettingsBuilder()),
+        ...preloadedState,
+    });
+
     const Wrapper = ({ children }: any) => (
-        <AuthenticationProvider store={authentication}>
-            <CacheProvider cache={createCache()}>
-                <FeaturesProvider>
+        <ReduxWrapper>
+            <AuthenticationProvider store={authentication}>
+                <CacheProvider cache={createCache()}>
                     <DrawerProvider>
-                        <ReduxProviderWrapper>
-                            <BrowserRouter>{children}</BrowserRouter>
-                        </ReduxProviderWrapper>
+                        <BrowserRouter>{children}</BrowserRouter>
                     </DrawerProvider>
-                </FeaturesProvider>
-            </CacheProvider>
-        </AuthenticationProvider>
+                </CacheProvider>
+            </AuthenticationProvider>
+        </ReduxWrapper>
     );
+    store.dispatch(refresh({ contacts: [], contactGroups: [] }));
 
     return {
         ...render(<EmailReminderWidget message={messageBuilder({ overrides })} />, { wrapper: Wrapper }),
@@ -115,7 +123,6 @@ function renderComponent(overrides?: any) {
 describe('EmailReminderWidget', () => {
     beforeAll(() => {
         // Initialize contactsMap
-        store.dispatch(refresh({ contacts: [], contactGroups: [] }));
         server.listen();
     });
 
@@ -146,7 +153,9 @@ describe('EmailReminderWidget', () => {
                     },
                 })
         );
-        mockedUseAddresses.mockImplementation(() => [[addressBuilder({})], false, null]);
+        const address = addressBuilder({});
+        mockedUseAddresses.mockImplementation(() => [[address], false]);
+        mockedUseGetAddresses.mockImplementation(() => async () => [address]);
         mockedUserSettings.mockImplementation(() => [
             { HideSidePanel: DRAWER_VISIBILITY.HIDE } as UserSettings,
             false,
@@ -266,8 +275,8 @@ describe('EmailReminderWidget', () => {
         });
 
         describe('needs user action', () => {
-            async function displaysErrorWithoutButtonInsteadOfWidget() {
-                const { skeleton } = renderComponent();
+            async function displaysErrorWithoutButtonInsteadOfWidget(calendars: VisualCalendar[]) {
+                const { skeleton } = renderComponent(undefined, { calendars: getModelState(calendars) });
 
                 expect(skeleton).toBeInTheDocument();
 
@@ -281,30 +290,13 @@ describe('EmailReminderWidget', () => {
             }
 
             it('displays an error instead of the widget when the calendar needs a reset', async () => {
-                server.use(
-                    rest.get(`/calendar/v1`, (req, res, ctx) => {
-                        return res.once(
-                            ctx.json({
-                                Calendars: [calendarBuilder({ traits: 'resetNeeded' })],
-                            })
-                        );
-                    })
-                );
-
-                await displaysErrorWithoutButtonInsteadOfWidget();
+                await displaysErrorWithoutButtonInsteadOfWidget([calendarBuilder({ traits: 'resetNeeded' })]);
             });
 
             it('displays an error instead of the widget when the calendar needs a passphrase update', async () => {
                 const calendar = calendarBuilder({ traits: 'updatePassphrase' });
 
                 server.use(
-                    rest.get(`/calendar/v1`, (req, res, ctx) => {
-                        return res.once(
-                            ctx.json({
-                                Calendars: [calendar],
-                            })
-                        );
-                    }),
                     rest.get(`/calendar/v1/${calendar.ID}/keys/all`, (req, res, ctx) => {
                         return res.once(ctx.json({}));
                     }),
@@ -316,7 +308,7 @@ describe('EmailReminderWidget', () => {
                     })
                 );
 
-                await displaysErrorWithoutButtonInsteadOfWidget();
+                await displaysErrorWithoutButtonInsteadOfWidget([calendar]);
             });
         });
 

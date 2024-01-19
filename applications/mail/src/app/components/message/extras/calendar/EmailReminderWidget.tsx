@@ -14,6 +14,7 @@ import {
     useApi,
     useContactEmails,
     useGetAddressKeys,
+    useGetAddresses,
     useGetCalendarEventRaw,
     useGetCalendars,
     useNotifications,
@@ -47,7 +48,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import { MessageErrors } from '../../../../logic/messages/messagesTypes';
+import { MessageErrors } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
@@ -79,6 +80,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [vevent, setVevent] = useState<VcalVeventComponent>();
     const [calendar, setCalendar] = useState<VisualCalendar>();
     const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const [calendarEvent, setCalendarEvent] = useState<CalendarEvent>();
 
     const [isLoading, setIsLoading] = useState(false);
@@ -193,6 +195,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 const calendar = calendars.find(({ ID }) => ID === Event.CalendarID);
 
+                const addresses = await getAddresses();
                 // We cannot be sure that setCalendar has finished when reaching the catch
                 calendarData = calendar
                     ? await getCalendarWithReactivatedKeys({ calendar, api, addresses, getAddressKeys })

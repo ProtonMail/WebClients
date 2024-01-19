@@ -1,0 +1,26 @@
+import { createSelector } from '@reduxjs/toolkit';
+
+import { baseUseSelector } from '@proton/redux-shared-store';
+import { KeyReactivationRequest } from '@proton/shared/lib/keys';
+import { getAllKeysReactivationRequests } from '@proton/shared/lib/keys/getInactiveKeys';
+
+import { AddressesState, selectAddresses } from '../addresses';
+import { UserState, selectUser } from '../user';
+import { InactiveKeysState, selectInactiveKeys } from './index';
+
+type Result = KeyReactivationRequest[];
+
+const selector = createSelector(
+    [
+        (state: InactiveKeysState) => selectInactiveKeys(state),
+        (state: UserState) => selectUser(state).value,
+        (state: AddressesState) => selectAddresses(state).value,
+    ],
+    (inactiveKeys, user, addresses): Result => {
+        return getAllKeysReactivationRequests({ addresses, user, inactiveKeys });
+    }
+);
+
+export const useInactiveKeys = () => {
+    return baseUseSelector<InactiveKeysState & UserState & AddressesState, Result>(selector);
+};

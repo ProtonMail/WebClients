@@ -14,6 +14,7 @@ beforeEach(() => {
 const defaultPlansMap: PlansMap = {
     [PLANS.PASS_PLUS]: {
         ID: 'id-123',
+        ParentMetaPlanID: '123',
         Type: 1,
         Name: PLANS.PASS_PLUS,
         Title: 'Pass Plus',
@@ -31,6 +32,11 @@ const defaultPlansMap: PlansMap = {
             '1': 499,
             '12': 4788,
             '24': 7176,
+        },
+        PeriodEnd: {
+            '1': 1678452604,
+            '12': 1707569404,
+            '24': 1739191804,
         },
         Currency: 'CHF',
         Quantity: 1,

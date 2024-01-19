@@ -15,13 +15,11 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
-import { DomainsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
-import { useApi, useCache, useCustomDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
+import { useCustomDomains, useGetCustomDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import CatchAllModal from './CatchAllModal';
@@ -40,9 +38,8 @@ const DomainsSectionText = () => {
 };
 
 const DomainsSectionInternal = () => {
-    const api = useApi();
-    const cache = useCache();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
+    const getCustomDomains = useGetCustomDomains();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -63,7 +60,7 @@ const DomainsSectionInternal = () => {
     const MaxDomains = organization?.MaxDomains || 0;
 
     const handleRefresh = async () => {
-        await loadModels([DomainsModel], { api, cache, useCache: false });
+        await getCustomDomains({ forceFetch: true });
     };
 
     const reviewText = c('Action').t`Review`;

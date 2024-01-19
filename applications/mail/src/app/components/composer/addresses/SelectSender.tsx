@@ -6,12 +6,13 @@ import { Icon, Option, SelectTwo, SettingsLink, generateUID, useAddresses, useUs
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { getFromAddresses } from '../../../helpers/addresses';
-import { selectComposer } from '../../../logic/composers/composerSelectors';
-import { ComposerID } from '../../../logic/composers/composerTypes';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch, useAppSelector } from '../../../logic/store';
+import { selectComposer } from '../../../store/composers/composerSelectors';
+import { ComposerID } from '../../../store/composers/composerTypes';
+import { composerActions } from '../../../store/composers/composersSlice';
+import { MessageState } from '../../../store/messages/messagesTypes';
 
 interface Props {
     composerID: ComposerID;
@@ -25,8 +26,8 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
     const [addresses = []] = useAddresses();
     const [user] = useUser();
 
-    const dispatch = useAppDispatch();
-    const composer = useAppSelector((state) => selectComposer(state, composerID));
+    const dispatch = useMailDispatch();
+    const composer = useMailSelector((state) => selectComposer(state, composerID));
 
     const [uid] = useState(generateUID('select-sender'));
 

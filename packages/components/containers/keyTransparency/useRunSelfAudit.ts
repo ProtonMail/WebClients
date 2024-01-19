@@ -14,7 +14,6 @@ import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
-import { AddressesModel } from '@proton/shared/lib/models';
 
 import {
     useApi,
@@ -22,8 +21,8 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
+    useGetUser,
     useGetUserKeys,
-    useUser,
 } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
 import useReportSelfAuditErrors from './useReportSelfAuditErrors';
@@ -33,10 +32,10 @@ import useUploadMissingSKL from './useUploadMissingSKL';
 const SELF_AUDIT_MAX_TRIALS = 6;
 
 const useRunSelfAudit = () => {
+    const getUser = useGetUser();
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const getLatestEpoch = useGetLatestEpoch();
-    const [{ ID: userID }] = useUser();
     const api = getSilentApi(useApi());
     const { APP_NAME: appName } = useConfig();
     const ktLSAPIPromise = getKTLocalStorage(appName);
@@ -55,7 +54,7 @@ const useRunSelfAudit = () => {
         let resolve: () => void;
         const eventPromise = new Promise<void>((_resolve) => (resolve = _resolve));
         const unsubscribe = subscribe((data) => {
-            if (!data[AddressesModel.key]) {
+            if (!data.Addresses) {
                 resolve();
             }
         });
@@ -184,6 +183,7 @@ const useRunSelfAudit = () => {
 
     const runSelfAuditWithState = async (state: SelfAuditState) => {
         const ktLSAPI = await ktLSAPIPromise;
+        const userID = (await getUser()).ID;
         if (state.userKeys.length === 0) {
             throw new Error('User has no user keys');
         }
