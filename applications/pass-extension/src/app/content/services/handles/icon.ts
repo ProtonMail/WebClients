@@ -49,23 +49,26 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
 
     const reposition = debounce(
         (revalidate: boolean = false) => {
-            cancelAnimationFrame(repositionRequest);
-            repositionRequest = requestAnimationFrame(() => {
-                animatePositionChange({
-                    get: () => field.element.getBoundingClientRect(),
-                    set: () => {
-                        const inputBox = field.getBoxElement({ revalidate });
-                        cleanupInjectionStyles({ input, control });
-                        applyInjectionStyles({
-                            icon,
-                            control,
-                            input,
-                            inputBox,
-                            form: field.getFormHandle().element,
-                        });
-                    },
-                });
-            });
+            cancelIdleCallback(repositionRequest);
+            repositionRequest = requestIdleCallback(
+                () => {
+                    animatePositionChange({
+                        get: () => field.element.getBoundingClientRect(),
+                        set: () => {
+                            const inputBox = field.getBoxElement({ revalidate });
+                            cleanupInjectionStyles({ input, control });
+                            applyInjectionStyles({
+                                icon,
+                                control,
+                                input,
+                                inputBox,
+                                form: field.getFormHandle().element,
+                            });
+                        },
+                    });
+                },
+                { timeout: 150 }
+            );
         },
         50,
         { leading: true, trailing: true }
