@@ -30,9 +30,9 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
                             key={`${feature.name}-${feature.icon}`}
                             left={
                                 !!feature.icon ? (
-                                    <Icon className="color-success" name={feature.icon} size={20} />
+                                    <Icon className="color-success" name={feature.icon} size={5} />
                                 ) : (
-                                    <Icon className="color-success" name="checkmark" size={20} />
+                                    <Icon className="color-success" name="checkmark" size={5} />
                                 )
                             }
                         >

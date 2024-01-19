@@ -11,7 +11,7 @@
     ],
     "license": "ISC",
     "author": "Proton AG",
-    "main": "index.js",
+    "main": "index.ts",
     "scripts": {
         "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css",
         "lint": "yarn run lint:scss && yarn run lint:svg",

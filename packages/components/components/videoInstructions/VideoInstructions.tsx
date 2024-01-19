@@ -50,7 +50,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 ])}
                 onClick={replayVideo}
             >
-                <Icon name="arrow-rotate-right" size={56} color="white" alt={c('Video control').t`Replay video`} />
+                <Icon name="arrow-rotate-right" size={14} color="white" alt={c('Video control').t`Replay video`} />
             </button>
         </div>
     );

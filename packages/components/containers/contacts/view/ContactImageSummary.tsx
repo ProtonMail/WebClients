@@ -49,7 +49,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
                     <div className="flex ratio-square rounded border bg-norm">
                         <Icon
                             name="cross-circle"
-                            size={24}
+                            size={6}
                             className="color-danger m-auto"
                             alt={c('Tooltip').t`The image could not be loaded`}
                         />
@@ -61,7 +61,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
                     <div className="flex ratio-square rounded border bg-norm">
                         <Icon
                             name="file-shapes"
-                            size={24}
+                            size={6}
                             className="m-auto"
                             alt={c('Tooltip').t`The image could not be loaded using proxy`}
                         />
@@ -87,7 +87,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'askLoading' && (
                 <Tooltip openDelay={0} title={c('Tooltip').t`Load image`}>
                     <ButtonLike className="flex ratio-square bg-norm" fullWidth onClick={handleClick}>
-                        <Icon name="arrow-down-line" size={32} className="m-auto" alt={c('Tooltip').t`Load image`} />
+                        <Icon name="arrow-down-line" size={8} className="m-auto" alt={c('Tooltip').t`Load image`} />
                     </ButtonLike>
                 </Tooltip>
             )}

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import { DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,
@@ -14,6 +14,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -58,40 +59,40 @@ interface Item {
     self?: boolean;
 }
 
-const getPaidMap = (plansMap: PlansMap): { [key in PLANS]?: Item } => {
+const getPaidMap = (plansMap: PlansMap, logoSize: IconSize): { [key in PLANS]?: Item } => {
     return {
         [PLANS.DRIVE]: {
             plan: PLANS.DRIVE,
             title: plansMap[PLANS.DRIVE]?.Title || '',
-            icon: <DriveLogo variant="glyph-only" size={20} />,
+            icon: <DriveLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.VPN]: {
             plan: PLANS.VPN,
             title: plansMap[PLANS.VPN]?.Title || '',
-            icon: <VpnLogo variant="glyph-only" size={20} />,
+            icon: <VpnLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.PASS_PLUS]: {
             plan: PLANS.PASS_PLUS,
             title: plansMap[PLANS.PASS_PLUS]?.Title || '',
-            icon: <PassLogo variant="glyph-only" size={20} />,
+            icon: <PassLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.MAIL]: {
             plan: PLANS.MAIL,
             title: plansMap[PLANS.MAIL]?.Title || '',
-            icon: <MailLogo variant="glyph-only" size={20} />,
+            icon: <MailLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
         [PLANS.MAIL_PRO]: {
             plan: PLANS.MAIL_PRO,
             title: plansMap[PLANS.MAIL_PRO]?.Title || '',
-            icon: <MailLogo variant="glyph-only" size={20} />,
+            icon: <MailLogo variant="glyph-only" size={logoSize} />,
             selected: true,
             bold: false,
         },
@@ -108,16 +109,17 @@ interface Props {
 }
 
 const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, plansMap }: Props) => {
-    const paidMap = getPaidMap(plansMap);
+    const iconSize: IconSize = 5;
+    const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
+    const paidMap = getPaidMap(plansMap, iconSize);
     const upsellPlanTitle = upsellPlan?.Title || '';
 
-    const freeSize = 18;
     const left: Item[] = [
         currentPlan?.Name === PLANS.MAIL_PRO
             ? {
                   plan: PLANS.MAIL_PRO,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} dark={dark} />,
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={iconImgSize} dark={dark} />,
                   selected: false,
                   bold: false,
                   service: PLAN_SERVICES.MAIL,
@@ -125,7 +127,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
             : {
                   plan: PLANS.MAIL,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} dark={dark} />,
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={iconImgSize} dark={dark} />,
                   selected: false,
                   bold: false,
                   service: PLAN_SERVICES.MAIL,
@@ -133,7 +135,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
         {
             plan: PLANS.PASS_PLUS,
             title: getFreeTitle(PASS_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONPASS} size={freeSize} dark={dark} />,
+            icon: <FreeLogo app={APPS.PROTONPASS} size={iconImgSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.PASS,
@@ -141,7 +143,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
         {
             plan: PLANS.DRIVE,
             title: getFreeTitle(DRIVE_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONDRIVE} size={freeSize} dark={dark} />,
+            icon: <FreeLogo app={APPS.PROTONDRIVE} size={iconImgSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.DRIVE,
@@ -149,7 +151,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
         {
             plan: PLANS.VPN,
             title: getFreeTitle(VPN_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={freeSize} dark={dark} />,
+            icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={iconImgSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.VPN,

@@ -148,7 +148,7 @@ const UsernameSection = ({ app }: Props) => {
                                     )}
                                     cta={
                                         <div className="mr-4">
-                                            <Icon name="chevron-right" size={16} />
+                                            <Icon name="chevron-right" size={4} />
                                         </div>
                                     }
                                 />
@@ -199,7 +199,7 @@ const UsernameSection = ({ app }: Props) => {
                                         <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
                                             <Icon
                                                 name="checkmark-circle-filled"
-                                                size={16}
+                                                size={4}
                                                 className="ml-2 color-success self-center"
                                             />
                                         </Tooltip>
@@ -233,7 +233,7 @@ const UsernameSection = ({ app }: Props) => {
                                         <div className="flex">
                                             <Icon
                                                 name="exclamation-circle-filled"
-                                                size={16}
+                                                size={4}
                                                 className="mr-1 color-danger self-center"
                                             />
                                             <span className="color-weak mr-1">

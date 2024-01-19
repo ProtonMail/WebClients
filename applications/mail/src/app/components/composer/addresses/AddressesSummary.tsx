@@ -139,7 +139,7 @@ const AddressesSummary = ({
                             icon
                             data-testid="composer:to-button"
                         >
-                            <Icon name="user-plus" size={16} alt={c('Title').t`To`} />
+                            <Icon name="user-plus" size={4} alt={c('Title').t`To`} />
                         </Button>
                     </Tooltip>
                 </span>

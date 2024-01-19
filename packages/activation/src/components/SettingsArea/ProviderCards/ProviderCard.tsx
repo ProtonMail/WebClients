@@ -55,7 +55,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
         >
             <div className="flex-1 flex justify-center w-full">
                 {provider === ImportProvider.DEFAULT ? (
-                    <Icon name={logo} className="self-center" size={40} />
+                    <Icon name={logo} className="self-center" size={10} />
                 ) : (
                     <img src={logo} alt="" className="self-center" width={width} height={height} />
                 )}

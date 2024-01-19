@@ -288,7 +288,7 @@ const ContactGroupDropdown = ({
                                                 <Icon
                                                     name="circle-filled"
                                                     className="ml-1 mr-2 shrink-0"
-                                                    size={16}
+                                                    size={4}
                                                     color={Color}
                                                 />
                                                 <span className="flex-1 text-ellipsis" title={Name}>
