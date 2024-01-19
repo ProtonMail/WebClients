@@ -20,15 +20,23 @@ interface Props {
 }
 
 export const WalletSetupModal = ({ isOpen, onClose }: Props) => {
-    const { currentStep, mnemonic, passphrase, onSelectSetupMode, onMnemonicGenerated, onNextStep, onSaveNewWallet } =
-        useWalletSetupModal({ isOpen, onSetupFinish: onClose });
+    const {
+        currentStep,
+        mnemonic,
+        passphrase,
+        onSelectSetupMode,
+        onMnemonicGenerated,
+        onNextStep,
+        onSaveNewWallet,
+        onMnemonicInput,
+    } = useWalletSetupModal({ isOpen, onSetupFinish: onClose });
 
     const step = useMemo(() => {
         switch (currentStep) {
             case WalletSetupStep.SetupModeChoice:
                 return <SetupModeSelect onModeSelection={(mode) => onSelectSetupMode(mode)} />;
             case WalletSetupStep.MnemonicInput:
-                return <MnemonicInput />;
+                return <MnemonicInput onContinue={onMnemonicInput} />;
             case WalletSetupStep.MnemonicGeneration:
                 return <MnemonicGeneration onGenerated={onMnemonicGenerated} />;
             case WalletSetupStep.MnemonicBackup:

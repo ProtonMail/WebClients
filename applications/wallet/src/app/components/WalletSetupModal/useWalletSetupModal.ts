@@ -42,6 +42,11 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
         setCurrentStep(firstStep);
     };
 
+    const onMnemonicInput = (mnemonic: WasmMnemonic) => {
+        setMnemonic(mnemonic);
+        onNextStep();
+    };
+
     const onMnemonicGenerated = (mnemonic: WasmMnemonic) => {
         setMnemonic(mnemonic);
         onNextStep();
@@ -77,6 +82,7 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     return {
         onSelectSetupMode,
         onMnemonicGenerated,
+        onMnemonicInput,
         onNextStep,
         setMnemonic,
         onSaveNewWallet,

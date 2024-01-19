@@ -1,24 +1,23 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-*/
-export function setPanicHook(): void;
-/**
 * @returns {string}
 */
 export function library_version(): string;
 /**
 */
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
+export function setPanicHook(): void;
+/**
+* @param {string} word_start
+* @returns {(string)[]}
+*/
+export function getWordsAutocomplete(word_start: string): (string)[];
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -28,6 +27,53 @@ export enum WasmWordCount {
   Words18 = 2,
   Words21 = 3,
   Words24 = 4,
+}
+/**
+*/
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
 /**
 */
@@ -99,37 +145,16 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmBitcoinUnit {
-  BTC = 0,
-  MBTC = 1,
-  SAT = 2,
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
 }
 /**
 */
@@ -141,31 +166,11 @@ export enum WasmScriptType {
 }
 /**
 */
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
 export enum WasmPaymentLinkKind {
   BitcoinAddress = 0,
   BitcoinURI = 1,
   LightningURI = 2,
   UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
 }
 
 interface IWasmTransactionTime {
