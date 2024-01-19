@@ -5,17 +5,18 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { EOLoadEmbedded, EOLoadRemote } from '../../logic/eo/eoActions';
-import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoType';
-import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { EOLoadEmbedded, EOLoadRemote } from '../../store/eo/eoActions';
+import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../store/eo/eoType';
+import { MessageRemoteImage, MessageState } from '../../store/messages/messagesTypes';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetEOMessageState();
 
     return useCallback(async () => {
@@ -38,7 +39,7 @@ export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
 };
 
 export const useLoadEOEmbeddedImages = (id: string) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
     const getMessage = useGetEOMessageState();
     const getDecryptedToken = useGetEODecryptedToken();

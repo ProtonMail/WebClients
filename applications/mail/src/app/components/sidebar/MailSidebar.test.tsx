@@ -4,27 +4,21 @@ import { fireEvent, getAllByText } from '@testing-library/react';
 import { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { conversationCountsActions } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, Label } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import range from '@proton/utils/range';
 
 import {
     ContextState,
     useGetStartedChecklist,
 } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
-import {
-    addToCache,
-    assertFocus,
-    clearAll,
-    config,
-    getDropdown,
-    getHistory,
-    minimalCache,
-    render,
-} from '../../helpers/test/helper';
+import { assertFocus, clearAll, config, getDropdown, minimalCache, render } from '../../helpers/test/helper';
 import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
@@ -49,9 +43,9 @@ const props = {
     onToggleExpand: jest.fn(),
 };
 
-const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' };
-const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID };
-const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' };
+const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' } as Folder;
+const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID } as Folder;
+const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' } as Label;
 const systemFolders = [
     {
         ID: MAILBOX_LABEL_IDS.INBOX,
@@ -93,21 +87,18 @@ const systemFolders = [
         Order: 11,
         Display: SYSTEM_FOLDER_SECTION.MAIN,
     },
-];
+] as Label[];
 const inboxMessages = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 3, Total: 20 };
 const allMailMessages = { LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Unread: 10000, Total: 10001 };
 const scheduledMessages = { LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: 4 };
 const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
-const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCounts: any[] = []) => {
+const setupTest = () => {
     // open the more section otherwise it's closed by default
     setItem('item-display-more-items', 'true');
 
     minimalCache();
-    addToCache('Labels', labels);
-    addToCache('MessageCounts', messageCounts);
-    addToCache('ConversationCounts', conversationCounts);
 
     mockedReturn.mockReturnValue({
         displayState: CHECKLIST_DISPLAY_TYPE.FULL,
@@ -123,7 +114,7 @@ describe('MailSidebar', () => {
             items: new Set(),
         } as ContextState);
 
-        const result = await render(<MailSidebar {...props} />, false);
+        const result = await render(<MailSidebar {...props} />);
 
         return { ...result };
     };
@@ -136,11 +127,10 @@ describe('MailSidebar', () => {
     });
 
     it('should redirect on inbox when click on logo', async () => {
-        const { getByTestId } = await setup();
+        const { getByTestId, history } = await setup();
         const logo = getByTestId('main-logo') as HTMLAnchorElement;
         fireEvent.click(logo);
 
-        const history = getHistory();
         expect(history.length).toBe(1);
         expect(history.location.pathname).toBe('/inbox');
     });
@@ -160,9 +150,13 @@ describe('MailSidebar', () => {
     });
 
     it('should show folder tree', async () => {
-        setupTest([folder, subfolder]);
+        setupTest();
 
-        const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([folder, subfolder]),
+            },
+        });
 
         const folderElement = getByTestId(`navigation-link:${folder.ID}`);
         const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
@@ -186,9 +180,13 @@ describe('MailSidebar', () => {
     });
 
     it('should show label list', async () => {
-        setupTest([label]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([label]),
+            },
+        });
 
         const labelElement = getByTestId(`navigation-link:${label.ID}`);
         const labelIcon = labelElement.querySelector('svg');
@@ -198,13 +196,14 @@ describe('MailSidebar', () => {
     });
 
     it('should show unread counters', async () => {
-        setupTest(
-            [folder, label, ...systemFolders],
-            [],
-            [inboxMessages, allMailMessages, folderMessages, labelMessages]
-        );
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([folder, label, ...systemFolders]),
+                conversationCounts: getModelState([inboxMessages, allMailMessages, folderMessages, labelMessages]),
+            },
+        });
 
         const inboxElement = getByTestId(`navigation-link:inbox`);
         const allMailElement = getByTestId(`navigation-link:all-mail`);
@@ -223,13 +222,15 @@ describe('MailSidebar', () => {
     });
 
     it('should navigate to the label on click', async () => {
-        setupTest([folder]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId, history } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([folder]),
+            },
+        });
 
         const folderElement = getByTestId(`navigation-link:${folder.ID}`);
-
-        const history = getHistory();
 
         expect(history.location.pathname).toBe('/inbox');
 
@@ -241,9 +242,13 @@ describe('MailSidebar', () => {
     });
 
     it('should call event manager on click if already on label', async () => {
-        setupTest([folder]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId, history } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState([folder]),
+            },
+        });
 
         const folderElement = getByTestId(`navigation-link:${folder.ID}`);
 
@@ -253,7 +258,7 @@ describe('MailSidebar', () => {
         });
 
         // Check if we are in the label
-        expect(getHistory().location.pathname).toBe(`/${folder.ID}`);
+        expect(history.location.pathname).toBe(`/${folder.ID}`);
 
         // Click again on the label to trigger the event manager
         act(() => {
@@ -266,7 +271,7 @@ describe('MailSidebar', () => {
     it('should show app version and changelog', async () => {
         setupTest();
 
-        const { getByText } = await render(<MailSidebar {...props} />, false);
+        const { getByText } = await render(<MailSidebar {...props} />);
         const appVersion = getAppVersion(config.APP_VERSION);
 
         const appVersionButton = getByText(appVersion);
@@ -279,9 +284,14 @@ describe('MailSidebar', () => {
     });
 
     it('should be updated when counters are updated', async () => {
-        setupTest(systemFolders, [], [inboxMessages]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId, store } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState(systemFolders),
+                conversationCounts: getModelState([inboxMessages]),
+            },
+        });
 
         const inboxElement = getByTestId('navigation-link:inbox');
 
@@ -291,24 +301,34 @@ describe('MailSidebar', () => {
         const inboxMessagesUpdated = { LabelID: '0', Unread: 7, Total: 21 };
 
         act(() => {
-            addToCache('ConversationCounts', [inboxMessagesUpdated]);
+            store.dispatch(conversationCountsActions.set([inboxMessagesUpdated]));
         });
 
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessagesUpdated.Unread}`);
     });
 
     it('should not show scheduled sidebar item when feature flag is disabled', async () => {
-        setupTest(systemFolders, [], [scheduledMessages]);
+        setupTest();
 
-        const { queryByTestId } = await render(<MailSidebar {...props} />, false);
+        const { queryByTestId } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState(systemFolders),
+                conversationCounts: getModelState([scheduledMessages]),
+            },
+        });
 
         expect(queryByTestId(`Scheduled`)).toBeNull();
     });
 
     it('should show scheduled sidebar item if scheduled messages', async () => {
-        setupTest(systemFolders, [], [scheduledMessages]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId } = await render(<MailSidebar {...props} />, {
+            preloadedState: {
+                categories: getModelState(systemFolders),
+                conversationCounts: getModelState([scheduledMessages]),
+            },
+        });
 
         const scheduledLocationAside = getByTestId(`navigation-link:unread-count`);
 
@@ -317,18 +337,22 @@ describe('MailSidebar', () => {
     });
 
     it('should not show scheduled sidebar item without scheduled messages', async () => {
-        setupTest([], [], []);
+        setupTest();
 
-        const { queryByTestId } = await render(<MailSidebar {...props} />, false);
+        const { queryByTestId } = await render(<MailSidebar {...props} />);
 
         expect(queryByTestId(`Scheduled`)).toBeNull();
     });
 
     describe('Sidebar hotkeys', () => {
         it('should navigate with the arrow keys', async () => {
-            setupTest([label, folder, ...systemFolders]);
+            setupTest();
 
-            const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, false);
+            const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, {
+                preloadedState: {
+                    categories: getModelState([label, folder, ...systemFolders]),
+                },
+            });
 
             const sidebar = container.querySelector('nav > div') as HTMLDivElement;
             const More = getByTitle('Less'); // When opened, it becomes "LESS"
@@ -376,7 +400,7 @@ describe('MailSidebar', () => {
         });
 
         it('should navigate to list with right key', async () => {
-            setupTest([label, folder]);
+            setupTest();
 
             const TestComponent = () => {
                 return (
@@ -389,7 +413,11 @@ describe('MailSidebar', () => {
                 );
             };
 
-            const { container } = await render(<TestComponent />, false);
+            const { container } = await render(<TestComponent />, {
+                preloadedState: {
+                    categories: getModelState([label, folder]),
+                },
+            });
 
             const sidebar = container.querySelector('nav > div') as HTMLDivElement;
 
@@ -413,7 +441,7 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
         } as ContextState);
 
-        const { getByTestId, container } = await render(<MailSidebar {...props} />, false);
+        const { getByTestId, container } = await render(<MailSidebar {...props} />);
         getByTestId('onboarding-checklist');
 
         const nav = container.querySelector('nav');
@@ -426,7 +454,7 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
         } as ContextState);
 
-        const { queryByTestId, container } = await render(<MailSidebar {...props} />, false);
+        const { queryByTestId, container } = await render(<MailSidebar {...props} />);
         const checklistWrapper = queryByTestId('onboarding-checklist');
         const nav = container.querySelector('nav');
 
@@ -440,7 +468,7 @@ describe('Sidebar checklist display', () => {
             items: new Set(),
         } as ContextState);
 
-        const { queryByTestId, container } = await render(<MailSidebar {...props} />, false);
+        const { queryByTestId, container } = await render(<MailSidebar {...props} />);
         const checklistWrapper = queryByTestId('onboarding-checklist');
         const nav = container.querySelector('nav');
 
@@ -456,7 +484,7 @@ describe('Sidebar checklist display', () => {
             changeChecklistDisplay: mockedChangeDisplay,
         } as Partial<ContextState>);
 
-        const { container, getByTestId } = await render(<MailSidebar {...props} />, false);
+        const { container, getByTestId } = await render(<MailSidebar {...props} />);
 
         const nav = container.querySelector('nav');
         expect(nav?.childNodes.length).toEqual(3);

@@ -7,7 +7,6 @@ import AuthenticationProvider, {
 import { CacheProvider } from '@proton/components/containers/cache';
 import { ConfigProvider } from '@proton/components/containers/config';
 import EventManagerContext from '@proton/components/containers/eventManager/context';
-import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
 import ModalsContext from '@proton/components/containers/modals/modalsContext';
 import NotificationsProvider from '@proton/components/containers/notifications/Provider';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -70,21 +69,6 @@ export const withEventManager =
             <EventManagerContext.Provider value={eventManager}>
                 <Component {...props} />
             </EventManagerContext.Provider>
-        );
-    };
-
-/**
- * >>> It depends on {@link withApi}! <<<
- * Make sure to include the API provider first.
- */
-export const withFeatures =
-    () =>
-    <T extends {}>(Component: ComponentType<T>) =>
-    (props: T & JSX.IntrinsicAttributes) => {
-        return (
-            <FeaturesProvider>
-                <Component {...props} />
-            </FeaturesProvider>
         );
     };
 

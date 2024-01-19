@@ -4,8 +4,8 @@ import { Dropdown, DropdownMenu, DropdownSizeUnit, generateUID } from '@proton/c
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAction from '../../list/ItemAction';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItemLayout from './RecipientItemLayout';

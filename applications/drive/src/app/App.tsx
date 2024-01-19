@@ -1,48 +1,114 @@
-import { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { FunctionComponent, useState } from 'react';
+import { Router } from 'react-router-dom';
 
-import { LoaderPage, ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
-import metrics from '@proton/metrics/index';
-import { getClientID } from '@proton/shared/lib/apps/helper';
-import authentication from '@proton/shared/lib/authentication/authentication';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
-import sentry from '@proton/shared/lib/helpers/sentry';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
+import FlagProvider from '@protontech/proxy-client-react';
 
-import PrivateApp from './PrivateApp';
+import {
+    ApiProvider,
+    AuthenticationProvider,
+    DelinquentContainer,
+    DrawerProvider,
+    ErrorBoundary,
+    EventManagerProvider,
+    LoaderPage,
+    ProtonApp,
+    StandardErrorPage,
+    StandardLoadErrorPage,
+    StandardPrivateApp,
+} from '@proton/components';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { DRAWER_VISIBILITY, UserModel } from '@proton/shared/lib/interfaces';
+import { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
+
+import { bootstrapApp } from './bootstrap';
 import * as config from './config';
-import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
-import locales from './locales';
+import { DriveStore } from './redux-store/store';
+import { extraThunkArguments } from './redux-store/thunk';
+import { UserSettingsProvider } from './store';
 
-import './app.scss';
-
-setTtagLocales(locales);
-setupGuestCrossStorage();
-newVersionUpdater(config);
-sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
-
-metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+const defaultState: {
+    initialUser?: UserModel;
+    initialDriveUserSettings?: UserSettingsResponse;
+    error?: { message: string } | undefined;
+    showDrawerSidebar?: boolean;
+    MainContainer?: FunctionComponent;
+    store?: DriveStore;
+} = {
+    initialUser: undefined,
+    initialDriveUserSettings: undefined,
+    error: undefined,
+    showDrawerSidebar: false,
+};
 
 const App = () => {
-    const [hasInitialAuth] = useState(() => {
-        return !window.location.pathname.startsWith('/urls');
+    const [state, setState] = useState(defaultState);
+
+    useEffectOnce(() => {
+        (async () => {
+            try {
+                const { store, scopes, MainContainer, user, userSettings, driveUserSettings } = await bootstrapApp({
+                    config,
+                });
+                setState({
+                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
+                    initialDriveUserSettings: driveUserSettings,
+                    initialUser: user,
+                    store,
+                });
+            } catch (error: any) {
+                setState({
+                    error: {
+                        message: getNonEmptyErrorMessage(error),
+                    },
+                });
+            }
+        })();
     });
 
     return (
-        <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
-            <Switch>
-                <Route path="/urls">
-                    <StandardPublicApp loader={<LoaderPage />} locales={locales}>
-                        <div className="h-full">
-                            <PublicSharedLinkContainer />
-                        </div>
-                    </StandardPublicApp>
-                </Route>
-                <Route path="*">
-                    <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-                </Route>
-            </Switch>
+        <ProtonApp config={config}>
+            {(() => {
+                if (state.error) {
+                    return <StandardLoadErrorPage errorMessage={state.error.message} />;
+                }
+                if (!state.MainContainer || !state.store || !state.initialUser || !state.initialDriveUserSettings) {
+                    return <LoaderPage />;
+                }
+                return (
+                    <ProtonStoreProvider store={state.store}>
+                        <AuthenticationProvider store={extraThunkArguments.authentication}>
+                            <ApiProvider api={extraThunkArguments.api}>
+                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                        <Router history={extraThunkArguments.history}>
+                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <StandardPrivateApp
+                                                        hasReadableMemberKeyActivation
+                                                        hasMemberKeyMigration
+                                                        hasPrivateMemberKeyGeneration
+                                                        noModals
+                                                    >
+                                                        <UserSettingsProvider
+                                                            initialUser={state.initialUser}
+                                                            initialDriveUserSettings={state.initialDriveUserSettings}
+                                                        >
+                                                            <state.MainContainer />
+                                                        </UserSettingsProvider>
+                                                    </StandardPrivateApp>
+                                                </ErrorBoundary>
+                                            </EventManagerProvider>
+                                        </Router>
+                                    </FlagProvider>
+                                </DrawerProvider>
+                            </ApiProvider>
+                        </AuthenticationProvider>
+                    </ProtonStoreProvider>
+                );
+            })()}
         </ProtonApp>
     );
 };

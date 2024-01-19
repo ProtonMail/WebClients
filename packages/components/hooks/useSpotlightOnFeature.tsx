@@ -6,7 +6,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getEnvironmentDate } from '@proton/shared/lib/spotlight/helpers';
 import { SpotlightDate } from '@proton/shared/lib/spotlight/interface';
 
-import { FeatureCode } from '../containers/features/FeaturesContext';
+import { FeatureCode } from '../containers/features';
 import useFeature from './useFeature';
 
 /**

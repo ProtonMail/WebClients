@@ -3,11 +3,12 @@ import { useCallback, useMemo, useState } from 'react';
 import { useApi, useEventManager, useFolders, useLabels, useModalTwo } from '@proton/components';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import SelectAllDeleteModal from 'proton-mail/components/list/select-all/modals/SelectAllDeleteModal';
 
 import { isCustomLabel } from '../../helpers/labels';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../logic/store';
+import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
 import { useOptimisticEmptyLabel } from '../optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
@@ -16,7 +17,7 @@ export const useEmptyLabel = () => {
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const [labelID, setLabelID] = useState<string>('');
     const [deleteAllModal, handleShowDeleteAllModal] = useModalTwo(SelectAllDeleteModal);

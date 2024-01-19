@@ -86,7 +86,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     const canEdit = canPay(user);
 
-    if (loadingSubscription || loadingPlans || loadingOrganization) {
+    if (!organization || !subscription || loadingSubscription || loadingPlans || loadingOrganization) {
         return (
             <LiteLayout searchParams={searchParams}>
                 <LiteLoaderPage />

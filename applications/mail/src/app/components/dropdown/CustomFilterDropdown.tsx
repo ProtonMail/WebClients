@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Checkbox, FiltersUpsellModal, PrimaryButton, useFilters, useModalState, useUser } from '@proton/components';
 import { OPERATORS } from '@proton/components/containers/filters/constants';
-import { ConditionComparator, ConditionType, Filter } from '@proton/components/containers/filters/interfaces';
+import { ConditionComparator, ConditionType } from '@proton/components/containers/filters/interfaces';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
 import newFilter, { computeTree } from '@proton/components/containers/filters/utils';
 import { hasReachedFiltersLimit } from '@proton/shared/lib/helpers/filters';
@@ -44,7 +44,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
         [ConditionType.ATTACHMENTS]: false,
     });
     const [user] = useUser();
-    const [filters = []] = useFilters() as [Filter[], boolean, Error];
+    const [filters = []] = useFilters();
 
     const FILTER_TYPES: FilterType[] = [
         {

@@ -1,22 +1,24 @@
 import { act, findByTestId, fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import { FeatureCode } from '@proton/components/containers/features';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
+import { MailStore } from 'proton-mail/store/store';
+
 import { MESSAGE_ACTIONS } from '../../../../constants';
-import { addApiMock } from '../../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../../helpers/test/cache';
-import { addApiKeys, addKeysToAddressKeysCache } from '../../../../helpers/test/crypto';
+import { addApiMock, getFeatureFlags } from '../../../../helpers/test/api';
+import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
+import { addApiKeys, getAddressKeyCache } from '../../../../helpers/test/crypto';
 import { getDropdown, waitForSpyCall } from '../../../../helpers/test/helper';
-import { initialize } from '../../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../../logic/store';
 import { addressID, setup } from '../../../message/tests/Message.test.helpers';
 import { data, fromFields, getExpectedDefaultPlainTextContent, getMessage } from './QuickReply.test.data';
 
-export const getStateMessageFromParentID = (parentMessageID: string) => {
+export const getStateMessageFromParentID = (store: MailStore, parentMessageID: string) => {
     const messagesFromCache = store.getState().messages;
 
     // search for message ID of message from parentID (The QR generated)
@@ -41,32 +43,38 @@ export const setupQuickReplyTests = async ({
     isSender,
 }: QuickReplyTestConfig) => {
     minimalCache();
-    addToCache('MailSettings', {
-        PMSignature: PM_SIGNATURE.ENABLED,
-        DraftMIMEType: MIME_TYPES.DEFAULT,
-    } as MailSettings); // Need to have the Proton signature by default in the QR
-    addToCache('Addresses', [
-        {
-            ID: addressID,
-            Email: fromFields.meAddress,
-            Receive: 1,
-            Status: 1,
-            Send: 1,
-        },
-    ]);
 
-    addKeysToAddressKeysCache(addressID, meKeys);
     addApiKeys(false, fromFields.fromAddress, []);
     addApiKeys(false, fromFields.toAddress, []);
 
     // Reference message
     const message = getMessage(!!isSender, !!isPlainText, referenceMessageBody);
 
-    store.dispatch(initialize(message));
-
     const expectedDefaultPlainTextContent = getExpectedDefaultPlainTextContent(referenceMessageBody);
 
-    const container = await setup({ conversationMode: true, message: message.data }, false);
+    const container = await setup(
+        message,
+        { conversationMode: true, message: message.data },
+        {
+            preloadedState: {
+                addresses: getModelState([
+                    getCompleteAddress({
+                        ID: addressID,
+                        Email: fromFields.meAddress,
+                        Receive: 1,
+                        Status: 1,
+                        Send: 1,
+                    }),
+                ]),
+                addressKeys: getAddressKeyCache(addressID, meKeys),
+                mailSettings: getModelState({
+                    PMSignature: PM_SIGNATURE.ENABLED,
+                    DraftMIMEType: MIME_TYPES.DEFAULT,
+                } as MailSettings),
+                features: getFeatureFlags([[FeatureCode.QuickReply, true]]),
+            },
+        }
+    );
 
     const createCall = jest.fn((message) => {
         return Promise.resolve({
@@ -185,6 +193,7 @@ export const setupQuickReplyTests = async ({
 
     return {
         container,
+        store: container.store,
         getPlainTextEditor,
         getRoosterEditor,
         createCall,

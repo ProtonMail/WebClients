@@ -1,11 +1,11 @@
-import * as useUserModule from '@proton/components/hooks/useUser';
+import * as useUserModule from '@proton/account/user/hooks';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
 import { buildUser } from '../builders';
 
-export const mockUseUser = (value: [Partial<UserModel>?, boolean?, any?] = []) => {
-    const [user, cached, miss = jest.fn()] = value;
-    const mockedUseUser = jest.spyOn(useUserModule, 'default');
-    mockedUseUser.mockReturnValue([buildUser(user), Boolean(cached), miss]);
+export const mockUseUser = (value: [Partial<UserModel>?, boolean?] = []) => {
+    const [user, cached = false] = value;
+    const mockedUseUser = jest.spyOn(useUserModule, 'useUser');
+    mockedUseUser.mockReturnValue([buildUser(user), Boolean(cached)]);
     return mockedUseUser;
 };

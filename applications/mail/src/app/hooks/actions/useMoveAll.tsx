@@ -8,9 +8,9 @@ import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
-import { moveAll } from '../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../logic/store';
+import { moveAll } from '../../store/elements/elementsActions';
 
 const getTitle = (destinationLabelID: string) => {
     switch (destinationLabelID) {
@@ -38,7 +38,7 @@ export const useMoveAll = () => {
     const [folders = []] = useFolders();
     const api = useApi();
 
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const [modalProps, setModalOpen] = useModalState();
     const [actionProps, setActionProps] = useState<{ SourceLabelID: string; DestinationLabelID: string }>({

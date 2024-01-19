@@ -6,7 +6,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useDownload, usePreview } from '../../hooks/attachments/useDownload';
-import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 
 export interface AttachmentPreviewControls {
     preview: (attachment: Attachment) => void;

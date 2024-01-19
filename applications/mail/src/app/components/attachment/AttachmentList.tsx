@@ -10,9 +10,9 @@ import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/attachments/useDownload';
-import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import { PendingUpload } from '../../hooks/composer/useAttachments';
+import { MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentItem from './AttachmentItem';
 import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
 

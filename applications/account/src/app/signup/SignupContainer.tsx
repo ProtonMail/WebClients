@@ -7,14 +7,7 @@ import { Step, Stepper } from '@proton/atoms/Stepper';
 import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import {
-    useApi,
-    useConfig,
-    useErrorHandler,
-    useLocalState,
-    useMyCountry,
-    useVPNServersCount,
-} from '@proton/components/hooks';
+import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -44,6 +37,7 @@ import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscr
 import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -155,7 +149,6 @@ const SignupContainer = ({
             ...config,
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
-    const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
@@ -197,6 +190,7 @@ const SignupContainer = ({
         method: 'auto',
         type: defaultSignupType,
     });
+    const vpnServers = model.vpnServersCountData;
 
     useEffect(() => {
         if (signupType.method === 'auto' && signupType.type !== defaultSignupType) {
@@ -260,6 +254,8 @@ const SignupContainer = ({
             const { referrer, invite } = signupParameters;
 
             await startUnAuthFlow().catch(noop);
+
+            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),

@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import { FeatureCode, useApi, useEventManager, useFeature, useNotifications } from '@proton/components';
-import { useGetLabels } from '@proton/components/hooks/useCategories';
+import { useGetLabels } from '@proton/mail';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
@@ -12,11 +12,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
+import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
-import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../../logic/store';
 import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
 import { useCreateFilters } from '../useCreateFilters';
 
@@ -109,7 +109,7 @@ export const useApplyLabelsToSelection = () => {
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 

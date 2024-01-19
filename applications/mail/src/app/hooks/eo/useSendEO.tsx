@@ -9,6 +9,8 @@ import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
@@ -17,10 +19,9 @@ import { getDecryptedAttachment } from '../../helpers/attachment/attachmentLoade
 import { encryptFile } from '../../helpers/attachment/attachmentUploader';
 import { createBlob, readContentIDandLocation } from '../../helpers/message/messageEmbeddeds';
 import { prepareExport } from '../../helpers/message/messageExport';
-import { EOAddReply } from '../../logic/eo/eoActions';
-import { EOMessageReply } from '../../logic/eo/eoType';
-import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { EOAddReply } from '../../store/eo/eoActions';
+import { EOMessageReply } from '../../store/eo/eoType';
+import { MessageKeys, MessageState } from '../../store/messages/messagesTypes';
 
 interface EOAttachment {
     Filename: string[];
@@ -38,7 +39,7 @@ interface Props {
 
 export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const history = useHistory();
     const notifManager = createSendingMessageNotificationManager();
     const { createNotification, hideNotification } = useNotifications();

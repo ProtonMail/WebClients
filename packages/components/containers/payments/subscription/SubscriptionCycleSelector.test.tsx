@@ -19,6 +19,7 @@ beforeEach(() => {
         plansMap: {
             mail2022: {
                 ID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
+                ParentMetaPlanID: '',
                 Type: 1,
                 Name: PLANS.PLUS,
                 Title: 'Mail Plus',
@@ -41,6 +42,11 @@ beforeEach(() => {
                     '1': 499,
                     '12': 4788,
                     '24': 8376,
+                },
+                PeriodEnd: {
+                    '1': 1702849536,
+                    '12': 1731879936,
+                    '24': 1763415936,
                 },
                 Currency: 'CHF',
                 Quantity: 1,

@@ -9,13 +9,14 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
-import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
-import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
@@ -45,8 +46,8 @@ const ItemHoverButtons = ({
     const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
     const star = useStar();
-    const snoozedElement = useAppSelector(selectSnoozeElement);
-    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
+    const snoozedElement = useMailSelector(selectSnoozeElement);
+    const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
 
     const [loadingStar, withLoadingStar] = useLoading();
 

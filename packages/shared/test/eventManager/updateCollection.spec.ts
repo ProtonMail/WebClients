@@ -1,5 +1,5 @@
 import { EVENT_ACTIONS } from '../../lib/constants';
-import updateCollection from '../../lib/helpers/updateCollection';
+import updateCollection, { sortCollection } from '../../lib/helpers/updateCollection';
 
 describe('update collection', () => {
     it('should remove items', () => {
@@ -148,7 +148,9 @@ describe('update collection', () => {
                 },
             ] as const;
             const newLabels = updateCollection({ model: labels, events, itemKey: 'Label', item: ({ Label }) => Label });
-            expect(newLabels).toEqual([
+            const key = 'Order';
+            const sortedLabels = sortCollection(key, newLabels);
+            expect(sortedLabels).toEqual([
                 { ID: '123', foo: 'bar2', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 },
                 { ID: '124', foo: 'bar', Order: 3 },
@@ -176,7 +178,8 @@ describe('update collection', () => {
                 itemKey: 'Label',
                 item: ({ Label }) => Label,
             });
-            expect(newLabels2).toEqual([
+            const sortedLabels2 = sortCollection(key, newLabels2);
+            expect(sortedLabels2).toEqual([
                 { ID: '124', foo: 'bar3', Order: 1 },
                 { ID: '12345', foo: 'monique', Order: 2 },
             ]);
@@ -291,7 +294,7 @@ describe('update collection', () => {
                     },
                 },
             ] as const;
-            const newLabels = updateCollection({ model: labels, events, itemKey: 'Label', sortByKey: 'counter' });
+            const newLabels = sortCollection('counter', updateCollection({ model: labels, events, itemKey: 'Label' }));
             expect(newLabels).toEqual([
                 { ID: '12345', foo: 'monique', counter: 2 },
                 { ID: '122', foo: 'bar', counter: 3 },

@@ -5,9 +5,9 @@ import { Icon } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import clsx from '@proton/utils/clsx';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { RecipientOrGroup } from '../../../models/address';
 import { MapStatusIcons } from '../../../models/crypto';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import RecipientSimple from './RecipientSimple';
 import RecipientsDetails from './RecipientsDetails';
 
@@ -39,10 +39,7 @@ const MailRecipients = ({
     return (
         <div
             id="message-recipients"
-            className={clsx([
-                'flex flex-nowrap flex-1 message-recipient',
-                expanded && 'message-recipient-expanded',
-            ])}
+            className={clsx(['flex flex-nowrap flex-1 message-recipient', expanded && 'message-recipient-expanded'])}
         >
             {expanded ? (
                 <RecipientsDetails

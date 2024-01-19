@@ -180,11 +180,11 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
 jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
-jest.mock('@proton/components/hooks/useWelcomeFlags', () => () => [{}]);
+jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
-jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: () => () => {
         call: jest.fn();
     },
@@ -328,21 +328,17 @@ describe.skip('MainContainer', () => {
                 ],
             },
         ];
-        mockedUseCalendars.mockImplementation(() => [mockedNoCreateCalendars, false, undefined]);
+        mockedUseCalendars.mockImplementation(() => [mockedNoCreateCalendars, false]);
         const { rerender } = render(renderComponent());
 
         expect(await screen.findByText(/New event/)).toBeDisabled();
 
-        mockedUseCalendars.mockImplementation(() => [[], false, undefined]);
+        mockedUseCalendars.mockImplementation(() => [[], false]);
         rerender(renderComponent());
 
         expect(await screen.findByText(/New event/)).toBeDisabled();
 
-        mockedUseCalendars.mockImplementation(() => [
-            [...mockedNoCreateCalendars, mockedCreatableCalendar],
-            false,
-            undefined,
-        ]);
+        mockedUseCalendars.mockImplementation(() => [[...mockedNoCreateCalendars, mockedCreatableCalendar], false]);
         rerender(renderComponent());
 
         expect(await screen.findByText(/New event/)).not.toBeDisabled();
@@ -350,7 +346,7 @@ describe.skip('MainContainer', () => {
 
     describe('Create event modal', () => {
         beforeEach(() => {
-            mockedUseCalendars.mockImplementation(() => [[mockedCreatableCalendar], false, undefined]);
+            mockedUseCalendars.mockImplementation(() => [[mockedCreatableCalendar], false]);
         });
 
         it('displays the correct fields when setting up recurring events', async () => {

@@ -14,8 +14,8 @@ import { decryptAndVerify, getVerificationStatusFromKeys } from 'proton-mail/hel
 import { useGetAttachment } from 'proton-mail/hooks/attachments/useAttachment';
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
 import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
-import { updateAttachment } from 'proton-mail/logic/attachments/attachmentsActions';
-import { useAppDispatch } from 'proton-mail/logic/store';
+import { updateAttachment } from 'proton-mail/store/attachments/attachmentsActions';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 const enum DOWNLOAD_TYPE {
     PREVIEW = 'PREVIEW',
@@ -30,7 +30,7 @@ export const useAttachmentThumbnailDownload = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
     const getMessageKeys = useGetMessageKeys();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
     const getVerificationPreferences = useGetVerificationPreferences();
     const contactsMap = useContactsMap();

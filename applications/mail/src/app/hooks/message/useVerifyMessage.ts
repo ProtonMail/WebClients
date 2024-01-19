@@ -4,13 +4,14 @@ import { useApi, useGetVerificationPreferences } from '@proton/components';
 import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { MessageErrors, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
-import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import { MessageErrors, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
+import { verificationComplete } from '../../store/messages/read/messagesReadActions';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -20,7 +21,7 @@ export const useVerifyMessage = (localID: string) => {
     const api = useApi();
     const getMessage = useGetMessage();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getVerificationPreferences = useGetVerificationPreferences();
     const getMessageKeys = useGetMessageKeys();
     const contactsMap = useContactsMap();

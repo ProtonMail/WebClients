@@ -3,10 +3,11 @@ import { RefObject, useEffect, useMemo } from 'react';
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../../logic/store';
+import { MessageState } from '../../../store/messages/messagesTypes';
+import { applyDarkStyle } from '../../../store/messages/read/messagesReadActions';
 
 const useMessageDarkStyles = (
     message: MessageState,
@@ -15,7 +16,7 @@ const useMessageDarkStyles = (
 ) => {
     const darkStylesFeature = useFeature(FeatureCode.DarkStylesInBody);
     const theme = useTheme();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const needCompute =
         darkStylesFeature.feature?.Value &&

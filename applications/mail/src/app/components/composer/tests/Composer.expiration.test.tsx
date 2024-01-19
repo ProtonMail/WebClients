@@ -7,16 +7,10 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import {
-    addApiKeys,
-    addKeysToAddressKeysCache,
-    clearAll,
-    generateKeys,
-    getDropdown,
-    render,
-} from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
+import { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
+
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { addApiKeys, clearAll, generateKeys, getDropdown, render } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
@@ -36,15 +30,20 @@ describe('Composer expiration', () => {
         await releaseCryptoProxy();
     });
 
-    const setup = async () => {
-        const state = store.getState();
-        const composerID = Object.keys(state.composers.composers)[0];
+    const composerID = 'composer-test-id';
 
+    const setup = async (message: PartialMessageState) => {
         const fromKeys = await generateKeys('me', fromAddress);
-        addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} composerID={composerID} />);
+        const result = await render(<Composer {...props} composerID={composerID} />, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+            onStore: (store) => {
+                prepareMessage(store, message, composerID);
+            },
+        });
 
         return result;
     };
@@ -53,13 +52,11 @@ describe('Composer expiration', () => {
         const expirationDate = addDays(new Date(), 7);
         const datePlaceholder = format(expirationDate, 'PP', { locale: dateLocale });
 
-        prepareMessage({
+        const { getByTestId, getByText } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
-
-        const { getByTestId, getByText } = await setup();
 
         const moreOptionsButton = getByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
@@ -86,13 +83,12 @@ describe('Composer expiration', () => {
         const expirationDate = addDays(new Date(), 7);
         const expirationTime = expirationDate.getTime() / 1000;
         const datePlaceholder = format(expirationDate, 'PP', { locale: dateLocale });
-        prepareMessage({
+
+        const { getByText, getByTestId } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES, ExpirationTime: expirationTime },
             messageDocument: { plainText: '' },
         });
-
-        const { getByText, getByTestId } = await setup();
 
         getByText(/This message will expire/);
 

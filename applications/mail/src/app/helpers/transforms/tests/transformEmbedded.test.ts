@@ -2,7 +2,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
-import { MessageImage, MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageImage, MessageState } from '../../../store/messages/messagesTypes';
 import { createDocument } from '../../test/message';
 import { transformEmbedded } from '../transformEmbedded';
 

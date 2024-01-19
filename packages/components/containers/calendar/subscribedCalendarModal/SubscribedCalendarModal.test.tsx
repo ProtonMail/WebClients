@@ -1,10 +1,9 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import createCache from '@proton/shared/lib/helpers/cache';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import { CacheProvider } from '../../cache';
+import { renderWithProviders } from '../../contacts/tests/render';
 import SubscribedCalendarModal from './SubscribedCalendarModal';
 
 jest.mock('../hooks/useGetCalendarSetup', () => () => ({}));
@@ -49,18 +48,14 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({
         subscribe: jest.fn(),
     })),
 }));
 
 function renderComponent() {
-    const Wrapper = ({ children }: { children: any }) => (
-        <CacheProvider cache={createCache()}>{children}</CacheProvider>
-    );
-
-    return render(<SubscribedCalendarModal open />, { wrapper: Wrapper });
+    return renderWithProviders(<SubscribedCalendarModal open />);
 }
 
 describe('SubscribedCalendarModal', () => {

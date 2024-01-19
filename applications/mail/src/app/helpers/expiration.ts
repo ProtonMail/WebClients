@@ -4,7 +4,7 @@ import { serverTime } from '@proton/crypto';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 
-import { MessageState } from '../logic/messages/messagesTypes';
+import { MessageState } from '../store/messages/messagesTypes';
 import { isAllowedAutoDeleteLabelID } from './autoDelete';
 
 export const canSetExpiration = (featureFlagValue: boolean, user: UserModel, messageState?: MessageState) => {

@@ -4,6 +4,8 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
+import { MailStore } from 'proton-mail/store/store';
+
 import { mergeMessages } from '../../../helpers/message/messages';
 import {
     addApiKeys,
@@ -15,10 +17,9 @@ import {
     waitForNotification,
 } from '../../../helpers/test/helper';
 import { EditorTypes } from '../../../hooks/composer/useComposerContent';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { composerActions } from '../../../store/composers/composersSlice';
+import { MessageStateWithData, PartialMessageState } from '../../../store/messages/messagesTypes';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action
@@ -51,7 +52,7 @@ export const props = {
     minimizeButtonRef: { current: null },
 };
 
-export const prepareMessage = (messageProp: PartialMessageState) => {
+export const getMessage = (messageProp: PartialMessageState) => {
     const baseMessage = {
         localID: 'localID',
         data: {
@@ -69,12 +70,17 @@ export const prepareMessage = (messageProp: PartialMessageState) => {
         },
     } as MessageStateWithData;
 
-    const message = mergeMessages(baseMessage, messageProp) as MessageStateWithData;
+    return mergeMessages(baseMessage, messageProp) as MessageStateWithData;
+};
+
+export const prepareMessage = (store: MailStore, messageProp: PartialMessageState, composerID: string) => {
+    const message = getMessage(messageProp);
 
     store.dispatch(initialize(message));
 
     store.dispatch(
         composerActions.addComposer({
+            ID: composerID,
             messageID: message.localID,
             type: EditorTypes.composer,
             senderEmailAddress: message.data?.Sender?.Address || '',
@@ -84,14 +90,22 @@ export const prepareMessage = (messageProp: PartialMessageState) => {
             status: 'idle',
         })
     );
-
-    const composerID = Object.keys(store.getState().composers.composers)[0];
-
-    return { message, composerID };
 };
 
-export const renderComposer = async (composerID: string, useMinimalCache = true) => {
-    const renderResult = await render(<Composer {...props} composerID={composerID} />, useMinimalCache);
+export const renderComposer = async (
+    renderOptions: Parameters<typeof render>[1] & {
+        message: PartialMessageState;
+    }
+) => {
+    const composerID = 'composer-test-id';
+
+    const renderResult = await render(<Composer {...props} composerID={composerID} />, {
+        ...renderOptions,
+        onStore: (store) => {
+            prepareMessage(store, renderOptions.message, composerID);
+            renderOptions.onStore?.(store);
+        },
+    });
 
     // onClose will most likely unmount the component, it has to continue working
     props.onClose.mockImplementation(renderResult.unmount);
@@ -121,15 +135,13 @@ export const clickSend = async (renderResult: RenderResult) => {
     return sendRequest;
 };
 
-export const send = async (composerID: string, useMinimalCache = true) => {
+export const send = async (findByTestId: Parameters<typeof clickSend>[0]) => {
     try {
         if (!apiKeys.has(toAddress)) {
             addApiKeys(false, toAddress, []);
         }
 
-        const renderResult = await renderComposer(composerID, useMinimalCache);
-
-        return await clickSend(renderResult);
+        return await clickSend(findByTestId);
     } catch (error: any) {
         console.log('Error in sending helper', error);
         throw error;

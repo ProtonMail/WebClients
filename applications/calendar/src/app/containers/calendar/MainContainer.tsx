@@ -1,16 +1,8 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import {
-    ErrorBoundary,
-    FeatureCode,
-    StandardErrorPage,
-    useAddresses,
-    useCalendars,
-    useFeatures,
-    useUser,
-    useWelcomeFlags,
-} from '@proton/components';
+import { FeatureCode, useAddresses, useCalendars, useFeatures, useUser, useWelcomeFlags } from '@proton/components';
+import { useDrawerParent } from '@proton/components/hooks';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInstance } from '@proton/hooks/index';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -132,12 +124,11 @@ const MainContainer = () => {
 };
 
 const WrappedMainContainer = () => {
+    useDrawerParent();
     return (
-        <ErrorBoundary component={<StandardErrorPage big />}>
-            <QuickSettingsRemindersProvider>
-                <MainContainer />
-            </QuickSettingsRemindersProvider>
-        </ErrorBoundary>
+        <QuickSettingsRemindersProvider>
+            <MainContainer />
+        </QuickSettingsRemindersProvider>
     );
 };
 

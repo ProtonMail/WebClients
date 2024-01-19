@@ -37,7 +37,7 @@ import {
     sendInviteErrorTelemetryReport,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
-import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';

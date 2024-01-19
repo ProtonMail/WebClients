@@ -10,7 +10,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 
 import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useGetAddressKeys';
+import { useGetAddressKeys } from './useAddressesKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 import useGetVerificationPreferences from './useGetVerificationPreferences';

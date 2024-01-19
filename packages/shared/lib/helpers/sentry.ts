@@ -32,7 +32,7 @@ type SentryIgnoreErrors = BrowserOptions['ignoreErrors'];
 type SentryOptions = {
     sessionTracking?: boolean;
     config: ProtonConfig;
-    uid?: string;
+    UID?: string;
     sentryConfig?: SentryConfig;
     ignore?: (config: SentryConfig) => boolean;
     denyUrls?: SentryDenyUrls;
@@ -169,7 +169,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
 };
 
 function main({
-    uid,
+    UID,
     config,
     sessionTracking = false,
     sentryConfig = getDefaultSentryConfig(config),
@@ -187,7 +187,7 @@ function main({
         return;
     }
 
-    setUID(uid);
+    setUID(UID);
 
     // Assumes sentryDSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
     // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11

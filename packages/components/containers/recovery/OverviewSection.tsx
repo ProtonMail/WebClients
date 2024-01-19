@@ -1,3 +1,4 @@
+import { useInactiveKeys } from '@proton/account';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -13,10 +14,9 @@ import {
     useUser,
     useUserKeys,
 } from '../../hooks';
-import { FeatureCode } from '../features/FeaturesContext';
+import { FeatureCode } from '../features';
 import { useKTVerifier } from '../keyTransparency';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
-import { getAllKeysReactivationRequests } from '../keys/reactivateKeys/getAllKeysToReactive';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';
 import RecoveryCard from './RecoveryCard';
@@ -34,9 +34,11 @@ const OverviewSection = ({ ids }: Props) => {
     const api = useApi();
     const [User] = useUser();
     const [Addresses] = useAddresses();
-    const [userKeys] = useUserKeys();
     const [addressesKeys] = useAddressesKeys();
-    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
+    const [userKeys] = useUserKeys();
+
+    const keyReactivationRequests = useInactiveKeys();
+
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();
@@ -46,27 +48,31 @@ const OverviewSection = ({ ids }: Props) => {
 
     useSearchParamsEffect(
         (params) => {
-            if (params.get('action') === 'recover-data' && allKeysToReactivate.length) {
+            if (params.get('action') === 'recover-data' && keyReactivationRequests.length) {
                 setReactivateKeyModalOpen(true);
                 params.delete('action');
                 return params;
             }
         },
-        [allKeysToReactivate]
+        [keyReactivationRequests.length]
     );
 
     return (
         <>
             {renderReactivateKeys && (
                 <ReactivateKeysModal
-                    userKeys={userKeys}
-                    keyReactivationRequests={allKeysToReactivate}
+                    userKeys={userKeys || []}
+                    keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
+                        if (!userKeys || !Addresses || !addressesKeys) {
+                            throw new Error('Missing keys');
+                        }
                         await reactivateKeysProcess({
                             api,
                             user: User,
                             userKeys,
                             addresses: Addresses,
+                            addressesKeys,
                             keyReactivationRecords,
                             keyPassword: authentication.getPassword(),
                             onReactivation,
@@ -79,7 +85,7 @@ const OverviewSection = ({ ids }: Props) => {
                 />
             )}
             {renderConfirm && <RecoverDataConfirmModal {...confirmProps} />}
-            {!!allKeysToReactivate.length && hasDismissedRecoverDataCard?.Value === false && (
+            {!!keyReactivationRequests.length && hasDismissedRecoverDataCard?.Value === false && (
                 <RecoverDataCard
                     className="mb-8"
                     onReactivate={() => setReactivateKeyModalOpen(true)}

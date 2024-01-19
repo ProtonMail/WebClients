@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { APPS, MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { CachedOrganizationKey, Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import { Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useConfig } from '../..';
@@ -17,8 +17,7 @@ interface Props {
     onDelete: (member: Member) => void;
     onRevoke: (member: Member) => Promise<void>;
     addresses: PartialMemberAddress[] | undefined;
-    organization: Organization;
-    organizationKey: CachedOrganizationKey | undefined;
+    organization?: Organization;
 }
 
 const MemberActions = ({

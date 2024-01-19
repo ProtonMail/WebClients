@@ -11,12 +11,12 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { isElementReminded } from 'proton-mail/helpers/snooze';
 import { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
-import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
+import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useOptimisticMarkAs } from '../../optimistic/useOptimisticMarkAs';
 
 const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
@@ -71,7 +71,7 @@ export const useMarkSelectionAs = () => {
     const { call, start, stop } = useEventManager();
     const optimisticMarkAs = useOptimisticMarkAs();
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const markAs = useCallback(

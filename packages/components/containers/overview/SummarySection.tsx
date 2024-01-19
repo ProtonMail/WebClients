@@ -11,7 +11,13 @@ import {
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { Organization, Plan, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import type {
+    Organization,
+    Subscription,
+    SubscriptionPlan,
+    UserModel,
+    UserSettings,
+} from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
@@ -31,7 +37,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
     const vpnPlan = subscription ? getPlan(subscription, PLAN_SERVICES.VPN) : undefined;
     const mailPlan = subscription ? getPlan(subscription, PLAN_SERVICES.MAIL) : undefined;
 
-    const getPlanTitle = (plan: Plan | undefined, service: string) => {
+    const getPlanTitle = (plan: SubscriptionPlan | undefined, service: string) => {
         if (!plan) {
             return `${service} Free`;
         }

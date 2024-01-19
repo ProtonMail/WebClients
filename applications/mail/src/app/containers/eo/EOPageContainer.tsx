@@ -4,17 +4,18 @@ import { Route, Switch } from 'react-router-dom';
 import { UnAuthenticated } from '@proton/components';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
 import EOReply from '../../components/eo/reply/EOReply';
 import EOUnlock from '../../components/eo/unlock/EOUnlock';
 import { EO_MESSAGE_REDIRECT_PATH, EO_REDIRECT_PATH, EO_REPLY_REDIRECT_PATH } from '../../constants';
-import { init } from '../../logic/eo/eoActions';
-import { useAppDispatch } from '../../logic/store';
+import { init } from '../../store/eo/eoActions';
 
 const { set, get } = createSecureSessionStorage();
 
 const PageContainer = () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     useEffect(() => {
         const initStore = async () => {

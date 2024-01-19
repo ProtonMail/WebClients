@@ -7,7 +7,7 @@ import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
 import { isHTMLEmpty } from '../dom';
 import { replaceLineBreaks } from '../string';

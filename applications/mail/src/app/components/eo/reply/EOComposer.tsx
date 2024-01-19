@@ -12,7 +12,7 @@ import { setContent } from '../../../helpers/message/messageContent';
 import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
-import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
+import { MessageState, OutsideKey } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../../composer/Composer';
 import ComposerContent from '../../composer/ComposerContent';
 import { ExternalEditorActions } from '../../composer/editor/EditorWrapper';

@@ -4,7 +4,6 @@ import {
     generateKeys,
     releaseCryptoProxy,
     removeLineBreaks,
-    setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
@@ -25,10 +24,6 @@ describe('Quick reply - Compose', () => {
         await releaseCryptoProxy();
     });
 
-    beforeEach(() => {
-        setFeatureFlags('QuickReply', true);
-    });
-
     afterEach(() => {
         clearAll();
     });
@@ -36,6 +31,7 @@ describe('Quick reply - Compose', () => {
     it('should open a plaintext quick reply and be able to modify it', async () => {
         // Setup test
         const {
+            store,
             openQuickReply,
             updateQuickReplyContent,
             sendQuickReply,
@@ -55,7 +51,7 @@ describe('Quick reply - Compose', () => {
         expect(plainTextEditor?.value.trim()).toEqual(data.protonSignature);
 
         // However, the state should contain the whole message (message + sig + blockquotes content)
-        const messageFromState = getStateMessageFromParentID(messageID);
+        const messageFromState = getStateMessageFromParentID(store, messageID);
         expect(removeLineBreaks(messageFromState?.messageDocument?.plainText || '')).toEqual(
             removeLineBreaks(expectedDefaultPlainTextContent)
         );
@@ -79,7 +75,7 @@ describe('Quick reply - Compose', () => {
         expect(removeLineBreaks(plainTextEditor?.value || '')).toEqual(removeLineBreaks(contentChange));
 
         // Content in the state is the one expected
-        const messageFromStateAfterUpdate = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate = getStateMessageFromParentID(store, messageID);
         const expectedUpdatedContent = `${newContent} ${expectedDefaultPlainTextContent}`;
         expect(removeLineBreaks(messageFromStateAfterUpdate?.messageDocument?.plainText || '')).toEqual(
             removeLineBreaks(expectedUpdatedContent)
@@ -101,16 +97,23 @@ describe('Quick reply - Compose', () => {
     it('should open an HTML quick reply and be able to modify it', async () => {
         const referenceMessageContent = 'Reference message content';
 
-        const { openQuickReply, updateQuickReplyContent, getRoosterEditor, sendQuickReply, createCall, sendCall } =
-            await setupQuickReplyTests({
-                meKeys,
-                referenceMessageBody: `<div>${referenceMessageContent}<br><div>`,
-            });
+        const {
+            store,
+            openQuickReply,
+            updateQuickReplyContent,
+            getRoosterEditor,
+            sendQuickReply,
+            createCall,
+            sendCall,
+        } = await setupQuickReplyTests({
+            meKeys,
+            referenceMessageBody: `<div>${referenceMessageContent}<br><div>`,
+        });
         await openQuickReply();
 
         const roosterEditor = await getRoosterEditor();
 
-        const messageFromState = getStateMessageFromParentID(messageID);
+        const messageFromState = getStateMessageFromParentID(store, messageID);
 
         /**
          * Initialisation check
@@ -148,7 +151,7 @@ describe('Quick reply - Compose', () => {
 
         // Type something in the editor
         await updateQuickReplyContent(newContent);
-        const messageFromStateAfterUpdate = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate = getStateMessageFromParentID(store, messageID);
 
         let protonContentAfterUpdate;
         let protonSignatureAfterUpdate;

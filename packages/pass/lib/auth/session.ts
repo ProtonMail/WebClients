@@ -2,7 +2,7 @@
 import type { Api } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
-import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';

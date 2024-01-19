@@ -6,7 +6,7 @@ import AddressesWithUser from './AddressesWithUser';
 
 interface AddressesProps {
     isOnlySelf?: boolean;
-    organization: Organization;
+    organization?: Organization;
     memberID?: string;
 }
 

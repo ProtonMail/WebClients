@@ -8,14 +8,14 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '../../helpers/errors';
 import { createMessage, updateMessage } from '../../helpers/message/messageExport';
-import { deleteConversation } from '../../logic/conversations/conversationsActions';
-import { deleteDraft, draftSaved } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { deleteConversation } from '../../store/conversations/conversationsActions';
+import { deleteDraft, draftSaved } from '../../store/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
@@ -24,7 +24,7 @@ const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
 export const useCreateDraft = () => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
     const { createNotification } = useNotifications();
@@ -45,7 +45,7 @@ export const useCreateDraft = () => {
 
 const useUpdateDraft = () => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
     const { call } = useEventManager();
     const getMessageKeys = useGetMessageKeys();
@@ -114,7 +114,7 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
 export const useDeleteDraft = () => {
     const api = useApi();
     const mailSettings = useMailModel('MailSettings');
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const getConversation = useGetConversation();

@@ -63,7 +63,7 @@ jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
 
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
@@ -83,17 +83,18 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
 
 jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);
+jest.mock('@proton/components/hooks/useSubscription', () => () => [{}, jest.fn()]);
 
 jest.mock('@proton/components/hooks/useApi', () => ({
     __esModule: true,
     default: jest.fn(),
 }));
 
-jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({
         subscribe: jest.fn(),
     })),
@@ -108,7 +109,7 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
     default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
-jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', () => ({
+jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => []),
 }));
@@ -208,7 +209,7 @@ describe('CalendarSidebar', () => {
         expect(getByText(/calendar3/)).toBeInTheDocument();
         expect(getByText(/Add calendar/)).toBeInTheDocument();
 
-        const manageCalendarsLink = getByRole(/link/) as HTMLAnchorElement;
+        const manageCalendarsLink = getByRole(/link/, { name: 'Calendars' }) as HTMLAnchorElement;
 
         expect(manageCalendarsLink.href).toBe('http://localhost/calendar/calendars');
 

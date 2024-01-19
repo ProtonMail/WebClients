@@ -4,7 +4,8 @@ import path from 'path';
 import { Configuration, ProvidePlugin } from 'webpack';
 import { InjectManifest } from 'workbox-webpack-plugin';
 
-import getConfig, { mergeEntry } from '@proton/pack/webpack.config';
+import getConfig from '@proton/pack/webpack.config';
+import { addDevEntry, getIndexChunks, getSupportedEntry, mergeEntry } from '@proton/pack/webpack/entries';
 
 const result = (env: any): Configuration => {
     setAutoFreeze(false);
@@ -41,7 +42,7 @@ const result = (env: any): Configuration => {
 
         // The order is important so that the unsupported file is loaded after
         config.entry = mergeEntry(config.entry, {
-            eo: [path.resolve('./src/app/eo.tsx'), require.resolve('@proton/shared/lib/supported/supported.ts')],
+            eo: [path.resolve('./src/app/eo.tsx'), getSupportedEntry()],
         });
 
         // @ts-ignore
@@ -55,6 +56,10 @@ const result = (env: any): Configuration => {
         }
         const htmlIndex = config.plugins.indexOf(htmlPlugin);
 
+        if (env.appMode === 'standalone') {
+            addDevEntry(config);
+        }
+
         // We keep the order because the other plugins have an impact
         // Replace the old html webpackplugin with this
         config.plugins.splice(
@@ -65,7 +70,7 @@ const result = (env: any): Configuration => {
                 template: path.resolve('./src/app.ejs'),
                 templateParameters: htmlPlugin.userOptions.templateParameters,
                 scriptLoading: 'defer',
-                excludeChunks: ['eo'],
+                chunks: getIndexChunks('index'),
                 inject: 'body',
             })
         );
@@ -78,7 +83,7 @@ const result = (env: any): Configuration => {
                 template: path.resolve('./src/eo.ejs'),
                 templateParameters: htmlPlugin.userOptions.templateParameters,
                 scriptLoading: 'defer',
-                excludeChunks: ['index'],
+                chunks: getIndexChunks('eo'),
                 inject: 'body',
             })
         );

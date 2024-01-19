@@ -4,15 +4,15 @@ import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useAddresses, useUserSettings } from '@proton/components/hooks';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail } from '../../helpers/addresses';
 import { changeSignature } from '../../helpers/message/messageSignature';
-import { selectComposer } from '../../logic/composers/composerSelectors';
-import { ComposerID } from '../../logic/composers/composerTypes';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { useAppSelector } from '../../logic/store';
 import { RecipientType } from '../../models/address';
+import { selectComposer } from '../../store/composers/composerSelectors';
+import { ComposerID } from '../../store/composers/composerTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     composerID?: ComposerID;
@@ -25,7 +25,7 @@ const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeCon
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
-    const composer = useAppSelector((state) => selectComposer(state, composerID || ''));
+    const composer = useMailSelector((state) => selectComposer(state, composerID || ''));
 
     useEffect(() => {
         if (!composer || composer.changesCount === 0) {

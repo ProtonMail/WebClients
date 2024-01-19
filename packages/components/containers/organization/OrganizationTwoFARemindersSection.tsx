@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { useMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
-import { Info, useConfig, useMembers, useModals } from '@proton/components';
+import { Info, useConfig, useMembers, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
@@ -16,19 +17,27 @@ interface Props {
 
 const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
     const { APP_NAME } = useConfig();
-    const { createModal } = useModals();
-    const [members, loadingMembers] = useMembers();
+    const [modalProps, setModal, renderModal] = useModalState();
+    const [members] = useMembers();
+    const noTwoFAMembers =
+        members?.filter((member) => (member.State === undefined || member.State === 1) && member['2faStatus'] === 0) ||
+        [];
 
-    if (!organization || loadingMembers) {
+    const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
+
+    if (!organization || !members) {
         return <Loader />;
     }
 
-    const noTwoFAMembers =
-        members.filter((member) => (member.State === undefined || member.State === 1) && member['2faStatus'] === 0) ||
-        [];
-
     return (
         <>
+            {renderModal && (
+                <SendEmailReminderTwoFAModal
+                    {...modalProps}
+                    members={noTwoFAMembers}
+                    memberAddressesMap={memberAddressesMap}
+                />
+            )}
             <SettingsParagraph
                 learnMoreUrl={
                     APP_NAME === APPS.PROTONVPN_SETTINGS
@@ -51,7 +60,7 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
                 <div className="flex items-center">
                     <Button
                         id="send-email-reminder-button"
-                        onClick={() => createModal(<SendEmailReminderTwoFAModal members={noTwoFAMembers} />)}
+                        onClick={() => setModal(true)}
                         disabled={noTwoFAMembers.length === 0}
                     >{c('Action').t`Send email reminder`}</Button>
                 </div>
