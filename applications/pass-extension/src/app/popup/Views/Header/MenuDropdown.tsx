@@ -29,7 +29,8 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
-import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     selectHasRegisteredLock,
@@ -66,6 +67,7 @@ export const MenuDropdown: FC = () => {
     const vaultActions = useVaultActions();
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
+    const navigateToAccount = useNavigateToAccount();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
@@ -90,6 +92,19 @@ export const MenuDropdown: FC = () => {
             ],
         },
     });
+
+    const accountMenuItems: MenuItem[] = [
+        {
+            onClick: navigateToAccount,
+            label: c('Action').t`Account settings`,
+            icon: 'arrow-out-square',
+        },
+        {
+            onClick: () => logout({ soft: false }),
+            label: c('Action').t`Sign out`,
+            icon: 'arrow-out-from-rectangle',
+        },
+    ];
 
     return (
         <>
@@ -222,11 +237,7 @@ export const MenuDropdown: FC = () => {
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
                         <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
-                        <DropdownMenuButton
-                            onClick={() => logout({ soft: false })}
-                            label={c('Action').t`Sign out`}
-                            icon="arrow-out-from-rectangle"
-                        />
+                        <Submenu icon="user" label={c('Action').t`Account`} items={accountMenuItems} />
                     </DropdownMenu>
                 </Dropdown>
             </nav>
