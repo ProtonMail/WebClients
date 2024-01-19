@@ -43,18 +43,12 @@ describe('useBalanceOverview', () => {
         it('should return wallets balance distribution doughnut data', () => {
             const { result } = renderHook(() => useBalanceOverview(walletsWithAccountsWithBalanceAndTxs));
 
-            expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
-                datasets: [
-                    {
-                        backgroundColor: ['#33FF33', '#FF3333', '#5733FF', '#336EFF'],
-                        borderWidth: 0,
-                        cutout: '70%',
-                        data: [11884066, 8384799, 2612374, 8875342],
-                        label: 'Balance',
-                    },
-                ],
-                labels: ['Bitcoin 01', 'Savings on Jade', 'Savings on Electrum', 'Lightning 01'],
-            });
+            expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual([
+                [11884066, '#33FF33', 'Bitcoin 01'],
+                [8384799, '#FF3333', 'Savings on Jade'],
+                [2612374, '#5733FF', 'Savings on Electrum'],
+                [8875342, '#336EFF', 'Lightning 01'],
+            ]);
         });
 
         it('should return wallets balance evolution chart data', () => {
@@ -79,17 +73,7 @@ describe('useBalanceOverview', () => {
                 const { result } = renderHook(() => useBalanceOverview([]));
 
                 expect(result.current.totalBalance).toBe(0);
-                expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
-                    datasets: [
-                        {
-                            backgroundColor: [],
-                            borderWidth: 0,
-                            data: [],
-                            label: 'Balance',
-                        },
-                    ],
-                    labels: [],
-                });
+                expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual([]);
                 expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
                     data: [
                         { x: '11/27/2023', y: 0 },
@@ -118,18 +102,10 @@ describe('useBalanceOverview', () => {
         it('should return wallets balance distribution doughnut data', () => {
             const { result } = renderHook(() => useBalanceOverview(walletWithAccountsWithBalanceAndTxs));
 
-            expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
-                datasets: [
-                    {
-                        backgroundColor: ['#33FF33', '#FF3333'],
-                        borderWidth: 0,
-                        cutout: '70%',
-                        data: [100067, 11783999],
-                        label: 'Balance',
-                    },
-                ],
-                labels: ['Account 1', 'Account 2'],
-            });
+            expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual([
+                [100067, '#33FF33', 'Account 1'],
+                [11783999, '#FF3333', 'Account 2'],
+            ]);
         });
 
         it('should return wallets balance evolution chart data', () => {
