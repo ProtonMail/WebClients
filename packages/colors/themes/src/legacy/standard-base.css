@@ -46,6 +46,7 @@
     --interaction-default-active: rgb(188 188 208 / 0.3);
 
     --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
     --shadow-lifted-opacity: 0.16;
 
     --backdrop-norm: rgb(80 80 97 / 0.48);
@@ -62,6 +63,7 @@
     --optional-main-border-width: 0;
 
     --optional-email-item-read-background-color: #F5F7FA;
+    --optional-email-item-read-text-color: #393939;
 
     /* Reset because prominent part overrides those colors */
     --optional-mini-calendar-today-color: initial;
