@@ -51,7 +51,26 @@ export const updateFromElements = (
                 const messageState = getMessage(state, element.ID);
 
                 if (messageState) {
-                    messageState.data = { ...messageState.data, ...(element as Message) };
+                    /**
+                     * For messages containing MimeAttachments, the NumAttachment value is updated on message load
+                     * So if a message is opened in a location, we might update NumAttachments.
+                     * Then, when switching location, we will receive again metadata from the API, which does not know about
+                     * Mime attachments.
+                     * Since the message is already loaded in the session, we will not compute this value again, and NumAttachments
+                     * will be 0.
+                     * We are relying on this value to display the attachment list, so in that case, the attachment would be hidden.
+                     *
+                     * To prevent this behaviour, we are reusing the NumAttachment value if it was already set.
+                     */
+                    const realNumAttachments = messageState.data?.NumAttachments
+                        ? messageState.data?.NumAttachments
+                        : element.NumAttachments || 0;
+
+                    messageState.data = {
+                        ...messageState.data,
+                        ...(element as Message),
+                        NumAttachments: realNumAttachments,
+                    };
                 }
             }
         });
