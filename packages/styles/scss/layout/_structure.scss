@@ -45,7 +45,6 @@ html,
 }
 
 .header {
-	contain: content;
 	padding-block: var(--space-1);
 	padding-inline: var(--space-3) var(--space-2);
 	block-size: rem($header-height-small);
@@ -54,6 +53,7 @@ html,
 	color: var(--header-text-color, var(--text-norm));
 
 	@include media('>small') {
+		contain: content;
 		padding-block: var(--space-3);
 		padding-inline: var(--space-2) rem(10);
 		block-size: rem($header-height);
