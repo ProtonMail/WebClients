@@ -4,7 +4,6 @@ import {
     clearAll,
     generateKeys,
     releaseCryptoProxy,
-    setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
@@ -14,10 +13,6 @@ import { getStateMessageFromParentID, setupQuickReplyTests } from './QuickReply.
 jest.setTimeout(20000);
 
 describe('Quick reply - Reply type', function () {
-    beforeEach(() => {
-        setFeatureFlags('QuickReply', true);
-    });
-
     afterEach(() => {
         clearAll();
     });
@@ -35,7 +30,7 @@ describe('Quick reply - Reply type', function () {
 
     it('should be possible to switch the quick reply type when user received a message', async () => {
         // Setup test
-        const { openQuickReply, updateReplyType, getRecipientList, createCall, updateCall } =
+        const { store, openQuickReply, updateReplyType, getRecipientList, createCall, updateCall } =
             await setupQuickReplyTests({
                 meKeys,
                 isPlainText: true,
@@ -45,7 +40,7 @@ describe('Quick reply - Reply type', function () {
         /**
          * Initialisation check
          */
-        const messageFromState = getStateMessageFromParentID(messageID);
+        const messageFromState = getStateMessageFromParentID(store, messageID);
 
         // List is the one expected on the UI
         const expectedList = `${data.quickReplyRecipientsStart} ${fromFields.fromName}`;
@@ -64,7 +59,7 @@ describe('Quick reply - Reply type', function () {
          */
         await updateReplyType(MESSAGE_ACTIONS.REPLY_ALL, true);
 
-        const messageFromStateAfterUpdate1 = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate1 = getStateMessageFromParentID(store, messageID);
         const expectedListAfterUpdate1 = `${data.quickReplyRecipientsStart} ${fromFields.fromName}, ${fromFields.toName}, ${fromFields.ccName}`;
         const recipientListAfterUpdate1 = await getRecipientList();
         expect(recipientListAfterUpdate1).toEqual(expectedListAfterUpdate1);
@@ -81,7 +76,7 @@ describe('Quick reply - Reply type', function () {
          */
         await updateReplyType(MESSAGE_ACTIONS.REPLY);
 
-        const messageFromStateAfterUpdate2 = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate2 = getStateMessageFromParentID(store, messageID);
         expect(recipientList).toEqual(expectedList);
         // List is the one expected in the state
         expect(messageFromStateAfterUpdate2?.data?.ToList).toEqual([recipients.fromRecipient]);
@@ -94,7 +89,7 @@ describe('Quick reply - Reply type', function () {
 
     it('should be possible to switch the quick reply type when user sent a message', async () => {
         // Setup test
-        const { openQuickReply, updateReplyType, getRecipientList, createCall, updateCall } =
+        const { store, openQuickReply, updateReplyType, getRecipientList, createCall, updateCall } =
             await setupQuickReplyTests({
                 meKeys,
                 isPlainText: true,
@@ -105,7 +100,7 @@ describe('Quick reply - Reply type', function () {
         /**
          * Initialisation check
          */
-        const messageFromState = getStateMessageFromParentID(messageID);
+        const messageFromState = getStateMessageFromParentID(store, messageID);
 
         // List is the one expected on the UI
         const expectedList = `${data.quickReplyRecipientsStart} ${fromFields.fromName}, ${fromFields.toName}`;
@@ -124,7 +119,7 @@ describe('Quick reply - Reply type', function () {
          */
         await updateReplyType(MESSAGE_ACTIONS.REPLY_ALL, true);
 
-        const messageFromStateAfterUpdate1 = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate1 = getStateMessageFromParentID(store, messageID);
         const expectedListAfterUpdate1 = `${data.quickReplyRecipientsStart} ${fromFields.fromName}, ${fromFields.toName}, ${fromFields.ccName}, ${fromFields.bccName}`;
         const recipientListAfterUpdate1 = await getRecipientList();
         expect(recipientListAfterUpdate1).toEqual(expectedListAfterUpdate1);
@@ -140,7 +135,7 @@ describe('Quick reply - Reply type', function () {
          * Switch back to reply
          */
         await updateReplyType(MESSAGE_ACTIONS.REPLY);
-        const messageFromStateAfterUpdate2 = getStateMessageFromParentID(messageID);
+        const messageFromStateAfterUpdate2 = getStateMessageFromParentID(store, messageID);
         expect(recipientList).toEqual(expectedList);
         // List is the one expected in the state
         expect(messageFromStateAfterUpdate2?.data?.ToList).toEqual([recipients.fromRecipient, recipients.toRecipient]);

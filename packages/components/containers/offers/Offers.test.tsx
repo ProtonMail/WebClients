@@ -1,10 +1,11 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { FeatureCode, TopNavbarUpsell } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/models';
 
-import { OffersTestProvider, offersCache } from './Offers.test.helpers';
+import { renderWithProviders } from '../contacts/tests/render';
+import { OffersTestProvider } from './Offers.test.helpers';
 import { OfferConfig } from './interface';
 
 const OFFER_CONTENT = 'deal deal deal deal deal';
@@ -59,10 +60,6 @@ jest.mock('./hooks/useOfferFlags', function () {
     };
 });
 
-afterEach(() => {
-    offersCache.clear();
-});
-
 const TopNavbarComponent = () => (
     <OffersTestProvider>
         <TopNavbarUpsell app={APPS.PROTONMAIL} />
@@ -72,9 +69,9 @@ const TopNavbarComponent = () => (
 describe('Offers', () => {
     describe('Offers display', () => {
         it('Should display upgrade button for free users', () => {
-            offersCache.add(UserModel.key, { isFree: true });
-
-            render(<TopNavbarComponent />);
+            renderWithProviders(<TopNavbarComponent />, {
+                preloadedState: { user: getModelState({ isFree: true } as any) },
+            });
 
             const link = screen.getByTestId('cta:upgrade-plan');
 
@@ -83,26 +80,26 @@ describe('Offers', () => {
         });
 
         it('Should display nothing for paid users with offers', () => {
-            offersCache.add(UserModel.key, { isFree: false });
-
-            render(<TopNavbarComponent />);
+            renderWithProviders(<TopNavbarComponent />, {
+                preloadedState: { user: getModelState({ isFree: false } as any) },
+            });
 
             expect(screen.queryByTestId('cta:upgrade-plan')).toBeNull();
         });
 
         describe('Non free user with valid offer', () => {
             it('Should display an offer button', () => {
-                offersCache.add(UserModel.key, { isFree: false });
-
-                render(<TopNavbarComponent />);
+                renderWithProviders(<TopNavbarComponent />, {
+                    preloadedState: { user: getModelState({ isFree: false } as any) },
+                });
 
                 expect(screen.getByTestId('cta:special-offer')?.textContent).toBe('Special offer');
             });
 
             it('Should open a modal with offer content', () => {
-                offersCache.add(UserModel.key, { isFree: false });
-
-                render(<TopNavbarComponent />);
+                renderWithProviders(<TopNavbarComponent />, {
+                    preloadedState: { user: getModelState({ isFree: false } as any) },
+                });
 
                 const specialOfferCta = screen.getByTestId('cta:special-offer');
 
@@ -112,9 +109,9 @@ describe('Offers', () => {
             });
 
             it.skip('Should open a modal when autopopup', () => {
-                offersCache.add(UserModel.key, { isFree: false });
-
-                render(<TopNavbarComponent />);
+                renderWithProviders(<TopNavbarComponent />, {
+                    preloadedState: { user: getModelState({ isFree: false } as any) },
+                });
 
                 screen.getByText(OFFER_CONTENT);
             });

@@ -1,27 +1,30 @@
-import { ReactElement } from 'react';
-import * as React from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
+import { getModelState } from '@proton/account/test';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import {
     ApiProvider,
     CacheProvider,
     EventManagerProvider,
-    EventModelListener,
+    FeatureCode,
     ModalsChildren,
     ModalsProvider,
     NotificationsContext,
 } from '@proton/components';
 import ConfigProvider from '@proton/components/containers/config/Provider';
-import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
+import { getFeatureFlags } from '@proton/testing';
 
 import fakeCache from './fakeCache';
+import { setupStore } from './protonStore';
 
 /**
  * Mocks
@@ -73,21 +76,19 @@ const notificationsManager = {
 };
 
 let history = createMemoryHistory();
+const api = createApi({ config });
 
 export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
     <ConfigProvider config={config}>
         <NotificationsContext.Provider value={notificationsManager}>
             <ModalsProvider>
-                <ApiProvider config={config}>
+                <ApiProvider api={api}>
                     <EventManagerProvider eventManager={eventManager}>
                         <CacheProvider cache={fakeCache.instance}>
-                            <FeaturesProvider>
-                                <ModalsChildren />
-                                <EventModelListener models={[]} />
-                                <Router history={history}>
-                                    <EasySwitchStoreProvider>{children}</EasySwitchStoreProvider>
-                                </Router>
-                            </FeaturesProvider>
+                            <ModalsChildren />
+                            <Router history={history}>
+                                <EasySwitchStoreProvider>{children}</EasySwitchStoreProvider>
+                            </Router>
                         </CacheProvider>
                     </EventManagerProvider>
                 </ApiProvider>
@@ -96,16 +97,47 @@ export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | 
     </ConfigProvider>
 );
 
+export const getStoreWrapper = (preloadedState?: any) => {
+    const store = setupStore({
+        preloadedState: {
+            user: getModelState({ UsedSpace: 10, MaxSpace: 100 } as UserModel),
+            addresses: getModelState([]),
+            mailSettings: getModelState({} as MailSettings),
+            categories: getModelState([]),
+            features: getFeatureFlags([[FeatureCode.EasySwitch, true]]),
+            calendars: getModelState([]),
+            ...preloadedState,
+        },
+    });
+
+    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
+    }
+
+    return { Wrapper, store };
+};
+
 export const easySwitchRender = (ui: ReactElement) => {
     fakeCache.setBase();
 
-    const result = originalRender(<EasySwitchTestProviders>{ui}</EasySwitchTestProviders>);
+    const { Wrapper } = getStoreWrapper();
+
+    const result = originalRender(
+        <Wrapper>
+            <EasySwitchTestProviders>{ui}</EasySwitchTestProviders>
+        </Wrapper>
+    );
 
     return result;
 };
 
 const easySwitchHookWrapper = ({ children }: { children: any }) => {
-    return <EasySwitchTestProviders>{children}</EasySwitchTestProviders>;
+    const { Wrapper } = getStoreWrapper();
+    return (
+        <Wrapper>
+            <EasySwitchTestProviders>{children}</EasySwitchTestProviders>
+        </Wrapper>
+    );
 };
 
 export const easySwitchHookRender = (hook: any) => renderHook(() => hook(), { wrapper: easySwitchHookWrapper });

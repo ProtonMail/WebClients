@@ -5,7 +5,7 @@ import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { Member } from '@proton/shared/lib/interfaces';
+import { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import {
@@ -18,19 +18,19 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useMemberAddresses, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     members: Member[];
+    memberAddressesMap: { [key: string]: (Address | PartialMemberAddress)[] | undefined };
 }
 
-const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
+const SendEmailReminderTwoFAModal = ({ onClose, members, memberAddressesMap, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const { onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
-    const [memberAddressesMap] = useMemberAddresses(members, true);
 
     const handleSubmit = async () => {
         await api(sendEmailReminderTwoFA());
@@ -66,10 +66,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                         .map((member) => {
                             const memberAddresses = memberAddressesMap?.[member.ID] || [];
                             return (
-                                <li
-                                    className="py-2 flex flex-nowrap items-center border-bottom"
-                                    title={member.Name}
-                                >
+                                <li className="py-2 flex flex-nowrap items-center border-bottom" title={member.Name}>
                                     <Avatar className="mr-2 shrink-0">{getInitials(member.Name)}</Avatar>
                                     <div>
                                         <div className="text-ellipsis max-100" title={member.Name}>
@@ -77,7 +74,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                         </div>
                                         <div className="max-w-full flex">
                                             <span className="flex-1 mr-2 text-ellipsis">
-                                                {memberAddresses[0].Email}
+                                                {memberAddresses[0]?.Email}
                                             </span>
                                             {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (
                                                 <span className="shrink-0">

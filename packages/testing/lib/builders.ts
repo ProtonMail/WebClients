@@ -7,6 +7,7 @@ import { Address, AddressKey } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_SUBSCRIPTION_STATUS,
     CalendarEvent,
+    CalendarUserSettings,
     VcalVeventComponent,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
@@ -51,6 +52,21 @@ export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Mess
 const testEmail = 'stest1@proton.black';
 const testAdddressId = 'Lw5suur9q0eTrcp-ufF41Ar7WNj5FQQFz_iKVcCD8khv0eVLJ8MPyx9oiI1XfZJ3JVuTmpG2dgOIY2zCCrIVIw==';
 const testCalendarId = '8DqHHGgVZgEb9KJ0En3mhktAcUBNlAEfGdp5-KnBy2WedZq2Th_gBhphVfcSITxDpz914-LvghzmLf5dhOB5HQ==';
+
+export const calendarUserSettingsBuilder = build<CalendarUserSettings>('CalendarUserSettings', {
+    fields: {
+        InviteLocale: '',
+        WeekLength: 0,
+        DisplayWeekNumber: 1,
+        AutoDetectPrimaryTimezone: 1,
+        PrimaryTimezone: 'Europe/Zurich',
+        DisplaySecondaryTimezone: 0,
+        SecondaryTimezone: null,
+        ViewPreference: 1,
+        DefaultCalendarID: '8DqHHGgVZgEb9KJ0En3mhktAcUBNlAEfGdp5-KnBy2WedZq2Th_gBhphVfcSITxDpz914-LvghzmLf5dhOB5HQ==',
+        AutoImportInvite: 0,
+    },
+});
 
 export const calendarBuilder = build<VisualCalendar>('Calendar', {
     fields: {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import useFeature from '../../hooks/useFeature';
-import { FeatureCode } from '../features/FeaturesContext';
+import { FeatureCode } from '../features';
 import FeedbackModal, { FeedbackModalProps } from './FeedbackModal';
 import { RebrandingFeatureValue } from './useRebrandingFeedback';
 

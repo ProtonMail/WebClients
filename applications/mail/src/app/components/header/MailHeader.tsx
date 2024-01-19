@@ -17,15 +17,15 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { getLabelName } from '../../helpers/labels';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { layoutActions } from '../../logic/layout/layoutSlice';
-import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
-import { useAppDispatch, useAppSelector } from '../../logic/store';
+import { layoutActions } from '../../store/layout/layoutSlice';
+import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
 import MailSearch from './search/MailSearch';
 
 interface Props {
@@ -43,8 +43,8 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     const [folders = []] = useFolders();
     const mailSettings = useMailModel('MailSettings');
     const hasRebrandingFeedback = useHasRebrandingFeedback();
-    const dispatch = useAppDispatch();
-    const expanded = useAppSelector(selectLayoutIsExpanded);
+    const dispatch = useMailDispatch();
+    const expanded = useMailSelector(selectLayoutIsExpanded);
     const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);
 
     const onCompose = useOnCompose();

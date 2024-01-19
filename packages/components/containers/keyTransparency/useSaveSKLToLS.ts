@@ -3,7 +3,7 @@ import { KTBlobContent, commitSKLToLS, getKTLocalStorage } from '@proton/key-tra
 import { encodeBase64URL, stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { SaveSKLToLS } from '@proton/shared/lib/interfaces';
 
-import { useConfig, useGetUserKeys, useUser } from '../../hooks';
+import { useConfig, useGetUser, useGetUserKeys } from '../../hooks';
 
 /**
  * Generate a unique fake ID from an email address
@@ -17,7 +17,7 @@ const generateID = async (userID: string, email: string) => {
 };
 
 const useSaveSKLToLS = () => {
-    const [{ ID: userID }] = useUser();
+    const getUser = useGetUser();
     const { APP_NAME: appName } = useConfig();
     const ktLSAPIPromise = getKTLocalStorage(appName);
     const getUserKeys = useGetUserKeys();
@@ -30,6 +30,7 @@ const useSaveSKLToLS = () => {
         addressID?: string,
         isCatchall?: boolean
     ) => {
+        const userID = (await getUser()).ID;
         // The fake address is generated just for matching purposes inside the stashedKeys
         // structure and to avoid writing the email in plaintext in localStorage
         const storedAddressID = addressID ?? (await generateID(userID, email));

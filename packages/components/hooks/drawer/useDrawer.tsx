@@ -111,7 +111,13 @@ export default function useDrawer() {
     };
 }
 
-export const DrawerProvider = ({ children }: { children: ReactNode }) => {
+export const DrawerProvider = ({
+    children,
+    defaultShowDrawerSidear,
+}: {
+    children: ReactNode;
+    defaultShowDrawerSidear?: boolean;
+}) => {
     const { getUID, getPersistent, getPassword, getTrusted } = useAuthentication();
     const api = useApi();
     const getUser = useGetUser();
@@ -127,7 +133,7 @@ export const DrawerProvider = ({ children }: { children: ReactNode }) => {
     // Is the sidebar mounted, we need this to get the drawer width
     const [drawerSidebarMounted, setDrawerSidebarMounted] = useState(false);
     // Is the DrawerSidebar displayed or not (we can hide the drawer with a setting)
-    const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(undefined);
+    const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(defaultShowDrawerSidear);
 
     const [requestsAbortControllers, setRequestsAbortControllers] = useState<
         { id: string; abortController: AbortController }[]

@@ -30,7 +30,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     const [cancelling, withCancelling] = useLoading();
 
     const [autoDetectPrimaryTimezone, setAutoDetectPrimaryTimezone] = useState<boolean>(
-        !!calendarUserSettings.AutoDetectPrimaryTimezone
+        !!calendarUserSettings?.AutoDetectPrimaryTimezone
     );
 
     const handleUpdateTimezone = async () => {
@@ -46,7 +46,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     };
 
     const handleCancel = async () => {
-        if (autoDetectPrimaryTimezone !== !!calendarUserSettings.AutoDetectPrimaryTimezone) {
+        if (autoDetectPrimaryTimezone !== !!calendarUserSettings?.AutoDetectPrimaryTimezone) {
             await api(
                 updateCalendarUserSettings({
                     AutoDetectPrimaryTimezone: +autoDetectPrimaryTimezone,

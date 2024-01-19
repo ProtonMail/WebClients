@@ -1,11 +1,12 @@
 import { useSubscribeEventManager } from '@proton/components';
 
-import { event } from '../../logic/incomingDefaults/incomingDefaultsActions';
-import { useAppDispatch } from '../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { Event } from '../../models/event';
+import { event } from '../../store/incomingDefaults/incomingDefaultsActions';
 
 export default () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     useSubscribeEventManager(async ({ IncomingDefaults }: Event) => {
         if (!Array.isArray(IncomingDefaults)) {

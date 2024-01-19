@@ -1,13 +1,12 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import { useApi, useEventManager, useFeature, useFolders, useNotifications } from '@proton/components/hooks';
-import { useGetLabels } from '@proton/components/hooks/useCategories';
+import { useApi, useEventManager, useFeature, useNotifications } from '@proton/components/hooks';
+import { useGetFolders, useGetLabels } from '@proton/mail';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
@@ -38,11 +37,11 @@ import { useMoveAll } from 'proton-mail/hooks/actions/useMoveAll';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { backendActionFinished, backendActionStarted } from 'proton-mail/logic/elements/elementsActions';
-import { pageSize as pageSizeSelector } from 'proton-mail/logic/elements/elementsSelectors';
-import { useAppDispatch } from 'proton-mail/logic/store';
 import { Element } from 'proton-mail/models/element';
 import { SearchParameters } from 'proton-mail/models/tools';
+import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
+import { pageSize as pageSizeSelector } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 const { TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
@@ -62,10 +61,10 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
-    const [folders = []] = useFolders();
+    const getFolders = useGetFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const mailSettings = useMailModel('MailSettings');
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
@@ -83,7 +82,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         { unsubscribe: boolean; remember: boolean }
     >(MoveToSpamModal);
 
-    const pageSize = useSelector(pageSizeSelector);
+    const pageSize = useMailSelector(pageSizeSelector);
 
     const moveSelectionToFolder = useCallback(
         async ({
@@ -100,6 +99,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         }: MoveSelectionParams) => {
             let undoing = false;
             let spamAction: SPAM_ACTION | undefined = undefined;
+            const folders = await getFolders();
+            const labels = await getLabels();
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(
@@ -146,8 +147,6 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
             }
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
-
-            const labels = (await getLabels()) || [];
 
             let rollback = () => {};
 

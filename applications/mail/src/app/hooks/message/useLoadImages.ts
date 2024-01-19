@@ -5,6 +5,7 @@ import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import {
     handleDispatchLoadFakeImagesProxy,
@@ -14,21 +15,20 @@ import {
 } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedResults,
     MessageRemoteImage,
     MessageState,
     MessageStateWithData,
-} from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+} from '../../store/messages/messagesTypes';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
 export const useLoadRemoteImages = (localID: string) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
     const getMessage = useGetMessage();
     const mailSettings = useMailModel('MailSettings');
@@ -63,7 +63,7 @@ export const useLoadRemoteImages = (localID: string) => {
 };
 
 export const useLoadEmbeddedImages = (localID: string) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
     const getAttachment = useGetAttachment();
     const getMessage = useGetMessage();

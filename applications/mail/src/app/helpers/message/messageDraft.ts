@@ -25,7 +25,7 @@ import {
 import unique from '@proton/utils/unique';
 
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, PartialMessageState } from '../../store/messages/messagesTypes';
 import { getFromAddress } from '../addresses';
 import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';

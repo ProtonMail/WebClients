@@ -1,21 +1,32 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
-import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import * as H from 'history';
 
+import * as bootstrap from '@proton/account/bootstrap';
 import {
+    ApiProvider,
+    AuthenticationProvider,
+    ErrorBoundary,
     ModalsChildren,
+    NotificationsChildren,
+    ProtonApp,
     SSOForkProducer,
+    StandardErrorPage,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
     UnleashFlagProvider,
-    useApi,
 } from '@proton/components';
 import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
+import useApi from '@proton/components/hooks/useApi';
+import { initMainHost } from '@proton/cross-storage/lib';
+import useInstance from '@proton/hooks/useInstance';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
+import createApi from '@proton/shared/lib/api/createApi';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
@@ -40,18 +51,19 @@ import {
 } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
 import resetPasswordPage from '../../pages/reset-password';
+import * as config from '../config';
 import HandleLogout from '../containers/HandleLogout';
+import locales from '../locales';
 import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
@@ -70,12 +82,28 @@ import { getProductParams } from '../signup/searchParams';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
+import { extendStore, setupStore } from '../store/store';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import AccountPublicAppSetup from './AccountPublicAppSetup';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
+
+const bootstrapApp = () => {
+    const api = createApi({ config, sendLocaleHeaders: true });
+    const authentication = bootstrap.createAuthentication({ initialAuth: false });
+    bootstrap.init({ config, authentication, locales });
+    initMainHost();
+    initElectronClassnames();
+    extendStore({ config, api, authentication });
+    const store = setupStore();
+    return {
+        authentication,
+        store,
+        api,
+    };
+};
 
 export const getSearchParams = (location: H.Location, searchParams: URLSearchParams) => {
     const { product, productParam } = getProductParams(location.pathname, searchParams);
@@ -132,19 +160,16 @@ const UNAUTHENTICATED_ROUTES = {
     EMAIL_FORWARDING: '/email-forwarding',
 };
 
-setMetricsEnabled(true);
-
 interface Props {
     onLogin: ProtonLoginCallback;
-    locales: TtagLocaleMap;
 }
 
-const PublicApp = ({ onLogin, locales }: Props) => {
+const BasePublicApp = ({ onLogin }: Props) => {
+    const api = useApi();
     const history = useHistory();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
-    const api = useApi();
     const [forkState, setForkState] = useState<ActiveSessionData>();
     const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
@@ -434,6 +459,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     return (
         <>
             <HandleLogout />
+            <NotificationsChildren />
             <ModalsChildren />
             <Switch>
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions?`}>
@@ -720,6 +746,31 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
             </Switch>
         </>
+    );
+};
+
+const PublicApp = () => {
+    const { store, authentication, api } = useInstance(bootstrapApp);
+
+    return (
+        <ProtonApp config={config}>
+            <AuthenticationProvider store={authentication}>
+                <ApiProvider api={api}>
+                    <ProtonStoreProvider store={store}>
+                        <BrowserRouter>
+                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                <BasePublicApp
+                                    onLogin={(args) => {
+                                        const url = authentication.login(args);
+                                        replaceUrl(url);
+                                    }}
+                                />
+                            </ErrorBoundary>
+                        </BrowserRouter>
+                    </ProtonStoreProvider>
+                </ApiProvider>
+            </AuthenticationProvider>
+        </ProtonApp>
     );
 };
 

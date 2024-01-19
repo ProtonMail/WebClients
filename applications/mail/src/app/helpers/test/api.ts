@@ -1,4 +1,12 @@
-import { addApiMock, addApiResolver, apiMock, apiMocksMap, clearApiMocks } from '@proton/testing';
+import { FeatureCode } from '@proton/components/containers/features';
+import {
+    addApiMock,
+    addApiResolver,
+    apiMock,
+    apiMocksMap,
+    getFeatureFlags as baseGetFeatureFlags,
+    clearApiMocks,
+} from '@proton/testing';
 
 /**
  * Export for backward compatibility in the tests. It can be gradually migrated to use @proton/testing package directly
@@ -6,47 +14,9 @@ import { addApiMock, addApiResolver, apiMock, apiMocksMap, clearApiMocks } from 
  */
 export { addApiMock, addApiResolver, clearApiMocks, apiMock as api, apiMocksMap as apiMocks };
 
-export const featureFlags: { [code: string]: any } = {};
-
-export const defaultFeatureFlagValue = {
-    Code: '',
-    Type: 'boolean',
-    Global: false,
-    DefaultValue: false,
-    Value: false,
-    UpdateTime: 1616511553,
-    Writable: true,
+export const getFeatureFlags = (features: [FeatureCode, boolean][]) => {
+    return baseGetFeatureFlags([...features]);
 };
-
-export const setFeatureFlags = (featureCode: string, value: boolean) => {
-    featureFlags[featureCode] = {
-        ...defaultFeatureFlagValue,
-        Code: featureCode,
-        Value: value,
-    };
-};
-
-export const clearFeatureFlags = () => {
-    Object.keys(featureFlags).forEach((key) => delete apiMocksMap[key]);
-};
-
-export const registerFeatureFlagsApiMock = () => {
-    addApiMock(
-        'core/v4/features',
-        (args) => {
-            const { Code } = args.params;
-            const features: string[] = Code.split(',');
-            return {
-                Features: features.map((code) =>
-                    featureFlags[code] ? featureFlags[code] : { ...defaultFeatureFlagValue, Code: code }
-                ),
-            };
-        },
-        'get'
-    );
-};
-
-export const registerMinimalFlags = () => {};
 
 export const parseFormData = (data: any) => {
     const result: any = {};

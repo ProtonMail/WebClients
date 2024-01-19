@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 import { act, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -11,11 +12,10 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Element } from 'proton-mail/models/element';
 
 import { addApiMock } from '../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { MessageState } from '../../../store/messages/messagesTypes';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import LabelDropdown, { getInitialState } from '../LabelDropdown';
 
@@ -55,42 +55,44 @@ describe('LabelDropdown', () => {
         currentLabelID: string | undefined = undefined
     ) => {
         minimalCache();
-        addToCache(
-            'Labels',
-            [
-                {
-                    ID: label1ID,
-                    Name: label1Name,
-                    Color: ACCENT_COLORS[0],
-                    Type: LABEL_TYPE.MESSAGE_LABEL,
-                    Path: label1Name,
-                } as Label,
-                {
-                    ID: label2ID,
-                    Name: label2Name,
-                    Color: ACCENT_COLORS[1],
-                    Type: LABEL_TYPE.MESSAGE_LABEL,
-                    Path: label2Name,
-                } as Label,
-                selectAll &&
-                    ({
-                        // Free users can create up to 3 labels, we only need 3 to test select all case
-                        ID: label3ID,
-                        Name: label3Name,
-                        Color: ACCENT_COLORS[3],
-                        Type: LABEL_TYPE.MESSAGE_LABEL,
-                        Path: label3Name,
-                    } as Label),
-            ].filter(isTruthy)
-        );
 
         const message = getMessage(labelIDs);
 
-        store.dispatch(initialize(message));
-
         const props = getProps(currentLabelID, selectAll);
 
-        const result = await render(<LabelDropdown {...props} />, false);
+        const result = await render(<></>, {
+            preloadedState: {
+                categories: getModelState(
+                    [
+                        {
+                            ID: label1ID,
+                            Name: label1Name,
+                            Color: ACCENT_COLORS[0],
+                            Type: LABEL_TYPE.MESSAGE_LABEL,
+                            Path: label1Name,
+                        } as Label,
+                        {
+                            ID: label2ID,
+                            Name: label2Name,
+                            Color: ACCENT_COLORS[1],
+                            Type: LABEL_TYPE.MESSAGE_LABEL,
+                            Path: label2Name,
+                        } as Label,
+                        selectAll &&
+                            ({
+                                // Free users can create up to 3 labels, we only need 3 to test select all case
+                                ID: label3ID,
+                                Name: label3Name,
+                                Color: ACCENT_COLORS[3],
+                                Type: LABEL_TYPE.MESSAGE_LABEL,
+                                Path: label3Name,
+                            } as Label),
+                    ].filter(isTruthy)
+                ),
+            },
+        });
+        result.store.dispatch(initialize(message));
+        await result.rerender(<LabelDropdown {...props} />);
         return result;
     };
 

@@ -24,8 +24,8 @@ import SendWithWarningsModal from '../../components/composer/addresses/SendWithW
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { MapSendInfo } from '../../models/crypto';
+import { MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetMessage } from '../message/useMessage';
 

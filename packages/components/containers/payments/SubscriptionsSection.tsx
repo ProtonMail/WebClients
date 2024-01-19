@@ -48,7 +48,7 @@ const SubscriptionsSection = () => {
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
 
-    if (loadingSubscription || loadingPlans) {
+    if (!current || loadingSubscription || loadingPlans) {
         return <Loader />;
     }
 

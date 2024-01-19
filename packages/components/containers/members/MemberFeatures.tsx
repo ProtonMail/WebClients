@@ -7,7 +7,7 @@ import { Icon } from '../../components';
 
 interface Props {
     member: Member;
-    organization: Organization;
+    organization?: Organization;
 }
 
 const MemberFeatures = ({ member, organization }: Props) => {
@@ -15,7 +15,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
 
     return (
         <>
-            {organization.MaxSpace > 0 ? (
+            {(organization?.MaxSpace || 0) > 0 ? (
                 <span className="mb-2 flex flex-nowrap">
                     <span className="shrink-0 flex mt-0.5">
                         <Icon name="filing-cabinet" />
@@ -25,7 +25,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
                     </span>
                 </span>
             ) : null}
-            {organization.MaxVPN > 0 ? (
+            {(organization?.MaxVPN || 0) > 0 ? (
                 <span className="flex flex-nowrap">
                     <span className="shrink-0 flex mt-0.5">
                         <Icon name="brand-proton-vpn" />

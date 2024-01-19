@@ -11,7 +11,7 @@ import { Api } from '@proton/shared/lib/interfaces/Api';
 import { AddContactsApiResponses, UpdateContactApiResponse } from '@proton/shared/lib/interfaces/contacts/ContactApi';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { useApi, useNotifications, useUserKeys } from '../../../hooks';
+import { useApi, useGetUserKeys, useNotifications } from '../../../hooks';
 
 const { THROW_ERROR_IF_CONFLICT } = OVERWRITE;
 const { INCLUDE, IGNORE } = CATEGORIES;
@@ -46,17 +46,18 @@ const handleContactRequest = async (
 export const useSaveVCardContact = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     const saveVCardContact = useCallback(
         async (contactID: string | undefined, vCardContact: VCardContact) => {
+            const userKeysList = await getUserKeys();
             const code = await handleContactRequest(api, contactID, vCardContact, userKeysList);
             if (code !== SINGLE_SUCCESS) {
                 createNotification({ text: c('Error').t`Contact could not be saved`, type: 'error' });
                 throw new Error('Contact could not be saved');
             }
         },
-        [api, userKeysList, loadingUserKeys]
+        [api]
     );
 
     return saveVCardContact;

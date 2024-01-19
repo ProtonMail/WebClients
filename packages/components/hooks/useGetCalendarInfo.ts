@@ -4,7 +4,7 @@ import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 
 import { useGetAddresses } from './useAddresses';
-import { useGetAddressKeys } from './useGetAddressKeys';
+import { useGetAddressKeys } from './useAddressesKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 import { useGetDecryptedPassphraseAndCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';
 

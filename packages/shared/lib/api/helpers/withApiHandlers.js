@@ -1,5 +1,3 @@
-import { setRefreshCookies } from '@proton/shared/lib/api/auth';
-
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import {
@@ -10,32 +8,17 @@ import {
 } from '../../fetch/headers';
 import { getDateHeader } from '../../fetch/helpers';
 import { wait } from '../../helpers/promise';
+import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
 import { createDeviceHandlers } from './deviceVerificationHandler';
+import { AppVersionBadError, InactiveSessionError } from './errors';
 import { createRefreshHandlers, getIsRefreshFailure, refresh } from './refreshHandlers';
 import { retryHandler } from './retryHandler';
 
-export const InactiveSessionError = () => {
-    const error = new Error('Inactive session');
-    error.name = 'InactiveSession';
-    return error;
-};
-
-export const AppVersionBadError = () => {
-    const error = new Error('App version outdated');
-    error.name = 'AppVersionBadError';
-    return error;
-};
-
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
- * @param {function} call
- * @param {string} UID
- * @param {function} onMissingScopes
- * @param {function} onVerification
- * @return {function}
  */
-export default ({ call, UID, onMissingScopes, onVerification }) => {
+export default ({ call, onMissingScopes, onVerification }) => {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -45,7 +28,9 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
 
     const deviceVerificationHandler = createDeviceHandlers();
 
-    return (options) => {
+    let UID;
+
+    const cb = (options) => {
         const perform = (attempts, maxAttempts) => {
             if (loggedOut) {
                 return Promise.reject(InactiveSessionError());
@@ -171,7 +156,7 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
                         });
                     };
 
-                    return onVerification({ token: captchaToken, methods, onVerify, title }, e);
+                    return onVerification({ token: captchaToken, methods, onVerify, title, error: e });
                 }
 
                 const ignoreDeviceVerification =
@@ -201,4 +186,14 @@ export default ({ call, UID, onMissingScopes, onVerification }) => {
 
         return perform(1);
     };
+
+    Object.defineProperties(cb, {
+        UID: {
+            set(value) {
+                UID = value;
+            },
+        },
+    });
+
+    return cb;
 };

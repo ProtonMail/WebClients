@@ -7,16 +7,17 @@ import { Icon, Tooltip, useApi } from '@proton/components';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import { removeDarkStyle } from '../../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
+import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import { removeDarkStyle } from '../../../store/messages/read/messagesReadActions';
 
 interface Props {
     message: MessageStateWithData;
 }
 
 const ExtraDarkStyle = ({ message }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
     const showBanner = message.messageDocument?.hasDarkStyle && !message.messageDocument?.noDarkStyle;
 

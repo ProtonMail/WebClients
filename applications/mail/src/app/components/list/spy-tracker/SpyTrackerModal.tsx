@@ -18,7 +18,7 @@ import clsx from '@proton/utils/clsx';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { Tracker, useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props extends ModalProps {

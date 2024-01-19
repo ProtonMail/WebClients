@@ -4,7 +4,7 @@ import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { unescapeFromString } from '@proton/shared/lib/sanitize/escape';
 
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';
-import { PartialMessageState } from '../logic/messages/messagesTypes';
+import { PartialMessageState } from '../store/messages/messagesTypes';
 
 /**
  * Split an addresses string to a list of recipients

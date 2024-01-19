@@ -21,7 +21,7 @@ const useStepLoadingImporting = () => {
 
     const dispatch = useEasySwitchDispatch();
 
-    const { availableAddresses } = useAvailableAddresses();
+    const { availableAddresses = [] } = useAvailableAddresses();
 
     const [calendarsToBeCreated, setCalendarsToBeCreated] = useState<number>(0);
     const [createdCalendarCount, setCreatedCalendarCount] = useState(0);

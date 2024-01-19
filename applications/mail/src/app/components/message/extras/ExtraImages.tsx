@@ -8,7 +8,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowEmbedded, hasShowRemote } from '@proton/shared/lib/mail/images';
 
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
-import { MessageImages } from '../../../logic/messages/messagesTypes';
+import { MessageImages } from '../../../store/messages/messagesTypes';
 
 interface Props {
     messageImages?: MessageImages;
@@ -53,8 +53,8 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
     const tooltipText = couldLoadDirect
         ? c('Action').t`Images will be loaded without a proxy`
         : type === 'remote'
-        ? c('Title').t`Load remote content`
-        : c('Title').t`Load embedded images`;
+          ? c('Title').t`Load remote content`
+          : c('Title').t`Load embedded images`;
 
     const tooltip = Shortcuts ? (
         <>

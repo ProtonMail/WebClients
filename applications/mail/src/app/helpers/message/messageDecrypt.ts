@@ -20,7 +20,7 @@ import {
     isMIME,
 } from '@proton/shared/lib/mail/messages';
 
-import { MessageErrors } from '../../logic/messages/messagesTypes';
+import { MessageErrors } from '../../store/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;

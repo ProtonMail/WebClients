@@ -8,7 +8,7 @@ import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters'
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../components';
-import { useApi, useApiWithoutResult, useEventManager, useFilters, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useFilters, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import FilterSortableList from './FilterSortableList';
@@ -17,9 +17,8 @@ import { Filter } from './interfaces';
 function FiltersSection() {
     const { call } = useEventManager();
     const [filters, loading] = useFilters();
-    const orderRequest = useApiWithoutResult(updateFilterOrder);
-    const { createNotification } = useNotifications();
     const api = useApi();
+    const { createNotification } = useNotifications();
     const handleApplyFilter = async (filterId: string) => {
         // Handle Filter API call
         await api(applyFilters({ FilterIDs: [filterId] }));
@@ -47,10 +46,10 @@ function FiltersSection() {
             setFilters(nextFilters);
 
             const filterIds = nextFilters.map(({ ID }) => ID);
-            await orderRequest.request(filterIds);
+            await api(updateFilterOrder(filterIds));
             await call();
         } catch (e: any) {
-            setFilters(filters);
+            setFilters(filters || []);
         }
     };
 

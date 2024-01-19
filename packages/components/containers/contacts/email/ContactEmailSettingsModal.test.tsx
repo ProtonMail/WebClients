@@ -5,8 +5,9 @@ import { API_CODES, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/const
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { addApiMock } from '@proton/testing/lib/api';
 
-import { api, clearAll, mockedCryptoApi, notificationManager, render } from '../tests/render';
+import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import ContactEmailSettingsModal, { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 
 describe('ContactEmailSettingsModal', () => {
@@ -37,21 +38,19 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return { Address: { Keys: [] } };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return { Address: { Keys: [] } };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle } = render(
+        const { getByText, getByTitle } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -117,21 +116,19 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return { Address: { Keys: [] } };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return { Address: { Keys: [] } };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle } = render(
+        const { getByText, getByTitle } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -210,21 +207,19 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return { Address: { Keys: [] } };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return { Address: { Keys: [] } };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = render(
+        const { getByText } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -307,26 +302,24 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return {
-                    Address: { Keys: [] },
-                    Unverified: {
-                        Keys: [{ Flags: 3, PublicKey: armoredPublicKey }],
-                    },
-                };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return {
+                Address: { Keys: [] },
+                Unverified: {
+                    Keys: [{ Flags: 3, PublicKey: armoredPublicKey }],
+                },
+            };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = render(
+        const { getByText } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -414,24 +407,22 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return {
-                    Address: { Keys: [] },
-                    Unverified: { Keys: [{ Flags: 3, PublicKey: armoredPublicKey }] },
-                };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return {
+                Address: { Keys: [] },
+                Unverified: { Keys: [{ Flags: 3, PublicKey: armoredPublicKey }] },
+            };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = render(
+        const { getByText } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -500,31 +491,29 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return {
-                    Address: {
-                        Keys: [
-                            {
-                                PublicKey: 'mocked armored key',
-                                Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
-                            },
-                        ],
-                    },
-                    ProtonMX: true, // internal address
-                };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return {
+                Address: {
+                    Keys: [
+                        {
+                            PublicKey: 'mocked armored key',
+                            Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                        },
+                    ],
+                },
+                ProtonMX: true, // internal address
+            };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle, queryByText } = render(
+        const { getByText, getByTitle, queryByText } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -598,34 +587,32 @@ END:VCARD`;
 
         const saveRequestSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'core/v4/keys/all') {
-                return {
-                    Address: {
-                        Keys: [
-                            {
-                                PublicKey: 'internal mocked armored key',
-                                Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
-                            },
-                        ],
-                    },
-                    Unverified: {
-                        Keys: [{ PublicKey: 'wkd mocked armored key', Flags: KEY_FLAG.FLAG_NOT_COMPROMISED }],
-                    },
-                    ProtonMX: false, // external account
-                };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
+        addApiMock('core/v4/keys/all', () => {
+            return {
+                Address: {
+                    Keys: [
+                        {
+                            PublicKey: 'internal mocked armored key',
+                            Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                        },
+                    ],
+                },
+                Unverified: {
+                    Keys: [{ PublicKey: 'wkd mocked armored key', Flags: KEY_FLAG.FLAG_NOT_COMPROMISED }],
+                },
+                ProtonMX: false, // external account
+            };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle, queryByText } = render(
+        const { getByText, getByTitle, queryByText } = renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}

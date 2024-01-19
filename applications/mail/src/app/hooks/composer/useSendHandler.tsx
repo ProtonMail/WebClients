@@ -6,17 +6,18 @@ import { useEventManager, useHandler, useNotifications } from '@proton/component
 import { Cancellable } from '@proton/components/hooks/useHandler';
 import { getOnlineStatus } from '@proton/components/hooks/useOnline';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import SendingMessageNotification, {
     SendingMessageNotificationManager,
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { cancelScheduled } from '../../logic/messages/scheduled/scheduledActions';
-import { useAppDispatch } from '../../logic/store';
 import { MapSendInfo } from '../../models/crypto';
+import { endSending, startSending } from '../../store/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import { cancelScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useGetMessage } from '../message/useMessage';
 import { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
@@ -65,7 +66,7 @@ export const useSendHandler = ({
 }: UseSendHandlerParameters) => {
     const { createNotification, hideNotification } = useNotifications();
     const { call } = useEventManager();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
 
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(

@@ -27,7 +27,7 @@ interface Props {
 
 const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     const [user] = useUser();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey();
     const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
     const displayOrganizationKey = useDisplayOrganizationKey(organizationKey);
     const [members, loadingMembers] = useMembers();

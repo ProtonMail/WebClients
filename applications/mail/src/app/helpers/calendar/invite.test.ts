@@ -14,7 +14,7 @@ import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interface
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { MessageStateWithData } from 'proton-mail/logic/messages/messagesTypes';
+import { MessageStateWithData } from 'proton-mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { EventInvitation, getIsPartyCrasher, getSupportedEventInvitation, parseVcalendar } from './invite';

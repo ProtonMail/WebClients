@@ -46,6 +46,9 @@ const UserKeysSections = () => {
     const { Name: userName } = User;
 
     const handleExportPrivate = (ID: string) => {
+        if (!userKeys) {
+            throw new Error('Missing keys');
+        }
         const userKey = getKeyByID(userKeys, ID);
         if (!userKey?.privateKey) {
             throw new Error('Could not find key');
@@ -61,6 +64,9 @@ const UserKeysSections = () => {
     };
 
     const onAdd = async (encryptionConfig: EncryptionConfig) => {
+        if (!userKeys) {
+            throw new Error('Missing keys');
+        }
         const addresses = await getAddresses();
 
         const newKey = await addUserKeysProcess({

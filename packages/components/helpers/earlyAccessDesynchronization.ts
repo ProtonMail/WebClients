@@ -1,10 +1,10 @@
+import { Feature } from '@proton/features';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import { Environment } from '@proton/shared/lib/interfaces';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { Feature } from '../containers/features/FeaturesContext';
 import {
     getTargetEnvironment,
     getVersionCookieIsValid,

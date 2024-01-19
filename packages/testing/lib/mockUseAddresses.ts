@@ -1,11 +1,11 @@
-import * as useAddressesModule from '@proton/components/hooks/useAddresses';
+import * as useAddressesModule from '@proton/account/addresses/hooks';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import { buildAddress } from '../builders/address';
 
-export const mockUseAddresses = (value: [Address[]?, boolean?, any?] = []) => {
-    const [addresses, cached, miss = jest.fn()] = value;
-    const mockedUseAddress = jest.spyOn(useAddressesModule, 'default');
-    mockedUseAddress.mockReturnValue([addresses ?? [buildAddress()], Boolean(cached), miss]);
+export const mockUseAddresses = (value: [Address[]?, boolean?] = []) => {
+    const [addresses, cached = false] = value;
+    const mockedUseAddress = jest.spyOn(useAddressesModule, 'useAddresses');
+    mockedUseAddress.mockReturnValue([addresses ?? [buildAddress()], Boolean(cached)]);
     return mockedUseAddress;
 };

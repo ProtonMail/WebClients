@@ -1,5 +1,4 @@
 import { RefObject, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -7,8 +6,10 @@ import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } fr
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { useLabelActions } from '../../hooks/useLabelActions';
-import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
+import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
 
 interface Props {
     checkedIDs: string[];
@@ -42,7 +43,7 @@ const ItemContextMenu = ({
     conversationMode,
     ...rest
 }: Props) => {
-    const elementsAreUnread = useSelector(elementsAreUnreadSelector);
+    const elementsAreUnread = useMailSelector(elementsAreUnreadSelector);
     const buttonMarkAsRead = useMemo(() => {
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;

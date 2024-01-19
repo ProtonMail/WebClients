@@ -36,6 +36,13 @@ export const getInfo = (User: User) => {
     };
 };
 
+export const formatUser = (User: User) => {
+    return {
+        ...User,
+        ...getInfo(User),
+    };
+};
+
 export const getUserByte = (user: User) => {
     const userID = user?.ID || '';
     const byteCharacters = decodeBase64URL(userID);

@@ -10,7 +10,7 @@ import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/const
 
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
 import { useSendEO } from '../../../hooks/eo/useSendEO';
-import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageKeys, MessageState } from '../../../store/messages/messagesTypes';
 import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {

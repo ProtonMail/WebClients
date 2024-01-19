@@ -30,6 +30,7 @@ interface Props {
 }
 
 type BannerId = 'es-slow' | 'almost-all-mail' | 'mail-upsell' | 'task-running' | 'auto-delete';
+
 interface Banner {
     id: BannerId;
     banner: () => ReactNode;

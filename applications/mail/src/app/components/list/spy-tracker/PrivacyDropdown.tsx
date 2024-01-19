@@ -13,12 +13,12 @@ import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers
 import trackersImage from '@proton/styles/assets/img/illustrations/trackers-found.svg';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { loadFakeTrackers } from '../../../logic/messages/images/messagesImagesActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../logic/store';
+import { loadFakeTrackers } from '../../../store/messages/images/messagesImagesActions';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 import UTMTrackerModal from './UTMTrackerModal';
@@ -57,7 +57,7 @@ interface Props {
 
 const PrivacyDropdown = ({ message }: Props) => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const mailSettings = useMailModel('MailSettings');
     const [spyTrackerModalProps, setSpyTrackerModalOpen, renderSpyTrackerModal] = useModalState();
     const [utmTrackerModalProps, setUTMTrackerModalOpen, renderUTMTrackerModal] = useModalState();

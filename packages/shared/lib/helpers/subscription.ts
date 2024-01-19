@@ -16,7 +16,15 @@ import {
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
+import {
+    External,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Pricing,
+    Subscription,
+    SubscriptionPlan,
+} from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -47,7 +55,7 @@ export const getPlan = (subscription: Subscription | undefined, service?: PLAN_S
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
     );
     if (result) {
-        return result as Plan & { Name: PLANS };
+        return result as SubscriptionPlan & { Name: PLANS };
     }
     return result;
 };
@@ -79,7 +87,7 @@ export const hasLifetime = (subscription: Subscription | undefined) => {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 };
 
-export const hasMigrationDiscount = (subscription: Subscription) => {
+export const hasMigrationDiscount = (subscription?: Subscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
 

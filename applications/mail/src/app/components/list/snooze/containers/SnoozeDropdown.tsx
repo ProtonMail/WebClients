@@ -6,10 +6,11 @@ import { Dropdown, DropdownButton, Icon, Tooltip, useModalState, usePopperAnchor
 import { useUser } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import useSnooze, { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
-import { snoozeActions } from '../../../../logic/snooze/snoozeSlice';
-import { useAppDispatch } from '../../../../logic/store';
 import { Element } from '../../../../models/element';
+import { snoozeActions } from '../../../../store/snooze/snoozeSlice';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
@@ -21,7 +22,7 @@ interface Props {
 }
 
 const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const [{ hasPaidMail }] = useUser();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 

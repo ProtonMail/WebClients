@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiMock, assertCheck, assertFocus, clearAll, getHistory, tick } from '../../../helpers/test/helper';
+import { addApiMock, assertCheck, assertFocus, clearAll, tick } from '../../../helpers/test/helper';
 import MailboxContainer from '../MailboxContainer';
 import { SetupArgs, setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
@@ -86,9 +86,7 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should enter a message and leave', async () => {
-        const { down, enter, escape } = await setup();
-
-        const history = getHistory();
+        const { down, enter, escape, history } = await setup();
 
         down();
         enter();
@@ -108,11 +106,10 @@ describe('Mailbox hotkeys', () => {
             Messages: [message],
         }));
 
-        const { j } = await setup({ conversations, elementID: conversation.ID });
+        const { j, history } = await setup({ conversations, elementID: conversation.ID });
 
         j();
 
-        const history = getHistory();
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[1].ID}`);
     });
 
@@ -124,11 +121,10 @@ describe('Mailbox hotkeys', () => {
             Messages: [message],
         }));
 
-        const { k } = await setup({ conversations, elementID: conversation.ID });
+        const { k, history } = await setup({ conversations, elementID: conversation.ID });
 
         k();
 
-        const history = getHistory();
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
     });
 

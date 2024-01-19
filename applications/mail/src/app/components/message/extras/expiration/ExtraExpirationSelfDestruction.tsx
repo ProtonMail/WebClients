@@ -4,11 +4,12 @@ import { Button } from '@proton/atoms/Button';
 import { FeatureCode, Icon, Tooltip, useFeature, useNotifications, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { canSetExpiration } from '../../../../helpers/expiration';
 import useExpiration from '../../../../hooks/useExpiration';
-import { expireMessages } from '../../../../logic/messages/expire/messagesExpireActions';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../../logic/store';
+import { expireMessages } from '../../../../store/messages/expire/messagesExpireActions';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
@@ -21,7 +22,7 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
     const { createNotification } = useNotifications();
     const { feature } = useFeature(FeatureCode.SetExpiration);
 
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const canExpire = canSetExpiration(feature?.Value, user, message);
 
     const messageID = message.data?.ID || '';

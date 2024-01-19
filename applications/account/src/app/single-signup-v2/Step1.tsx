@@ -37,7 +37,15 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    Currency,
+    Cycle,
+    Plan,
+    PlanIDs,
+    SubscriptionPlan,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -140,7 +148,7 @@ const Step1 = ({
     onChallengeError: () => void;
     model: SignupModelV2;
     setModel: Dispatch<SetStateAction<SignupModelV2>>;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     mode: SignupMode;
     benefits: ReactNode;
     api: Api;

@@ -4,7 +4,7 @@ import { useGetAddressKeys } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { PublicPrivateKey } from '../../store/messages/messagesTypes';
 
 export type GetMessageKeys = (message: Pick<Message, 'AddressID'>) => Promise<PublicPrivateKey>;
 export type UseGetMessageKeys = () => GetMessageKeys;

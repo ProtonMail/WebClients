@@ -1,21 +1,19 @@
-import {getRecurrenceIdDate} from '@proton/shared/lib/calendar/veventHelper';
 import { useCallback } from 'react';
 
 import { getUnixTime } from 'date-fns';
 
-import { useApi, useCache } from '@proton/components';
+import { useApi, useGetCalendars } from '@proton/components';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
 import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/recurrence/getRecurrenceIdValueFromTimestamp';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
 import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { CalendarsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 
 import parseMainEventData from '../containers/calendar/event/parseMainEventData';
 import getAllEventsByUID from '../containers/calendar/getAllEventsByUID';
@@ -38,7 +36,7 @@ interface HandlerProps {
 
 export const useOpenEvent = () => {
     const api = useApi();
-    const cache = useCache();
+    const getCalendars = useGetCalendars();
 
     return useCallback(
         async ({
@@ -65,7 +63,7 @@ export const useOpenEvent = () => {
                     ...updateMember(calendarID, memberID, { Display: 1 }),
                     silence: true,
                 }).catch(() => {});
-                await loadModels([CalendarsModel], { api, cache, useCache: false });
+                await getCalendars({ forceFetch: true });
             }
             try {
                 const result = await api<{ Event: CalendarEvent }>({
@@ -155,6 +153,6 @@ export const useOpenEvent = () => {
                 return onOtherError?.();
             }
         },
-        [api, cache]
+        [api, getCalendars]
     );
 };

@@ -14,7 +14,7 @@ const AddressStatus = ({
     isExternal,
     isNotEncrypted,
     isSignatureNotExpected,
-}: AddressStatuses) => {
+}: Partial<AddressStatuses>) => {
     const list = [
         isDefault &&
             ({

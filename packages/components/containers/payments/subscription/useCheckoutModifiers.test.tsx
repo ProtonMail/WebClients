@@ -14,6 +14,7 @@ describe('useCheckoutModifiers', () => {
     const plansMap: PlansMap = {
         mail2022: {
             ID: 'Wb4NAqmiuqoA7kCHE28y92bBFfN8jaYQCLxHRAB96yGj-bh9SxguXC48_WSU-fRUjdAr-lx95c6rFLplgXyXYA==',
+            ParentMetaPlanID: '',
             Type: 1,
             Name: PLANS.MAIL,
             Title: 'Mail Plus',
@@ -32,6 +33,11 @@ describe('useCheckoutModifiers', () => {
                 '12': 4788,
                 '24': 8376,
             },
+            PeriodEnd: {
+                '1': 1702849536,
+                '12': 1731879936,
+                '24': 1763415936,
+            },
             Currency: 'CHF',
             Quantity: 1,
             Cycle: 1,
@@ -40,6 +46,7 @@ describe('useCheckoutModifiers', () => {
         },
         mailpro2022: {
             ID: 'rIJcBetavQi7h5qqN9nxrRnlojgl6HF6bAVG989deNJVVVx1nn2Ic3eyCVV2Adq11ddseZuWba9H5tmvLC727Q==',
+            ParentMetaPlanID: '',
             Type: 1,
             Name: PLANS.MAIL_PRO,
             Title: 'Mail Essentials',
@@ -58,6 +65,11 @@ describe('useCheckoutModifiers', () => {
                 '12': 8388,
                 '24': 15576,
             },
+            PeriodEnd: {
+                '1': 1702849536,
+                '12': 1731879936,
+                '24': 1763415936,
+            },
             Currency: 'CHF',
             Quantity: 1,
             Cycle: 1,
@@ -66,6 +78,7 @@ describe('useCheckoutModifiers', () => {
         },
         bundle2022: {
             ID: 'vl-JevUsz3GJc18CC1VOs-qDKqoIWlLiUePdrzFc72-BtxBPHBDZM7ayn8CNQ59Sk4XjDbwwBVpdYrPIFtOvIw==',
+            ParentMetaPlanID: '',
             Type: 1,
             Name: PLANS.BUNDLE,
             Title: 'Proton Unlimited',
@@ -83,6 +96,11 @@ describe('useCheckoutModifiers', () => {
                 '1': 1199,
                 '12': 11988,
                 '24': 19176,
+            },
+            PeriodEnd: {
+                '1': 1702849536,
+                '12': 1731879936,
+                '24': 1763415936,
             },
             Currency: 'CHF',
             Quantity: 1,
@@ -115,6 +133,7 @@ describe('useCheckoutModifiers', () => {
             Amount: 499,
             RenewAmount: 499,
             Discount: 0,
+            RenewDiscount: 0,
             isManagedByMozilla: false,
             External: 0,
             Renew: Renew.Enabled,
@@ -138,8 +157,7 @@ describe('useCheckoutModifiers', () => {
                     State: 1,
                     Title: 'Mail Plus',
                     Type: 1,
-                    Pricing: null as any,
-                    Offers: [],
+                    Offer: 'default',
                 },
             ],
         };

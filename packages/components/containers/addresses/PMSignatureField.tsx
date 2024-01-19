@@ -1,7 +1,6 @@
-import React, { ChangeEvent } from 'react';
-
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -9,7 +8,7 @@ import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 import { Toggle, UpsellModal, useModalState } from '../../components';
-import { useApiWithoutResult, useEventManager, useNotifications, useToggle, useUser } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useToggle, useUser } from '../../hooks';
 
 interface Props {
     id: string;
@@ -20,7 +19,8 @@ interface Props {
 const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const { request, loading } = useApiWithoutResult(updatePMSignature);
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
     const { state, toggle } = useToggle(!!mailSettings.PMSignature);
     const [user] = useUser();
 
@@ -35,15 +35,11 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        if (hasPaidMail) {
-            await request(+target.checked);
-            await call();
-            toggle();
-            createNotification({ text: c('Success').t`Preference saved` });
-        } else {
-            handleUpsellModalDisplay(true);
-        }
+    const handleChange = async (checked: number) => {
+        await api(updatePMSignature(checked));
+        await call();
+        toggle();
+        createNotification({ text: c('Success').t`Preference saved` });
     };
 
     return (
@@ -59,7 +55,18 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                 }}
             />
             <div className="ml-0 md:ml-2 pt-2" data-testid="settings:identity-section:signature-toggle">
-                <Toggle loading={loading} id={id} checked={state} onChange={handleChange} />
+                <Toggle
+                    loading={loading}
+                    id={id}
+                    checked={state}
+                    onChange={({ target }) => {
+                        if (hasPaidMail) {
+                            withLoading(handleChange(+target.checked));
+                        } else {
+                            handleUpsellModalDisplay(true);
+                        }
+                    }}
+                />
             </div>
 
             {renderUpsellModal && (

@@ -1,11 +1,8 @@
 import { useCallback, useState } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
 
-import { ModalsChildren } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { store } from '../../logic/eo/eoStore';
 import EOPageContainer from './EOPageContainer';
 import FakeEventManagerProvider from './FakeEventManagerProvider';
 import EOLayout from './layout/EOLayout';
@@ -18,11 +15,8 @@ const EOContainer = () => {
         <FakeEventManagerProvider>
             <ForceRefreshContext.Provider value={refresh}>
                 <EOLayout toApp={APPS.PROTONMAIL}>
-                    <ReduxProvider store={store}>
-                        <EOPageContainer />
-                    </ReduxProvider>
+                    <EOPageContainer />
                 </EOLayout>
-                <ModalsChildren />
             </ForceRefreshContext.Provider>
         </FakeEventManagerProvider>
     );

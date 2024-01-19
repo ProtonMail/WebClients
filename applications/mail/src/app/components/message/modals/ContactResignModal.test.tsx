@@ -1,12 +1,11 @@
 import { fireEvent, waitFor } from '@testing-library/react';
 
-import { Address } from '@proton/shared/lib/interfaces';
+import { getModelState } from '@proton/account/test';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { addApiMock } from '../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { addKeysToUserKeysCache } from '../../../helpers/test/crypto';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
+import { getCompleteAddress } from '../../../helpers/test/cache';
+import { getStoredKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { render, tick } from '../../../helpers/test/render';
 import ContactResignModal from './ContactResignModal';
@@ -24,11 +23,12 @@ describe('Contact resign modal', () => {
         await releaseCryptoProxy();
     });
 
-    const setup = async (hasFingerprint: boolean) => {
-        minimalCache();
-        addToCache('Addresses', [{ Email: receiver.Address } as Address]);
+    beforeEach(() => {
+        clearApiMocks();
+    });
 
-        const { receiverKeys, senderKeys } = await setupContactsForPinKeys(hasFingerprint);
+    const setup = async (hasFingerprint: boolean) => {
+        const { receiverKeys, senderKeys, updateSpy } = await setupContactsForPinKeys(hasFingerprint);
 
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
         addApiMock(
@@ -39,18 +39,18 @@ describe('Contact resign modal', () => {
             'get'
         );
 
-        const updateSpy = jest.fn();
-        addApiMock(`contacts/v4/contacts/${contactID}`, updateSpy, 'put');
-
-        addKeysToUserKeysCache(receiverKeys);
-
         const onResignSpy = jest.fn();
 
         const view = await render(
             <ContactResignModal title={title} contacts={contacts} onResign={onResignSpy} open>
                 {children}
             </ContactResignModal>,
-            false
+            {
+                preloadedState: {
+                    userKeys: getModelState(getStoredKey(receiverKeys)),
+                    addresses: getModelState([getCompleteAddress({ Email: receiver.Address })]),
+                },
+            }
         );
 
         return { container: view, senderKeys, updateSpy, onResignSpy };

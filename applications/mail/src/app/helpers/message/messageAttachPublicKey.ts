@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
-import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { upload } from '../attachment/attachmentUploader';
 
 interface KeyInfoForFile {

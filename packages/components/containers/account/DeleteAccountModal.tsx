@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { handleLogout } from '@proton/shared/lib/authentication/logout';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -40,8 +41,8 @@ import {
     useAuthentication,
     useConfig,
     useEventManager,
+    useGetOrganization,
     useNotifications,
-    useOrganization,
     useUser,
 } from '../../hooks';
 
@@ -75,7 +76,7 @@ const DeleteAccountModal = (props: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const [{ isAdmin, Name, Email }] = useUser();
-    const [organization] = useOrganization();
+    const getOrganization = useGetOrganization();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -128,6 +129,7 @@ const DeleteAccountModal = (props: Props) => {
                 );
             }
 
+            const organization = await getOrganization();
             // If a user is part of a family plan we first need to leave the organization before deleting the account.
             // Refreshing the event manager is necessary to update the organization state
             if (isOrganizationFamily(organization) && !isAdmin) {
@@ -147,7 +149,7 @@ const DeleteAccountModal = (props: Props) => {
 
             await onSuccess?.();
             onClose?.();
-            authentication.logout();
+            handleLogout({ appName: APP_NAME, authentication, clearDeviceRecoveryData: true, type: 'full' });
         } catch (error: any) {
             eventManager.start();
             throw error;

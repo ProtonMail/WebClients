@@ -21,7 +21,12 @@ const SelectAllMarkModal = ({ onResolve, onReject, isMessage, markAction, labelI
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const isConversation = isConversationMode(labelID, mailSettings);
-    const elementsCount = getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
+    const elementsCount = getLocationElementsCount(
+        labelID,
+        conversationCounts || [],
+        messageCounts || [],
+        isConversation
+    );
 
     const markAsRead = markAction === MARK_AS_STATUS.READ;
 

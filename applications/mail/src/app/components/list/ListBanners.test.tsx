@@ -3,9 +3,10 @@ import userEvent from '@testing-library/user-event';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
-import { mockUseApi, mockUseEventManager, mockUseHistory, mockUseSelector, mockUseUser } from '@proton/testing/index';
+import { mockUseApi, mockUseEventManager, mockUseHistory, mockUseUser } from '@proton/testing/index';
 
 import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import ListBanners from './ListBanners';
 import { mockUseAutoDeleteBanner, mockUseShowUpsellBanner } from './ListBanners.test.utils';
@@ -23,13 +24,18 @@ const baseProps = {
     canDisplayTaskRunningBanner: false,
 };
 
+jest.mock('proton-mail/store/hooks', () => ({
+    useMailSelector: jest.fn().mockReturnValue(jest.fn()),
+}));
+const useMailSelectorMock = useMailSelector as jest.Mock;
+
 describe('ListBanners', () => {
     beforeEach(() => {
         mockUseEncryptedSearchContext();
         mockUseAutoDeleteBanner();
-        mockUseSelector();
         mockUseShowUpsellBanner();
         mockUseUser();
+        useMailSelectorMock.mockReturnValue(false);
     });
 
     it('should display no banner', () => {
@@ -125,6 +131,7 @@ describe('ListBanners', () => {
 
     describe('when canDisplayTaskRunningBanner is true', () => {
         it('should display task running banner', async () => {
+            useMailSelectorMock.mockReturnValue(true);
             render(<ListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
             expect(screen.getByText(/Message actions in progress. This may take a while./i)).toBeInTheDocument();
         });
@@ -137,7 +144,7 @@ describe('ListBanners', () => {
             mockUseAutoDeleteBanner('paid-banner');
         });
 
-        it('should display auto delete banner', async () => {
+        it('should display auto delete banner', () => {
             render(<ListBanners {...baseProps} labelID={MAILBOX_LABEL_IDS.TRASH} />);
             expect(
                 screen.getByText(

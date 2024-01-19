@@ -6,8 +6,8 @@ import { reportPhishing } from '@proton/shared/lib/api/reports';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
+import { MessageState } from '../../../store/messages/messagesTypes';
 
 const { SPAM } = MAILBOX_LABEL_IDS;
 

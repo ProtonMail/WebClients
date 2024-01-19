@@ -1,3 +1,4 @@
+import { Api } from '../../interfaces/Api';
 import { HolidaysDirectoryCalendar } from '../calendar';
 
-export type GetHolidaysDirectory = () => Promise<HolidaysDirectoryCalendar[]>;
+export type GetHolidaysDirectory = (api: Api) => Promise<HolidaysDirectoryCalendar[]>;
