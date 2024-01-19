@@ -18,6 +18,7 @@ export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'valu
     title: string;
     disableFocusOnActive?: boolean;
     searchStrings?: string[];
+    preventScroll?: boolean;
 }
 
 const Option = <V,>({
@@ -32,6 +33,7 @@ const Option = <V,>({
     disableFocusOnActive,
     searchStrings,
     className,
+    preventScroll = false,
     ...rest
 }: Props<V>) => {
     const ref = useRef<HTMLButtonElement | null>(null);
@@ -40,7 +42,7 @@ const Option = <V,>({
     useEffect(() => {
         if (!previousActive && active) {
             if (!disableFocusOnActive) {
-                ref.current?.focus();
+                ref.current?.focus({ preventScroll });
             } else {
                 scrollIntoView(ref.current, { block: 'center' });
             }
