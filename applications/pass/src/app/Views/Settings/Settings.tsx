@@ -7,6 +7,7 @@ import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
+import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { type Unpack } from '@proton/pass/types';
 
 import { Export } from './Tabs/Export';
@@ -39,6 +40,11 @@ const getSettingsTabs: () => SettingTab[] = () => {
             title: c('Label').t`Support`,
             content: <Support />,
         },
+        {
+            hash: 'account',
+            title: c('Label').t`Account`,
+            content: <></>,
+        },
     ];
 
     return tabs;
@@ -51,12 +57,16 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
 
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     const { openSettings } = usePassCore();
+    const navigateToAccount = useNavigateToAccount();
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const tabs = useMemo(getSettingsTabs, []);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
-    const handleOnChange = (nextTab: number) => openSettings?.(tabs[nextTab].hash);
+    const handleOnChange = (nextTab: number) => {
+        if (tabs[nextTab].hash === 'account') navigateToAccount();
+        else openSettings?.(tabs[nextTab].hash);
+    };
 
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
 
