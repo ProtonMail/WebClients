@@ -25,7 +25,7 @@ const ItemUnread = ({ element, labelID, className, isSelected }: Props) => {
             <span className={clsx('flex items-center shrink-0 z-1', className)}>
                 <Icon
                     name="circle-filled"
-                    size={12}
+                    size={3}
                     className={!isSelected ? 'color-primary' : undefined}
                     alt={c('Alt').t`Unread email`}
                 />

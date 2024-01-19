@@ -1,18 +1,11 @@
 import { ReactNode, ThHTMLAttributes } from 'react';
 
-
-
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-
-
 
 import { Icon } from '../icon';
 import { Loader } from '../loader';
 
-
-
 import './TableHeaderCell.scss';
-
 
 interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
     children?: ReactNode;
@@ -28,7 +21,7 @@ const TableHeaderCell = ({ children, direction, isLoading, onSort, ...rest }: Pr
             {direction && (
                 <Icon
                     name="arrow-up"
-                    size={16}
+                    size={4}
                     className={`mr-1 shrink-0 ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
                 />
             )}

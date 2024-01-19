@@ -49,9 +49,7 @@ const RightPlanSummary = ({
                         {!free && <div className="color-weak text-ellipsis">{getDealDurationText(cycle)}</div>}
                         {(() => {
                             if (free) {
-                                return (
-                                    <div className="flex-auto color-weak">{c('Info').t`Free forever`}</div>
-                                );
+                                return <div className="flex-auto color-weak">{c('Info').t`Free forever`}</div>;
                             }
                             if (discount > 0) {
                                 return (
@@ -76,7 +74,7 @@ const RightPlanSummary = ({
                 features={features}
                 icon={false}
                 highlight={false}
-                iconSize={16}
+                iconSize={4}
                 tooltip={false}
                 className="text-sm mb-5 gap-1"
                 itemClassName="color-weak"

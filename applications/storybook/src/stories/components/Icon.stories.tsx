@@ -22,7 +22,7 @@ Basic.args = {
 export const Color = () => {
     const colors = ['primary', 'danger', 'success', 'warning', 'info'];
 
-    const sizes = [12, 16, 24, 40, 48] as const;
+    const sizes = [3, 4, 6, 10, 12] as const;
 
     return (
         <div>

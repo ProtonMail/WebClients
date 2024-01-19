@@ -27,7 +27,7 @@ const ProtonLogo = ({ variant = 'full', size, color = 'brand', className, ...res
             height="36"
             fill="none"
             role="img"
-            className={clsx('logo', size && `icon-${size}p`, variant, className)}
+            className={clsx('logo', size && `icon-size-${size}`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >
@@ -68,7 +68,7 @@ const ProtonLogo = ({ variant = 'full', size, color = 'brand', className, ...res
             width="36"
             height="36"
             fill="none"
-            className={clsx(['logo', size && `icon-${size}p`, variant, className])}
+            className={clsx(['logo', size && `icon-${size}`, variant, className])}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >

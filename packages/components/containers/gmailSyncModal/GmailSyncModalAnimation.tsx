@@ -43,7 +43,7 @@ const GmailSyncModalAnimation = ({ reduceHeight = false }: Props) => {
                 <div className="gsma-new-email">{c('Animation').t`New email`}</div>
             </div>
             <div className="gsma-proton">
-                <Logo appName="proton-mail" variant="glyph-only" size={mobile ? 32 : 48} className="gsma-proton-logo" />
+                <Logo appName="proton-mail" variant="glyph-only" size={mobile ? 8 : 12} className="gsma-proton-logo" />
             </div>
             <div className="gsma-received">
                 <div className="gsma-received-inner ui-prominent">

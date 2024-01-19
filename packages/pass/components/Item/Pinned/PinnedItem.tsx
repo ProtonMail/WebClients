@@ -37,7 +37,7 @@ const PinnedItemRaw: FC<Props> = ({ item, active = false, className, ...rest }) 
                     className={clsx('shrink-0', itemTypeToSubThemeClassName[data.type])}
                     item={item}
                     pill={false}
-                    size={10}
+                    size={2.5}
                 />
                 <div className="text-ellipsis text-sm">{data.metadata.name}</div>
             </div>

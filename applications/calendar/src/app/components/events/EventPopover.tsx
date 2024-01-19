@@ -280,7 +280,7 @@ const EventPopover = ({
                     icon
                     size="small"
                 >
-                    <Icon name="arrow-out-square" size={14} />
+                    <Icon name="arrow-out-square" size={3.5} />
                 </ButtonLike>
             ) : (
                 <AppLink
@@ -289,7 +289,7 @@ const EventPopover = ({
                     selfOpening
                     className="mr-2 button button-small button-ghost-weak button-for-icon"
                 >
-                    <Icon name="arrow-out-square" size={14} />
+                    <Icon name="arrow-out-square" size={3.5} />
                 </AppLink>
             )}
         </Tooltip>
@@ -392,10 +392,7 @@ const EventPopover = ({
                         style={{ '--calendar-color': color }}
                     />
                     <div className="pt-2">
-                        <h1
-                            className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0"
-                            title={eventTitleSafe}
-                        >
+                        <h1 className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0" title={eventTitleSafe}>
                             {eventTitleSafe}
                         </h1>
                         <div className={clsx([!!frequencyString ? 'mb-2' : 'mb-3'])}>

@@ -33,7 +33,7 @@ const RecoveryStatusIcon = ({ type, className, ...rest }: Props) => {
         };
     }
 
-    return <Icon className={clsx([config.className, className])} name={config.name} size={18} {...rest} />;
+    return <Icon className={clsx([config.className, className])} name={config.name} size={4.5} {...rest} />;
 };
 
 export default RecoveryStatusIcon;

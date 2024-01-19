@@ -1,4 +1,4 @@
-import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import { DriveLogo, IconSize, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
@@ -24,13 +24,15 @@ import {
 } from '@proton/components/containers/payments/features/vpn';
 import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
 import { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
 import { getCustomPassFeatures } from './pass/configuration';
 
 export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
-    const iconSize = 24;
+    const iconSize: IconSize = 6;
+    const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
 
     if (plan && plan?.Name === PLANS.VPN) {
         const shortPlan = getVPNPlan(plan, vpnServersCountData);
@@ -57,7 +59,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
         return {
             logo: (
                 <div>
-                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
                 </div>
             ),
             ...shortPlan,
@@ -96,7 +98,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
         return {
             logo: (
                 <div>
-                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
                 </div>
             ),
             ...shortPlan,
@@ -121,7 +123,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
         return {
             logo: (
                 <div>
-                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
                 </div>
             ),
             ...shortPlan,
@@ -139,7 +141,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
         return {
             logo: (
                 <div>
-                    <img src={bundleVpnPass} width={iconSize} height={iconSize} alt={plan.Title} />
+                    <img src={bundleVpnPass} width={iconImgSize} height={iconImgSize} alt={plan.Title} />
                 </div>
             ),
             plan,
@@ -153,7 +155,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
         return {
             logo: (
                 <div>
-                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={shortPlan.title} />
                 </div>
             ),
             ...shortPlan,

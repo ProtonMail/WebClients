@@ -32,7 +32,7 @@ export default function PasswordPage({ submitPassword }: Props) {
                 >
                     <div className="flex justify-center pb-7">
                         <span className="password-page--icon-container rounded p-4">
-                            <Icon name="key-skeleton" className="color-primary" size={28} />
+                            <Icon name="key-skeleton" className="color-primary" size={7} />
                         </span>
                     </div>
                     <h3 className="text-center text-bold mb-2">{c('Title').t`This link is password protected`}</h3>

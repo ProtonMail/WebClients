@@ -67,10 +67,7 @@ const Header = ({
 
     return (
         <div className="flex justify-space-between items-center p-7 relative">
-            <div
-                className="file-preview-filename flex items-center flex-nowrap"
-                data-testid="preview:file-name"
-            >
+            <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
                 <FileNameDisplay text={name} data-testid="file-preview:file-name" />
                 {signatureStatus}
@@ -113,7 +110,7 @@ const Header = ({
                         className="ml-2"
                         data-testid="file-preview:actions:download"
                     >
-                        <Icon name="arrow-down-line" size={20} alt={c('Action').t`Download`} />
+                        <Icon name="arrow-down-line" size={5} alt={c('Action').t`Download`} />
                     </Button>
                 )}
                 {onSave && (
@@ -133,7 +130,7 @@ const Header = ({
                     >
                         <Icon
                             name={saveError ? 'exclamation-circle-filled' : 'arrow-up-line'}
-                            size={20}
+                            size={5}
                             alt={c('Action').t`Save`}
                         />
                     </Button>
@@ -147,7 +144,7 @@ const Header = ({
                         className="ml-2 hidden md:inline-flex"
                         data-testid="file-preview:actions:details"
                     >
-                        <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
+                        <Icon name="info-circle" size={5} alt={c('Action').t`Details`} />
                     </Button>
                 )}
                 {onShare && (
@@ -161,7 +158,7 @@ const Header = ({
                     >
                         <Icon
                             name="link"
-                            size={20}
+                            size={5}
                             alt={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                             className={SHARED_STATUS_TO_COLOR[sharedStatus || '']}
                         />
@@ -176,7 +173,7 @@ const Header = ({
                         className="ml-2"
                         data-testid="preview:button:close"
                     >
-                        <Icon name="cross" size={20} alt={c('Action').t`Close`} />
+                        <Icon name="cross" size={5} alt={c('Action').t`Close`} />
                     </Button>
                 )}
             </div>
