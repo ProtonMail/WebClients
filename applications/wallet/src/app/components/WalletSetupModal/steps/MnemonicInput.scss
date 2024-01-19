@@ -1,0 +1,10 @@
+@use 'sass:math';
+
+.word-index {
+	background-color: var(--interaction-norm);
+	inline-size: 1rem;
+	block-size: 1rem;
+	line-height: 1.8;
+	margin-inline-end: -#{math.div(1rem, 2)};
+	margin-block-start: -#{math.div(1rem, 2)};
+}
