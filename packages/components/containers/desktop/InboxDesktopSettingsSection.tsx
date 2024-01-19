@@ -39,7 +39,7 @@ const DownloadSection = ({ release, icon, platform, isBeta }: DownloadSectionPro
     );
 };
 
-const ProtonMailBridgeSection = () => {
+const InboxDesktopSettingsSection = () => {
     const { windowsApp, macosApp } = useInboxDesktopVersion();
     const isWindowsAppOK = windowsApp?.early?.File?.Url && windowsApp?.early?.Version;
     const isMacosAppOK = macosApp?.early?.File?.Url && macosApp?.early?.Version;
@@ -70,4 +70,4 @@ const ProtonMailBridgeSection = () => {
     );
 };
 
-export default ProtonMailBridgeSection;
+export default InboxDesktopSettingsSection;
