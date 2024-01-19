@@ -80,6 +80,7 @@
   --interaction-default-hover: rgb(188 188 208 / 0.2);
   --interaction-default-active: rgb(188 188 208 / 0.3);
   --shadow-norm-opacity: 0.1;
+  --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(80 80 97 / 0.48);
   --optional-scrollbar-thumb-color: #ced2df;
@@ -88,6 +89,7 @@
   --optional-border-radius: 2;
   --optional-main-border-width: 0;
   --optional-email-item-read-background-color: #f5f7fa;
+  --optional-email-item-read-text-color: #393939;
   --optional-mini-calendar-today-color: initial;
   --optional-logo-text-proton-color: initial;
   --optional-logo-text-product-color: initial;
