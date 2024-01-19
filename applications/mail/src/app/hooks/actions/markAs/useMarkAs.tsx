@@ -40,7 +40,7 @@ export const useMarkAs = () => {
                 });
             }
         },
-        []
+        [markAllAs, markSelectionAs]
     );
 
     return { markAs, selectAllMarkModal };

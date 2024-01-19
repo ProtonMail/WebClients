@@ -56,7 +56,7 @@ export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean
                 });
             }
         },
-        []
+        [applyLabelsToAll, applyLabelsToSelection]
     );
 
     return { applyLabels, applyLabelsToAllModal };

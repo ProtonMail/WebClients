@@ -81,7 +81,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 });
             }
         },
-        []
+        [moveAllToFolder, moveSelectionToFolder]
     );
 
     return { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal };
