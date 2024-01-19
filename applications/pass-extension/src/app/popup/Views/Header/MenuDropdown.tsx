@@ -30,6 +30,7 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import browser from '@proton/pass/lib/globals/browser';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -41,6 +42,7 @@ import type { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -83,6 +85,15 @@ export const MenuDropdown: VFC = () => {
                   ],
         []
     );
+
+    const feedbackAndHelpMenuItems: MenuItem[] = [
+        ...menu.feedback,
+        {
+            icon: 'life-ring',
+            label: c('Action').t`How to use ${PASS_APP_NAME}`,
+            url: browser.runtime.getURL('/onboarding.html#/welcome'),
+        },
+    ];
 
     return (
         <>
@@ -213,9 +224,8 @@ export const MenuDropdown: VFC = () => {
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advancedMenuItems} />
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-                        <Submenu icon="bug" label={c('Action').t`Feedback`} items={menu.feedback} />
+                        <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={feedbackAndHelpMenuItems} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
-
                         <DropdownMenuButton
                             onClick={() => logout({ soft: false })}
                             label={c('Action').t`Sign out`}
