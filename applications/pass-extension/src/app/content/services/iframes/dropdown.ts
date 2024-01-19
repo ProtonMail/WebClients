@@ -85,12 +85,12 @@ export const createDropdown = (): InjectedDropdown => {
                     return { action, hostname, prefix: deriveAliasPrefix(displayName!) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
-                    const options = await sendMessage.on(
-                        contentScriptMessage({ type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS }),
-                        (res) => (res.type === 'success' ? res.options : DEFAULT_RANDOM_PW_OPTIONS)
+                    const config = await sendMessage.on(
+                        contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG }),
+                        (res) => (res.type === 'success' ? res.config : DEFAULT_RANDOM_PW_OPTIONS)
                     );
 
-                    return { action, options, hostname };
+                    return { action, config, hostname };
                 }
             }
         }

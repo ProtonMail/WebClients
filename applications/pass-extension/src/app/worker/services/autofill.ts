@@ -123,8 +123,8 @@ export const createAutoFillService = () => {
         })
     );
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS, () => {
-        return { options: selectPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOSUGGEST_PASSWORD_CONFIG, () => {
+        return { config: selectPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
     });
 
     WorkerMessageBroker.registerMessage(

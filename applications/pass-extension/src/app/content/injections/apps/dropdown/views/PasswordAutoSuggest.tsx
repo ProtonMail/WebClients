@@ -10,13 +10,13 @@ import { c } from 'ttag';
 
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { generatePassword } from '@proton/pass/lib/password/generator';
 import { type Maybe } from '@proton/pass/types';
 
 type Props = {
     hostname: string;
-    passwordOptions: GeneratePasswordOptions;
+    passwordOptions: GeneratePasswordConfig;
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
