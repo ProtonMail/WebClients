@@ -65,8 +65,8 @@
   --field-disabled: #aaaaaa;
   --focus-outline: #0073ff;
   --focus-ring: rgb(0 115 255 / 0.75);
-  --border-norm: #dddddd;
-  --border-weak: #777777;
+  --border-norm: #4a4658;
+  --border-weak: #343140;
   --background-norm: #0e0d12;
   --background-weak: #1e1c24;
   --background-strong: #2c2934;
@@ -75,6 +75,7 @@
   --interaction-default-hover: rgb(91 87 107 / 0.6);
   --interaction-default-active: rgb(91 87 107 / 0.9);
   --shadow-norm-opacity: 0.5;
+  --shadow-raised-opacity: 1;
   --shadow-lifted-opacity: 0.75;
   --backdrop-norm: rgb(0 0 0 / 0.75);
   --optional-scrollbar-thumb-color: #999999;
