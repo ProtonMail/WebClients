@@ -31,7 +31,7 @@ const Toggle = (
     const label = (name: IconName, condition: boolean) => {
         return (
             <span className="toggle-container-text" aria-hidden="true">
-                <Icon name={name} alt="" size={16} className="toggle-container-img" />
+                <Icon name={name} alt="" size={4} className="toggle-container-img" />
                 {condition && (
                     <span className="toggle-container-loader">
                         <CircleLoader />
@@ -42,11 +42,7 @@ const Toggle = (
     };
     return (
         <label
-            className={clsx([
-                children ? 'flex items-center flex-nowrap gap-2' : '',
-                'toggle-label',
-                className,
-            ])}
+            className={clsx([children ? 'flex items-center flex-nowrap gap-2' : '', 'toggle-label', className])}
             htmlFor={id}
             title={title}
         >

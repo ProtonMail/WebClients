@@ -23,7 +23,7 @@ const StepPrepareCustomButton = ({ isLabelMapping, handleClickCustomize, handleR
             </Button>
             {hasError && (
                 <Tooltip title={EasyTrans.get(isLabelMapping).editName()} originalPlacement="right">
-                    <Icon name="exclamation-circle-filled" size={20} className="ml-2 color-danger" />
+                    <Icon name="exclamation-circle-filled" size={5} className="ml-2 color-danger" />
                 </Tooltip>
             )}
             {isCustom && (

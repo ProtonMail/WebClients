@@ -143,7 +143,7 @@ export const PhotosCard: FC<Props> = ({
                         />
                     ) : (
                         <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
-                            <FileIcon mimeType={photo.mimeType || ''} size={48} />
+                            <FileIcon mimeType={photo.mimeType || ''} size={12} />
                         </div>
                     )}
                     {(photo.signatureIssues || photo.isShared) && (
@@ -157,7 +157,7 @@ export const PhotosCard: FC<Props> = ({
                             )}
                             {photo.isShared && (
                                 <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
-                                    <Icon name="link" color="white" size={12} />
+                                    <Icon name="link" color="white" size={3} />
                                 </div>
                             )}
                         </div>

@@ -48,10 +48,10 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
 
     switch (true) {
         case icon && upsell:
-            iconSize = 16;
+            iconSize = 4;
             break;
         default:
-            iconSize = 20;
+            iconSize = 5;
             break;
     }
 

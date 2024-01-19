@@ -40,7 +40,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                                 {isCurrentStep ? (
                                     <CircleLoader size="small" className="ml-1" />
                                 ) : (
-                                    <Icon size={24} className="color-success" name="checkmark" />
+                                    <Icon size={6} className="color-success" name="checkmark" />
                                 )}
                             </div>
                             <div className="flex-1 p-2 text-left">{step}</div>

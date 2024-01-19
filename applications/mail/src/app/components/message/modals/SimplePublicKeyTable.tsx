@@ -52,7 +52,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     );
     const creationCell = isValid(creationDate) ? format(creationDate, 'PP', { locale: dateLocale }) : '-';
     const expirationCell = loading ? (
-        <Loader className="icon-18p m-auto flex" />
+        <Loader className="icon-size-4.5 m-auto flex" />
     ) : isValid(expirationDate) ? (
         format(expirationDate as Date, 'PP', { locale: dateLocale })
     ) : (

@@ -93,7 +93,7 @@ export const VaultItem: FC<Props> = ({
                             {notification && (
                                 <Icon
                                     name="exclamation-circle-filled"
-                                    size={12}
+                                    size={3}
                                     className="absolute top-custom right-custom"
                                     style={{
                                         '--top-custom': '-1px',
@@ -111,7 +111,7 @@ export const VaultItem: FC<Props> = ({
             icon={
                 <VaultIcon
                     className="shrink-0"
-                    size={14}
+                    size={3.5}
                     color={vault?.content.display.color}
                     icon={vault?.content.display.icon}
                 />

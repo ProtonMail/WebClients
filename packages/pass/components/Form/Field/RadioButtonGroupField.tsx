@@ -37,7 +37,7 @@ export const RadioButton = <T,>({ onChange, id, checked, value, name, color, ico
                 style: { '--radio-button-background': color ? `rgb(${color})` : 'var(--background-weak)' },
             }}
         >
-            {icon && <Icon name={icon} size={20} />}
+            {icon && <Icon name={icon} size={5} />}
         </InputButton>
     );
 };
@@ -72,7 +72,7 @@ export const RadioLabelledButton = <T extends RadioValue>({
             />
             <div className="flex items-center gap-x-3 py-4">
                 {children}
-                {checked && <Icon name="checkmark" size={24} color="var(--interaction-norm)" />}
+                {checked && <Icon name="checkmark" size={6} color="var(--interaction-norm)" />}
             </div>
         </label>
     );

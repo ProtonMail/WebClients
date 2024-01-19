@@ -51,7 +51,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                                     <Icon
                                         className="modal-close-icon"
                                         name="arrow-left"
-                                        size={14}
+                                        size={3.5}
                                         alt={c('Action').t`Close`}
                                     />
                                 </Button>

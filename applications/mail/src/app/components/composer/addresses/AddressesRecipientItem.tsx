@@ -224,7 +224,7 @@ const AddressesRecipientItem = ({
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >
-                        <Icon name="cross" size={12} className="m-auto" />
+                        <Icon name="cross" size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -236,17 +236,11 @@ const AddressesRecipientItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton
-                        className="text-left flex flex-nowrap items-center"
-                        onClick={handleCopy}
-                    >
+                    <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleCopy}>
                         <Icon name="squares" className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton
-                        className="text-left flex flex-nowrap items-center"
-                        onClick={handleDoubleClick}
-                    >
+                    <DropdownMenuButton className="text-left flex flex-nowrap items-center" onClick={handleDoubleClick}>
                         <Icon name="pen" className="mr-2" />
                         <span className="flex-1 my-auto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>

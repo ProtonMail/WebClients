@@ -138,7 +138,7 @@ const FilterConditionsFormRow = ({
                     {token}
                 </span>
                 <button type="button" className="flex shrink-0 ml-2" onClick={() => onRemoveToken(i)}>
-                    <Icon name="cross" size={11} />
+                    <Icon name="cross" size={2.75} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
             </span>

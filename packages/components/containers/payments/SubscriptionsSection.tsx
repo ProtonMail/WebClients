@@ -169,7 +169,7 @@ const SubscriptionsSection = () => {
                                         <Icon
                                             name="exclamation-circle-filled"
                                             className="color-danger ml-1"
-                                            size={18}
+                                            size={4.5}
                                         />
                                     </Tooltip>
                                 )}

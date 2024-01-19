@@ -57,7 +57,7 @@ const ExpandableRow = ({
                         ])}
                     >
                         <span className="inline-flex bg-primary rounded-50 folder-tree-list-item-selected-check">
-                            <Icon name="checkmark" className="p-1" size={16} />
+                            <Icon name="checkmark" className="p-1" size={4} />
                         </span>
                     </div>
                     <div className="flex shrink-0 folder-tree-list-item-indent" style={paddingElement}></div>
@@ -73,7 +73,7 @@ const ExpandableRow = ({
                             }}
                         >
                             <Icon
-                                size={12}
+                                size={3}
                                 name="chevron-down"
                                 alt={isExpanded ? c('Action').t`Collapse` : c('Action').t`Expand`}
                                 className={isExpanded ? 'rotateX-180' : undefined}

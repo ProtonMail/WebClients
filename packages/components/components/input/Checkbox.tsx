@@ -78,9 +78,9 @@ const Checkbox = (
                 style={{ borderColor, background: backgroundColor, color }}
             >
                 {indeterminate === false ? (
-                    <Icon className="checkbox-fakecheck-img" size={16} name="checkmark" color={color} />
+                    <Icon className="checkbox-fakecheck-img" size={4} name="checkmark" color={color} />
                 ) : (
-                    <Icon className="checkbox-fakecheck-img color-disabled" size={16} name="minus" />
+                    <Icon className="checkbox-fakecheck-img color-disabled" size={4} name="minus" />
                 )}
             </span>
             {children}
