@@ -29,6 +29,7 @@ type CreateFieldHandlesOptions = {
 const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
     withContext(({ service: { iframe }, getSettings, getState }, evt) => {
         const { action, element } = field;
+        field?.icon?.reposition();
 
         if (shouldPreventActions(element)) return allowActions(element);
         if (!action) return;
@@ -144,6 +145,7 @@ export const createFieldHandles = ({
         attach(onSubmit) {
             field.tracked = true;
             listeners.removeAll();
+            listeners.addListener(field.element, 'blur', () => field.icon?.reposition());
             listeners.addListener(field.element, 'focus', onFocusField(field));
             listeners.addListener(field.element, 'input', onInputField(field));
             listeners.addListener(field.element, 'keydown', onKeyDownField(onSubmit));
