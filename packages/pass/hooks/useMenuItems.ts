@@ -24,10 +24,18 @@ export type MenuItem = {
     onClick?: () => void;
 };
 
-type MenuItemsOptions = { onAction?: () => void };
+type MenuItemsOptions = {
+    onAction?: () => void;
+    extra?: {
+        advanced?: MenuItem[];
+        download?: MenuItem[];
+        feedback?: MenuItem[];
+    };
+};
 
 export const useMenuItems = ({
     onAction = noop,
+    extra = {},
 }: MenuItemsOptions): Record<'feedback' | 'download' | 'advanced', MenuItem[]> => {
     const { openSettings } = usePassCore();
     const passwordContext = usePasswordContext();
@@ -61,6 +69,7 @@ export const useMenuItems = ({
                 label: c('Action').t`Request a feature`,
                 url: PASS_REQUEST_URL,
             },
+            ...(extra.feedback ?? []),
         ],
         download: [
             {
@@ -73,6 +82,7 @@ export const useMenuItems = ({
                 label: c('Action').t`Pass for iOS`,
                 url: PASS_IOS_URL,
             },
+            ...(extra.download ?? []),
         ],
         advanced: [
             {
@@ -85,6 +95,7 @@ export const useMenuItems = ({
                 label: c('Action').t`Manually sync your data`,
                 onClick: withAction(() => dispatch(syncIntent())),
             },
+            ...(extra.advanced ?? []),
         ],
     };
 };
