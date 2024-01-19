@@ -563,7 +563,7 @@ const CalendarContainerView = ({
                 floatingButton={
                     !isSearchView && (
                         <FloatingButton onClick={() => onCreateEvent?.()}>
-                            <Icon size={24} name="plus" className="m-auto" />
+                            <Icon size={6} name="plus" className="m-auto" />
                         </FloatingButton>
                     )
                 }

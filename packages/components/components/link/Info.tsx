@@ -75,7 +75,7 @@ const Info = ({
                 role={url ? 'link' : undefined}
             >
                 <Icon
-                    className={clsx(['icon-16p', colorPrimary && 'color-primary', className])}
+                    className={clsx(colorPrimary && 'color-primary', className)}
                     name={icon()}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}

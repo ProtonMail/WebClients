@@ -142,7 +142,7 @@ export function RevisionDetailsModal({
                             >
                                 <Icon
                                     name="info-circle"
-                                    size={14}
+                                    size={3.5}
                                     alt={c('Info')
                                         .t`The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.`}
                                 />
@@ -250,7 +250,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                                 <>
                                     {c('Title').t`Size`}
                                     <Tooltip title={getSizeTooltipMessage()} className="ml-1 mb-1">
-                                        <Icon name="info-circle" size={14} alt={getSizeTooltipMessage()} />
+                                        <Icon name="info-circle" size={3.5} alt={getSizeTooltipMessage()} />
                                     </Tooltip>
                                 </>
                             }
@@ -274,7 +274,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             <>
                                 {c('Title').t`# of downloads`}
                                 <Tooltip title={getNumAccessesTooltipMessage()} className="ml-1 mb-1">
-                                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
+                                    <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
                                 </Tooltip>
                             </>
                         }

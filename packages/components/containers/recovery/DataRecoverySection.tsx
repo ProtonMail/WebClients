@@ -147,7 +147,7 @@ const DataRecoverySection = () => {
                     <>
                         {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
                             <p className="color-danger">
-                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
+                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={3.5} />
                                 {c('Warning')
                                     .t`Your recovery phrase is outdated. It can't recover new data if you reset your account again.`}
                             </p>
@@ -277,7 +277,7 @@ const DataRecoverySection = () => {
                         </SettingsLayout>
                         {hasOutdatedRecoveryFile && (
                             <p className="color-danger flex flex-nowrap">
-                                <Icon className="mr-2 shrink-0 mt-0.5" name="exclamation-circle-filled" size={14} />
+                                <Icon className="mr-2 shrink-0 mt-0.5" name="exclamation-circle-filled" size={3.5} />
                                 <span className="flex-1">{c('Warning')
                                     .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}</span>
                             </p>

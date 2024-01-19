@@ -32,10 +32,10 @@ const viewboxMap = {
 };
 
 const getIconAsset = (size: IconSize) => {
-    if (size < 20) {
+    if (size < 5) {
         return 'sm';
     }
-    if (size < 40) {
+    if (size < 10) {
         return 'md';
     }
     return 'lg';
@@ -57,29 +57,27 @@ export interface MimeIconProps extends ComponentPropsWithRef<'svg'> {
  * passed size parameter: mime icons have three different shapes to fit
  * any space the best way.
  */
-const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(
-    ({ name, size = 16, alt, title, className, ...rest }, ref) => {
-        const iconAsset = getIconAsset(size);
-        const viewBox = `0 0 ${viewboxMap[iconAsset]} ${viewboxMap[iconAsset]}`;
+const MimeIcon = forwardRef<SVGSVGElement, MimeIconProps>(({ name, size = 4, alt, title, className, ...rest }, ref) => {
+    const iconAsset = getIconAsset(size);
+    const viewBox = `0 0 ${viewboxMap[iconAsset]} ${viewboxMap[iconAsset]}`;
 
-        return (
-            <>
-                <svg
-                    role="img"
-                    viewBox={viewBox}
-                    focusable="false"
-                    className={clsx([`icon-${size}p`, className])}
-                    ref={ref}
-                    {...rest}
-                >
-                    {title && <title>{title}</title>}
-                    <use xlinkHref={`#mime-${iconAsset}-${name}`} />
-                </svg>
+    return (
+        <>
+            <svg
+                role="img"
+                viewBox={viewBox}
+                focusable="false"
+                className={clsx([`icon-size-${size}`, className])}
+                ref={ref}
+                {...rest}
+            >
+                {title && <title>{title}</title>}
+                <use xlinkHref={`#mime-${iconAsset}-${name}`} />
+            </svg>
 
-                {alt ? <span className="sr-only">{alt}</span> : null}
-            </>
-        );
-    }
-);
+            {alt ? <span className="sr-only">{alt}</span> : null}
+        </>
+    );
+});
 
 export default MimeIcon;

@@ -8,7 +8,10 @@ import passFreeDark from './logo/plan-pass-free-dark.svg';
 import passFreeLight from './logo/plan-pass-free-light.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 
-const getLogo = (src: string, size: number | undefined, rest: any) => <img {...rest} src={src} width={size} alt="" />;
+const getLogo = (src: string, size: number | undefined, rest: any) => (
+    // Magic padding to align with normal SVG logos
+    <img {...rest} src={src} width={size} style={{ padding: 2 }} alt="" />
+);
 
 interface Props extends ComponentPropsWithoutRef<'img'> {
     app: APP_NAMES;

@@ -58,12 +58,12 @@ export const VaultInviteForm: FC<Props> = ({ form, autoFocus }) => {
                         className="flex items-center flex-nowrap gap-3 mb-3"
                         onClick={() => form.setFieldValue('step', 'email')}
                     >
-                        <IconBox size={18} mode="icon" className="shrink-0">
+                        <IconBox size={4.5} mode="icon" className="shrink-0">
                             <Icon
                                 className={'absolute inset-center'}
                                 color="var(--interaction-norm)"
                                 name={'envelope'}
-                                size={16}
+                                size={4}
                             />
                         </IconBox>
                         <div className="text-break-all text-left">{email}</div>

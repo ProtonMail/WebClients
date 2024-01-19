@@ -165,7 +165,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
 
     return (
         <div className="flex flex-column items-center justify-center my-auto">
-            <Icon name="lock-filled" size={42} className="mb-4" />
+            <Icon name="lock-filled" size={10} className="mb-4" />
             {context.state.status === AppStatus.LOCKED && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>

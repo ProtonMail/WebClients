@@ -155,7 +155,7 @@ const MessageBodyImage = ({
             style={style}
             className={clsx(['proton-image-placeholder', !!error && 'proton-image-placeholder--error border-danger'])}
         >
-            {!showLoader ? <Icon name={icon} size={20} /> : null}
+            {!showLoader ? <Icon name={icon} size={5} /> : null}
 
             {showLoader ? (
                 <>

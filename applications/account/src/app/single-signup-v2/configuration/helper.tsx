@@ -44,12 +44,12 @@ export const getGenericFeatures = (isLargeViewport: boolean) => {
     return [
         {
             key: 1,
-            left: <Icon size={24} className="color-primary" name="lock" />,
+            left: <Icon size={6} className="color-primary" name="lock" />,
             text: c('pass_signup_2023: Feature').t`End-to-end encrypted`,
         },
         {
             key: 2,
-            left: <Icon size={24} className="color-primary" name="globe" />,
+            left: <Icon size={6} className="color-primary" name="globe" />,
             text: c('pass_signup_2023: Feature').t`Open source`,
         },
         {

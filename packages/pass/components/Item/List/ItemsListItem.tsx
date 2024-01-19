@@ -49,12 +49,12 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
             <div className="flex-nowrap flex w-full px-3 py-2 items-center">
                 <OptimisticItemIcon
                     item={item}
-                    size={20}
+                    size={5}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
                 />
                 {pinningEnabled && item.pinned && (
                     <IconBox
-                        size={10}
+                        size={2.5}
                         mode="transparent"
                         className={clsx(
                             'pass-item-list--item--pin absolute top-custom left-custom flex items-center justify-center',
@@ -62,13 +62,13 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                         )}
                         style={{ '--top-custom': '32px', '--left-custom': '36px' }}
                     >
-                        <Icon name="pin-angled-filled" size={11} className="absolute-center" color="black" />
+                        <Icon name="pin-angled-filled" size={2.75} className="absolute-center" color="black" />
                     </IconBox>
                 )}
                 <div className="text-left">
                     <span className="flex items-center">
                         {search && (
-                            <VaultIcon size={12} icon={vault?.content.display.icon} className="color-weak mr-1" />
+                            <VaultIcon size={3} icon={vault?.content.display.icon} className="color-weak mr-1" />
                         )}
                         <span className="flex-1 text-ellipsis">
                             <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>

@@ -40,7 +40,7 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, autoLoad = false, 
             {display === 'loadDirectFailed' && (
                 <div className="border rounded bg-norm mb-0 flex justify-center items-center p-4">
                     <Tooltip title={c('Tooltip').t`The image could not be loaded`}>
-                        <Icon name="cross-circle" size={24} className="color-danger" />
+                        <Icon name="cross-circle" size={6} className="color-danger" />
                     </Tooltip>
                 </div>
             )}

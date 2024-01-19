@@ -43,7 +43,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     );
 
     const appVersion = getAppVersion(APP_VERSION);
-    const size = 48;
+    const size = 12;
 
     return (
         <div className="flex *:min-size-auto flex-nowrap flex-column h-full eo-layout-bg overflow-auto">

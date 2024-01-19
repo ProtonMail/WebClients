@@ -582,7 +582,7 @@ const AccountStepDetails = ({
                                                 <Icon
                                                     name="checkmark-circle"
                                                     className="color-success"
-                                                    size={16}
+                                                    size={4}
                                                     data-testid="email-valid"
                                                 />
                                             );
@@ -649,7 +649,7 @@ const AccountStepDetails = ({
                                                         <Icon
                                                             name="exclamation-circle-filled"
                                                             className="color-danger"
-                                                            size={16}
+                                                            size={4}
                                                             data-testid="email-invalid"
                                                         />
                                                     </Tooltip>
@@ -662,7 +662,7 @@ const AccountStepDetails = ({
                                                     <Icon
                                                         name="checkmark-circle"
                                                         className="color-success"
-                                                        size={16}
+                                                        size={4}
                                                         data-testid="email-valid"
                                                     />
                                                 );

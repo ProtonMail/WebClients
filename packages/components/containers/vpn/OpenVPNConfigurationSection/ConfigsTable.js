@@ -37,7 +37,7 @@ const ServerDown = () => (
     <span className="ml-2">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex *:self-center">
-                <Icon className="color-danger" size={20} name="exclamation-circle" />
+                <Icon className="color-danger" size={5} name="exclamation-circle" />
             </div>
         </Tooltip>
     </span>
@@ -46,7 +46,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`P2P`}>
-            <Icon name="arrow-right-arrow-left" size={18} className="rounded bg-strong p-1" />
+            <Icon name="arrow-right-arrow-left" size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );
@@ -54,7 +54,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`Tor`}>
-            <Icon name="brand-tor" size={18} className="rounded bg-strong p-1" />
+            <Icon name="brand-tor" size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );

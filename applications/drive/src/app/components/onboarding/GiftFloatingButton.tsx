@@ -188,7 +188,7 @@ function FloatingSpotlight({
                 style={{ '--w-custom': '3em', '--h-custom': '3em', '--right': `${rightOffset}rem` }}
                 data-testid="gift-floating-button"
             >
-                <Icon size={24} name={icon} className="m-auto" />
+                <Icon size={6} name={icon} className="m-auto" />
             </FloatingButton>
         </Spotlight>
     );
