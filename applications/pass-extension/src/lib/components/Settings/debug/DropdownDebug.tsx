@@ -121,7 +121,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOSUGGEST_PASSWORD,
-                            options: DEFAULT_RANDOM_PW_OPTIONS,
+                            config: DEFAULT_RANDOM_PW_OPTIONS,
                             hostname: 'proton.me',
                         }}
                     />
