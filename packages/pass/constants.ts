@@ -28,6 +28,7 @@ export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
 export const PASS_UPGRADE_PATH = 'pass/signup';
+export const PASS_ACCOUNT_PATH = 'pass/account-password';
 
 export const PASS_BF_MONTHLY_PRICE = 199;
 export const PASS_REGULAR_MONTHLY_PRICE = 399;
