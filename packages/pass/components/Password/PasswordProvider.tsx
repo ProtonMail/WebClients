@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { passwordDelete, passwordHistoryClear, passwordSave } from '@proton/pass/store/actions';
 import type { PasswordItem } from '@proton/pass/store/reducers';
 import { selectPasswordOptions } from '@proton/pass/store/selectors';
@@ -18,6 +18,8 @@ import { PasswordHistoryModal } from './PasswordHistoryModal';
 type ModalState = Omit<PasswordGeneratorModalProps, 'onSubmit'>;
 
 type PasswordContextValue = {
+    /** Current password options in store */
+    config: MaybeNull<GeneratePasswordConfig>;
     /** Generates a random password */
     generate: UseAsyncModalHandle<string, ModalState>;
     /** Password history handles */
@@ -31,12 +33,10 @@ type PasswordContextValue = {
         /** Removes a password history item by id */
         remove: (id: string) => void;
     };
-    /** Current password options in store */
-    options: MaybeNull<GeneratePasswordOptions>;
 };
 
 const PasswordContext = createContext<PasswordContextValue>({
-    options: null,
+    config: null,
     generate: async () => {},
     history: {
         add: noop,
@@ -52,11 +52,11 @@ export const PasswordProvider: FC = ({ children }) => {
     const dispatch = useDispatch();
     const { resolver, state, handler, abort } = useAsyncModalHandles<string, ModalState>({ getInitialModalState });
     const [showHistory, setShowHistory] = useState(false);
-    const options = useSelector(selectPasswordOptions);
+    const config = useSelector(selectPasswordOptions);
 
     const contextValue = useMemo<PasswordContextValue>(
         () => ({
-            options,
+            config,
             generate: handler,
             history: {
                 add: (pw) => dispatch(passwordSave({ ...pw, id: uniqueId(), createTime: getEpoch() })),
@@ -65,7 +65,7 @@ export const PasswordProvider: FC = ({ children }) => {
                 remove: (id) => dispatch(passwordDelete({ id })),
             },
         }),
-        [handler, options]
+        [handler, config]
     );
 
     return (
