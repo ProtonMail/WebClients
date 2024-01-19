@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import {
-    getElectronAppVersion,
+    electronAppVersion,
     isElectronApp,
     isElectronOnMac,
     isElectronOnWindows,
@@ -40,7 +40,7 @@ const DownloadButton = ({ app }: { app: DesktopClient }) => {
 };
 
 const InboxDesktopOutdatedAppTopBanner = () => {
-    const version = getElectronAppVersion;
+    const version = electronAppVersion;
     const { windowsApp, macosApp, loading } = useInboxDesktopVersion();
 
     if (!isElectronApp || !version || loading) {
