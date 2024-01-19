@@ -15,6 +15,7 @@ import {
     FoldersSection,
     IdentitySection,
     ImportExportAppSection,
+    InboxDesktopSettingsSection,
     LabelsSection,
     LayoutsSection,
     MessagesGeneralSection,
@@ -24,7 +25,6 @@ import {
     PmMeSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
-    ProtonDesktopSection,
     ProtonMailBridgeSection,
     SMTPSubmissionSection,
     SpamFiltersSection,
@@ -111,7 +111,7 @@ const MailSettingsRouter = ({
             {getIsSectionAvailable(desktop) && (
                 <Route path={getSectionPath(path, desktop)}>
                     <PrivateMainSettingsArea config={desktop}>
-                        <ProtonDesktopSection />
+                        <InboxDesktopSettingsSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
