@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
@@ -29,7 +29,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
-import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     selectHasRegisteredLock,
@@ -51,7 +51,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     width: `22em`,
 };
 
-export const MenuDropdown: VFC = () => {
+export const MenuDropdown: FC = () => {
     const { onLink } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { filters, matchTrash } = useNavigation();
@@ -69,31 +69,27 @@ export const MenuDropdown: VFC = () => {
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
-    const menu = useMenuItems({ onAction: close });
-
-    const advancedMenuItems = useMemo<MenuItem[]>(
-        () =>
-            expanded
-                ? menu.advanced
-                : [
-                      ...menu.advanced,
+    const menu = useMenuItems({
+        onAction: close,
+        extra: {
+            advanced: !expanded
+                ? [
                       {
                           icon: 'arrow-out-square',
                           label: c('Action').t`Open in a window`,
                           onClick: withClose(expandPopup),
                       },
-                  ],
-        []
-    );
-
-    const feedbackAndHelpMenuItems: MenuItem[] = [
-        ...menu.feedback,
-        {
-            icon: 'life-ring',
-            label: c('Action').t`How to use ${PASS_APP_NAME}`,
-            url: browser.runtime.getURL('/onboarding.html#/welcome'),
+                  ]
+                : [],
+            feedback: [
+                {
+                    icon: 'life-ring',
+                    label: c('Action').t`How to use ${PASS_APP_NAME}`,
+                    url: browser.runtime.getURL('/onboarding.html#/welcome'),
+                },
+            ],
         },
-    ];
+    });
 
     return (
         <>
@@ -222,9 +218,9 @@ export const MenuDropdown: VFC = () => {
                             icon="arrow-out-square"
                         />
 
-                        <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advancedMenuItems} />
+                        <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-                        <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={feedbackAndHelpMenuItems} />
+                        <Submenu icon="bug" label={c('Action').t`Feedback & Help`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
                         <DropdownMenuButton
                             onClick={() => logout({ soft: false })}
