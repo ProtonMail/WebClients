@@ -1,4 +1,3 @@
-export { rest } from 'msw';
 export * from './lib/api';
 export * from './lib/builders';
 export * from './lib/cache';
@@ -29,4 +28,3 @@ export * from './lib/mockUseSelector';
 export * from './lib/mockUseSpotlightOnFeature';
 export * from './lib/mockUseUser';
 export * from './lib/payments';
-export * from './lib/server';
