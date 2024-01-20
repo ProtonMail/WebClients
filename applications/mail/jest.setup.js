@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import { TextDecoder, TextEncoder } from 'util';
 
 import '@proton/testing/lib/mockMatchMedia';
 import '@proton/testing/lib/mockUnleash';
@@ -9,8 +8,6 @@ import '@proton/testing/lib/mockUnleash';
 // console.warn = () => {};
 
 // Getting ReferenceError: TextDecoder is not defined without
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
 
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
     observe: jest.fn(),

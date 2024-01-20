@@ -1,7 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
 import ImapMailModal from './ImapMailModal';
@@ -29,15 +30,15 @@ describe('IMAP Start Step', () => {
         fireEvent.change(emailInput, { target: { value: 'testing@proton.ch' } });
 
         server.use(
-            rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                return res(
-                    ctx.set('date', '01/01/2022'),
-                    ctx.json({
+            http.get('/importer/v1/mail/importers/authinfo', () => {
+                return HttpResponse.json(
+                    {
                         Authentication: {
                             ImapHost: 'imap.proton.ch',
                             ImapPort: 993,
                         },
-                    })
+                    },
+                    { headers }
                 );
             })
         );

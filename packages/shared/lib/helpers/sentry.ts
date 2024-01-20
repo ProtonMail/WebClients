@@ -71,13 +71,11 @@ export const getContentTypeHeaders = (input: FirstFetchParameter): HeadersInit =
 };
 
 const sentryFetch: typeof fetch = (input, init?) => {
-    // Force the input type due to node.js fetch types not being compatible with libdom.d.ts
-    // https://github.com/nodejs/undici/issues/1943
-    return globalThis.fetch(input as FirstFetchParameter, {
+    return globalThis.fetch(input, {
         ...init,
         headers: {
             ...init?.headers,
-            ...getContentTypeHeaders(input as FirstFetchParameter),
+            ...getContentTypeHeaders(input),
             ...context.authHeaders,
         },
     });
