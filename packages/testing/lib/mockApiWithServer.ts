@@ -1,5 +1,4 @@
 import { jest } from '@jest/globals';
-import fetch from 'cross-fetch';
 
 function handleResponse(response: Response) {
     return response.text().then((text) => {
@@ -23,5 +22,9 @@ export const mockApiWithServer = jest.fn((config: any) => {
 
     return fetch(url.toString(), {
         method: config.method,
-    }).then(handleResponse);
+    })
+        .then(handleResponse)
+        .catch((ex) => {
+            throw ex;
+        });
 });
