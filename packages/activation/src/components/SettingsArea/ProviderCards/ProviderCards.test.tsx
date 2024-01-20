@@ -1,7 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useUser } from '@proton/components/index';
 
@@ -110,17 +111,17 @@ const server = setupServer();
 beforeAll(() => {
     server.listen();
     server.use(
-        rest.get('/core/v4/features', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/core/v4/features', () => {
+            return HttpResponse.json({}, { headers });
         }),
-        rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/importer/v1/mail/importers/authinfo', () => {
+            return HttpResponse.json({}, { headers });
         }),
-        rest.get('/core/v4/system/config', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/core/v4/system/config', () => {
+            return HttpResponse.json({}, { headers });
         }),
-        rest.get('/calendar/v1', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/calendar/v1', () => {
+            return HttpResponse.json({}, { headers });
         })
     );
 });
@@ -175,33 +176,32 @@ describe('Provider cards process testing', () => {
     it('Should trigger yahoo auth error', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
         server.use(
-            rest.get('/core/v4/features', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/core/v4/features', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/importer/v1/mail/importers/authinfo', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.get('/core/v4/system/config', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/core/v4/system/config', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.get('/calendar/v1', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/calendar/v1', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.get('/settings/calendar', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/settings/calendar', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.post('/importer/v1/importers', (req, res, ctx) => {
-                return res(
-                    ctx.set('date', '01/01/2022'),
-                    ctx.status(422),
-                    ctx.json({
+            http.post('/importer/v1/importers', () => {
+                return HttpResponse.json(
+                    {
                         Code: 2901,
                         Error: 'Invalid credentials',
                         Details: {
                             ProviderError:
                                 'AUTHENTICATE command failed: NO [AUTHENTICATIONFAILED] AUTHENTICATE Invalid credentials\r\n',
                         },
-                    })
+                    },
+                    { status: 422, headers }
                 );
             })
         );
