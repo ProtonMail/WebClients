@@ -15,6 +15,7 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
     const store = configureStore({
         preloadedState,
         reducer: rootReducer,
+        devTools: process.env.NODE_ENV !== 'production',
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 serializableCheck: {
