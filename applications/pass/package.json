@@ -34,16 +34,16 @@
         "react-router-dom": "^5.3.4",
         "redux": "^4.2.1",
         "redux-saga": "^1.2.3",
-        "ttag": "^1.8.5"
+        "ttag": "^1.8.6"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/jest-dom": "^6.1.6",
+        "@testing-library/jest-dom": "^6.2.0",
         "@testing-library/react": "^12.1.5",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
-        "@types/react": "^17.0.74",
+        "@types/react": "^17.0.75",
         "@types/react-dom": "^17.0.25",
         "@types/react-router-dom": "^5.3.3",
         "@types/react-window": "^1.8.8",
@@ -51,7 +51,7 @@
         "eslint": "^8.56.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
-        "prettier": "^3.1.1",
+        "prettier": "^3.2.4",
         "typescript": "^5.3.3",
         "webpack": "^5.89.0"
     }
