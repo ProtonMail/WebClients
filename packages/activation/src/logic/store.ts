@@ -20,6 +20,7 @@ export const useGenerateEasySwitchStore = () => {
     const eventManager = useEventManager();
     const store = useMemo(() => {
         return configureStore({
+            devTools: process.env.NODE_ENV !== 'production',
             reducer: { reports, importers, sync, oauthDraft, imapDraft },
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
