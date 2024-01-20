@@ -4770,61 +4770,63 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pdfme/common@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@pdfme/common@npm:3.1.3"
+"@pdfme/common@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@pdfme/common@npm:3.2.1"
   dependencies:
-    "@pdfme/pdf-lib": "npm:^1.17.3"
+    "@pdfme/pdf-lib": "npm:^1.18.3"
     antd: "npm:^5.11.2"
     buffer: "npm:^6.0.3"
     form-render: "npm:^2.2.20"
     zod: "npm:^3.20.2"
-  checksum: 135ca10e2cc550b86f24c4d3c82d10ed4b147a46dfe48fadfcf9f2e8fe45f356b6ddbb0c28d77db821053a364a20f9499828931c6948ba8844ff64251a47ae97
+  checksum: dfb70c4f0905449a8fb7c2cb5478e22d56b730fa60dafc990cae469752775b8dcb77c1084cd0cacacdd54114c1886b29ff8400cff0c197941f9729dcf8204cbb
   languageName: node
   linkType: hard
 
-"@pdfme/generator@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@pdfme/generator@npm:3.1.3"
+"@pdfme/generator@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@pdfme/generator@npm:3.2.1"
   dependencies:
-    "@pdfme/pdf-lib": "npm:^1.17.3"
+    "@pdfme/pdf-lib": "npm:^1.18.3"
     atob: "npm:^2.1.2"
     fontkit: "npm:^2.0.2"
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: b371c2954ec0bab586694f9314dd04a8d69c1edc4e9e408006c8a6b162340fc4b3f81572b0b94161ed9895f03d607b7f4e44f7541412466bd153da7b2143f29d
+  checksum: 839fbf62f8bbaf3c342b1bfb0fc128e92ca9c3f8ec0217c0a001cd7305ef31b93e50373e0dc8d2205608c5b2e8b5a2cb98b66c550ac944ffdaa3b6eaf198d847
   languageName: node
   linkType: hard
 
-"@pdfme/pdf-lib@npm:^1.17.3":
-  version: 1.17.3
-  resolution: "@pdfme/pdf-lib@npm:1.17.3"
+"@pdfme/pdf-lib@npm:^1.18.3":
+  version: 1.18.3
+  resolution: "@pdfme/pdf-lib@npm:1.18.3"
   dependencies:
     "@pdf-lib/standard-fonts": "npm:^1.0.0"
     "@pdf-lib/upng": "npm:^1.0.1"
+    color: "npm:^4.2.3"
+    node-html-better-parser: "npm:^1.4.0"
     pako: "npm:^1.0.11"
-    tslib: "npm:^1.11.1"
-  checksum: 7e2379d8f97984f7ae962fcae3e739eb53b3e8f8b5fa2fe1db6547144e89c3ff9319bdc0704f967b9b66e32433b7119001c8d6d8bf9100353e4e9e4badf1615d
+  checksum: 7d4cdbb51152d79b59f1c41da76b2c51d23f4ed2ec65da8376df74c8a64eca1f90189a2c29fd852a9856631e1994f76ce95bb7cd2b22d91ce075565f2a6dfbe3
   languageName: node
   linkType: hard
 
-"@pdfme/schemas@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@pdfme/schemas@npm:3.1.3"
+"@pdfme/schemas@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@pdfme/schemas@npm:3.2.1"
   dependencies:
-    "@pdfme/pdf-lib": "npm:^1.17.3"
+    "@pdfme/pdf-lib": "npm:^1.18.3"
     bwip-js: "npm:^4.1.1"
+    fast-xml-parser: "npm:^4.3.2"
     fontkit: "npm:^2.0.2"
   peerDependencies:
     "@pdfme/common": "*"
-  checksum: 1002edc4f38f552e0e8b11e5d9eb8d04c9fa3f0854cbd61604ece9da5d712e1c7ae5c1371486531e4a197dc344cc715ebcbaa3db1c97fdc4b073ef3d1ba30b40
+  checksum: c0d63c29e8ba2f958b01d613ae1c4c115ded4e246e7c7db725743bd164b546344aac06b8b8ab41050377ed0fccefb3680aea5c3e0992d898177b1279152bc42e
   languageName: node
   linkType: hard
 
-"@pdfme/ui@npm:^3.1.3":
-  version: 3.1.3
-  resolution: "@pdfme/ui@npm:3.1.3"
+"@pdfme/ui@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@pdfme/ui@npm:3.2.1"
   dependencies:
     "@ant-design/icons": "npm:^5.2.6"
     "@dnd-kit/core": "npm:^6.0.8"
@@ -4841,7 +4843,7 @@ __metadata:
   peerDependencies:
     "@pdfme/common": "*"
     "@pdfme/schemas": "*"
-  checksum: 1a75e83295bad84dfa4e501c8083f5c18ba200511fa5569648da335b9bca1850c422472d183b96a99018a4a48580998fee18ccdf91863a8c418a41c92a7306bd
+  checksum: 385bfee05ba82e0aae1988894c5ceb8014e3828d733a374546c8412f9e08d829c6dc5fc04b2766c4a90279f68f4494b3ee01af527419b19ead2acacfd920ba65
   languageName: node
   linkType: hard
 
@@ -5553,8 +5555,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/recovery-kit@workspace:packages/recovery-kit"
   dependencies:
-    "@pdfme/common": "npm:^3.1.3"
-    "@pdfme/generator": "npm:^3.1.3"
+    "@pdfme/common": "npm:^3.2.1"
+    "@pdfme/generator": "npm:^3.2.1"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/utils": "workspace:packages/utils"
     eslint: "npm:^8.56.0"
@@ -18006,6 +18008,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-xml-parser@npm:^4.3.2":
+  version: 4.3.3
+  resolution: "fast-xml-parser@npm:4.3.3"
+  dependencies:
+    strnum: "npm:^1.0.5"
+  bin:
+    fxparser: src/cli/cli.js
+  checksum: 420d15f315dbafac68be8a6bfa6a26c42d3e846c336a4d0c9a901f0a0903b0ab642379766fe7574d1602da2914c5d7481f78edf47c0712ab9078871e26cab296
+  languageName: node
+  linkType: hard
+
 "fastest-levenshtein@npm:1.0.16, fastest-levenshtein@npm:^1.0.12, fastest-levenshtein@npm:^1.0.16":
   version: 1.0.16
   resolution: "fastest-levenshtein@npm:1.0.16"
@@ -25750,6 +25763,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-html-better-parser@npm:^1.4.0":
+  version: 1.4.3
+  resolution: "node-html-better-parser@npm:1.4.3"
+  dependencies:
+    html-entities: "npm:^2.3.2"
+  checksum: e05034a6fab2467be861eb49953dbc90078d09bd040b472a3e72b0a6edc52f74606f590a6d15c28c361efe695bf8ffe0236618152da5b582af620426859539bf
+  languageName: node
+  linkType: hard
+
 "node-int64@npm:^0.4.0":
   version: 0.4.0
   resolution: "node-int64@npm:0.4.0"
@@ -27243,9 +27265,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
-    "@pdfme/common": "npm:^3.1.3"
-    "@pdfme/schemas": "npm:^3.1.3"
-    "@pdfme/ui": "npm:^3.1.3"
+    "@pdfme/common": "npm:^3.2.1"
+    "@pdfme/schemas": "npm:^3.2.1"
+    "@pdfme/ui": "npm:^3.2.1"
     "@types/toastify-js": "npm:^1.12.3"
     eslint: "npm:^8.56.0"
     toastify-js: "npm:^1.12.0"
@@ -33419,6 +33441,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"strnum@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "strnum@npm:1.0.5"
+  checksum: 64fb8cc2effbd585a6821faa73ad97d4b553c8927e49086a162ffd2cc818787643390b89d567460a8e74300148d11ac052e21c921ef2049f2987f4b1b89a7ff1
+  languageName: node
+  linkType: hard
+
 "strtok3@npm:^7.0.0":
   version: 7.0.0
   resolution: "strtok3@npm:7.0.0"
@@ -34679,7 +34708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.11.1, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 69ae09c49eea644bc5ebe1bca4fa4cc2c82b7b3e02f43b84bd891504edf66dbc6b2ec0eef31a957042de2269139e4acff911e6d186a258fb14069cd7f6febce2
