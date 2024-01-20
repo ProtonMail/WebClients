@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-import { TextDecoder, TextEncoder } from 'util';
 
 import '@proton/testing/lib/mockMatchMedia';
 import '@proton/testing/lib/mockUnleash';
@@ -7,10 +6,6 @@ import '@proton/testing/lib/mockUnleash';
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
 // console.error = () => {};
 // console.warn = () => {};
-
-// Getting ReferenceError: TextDecoder is not defined without
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({

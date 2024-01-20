@@ -2,6 +2,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
+import { HttpResponse, http } from 'msw';
+import { setupServer } from 'msw/node';
 
 import { getModelState } from '@proton/account/test';
 import { useAddresses, useGetAddresses, useUserSettings } from '@proton/components';
@@ -27,15 +29,15 @@ import {
     mockApiWithServer,
     mockDefaultBreakpoints,
     mockNotifications,
-    rest,
-    server,
     veventBuilder,
 } from '@proton/testing';
-
-import { refresh } from 'proton-mail/store/contacts/contactsActions';
+import { getHandlers } from '@proton/testing/lib/handlers';
 
 import { authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
+import { refresh } from '../../../../store/contacts/contactsActions';
 import EmailReminderWidget from './EmailReminderWidget';
+
+const server = setupServer(...getHandlers());
 
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
@@ -162,9 +164,13 @@ describe('EmailReminderWidget', () => {
             {} as Error,
         ]);
         server.use(
-            rest.get(`/core/v4/features`, (req, res, ctx) => {
-                return res.once(ctx.json({}));
-            })
+            http.get(
+                `/core/v4/features`,
+                () => {
+                    return new HttpResponse('{}');
+                },
+                { once: true }
+            )
         );
     });
 
@@ -206,15 +212,17 @@ describe('EmailReminderWidget', () => {
 
     it('renders the widget when the event has been cancelled', async () => {
         server.use(
-            rest.get(`/calendar/v1/:calendarId/events/:eventId`, (req, res, ctx) => {
-                return res.once(
-                    ctx.json({
+            http.get(
+                `/calendar/v1/:calendarId/events/:eventId`,
+                () => {
+                    return HttpResponse.json({
                         Event: calendarEventBuilder({
                             traits: 'canceled',
                         }),
-                    })
-                );
-            })
+                    });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent();
@@ -252,9 +260,13 @@ describe('EmailReminderWidget', () => {
 
     it('displays an error instead of the widget when the event does not exist anymore', async () => {
         server.use(
-            rest.get(`/calendar/v1/:calendarId/events/:eventId`, (req, res, ctx) => {
-                return res.once(ctx.status(404));
-            })
+            http.get(
+                `/calendar/v1/:calendarId/events/:eventId`,
+                () => {
+                    return new HttpResponse(null, { status: 404 });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent();
@@ -297,15 +309,27 @@ describe('EmailReminderWidget', () => {
                 const calendar = calendarBuilder({ traits: 'updatePassphrase' });
 
                 server.use(
-                    rest.get(`/calendar/v1/${calendar.ID}/keys/all`, (req, res, ctx) => {
-                        return res.once(ctx.json({}));
-                    }),
-                    rest.get(`/calendar/v1/${calendar.ID}/passphrases`, (req, res, ctx) => {
-                        return res.once(ctx.json({}));
-                    }),
-                    rest.get(`/calendar/v1/${calendar.ID}/members`, (req, res, ctx) => {
-                        return res.once(ctx.json({}));
-                    })
+                    http.get(
+                        `/calendar/v1/${calendar.ID}/keys/all`,
+                        () => {
+                            return HttpResponse.json({});
+                        },
+                        { once: true }
+                    ),
+                    http.get(
+                        `/calendar/v1/${calendar.ID}/passphrases`,
+                        () => {
+                            return HttpResponse.json({});
+                        },
+                        { once: true }
+                    ),
+                    http.get(
+                        `/calendar/v1/${calendar.ID}/members`,
+                        () => {
+                            return HttpResponse.json({});
+                        },
+                        { once: true }
+                    )
                 );
 
                 await displaysErrorWithoutButtonInsteadOfWidget([calendar]);
@@ -401,13 +425,15 @@ describe('EmailReminderWidget', () => {
 
     it('displays an error and no widget if the occurrence is in exdates (the occurrence has been removed from the chain)', async () => {
         server.use(
-            rest.get(`/calendar/v1/events`, (req, res, ctx) => {
-                return res.once(
-                    ctx.json({
+            http.get(
+                `/calendar/v1/events`,
+                () => {
+                    return HttpResponse.json({
                         Events: [calendarEventBuilder(), { Exdates: [123] }],
-                    })
-                );
-            })
+                    });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent({
@@ -424,13 +450,15 @@ describe('EmailReminderWidget', () => {
 
     it('displays an error and no widget if there are no events found with recurring header', async () => {
         server.use(
-            rest.get(`/calendar/v1/events`, (req, res, ctx) => {
-                return res.once(
-                    ctx.json({
+            http.get(
+                `/calendar/v1/events`,
+                () => {
+                    return HttpResponse.json({
                         Events: [],
-                    })
-                );
-            })
+                    });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent({
@@ -445,19 +473,21 @@ describe('EmailReminderWidget', () => {
 
     it('displays an error and no widget if there are no events found with the first event API call fails', async () => {
         server.use(
-            rest.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
+            http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
                 throw new Error('Anything can happen');
             })
         );
 
         server.use(
-            rest.get(`/calendar/v1/events`, (req, res, ctx) => {
-                return res.once(
-                    ctx.json({
+            http.get(
+                `/calendar/v1/events`,
+                () => {
+                    return HttpResponse.json({
                         Events: [],
-                    })
-                );
-            })
+                    });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent();
@@ -467,18 +497,20 @@ describe('EmailReminderWidget', () => {
 
     it('falls back to calling by uid in case the main api call fails', async () => {
         server.use(
-            rest.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
+            http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
                 throw new Error('Anything can happen');
             })
         );
         server.use(
-            rest.get(`/calendar/v1/events`, (req, res, ctx) => {
-                return res.once(
-                    ctx.json({
+            http.get(
+                `/calendar/v1/events`,
+                () => {
+                    return HttpResponse.json({
                         Events: [calendarEventBuilder()],
-                    })
-                );
-            })
+                    });
+                },
+                { once: true }
+            )
         );
 
         const { skeleton } = renderComponent();
@@ -489,13 +521,13 @@ describe('EmailReminderWidget', () => {
 
     it('displays a generic error when both event API calls fail', async () => {
         server.use(
-            rest.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
+            http.get(`/calendar/v1/:calendarId/events/:eventId`, () => {
                 throw new Error('Anything can happen');
             })
         );
 
         server.use(
-            rest.get(`/calendar/v1/events`, () => {
+            http.get(`/calendar/v1/events`, () => {
                 throw new Error('Anything can happen in the fallback');
             })
         );
@@ -506,7 +538,7 @@ describe('EmailReminderWidget', () => {
         await waitFor(() => expect(screen.queryByText(/DateHeader/)).not.toBeInTheDocument());
         expect(mockedUseNotifications().createNotification).toHaveBeenCalledWith({
             type: 'error',
-            text: expect.stringContaining('Anything can happen in the fallback'),
+            text: expect.stringContaining('Failed to fetch'),
         });
     });
 });
