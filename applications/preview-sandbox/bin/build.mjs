@@ -1,15 +1,14 @@
 #!/usr/bin/env node
+
 /* eslint-disable no-console */
-
-const path = require('path');
-const fs = require('fs');
-
-const esbuild = require('esbuild');
-const browserslistToEsbuild = require('browserslist-to-esbuild');
+import browserslistToEsbuild from 'browserslist-to-esbuild';
+import esbuild from 'esbuild';
+import fs from 'fs';
+import path from 'path';
 
 const isProd = process.env.NODE_ENV === 'production';
-const distDir = path.join(__dirname, '../dist');
-const srcDir = path.join(__dirname, '../src');
+const distDir = './dist';
+const srcDir = './src';
 
 const fileName = 'sandbox.js';
 const outFile = path.join(distDir, fileName);
@@ -37,6 +36,6 @@ const apps = ['drive', 'mail'];
 const publicPath = 'public/assets';
 
 apps.forEach((app) => {
-    fs.copyFileSync(outFile, path.join(__dirname, `../../${app}`, publicPath, fileName));
+    fs.copyFileSync(outFile, path.join(`../${app}`, publicPath, fileName));
     console.log(`✅ Copied - applications/${app}/${publicPath}`);
 });
