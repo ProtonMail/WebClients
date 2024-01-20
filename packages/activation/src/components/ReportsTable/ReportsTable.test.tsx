@@ -1,7 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
 import ReportsTable from './ReportsTable';
@@ -27,9 +28,9 @@ afterAll(() => {
 describe('Reports table testing', () => {
     it('Should display placeholder text when no imports available', async () => {
         server.use(
-            rest.get('importer/v1/reports', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([]))),
-            rest.get('importer/v1/importers', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([]))),
-            rest.get('importer/v1/sync', (req, res, ctx) => res(ctx.set('date', '01/01/2022'), ctx.json([])))
+            http.get('importer/v1/reports', () => HttpResponse.json([], { headers })),
+            http.get('importer/v1/importers', () => HttpResponse.json([], { headers })),
+            http.get('importer/v1/sync', () => HttpResponse.json([], { headers }))
         );
 
         easySwitchRender(<ReportsTable />);
@@ -75,11 +76,7 @@ describe('Reports table testing', () => {
             ],
         };
 
-        server.use(
-            rest.get('importer/v1/reports', (req, res, ctx) =>
-                res(ctx.set('date', '01/01/2022'), ctx.json(finishedReport))
-            )
-        );
+        server.use(http.get('importer/v1/reports', () => HttpResponse.json(finishedReport, { headers })));
 
         easySwitchRender(<ReportsTable />);
 
@@ -129,27 +126,27 @@ describe('Reports table testing', () => {
         const singleImporterSpy = jest.fn();
 
         server.use(
-            rest.get('/importer/v1/mail/importers/authinfo', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/importer/v1/mail/importers/authinfo', () => {
+                return HttpResponse.json({}, { headers });
             }),
-            rest.get('importer/v1/importers', (req, res, ctx) => {
+            http.get('importer/v1/importers', () => {
                 importersSpy();
-                return res(
-                    ctx.set('date', '01/01/2022'),
-                    ctx.json({
+                return HttpResponse.json(
+                    {
                         Code: 1000,
                         Importers: [importerData],
-                    })
+                    },
+                    { headers }
                 );
             }),
-            rest.get(`importer/v1/importers/${importerData.ID}`, (req, res, ctx) => {
+            http.get(`importer/v1/importers/${importerData.ID}`, () => {
                 singleImporterSpy();
-                return res(
-                    ctx.set('date', '01/01/2022'),
-                    ctx.json({
+                return HttpResponse.json(
+                    {
                         Code: 1000,
                         Importer: importerData,
-                    })
+                    },
+                    { headers }
                 );
             })
         );
@@ -199,9 +196,9 @@ describe('Reports table testing', () => {
         const importersSpy = jest.fn();
 
         server.use(
-            rest.get('importer/v1/sync', (req, res, ctx) => {
+            http.get('importer/v1/sync', () => {
                 importersSpy();
-                return res(ctx.set('date', '01/01/2022'), ctx.json(ongoingForward));
+                return HttpResponse.json(ongoingForward, { headers });
             })
         );
 
