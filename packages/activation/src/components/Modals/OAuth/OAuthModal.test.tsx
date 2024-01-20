@@ -1,7 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { rest } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
+import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 
 import ProviderCards from '../../SettingsArea/ProviderCards/ProviderCards';
@@ -71,11 +72,11 @@ jest.mock('@proton/components/hooks/useFeature', () => () => {
 beforeAll(() => {
     server.listen();
     server.use(
-        rest.get('/core/v4/system/config', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/core/v4/system/config', () => {
+            return HttpResponse.json({}, { headers });
         }),
-        rest.get('/calendar/v1', (req, res, ctx) => {
-            return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+        http.get('/calendar/v1', () => {
+            return HttpResponse.json({}, { headers });
         })
     );
 });
@@ -138,8 +139,8 @@ describe('OAuth start step', () => {
 
     it('Should render the product modal and fire submit', async () => {
         server.use(
-            rest.get('/calendar/v1', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/calendar/v1', () => {
+                return HttpResponse.json({}, { headers });
             })
         );
 
@@ -159,8 +160,8 @@ describe('OAuth start step', () => {
 
     it('Should render the product and instructions modal when Google is selected', async () => {
         server.use(
-            rest.get('/calendar/v1', (req, res, ctx) => {
-                return res(ctx.set('date', '01/01/2022'), ctx.json({}));
+            http.get('/calendar/v1', () => {
+                return HttpResponse.json({}, { headers });
             })
         );
 

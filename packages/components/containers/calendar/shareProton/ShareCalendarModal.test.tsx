@@ -1,16 +1,20 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
+import { setupServer } from 'msw/node';
 
 import { useApi, useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
-import { addressBuilder, calendarBuilder, mockApiWithServer, mockNotifications, server } from '@proton/testing';
+import { addressBuilder, calendarBuilder, mockApiWithServer, mockNotifications } from '@proton/testing';
+import { getHandlers } from '@proton/testing/lib/handlers';
 
 import { CacheProvider } from '../../cache';
 import ShareCalendarModal from './ShareCalendarModal';
+
+const server = setupServer(...getHandlers());
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences');
 jest.mock('@proton/components/hooks/useNotifications');
