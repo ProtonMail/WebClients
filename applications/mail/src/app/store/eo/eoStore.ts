@@ -7,6 +7,7 @@ import eo from './eoSlice';
 
 export const setupStore = () => {
     return configureStore({
+        devTools: process.env.NODE_ENV !== 'production',
         reducer: {
             eo,
             ...elementsReducer,
