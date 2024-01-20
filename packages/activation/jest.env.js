@@ -11,7 +11,19 @@ class MyEnvironment extends JSDOMEnvironment {
                 globalConfig,
                 projectConfig: {
                     ...projectConfig,
-                    globals: { ...projectConfig.globals, Uint32Array, Uint8Array, ArrayBuffer },
+                    globals: {
+                        ...projectConfig.globals,
+                        Uint32Array,
+                        Uint8Array,
+                        ArrayBuffer,
+                        TextDecoder,
+                        TextEncoder,
+                        ReadableStream,
+                        Response,
+                        Request,
+                        fetch,
+                        structuredClone,
+                    },
                 },
             },
             context
