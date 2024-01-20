@@ -5,7 +5,7 @@
     "author": "Proton AG",
     "main": "index.ts",
     "scripts": {
-        "build": "cross-env NODE_ENV=production ./bin/build.js",
+        "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check-types": "tsc",
         "lint": "eslint src --ext .ts --cache",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
