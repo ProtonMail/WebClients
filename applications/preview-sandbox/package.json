@@ -5,7 +5,7 @@
     "author": "Proton AG",
     "main": "index.ts",
     "scripts": {
-        "build": "cross-env NODE_ENV=production ./bin/build.js",
+        "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check-types": "tsc",
         "lint": "eslint src --ext .ts --cache",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
@@ -17,7 +17,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "browserslist-to-esbuild": "^1.2.0",
+        "browserslist-to-esbuild": "^2.1.1",
         "cross-env": "^7.0.3",
         "esbuild": "^0.19.11",
         "eslint": "^8.56.0",

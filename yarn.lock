@@ -3533,7 +3533,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.18, @jridgewell/trace-mapping@npm:^0.3.20, @jridgewell/trace-mapping@npm:^0.3.21, @jridgewell/trace-mapping@npm:^0.3.9":
+"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.17, @jridgewell/trace-mapping@npm:^0.3.18, @jridgewell/trace-mapping@npm:^0.3.20, @jridgewell/trace-mapping@npm:^0.3.9":
+  version: 0.3.20
+  resolution: "@jridgewell/trace-mapping@npm:0.3.20"
+  dependencies:
+    "@jridgewell/resolve-uri": "npm:^3.1.0"
+    "@jridgewell/sourcemap-codec": "npm:^1.4.14"
+  checksum: 0ea0b2675cf513ec44dc25605616a3c9b808b9832e74b5b63c44260d66b58558bba65764f81928fc1033ead911f8718dca1134049c3e7a93937faf436671df31
+  languageName: node
+  linkType: hard
+
+"@jridgewell/trace-mapping@npm:^0.3.21":
   version: 0.3.22
   resolution: "@jridgewell/trace-mapping@npm:0.3.22"
   dependencies:
@@ -12927,16 +12937,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist-to-esbuild@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "browserslist-to-esbuild@npm:1.2.0"
+"browserslist-to-esbuild@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "browserslist-to-esbuild@npm:2.1.1"
   dependencies:
-    browserslist: "npm:^4.17.3"
-  checksum: d0825e3fb622d0d846ea176af1709ead0529aedc6e1e5d4bc10d8fbe614aab561ec781a3e5d6638174b9ac5e955af5c45826c561bb4f18e6b6883fa2e99fee18
+    meow: "npm:^13.0.0"
+  peerDependencies:
+    browserslist: "*"
+  bin:
+    browserslist-to-esbuild: cli/index.js
+  checksum: 4d1968efd72850949d5dfa355f4663c695a8fd7b259b19cc81ecd0ed33dd37bbd327475c644de3f2beb53e737c6e511c6e84ed3e97a2ff49f117505a7707c72d
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.0.0, browserslist@npm:^4.12.0, browserslist@npm:^4.14.5, browserslist@npm:^4.17.3, browserslist@npm:^4.22.1, browserslist@npm:^4.22.2":
+"browserslist@npm:^4.0.0, browserslist@npm:^4.12.0, browserslist@npm:^4.14.5, browserslist@npm:^4.22.1, browserslist@npm:^4.22.2":
   version: 4.22.2
   resolution: "browserslist@npm:4.22.2"
   dependencies:
@@ -24675,6 +24689,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"meow@npm:^13.0.0":
+  version: 13.1.0
+  resolution: "meow@npm:13.1.0"
+  checksum: 2dac9dbf99a17ce29618fe5919072a9b28e2aedb9547f9b1f15d046d5501dd6c14fe1f35f7a5665d0ee7111c98c4d359fcf3f985463ec5896dd50177363f442d
+  languageName: node
+  linkType: hard
+
 "meow@npm:^3.1.0":
   version: 3.7.0
   resolution: "meow@npm:3.7.0"
@@ -28059,7 +28080,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.15, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
+"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
+  version: 6.0.13
+  resolution: "postcss-selector-parser@npm:6.0.13"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 51f099b27f7c7198ea1826470ef0adfa58b3bd3f59b390fda123baa0134880a5fa9720137b6009c4c1373357b144f700b0edac73335d0067422063129371444e
+  languageName: node
+  linkType: hard
+
+"postcss-selector-parser@npm:^6.0.15":
   version: 6.0.15
   resolution: "postcss-selector-parser@npm:6.0.15"
   dependencies:
@@ -28835,7 +28866,7 @@ __metadata:
   resolution: "proton-preview-sandbox@workspace:applications/preview-sandbox"
   dependencies:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    browserslist-to-esbuild: "npm:^1.2.0"
+    browserslist-to-esbuild: "npm:^2.1.1"
     cross-env: "npm:^7.0.3"
     docx-preview: "npm:^0.3.0"
     esbuild: "npm:^0.19.11"
