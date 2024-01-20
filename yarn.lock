@@ -5731,7 +5731,7 @@ __metadata:
   dependencies:
     "@inquirer/prompts": "npm:^3.3.0"
     chalk: "npm:^5.3.0"
-    googleapis: "npm:^129.0.0"
+    googleapis: "npm:^131.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
   languageName: unknown
@@ -19793,23 +19793,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^128.0.0":
-  version: 128.0.0
-  resolution: "googleapis@npm:128.0.0"
+"googleapis@npm:^131.0.0":
+  version: 131.0.0
+  resolution: "googleapis@npm:131.0.0"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 5c6826d25d9d6c3bdbe3923022353e4ba86a7eb3787c352cea61558cff0f00a2b18d1ff83548dc1f6b9e9fe4b4fbad66dd2cb0a8b180311e33e83dfab2427008
-  languageName: node
-  linkType: hard
-
-"googleapis@npm:^129.0.0":
-  version: 129.0.0
-  resolution: "googleapis@npm:129.0.0"
-  dependencies:
-    google-auth-library: "npm:^9.0.0"
-    googleapis-common: "npm:^7.0.0"
-  checksum: a1e078b2c3da1a1fe3ba1de1233700872c973fb49a6254c59a83c2c1884f4493b059fe43e7bb65226b9493c429da69e09e842368c82abb8c52118d2dbc657da3
+  checksum: ead6d42597fe87e7b2d2514743c4397de73d26a48a99736b7cb095923021330d60296ccf5f6a21dbb530817ff0abca70504facc5b14999cc560983063ea9c1d1
   languageName: node
   linkType: hard
 
@@ -28668,7 +28658,7 @@ __metadata:
     del: "npm:^7.1.0"
     eslint: "npm:^8.56.0"
     gmail-tester: "npm:^1.3.8"
-    googleapis: "npm:^128.0.0"
+    googleapis: "npm:^131.0.0"
     js-yaml: "npm:^4.1.0"
     json-to-zod: "npm:^1.1.2"
     mailosaur: "npm:^8.6.1"
