@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC17, useState } from 'react';
 
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -19,7 +19,7 @@ type AliasFormProps<V extends AliasFormValues> = {
     loading: boolean;
 };
 
-const AliasFormBase: FC<{
+const AliasFormBase: FC17<{
     disabled: boolean;
     loading: boolean;
     mailboxes: AliasMailbox[];

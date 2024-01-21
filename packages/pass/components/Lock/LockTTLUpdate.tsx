@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,7 +22,7 @@ const getSessionLockTTLOptions = () => [
     { title: c('Label').t`1 hour`, value: 3600 },
 ];
 
-export const LockTTLUpdate: VFC<Props> = ({ ttl, disabled, onChange }) => {
+export const LockTTLUpdate: VFC17<Props> = ({ ttl, disabled, onChange }) => {
     const { confirmPin } = useSessionLockConfirmContext();
 
     const handleOnChange = async (ttl: number) =>

@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -18,7 +16,7 @@ type Props = {
     handleCancelClick: () => void;
 } & Omit<DiscardableModalProps, 'onDiscard'>;
 
-export const ItemEditPanel: FC<Props> = ({ type, formId, valid, discardable, handleCancelClick, children }) => (
+export const ItemEditPanel = ({ type, formId, valid, discardable, handleCancelClick, children }: Props) => (
     <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
         {(props) => (
             <Panel

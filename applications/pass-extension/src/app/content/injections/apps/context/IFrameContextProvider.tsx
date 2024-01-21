@@ -1,4 +1,4 @@
-import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { type FC17, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import type {
     IFrameCloseOptions,
@@ -64,7 +64,7 @@ const IFrameContext = createContext<IFrameContextValue>({
  * dedicated port with the service-worker and sending out port-
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
-export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoint, children }) => {
+export const IFrameContextProvider: FC17<{ endpoint: IFrameEndpoint }> = ({ endpoint, children }) => {
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);

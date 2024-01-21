@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { ModalProps } from '@proton/components';
 import { ModalTwo } from '@proton/components';
@@ -9,7 +9,7 @@ export type Props = Omit<ModalProps, 'children'> & {
     children: ReactNode | ((didEnter: boolean) => ReactNode);
 };
 
-export const SidebarModal: FC<Props> = ({ children, className, ...props }) => {
+export const SidebarModal = ({ children, className, ...props }: Props): ReactNode => {
     const [didEnter, setDidEnter] = useState(false);
     const timer = useRef<NodeJS.Timeout>();
 

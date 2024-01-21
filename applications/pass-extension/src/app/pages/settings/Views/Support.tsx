@@ -1,7 +1,7 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { ReportAProblem } from '@proton/pass/components/Settings/ReportAProblem';
 
-export const Support: VFC = () => {
+export const Support: VFC17 = () => {
     return <ReportAProblem />;
 };

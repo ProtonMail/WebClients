@@ -1,5 +1,5 @@
 import type { KeyboardEvent } from 'react';
-import { type VFC, useState } from 'react';
+import { type VFC17, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -32,7 +32,7 @@ import './PauseList.scss';
 
 const criterias = Object.keys(CRITERIA_MASKS) as CriteriaMasks[];
 
-export const PauseList: VFC = () => {
+export const PauseList: VFC17 = () => {
     const disallowedDomains = useSelector(selectDisallowedDomains);
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();

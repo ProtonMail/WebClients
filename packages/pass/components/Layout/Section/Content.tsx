@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import './Content.scss';
 
-export const Content: FC = ({ children }) => {
+export const Content: FC17 = ({ children }) => {
     return <div id="content">{children}</div>;
 };

@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import type { VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,7 @@ import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { usePasswordContext } from './PasswordProvider';
 
-export const PasswordHistoryItem: VFC<PasswordHistoryEntry> = ({ value, origin, id, createTime }) => {
+export const PasswordHistoryItem: VFC17<PasswordHistoryEntry> = ({ value, origin, id, createTime }) => {
     const passwordContext = usePasswordContext();
 
     return (

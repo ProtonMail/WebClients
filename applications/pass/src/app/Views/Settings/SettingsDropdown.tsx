@@ -1,4 +1,4 @@
-import { type FC, useCallback, useMemo } from 'react';
+import { type FC17, useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ import { useAuthService } from '../../Context/AuthServiceProvider';
 
 type SettingAction = { key: string; label: string; icon: IconName };
 
-export const SettingsDropdown: FC = () => {
+export const SettingsDropdown: FC17 = () => {
     const { navigate } = useNavigation();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();

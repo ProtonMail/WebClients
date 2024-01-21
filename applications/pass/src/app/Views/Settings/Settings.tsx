@@ -1,4 +1,4 @@
-import { type ComponentProps, type FC, useEffect, useMemo, useState } from 'react';
+import { type ComponentProps, type FC17, useEffect, useMemo, useState } from 'react';
 import { type RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -55,7 +55,7 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
     return idx !== -1 ? idx : 0;
 };
 
-export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
+export const SettingsTabs: FC17<RouteChildrenProps> = (props) => {
     const { openSettings } = usePassCore();
     const navigateToAccount = useNavigateToAccount();
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
@@ -82,7 +82,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     );
 };
 
-export const Settings: FC<RouteChildrenProps> = (props) => {
+export const Settings: FC17<RouteChildrenProps> = (props) => {
     return (
         <div className="pass-settings flex flex-column w-full p-4 h-full">
             <LockConfirmContextProvider>

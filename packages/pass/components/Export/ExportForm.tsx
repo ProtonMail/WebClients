@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
 
-export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
+export const ExportForm: FC17<ExporterProps> = ({ form, loading = false }) => {
     return (
         <FormikProvider value={form}>
             <Form className="modal-two-dialog-container">

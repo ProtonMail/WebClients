@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { type VFC, useMemo } from 'react';
+import { type VFC17, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import type { Dispatch } from 'redux';
@@ -124,7 +124,7 @@ const getSettings =
         ];
     };
 
-export const Behaviors: VFC = () => {
+export const Behaviors: VFC17 = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
     const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));

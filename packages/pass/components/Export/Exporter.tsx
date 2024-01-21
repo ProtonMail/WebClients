@@ -1,4 +1,4 @@
-import { type FC, useState } from 'react';
+import { type FC17, useState } from 'react';
 
 import { useFormik } from 'formik';
 import { c } from 'ttag';
@@ -22,7 +22,7 @@ type Props = {
     onConfirm: (password: string) => MaybePromise<void>;
 };
 
-export const Exporter: FC<Props> = ({ onConfirm }) => {
+export const Exporter: FC17<Props> = ({ onConfirm }) => {
     const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
 

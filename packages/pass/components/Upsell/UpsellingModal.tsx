@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC17, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -35,7 +35,7 @@ const getContent = (type: UpsellType): UpsellModalContent =>
         },
     })[type];
 
-export const UpsellingModal: FC<Props> = ({
+export const UpsellingModal: FC17<Props> = ({
     extraActions,
     size = 'medium',
     type,

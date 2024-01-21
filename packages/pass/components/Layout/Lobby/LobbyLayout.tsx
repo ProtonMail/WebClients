@@ -1,11 +1,11 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import protonPassIcon from '@proton/pass/assets/protonpass-icon.svg';
 import clsx from '@proton/utils/clsx';
 
 import './LobbyLayout.scss';
 
-export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => {
+export const LobbyLayout: FC17<{ overlay: boolean }> = ({ overlay, children }) => {
     return (
         <div
             className="pass-lobby relative p-7 anime-fade-in"

@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -47,7 +47,7 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
     state: INITIAL_STATE,
 });
 
-export const SpotlightProvider: FC = ({ children }) => {
+export const SpotlightProvider: FC17 = ({ children }) => {
     const { onOnboardingAck } = usePassCore();
     const { latestInvite, respondToInvite } = useInviteContext();
 

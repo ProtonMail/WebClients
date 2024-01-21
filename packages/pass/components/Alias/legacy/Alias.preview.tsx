@@ -1,11 +1,11 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { c } from 'ttag';
 
 import { MiddleEllipsis } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-export const AliasPreview: VFC<{
+export const AliasPreview: VFC17<{
     loading?: boolean;
     prefix: string;
     suffix: string;
