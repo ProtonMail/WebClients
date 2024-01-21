@@ -103,9 +103,9 @@ describe('FocusTrap', () => {
         const { getByTestId } = render(<Component />);
         expect(getByTestId('root')).not.toHaveAttribute('tabIndex', '-1');
         const openerButton = getByTestId('button');
-        openerButton.click();
+        fireEvent.click(openerButton);
         expect(getByTestId('root')).toHaveAttribute('tabIndex', '-1');
-        openerButton.click();
+        fireEvent.click(openerButton);
         expect(getByTestId('root')).not.toHaveAttribute('tabIndex', '-1');
     });
 
@@ -216,7 +216,7 @@ describe('FocusTrap', () => {
         const { getByTestId } = render(<Component />);
         const openerButton = getByTestId('button1');
         openerButton.focus();
-        openerButton.click();
+        fireEvent.click(openerButton);
         await waitFor(() => {
             expect(getByTestId('input1')).toHaveFocus();
         });
