@@ -204,7 +204,7 @@ describe('EmailReminderWidget', () => {
 
         expect(screen.getByText(/EventReminderText/)).toBeInTheDocument();
 
-        fireEvent.click(screen.getByRole(/button/));
+        fireEvent.click(screen.getByRole('button', { name: 'Show' }));
 
         expect(screen.getByText(/visionary@proton.black/)).toBeInTheDocument();
         expect(screen.getByText(/calendar@proton.black/)).toBeInTheDocument();

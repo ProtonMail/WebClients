@@ -48,10 +48,10 @@ it('should render redirect step by default', () => {
     expect(screen.getByText('Verify')).toBeInTheDocument();
 });
 
-it('should set redirecting step once user clicks on verify', () => {
+it('should set redirecting step once user clicks on verify', async () => {
     render(<ContextPaymentVerificationModal {...props} />);
     screen.getByText('Verify').click();
-    expect(screen.getByTestId('redirecting-message')).toBeInTheDocument();
+    expect(await waitFor(() => screen.findByTestId('redirecting-message'))).toBeInTheDocument();
 });
 
 it('should set redirected after processingDelay passes', async () => {
@@ -62,7 +62,7 @@ it('should set redirected after processingDelay passes', async () => {
 
     await wait(processingDelay);
 
-    expect(screen.getByTestId('redirected-message')).toBeInTheDocument();
+    expect(await waitFor(() => screen.findByTestId('redirected-message'))).toBeInTheDocument();
 });
 
 it('should set fail step if promise rejects', async () => {
@@ -94,7 +94,7 @@ it('should abort the promise and call onClose if user cancels', async () => {
 
     await wait(processingDelay);
 
-    screen.getByText('Cancel').click();
+    await (await waitFor(() => screen.findByText('Cancel'))).click();
 
     await waitFor(() => expect(props.onClose).toHaveBeenCalledTimes(1));
     expect(promiseWithController.abort.abort).toHaveBeenCalledTimes(1);
