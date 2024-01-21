@@ -69,18 +69,18 @@ const slice = createSlice({
                     events: action.payload.Domains,
                     itemKey: 'Domain',
                 });
-            }
+            } else {
+                const isFreeDomains = original(state)?.value === freeDomains;
 
-            const isFreeDomains = original(state)?.value === freeDomains;
+                if (!isFreeDomains && action.payload.User && !canFetch(action.payload.User)) {
+                    // Do not get any domain update when user becomes unsubscribed.
+                    state.value = freeDomains;
+                }
 
-            if (!isFreeDomains && action.payload.User && !canFetch(action.payload.User)) {
-                // Do not get any domain update when user becomes unsubscribed.
-                state.value = freeDomains;
-            }
-
-            if (isFreeDomains && action.payload.User && canFetch(action.payload.User)) {
-                delete state.value;
-                delete state.error;
+                if (isFreeDomains && action.payload.User && canFetch(action.payload.User)) {
+                    delete state.value;
+                    delete state.error;
+                }
             }
         });
     },
