@@ -1,8 +1,10 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import '@proton/polyfill';
 
 import './01-style';
 import LiteApp from './LiteApp';
 
-ReactDOM.render(<LiteApp />, document.querySelector('.app-root'));
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(<LiteApp />);
