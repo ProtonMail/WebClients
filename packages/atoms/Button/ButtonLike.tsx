@@ -1,7 +1,7 @@
-import { ElementType, ForwardedRef, ReactElement, forwardRef } from 'react';
+import { ElementType, ForwardedRef, forwardRef } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
-import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { CircleLoader } from '../CircleLoader';
@@ -133,7 +133,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
     );
 };
 
-const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonLikeProps<E>) => ReactElement | null =
+const ButtonLike: PolymorphicForwardRefExoticComponent<ButtonLikeOwnProps, typeof defaultElement> =
     forwardRef(ButtonLikeBase);
 
 export default ButtonLike;

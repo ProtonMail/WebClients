@@ -112,7 +112,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             handleAddRecipient(getRecipientFromAutocompleteItem(contactEmails, item));
         };
 
-        const getData = useCallback((value) => {
+        const getData = useCallback((value: { label: string }) => {
             return value.label;
         }, []);
 

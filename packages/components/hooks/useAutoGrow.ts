@@ -22,7 +22,7 @@ const useAutoGrow = ({ maxRows = 5, minRows = 1, autoGrow = false }) => {
     const [rows, setRows] = useState(minRows);
 
     const updateTextArea = useCallback(
-        (el) => {
+        (el: HTMLTextAreaElement) => {
             setRows(getTextAreaRows({ el, minRows, maxRows }));
         },
         [minRows, maxRows]

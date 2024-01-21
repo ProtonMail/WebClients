@@ -117,7 +117,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
             publicKey,
         });
 
-    const handleEditorReady = useCallback((editorActions) => {
+    const handleEditorReady = useCallback((editorActions: ExternalEditorActions) => {
         setEditorReady(true);
         editorActionsRef.current = editorActions;
     }, []);

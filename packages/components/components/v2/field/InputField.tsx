@@ -1,20 +1,10 @@
-import React, {
-    ElementType,
-    ForwardedRef,
-    ReactElement,
-    ReactNode,
-    Ref,
-    forwardRef,
-    useContext,
-    useRef,
-    useState,
-} from 'react';
+import React, { ElementType, ForwardedRef, ReactNode, Ref, forwardRef, useContext, useRef, useState } from 'react';
 
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
-import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { FormContext } from '../../../components';
@@ -235,8 +225,7 @@ https://github.com/storybookjs/storybook/issues/9511
 https://github.com/styleguidist/react-docgen-typescript/issues/314
 https://github.com/styleguidist/react-docgen-typescript/issues/215
 */
-export const InputField: <E extends ElementType = typeof defaultElement>(
-    props: InputFieldProps<E>
-) => ReactElement | null = forwardRef(InputFieldBase);
+export const InputField: PolymorphicForwardRefExoticComponent<InputFieldOwnProps, typeof defaultElement> =
+    forwardRef(InputFieldBase);
 
 export default InputField;

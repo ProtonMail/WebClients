@@ -14,7 +14,7 @@ const useApiWithoutResult = <R, F extends QueryFunction = QueryFunction>(fn: F):
     const { loading, run } = useAsync(false);
 
     const requestAndSetLoading = useCallback(
-        (...args) => {
+        (...args: any) => {
             const promise = request<R>(fn(...args));
             run(promise);
             return promise;
