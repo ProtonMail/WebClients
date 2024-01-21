@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { type AnyAction, configureStore, createAction } from '@reduxjs/toolkit';
@@ -42,7 +43,9 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: AnyActio
                     onFailure,
                 }),
             {
-                wrapper: ({ children }) => <ReduxProvider store={store}>{children}</ReduxProvider>,
+                wrapper: (({ children }: { children: ReactNode }) => (
+                    <ReduxProvider store={store}>{children}</ReduxProvider>
+                )) as any,
             }
         ),
     };

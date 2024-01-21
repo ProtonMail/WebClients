@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react';
+import { type FC17, memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
@@ -18,7 +18,7 @@ type Props = ButtonLikeProps<any> & {
     className?: string;
 };
 
-const PinnedItemRaw: FC<Props> = ({ item, active = false, className, ...rest }) => {
+const PinnedItemRaw: FC17<Props> = ({ item, active = false, className, ...rest }) => {
     const { data } = item;
 
     return (

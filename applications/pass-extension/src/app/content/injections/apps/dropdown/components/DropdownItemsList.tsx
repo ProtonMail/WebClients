@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownMenu } from '@proton/components/components';
@@ -8,7 +8,7 @@ import { DROPDOWN_ITEM_HEIGHT } from './DropdownItem';
 const DROPDOWN_MAX_VISIBLE_ITEMS = 3;
 const DROPDOWN_LIST_MAX_HEIGHT = DROPDOWN_MAX_VISIBLE_ITEMS * DROPDOWN_ITEM_HEIGHT;
 
-export const DropdownItemsList: FC = ({ children }) => (
+export const DropdownItemsList: FC17 = ({ children }) => (
     <DropdownMenu>
         <div className="max-h-custom overflow-hidden" style={{ '--max-h-custom': `${DROPDOWN_LIST_MAX_HEIGHT}rem` }}>
             <Scroll

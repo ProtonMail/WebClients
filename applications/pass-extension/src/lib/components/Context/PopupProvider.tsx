@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { type FC17, createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import {
     ExtensionConnect,
@@ -47,7 +47,7 @@ export const PopupContext = createContext<PopupContextValue>({
 /* this cannot be included directly in `PopupContextProvider` because
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
-const PopupContextProvider: FC = ({ children }) => {
+const PopupContextProvider: FC17 = ({ children }) => {
     const extensionContext = useExtensionConnect();
     const { status } = extensionContext.state;
     const { tabId } = extensionContext.context!;
@@ -86,7 +86,7 @@ const PopupContextProvider: FC = ({ children }) => {
     return <PopupContext.Provider value={popupContext}>{children}</PopupContext.Provider>;
 };
 
-export const PopupProvider: FC = ({ children }) => {
+export const PopupProvider: FC17 = ({ children }) => {
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
 

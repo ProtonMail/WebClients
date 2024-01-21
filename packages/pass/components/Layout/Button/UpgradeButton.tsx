@@ -1,4 +1,4 @@
-import type { CSSProperties, VFC } from 'react';
+import type { CSSProperties, VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,7 +23,7 @@ type UpgradeButtonProps = {
     upsellRef: UpsellRef;
 };
 
-export const UpgradeButton: VFC<UpgradeButtonProps> = ({
+export const UpgradeButton: VFC17<UpgradeButtonProps> = ({
     buttonSize,
     className,
     iconSize,
