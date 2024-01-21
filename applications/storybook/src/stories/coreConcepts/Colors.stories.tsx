@@ -1,3 +1,5 @@
+import { FunctionComponent, ReactNode } from 'react';
+
 import { ColorItem, ColorPalette } from '@storybook/addon-docs';
 
 import { getTitle } from '../../helpers/title';
@@ -12,9 +14,11 @@ export default {
     },
 };
 
+const UghColorPalette = ColorPalette as FunctionComponent<{ children: ReactNode }>;
+
 const BaseColors = () => (
     <>
-        <ColorPalette>
+        <UghColorPalette>
             <ColorItem
                 title="Primary"
                 subtitle="Protons primary color"
@@ -135,7 +139,7 @@ const BaseColors = () => (
                     'var(--interaction-weak-contrast)',
                 ]}
             />
-        </ColorPalette>
+        </UghColorPalette>
     </>
 );
 

@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -42,7 +42,7 @@ const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
     handler?.();
 };
 
-export const VaultItem: VFC<Props> = ({
+export const VaultItem: VFC17<Props> = ({
     count,
     dense,
     label,

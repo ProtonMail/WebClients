@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import { type FC17, createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -54,7 +54,7 @@ export const useAuthService = (): AuthService => {
  * to be able to leverage the history object provided by `react-router-dom` and the
  * notifications handler. Ideally this could live outside of react-land by moving the
  * authentication service to an event-bus architecture.. */
-export const AuthServiceProvider: FC = ({ children }) => {
+export const AuthServiceProvider: FC17 = ({ children }) => {
     const sw = useServiceWorker();
     const client = useClientRef();
     const history = useHistory();

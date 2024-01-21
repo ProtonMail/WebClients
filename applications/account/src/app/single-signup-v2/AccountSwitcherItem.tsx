@@ -1,7 +1,7 @@
-import { ElementType, ReactElement, ReactNode, forwardRef } from 'react';
+import { ElementType, ReactNode, forwardRef } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar';
-import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
@@ -53,7 +53,7 @@ const AccountSwitcherItemBase = <E extends ElementType = typeof defaultElement>(
     );
 };
 
-const AccountSwitcherItem: <E extends ElementType = typeof defaultElement>(props: Props<E>) => ReactElement | null =
+const AccountSwitcherItem: PolymorphicForwardRefExoticComponent<OwnProps, typeof defaultElement> =
     forwardRef(AccountSwitcherItemBase);
 
 export default AccountSwitcherItem;

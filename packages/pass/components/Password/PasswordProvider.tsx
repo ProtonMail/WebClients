@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useMemo, useState } from 'react';
+import { type FC17, createContext, useContext, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
@@ -48,7 +48,7 @@ const PasswordContext = createContext<PasswordContextValue>({
 
 const getInitialModalState = (): ModalState => ({ actionLabel: '' });
 
-export const PasswordProvider: FC = ({ children }) => {
+export const PasswordProvider: FC17 = ({ children }) => {
     const dispatch = useDispatch();
     const { resolver, state, handler, abort } = useAsyncModalHandles<string, ModalState>({ getInitialModalState });
     const [showHistory, setShowHistory] = useState(false);

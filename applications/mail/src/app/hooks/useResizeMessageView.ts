@@ -46,7 +46,7 @@ export const useResizeMessageView = (
     };
 
     const resizeWithMouse = useCallback(
-        (e) => {
+        (e: MouseEvent) => {
             if (isResizing) {
                 // Get left of container to have the size of the sidebar
                 const sidebarWidth = containerRef.current ? containerRef.current.getBoundingClientRect().left : 0;

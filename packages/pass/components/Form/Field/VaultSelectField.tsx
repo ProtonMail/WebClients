@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type VFC17, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -22,7 +22,7 @@ type VaultSelectFieldProps = Omit<SelectFieldProps, 'children'> & {
     placeholder?: string;
 };
 
-export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
+export const VaultSelectField: VFC17<VaultSelectFieldProps> = ({
     extraOptions = [],
     excludeOptions = [],
     placeholder,

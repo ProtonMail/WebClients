@@ -1,4 +1,4 @@
-import { FC, createContext, useContext, useEffect, useState } from 'react';
+import { FC, ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
@@ -19,7 +19,7 @@ export const PhotosContext = createContext<{
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
 } | null>(null);
 
-export const PhotosProvider: FC = ({ children }) => {
+export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const [photosShare, setPhotosShare] = useState<ShareWithKey>();
     const [share, setShare] = useState<ShareWithKey>();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();

@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
+import { type FC17, type ReactElement, useEffect, useMemo, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
@@ -17,7 +17,7 @@ type Props = {
     placeholder: () => ReactElement;
 };
 
-export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
+export const ItemsListBase: FC17<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
     const listRef = useRef<List>(null);
 
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort]);

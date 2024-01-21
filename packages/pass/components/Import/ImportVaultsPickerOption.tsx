@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -22,7 +22,7 @@ type VaultsPickerOptionProps = {
     onChange: (shareId: MaybeNull<string>) => void;
 };
 
-export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
+export const ImportVaultPickerOption: FC17<VaultsPickerOptionProps> = ({
     data: { name, items },
     vaults,
     allowNewVault,

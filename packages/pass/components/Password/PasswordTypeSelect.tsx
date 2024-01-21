@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,7 @@ import './PasswordTypeSelect.scss';
 
 type Props = UsePasswordGeneratorResult & { dense?: boolean };
 
-export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswordOptions }) => (
+export const PasswordTypeSelect: FC17<Props> = ({ config, dense = false, setPasswordOptions }) => (
     <div className="flex items-center justify-space-between gap-x-2">
         <label htmlFor="password-type" className="shrink-0">
             {c('Label').t`Type`}
