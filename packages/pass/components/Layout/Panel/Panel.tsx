@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Scroll } from '@proton/atoms/Scroll';
@@ -13,7 +13,7 @@ type Props = {
     loading?: boolean;
 };
 
-export const Panel: VFC<Props> = ({ header, children, className, loading }) => {
+export const Panel: VFC17<Props> = ({ header, children, className, loading }) => {
     return (
         <article className={clsx('pass-panel flex flex-column flex-nowrap', className)}>
             {header && <div className="shrink-0 px-4 py-3">{header}</div>}

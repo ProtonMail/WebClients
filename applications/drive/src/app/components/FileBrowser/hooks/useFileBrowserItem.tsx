@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { MouseEvent, useCallback, useRef } from 'react';
 
 import { BrowserItemId } from '../interface';
 import { useSelection } from '../state/useSelection';
@@ -11,7 +11,7 @@ interface Options {
     isMultiSelectionDisabled?: boolean;
 
     onItemOpen?: (id: BrowserItemId) => void;
-    onItemContextMenu?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+    onItemContextMenu?: (e: MouseEvent<HTMLElement>) => void;
 }
 
 function useFileBrowserItem({
@@ -106,7 +106,7 @@ function useFileBrowserItem({
     );
 
     const onContextMenu = useCallback(
-        (e) => {
+        (e: MouseEvent<HTMLElement>) => {
             e.stopPropagation();
 
             if (isItemLocked) {

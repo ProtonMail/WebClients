@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import { DropdownMenuButton } from '@proton/components/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
@@ -10,7 +10,7 @@ import './DropdownItem.scss';
 
 export const DROPDOWN_ITEM_HEIGHT = 3.75; /* rem */
 
-export const DropdownItem: VFC<
+export const DropdownItem: VFC17<
     {
         onClick?: () => void;
         title?: string;

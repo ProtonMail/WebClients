@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import Icon from '@proton/components/components/icon/Icon';
@@ -9,7 +9,7 @@ import { SettingsPanel } from '../../../../lib/components/Settings/SettingsPanel
 import { DropdownDebug } from '../../../../lib/components/Settings/debug/DropdownDebug';
 import { NotificationDebug } from '../../../../lib/components/Settings/debug/NotificationDebug';
 
-export const Developer: VFC = () => {
+export const Developer: VFC17 = () => {
     return (
         <>
             <SettingsPanel title="Extension triggers">

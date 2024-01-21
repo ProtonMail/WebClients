@@ -1,4 +1,4 @@
-import { type VFC, useCallback } from 'react';
+import { type VFC17, useCallback } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
@@ -13,7 +13,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-export const Lobby: VFC = () => {
+export const Lobby: VFC17 = () => {
     const { state, logout } = usePopupContext();
     const errored = clientErrored(state.status);
 

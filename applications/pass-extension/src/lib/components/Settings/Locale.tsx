@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -10,7 +10,7 @@ import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const Locale: VFC = () => {
+export const Locale: VFC17 = () => {
     const locale = useSelector(selectLocale);
     const dispatch = useDispatch();
 

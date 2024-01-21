@@ -24,7 +24,7 @@ const getValue = (value?: string | number | Date | null) => {
     return 0;
 };
 
-interface Props extends HTMLAttributes<HTMLTimeElement> {
+interface Props extends Omit<HTMLAttributes<HTMLTimeElement>, 'children'> {
     children?: string | number | Date | null;
     localeCode?: string;
     sameDayOptions?: OptionsWithIntl['sameDayIntlOptions'];

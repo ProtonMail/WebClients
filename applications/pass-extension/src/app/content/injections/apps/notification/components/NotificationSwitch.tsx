@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -18,7 +18,7 @@ type Props = {
     onClose?: (options?: IFrameCloseOptions) => void;
 };
 
-export const NotificationSwitch: VFC<Props> = ({ children, visible, state, settings, onMessage, onClose }) => {
+export const NotificationSwitch: VFC17<Props> = ({ children, visible, state, settings, onMessage, onClose }) => {
     return (
         <div className="h-full p-4 bg-norm relative">
             {children}

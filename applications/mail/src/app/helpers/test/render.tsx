@@ -275,15 +275,15 @@ export const renderHook = async <TProps, TResult>({
     init?.(store);
     const history = createMemoryHistory();
 
-    function HookWrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+    const HookWrapper = ({ children }: { children?: ReactNode }) => {
         return (
             <Wrapper>
                 <TestProvider history={history}>{children}</TestProvider>
             </Wrapper>
         );
-    }
+    };
 
-    const result = originalRenderHook<TProps, TResult>(useCallback, { wrapper: HookWrapper });
+    const result = originalRenderHook<TProps, TResult>(useCallback, { wrapper: HookWrapper as any });
     await actHook(() => wait(0));
     return { ...result, store };
 };

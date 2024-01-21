@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect, useRef, useState } from 'react';
+import { type VFC17, useCallback, useEffect, useRef, useState } from 'react';
 
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -7,7 +7,7 @@ import { type DropdownActions, type IFrameMessage, IFrameMessageType } from '../
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { DropdownSwitch } from '../components/DropdownSwitch';
 
-export const DropdownContent: VFC = () => {
+export const DropdownContent: VFC17 = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
     const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownActions>>(null);

@@ -527,7 +527,7 @@ export const Sandbox = () => {
                     ))}
                 </div>
                 <div className="border rounded w-4/6 relative">
-                    {containerClasses}
+                    {containerClasses('')}
                     <div
                         className={`${containerClasses(assembleClasses(selectedMargin))} bg-strong rounded-sm`}
                         style={{ display: containerDisplay(assembleClasses(selectedMargin)) }}

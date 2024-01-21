@@ -1,10 +1,10 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import { c } from 'ttag';
 
 import { Pill } from '@proton/atoms/Pill';
 
-export const EarlyAccessBadge: FC = () => (
+export const EarlyAccessBadge: FC17 = () => (
     <span className="text-sm">
         <Pill
             className="text-uppercase text-semibold"

@@ -59,6 +59,7 @@ export interface Props extends DetailedHTMLProps<SelectHTMLAttributes<HTMLSelect
     options: OptionProps[];
     loading?: boolean;
     classNameContainer?: string;
+    placeholder?: string;
 }
 
 /**

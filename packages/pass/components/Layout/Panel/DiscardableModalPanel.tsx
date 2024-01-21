@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useCallback, useState } from 'react';
+import { type ReactNode, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,7 +24,7 @@ export type DiscardableModalProps = {
  * can occur with CSS animations. The "flickering caret" problem refers
  * to the flickering effect that can happen when the input's text cursor
  * rapidly gains and loses focus, leading to visual inconsistencies. */
-export const DiscardableModalPanel: FC<DiscardableModalProps> = ({ discardable, onDiscard, children }) => {
+export const DiscardableModalPanel = ({ discardable, onDiscard, children }: DiscardableModalProps) => {
     const ensureMounted = useEnsureMounted();
     const [confirm, setConfirm] = useState<{ opened: boolean }>({ opened: false });
 

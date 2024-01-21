@@ -1,8 +1,10 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import '@proton/polyfill';
 
 import PublicApp from './content/PublicApp';
 import './style';
 
-ReactDOM.render(<PublicApp />, document.querySelector('.app-root'));
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(<PublicApp />);

@@ -1,4 +1,4 @@
-import { type FC, type MutableRefObject, useRef } from 'react';
+import { type FC17, type MutableRefObject, useRef } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -13,7 +13,7 @@ export type SelectFieldProps = FieldProps &
     InputFieldProps<typeof SelectTwo> &
     Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'>;
 
-export const SelectField: FC<SelectFieldProps> = ({
+export const SelectField: FC17<SelectFieldProps> = ({
     className,
     field,
     form,

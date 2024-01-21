@@ -58,7 +58,7 @@ const useGetDecryptedPassphraseAndCalendarKeysRaw = () => {
     const getCalendarBootstrap = useGetCalendarBootstrap();
 
     return useCallback(
-        async (calendarID) => {
+        async (calendarID: string) => {
             const [{ Keys = [], Passphrase = {}, Members = [] }, Addresses = []] = await Promise.all([
                 getCalendarBootstrap(calendarID),
                 getAddresses(),

@@ -1,7 +1,10 @@
-import { SortableContainer } from 'react-sortable-hoc';
+import { ComponentType, ReactNode } from 'react';
+import { SortableContainer, SortableContainerProps } from 'react-sortable-hoc';
 
-interface Props {
-    children: any;
+interface Props extends SortableContainerProps {
+    children: ReactNode;
 }
 
-export default SortableContainer(({ children }: Props) => children);
+const OrderableContainer = SortableContainer(({ children }: Props) => children) as ComponentType<Props>;
+
+export default OrderableContainer;

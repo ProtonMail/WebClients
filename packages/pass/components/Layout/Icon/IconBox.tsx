@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import type { IconSize } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
@@ -16,7 +16,7 @@ type Props = {
 
 const getOuterSize = (size: IconSize) => Math.round(size * 1.8);
 
-export const IconBox: VFC<Props> = ({ className, children, mode, pill = true, size, style }) => {
+export const IconBox: VFC17<Props> = ({ className, children, mode, pill = true, size, style }) => {
     const outerSize = getOuterSize(size);
 
     return (

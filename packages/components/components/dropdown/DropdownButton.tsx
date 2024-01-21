@@ -1,7 +1,7 @@
-import { ElementType, ReactElement, forwardRef } from 'react';
+import { ElementType, forwardRef } from 'react';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from './DropdownCaret';
@@ -58,8 +58,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
     );
 };
 
-const DropdownButton: <E extends ElementType = typeof defaultElement>(
-    props: DropdownButtonProps<E>
-) => ReactElement | null = forwardRef(DropdownButtonBase);
+const DropdownButton: PolymorphicForwardRefExoticComponent<OwnProps, typeof defaultElement> =
+    forwardRef(DropdownButtonBase);
 
 export default DropdownButton;
