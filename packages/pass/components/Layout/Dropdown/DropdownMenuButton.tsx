@@ -1,6 +1,6 @@
 import {
     Children,
-    type FC,
+    type FC17,
     type MouseEvent,
     type ReactElement,
     type ReactNode,
@@ -20,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
 type QuickActionChild = ReactElement<QuickActionChildProp>;
 
-const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }) => {
+const QuickActionsDropdown: FC17<{ children: QuickActionChild[] }> = ({ children }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = (evt: MouseEvent) => {
@@ -70,7 +70,7 @@ type DropdownMenuButtonLabelProps = {
     danger?: boolean;
 };
 
-export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
+export const DropdownMenuButtonLabel: FC17<DropdownMenuButtonLabelProps> = ({
     label,
     labelClassname,
     icon,
@@ -113,7 +113,7 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
     size?: 'small' | 'medium';
 }
 
-export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
+export const DropdownMenuButton: FC17<DropdownMenuButtonProps> = ({
     children,
     className,
     parentClassName,

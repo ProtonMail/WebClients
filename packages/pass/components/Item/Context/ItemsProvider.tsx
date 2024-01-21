@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useEffect } from 'react';
+import { type FC17, createContext, useContext, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -15,7 +15,7 @@ type ItemsContextValue = {
 
 const ItemsContext = createContext<ItemsContextValue>({ filtered: [], searched: [], totalCount: 0 });
 
-export const ItemsProvider: FC = ({ children }) => {
+export const ItemsProvider: FC17 = ({ children }) => {
     const { filters, matchTrash, selectedItem, navigate } = useNavigation();
     const shareId = selectedItem?.shareId;
     const itemId = selectedItem?.itemId;

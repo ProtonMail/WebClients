@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -14,14 +14,14 @@ import { itemEditIntent } from '@proton/pass/store/actions';
 import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
 import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
-const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
+const itemEditMap: { [T in ItemType]: VFC17<ItemEditViewProps<T>> } = {
     login: LoginEdit,
     note: NoteEdit,
     alias: AliasEdit,
     creditCard: CreditCardEdit,
 };
 
-export const ItemEdit: VFC = () => {
+export const ItemEdit: VFC17 = () => {
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
     const { selectItem, preserveSearch } = useNavigation();
@@ -37,7 +37,7 @@ export const ItemEdit: VFC = () => {
 
     if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath())} push={false} />;
 
-    const EditViewComponent = itemEditMap[item.data.type] as VFC<ItemEditViewProps>;
+    const EditViewComponent = itemEditMap[item.data.type] as VFC17<ItemEditViewProps>;
 
     return (
         <EditViewComponent

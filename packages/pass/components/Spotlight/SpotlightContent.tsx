@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { type MouseEvent, type VFC, useMemo } from 'react';
+import { type MouseEvent, type VFC17, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,7 +24,7 @@ export type SpotlightMessageDefinition = {
 
 type Props = SpotlightMessageDefinition;
 
-export const SpotlightContent: VFC<Props> = ({
+export const SpotlightContent: VFC17<Props> = ({
     action,
     className,
     dense = true,
@@ -70,7 +70,14 @@ export const SpotlightContent: VFC<Props> = ({
             )}
         >
             {onClose && (
-                <Button icon shape="ghost" color="weak" size="small" className="absolute top-0 right-0" onClick={onClose}>
+                <Button
+                    icon
+                    shape="ghost"
+                    color="weak"
+                    size="small"
+                    className="absolute top-0 right-0"
+                    onClick={onClose}
+                >
                     <Icon name="cross" color="var(--interaction-norm-contrast)" alt={c('Action').t`Close`} />
                 </Button>
             )}

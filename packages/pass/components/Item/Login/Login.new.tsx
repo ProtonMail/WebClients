@@ -1,4 +1,4 @@
-import { type ReactElement, type VFC, useEffect, useMemo } from 'react';
+import { type ReactElement, type VFC17, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -48,7 +48,7 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const FORM_ID = 'new-login';
 
-export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
+export const LoginNew: VFC17<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
     const passwordContext = usePasswordContext();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);

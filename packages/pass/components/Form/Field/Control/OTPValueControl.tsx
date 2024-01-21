@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,7 +17,7 @@ type Props = { label?: string; payload: OtpRequest };
  * need of the OTP code generation as it involves alot of
  * re-rendering. eg: we do not want to re-render `Login.view`
  * everytime the OTP countdown updates */
-export const OTPValueControl: VFC<Props> = ({ label, payload }) => {
+export const OTPValueControl: VFC17<Props> = ({ label, payload }) => {
     const { generateOTP } = usePassCore();
     const [otp, percent] = usePeriodicOtpCode({ generate: generateOTP, payload });
 

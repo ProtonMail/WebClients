@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -6,7 +6,7 @@ import './FieldsetCluster.scss';
 
 type Props = { as?: 'fieldset' | 'div' | 'span'; className?: string; mode?: 'read' | 'write' };
 
-export const FieldsetCluster: FC<Props> = ({ children, as = 'fieldset', className, mode = 'write' }) => {
+export const FieldsetCluster: FC17<Props> = ({ children, as = 'fieldset', className, mode = 'write' }) => {
     const Component = as;
     return (
         <Component

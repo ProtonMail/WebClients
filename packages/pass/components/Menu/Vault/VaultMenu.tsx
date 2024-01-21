@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useMemo } from 'react';
+import { type FC17, type ReactElement, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { TrashItem } from '@proton/pass/components/Menu/Vault/TrashItem';
@@ -24,7 +24,7 @@ type Props = {
     render?: (selectedVaultOption: VaultMenuOption, menu: ReactElement) => ReactElement;
 };
 
-export const VaultMenu: FC<Props> = ({
+export const VaultMenu: FC17<Props> = ({
     dense = false,
     inTrash,
     selectedShareId,

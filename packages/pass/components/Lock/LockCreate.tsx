@@ -1,4 +1,4 @@
-import { type VFC, useCallback } from 'react';
+import { type VFC17, useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,7 +14,7 @@ type Props = {
     onSubmit: (options: { pin: string; ttl: number }) => void;
 };
 
-export const LockCreate: VFC<Props> = ({ opened, onClose, onSubmit }) => {
+export const LockCreate: VFC17<Props> = ({ opened, onClose, onSubmit }) => {
     const { createNotification } = useNotifications();
     const { confirmPin } = useSessionLockConfirmContext();
 

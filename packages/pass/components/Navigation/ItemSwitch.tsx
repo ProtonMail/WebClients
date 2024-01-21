@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 import type { RouteChildrenProps } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import { ItemView } from '@proton/pass/components/Item/Containers/ItemView';
 
 import { Autoselect } from './Autoselect';
 
-export const ItemSwitch: FC<RouteChildrenProps> = ({ match }) => {
+export const ItemSwitch: FC17<RouteChildrenProps> = ({ match }) => {
     const sub = (path: string) => `${match?.path}/${path}`;
 
     return match ? (

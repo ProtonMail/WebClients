@@ -1,4 +1,4 @@
-import type { FC, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -34,7 +34,7 @@ function getItemTypeSubmitButtonLabel(type: ItemType) {
     }
 }
 
-export const ItemCreatePanel: FC<Props> = ({
+export const ItemCreatePanel = ({
     type,
     formId,
     valid,
@@ -42,7 +42,7 @@ export const ItemCreatePanel: FC<Props> = ({
     handleCancelClick,
     renderSubmitButton,
     children,
-}) => (
+}: Props) => (
     <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
         {(props) => (
             <Panel

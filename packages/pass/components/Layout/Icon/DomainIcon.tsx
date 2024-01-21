@@ -1,4 +1,4 @@
-import { type CSSProperties, type VFC, useEffect, useRef, useState } from 'react';
+import { type CSSProperties, type VFC17, useEffect, useRef, useState } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
@@ -21,7 +21,7 @@ type Props = {
     onStatusChange: (status: ImageStatus) => void;
 };
 
-export const DomainIcon: VFC<Props> = ({ className, status, style = {}, url, onStatusChange }) => {
+export const DomainIcon: VFC17<Props> = ({ className, status, style = {}, url, onStatusChange }) => {
     const { getDomainImage } = usePassCore();
     const ensureMounted = useEnsureMounted();
     const [src, setSrc] = useState<Maybe<string>>();

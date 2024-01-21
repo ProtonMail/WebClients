@@ -1,4 +1,4 @@
-import { type VFC, useRef } from 'react';
+import { type VFC17, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
@@ -29,7 +29,7 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     return errors;
 };
 
-export const ReportAProblem: VFC = () => {
+export const ReportAProblem: VFC17 = () => {
     const { config } = usePassCore();
     const user = useSelector(selectUser);
     const formRef = useRef<FormikContextType<FormValues>>();

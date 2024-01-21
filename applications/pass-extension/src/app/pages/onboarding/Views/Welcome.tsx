@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC17, useState } from 'react';
 
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
@@ -27,7 +27,7 @@ const brandNameJSX = (
     <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
 );
 
-export const Welcome: VFC = () => {
+export const Welcome: VFC17 = () => {
     const { tabId, endpoint } = ExtensionContext.get();
     const [pendingAccess, setPendingAccess] = useState(false);
 

@@ -1,4 +1,4 @@
-import { Fragment, type VFC } from 'react';
+import { Fragment, type VFC17 } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
@@ -9,7 +9,7 @@ import { Welcome } from './Views/Welcome';
 
 import './Onboarding.scss';
 
-export const Onboarding: VFC = () => (
+export const Onboarding: VFC17 = () => (
     <ExtensionApp endpoint="page">
         {(ready, locale) =>
             ready && (
