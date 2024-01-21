@@ -134,12 +134,12 @@ it('should display the credit card form initially', async () => {
 });
 
 it('should remember credit card details when switching back and forth', async () => {
-    const { container, queryByTestId } = render(<ContextCreditsModal open={true} />);
+    const { container, getByTestId } = render(<ContextCreditsModal open={true} />);
     await waitFor(() => {});
 
-    const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
-    const exp = queryByTestId('exp') as HTMLInputElement;
-    const cvc = queryByTestId('cvc') as HTMLInputElement;
+    const ccnumber = await waitFor(() => getByTestId('ccnumber'));
+    const exp = getByTestId('exp') as HTMLInputElement;
+    const cvc = getByTestId('cvc') as HTMLInputElement;
 
     await userEvent.type(ccnumber, '4242424242424242');
     await userEvent.type(exp, '1232');
@@ -147,14 +147,14 @@ it('should remember credit card details when switching back and forth', async ()
 
     // switching to paypal
     selectMethod(container, 'PayPal');
-    expect(queryByTestId('paypal-view')).toBeTruthy();
+    expect(getByTestId('paypal-view')).toBeTruthy();
 
     // switching back to credit card
     selectMethod(container, 'New credit/debit card');
 
-    expect((queryByTestId('ccnumber') as HTMLInputElement).value).toBe('4242 4242 4242 4242');
-    expect((queryByTestId('exp') as HTMLInputElement).value).toBe('12/32');
-    expect((queryByTestId('cvc') as HTMLInputElement).value).toBe('123');
+    expect((getByTestId('ccnumber') as HTMLInputElement).value).toBe('4242 4242 4242 4242');
+    expect((getByTestId('exp') as HTMLInputElement).value).toBe('12/32');
+    expect((getByTestId('cvc') as HTMLInputElement).value).toBe('123');
 });
 
 it('should display validation errors after user submits credit card', async () => {

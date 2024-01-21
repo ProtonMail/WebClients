@@ -9,7 +9,16 @@ import range from '@proton/utils/range';
 
 import { MessageState } from 'proton-mail/store/messages/messagesTypes';
 
-import { addApiKeys, addApiMock, assertFocus, clearAll, mockConsole, render, tick, waitForSpyCall } from '../../helpers/test/helper';
+import {
+    addApiKeys,
+    addApiMock,
+    assertFocus,
+    clearAll,
+    mockConsole,
+    render,
+    tick,
+    waitForSpyCall,
+} from '../../helpers/test/helper';
 import { Conversation } from '../../models/conversation';
 import {
     initialize as initializeConversation,
@@ -225,7 +234,7 @@ describe('ConversationView', () => {
             expect(header.getAttribute('class')).toContain('is-loading');
 
             jest.advanceTimersByTime(5000);
-            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: true });
+            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
             await rerender();
 
             expect(header.getAttribute('class')).not.toContain('is-loading');
@@ -250,11 +259,11 @@ describe('ConversationView', () => {
 
             await act(async () => {
                 jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: true });
+                await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
                 jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: true });
+                await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: false });
                 jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: true });
+                await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: false });
             });
 
             getByText('Network error', { exact: false });
