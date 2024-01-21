@@ -13,7 +13,7 @@ import { MailStore } from 'proton-mail/store/store';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
-import { render } from '../../../helpers/test/render';
+import { render, tick } from '../../../helpers/test/render';
 import { MessageState, PartialMessageState } from '../../../store/messages/messagesTypes';
 import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView, { MessageViewRef } from '../MessageView';
@@ -108,6 +108,7 @@ export const setup = async (
     const rerender = async (specificProps: Partial<MessageViewProps> = {}) => {
         const props = { ...defaultProps, ...specificProps };
         await renderResult.rerender(<MessageView ref={refCallback} {...props} />);
+        await tick();
     };
 
     return { ...renderResult, ref, open, details, rerender };
