@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type VFC17, useMemo } from 'react';
 
 import { Field } from 'formik';
 import { c } from 'ttag';
@@ -31,7 +31,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) => {
     );
 };
 
-export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
+export const ImportForm: VFC17<Omit<ImportFormContext, 'reset' | 'result'>> = ({ form, dropzone, busy }) => {
     const needsPassphrase = useMemo(
         () =>
             form.values.file &&

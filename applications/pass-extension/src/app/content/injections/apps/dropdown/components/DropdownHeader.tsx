@@ -1,10 +1,10 @@
-import type { ReactElement, VFC } from 'react';
+import type { ReactElement, VFC17 } from 'react';
 
 type Props = { title: string; extra?: ReactElement };
 
 export const DROPDOWN_HEADER_HEIGHT = 2; /* rem */
 
-export const DropdownHeader: VFC<Props> = ({ title, extra }) => (
+export const DropdownHeader: VFC17<Props> = ({ title, extra }) => (
     <div
         className="flex flex-nowrap shrink-0 items-center justify-space-between h-custom pl-3 pr-2 pt-2"
         style={{ '--h-custom': `${DROPDOWN_HEADER_HEIGHT}rem` }}

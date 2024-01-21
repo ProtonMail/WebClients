@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import { ComponentType, ReactNode, createElement } from 'react';
 
 import { WrapperComponent } from '@testing-library/react-hooks';
 
@@ -20,16 +20,22 @@ export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) 
         const WrappedComponent = reducedHoc(Component);
 
         return (props: T & JSX.IntrinsicAttributes) => {
-            return React.createElement<T>(WrappedComponent, props);
+            return createElement<T>(WrappedComponent, props);
         };
     };
 };
 
-export const hookWrapper = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]): WrapperComponent<T> => {
-    return reduceHOCs(hocs)(({ children }) => React.createElement('', { children }));
+export const hookWrapper = <
+    T extends JSX.IntrinsicAttributes & {
+        children?: ReactNode;
+    },
+>(
+    ...hocs: HOC<T>[]
+): WrapperComponent<T> => {
+    return reduceHOCs(hocs)(({ children }) => createElement('', { children }));
 };
 
-export const componentWrapper = <T extends JSX.IntrinsicAttributes>(
+export const componentWrapper = <T extends JSX.IntrinsicAttributes & { children?: ReactNode }>(
     ...hocs: HOC<T>[]
 ): React.JSXElementConstructor<{ children: React.ReactElement }> => {
     return reduceHOCs(hocs)((props) => props.children as any) as any;

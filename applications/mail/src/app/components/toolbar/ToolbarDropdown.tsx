@@ -23,7 +23,7 @@ export interface DropdownRender {
     render: (props: DropdownRenderProps) => ReactNode;
 }
 
-interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'> {
+interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content' | 'children'> {
     hasCaret?: boolean;
     autoClose?: boolean;
     title?: ReactNode;

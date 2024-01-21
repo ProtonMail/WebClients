@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
+import { type FC17, createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
@@ -27,7 +27,7 @@ export const useClientRef = () => {
     return clientRef;
 };
 
-export const ClientProvider: FC = ({ children }) => {
+export const ClientProvider: FC17 = ({ children }) => {
     const [state, setState] = useState<ClientState>(getInitialClientState);
 
     return (

@@ -1,8 +1,10 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import '@proton/polyfill';
 
 import PrivateApp from './content/PrivateApp';
 import './style';
 
-ReactDOM.render(<PrivateApp />, document.querySelector('.app-root'));
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(<PrivateApp />);

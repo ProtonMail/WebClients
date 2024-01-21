@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC17, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -24,7 +24,7 @@ type Props = {
     onCreate: (type: ItemType) => void;
 };
 
-export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
+export const ItemQuickActions: FC17<Props> = ({ disabled = false, origin = null, onCreate }) => {
     const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
 

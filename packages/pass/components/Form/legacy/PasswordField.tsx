@@ -5,7 +5,7 @@
  * in the Exporter to generate a password for PGP
  * encryption but we can do without for now..
  */
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import type { FieldProps } from 'formik';
 
@@ -15,7 +15,7 @@ import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 
 type PasswordFieldProps = FieldProps & InputFieldOwnProps;
 
-export const PasswordField: FC<PasswordFieldProps> = (fieldProps) => {
+export const PasswordField: FC17<PasswordFieldProps> = (fieldProps) => {
     const { field, form, ...rest } = fieldProps;
     const { error } = useFieldControl(fieldProps);
 

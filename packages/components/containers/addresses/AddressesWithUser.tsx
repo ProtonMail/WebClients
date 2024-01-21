@@ -38,7 +38,7 @@ interface Props {
 const AddressesUser = ({ user, organizationKey, member, hasDescription = true }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [savingIndex, setSavingIndex] = useState();
+    const [savingIndex, setSavingIndex] = useState<number | undefined>();
     const { call } = useEventManager();
     const [addresses, loadingAddresses] = useAddresses();
     const [list, setAddresses] = useState<Address[]>(() => sortAddresses(addresses || []));
@@ -59,7 +59,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true }:
     }, [addresses]);
 
     const handleSortEnd = useCallback(
-        async ({ oldIndex, newIndex }) => {
+        async ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
             try {
                 const newList = move(list, oldIndex, newIndex);
                 const { isExternal, isDisabled } = getStatus(newList[0], 0);
@@ -103,7 +103,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true }:
     );
 
     const setDefaultAddress = useCallback(
-        (addressOldIndex) => {
+        (addressOldIndex: number) => {
             return async () => {
                 await handleSortEnd({ oldIndex: addressOldIndex, newIndex: 0 });
             };

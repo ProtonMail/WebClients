@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -49,7 +49,7 @@ const getFeatures = (): UpsellFeature[] => [
     },
 ];
 
-export const UpsellFeatures: FC<Props> = ({ upsellType }) => {
+export const UpsellFeatures: FC17<Props> = ({ upsellType }) => {
     const features = getFeatures();
 
     return (

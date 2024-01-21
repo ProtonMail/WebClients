@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { type FC17, useCallback } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,7 @@ import { usePassConfig } from './usePassConfig';
 
 type NotificationEnhancerOptions = { onLink: (url: string) => void };
 
-const ReactivateLink: FC<NotificationEnhancerOptions> = ({ onLink }) => {
+const ReactivateLink: FC17<NotificationEnhancerOptions> = ({ onLink }) => {
     const { SSO_URL } = usePassConfig();
 
     return (

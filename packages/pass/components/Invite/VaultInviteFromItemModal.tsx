@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -21,7 +21,7 @@ export type Props = ModalProps & {
     vault: ShareItem<ShareType.Vault>;
 };
 
-export const VaultInviteFromItemModal: VFC<Props> = ({
+export const VaultInviteFromItemModal: VFC17<Props> = ({
     handleCreateSharedVaultClick,
     handleMoveToSharedVaultClick,
     handleShareVaultClick,

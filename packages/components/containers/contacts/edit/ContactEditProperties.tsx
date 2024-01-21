@@ -135,7 +135,7 @@ const ContactEditProperties = (
     }, [properties, vCardContact, onChangeVCard, onRemove, onAdd, sortable]);
 
     const handleSortEnd = useCallback(
-        ({ newIndex, oldIndex }) => {
+        ({ newIndex, oldIndex }: { newIndex: number; oldIndex: number }) => {
             const orderedProperties = move(properties, oldIndex, newIndex);
             orderedProperties.forEach((property, index) => {
                 onChangeVCard({ ...property, params: { ...property.params, pref: String(index + 1) } });
