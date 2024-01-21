@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { ChangeEvent, MouseEvent, useCallback } from 'react';
 
 import { useSelection } from '../state/useSelection';
 
@@ -6,7 +6,7 @@ export const useFileBrowserCheckbox = (id: string) => {
     const selectionControls = useSelection();
     const isSelected = Boolean(selectionControls?.isSelected(id));
 
-    const handleCheckboxChange = useCallback((e) => {
+    const handleCheckboxChange = useCallback((e: ChangeEvent<HTMLElement>) => {
         const el = document.activeElement ?? e.currentTarget;
         if (isSelected && 'blur' in el) {
             (el as any).blur();
@@ -14,7 +14,7 @@ export const useFileBrowserCheckbox = (id: string) => {
     }, []);
 
     const handleCheckboxClick = useCallback(
-        (e) => {
+        (e: MouseEvent<HTMLElement>) => {
             if (!e.shiftKey) {
                 selectionControls?.toggleSelectItem(id);
             }
@@ -23,7 +23,7 @@ export const useFileBrowserCheckbox = (id: string) => {
     );
 
     const handleCheckboxWrapperClick = useCallback(
-        (e) => {
+        (e: MouseEvent<HTMLElement>) => {
             e.stopPropagation();
             // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
             if (e.shiftKey) {

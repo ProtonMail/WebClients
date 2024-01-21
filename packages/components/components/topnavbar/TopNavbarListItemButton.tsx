@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike, ButtonLikeProps, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors/types';
-import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 type ButtonButtonLikeProps = ButtonLikeProps<'button'>;
@@ -72,8 +72,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
     );
 };
 
-const TopNavbarListItemButton: <E extends ElementType = typeof defaultElement>(
-    props: TopNavbarListItemButtonProps<E>
-) => ReactElement | null = forwardRef(TopNavbarListItemButtonBase);
+const TopNavbarListItemButton: PolymorphicForwardRefExoticComponent<OwnProps, typeof defaultElement> =
+    forwardRef(TopNavbarListItemButtonBase);
 
 export default TopNavbarListItemButton;
