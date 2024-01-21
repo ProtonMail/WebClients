@@ -84,19 +84,19 @@ const slice = createSlice({
                     eventsSubscription,
                     eventsSubscription.UpcomingSubscription || undefined
                 );
-            }
+            } else {
+                const isFreeSubscription = original(state)?.value === freeSubscription;
 
-            const isFreeSubscription = original(state)?.value === freeSubscription;
+                // User who downgrades does not receive a subscription update, so this resets it to free.
+                if (!isFreeSubscription && action.payload.User && !canFetch(action.payload.User)) {
+                    state.value = freeSubscription;
+                }
 
-            // User who downgrades does not receive a subscription update, so this resets it to free.
-            if (!isFreeSubscription && action.payload.User && !canFetch(action.payload.User)) {
-                state.value = freeSubscription;
-            }
-
-            // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
-            if (isFreeSubscription && action.payload.User && canFetch(action.payload.User)) {
-                state.value = undefined;
-                state.error = undefined;
+                // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
+                if (isFreeSubscription && action.payload.User && canFetch(action.payload.User)) {
+                    state.value = undefined;
+                    state.error = undefined;
+                }
             }
         });
     },
