@@ -7,7 +7,7 @@ const ModalPositionsContext = createContext<[any[], (id: any) => () => void]>([[
 export const ModalPositionsProvider = ({ children }: { children: ReactNode }) => {
     const [modals, setModals] = useState<any[]>([]);
 
-    const addModal = useCallback((id) => {
+    const addModal = useCallback((id: any) => {
         setModals((oldModals) => [id, ...oldModals]);
         return () => {
             setModals((oldModals) =>

@@ -1,7 +1,8 @@
-import { ElementType, ForwardedRef, ReactElement, forwardRef, useContext } from 'react';
+import { ElementType, ForwardedRef, forwardRef, useContext } from 'react';
 
 import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
+import { PolymorphicForwardRefExoticComponent } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
@@ -36,9 +37,8 @@ const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
     );
 };
 
-const NotificationButton: <E extends ElementType = typeof defaultElement>(
-    props: NotificationButtonProps<E>
-) => ReactElement | null = forwardRef(NotificationButtonBase);
+const NotificationButton: PolymorphicForwardRefExoticComponent<NotificationOwnProps, typeof defaultElement> =
+    forwardRef(NotificationButtonBase);
 
 export const NotificationCloseButton = ({ onClick }: { onClick?: () => void }) => {
     return (

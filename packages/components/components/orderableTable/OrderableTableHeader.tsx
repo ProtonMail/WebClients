@@ -2,12 +2,12 @@ import { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { Cell, TableHeader } from '../table';
+import { TableHeader } from '../table';
 
 import './OrderableTableHeader.scss';
 
 interface Props {
-    cells?: (Cell | ReactNode)[];
+    cells?: ReactNode[];
     className?: string;
     children?: ReactNode;
 }
