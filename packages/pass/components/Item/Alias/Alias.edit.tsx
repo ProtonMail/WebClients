@@ -1,4 +1,4 @@
-import { type VFC, useRef, useState } from 'react';
+import { type VFC17, useRef, useState } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -25,7 +25,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-alias';
 
-export const AliasEdit: VFC<ItemEditViewProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
+export const AliasEdit: VFC17<ItemEditViewProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const aliasEmail = revision.aliasEmail!;

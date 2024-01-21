@@ -308,7 +308,7 @@ const QuickReply = ({
                 </div>
                 <div className="quick-reply-buttons absolute bottom-0 right-0 mb-2 mr-2 flex">
                     {toolbarConfig && !metadata.isPlainText && (
-                        <ErrorBoundary component={() => null}>
+                        <ErrorBoundary component={null}>
                             <Suspense fallback={null}>
                                 <ToolbarEmojiDropdown
                                     className={clsx([

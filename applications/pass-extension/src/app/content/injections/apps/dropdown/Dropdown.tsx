@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import type { VFC17 } from 'react';
 
 import { Icons } from '@proton/components';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -8,7 +8,7 @@ import { DropdownContent } from './views/DropdownContent';
 
 import './Dropdown.scss';
 
-export const Dropdown: VFC = () => (
+export const Dropdown: VFC17 = () => (
     <IFrameContextProvider endpoint="dropdown">
         <Icons />
         <ThemeProvider />

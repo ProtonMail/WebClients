@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
@@ -22,10 +22,13 @@ import noop from '@proton/utils/noop';
 import locales from '../../../app/locales';
 import { PassExtensionCore } from './PassExtensionCore';
 
-export const ExtensionApp: FC<{
+export const ExtensionApp = ({
+    endpoint,
+    children,
+}: {
     endpoint: ClientEndpoint;
     children: (ready: boolean, locale: string) => ReactNode;
-}> = ({ endpoint, children }) => {
+}) => {
     const [ready, setReady] = useState(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
 

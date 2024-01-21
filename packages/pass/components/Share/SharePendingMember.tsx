@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -22,7 +22,7 @@ type PendingExistingMemberProps = PendingMemberBase & { inviteId: string };
 type PendingNewMemberProps = PendingMemberBase & { newUserInviteId: string; state: NewUserInviteState };
 type SharePendingMemberProps = { actions?: ReactNode[]; email: string; extra?: ReactNode; loading: boolean };
 
-export const SharePendingMember: VFC<SharePendingMemberProps> = ({ actions, email, extra, loading }) => (
+export const SharePendingMember: VFC17<SharePendingMemberProps> = ({ actions, email, extra, loading }) => (
     <div className="border rounded-xl px-4 py-3 max-w-full">
         <div className="flex flex-nowrap items-center w-full">
             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
@@ -48,7 +48,7 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ actions, emai
     </div>
 );
 
-export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
+export const PendingExistingMember: VFC17<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
     const resendInvite = useActionRequest({ action: inviteResendIntent });
     const removeInvite = useActionRequest({ action: inviteRemoveIntent });
 
@@ -86,7 +86,13 @@ export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canMana
     );
 };
 
-export const PendingNewMember: VFC<PendingNewMemberProps> = ({ canManage, email, shareId, state, newUserInviteId }) => {
+export const PendingNewMember: VFC17<PendingNewMemberProps> = ({
+    canManage,
+    email,
+    shareId,
+    state,
+    newUserInviteId,
+}) => {
     const promoteInvite = useActionRequest({ action: newUserInvitePromoteIntent });
     const removeInvite = useActionRequest({ action: newUserInviteRemoveIntent });
 

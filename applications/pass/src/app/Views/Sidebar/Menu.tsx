@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { type FC17, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -27,7 +27,7 @@ import clsx from '@proton/utils/clsx';
 import { useAuthService } from '../../Context/AuthServiceProvider';
 import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
-export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
+export const Menu: FC17<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
 

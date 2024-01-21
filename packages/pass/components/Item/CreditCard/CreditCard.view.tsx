@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -21,7 +21,7 @@ import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-car
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
-export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
+export const CreditCardView: VFC17<ItemViewProps<'creditCard'>> = (itemViewProps) => {
     const { data: item } = itemViewProps.revision;
 
     const {

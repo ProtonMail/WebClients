@@ -1,5 +1,3 @@
-import type { VFC } from 'react';
-
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
@@ -17,7 +15,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-note';
 
-export const NoteEdit: VFC<ItemEditViewProps<'note'>> = ({ vault: { shareId }, revision, onSubmit, onCancel }) => {
+export const NoteEdit = ({ vault: { shareId }, revision, onSubmit, onCancel }: ItemEditViewProps<'note'>) => {
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, extraFields } = item;
     const { name, itemUuid } = metadata;

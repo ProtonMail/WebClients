@@ -1,4 +1,4 @@
-import { type FC, type MouseEventHandler, useMemo } from 'react';
+import { type FC17, type MouseEventHandler, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -22,7 +22,7 @@ import clsx from '@proton/utils/clsx';
 
 import './PinnedItemsBar.scss';
 
-export const PinnedItemsBar: FC = () => {
+export const PinnedItemsBar: FC17 = () => {
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const { selectedItem, selectItem, filters } = useNavigation();
     const { filtered } = useItems();

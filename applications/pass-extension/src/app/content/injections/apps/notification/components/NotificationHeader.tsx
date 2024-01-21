@@ -1,4 +1,4 @@
-import type { ReactElement, VFC } from 'react';
+import type { ReactElement, VFC17 } from 'react';
 
 import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
@@ -10,7 +10,7 @@ import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 
 type Props = { extra?: ReactElement; title: string; onClose?: (options?: IFrameCloseOptions) => void };
 
-export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
+export const NotificationHeader: VFC17<Props> = ({ extra, title, onClose }) => {
     return (
         <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2">
             <h3 className="flex text-bold text-lg items-center gap-2">

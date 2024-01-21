@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect, useState } from 'react';
+import { type VFC17, useCallback, useEffect, useState } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
@@ -17,7 +17,7 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { AliasState } from '@proton/pass/store/reducers';
-import type { AliasOptions} from '@proton/pass/types';
+import type { AliasOptions } from '@proton/pass/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -37,7 +37,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
+export const AliasAutoSuggest: VFC17<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
     const ensureMounted = useEnsureMounted();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
     const { userEmail } = useIFrameContext();

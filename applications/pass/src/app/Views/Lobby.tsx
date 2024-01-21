@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
@@ -12,7 +12,7 @@ import { useClient } from '../Context/ClientProvider';
 
 const app = APPS.PROTONPASS;
 
-export const Lobby: FC = () => {
+export const Lobby: FC17 = () => {
     const { SSO_URL: host } = usePassConfig();
     const client = useClient();
     const authService = useAuthService();

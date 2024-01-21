@@ -1495,14 +1495,14 @@ const InteractiveCalendarView = ({
     }, [containerRef]);
 
     const formatDate = useCallback(
-        (utcDate) => {
+        (utcDate: Date) => {
             return format(utcDate, 'PP', { locale: dateLocale });
         },
         [dateLocale]
     );
 
     const formatTime = useCallback(
-        (utcDate) => {
+        (utcDate: Date) => {
             return format(utcDate, 'p', { locale: dateLocale });
         },
         [dateLocale]

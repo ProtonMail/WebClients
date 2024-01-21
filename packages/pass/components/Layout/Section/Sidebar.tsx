@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import { Logo } from '@proton/components/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -9,7 +9,7 @@ import './Sidebar.scss';
 
 type Props = { expanded: boolean; onToggle: () => void };
 
-export const Sidebar: FC<Props> = ({ children, expanded = false, onToggle }) => (
+export const Sidebar: FC17<Props> = ({ children, expanded = false, onToggle }) => (
     <>
         <div
             id="pass-sidebar"

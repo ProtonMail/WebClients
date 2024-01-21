@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import type { IconName } from '@proton/components';
 import {
@@ -26,7 +26,7 @@ type Props = {
     label: string;
 };
 
-export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, items, label }) => {
+export const Submenu: FC17<Props> = ({ contentClassname, headerClassname, icon, items, label }) => {
     const { onLink } = usePassCore();
 
     return (

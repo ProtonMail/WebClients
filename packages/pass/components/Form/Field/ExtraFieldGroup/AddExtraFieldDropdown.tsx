@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,7 @@ import { getExtraFieldOptions } from './ExtraField';
 
 type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void };
 
-export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd }) => {
+export const AddExtraFieldDropdown: VFC17<CustomFieldsDropdownProps> = ({ onAdd }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const handleAddClick = (type: ExtraFieldType) => {
@@ -21,14 +21,7 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
 
     return (
         <>
-            <Button
-                pill
-                className="flex items-center mb-2"
-                color="norm"
-                onClick={toggle}
-                ref={anchorRef}
-                shape="ghost"
-            >
+            <Button pill className="flex items-center mb-2" color="norm" onClick={toggle} ref={anchorRef} shape="ghost">
                 <Icon className="mr-2" name="plus" />
                 <span className="line-height-1">{c('Action').t`Add more`}</span>
             </Button>
