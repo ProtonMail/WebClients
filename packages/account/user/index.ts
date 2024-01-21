@@ -52,6 +52,15 @@ const slice = createSlice({
                     if (action.payload.UsedSpace !== undefined) {
                         user.UsedSpace = action.payload.UsedSpace;
                     }
+                    if (action.payload.UsedBaseSpace !== undefined) {
+                        user.UsedBaseSpace = action.payload.UsedBaseSpace;
+                    }
+                    if (action.payload.UsedDriveSpace !== undefined) {
+                        user.UsedDriveSpace = action.payload.UsedDriveSpace;
+                    }
+                    if (action.payload.ProductUsedSpace !== undefined) {
+                        user.ProductUsedSpace = action.payload.ProductUsedSpace;
+                    }
                     state.value = formatUser(user);
                 }
             });
