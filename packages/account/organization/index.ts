@@ -57,18 +57,18 @@ const slice = createSlice({
 
             if (action.payload.Organization) {
                 state.value = updateObject(state.value, action.payload.Organization);
-            }
+            } else {
+                const isFreeOrganization = original(state)?.value === freeOrganization;
 
-            const isFreeOrganization = original(state)?.value === freeOrganization;
+                if (!isFreeOrganization && action.payload.User && !canFetch(action.payload.User)) {
+                    // Do not get any organization update when user becomes unsubscribed.
+                    state.value = freeOrganization;
+                }
 
-            if (!isFreeOrganization && action.payload.User && !canFetch(action.payload.User)) {
-                // Do not get any organization update when user becomes unsubscribed.
-                state.value = freeOrganization;
-            }
-
-            if (isFreeOrganization && action.payload.User && canFetch(action.payload.User)) {
-                state.value = undefined;
-                state.error = undefined;
+                if (isFreeOrganization && action.payload.User && canFetch(action.payload.User)) {
+                    state.value = undefined;
+                    state.error = undefined;
+                }
             }
         });
     },
