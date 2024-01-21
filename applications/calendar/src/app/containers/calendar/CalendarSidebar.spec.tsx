@@ -209,7 +209,7 @@ describe('CalendarSidebar', () => {
         expect(getByText(/calendar3/)).toBeInTheDocument();
         expect(getByText(/Add calendar/)).toBeInTheDocument();
 
-        const manageCalendarsLink = getByRole(/link/, { name: 'Calendars' }) as HTMLAnchorElement;
+        const manageCalendarsLink = getByRole('link', { name: 'Calendars' }) as HTMLAnchorElement;
 
         expect(manageCalendarsLink.href).toBe('http://localhost/calendar/calendars');
 
