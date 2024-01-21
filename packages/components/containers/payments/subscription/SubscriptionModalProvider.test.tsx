@@ -265,5 +265,5 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
     });
     openSubscriptionModal({} as any);
 
-    expect(getByTestId('InAppPurchaseModal/text')).not.toBeEmptyDOMElement();
+    expect(await waitFor(() => getByTestId('InAppPurchaseModal/text'))).not.toBeEmptyDOMElement();
 });

@@ -42,7 +42,7 @@ describe('NewFeatureTag component', () => {
     });
 
     it('NewFeatureTag should be show once with showOnce', () => {
-        const { rerender, unmount } = render(<NewFeatureTag featureKey={featureKey} showOnce className="ml-10" />);
+        const { unmount } = render(<NewFeatureTag featureKey={featureKey} showOnce className="ml-10" />);
 
         expect(screen.getByText('New')).toBeInTheDocument();
         expect(mockedGetItem).toHaveBeenCalledWith(localStorageKey, defaultValue);
@@ -51,7 +51,7 @@ describe('NewFeatureTag component', () => {
         expect(mockedSetItem).toHaveBeenCalledWith(`${featureKey}-new-tag`, 'true');
 
         mockedGetItem.mockReturnValue('true');
-        rerender(<NewFeatureTag featureKey={featureKey} showOnce className="ml-10" />);
+        render(<NewFeatureTag featureKey={featureKey} showOnce className="ml-10" />);
         expect(mockedRemoveItem).not.toHaveBeenCalledWith();
         expect(screen.queryByText('New')).not.toBeInTheDocument();
     });
