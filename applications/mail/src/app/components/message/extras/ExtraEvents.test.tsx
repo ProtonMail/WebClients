@@ -1,4 +1,4 @@
-import { act, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
@@ -1052,10 +1052,7 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, { preloadedState });
 
-            // eslint-disable-next-line testing-library/no-unnecessary-act
-            await act(async () => {
-                await userEvent.click(await screen.findByTitle(`Yes, I'll attend`));
-            });
+            await userEvent.click(await waitFor(() => screen.findByTitle(`Yes, I'll attend`)));
 
             await waitFor(() => expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument());
         });
