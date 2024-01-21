@@ -1,5 +1,6 @@
-import React, { Fragment, Key, useEffect, useRef, useState } from 'react';
+import { Fragment, Key, useEffect, useRef, useState } from 'react';
 
+import useInstance from '@proton/hooks/useInstance';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -8,14 +9,17 @@ import { NotificationOffset, Notification as NotificationType } from './interfac
 
 const notificationGap = 4;
 
-const getRects = (notifications: { [key: Key]: HTMLDivElement }) => {
-    return Object.entries(notifications).reduce<{ [key: Key]: DOMRect }>((acc, [key, el]) => {
+const getRects = (notifications: Map<Key, HTMLDivElement>) => {
+    const map = new Map<Key, DOMRect>();
+
+    for (const [key, el] of notifications.entries()) {
         if (!el) {
-            return acc;
+            continue;
         }
-        acc[key] = el.getBoundingClientRect();
-        return acc;
-    }, {});
+        map.set(key, el.getBoundingClientRect());
+    }
+
+    return map;
 };
 
 type Position = number;
@@ -23,17 +27,19 @@ type Position = number;
 const getPositions = (notifications: NotificationType[], rects: ReturnType<typeof getRects>) => {
     let top = 0;
 
-    return notifications.reduce<{ [key: Key]: Position }>((acc, notification) => {
-        acc[notification.key] = top;
+    const map = new Map<Key, Position>();
 
-        const height = rects[notification.key]?.height;
+    notifications.forEach((notification) => {
+        map.set(notification.key, top);
+
+        const height = rects.get(notification.key)?.height;
         if (height === undefined) {
-            return acc;
+            return;
         }
         top += height + notificationGap;
+    });
 
-        return acc;
-    }, {});
+    return map;
 };
 
 interface Props {
@@ -52,57 +58,62 @@ const NotificationsContainer = ({
     offset,
 }: Props) => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const notificationRefs = useRef<{ [key: Key]: HTMLDivElement }>({});
-    const [rects, setRects] = useState<{ [key: Key]: DOMRect }>({});
+    const notificationRefs = useInstance(() => {
+        return new Map<Key, HTMLDivElement>();
+    });
+    const [rects, setRects] = useState(() => {
+        return new Map<Key, DOMRect>();
+    });
     const resizeObserverRef = useRef<ResizeObserver | null>(null);
-    const callbackRefs = useRef<{ [key: Key]: (el: HTMLDivElement | null) => void }>({});
+    const callbackRefs = useInstance(() => {
+        return new Map<Key, (el: HTMLDivElement | null) => void>();
+    });
 
     useEffect(() => {
         const observer = new ResizeObserver(() => {
-            setRects(getRects(notificationRefs.current));
+            setRects(getRects(notificationRefs));
         });
         resizeObserverRef.current = observer;
-        Object.values(notificationRefs.current).forEach((el) => {
+        for (const el of notificationRefs.values()) {
             observer.observe(el);
-        });
+        }
         return () => {
             observer.disconnect();
             resizeObserverRef.current = null;
         };
-    }, []);
+    }, [notificationRefs]);
 
     useEffect(() => {
-        const notificationIds = Object.fromEntries(notifications.map((notification) => [notification.key, true]));
-        const callbackKeys = Object.keys(callbackRefs.current);
-        callbackKeys.forEach((callbackKey) => {
-            if (!notificationIds[callbackKey]) {
-                delete callbackRefs.current[callbackKey];
+        const notificationIds = new Set(notifications.map((notification) => notification.key));
+        for (const callbackKey of callbackRefs.keys()) {
+            if (!notificationIds.has(callbackKey)) {
+                callbackRefs.delete(callbackKey);
             }
-        });
-    }, [notifications]);
+        }
+    }, [notifications, callbackRefs]);
 
     const positions = getPositions(notifications, rects);
 
     const list = notifications.map(({ id, key, type, text, isClosing, showCloseButton, icon, duplicate }) => {
-        if (!callbackRefs.current[key]) {
-            callbackRefs.current[key] = (el: HTMLDivElement | null) => {
+        if (!callbackRefs.has(key)) {
+            callbackRefs.set(key, (el: HTMLDivElement | null) => {
                 if (el === null) {
-                    const oldEl = notificationRefs.current[key];
+                    const oldEl = notificationRefs.get(key);
                     if (oldEl) {
                         resizeObserverRef.current?.unobserve(oldEl);
                     }
-                    delete notificationRefs.current[key];
+                    notificationRefs.delete(key);
                 } else {
                     resizeObserverRef.current?.observe(el);
-                    notificationRefs.current[key] = el;
+                    notificationRefs.set(key, el);
                 }
-            };
+            });
         }
         return (
             <Fragment key={key}>
                 {duplicate.old && (
                     <Notification
-                        top={positions[key]}
+                        top={positions.get(key)}
                         isClosing={true}
                         isDuplicate={true}
                         icon={duplicate.old.icon}
@@ -118,8 +129,8 @@ const NotificationsContainer = ({
                 <Notification
                     key={duplicate.key}
                     onEnter={() => removeDuplicate(id)}
-                    top={positions[key]}
-                    ref={callbackRefs.current[key]}
+                    top={positions.get(key)}
+                    ref={callbackRefs.get(key)}
                     isClosing={isClosing}
                     icon={icon}
                     type={type}

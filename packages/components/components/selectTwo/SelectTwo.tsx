@@ -39,6 +39,7 @@ export interface Props<V> extends SelectProps<V> {
     originalPlacement?: PopperPlacement;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     getSearchableValue?: (value: V) => string;
+    placeholder?: string;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;

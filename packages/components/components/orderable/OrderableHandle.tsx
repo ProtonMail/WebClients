@@ -1,7 +1,10 @@
+import { ComponentType, ReactNode } from 'react';
 import { SortableHandle } from 'react-sortable-hoc';
 
 interface Props {
-    children: any;
+    children?: ReactNode;
 }
 
-export default SortableHandle(({ children }: Props) => children);
+const OrderableHandle = SortableHandle(({ children }: Props): ReactNode => children) as ComponentType<Props>;
+
+export default OrderableHandle;

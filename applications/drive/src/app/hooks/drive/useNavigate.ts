@@ -47,7 +47,7 @@ function useNavigate() {
     };
 
     const navigateToSearch = useCallback(
-        (searchTerm) => {
+        (searchTerm: string) => {
             history.push({
                 pathname: '/search',
                 hash: `q=${searchTerm}`,

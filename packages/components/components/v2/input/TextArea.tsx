@@ -54,7 +54,9 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
                 }
                 onValue?.(e.target.value);
                 rest.onChange?.(e);
-                updateTextArea?.(textAreaRef.current);
+                if (textAreaRef.current) {
+                    updateTextArea?.(textAreaRef.current);
+                }
             }}
             rows={rows}
             className={className}

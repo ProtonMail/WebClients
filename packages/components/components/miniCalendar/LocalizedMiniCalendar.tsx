@@ -24,7 +24,7 @@ const LocalizedMiniCalendar = ({ weekStartsOn, now, todayTitle: todayTitleProp, 
     }, [dateLocale]);
 
     const formatDay = useCallback(
-        (date) => {
+        (date: Date) => {
             return format(date, 'PPPP', { locale: dateLocale });
         },
         [dateLocale]

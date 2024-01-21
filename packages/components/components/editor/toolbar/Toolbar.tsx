@@ -173,7 +173,7 @@ const Toolbar = ({
                     {!simple && (
                         <>
                             <Vr aria-hidden="true" />{' '}
-                            <ErrorBoundary component={() => null}>
+                            <ErrorBoundary component={null}>
                                 <Suspense fallback={null}>
                                     <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
                                 </Suspense>

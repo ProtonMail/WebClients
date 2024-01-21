@@ -201,7 +201,7 @@ const CalendarContainerView = ({
     );
 
     const handleClickLocalDate = useCallback(
-        (newDate) => {
+        (newDate: Date) => {
             if (showIframeMiniCalendar) {
                 setShowIframeMiniCalendar(false);
             }
