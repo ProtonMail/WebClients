@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import type { ImportProvider } from '@proton/pass/lib/import/types';
@@ -7,7 +7,7 @@ import { ImportIcon } from './ImportIcon';
 
 import './ImportProviderItem.scss';
 
-export const ImportProviderItem: FC<{
+export const ImportProviderItem: FC17<{
     value: ImportProvider;
     title: string;
     fileExtension: string;

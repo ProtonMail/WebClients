@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getItemRoute, getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { selectShare } from '@proton/pass/store/selectors';
 
-export const Autoselect: FC = () => {
+export const Autoselect: FC17 = () => {
     const { matchTrash, preserveSearch, filters } = useNavigation();
     const { filtered } = useItems();
     const autoselect = filtered[0];

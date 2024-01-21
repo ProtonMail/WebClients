@@ -58,7 +58,7 @@ export const RadioGroupField = <T extends RadioValue>({
             error={error}
             {...field}
             {...props}
-            onChange={async (value) => {
+            onChange={async (value: T) => {
                 await form.setFieldValue(field.name, value);
                 onChange?.(value);
             }}

@@ -1,5 +1,5 @@
 /* eslint-disable deprecation/deprecation */
-import { type VFC, useEffect, useRef, useState } from 'react';
+import { type VFC17, useEffect, useRef, useState } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
@@ -32,7 +32,7 @@ type Props = {
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const PasswordAutoSuggest: VFC<Props> = ({ hostname, config: initial, visible, onMessage, onClose }) => {
+export const PasswordAutoSuggest: VFC17<Props> = ({ hostname, config: initial, visible, onMessage, onClose }) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
 

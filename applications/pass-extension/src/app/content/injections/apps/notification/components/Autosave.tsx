@@ -1,4 +1,4 @@
-import { type VFC, useEffect, useState } from 'react';
+import { type VFC17, useEffect, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
@@ -38,7 +38,7 @@ type Props = {
 };
 type AutosaveFormValues = { name: string; username: string; password: string };
 
-export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose }) => {
+export const Autosave: VFC17<Props> = ({ settings, submission, visible, onClose }) => {
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
     const submissionURL = submission.subdomain ?? submission.domain;

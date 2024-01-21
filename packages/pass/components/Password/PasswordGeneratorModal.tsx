@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect } from 'react';
+import { type VFC17, useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -18,7 +18,7 @@ import { usePasswordContext } from './PasswordProvider';
 export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (password: string) => void };
 export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
-export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...props }) => {
+export const PasswordGeneratorModal: VFC17<Props> = ({ onSubmit, actionLabel, ...props }) => {
     const dispatch = useDispatch();
     const { config, history } = usePasswordContext();
 

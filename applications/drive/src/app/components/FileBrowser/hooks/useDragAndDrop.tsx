@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { DragEvent, useCallback } from 'react';
 
 import { useDragMove } from '@proton/components';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
@@ -40,7 +40,7 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
 
     const handleDragStart = unlessDisabled(
         useCallback(
-            (e: React.DragEvent<HTMLTableRowElement>) => {
+            (e: DragEvent<HTMLTableRowElement>) => {
                 if (!isDraggingSelected) {
                     selectionControls?.selectItem(item.id);
                 }
@@ -51,7 +51,7 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
     );
 
     const handleDragEnd = useCallback(
-        (e) => {
+        (e: DragEvent<HTMLTableRowElement>) => {
             e.currentTarget.blur();
             dragMove.handleDragEnd();
         },

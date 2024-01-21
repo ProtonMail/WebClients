@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 
 import { type IconName } from '@proton/components/components';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
@@ -9,7 +9,7 @@ import { isPassIcon } from '@proton/pass/types/data/pass-icon';
 
 export type DropdownItemIconProps = { url: string; icon: IconName } | { url?: never; icon: DropdownIcon };
 
-export const DropdownItemIcon: VFC<DropdownItemIconProps> = ({ url, icon }) =>
+export const DropdownItemIcon: VFC17<DropdownItemIconProps> = ({ url, icon }) =>
     isPassIcon(icon) ? (
         <IconBox size={20} mode="transparent">
             <PassIcon status={icon} size={24} className="absolute inset-center" />

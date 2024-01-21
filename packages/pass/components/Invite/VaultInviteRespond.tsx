@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -17,7 +17,7 @@ import { getItemsText } from '../Settings/helper';
 import { useInviteContext } from './InviteProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
-export const VaultInviteRespond: VFC<Invite> = (invite) => {
+export const VaultInviteRespond: VFC17<Invite> = (invite) => {
     const { inviterEmail, invitedAddressId, token, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
     const { vaultLimitReached } = useSelector(selectVaultLimits);

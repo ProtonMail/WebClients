@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { KeyboardEvent, MouseEvent, useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,7 +21,7 @@ const CopyLinkIcon = ({ shareId, linkId, trashed, isExpired, className }: Props)
     const { copyShareLinkToClipboard } = useActions();
 
     const handleGetLink = useCallback(
-        (e) => {
+        (e: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>) => {
             if (!copyShareLinkToClipboard) {
                 return;
             }

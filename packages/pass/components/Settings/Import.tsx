@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useRef, useState } from 'react';
+import { type VFC17, useCallback, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useStore } from 'react-redux';
 
 import { Form, FormikProvider } from 'formik';
@@ -24,7 +24,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { SettingsPanel } from './SettingsPanel';
 import { getItemsText } from './helper';
 
-export const Import: VFC = () => {
+export const Import: VFC17 = () => {
     const store = useStore();
     const { createNotification } = useNotifications();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);

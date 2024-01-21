@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from 'react';
+import type { ReactNode, VFC17 } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -9,7 +9,7 @@ type Props = {
     actions?: ReactNode[];
 };
 
-export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
+export const PanelHeader: VFC17<Props> = ({ className, actions, ...props }) => {
     const title = 'title' in props ? props.title : undefined;
     const subtitle = 'subtitle' in props ? props.subtitle : undefined;
     const withActions = Array.isArray(actions) && actions.length > 0;

@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC17, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,7 +23,7 @@ type Props = {
     onSubmit?: (password: string) => MaybePromise<void>;
 };
 
-export const ConfirmPasswordModal: FC<Props> = ({ disabled, message, open, onClose, onSubmit }) => {
+export const ConfirmPasswordModal: FC17<Props> = ({ disabled, message, open, onClose, onSubmit }) => {
     const [password, setPassword] = useState('');
 
     useEffect(() => {
