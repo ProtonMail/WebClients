@@ -51,7 +51,10 @@ export interface EventLoop {
     Subscription?: Subscription & { UpcomingSubscription?: Subscription };
     Config?: ApiEnvironmentConfig;
     SSO?: EventItemUpdate<SSO, 'SSO'>[];
-    UsedSpace?: number;
+    UsedSpace?: User['UsedSpace'];
+    UsedBaseSpace?: User['UsedBaseSpace'];
+    UsedDriveSpace?: User['UsedDriveSpace'];
+    ProductUsedSpace?: User['ProductUsedSpace'];
     Refresh?: number;
 }
 
