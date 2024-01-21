@@ -135,18 +135,18 @@ const slice = createSlice({
                         };
                     },
                 });
-            }
+            } else {
+                const isFreeMembers = original(state)?.value === freeMembers;
 
-            const isFreeMembers = original(state)?.value === freeMembers;
+                if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
+                    // Do not get any members update when user becomes unsubscribed.
+                    state.value = freeMembers;
+                }
 
-            if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
-                // Do not get any members update when user becomes unsubscribed.
-                state.value = freeMembers;
-            }
-
-            if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
-                delete state.value;
-                delete state.error;
+                if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
+                    delete state.value;
+                    delete state.error;
+                }
             }
         });
     },
