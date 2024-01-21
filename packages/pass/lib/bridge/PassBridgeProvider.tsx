@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 import { createContext, useContext, useRef } from 'react';
 
 import { useAddresses, useApi, useAuthentication, useUser } from '@proton/components/hooks';
@@ -9,7 +9,7 @@ import type { PassBridge } from './types';
 
 export const PassBridgeContext = createContext<MaybeNull<PassBridge>>(null);
 
-export const PassBridgeProvider: FC = ({ children }) => {
+export const PassBridgeProvider: FC17 = ({ children }) => {
     const api = useApi();
     const [user] = useUser();
     const [addresses] = useAddresses();

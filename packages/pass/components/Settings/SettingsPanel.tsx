@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC17, ReactNode } from 'react';
 
 import { Card } from '@proton/atoms/Card';
 
@@ -7,7 +7,7 @@ type Props = {
     subTitle?: string;
     children: ReactNode;
 };
-export const SettingsPanel: FC<Props> = ({ title, subTitle, children }) => (
+export const SettingsPanel: FC17<Props> = ({ title, subTitle, children }) => (
     <Card
         rounded
         className="pass-settings--panel mb-4 p-3 relative max-w-custom"

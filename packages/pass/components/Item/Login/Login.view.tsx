@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -19,7 +19,7 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-export const LoginView: VFC<ItemViewProps<'login'>> = (itemViewProps) => {
+export const LoginView: VFC17<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision } = itemViewProps;
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
 

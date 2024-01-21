@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -8,7 +8,7 @@ import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordG
 
 type Props = UsePasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };
 
-export const PasswordRandomOptions: FC<Props> = ({ advanced, config, dense = false, setPasswordOptions }) => (
+export const PasswordRandomOptions: FC17<Props> = ({ advanced, config, dense = false, setPasswordOptions }) => (
     <>
         <div className="flex items-center justify-space-between">
             <label htmlFor="password-length" className="w-custom" style={{ '--w-custom': '6.875rem' }}>

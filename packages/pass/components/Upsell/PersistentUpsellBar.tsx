@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -6,7 +6,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import './PersistentUpsellBar.scss';
 
-export const PersistentUpsellBar: FC = ({ children }) => {
+export const PersistentUpsellBar: FC17 = ({ children }) => {
     const passPlan = useSelector(selectPassPlan);
     if (passPlan === UserPassPlan.PLUS) return null;
 

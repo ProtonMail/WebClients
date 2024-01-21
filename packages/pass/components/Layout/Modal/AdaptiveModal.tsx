@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import { type FC17, type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -25,7 +25,7 @@ export type AdapativeModalProps = Omit<ModalProps, 'children'> & {
 /** The AdaptiveModal dynamically adjusts its presentation based on the client environment.
  * When accessed through the extension, it renders as a sidebar modal - on web, it takes the
  * form of a conventional modal, relocating quick actions to the footer. */
-export const AdaptiveModal: FC<AdapativeModalProps> = ({
+export const AdaptiveModal: FC17<AdapativeModalProps> = ({
     actions = [],
     children,
     closable = true,

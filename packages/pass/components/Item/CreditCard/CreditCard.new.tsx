@@ -1,4 +1,4 @@
-import { type VFC, useMemo } from 'react';
+import { type VFC17, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -30,7 +30,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 const FORM_ID = 'new-creditCard';
 
-export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, onSubmit, onCancel }) => {
+export const CreditCardNew: VFC17<ItemNewViewProps<'creditCard'>> = ({ shareId, onSubmit, onCancel }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
 
     const initialValues: CreditCardItemFormValues = useMemo(() => {
