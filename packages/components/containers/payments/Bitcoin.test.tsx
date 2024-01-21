@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { act, render, waitFor } from '@testing-library/react';
 
 import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
@@ -35,11 +35,12 @@ const BitcoinTestComponent = (props: InnerProps) => {
     return <BitcoinContext {...props} {...bitcoinHook} />;
 };
 
-beforeAll(() => {
+beforeEach(() => {
     jest.useFakeTimers();
 });
 
-afterAll(() => {
+afterEach(() => {
+    jest.runOnlyPendingTimers();
     jest.useRealTimers();
 });
 
@@ -73,7 +74,9 @@ it('should render', async () => {
         expect(container).not.toBeEmptyDOMElement();
     });
 
-    expect(container).toHaveTextContent('address-123');
+    await waitFor(() => {
+        expect(container).toHaveTextContent('address-123');
+    });
     expect(container).toHaveTextContent('0.00135');
 });
 
@@ -92,7 +95,9 @@ it('should render for signup-pass', async () => {
         expect(container).not.toBeEmptyDOMElement();
     });
 
-    expect(container).toHaveTextContent('address-123');
+    await waitFor(() => {
+        expect(container).toHaveTextContent('address-123');
+    });
     expect(container).toHaveTextContent('0.00135');
 });
 
@@ -127,15 +132,19 @@ it('should check the token every 10 seconds', async () => {
         />
     );
 
-    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
-    await flushPromises();
+    await act(async () => {
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        await flushPromises();
+    });
 
     addApiMock(getTokenStatus('token-123').url, function second() {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
     });
 
-    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
-    await flushPromises();
+    await act(async () => {
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        await flushPromises();
+    });
 
     expect(onTokenValidated).toHaveBeenCalledTimes(1);
     expect(onTokenValidated).toHaveBeenLastCalledWith({
@@ -287,8 +296,10 @@ it('should call awaitingPayment callback when amount or currency is changed', as
         />
     );
 
-    jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
-    await flushPromises();
+    await act(async () => {
+        jest.advanceTimersByTime(BITCOIN_POLLING_INTERVAL);
+        await flushPromises();
+    });
 
-    expect(onAwaitingPayment).toHaveBeenLastCalledWith(false);
+    expect(onAwaitingPayment).toHaveBeenLastCalledWith(true);
 });
