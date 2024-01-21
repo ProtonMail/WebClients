@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
 
 import Tooltip from './Tooltip';
@@ -50,7 +50,9 @@ describe('tooltip', () => {
         await timerUserEvent.unhover(screen.getByTestId('span'));
         await timerUserEvent.click(screen.getByTestId('outside'));
 
-        jest.advanceTimersByTime(1000);
+        act(() => {
+            jest.advanceTimersByTime(1000);
+        });
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
 
         expect(screen.getByTestId('span')).toHaveTextContent('Hello');
@@ -69,14 +71,18 @@ describe('tooltip', () => {
         await timerUserEvent.hover(screen.getByTestId('span'));
 
         expect(screen.queryByTestId('tooltip')).toBeNull();
-        jest.advanceTimersByTime(1000);
+        act(() => {
+            jest.advanceTimersByTime(1000);
+        });
 
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in-first' });
         expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
         await timerUserEvent.unhover(screen.getByTestId('span'));
         expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
 
-        jest.advanceTimersByTime(500);
+        act(() => {
+            jest.advanceTimersByTime(500);
+        });
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
         expect(screen.queryByTestId('tooltip')).toBeNull();
     });
@@ -99,7 +105,9 @@ describe('tooltip', () => {
 
         expect(screen.queryByTestId('tooltip-1')).toBeNull();
         expect(screen.queryByTestId('tooltip-2')).toBeNull();
-        jest.advanceTimersByTime(1000);
+        act(() => {
+            jest.advanceTimersByTime(1000);
+        });
 
         fireEvent.animationEnd(screen.getByTestId('tooltip-1'), { animationName: 'anime-tooltip-in-first' });
         expect(screen.getByTestId('tooltip-1')).toHaveTextContent('World');
@@ -116,7 +124,9 @@ describe('tooltip', () => {
         expect(screen.getByTestId('tooltip-2')).toHaveTextContent('Bar');
 
         await timerUserEvent.unhover(screen.getByTestId('span-2'));
-        jest.advanceTimersByTime(500);
+        act(() => {
+            jest.advanceTimersByTime(500);
+        });
         expect(screen.queryByTestId('tooltip-1')).toBeNull();
         fireEvent.animationEnd(screen.getByTestId('tooltip-2'), { animationName: 'anime-tooltip-out-last' });
         expect(screen.queryByTestId('tooltip-2')).toBeNull();

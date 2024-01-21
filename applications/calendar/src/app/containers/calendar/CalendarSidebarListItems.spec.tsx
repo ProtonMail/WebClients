@@ -271,7 +271,7 @@ describe('CalendarSidebarListItems', () => {
 
         render(renderComponent({ onChangeVisibility: mockedOnChangeVisibility }));
 
-        fireEvent.click(screen.getAllByRole(/checkbox/)[0]);
+        fireEvent.click(screen.getAllByRole('checkbox')[0]);
 
         expect(mockedOnChangeVisibility).toHaveBeenCalledWith(mockCalendar.ID, !mockCalendar.Display);
     });

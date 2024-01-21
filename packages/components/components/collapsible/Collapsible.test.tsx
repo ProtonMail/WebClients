@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import Collapsible from './Collapsible';
 import CollapsibleContent from './CollapsibleContent';
@@ -34,7 +34,7 @@ describe('<Collapsible />', () => {
         expect(content).toBeVisible();
     });
 
-    it('toggles content when header is clicked', () => {
+    it('toggles content when header is clicked', async () => {
         const { getByTestId } = render(
             <Collapsible>
                 <CollapsibleHeader>Header</CollapsibleHeader>
@@ -47,10 +47,10 @@ describe('<Collapsible />', () => {
 
         expect(content).not.toBeVisible();
 
-        header.click();
+        fireEvent.click(header);
         expect(content).toBeVisible();
 
-        header.click();
+        fireEvent.click(header);
         expect(content).not.toBeVisible();
     });
 });
