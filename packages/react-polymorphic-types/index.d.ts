@@ -20,3 +20,8 @@ export type PolymorphicPropsWithRef<P, T extends React.ElementType> = Merge<
         : React.ComponentPropsWithRef<T>,
     PropsWithAs<P, T>
 >;
+
+export type PolymorphicForwardRefExoticComponent<P, T extends React.ElementType> = Merge<
+    React.ForwardRefExoticComponent<P & { [key: string]: unknown }>,
+    PolymorphicExoticComponent<P, T>
+>;

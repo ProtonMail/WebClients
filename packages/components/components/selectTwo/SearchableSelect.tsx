@@ -23,6 +23,7 @@ export interface Props<V> extends SelectProps<V> {
     unstyled?: boolean;
     size?: DropdownSize;
     originalPlacement?: PopperPlacement;
+    placeholder?: string;
 }
 
 const SearchableSelect = <V extends any>({
@@ -34,7 +35,10 @@ const SearchableSelect = <V extends any>({
     loading,
     search,
     searchPlaceholder,
-    size = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport },
+    size = {
+        width: DropdownSizeUnit.Anchor,
+        maxWidth: DropdownSizeUnit.Viewport,
+    },
     noSearchResults = c('Select search results').t`No results found`,
     onClose,
     onOpen,
