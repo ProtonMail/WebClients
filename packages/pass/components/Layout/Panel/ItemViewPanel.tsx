@@ -1,4 +1,4 @@
-import { type FC, type ReactElement } from 'react';
+import { type FC17, type ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -33,7 +33,7 @@ type Props = {
     type: ItemType;
 } & ItemViewProps;
 
-export const ItemViewPanel: FC<Props> = ({
+export const ItemViewPanel: FC17<Props> = ({
     actions = [],
     children,
     quickActions = [],

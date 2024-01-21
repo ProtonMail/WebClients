@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { type VFC, forwardRef, useState } from 'react';
+import { type VFC17, forwardRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -76,7 +76,7 @@ export const BaseTextField = forwardRef(BaseTextFieldRender);
 
 export type TextFieldProps = FieldBoxProps & BaseTextFieldProps;
 
-export const TextField: VFC<TextFieldProps> = (props) => {
+export const TextField: VFC17<TextFieldProps> = (props) => {
     const { actions, actionsContainerClassName, className, icon, ...rest } = props;
 
     return (

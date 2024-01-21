@@ -1,4 +1,4 @@
-import { type FC, useCallback, useRef } from 'react';
+import { type FC17, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
@@ -108,7 +108,7 @@ const exportData: PassCoreContextValue['exportData'] = (payload) =>
 const onForceUpdate: PassCoreContextValue['onForceUpdate'] = () =>
     sendMessage(pageMessage({ type: WorkerMessageType.WORKER_RELOAD }));
 
-export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => {
+export const PassExtensionCore: FC17<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
 
     return (

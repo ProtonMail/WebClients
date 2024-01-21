@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC17 } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
@@ -7,7 +7,7 @@ import { useSpotlight } from './SpotlightProvider';
 
 import './Spotlight.scss';
 
-export const Spotlight: FC = () => {
+export const Spotlight: FC17 = () => {
     const spotlight = useSpotlight();
 
     return (

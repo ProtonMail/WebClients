@@ -30,6 +30,6 @@ Add the following properties to your `settings.json`
 
 -   Prefer named exports & avoid index file re-exports
 -   Specify `import type { ... }` or `import { type ... }` when importing types
--   Use `FC` utility type from react to explicitly type components & `VFC` for children-less components
+-   Use `FC17` utility type from react to explicitly type components & `VFC17` for children-less components
 -   When using React Context, ensure its responsibilities are well defined & the implementation is correct in regards to having a stable context value or memoized according to its dependencies
 -   Create hooks when composing data from context and/or redux for use in UI components.

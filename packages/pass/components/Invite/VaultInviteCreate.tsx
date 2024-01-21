@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC17, ReactNode } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -32,7 +32,7 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
     'withVaultCreation' | 'onVaultCreated'
 >;
 
-export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
+export const VaultInviteCreate: FC17<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
 
     const createInvite = useActionRequest({
@@ -90,7 +90,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
 
     return (
         <SidebarModal onClose={close} open>
-            {(didEnter) => (
+            {(didEnter): ReactNode => (
                 <Panel
                     loading={createInvite.loading}
                     header={

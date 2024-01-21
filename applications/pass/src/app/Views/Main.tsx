@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Hamburger } from '@proton/components';
@@ -20,7 +20,7 @@ import { Header } from './Header/Header';
 import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
 
-export const Main: FC = () => {
+export const Main: FC17 = () => {
     const client = useClient();
     const { state: expanded, toggle } = useToggle();
 

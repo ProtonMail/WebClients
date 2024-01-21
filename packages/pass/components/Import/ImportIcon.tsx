@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC17 } from 'react';
 
 import onepassword from '@proton/pass/assets/import/1password-icon-48.png';
 import bitwarden from '@proton/pass/assets/import/bitwarden-icon-48.png';
@@ -39,7 +39,7 @@ const IMPORT_ICON_MAP: ImportIconMap = {
 
 type Props = { provider: ImportProvider; className?: string };
 
-export const ImportIcon: FC<Props> = ({ provider, className }) => {
+export const ImportIcon: FC17<Props> = ({ provider, className }) => {
     return (
         <img
             className={className}
