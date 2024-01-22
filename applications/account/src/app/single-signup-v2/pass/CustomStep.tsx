@@ -38,7 +38,7 @@ const CustomStep = ({
     const mnemonicData = model.cache?.setupData?.mnemonicData;
 
     useEffect(() => {
-        measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
+        void measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
     }, []);
 
     const getNextPassStep = () => {
@@ -71,7 +71,7 @@ const CustomStep = ({
                             <Layout theme={theme} logo={logo} hasDecoration={false}>
                                 <CopyRecoveryStep
                                     onMeasureClick={(type) => {
-                                        measure({
+                                        void measure({
                                             event: TelemetryAccountSignupEvents.interactRecoveryKit,
                                             dimensions: { click: type },
                                         });
@@ -86,7 +86,7 @@ const CustomStep = ({
                         <Layout theme={theme} logo={logo} hasDecoration={false}>
                             <PDFRecoveryStep
                                 onMeasureClick={(type) => {
-                                    measure({
+                                    void measure({
                                         event: TelemetryAccountSignupEvents.interactRecoveryKit,
                                         dimensions: { click: type },
                                     });
