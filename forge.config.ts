@@ -24,6 +24,7 @@ const config: ForgeConfig = {
         asar: true,
         name: getName(),
         extraResource: getExtraResource(),
+        appBundleId: "ch.protonmail.desktop",
         osxSign: {},
         osxNotarize: {
             appleId: process.env.APPLE_ID!,
