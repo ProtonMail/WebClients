@@ -14,12 +14,14 @@ import {
 } from 'electron';
 import { join } from 'path';
 
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { isSquirrelStartup } from './startup';
+import { SourceType, updateElectronApp } from './update';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (isSquirrelStartup()) app.quit();
@@ -42,18 +44,34 @@ const createSession = () => {
                 ...details.responseHeaders,
                 'access-control-allow-origin': 'file://',
                 'access-control-allow-credentials': 'true',
-                'access-control-allow-headers': [
-                    'authorization',
-                    'content-type',
-                    'x-pm-appversion',
-                    'x-pm-locale',
-                    'x-pm-uid',
-                ],
+                'access-control-allow-headers': Object.keys(details.responseHeaders || {}),
             };
 
             callback({ responseHeaders });
         });
     }
+
+    const clientId = ((): string => {
+        const config = APPS_CONFIGURATION[APPS.PROTONPASS];
+
+        switch (process.platform) {
+            case 'win32':
+                return config.windowsClientID || config.clientID;
+            case 'darwin':
+                return config.macosClientID || config.clientID;
+            default:
+                return config.clientID;
+        }
+    })();
+    const appVersionHeaders = getAppVersionHeaders(clientId, config.APP_VERSION);
+    secureSession.webRequest.onBeforeSendHeaders((details, callback) => {
+        const requestHeaders = {
+            ...details.requestHeaders,
+            ...appVersionHeaders,
+        };
+
+        callback({ requestHeaders });
+    });
 
     // Intercept SSO login redirect to the Pass web app
     secureSession.webRequest.onBeforeRequest(filter, async (details, callback) => {
@@ -86,7 +104,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
             contextIsolation: true,
             nodeIntegration: false,
             disableBlinkFeatures: 'Auxclick',
-            devTools: Boolean(process.env.PASS_DEBUG),
+            devTools: Boolean(process.env.PASS_DEBUG) || !app.isPackaged,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
         },
         titleBarStyle: process.platform === 'darwin' ? 'hidden' : 'default',
@@ -154,7 +172,7 @@ const onActivate = (secureSession: Session) => () => {
 if (!app.requestSingleInstanceLock()) app.quit();
 
 // Disable default main menu
-if (!Boolean(process.env.PASS_DEBUG)) Menu.setApplicationMenu(null);
+if (!Boolean(process.env.PASS_DEBUG) && app.isPackaged) Menu.setApplicationMenu(null);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -177,9 +195,18 @@ app.addListener('ready', async () => {
     // or create the main window of the existing process
     app.addListener('second-instance', handleActivate);
 
+    // Prevent hiding windows when explicitly quitting
     app.addListener('before-quit', () => (isAppQuitting = true));
 
     await createWindow(secureSession);
+
+    updateElectronApp({
+        session: secureSession,
+        updateSource: {
+            type: SourceType.StaticStorage,
+            baseUrl: `https://proton.me/download/PassDesktop/${process.platform}/${process.arch}`,
+        },
+    });
 });
 
 app.addListener('web-contents-created', (_ev, contents) => {
@@ -226,6 +253,11 @@ app.addListener('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }
+});
+
+const windowsAppId = 'com.squirrel.proton_pass_desktop.ProtonPass';
+app.addListener('will-finish-launching', () => {
+    if (process.platform === 'win32') app.setAppUserModelId(windowsAppId);
 });
 
 let clipboardTimer: NodeJS.Timeout;
