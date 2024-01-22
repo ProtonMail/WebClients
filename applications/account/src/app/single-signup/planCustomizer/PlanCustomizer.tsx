@@ -37,6 +37,8 @@ export const AddonKey: Readonly<{
     [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
     [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
+    [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
 };
 
 export const addonLimit = {
@@ -54,6 +56,8 @@ export const addonLimit = {
     [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
+    [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
 } as const;
 
 interface AddonFieldProps extends ComponentPropsWithoutRef<'div'> {
