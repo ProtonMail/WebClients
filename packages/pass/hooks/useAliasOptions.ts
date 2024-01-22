@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import { getAliasOptionsIntent } from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasOptions } from '@proton/pass/store/selectors';
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
+import noop from '@proton/utils/noop';
 
 import { useActionRequest } from './useActionRequest';
 
@@ -17,7 +18,7 @@ export type SanitizedAliasOptions = {
 export type UseAliasOptionsParams = {
     lazy?: boolean /* defer the alias options dispatch */;
     shareId: string;
-    onAliasOptionsLoaded?: (aliasOptions: SanitizedAliasOptions) => any;
+    onAliasOptionsLoaded?: (aliasOptions: SanitizedAliasOptions) => MaybePromise<void>;
 };
 
 export type UseAliasOptionsResult = {
@@ -50,7 +51,7 @@ export const useAliasOptions = ({
     const getAliasOptions = useActionRequest({
         action: getAliasOptionsIntent,
         initialRequestId: aliasOptionsRequest(shareId),
-        onSuccess: () => sanitizedAliasOptions && onAliasOptionsLoaded?.(sanitizedAliasOptions),
+        onSuccess: sanitizedAliasOptions ? () => onAliasOptionsLoaded?.(sanitizedAliasOptions) : noop,
     });
 
     useEffect(() => {
