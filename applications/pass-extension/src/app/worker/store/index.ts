@@ -24,7 +24,12 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
-    middleware: (middlewares) => middlewares().concat(requestMiddleware, workerMiddleware, sagaMiddleware),
+    middleware: (middlewares) =>
+        middlewares({ serializableCheck: false, thunk: false }).concat(
+            requestMiddleware,
+            workerMiddleware,
+            sagaMiddleware
+        ),
     enhancers: (enhancers) =>
         enhancers().concat(
             ENV === 'development'
