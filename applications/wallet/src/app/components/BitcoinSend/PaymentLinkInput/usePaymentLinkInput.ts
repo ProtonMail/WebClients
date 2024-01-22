@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { QRCode } from 'jsqr';
+
 import { useDebounceInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -22,7 +24,7 @@ export const usePaymentLinkInput = () => {
     const debouncedPaymentLinkInput = useDebounceInput(paymentLinkInput, 1 * SECOND);
 
     const handleScanQrCode = useCallback(
-        (qrcode) => {
+        (qrcode: QRCode) => {
             setPaymentLinkInput(qrcode.data);
             closeModal();
         },
@@ -53,7 +55,7 @@ export const usePaymentLinkInput = () => {
                 text: tryHandleWasmError(error) ?? getHumanReadableErrorFromWasmError(WasmError.InvalidAddress),
             });
         }
-    }, [createNotification, debouncedPaymentLinkInput]);
+    }, [createNotification, debouncedPaymentLinkInput, network]);
 
     return {
         isOpen,

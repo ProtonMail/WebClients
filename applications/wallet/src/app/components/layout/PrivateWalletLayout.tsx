@@ -23,7 +23,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
         <PrivateAppContainer
             top={<TopBanners />}
             header={<WalletHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />}
-            sidebar={<WalletSidebar wallets={wallets} />}
+            sidebar={<WalletSidebar expanded={expanded} wallets={wallets} />}
             drawerApp={<WalletDrawerApp />}
         >
             <PrivateMainArea

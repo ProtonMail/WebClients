@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
@@ -19,7 +21,9 @@ describe('useBlockchainFeesEstimation', () => {
 
     it('should fetch fees estimation once at mount', async () => {
         const { result } = renderHook(() => useBlockchainFeesEstimation(), {
-            wrapper: ({ children }) => <CacheProvider cache={createCache()}> {children}</CacheProvider>,
+            wrapper: ({ children }: { children: ReactNode }) => (
+                <CacheProvider cache={createCache()}> {children}</CacheProvider>
+            ),
         });
 
         await waitFor(() => {

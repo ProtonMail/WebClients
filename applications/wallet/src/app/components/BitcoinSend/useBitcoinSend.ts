@@ -38,7 +38,7 @@ export const useBitcoinSend = () => {
         setView(BitcoinSendViews.OnchainTransactionBuilder);
     }, []);
 
-    const handleSelectSendMethod = useCallback((method) => {
+    const handleSelectSendMethod = useCallback((method: WalletType) => {
         switch (method) {
             case WalletType.OnChain:
                 setView(BitcoinSendViews.OnchainSimpleSend);
