@@ -102,7 +102,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const authentication = useAuthentication();
     const [redDotReferral, setRedDotReferral] = useState(false);
     const { Email, DisplayName, Name, isMember } = user;
-    const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
+    const nameToDisplay = DisplayName || Name || ''; // nameToDisplay can be falsy for external account
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
