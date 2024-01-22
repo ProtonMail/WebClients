@@ -52,7 +52,10 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         if (!state.hasError) {
             return props.children;
         }
-        return props.component || <GenericError className={props.className} big={props.big} />;
+        if (props.component || props.component === null) {
+            return props.component;
+        }
+        return <GenericError className={props.className} big={props.big} />;
     }
 }
 
