@@ -4,6 +4,7 @@ import onepassword from '@proton/pass/assets/import/1password-icon-48.png';
 import bitwarden from '@proton/pass/assets/import/bitwarden-icon-48.png';
 import brave from '@proton/pass/assets/import/brave-icon-48.png';
 import chrome from '@proton/pass/assets/import/chrome-icon-48.png';
+import csv from '@proton/pass/assets/import/csv-icon-48.png';
 import dashlane from '@proton/pass/assets/import/dashlane-icon-48.png';
 import edge from '@proton/pass/assets/import/edge-icon-48.png';
 import enpass from '@proton/pass/assets/import/enpass-icon-48.png';
@@ -35,6 +36,7 @@ const IMPORT_ICON_MAP: ImportIconMap = {
     [ImportProvider.PROTONPASS]: protonpass,
     [ImportProvider.ROBOFORM]: roboform,
     [ImportProvider.SAFARI]: safari,
+    [ImportProvider.CSV]: csv,
 };
 
 type Props = { provider: ImportProvider; className?: string };
