@@ -47,6 +47,8 @@ const AddonKey: Readonly<{
     [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
     [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
+    [ADDON_NAMES.MEMBER_PASS_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 'MaxMembers',
 } as const;
 
 export type CustomiserMode = 'signup' | undefined;
@@ -175,6 +177,8 @@ const addonLimit = {
     [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
     [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
+    [ADDON_NAMES.MEMBER_PASS_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_PASS_BUSINESS]: MAX_MEMBER_ADDON,
 } as const;
 
 // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
