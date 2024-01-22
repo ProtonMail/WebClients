@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import sentry from '@proton/shared/lib/helpers/sentry';
 
@@ -16,5 +16,6 @@ sentry({
     denyUrls: [],
 });
 
-const root = document.querySelector('.app-root') as HTMLElement;
-ReactDOM.render(<Popup />, root);
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(<Popup />);

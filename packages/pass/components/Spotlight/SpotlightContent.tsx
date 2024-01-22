@@ -1,5 +1,5 @@
 import type { ElementType } from 'react';
-import { type MouseEvent, type VFC17, useMemo } from 'react';
+import { type FC, type MouseEvent, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -24,7 +24,7 @@ export type SpotlightMessageDefinition = {
 
 type Props = SpotlightMessageDefinition;
 
-export const SpotlightContent: VFC17<Props> = ({
+export const SpotlightContent: FC<Props> = ({
     action,
     className,
     dense = true,

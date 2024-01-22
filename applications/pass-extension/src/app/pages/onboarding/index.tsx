@@ -1,8 +1,9 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import '@proton/pass/styles/common.scss';
 
 import { Onboarding } from './Onboarding';
 
-const root = document.getElementById('root') as HTMLElement;
-ReactDOM.render(<Onboarding />, root);
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<Onboarding />);

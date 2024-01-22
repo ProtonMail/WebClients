@@ -1,4 +1,4 @@
-import { type FC17, useState } from 'react';
+import { type FC, type PropsWithChildren, useState } from 'react';
 
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -19,12 +19,14 @@ type AliasFormProps<V extends AliasFormValues> = {
     loading: boolean;
 };
 
-const AliasFormBase: FC17<{
-    disabled: boolean;
-    loading: boolean;
-    mailboxes: AliasMailbox[];
-    toggleShowAdvanced: () => void;
-}> = ({ children, disabled, loading, mailboxes, toggleShowAdvanced }) => {
+const AliasFormBase: FC<
+    PropsWithChildren<{
+        disabled: boolean;
+        loading: boolean;
+        mailboxes: AliasMailbox[];
+        toggleShowAdvanced: () => void;
+    }>
+> = ({ children, disabled, loading, mailboxes, toggleShowAdvanced }) => {
     return (
         <>
             <div className="flex justify-end mb-2">

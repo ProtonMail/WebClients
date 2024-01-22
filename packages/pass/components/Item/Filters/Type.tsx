@@ -1,4 +1,4 @@
-import { type FC17, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -40,7 +40,7 @@ export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string
     },
 });
 
-export const TypeFilter: FC17<Props> = ({ items, value, onChange }) => {
+export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     const options = useMemo(

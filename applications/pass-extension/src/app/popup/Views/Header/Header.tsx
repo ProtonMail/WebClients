@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
@@ -15,7 +15,7 @@ import type { ItemType } from '@proton/pass/types';
 
 import { MenuDropdown } from './MenuDropdown';
 
-export const Header: VFC17 = () => {
+export const Header: FC = () => {
     const { ready, context, state } = usePopupContext();
     const { domain, subdomain, hostname } = context?.url ?? {};
 

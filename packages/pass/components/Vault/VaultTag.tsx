@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 
 import type { IconName, IconSize } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
@@ -18,7 +18,7 @@ type Props = {
     iconSize?: IconSize;
 };
 
-export const VaultTag: VFC17<Props> = ({ title, shared = false, icon, color, count, iconSize = 12 }) => {
+export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count, iconSize = 12 }) => {
     return (
         <div
             className={clsx(

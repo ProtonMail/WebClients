@@ -1,4 +1,4 @@
-import { type FC17 } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
@@ -52,7 +52,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     width: `22em`,
 };
 
-export const MenuDropdown: FC17 = () => {
+export const MenuDropdown: FC = () => {
     const { onLink } = usePassCore();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { filters, matchTrash } = useNavigation();

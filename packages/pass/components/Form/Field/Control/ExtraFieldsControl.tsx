@@ -1,4 +1,4 @@
-import { type VFC17, useCallback } from 'react';
+import { type FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { UpsellRef } from '@proton/pass/constants';
@@ -19,7 +19,7 @@ type ExtraFieldsControlProps = {
     shareId: string;
 };
 
-export const ExtraFieldsControl: VFC17<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
+export const ExtraFieldsControl: FC<ExtraFieldsControlProps> = ({ extraFields, itemId, shareId }) => {
     const { needsUpgrade } = useSelector(selectExtraFieldLimits);
 
     const getControlByType = useCallback(

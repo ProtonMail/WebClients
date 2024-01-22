@@ -12,7 +12,7 @@ describe('splitHistoryOnFirstOptimisticItem', () => {
         expect(left).toEqual(history);
     });
 
-    test('left side should only contain AnyActions and no optimistic actions', () => {
+    test('left side should only contain redux actions and no optimistic actions', () => {
         const history: WithOptimisticHistory = [
             createTestDeterministicAction(),
             createTestOptimisticHistoryItem(),

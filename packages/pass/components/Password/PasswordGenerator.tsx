@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
@@ -16,7 +16,7 @@ import { PasswordMemorableOptions } from './PasswordMemorableOptions';
 import { PasswordRandomOptions } from './PasswordRandomOptions';
 import { PasswordTypeSelect } from './PasswordTypeSelect';
 
-export const PasswordGenerator: FC17<UsePasswordGeneratorResult> = (props) => {
+export const PasswordGenerator: FC<UsePasswordGeneratorResult> = (props) => {
     const [showAdvanced, setShowAdvanced] = useState(false);
 
     return (

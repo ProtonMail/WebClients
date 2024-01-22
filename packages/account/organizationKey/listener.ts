@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux';
+import type { Action } from '@reduxjs/toolkit';
 
 import { CryptoProxy } from '@proton/crypto';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
@@ -9,7 +9,7 @@ import { OrganizationKeyState, organizationKeyThunk, selectOrganizationKey } fro
 
 export const organizationKeysListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
     startListening({
-        predicate: (action: AnyAction, currentState: OrganizationKeyState) => {
+        predicate: (action: Action, currentState: OrganizationKeyState) => {
             // Warning: There is no event update coming for organization key changes, however, an update for the organization
             // is received as the keys are changed. So each time it changes, it will redo this.
             return !!(

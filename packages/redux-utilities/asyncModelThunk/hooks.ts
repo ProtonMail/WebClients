@@ -1,8 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
-import type { ThunkDispatch } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
-import type { AnyAction } from 'redux';
 import type { ThunkAction } from 'redux-thunk';
 
 import {
@@ -56,11 +55,11 @@ export const useModelThunkDispatcher = (store: any) => {
 };
 
 export const createHooks = <State, Extra, Returned, ThunkArg = void>(
-    thunk: (arg?: ThunkArg) => ThunkAction<Promise<Returned>, State, Extra, AnyAction>,
+    thunk: (arg?: ThunkArg) => ThunkAction<Promise<Returned>, State, Extra, Action>,
     selector: (state: State) => ReducerValue<Returned>
 ) => {
     const useGet = (): ((arg?: ThunkArg) => Promise<Returned>) => {
-        const dispatch = useDispatch<ThunkDispatch<State, Extra, AnyAction>>();
+        const dispatch = useDispatch<ThunkDispatch<State, Extra, Action>>();
         return useCallback((arg?: ThunkArg) => dispatch(thunk(arg)), []);
     };
 

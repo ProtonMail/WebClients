@@ -1,4 +1,4 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import type { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItemsSuccess } from '@proton/pass/store/actions';
@@ -13,7 +13,7 @@ export type ImportEntry = {
 };
 export type ImportState = MaybeNull<ImportEntry>;
 
-const importReducer: Reducer<ImportState> = (state = null, action: AnyAction) => {
+const importReducer: Reducer<ImportState> = (state = null, action: Action) => {
     if (importItemsSuccess.match(action)) {
         return action.payload;
     }

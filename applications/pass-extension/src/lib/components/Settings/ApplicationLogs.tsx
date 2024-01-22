@@ -1,4 +1,4 @@
-import { type VFC17, useCallback, useEffect, useRef, useState } from 'react';
+import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const ApplicationLogs: VFC17 = () => {
+export const ApplicationLogs: FC = () => {
     const [showLogs, setShowLogs] = useState(false);
     const [logs, setLogs] = useState<MaybeNull<string[]>>(null);
     const intervalRef = useRef<Maybe<ReturnType<typeof setInterval>>>();
