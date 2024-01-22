@@ -35,7 +35,7 @@ const store = configureStore({
             ENV === 'development'
                 ? [
                       devToolsEnhancer({
-                          name: 'background',
+                          name: 'store::sw',
                           port: REDUX_DEVTOOLS_PORT,
                           realtime: true,
                       }),
