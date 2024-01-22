@@ -17,6 +17,10 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'emoji-mart',
     'idb',
     '@protontech/bip39',
+    '@reduxjs/toolkit',
+    'react-redux',
+    'reselect',
+    'immer',
 ];
 const BABEL_EXCLUDE_FILES = ['mailparser.js'];
 
