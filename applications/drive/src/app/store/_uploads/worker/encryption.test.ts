@@ -40,8 +40,8 @@ describe('block generator', () => {
     // This is obviously not a good or complete mock implementation
     // but should be sufficient for our implementation
     const mockHasher: any = {
-        process: noop,
-        finish: () => ({ result: new Uint8Array([1, 2, 3, 4]) }),
+        update: noop,
+        digest: () => new Uint8Array([1, 2, 3, 4]),
     };
 
     // Mock implementation of a verifier that always succeeds
@@ -185,10 +185,8 @@ describe('block generator', () => {
 
     it('should call the hasher correctly', async () => {
         const hasher: any = {
-            process: jest.fn(),
-            finish: jest.fn(() => {
-                return new Uint8Array([0, 0, 0, 0]);
-            }),
+            update: jest.fn(),
+            digest: jest.fn(() => new Uint8Array([0, 0, 0, 0])),
         };
 
         const lastBlockSize = 123;
@@ -208,9 +206,9 @@ describe('block generator', () => {
         const blocks = await asyncGeneratorToArray(generator);
         expect(blocks.length).toBe(3);
         // it should have processed the same amount as the blocks
-        expect(hasher.process).toHaveBeenCalledTimes(3);
+        expect(hasher.update).toHaveBeenCalledTimes(3);
         // the finish function is called by the worker at a higher level
-        expect(hasher.finish).not.toHaveBeenCalled();
+        expect(hasher.digest).not.toHaveBeenCalled();
     });
 
     describe('verifier usage', () => {

@@ -1,4 +1,4 @@
-import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import { sha1 } from '@openpgp/noble-hashes/sha1';
 import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
@@ -98,7 +98,7 @@ async function start(
     parentHashKey: Uint8Array,
     verificationData: VerificationData
 ) {
-    const hashInstance = new Sha1();
+    const hashInstance = sha1.create();
     const verifier = createVerifier(verificationData);
 
     buffer
@@ -125,7 +125,7 @@ async function start(
         uploadWorker.postLog(`Computing and validating manifest`);
 
         const fileHash = buffer.hash;
-        const sha1Digest = hashInstance.finish().result;
+        const sha1Digest = hashInstance.digest();
 
         // It seems very unlikely but we had one case when we requested block
         // upload, provided correct original size, but no block was uploaded
@@ -151,7 +151,7 @@ async function start(
             duration: media?.duration,
         };
 
-        const sha1 = sha1Digest ? arrayToHexString(sha1Digest) : undefined;
+        const sha1 = arrayToHexString(sha1Digest);
 
         const [xattr] = await Promise.all([
             encryptFileExtendedAttributes(
@@ -165,11 +165,7 @@ async function start(
                                   duration,
                               }
                             : undefined,
-                    digests: sha1
-                        ? {
-                              sha1,
-                          }
-                        : undefined,
+                    digests:  { sha1 },
                     ...(exifInfo ? getPhotoExtendedAttributes(exifInfo) : {}),
                 },
                 privateKey,
