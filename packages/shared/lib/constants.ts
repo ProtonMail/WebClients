@@ -693,6 +693,8 @@ export enum ADDON_NAMES {
     MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
     MEMBER_VPN_BUSINESS = `${MEMBER_ADDON_PREFIX}-vpnbiz2023`,
     IP_VPN_BUSINESS = `${IP_ADDON_PREFIX}-vpnbiz2023`,
+    MEMBER_PASS_PRO = `${MEMBER_ADDON_PREFIX}-passpro2024`,
+    MEMBER_PASS_BUSINESS = `${MEMBER_ADDON_PREFIX}-passbiz2024`,
 }
 
 export enum PLAN_TYPES {
@@ -743,6 +745,8 @@ export enum PLANS {
     VPN_PRO = 'vpnpro2023',
     VPN_BUSINESS = 'vpnbiz2023',
     VPN_PASS_BUNDLE = 'vpnpass2023',
+    PASS_PRO = 'passpro2024',
+    PASS_BUSINESS = 'passbiz2024',
 }
 
 export const PLAN_NAMES = {
@@ -766,6 +770,8 @@ export const PLAN_NAMES = {
     [PLANS.VPN_PRO]: 'VPN Essentials',
     [PLANS.VPN_BUSINESS]: 'VPN Business',
     [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',
+    [PLANS.PASS_PRO]: 'Pass Essentials',
+    [PLANS.PASS_BUSINESS]: 'Pass Business',
 };
 
 export const MEMBER_PLAN_MAPPING = {
