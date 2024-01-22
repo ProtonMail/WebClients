@@ -1,4 +1,4 @@
-import { type FC17, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
@@ -10,7 +10,7 @@ type Props = {
     onLoading?: (loading: boolean) => void;
 };
 
-export const Unlock: FC17<Props> = ({ onLoading }) => {
+export const Unlock: FC<Props> = ({ onLoading }) => {
     const [value, setValue] = useState('');
 
     const unlock = useActionRequest({

@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useEffect, useMemo } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
@@ -29,7 +29,7 @@ type Props = {
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC17<Props> = ({ hostname, items, needsUpgrade, visible, onMessage, onClose }) => {
+export const ItemsList: FC<Props> = ({ hostname, items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 

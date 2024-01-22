@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 import { Provider, type TypedUseSelectorHook } from 'react-redux';
 
 import type { Action } from '@reduxjs/toolkit';
-import type { AnyAction, Store } from 'redux';
+import type { Store } from 'redux';
 
 import { useModelThunkDispatcher } from '@proton/redux-utilities';
 
@@ -12,7 +12,7 @@ import type { SharedStore } from './sharedStore';
 type UseProtonDispatch = SharedStore['dispatch'];
 type SharedState = ReturnType<SharedStore['getState']>;
 
-export interface ProtonStoreProviderProps<S = any, A extends Action = AnyAction> {
+export interface ProtonStoreProviderProps<S = any, A extends Action = Action> {
     store: Store<S, A>;
     children: ReactNode;
 }

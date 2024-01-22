@@ -1,4 +1,4 @@
-import { type ReactNode, type VFC17, useEffect, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -21,7 +21,7 @@ type Props = {
     renderError: () => ReactNode;
 };
 
-export const LobbyContent: VFC17<Props> = ({ status, onLogin, onLogout, onRegister, renderError }) => {
+export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError }) => {
     const [timeoutError, setTimeoutError] = useState(false);
     const stale = clientStale(status);
     const busy = clientBusy(status);

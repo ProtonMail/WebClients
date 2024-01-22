@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
@@ -15,14 +15,14 @@ import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 import { usePassCore } from '../../Core/PassCoreProvider';
 
-const itemNewMap: { [T in ItemType]: VFC17<ItemNewViewProps<T>> } = {
+const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     login: LoginNew,
     note: NoteNew,
     alias: AliasNew,
     creditCard: CreditCardNew,
 };
 
-export const ItemNew: VFC17 = () => {
+export const ItemNew: FC = () => {
     const { getCurrentTabUrl } = usePassCore();
     const { selectItem, setFilters, filters } = useNavigation();
     const selectedShareId = filters.selectedShareId;

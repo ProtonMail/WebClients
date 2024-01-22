@@ -1,4 +1,4 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import type { OptimisticState } from '../types';
 import { HistoryFlag } from '../types';
@@ -15,7 +15,7 @@ import { removeHistoryItem } from '../utils/remove-history-item';
 export const initiateReducer = <T>(
     inner: T,
     reducer: Reducer<T>,
-    action: AnyAction,
+    action: Action,
     optimistic: OptimisticState<T>,
     optimisticId: string
 ): OptimisticState<T> => {

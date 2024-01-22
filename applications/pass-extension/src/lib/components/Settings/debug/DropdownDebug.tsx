@@ -1,4 +1,4 @@
-import type { ReactNode, VFC17 } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SafeLoginItem } from '@proton/pass/types';
@@ -26,7 +26,7 @@ const LOGIN_ITEMS: SafeLoginItem[] = [
     },
 ];
 
-const MockIFrameContainer: VFC17<{ children: ReactNode }> = ({ children }) => (
+const MockIFrameContainer: FC<{ children: ReactNode }> = ({ children }) => (
     <div
         style={{
             width: '100%',
@@ -42,7 +42,7 @@ const MockIFrameContainer: VFC17<{ children: ReactNode }> = ({ children }) => (
     </div>
 );
 
-export const DropdownDebug: VFC17 = () => {
+export const DropdownDebug: FC = () => {
     return (
         <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>

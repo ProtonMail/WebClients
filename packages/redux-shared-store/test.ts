@@ -1,14 +1,13 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
-import type { NoInfer } from '@reduxjs/toolkit/src/tsHelpers';
-import type { Action, CombinedState, PreloadedState, Reducer, ReducersMapObject } from 'redux';
+import type { Action, Reducer, ReducersMapObject } from 'redux';
 
-export const getTestStore = <T, A extends Action, S = any>({
+export const getTestStore = <T, A extends Action, S = any, P = S>({
     preloadedState,
     reducer,
     extraThunkArguments,
 }: {
-    reducer: Reducer<S, A> | ReducersMapObject<S, A>;
-    preloadedState?: PreloadedState<CombinedState<NoInfer<S>>>;
+    reducer: Reducer<S, A, P> | ReducersMapObject<S, A, P>;
+    preloadedState?: P;
     extraThunkArguments: T;
 }) => {
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });

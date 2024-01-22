@@ -1,7 +1,8 @@
-import type { AnyAction, Middleware } from 'redux';
+import { type Middleware, isAction } from 'redux';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import type { State } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
 import WorkerMessageBroker from '../channel';
@@ -11,14 +12,16 @@ import WorkerMessageBroker from '../channel';
  * - proxies every action through the extension's message channel
  * - forwards actions to saga middleware
  */
-export const workerMiddleware: Middleware = () => (next) => (action: AnyAction) => {
-    WorkerMessageBroker.ports.broadcast(
-        backgroundMessage({
-            type: WorkerMessageType.STORE_DISPATCH,
-            payload: { action: sanitizeWithCallbackAction(action) },
-        }),
-        (name) => /^(popup|page)/.test(name)
-    );
+export const workerMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
+    if (isAction(action)) {
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.STORE_DISPATCH,
+                payload: { action: sanitizeWithCallbackAction(action) },
+            }),
+            (name) => /^(popup|page)/.test(name)
+        );
 
-    next(action);
+        next(action);
+    }
 };

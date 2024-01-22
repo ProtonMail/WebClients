@@ -1,4 +1,4 @@
-import { type VFC17, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import { Card } from '@proton/atoms/Card';
 import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
@@ -13,7 +13,7 @@ type Props = Omit<ModalProps, 'onSubmit'> & {
     onSubmit: (pin: string) => void;
 };
 
-export const LockPinModal: VFC17<Props> = ({ title, assistiveText, loading, onSubmit, ...modalProps }) => {
+export const LockPinModal: FC<Props> = ({ title, assistiveText, loading, onSubmit, ...modalProps }) => {
     const [value, setValue] = useState<string>('');
     useSessionLockPinSubmitEffect(value, { onSubmit });
 

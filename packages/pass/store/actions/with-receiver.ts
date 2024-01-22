@@ -1,19 +1,19 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 
 import type { ClientEndpoint, TabId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type EndpointOptions = { endpoint?: ClientEndpoint; tabId?: TabId };
-export type WithReceiverAction<T = AnyAction> = T & { meta: { receiver: EndpointOptions } };
-export type WithSenderAction<T = AnyAction> = T & { meta: { sender?: EndpointOptions } };
+export type WithReceiverAction<T = Action> = T & { meta: { receiver: EndpointOptions } };
+export type WithSenderAction<T = Action> = T & { meta: { sender?: EndpointOptions } };
 
 /* type guard utility */
-export const isActionWithReceiver = <T extends AnyAction>(action?: T): action is WithReceiverAction<T> => {
+export const isActionWithReceiver = <T extends Action>(action?: T): action is WithReceiverAction<T> => {
     const { meta } = action as any;
     return meta?.receiver !== undefined || meta?.tabId !== undefined;
 };
 
-export const acceptActionWithReceiver = (action: AnyAction, endpoint: ClientEndpoint, tabId?: TabId) => {
+export const acceptActionWithReceiver = (action: Action, endpoint: ClientEndpoint, tabId?: TabId) => {
     if (isActionWithReceiver(action)) {
         const { meta } = action;
         return (

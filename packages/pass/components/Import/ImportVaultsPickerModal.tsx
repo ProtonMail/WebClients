@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -33,7 +33,7 @@ export type ImportVaultsPickerHandle = { submit: () => void };
 
 const FORM_ID = 'vault-picker';
 
-export const ImportVaultsPickerModal: VFC17<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
+export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
     const writableVaults = useSelector(selectWritableVaults);
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);

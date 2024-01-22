@@ -1,4 +1,4 @@
-import { type FC17, type MouseEvent, useMemo } from 'react';
+import { type FC, type MouseEvent, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -34,7 +34,7 @@ type Props = {
     noActions?: boolean;
 };
 
-export const ItemsListPlaceholder: FC17<Props> = ({ noActions }) => {
+export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const { openSettings } = usePassCore();
     const { navigate, matchTrash, filters } = useNavigation();
     const { search, selectedShareId } = filters;

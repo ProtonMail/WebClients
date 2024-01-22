@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import { ThunkDispatch, createSelector } from '@reduxjs/toolkit';
-import { AnyAction } from 'redux';
+import { Action, ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { type ProtonThunkArguments, baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -9,7 +8,7 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainAddressesState, domainAddressesThunk, selectDomainAddresses } from './index';
 
 export const useGetDomainAddresses = () => {
-    const dispatch = baseUseDispatch<ThunkDispatch<DomainAddressesState, ProtonThunkArguments, AnyAction>>();
+    const dispatch = baseUseDispatch<ThunkDispatch<DomainAddressesState, ProtonThunkArguments, Action>>();
     return useCallback((addressID: string) => dispatch(domainAddressesThunk({ thunkArg: addressID })), [dispatch]);
 };
 
