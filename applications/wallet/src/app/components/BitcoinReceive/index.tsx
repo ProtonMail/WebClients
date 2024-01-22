@@ -25,7 +25,7 @@ const CopyPasteButton = ({ value }: { value: string }) => {
         <div className="mt-8">
             <Copy
                 value={value}
-                className="flex flex-row items-center"
+                className="flex items-start flex-nowrap gap-2"
                 shape="solid"
                 color="norm"
                 size="small"
@@ -34,8 +34,10 @@ const CopyPasteButton = ({ value }: { value: string }) => {
                     setTimeout(() => setTitle(defaultTitle), 2 * SECOND);
                 }}
             >
-                <Icon className="mx-2" name="squares" alt={c('Wallet Receive').t`Copy`} />
-                <span className="mr-2"> {title}</span>
+                <span className="shrink-0">
+                    <Icon name="squares" />
+                </span>
+                <span className="text-left">{title}</span>
             </Copy>
         </div>
     );
