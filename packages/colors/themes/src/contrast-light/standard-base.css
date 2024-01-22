@@ -27,8 +27,8 @@
     --focus-outline: #4630a6;
     --focus-ring: rgb(70 48 166 / 0.75);
 
-    --border-norm: #888888;
-    --border-weak: #aaaaaa;
+    --border-norm: #B7B5B4;
+    --border-weak: #D1CFCD;
 
     --background-norm: #ffffff;
     --background-weak: #f5f5f5;
@@ -40,11 +40,14 @@
     --interaction-default-active: rgb(194 194 194 / 0.6);
 
     --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
     --shadow-lifted-opacity: 0.16;
 
     --backdrop-norm: rgb(0 0 0 / 0.32);
 
     /* Optional colors */
+
+    --optional-email-item-read-text-color: #393939;
 
     --optional-scrollbar-thumb-color: #c2c2c2;
     --optional-scrollbar-thumb-hover-color: #a8a8a8;
