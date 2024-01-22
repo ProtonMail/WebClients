@@ -3,19 +3,20 @@ import { useSelector } from 'react-redux';
 
 import type { RequestEntry } from '@proton/pass/store/reducers';
 import { selectRequest } from '@proton/pass/store/selectors';
+import type { MaybePromise } from '@proton/pass/types';
 
-type Options = {
-    onStart?: <R extends RequestEntry<'start', any>>(request: R) => void;
-    onSuccess?: <R extends RequestEntry<'success', any>>(request: R) => void;
-    onFailure?: <R extends RequestEntry<'failure', any>>(request: R) => void;
+export type UseActionRequestEffectOptions = {
+    onStart?: <R extends RequestEntry<'start', any>>(request: R) => MaybePromise<void>;
+    onSuccess?: <R extends RequestEntry<'success', any>>(request: R) => MaybePromise<void>;
+    onFailure?: <R extends RequestEntry<'failure', any>>(request: R) => MaybePromise<void>;
 };
 
 /* `options` is wrapped in a ref to avoid setting it as
  * a dependency to the status change effect. We only want
  * to trigger the callbacks once. */
-export const useActionRequestEffect = (requestId: string, options: Options) => {
+export const useActionRequestEffect = (requestId: string, options: UseActionRequestEffectOptions) => {
     const request = useSelector(selectRequest(requestId));
-    const optionsRef = useRef<Options>(options);
+    const optionsRef = useRef<UseActionRequestEffectOptions>(options);
     optionsRef.current = options;
 
     const [loading, setLoading] = useState(false);
@@ -30,13 +31,16 @@ export const useActionRequestEffect = (requestId: string, options: Options) => {
         switch (request.status) {
             case 'start':
                 setLoading(true);
-                return optionsRef.current.onStart?.(request);
+                void optionsRef.current.onStart?.(request);
+                break;
             case 'success':
                 setLoading(false);
-                return optionsRef.current.onSuccess?.(request);
+                void optionsRef.current.onSuccess?.(request);
+                break;
             case 'failure':
                 setLoading(false);
-                return optionsRef.current.onFailure?.(request);
+                void optionsRef.current.onFailure?.(request);
+                break;
         }
     }, [request]);
 
