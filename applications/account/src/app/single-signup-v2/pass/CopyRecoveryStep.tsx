@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,11 +9,13 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import Content from '../../public/Content';
 import Header from '../../public/Header';
 import Main from '../../public/Main';
 import { MnemonicData } from '../../signup/interfaces';
+import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 
 interface Props {
     onContinue: () => Promise<void>;
@@ -24,6 +26,7 @@ interface Props {
 const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
     const [loading, withLoading] = useLoading();
     const onceRef = useRef(false);
+    const [understood, setUnderstood] = useState(false);
 
     const { createNotification } = useNotifications();
 
@@ -39,7 +42,6 @@ const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
         <Main>
             <Content>
                 <Header
-                    center
                     title={c('pass_signup_2023: Title').t`Secure your account`}
                     subTitle={c('pass_signup_2023: Info').t`Save your recovery kit to continue`}
                 />
@@ -47,35 +49,38 @@ const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
                     <p className="mt-4">
                         {getBoldFormattedText(
                             c('pass_signup_2023: Info')
-                                .t`If you get locked out of your ${BRAND_NAME} Account, your **recovery kit** will allow you to sign in and recover your data.`
+                                .t`If you get locked out of your ${BRAND_NAME} Account, your **Recovery kit** will allow you to sign in and recover your data.`
                         )}
                     </p>
                     <p className="mb-0">
                         {getBoldFormattedText(
                             c('pass_signup_2023: Info')
-                                .t`It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.`
+                                .t`It’s the only way to fully restore your account, so make sure you keep it somewhere safe.`
                         )}
                     </p>
-                    <Card
-                        className="mt-2 flex justify-space-between items-center flex-nowrap"
-                        bordered={false}
-                        rounded
-                    >
+                    <Card className="mt-2 flex justify-space-between items-center flex-nowrap" bordered={false} rounded>
                         <span className="mr-2 text-bold" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic.mnemonic}
                         </span>
                         <Copy className="bg-norm shrink-0" value={mnemonic.mnemonic} onCopy={onCopy} />
                     </Card>
+
+                    <RecoveryStepUnderstoodCheckbox
+                        className="mt-2"
+                        checked={understood}
+                        onChange={loading ? noop : () => setUnderstood(!understood)}
+                    />
                 </div>
                 <Button
                     color="norm"
                     size="large"
                     fullWidth
-                    className="mt-6"
+                    className="mt-4"
+                    disabled={!understood}
                     loading={loading}
                     onClick={() => {
                         onMeasureClick('recovery_continue');
-                        withLoading(onContinue());
+                        void withLoading(onContinue());
                     }}
                 >
                     {c('pass_signup_2023: Action').t`Continue`}
