@@ -43,17 +43,25 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
         const user = session.payload?.User;
+        extendStore({ config, api, authentication, history, unleashClient });
 
-        const persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
+        let persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
             authentication,
             user,
         });
 
+        if (persistedState) {
+            await unleashPromise;
+            if (!unleashClient.isEnabled('PersistedState')) {
+                persistedState = undefined;
+            }
+        }
+
         const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;
-        extendStore({ config, api, authentication, history, unleashClient });
 
         if (user) {
             dispatch(initEvent({ User: user }));
@@ -88,11 +96,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
         const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
-        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
         loadPreloadButIgnored();
 
+        // Needs unleash to be loaded. NOTE: It might have already gotten loaded previously.
         await unleashPromise;
-        // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
         const [MainContainer, userData, eventManager] = await Promise.all([
             appContainerPromise,
@@ -111,6 +118,14 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(serverEvent(event));
         });
         eventManager.start();
+
+        if (persistedState?.eventID) {
+            setTimeout(() => {
+                eventManager.call();
+                // If we're resuming a session, we'd like to call the ev to get up-to-speed.
+                // This is in an arbitrary timeout since there are some consumers who subscribe through react useEffects triggered later through the app.
+            }, 550);
+        }
 
         bootstrap.onAbort(signal, () => {
             unsubscribeEventManager();
