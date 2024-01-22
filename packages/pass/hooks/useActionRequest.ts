@@ -7,21 +7,17 @@ import type { RequestOptions } from '@proton/pass/store/actions/with-request';
 import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
 import type { RequestEntry } from '@proton/pass/store/reducers';
 
-import { useActionRequestEffect } from './useActionRequestEffect';
+import { type UseActionRequestEffectOptions, useActionRequestEffect } from './useActionRequestEffect';
 
-export type RequestEntryFromAction<A extends WithRequest<Action, any>> = A['meta']['request'] extends RequestOptions<
-    infer T,
-    infer D
->
-    ? RequestEntry<T, D>
-    : never;
+export type RequestEntryFromAction<A extends WithRequest<Action, any>> =
+    A['meta']['request'] extends RequestOptions<infer T, infer D> ? RequestEntry<T, D> : never;
 
-type UseActionWithRequestOptions<P extends any[], A extends WithRequest<Action, 'start'>> = {
+type UseActionWithRequestOptions<
+    P extends any[],
+    A extends WithRequest<Action, 'start'>,
+> = UseActionRequestEffectOptions & {
     action: (...args: P) => A;
     initialRequestId?: string;
-    onStart?: <R extends RequestEntry<'start', any>>(request: R) => void;
-    onSuccess?: <R extends RequestEntry<'success', any>>(request: R) => void;
-    onFailure?: <R extends RequestEntry<'failure', any>>(request: R) => void;
 };
 
 /*
