@@ -25,6 +25,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) => {
         provider !== ImportProvider.BRAVE &&
         provider !== ImportProvider.FIREFOX &&
         provider !== ImportProvider.CHROME &&
+        provider !== ImportProvider.CSV &&
         provider !== ImportProvider.EDGE &&
         provider !== ImportProvider.SAFARI &&
         provider !== ImportProvider.PROTONPASS
@@ -97,6 +98,24 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                             </Href>
                         )}
                     </div>
+                    {form.values.provider === ImportProvider.CSV && (
+                        <div>
+                            {c('Info').t`Follow those steps to import your data with a generic CSV:`}
+                            <ol>
+                                <li>
+                                    <Href href="/assets/protonpass-import.csv" download="protonpass-import.csv">
+                                        {c('Action').t`Download this CSV template`}
+                                    </Href>
+                                </li>
+                                <li>{c('Info').t`Fill in the CSV with your data`}</li>
+                                <li>{c('Info').t`Import the CSV file below.`}</li>
+                                <li>
+                                    {c('Info')
+                                        .t`After successfully importing your data, you may delete the CSV file containing your passwords for security.`}
+                                </li>
+                            </ol>
+                        </div>
+                    )}
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
