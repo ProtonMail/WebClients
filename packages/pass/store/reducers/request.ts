@@ -21,21 +21,26 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
         const { request } = action.meta;
         const nextState = { ...state };
 
-        const entry = ((): RequestEntry<RequestType, any> => {
-            switch (request.type) {
-                case 'start':
-                    return { status: request.type, progress: 0, data: undefined };
-                default:
-                    return {
-                        status: request.type,
-                        data: 'data' in request ? request.data : undefined,
-                        ...(request.maxAge ? { expiresAt: getEpoch() + request.maxAge } : { expiresAt: undefined }),
-                    };
-            }
-        })();
+        switch (request.type) {
+            case 'start':
+                nextState[request.id] = { status: request.type, progress: 0, data: undefined };
+                return nextState;
 
-        nextState[request.id] = entry;
-        return nextState;
+            case 'progress':
+                const ongoing = nextState[request.id];
+                if (ongoing?.status !== 'start') return state;
+                nextState[request.id] = { ...ongoing, progress: request.progress };
+                return nextState;
+
+            case 'failure':
+            case 'success':
+                nextState[request.id] = {
+                    status: request.type,
+                    data: ('data' in request ? request.data : undefined) as any,
+                    ...(request.maxAge ? { expiresAt: getEpoch() + request.maxAge } : { expiresAt: undefined }),
+                };
+                return nextState;
+        }
     }
 
     if (requestProgress.match(action) && state[action.payload.requestId]?.status === 'start') {
