@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { all, put, takeEvery } from 'redux-saga/effects';
 
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
@@ -19,10 +19,10 @@ import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 type ItemCreationAction = ReturnType<typeof itemCreationIntent>;
 type ItemWithAliasCreationAction = ItemCreationAction & { payload: { type: 'login'; extraData: { withAlias: true } } };
 
-const singleItemCreation = (action: AnyAction): action is ItemCreationAction =>
+const singleItemCreation = (action: Action): action is ItemCreationAction =>
     itemCreationIntent.match(action) && (action.payload.type === 'login' ? !action.payload.extraData.withAlias : true);
 
-const withAliasItemCreation = (action: AnyAction): action is ItemWithAliasCreationAction =>
+const withAliasItemCreation = (action: Action): action is ItemWithAliasCreationAction =>
     itemCreationIntent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
 function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOptions, action: ItemCreationAction) {
@@ -45,7 +45,9 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         yield put(itemCreationSuccessAction);
         yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] }));
+        void telemetry?.push(
+            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] })
+        );
 
         if (item.data.type === 'login' && deobfuscate(item.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
@@ -77,8 +79,12 @@ function* withAliasCreationWorker(
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
         yield put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] }));
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] }));
+        void telemetry?.push(
+            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] })
+        );
+        void telemetry?.push(
+            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] })
+        );
         if (loginItem.data.type === 'login' && deobfuscate(loginItem.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }

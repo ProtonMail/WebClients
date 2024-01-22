@@ -1,4 +1,4 @@
-import { type VFC17, useCallback, useEffect, useState } from 'react';
+import { type FC, useCallback, useEffect, useState } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
@@ -37,7 +37,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC17<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
+export const AliasAutoSuggest: FC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
     const ensureMounted = useEnsureMounted();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
     const { userEmail } = useIFrameContext();

@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { type FormikContextType } from 'formik';
@@ -21,7 +21,7 @@ export const FORM_ID = 'vault-invite';
 
 type Props = { form: FormikContextType<InviteFormValues>; autoFocus?: boolean };
 
-export const VaultInviteForm: VFC17<Props> = ({ form, autoFocus }) => {
+export const VaultInviteForm: FC<Props> = ({ form, autoFocus }) => {
     const { email, step } = form.values;
     const userVerified = useSelector(selectUserVerified);
 

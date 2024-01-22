@@ -1,4 +1,4 @@
-import { Children, type FC17, type ReactElement, type ReactNode, cloneElement } from 'react';
+import { Children, type FC, type ReactElement, type ReactNode, cloneElement } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -101,7 +101,7 @@ export const RadioButtonGroup = <T extends RadioValue>(props: RadioButtonGroupPr
 
 type RadioButtonGroupFieldProps = FieldProps & InputFieldProps<typeof RadioButtonGroup>;
 
-export const RadioButtonGroupField: FC17<RadioButtonGroupFieldProps> = ({ field, form, meta, onChange, ...props }) => {
+export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = ({ field, form, meta, onChange, ...props }) => {
     const { error } = useFieldControl({ field, form, meta });
 
     return (

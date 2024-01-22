@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -20,7 +20,7 @@ type Props = {
     onSelect: () => void;
 };
 
-export const TrashItem: VFC17<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
+export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
     const count = useSelector(selectAllTrashedItems).length;
 
     return (

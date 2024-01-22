@@ -43,7 +43,7 @@ const reducer = combineReducers({
     ...addressKeysReducer,
 });
 
-const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
+const setup = (preloadedState?: Partial<typeof reducer>) => {
     const actions: any[] = [];
 
     const extraThunkArguments = {

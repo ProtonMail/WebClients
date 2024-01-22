@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 
 import type { IconSize } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
@@ -24,7 +24,7 @@ type Props = {
 
 const rem = (px: number) => `${px / rootFontSize()}rem`;
 
-export const VaultIcon: VFC17<Props> = ({
+export const VaultIcon: FC<Props> = ({
     className,
     background,
     highlighted,

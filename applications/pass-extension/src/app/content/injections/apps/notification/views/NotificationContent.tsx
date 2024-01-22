@@ -1,4 +1,4 @@
-import { type VFC17, useCallback, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 
 import { NotificationsChildren } from '@proton/components/containers';
 import type { MaybeNull } from '@proton/pass/types';
@@ -8,7 +8,7 @@ import { type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';
 import { NotificationSwitch } from '../components/NotificationSwitch';
 
-export const NotificationContent: VFC17 = () => {
+export const NotificationContent: FC = () => {
     const { closeIFrame, postMessage, settings, visible, locale } = useIFrameContext();
     const [notificationState, setNotificationState] = useState<MaybeNull<NotificationActions>>(null);
 

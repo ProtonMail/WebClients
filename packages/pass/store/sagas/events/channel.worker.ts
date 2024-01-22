@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { call, cancelled, take, takeLeading } from 'redux-saga/effects';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
@@ -40,7 +40,7 @@ export function* channelEventsWorker<T extends {}>(eventChannel: EventChannel<T>
 export function* channelWakeupWorker<T extends {}>({ manager }: EventChannel<T>): Generator {
     yield manager.call().catch(noop);
     yield takeLeading(
-        (action: AnyAction) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
+        (action: Action) => wakeupSuccess.match(action) && action.meta.receiver.endpoint === 'popup',
         function* () {
             yield manager.call().catch(noop);
             /* wait the channel's interval to process

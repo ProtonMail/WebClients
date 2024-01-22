@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 
@@ -17,7 +17,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'locked' }
         | { type: 'unlocked' }
         | { type: 'refresh'; data: RefreshSessionData }
-        | { type: 'action'; action: AnyAction }
+        | { type: 'action'; action: Action }
         | { type: 'abort'; requestUrl: string }
     );
 

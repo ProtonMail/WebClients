@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ type Props = {
     onChange: (locale: string) => void;
 };
 
-export const LocaleSelect: VFC17<Props> = ({ value, onChange }) => {
+export const LocaleSelect: FC<Props> = ({ value, onChange }) => {
     const { LOCALES } = useConfig();
 
     return (

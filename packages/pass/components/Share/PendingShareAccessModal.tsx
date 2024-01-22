@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +8,7 @@ import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModa
 
 export type Props = Omit<ModalProps, 'onSubmit'>;
 
-export const PendingShareAccessModal: VFC17<Props> = ({ ...props }) => (
+export const PendingShareAccessModal: FC<Props> = ({ ...props }) => (
     <AdaptiveModal {...props} size="large">
         <div className="flex flex-column items-center justify-center gap-5">
             <img

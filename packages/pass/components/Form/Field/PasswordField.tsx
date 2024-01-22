@@ -1,4 +1,4 @@
-import { type VFC17, useCallback } from 'react';
+import { type FC, useCallback } from 'react';
 
 import { PasswordGeneratorButton } from '@proton/pass/components/Password/PasswordGeneratorButton';
 import clsx from '@proton/utils/clsx';
@@ -9,7 +9,7 @@ import './PasswordField.scss';
 
 type Props = { onPasswordGenerated: (password: string) => void } & TextFieldProps;
 
-export const PasswordField: VFC17<Props> = (props) => {
+export const PasswordField: FC<Props> = (props) => {
     const { field, form, onPasswordGenerated, ...rest } = props;
 
     const handlePasswordGeneratorDone = useCallback(

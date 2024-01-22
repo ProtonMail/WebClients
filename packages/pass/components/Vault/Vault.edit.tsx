@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -21,7 +21,7 @@ type Props = Omit<ModalProps, 'onSubmit'> & { vault: VaultShareItem; onSuccess: 
 
 export const FORM_ID = 'vault-edit';
 
-export const VaultEdit: VFC17<Props> = ({ vault, onSuccess, ...modalProps }) => {
+export const VaultEdit: FC<Props> = ({ vault, onSuccess, ...modalProps }) => {
     const editVault = useActionRequest({ action: vaultEditIntent, onSuccess });
 
     const form = useFormik<VaultFormValues>({
