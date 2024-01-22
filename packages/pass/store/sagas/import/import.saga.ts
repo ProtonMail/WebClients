@@ -7,12 +7,11 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
-    importItemsBatchSuccess,
     importItemsFailure,
     importItemsIntent,
+    importItemsProgress,
     importItemsSuccess,
     notification,
-    requestProgress,
     startEventPolling,
     stopEventPolling,
     vaultCreationIntent,
@@ -94,9 +93,7 @@ function* importWorker(
                         );
 
                         totalItems += revisions.length;
-
-                        yield put(requestProgress(meta.request.id, totalItems));
-                        yield put(importItemsBatchSuccess({ shareId, items }));
+                        yield put(importItemsProgress(meta.request.id, totalItems, { shareId, items }));
                     } catch (e) {
                         const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
                         ignored.push(...batch.map((item) => `[${capitalize(item.type)}] ${item.metadata.name}`));
