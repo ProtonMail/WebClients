@@ -1,4 +1,4 @@
-import type { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import type { sha1 } from '@openpgp/noble-hashes/sha1';
 
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
@@ -21,7 +21,7 @@ export async function* generateEncryptedBlocks(
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
     postNotifySentry: (e: Error) => void,
-    hashInstance: Sha1,
+    hashInstance: ReturnType<typeof sha1.create>,
     verifier: Verifier
 ): AsyncGenerator<EncryptedBlock> {
     let index = 1;
@@ -29,7 +29,7 @@ export async function* generateEncryptedBlocks(
     while (!reader.isEOF()) {
         const chunk = await reader.readNextChunk();
 
-        hashInstance.process(chunk);
+        hashInstance.update(chunk);
 
         yield await encryptBlock(index++, chunk, addressPrivateKey, privateKey, sessionKey, verifier, postNotifySentry);
     }
