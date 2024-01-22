@@ -28,6 +28,8 @@ const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title
         return null;
     }, [syncingMetatadaByAccountId]);
 
+    const isSmallViewport = viewportWidth['<=small'];
+
     return (
         <PrivateHeader
             app={APPS.PROTONWALLET}
@@ -35,8 +37,9 @@ const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title
             title={title}
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
-            isSmallViewport={viewportWidth['<=small']}
             settingsButton={<QuickSettingsAppButton />}
+            isSmallViewport={isSmallViewport}
+            hideMenuButton={!isSmallViewport}
             actionArea={
                 <div className="flex h-full">
                     {syncingText && (
