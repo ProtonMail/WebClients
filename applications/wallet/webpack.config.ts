@@ -2,7 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
-import { addDevEntry } from '@proton/pack/webpack/entries';
+import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
 
 const result = (env: any): webpack.Configuration => {
     const config = getConfig(env);
@@ -26,6 +26,7 @@ const result = (env: any): webpack.Configuration => {
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
+            chunks: getIndexChunks('index'),
         })
     );
 
