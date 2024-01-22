@@ -8,4 +8,4 @@ export const alphabeticChars = uppercaseChars + lowercaseChars + 'iolIOL';
 export const digitChars = '0123456789';
 export const specialChars = '!#$%&()*+.:;<=>?@[]^';
 
-export const DEFAULT_PASSWORD_LENGTH = 16;
+export const DEFAULT_PASSWORD_LENGTH = 20;
