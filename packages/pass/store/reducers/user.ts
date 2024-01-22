@@ -80,8 +80,8 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     }
 
     if (getUserFeaturesSuccess.match(action)) {
-        state.features = null; /* wipe all features before merge */
-        return partialMerge(state, { features: action.payload });
+        const next: UserState = { ...state, features: null }; /* wipe all features before merge */
+        return partialMerge(next, { features: action.payload });
     }
 
     return state;

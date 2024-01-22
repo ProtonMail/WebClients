@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
@@ -21,7 +21,7 @@ type Props = {
 const FORM_ID = 'vault-confirm-delete';
 const initialValues: ConfirmDeleteValues = { name: '' };
 
-export const VaultDelete: VFC17<Props> = ({ vault, onClose, onSubmit }) => {
+export const VaultDelete: FC<Props> = ({ vault, onClose, onSubmit }) => {
     const dispatch = useDispatch();
     const vaultName = (vault?.content?.name ?? '').trim();
 

@@ -1,4 +1,4 @@
-import type { ReactNode, VFC17 } from 'react';
+import type { FC, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -10,7 +10,7 @@ import { NotificationSwitch } from '../../../../app/content/injections/apps/noti
 import { NotificationAction } from '../../../../app/content/types';
 import { SettingsPanel } from '../SettingsPanel';
 
-const MockIFrameContainer: VFC17<{ children: ReactNode; height?: number }> = ({
+const MockIFrameContainer: FC<{ children: ReactNode; height?: number }> = ({
     children,
     height = NOTIFICATION_HEIGHT,
 }) => (
@@ -31,7 +31,7 @@ const MockIFrameContainer: VFC17<{ children: ReactNode; height?: number }> = ({
 
 const MockSettings = { loadDomainImages: true } as ProxiedSettings;
 
-export const NotificationDebug: VFC17 = () => {
+export const NotificationDebug: FC = () => {
     const otpItem = useSelector(selectItemsByType('login')).find((item) => Boolean(item.data.content.totpUri.v));
 
     return (

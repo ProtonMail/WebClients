@@ -1,11 +1,11 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
 type Props = { children: string; className?: string };
 
-export const TextAreaReadonly: VFC17<Props> = ({ children, className }) => {
+export const TextAreaReadonly: FC<Props> = ({ children, className }) => {
     const [height, setHeight] = useState(0);
     const ref = useRef<HTMLTextAreaElement>(null);
 

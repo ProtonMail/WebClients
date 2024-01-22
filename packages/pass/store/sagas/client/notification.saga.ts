@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { takeEvery } from 'redux-saga/effects';
 
 import type { WithNotification } from '@proton/pass/store/actions/with-notification';
@@ -6,7 +6,7 @@ import { isActionWithNotification } from '@proton/pass/store/actions/with-notifi
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
-function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNotification<AnyAction>) {
+function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNotification<Action>) {
     const { notification } = action.meta;
 
     /* if the action has request metadata - use the

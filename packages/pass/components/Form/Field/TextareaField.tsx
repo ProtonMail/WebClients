@@ -1,5 +1,5 @@
 import type { ForwardRefRenderFunction } from 'react';
-import { type VFC17, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { type FC, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -67,7 +67,7 @@ const BaseTextAreaFieldRender: ForwardRefRenderFunction<HTMLTextAreaElement, Bas
 
 export const BaseTextAreaField = forwardRef(BaseTextAreaFieldRender);
 
-export const BaseMaskedTextAreaField: VFC17<BaseTextAreaFieldProps> = ({ form, field, ...rest }) => {
+export const BaseMaskedTextAreaField: FC<BaseTextAreaFieldProps> = ({ form, field, ...rest }) => {
     const { value } = field;
     const [masked, setMasked] = useState<boolean>(true);
     const ref = useRef<HTMLTextAreaElement>(null);
@@ -98,7 +98,7 @@ export const BaseMaskedTextAreaField: VFC17<BaseTextAreaFieldProps> = ({ form, f
 
 export type TextAreaFieldProps = FieldBoxProps & BaseTextAreaFieldProps;
 
-export const TextAreaField: VFC17<TextAreaFieldProps> = ({
+export const TextAreaField: FC<TextAreaFieldProps> = ({
     actions,
     actionsContainerClassName,
     className,

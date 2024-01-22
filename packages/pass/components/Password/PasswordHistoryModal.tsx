@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 import { PasswordHistoryItem } from './PasswordHistoryItem';
 import { usePasswordContext } from './PasswordProvider';
 
-export const PasswordHistoryModal: VFC17<ModalProps> = (props) => {
+export const PasswordHistoryModal: FC<ModalProps> = (props) => {
     const passwordContext = usePasswordContext();
     const history = useSelector(selectPasswordHistory);
 

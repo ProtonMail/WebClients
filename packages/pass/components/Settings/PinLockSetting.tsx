@@ -1,4 +1,4 @@
-import { type VFC17, useState } from 'react';
+import { type FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -15,7 +15,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
 
-export const PinLockSetting: VFC17 = () => {
+export const PinLockSetting: FC = () => {
     const [lockCreationModalOpened, setLockCreationModalOpened] = useState(false);
     const { confirmPin } = useSessionLockConfirmContext();
 

@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +9,7 @@ import { throwError } from '@proton/pass/utils/fp/throw';
 
 import { useAuthService } from '../../../Context/AuthServiceProvider';
 
-export const Export: FC17 = () => {
+export const Export: FC = () => {
     const authService = useAuthService();
 
     return (

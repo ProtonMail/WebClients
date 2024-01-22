@@ -1,5 +1,5 @@
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import type { AnyAction, Middleware } from 'redux';
+import { type Middleware, isAction } from 'redux';
 
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/with-receiver';
@@ -35,16 +35,18 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
             }
         });
 
-        return (action: AnyAction) => {
-            /* if action should be processed immediately on the client
-             * reducers, forward it before broadcasting to the worker */
-            if (isClientSynchronousAction(action)) next(action);
+        return (action: unknown) => {
+            if (isAction(action)) {
+                /* if action should be processed immediately on the client
+                 * reducers, forward it before broadcasting to the worker */
+                if (isClientSynchronousAction(action)) next(action);
 
-            /* hydrate the action with the current client's sender data */
-            const message = messageFactory({ type: WorkerMessageType.STORE_DISPATCH, payload: { action } });
-            message.payload.action = withSender({ endpoint: message.sender, tabId })(message.payload.action);
+                /* hydrate the action with the current client's sender data */
+                const message = messageFactory({ type: WorkerMessageType.STORE_DISPATCH, payload: { action } });
+                message.payload.action = withSender({ endpoint: message.sender, tabId })(message.payload.action);
 
-            sendMessage(message).catch(noop);
+                sendMessage(message).catch(noop);
+            }
         };
     };
 };

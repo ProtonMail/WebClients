@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { type FC17, useCallback, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
@@ -33,7 +33,7 @@ type BaseItemIconProps = {
     renderIndicators?: () => ReactNode;
 };
 
-export const ItemIcon: FC17<BaseItemIconProps> = ({
+export const ItemIcon: FC<BaseItemIconProps> = ({
     alt,
     className,
     icon,
@@ -88,7 +88,7 @@ type ItemIconProps<T extends ItemRevision> = {
     renderIndicators?: () => ReactNode;
 };
 
-export const SafeItemIcon: FC17<ItemIconProps<ItemRevision>> = ({ className, item, pill, size, renderIndicators }) => {
+export const SafeItemIcon: FC<ItemIconProps<ItemRevision>> = ({ className, item, pill, size, renderIndicators }) => {
     const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
@@ -107,7 +107,7 @@ export const SafeItemIcon: FC17<ItemIconProps<ItemRevision>> = ({ className, ite
     );
 };
 
-export const OptimisticItemIcon: FC17<ItemIconProps<ItemRevisionWithOptimistic>> = (props) => {
+export const OptimisticItemIcon: FC<ItemIconProps<ItemRevisionWithOptimistic>> = (props) => {
     const { optimistic, failed } = props.item;
 
     const renderIndicators = () => {

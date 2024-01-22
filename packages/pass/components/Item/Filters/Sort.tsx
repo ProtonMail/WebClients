@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -50,7 +50,7 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
 const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
-export const SortFilter: FC17<Props> = ({ value, onChange }) => {
+export const SortFilter: FC<Props> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (

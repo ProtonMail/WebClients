@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectVaultItemsCount } from '@proton/pass/store/selectors';
@@ -16,7 +16,7 @@ type SharedVaultItemProps = {
     shareId?: string;
 };
 
-export const SharedVaultItem: VFC17<SharedVaultItemProps> = ({
+export const SharedVaultItem: FC<SharedVaultItemProps> = ({
     className,
     color,
     icon,

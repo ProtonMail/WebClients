@@ -1,4 +1,4 @@
-import { type VFC17, memo } from 'react';
+import { type FC, memo } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import { usePasswordContext } from './PasswordProvider';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
 
-const PasswordGeneratorButtonRaw: VFC17<Props> = ({ onSubmit, type, ...rest }) => {
+const PasswordGeneratorButtonRaw: FC<Props> = ({ onSubmit, type, ...rest }) => {
     const passwordContext = usePasswordContext();
 
     const handleOnClick = () =>

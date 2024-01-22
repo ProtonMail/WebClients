@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -39,7 +39,7 @@ type InviteContextState =
     | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
     | { view: 'manage'; shareId: string };
 
-export const InviteProvider: FC17 = ({ children }) => {
+export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
     const { setFilters } = useNavigation();
 
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);

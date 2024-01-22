@@ -27,7 +27,7 @@ import type {
 import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { invert } from '@proton/pass/utils/fp/predicates';
+import { invert, truthy } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -153,12 +153,12 @@ const itemsByDomainSelector = createSelector(
     [
         selectItemsWithOptimistic,
         (_state: State, domain: MaybeNull<string>) => domain,
-        (_state: State, _: MaybeNull<string>, { protocolFilter }: SelectItemsByDomainOptions) => protocolFilter,
+        (_state: State, _: MaybeNull<string>, { protocol }: SelectItemsByDomainOptions) => protocol,
         (_state: State, _: MaybeNull<string>, { isPrivate }: SelectItemsByDomainOptions) => isPrivate,
         (_state: State, _: MaybeNull<string>, { shareIds }: SelectItemsByDomainOptions) => shareIds,
         (_state: State, _: MaybeNull<string>, { sortOn }: SelectItemsByDomainOptions) => sortOn ?? 'lastUseTime',
     ],
-    (items, domain, protocolFilter, isPrivate, shareIds, sortOn) =>
+    (items, domain, protocol, isPrivate, shareIds, sortOn) =>
         (typeof domain === 'string' && !isEmptyString(domain)
             ? items
                   .filter(invert(isTrashed))
@@ -174,7 +174,10 @@ const itemsByDomainSelector = createSelector(
 
                       /* `getItemPriorityForUrl` will apply strict domain matching */
                       const { data } = item as ItemRevisionWithOptimistic<'login'>;
-                      const priority = getItemPriorityForUrl(data)(domain, { protocolFilter, isPrivate });
+                      const priority = getItemPriorityForUrl(data)(domain, {
+                          protocolFilter: [protocol].filter(truthy),
+                          isPrivate,
+                      });
 
                       /* if negative priority : this item does not match the criteria */
                       if (priority === ItemUrlMatch.NO_MATCH) return matches;
@@ -220,14 +223,14 @@ const autofillCandidatesSelector = createSelector(
     [
         (state: State, { domain, isSecure, isPrivate, shareIds, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(domain, {
-                protocolFilter: !isSecure && protocol ? [protocol] : [],
+                protocol: !isSecure && protocol ? protocol : null,
                 isPrivate,
                 shareIds,
                 sortOn: 'priority',
             })(state),
         (state: State, { subdomain, isSecure, isPrivate, shareIds, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(subdomain, {
-                protocolFilter: !isSecure && protocol ? [protocol] : [],
+                protocol: !isSecure && protocol ? protocol : null,
                 isPrivate,
                 shareIds,
                 sortOn: 'lastUseTime',
@@ -249,15 +252,9 @@ export const selectAutofillCandidates = (options: SelectAutofillCandidatesOption
 const autosaveCandidateSelector = createSelector(
     [
         (state: State, { subdomain }: SelectAutosaveCandidatesOptions) =>
-            selectItemsByDomain(subdomain, {
-                protocolFilter: [],
-                isPrivate: false,
-            })(state),
+            selectItemsByDomain(subdomain, { protocol: null, isPrivate: false })(state),
         (state: State, { domain }: SelectAutosaveCandidatesOptions) =>
-            selectItemsByDomain(domain, {
-                protocolFilter: [],
-                isPrivate: false,
-            })(state),
+            selectItemsByDomain(domain, { protocol: null, isPrivate: false })(state),
         (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
     ],
     (subdomainItems, domainItems, username) =>

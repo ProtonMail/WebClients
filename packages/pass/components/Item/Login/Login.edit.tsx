@@ -1,4 +1,4 @@
-import { type ReactElement, type VFC17 } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -48,7 +48,7 @@ import { usePasswordContext } from '../../Password/PasswordProvider';
 
 const FORM_ID = 'edit-login';
 
-export const LoginEdit: VFC17<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
+export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
     const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);

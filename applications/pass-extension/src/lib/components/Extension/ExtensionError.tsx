@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 /* This component uses buttons leveraging `ui-orange` &
  * `ui-red` themes because we don't currently
  * support weak & danger|warning buttons */
-export const PromptForReload: VFC17<{ message: string }> = ({ message }) => {
+export const PromptForReload: FC<{ message: string }> = ({ message }) => {
     const { onForceUpdate } = usePassCore();
 
     return (
@@ -24,7 +24,7 @@ export const PromptForReload: VFC17<{ message: string }> = ({ message }) => {
     );
 };
 
-export const ExtensionError: VFC17 = () => (
+export const ExtensionError: FC = () => (
     <LobbyLayout overlay>
         <PromptForReload
             message={c('Error')

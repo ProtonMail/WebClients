@@ -1,4 +1,4 @@
-import { type VFC17, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
@@ -25,7 +25,7 @@ type Props = {
     onClose?: (options?: IFrameCloseOptions) => void;
 };
 
-export const AutofillOTP: VFC17<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
+export const AutofillOTP: FC<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
     const { generateOTP } = usePassCore();
 
     const [otp, percent] = usePeriodicOtpCode({

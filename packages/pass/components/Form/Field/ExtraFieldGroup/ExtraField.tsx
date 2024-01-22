@@ -1,4 +1,4 @@
-import type { ChangeEvent, VFC17 } from 'react';
+import type { ChangeEvent, FC } from 'react';
 
 import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
@@ -56,13 +56,13 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
 
 export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOptions()[type];
 
-const DeleteButton: VFC17<{ onDelete: () => void }> = ({ onDelete }) => (
+const DeleteButton: FC<{ onDelete: () => void }> = ({ onDelete }) => (
     <Button icon pill color="weak" onClick={onDelete} shape="solid" size="medium" title={c('Action').t`Delete`}>
         <Icon name="cross" size={20} />
     </Button>
 );
 
-export const ExtraFieldComponent: VFC17<ExtraFieldProps> = (props) => {
+export const ExtraFieldComponent: FC<ExtraFieldProps> = (props) => {
     const { className, field, onDelete, type, error, touched, autoFocus, ...rest } = props;
     const { icon, placeholder } = getExtraFieldOption(type);
 

@@ -1,4 +1,4 @@
-import { type VFC17, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
@@ -17,7 +17,7 @@ import { Header } from './Header/Header';
 
 import './Main.scss';
 
-export const Main: VFC17 = () => {
+export const Main: FC = () => {
     usePopupStateEffects();
 
     /** clear notifications when `Main` unmounts */

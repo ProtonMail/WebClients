@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -30,7 +30,7 @@ export type ShareMemberProps = {
     userShareId: string;
 };
 
-export const ShareMember: VFC17<ShareMemberProps> = ({
+export const ShareMember: FC<ShareMemberProps> = ({
     canManage,
     canTransfer,
     email,

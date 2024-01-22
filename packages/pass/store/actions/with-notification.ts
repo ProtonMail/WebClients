@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action, UnknownAction } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
 import type { ClientEndpoint } from '@proton/pass/types';
@@ -6,12 +6,12 @@ import { merge } from '@proton/pass/utils/object/merge';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 export type Notification = CreateNotificationOptions & { endpoint?: ClientEndpoint; loading?: boolean };
-export type WithNotification<T = AnyAction> = T & { meta: { notification: Notification } };
+export type WithNotification<T = UnknownAction> = T & { meta: { notification: Notification } };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
 
 /* type guard utility */
-export const isActionWithNotification = <T extends AnyAction>(action?: T): action is WithNotification<T> =>
+export const isActionWithNotification = <T extends Action>(action?: T): action is WithNotification<T> =>
     (action as any)?.meta?.notification !== undefined;
 
 const parseNotification = (notification: NotificationOptions): Notification => {
