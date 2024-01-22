@@ -1,5 +1,11 @@
-import { ActionReducerMapBuilder, Draft, ThunkDispatch, createAction, miniSerializeError } from '@reduxjs/toolkit';
-import { AnyAction } from 'redux';
+import {
+    type Action,
+    ActionReducerMapBuilder,
+    Draft,
+    ThunkDispatch,
+    createAction,
+    miniSerializeError,
+} from '@reduxjs/toolkit';
 import { ThunkAction } from 'redux-thunk';
 
 import type { ReducerValue, ThunkOptions } from './interface';
@@ -11,13 +17,13 @@ export const createAsyncModelThunk = <Returned, State, Extra, ThunkArg = void>(
         previous,
     }: {
         miss: (extra: {
-            dispatch: ThunkDispatch<State, Extra, AnyAction>;
+            dispatch: ThunkDispatch<State, Extra, Action>;
             getState: () => State;
             extraArgument: Extra;
             options?: ThunkOptions<ThunkArg>;
         }) => Promise<Returned>;
         previous: (extra: {
-            dispatch: ThunkDispatch<State, Extra, AnyAction>;
+            dispatch: ThunkDispatch<State, Extra, Action>;
             getState: () => State;
             extraArgument: Extra;
             options?: ThunkOptions<ThunkArg>;
@@ -108,7 +114,7 @@ export const previousSelector =
     <Returned, State, Extra, ThunkArg = void>(
         selector: (state: State) => ReducerValue<Returned>
     ): ((extra: {
-        dispatch: ThunkDispatch<State, Extra, AnyAction>;
+        dispatch: ThunkDispatch<State, Extra, Action>;
         getState: () => State;
         extraArgument: Extra;
         options?: ThunkOptions<ThunkArg>;

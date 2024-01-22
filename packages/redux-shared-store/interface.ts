@@ -1,6 +1,5 @@
-import type { ThunkDispatch } from '@reduxjs/toolkit';
+import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import type { History } from 'history';
-import type { AnyAction } from 'redux';
 import type { UnleashClient } from 'unleash-proxy-client';
 
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
@@ -17,4 +16,4 @@ export interface ProtonThunkArguments {
     config: ProtonConfig;
 }
 
-export type ProtonDispatch<T> = ThunkDispatch<T, ProtonThunkArguments, AnyAction>;
+export type ProtonDispatch<T> = ThunkDispatch<T, ProtonThunkArguments, Action>;
