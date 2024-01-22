@@ -12,6 +12,7 @@ const config = {
         icon: 'assets/logo',
         extraResource: 'assets',
         appBundleId: 'me.proton.pass.electron',
+        executableName: 'ProtonPass',
     },
     rebuildConfig: {},
     makers: [
@@ -21,6 +22,8 @@ const config = {
             iconUrl: path.join(__dirname, 'assets', 'logo.ico'),
             setupIcon: path.join(__dirname, 'assets', 'logo.ico'),
             signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
+            setupExe: `ProtonPass_Setup.exe`,
+            name: 'ProtonPass',
         }),
     ],
     plugins: [

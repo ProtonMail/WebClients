@@ -17574,6 +17574,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"electron-log@npm:^5.1.0":
+  version: 5.1.1
+  resolution: "electron-log@npm:5.1.1"
+  checksum: 10c0/4ca427404d7a660df69146a4d16fcc266f0fa8d1da665b226cda50b8608f7ef032c43bef1330125b692835582afca4e2123602840b3216735c586dd49c16d03c
+  languageName: node
+  linkType: hard
+
 "electron-to-chromium@npm:^1.4.601":
   version: 1.4.616
   resolution: "electron-to-chromium@npm:1.4.616"
@@ -30758,6 +30765,7 @@ __metadata:
     "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
     cross-env: "npm:^7.0.3"
     electron: "npm:^28.2.0"
+    electron-log: "npm:^5.1.0"
     eslint: "npm:^8.56.0"
     jest: "npm:^29.7.0"
     node-loader: "npm:^2.0.0"
