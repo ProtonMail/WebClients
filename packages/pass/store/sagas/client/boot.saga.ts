@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { put, race, take, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
@@ -51,7 +51,7 @@ export default function* watcher(options: RootSagaOptions) {
             start: bootWorker(options),
             caching: take(isCachingAction),
             destroyed: take(stateDestroy.match),
-        })) as { caching?: AnyAction; destroyed?: AnyAction };
+        })) as { caching?: Action; destroyed?: Action };
 
         if (caching || destroyed) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
