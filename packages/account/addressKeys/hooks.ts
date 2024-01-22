@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import { type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
-import type { AnyAction } from 'redux';
+import { Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { type ProtonThunkArguments, baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
 import type { Address, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
@@ -10,7 +9,7 @@ import { selectAddresses } from '../addresses';
 import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selectAddressKeys } from './index';
 
 export const useGetAddressKeys = () => {
-    const dispatch = baseUseDispatch<ThunkDispatch<AddressKeysState, ProtonThunkArguments, AnyAction>>();
+    const dispatch = baseUseDispatch<ThunkDispatch<AddressKeysState, ProtonThunkArguments, Action>>();
     return useCallback((addressID: string) => dispatch(addressKeysThunk({ thunkArg: addressID })), [dispatch]);
 };
 
@@ -39,7 +38,7 @@ const selector = createSelector(
 );
 
 export const useAddressesKeys = () => {
-    const dispatch = baseUseDispatch<ThunkDispatch<AddressKeysState, ProtonThunkArguments, AnyAction>>();
+    const dispatch = baseUseDispatch<ThunkDispatch<AddressKeysState, ProtonThunkArguments, Action>>();
     const selectedValue = baseUseSelector<AddressKeysState, Result>(selector);
     useEffect(() => {
         dispatch(getAllAddressKeysAction());
