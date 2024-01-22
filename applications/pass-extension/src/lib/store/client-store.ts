@@ -20,7 +20,7 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
                 ENV === 'development'
                     ? [
                           devToolsEnhancer({
-                              name: 'background',
+                              name: `store::${endpoint}`,
                               port: REDUX_DEVTOOLS_PORT,
                               realtime: true,
                           }),
