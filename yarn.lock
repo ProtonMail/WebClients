@@ -5711,9 +5711,9 @@ __metadata:
     "@babel/preset-env": "npm:^7.23.8"
     "@babel/preset-typescript": "npm:^7.23.3"
     "@babel/register": "npm:^7.23.7"
+    "@openpgp/noble-hashes": "npm:^1.3.3-0"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    asmcrypto.js: "npm:^2.3.2"
     bcryptjs: "npm:^2.4.3"
     eslint: "npm:^8.56.0"
     jest: "npm:^29.7.0"
@@ -11067,13 +11067,6 @@ __metadata:
   version: 0.0.9
   resolution: "ascii-table@npm:0.0.9"
   checksum: d485349d05b52d5cc686651a603c968fae881777be06aa4d14912683ee61b305e2558508659ec84837cb87f2a58ac7b72b99c05ea84da598cfe2cac9199dd527
-  languageName: node
-  linkType: hard
-
-"asmcrypto.js@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "asmcrypto.js@npm:2.3.2"
-  checksum: 777c0c5eab60addffe9466cc3b7ffdb041a07389a47006b9d566dd1f829248ffe98edcfdd5888d0c51f1790e93a4586127097cc891059ff1c7795ab27024fa83
   languageName: node
   linkType: hard
 
