@@ -16,6 +16,8 @@ const {
     DRIVE_PRO,
     VPN_PRO,
     VPN_BUSINESS,
+    PASS_PRO,
+    PASS_BUSINESS,
 } = PLANS;
 const NEW_PLANS = [
     MAIL,
@@ -32,6 +34,8 @@ const NEW_PLANS = [
     DRIVE_PRO,
     VPN_PRO,
     VPN_BUSINESS,
+    PASS_PRO,
+    PASS_BUSINESS,
 ];
 
 export const hasPlanIDs = (planIDs: PlanIDs) => Object.values(planIDs).some((quantity) => quantity > 0);
@@ -91,6 +95,14 @@ export const getSupportedAddons = (planIDs: PlanIDs) => {
     if (planIDs[VPN_BUSINESS]) {
         supported[ADDON_NAMES.MEMBER_VPN_BUSINESS] = true;
         supported[ADDON_NAMES.IP_VPN_BUSINESS] = true;
+    }
+
+    if (planIDs[PASS_PRO]) {
+        supported[ADDON_NAMES.MEMBER_PASS_PRO] = true;
+    }
+
+    if (planIDs[PASS_BUSINESS]) {
+        supported[ADDON_NAMES.MEMBER_PASS_BUSINESS] = true;
     }
 
     return supported;
@@ -164,7 +176,9 @@ export const switchPlan = ({
                             (planIDs[ADDON_NAMES.MEMBER_MAIL_PRO] || 0) +
                             (planIDs[ADDON_NAMES.MEMBER_ENTERPRISE] || 0) +
                             (planIDs[ADDON_NAMES.MEMBER_VPN_PRO] || 0) +
-                            (planIDs[ADDON_NAMES.MEMBER_VPN_BUSINESS] || 0)
+                            (planIDs[ADDON_NAMES.MEMBER_VPN_BUSINESS] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_PASS_PRO] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_PASS_BUSINESS] || 0)
                     );
                 }
             }
