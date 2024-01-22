@@ -6,6 +6,7 @@ import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownCaret } from '../..';
 
@@ -18,9 +19,10 @@ export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButton
 
 const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {
     const { Email, DisplayName, Name } = user;
-    const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
+    const nameToDisplay = DisplayName || Name || ''; // nameToDisplay can be falsy for external account
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
     const initials = getInitials(nameToDisplay || Email || '');
+    const title = [nameToDisplay, `<${Email}>`].filter(isTruthy).join(' ');
 
     return (
         <button
@@ -29,7 +31,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             ref={ref}
             {...rest}
             className="max-w-full flex items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
-            title={`${nameToDisplay} <${Email}>`}
+            title={title}
         >
             <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />
 
