@@ -3,7 +3,7 @@ import type { Action } from 'redux';
 
 import { merge } from '@proton/pass/utils/object/merge';
 
-export type RequestType = 'start' | 'failure' | 'success';
+export type RequestType = 'start' | 'failure' | 'success' | 'progress';
 /* optionally adds the extra data property on the `RequestOptions` */
 export type WithOptionalData<Req, Data> = Req & (Data extends undefined ? {} : { data: Data });
 
@@ -13,7 +13,8 @@ export type RequestOptions<Type extends RequestType = RequestType, Data = undefi
     Extract<
         | { type: 'start'; id: string; revalidate?: boolean }
         | { type: 'success'; id: string; maxAge?: number }
-        | { type: 'failure'; id: string; maxAge?: number },
+        | { type: 'failure'; id: string; maxAge?: number }
+        | { type: 'progress'; id: string; progress?: number },
         { type: Type }
     >,
     Data
@@ -53,6 +54,13 @@ const withRequestResult =
 
 export const withRequestFailure = withRequestResult('failure');
 export const withRequestSuccess = withRequestResult('success');
+
+export const withRequestProgress =
+    <PA extends PrepareAction<any>>(prepare: PA) =>
+    <ID extends string>(requestId: ID, progress: number, ...args: Parameters<PA>) =>
+        withRequest<'progress'>({ id: requestId, type: 'progress', progress })(
+            prepare(...args) as ReturnType<PA>
+        ) as WithRequest<ReturnType<PA>, 'progress', undefined>;
 
 export const withRevalidate = <T extends WithRequest<Action, 'start'>>(action: T) => {
     action.meta.request.revalidate = true;
