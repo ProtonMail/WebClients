@@ -7,8 +7,20 @@ import type { ItemMatchFunc, ItemMatchFuncMap } from './types';
 export const matchesNoteItem: ItemMatchFunc<'note'> = ({ metadata: { name, note } }) =>
     matchAny([name, deobfuscate(note)]);
 
-export const matchesLoginItem: ItemMatchFunc<'login'> = ({ metadata: { name, note }, content: { username, urls } }) =>
-    matchAny([name, deobfuscate(note), deobfuscate(username), ...urls]);
+export const matchesLoginItem: ItemMatchFunc<'login'> = ({
+    metadata: { name, note },
+    content: { username, urls },
+    extraFields,
+}) =>
+    matchAny([
+        name,
+        deobfuscate(note),
+        deobfuscate(username),
+        ...urls,
+        ...extraFields.flatMap((field) =>
+            field.type !== 'totp' ? [field.fieldName, deobfuscate(field.data.content)] : []
+        ),
+    ]);
 
 export const matchesAliasItem: ItemMatchFunc<'alias'> = ({ metadata: { name, note } }) =>
     matchAny([name, deobfuscate(note)]);
