@@ -10,5 +10,6 @@ export const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
     reducer,
-    middleware: (mw) => mw().concat(cacheMiddleware, requestMiddleware, sagaMiddleware),
+    middleware: (mw) =>
+        mw({ serializableCheck: false, thunk: false }).concat(cacheMiddleware, requestMiddleware, sagaMiddleware),
 });
