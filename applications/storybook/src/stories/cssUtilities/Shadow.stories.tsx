@@ -42,6 +42,21 @@ export const Shadow = () => {
                 </TableRow>
                 <TableRow>
                     <TableCell>
+                        <code>shadow-raised</code>
+                    </TableCell>
+                    <TableCell>
+                        Applies a <code>--shadow-raised</code> shadow on an element.
+                        <br />
+                        Should only be applied on lifted and out of flow elements, such as modals or tooltips.
+                    </TableCell>
+                    <TableCell className="text-right">
+                        <span className="inline-block shadow-raised w-custom" style={{ '--w-custom': '3em' }}>
+                            &nbsp;
+                        </span>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>
                         <code>shadow-lifted</code>
                     </TableCell>
                     <TableCell>

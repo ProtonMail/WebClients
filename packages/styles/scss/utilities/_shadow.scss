@@ -1,6 +1,6 @@
 // .shadow-norm .shadow-lifted for purgecss
 
-@each $type in (norm, lifted) {
+@each $type in (norm, raised, lifted) {
 	:root {
 		--shadow-#{$type}: var(--shadow-#{$type}-offset)
 			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-#{$type}-opacity));
@@ -12,6 +12,11 @@
 		shadow-norm: (
 			box-shadow: var(--shadow-norm-offset)
 				rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity)),
+		),
+
+		shadow-raised: (
+			box-shadow: var(--shadow-raised-offset)
+				rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-raised-opacity)),
 		),
 
 		shadow-lifted: (
