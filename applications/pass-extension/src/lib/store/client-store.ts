@@ -10,7 +10,11 @@ import { proxyActionsMiddleware } from './proxy-actions.middleware';
 export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
     const store = configureStore({
         reducer,
-        middleware: (mw) => mw().concat(requestMiddleware, proxyActionsMiddleware({ endpoint, tabId })),
+        middleware: (mw) =>
+            mw({ serializableCheck: false, thunk: false }).concat(
+                requestMiddleware,
+                proxyActionsMiddleware({ endpoint, tabId })
+            ),
         enhancers: (e) =>
             e().concat(
                 ENV === 'development'
