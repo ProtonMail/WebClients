@@ -26,11 +26,12 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
         action: getAliasDetailsIntent,
         initialRequestId: aliasDetailsRequest(aliasEmail),
         onSuccess: () => onAliasDetailsLoaded?.(aliasDetails),
-        onFailure: () =>
+        onFailure: () => {
             createNotification({
                 type: 'warning',
                 text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
-            }),
+            });
+        },
     });
 
     useEffect(() => {
