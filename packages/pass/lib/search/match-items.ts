@@ -17,9 +17,10 @@ export const matchesLoginItem: ItemMatchFunc<'login'> = ({
         deobfuscate(note),
         deobfuscate(username),
         ...urls,
-        ...extraFields.flatMap((field) =>
-            field.type !== 'totp' ? [field.fieldName, deobfuscate(field.data.content)] : []
-        ),
+        ...extraFields.reduce<string[]>((terms, { fieldName, type, data }) => {
+            if (type === 'text') terms.push(fieldName, deobfuscate(data.content));
+            return terms;
+        }, []),
     ]);
 
 export const matchesAliasItem: ItemMatchFunc<'alias'> = ({ metadata: { name, note } }) =>
