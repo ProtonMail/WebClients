@@ -1,3 +1,11 @@
+### Version 1.11.1
+
+-   Add keyboard shortcut Ctrl/Cmd + S to save a new or existing item
+
+### Version 1.11.0
+
+-   Add account link in settings
+
 ### Version 1.10.1
 
 -   Improve cross tab synchronization
