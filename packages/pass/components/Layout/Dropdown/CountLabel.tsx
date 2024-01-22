@@ -1,8 +1,8 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 
 type Props = { label: string; count: number };
 
-export const CountLabel: VFC17<Props> = ({ label, count }) => (
+export const CountLabel: FC<Props> = ({ label, count }) => (
     <>
         <span className="block text-ellipsis">{label}</span>
         <span className="shrink-0 color-weak">({count})</span>

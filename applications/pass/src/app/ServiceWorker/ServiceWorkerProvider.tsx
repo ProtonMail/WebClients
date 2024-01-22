@@ -1,4 +1,5 @@
-import { type FC17, createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import type { PropsWithChildren } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -35,7 +36,7 @@ export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({
     off: noop,
 });
 
-export const ServiceWorkerProvider: FC17 = ({ children }) => {
+export const ServiceWorkerProvider: FC<PropsWithChildren> = ({ children }) => {
     const handlers = useRef<Map<ServiceWorkerMessageType, ServiceWorkerMessageHandler[]>>(new Map());
 
     const context = useMemo<ServiceWorkerContextValue>(

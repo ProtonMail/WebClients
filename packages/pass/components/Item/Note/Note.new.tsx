@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -21,7 +22,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 const FORM_ID = 'new-note';
 
-export const NoteNew = ({ shareId, onSubmit, onCancel }: ItemNewViewProps<'note'>) => {
+export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCancel }) => {
     const initialValues: NoteFormValues = { name: '', note: '', shareId };
     const { vaultTotalCount } = useSelector(selectVaultLimits);
 

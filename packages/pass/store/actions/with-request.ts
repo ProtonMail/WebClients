@@ -1,5 +1,5 @@
 import { type PrepareAction } from '@reduxjs/toolkit';
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 
 import { merge } from '@proton/pass/utils/object/merge';
 
@@ -29,9 +29,8 @@ export type WithRequest<Action extends object, Type extends RequestType, Data = 
     meta: { request: RequestOptions<Type, Data> };
 };
 
-export const isActionWithRequest = <Action extends AnyAction>(
-    action?: Action
-): action is WithRequest<Action, RequestType> => (action as any)?.meta?.request !== undefined;
+export const isActionWithRequest = <T extends Action>(action?: T): action is WithRequest<T, RequestType> =>
+    (action as any)?.meta?.request !== undefined;
 
 const withRequest =
     <Type extends RequestType, Data = undefined>(request: RequestOptions<Type, Data>) =>
@@ -55,7 +54,7 @@ const withRequestResult =
 export const withRequestFailure = withRequestResult('failure');
 export const withRequestSuccess = withRequestResult('success');
 
-export const withRevalidate = <Action extends WithRequest<AnyAction, 'start'>>(action: Action) => {
+export const withRevalidate = <T extends WithRequest<Action, 'start'>>(action: T) => {
     action.meta.request.revalidate = true;
     return action;
 };

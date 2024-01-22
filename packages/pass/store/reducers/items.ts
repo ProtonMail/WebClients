@@ -1,4 +1,4 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import {
@@ -95,7 +95,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             revert: itemDeleteFailure.optimisticMatch,
         },
     ],
-    (state = {}, action: AnyAction) => {
+    (state = {}, action: Action) => {
         if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
         if (syncSuccess.match(action)) return action.payload.items;
         if (sharesSync.match(action)) return fullMerge(state, action.payload.items);

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
-import { type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
-import type { AnyAction } from 'redux';
+import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { type ProtonThunkArguments, baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
 import type { Address, PartialMemberAddress } from '@proton/shared/lib/interfaces';
@@ -35,7 +34,7 @@ export const useMemberAddresses = ({
     members: EnhancedMember[] | undefined;
     partial?: boolean;
 }) => {
-    const dispatch = baseUseDispatch<ThunkDispatch<MembersState, ProtonThunkArguments, AnyAction>>();
+    const dispatch = baseUseDispatch<ThunkDispatch<MembersState, ProtonThunkArguments, Action>>();
     const value = baseUseSelector<MembersState, Result>(selector);
 
     const retry = (members: EnhancedMember[]) => {

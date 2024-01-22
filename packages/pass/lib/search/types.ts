@@ -15,7 +15,7 @@ export type SelectItemsOptions = {
 };
 
 export type SelectItemsByDomainOptions = {
-    protocolFilter: string[];
+    protocol: MaybeNull<string>;
     isPrivate: boolean;
     shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';

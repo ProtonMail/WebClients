@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { Icons, NotificationsProvider } from '@proton/components';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -8,7 +8,7 @@ import { NotificationContent } from './views/NotificationContent';
 
 import './Notification.scss';
 
-export const Notification: VFC17 = () => (
+export const Notification: FC = () => (
     <IFrameContextProvider endpoint="notification">
         <Icons />
         <ThemeProvider />
