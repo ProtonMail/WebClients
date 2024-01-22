@@ -74,6 +74,7 @@
   --interaction-default-hover: rgb(186 190 199 / 0.2);
   --interaction-default-active: rgb(186 190 199 / 0.3);
   --shadow-norm-opacity: 0.1;
+  --shadow-raised-opacity: 0.1;
   --shadow-lifted-opacity: 0.16;
   --backdrop-norm: rgb(38 42 51 / 0.48);
   --optional-scrollbar-thumb-color: #d0d3da;
@@ -81,6 +82,7 @@
   --optional-font-family: system-ui, sans-serif;
   --optional-border-radius: 3;
   --optional-main-border-width: 0;
+  --optional-email-item-read-text-color: #484e5b;
   --optional-email-item-read-background-color: #f7f8fa;
   --optional-logo-text-proton-color: initial;
   --optional-logo-text-product-color: initial;
@@ -153,6 +155,7 @@
   --interaction-default-hover: rgb(68 78 114 / 0.3);
   --interaction-default-active: rgb(68 78 114 / 0.4);
   --shadow-norm-opacity: 0.32;
+  --shadow-raised-opacity: 0.35;
   --shadow-lifted-opacity: 0.4;
   --backdrop-norm: rgb(0 0 0 / 0.32);
   --optional-scrollbar-thumb-color: #353e60;

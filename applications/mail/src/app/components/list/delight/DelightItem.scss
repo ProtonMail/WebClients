@@ -13,15 +13,10 @@ $item-container-height: rem(64);
 		padding-inline: var(--item-container-padding-inline);
 		scroll-margin-block-start: $item-container-height;
 		margin-block-start: -1px; // prevent double border
-		transition:
-			box-shadow 0 easing(ease-in-cubic),
-			color 100ms easing(ease-in),
-			background-color 100ms easing(ease-in);
-		animation: fadeInItem 150ms easing(ease-out) both;
 		box-shadow: none;
 
 		.is-comfortable .is-column & {
-			--item-container-padding-block: #{rem(12)};
+			--item-container-padding-block: #{rem(16)};
 		}
 
 		.is-compact .is-column & {
@@ -38,11 +33,7 @@ $item-container-height: rem(64);
 
 		&:hover {
 			z-index: 2;
-			box-shadow: var(--shadow-lifted);
-			transition:
-				box-shadow 100ms easing(ease-in),
-				color 100ms easing(ease-in),
-				background-color 100ms easing(ease-in);
+			box-shadow: var(--shadow-raised);
 		}
 
 		&::after {
