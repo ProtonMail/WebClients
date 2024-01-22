@@ -145,7 +145,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             type="alias"
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            valid={form.isValid && userVerified}
+            valid={form.isValid && userVerified && !needsUpgrade}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={
