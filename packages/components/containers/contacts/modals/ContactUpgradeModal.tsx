@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/components/hooks';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import { ModalStateProps, UpsellModal } from '../../../components';
 
@@ -23,7 +23,7 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             description={c('Description')
                 .t`Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.`}
             title={c('Title').t`Unlock contacts groups`}
-            upsellRef={upsellRef}
+            upgradePath={addUpsellPath(getUpgradePath({}), upsellRef)}
         />
     );
 };

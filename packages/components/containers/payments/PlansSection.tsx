@@ -9,7 +9,7 @@ import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, APP_NAMES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BPlan, getPlanIDs, getValidAudience, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -40,8 +40,14 @@ const FREE_SUBSCRIPTION = {} as Subscription;
 
 const getSearchParams = (search: string) => {
     const params = new URLSearchParams(search);
+    const maybeCycle = Number(params.get('cycle'));
+    const cycle = getValidCycle(maybeCycle);
+    const maybeAudience = params.get('audience');
+    const audience = getValidAudience(maybeAudience);
     return {
-        audience: params.has('business') ? Audience.B2B : undefined,
+        audience,
+        plan: params.get('plan') || undefined,
+        cycle,
     };
 };
 
@@ -60,14 +66,18 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
-        return getDefaultSelectedProductPlans(app, getPlanIDs(subscription));
+        return getDefaultSelectedProductPlans({
+            appName: app,
+            plan: searchParams.plan,
+            planIDs: getPlanIDs(subscription),
+        });
     });
     const [open] = useSubscriptionModal();
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
     const currency = selectedCurrency || getCurrency(user, subscription, plans);
 
-    const [cycle, setCycle] = useState(DEFAULT_CYCLE);
+    const [cycle, setCycle] = useState(searchParams.cycle ?? DEFAULT_CYCLE);
     const { CouponCode } = subscription;
 
     useLoad();
@@ -113,7 +123,13 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             return;
         }
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
-        setSelectedProductPlans(getDefaultSelectedProductPlans(app, getPlanIDs(subscription)));
+        setSelectedProductPlans(
+            getDefaultSelectedProductPlans({
+                appName: app,
+                planIDs: getPlanIDs(subscription),
+                plan: searchParams.plan,
+            })
+        );
     }, [isLoading, subscription, app]);
 
     // @ts-ignore

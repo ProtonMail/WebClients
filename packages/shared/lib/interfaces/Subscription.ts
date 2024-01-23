@@ -151,7 +151,7 @@ export interface SubscriptionCheckResponse {
 }
 
 export enum Audience {
-    B2C = 0,
-    B2B = 1,
-    FAMILY = 2,
+    B2C = 'b2c',
+    B2B = 'b2b',
+    FAMILY = 'family',
 }
