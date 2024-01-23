@@ -17,6 +17,7 @@ import {
     EmailSubscriptionSection,
     FamilyPlanSection,
     GiftCodeSection,
+    InviteSection,
     InvoicesSection,
     LanguageAndTimeSection,
     LogsSection,
@@ -27,6 +28,8 @@ import {
     PrivacySection,
     PrivateMainArea,
     PrivateMainSettingsArea,
+    ReferralInvitesContextProvider,
+    RewardSection,
     SentinelSection,
     SessionRecoverySection,
     SessionsSection,
@@ -39,10 +42,9 @@ import {
     TwoFactorSection,
     UsernameSection,
     YourPlanSection,
+    YourStorageSection,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import YourStorageSection from '@proton/components/containers/payments/subscription/YourStorageSection';
-import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { recoveryIds } from './recoveryIds';
