@@ -28,7 +28,7 @@ export const BulkView: VFC = () => {
                     }</p>
                 ) : (
                     <>
-                        <p>
+                        <p key="bulk-items">
                             {
                                 // Translator: full sentence is: You selected <number> item/s in this vault; where semiboldText=<number> item/s
                                 c('Message').jt`You selected ${semiboldText} in this vault`
