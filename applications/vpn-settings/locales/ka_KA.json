@@ -470,9 +470,6 @@
       "Signing in": [
         "შესვლა"
       ],
-      "Signing out": [
-        "გამოსვლა"
-      ],
       "Submit": [
         "დამტკიცება"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Business-მდე აწევა"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary-მდე აწევა"
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "კომპიუტერის აპთან წვდომა შეზღუდულია"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME }-ის სამუშაო მაგიდის აპის ბეტა ვერსია ამჟამად ${ BRAND_NAME } Visionary გამომწერზეა შეზღუდული. ის ყველა მომხმარებლისთვის 2024-ის დასაწყისში გახდება ხელმისაწვდომი."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპის ბეტა ვერსია ხელმისაწვდომია ყველასთვის, ვისაც ${ MAIL_APP_NAME }-ის ფასიანი სატარიფო გეგმა აქვს. მალე ის ყველასთვის იქნება ხელმისაწვდომი."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organization.Name }-სთან მიერთება აღარ შეეძლება."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "წაშლილია ${ member.Name } ${ organization.Name }-დან"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "წაშლილია ${ member.Name } ${ organizationName }-დან"
       ],
       "An error occurred, please try again": [
         "დაფიქსირდა შეცდომა. თავიდან სცადეთ"
@@ -3910,9 +3907,9 @@
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ.",
-        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
+        "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "შესული ბრძანდებით ანგარიშში ${ memberAddress }."
