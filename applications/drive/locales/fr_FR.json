@@ -493,9 +493,6 @@
       "Refresh the page": [
         "Actualiser la page"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Remove": [
         "Retirer"
       ],
@@ -616,14 +613,8 @@
       "Show side panel": [
         "Afficher le panneau latéral"
       ],
-      "Sign in": [
-        "Se connecter"
-      ],
       "Sign out": [
         "Se déconnecter"
-      ],
-      "Signing out": [
-        "Déconnexion"
       ],
       "Skip": [
         "Ignorer"
@@ -1096,9 +1087,6 @@
       ],
       "Gender": [
         "Genre"
-      ],
-      "Geo": [
-        "Coordonnées géographiques"
       ],
       "Language": [
         "Langue"
@@ -2201,12 +2189,6 @@
       "IMAP server is required": [
         "Le serveur IMAP est nécessaire."
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Les identifiants de connexion ne sont pas corrects, nous vous invitons à réessayer."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Le mot de passe de la messagerie n'est pas correct. Veuillez réessayer."
-      ],
       "Incorrect password. Please try again.": [
         "Le mot de passe n'est pas correct. Réessayez."
       ],
@@ -2330,9 +2312,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
       "status page": [
         "page d'état"
@@ -3739,9 +3718,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
       ],
@@ -4142,9 +4118,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "équipe support"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -4168,9 +4141,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Certains fichiers doivent encore être transférés. Si vous fermez le gestionnaire de transfert, toutes les opérations seront arrêtées."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -4698,9 +4668,6 @@
       "Email format": [
         "Format du message"
       ],
-      "Email or username": [
-        "E-mail ou nom d'utilisateur"
-      ],
       "Emails": [
         "Messages"
       ],
@@ -4808,9 +4775,6 @@
       ],
       "Mail Server (IMAP)": [
         "Serveur de messagerie (IMAP)"
-      ],
-      "Mailbox password": [
-        "Mot de passe de la messagerie"
       ],
       "Main": [
         "Principale"
@@ -6333,9 +6297,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } chargement n'a pas abouti.",
         "${ numberOfFailedTransfer.total } chargements n'ont pas abouti."
-      ],
-      "Account suspended": [
-        "Compte suspendu"
       ],
       "Active": [
         "Actifs"
