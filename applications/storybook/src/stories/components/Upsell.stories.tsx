@@ -73,7 +73,7 @@ export const Basic = () => {
                     description={'A description to write'}
                     features={selectedFeatures}
                     title="A title"
-                    upsellRef="account-banner"
+                    upgradePath="/upgrade?ref=account-banner"
                 />
                 <Button
                     className="mx-auto"

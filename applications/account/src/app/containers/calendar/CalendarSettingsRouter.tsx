@@ -28,7 +28,7 @@ import {
     sortCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { getCalendarAppRoutes } from './routes';
 
@@ -37,9 +37,10 @@ interface Props {
     loadingFeatures: boolean;
     calendarAppRoutes: ReturnType<typeof getCalendarAppRoutes>;
     redirect: ReactNode;
+    subscription?: Subscription;
 }
 
-const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redirect }: Props) => {
+const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarAppRoutes, redirect }: Props) => {
     const { path } = useRouteMatch();
 
     const [addresses, loadingAddresses] = useAddresses();
@@ -110,6 +111,7 @@ const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redi
                 <CalendarsSettingsSection
                     config={calendarsRoute}
                     user={user}
+                    subscription={subscription}
                     addresses={memoizedAddresses}
                     calendars={visualCalendars}
                     myCalendars={myCalendars}
@@ -128,6 +130,7 @@ const CalendarSettingsRouter = ({ user, loadingFeatures, calendarAppRoutes, redi
                     holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     user={user}
+                    subscription={subscription}
                 />
             </Route>
             <Route path={getSectionPath(path, interopsRoute)} exact>

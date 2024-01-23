@@ -353,7 +353,7 @@ const CalendarSidebar = ({
                 <HolidaysCalendarModal {...holidaysCalendarModal} holidaysCalendars={holidaysCalendars} />
             )}
             {renderLimitReachedModal && (
-                <CalendarLimitReachedModal {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
+                <CalendarLimitReachedModal user={user} {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
             )}
 
             <SidebarNav data-testid="calendar-sidebar:calendars-list-area">

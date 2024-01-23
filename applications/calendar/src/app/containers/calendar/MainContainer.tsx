@@ -1,7 +1,15 @@
 import { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { FeatureCode, useAddresses, useCalendars, useFeatures, useUser, useWelcomeFlags } from '@proton/components';
+import {
+    FeatureCode,
+    useAddresses,
+    useCalendars,
+    useFeatures,
+    useSubscription,
+    useUser,
+    useWelcomeFlags,
+} from '@proton/components';
 import { useDrawerParent } from '@proton/components/hooks';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInstance } from '@proton/hooks/index';
@@ -26,6 +34,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const { pathname } = useLocation();
 
     const drawerView = useInstance(() => {
@@ -115,6 +124,7 @@ const MainContainer = () => {
     return (
         <MainContainerSetup
             user={user}
+            subscription={subscription}
             addresses={memoedAddresses}
             calendars={memoedCalendars}
             drawerView={drawerView}

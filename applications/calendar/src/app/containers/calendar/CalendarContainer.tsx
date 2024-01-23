@@ -45,7 +45,7 @@ import {
     getTimezoneOffset,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { Address, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
     CalendarMemberInvitation,
@@ -111,6 +111,7 @@ interface Props {
     isSmallViewport: boolean;
     drawerView?: VIEWS;
     user: UserModel;
+    subscription?: Subscription;
     addresses: Address[];
     activeAddresses: Address[];
     visibleCalendars: VisualCalendar[];
@@ -133,6 +134,7 @@ const CalendarContainer = ({
     isSmallViewport,
     drawerView,
     user,
+    subscription,
     addresses,
     activeAddresses,
     calendars,
@@ -517,6 +519,7 @@ const CalendarContainer = ({
                     addresses={addresses}
                     calendars={calendars}
                     user={user}
+                    subscription={subscription}
                     invitation={shareCalendarInvitation}
                 />
             )}

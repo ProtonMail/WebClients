@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
@@ -75,7 +75,7 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                     description={c('Description')
                         .t`To remove the ${MAIL_APP_NAME} footer, upgrade and unlock even more premium features.`}
                     modalProps={upsellModalProps}
-                    upsellRef={upsellRef}
+                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
                     features={[
                         'unlimited-folders-and-labels',
                         'search-message-content',
