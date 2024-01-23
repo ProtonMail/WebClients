@@ -51,8 +51,35 @@ const result = async (env: any): Promise<webpack.Configuration> => {
         throw new Error('Missing html plugin');
     }
     const htmlIndex = plugins.indexOf(htmlPlugin);
+    const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
 
     const { pre, unsupported } = config.entry as any;
+
+    if (env.appMode === 'standalone') {
+        config.entry = {
+            pre,
+            private: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
+            unsupported,
+        };
+
+        plugins.splice(
+            htmlIndex,
+            1,
+            new HtmlWebpackPlugin({
+                filename: 'index.html',
+                template: path.resolve('./src/private.ejs'),
+                templateParameters: originalTemplateParameters,
+                scriptLoading: 'defer' as const,
+                chunks: getIndexChunks('private'),
+                inject: 'body' as const,
+            })
+        );
+
+        addDevEntry(config);
+
+        return config;
+    }
+
     config.entry = {
         pre,
         private: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
@@ -65,8 +92,6 @@ const result = async (env: any): Promise<webpack.Configuration> => {
     const rewrites: any[] = [];
     // @ts-ignore
     config.devServer.historyApiFallback.rewrites = rewrites;
-
-    const originalTemplateParameters = htmlPlugin.userOptions.templateParameters as { [key: string]: any };
 
     // Replace the old html webpack plugin with this
     plugins.splice(
@@ -165,10 +190,6 @@ const result = async (env: any): Promise<webpack.Configuration> => {
             return [index, ...rest];
         })
     );
-
-    if (env.appMode === 'standalone') {
-        addDevEntry(config);
-    }
 
     return config;
 };
