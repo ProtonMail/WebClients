@@ -22,7 +22,6 @@ import {
     itemEditIntent,
     itemPinIntent,
     itemRestoreIntent,
-    itemTrashIntent,
     itemUnpinIntent,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
@@ -74,7 +73,7 @@ export const ItemView: FC = () => {
 
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
-    const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
+    const handleTrash = () => itemActions.trash(item);
     const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
     const handleMoveToSharedVault = () => itemActions.move(item, VaultSelectMode.Shared);
     const handleRestore = () => dispatch(itemRestoreIntent({ item, itemId, shareId }));
