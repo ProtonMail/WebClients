@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { SECOND } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isReceived } from '@proton/shared/lib/mail/messages';
 
 /**
  * Hook used to determine if we need to display the "X new unread messages" in the conversation view,
@@ -16,7 +17,7 @@ const useUnreadNotifications = (messages: Message[], conversationID: string) => 
 
     // We want to show the notification for messages that have been received after the current time marker
     const unreadMessageAfterTimeMarkerIds = useMemo(() => {
-        const filteredMessages = messages.filter((message) => (message.Time || 0) > timeMarker);
+        const filteredMessages = messages.filter((message) => (message.Time || 0) > timeMarker && isReceived(message));
         return filteredMessages.map((message) => message.ID);
     }, [messages]);
 
