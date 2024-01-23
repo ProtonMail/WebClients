@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "ანგარიში"
+      ],
+      "Account settings": [
+        "ანგარიშის მორგება"
+      ],
       "Add": [
         "დამატება"
       ],
@@ -160,9 +166,6 @@
       ],
       "Export": [
         "გატანა"
-      ],
-      "Feedback": [
-        "უკუკავშირი"
       ],
       "Fill password": [
         "შეავსეთ პაროლი"
@@ -337,6 +340,9 @@
       ],
       "Show": [
         "ჩვენება"
+      ],
+      "Show advanced options": [
+        "დამატებითი პარამეტრების ჩვენება"
       ],
       "Sign back in": [
         "თავიდან შესვლა"
@@ -1198,13 +1204,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } სიმბოლო",
-        "${ passwordOptions.options.length } სიმბოლო"
+      "${ config.options.length } character": [
+        "${ config.options.length } სიმბოლო",
+        "${ config.options.length } სიმბოლო"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } სიტყვა",
-        "${ passwordOptions.options.wordCount } სიტყვა"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } სიტყვა",
+        "${ config.options.wordCount } სიტყვა"
       ],
       "1 hour": [
         "1 სთ"
@@ -1235,6 +1241,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "ანგარიში"
       ],
       "Alias": [
         "ფსევდონიმი"
@@ -1388,6 +1397,9 @@
       ],
       "Item ID": [
         "ელემენტის ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "კლავიატურის მალსახმობი: ${ shortcut }"
       ],
       "Language": [
         "ენა"
