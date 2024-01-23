@@ -1,26 +1,23 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import type { FormikTouched } from 'formik';
 import { type FormikContextType } from 'formik';
 
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { draftDiscard, draftSave } from '@proton/pass/store/actions';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
 import { selectItemDrafts } from '@proton/pass/store/selectors';
-import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import debounce from '@proton/utils/debounce';
-
-import { itemEq } from '../lib/items/item.predicates';
 
 const SAVE_DRAFT_TIMEOUT = 500;
 
-export type LocationDraftState<V extends {} = {}> = Maybe<{ draft?: Draft<V> }>;
-
-/** Parses the draft from the history location state */
-export const useItemDraftLocationState = <V extends {}>() => {
-    const location = useLocation<LocationDraftState<V>>();
-    return location.state?.draft;
+export const useMatchDraftHash = (): boolean => {
+    const { location } = useHistory();
+    return useMemo(() => location.hash === '#draft', []);
 };
 
 type UseItemDraftOptions<V extends {}> = DraftBase & {
@@ -40,8 +37,11 @@ type UseItemDraftOptions<V extends {}> = DraftBase & {
  * dispatch with the form data. The `itemDraft` action throttles caching
  * to avoid swarming the service worker with encryption requests */
 export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
-    const draft = useItemDraftLocationState<V>();
+    const history = useHistory();
+
+    const isDraft = useMatchDraftHash();
     const drafts = useSelector(selectItemDrafts, () => true);
+    const draft = useMemo(() => (isDraft ? first(drafts) : undefined), []);
 
     const shouldInvalidate = useRef(
         (() => {
@@ -66,12 +66,15 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
 
     useEffect(() => {
         if (ready) {
-            if (dirty) saveDraft(values);
-            else {
+            if (dirty) {
+                saveDraft(values);
+                history.replace({ hash: 'draft' });
+            } else {
                 saveDraft.cancel();
                 if (shouldInvalidate.current) {
                     dispatch(draftDiscard(draftOptions));
                     shouldInvalidate.current = false;
+                    history.replace({ hash: '' });
                 }
             }
         }
