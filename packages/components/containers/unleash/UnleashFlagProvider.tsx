@@ -1,8 +1,8 @@
 import { ReactNode, useRef } from 'react';
 import { useEffect } from 'react';
 
-import FlagProvider from '@protontech/proxy-client-react';
-import { useUnleashClient } from '@protontech/proxy-client-react';
+import FlagProvider from '@unleash/proxy-client-react';
+import { useUnleashClient } from '@unleash/proxy-client-react';
 import { IConfig, UnleashClient } from 'unleash-proxy-client';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
