@@ -908,9 +908,6 @@
       "Signing in": [
         "Oturum açılıyor"
       ],
-      "Signing out": [
-        "Oturum kapatılıyor"
-      ],
       "Size": [
         "Boyut"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary tarifesine yükselt"
       ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Cinsiyet"
       ],
-      "Geo": [
-        "Coğrafi konum"
-      ],
       "Language": [
         "Dil"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "Masaüstü uygulamasına erişim kısıtlı"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasının Beta sürümünü şu anda yalnızca ${ BRAND_NAME } Visionary aboneleri kullanabilir. 2024 yılının başlarında tüm kullanıcılara sunulacak."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Yakında herkesin kullanımına sunulacak."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "İzin verilmedi, yönetici yetkileri kısıtlandı."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Lütfen adresleri eklemeden önce özel bir etki alanı yapılandırın."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
       ],
@@ -4010,7 +4004,7 @@
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -4019,7 +4013,7 @@
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Kullanıcının zaten bir ${ MAIL_APP_NAME } adresi varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Davet iptal edilecek ve kullanıcı ${ organization.Name } kuruluşuna katılamayacak."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Davet iptal edilecek ve kullanıcı ${ organizationName } kuruluşuna katılamayacak."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name }, ${ organization.Name } kuruluşundan kaldırıldı"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name }, ${ organizationName } kuruluşundan kaldırıldı"
       ],
       "An error occurred, please try again": [
         "Bir sorun çıktı. Lütfen yeniden deneyin"
@@ -5075,10 +5069,10 @@
         "gönderilen e-postada ${ label }"
       ],
       "with attachments": [
-        "ek dosyası olan"
+        "ek dosyaları var"
       ],
       "without attachments": [
-        "ek dosyaları olmayan"
+        "ek dosyalar yok"
       ]
     },
     "filter: Label, jt": {
@@ -5765,17 +5759,6 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -5837,6 +5820,9 @@
         "${ n } adres",
         "${ n } adres"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
+      ],
       "${ number } city": [
         "${ number } il",
         "${ number } il"
@@ -5869,6 +5855,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: Alıcı platformlardan, yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: Alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } diğer",
@@ -6196,8 +6188,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "${ MAIL_APP_NAME } adresindeki özel etki alan adreslerinizle e-posta alabilmeniz için, aşağıdaki iki MX kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklemeniz gerekir. Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "${ price } olarak faturalandı"
@@ -6340,6 +6338,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM, ${ BRAND_NAME } kaydı, e-postalarınızın şifrelenmiş olarak imzalamasını ve kötü niyetli kişilerin e-postanızı taklit etmesini engeller. Aşağıdaki üç CNAME kaydını DNS bölgenize (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC, göndericinin SPF ve DKIM kayıtlarının etki alanınızdan gelip gelmediğini denetler. Böylece, kötü niyetli kişilerin etki alanınızı taklit etmek için başka bir alanın SPF ve DKIM kayıtlarını kullanması engellenebilir. Bu kayıttaki \"p=\" (ilke), alıcı platformların yetkisiz e-postaları nasıl işleyeceğini belirlemenizi sağlar. Çoğu etki alanı için \"p=quarantine\" ilkesini kullanmanızı öneririz. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
       ],
@@ -6385,6 +6389,9 @@
       ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Her etki alanı için yalnızca bir SPF (TXT) kaydı olabilir. Var olan SPF (TXT) kaydını tutmak istiyorsanız var olan kaydınıza ${ spf } ekleyebilirsiniz (${ spfValue } sonrasına ekleyin)."
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -6470,6 +6477,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Etkinlik davetleri ve davet yanıtlama istekleri bu dilde gönderilir."
       ],
+      "Example: ${ spfExample }": [
+        "Örnek: ${ spfExample }"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -6490,6 +6500,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Tek oturum açma (SAML SSO) kullanan kuruluşların üyeleri için"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Başka bir e-posta hizmetinden ${ MAIL_APP_NAME } uygulamasına geçiş yapan kullanıcılar için, sorunsuz bir geçiş sağlamak üzere MX kaydını değiştirmeden önce ${ boldAddresses } sekmesini seçin ve tüm etkin e-posta adreslerini ekleyin."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
@@ -6611,6 +6624,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ÖNEMLİ: DNS panonuz CNAME değerlerinin noktayla bitmesine izin vermiyorsa CNAME değerlerindeki son noktayı kaldırabilirsiniz."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Bu kodlar olmadan, iki adımlı doğrulama aygıtınızı kaybederseniz hesabınıza asla erişemezsiniz."
@@ -6741,6 +6757,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Günlük kayıtlarında, ${ BRAND_NAME_TWO } kimlik doğrulama bilgilerinizi kullanan tüm ${ BRAND_NAME } hizmetlerinin kimlik doğrulama girişimleri bulunur."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "SPF/DKIM/DMARC ayarları doğru değilse, büyük e-posta hizmeti sağlayıcıları e-postalarınızı istenmeyen olarak algılayarak reddebilir ya da süzebilir."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza erişebileceğinizden emin olmak için ${ addARecoveryMethod }."
@@ -7173,6 +7195,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Kullanılabileceğiniz sunuculardan bazıları, son kaldırma işlemleri nedeniyle yalnızca belirli ülkelerde kullanılabilir"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF, etki alanınız için kimlerin e-posta göndermesine izin verildiğini belirtir. Aşağıdaki TXT kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklediğinizden emin olun."
       ],
       "Stay tuned for future promotions.": [
         "Gelecekteki fırsatları kaçırmayın."
@@ -7713,9 +7738,9 @@
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz.",
-        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
@@ -7942,6 +7967,17 @@
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Açıldığında alt klasörler üst klasörün rengini alır."
@@ -7953,8 +7989,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Kuruluşunuzda var olan kullanıcılar için yeni bir adres ekleyin."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Kuruluşunuza yeni bir kullanıcı ve e-posta adresi ekleyin."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Güvenlik nedeniyle ${ domainName } etki alanının sahibi olduğunuzu doğrulamamız gerekiyor. Lütfen aşağıdaki TXT kaydını DNS panonuza ekleyin (özel etki alanınızı kiraladığınız yerde bulunur). Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8993,6 +9035,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "İfade belirli bir sıradaki 12 benzersiz sözcükten oluşur"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki 3 CNAME kaydını da ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat alabilir."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki iki MX kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ],
       "Please select files to upload": [
         "Lütfen yüklenecek dosyaları seçin"
       ],
@@ -9236,6 +9287,11 @@
         "Süre"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Yönetici"
@@ -9421,6 +9477,9 @@
       ],
       "Help translate": [
         "Çeviriye yardımcı olun"
+      ],
+      "here": [
+        "buradan"
       ],
       "How to pay with Bitcoin?": [
         "Bitcoin ile nasıl ödeme yapabilirsiniz?"
@@ -10275,6 +10334,10 @@
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
       ],
+      "Up to ${ n } user": [
+        "${ n } kullanıcıya kadar",
+        "${ n } kullanıcıya kadar"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
@@ -10584,6 +10647,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ VPN_APP_NAME } hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ VPN_APP_NAME } bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -11216,12 +11282,6 @@
       "Create another account instead": [
         "Bunun yerine başka bir hesap oluşturun"
       ],
-      "Download again ${ size }": [
-        "Yeniden ${ size } indirin"
-      ],
-      "Download to continue ${ size }": [
-        "İlerlemek için ${ size } indirin"
-      ],
       "Keep this plan": [
         "Bu tarifede kal"
       ],
@@ -11360,9 +11420,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email takma adları, e-postanızı verilerinizin ele geçirilmesinden korur"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
-      ],
       "Includes:": [
         "İçindekiler:"
       ],
@@ -11374,9 +11431,6 @@
       ],
       "Install app and extension": [
         "Uygulamayı ve eklentiyi kurun"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bu **kurtarma paketini** güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
@@ -12583,8 +12637,12 @@
         "${ ipAddresses } size ayrılmış sunucu"
       ],
       "${ n } calendar per user": [
-        "Kullanıcı başına ${ n } takvim",
-        "Kullanıcı başına ${ n } takvim"
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } free VPN connection per user": [
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı",
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
@@ -13945,6 +14003,10 @@
       "Success": [
         "Başarılı"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } kullanıcı hesabı eklendi",
+        "${ n } kullanıcı hesabı eklendi"
+      ],
       "Summary": [
         "Özet"
       ],
@@ -14212,6 +14274,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Gelişmiş günlük kaydı özelliği açıldığında, her etkinliğin IP adresi kaydedilir."
       ],
+      "Feature in early access": [
+        "Erken erişim özelliği"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
@@ -14226,6 +14291,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
+      ],
+      "See number of unread messages in the application icon": [
+        "Okunmamış ileti sayısını uygulama simgesinde görüntüler"
       ],
       "See number of unread messages in the tab icon": [
         "Okunmamış ileti sayısını sekme simgesinde görüntüler"
@@ -14433,6 +14501,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Tek oturum açma"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Kimlik hizmeti sağlayıcınızın belirttiği tek oturum açma"
       ]
     },
     "Validation": {

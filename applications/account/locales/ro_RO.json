@@ -908,9 +908,6 @@
       "Signing in": [
         "Conectare"
       ],
-      "Signing out": [
-        "Deconectare"
-      ],
       "Size": [
         "Mărime"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Migrare la Visionary"
       ],
       "Upgrade your plan": [
         "Modificare plan"
@@ -2106,9 +2100,6 @@
       "Gender": [
         "Gen"
       ],
-      "Geo": [
-        "Coordonate"
-      ],
       "Language": [
         "Limba"
       ],
@@ -3146,8 +3137,8 @@
       "Access to the desktop app is limited": [
         "Accesul la aplicația pentru desktop este limitat"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Versiunea beta a aplicației pentru desktop ${ MAIL_APP_NAME } este în prezent limitată la abonații cu planul ${ BRAND_NAME } Visionary. Aceasta va fi disponibilă pentru toți utilizatorii la începutul anului 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Versiunea beta a aplicației desktop ${ MAIL_APP_NAME } este disponibilă în prezent pentru oricine are un plan cu plată ${ MAIL_APP_NAME }. În curând aplicația va fi disponibilă pentru toată lumea."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
@@ -3957,6 +3948,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Permisiune refuzată, drepturile de administrator au fost restricționate."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configurația un domeniu personal înainte de a adăuga adrese."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configurați un nume de domeniu personal înainte de a adăuga utilizatori la organizație."
       ],
@@ -4761,8 +4755,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Dacă utilizatorul are deja o adresă ${ MAIL_APP_NAME }, introduceți-o aici. În caz contrar, acesta va trebui să-și creeze mai întâi un cont."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
@@ -4810,8 +4804,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } a fost eliminat din ${ organization.Name }."
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } a fost eliminat din ${ organizationName }."
       ],
       "An error occurred, please try again": [
         "A apărut o eroare. Reîncercați mai târziu."
@@ -5800,17 +5794,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info": {
@@ -7835,10 +7818,10 @@
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
         "Momentan folosiți ${ ipCount } din ${ ipAddresses } de servere dedicate disponibile."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
-        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
-        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
+        "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
+        "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Este conectat contul ${ memberAddress }."
@@ -8068,6 +8051,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11445,12 +11439,6 @@
       "Create another account instead": [
         "Creare alt cont"
       ],
-      "Download again ${ size }": [
-        "Descărcare din nou ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Descărcare pentru a continua ${ size }"
-      ],
       "Keep this plan": [
         "Păstrez planul"
       ],
@@ -11589,9 +11577,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasurile hide-my-email vă protejează adresa de e-mail împotriva divulgării datelor personale."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Dacă sunteți blocat din contul ${ BRAND_NAME }, **pachetul de recuperare** vă va permite să vă conectați și să recuperați datele."
-      ],
       "Includes:": [
         "Include:"
       ],
@@ -11603,9 +11588,6 @@
       ],
       "Install app and extension": [
         "Instalați aplicația și extensia"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că păstrați acest **pachet de recuperare** undeva în siguranță."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Alăturați-vă celor peste 100 de milioane de oameni care au ales ${ BRAND_NAME } pentru a rămâne în siguranță online."
@@ -14515,6 +14497,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Mesajele din folderul «Trimise» sau «Ciorne» vor continua să apară în acel folder, chiar dacă le mutați în altul."
+      ],
+      "See number of unread messages in the application icon": [
+        "Afișare număr mesaje necitite pe pictograma aplicației."
       ],
       "See number of unread messages in the tab icon": [
         "Afișare număr mesaje necitite pe pictograma filei."
