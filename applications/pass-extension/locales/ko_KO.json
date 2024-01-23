@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "계정 설정"
+      ],
       "Add": [
         "추가"
       ],
@@ -160,9 +163,6 @@
       ],
       "Export": [
         "내보내기"
-      ],
-      "Feedback": [
-        "피드백"
       ],
       "Fill password": [
         "비밀번호 채우기"
@@ -1183,11 +1183,11 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length }글자"
+      "${ config.options.length } characters": [
+        "${ config.options.length }글자"
       ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount }단어"
+      "${ config.options.wordCount } words": [
+        "${ config.options.wordCount }단어"
       ],
       "1 hour": [
         "1시간"
@@ -1371,6 +1371,9 @@
       ],
       "Item ID": [
         "항목 ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
       ],
       "Language": [
         "언어"
@@ -2015,7 +2018,7 @@
         "사용자 세션을 재게할 수 없습니다."
       ],
       "Your session is inactive.": [
-        "사용자의 세션이 미활동 입니다."
+        "비활성 세션입니다."
       ],
       "Your session was locked.": [
         "사용자의 세션이 잠겼습니다."

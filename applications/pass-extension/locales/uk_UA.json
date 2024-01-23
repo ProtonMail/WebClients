@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Налаштування облікового запису"
+      ],
       "Add": [
         "Додати"
       ],
@@ -148,9 +151,6 @@
       ],
       "Export": [
         "Експортувати"
-      ],
-      "Feedback": [
-        "Відгук"
       ],
       "Fill password": [
         "Заповнити пароль"
@@ -304,6 +304,9 @@
       ],
       "Show": [
         "Показати"
+      ],
+      "Show advanced options": [
+        "Показати додаткові параметри"
       ],
       "Sign back in": [
         "Увійти знову"
@@ -987,17 +990,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } символ",
-        "${ passwordOptions.options.length } символи",
-        "${ passwordOptions.options.length } символів",
-        "${ passwordOptions.options.length } символів"
+      "${ config.options.length } character": [
+        "${ config.options.length } символ",
+        "${ config.options.length } символів",
+        "${ config.options.length } символи",
+        "${ config.options.length } символи"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } слово",
-        "${ passwordOptions.options.wordCount } слова",
-        "${ passwordOptions.options.wordCount } слів",
-        "${ passwordOptions.options.wordCount } слів"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слово",
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } слів",
+        "${ config.options.wordCount } слів"
       ],
       "1 hour": [
         "1 година"
@@ -1166,6 +1169,9 @@
       ],
       "Invitations": [
         "Запрошення"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбінація клавіш: ${ shortcut }"
       ],
       "Language": [
         "Мова"
