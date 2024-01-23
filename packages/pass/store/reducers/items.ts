@@ -12,6 +12,7 @@ import {
     inviteCreationSuccess,
     itemAutofilled,
     itemBulkMoveProgress,
+    itemBulkTrashProgress,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -61,7 +62,8 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 /** itemIds are only guaranteed to be unique per share not globally,
  * therefore we must index the item entries by `shareId`  */
-export type ItemsByShareId = { [shareId: string]: { [itemId: string]: ItemRevision } };
+export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };
+export type ItemsByShareId = IndexedByShareIdAndItemId<ItemRevision>;
 
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
@@ -316,6 +318,19 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                 { ...state, [shareId]: objectFilter(state[shareId], notIn(itemIds)) },
                 { [destinationShareId]: toMap(movedItems, 'itemId') }
             );
+        }
+
+        if (itemBulkTrashProgress.match(action)) {
+            const update = action.payload.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>(
+                (acc, { itemId, shareId }) => {
+                    acc[shareId] = acc[shareId] ?? {};
+                    acc[shareId][itemId] = { state: ItemState.Trashed };
+                    return acc;
+                },
+                {}
+            );
+
+            return partialMerge(state, update);
         }
 
         return state;
