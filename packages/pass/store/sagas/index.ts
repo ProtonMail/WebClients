@@ -12,7 +12,6 @@ import boot from './client/boot.saga';
 import cache from './client/cache.saga';
 import notification from './client/notification.saga';
 import reportProblem from './client/report-problem.saga';
-import request from './client/request-saga';
 import settings from './client/settings.saga';
 import sync from './client/sync.saga';
 import wakeup from './client/wakeup.saga';
@@ -76,7 +75,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             newUserInviteRemove,
             notification,
             reportProblem,
-            request,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
