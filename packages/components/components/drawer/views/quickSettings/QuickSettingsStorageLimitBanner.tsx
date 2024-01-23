@@ -6,7 +6,6 @@ import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
-    PLANS,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -17,6 +16,8 @@ import {
     getAppStorageFull,
     getCanAddStorage,
     getCompleteSpaceDetails,
+    getPercentageFull,
+    getPlanToUpsell,
     getSpace,
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
@@ -56,51 +57,7 @@ const QuickSettingsStorageLimitBanner = () => {
     const details = getCompleteSpaceDetails(space);
     const title = getTitle(details);
 
-    const result = (() => {
-        if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {
-            return {
-                plan: PLANS.BUNDLE,
-                title: getStorageFull(),
-            };
-        }
-
-        if (details.base.type === SpaceState.Danger) {
-            return {
-                plan: PLANS.MAIL,
-                title: getAppStorageFull(getAppStorage(MAIL_SHORT_APP_NAME)),
-            };
-        }
-
-        if (details.drive.type === SpaceState.Danger) {
-            return {
-                plan: PLANS.DRIVE,
-                title: getAppStorageFull(getAppStorage(DRIVE_SHORT_APP_NAME)),
-            };
-        }
-
-        const getPercentageFull = (storage: string, percentage: number) => {
-            // Translator: Drive storage 99% full
-            return c('storage_split: info').t`${storage} ${percentage}% full`;
-        };
-
-        if (details.base.type === SpaceState.Warning) {
-            return {
-                plan: PLANS.MAIL,
-                title: getPercentageFull(getAppStorage(MAIL_SHORT_APP_NAME), details.base.displayed),
-            };
-        }
-
-        if (details.drive.type === SpaceState.Warning) {
-            return {
-                plan: PLANS.DRIVE,
-                title: getPercentageFull(getAppStorage(DRIVE_SHORT_APP_NAME), details.drive.displayed),
-            };
-        }
-
-        return null;
-    })();
-
-    if (!result) {
+    if (!title) {
         return null;
     }
 
@@ -110,7 +67,7 @@ const QuickSettingsStorageLimitBanner = () => {
         component: UPSELL_COMPONENT.BANNER,
     });
 
-    const { plan, title } = result;
+    const plan = getPlanToUpsell({ storageDetails: details, app: APP_NAME });
 
     return (
         <DrawerAppSection>
