@@ -2,7 +2,12 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { itemPinRequest, itemUnpinRequest, itemsBulkMoveRequest } from '@proton/pass/store/actions/requests';
+import {
+    itemPinRequest,
+    itemUnpinRequest,
+    itemsBulkMoveRequest,
+    itemsBulkTrashRequest,
+} from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
@@ -225,6 +230,46 @@ export const itemTrashSuccess = createOptimisticAction(
             })
         )({ payload }),
     ({ payload }) => getItemActionId(payload)
+);
+
+export const itemBulkTrashIntent = createAction(
+    'item::bulk::trash::intent',
+    (payload: { itemsByShareId: ItemIdsByShareId }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkTrashRequest() }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving items to trash`,
+            })
+        )({ payload })
+);
+
+export const itemBulkTrashFailure = createAction(
+    'item::bulk::trash::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to move items to trash`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkTrashProgress = createAction(
+    'item::bulk::trash::progress',
+    withRequestProgress((payload: SelectedItem[]) => withCache({ payload }))
+);
+
+export const itemBulkTrashSuccess = createAction(
+    'item::bulk::trash::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`All items successfully moved to trash`,
+        })({ payload })
+    )
 );
 
 export const itemDeleteIntent = createOptimisticAction(
