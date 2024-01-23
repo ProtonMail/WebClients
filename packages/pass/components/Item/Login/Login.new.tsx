@@ -26,7 +26,7 @@ import { usePasswordContext } from '@proton/pass/components/Password/PasswordPro
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
-import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -161,14 +161,14 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
         validateOnBlur: true,
     });
 
-    const itemDraft = useItemDraftLocationState<NewLoginItemFormValues>();
-    const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
+    const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
     const draft = useItemDraft<NewLoginItemFormValues>(form, {
         type: 'login',
         mode: 'new',
         sanitizeSave: sanitizeLoginAliasSave,
-        sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
+        sanitizeHydration: sanitizeLoginAliasHydration(aliasOptions.value),
+        onHydrated: (draft) => draft?.withAlias && aliasOptions.request(),
     });
 
     useEffect(
@@ -329,8 +329,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
             <AliasModal
                 form={form}
                 shareId={shareId}
-                aliasOptions={aliasModal.aliasOptions}
-                loading={aliasModal.loading}
+                aliasOptions={aliasOptions.value}
+                loading={aliasOptions.loading}
                 open={aliasModal.open}
                 onClose={() =>
                     form
