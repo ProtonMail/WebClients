@@ -8,11 +8,11 @@ export const getHasStorageSplit = (user: User) => {
     return user.MaxBaseSpace !== undefined;
 };
 
-export const getSpace = (user: User) => {
+export const getSpace = (user: User, storageSplitEnabled: boolean) => {
     const usedSpace = user.UsedSpace ?? 0;
     const maxSpace = user.MaxSpace ?? 0;
 
-    if (!getHasStorageSplit(user)) {
+    if (!storageSplitEnabled || !getHasStorageSplit(user)) {
         const usedDriveSpace = user.ProductUsedSpace?.Drive ?? 0;
         const usedBaseSpace = usedSpace - usedDriveSpace;
         return {
