@@ -6,7 +6,6 @@ import { usePopupContext } from 'proton-pass-extension/lib/components/Context/Po
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import type { LocationDraftState } from '@proton/pass/hooks/useItemDraft';
 import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import { selectLatestDraft } from '@proton/pass/store/selectors';
@@ -53,18 +52,11 @@ export const usePopupStateEffects = () => {
         /** When supporting drafts v2: remove these as we will be able to leverage
          * the full draft state and give the user more control over the drafts */
         if (isNewItemDraft(draft)) {
-            return navigate<LocationDraftState>(getLocalPath(`item/new/${draft.type}`), {
-                mode: 'push',
-                state: { draft },
-            });
+            return navigate(getLocalPath(`item/new/${draft.type}`), { hash: 'draft', mode: 'push' });
         }
 
         if (isEditItemDraft(draft)) {
-            return selectItem<LocationDraftState>(draft.shareId, draft.itemId, {
-                view: 'edit',
-                mode: 'push',
-                state: { draft },
-            });
+            return selectItem(draft.shareId, draft.itemId, { hash: 'draft', mode: 'push', view: 'edit' });
         }
     }, []);
 
