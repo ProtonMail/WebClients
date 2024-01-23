@@ -31,7 +31,6 @@ const config: ForgeConfig = {
                 schemes: ["mailto"],
             },
         ],
-        appBundleId: "ch.protonmail.desktop",
         // Change category type of the application on macOS
         appCategoryType: "public.app-category.productivity",
         appBundleId: "ch.protonmail.desktop",
