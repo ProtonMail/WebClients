@@ -28,7 +28,12 @@ describe('openVaultKey crypto process', () => {
         });
 
         const vaultKey = await openVaultKey({
-            shareKey: { Key: vault.EncryptedVaultKey, KeyRotation: 1, CreateTime: 0 },
+            shareKey: {
+                CreateTime: 0,
+                Key: vault.EncryptedVaultKey,
+                KeyRotation: 1,
+                UserKeyID: 'test_user_key_id',
+            },
             userKeys,
         });
 
