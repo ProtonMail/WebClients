@@ -46,6 +46,7 @@ export const getAccountAppRoutes = ({
     isProtonSentinelEligible,
     isProtonSentinelFeatureEnabled,
     isProtonSentinelUpsellEnabled,
+    isStorageSplitEnabled,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -60,6 +61,7 @@ export const getAccountAppRoutes = ({
     isProtonSentinelEligible: boolean;
     isProtonSentinelFeatureEnabled: boolean;
     isProtonSentinelUpsellEnabled: boolean;
+    isStorageSplitEnabled: boolean;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
@@ -76,7 +78,7 @@ export const getAccountAppRoutes = ({
 
     const cancellablePlan = hasCancellablePlan(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
-    const hasSplitStorage = getHasStorageSplit(user);
+    const hasSplitStorage = isStorageSplitEnabled && getHasStorageSplit(user);
 
     return <const>{
         available: true,
