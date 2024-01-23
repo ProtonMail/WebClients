@@ -450,9 +450,6 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Remove": [
         "Eliminare"
       ],
@@ -537,13 +534,7 @@
       "Show time zones": [
         "Afișare fusuri orare"
       ],
-      "Sign in": [
-        "Autentificare"
-      ],
       "Sign out": [
-        "Deconectare"
-      ],
-      "Signing out": [
         "Deconectare"
       ],
       "Skip": [
@@ -1238,9 +1229,6 @@
       ],
       "Gender": [
         "Gen"
-      ],
-      "Geo": [
-        "Coordonate"
       ],
       "Language": [
         "Limba"
@@ -2522,12 +2510,6 @@
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Date de conectare incorecte. Reîncercați."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -2687,9 +2669,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Timpul de începere trebuie să fie înainte de cel de sfârșit."
@@ -3973,9 +3952,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
@@ -4181,9 +4157,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "echipa de asistență"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
@@ -4219,9 +4192,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -4653,9 +4623,6 @@
       "Email format": [
         "Format e-mail"
       ],
-      "Email or username": [
-        "E-mail sau utilizator"
-      ],
       "Emails": [
         "Mesaje"
       ],
@@ -4748,9 +4715,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
       ],
       "Main": [
         "Principală"
@@ -6671,9 +6635,6 @@
         "${ emailsCount } adresă de e-mail",
         "${ emailsCount } adrese de e-mail",
         "${ emailsCount } de adrese de e-mail"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
       ],
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"

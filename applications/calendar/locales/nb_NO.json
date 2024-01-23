@@ -222,6 +222,9 @@
       "Download": [
         "Last ned"
       ],
+      "Download now": [
+        "Last ned nå"
+      ],
       "Edit": [
         "Rediger"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Importer fra Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Viktig oppdatering tilgjengelig. For å fortsette å bruke appen, vennligst oppdater til den nyeste versjonen ${ downloadUpdate }."
       ],
       "Join calendar": [
         "Bli med i kalender"
@@ -447,9 +453,6 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -534,14 +537,8 @@
       "Show time zones": [
         "Vis tidssoner"
       ],
-      "Sign in": [
-        "Logg på"
-      ],
       "Sign out": [
         "Logg av"
-      ],
-      "Signing out": [
-        "Logger av"
       ],
       "Skip": [
         "Hopp over"
@@ -1226,9 +1223,6 @@
       ],
       "Gender": [
         "Kjønn"
-      ],
-      "Geo": [
-        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -2499,12 +2493,6 @@
       "IMAP server is required": [
         "IMAP-tjener kreves"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Feil påloggingsinformasjon. Vennligst prøv på nytt."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Feil postbokspassord. Vennligst prøv på nytt."
-      ],
       "Incorrect username": [
         "Uriktig brukernavn"
       ],
@@ -2659,9 +2647,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Vennligst tilpass importen for å redigere disse navnene."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noe gikk galt, vennligst ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Starttid må være før sluttid"
@@ -3906,9 +3891,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener det er en feil, vennligst kontakt oss ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
       ],
@@ -4112,9 +4094,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "støtteapparat"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Vennligst kom tilbake senere."
       ],
@@ -4150,9 +4129,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -4581,9 +4557,6 @@
       "Email format": [
         "E-postformat"
       ],
-      "Email or username": [
-        "E-post eller brukernavn"
-      ],
       "Emails": [
         "E-poster"
       ],
@@ -4676,9 +4649,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-posttjener (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postbokspassord"
       ],
       "Main": [
         "Hoved"
@@ -6530,9 +6500,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
-      ],
-      "Account suspended": [
-        "Kontoen er suspendert"
       ],
       "Add another notification to remind you of this event": [
         "Legg til en ny varsling for å minne deg om denne hendelsen"

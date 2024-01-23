@@ -222,6 +222,9 @@
       "Download": [
         "Ladda ner"
       ],
+      "Download now": [
+        "Ladda ner nu"
+      ],
       "Edit": [
         "Redigera"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Importera från Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Viktig uppdatering tillgänglig. För att fortsätta använda appen, uppdatera till den senaste versionen. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Gå med i kalender"
@@ -447,9 +453,6 @@
       "Refresh the page": [
         "Uppdatera sidan"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Remove": [
         "Ta bort"
       ],
@@ -534,14 +537,8 @@
       "Show time zones": [
         "Visa tidszoner"
       ],
-      "Sign in": [
-        "Logga in"
-      ],
       "Sign out": [
         "Logga ut"
-      ],
-      "Signing out": [
-        "Loggar ut"
       ],
       "Skip": [
         "Hoppa över"
@@ -1226,9 +1223,6 @@
       ],
       "Gender": [
         "Kön"
-      ],
-      "Geo": [
-        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -2495,12 +2489,6 @@
       "IMAP server is required": [
         "IMAP-server är obligatoriskt"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Felaktiga inloggningsuppgifter. Försök igen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Felaktigt lösenord för brevlådan. Försök igen."
-      ],
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
@@ -2655,9 +2643,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Starttid måste vara före sluttid"
@@ -3899,9 +3884,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Om du har problem med att skapa ditt konto, begär en inbjudan så svarar vi inom en arbetsdag."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
       ],
@@ -4105,9 +4087,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
       ],
-      "support team": [
-        "supportteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -4143,9 +4122,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -4574,9 +4550,6 @@
       "Email format": [
         "E-postformat"
       ],
-      "Email or username": [
-        "E-post eller användarnamn"
-      ],
       "Emails": [
         "E-postmeddelanden"
       ],
@@ -4669,9 +4642,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Lösenord för brevlåda"
       ],
       "Main": [
         "Huvud"
@@ -6515,9 +6485,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } e-postadress",
         "${ emailsCount } e-postadresser"
-      ],
-      "Account suspended": [
-        "Konto avstängt"
       ],
       "Add another notification to remind you of this event": [
         "Lägg till ytterligare en avisering för att påminna dig om denna händelse"

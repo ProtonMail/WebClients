@@ -450,9 +450,6 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Remove": [
         "Удалить"
       ],
@@ -537,14 +534,8 @@
       "Show time zones": [
         "Показать часовые пояса"
       ],
-      "Sign in": [
-        "Войти"
-      ],
       "Sign out": [
         "Выйти"
-      ],
-      "Signing out": [
-        "Выход"
       ],
       "Skip": [
         "Пропустить"
@@ -1242,9 +1233,6 @@
       ],
       "Gender": [
         "Пол"
-      ],
-      "Geo": [
-        "Геолокация"
       ],
       "Language": [
         "Язык"
@@ -2526,12 +2514,6 @@
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
-      ],
       "Incorrect username": [
         "Некорректное имя пользователя"
       ],
@@ -2696,9 +2678,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Время начала должно быть раньше времени окончания"
@@ -3036,7 +3015,7 @@
         "Весь день, длится ${ plusDaysToEnd } день",
         "Весь день, длится ${ plusDaysToEnd } дня",
         "Весь день, длится ${ plusDaysToEnd } дней",
-        "Весь день, длится ${ plusDaysToEnd } дня"
+        "Весь день, длится ${ plusDaysToEnd } дней"
       ]
     },
     "Event info. Organizer name": {
@@ -3935,6 +3914,9 @@
       "Discard changes?": [
         "Отменить изменения?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Отображать события для календаря ${ Name }"
+      ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
       ],
@@ -4006,9 +3988,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
@@ -4214,9 +4193,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
-      "support team": [
-        "служба поддержки"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -4249,9 +4225,6 @@
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "Организатор этой серии событий не будет уведомлен о том, что вы отклонили приглашение, поскольку вы не можете отправлять письма с приглашенного адреса. Вы хотите удалить все события этой серии?"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -4678,9 +4651,6 @@
       "Email format": [
         "Формат сообщения"
       ],
-      "Email or username": [
-        "Эл. почта или имя пользователя"
-      ],
       "Emails": [
         "Электронные письма"
       ],
@@ -4773,9 +4743,6 @@
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Main": [
         "Главная"
@@ -6664,9 +6631,6 @@
         "${ emailsCount } адреса электронной почты",
         "${ emailsCount } адресов электронной почты",
         "${ emailsCount } адреса электронной почты"
-      ],
-      "Account suspended": [
-        "Аккаунт временно заблокирован"
       ],
       "Add another notification to remind you of this event": [
         "Добавить другое уведомление, чтобы напомнить вам об этом событии"
