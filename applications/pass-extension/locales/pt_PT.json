@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Definições de conta"
+      ],
       "Add": [
         "Adicionar"
       ],
@@ -137,9 +140,6 @@
       "Export": [
         "Exportar"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Fill password": [
         "Preencher a palavra-passe"
       ],
@@ -268,6 +268,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Show advanced options": [
+        "Mostrar as opções avançadas"
       ],
       "Sign back in": [
         "Inicie sessão novamente"
@@ -820,13 +823,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } carácter",
-        "${ passwordOptions.options.length } caracteres"
+      "${ config.options.length } character": [
+        "${ config.options.length } carácter",
+        "${ config.options.length } caracteres"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } palavra",
-        "${ passwordOptions.options.wordCount } palavras"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } palavra",
+        "${ config.options.wordCount } palavras"
       ],
       "1 hour": [
         "1 hora"
@@ -998,6 +1001,9 @@
       ],
       "Invitations": [
         "Convites"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalhos de teclado: ${ shortcut }"
       ],
       "Language": [
         "Idioma"

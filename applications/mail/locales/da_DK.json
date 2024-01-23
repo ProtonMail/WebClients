@@ -794,9 +794,6 @@
       "Refresh the page": [
         "Opdater siden"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -980,14 +977,8 @@
       "Show side panel": [
         "Vis sidepanel"
       ],
-      "Sign in": [
-        "Log ind"
-      ],
       "Sign out": [
         "Log ud"
-      ],
-      "Signing out": [
-        "Logger ud"
       ],
       "Size": [
         "Størrelse"
@@ -2093,9 +2084,6 @@
       "Gender": [
         "Køn"
       ],
-      "Geo": [
-        "Geolokalisering"
-      ],
       "Language": [
         "Sprog"
       ],
@@ -2134,6 +2122,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kontaktbillede"
       ]
     },
     "Contact type label": {
@@ -3298,6 +3291,10 @@
       "Choose a date in the future.": [
         "Vælg en dato i fremtiden."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Vælg en dato indenfor den næste ${ n } dag.",
+        "Vælg en dato indenfor de næste ${ n } dage."
+      ],
       "Condition incomplete": [
         "Betingelse mangelfuld"
       ],
@@ -3386,12 +3383,6 @@
       ],
       "IMAP server is required": [
         "IMAP-server er påkrævet."
-      ],
-      "Incorrect login credentials. Please try again.": [
-        "Forkerte loginoplysninger. Prøv venligst igen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen."
       ],
       "Incorrect username": [
         "Forkert brugernavn"
@@ -3547,9 +3538,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Besked er optaget. Prøv venligst igen."
@@ -4849,6 +4837,46 @@
         "${ currentProgress } ud af ${ totalProgress }",
         "${ currentProgress } ud af ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } samtale vil få etiketten:",
+        "${ elementsCount } samtaler vil få etiketten:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } samtale vil blive markeret som læst.",
+        "${ elementsCount } samtaler vil blive markeret som læst."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } samtale vil blive markeret som ulæst.",
+        "${ elementsCount } samtaler vil blive markeret som ulæst."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } samtale vil blive flyttet",
+        "${ elementsCount } samtaler vil blive flyttet"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } samtale vil ikke længere have etiketten:",
+        "${ elementsCount } samtaler vil ikke længere have etiketten:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } besked vil få etiketten:",
+        "${ elementsCount } beskeder vil få etiketten:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } besked vil blive markeret som læst.",
+        "${ elementsCount } beskeder vil blive markeret som læst."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } besked vil blive markeret som ulæst.",
+        "${ elementsCount } beskeder vil blive markeret som ulæst."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } besked vil blive flyttet",
+        "${ elementsCount } beskeder vil blive flyttet"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } besked vil ikke længere have etiketten:",
+        "${ elementsCount } beskeder vil ikke længere have etiketten:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } indlejret billede",
         "${ embeddedAttachmentsCount } indlejrede billeder"
@@ -5013,8 +5041,17 @@
       "and": [
         "og"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Alle planlagte eller udsatte beskeder vil blive annulleret."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også blive slettet. E-mails, der er gemt i denne mappe ${ nameDeleted }, vil dog ikke blive slettet og kan findes i mappen Alle e-mails."
+      ],
+      "Applying actions to conversations": [
+        "Anvender handlinger på samtaler"
+      ],
+      "Applying actions to messages": [
+        "Anvender handlinger på beskeder"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Er du sikker på, at du vil slette alle beskeder i denne mappe?"
@@ -5339,9 +5376,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
@@ -5456,6 +5490,9 @@
       ],
       "Merged": [
         "Flettet"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Beskedhandlinger er i gang. Dette kan tage et stykke tid."
       ],
       "Message download status:": [
         "Status for download af besked:"
@@ -5695,6 +5732,10 @@
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Vælg alle ${ elementsCount } i ${ location }",
+        "Vælg alle ${ elementsCount } i ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
@@ -5773,9 +5814,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
-      "support team": [
-        "supportteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -5824,9 +5862,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med hide-my-email-aliasser."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -5925,6 +5960,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne afsenders offentlige nøgle er endnu ikke betroet."
+      ],
+      "to ${ destinationElement } folder.": [
+        "til ${ destinationElement } mappe."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -6115,6 +6153,9 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nu vende tilbage til applikationen for at fortsætte"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
@@ -6176,6 +6217,22 @@
       "You selected **${ count } message** with this label": [
         "Du valgte **${ count } besked** med denne etikette",
         "Du valgte **${ count } beskeder** med denne etikette"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du valgte **${ elementsCount } samtale** i ${ location }",
+        "Du valgte **${ elementsCount } samtaler** i ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du valgte **${ elementsCount } samtale**.",
+        "Du valgte **${ elementsCount } samtaler**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du valgte **${ elementsCount } besked** i ${ location }",
+        "Du valgte **${ elementsCount } beskeder** i ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du valgte **${ elementsCount } besked**.",
+        "Du valgte **${ elementsCount } beskeder**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men der er ikke tilføjet en vedhæftning. Vil du sende din besked alligevel?"
@@ -6645,9 +6702,6 @@
       "Email format": [
         "E-mailformattering"
       ],
-      "Email or username": [
-        "E-mail eller brugernavn"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -6755,9 +6809,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
       ],
       "Main": [
         "Hjem"
@@ -7003,6 +7054,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7837,6 +7891,9 @@
       "Search name, email or group": [
         "Søg navn, e-mail eller gruppe"
       ],
+      "Search parent folder": [
+        "Søg i overordnet mappe"
+      ],
       "Select": [
         "Vælg"
       ],
@@ -8412,6 +8469,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium tidlig adgang"
       ],
@@ -8557,9 +8617,6 @@
       "Schedule send": [
         "Planlæg afsendelse"
       ],
-      "Search just got smarter and faster": [
-        "Søgning er lige blevet smartere og hurtigere"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Indstil, hvornår en e-mail skal dukke op igen i din indbakke med den nye udsættelsesfunktion."
       ],
@@ -8568,9 +8625,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "E-mails fra spam og papirkurven udelukkes nu automatisk fra Alle e-mails. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Prøv det i dag."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
@@ -9001,8 +9055,11 @@
       "(active)": [
         "(aktiv)"
       ],
-      "Account suspended": [
-        "Konto suspenderet"
+      "Action all conversations": [
+        "Anvend på alle samtaler"
+      ],
+      "Action all messages": [
+        "Anvend på alle beskeder"
       ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
@@ -9278,8 +9335,20 @@
       "Mark as unread": [
         "Markér som ulæst"
       ],
+      "Mark conversations as read": [
+        "Markér samtaler som læste"
+      ],
+      "Mark conversations as unread": [
+        "Markér samtaler som ulæste"
+      ],
       "Mark email as legitimate": [
         "Markér e-mail som legitim"
+      ],
+      "Mark messages as read": [
+        "Markér beskeder som læste"
+      ],
+      "Mark messages as unread": [
+        "Markér beskeder som ulæste"
       ],
       "Merge contacts": [
         "Flet kontakter"
@@ -9310,6 +9379,12 @@
       ],
       "More selections": [
         "Flere valg"
+      ],
+      "Move all conversations": [
+        "Flyt alle samtaler"
+      ],
+      "Move all messages": [
+        "Flyt alle beskeder"
       ],
       "Move all messages to Archive": [
         "Flyt alle beskeder til arkiv"
@@ -9607,6 +9682,9 @@
       ],
       "Hide side panel": [
         "Skjul sidepanel"
+      ],
+      "Load image": [
+        "Indlæs billede"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"

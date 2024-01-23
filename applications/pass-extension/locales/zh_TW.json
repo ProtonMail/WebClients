@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "帳號設定"
+      ],
       "Add": [
         "加入"
       ],
@@ -143,6 +146,12 @@
       "Dismiss": [
         "忽略"
       ],
+      "Do not show on this website": [
+        "不要顯示於此網站"
+      ],
+      "Do not suggest on this website": [
+        "不要於此網站推薦"
+      ],
       "Done": [
         "完成"
       ],
@@ -154,9 +163,6 @@
       ],
       "Export": [
         "匯出"
-      ],
-      "Feedback": [
-        "意見回饋"
       ],
       "Fill password": [
         "填寫密碼"
@@ -260,6 +266,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Open web app": [
+        "開啟網頁應用程式"
+      ],
       "Pass for Android": [
         "Proton Pass 的 安卓版本"
       ],
@@ -326,6 +335,9 @@
       "Show": [
         "顯示"
       ],
+      "Show advanced options": [
+        "顯示進階選項"
+      ],
       "Sign back in": [
         "重新登入"
       ],
@@ -386,6 +398,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "黑色星期五優惠"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Button": {
@@ -656,6 +673,12 @@
       "${ n } items": [
         "${ n } 項目"
       ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME }將會提醒儲存或更新資料。"
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME }將會於註冊時建議密碼"
+      ],
       "${ revisionNumber } times": [
         "${ revisionNumber }次數"
       ],
@@ -677,6 +700,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
       ],
+      "All trashed items permanently deleted": [
+        "全數垃圾項目永久刪除"
+      ],
       "All trashed items successfully restored": [
         "全部垃圾項目已成功還原"
       ],
@@ -697,6 +723,9 @@
       ],
       "Can view items in this vault.": [
         "可查看保管庫的項目。"
+      ],
+      "Click the icon to open it anytime.": [
+        "點擊圖示以隨時打開。"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -742,6 +771,12 @@
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "匯出檔案以使用PGP金鑰加密且需要強的密碼片語"
+      ],
+      "For easy access to your passwords and more.": [
+        "容易存取密碼及更多。"
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "基於安全性理由，您的存取需要得到確認"
       ],
       "For security reasons, your access needs to be confirmed": [
         "基於安全性理由，您的存取需要得到確認"
@@ -835,6 +870,9 @@
       ],
       "Never": [
         "永不"
+      ],
+      "No login found": [
+        "查詢無登入"
       ],
       "None": [
         "無"
@@ -980,6 +1018,9 @@
       "You are about to create:": [
         "您將要創建:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "您能快速透過${ PASS_APP_NAME }圖示自動填入資料。"
+      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "已用鑿可供創建別名的數量。升級訂購授權即可釋放限制"
       ],
@@ -1006,11 +1047,11 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length }個字元"
+      "${ config.options.length } characters": [
+        "${ config.options.length }個字元"
       ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount }個字"
+      "${ config.options.wordCount } words": [
+        "${ config.options.wordCount }個字"
       ],
       "1 hour": [
         "1 小時"
@@ -1188,6 +1229,12 @@
       ],
       "Invitations": [
         "邀請"
+      ],
+      "Item ID": [
+        "項目 ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "鍵盤快速鍵: ${ shortcut }"
       ],
       "Language": [
         "語言"
@@ -1389,6 +1436,9 @@
       ],
       "Vault": [
         "保管庫"
+      ],
+      "Vault ID": [
+        "保管庫 ID"
       ],
       "View details": [
         "查看詳情資料"
@@ -1592,6 +1642,9 @@
       ],
       "Leave vault ?": [
         "離開保管庫 ?"
+      ],
+      "Log in as...": [
+        "以登入..."
       ],
       "Low disk space": [
         "磁碟空間過低"

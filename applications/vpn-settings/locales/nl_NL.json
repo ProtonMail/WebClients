@@ -98,6 +98,9 @@
       "Copy address": [
         "Adres kopiëren"
       ],
+      "Copy key to the clipboard": [
+        "Kopieer sleutel naar klembord"
+      ],
       "Create": [
         "Aanmaken"
       ],
@@ -241,6 +244,9 @@
       ],
       "Get verification code": [
         "Krijg verificatie code"
+      ],
+      "Give feedback": [
+        "Geef feedback"
       ],
       "Got it": [
         "Begrepen"
@@ -445,9 +451,6 @@
       ],
       "Signing in": [
         "Aanmelden"
-      ],
-      "Signing out": [
-        "Uitloggen"
       ],
       "Submit": [
         "Versturen"
@@ -1989,6 +1992,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configureer eerst een eigen domein voordat u adressen toevoegt."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configureer een eigen domein om gebruikers aan uw organisatie toe te voegen."
       ],
@@ -2305,8 +2311,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Als de gebruiker al een ${ MAIL_APP_NAME }-adres heeft, voert u het hier in. Anders moet de gebruiker eerst een account aanmaken."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "De uitnodiging wordt ingetrokken en de gebruiker kan zich niet aansluiten bij ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
@@ -2346,8 +2352,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } is verwijderd uit ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } is verwijderd uit ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Er is een fout opgetreden, probeer het opnieuw"
@@ -3759,9 +3765,9 @@
         "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
         "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicentie",
-        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicenties"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie",
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
@@ -3782,6 +3788,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "U heeft nu toegang tot het account als administrator en kan deze beheren."
+      ],
+      "You can now return to the application to continue": [
+        "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "U kunt slechts één chat-instantie tegelijk open hebben. Sluit eerdere gesprekken voordat u een nieuw gesprek begint."
@@ -6360,6 +6369,10 @@
         "${ n } agenda per gebruiker",
         "${ n } agenda's per gebruiker"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-verbinding per gebruiker",
+        "${ n } gratis VPN-verbindingen per gebruiker"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } supersnelle VPN-verbinding",
         "${ n } supersnelle VPN-verbindingen"
@@ -7158,6 +7171,10 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Successfully created ${ n } user account": [
+        "Met succes ${ n } gebruikersaccounts aangemaakt",
+        "Met succes ${ n } gebruikersaccounts aangemaakt"
       ],
       "Summary": [
         "Overzicht"

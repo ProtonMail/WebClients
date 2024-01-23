@@ -343,6 +343,9 @@
       "Download ${ attachmentName }": [
         "Спампаваць ${ attachmentName }"
       ],
+      "Download now": [
+        "Спампаваць"
+      ],
       "Downloading": [
         "Спампоўванне"
       ],
@@ -513,6 +516,9 @@
       ],
       "Import from Outlook": [
         "Імпартаваць з Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Даступны важныя абнаўленні. Для працягу выкарыстання праграмы, вам неабходна абнавіць яе да апошняй версіі. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Раніцай"
@@ -802,9 +808,6 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Remove": [
         "Выдаліць"
       ],
@@ -988,14 +991,8 @@
       "Show side panel": [
         "Паказаць бакавую панэль"
       ],
-      "Sign in": [
-        "Увайсці"
-      ],
       "Sign out": [
         "Выйсці з уліковага запісу"
-      ],
-      "Signing out": [
-        "Адбываецца выхад"
       ],
       "Size": [
         "Памер"
@@ -2115,9 +2112,6 @@
       "Gender": [
         "Пол"
       ],
-      "Geo": [
-        "Геалакацыя"
-      ],
       "Language": [
         "Мова"
       ],
@@ -2174,7 +2168,7 @@
         "Мабільны"
       ],
       "Other": [
-        "Іншае"
+        "Іншы"
       ],
       "Pager": [
         "Пэйджар"
@@ -3436,12 +3430,6 @@
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Няправільны пароль паштовай скрыні. Паспрабуйце яшчэ раз."
-      ],
       "Incorrect username": [
         "Няправільнае імя карыстальніка"
       ],
@@ -3465,6 +3453,9 @@
       ],
       "Last name is too long": [
         "Занадта доўгае прозвішча"
+      ],
+      "Maximum expiration time reached.": [
+        "Дасягнуты максімальны тэрмін дзеяння"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перавышана максімальная колькасць далучэнняў (${ attachmentsCountLimit })"
@@ -3606,9 +3597,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
@@ -5599,9 +5587,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -6046,9 +6031,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "каманда падтрымкі"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
       ],
@@ -6099,9 +6081,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Яны больш не змогуць адпраўляць вам лісты са спамам, калі не будуць ведаць ваш адрас электроннай пошты. Абараніце сваю паштовую скрыню з функцыяй Hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -6982,9 +6961,6 @@
       "Email format": [
         "Фармат ліста"
       ],
-      "Email or username": [
-        "Электронная пошта або імя карыстальніка"
-      ],
       "Emails": [
         "Лісты"
       ],
@@ -7092,9 +7068,6 @@
       ],
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль паштовай скрыні"
       ],
       "Main": [
         "Галоўная"
@@ -8972,17 +8945,20 @@
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
       ],
+      "Faster email management": [
+        "Больш хуткае кіраванне лістамі"
+      ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдыты."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Запрасіць сяброў у ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Цяпер вы можаце выканаць дзеянне над усімі лістамі ў адной папцы за адзін раз."
+      ],
       "Schedule send": [
         "Запланаваць адпраўку"
-      ],
-      "Search just got smarter and faster": [
-        "Пошук стаў больш разумным і хуткім"
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Задаць, калі ліст павінен з'явіцца ў вашай паштовай скрыні паўторна з новай функцыяй адкладання."
@@ -8992,9 +8968,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Лісты з папак Спам і Сметніца цяпер аўтаматычна выключаны з Уся пошта. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Паспрабуйце сёння."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
@@ -9498,9 +9471,6 @@
       ],
       "A filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
-      ],
-      "Account suspended": [
-        "Уліковы запіс прыпынены"
       ],
       "Action all conversations": [
         "Прымяніць да ўсіх размоў"

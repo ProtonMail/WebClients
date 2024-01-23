@@ -310,6 +310,9 @@
       "Get started": [
         "開始使用"
       ],
+      "Get Started": [
+        "入門指南"
+      ],
       "Get verification code": [
         "取得驗證碼"
       ],
@@ -478,9 +481,6 @@
       "Refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
-        "重新整理此頁面"
-      ],
       "Remove": [
         "移除"
       ],
@@ -601,14 +601,8 @@
       "Show side panel": [
         "顯示側邊面板"
       ],
-      "Sign in": [
-        "登入"
-      ],
       "Sign out": [
         "登出"
-      ],
-      "Signing out": [
-        "正在登出"
       ],
       "Skip": [
         "略過"
@@ -884,6 +878,11 @@
         "包存最多200份檔案歷程記錄長達10年。"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "應用程式問題"
@@ -1071,9 +1070,6 @@
       "Gender": [
         "性別"
       ],
-      "Geo": [
-        "地理位置"
-      ],
       "Language": [
         "語言"
       ],
@@ -1112,6 +1108,11 @@
       ],
       "URL": [
         "網址"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "聯絡人圖片"
       ]
     },
     "Contact type label": {
@@ -2154,12 +2155,6 @@
       "IMAP server is required": [
         "IMAP 伺服器為必填"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "登入憑證不正確。請再試一次。"
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "郵箱密碼不正確。請再試一次."
-      ],
       "Incorrect password. Please try again.": [
         "密碼不正確。請再試一次。"
       ],
@@ -2273,9 +2268,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "您有部分的標籤名稱超出 ${ MAIL_APP_NAME } 的字數上限。請自訂匯入以編輯該等名稱。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
       "status page": [
         "狀態頁面"
@@ -3246,6 +3238,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount }略過"
+      ],
       "${ speed }/s": [
         "${ speed }/秒"
       ],
@@ -3594,6 +3589,9 @@
       "Get the app to backup photos from your phone.": [
         "下載應用程式來備份手機中的照片"
       ],
+      "Get the desktop app to sync files from your computer.": [
+        "取得電腦應用程式以從電腦同步檔案。"
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
       ],
@@ -3608,9 +3606,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
@@ -3966,6 +3961,9 @@
       "Signature issue": [
         "簽署問題"
       ],
+      "Skipped": [
+        "已略過"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "某些檔案下載失敗，請嘗試重新下載這些檔案。"
       ],
@@ -3980,9 +3978,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
-      ],
-      "support team": [
-        "支援團隊"
       ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
@@ -4007,9 +4002,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "目前仍有檔案等候傳輸，關閉傳輸管理員將會終止所有操作。"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "此帳號可能因違反政策而遭停用。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -4104,6 +4096,9 @@
       "Trash is empty": [
         "垃圾桶是空的"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "嘗試${ DRIVE_APP_NAME }:永久免費"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
       ],
@@ -4187,6 +4182,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "將還原到 ${ formattedRevisionDate } 的版本。其他所有版本仍會被儲存。"
+      ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "與${ DRIVE_APP_NAME }您的資料已被端對端加密保護。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -4512,9 +4510,6 @@
       "Email format": [
         "電郵格式"
       ],
-      "Email or username": [
-        "電郵位址或使用者名稱"
-      ],
       "Emails": [
         "電郵"
       ],
@@ -4622,9 +4617,6 @@
       ],
       "Mail Server (IMAP)": [
         "郵件伺服器 (IMAP)"
-      ],
-      "Mailbox password": [
-        "信箱密碼"
       ],
       "Main": [
         "主要"
@@ -4839,6 +4831,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "寄件者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "收件者：${ to }"
       ]
     },
     "Landmarks": {
@@ -5200,6 +5195,9 @@
       "Move ${ n } files": [
         "移動 ${ n } 個檔案"
       ],
+      "Move ${ n } folders": [
+        "移動 ${ n } 個資料夾"
+      ],
       "Move ${ n } items": [
         "移動 ${ n } 個項目"
       ],
@@ -5415,6 +5413,9 @@
       ],
       "Search for name or email": [
         "搜尋名稱或電郵"
+      ],
+      "Search parent folder": [
+        "搜尋資料夾主目錄"
       ],
       "Select": [
         "選取"
@@ -6077,9 +6078,6 @@
       "${ numberOfFailedTransfer.total } failed uploads": [
         "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
-      "Account suspended": [
-        "帳號已被停用"
-      ],
       "Active": [
         "使用中"
       ],
@@ -6575,6 +6573,9 @@
       ],
       "Hide side panel": [
         "隱藏側邊面板"
+      ],
+      "Load image": [
+        "載入圖像"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"

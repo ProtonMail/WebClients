@@ -908,9 +908,6 @@
       "Signing in": [
         "로그인 중"
       ],
-      "Signing out": [
-        "로그아웃 중"
-      ],
       "Size": [
         "크기"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary로 업그레이드"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -2088,9 +2082,6 @@
       "Gender": [
         "성별"
       ],
-      "Geo": [
-        "위도, 경도"
-      ],
       "Language": [
         "언어"
       ],
@@ -3120,8 +3111,8 @@
       "Access to the desktop app is limited": [
         "데스크톱 앱에 접근할 수 없습니다"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } 데스크톱 앱 베타 버전은 현재 ${ MAIL_APP_NAME } 유료 플랜을 사용 중인 모든 사람들이 이용 가능합니다. 곧 모두가 사용할 수 있게 될 예정입니다."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "접근을 위해선 오늘 업그레이드 하거나 2024년 초까지 기다려 주세요."
@@ -3925,6 +3916,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
       ],
@@ -4721,8 +4715,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 걔정 생성이 필요합니다."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "초대가 취소되며 사용자가 ${ organization.Name } 에 합류하지 않게 됩니다."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "초대가 취소되며 사용자가 ${ organizationName } 에 합류하지 않게 됩니다."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
@@ -4770,8 +4764,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name }님이 ${ organization.Name }에서 삭제되었습니다."
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name }님이 ${ organizationName }에서 삭제되었습니다."
       ],
       "An error occurred, please try again": [
         "오류가 발생했습니다, 다시 시도하세요"
@@ -5726,17 +5720,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info": {
@@ -7684,8 +7667,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "현재 ${ ipAddresses } 사용 가능한 전용 서버의 ${ ipCount }을(를) 사용하고 있습니다."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "현재 ${ organization.MaxMembers } 사용 가능한 사용자 라이선스 ${ organization.UsedMembers }을(를) 사용하고 있습니다."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "현재 ${ maxMembers } 사용 가능한 사용자 라이선스 ${ usedMembers }을(를) 사용하고 있습니다."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } 계정으로 로그인했습니다."
@@ -7905,6 +7888,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11188,12 +11182,6 @@
       "Create another account instead": [
         "대신 다른 계정을 생성"
       ],
-      "Download again ${ size }": [
-        "${ size } 다시 다운로드"
-      ],
-      "Download to continue ${ size }": [
-        "${ size } 계속하려면 다운로드"
-      ],
       "Keep this plan": [
         "이 플랜 유지"
       ],
@@ -11332,9 +11320,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "데이터 유출로부터 이메일을 보호해주는 Hide-my-email 별칭"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "만약 ${ BRAND_NAME } 계정이 잠기면 **복구 키트**를 사용하여 로그인하고 데이터를 복구할 수 있습니다."
-      ],
       "Includes:": [
         "포함:"
       ],
@@ -11346,9 +11331,6 @@
       ],
       "Install app and extension": [
         "앱 및 확장 프로그램 설치"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "계정을 완전히 복원하는 유일한 방법이므로, 이 **복구 키트**를 안전한 곳에 확실히 보관해주세요."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "온라인에서 안전을 위해 ${ BRAND_NAME }을 선택한 1억 명이 넘는 사람들과 함께 하세요"
@@ -14161,6 +14143,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "전송 및 초안 폴더의 메시지가 다른 폴더로 이동하여도 표시됩니다."
       ],
+      "See number of unread messages in the application icon": [
+        "애플리케이션 아이콘에서 읽지 않은 메시지 수 보기"
+      ],
       "See number of unread messages in the tab icon": [
         "탭 아이콘에서 읽지 않은 메시지 수 보기"
       ],
@@ -14370,7 +14355,7 @@
     },
     "Users table: single sign-on tooltip": {
       "SSO user provided by your identity provider": [
-        "SSO 사용자는 사용자의 정보 제공사로 부터 제공되었습니다."
+        "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."
       ]
     },
     "Validation": {

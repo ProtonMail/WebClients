@@ -857,9 +857,6 @@
       "Signing in": [
         "Bejelentkezés"
       ],
-      "Signing out": [
-        "Kijelentkezés"
-      ],
       "Size": [
         "Méret"
       ],
@@ -1833,9 +1830,6 @@
       ],
       "Gender": [
         "Nem"
-      ],
-      "Geo": [
-        "Helyzet"
       ],
       "Language": [
         "Nyelv"
@@ -5002,14 +4996,6 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -6724,9 +6710,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből.",
-        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Jelenleg ${ usedMembers } felhasználói licencet használ, az elérhető ${ maxMembers } licencből.",
+        "Jelenleg ${ usedMembers } felhasználói licencet használ, az elérhető ${ maxMembers } licencből."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
@@ -6920,6 +6906,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info - folder colouring feature": {

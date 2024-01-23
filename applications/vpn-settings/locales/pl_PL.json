@@ -470,9 +470,6 @@
       "Signing in": [
         "Logowanie"
       ],
-      "Signing out": [
-        "Wylogowywanie"
-      ],
       "Submit": [
         "Wyślij"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Ulepsz plan do wersji Business"
-      ],
-      "Upgrade to Visionary": [
-        "Ulepsz do planu Visionary"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -1880,9 +1874,6 @@
       "Access to the desktop app is limited": [
         "Dostęp do aplikacji desktopowej jest ograniczony"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników planu ${ BRAND_NAME } Visionary. Aplikacja będzie dostępna dla wszystkich użytkowników na początku 2024 roku."
-      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
       ]
@@ -2073,8 +2064,11 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Ustaw niestandardową domenę, zanim zaczniesz dodawać użytkowników do organizacji."
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
@@ -2398,8 +2392,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jeśli użytkownik już ma adres ${ MAIL_APP_NAME }, wpisz go tutaj. W przeciwnym razie utwórz konto."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
@@ -2439,8 +2433,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Użytkownik ${ member.Name } został usunięty z organizacji ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Użytkownik ${ member.Name } został usunięty z organizacji ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Wystąpił błąd. Spróbuj ponownie"
@@ -3978,11 +3972,11 @@
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów.",
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnej licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnej licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Zalogowano jako ${ memberAddress }."
