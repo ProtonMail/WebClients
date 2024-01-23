@@ -198,7 +198,7 @@ export const trashItems = async (items: ItemRevision[]) =>
                 })
             )
         )
-    ).flatMap(({ Items }) => Items?.Items ?? []);
+    ).flatMap(({ Items }) => Items ?? []);
 
 export const restoreItems = (items: ItemRevision[]) =>
     Promise.all(
