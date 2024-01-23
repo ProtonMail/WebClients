@@ -982,7 +982,7 @@
         "Neomezený počet aliasů Hide-my-email"
       ],
       "Unpinning item...": [
-        "Odepínání položky"
+        "Odepínání položky..."
       ],
       "Use vaults to share this item with others.": [
         "Pomocí trezorů můžete tuto položku sdílet s ostatními."
@@ -1049,17 +1049,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } znak",
-        "${ passwordOptions.options.length } znaky",
-        "${ passwordOptions.options.length } znaků",
-        "${ passwordOptions.options.length } znaků"
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znaky",
+        "${ config.options.length } znaků",
+        "${ config.options.length } znaků"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } slovo",
-        "${ passwordOptions.options.wordCount } slova",
-        "${ passwordOptions.options.wordCount } slov",
-        "${ passwordOptions.options.wordCount } slov"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } slovo",
+        "${ config.options.wordCount } slova",
+        "${ config.options.wordCount } slov",
+        "${ config.options.wordCount } slov"
       ],
       "1 hour": [
         "1 hodina"
@@ -1201,6 +1201,9 @@
       ],
       "Item ID": [
         "ID položky"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová zkratka: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Minulé 2 týdny"
