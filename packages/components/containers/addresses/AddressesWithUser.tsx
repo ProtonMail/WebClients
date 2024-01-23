@@ -7,7 +7,7 @@ import { SettingsParagraph } from '@proton/components/containers';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -190,7 +190,7 @@ const AddressesUser = ({ user, organizationKey, member, hasDescription = true }:
                     description={c('Description')
                         .t`Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.`}
                     modalProps={upsellModalProps}
-                    upsellRef={upsellRef}
+                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
                     features={[
                         'more-storage',
                         'more-email-addresses',

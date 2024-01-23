@@ -16,6 +16,7 @@ import DrawerAppHeadline from '../shared/DrawerAppHeadline';
 import DrawerAppSection from '../shared/DrawerAppSection';
 import QuickSettingsRemindersSection from './QuickSettingsRemindersSection';
 import QuickSettingsSectionRow from './QuickSettingsSectionRow';
+import QuickSettingsStorageLimitBanner from './QuickSettingsStorageLimitBanner';
 
 interface Props {
     inAppReminders?: QuickSettingsReminders[];
@@ -146,6 +147,8 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     </DrawerAppSection>
                 </div>
             </Tooltip>
+
+            <QuickSettingsStorageLimitBanner />
 
             <QuickSettingsRemindersSection inAppReminders={inAppReminders} />
         </>
