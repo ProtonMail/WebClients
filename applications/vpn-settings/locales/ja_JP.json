@@ -335,6 +335,9 @@
       "Remove bonuses": [
         "ボーナスを削除"
       ],
+      "Remove domain": [
+        "ドメインを削除"
+      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
@@ -401,6 +404,9 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
+      "Select file": [
+        "ファイルを選択"
+      ],
       "Send code": [
         "コードを送信"
       ],
@@ -448,9 +454,6 @@
       ],
       "Signing in": [
         "サインイン中"
-      ],
-      "Signing out": [
-        "サインアウト中"
       ],
       "Submit": [
         "送信"
@@ -2255,8 +2258,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "招待はキャンセルされ、ユーザーは ${ organization.Name } に参加できなくなります。"
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "招待はキャンセルされ、ユーザーは ${ organizationName } に参加できなくなります。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
@@ -2296,8 +2299,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } が ${ organization.Name } から削除されました"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } が ${ organizationName } から削除されました"
       ],
       "An error occurred, please try again": [
         "エラーが発生しました。もう一度お試しください"
@@ -2734,6 +2737,9 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "アカウントに追加のセキュリティ層を追加します。サインインするたびに 2FA 検証を行う必要があります。"
+      ],
+      "Add domain": [
+        "ドメインを追加"
       ],
       "Add server (${ availableAddedCount } available)": [
         "サーバーを追加 (${ availableAddedCount } が利用可能)"
@@ -3674,8 +3680,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "現在、利用可能な ${ organization.MaxMembers } ユーザー ライセンスのうち ${ organization.UsedMembers } を使用しています。"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "現在、利用可能な ${ maxMembers } ユーザー ライセンスのうち ${ usedMembers } を使用しています。"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
@@ -4225,6 +4231,9 @@
       "Select your plan": [
         "プランの選択"
       ],
+      "Single sign-on URL": [
+        "シングルサインオン URL"
+      ],
       "Start date": [
         "開始日"
       ],
@@ -4251,6 +4260,9 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "Value": [
+        "値"
       ],
       "Verification code": [
         "認証コード"
@@ -5519,6 +5531,11 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Permission": {
+      "Organization only": [
+        "組織のみ"
       ]
     },
     "Placeholder": {
