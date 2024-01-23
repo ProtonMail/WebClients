@@ -1,8 +1,9 @@
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Loader } from '../../../components';
-import { useFreePlan, useLoad, usePlans, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
+import { useLoad, usePlans, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { getCurrency, resolveUpsellsToDisplay } from './helpers';
@@ -16,8 +17,9 @@ interface Props {
 
 const UpgradeVpnSection = ({ app }: Props) => {
     const [user] = useUser();
-    const [plans = [], loadingPlans] = usePlans();
-    const [freePlan] = useFreePlan();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [serversCount, serversCountLoading] = useVPNServersCount();

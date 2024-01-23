@@ -18,18 +18,10 @@ import {
     Subscription,
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Icon, Loader } from '../../components';
-import {
-    useApi,
-    useFreePlan,
-    useLoad,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '../../hooks';
+import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
@@ -55,8 +47,9 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
-    const [plans = [], loadingPlans] = usePlans();
-    const [freePlan] = useFreePlan();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
