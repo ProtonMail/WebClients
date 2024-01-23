@@ -16,9 +16,9 @@ import {
     MAIL_SHORT_APP_NAME,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import SubSettingsSection from '../../layout/SubSettingsSection';
@@ -51,6 +51,7 @@ interface CalendarShareSectionProps {
     calendar: VisualCalendar;
     addresses: Address[];
     user: UserModel;
+    subscription?: Subscription;
     isLoading: boolean;
     canShare: boolean;
     invitations: CalendarMemberInvitation[];
@@ -63,6 +64,7 @@ const CalendarShareSection = ({
     calendar,
     addresses,
     user,
+    subscription,
     isLoading,
     canShare,
     invitations,
@@ -170,7 +172,7 @@ const CalendarShareSection = ({
                             </p>
                             <ButtonLike
                                 as={SettingsLink}
-                                path={addUpsellPath('/upgrade', upsellRef)}
+                                path={addUpsellPath(getUpgradePath({ user, subscription }), upsellRef)}
                                 color="norm"
                                 shape="solid"
                                 size="small"

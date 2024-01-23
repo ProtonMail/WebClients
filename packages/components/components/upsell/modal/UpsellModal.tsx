@@ -92,7 +92,7 @@ export interface UpsellModalProps {
     features: UpsellFeatureName[];
     modalProps: ModalStateProps;
     title: string;
-    upsellRef: string;
+    upgradePath: string;
     onClose?: () => void;
     headerType?: UpsellHeaderType;
     hideInfo?: boolean;
@@ -104,7 +104,7 @@ const UpsellModal = ({
     hideInfo,
     modalProps,
     title,
-    upsellRef,
+    upgradePath,
     'data-testid': dataTestid,
     onClose,
     headerType = 'mail',
@@ -128,7 +128,7 @@ const UpsellModal = ({
                     features={features}
                     handleUpgrade={handleUpgrade}
                     headerType={headerType}
-                    path={`/upgrade?ref=${upsellRef}`}
+                    path={upgradePath}
                     hideInfo={hideInfo}
                 />
             </ModalTwoContent>

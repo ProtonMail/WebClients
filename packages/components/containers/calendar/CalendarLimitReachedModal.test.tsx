@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
 import { mockUseLocation } from '@proton/testing/lib/mockUseLocation';
 
@@ -15,7 +16,8 @@ describe('CalendarLimitReachedModal', () => {
     describe('when user is free', () => {
         it('should render correct prompt', async () => {
             const onClose = jest.fn();
-            render(<CalendarLimitReachedModal open onClose={onClose} isFreeUser />);
+            const user = { isFree: true } as UserModel;
+            render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser />);
 
             expect(screen.getByRole('heading', { level: 1, name: /Cannot add more calendars/ }));
 
@@ -40,7 +42,8 @@ describe('CalendarLimitReachedModal', () => {
     describe('when user is paid', () => {
         it('should render correct prompt', async () => {
             const onClose = jest.fn();
-            render(<CalendarLimitReachedModal open onClose={onClose} isFreeUser={false} />);
+            const user = { isPaid: true } as UserModel;
+            render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser={false} />);
 
             expect(screen.getByRole('heading', { level: 1, name: /Cannot add more calendars/ }));
 
