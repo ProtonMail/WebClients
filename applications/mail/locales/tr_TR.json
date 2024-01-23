@@ -794,9 +794,6 @@
       "Refresh the page": [
         "Sayfayı yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Remove": [
         "Kaldır"
       ],
@@ -980,14 +977,8 @@
       "Show side panel": [
         "Yan panoyu görüntüle"
       ],
-      "Sign in": [
-        "Oturum aç"
-      ],
       "Sign out": [
         "Oturumu kapat"
-      ],
-      "Signing out": [
-        "Oturum kapatılıyor"
       ],
       "Size": [
         "Boyut"
@@ -2092,9 +2083,6 @@
       ],
       "Gender": [
         "Cinsiyet"
-      ],
-      "Geo": [
-        "Coğrafi konum"
       ],
       "Language": [
         "Dil"
@@ -3396,12 +3384,6 @@
       "IMAP server is required": [
         "IMAP sunucusunun yazılması zorunludur"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
-      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
@@ -3546,7 +3528,7 @@
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+        "Bazı klasör adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız sistem kullanımına ayrılmış. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
@@ -3555,10 +3537,7 @@
         "Bazı etiket adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+        "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
       "Something went wrong. Please try again.": [
         "Bir şeyler ters gitti. Lütfen yeniden deneyin."
@@ -4269,10 +4248,10 @@
         "gönderilen e-postada ${ label }"
       ],
       "with attachments": [
-        "ek dosyası olan"
+        "ek dosyaları var"
       ],
       "without attachments": [
-        "ek dosyaları olmayan"
+        "ek dosyalar yok"
       ]
     },
     "filter: Label, jt": {
@@ -5397,9 +5376,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
@@ -5838,9 +5814,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
-      "support team": [
-        "destek ekibi"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın."
       ],
@@ -5889,9 +5862,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
@@ -6732,9 +6702,6 @@
       "Email format": [
         "E-posta biçimi"
       ],
-      "Email or username": [
-        "E-posta adresi ya da kullanıcı adı"
-      ],
       "Emails": [
         "E-postalar"
       ],
@@ -6842,9 +6809,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-posta sunucusu (IMAP)"
-      ],
-      "Mailbox password": [
-        "Posta kutusu parolası"
       ],
       "Main": [
         "Ana"
@@ -8130,7 +8094,7 @@
         "Sorunlar algıladık. E-postanız şu nedenlerle belirtilen e-posta adreslerine gönderilemez:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Bazı sorunlar algıladık. E-postanız şu nedenlerle belirtilen bir ya da birkaç e-posta adresine gönderilemez:"
+        "Bazı sorunlar bulduk. E-postanız şu nedenlerle belirtilen bir ya da birkaç e-posta adresine gönderilemez:"
       ]
     },
     "Send email with warnings": {
@@ -8653,9 +8617,6 @@
       "Schedule send": [
         "Gönderimi zamanla"
       ],
-      "Search just got smarter and faster": [
-        "Arama artık daha akıllı ve daha hızlı"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Erteleme özelliğiyle bir e-postanın gelen kutunuzda daha sonra yeniden görüntülenmesini sağlayabilirsiniz."
       ],
@@ -8664,9 +8625,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "İstenmeyen ve Çöp klasörlerindeki e-postalar Tüm e-postalar klasörüne katılmıyor. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Bugün deneyin."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
@@ -9096,9 +9054,6 @@
       ],
       "(active)": [
         "(etkin)"
-      ],
-      "Account suspended": [
-        "Hesap askıya alınmış"
       ],
       "Action all conversations": [
         "Tüm yazışmalara uygula"
