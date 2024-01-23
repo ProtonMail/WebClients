@@ -1,63 +1,53 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
-import { c } from 'ttag';
+import { END, eventChannel } from 'redux-saga';
+import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
-import { moveItems } from '@proton/pass/lib/items/item.requests';
+import { type MovedItemsBatch, moveItems } from '@proton/pass/lib/items/item.requests';
 import {
     itemBulkMoveFailure,
     itemBulkMoveIntent,
     itemBulkMoveProgress,
     itemBulkMoveSuccess,
-    notification,
 } from '@proton/pass/store/actions';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { RequestProgress } from '@proton/pass/store/actions/with-request';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import chunk from '@proton/utils/chunk';
+import noop from '@proton/utils/noop';
 
+import { selectItemsFromSelection } from '../../selectors';
+
+export type BulkMoveItemsChannel = RequestProgress<ItemRevision[], MovedItemsBatch>;
+
+export const bulkMoveChannel = (items: ItemRevision[], destinationShareId: string) =>
+    eventChannel<BulkMoveItemsChannel>((emitter) => {
+        moveItems(items, destinationShareId, (data, progress) => emitter({ type: 'progress', progress, data }))
+            .then((result) => emitter({ type: 'done', result }))
+            .catch((error) => emitter({ type: 'error', error }))
+            .finally(() => emitter(END));
+
+        return noop;
+    });
+
+/** FIXME: use event channel */
 function* itemBulkMoveWorker(
-    _: RootSagaOptions,
-    { payload: { itemsByShareId, destinationShareId }, meta }: ReturnType<typeof itemBulkMoveIntent>
+    { onItemsUpdated }: RootSagaOptions,
+    { payload, meta }: ReturnType<typeof itemBulkMoveIntent>
 ) {
-    /* we want to apply these request sequentially to avoid
-     * swarming the network with too many parallel requests */
-    let totalItems: number = 0;
-    const state = (yield select()) as State;
+    const requestId = meta.request.id;
+    const { itemsByShareId, destinationShareId } = payload;
+    const items = (yield select(selectItemsFromSelection(itemsByShareId))) as ItemRevision[];
+    const itemsToMove = items.filter(({ shareId }) => shareId !== destinationShareId);
+    const channel = bulkMoveChannel(itemsToMove, destinationShareId);
 
-    for (const shareId in itemsByShareId) {
-        if (shareId === destinationShareId || !itemsByShareId[shareId].length) continue;
+    while (true) {
+        const action: BulkMoveItemsChannel = yield take(channel);
 
-        try {
-            const items = itemsByShareId[shareId].map((itemId) => state.items.byShareId[shareId][itemId]);
-
-            for (const batch of chunk(items, MAX_BATCH_ITEMS_PER_REQUEST)) {
-                try {
-                    const movedItems = (yield moveItems(batch, destinationShareId)) as ItemRevision[];
-                    totalItems += movedItems.length;
-                    yield put(
-                        itemBulkMoveProgress(meta.request.id, totalItems, {
-                            destinationShareId,
-                            itemIds: batch.map(prop('itemId')),
-                            movedItems,
-                            shareId,
-                        })
-                    );
-                } catch (e) {
-                    const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
-                    yield put(
-                        notification({
-                            key: meta.request.id,
-                            type: 'error',
-                            text: c('Error').t`Moven bulk failed for batch : ${description}`,
-                        })
-                    );
-                }
-            }
-            yield put(itemBulkMoveSuccess(meta.request.id, { itemsByShareId, destinationShareId }));
-        } catch (e) {
-            yield put(itemBulkMoveFailure(meta.request.id, { itemsByShareId, destinationShareId }, e));
+        if (action.type === 'progress') {
+            yield put(itemBulkMoveProgress(requestId, action.progress, { ...action.data, destinationShareId }));
+            onItemsUpdated?.();
         }
+
+        if (action.type === 'done') yield put(itemBulkMoveSuccess(requestId, {}));
+        if (action.type === 'error') yield put(itemBulkMoveFailure(requestId, payload, action.error));
     }
 }
 

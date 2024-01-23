@@ -12,7 +12,11 @@ import { withCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, {
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/with-request';
 import type { ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -137,22 +141,21 @@ export const vaultMoveAllItemsIntent = createAction(
         )({ payload })
 );
 
+export const vaultMoveAllItemsProgress = createAction(
+    'vault::move::items::progress',
+    withRequestProgress(
+        (payload: { destinationShareId: string; itemIds: string[]; movedItems: ItemRevision[]; shareId: string }) =>
+            withCache({ payload })
+    )
+);
+
 export const vaultMoveAllItemsSuccess = createAction(
     'vault::move::items::success',
-    withRequestSuccess(
-        (payload: {
-            shareId: string;
-            destinationShareId: string;
-            content: ShareContent<ShareType.Vault>;
-            movedItems: ItemRevision[];
-        }) =>
-            pipe(
-                withCache,
-                withNotification({
-                    type: 'info',
-                    text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
-                })
-            )({ payload })
+    withRequestSuccess((payload: { content: ShareContent<ShareType.Vault> }) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
+        })({ payload })
     )
 );
 
