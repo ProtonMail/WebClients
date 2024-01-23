@@ -6,7 +6,7 @@ import { shareLeaveFailure, shareLeaveIntent, shareLeaveSuccess } from '@proton/
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* shareLeaveWorker(
-    { onShareDeleted, onItemsUpdated }: RootSagaOptions,
+    { onItemsUpdated }: RootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof shareLeaveIntent>
 ) {
     try {
@@ -14,7 +14,6 @@ function* shareLeaveWorker(
         yield deleteShare(shareId);
 
         PassCrypto.removeShare(shareId);
-        onShareDeleted?.(shareId);
         onItemsUpdated?.();
 
         yield put(shareLeaveSuccess(request.id, payload.shareId));
