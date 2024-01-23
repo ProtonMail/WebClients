@@ -40,6 +40,8 @@ const {
     FAMILY,
     VPN_PRO,
     VPN_BUSINESS,
+    PASS_PRO,
+    PASS_BUSINESS,
 } = PLANS;
 
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
@@ -114,6 +116,10 @@ export const hasVpnPro = (subscription: Subscription | FreeSubscription | undefi
     hasSomePlan(subscription, VPN_PRO);
 export const hasVpnBusiness = (subscription: Subscription | FreeSubscription | undefined) =>
     hasSomePlan(subscription, VPN_BUSINESS);
+export const hasPassPro = (subscription: Subscription | FreeSubscription | undefined) =>
+    hasSomePlan(subscription, PASS_PRO);
+export const hasPassBusiness = (subscription: Subscription | FreeSubscription | undefined) =>
+    hasSomePlan(subscription, PASS_BUSINESS);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
@@ -137,7 +143,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
 };
 
 export const getIsB2BAudienceFromPlan = (planName: PLANS | ADDON_NAMES) => {
-    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE, VPN_PRO, VPN_BUSINESS].includes(
+    return [MAIL_PRO, DRIVE_PRO, BUNDLE_PRO, ENTERPRISE, VPN_PRO, VPN_BUSINESS, PASS_PRO, PASS_BUSINESS].includes(
         planName as any
     );
 };
@@ -156,6 +162,14 @@ export const getIsB2BAudienceFromSubscription = (subscription: Subscription | un
 
 export const getHasVpnB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
+};
+
+export const getHasPassB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+    return hasPassPro(subscription) || hasPassBusiness(subscription);
+};
+
+export const getHasB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+    return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
 };
 
 export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
