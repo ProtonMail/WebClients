@@ -1,4 +1,3 @@
-import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type {
@@ -15,24 +14,17 @@ import type {
     ItemRevisionContentsResponse,
     ItemType,
     Maybe,
+    SelectedItem,
 } from '@proton/pass/types';
-import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import chunk from '@proton/utils/chunk';
+import identity from '@proton/utils/identity';
 
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
-
-const batchRevisionsByShareId = (items: ItemRevision[]) =>
-    groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
-        const batches = chunk(shareTrashedItems, MAX_BATCH_ITEMS_PER_REQUEST);
-        return batches.map((batch) => ({
-            shareId: batch[0].shareId,
-            Items: batch.map((item) => ({ ItemID: item.itemId, Revision: item.revision })),
-        }));
-    });
+import { batchByShareId, mapToRevision } from './item.utils';
 
 /* Item creation API request for all items
  * except for alias items */
@@ -152,22 +144,28 @@ export const moveItem = async (
     return parseItemRevision(destinationShareId, encryptedItem);
 };
 
-export const moveItems = async (items: ItemRevision[], destinationShareId: string): Promise<ItemRevision[]> => {
-    const groupedByShareId = groupByKey(items, 'shareId').flatMap((shareItems) => {
-        const batches = chunk(shareItems, MAX_BATCH_ITEMS_PER_REQUEST);
-        return batches.map((batch) => ({
-            shareId: batch[0].shareId,
-            items: batch,
-        }));
-    });
+export type MovedItemsBatch = {
+    /** original shareId the moved items belonged to */
+    shareId: string;
+    /** itemIds that were moved */
+    itemIds: string[];
+    /** the moved items  */
+    movedItems: ItemRevision[];
+};
 
-    const encryptedItems = (
+export const moveItems = async (
+    items: ItemRevision[],
+    destinationShareId: string,
+    onBatch?: (batch: MovedItemsBatch, progress: number) => void,
+    progress: number = 0
+): Promise<ItemRevision[]> =>
+    (
         await Promise.all(
-            groupedByShareId.map(async (batch) => {
+            batchByShareId(items, identity).map(async ({ shareId, items }) => {
                 const data: ItemMoveMultipleToShareRequest = {
                     ShareID: destinationShareId,
                     Items: await Promise.all(
-                        batch.items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
+                        items.map<Promise<ItemMoveIndividualToShareRequest>>(async (item) => {
                             const content = serializeItemContent(item.data);
 
                             return {
@@ -178,31 +176,49 @@ export const moveItems = async (items: ItemRevision[], destinationShareId: strin
                     ),
                 };
 
-                return (await api({ url: `pass/v1/share/${batch.shareId}/item/share`, method: 'put', data })).Items!;
+                const { Items = [] } = await api({ url: `pass/v1/share/${shareId}/item/share`, method: 'put', data });
+                const decryptedItems = Items!.map((encrypted) => parseItemRevision(destinationShareId, encrypted));
+                const movedItems = await Promise.all(decryptedItems);
+
+                onBatch?.(
+                    {
+                        itemIds: data.Items.map(prop('ItemID')),
+                        movedItems,
+                        shareId,
+                    },
+                    (progress += movedItems.length)
+                );
+
+                return movedItems;
             })
         )
     ).flat();
 
-    const revisions = encryptedItems.map(async (encryptedItem) => parseItemRevision(destinationShareId, encryptedItem));
-    return Promise.all(revisions);
-};
-
-export const trashItems = async (items: ItemRevision[]) =>
+export const trashItems = async (
+    items: ItemRevision[],
+    onBatch?: (batch: SelectedItem[], progress: number) => void,
+    progress: number = 0
+) =>
     (
         await Promise.all(
-            batchRevisionsByShareId(items).map(({ shareId, Items }) =>
-                api({
+            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+                const response = await api({
                     url: `pass/v1/share/${shareId}/item/trash`,
                     method: 'post',
                     data: { Items },
-                })
-            )
+                });
+
+                const batch = (response?.Items ?? []).map(({ ItemID }) => ({ shareId, itemId: ItemID }));
+                onBatch?.(batch, (progress += batch.length));
+
+                return response;
+            })
         )
     ).flatMap(({ Items }) => Items ?? []);
 
 export const restoreItems = (items: ItemRevision[]) =>
     Promise.all(
-        batchRevisionsByShareId(items).map(({ shareId, Items }) =>
+        batchByShareId(items, mapToRevision).map(({ shareId, items: Items }) =>
             api({
                 url: `pass/v1/share/${shareId}/item/untrash`,
                 method: 'post',
@@ -213,7 +229,7 @@ export const restoreItems = (items: ItemRevision[]) =>
 
 export const deleteItems = (items: ItemRevision[]) =>
     Promise.all(
-        batchRevisionsByShareId(items).map(({ shareId, Items }) =>
+        batchByShareId(items, mapToRevision).map(({ shareId, items: Items }) =>
             api({
                 url: `pass/v1/share/${shareId}/item`,
                 method: 'delete',
@@ -233,7 +249,7 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
 
 export const requestAllItemsForShareId = async (
     shareId: string,
-    onItemsLoaded?: (total: number) => void
+    onBatch?: (count: number) => void
 ): Promise<ItemRevisionContentsResponse[]> => {
     const pageIterator = async (count: number, Since?: string): Promise<ItemRevisionContentsResponse[]> => {
         const { Items } = await api({
@@ -243,7 +259,7 @@ export const requestAllItemsForShareId = async (
         });
 
         const nextCount = count + (Items?.RevisionsData.length ?? 0);
-        onItemsLoaded?.(nextCount);
+        onBatch?.(nextCount);
 
         return Items?.LastToken
             ? Items.RevisionsData.concat(await pageIterator(nextCount, Items.LastToken))
@@ -253,13 +269,13 @@ export const requestAllItemsForShareId = async (
     return pageIterator(0);
 };
 
-/* avoid throwing when decrypting items for a shareId - this avoids blocking
- * the user if one item is corrupted or is using a newer proto version */
+/** Will not throw on decryption errors : this avoids blocking the
+ *  user if one item is corrupted or is using a newer proto version */
 export async function requestItemsForShareId(
     shareId: string,
-    onItemsLoaded?: (total: number) => void
+    onBatch?: (progress: number) => void
 ): Promise<ItemRevision[]> {
-    const encryptedItems = await requestAllItemsForShareId(shareId, onItemsLoaded);
+    const encryptedItems = await requestAllItemsForShareId(shareId, onBatch);
     const items = await Promise.all(encryptedItems.map((item) => parseItemRevision(shareId, item).catch(() => null)));
     return items.filter(truthy);
 }
