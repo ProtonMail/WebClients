@@ -130,7 +130,8 @@ const SidebarStorageUpsell = ({ app }: Props) => {
         return null;
     }
 
-    const data = getStorageUpsell({ app, user, storageSplitEnabled });
+    // Storage upsell is completely hidden in drive.
+    const data = app === APPS.PROTONDRIVE ? undefined : getStorageUpsell({ app, user, storageSplitEnabled });
 
     const upsellButton = (
         <ButtonLike
