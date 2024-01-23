@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Λογαριασμός"
+      ],
+      "Account settings": [
+        "Ρυθμίσεις λογαριασμού"
+      ],
       "Add": [
         "Προσθήκη"
       ],
@@ -161,8 +167,8 @@
       "Export": [
         "Εξαγωγή"
       ],
-      "Feedback": [
-        "Αξιολόγηση"
+      "Feedback & Help": [
+        "Σχόλια & Βοήθεια"
       ],
       "Fill password": [
         "Συμπληρώστε τον κωδικό πρόσβασης"
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Πώς μπορώ να εξαγάγω τα δεδομένα μου από το ${ PROVIDER_INFO_MAP[form.values.provider].title };"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Πώς να χρησιμοποιήσετε το ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Εισαγωγή"
@@ -337,6 +346,9 @@
       ],
       "Show": [
         "Εμφάνιση"
+      ],
+      "Show advanced options": [
+        "Εμφάνιση περισσότερων επιλογών"
       ],
       "Sign back in": [
         "Συνδεθείτε ξανά"
@@ -1198,13 +1210,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } χαρακτήρας",
-        "${ passwordOptions.options.length } χαρακτήρες"
+      "${ config.options.length } character": [
+        "${ config.options.length } χαρακτήρας",
+        "${ config.options.length } χαρακτήρες"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } λέξη",
-        "${ passwordOptions.options.wordCount } λέξεις"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } λέξη",
+        "${ config.options.wordCount } λέξεις"
       ],
       "1 hour": [
         "1 ώρα"
@@ -1235,6 +1247,9 @@
       ],
       "A-Z": [
         "Α-Ω"
+      ],
+      "Account": [
+        "Λογαριασμός"
       ],
       "Alias": [
         "Ψευδώνυμο"
@@ -1388,6 +1403,9 @@
       ],
       "Item ID": [
         "Αναγνωριστικό στοιχείου"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
       ],
       "Language": [
         "Γλώσσα"

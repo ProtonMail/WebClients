@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Ustawienia konta"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -161,8 +167,8 @@
       "Export": [
         "Eksportuj"
       ],
-      "Feedback": [
-        "Opinia"
+      "Feedback & Help": [
+        "Opinia i pomoc"
       ],
       "Fill password": [
         "Uzupełnij hasło"
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Jak wyeksportować dane z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Jak używać ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importuj"
@@ -337,6 +346,9 @@
       ],
       "Show": [
         "Pokaż"
+      ],
+      "Show advanced options": [
+        "Pokaż opcje zaawansowane"
       ],
       "Sign back in": [
         "Zaloguj się ponownie"
@@ -1228,17 +1240,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } znak",
-        "${ passwordOptions.options.length } znaki",
-        "${ passwordOptions.options.length } znaków",
-        "${ passwordOptions.options.length } znaków"
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znaki",
+        "${ config.options.length } znaków",
+        "${ config.options.length } znaków"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } słowo",
-        "${ passwordOptions.options.wordCount } słowa",
-        "${ passwordOptions.options.wordCount } słów",
-        "${ passwordOptions.options.wordCount } słowa"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } słowo",
+        "${ config.options.wordCount } słowa",
+        "${ config.options.wordCount } słów",
+        "${ config.options.wordCount } słów"
       ],
       "1 hour": [
         "1 godzina"
@@ -1269,6 +1281,9 @@
       ],
       "A-Z": [
         "Alfabetycznie"
+      ],
+      "Account": [
+        "Konto"
       ],
       "Alias": [
         "Alias"
@@ -1422,6 +1437,9 @@
       ],
       "Item ID": [
         "Identyfikator elementu"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Skrót klawiszowy: ${ shortcut }"
       ],
       "Language": [
         "Język"
