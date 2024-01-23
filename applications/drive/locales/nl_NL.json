@@ -316,6 +316,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Give feedback": [
+        "Geef feedback"
+      ],
       "Go to Drive": [
         "Ga naar Drive"
       ],
@@ -478,9 +481,6 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -601,13 +601,7 @@
       "Show side panel": [
         "Toon zijpaneel"
       ],
-      "Sign in": [
-        "Inloggen"
-      ],
       "Sign out": [
-        "Uitloggen"
-      ],
-      "Signing out": [
         "Uitloggen"
       ],
       "Skip": [
@@ -1072,9 +1066,6 @@
       ],
       "Gender": [
         "Geslacht"
-      ],
-      "Geo": [
-        "Plaats"
       ],
       "Language": [
         "Taal"
@@ -2136,12 +2127,6 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
-      ],
       "Incorrect password. Please try again.": [
         "Onjuist wachtwoord. Probeer het opnieuw."
       ],
@@ -2262,9 +2247,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "status page": [
         "statuspagina"
@@ -3632,9 +3614,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -4001,9 +3980,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -4027,9 +4003,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Er zijn bestanden die nog overgedragen moeten worden. Het overdrachtsbeheer sluiten zal alle handelingen stopzetten."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -4235,6 +4208,9 @@
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
+      ],
+      "You can now return to the application to continue": [
+        "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -4522,7 +4498,7 @@
         "Toch downloaden"
       ],
       "Downloading ${ percentageValue }%": [
-        "Downloaden ${ percentageValue }$"
+        "Downloaden ${ percentageValue }%"
       ],
       "Duplicate found": [
         "Duplicaat gevonden"
@@ -4535,9 +4511,6 @@
       ],
       "Email format": [
         "E-mailformaat"
-      ],
-      "Email or username": [
-        "E-mailadres of gebruikersnaam"
       ],
       "Emails": [
         "E-mails"
@@ -4646,9 +4619,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
       ],
       "Main": [
         "Primair"
@@ -6142,9 +6112,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } upload mislukt",
         "${ numberOfFailedTransfer.total } uploads mislukt"
-      ],
-      "Account suspended": [
-        "Account opgeschort"
       ],
       "Active": [
         "Actief"

@@ -496,9 +496,6 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Remove": [
         "Odstranit"
       ],
@@ -619,14 +616,8 @@
       "Show side panel": [
         "Zobrazit postranní panel"
       ],
-      "Sign in": [
-        "Přihlásit se"
-      ],
       "Sign out": [
         "Odhlásit se"
-      ],
-      "Signing out": [
-        "Odhlašování"
       ],
       "Skip": [
         "Přeskočit"
@@ -1111,9 +1102,6 @@
       ],
       "Gender": [
         "Pohlaví"
-      ],
-      "Geo": [
-        "Poloha"
       ],
       "Language": [
         "Jazyk"
@@ -2220,12 +2208,6 @@
       "IMAP server is required": [
         "Je vyžadován IMAP server"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
-      ],
       "Incorrect password. Please try again.": [
         "Nesprávné heslo. Zkuste to znovu."
       ],
@@ -2357,9 +2339,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ],
       "status page": [
         "stavová stránka"
@@ -3466,10 +3445,10 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
       "${ skippedCount } skipped": [
-        "${ skippedCount } přeskočen",
-        "${ skippedCount } přeskočeny",
-        "${ skippedCount } přeskočeno",
-        "${ skippedCount } přeskočeno"
+        "${ skippedCount } vynechán",
+        "${ skippedCount } vynechány",
+        "${ skippedCount } vynecháno",
+        "${ skippedCount } vynecháno"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3870,9 +3849,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
@@ -3899,6 +3875,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Mezitím si založte vlastní účet ${ DRIVE_APP_NAME } a chraňte svá data pomocí šifrování end-to-end a bezpečně je sdílejte."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexování položek ${ esProgress } z ${ totalProgressToShow }"
@@ -4191,6 +4170,18 @@
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } soubor bezpečně stažen",
+        "${ nbFile } soubory bezpečně staženy",
+        "${ nbFile } souboů bezpečně staženo",
+        "${ nbFile } souboů bezpečně staženo"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Všechny zašifrované soubory bezpečně staženy"
+      ],
+      "Securely downloaded all files": [
+        "Všechny soubory jsou bezpečně staženy"
+      ],
       "Select a folder to move to.": [
         "Vyberte složku, do níž chcete přesunout."
       ],
@@ -4233,6 +4224,9 @@
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Založte si vlastní účet ${ DRIVE_APP_NAME } a chraňte svá data šifrováním end-to-end a bezpečně je sdílejte."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nelze ověřit z důvodu chyby sítě, zkuste to prosím později."
       ],
@@ -4243,7 +4237,7 @@
         "Problém s podpisem"
       ],
       "Skipped": [
-        "Přeskočeno"
+        "Vynecháno"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Některé soubory nebyly staženy. Zkuste soubory znovu stáhnout."
@@ -4262,9 +4256,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
-      ],
-      "support team": [
-        "tým podpory"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
@@ -4290,9 +4281,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tento účet byl zablokován kvůli možnému porušení pravidel."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
       ],
@@ -4304,6 +4292,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento soubor mohl být smazán, přesunut nebo znepřístupněn. Zkuste se obrátit na vlastníka souboru."
+      ],
+      "This item already exists in your library": [
+        "Tato položka již ve vaší knihovně existuje"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
@@ -4560,6 +4551,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Probíhá stahování"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
@@ -4809,6 +4803,9 @@
       "Download anyway": [
         "Přesto stáhnout"
       ],
+      "Downloading": [
+        "Stahování"
+      ],
       "Downloading ${ percentageValue }%": [
         "Stahování ${ percentageValue }%"
       ],
@@ -4823,9 +4820,6 @@
       ],
       "Email format": [
         "Formát e-mailu"
-      ],
-      "Email or username": [
-        "E-mail nebo uživatelské jméno"
       ],
       "Emails": [
         "E-maily"
@@ -4934,9 +4928,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
-      ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
       ],
       "Main": [
         "Hlavní"
@@ -6577,9 +6568,6 @@
         "${ numberOfFailedTransfer.total } nebyly nahrány",
         "${ numberOfFailedTransfer.total } nebylo nahráno",
         "${ numberOfFailedTransfer.total } nebylo nahráno"
-      ],
-      "Account suspended": [
-        "Účet pozastaven"
       ],
       "Active": [
         "Aktivní"

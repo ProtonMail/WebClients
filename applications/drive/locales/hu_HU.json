@@ -481,9 +481,6 @@
       "Refresh the page": [
         "Oldal frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Remove": [
         "Eltávolítás"
       ],
@@ -604,13 +601,7 @@
       "Show side panel": [
         "Az oldalsó panel megjelenítése"
       ],
-      "Sign in": [
-        "Bejelentkezés"
-      ],
       "Sign out": [
-        "Kijelentkezés"
-      ],
-      "Signing out": [
         "Kijelentkezés"
       ],
       "Skip": [
@@ -1033,9 +1024,6 @@
       ],
       "Gender": [
         "Nem"
-      ],
-      "Geo": [
-        "Helyzet"
       ],
       "Language": [
         "Nyelv"
@@ -2099,12 +2087,6 @@
       "IMAP server is required": [
         "IMAP szerver megadása szükséges"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
-      ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
       ],
@@ -2225,9 +2207,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "status page": [
         "állapotjelző oldalunkat"
@@ -3586,9 +3565,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
@@ -3937,9 +3913,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
-      "support team": [
-        "ügyfélszolgálat"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -3960,9 +3933,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Még vannak fájlok, amelyeket le vagy fel kell tölteni. A transzferkezelő bezárása le fogja állítani az összes műveletet."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
@@ -4454,9 +4424,6 @@
       "Email format": [
         "E-mail formátum"
       ],
-      "Email or username": [
-        "Email cím, vagy felhasználónév"
-      ],
       "Emails": [
         "E-mailek"
       ],
@@ -4564,9 +4531,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
       ],
       "Main": [
         "Elsődleges"
@@ -6023,9 +5987,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
-      ],
-      "Account suspended": [
-        "Fiók felfüggesztve"
       ],
       "Active": [
         "Aktív"
