@@ -24,7 +24,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -161,8 +161,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
             .concat(form.values.url)
             .some((url) => url.includes(subdomain ?? domain!));
 
-    const itemDraft = useItemDraftLocationState<EditLoginItemFormValues>();
-    const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
+    const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
     useItemDraft<EditLoginItemFormValues>(form, {
         mode: 'edit',
@@ -170,7 +169,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         shareId: form.values.shareId,
         revision: lastRevision,
         sanitizeSave: sanitizeLoginAliasSave,
-        sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
+        sanitizeHydration: sanitizeLoginAliasHydration(aliasOptions.value),
+        onHydrated: (draft) => draft?.withAlias && aliasOptions.request(),
     });
 
     return (
@@ -342,8 +342,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
             <AliasModal
                 form={form}
                 shareId={shareId}
-                aliasOptions={aliasModal.aliasOptions}
-                loading={aliasModal.loading}
+                aliasOptions={aliasOptions.value}
+                loading={aliasOptions.loading}
                 open={aliasModal.open}
                 onClose={() =>
                     form
