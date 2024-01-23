@@ -7,7 +7,7 @@ import {
     draftSave,
     draftsGarbageCollect,
     emptyTrashSuccess,
-    importItemsBatchSuccess,
+    importItemsProgress,
     inviteAcceptSuccess,
     inviteCreationSuccess,
     itemAutofilled,
@@ -141,7 +141,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             });
         }
 
-        if (importItemsBatchSuccess.match(action)) {
+        if (importItemsProgress.match(action)) {
             const { shareId, items } = action.payload;
             return fullMerge(state, { [shareId]: toMap(items, 'itemId') });
         }

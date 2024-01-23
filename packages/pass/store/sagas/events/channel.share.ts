@@ -40,7 +40,7 @@ const onShareEvent = (shareId: string) =>
     function* (
         event: EventManagerEvent<ShareEventResponse>,
         _: EventChannel<ShareEventResponse>,
-        { onItemsUpdated, onItemsDeleted }: RootSagaOptions
+        { onItemsUpdated }: RootSagaOptions
     ) {
         if ('error' in event) throw event.error;
 
@@ -58,10 +58,7 @@ const onShareEvent = (shareId: string) =>
             if (share) yield put(shareEditSync({ id: share.shareId, share }));
         }
 
-        if (DeletedItemIDs.length > 0) {
-            yield discardDrafts(shareId, DeletedItemIDs);
-            onItemsDeleted?.(shareId, DeletedItemIDs);
-        }
+        if (DeletedItemIDs.length > 0) yield discardDrafts(shareId, DeletedItemIDs);
 
         yield all([
             ...DeletedItemIDs.map((itemId) => put(itemDeleteSync({ itemId, shareId }))),
@@ -83,11 +80,7 @@ const onShareEvent = (shareId: string) =>
     };
 
 const onShareEventError = (shareId: string) =>
-    function* (
-        error: unknown,
-        { channel }: EventChannel<ShareEventResponse>,
-        { onShareDeleted, onItemsUpdated }: RootSagaOptions
-    ) {
+    function* (error: unknown, { channel }: EventChannel<ShareEventResponse>, { onItemsUpdated }: RootSagaOptions) {
         const { code } = getApiError(error);
 
         /* share was deleted or user lost access */
@@ -97,7 +90,6 @@ const onShareEventError = (shareId: string) =>
 
             const share: Maybe<Share> = yield select(selectShare(shareId));
             if (share) {
-                onShareDeleted?.(shareId);
                 onItemsUpdated?.();
                 yield discardDrafts(shareId);
                 yield put(shareDeleteSync(share));

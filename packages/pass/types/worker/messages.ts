@@ -13,7 +13,7 @@ import type { TransferableFile } from '@proton/pass/utils/file/transferable-file
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { SessionLockStatus, ShareEventPayload } from '../api';
+import type { SessionLockStatus } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, AliasOptions, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -85,7 +85,6 @@ export enum WorkerMessageType {
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
-    SHARE_SERVER_EVENT = 'SHARE_SERVER_EVENT',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     STORE_DISPATCH = 'STORE_DISPATCH',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
@@ -141,7 +140,6 @@ export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
-export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER_EVENT, ShareEventPayload>;
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
@@ -196,7 +194,6 @@ export type WorkerMessage =
     | ResolveUserDataMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
-    | ShareServerEventMessage
     | StartContentScriptMessage
     | StoreActionMessage
     | TelemetryEventMessage

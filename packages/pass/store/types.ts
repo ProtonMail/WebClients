@@ -42,13 +42,7 @@ export interface RootSagaOptions {
     onFeatureFlagsUpdated?: (features: FeatureFlagState) => void;
     /** Called whenever some changes were committed to the items state */
     onItemsUpdated?: () => void;
-    /** Callback used when deleted items are detected through event polling */
-    onItemsDeleted?: (shareId: string, itemIds: string[]) => void;
-    /**  Callback triggered when settings have been updates: leverage
+    /** Callback triggered when settings have been updates: leverage
      * this to persist the settings to storage if needed. */
     onSettingsUpdated?: (settings: ProxiedSettings) => Promise<void>;
-    /** Callback used when a disabled share is detected through event polling.
-     * This can happen if a user loses access to a share or if it was deleted
-     * in another client. */
-    onShareDeleted?: (shareId: string) => void;
 }
