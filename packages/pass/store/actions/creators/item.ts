@@ -7,7 +7,11 @@ import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-c
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, {
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/with-request';
 import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
@@ -171,10 +175,12 @@ export const itemBulkMoveFailure = createAction(
     )
 );
 
-export const itemBulkBatchMoveSuccess = createAction(
-    'item::bulk::batch::move::success',
-    (payload: { shareId: string; itemIds: string[]; movedItems: ItemRevision[]; destinationShareId: string }) =>
-        withCache({ payload })
+export const itemBulkMoveProgress = createAction(
+    'item::bulk::move::progress',
+    withRequestProgress(
+        (payload: { shareId: string; itemIds: string[]; movedItems: ItemRevision[]; destinationShareId: string }) =>
+            withCache({ payload })
+    )
 );
 
 export const itemBulkMoveSuccess = createAction(
