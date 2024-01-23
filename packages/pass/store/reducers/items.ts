@@ -11,7 +11,7 @@ import {
     inviteAcceptSuccess,
     inviteCreationSuccess,
     itemAutofilled,
-    itemBulkBatchMoveSuccess,
+    itemBulkMoveProgress,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -310,7 +310,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
         }
 
-        if (itemBulkBatchMoveSuccess.match(action)) {
+        if (itemBulkMoveProgress.match(action)) {
             const { shareId, itemIds, destinationShareId, movedItems } = action.payload;
             return fullMerge(
                 { ...state, [shareId]: objectFilter(state[shareId], notIn(itemIds)) },

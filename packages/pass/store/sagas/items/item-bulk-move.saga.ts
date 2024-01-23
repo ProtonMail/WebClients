@@ -4,12 +4,11 @@ import { c } from 'ttag';
 import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import { moveItems } from '@proton/pass/lib/items/item.requests';
 import {
-    itemBulkBatchMoveSuccess,
     itemBulkMoveFailure,
     itemBulkMoveIntent,
+    itemBulkMoveProgress,
     itemBulkMoveSuccess,
     notification,
-    requestProgress,
 } from '@proton/pass/store/actions';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
@@ -36,9 +35,8 @@ function* itemBulkMoveWorker(
                 try {
                     const movedItems = (yield moveItems(batch, destinationShareId)) as ItemRevision[];
                     totalItems += movedItems.length;
-                    yield put(requestProgress(meta.request.id, totalItems));
                     yield put(
-                        itemBulkBatchMoveSuccess({
+                        itemBulkMoveProgress(meta.request.id, totalItems, {
                             destinationShareId,
                             itemIds: batch.map(prop('itemId')),
                             movedItems,
