@@ -908,9 +908,6 @@
       "Signing in": [
         "Iniciando sessão"
       ],
-      "Signing out": [
-        "Encerrando a sessão"
-      ],
       "Size": [
         "Tamanho"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Upgrade para Visionary"
       ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Gênero"
       ],
-      "Geo": [
-        "Geolocalização"
-      ],
       "Language": [
         "Idioma"
       ],
@@ -3132,9 +3123,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "O acesso ao aplicativo de desktop é limitado"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "A versão beta do aplicativo de desktop ${ MAIL_APP_NAME } é atualmente limitada aos assinantes ${ BRAND_NAME } Visionary. Ela estará disponível para todos os usuários no início de 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
@@ -4741,8 +4729,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Caso o usuário já tenha um endereço ${ MAIL_APP_NAME }, insira-o aqui. Caso contrário, ele precisará criar uma conta primeiro."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "O convite será cancelado e o usuário não conseguirá participar ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
@@ -4790,8 +4778,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } foi removido de ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } foi removido de ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Ocorreu um erro, tente novamente"
@@ -5768,17 +5756,6 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -6475,6 +6452,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Os convites para eventos e as confirmações de presença serão enviados nesse idioma."
+      ],
+      "Example: ${ spfExample }": [
+        "Exemplo: ${ spfExample }"
       ],
       "Expired": [
         "Expirado"
@@ -7725,9 +7705,9 @@
         "Atualmente você está usando ${ ipCount } de ${ ipAddresses } do seu servidor dedicado disponível.",
         "Atualmente você está usando ${ ipCount } de ${ ipAddresses } dos seus servidores dedicados disponíveis."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Você está usando atualmente ${ organization.UsedMembers } de sua ${ organization.MaxMembers } licença de usuário disponível.",
-        "Você está usando atualmente ${ organization.UsedMembers } de suas ${ organization.MaxMembers } licenças de usuário disponíveis."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Você está usando atualmente ${ usedMembers } de sua ${ maxMembers } licença de usuário disponível.",
+        "Você está usando atualmente ${ usedMembers } de suas ${ maxMembers } licenças de usuário disponíveis."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Você iniciou sessão à conta ${ memberAddress }."
@@ -7949,6 +7929,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9430,6 +9421,9 @@
       ],
       "Help translate": [
         "Ajude a traduzir"
+      ],
+      "here": [
+        "aqui"
       ],
       "How to pay with Bitcoin?": [
         "Como pagar com Bitcoin?"
@@ -11241,12 +11235,6 @@
       "Create another account instead": [
         "Crie outra conta"
       ],
-      "Download again ${ size }": [
-        "Baixar novamente ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Baixar para continuar ${ size }"
-      ],
       "Keep this plan": [
         "Manter esse plano"
       ],
@@ -11385,9 +11373,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Os aliases hide-my-email protegem seu e-mail contra violações de dados"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Se você não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
-      ],
       "Includes:": [
         "Incluí:"
       ],
@@ -11399,9 +11384,6 @@
       ],
       "Install app and extension": [
         "Instale o aplicativo e a extensão"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "É a única maneira de restaurar totalmente sua conta, então tenha certeza de manter o **kit de recuperação** em um lugar seguro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para manter a segurança on-line"
@@ -12386,6 +12368,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium de ${ appName1 } e ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -13160,6 +13145,12 @@
       "4. Select a server to connect to": [
         "4. Selecione um servidor para conectar a"
       ],
+      "A filter name is required": [
+        "O nome do filtro é obrigatório"
+      ],
+      "A filter with this name already exists": [
+        "Um filtro com esse nome já existe"
+      ],
       "Accessibility": [
         "Acessibilidade"
       ],
@@ -13585,6 +13576,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Erro ao criar ${ failedUsers.length } conta\nde usuário.",
         "Erro ao criar ${ failedUsers.length } contas de usuário."
+      ],
+      "Filter name cannot contain only spaces": [
+        "O nome do filtro não pode somente espaços"
       ],
       "Filters": [
         "Filtros"

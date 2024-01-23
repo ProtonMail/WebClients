@@ -908,9 +908,6 @@
       "Signing in": [
         "Prihlasuje sa"
       ],
-      "Signing out": [
-        "Odhlasovanie"
-      ],
       "Size": [
         "Veľkosť"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgradovať pre využívanie programu ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Aktualizovať na predplatné Visionary"
       ],
       "Upgrade your plan": [
         "Inovujte svoj plán"
@@ -2115,9 +2109,6 @@
       "Gender": [
         "Pohlavie"
       ],
-      "Geo": [
-        "Poloha"
-      ],
       "Language": [
         "Jazyk"
       ],
@@ -3158,9 +3149,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Prístup k desktopovej aplikácii je obmedzený"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verzia aplikácie ${ MAIL_APP_NAME } pre desktopy je v súčasnosti obmedzená pre predplatiteľov ${ BRAND_NAME } Visionary. Všetkým používateľom bude k dispozícii začiatkom roka 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Aktualizujte ešte dnes alebo si prístup overte začiatkom roka 2024."
@@ -4781,8 +4769,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Ak používateľ už má adresu ${ MAIL_APP_NAME }, zadajte ju sem. V opačnom prípade si musí najprv vytvoriť účet."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Pozvánka bude zrušená a používateľ sa nebude môcť pripojiť k ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Pozvánka bude zrušená a používateľ sa nebude môcť pripojiť k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet používateľa bude presunutý do plánu ${ BRAND_NAME } Unlimited na 30-dňovú bezplatnú skúšobnú verziu*."
@@ -4830,8 +4818,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } bol odstránený z ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } bol odstránený z ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Vyskytla sa chyba, skúste to znova, prosím"
@@ -5837,17 +5825,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
       ]
     },
     "Info": {
@@ -7864,11 +7841,11 @@
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov.",
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
-        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
-        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
-        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ste prihlásení do účtu ${ memberAddress }."
@@ -8103,6 +8080,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11471,12 +11459,6 @@
       "Create another account instead": [
         "Vytvoriť namiesto toho ďalší účet"
       ],
-      "Download again ${ size }": [
-        "Stiahnuť znova ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Pokračujte stiahnutím ${ size }"
-      ],
       "Keep this plan": [
         "Ponechať tento plán"
       ],
@@ -11615,9 +11597,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email aliasy chránia váš email pred únikom údajov"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Ak stratíte prístup k svojmu ${ BRAND_NAME } účtu, vaša **sada na obnovenie** vám umožní prihlásiť sa a obnoviť vaše údaje."
-      ],
       "Includes:": [
         "Obsahuje:"
       ],
@@ -11629,9 +11608,6 @@
       ],
       "Install app and extension": [
         "Inštalovať aplikáciu a rozširenie"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Je to jediný spôsob, ako úplne obnoviť svoj účet. Preto si túto **sadu na obnovenie** uchovajte niekde v bezpečí."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Pridajte sa k viac ako 100 miliónom ľudí, ktorí si zvolili ${ BRAND_NAME }, aby zostali v bezpečí online"

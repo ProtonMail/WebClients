@@ -908,9 +908,6 @@
       "Signing in": [
         "Iniciant sessió"
       ],
-      "Signing out": [
-        "Tancant la sessió"
-      ],
       "Size": [
         "Mida"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per habilitar ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Actualitza a Visionary"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -1275,7 +1269,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Sóc fora de l'oficina i amb accés limitat al meu correu electrònic."
+        "Soc fora de l'oficina i amb accés limitat al meu correu electrònic."
       ]
     },
     "Badge for domain": {
@@ -2053,7 +2047,7 @@
         "Aniversari"
       ],
       "Birthday": [
-        "Aniversari"
+        "Data de naixement"
       ],
       "Display name": [
         "Nom que es mostrarà"
@@ -2066,9 +2060,6 @@
       ],
       "Gender": [
         "Gènere"
-      ],
-      "Geo": [
-        "Geolocalització"
       ],
       "Language": [
         "Idioma"
@@ -3370,13 +3361,13 @@
         "Elimina aquesta condició"
       ],
       "Edit conditions": [
-        "Editar les condicions"
+        "Edita les condicions"
       ],
       "Next": [
         "Següent"
       ],
       "Pause": [
-        "Pausa"
+        "Posa en pausa"
       ],
       "Re-enable": [
         "Torna a activar"
@@ -3410,10 +3401,10 @@
     },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
-        "La condició no es compleix. Afegiu un token."
+        "La condició està incompleta. Afegiu un testimoni."
       ],
       "Token already exists": [
-        "El token ja existeix."
+        "El testimoni ja existeix."
       ]
     },
     "email_forwarding_2023: Error message, recovery": {
@@ -3454,7 +3445,7 @@
         "Actualitzeu les vostres claus de reenviament."
       ],
       "The forwarding is temporarily paused": [
-        "El reenviament està temporalment aturat."
+        "El reenviament està temporalment en pausa."
       ],
       "You can safely close this tab.": [
         "Podeu tancar aquesta pestanya amb seguretat."
@@ -3501,7 +3492,7 @@
         "Introduïu l'adreça de correu electrònic."
       ],
       "Type text or keyword": [
-        "Escrigui text o una paraula clau."
+        "Introduïu text o una paraula clau."
       ],
       "Type text or keyword for this condition:": [
         "Introduïu text o una paraula clau per a aquesta condició:"
@@ -3535,19 +3526,19 @@
         "S'ha enviat el correu electrònic a ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
-        "Reenviament acceptat"
+        "S'ha acceptat el reenviament"
       ],
       "Forwarding declined": [
-        "Reenviament rebutjat"
+        "S'ha rebutjat el reenviament"
       ],
       "Forwarding deleted": [
         "S'ha eliminat el reenviament."
       ],
       "Forwarding paused": [
-        "El reenviament està pausat."
+        "El reenviament està en pausa."
       ],
       "Forwarding resumed": [
-        "S'ha reactivat el reenviament."
+        "S'ha reprès el reenviament."
       ]
     },
     "email_forwarding_2023: Title": {
@@ -4642,8 +4633,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'usuari ja té una adreça ${ MAIL_APP_NAME }, introduïu-la aquí. En cas contrari, primer haurà de crear un compte."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
@@ -4691,8 +4682,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } s'ha esborrat de ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } s'ha esborrat de ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "S'ha produït un error. Intenteu-ho de nou."
@@ -5658,17 +5649,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
       ]
     },
     "Info": {
@@ -7544,9 +7524,9 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Actualment, esteu utilitzant ${ organization.UsedMembers } d' ${ organization.MaxMembers } llicència d'usuari disponible.",
-        "Actualment, esteu utilitzant ${ organization.UsedMembers } de ${ organization.MaxMembers } llicències d'usuari disponibles."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Actualment, esteu utilitzant ${ usedMembers } d' ${ maxMembers } llicència d'usuari disponible.",
+        "Actualment, esteu utilitzant ${ usedMembers } de ${ maxMembers } llicències d'usuari disponibles."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Heu iniciat la sessió al compte ${ memberAddress }."
@@ -7767,6 +7747,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8126,13 +8117,13 @@
         "Elimina"
       ],
       "Disables encryption with this key": [
-        "Desactiva el xifrat amb aquesta clau"
+        "Desactiva el xifratge amb aquesta clau"
       ],
       "Disables signature verification and encryption with this key": [
         "Desactiva la verificació i el xifratge de signatures amb aquesta clau"
       ],
       "Enable encryption with this key": [
-        "Activa el xifrat amb aquesta clau"
+        "Activa el xifratge amb aquesta clau"
       ],
       "Enable signature verification and encryption with this key": [
         "Activa la verificació i el xifratge de signatures amb aquesta clau."
@@ -8144,10 +8135,10 @@
         "Exporta la clau pública"
       ],
       "Make primary": [
-        "Fes-la primària"
+        "Marca com a principal"
       ],
       "Mark compromised": [
-        "Marca compromesos"
+        "Marca com a compromès"
       ],
       "Mark not compromised": [
         "Marca com a no compromès"
@@ -10146,10 +10137,10 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        "${ brand } acabant en ${ last4 }."
+        "${ brand } que acaba amb ${ last4 }."
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a les vostres famílies i organitzacions."
+        "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a famílies i organitzacions."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* Amb una subscripció d'1 mes. Altres opcions de subscripció disponibles a la compra."
@@ -10182,7 +10173,7 @@
         "Accés anticipat a noves aplicacions i característiques"
       ],
       "For next-level password management and identity protection.": [
-        "Per a una gestió de contrasenyes i identitat del més alt nivell."
+        "Per a una gestió de contrasenyes i protecció de la identitat de nivell superior."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si elimineu el vostre compte, perdeu tots els avantatges del pla ${ visionary } i no estarà disponible si creeu un compte nou."
@@ -10194,7 +10185,7 @@
         "Si canvieu a un pla diferent, perdreu tots els avantatges del pla ${ visionary } i no podreu tornar al pla ${ visionary }."
       ],
       "Most popular": [
-        "Més popular"
+        "El més popular"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "El nostre pla ${ visionary } ja no està disponible per als nous subscriptors, ja que és un pla especial per als usuaris originals de ${ BRAND_NAME } amb característiques i beneficis especials."
@@ -10209,7 +10200,7 @@
         "Protegiu la privadesa de la vostra família amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge de xarxa essencial"
+        "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge essencial de la xarxa"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
@@ -10221,7 +10212,7 @@
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Estableix respostes automàtiques per informar els remitents que sou fora de l'oficina o que no podeu respondre."
+        "Establiu respostes automàtiques per informar els remitents que sou fora de l'oficina o que no podeu respondre."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Solucions a mida per a organitzacions més grans amb necessitats específiques de seguretat"
@@ -10514,13 +10505,13 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "S'inclou amb ${ BRAND_NAME } per a empreses, ${ familyPlanName } i ${ mailProPlanName }."
+        "Inclòs amb ${ BRAND_NAME } per a empreses, ${ familyPlanName } i ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inclòs en ${ plus }, ${ bundle } i ${ BRAND_NAME } per a empreses."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Inclòs amb diversos usuaris en els plans ${ BRAND_NAME } for Business"
+        "Inclòs amb diversos usuaris en els plans ${ BRAND_NAME } per a empreses"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11028,12 +11019,6 @@
       "Create another account instead": [
         "Creeu un altre compte en lloc"
       ],
-      "Download again ${ size }": [
-        "Torna a descarregar ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Descarregueu per continuar ${ size }"
-      ],
       "Keep this plan": [
         "Mantén aquest pla"
       ],
@@ -11157,9 +11142,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Els àlies Hide-my-email protegeixen el vostre correu electrònic d'infraccions de dades"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Si no podeu accedir al vostre compte de ${ BRAND_NAME }, el vostre **kit de recuperació** us permetrà iniciar sessió i recuperar les vostres dades."
-      ],
       "Includes:": [
         "Inclou:"
       ],
@@ -11171,9 +11153,6 @@
       ],
       "Install app and extension": [
         "Instal·leu l'aplicació i l'extensió"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "És l'única manera de restaurar completament el vostre compte, així que assegureu-vos de mantenir aquest **kit de recuperació** en un lloc segur."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Afegiu-vos a més de 100 milions de persones que han escollit ${ BRAND_NAME } per mantenir-se segurs en línia"
@@ -14094,22 +14073,22 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar això per verificar l'autenticitat dels vostres missatges i enviar-vos missatges xifrats."
+        "Això afegeix automàticament la vostra clau pública a cada missatge que envieu. Els destinataris poden utilitzar-la per a verificar l'autenticitat dels vostres missatges i enviar-vos missatges xifrats."
       ]
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que Inline PGP implica missatges de text sense format."
+        "Seleccioneu les preferències PGP per defecte utilitzades per a signar o xifrar missatges amb usuaris PGP de fora de ${ BRAND_NAME }. Tingueu en compte que PGP en línia implica missatges de text sense format."
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Al rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu habilitar les claus de confiança."
+        "En rebre un correu electrònic d'un altre usuari de ${ MAIL_APP_NAME } que no tingui claus de confiança als vostres contactes, un avís us preguntarà si voleu habilitar les claus de confiança."
       ]
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb la configuració PGP per defecte que es pot configurar a continuació."
+        "Signeu automàticament tots els vostres missatges de sortida perquè els usuaris puguin verificar l'autenticitat dels vostres missatges. Això es fa en combinació amb les preferències PGP per defecte que es poden configurar a continuació."
       ]
     },
     "Tooltip; share calendar modal ": {
