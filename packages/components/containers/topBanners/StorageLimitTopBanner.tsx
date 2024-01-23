@@ -1,10 +1,24 @@
 import { c } from 'ttag';
 
 import useFlag from '@proton/components/containers/unleash/useFlag';
-import { APPS, APP_NAMES, PLANS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_NAMES,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PLANS,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { SpaceState, getCompleteSpaceDetails, getSpace } from '@proton/shared/lib/user/storage';
+import {
+    SpaceState,
+    getAppStorage,
+    getCompleteSpaceDetails,
+    getPlanToUpsell,
+    getSpace,
+} from '@proton/shared/lib/user/storage';
 
 import { SettingsLink } from '../../components';
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
@@ -44,14 +58,27 @@ const getStorageFull = ({
     );
 
     if (mode === 'drive') {
+        const storage = getAppStorage(DRIVE_SHORT_APP_NAME);
         if (percentage >= 100) {
-            // Translator: Your drive is almost full. To upload or sync files, free up space or upgrade for more storage.
+            // Translator: Your Drive storage is full. To upload or sync files, free up space or upgrade for more storage.
             return c('storage_split: info')
-                .jt`Your drive is full. To upload or sync files, free up space or ${upgrade}.`;
+                .jt`Your ${storage} is full. To upload or sync files, free up space or ${upgrade}.`;
         }
-        // Translator: Your drive is 99% full. To upload or sync files, free up space or upgrade for more storage.
+        // Translator: Your Drive storage is 99% full. To upload or sync files, free up space or upgrade for more storage.
         return c('storage_split: info')
-            .jt`Your drive is ${percentage}% full. To upload or sync files, free up space or ${upgrade}.`;
+            .jt`Your ${storage} is ${percentage}% full. To upload or sync files, free up space or ${upgrade}.`;
+    }
+
+    if (mode === 'mail') {
+        const storage = getAppStorage(MAIL_SHORT_APP_NAME);
+        if (percentage >= 100) {
+            // Translator: Your Mail storage is full. To send or receive emails, free up space or upgrade for more storage.
+            return c('storage_split: info')
+                .jt`Your ${storage} is full. To send or receive emails, free up space or ${upgrade}`;
+        }
+        // Translator: Your Mail storage is 99% full. To send or receive emails, free up space or upgrade for more storage.
+        return c('storage_split: info')
+            .jt`Your ${storage} is ${percentage}% full. To send or receive emails, free up space or ${upgrade}.`;
     }
 
     if (percentage >= 100) {
@@ -82,12 +109,13 @@ const SplitStorageLimitTopBanner = ({
     space: ReturnType<typeof getSpace>;
 }) => {
     const details = getCompleteSpaceDetails(space);
+    const plan = getPlanToUpsell({ storageDetails: details, app });
 
     if (details.base.type === SpaceState.Danger && details.drive.type === SpaceState.Danger) {
         return (
             <TopBanner className="bg-danger">
                 {getStorageFull({
-                    plan: PLANS.BUNDLE,
+                    plan,
                     user,
                     subscription,
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
@@ -102,7 +130,7 @@ const SplitStorageLimitTopBanner = ({
         return (
             <TopBanner className="bg-danger">
                 {getStorageFull({
-                    plan: PLANS.MAIL,
+                    plan,
                     user,
                     subscription,
                     percentage: details.base.displayed,
@@ -117,7 +145,7 @@ const SplitStorageLimitTopBanner = ({
         return (
             <TopBanner className="bg-danger">
                 {getStorageFull({
-                    plan: PLANS.DRIVE,
+                    plan,
                     user,
                     subscription,
                     percentage: details.drive.displayed,
@@ -136,7 +164,7 @@ const SplitStorageLimitTopBanner = ({
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
                 {getStorageFull({
-                    plan: PLANS.BUNDLE,
+                    plan,
                     user,
                     subscription,
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
@@ -151,7 +179,7 @@ const SplitStorageLimitTopBanner = ({
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
                 {getStorageFull({
-                    plan: PLANS.DRIVE,
+                    plan,
                     user,
                     subscription,
                     percentage: details.drive.displayed,
@@ -166,7 +194,7 @@ const SplitStorageLimitTopBanner = ({
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
                 {getStorageFull({
-                    plan: PLANS.MAIL,
+                    plan,
                     user,
                     subscription,
                     percentage: details.base.displayed,
@@ -197,16 +225,17 @@ const PooledStorageLimitTopBanner = ({
     setIgnoreStorageLimit: (value: boolean) => void;
     space: ReturnType<typeof getSpace>;
 }) => {
-    const data = getCompleteSpaceDetails(space);
+    const details = getCompleteSpaceDetails(space);
+    const plan = getPlanToUpsell({ storageDetails: details, app });
 
-    if (data.pooled.type === SpaceState.Danger) {
+    if (details.pooled.type === SpaceState.Danger) {
         return (
             <TopBanner className="bg-danger">
                 {getStorageFull({
-                    plan: PLANS.BUNDLE,
+                    plan,
                     user,
                     subscription,
-                    percentage: data.pooled.displayed,
+                    percentage: details.pooled.displayed,
                     mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upsellRef,
                 })}
@@ -218,14 +247,14 @@ const PooledStorageLimitTopBanner = ({
         return null;
     }
 
-    if (data.pooled.type === SpaceState.Warning) {
+    if (details.pooled.type === SpaceState.Warning) {
         return (
             <TopBanner className="bg-warning" onClose={() => setIgnoreStorageLimit(true)}>
                 {getStorageFull({
-                    plan: PLANS.BUNDLE,
+                    plan,
                     user,
                     subscription,
-                    percentage: data.pooled.displayed,
+                    percentage: details.pooled.displayed,
                     mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
                     upsellRef,
                 })}

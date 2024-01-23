@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { APPS, APP_NAMES } from '../constants';
+import { APPS, APP_NAMES, PLANS } from '../constants';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '../helpers/subscription';
 import type { Subscription, User, UserModel } from '../interfaces';
 
@@ -120,4 +120,36 @@ export const getAppStorageAlmostFull = (appStorage: string) => {
 
 export const getStorageFull = () => {
     return c('storage_split: info').t`Your storage is full`;
+};
+
+export const getPercentageFull = (storage: string, percentage: number) => {
+    // Translator: Drive storage 99% full
+    return c('storage_split: info').t`${storage} ${percentage}% full`;
+};
+
+export const getPlanToUpsell = ({
+    storageDetails,
+    app,
+}: {
+    storageDetails: ReturnType<typeof getCompleteSpaceDetails>;
+    app: APP_NAMES;
+}) => {
+    if (app === APPS.PROTONDRIVE) {
+        return PLANS.DRIVE;
+    }
+
+    // Area of experimentation which plan to upsell to.
+    if (false) {
+        if (storageDetails.base.type === SpaceState.Danger && storageDetails.drive.type === SpaceState.Danger) {
+            return PLANS.BUNDLE;
+        }
+        if (storageDetails.base.type === SpaceState.Danger) {
+            return PLANS.MAIL;
+        }
+        if (storageDetails.drive.type === SpaceState.Danger) {
+            return PLANS.DRIVE;
+        }
+    }
+
+    return PLANS.MAIL;
 };
