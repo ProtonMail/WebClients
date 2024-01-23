@@ -45,7 +45,7 @@ import {
     syncSuccess,
     vaultDeleteIntent,
     vaultDeleteSuccess,
-    vaultMoveAllItemsSuccess,
+    vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
@@ -299,7 +299,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return objectDelete(state, action.payload.shareId);
         }
 
-        if (vaultMoveAllItemsSuccess.match(action)) {
+        if (vaultMoveAllItemsProgress.match(action)) {
             const { shareId, movedItems, destinationShareId } = action.payload;
             return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
         }
