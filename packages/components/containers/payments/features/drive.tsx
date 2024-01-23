@@ -23,7 +23,7 @@ const getTb = (n: number) => {
 };
 
 export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(freePlan.MaxDriveSpace + freePlan.MaxDriveRewardSpace, undefined, undefined, 0);
+    const totalStorageSize = humanSize(freePlan.MaxDriveSpace + freePlan.MaxDriveRewardSpace, undefined, undefined, 1);
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Drive storage`,
         tooltip: '',
@@ -33,7 +33,7 @@ export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardF
 };
 
 export const getFreeMailStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(freePlan.MaxBaseSpace + freePlan.MaxBaseRewardSpace, undefined, undefined, 0);
+    const totalStorageSize = humanSize(freePlan.MaxBaseSpace + freePlan.MaxBaseRewardSpace, undefined, undefined, 1);
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Mail storage`,
         tooltip: c('storage_split: feature')
@@ -55,9 +55,18 @@ export const getStorageFeature = (
     }
 ): PlanCardFeatureDefinition => {
     const { highlight = false, boldStorageSize = false } = options;
-    const freeBaseStorage = options.freePlan.MaxBaseSpace + options.freePlan.MaxBaseRewardSpace;
-    const freeDriveStorage = options.freePlan.MaxDriveSpace + options.freePlan.MaxDriveRewardSpace;
     if (bytes === -1) {
+        if (!options.freePlan.storageSplitEnabled) {
+            const freeBaseStorage = options.freePlan.MaxSpace + options.freePlan.MaxRewardSpace;
+            const totalStorageSize = humanSize(freeBaseStorage, undefined, undefined, 0);
+            return {
+                text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
+                included: true,
+                icon: 'storage',
+            };
+        }
+        const freeBaseStorage = options.freePlan.MaxBaseSpace + options.freePlan.MaxBaseRewardSpace;
+        const freeDriveStorage = options.freePlan.MaxDriveSpace + options.freePlan.MaxDriveRewardSpace;
         const driveStorageSize = humanSize(freeDriveStorage, undefined, undefined, 1);
         const baseStorageSize = humanSize(freeBaseStorage, undefined, undefined, 1);
         const totalStorageSize = humanSize(freeDriveStorage + freeBaseStorage, undefined, undefined, 1);

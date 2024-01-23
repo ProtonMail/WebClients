@@ -18,14 +18,13 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
-import { getFreePlan } from '@proton/components/hooks/useFreePlan';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getExtension } from '@proton/shared/lib/apps/helper';
@@ -206,6 +205,7 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
+    const storageSplitEnabled = useFlag('SplitStorage');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -577,7 +577,7 @@ const SingleSignupContainerV2 = ({
                     },
                     toApp: product,
                 }),
-                getFreePlan(silentApi),
+                getFreePlan({ api: silentApi, storageSplitEnabled }),
             ]);
 
             let session: SessionData | undefined;
