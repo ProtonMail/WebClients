@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms/Button';
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Meter, PassLogo, SettingsLink } from '@proton/components/components';
 import { SettingsSection } from '@proton/components/containers';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import {
@@ -138,9 +139,10 @@ const getBaseWarning = () => {
 };
 
 const YourStorageSection = ({ app }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const space = getSpace(user);
+    const space = getSpace(user, storageSplitEnabled);
     const details = getCompleteSpaceDetails(space);
 
     return (

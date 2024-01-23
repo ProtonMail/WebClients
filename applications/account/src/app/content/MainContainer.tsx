@@ -154,6 +154,7 @@ const MainContainer = () => {
     const appSlug = getSlugFromApp(app);
 
     const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
+    const isStorageSplitEnabled = useFlag('SplitStorage');
 
     const routes = getRoutes({
         app,
@@ -175,6 +176,7 @@ const MainContainer = () => {
         isEmailForwardingEnabled,
         hasUserAccessToInboxDesktop,
         isNotifInboxDesktopAppOn,
+        isStorageSplitEnabled,
     });
 
     useEffect(() => {

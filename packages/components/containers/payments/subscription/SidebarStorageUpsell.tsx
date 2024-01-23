@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon, SettingsLink } from '@proton/components/components';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLocalState, useSubscription } from '@proton/components/hooks';
 import {
     APPS,
@@ -120,11 +121,12 @@ const getStorageUpsell = ({
 };
 
 const SidebarStorageUpsell = ({ app }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
 
-    if (!getCanAddStorage({ user, subscription })) {
+    if (!storageSplitEnabled || !getCanAddStorage({ user, subscription })) {
         return null;
     }
 
