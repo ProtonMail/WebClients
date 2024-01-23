@@ -1,3 +1,14 @@
+## Release 5.0.20 — Jan 31st, 2024
+
+### Improvements
+
+-   Minor UX improvements for edition/deletion of holidays calendars
+-   Improved the behavior of the time input when time is entered manually
+
+### Fixes
+
+-   Fixed issues that prevented importing events with time zone Australia/Hobart
+
 ## Release 5.0.19 — Jan 10th, 2024
 
 ### Improvements
