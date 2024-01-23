@@ -908,9 +908,6 @@
       "Signing in": [
         "Logowanie"
       ],
-      "Signing out": [
-        "Wylogowywanie"
-      ],
       "Size": [
         "Rozmiar"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ulepsz plan, aby włączyć ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Ulepsz do planu Visionary"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -2109,9 +2103,6 @@
       "Gender": [
         "Płeć"
       ],
-      "Geo": [
-        "Współrzędne"
-      ],
       "Language": [
         "Język"
       ],
@@ -3153,9 +3144,6 @@
       "Access to the desktop app is limited": [
         "Dostęp do aplikacji desktopowej jest ograniczony"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników planu ${ BRAND_NAME } Visionary. Aplikacja będzie dostępna dla wszystkich użytkowników na początku 2024 roku."
-      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
       ]
@@ -3967,8 +3955,11 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Ustaw niestandardową domenę przed dodaniem adresów."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Ustaw niestandardową domenę, zanim zaczniesz dodawać użytkowników do organizacji."
+        "Ustaw niestandardową domenę przed dodaniem użytkowników do organizacji."
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Przed dodaniem użytkowników do organizacji, włącz obsługę wielu użytkowników."
@@ -4775,8 +4766,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jeśli użytkownik już ma adres ${ MAIL_APP_NAME }, wpisz go tutaj. W przeciwnym razie utwórz konto."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Zaproszenie zostanie anulowane i użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
@@ -4824,8 +4815,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Użytkownik ${ member.Name } został usunięty z organizacji ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Użytkownik ${ member.Name } został usunięty z organizacji ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Wystąpił błąd. Spróbuj ponownie"
@@ -5833,17 +5824,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -5911,6 +5891,9 @@
         "${ n } adresów",
         "${ n } adresów"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: nie przenosi do kwarantanny ani nie odrzuca nieautoryzowanych wiadomości. Zasada jest używana głównie do testowania."
+      ],
       "${ number } city": [
         "${ number } miasto",
         "${ number } miasta",
@@ -5955,6 +5938,12 @@
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: informuje serwer odbiorcy, aby oznaczyć nieautoryzowane wiadomości jako spam lub przenieść je do kwarantanny."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: informuje serwer odbiorcy, aby odrzucić nieautoryzowane wiadomości."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } więcej",
@@ -6463,6 +6452,12 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Zabezpieczenie DKIM umożliwia ${ BRAND_NAME } kryptograficzne podpisywanie wiadomości, aby zagwarantować ich autentyczność. Sprawdź, czy następujące 3 rekordy CNAME zostały dodane w panelu sterowania u rejestratora domeny."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Zabezpieczenie DMARC sprawdza, czy rekordy SPF i DKIM nadawcy pochodzą z Twojej domeny. Może to uniemożliwić atakującym wykorzystanie rekordów SPF i DKIM innej domeny do podszywania się pod Twoją domenę. Wartość parametru \"p=\" informuje serwer odbiorcy o sposobie obsługi nieautoryzowanych wiadomości. Zalecamy używanie zasady \"p=quarantine\" dla większości domen. Sprawdź, czy następujący rekord TXT został dodany w panelu sterowania u rejestratora domeny."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz w stanie zarządzać organizacją."
       ],
@@ -6510,6 +6505,9 @@
       ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Każda domena może posiadać tylko 1 rekord SPF (TXT). Jeśli chcesz zachować obecny rekord SPF (TXT), możesz dodać ${ spf } do obecnego rekordu (wpisz po ${ spfValue })."
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
@@ -6742,6 +6740,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "WAŻNE: Jeśli panel sterowania u rejestratora domeny nie pozwala na dodanie rekordów CNAME kończących się kropką, usuń kropkę na końcu."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Ważne: Upewnij się, że zapisałeś kody odzyskiwania. W przeciwnym razie, w przypadku zgubienia urządzenia z przypisanym uwierzytelnianiem dwustopniowym, możesz trwale stracić dostęp do konta."
       ],
@@ -6875,7 +6876,10 @@
         "Logi obejmują próby uwierzytelniania dla wszystkich usług ${ BRAND_NAME }, które używają poświadczeń ${ BRAND_NAME_TWO }."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
-        "Większość usług pocztowych może odrzucić lub oznaczyć jako spam wiadomości niezabezpieczone prawidłowymi rekordami SPF / DKIM / DMARC."
+        "Większość usług pocztowych może odrzucać lub oznaczać jako spam wiadomości niezabezpieczone prawidłowymi rekordami SPF / DKIM / DMARC."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Większość usług pocztowych może odrzucać lub oznaczać jako spam wiadomości niezabezpieczone prawidłowymi rekordami SPF / DKIM / DMARC."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "${ addARecoveryMethod }, aby odzyskać dostęp do konta, jeśli zapomnisz hasła."
@@ -7867,11 +7871,11 @@
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów.",
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnych dedykowanych serwerów."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnej licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika.",
-        "Używasz ${ organization.UsedMembers } z ${ organization.MaxMembers } dostępnych licencji użytkownika."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnej licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
+        "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Zalogowano jako ${ memberAddress }."
@@ -8108,6 +8112,17 @@
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -8119,6 +8134,9 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Dodaj nowy adres do istniejących użytkowników organizacji."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Dodaj nowego użytkownika do swojej organizacji i utwórz dla niego adres."
       ]
@@ -9171,6 +9189,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Hasłem odzyskiwania jest seria 12 słów w określonej kolejności"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Dodaj następujące 3 rekordy CNAME. Uwaga: Aktualizacja rekordów DNS może potrwać do kilku godzin."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Dodaj następujące 2 rekordy MX. Uwaga: Aktualizacja rekordów DNS może potrwać do kilku godzin."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Dodaj następujący rekord TXT. Uwaga: Aktualizacja rekordów DNS może potrwać do kilku godzin."
+      ],
       "Please select files to upload": [
         "Wybierz pliki do przesłania"
       ],
@@ -9242,6 +9269,9 @@
       ],
       "Show sender images": [
         "Pokaż zdjęcie nadawcy"
+      ],
+      "Show unread count in application icon": [
+        "Pokaż liczbę nieprzeczytanych w ikonie aplikacji"
       ],
       "Show unread count in Favicon": [
         "Pokaż liczbę nieprzeczytanych w ikonie strony"
@@ -9412,6 +9442,11 @@
     "Label for default event settings": {
       "Duration": [
         "Czas trwania"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Dodaj następujący rekord TXT. Uwaga: Aktualizacja rekordów DNS może potrwać do kilku godzin."
       ]
     },
     "Label for new member": {
@@ -11486,11 +11521,8 @@
       "Create another account instead": [
         "Utwórz inne konto"
       ],
-      "Download again ${ size }": [
-        "Pobierz ponownie ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Pobierz, aby kontynuować ${ size }"
+      "Download PDF ${ size }": [
+        "Pobierz plik PDF ${ size }"
       ],
       "Keep this plan": [
         "Zachowaj plan"
@@ -11630,9 +11662,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
-      ],
       "Includes:": [
         "Zawiera:"
       ],
@@ -11644,9 +11673,6 @@
       ],
       "Install app and extension": [
         "Zainstaluj aplikację i rozszerzenie"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Jest to jedyny sposób na pełne przywrócenie konta, więc upewnij się, że przechowujesz **zestaw odzyskiwania ** w bezpiecznym miejscu."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
@@ -14617,6 +14643,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
+      ],
+      "See number of unread messages in the application icon": [
+        "Pokaż liczbę nieprzeczytanych wiadomości w ikonie aplikacji"
       ],
       "See number of unread messages in the tab icon": [
         "Pokaż liczbę nieprzeczytanych wiadomości w ikonie karty"
