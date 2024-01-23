@@ -20,16 +20,8 @@ export const ItemsList: FC = () => {
     const bulk = useBulkSelect();
 
     const handleSelect = (item: ItemRevision) => {
-        const currentItem = { itemId: item.itemId, shareId: item.shareId } as SelectedItem;
-        if (bulk.isBulk) {
-            if (bulk.isSelected(currentItem)) {
-                bulk.unselectItem(currentItem);
-            } else {
-                bulk.selectItem(currentItem);
-            }
-        } else {
-            selectItem(item, { inTrash: matchTrash });
-        }
+        if (bulk.enabled) bulk[bulk.isSelected(item) ? 'unselect' : 'select'](item);
+        else selectItem(item, { inTrash: matchTrash });
     };
 
     useEffect(bulk.disable, [selectedItem, matchTrash]);
@@ -40,7 +32,7 @@ export const ItemsList: FC = () => {
         <>
             <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto space-between">
                 <div className="flex gap-1 shrink-0 flex-1">
-                    {!bulk.isBulk && disableFilters && (
+                    {!bulk.enabled && disableFilters && (
                         <>
                             <TypeFilter
                                 items={items.searched}
@@ -50,7 +42,7 @@ export const ItemsList: FC = () => {
                             <SortFilter value={filters.sort} onChange={(sort) => setFilters({ sort })} />
                         </>
                     )}
-                    {bulk.isBulk && <BulkActions />}
+                    {bulk.enabled && <BulkActions />}
                 </div>
                 <BulkToggle />
             </div>

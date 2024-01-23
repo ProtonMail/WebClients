@@ -54,7 +54,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                     size={5}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
                 />
-                {bulk.isBulk && (
+                {bulk.enabled && (
                     <ItemIcon
                         icon="checkmark"
                         alt=""

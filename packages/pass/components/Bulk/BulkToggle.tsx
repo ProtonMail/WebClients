@@ -14,11 +14,11 @@ export const BulkToggle: FC = () => {
             shape="solid"
             size="small"
             color="weak"
-            icon={!bulk.isBulk}
-            onClick={bulk[bulk.isBulk ? 'disable' : 'enable']}
+            icon={!bulk.enabled}
+            onClick={bulk[bulk.enabled ? 'disable' : 'enable']}
             title={c('Action').t`Bulk select items`}
         >
-            {bulk.isBulk ? c('Action').t`Cancel` : <Icon name={'checkmark-triple'} />}
+            {bulk.enabled ? c('Action').t`Cancel` : <Icon name={'checkmark-triple'} />}
         </Button>
     );
 };
