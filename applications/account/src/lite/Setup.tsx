@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import FlagProvider from '@protontech/proxy-client-react';
+import FlagProvider from '@unleash/proxy-client-react';
 import { UnleashClient } from 'unleash-proxy-client';
 
 import { serverEvent, userThunk } from '@proton/account';
