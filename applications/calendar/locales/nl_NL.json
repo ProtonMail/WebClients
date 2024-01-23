@@ -261,6 +261,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Give feedback": [
+        "Geef feedback"
+      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -444,9 +447,6 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -531,13 +531,7 @@
       "Show time zones": [
         "Tijdzones tonen"
       ],
-      "Sign in": [
-        "Inloggen"
-      ],
       "Sign out": [
-        "Uitloggen"
-      ],
-      "Signing out": [
         "Uitloggen"
       ],
       "Skip": [
@@ -1214,9 +1208,6 @@
       ],
       "Gender": [
         "Geslacht"
-      ],
-      "Geo": [
-        "Plaats"
       ],
       "Language": [
         "Taal"
@@ -2151,6 +2142,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Verhoog uw effectiviteit en hou uw tijd bij door gebeurtenissen van een categorie kleur te voorzien of een kleur gebaseerd op uw energie niveau. Krijg dit en nog heel veel meer met een betaald abonnement."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
       ],
@@ -2446,12 +2440,6 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
-      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -2607,9 +2595,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
       "Start time must be before end time": [
         "Starttijd dient voor de begintijd te liggen"
       ],
@@ -2702,6 +2687,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Uitgenodigd adres bestaat niet"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Fout bij het wijzigen van het antwoord"
       ]
     },
     "Error importing calendar": {
@@ -3653,6 +3643,9 @@
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Alle deelnemers krijgen een annuleringsmail. Welke afspraak wilt u verwijderen?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
@@ -3769,6 +3762,9 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Toon afspraken van agenda ${ Name }"
+      ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
       ],
@@ -3838,9 +3834,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -4045,9 +4038,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -4083,9 +4073,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -4203,6 +4190,9 @@
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
+      ],
+      "You can now return to the application to continue": [
+        "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -4511,9 +4501,6 @@
       "Email format": [
         "E-mailformaat"
       ],
-      "Email or username": [
-        "E-mailadres of gebruikersnaam"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -4606,9 +4593,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
       ],
       "Main": [
         "Primair"
@@ -6129,6 +6113,9 @@
       "Add your country's public holidays to your calendar.": [
         "Voeg de wettelijke feestdagen van uw land toe aan uw agenda."
       ],
+      "Color-coding is here!": [
+        "Kleurcodering!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Vind eenvoudig de afspraken waar u naar zoekt met onze nieuwe zoekfunctie."
       ],
@@ -6143,6 +6130,9 @@
       ],
       "Search for events": [
         "Zoek naar afspraken"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Met aanpasbare agenda kleuren, u kunt de chaos van kleurcodering en breng orde aan in uw dag."
       ]
     },
     "Storage": {
@@ -6430,9 +6420,6 @@
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
-      "Account suspended": [
-        "Account opgeschort"
-      ],
       "Add another notification to remind you of this event": [
         "Voeg nog een melding toe om je te herinneren aan deze afspraak"
       ],
@@ -6450,6 +6437,9 @@
       ],
       "Add participants": [
         "Personen toevoegen"
+      ],
+      "Add some color to your day": [
+        "Voeg wat kleur toe aan uw dag"
       ],
       "Add to ${ groupCount } group": [
         "Toevoegen aan ${ groupCount } groep",

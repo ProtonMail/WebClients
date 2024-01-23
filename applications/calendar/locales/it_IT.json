@@ -222,6 +222,9 @@
       "Download": [
         "Scarica"
       ],
+      "Download now": [
+        "Scarica ora"
+      ],
       "Edit": [
         "Modifica"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Importa da Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "È disponibile un aggiornamento importante. Per continuare a utilizzare l'app, aggiornala alla versione più recente. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Aderisci al calendario"
@@ -447,9 +453,6 @@
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Remove": [
         "Rimuovi"
       ],
@@ -534,14 +537,8 @@
       "Show time zones": [
         "Mostra fusi orari"
       ],
-      "Sign in": [
-        "Accedi"
-      ],
       "Sign out": [
         "Disconnetti"
-      ],
-      "Signing out": [
-        "Disconnessione"
       ],
       "Skip": [
         "Salta"
@@ -1226,9 +1223,6 @@
       ],
       "Gender": [
         "Sesso"
-      ],
-      "Geo": [
-        "Geolocalizzazione"
       ],
       "Language": [
         "Lingua"
@@ -2499,12 +2493,6 @@
       "IMAP server is required": [
         "È richiesto il server IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Credenziali di accesso non valide. Per favore riprova."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Password della casella di posta non corretta. Per favore riprova."
-      ],
       "Incorrect username": [
         "Username non corretto"
       ],
@@ -2659,9 +2647,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "L'ora di inizio deve essere prima dell'ora di fine"
@@ -3906,9 +3891,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se credi che questo sia un errore, contattaci ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
@@ -4112,9 +4094,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "team di supporto"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -4150,9 +4129,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
@@ -4581,9 +4557,6 @@
       "Email format": [
         "Formato email"
       ],
-      "Email or username": [
-        "Email o nome utente"
-      ],
       "Emails": [
         "Email"
       ],
@@ -4676,9 +4649,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server di posta (IMAP)"
-      ],
-      "Mailbox password": [
-        "Password della casella di posta"
       ],
       "Main": [
         "Principale"
@@ -6530,9 +6500,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } indirizzo email",
         "${ emailsCount } indirizzi email"
-      ],
-      "Account suspended": [
-        "Account sospeso"
       ],
       "Add another notification to remind you of this event": [
         "Aggiungi un'altra notifica per ricordarti di questo evento"
