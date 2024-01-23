@@ -127,7 +127,7 @@ describe('searchItems', () => {
     });
 
     it('should return matching items based on extra fields label and value', () => {
-        const result = searchItems(items, 'hidden label');
+        const result = searchItems(items, 'text label');
         expect(result).toEqual([items[0]]);
 
         const result2 = searchItems(items, 'text value');
