@@ -50,7 +50,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
-                                            active={!bulk.isBulk && selectedItem && itemEq(selectedItem)(item)}
+                                            active={!bulk.enabled && selectedItem && itemEq(selectedItem)(item)}
                                             id={id}
                                             item={item}
                                             key={id}
