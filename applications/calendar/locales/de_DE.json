@@ -222,6 +222,9 @@
       "Download": [
         "Herunterladen"
       ],
+      "Download now": [
+        "Jetzt herunterladen"
+      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Von Outlook importieren"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Ein wichtiges Update ist verfügbar. Um die App weiterhin zu nutzen, update sie bitte auf die aktuellste Version. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Kalender beitreten"
@@ -447,9 +453,6 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Remove": [
         "Entfernen"
       ],
@@ -534,14 +537,8 @@
       "Show time zones": [
         "Zeitzonen anzeigen"
       ],
-      "Sign in": [
-        "Anmelden"
-      ],
       "Sign out": [
         "Abmelden"
-      ],
-      "Signing out": [
-        "Abmeldung…"
       ],
       "Skip": [
         "Überspringen"
@@ -1226,9 +1223,6 @@
       ],
       "Gender": [
         "Geschlecht"
-      ],
-      "Geo": [
-        "Standort"
       ],
       "Language": [
         "Sprache"
@@ -2499,12 +2493,6 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Ungültige Anmeldedaten. Bitte versuche es erneut."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
-      ],
       "Incorrect username": [
         "Falscher Benutzername"
       ],
@@ -2659,9 +2647,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Startzeit muss vor der Endzeit liegen"
@@ -3834,7 +3819,7 @@
         "Änderungen verwerfen?"
       ],
       "Display events for calendar ${ Name }": [
-        "Ereignisse für Kalender ${ Name } anzeigen"
+        "Termine für Kalender ${ Name } anzeigen"
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
@@ -3905,9 +3890,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
@@ -4112,9 +4094,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
       ],
-      "support team": [
-        "Support-Team"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -4150,9 +4129,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -4581,9 +4557,6 @@
       "Email format": [
         "E-Mail-Format"
       ],
-      "Email or username": [
-        "E‐Mail‐Adresse oder Benutzername"
-      ],
       "Emails": [
         "E-Mails"
       ],
@@ -4676,9 +4649,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
       ],
       "Main": [
         "Hauptebene"
@@ -6243,7 +6213,7 @@
         "Nach Terminen suchen"
       ],
       "With customizable event colors, you can color-code the chaos and conquer your day.": [
-        "Mit anpassbaren Veranstaltungsfarben kannst du das Chaos einfärben und deinen Tag bewältigen."
+        "Mit anpassbaren Terminfarben kannst du das Chaos einfärben und deinen Tag bewältigen."
       ]
     },
     "Storage": {
@@ -6530,9 +6500,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } E-Mail-Adresse",
         "${ emailsCount } E-Mail-Adressen"
-      ],
-      "Account suspended": [
-        "Konto gesperrt"
       ],
       "Add another notification to remind you of this event": [
         "Weitere Benachrichtigung hinzufügen, um dich an diesen Termin zu erinnern"

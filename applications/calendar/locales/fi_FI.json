@@ -447,9 +447,6 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
-        "Päivitä sivu"
-      ],
       "Remove": [
         "Poista"
       ],
@@ -534,14 +531,8 @@
       "Show time zones": [
         "Näytä aikavyöhykkeet"
       ],
-      "Sign in": [
-        "Kirjaudu sisään"
-      ],
       "Sign out": [
         "Kirjaudu ulos"
-      ],
-      "Signing out": [
-        "Kirjaudutaan ulos"
       ],
       "Skip": [
         "Ohita"
@@ -1226,9 +1217,6 @@
       ],
       "Gender": [
         "Sukupuoli"
-      ],
-      "Geo": [
-        "Paikkatieto"
       ],
       "Language": [
         "Kieli"
@@ -2499,12 +2487,6 @@
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Virheelliset kirjautumistiedot. Yritä uudelleen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Virheellinen postilaatikon salasana. Yritä uudelleen."
-      ],
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
       ],
@@ -2659,9 +2641,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Aloitusajan on oltava ennen päätösaikaa"
@@ -3906,9 +3885,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
@@ -4112,9 +4088,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
-      "support team": [
-        "tukeemme"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -4150,9 +4123,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -4581,9 +4551,6 @@
       "Email format": [
         "Viestien muoto"
       ],
-      "Email or username": [
-        "Sähköpostiosoite tai käyttäjätunnus"
-      ],
       "Emails": [
         "Viestit"
       ],
@@ -4676,9 +4643,6 @@
       ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postilaatikon salasana"
       ],
       "Main": [
         "Pää"
@@ -6530,9 +6494,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
-      ],
-      "Account suspended": [
-        "Tili on jäädytetty"
       ],
       "Add another notification to remind you of this event": [
         "Lisää uusi ilmoitus muistuttamaan tapahtumasta"

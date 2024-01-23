@@ -236,6 +236,9 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pin item": [
+        "Закрепить элемент"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -310,6 +313,9 @@
       ],
       "Transfer ownership": [
         "Передать права владельца"
+      ],
+      "Unpin item": [
+        "Открепить элемент"
       ],
       "Update vault": [
         "Обновить хранилище"
@@ -446,11 +452,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Сбой при закреплении элемента"
+      ],
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
       "Failed to transfer this vault's ownership.": [
         "Сбой при передаче владения хранилищем."
+      ],
+      "Failed to unpin item": [
+        "Сбой при откреплении элемента"
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
@@ -639,9 +651,9 @@
       ],
       "${ n } item": [
         "${ n } элемент",
-        "${ n } элемент",
-        "${ n } элемент",
-        "${ n } элемент"
+        "${ n } элемента",
+        "${ n } элементов",
+        "${ n } элементов"
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
@@ -650,7 +662,7 @@
         "${ revisionNumber } раз",
         "${ revisionNumber } раза",
         "${ revisionNumber } раз",
-        "${ revisionNumber } раза"
+        "${ revisionNumber } раз"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
@@ -794,7 +806,7 @@
         "Элемент \"${ payload.item.data.metadata.name }\" обновлен"
       ],
       "Item moved to trash": [
-        "Элемент перемещен в корзину"
+        "Элемент перемещён в Корзину"
       ],
       "Item permanently deleted": [
         "Элемент удален окончательно"
@@ -804,6 +816,12 @@
       ],
       "Item successfully moved": [
         "Элемент успешно перемещен"
+      ],
+      "Item successfully pinned": [
+        "Элемент закреплен"
+      ],
+      "Item successfully unpinned": [
+        "Элемент откреплен"
       ],
       "Leaving vault...": [
         "Покидаю хранилище..."
@@ -845,13 +863,16 @@
         "Владение успешно передано. Вы теперь не владелец этого хранилища."
       ],
       "Pass Plus trial": [
-        "Проба Pass Plus"
+        "Пробная версия Pass Plus"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Закрепление элемента..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
@@ -955,6 +976,9 @@
       "Unlimited hide-my-email aliases": [
         "Неограниченное количество псевдонимов hide-my-email"
       ],
+      "Unpinning item...": [
+        "Открепление элемента..."
+      ],
       "Use vaults to share this item with others.": [
         "Используйте хранилища, чтобы поделиться этим элементом с другими."
       ],
@@ -1020,17 +1044,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } символ",
-        "${ passwordOptions.options.length } символа",
-        "${ passwordOptions.options.length } символов",
-        "${ passwordOptions.options.length } символа"
+      "${ config.options.length } character": [
+        "${ config.options.length } символ",
+        "${ config.options.length } символов",
+        "${ config.options.length } символа",
+        "${ config.options.length } символа"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } слово",
-        "${ passwordOptions.options.wordCount } слова",
-        "${ passwordOptions.options.wordCount } слов",
-        "${ passwordOptions.options.wordCount } слова"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слово",
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } слов",
+        "${ config.options.wordCount } слов"
       ],
       "1 hour": [
         "1 час"
@@ -1172,6 +1196,9 @@
       ],
       "Item ID": [
         "ID элемента"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбинация клавиш: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Последние 2 недели"
@@ -1411,7 +1438,7 @@
         "Пробелы"
       ],
       "Underscores": [
-        "Подчеркивания"
+        "Подчёркивания"
       ]
     },
     "Placeholder": {
@@ -1560,6 +1587,9 @@
       "Permanently remove all items ?": [
         "Безвозвратно удалить все элементы?"
       ],
+      "Pinned (${ items.length })": [
+        "Закреплено (${ items.length })"
+      ],
       "Secure your data": [
         "Защитите свои данные"
       ],
@@ -1639,6 +1669,9 @@
       "Empty note": [
         "Пустая заметка"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Срок действия не в формате ММ/ГГ"
+      ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
@@ -1646,7 +1679,7 @@
         "Максимальная длина ${ maxLength } символ",
         "Максимальная длина ${ maxLength } символа",
         "Максимальная длина ${ maxLength } символов",
-        "Максимальная длина ${ maxLength } символа"
+        "Максимальная длина ${ maxLength } символов"
       ],
       "Missing alias prefix": [
         "Отсутствует префикс псевдонима"
@@ -1734,6 +1767,9 @@
       ],
       "Your session could not be resumed.": [
         "Ваш сеанс не может быть возобновлён."
+      ],
+      "Your session is inactive.": [
+        "Ваша сессия неактивна."
       ],
       "Your session was locked.": [
         "Ваш сеанс заблокирован."

@@ -337,6 +337,9 @@
       "Download ${ attachmentName }": [
         "Descargar ${ attachmentName }"
       ],
+      "Download now": [
+        "Descargar ahora"
+      ],
       "Downloading": [
         "Descargando"
       ],
@@ -507,6 +510,9 @@
       ],
       "Import from Outlook": [
         "Importar desde Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualización importante disponible. Para continuar usando la aplicación, actualiza a la última versión. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Por la mañana"
@@ -794,9 +800,6 @@
       "Refresh the page": [
         "Actualizar la página"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Remove": [
         "Eliminar"
       ],
@@ -980,14 +983,8 @@
       "Show side panel": [
         "Mostrar el panel lateral"
       ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
       "Sign out": [
         "Cerrar sesión"
-      ],
-      "Signing out": [
-        "Cerrando sesión"
       ],
       "Size": [
         "Tamaño"
@@ -2092,9 +2089,6 @@
       ],
       "Gender": [
         "Género"
-      ],
-      "Geo": [
-        "Geolocalización"
       ],
       "Language": [
         "Idioma"
@@ -3396,12 +3390,6 @@
       "IMAP server is required": [
         "Servidor IMAP requerido"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Credenciales de inicio de sesión incorrectas. Inténtalo de nuevo."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contraseña de buzón incorrecta. Inténtalo de nuevo."
-      ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
@@ -3425,6 +3413,9 @@
       ],
       "Last name is too long": [
         "El apellido es demasiado largo."
+      ],
+      "Maximum expiration time reached.": [
+        "Se ha alcanzado el tiempo máximo de expiración."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de adjuntos (${ attachmentsCountLimit }) superado"
@@ -3556,9 +3547,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Se ha producido un error. Inténtalo de nuevo."
@@ -5397,9 +5385,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, solicita una invitación y responderemos en un día hábil."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si crees que esto es un error, contáctanos ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
@@ -5838,9 +5823,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "equipo de soporte"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -5889,9 +5871,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No pueden enviarte spam si no conocen tu dirección de correo. Protege tu buzón con alias de Hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
@@ -6732,9 +6711,6 @@
       "Email format": [
         "Formato de correo electrónico"
       ],
-      "Email or username": [
-        "Dirección de correo electrónico o nombre de usuario"
-      ],
       "Emails": [
         "Correos electrónicos"
       ],
@@ -6842,9 +6818,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correo (IMAP)"
-      ],
-      "Mailbox password": [
-        "Contraseña del buzón"
       ],
       "Main": [
         "Principal"
@@ -7928,7 +7901,7 @@
         "Buscar nombre, correo o grupo"
       ],
       "Search parent folder": [
-        "Buscar la carpeta principal"
+        "Buscar en la carpeta principal"
       ],
       "Select": [
         "Seleccionar"
@@ -8644,17 +8617,20 @@
       "Email tracking protection": [
         "Protección contra rastreos de correo electrónico"
       ],
+      "Faster email management": [
+        "Gestión del correo electrónico más rápida"
+      ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Ahora puedes tomar acción en todos los correos electrónicos de una misma carpeta en un solo paso."
+      ],
       "Schedule send": [
         "Programar envío"
-      ],
-      "Search just got smarter and faster": [
-        "La búsqueda acaba de volverse más inteligente y rápida."
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Establece cuándo un correo debería de reaparecer en tu buzón con la nueva función de pausa."
@@ -8664,9 +8640,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Los correos de Spam y Papelera ahora se excluyen automáticamente de Todos los mensajes. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Prueba hoy mismo."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargamos las imágenes por defecto y bloqueamos el rastreo por parte de los remitentes. Esto se puede cambiar en ${ settingsLink }."
@@ -9102,9 +9075,6 @@
       ],
       "A filter with this name already exists": [
         "Ya existe un filtro con este nombre."
-      ],
-      "Account suspended": [
-        "Cuenta suspendida"
       ],
       "Action all conversations": [
         "Acción en todas las conversaciones"

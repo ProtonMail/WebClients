@@ -447,9 +447,6 @@
       "Refresh the page": [
         "Оновити сторінку"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Remove": [
         "Вилучити"
       ],
@@ -534,14 +531,8 @@
       "Show time zones": [
         "Показати часові пояси"
       ],
-      "Sign in": [
-        "Увійти"
-      ],
       "Sign out": [
         "Вийти"
-      ],
-      "Signing out": [
-        "Вихід"
       ],
       "Skip": [
         "Пропустити"
@@ -1194,9 +1185,6 @@
       ],
       "Gender": [
         "Стать"
-      ],
-      "Geo": [
-        "Геолокація"
       ],
       "Language": [
         "Мова"
@@ -2430,12 +2418,6 @@
       "IMAP server is required": [
         "Сервер IMAP обов'язковий"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Неправильні дані входу. Спробуйте ще раз."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неправильний пароль поштової скриньки. Спробуйте знову."
-      ],
       "Incorrect username": [
         "Неправильне ім'я користувача"
       ],
@@ -2600,9 +2582,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назви деяких ваших міток перевищують обмеження кількості символів ${ MAIL_APP_NAME }. Будь ласка, налаштуйте імпорт для зміни цих назв."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Час початку повинен бути раніше часу завершення"
@@ -3893,9 +3872,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
@@ -4103,9 +4079,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "командою підтримки"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -4138,9 +4111,6 @@
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "Організатор цієї серії подій отримає сповіщення про те, що ви відхиляєте запрошення, оскільки ви не можете надсилати листи з адреси запрошення. Усе одно бажаєте видалити всі події в цій серії?"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Цей обліковий запис було призупинено через потенційне порушення правил."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -4567,9 +4537,6 @@
       "Email format": [
         "Формат повідомлень"
       ],
-      "Email or username": [
-        "Е-пошта чи ім'я користувача"
-      ],
       "Emails": [
         "Адреси е-пошти"
       ],
@@ -4662,9 +4629,6 @@
       ],
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль поштової скриньки"
       ],
       "Main": [
         "Головна"
@@ -6488,9 +6452,6 @@
         "${ emailsCount } адреси е-пошти",
         "${ emailsCount } адрес е-пошти",
         "${ emailsCount } адрес е-пошти"
-      ],
-      "Account suspended": [
-        "Обліковий запис призупинено"
       ],
       "Add another notification to remind you of this event": [
         "Додати ще сповіщення, щоб нагадати вам про цю подію"

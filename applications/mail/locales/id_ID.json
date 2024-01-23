@@ -334,6 +334,9 @@
       "Download ${ attachmentName }": [
         "Unduh ${ attachmentName }"
       ],
+      "Download now": [
+        "Unduh sekarang"
+      ],
       "Downloading": [
         "Mengunduh"
       ],
@@ -504,6 +507,9 @@
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Pembaruan penting tersedia. Untuk dapat lanjut menggunakan aplikasi, silakan perbarui aplikasi ke versi terbaru. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Di pagi hari"
@@ -790,9 +796,6 @@
       "Refresh the page": [
         "Muat ulang halaman"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Remove": [
         "Hapus"
       ],
@@ -976,13 +979,7 @@
       "Show side panel": [
         "Tampilkan panel samping"
       ],
-      "Sign in": [
-        "Masuk"
-      ],
       "Sign out": [
-        "Keluar"
-      ],
-      "Signing out": [
         "Keluar"
       ],
       "Size": [
@@ -1040,7 +1037,7 @@
         "Tampilkan/sembunyikan aplikasi Contact"
       ],
       "Toggle settings": [
-        "Saklar pengaturan"
+        "Aktifkan/nonaktifkan pengaturan"
       ],
       "Tomorrow": [
         "Besok"
@@ -2081,9 +2078,6 @@
       ],
       "Gender": [
         "Jenis kelamin"
-      ],
-      "Geo": [
-        "Koordinat"
       ],
       "Language": [
         "Bahasa"
@@ -3376,12 +3370,6 @@
       "IMAP server is required": [
         "Server IMAP diperlukan"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Kredensial masuk salah. Silakan coba lagi."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak surat salah. Silakan coba lagi."
-      ],
       "Incorrect username": [
         "Nama pengguna salah"
       ],
@@ -3405,6 +3393,9 @@
       ],
       "Last name is too long": [
         "Nama terakhir terlalu panjang"
+      ],
+      "Maximum expiration time reached.": [
+        "Waktu kedaluwarsa maksimum tercapai."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Jumlah lampiran maksimum (${ attachmentsCountLimit }) terlampaui"
@@ -3534,9 +3525,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ],
       "Something went wrong. Please try again.": [
         "Terjadi suatu kesalahan. Silakan coba lagi."
@@ -5072,7 +5060,7 @@
         "Membersihkan data peramban akan menonaktikan pencarian konten pesan di perangkat ini. Semua pesan perlu dimuat lagi bila ingin dicari."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        "Membersihkan data peramban yang terkait dengan pencarian konten pesan, termasuk pesan yang dimuat"
+        "Membersihkan data browser yang terkait dengan pencarian konten pesan, termasuk pesan yang diunduh"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -5295,9 +5283,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -5734,9 +5719,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
-      "support team": [
-        "tim dukungan"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
@@ -5790,9 +5772,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Mereka tidak akan dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan alias hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -5918,7 +5897,7 @@
         "Pelacak yang diblokir:"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
+        "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "Nonaktifkan pilihan ini agar pencarian pesan hanya didasarkan pada tanggal, nama, alamat surel, atau baris subjek. Untuk menonaktifkan pencarian konten pesan dan menghapus pesan yang telah diunduh, tuju menu pengaturan."
@@ -6560,7 +6539,7 @@
         "Warna"
       ],
       "Composer": [
-        "Komposer"
+        "Ukuran komposer"
       ],
       "Conditions": [
         "Syarat"
@@ -6590,7 +6569,7 @@
         "Hapus informasi terkait pemulihan."
       ],
       "Density": [
-        "Kerapatan"
+        "Kerapatan surat"
       ],
       "Don't ask again": [
         "Jangan tanyakan lagi"
@@ -6606,9 +6585,6 @@
       ],
       "Email format": [
         "Format surel"
-      ],
-      "Email or username": [
-        "Surel atau nama pengguna"
       ],
       "Emails": [
         "Surel"
@@ -6710,16 +6686,13 @@
         "Hanya sebulan terakhir"
       ],
       "Layout": [
-        "Tata letak"
+        "Mode tata letak"
       ],
       "Location": [
         "Lokasi"
       ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Kata sandi kotak surat"
       ],
       "Main": [
         "Utama"
@@ -7770,7 +7743,7 @@
         "Nomor telepon"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
@@ -8355,7 +8328,7 @@
         "Streaming aman"
       ],
       "Support online privacy": [
-        "Dukung privasi daring"
+        "Dukung privasi online"
       ]
     },
     "specialoffer: Footer": {
@@ -8480,6 +8453,9 @@
       "Email tracking protection": [
         "Perlindungan pelacak surel"
       ],
+      "Faster email management": [
+        "Pengelolaan email yang lebih cepat"
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
@@ -8489,9 +8465,6 @@
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
-      "Search just got smarter and faster": [
-        "Pencarian kini hadir lebih cerdas dan lebih cepat"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Tentukan kapan email akan kembali muncul pada kotak masuk Anda dengan fitur tunda baru kami."
       ],
@@ -8500,9 +8473,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Surel Spam dan Sampah tidak lagi akan diikutsertakan secara otomatis dalam Semua Surat. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Coba hari ini."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
@@ -8901,9 +8871,6 @@
       ],
       "A filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
       ],
       "Action all conversations": [
         "Terapkan pada seluruh percakapan"
@@ -9631,7 +9598,7 @@
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "Skip verification?": [
         "Lewati verifikasi?"

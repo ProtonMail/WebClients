@@ -908,9 +908,6 @@
       "Signing in": [
         "登入"
       ],
-      "Signing out": [
-        "正在登出"
-      ],
       "Size": [
         "大小"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升級以啟用${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "升級到 Visionary 方案"
       ],
       "Upgrade your plan": [
         "升級您的方案"
@@ -1380,6 +1374,9 @@
       ]
     },
     "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
+      ],
       "Secure browsing and premium VPN features.": [
         "安全瀏覽和進階 VPN 功能。"
       ],
@@ -1490,6 +1487,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "無法找到最新版本"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Bug category": {
@@ -2049,9 +2051,6 @@
       ],
       "Gender": [
         "性別"
-      ],
-      "Geo": [
-        "地理位置"
       ],
       "Language": [
         "語言"
@@ -3076,6 +3075,9 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "存取桌面應用程式為限定"
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "現在升級或等到2024年初再來看看。"
       ]
@@ -3484,6 +3486,9 @@
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
+      ],
+      "Type text or keyword for this condition:": [
+        "替此條件輸入內容或關鍵字:"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -3509,6 +3514,9 @@
       ]
     },
     "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "新的加密金鑰已替${ forwarderEmail }生成。"
+      ],
       "Changes saved": [
         "更改已保存"
       ],
@@ -4620,8 +4628,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "邀請將會取消，此使用者亦不會能夠加入 ${ organization.Name }。"
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "邀請將會取消，此使用者亦不會能夠加入 ${ organizationName }。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
@@ -4669,8 +4677,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } 已從 ${ organization.Name } 中移除"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } 已從 ${ organizationName } 中移除"
       ],
       "An error occurred, please try again": [
         "發生錯誤，請再試一次"
@@ -5624,17 +5632,6 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -6032,6 +6029,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需創建加密金鑰，才可用來傳送和接收電郵。"
       ],
+      "Beta": [
+        "測試版"
+      ],
       "Billed at ${ price }": [
         "以 ${ price } 計費"
       ],
@@ -6298,6 +6298,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "行程邀請與回函將會以此語言傳送。"
+      ],
+      "Example: ${ spfExample }": [
+        "範例: ${ spfExample }"
       ],
       "Expired": [
         "已過期"
@@ -7517,8 +7520,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "您目前正在使用 ${ ipAddresses } 個可用伺服器中的 ${ ipCount } 個。"
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "您目前使用${ organization.MaxMembers }的可用序號${ organization.UsedMembers }。"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "您目前使用${ maxMembers }的可用序號${ usedMembers }。"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
@@ -7619,6 +7622,12 @@
       "You will be redirected to ${ destination } after signing in.": [
         "登入後，您將會被重新導向至 ${ destination }。"
       ],
+      "You will lose access to Plus features on this date.": [
+        "您將於此更新失去存取進階功能。"
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "您將於此更新失去存取進階伺服器和功能。"
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -7666,6 +7675,9 @@
       ],
       "Your account recovery method is set": [
         "你已設定帳號復原方式"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "您帳號已成功更新此促銷"
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
@@ -7723,6 +7735,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9041,6 +9064,9 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } 產品公告"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } 使用者問卷"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
       ],
@@ -9129,6 +9155,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "寄件者: ${ from }"
+      ],
+      "To: ${ to }": [
+        "收件者：${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9187,6 +9216,9 @@
       ],
       "Help translate": [
         "協助翻譯"
+      ],
+      "here": [
+        "這裡"
       ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
@@ -10942,12 +10974,6 @@
       "Create another account instead": [
         "創建另一個帳號"
       ],
-      "Download again ${ size }": [
-        "重新下載 ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "下載已繼續${ size }"
-      ],
       "Keep this plan": [
         "保持此方案"
       ],
@@ -11074,9 +11100,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email 別名保護您免於資料外洩的威脅"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "若您無法解鎖${ BRAND_NAME }帳號，您的**復原包**將允許您登入及復原您的資料。"
-      ],
       "Includes:": [
         "包含:"
       ],
@@ -11088,9 +11111,6 @@
       ],
       "Install app and extension": [
         "安裝應用程式及擴充功能"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "此是唯一還原帳號的方法，確保您的**復原包**安全的存放。"
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "加入超過一億人的行列，選擇 ${ BRAND_NAME } 確保上網安全"
@@ -11299,6 +11319,9 @@
       "Search for a user or address": [
         "搜尋使用者或電子信箱"
       ],
+      "Search parent folder": [
+        "搜尋資料夾主目錄"
+      ],
       "Search users": [
         "搜尋使用者"
       ],
@@ -11319,6 +11342,9 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "請聯繫${ contactHref }我們的銷售團隊。"
+      ],
       "Should you need more than ${ maxIPs } IPs, ": [
         "您需要多餘 ${ maxIPs } IP, "
       ]
@@ -12263,6 +12289,9 @@
       ],
       "${ n } calendars per user": [
         "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } free VPN connections per user": [
+        "每一位用戶${ n }個免費VPN連線"
       ],
       "${ n } high-speed VPN connections": [
         "${ n } 個極飆速 VPN 連線"
@@ -13603,6 +13632,9 @@
       "Success": [
         "成功"
       ],
+      "Successfully created ${ n } user accounts": [
+        "成功創建 ${ n } 使用者帳號"
+      ],
       "Summary": [
         "總結"
       ],
@@ -13869,6 +13901,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "啟用進階日誌記錄安全記錄檔中每項行程的 IP 位址。"
+      ],
+      "Feature in early access": [
+        "功能於提早存取"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"

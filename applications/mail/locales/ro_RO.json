@@ -798,9 +798,6 @@
       "Refresh the page": [
         "Împrospătare pagină"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Remove": [
         "Eliminare"
       ],
@@ -984,13 +981,7 @@
       "Show side panel": [
         "Afișare panou lateral"
       ],
-      "Sign in": [
-        "Autentificare"
-      ],
       "Sign out": [
-        "Deconectare"
-      ],
-      "Signing out": [
         "Deconectare"
       ],
       "Size": [
@@ -2103,9 +2094,6 @@
       ],
       "Gender": [
         "Gen"
-      ],
-      "Geo": [
-        "Coordonate"
       ],
       "Language": [
         "Limba"
@@ -3416,12 +3404,6 @@
       "IMAP server is required": [
         "Serverul IMAP este obligatoriu"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Date de conectare incorecte. Reîncercați."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Parolă mesaje incorectă. Reîncercați."
-      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -3581,9 +3563,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
@@ -5498,9 +5477,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
@@ -5942,9 +5918,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "echipa de asistență"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
@@ -5994,9 +5967,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ceilalți nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă adresa folosind aliasuri hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
@@ -6857,9 +6827,6 @@
       "Email format": [
         "Format e-mail"
       ],
-      "Email or username": [
-        "E-mail sau utilizator"
-      ],
       "Emails": [
         "Mesaje"
       ],
@@ -6967,9 +6934,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Parolă mesaje"
       ],
       "Main": [
         "Principală"
@@ -8817,9 +8781,6 @@
       "Schedule send": [
         "Trimitere programată"
       ],
-      "Search just got smarter and faster": [
-        "Căutarea a devenit mai rapidă și mai inteligentă"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Setați când un e-mail ar trebui să reapară în folderul de mesaje primite cu noua funcție de amânare."
       ],
@@ -8828,9 +8789,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Mesajele nedorite și din gunoi sunt excluse acum automat din opțiunea „Toate mesajele”. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Încercați acum."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
@@ -9294,9 +9252,6 @@
       ],
       "(active)": [
         "(activă)"
-      ],
-      "Account suspended": [
-        "Cont suspendat"
       ],
       "Action all conversations": [
         "Aplicare la toate conversațiile"

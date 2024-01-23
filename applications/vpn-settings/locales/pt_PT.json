@@ -449,9 +449,6 @@
       "Signing in": [
         "A iniciar sessão"
       ],
-      "Signing out": [
-        "A terminar sessão"
-      ],
       "Submit": [
         "Submeter"
       ],
@@ -2216,8 +2213,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "O convite será cancelado e o utilizador não poderá aderir a ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "O convite será cancelado e o utilizador não poderá aderir a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do utilizador será transferida para um plano ilimitado da ${ BRAND_NAME } para uma avaliação gratuita de 30 dias*."
@@ -2257,8 +2254,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } foi removido de ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } foi removido de ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Ocorreu um erro. Tente de novo."
@@ -3666,9 +3663,9 @@
         "Utiliza atualmente ${ ipCount } de ${ ipAddresses } servidor dedicado disponível.",
         "Utiliza atualmente ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } da licença de utilizador disponível.",
-        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } das licenças de utilizador disponíveis."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Utiliza atualmente ${ usedMembers } de ${ maxMembers } da licença de utilizador disponível.",
+        "Utiliza atualmente ${ usedMembers } de ${ maxMembers } das licenças de utilizador disponíveis."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Tem sessão iniciada na conta ${ memberAddress }."

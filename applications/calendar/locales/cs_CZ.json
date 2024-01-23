@@ -228,6 +228,9 @@
       "Download": [
         "Stáhnout"
       ],
+      "Download now": [
+        "Stáhnout nyní"
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -453,9 +456,6 @@
       "Refresh the page": [
         "Obnovit stránku"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Remove": [
         "Odstranit"
       ],
@@ -540,14 +540,8 @@
       "Show time zones": [
         "Zobrazit časová pásma"
       ],
-      "Sign in": [
-        "Přihlásit se"
-      ],
       "Sign out": [
         "Odhlásit se"
-      ],
-      "Signing out": [
-        "Odhlašování"
       ],
       "Skip": [
         "Přeskočit"
@@ -1250,9 +1244,6 @@
       ],
       "Gender": [
         "Pohlaví"
-      ],
-      "Geo": [
-        "Poloha"
       ],
       "Language": [
         "Jazyk"
@@ -2545,12 +2536,6 @@
       "IMAP server is required": [
         "Je vyžadován IMAP server"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Nesprávné přihlašovací údaje. Zkuste to prosím znovu."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Nesprávné heslo k e-mailové schránce. Zkuste to znovu."
-      ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
       ],
@@ -2715,9 +2700,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Čas začátku musí být před časem konce"
@@ -4040,9 +4022,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
@@ -4250,9 +4229,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "tým podpory"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -4288,9 +4264,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tento účet byl zablokován kvůli možnému porušení pravidel."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
@@ -4725,9 +4698,6 @@
       "Email format": [
         "Formát e-mailu"
       ],
-      "Email or username": [
-        "E-mail nebo uživatelské jméno"
-      ],
       "Emails": [
         "E-maily"
       ],
@@ -4820,9 +4790,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
-      ],
-      "Mailbox password": [
-        "Heslo k poštovní schránce"
       ],
       "Main": [
         "Hlavní"
@@ -6812,9 +6779,6 @@
         "${ emailsCount } e-mailové adresy",
         "${ emailsCount } e-mailových adres",
         "${ emailsCount } e-mailových adres"
-      ],
-      "Account suspended": [
-        "Účet pozastaven"
       ],
       "Add another notification to remind you of this event": [
         "Přidat další upozornění pro připomenutí této události"

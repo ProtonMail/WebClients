@@ -908,9 +908,6 @@
       "Signing in": [
         "Přihlašování"
       ],
-      "Signing out": [
-        "Odhlašování"
-      ],
       "Size": [
         "Velikost"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Navyšte pro povolení ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Navýšit na Visionary"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -2115,9 +2109,6 @@
       "Gender": [
         "Pohlaví"
       ],
-      "Geo": [
-        "Poloha"
-      ],
       "Language": [
         "Jazyk"
       ],
@@ -3158,9 +3149,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Přístup k aplikaci pro stolní PC je omezený"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitele tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
@@ -4781,8 +4769,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Pokud již uživatel má adresu ${ MAIL_APP_NAME }, zadejte ji zde. V opačném případě si musí nejprve vytvořit účet."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
@@ -4830,8 +4818,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } byl odstraněn z ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } byl odstraněn z ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Došlo k chybě, zkuste to prosím znovu"
@@ -5839,17 +5827,6 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -5917,6 +5894,9 @@
         "${ n } adres",
         "${ n } adres"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: neumisťovat do karantény ani neodmítat neautorizované e-maily. Obvykle tuto zásadu lidé používají pouze k diagnostice a odstraňování problémů nebo k testování."
+      ],
       "${ number } city": [
         "${ number } město",
         "${ number } města",
@@ -5961,6 +5941,12 @@
         "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: žádá platformy příjemců, aby neautorizované e-maily označily jako spam nebo je umístily do karantény."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: žádá platformy příjemců o odmítnutí neautorizovaných e-mailů."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } další",
@@ -7900,11 +7886,11 @@
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
         "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "V současné době využíváte ${ organization.UsedMembers } ze své ${ organization.MaxMembers } dostupné uživatelské licence.",
-        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
-        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
-        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
@@ -8139,6 +8125,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11563,12 +11560,6 @@
       "Create another account instead": [
         "Namísto toho si vytvořte další účet"
       ],
-      "Download again ${ size }": [
-        "Znovu stáhnout ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Pokračujte stažením ${ size }"
-      ],
       "Keep this plan": [
         "Ponechat tento tarif"
       ],
@@ -11707,9 +11698,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy Hide-my-email chrání váš e-mail před únikem dat"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Pokud dojde k zablokování vašeho účtu ${ BRAND_NAME }, vaše **sada pro obnovení** vám umožní přihlásit se a obnovit vaše data."
-      ],
       "Includes:": [
         "Zahrnuje:"
       ],
@@ -11721,9 +11709,6 @@
       ],
       "Install app and extension": [
         "Instalace aplikace a rozšíření"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Je to jediný způsob, jak plně obnovit účet, a proto si tuto **sadu pro obnovení** uložte na bezpečné místo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Připojte se k více než 100 milionům lidí, kteří si zvolili ${ BRAND_NAME }, aby zůstali v bezpečí online."
@@ -13570,6 +13555,12 @@
       "4. Select a server to connect to": [
         "4. Vyberte server, ke kterému se chcete připojit"
       ],
+      "A filter name is required": [
+        "Název filtru je povinný"
+      ],
+      "A filter with this name already exists": [
+        "Filtr s tímto názvem již existuje"
+      ],
       "Accessibility": [
         "Přístupnost"
       ],
@@ -14002,6 +13993,9 @@
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
       ],
+      "Filter name cannot contain only spaces": [
+        "Název filtru nesmí obsahovat pouze mezery"
+      ],
       "Filters": [
         "Filtry"
       ],
@@ -14413,6 +14407,9 @@
       "Theme": [
         "Vzhled"
       ],
+      "This field cannot contain only spaces": [
+        "Toto pole nesmí obsahovat pouze mezery"
+      ],
       "Time zone": [
         "Časové pásmo"
       ],
@@ -14661,6 +14658,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
+      ],
+      "Feature in early access": [
+        "Funkce v předběžném přístupu"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."

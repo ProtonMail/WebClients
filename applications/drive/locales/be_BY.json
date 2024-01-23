@@ -499,9 +499,6 @@
       "Refresh the page": [
         "Абнавіць старонку"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Remove": [
         "Выдаліць"
       ],
@@ -622,14 +619,8 @@
       "Show side panel": [
         "Паказаць бакавую панэль"
       ],
-      "Sign in": [
-        "Увайсці"
-      ],
       "Sign out": [
         "Выйсці з уліковага запісу"
-      ],
-      "Signing out": [
-        "Адбываецца выхад"
       ],
       "Skip": [
         "Прапусціць"
@@ -1115,9 +1106,6 @@
       "Gender": [
         "Пол"
       ],
-      "Geo": [
-        "Геалакацыя"
-      ],
       "Language": [
         "Мова"
       ],
@@ -1174,7 +1162,7 @@
         "Мабільны"
       ],
       "Other": [
-        "Іншае"
+        "Іншы"
       ],
       "Pager": [
         "Пэйджар"
@@ -2223,12 +2211,6 @@
       "IMAP server is required": [
         "Патрабуецца ўвесці сервер IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Няправільныя ўліковыя даныя для ўваходу. Паспрабуйце яшчэ раз."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Няправільны пароль паштовай скрыні. Паспрабуйце яшчэ раз."
-      ],
       "Incorrect password. Please try again.": [
         "Няправільны пароль. Паспрабуйце яшчэ раз."
       ],
@@ -2360,9 +2342,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
       "status page": [
         "статус старонкі"
@@ -3873,9 +3852,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Калі ў вас узніклі праблемы са стварэннем уліковага запісу, запытайце запрашэнне і мы адкажам на працягу аднаго працоўнага дня."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -4204,7 +4180,7 @@
         "${ nbFile } файлаў былі бяспечна спампаваны"
       ],
       "Securely downloaded all encrypted files": [
-        "Бяспечна спампаваць усе зашыфраваныя файлы"
+        "Бяспечна спампаваны ўсе зашыфраваныя файлы"
       ],
       "Securely downloaded all files": [
         "Усе файлы былі бяспечна спампаваны"
@@ -4284,9 +4260,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "каманда падтрымкі"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
       ],
@@ -4310,9 +4283,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -4854,9 +4824,6 @@
       "Email format": [
         "Фармат ліста"
       ],
-      "Email or username": [
-        "Электронная пошта або імя карыстальніка"
-      ],
       "Emails": [
         "Лісты"
       ],
@@ -4964,9 +4931,6 @@
       ],
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль паштовай скрыні"
       ],
       "Main": [
         "Галоўная"
@@ -6607,9 +6571,6 @@
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні",
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванняў",
         "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні"
-      ],
-      "Account suspended": [
-        "Уліковы запіс прыпынены"
       ],
       "Active": [
         "Актыўна"
