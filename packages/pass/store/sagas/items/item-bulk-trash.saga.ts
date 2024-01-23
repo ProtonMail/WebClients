@@ -23,7 +23,7 @@ function* itemBulkTrashWorker(
     const items = (yield select(selectItemsFromSelection(itemsByShareId))) as ItemRevision[];
 
     const progressChannel = eventChannel<BulkTrashChannel>((emitter) => {
-        trashItems(items, (batch, progress) => emitter({ type: 'progress', progress, batch }))
+        trashItems(items, (data, progress) => emitter({ type: 'progress', progress, data }))
             .then((result) => emitter({ type: 'done', result }))
             .catch((error) => emitter({ type: 'error', error }))
             .finally(() => emitter(END));
@@ -34,19 +34,9 @@ function* itemBulkTrashWorker(
     while (true) {
         const action: BulkTrashChannel = yield take(progressChannel);
 
-        switch (action.type) {
-            case 'progress':
-                yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.batch));
-                break;
-
-            case 'done':
-                yield put(itemBulkTrashSuccess(meta.request.id, {}));
-                break;
-
-            case 'error':
-                yield put(itemBulkTrashFailure(meta.request.id, {}, action.error));
-                break;
-        }
+        if (action.type === 'progress') yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
+        if (action.type === 'done') yield put(itemBulkTrashSuccess(meta.request.id, {}));
+        if (action.type === 'error') yield put(itemBulkTrashFailure(meta.request.id, {}, action.error));
     }
 }
 
