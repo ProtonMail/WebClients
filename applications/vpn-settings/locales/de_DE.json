@@ -470,9 +470,6 @@
       "Signing in": [
         "Anmeldung erfolgt"
       ],
-      "Signing out": [
-        "Abmeldung…"
-      ],
       "Submit": [
         "Senden"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Auf Business upgraden"
-      ],
-      "Upgrade to Visionary": [
-        "Auf Visionary upgraden"
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "Zugang zur Desktop-App ist beschränkt"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Die Betaversion der ${ MAIL_APP_NAME } Desktop-App ist derzeit auf ${ BRAND_NAME } Visionary-Abonnenten beschränkt. Sie wird Anfang 2024 für alle Benutzer verfügbar sein."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Die Betaversion der ${ MAIL_APP_NAME }-Desktop-App ist derzeit für jeden mit einem kostenpflichtigen ${ MAIL_APP_NAME }-Abonnement verfügbar. Sie wird bald für alle verfügbar sein."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Die Einladung wird storniert und der Benutzer kann ${ organization.Name } nicht beitreten."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } wurde aus ${ organization.Name } entfernt"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } wurde aus ${ organizationName } entfernt."
       ],
       "An error occurred, please try again": [
         "Ein Fehler ist aufgetreten. Bitte erneut versuchen"
@@ -3910,9 +3907,9 @@
         "Du verwendest aktuell ${ ipCount } von deinem ${ ipAddresses } verfügbaren dedizierten Server.",
         "Du verwendest aktuell ${ ipCount } von deinen ${ ipAddresses } verfügbaren dedizierten Servern."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du verwendest aktuell ${ organization.UsedMembers } von deiner ${ organization.MaxMembers } verfügbaren Benutzerlizenz.",
-        "Du verwendest aktuell ${ organization.UsedMembers } von deinen ${ organization.MaxMembers } verfügbaren Benutzerlizenzen."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du verwendest aktuell ${ usedMembers } von deiner ${ maxMembers } verfügbaren Benutzerlizenz.",
+        "Du verwendest aktuell ${ usedMembers } von deinen ${ maxMembers } verfügbaren Benutzerlizenzen."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du bist beim Konto ${ memberAddress } angemeldet."
@@ -7583,6 +7580,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Funktion im frühzeitigen Zugang"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertions. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
