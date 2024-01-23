@@ -13,7 +13,6 @@ import {
     APP_NAMES,
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
-    PLANS,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -25,6 +24,7 @@ import {
     getAppStorageAlmostFull,
     getAppStorageFull,
     getCompleteSpaceDetails,
+    getPlanToUpsell,
     getSpace,
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
@@ -91,7 +91,6 @@ const getUpgrade = () => {
 
 const getDriveDanger = () => {
     return {
-        plan: PLANS.DRIVE,
         icon: upsellStorageDrive,
         description: getDescription({
             header: getAppStorageFull(getAppStorage(DRIVE_SHORT_APP_NAME)),
@@ -102,7 +101,6 @@ const getDriveDanger = () => {
 
 const getBaseDanger = () => {
     return {
-        plan: PLANS.MAIL,
         icon: upsellStorageMail,
         description: getDescription({
             header: getAppStorageFull(getAppStorage(MAIL_SHORT_APP_NAME)),
@@ -118,7 +116,6 @@ const getConsiderUpgrade = () => {
 
 const getDriveWarning = () => {
     return {
-        plan: PLANS.DRIVE,
         icon: upsellStorageDrive,
         description: getDescription({
             header: getAppStorageAlmostFull(getAppStorage(DRIVE_SHORT_APP_NAME)),
@@ -129,7 +126,6 @@ const getDriveWarning = () => {
 
 const getBaseWarning = () => {
     return {
-        plan: PLANS.MAIL,
         icon: upsellStorageMail,
         description: getDescription({
             header: getAppStorageAlmostFull(getAppStorage(MAIL_SHORT_APP_NAME)),
@@ -144,14 +140,14 @@ const YourStorageSection = ({ app }: Props) => {
     const [subscription] = useSubscription();
     const space = getSpace(user, storageSplitEnabled);
     const details = getCompleteSpaceDetails(space);
+    const plan = getPlanToUpsell({ storageDetails: details, app });
 
     return (
         <SettingsSection>
             {(() => {
-                const { icon, description, plan } = (() => {
+                const { icon, description } = (() => {
                     if (details.drive.type === SpaceState.Danger && details.base.type === SpaceState.Danger) {
                         return {
-                            plan: PLANS.BUNDLE,
                             icon: upsellStorageGlobal,
                             description: getDescription({
                                 header: getStorageFull(),
@@ -183,7 +179,6 @@ const YourStorageSection = ({ app }: Props) => {
                     const upgradePlan = c('storage_split: info').t`Upgrade your plan to increase your storage.`;
                     if (app === APPS.PROTONDRIVE) {
                         return {
-                            plan: PLANS.DRIVE,
                             icon: upsellStorageIncrease,
                             description: getDescription({
                                 header: getTryOut(DRIVE_SHORT_APP_NAME),
@@ -193,7 +188,6 @@ const YourStorageSection = ({ app }: Props) => {
                     }
 
                     return {
-                        plan: PLANS.MAIL,
                         icon: upsellStorageIncrease,
                         description: getDescription({
                             header: getTryOut(MAIL_SHORT_APP_NAME),
