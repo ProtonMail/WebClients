@@ -337,6 +337,9 @@
       "Download ${ attachmentName }": [
         "Baixar ${ attachmentName }"
       ],
+      "Download now": [
+        "Baixar agora"
+      ],
       "Downloading": [
         "Baixando"
       ],
@@ -794,9 +797,6 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Remove": [
         "Remover"
       ],
@@ -980,14 +980,8 @@
       "Show side panel": [
         "Mostrar o painel lateral"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign out": [
         "Encerrar sessão"
-      ],
-      "Signing out": [
-        "Encerrando a sessão"
       ],
       "Size": [
         "Tamanho"
@@ -2092,9 +2086,6 @@
       ],
       "Gender": [
         "Gênero"
-      ],
-      "Geo": [
-        "Geolocalização"
       ],
       "Language": [
         "Idioma"
@@ -3303,6 +3294,10 @@
       "Choose a date in the future.": [
         "Escolha uma data futura."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Escolha uma data no próximo ${ n } dia.",
+        "Escolha uma data nos próximos ${ n } dias."
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -3391,12 +3386,6 @@
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
-      ],
-      "Incorrect login credentials. Please try again.": [
-        "As credenciais de início de sessão não são válidas. Tente novamente."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorreta. Tente novamente."
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
@@ -3552,9 +3541,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente mais tarde."
@@ -4854,6 +4840,30 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversa será marcada como lida.",
+        "${ elementsCount } conversas serão marcadas como lidas."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } conversa será marcada como não lida.",
+        "${ elementsCount } conversas serão marcadas como não lidas."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } conversa será movida",
+        "${ elementsCount } mensagens serão conversas"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } mensagens será marcada como lida.",
+        "${ elementsCount } mensagens serão marcadas como lidas."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } mensagens será marcada como não lida.",
+        "${ elementsCount } mensagens serão marcadas como não lidas."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mensagem será movida",
+        "${ elementsCount } mensagens serão movidas"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagem incorporada",
         "${ embeddedAttachmentsCount } imagens incorporadas"
@@ -5020,6 +5030,12 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
+      ],
+      "Applying actions to conversations": [
+        "Aplicando ações para as conversas"
+      ],
+      "Applying actions to messages": [
+        "Aplicando ações para as mensagens"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Você tem certeza que deseja excluir todas as mensagens nesta pasta?"
@@ -5343,9 +5359,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
@@ -5778,9 +5791,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
-      "support team": [
-        "equipe de suporte"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -5829,9 +5839,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Eles não podem enviar spam para você se não souberem seu endereço de e-mail. Proteja sua caixa de entrada com aliases do Hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -5930,6 +5937,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente não é confiável."
+      ],
+      "to ${ destinationElement } folder.": [
+        "para ${ destinationElement } pasta."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -6185,6 +6195,10 @@
       "You selected **${ elementsCount } conversation**.": [
         "Você selecionou **${ elementsCount } conversa**.",
         "Você selecionou **${ elementsCount } conversas**."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Você selecionou **${ elementsCount } mensagem**.",
+        "Você selecionou **${ elementsCount } mensagens**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Você escreveu \"${ attachmentsFoundKeyword }\", mas nenhum anexo foi adicionado. Quer enviar a mensagem assim mesmo?"
@@ -6654,9 +6668,6 @@
       "Email format": [
         "Formato do e-mail"
       ],
-      "Email or username": [
-        "E-mail ou nome de usuário"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -6764,9 +6775,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -8424,6 +8432,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium de ${ appName1 } e ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -8560,6 +8571,9 @@
       "Email tracking protection": [
         "Proteção de rastreamento de e-mail"
       ],
+      "Faster email management": [
+        "Gerenciamento de e-mail mais rápido"
+      ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
       ],
@@ -8569,9 +8583,6 @@
       "Schedule send": [
         "Envio agendado"
       ],
-      "Search just got smarter and faster": [
-        "A pesquisa ficou mais inteligente e rápida"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Defina quando um e-mail deve reaparecer na sua caixa de entrada com o novo recurso de adiamento."
       ],
@@ -8580,9 +8591,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Os e-mails nas pastas Spam e Lixo agora são removidos automaticamente da pasta Todos os e-mails. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Experimente hoje mesmo."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
@@ -9013,8 +9021,17 @@
       "(active)": [
         "(ativo)"
       ],
-      "Account suspended": [
-        "Conta suspensa"
+      "A filter name is required": [
+        "O nome do filtro é obrigatório"
+      ],
+      "A filter with this name already exists": [
+        "Um filtro com esse nome já existe"
+      ],
+      "Action all conversations": [
+        "Ação em todas as conversas"
+      ],
+      "Action all messages": [
+        "Ação em todas as mensagens"
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contatos"
@@ -9226,6 +9243,9 @@
       "Feedback": [
         "Comentários"
       ],
+      "Filter name cannot contain only spaces": [
+        "O nome do filtro não pode somente espaços"
+      ],
       "Filter on...": [
         "Filtrar em..."
       ],
@@ -9290,11 +9310,20 @@
       "Mark as unread": [
         "Marcar como não lida"
       ],
+      "Mark conversations as read": [
+        "Marcar conversas como lidas"
+      ],
+      "Mark conversations as unread": [
+        "Marcar conversas como não lidas"
+      ],
       "Mark email as legitimate": [
         "Marcar e-mail como legítimo"
       ],
       "Mark messages as read": [
         "Marcar mensagens como lidas"
+      ],
+      "Mark messages as unread": [
+        "Marcar mensagens como não lidas"
       ],
       "Merge contacts": [
         "Mesclar contatos"

@@ -430,6 +430,9 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
+      "Give feedback": [
+        "Geef feedback"
+      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -791,9 +794,6 @@
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Remove": [
         "Verwijderen"
       ],
@@ -977,13 +977,7 @@
       "Show side panel": [
         "Toon zijpaneel"
       ],
-      "Sign in": [
-        "Inloggen"
-      ],
       "Sign out": [
-        "Uitloggen"
-      ],
-      "Signing out": [
         "Uitloggen"
       ],
       "Size": [
@@ -2080,9 +2074,6 @@
       ],
       "Gender": [
         "Geslacht"
-      ],
-      "Geo": [
-        "Plaats"
       ],
       "Language": [
         "Taal"
@@ -3342,12 +3333,6 @@
       "IMAP server is required": [
         "IMAP-server is vereist"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
-      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
@@ -3502,9 +3487,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sommige van uw labelnamen overschrijden de maximum tekenlimiet van ${ MAIL_APP_NAME }. Pas de import aan om deze namen te bewerken."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Er ging iets mis. Probeer het later nog eens."
@@ -4965,11 +4947,20 @@
       "and": [
         "en"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Eventuele geplande of uitgestelde berichten zullen geannuleerd worden."
+      ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuele submappen zullen ook worden gewist. Echter, mails die zijn opgeslagen in deze map ${ nameDeleted } zullen niet worden gewist en zijn terug te vinden in de map Alle berichten."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Weet u zeker dat u alle berichten in deze map wilt verwijderen?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Weet u zeker dat u alle berichten met dit label wilt verwijderen?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Weet u zeker dat u deze map wilt wissen?"
       ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
@@ -5189,6 +5180,9 @@
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
       ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mails getagged met het label ${ nameDeleted } zullen niet gewist worden en zijn terug te vinden in hun respectievelijke map."
+      ],
       "embedded image": [
         "ingesloten afbeelding",
         "ingesloten afbeeldingen"
@@ -5281,9 +5275,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
@@ -5716,9 +5707,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
-      "support team": [
-        "ondersteuningsteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -5767,9 +5755,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ze kunnen u geen spam versturen, als ze uw echte e-mailadres niet kennen. Bescherm uw inbox met Hide-my-email-aliassen."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5868,6 +5853,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "De openbare sleutel van de afzender is nog niet vertrouwd."
+      ],
+      "to ${ destinationElement } folder.": [
+        "naar ${ destinationElement } map."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
@@ -6057,6 +6045,9 @@
       ],
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
+      ],
+      "You can now return to the application to continue": [
+        "U kunt nu teruggaan naar het programma om door te gaan"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "U kunt meldingen inschakelen om meldingen te krijgen wanneer nieuwe e-mailberichten in deze map binnenkomen."
@@ -6592,9 +6583,6 @@
       "Email format": [
         "E-mailformaat"
       ],
-      "Email or username": [
-        "E-mailadres of gebruikersnaam"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -6699,9 +6687,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Mailboxwachtwoord"
       ],
       "Main": [
         "Primair"
@@ -8458,9 +8443,6 @@
       "Schedule send": [
         "Gepland versturen"
       ],
-      "Search just got smarter and faster": [
-        "Zoeken werd zonet slimmer en sneller"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Stel in wanneer een e-mail weer moet verschijnen in uw inbox met de nieuwe snoozefunctie."
       ],
@@ -8469,9 +8451,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Spam en Ongewenste e-mail worden nu automatisch uitgesloten van All Mail. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Probeer het nu."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
@@ -8902,8 +8881,11 @@
       "(active)": [
         "(actief)"
       ],
-      "Account suspended": [
-        "Account opgeschort"
+      "Action all conversations": [
+        "Toepassen op alle gesprekken"
+      ],
+      "Action all messages": [
+        "Toepassen op alle berichten"
       ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
@@ -9055,6 +9037,12 @@
       "Delete draft": [
         "Concept verwijderen"
       ],
+      "Delete folder?": [
+        "Wis map"
+      ],
+      "Delete label?": [
+        "Wis label"
+      ],
       "Delete message": [
         "Bericht verwijderen"
       ],
@@ -9173,8 +9161,20 @@
       "Mark as unread": [
         "Markeren als ongelezen"
       ],
+      "Mark conversations as read": [
+        "Markeer gesprekken als gelezen"
+      ],
+      "Mark conversations as unread": [
+        "Markeer gesprekken als ongelezen"
+      ],
       "Mark email as legitimate": [
         "E-mail als legitiem markeren"
+      ],
+      "Mark messages as read": [
+        "Markeer berichten als gelezen"
+      ],
+      "Mark messages as unread": [
+        "Markeer berichten als ongelezen"
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
@@ -9205,6 +9205,12 @@
       ],
       "More selections": [
         "Meer selecties"
+      ],
+      "Move all conversations": [
+        "Verplaats alle gesprekken"
+      ],
+      "Move all messages": [
+        "Verplaats alle berichten"
       ],
       "Move all messages to Archive": [
         "Alle berichten naar het Archief verplaatsen"
