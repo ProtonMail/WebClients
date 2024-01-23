@@ -159,7 +159,7 @@ export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
     (payload: { itemsByShareId: ItemIdsByShareId; destinationShareId: string }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkMoveRequest() }),
+            withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.itemsByShareId }),
             withNotification({
                 expiration: -1,
                 type: 'info',

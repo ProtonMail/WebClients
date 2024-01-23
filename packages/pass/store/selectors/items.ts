@@ -17,6 +17,7 @@ import type {
     SelectItemsOptions,
 } from '@proton/pass/lib/search/types';
 import type {
+    ItemIdsByShareId,
     ItemRevision,
     ItemRevisionWithOptimistic,
     ItemType,
@@ -46,6 +47,11 @@ export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => fi
  * presence in the `byOptimisticId` dictionary state */
 export const selectResolvedOptimisticId = (optimisticId: string) =>
     createSelector(selectByOptimisticIds, (optimisticIds) => optimisticId in optimisticIds);
+
+export const selectItemsFromSelection = (itemIdsByShareId: ItemIdsByShareId) => (state: State) =>
+    Object.entries(itemIdsByShareId).flatMap(([shareId, itemIds]) =>
+        itemIds.map((itemId) => state.items.byShareId[shareId][itemId])
+    );
 
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
 export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
