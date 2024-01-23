@@ -11,6 +11,7 @@ import {
     inviteAcceptSuccess,
     inviteCreationSuccess,
     itemAutofilled,
+    itemBulkBatchMoveSuccess,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -51,8 +52,9 @@ import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/c
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { ItemType } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
+import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
+import { objectFilter } from '@proton/pass/utils/object/filter';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -306,6 +308,14 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (inviteAcceptSuccess.match(action)) {
             return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
+        }
+
+        if (itemBulkBatchMoveSuccess.match(action)) {
+            const { shareId, itemIds, destinationShareId, movedItems } = action.payload;
+            return fullMerge(
+                { ...state, [shareId]: objectFilter(state[shareId], notIn(itemIds)) },
+                { [destinationShareId]: toMap(movedItems, 'itemId') }
+            );
         }
 
         return state;

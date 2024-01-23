@@ -7,6 +7,7 @@ export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
 export const itemsImportRequest = () => `items::import`;
+export const itemsBulkMoveRequest = () => `items::bulk::move::intent`;
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
