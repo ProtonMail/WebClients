@@ -10,7 +10,6 @@ import {
     DRIVE_SHORT_APP_NAME,
     DRIVE_UPSELL_PATHS,
     MAIL_SHORT_APP_NAME,
-    PLANS,
     PRODUCT_BIT,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -23,6 +22,7 @@ import {
     getAppStorageFull,
     getCanAddStorage,
     getCompleteSpaceDetails,
+    getPlanToUpsell,
     getSpace,
 } from '@proton/shared/lib/user/storage';
 
@@ -38,7 +38,6 @@ const IGNORE_STORAGE_LIMIT_KEY = 'ignore-sidebar-storage-upsell';
 
 const getDriveFull = () => {
     return {
-        plan: PLANS.DRIVE,
         icon: upsellStorageDrive,
         description: getAppStorageFull(getAppStorage(DRIVE_SHORT_APP_NAME)),
         info: c('storage_split: info')
@@ -47,7 +46,6 @@ const getDriveFull = () => {
 };
 const getBaseFull = () => {
     return {
-        plan: PLANS.MAIL,
         icon: upsellStorageMail,
         description: getAppStorageFull(getAppStorage(MAIL_SHORT_APP_NAME)),
         info: c('storage_split: info').t`To send or receive emails, free up space or upgrade for more storage.`,
@@ -84,37 +82,50 @@ const getStorageUpsell = ({
     }
 
     const details = getCompleteSpaceDetails(space);
+    const plan = getPlanToUpsell({ storageDetails: details, app });
 
     if (details.drive.type === SpaceState.Danger && details.base.type === SpaceState.Danger) {
         const result = app === APPS.PROTONDRIVE ? getDriveFull() : getBaseFull();
         return {
             ...result,
-            plan: PLANS.BUNDLE,
+            plan,
         };
     }
 
     if (details.drive.type === SpaceState.Danger) {
-        return getDriveFull();
+        return {
+            ...getDriveFull(),
+            plan,
+        };
     }
 
     if (details.base.type === SpaceState.Danger) {
-        return getBaseFull();
+        return {
+            ...getBaseFull(),
+            plan,
+        };
     }
 
     if (details.drive.type === SpaceState.Warning && details.base.type === SpaceState.Warning) {
         const result = app === APPS.PROTONDRIVE ? getDriveWarning() : getBaseWarning();
         return {
             ...result,
-            plan: PLANS.BUNDLE,
+            plan,
         };
     }
 
     if (details.drive.type === SpaceState.Warning) {
-        return getDriveWarning();
+        return {
+            ...getDriveWarning(),
+            plan,
+        };
     }
 
     if (details.base.type === SpaceState.Warning) {
-        return getBaseWarning();
+        return {
+            ...getBaseWarning(),
+            plan,
+        };
     }
 
     return null;
