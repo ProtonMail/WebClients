@@ -591,7 +591,7 @@ export enum CYCLE {
     FIFTEEN = 15,
 }
 
-export const DEFAULT_CYCLE = CYCLE.TWO_YEARS;
+export const DEFAULT_CYCLE = CYCLE.YEARLY;
 
 export const BLACK_FRIDAY = {
     COUPON_CODE: 'BF2022',
