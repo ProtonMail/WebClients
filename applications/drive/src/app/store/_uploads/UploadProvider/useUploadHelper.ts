@@ -1,4 +1,4 @@
-import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import { sha1 } from '@openpgp/noble-hashes/sha1';
 import { ReadableStream } from 'web-streams-polyfill';
 
 import { arrayToHexString } from '@proton/crypto/lib/utils';
@@ -143,21 +143,14 @@ export default function useUploadHelper() {
 
         // Force polyfill type for ReadableStream
         const fileStream = file.stream() as ReadableStream<Uint8Array>;
-        const sha1 = new Sha1();
+        const sha1Instance = sha1.create();
         await untilStreamEnd<Uint8Array>(fileStream, async (chunk) => {
             if (chunk?.buffer) {
-                sha1.process(new Uint8Array(chunk.buffer));
+                sha1Instance.update(new Uint8Array(chunk.buffer));
             }
         });
 
-        const sha1Hash = sha1.finish().result;
-        // If sha1 failed to be processed we simply let the user upload
-        if (!sha1Hash) {
-            return {
-                filename: file.name,
-                hash,
-            };
-        }
+        const sha1Hash = sha1Instance.digest();
 
         const contentHash = await generateLookupHash(arrayToHexString(sha1Hash), parentHashKey);
 
