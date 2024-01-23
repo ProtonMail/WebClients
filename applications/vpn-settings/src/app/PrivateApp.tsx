@@ -1,6 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 
-import FlagProvider from '@protontech/proxy-client-react';
+import FlagProvider from '@unleash/proxy-client-react';
 
 import {
     ErrorBoundary,

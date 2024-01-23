@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { useFlag } from '@protontech/proxy-client-react';
+import { useFlag } from '@unleash/proxy-client-react';
 
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
