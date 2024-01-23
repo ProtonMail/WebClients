@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
+import { itemPinRequest, itemUnpinRequest, itemsBulkMoveRequest } from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
@@ -11,7 +11,14 @@ import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pas
 import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
-import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem, UniqueItem } from '@proton/pass/types';
+import type {
+    ItemCreateIntent,
+    ItemEditIntent,
+    ItemIdsByShareId,
+    ItemRevision,
+    SelectedItem,
+    UniqueItem,
+} from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
@@ -137,6 +144,47 @@ export const itemMoveSuccess = createOptimisticAction(
             })
         )({ payload }),
     ({ payload }) => getItemActionId(payload)
+);
+
+export const itemBulkMoveIntent = createAction(
+    'item::bulk::move::intent',
+    (payload: { itemsByShareId: ItemIdsByShareId; destinationShareId: string }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkMoveRequest() }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving items`,
+            })
+        )({ payload })
+);
+
+export const itemBulkMoveFailure = createAction(
+    'item::bulk::move::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to move items`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkBatchMoveSuccess = createAction(
+    'item::bulk::batch::move::success',
+    (payload: { shareId: string; itemIds: string[]; movedItems: ItemRevision[]; destinationShareId: string }) =>
+        withCache({ payload })
+);
+
+export const itemBulkMoveSuccess = createAction(
+    'item::bulk::move::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`All items successfully moved`,
+        })({ payload })
+    )
 );
 
 export const itemTrashIntent = createOptimisticAction(

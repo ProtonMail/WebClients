@@ -56,3 +56,5 @@ export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImport
     createTime?: number;
     modifyTime?: number;
 };
+
+export type ItemIdsByShareId = { [shareId: string]: string[] };
