@@ -5,8 +5,8 @@ import { SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton
 import { PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 
 const VpnUpgradeSection = () => {
-    const [plans, loadingPlans] = usePlans();
-    const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN);
+    const [plansResult, loadingPlans] = usePlans();
+    const vpnPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.VPN);
     const n = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const { result } = useUserVPN();

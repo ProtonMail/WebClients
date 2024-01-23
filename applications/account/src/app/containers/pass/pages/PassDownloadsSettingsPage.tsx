@@ -10,8 +10,8 @@ import clsx from '@proton/utils/clsx';
 
 const UpgradeBanner = ({ className }: { className?: string }) => {
     const [user] = useUser();
-    const [plans, loadingPlans] = usePlans();
-    const passPlan = plans?.find(({ Name }) => Name === PLANS.PASS_PLUS);
+    const [plansResult, loadingPlans] = usePlans();
+    const passPlan = plansResult?.plans?.find(({ Name }) => Name === PLANS.PASS_PLUS);
 
     const shouldUpgrade = user.isFree;
 

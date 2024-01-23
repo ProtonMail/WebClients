@@ -49,6 +49,7 @@ import {
     Audience,
     Currency,
     Cycle,
+    FreePlanDefault,
     Organization,
     Plan,
     PlanIDs,
@@ -67,7 +68,6 @@ import {
     useApi,
     useConfig,
     useEventManager,
-    useFreePlan,
     useGetCalendars,
     useModals,
     useNotifications,
@@ -158,6 +158,7 @@ export interface SubscriptionContainerProps {
     subscription: SubscriptionModel;
     organization: Organization;
     plans: Plan[];
+    freePlan: FreePlanDefault;
 }
 
 const SubscriptionContainer = ({
@@ -184,6 +185,7 @@ const SubscriptionContainer = ({
     subscription,
     organization,
     plans,
+    freePlan,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -217,7 +219,6 @@ const SubscriptionContainer = ({
     });
     const plansMap = toMap(plans, 'Name');
     const [vpnServers] = useVPNServersCount();
-    const [freePlan] = useFreePlan();
     const getCalendars = useGetCalendars();
     const { APP_NAME } = useConfig();
 
@@ -794,6 +795,7 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
+                                freePlan={freePlan}
                                 submit={
                                     <Button
                                         color="norm"
@@ -950,6 +952,7 @@ const SubscriptionContainer = ({
                                 data-testid="subscription-checkout"
                             >
                                 <SubscriptionCheckout
+                                    freePlan={freePlan}
                                     submit={
                                         <SubscriptionSubmitButton
                                             currency={model.currency}
@@ -1084,6 +1087,7 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
+                                freePlan={freePlan}
                                 submit={
                                     <SubscriptionSubmitButton
                                         currency={model.currency}

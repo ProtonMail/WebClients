@@ -1,13 +1,13 @@
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
-    useFreePlan,
     useLoad,
     useOrganization,
     usePendingUserInvitations,
@@ -34,8 +34,9 @@ interface Props {
 
 const YourPlanSection = ({ app }: Props) => {
     const [user] = useUser();
-    const [plans = [], loadingPlans] = usePlans();
-    const [freePlan] = useFreePlan();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans;
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
@@ -48,7 +49,7 @@ const YourPlanSection = ({ app }: Props) => {
 
     const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
 
-    if (!subscription || loading) {
+    if (!subscription || !plans || loading) {
         return <Loader />;
     }
 

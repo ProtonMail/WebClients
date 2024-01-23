@@ -6,7 +6,6 @@ import {
     useCalendars,
     useConfig,
     useFeature,
-    useFreePlan,
     useGetUserInvitations,
     useOrganization,
     usePendingUserInvitations,
@@ -42,11 +41,7 @@ mockUseUser.mockReturnValue([user, false]);
 
 jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
-mockUsePlans.mockReturnValue([plans, false]);
-
-jest.mock('@proton/components/hooks/useFreePlan');
-const mockUseFreePlan = useFreePlan as jest.MockedFunction<any>;
-mockUseFreePlan.mockReturnValue([FREE_PLAN, false]);
+mockUsePlans.mockReturnValue([{ plans, freePlan: FREE_PLAN }, false]);
 
 jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
