@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, ItemState, PassEncryptionTag, ShareType } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
@@ -158,6 +158,7 @@ describe('PassCrypto', () => {
                     Key: vault.EncryptedVaultKey,
                     KeyRotation: 1,
                     CreateTime: 0,
+                    UserKeyID: 'test_user_key_id',
                 },
             });
 
@@ -204,6 +205,7 @@ describe('PassCrypto', () => {
                 Primary: false,
                 Shared: false,
                 ShareID: `shareId-${Math.random()}`,
+                ShareRoleID: ShareRole.ADMIN,
                 TargetID: `targetId-${Math.random()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
@@ -264,6 +266,7 @@ describe('PassCrypto', () => {
                 Primary: false,
                 Shared: false,
                 ShareID: `shareId-${Math.random()}`,
+                ShareRoleID: ShareRole.ADMIN,
                 TargetID: `targetId-${Math.random()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
@@ -324,6 +327,7 @@ describe('PassCrypto', () => {
                 Primary: false,
                 Shared: false,
                 ShareID: `shareId-${Math.random()}`,
+                ShareRoleID: ShareRole.ADMIN,
                 TargetID: `targetId-${Math.random()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
@@ -363,6 +367,7 @@ describe('PassCrypto', () => {
                 Primary: false,
                 Shared: false,
                 ShareID: `shareId-${Math.random()}`,
+                ShareRoleID: ShareRole.ADMIN,
                 TargetID: `targetId-${Math.random()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
@@ -401,6 +406,7 @@ describe('PassCrypto', () => {
                 Primary: false,
                 Shared: false,
                 ShareID: `shareId-${Math.random()}`,
+                ShareRoleID: ShareRole.ADMIN,
                 TargetID: `targetId-${Math.random()}`,
                 TargetMaxMembers: 2,
                 TargetMembers: 0,
@@ -458,16 +464,17 @@ describe('PassCrypto', () => {
             await PassCrypto.hydrate({ user, addresses: [address], keyPassword: TEST_KEY_PASSWORD });
 
             const encryptedItem: ItemRevisionContentsResponse = {
-                ItemID: `itemId-${Math.random()}`,
-                Revision: 1,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                KeyRotation: 1,
                 Content: 'base64encoded',
-                ItemKey: 'base64encoded',
-                State: ItemState.Active,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
                 CreateTime: 0,
+                ItemID: `itemId-${Math.random()}`,
+                ItemKey: 'base64encoded',
+                KeyRotation: 1,
                 ModifyTime: 0,
+                Pinned: false,
+                Revision: 1,
                 RevisionTime: 0,
+                State: ItemState.Active,
             };
 
             await expect(
@@ -489,16 +496,17 @@ describe('PassCrypto', () => {
             const itemContent = randomContents();
             const item = await processes.createItem({ content: itemContent, vaultKey });
             const encryptedItem: ItemRevisionContentsResponse = {
-                ItemID: `itemId-${Math.random()}`,
-                Revision: 1,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                KeyRotation: 1,
                 Content: item.Content,
-                ItemKey: item.ItemKey,
-                State: ItemState.Active,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
                 CreateTime: 0,
+                ItemID: `itemId-${Math.random()}`,
+                ItemKey: item.ItemKey,
+                KeyRotation: 1,
                 ModifyTime: 0,
+                Pinned: false,
+                Revision: 1,
                 RevisionTime: 0,
+                State: ItemState.Active,
             };
 
             const openedItem = await PassCrypto.openItem({ shareId: encryptedShare.ShareID, encryptedItem });
@@ -530,16 +538,17 @@ describe('PassCrypto', () => {
             expect(Item.KeyRotation).toEqual(targetVaultKey.KeyRotation);
 
             const encryptedItem: ItemRevisionContentsResponse = {
-                ItemID: `itemId-${Math.random()}`,
-                Revision: 1,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                KeyRotation: 1,
                 Content: Item.Content,
-                ItemKey: Item.ItemKey,
-                State: ItemState.Active,
+                ContentFormatVersion: CONTENT_FORMAT_VERSION,
                 CreateTime: 0,
+                ItemID: `itemId-${Math.random()}`,
+                ItemKey: Item.ItemKey,
+                KeyRotation: 1,
                 ModifyTime: 0,
+                Pinned: false,
+                Revision: 1,
                 RevisionTime: 0,
+                State: ItemState.Active,
             };
 
             const movedItem = await PassCrypto.openItem({ shareId: targetShare.ShareID, encryptedItem });

@@ -92,6 +92,7 @@ export const createRandomShareResponses = async (
             Primary: false,
             Shared: false,
             ShareID: `shareId-${Math.random()}`,
+            ShareRoleID: '1',
             TargetID: `targetId-${Math.random()}`,
             TargetMaxMembers: 2,
             TargetMembers: 1,
