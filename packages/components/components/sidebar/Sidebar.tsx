@@ -12,8 +12,9 @@ import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import { UserDropdown, useActiveBreakpoint } from '../..';
-import { useConfig, useSubscription, useUser } from '../../hooks';
+import UserDropdown from '../../containers/heading/UserDropdown';
+import useFlag from '../../containers/unleash/useFlag';
+import { useActiveBreakpoint, useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
 import { getMeterColor } from '../progress';
@@ -134,6 +135,7 @@ const Sidebar = ({
     growContent = true,
     ...rest
 }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
         active: expanded,
@@ -142,7 +144,7 @@ const Sidebar = ({
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const appSpace = getAppSpace(getSpace(user), app);
+    const appSpace = getAppSpace(getSpace(user, storageSplitEnabled), app);
     const { viewportWidth } = useActiveBreakpoint();
 
     return (

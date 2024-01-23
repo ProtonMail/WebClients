@@ -17,6 +17,7 @@ import {
     useSettingsLink,
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { forceSend } from '@proton/shared/lib/api/messages';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -87,6 +88,7 @@ export const useCompose = ({
     maxActiveComposer,
     returnFocusToElementRef,
 }: UseComposeProps) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     // Avoid useUser for performance issues
     const getUser = useGetUser();
     const store = useMailStore();

@@ -3,6 +3,7 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -35,6 +36,7 @@ import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
 export default function useUpload(): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
+    const storageSplitEnabled = useFlag('SplitStorage');
     const getUser = useGetUser();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();

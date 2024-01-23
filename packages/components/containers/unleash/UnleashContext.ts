@@ -14,6 +14,7 @@ enum CommonFeatureFlag {
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
     PassWebAppLink = 'PassWebAppLink',
     MailDesktopAppAccess = 'MailDesktopAppAccess',
+    SplitStorage = 'SplitStorage',
 }
 
 enum AccountFlag {
