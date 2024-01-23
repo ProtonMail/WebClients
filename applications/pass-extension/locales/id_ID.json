@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Akun"
+      ],
+      "Account settings": [
+        "Pengaturan akun"
+      ],
       "Add": [
         "Tambah"
       ],
@@ -12,7 +18,7 @@
         "Tambahkan URL saat ini"
       ],
       "Add domain to pause list": [
-        "Tambah domain ke daftar jeda"
+        "Tambah ke daftar domain yang dikecualikan"
       ],
       "Add more": [
         "Tambahkan lagi"
@@ -21,7 +27,7 @@
         "Tambahkan item baru"
       ],
       "Advanced": [
-        "Lanjutan"
+        "Opsi lanjutan"
       ],
       "Advanced options": [
         "Opsi lanjutan"
@@ -161,8 +167,8 @@
       "Export": [
         "Ekspor"
       ],
-      "Feedback": [
-        "Masukan"
+      "Feedback & Help": [
+        "Tanggapan & Bantuan"
       ],
       "Fill password": [
         "Isi kata sandi"
@@ -180,7 +186,7 @@
         "Kata sandi yang dihasilkan"
       ],
       "Get mobile apps": [
-        "Dapatkan aplikasi ponsel"
+        "Dapatkan Pass versi mobile"
       ],
       "Help us improve": [
         "Bantu kami untuk berkembang"
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Bagaimana cara mengekspor data saya dari ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Cara menggunakan ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Impor"
@@ -231,7 +240,7 @@
         "Kelola akses"
       ],
       "Manually sync your data": [
-        "Sinrkonisasi data Anda secara manual"
+        "Sinkronkan data secara manual"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -261,7 +270,7 @@
         "OK"
       ],
       "Open in a window": [
-        "Buka di jendela"
+        "Buka Pass di jendela baru"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -338,6 +347,9 @@
       "Show": [
         "Tampilkan"
       ],
+      "Show advanced options": [
+        "Tampilkan opsi lanjutan"
+      ],
       "Sign back in": [
         "Masuk kembali"
       ],
@@ -393,7 +405,7 @@
         "Tulis tentang kami di Twitter"
       ],
       "Your password manager not here? Request it.": [
-        "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
+        "Tidak menemukan pengelola kata sandi Anda? Mintalah kepada kami."
       ]
     },
     "bf2023: Info": {
@@ -434,7 +446,7 @@
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Daftar domain tempat fungsi otomatis tertentu di ${ PASS_SHORT_APP_NAME } (IsiOtomatis, Saran Otomatis, Simpan Otomatis) tidak boleh dijalankan.${ infoText }"
+        "Daftar domain di mana fungsi otomatis ${ PASS_SHORT_APP_NAME } tertentu (Isi Otomatis, Saran Otomatis, Simpan Otomatis) tidak akan berjalan.${ infoText }"
       ]
     },
     "Error": {
@@ -451,10 +463,10 @@
         "Autentikasi gagal. Konfirmasi kata sandi ${ BRAND_NAME } Anda untuk melanjutkan pengeksporan"
       ],
       "Auto-lock could not be activated": [
-        "Pengunci otomatis tidak dapat diaktifkan"
+        "Kunci otomatis tidak dapat diaktifkan"
       ],
       "Auto-lock could not be disabled": [
-        "Pengunci otomatis tidak dapat dinonaktifkan"
+        "Kunci otomatis tidak dapat dinonaktifkan"
       ],
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dihasilkan (${ error })."
@@ -592,7 +604,7 @@
         "Item gagal dipulihkan"
       ],
       "Restoring trashed items failed": [
-        "Gagal memulihkan item yang dibuang"
+        "Item yang dibuang gagal dipulihkan"
       ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
@@ -616,7 +628,7 @@
         "URL ada dalam daftar ini"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Terlalu banyak percobaan gagal. Mohon masuk lagi."
+        "Terlalu banyak percobaan yang gagal. Silakan masuk kembali."
       ],
       "Trashing item failed": [
         "Item gagal dibuang"
@@ -726,10 +738,10 @@
         "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan atau memperbarui kredensial."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } akan menyarankan membuat alias surel di formulir pendaftaran."
+        "${ PASS_APP_NAME } akan menyarankan pembuatan alias email pada formulir pendaftaran."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } akan menyarankan membuat kata sandi yang kuat di formulir pendaftaran."
+        "${ PASS_APP_NAME } akan menyarankan pembuatan kata sandi yang kuat pada formulir pendaftaran."
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber } kali"
@@ -984,7 +996,7 @@
         "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Kode PIN berhasil didaftarkan. Gunakan kode PIN Anda untuk membuka kunci ${ PASS_APP_NAME }"
+        "Kode PIN berhasil didaftarkan. Gunakan kode PIN ini untuk membuka kunci ${ PASS_APP_NAME }"
       ],
       "Pinning item...": [
         "Menyematkan item..."
@@ -1035,7 +1047,7 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Atur kode PIN untuk dengan mudah mengunci data Anda."
+        "Tentukan kode PIN agar data Anda dapat terkunci dengan mudah"
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
@@ -1068,7 +1080,7 @@
         "Terima kasih, masalah ini telah dilaporkan"
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Dropdown pengisian otomatis akan terbuka setiap kali Anda mengeklik atau mengarahkan kursor Anda ke kolom yang bersangkutan."
+        "Dropdown isi otomatis akan terbuka setiap kali Anda mengeklik atau mengarahkan kursor Anda pada kolom entri masuk."
       ],
       "The following ${ result.ignored.length } items could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
@@ -1080,13 +1092,13 @@
         "Pengguna ini belum menjawab undangan Anda."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas yang Anda ekspor akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus ekspor ini setelah tidak lagi digunakan."
+        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor ini akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Untuk memigrasikan data dari pengelola kata sandi yang lain, pergi ke pengelola kata sandi, ekspor data Anda, terus unggah ke ${ PASS_APP_NAME }. Ketika sudah diunggah, hapus berkas yang telah diekspor."
+        "Untuk memindahkan data dari pengelola kata sandi lain, tuju pengelola kata sandi yang dimaksud, ekspor data Anda, lalu unggah data ini ke ${ PASS_APP_NAME }. Setelah data selesai diunggah, hapus berkas yang diekspor."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Untuk meninjau data Anda yang telah diimpor, klik ikon Pass pada toolbar browser Anda."
@@ -1143,7 +1155,7 @@
         "Anda akan membuat:"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Anda dapat mengisi kredensial Anda secara otomatis dengan mengeklik pada ikon ${ PASS_APP_NAME }."
+        "Anda dapat mengisi kredensial Anda secara otomatis dengan mengeklik ikon ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
@@ -1167,7 +1179,7 @@
         "Anda telah mencapai panjang maksimum yang diizinkan sebesar ${ maxLength } karakter."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah itu terkunci secara otomatis karena tidak digunakan untuk jangka waktu tertentu."
+        "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah aplikasi terkunci secara otomatis akibat tidak digunakan dalam jangka waktu tertentu."
       ],
       "You're about to create": [
         "Anda akan menghasilkan"
@@ -1183,11 +1195,11 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length } karakter"
+      "${ config.options.length } characters": [
+        "${ config.options.length } karakter"
       ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount } kata"
+      "${ config.options.wordCount } words": [
+        "${ config.options.wordCount } word"
       ],
       "1 hour": [
         "1 jam"
@@ -1219,6 +1231,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "Akun"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1244,7 +1259,7 @@
         "Kunci ${ PASS_APP_NAME } secara otomatis"
       ],
       "Auto-lock after": [
-        "Kunci otomatis setelah"
+        "Kunci Pass secara otomatis setelah"
       ],
       "Autofill": [
         "Isi otomatis"
@@ -1253,13 +1268,13 @@
         "Isi 2FA otomatis"
       ],
       "Automatically open autofill when a login field is focused": [
-        "Buka modul pengisian otomatis setiap kali kursor terfokus pada kolom login"
+        "Buka modul isi otomatis setiap kali kursor terfokus pada kolom login"
       ],
       "Autosave": [
         "Simpan otomatis"
       ],
       "Autosave vault": [
-        "Simpan brankas secara otomatis"
+        "Brankas lokasi penyimpanan otomatis"
       ],
       "Autosuggest": [
         "Saran otomatis"
@@ -1298,7 +1313,7 @@
         "Buat brankas baru"
       ],
       "Created": [
-        "Waktu Dibuat"
+        "Waktu pembuatan"
       ],
       "Display": [
         "Tampilan"
@@ -1372,6 +1387,9 @@
       "Item ID": [
         "ID Item"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pintasan keyboard: ${ shortcut }"
+      ],
       "Language": [
         "Bahasa"
       ],
@@ -1394,7 +1412,7 @@
         "Pelajari lebih lanjut"
       ],
       "Login": [
-        "Masuk"
+        "Entri masuk"
       ],
       "Logins": [
         "Entri masuk"
@@ -1457,7 +1475,7 @@
         "Kata sandi"
       ],
       "Pause list": [
-        "Daftar jeda"
+        "Domain yang dikecualikan"
       ],
       "PIN": [
         "PIN"
@@ -1505,7 +1523,7 @@
         "Penguncian sesi"
       ],
       "Set PIN code": [
-        "Atur kode PIN"
+        "Tentukan kode PIN"
       ],
       "Settings": [
         "Pengaturan"
@@ -1562,7 +1580,7 @@
         "Perbarui"
       ],
       "Username": [
-        "Nama Pengguna"
+        "Nama pengguna"
       ],
       "Username (alias)": [
         "Nama pengguna (alias)"
@@ -1683,7 +1701,7 @@
         "Pilih brankas"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Ketik ulang \"${ vaultName }\" untuk mengonfirmasi penghapusan"
@@ -1816,7 +1834,7 @@
         "Amankan data Anda"
       ],
       "Set access level": [
-        "Tentukan tingkatan akses"
+        "Tentukan tingkat akses"
       ],
       "Share with": [
         "Bagikan dengan"
@@ -1875,7 +1893,7 @@
         "URL sudah ada"
       ],
       "URL cannot be empty": [
-        "URL tidak bisa kosong"
+        "URL tidak boleh kosong"
       ],
       "Url is invalid": [
         "URL tidak valid"
@@ -1952,7 +1970,7 @@
         "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur berbagi berkas"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Terjadi masalah saat memulai ${ PASS_APP_NAME }. Silakan coba segarkan atau muat ulang ekstensi."
@@ -1985,13 +2003,13 @@
         "Anda tidak dapat membuat lebih banyak brankas dari yang diizinkan oleh paket langganan Anda."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Anda melampaui batas anggota untuk akses brankas."
+        "Anda telah mencapai batas jumlah anggota yang dapat mengakses brankas ini."
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Anda telah mencapai batas pengguna brankas ini. ${ upgradeLink }"
+        "Anda telah mencapai batas pengguna pada brankas ini. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Anda melampaui batas brankas paket langganan Anda."
+        "Anda telah mencapai batas jumlah brankas yang dapat dimiliki pada paket langganan Anda."
       ],
       "You have unsaved changes.": [
         "Anda memiliki perubahan yang belum disimpan."
