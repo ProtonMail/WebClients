@@ -204,9 +204,10 @@ module.exports = {
     },
     settings: {
         'import/resolver': {
-            node: {
-                extensions: ['.js', '.ts', '.tsx'],
-            },
+            // The built-in node resolver does not support the `exports` entrypoints.
+            // The TS one is used as a workaround, see https://github.com/import-js/eslint-plugin-import/issues/1810#issuecomment-1189510672
+            typescript: {},
+
             alias: {
                 map: [
                     ['proton-mail', path.resolve(__dirname, '../../applications/mail/src/app')],
