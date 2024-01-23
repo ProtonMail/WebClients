@@ -39,6 +39,7 @@ const config: ForgeConfig = {
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
+                signWithParams: `/a /d "Proton Mail Desktop" /t "http://timestamp.sectigo.com" /fd SHA256`,
             },
         },
         {
