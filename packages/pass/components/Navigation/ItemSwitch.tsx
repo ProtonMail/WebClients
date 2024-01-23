@@ -12,9 +12,9 @@ import { Autoselect } from './Autoselect';
 
 export const ItemSwitch: FC<RouteChildrenProps> = ({ match }) => {
     const sub = (path: string) => `${match?.path}/${path}`;
-    const { isBulk } = useBulkSelect();
+    const { enabled } = useBulkSelect();
 
-    if (isBulk) return <BulkView />;
+    if (enabled) return <BulkView />;
 
     return match ? (
         <Switch>
