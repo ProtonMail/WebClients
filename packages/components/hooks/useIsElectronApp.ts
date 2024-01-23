@@ -1,4 +1,4 @@
-import { useFlag } from '@protontech/proxy-client-react';
+import { useFlag } from '@unleash/proxy-client-react';
 
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import {

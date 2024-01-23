@@ -1,6 +1,6 @@
 import { ReactNode, useContext, useEffect } from 'react';
 
-import { FlagContext, useFlag } from '@protontech/proxy-client-react';
+import { FlagContext, useFlag } from '@unleash/proxy-client-react';
 import { differenceInMilliseconds } from 'date-fns';
 import { c } from 'ttag';
 
