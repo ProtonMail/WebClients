@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { APPS, APP_NAMES, PLANS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
@@ -236,11 +237,12 @@ const PooledStorageLimitTopBanner = ({
 };
 
 const StorageLimitTopBanner = ({ app }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [subscription] = useSubscription();
     const { APP_NAME } = useConfig();
     const [ignoreStorageLimit, setIgnoreStorageLimit] = useLocalState(false, `${IGNORE_STORAGE_LIMIT_KEY}${user.ID}`);
-    const space = getSpace(user);
+    const space = getSpace(user, storageSplitEnabled);
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -249,7 +251,7 @@ const StorageLimitTopBanner = ({ app }: Props) => {
         fromApp: app,
     });
 
-    return space.splitStorage ? (
+    return space.splitStorage && storageSplitEnabled ? (
         <SplitStorageLimitTopBanner
             app={app}
             space={space}

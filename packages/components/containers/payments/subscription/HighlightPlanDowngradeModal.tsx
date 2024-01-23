@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { APP_NAMES, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
@@ -42,12 +43,15 @@ const HighlightPlanDowngradeModal = ({
     periodEnd,
     ...rest
 }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const downgradedShortPlan = getFreePlan(freePlan);
     const downgradedPlanName = `${downgradedShortPlan.title}`;
     const currentPlanName = shortPlan.title;
 
-    const space = getSpace(user);
-    const storageError = space.usedBaseSpace >= freePlan.MaxBaseSpace || space.usedDriveSpace >= freePlan.MaxDriveSpace;
+    const space = getSpace(user, storageSplitEnabled);
+    const storageError =
+        storageSplitEnabled &&
+        (space.usedBaseSpace >= freePlan.MaxBaseSpace || space.usedDriveSpace >= freePlan.MaxDriveSpace);
 
     const daysRemaining = getDifferenceInDays(new Date(), new Date(periodEnd * 1000));
 
