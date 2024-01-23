@@ -447,9 +447,6 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
-        "გვერდის განახლება"
-      ],
       "Remove": [
         "წაშლა"
       ],
@@ -534,14 +531,8 @@
       "Show time zones": [
         "დროის სარტყლების ჩვენება"
       ],
-      "Sign in": [
-        "შესვლა"
-      ],
       "Sign out": [
         "გასვლა"
-      ],
-      "Signing out": [
-        "გამოსვლა"
       ],
       "Skip": [
         "გამოტოვება"
@@ -1226,9 +1217,6 @@
       ],
       "Gender": [
         "სქესი"
-      ],
-      "Geo": [
-        "ლოკაცია"
       ],
       "Language": [
         "ენა"
@@ -2499,12 +2487,6 @@
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "არასწორი შესვლის პარამეტრები. თავიდან სცადეთ."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
-      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
@@ -2659,9 +2641,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "დაწყების დრო დასრულების დრომდე უნდა იყოს"
@@ -3906,9 +3885,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
       ],
@@ -4112,9 +4088,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
-      "support team": [
-        "მხარდაჭერის გუნდი"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -4150,9 +4123,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -4581,9 +4551,6 @@
       "Email format": [
         "ელფოსტის ფორმატი"
       ],
-      "Email or username": [
-        "ელფოსტა ან მომხმარებლის სახელი"
-      ],
       "Emails": [
         "ელფოსტები"
       ],
@@ -4676,9 +4643,6 @@
       ],
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
-      ],
-      "Mailbox password": [
-        "საფოსტო ყუთის პაროლი"
       ],
       "Main": [
         "მთავარი"
@@ -6530,9 +6494,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } ელფოსტის მისამართი",
         "${ emailsCount } ელფოსტის მისამართი"
-      ],
-      "Account suspended": [
-        "ანგარიში შეჩერებულია"
       ],
       "Add another notification to remind you of this event": [
         "ამ მოვლენის გასახსენებლად სხვა გაფრთხილების დამატება"

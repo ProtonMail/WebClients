@@ -908,9 +908,6 @@
       "Signing in": [
         "Connexion en cours"
       ],
-      "Signing out": [
-        "Déconnexion"
-      ],
       "Size": [
         "Taille"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Upgrade to Visionary": [
-        "Passer à l'abonnement Visionary"
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Genre"
       ],
-      "Geo": [
-        "Coordonnées géographiques"
-      ],
       "Language": [
         "Langue"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "L'accès à l'application de bureau est limité."
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement réservée aux utilisateurs ayant un abonnement ${ BRAND_NAME } Visionary. Elle sera disponible pour tous les utilisateurs début 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement disponible pour tous les utilisateurs avec un abonnement payant à ${ MAIL_APP_NAME }. Elle sera prochainement disponible pour tous les utilisateurs."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Changez d'abonnement dès aujourd'hui ou vérifiez à nouveau début 2024 pour y accéder."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "L'autorisation est refusée, les droits administrateur ont été restreints."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Veuillez configurer un domaine personnalisé avant d'ajouter des adresses."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Nous vous invitons à configurer un domaine personnalisé avant d'ajouter des utilisateurs à votre organisation."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Si l'utilisateur a déjà une adresse ${ MAIL_APP_NAME }, saisissez-la ici. Sinon, il doit d'abord créer un compte."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } a été retiré de ${ organization.Name }."
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } a été retiré de ${ organizationName }."
       ],
       "An error occurred, please try again": [
         "Une erreur s'est produite, nous vous invitons à réessayer."
@@ -5763,17 +5757,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
       ]
     },
     "Info": {
@@ -7758,9 +7741,9 @@
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }.",
         "Nombre de serveurs dédiés que vous utilisez : ${ ipCount } sur ${ ipAddresses }."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Nombre de licences utilisateurs que vous utilisez : ${ organization.UsedMembers } sur ${ organization.MaxMembers }",
-        "Nombre de licences utilisateurs que vous utilisez : ${ organization.UsedMembers } sur ${ organization.MaxMembers }"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }",
+        "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
@@ -7985,6 +7968,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info - folder colouring feature": {
@@ -9124,6 +9118,9 @@
       ],
       "Show sender images": [
         "Afficher les images des expéditeurs"
+      ],
+      "Show unread count in application icon": [
+        "Afficher le nombre de messages non lus sur l'icône de l'application"
       ],
       "Show unread count in Favicon": [
         "Afficher le nombre de non lus sur l'icône de l'onglet"
@@ -11291,12 +11288,6 @@
       "Create another account instead": [
         "Créer un autre compte à la place"
       ],
-      "Download again ${ size }": [
-        "Télécharger à nouveau ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Télécharger pour continuer ${ size }"
-      ],
       "Keep this plan": [
         "Conserver cet abonnement"
       ],
@@ -11435,9 +11426,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Les alias « hide-my-email » protègent votre adresse e-mail contre les fuites de données."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre **kit de récupération** vous permettra de vous connecter et de récupérer vos données."
-      ],
       "Includes:": [
         "Comprend :"
       ],
@@ -11449,9 +11437,6 @@
       ],
       "Install app and extension": [
         "Installez les applications et extensions"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Ce **kit de récupération** est le seul moyen de restaurer complètement votre compte. Nous vous conseillons de le garder dans un endroit sûr."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
@@ -14330,6 +14315,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
+      ],
+      "See number of unread messages in the application icon": [
+        "Affiche le nombre de messages non lus sur l'icône dans l'onglet de navigation."
       ],
       "See number of unread messages in the tab icon": [
         "Affichez le nombre de messages non lus sur l'icône dans l'onglet de navigation"

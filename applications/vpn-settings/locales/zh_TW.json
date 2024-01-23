@@ -77,6 +77,9 @@
       "Close this banner": [
         "關閉此橫幅"
       ],
+      "Configure SAML": [
+        "配置 SAML"
+      ],
       "Confirm": [
         "確認"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "隱藏方案功能"
       ],
+      "Import new SAML metadata": [
+        "匯入新的 SAML 後設資料"
+      ],
       "Increase": [
         "加"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "移除贈品"
       ],
+      "Remove domain": [
+        "刪除網域"
+      ],
       "Remove gift code": [
         "移除禮品代碼"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "儲存電郵位址"
       ],
+      "Save SAML configuration": [
+        "儲存 SAML 設置"
+      ],
       "Search": [
         "搜尋"
       ],
       "Search countries": [
         "搜尋國家與地區"
+      ],
+      "See DNS TXT record": [
+        "查看DNS的TXT紀錄"
       ],
       "See how": [
         "看看怎麼做"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
+      ],
+      "Select file": [
+        "選取檔案"
       ],
       "Send code": [
         "傳送代碼"
@@ -452,9 +470,6 @@
       "Signing in": [
         "登入"
       ],
-      "Signing out": [
-        "正在登出"
-      ],
       "Submit": [
         "送出"
       ],
@@ -490,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "升級企業版"
-      ],
-      "Upgrade to Visionary": [
-        "升級到 Visionary 方案"
       ],
       "Upgrade your plan": [
         "升級您的方案"
@@ -726,6 +738,9 @@
       ]
     },
     "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
+      ],
       "Secure browsing and premium VPN features.": [
         "安全瀏覽和進階 VPN 功能。"
       ],
@@ -815,6 +830,11 @@
       ],
       "Two-year": [
         "兩年"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
       ]
     },
     "Bug category": {
@@ -1815,6 +1835,9 @@
       ]
     },
     "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "存取桌面應用程式為限定"
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "現在升級或等到2024年初再來看看。"
       ]
@@ -2021,6 +2044,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "請升級至選用多於 1 位使用者的企業方案，以便管理多個使用者。"
       ],
+      "Please upload an xml file": [
+        "請上載xml格式文檔"
+      ],
+      "Please upload only 1 file": [
+        "請上傳一個檔案"
+      ],
       "Process aborted": [
         "處理已中止"
       ],
@@ -2071,6 +2100,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
+      ],
+      "Unable to upload file": [
+        "無法上傳文件"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -2316,8 +2348,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "邀請將會取消，此使用者亦不會能夠加入 ${ organization.Name }。"
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "邀請將會取消，此使用者亦不會能夠加入 ${ organizationName }。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
@@ -2357,8 +2389,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } 已從 ${ organization.Name } 中移除"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } 已從 ${ organizationName } 中移除"
       ],
       "An error occurred, please try again": [
         "發生錯誤，請再試一次"
@@ -2883,6 +2915,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需創建加密金鑰，才可用來傳送和接收電郵。"
       ],
+      "Beta": [
+        "測試版"
+      ],
       "Billed at ${ price }": [
         "以 ${ price } 計費"
       ],
@@ -3369,6 +3404,9 @@
       "Revoke certificate ${ name }": [
         "撤銷憑證 ${ name }"
       ],
+      "SAML configuration saved": [
+        "SAML設置已儲存"
+      ],
       "Save ${ percentage }": [
         "省下 ${ percentage }"
       ],
@@ -3747,8 +3785,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "您目前正在使用 ${ ipAddresses } 個可用伺服器中的 ${ ipCount } 個。"
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "您目前使用${ organization.MaxMembers }的可用序號${ organization.UsedMembers }。"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "您目前使用${ maxMembers }的可用序號${ usedMembers }。"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
@@ -3804,6 +3842,12 @@
       "You will be redirected to ${ destination } after signing in.": [
         "登入後，您將會被重新導向至 ${ destination }。"
       ],
+      "You will lose access to Plus features on this date.": [
+        "您將於此更新失去存取進階功能。"
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "您將於此更新失去存取進階伺服器和功能。"
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -3833,6 +3877,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "您的帳號已有超過一期以上的逾期繳款單，因此帳號功能將受限。若持續未繳清款項，則將封鎖您的電郵和共享連結。 ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "您帳號已成功更新此促銷"
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
@@ -3984,11 +4031,20 @@
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
+      "Allowed domain": [
+        "已允許網域"
+      ],
+      "Allowed Domain": [
+        "網域白名單"
+      ],
       "Amount": [
         "金額"
       ],
       "Amount due": [
         "應付金額"
+      ],
+      "Assertion Consumer Service URL": [
+        "消費者服務聲明網址"
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
@@ -4113,6 +4169,9 @@
       "Do you have any suggestions for our team?": [
         "您對我們的團隊有什麼建議嗎？"
       ],
+      "e.g. example.com": [
+        "範例 example.com"
+      ],
       "Email": [
         "電郵"
       ],
@@ -4160,6 +4219,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Method for importing metadata": [
+        "匯入後設資料方案"
       ],
       "Moderate NAT": [
         "中等 NAT"
@@ -4257,6 +4319,9 @@
       "Proration": [
         "按比例分配後"
       ],
+      "Public certificate (X.509)": [
+        "公開憑證 (X.509)"
+      ],
       "Recovery email address": [
         "復原電郵位址"
       ],
@@ -4265,6 +4330,9 @@
       ],
       "Recovery phrase": [
         "復原短語"
+      ],
+      "Reply (ACS) URL": [
+        "回覆 (ACS) 網址"
       ],
       "Require 2FA for administrators": [
         "要求管理員使用雙重驗證"
@@ -4280,6 +4348,12 @@
       ],
       "Select your plan": [
         "選擇你的方案"
+      ],
+      "Single sign-on entity ID": [
+        "單一登入登入ID"
+      ],
+      "Single sign-on URL": [
+        "單一登入網址"
       ],
       "Start date": [
         "開始日期"
@@ -4307,6 +4381,9 @@
       ],
       "Username": [
         "使用者名稱"
+      ],
+      "Value": [
+        "值"
       ],
       "Verification code": [
         "驗證碼"
@@ -4370,6 +4447,9 @@
       ],
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } 產品公告"
+      ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } 使用者問卷"
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
@@ -5622,6 +5702,15 @@
       "Confirm": [
         "確認"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "例如 https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "例如 https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "例如 https://idp.example.com/XXXXX"
+      ],
       "Email address": [
         "電郵位址"
       ],
@@ -5660,6 +5749,9 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "請聯繫${ contactHref }我們的銷售團隊。"
+      ],
       "Should you need more than ${ maxIPs } IPs, ": [
         "您需要多餘 ${ maxIPs } IP, "
       ]
@@ -6327,6 +6419,9 @@
       "${ n } calendars per user": [
         "${ n } 個行事曆分配給每位使用者"
       ],
+      "${ n } free VPN connections per user": [
+        "每一位用戶${ n }個免費VPN連線"
+      ],
       "${ n } high-speed VPN connections": [
         "${ n } 個極飆速 VPN 連線"
       ],
@@ -6909,6 +7004,9 @@
       "Email subscriptions": [
         "電子報訂閱"
       ],
+      "Enter SAML metadata": [
+        "輸入 SAML 後設資料"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
@@ -7032,6 +7130,9 @@
       "Recovery": [
         "復原"
       ],
+      "Remove domain": [
+        "移除網域"
+      ],
       "Remove user?": [
         "要移除使用者嗎？"
       ],
@@ -7061,6 +7162,9 @@
       ],
       "Revoke certificate": [
         "撤銷憑證"
+      ],
+      "SAML authentication": [
+        "SAML 驗證"
       ],
       "Select a plan": [
         "請選擇一個方案"
@@ -7107,11 +7211,17 @@
       "Signed in to member account": [
         "登入到成員帳號"
       ],
+      "Single Sign-On": [
+        "單一登入"
+      ],
       "Status": [
         "狀態"
       ],
       "Subscription": [
         "訂閲"
+      ],
+      "Successfully created ${ n } user accounts": [
+        "成功創建 ${ n } 使用者帳號"
       ],
       "Summary": [
         "總結"
@@ -7233,6 +7343,12 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "來自身分提供商(例如 e.g. https://idp.example.com/sso/saml)端點網址"
+      ],
+      "Feature in early access": [
+        "功能於提早存取"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"

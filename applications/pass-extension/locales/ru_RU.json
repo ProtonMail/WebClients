@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Настройки учётной записи"
+      ],
       "Add": [
         "Добавить"
       ],
@@ -161,9 +164,6 @@
       "Export": [
         "Экспорт"
       ],
-      "Feedback": [
-        "Обратная связь"
-      ],
       "Fill password": [
         "Заполнить пароль"
       ],
@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pin item": [
+        "Закрепить элемент"
+      ],
       "Refresh the page": [
         "Обновить страницу"
       ],
@@ -361,6 +364,9 @@
       ],
       "Try again": [
         "Попробовать снова"
+      ],
+      "Unpin item": [
+        "Открепить элемент"
       ],
       "Update": [
         "Обновить"
@@ -514,11 +520,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Сбой при перемещении всех элементов из \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Сбой при закреплении элемента"
+      ],
       "Failed to remove user's access.": [
         "Не удалось удалить доступ пользователя."
       ],
       "Failed to transfer this vault's ownership.": [
         "Сбой при передаче владения хранилищем."
+      ],
+      "Failed to unpin item": [
+        "Сбой при откреплении элемента"
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
@@ -722,9 +734,9 @@
       ],
       "${ n } item": [
         "${ n } элемент",
-        "${ n } элемент",
-        "${ n } элемент",
-        "${ n } элемент"
+        "${ n } элемента",
+        "${ n } элементов",
+        "${ n } элементов"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
@@ -745,7 +757,7 @@
         "${ revisionNumber } раз",
         "${ revisionNumber } раза",
         "${ revisionNumber } раз",
-        "${ revisionNumber } раза"
+        "${ revisionNumber } раз"
       ],
       "${ trialDaysLeft } day left": [
         "Остался ${ trialDaysLeft } день",
@@ -931,7 +943,7 @@
         "Элемент \"${ payload.item.data.metadata.name }\" обновлен"
       ],
       "Item moved to trash": [
-        "Элемент перемещен в корзину"
+        "Элемент перемещён в Корзину"
       ],
       "Item permanently deleted": [
         "Элемент удален окончательно"
@@ -941,6 +953,12 @@
       ],
       "Item successfully moved": [
         "Элемент успешно перемещен"
+      ],
+      "Item successfully pinned": [
+        "Элемент закреплен"
+      ],
+      "Item successfully unpinned": [
+        "Элемент откреплен"
       ],
       "Leaving vault...": [
         "Покидаю хранилище..."
@@ -985,7 +1003,7 @@
         "Владение успешно передано. Вы теперь не владелец этого хранилища."
       ],
       "Pass Plus trial": [
-        "Проба Pass Plus"
+        "Пробная версия Pass Plus"
       ],
       "Password copied": [
         "Пароль скопирован"
@@ -1001,6 +1019,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
+      ],
+      "Pinning item...": [
+        "Закрепление элемента..."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
@@ -1116,6 +1137,9 @@
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
       ],
+      "Unpinning item...": [
+        "Открепление элемента..."
+      ],
       "Update login": [
         "Обновить логин"
       ],
@@ -1199,17 +1223,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } символ",
-        "${ passwordOptions.options.length } символа",
-        "${ passwordOptions.options.length } символов",
-        "${ passwordOptions.options.length } символа"
+      "${ config.options.length } character": [
+        "${ config.options.length } символ",
+        "${ config.options.length } символов",
+        "${ config.options.length } символа",
+        "${ config.options.length } символа"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } слово",
-        "${ passwordOptions.options.wordCount } слова",
-        "${ passwordOptions.options.wordCount } слов",
-        "${ passwordOptions.options.wordCount } слова"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слово",
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } слов",
+        "${ config.options.wordCount } слов"
       ],
       "1 hour": [
         "1 час"
@@ -1393,6 +1417,9 @@
       ],
       "Item ID": [
         "ID элемента"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Комбинация клавиш: ${ shortcut }"
       ],
       "Language": [
         "Язык"
@@ -1658,7 +1685,7 @@
         "Пробелы"
       ],
       "Underscores": [
-        "Подчеркивания"
+        "Подчёркивания"
       ]
     },
     "Placeholder": {
@@ -1834,6 +1861,9 @@
       "Pin the extension": [
         "Закрепить расширение"
       ],
+      "Pinned (${ items.length })": [
+        "Закреплено (${ items.length })"
+      ],
       "Secure your data": [
         "Защитите свои данные"
       ],
@@ -1928,6 +1958,9 @@
       "Empty note": [
         "Пустая заметка"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Срок действия не в формате ММ/ГГ"
+      ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
       ],
@@ -1935,7 +1968,7 @@
         "Максимальная длина ${ maxLength } символ",
         "Максимальная длина ${ maxLength } символа",
         "Максимальная длина ${ maxLength } символов",
-        "Максимальная длина ${ maxLength } символа"
+        "Максимальная длина ${ maxLength } символов"
       ],
       "Missing alias prefix": [
         "Отсутствует префикс псевдонима"
@@ -2035,6 +2068,9 @@
       ],
       "Your session could not be resumed.": [
         "Ваш сеанс не может быть возобновлён."
+      ],
+      "Your session is inactive.": [
+        "Ваша сессия неактивна."
       ],
       "Your session was locked.": [
         "Ваш сеанс заблокирован."

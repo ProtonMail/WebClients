@@ -470,9 +470,6 @@
       "Signing in": [
         "Адбываецца ўваход"
       ],
-      "Signing out": [
-        "Адбываецца выхад"
-      ],
       "Submit": [
         "Адправіць"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Палепшыць да Business"
-      ],
-      "Upgrade to Visionary": [
-        "Палепшыць да Visionary"
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
@@ -1886,8 +1880,8 @@
       "Access to the desktop app is limited": [
         "Доступ да настольнай праграмы абмежаваны"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }, а неўзабаве яна стане даступна ўсім карыстальнікам."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
@@ -2078,6 +2072,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "У доступе адмоўлена, правы адміністратара абмежаваны."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
@@ -2404,8 +2401,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Уліковы запіс карыстальніка будзе пераведзены на тарыфны план ${ BRAND_NAME } Unlimited на 30 дзён бясплатнай пробнай версіі*."
@@ -2445,8 +2442,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Карыстальнік ${ member.Name } быў выдалены з ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Карыстальнік ${ member.Name } быў выдалены з ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Адбылася памылка. Паспрабуйце яшчэ раз"
@@ -3268,7 +3265,7 @@
         "тут"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэнняў аўтэнтыфікацыі. Павінна быць месца для спампоўвання ці капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -3984,11 +3981,11 @@
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."

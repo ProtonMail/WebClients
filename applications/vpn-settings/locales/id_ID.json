@@ -470,9 +470,6 @@
       "Signing in": [
         "Masuk"
       ],
-      "Signing out": [
-        "Keluar"
-      ],
       "Submit": [
         "Kirim"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Tingkatkan ke Business"
-      ],
-      "Upgrade to Visionary": [
-        "Tingkatkan ke Visionary"
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
@@ -1862,8 +1856,8 @@
       "Access to the desktop app is limited": [
         "Akses ke aplikasi desktop tengah dibatasi"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } versi beta saat ini hanya tersedia bagi para pelanggan paket ${ MAIL_APP_NAME } berbayar. Versi ini akan tersedia bagi seluruh pengguna di masa yang akan datang."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
@@ -2054,6 +2048,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak, hak istimewa administrator telah dibatasi."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
@@ -2380,8 +2377,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
@@ -2421,8 +2418,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } telah dikeluarkan dari ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } telah dikeluarkan dari ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Terjadi kesalahan, silakan coba lagi"
@@ -3403,7 +3400,7 @@
         "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima surel melalui alamat ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat surel seandainya kami perlu menghubungi Anda."
@@ -3873,8 +3870,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "Anda sedang menggunakan ${ organization.UsedMembers } dari ${ organization.MaxMembers } lisensi pengguna yang Anda miliki."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
@@ -4341,7 +4338,7 @@
         "Nama dan alamat"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Port Forwarding)"
+        "NAT-PMP (Penerusan Port)"
       ],
       "Navigation": [
         "Navigasi"
@@ -4488,7 +4485,7 @@
         "Kata sandi baru pengguna"
       ],
       "Username": [
-        "Nama Pengguna"
+        "Nama pengguna"
       ],
       "Value": [
         "Nilai"
@@ -5841,7 +5838,7 @@
         "Kata sandi"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
       "Please select the main reason": [
         "Silakan pilih alasan utama"
@@ -6365,7 +6362,7 @@
         "Streaming aman"
       ],
       "Support online privacy": [
-        "Dukung privasi daring"
+        "Dukung privasi online"
       ]
     },
     "specialoffer: Footer": {
@@ -7578,7 +7575,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan masih banyak lagi."
       ]
     },
     "VPN Plan Feature": {
@@ -7673,7 +7670,7 @@
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"

@@ -781,9 +781,6 @@
       "Refresh the page": [
         "ページを更新"
       ],
-      "refresh the page": [
-        "ページを更新"
-      ],
       "Remove": [
         "削除"
       ],
@@ -967,14 +964,8 @@
       "Show side panel": [
         "サイドパネルを表示"
       ],
-      "Sign in": [
-        "サインイン"
-      ],
       "Sign out": [
         "サインアウト"
-      ],
-      "Signing out": [
-        "サインアウト中"
       ],
       "Size": [
         "サイズ"
@@ -2011,9 +2002,6 @@
       ],
       "Gender": [
         "性別"
-      ],
-      "Geo": [
-        "緯度・経度"
       ],
       "Language": [
         "言語"
@@ -3261,12 +3249,6 @@
       "IMAP server is required": [
         "IMAP サーバーは必須です"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "無効なログイン情報です。再度お試しください。"
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "無効な受信トレイのパスワードです。再度お試しください。"
-      ],
       "Incorrect username": [
         "ユーザー名に間違いがあります。"
       ],
@@ -3419,9 +3401,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Something went wrong. Please try again.": [
         "問題が発生しました。再度お試しください。"
@@ -5121,9 +5100,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
@@ -5529,9 +5505,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
-      "support team": [
-        "サポートチーム"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
       ],
@@ -5582,9 +5555,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide-my-email で受信トレイを守りましょう。"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
@@ -6372,9 +6342,6 @@
       "Email format": [
         "メールの形式"
       ],
-      "Email or username": [
-        "メールアドレスまたはユーザー名"
-      ],
       "Emails": [
         "メール"
       ],
@@ -6479,9 +6446,6 @@
       ],
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
-      ],
-      "Mailbox password": [
-        "メールボックスのパスワード"
       ],
       "Main": [
         "メイン"
@@ -7310,8 +7274,14 @@
       "For your eyes only": [
         "あなたの目だけに"
       ],
+      "Next": [
+        "次へ"
+      ],
       "Protection from trackers": [
         "トラッカーからの保護"
+      ],
+      "Skip": [
+        "スキップ"
       ]
     },
     "Onboarding Proton": {
@@ -7320,6 +7290,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
+      ],
+      "Pick a theme": [
+        "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
@@ -8161,9 +8134,6 @@
       "Schedule send": [
         "送信予約"
       ],
-      "Search just got smarter and faster": [
-        "検索がより賢く、より速く"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "新しいスヌーズ機能で、メールが受信トレイに再表示されるタイミングを設定できます。"
       ],
@@ -8172,9 +8142,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "スパムメールとゴミ箱メールがすべてのメールから自動的に除外されるようになりました。 ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "今すぐ試してみよう。"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"
@@ -8562,9 +8529,6 @@
       "(active)": [
         "(アクティブ)"
       ],
-      "Account suspended": [
-        "アカウントが停止されました"
-      ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
@@ -8709,6 +8673,12 @@
       "Delete draft": [
         "下書きの削除"
       ],
+      "Delete folder?": [
+        "フォルダーを削除しますか？"
+      ],
+      "Delete label?": [
+        "ラベルを削除しますか？"
+      ],
       "Delete message": [
         "メッセージを削除"
       ],
@@ -8826,8 +8796,20 @@
       "Mark as unread": [
         "未読にする"
       ],
+      "Mark conversations as read": [
+        "会話を既読にする"
+      ],
+      "Mark conversations as unread": [
+        "会話を未読にする"
+      ],
       "Mark email as legitimate": [
         "メールを正当なものとしてマーク"
+      ],
+      "Mark messages as read": [
+        "メッセージを既読にする"
+      ],
+      "Mark messages as unread": [
+        "メッセージを未読にする"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -9141,6 +9123,9 @@
       ],
       "Hide side panel": [
         "サイドパネルを隠す"
+      ],
+      "Load image": [
+        "画像を読み込む"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"

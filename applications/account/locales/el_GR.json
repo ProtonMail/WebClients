@@ -908,9 +908,6 @@
       "Signing in": [
         "Γίνεται είσοδος"
       ],
-      "Signing out": [
-        "Αποσύνδεση"
-      ],
       "Size": [
         "Μέγεθος"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Αναβάθμιση σε Visionary"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Φύλο"
       ],
-      "Geo": [
-        "Γεωγραφικό"
-      ],
       "Language": [
         "Γλώσσα"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } είναι προς το παρόν διαθέσιμη σε οποιονδήποτε έχει πρόγραμμα επί πληρωμή ${ MAIL_APP_NAME }. Σύντομα θα είναι διαθέσιμη σε όλους."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Εάν ο χρήστης έχει ήδη διεύθυνση ${ MAIL_APP_NAME }, πληκτρολογήστε την εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Το ${ member.Name } αφαιρέθηκε από το ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Το ${ member.Name } αφαιρέθηκε από το ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Παρουσιάστηκε σφάλμα. Παρακαλούμε προσπαθήστε ξανά."
@@ -5763,17 +5757,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info": {
@@ -7758,9 +7741,9 @@
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμων αποκλειστικών διακομιστών."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τη ${ organization.MaxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
-        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τις ${ organization.MaxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης χρηστών."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
@@ -7985,6 +7968,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -11291,12 +11285,6 @@
       "Create another account instead": [
         "Δημιουργήστε έναν άλλο λογαριασμό"
       ],
-      "Download again ${ size }": [
-        "Επανάληψη λήψης ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Λήψη για συνέχεια ${ size }"
-      ],
       "Keep this plan": [
         "Διατηρήστε αυτό το πλάνο"
       ],
@@ -11435,9 +11423,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Τα Hide-my-email ψευδώνυμα προστατεύουν το ηλεκτρονικό ταχυδρομείο σας από παραβιάσεις δεδομένων"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας, το **κιτ ανάκτησης** θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
-      ],
       "Includes:": [
         "Περιλαμβάνει:"
       ],
@@ -11449,9 +11434,6 @@
       ],
       "Install app and extension": [
         "Εγκατάσταση εφαρμογής και προέκτασης"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Είναι ο μόνος τρόπος για να επαναφέρετε πλήρως τον λογαριασμό σας, οπότε φροντίστε να διατηρήσετε αυτό το **κιτ ανάκτησης** κάπου ασφαλές."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Ενταχθείτε στους περισσότερους από 100 εκατομμυρίων ανθρώπους που έχουν επιλέξει το ${ BRAND_NAME } για να παραμείνουν ασφαλείς στο διαδίκτυο"
@@ -14312,6 +14294,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
+      ],
+      "See number of unread messages in the application icon": [
+        "Δείτε τον αριθμό των μην αναγνωσμένων μηνυμάτων στο εικονίδιο εφαρμογής"
       ],
       "See number of unread messages in the tab icon": [
         "Δείτε τον αριθμό των μην αναγνωσμένων μηνυμάτων στο εικονίδιο καρτέλας"

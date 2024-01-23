@@ -656,9 +656,9 @@
       ],
       "${ n } item": [
         "${ n } элемент",
-        "Элементаў: ${ n }",
-        "Элементаў: ${ n }",
-        "Элементаў: ${ n }"
+        "${ n } элементы",
+        "${ n } элементаў",
+        "${ n } элементаў"
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
@@ -904,7 +904,7 @@
         "Прыватнасць для нас выклікае вялікую заклапочанасць. Даведайцеся чым ${ PASS_APP_NAME } адрозніваецца ад іншых праграм такога тыпу."
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK }, якая з'яўляецца нашай перадавой праграмай абароны ўліковых запісаў"
+        "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
       ],
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
@@ -1049,17 +1049,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } сімвал",
-        "${ passwordOptions.options.length } сімвалы",
-        "${ passwordOptions.options.length } сімвалаў",
-        "${ passwordOptions.options.length } сімвалаў"
+      "${ config.options.length } character": [
+        "${ config.options.length } сімвал",
+        "${ config.options.length } сімвалы",
+        "${ config.options.length } сімвалаў",
+        "${ config.options.length } сімвалаў"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } слова",
-        "${ passwordOptions.options.wordCount } словы",
-        "${ passwordOptions.options.wordCount } слоў",
-        "${ passwordOptions.options.wordCount } слоў"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } словы",
+        "${ config.options.wordCount } слоў",
+        "${ config.options.wordCount } слоў"
       ],
       "1 hour": [
         "1 гадзіна"
@@ -1090,6 +1090,9 @@
       ],
       "A-Z": [
         "А-Я"
+      ],
+      "Account": [
+        "Уліковы запіс"
       ],
       "Alias": [
         "Псеўданім"
@@ -1202,6 +1205,9 @@
       "Item ID": [
         "Ідэнтыфікатар элемента"
       ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Спалучэнні клавіш: ${ shortcut }"
+      ],
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
       ],
@@ -1221,7 +1227,7 @@
         "Даведацца больш"
       ],
       "Login": [
-        "Увайсці"
+        "Запіс уваходу"
       ],
       "Logins": [
         "Запісы ўваходу"

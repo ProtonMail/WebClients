@@ -5,6 +5,12 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Tili"
+      ],
+      "Account settings": [
+        "Tilin asetukset"
+      ],
       "Add": [
         "Lisää"
       ],
@@ -161,8 +167,8 @@
       "Export": [
         "Vie"
       ],
-      "Feedback": [
-        "Palaute"
+      "Feedback & Help": [
+        "Palaute & tuki"
       ],
       "Fill password": [
         "Täytä salasana"
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } -sovelluksen käyttö"
       ],
       "Import": [
         "Tuo"
@@ -337,6 +346,9 @@
       ],
       "Show": [
         "Näytä"
+      ],
+      "Show advanced options": [
+        "Näytä lisävalinnat"
       ],
       "Sign back in": [
         "Kirjaudu takaisin sisään"
@@ -1198,13 +1210,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } merkki",
-        "${ passwordOptions.options.length } merkkiä"
+      "${ config.options.length } character": [
+        "${ config.options.length } merkki",
+        "${ config.options.length } merkkiä"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sana",
-        "${ passwordOptions.options.wordCount } sanaa"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sana",
+        "${ config.options.wordCount } sanaa"
       ],
       "1 hour": [
         "Tunnin kuluttua"
@@ -1235,6 +1247,9 @@
       ],
       "A-Z": [
         "A-Ö"
+      ],
+      "Account": [
+        "Tili"
       ],
       "Alias": [
         "Alias"
@@ -1388,6 +1403,9 @@
       ],
       "Item ID": [
         "Kohteen ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pikanäppäin: ${ shortcut }"
       ],
       "Language": [
         "Kieli"

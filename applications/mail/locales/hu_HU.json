@@ -785,9 +785,6 @@
       "Refresh the page": [
         "Oldal frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Remove": [
         "Eltávolítás"
       ],
@@ -968,13 +965,7 @@
       "Show side panel": [
         "Az oldalsó panel megjelenítése"
       ],
-      "Sign in": [
-        "Bejelentkezés"
-      ],
       "Sign out": [
-        "Kijelentkezés"
-      ],
-      "Signing out": [
         "Kijelentkezés"
       ],
       "Size": [
@@ -2026,9 +2017,6 @@
       ],
       "Gender": [
         "Nem"
-      ],
-      "Geo": [
-        "Helyzet"
       ],
       "Language": [
         "Nyelv"
@@ -3282,12 +3270,6 @@
       "IMAP server is required": [
         "IMAP szerver megadása szükséges"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Helytelen bejelentkezési adatok. Próbálja meg újra."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
-      ],
       "Incorrect username": [
         "Helytelen felhasználónév"
       ],
@@ -3442,9 +3424,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Valami hiba történt. Kérjük próbálja újra."
@@ -5210,9 +5189,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
@@ -5620,9 +5596,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
-      "support team": [
-        "ügyfélszolgálat"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Átmenetileg nem elérhető. Próbálja meg később."
       ],
@@ -5668,9 +5641,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Senki sem tud önnek levélszemetet küldeni, ha nem ismerik a valós e-mail címét. Védje meg az e-mail címét a hide-my-email szolgáltatással."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
@@ -6480,9 +6450,6 @@
       "Email format": [
         "E-mail formátum"
       ],
-      "Email or username": [
-        "Email cím, vagy felhasználónév"
-      ],
       "Emails": [
         "E-mailek"
       ],
@@ -6587,9 +6554,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
-      ],
-      "Mailbox password": [
-        "E-mail titkosítási jelszó"
       ],
       "Main": [
         "Elsődleges"
@@ -8301,14 +8265,8 @@
       "Schedule send": [
         "Küldés ütemezése"
       ],
-      "Search just got smarter and faster": [
-        "A keresés jobb és gyorsabb lett"
-      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "A Levélszemét és a Lomtár tartalma most már nem jelenik meg az Összes levél mappában. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Próbálja ki még ma."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "A képek már alapértelmezetten betöltődnek, a feladók általi követés megakadályozásával. Ez megváltoztatható a ${ settingsLink }."
@@ -8730,9 +8688,6 @@
       ],
       "(active)": [
         "(aktív)"
-      ],
-      "Account suspended": [
-        "Fiók felfüggesztve"
       ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"

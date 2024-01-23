@@ -794,9 +794,6 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Remove": [
         "Αφαίρεση"
       ],
@@ -980,13 +977,7 @@
       "Show side panel": [
         "Εμφάνιση πλαϊνού πλαισίου"
       ],
-      "Sign in": [
-        "Είσοδος"
-      ],
       "Sign out": [
-        "Αποσύνδεση"
-      ],
-      "Signing out": [
         "Αποσύνδεση"
       ],
       "Size": [
@@ -2092,9 +2083,6 @@
       ],
       "Gender": [
         "Φύλο"
-      ],
-      "Geo": [
-        "Γεωγραφικό"
       ],
       "Language": [
         "Γλώσσα"
@@ -3396,12 +3384,6 @@
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
@@ -3556,9 +3538,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
@@ -5397,9 +5376,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -5838,9 +5814,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "ομάδα υποστήριξης"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -5889,9 +5862,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Δε μπορούν να σας στείλουν ανεπιθύμητα μηνύματα εάν δε γνωρίζουν τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. Προστατέψτε τα εισερχόμενά σας με hide-my-email ψευδώνυμα."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -6732,9 +6702,6 @@
       "Email format": [
         "Μορφή μηνύματος"
       ],
-      "Email or username": [
-        "Διεύθυνση ή όνομα χρήστη"
-      ],
       "Emails": [
         "Μηνύματα"
       ],
@@ -6842,9 +6809,6 @@
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
       ],
       "Main": [
         "Κύριο"
@@ -8653,9 +8617,6 @@
       "Schedule send": [
         "Προγραμματισμός αποστολής"
       ],
-      "Search just got smarter and faster": [
-        "Η αναζήτηση μόλις έγινε εξυπνότερη και ταχύτερη"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Ορίστε πότε θα πρέπει να εμφανίζεται ξανά ένα μήνυμα ηλεκτρονικού ταχυδρομείου στα εισερχόμενά σας με τη νέα δυνατότητα αναβολής."
       ],
@@ -8664,9 +8625,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου στα Ανεπιθύμητα και στον Κάδου απορριμμάτων εξαιρούνται πλέον αυτόματα από την ενότητα Όλα τα Μηνύματα. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Δοκιμάστε το σήμερα."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Τώρα φορτώνουμε εικόνες από προεπιλογή και αποκλείουμε τους αποστολείς από την παρακολούθησή σας. Αυτό μπορεί να αλλάξει στις ${ settingsLink }."
@@ -9096,9 +9054,6 @@
       ],
       "(active)": [
         "(ενεργό)"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
       ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"

@@ -405,9 +405,6 @@
       "Refresh the page": [
         "Osvježi stranicu"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Remove": [
         "Ukloni"
       ],
@@ -501,14 +498,8 @@
       "Show preview": [
         "Prikaži pregled"
       ],
-      "Sign in": [
-        "Prijavite se"
-      ],
       "Sign out": [
         "Odjava"
-      ],
-      "Signing out": [
-        "Odjavljivanje"
       ],
       "Skip": [
         "Preskoči"
@@ -847,9 +838,6 @@
       ],
       "Gender": [
         "Spol"
-      ],
-      "Geo": [
-        "Geolokacija"
       ],
       "Language": [
         "Jezik"
@@ -1820,12 +1808,6 @@
       "Image upload failed": [
         "Neuspješno učitavanje slike"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Nevažeći podaci za prijavu. Molimo pokušajte ponovno."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Pogrešna lozinka poštanskog pretinca. Pokušajte ponovno."
-      ],
       "Incorrect password. Please try again.": [
         "Netočna lozinka. Pokušajte ponovo."
       ],
@@ -1886,9 +1868,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Naziv mape je predugačak. Odaberite drugi naziv."
@@ -2660,9 +2639,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Ako mislite da je ovo pogreška, kontaktirajte nas na ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
@@ -2813,14 +2789,8 @@
       "Something went wrong, please try again later.": [
         "Nešto je pošlo po zlu. Pokušajte ponovno."
       ],
-      "support team": [
-        "tim za podršku"
-      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Vaš račun je suspendiran zbog mogućih kršenja pravila."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ova adresa je onemogućena. Da biste mogli slati na ovu adresu, vlasnik najprije mora omogućiti adresu."
@@ -3107,9 +3077,6 @@
       "Email format": [
         "Format e-pošte"
       ],
-      "Email or username": [
-        "Adresa e-pošte ili korisničko ime"
-      ],
       "Emails": [
         "E-pošta"
       ],
@@ -3184,9 +3151,6 @@
       ],
       "Mail Server (IMAP)": [
         "Poslužitelj e-pošte (IMAP)"
-      ],
-      "Mailbox password": [
-        "Lozinka sandučića e-pošte"
       ],
       "Main": [
         "Glavno"
@@ -4024,9 +3988,6 @@
         "${ emailsCount } adresa e-pošte",
         "${ emailsCount } adrese e-pošte",
         "${ emailsCount } adrese e-pošte"
-      ],
-      "Account suspended": [
-        "Račun je suspendiran"
       ],
       "Active": [
         "Aktivno"
