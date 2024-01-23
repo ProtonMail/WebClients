@@ -11,7 +11,6 @@ import cache from '@proton/pass/store/sagas/client/cache.saga';
 import hydrate from '@proton/pass/store/sagas/client/hydrate.saga';
 import notification from '@proton/pass/store/sagas/client/notification.saga';
 import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
-import request from '@proton/pass/store/sagas/client/request-saga';
 import settings from '@proton/pass/store/sagas/client/settings.saga';
 import sync from '@proton/pass/store/sagas/client/sync.saga';
 import events from '@proton/pass/store/sagas/events/events.saga';
@@ -74,7 +73,6 @@ export function* rootSaga(options: RootSagaOptions) {
             newUserInviteRemove,
             notification,
             reportProblem,
-            request,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,

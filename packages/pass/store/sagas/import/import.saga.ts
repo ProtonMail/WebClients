@@ -142,6 +142,7 @@ function* importWorker(
                 meta.sender?.endpoint
             )
         );
+
         onItemsUpdated?.();
     } catch (error: any) {
         yield put(importItemsFailure(meta.request.id, error, meta.sender?.endpoint));
