@@ -1021,13 +1021,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } merkki",
-        "${ passwordOptions.options.length } merkkiä"
+      "${ config.options.length } character": [
+        "${ config.options.length } merkki",
+        "${ config.options.length } merkkiä"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sana",
-        "${ passwordOptions.options.wordCount } sanaa"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sana",
+        "${ config.options.wordCount } sanaa"
       ],
       "1 hour": [
         "Tunnin kuluttua"
@@ -1058,6 +1058,9 @@
       ],
       "A-Z": [
         "A-Ö"
+      ],
+      "Account": [
+        "Tili"
       ],
       "Alias": [
         "Alias"
@@ -1169,6 +1172,9 @@
       ],
       "Item ID": [
         "Kohteen ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Pikanäppäin: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Kahden viikon aikana"

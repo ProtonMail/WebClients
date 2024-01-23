@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Nastavenia účtu"
+      ],
       "Add": [
         "Pridať"
       ],
@@ -160,9 +163,6 @@
       ],
       "Export": [
         "Exportovať"
-      ],
-      "Feedback": [
-        "Spätná väzba"
       ],
       "Fill password": [
         "Vyplniť heslo"
@@ -1228,17 +1228,17 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } znak",
-        "${ passwordOptions.options.length } znaky",
-        "${ passwordOptions.options.length } znakov",
-        "${ passwordOptions.options.length } znakov"
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znakov",
+        "${ config.options.length } znaky",
+        "${ config.options.length } znaky"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } slovo",
-        "${ passwordOptions.options.wordCount } slová",
-        "${ passwordOptions.options.wordCount } slov",
-        "${ passwordOptions.options.wordCount } slov"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } slovo",
+        "${ config.options.wordCount } slová",
+        "${ config.options.wordCount } slov",
+        "${ config.options.wordCount } slov"
       ],
       "1 hour": [
         "1 hodine"
@@ -1422,6 +1422,9 @@
       ],
       "Item ID": [
         "ID položky"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klávesová skratka: ${ shortcut }"
       ],
       "Language": [
         "Jazyk"
@@ -2070,6 +2073,9 @@
       ],
       "Your session could not be resumed.": [
         "Vašu reláciu sa nepodarilo obnoviť."
+      ],
+      "Your session is inactive.": [
+        "Vaša relácia je neaktívna."
       ],
       "Your session was locked.": [
         "Vaša relácia bola uzamknutá."

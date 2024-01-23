@@ -852,9 +852,6 @@
       "Signing in": [
         "正在登录"
       ],
-      "Signing out": [
-        "正在退出账户"
-      ],
       "Size": [
         "字号"
       ],
@@ -1020,6 +1017,11 @@
     "Action in trial plan": {
       "No, thanks": [
         "不用了，谢谢"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "重新激活"
       ]
     },
     "Action; accept invitation to share calendar": {
@@ -1366,6 +1368,9 @@
     "Billing cycle": {
       "${ n } months": [
         "${ n } 个月"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "将以 ${ renewPrice } 的价格自动续期 ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -1936,9 +1941,6 @@
       ],
       "Gender": [
         "性别"
-      ],
-      "Geo": [
-        "地理位置"
       ],
       "Language": [
         "语言"
@@ -5107,17 +5109,6 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -6907,8 +6898,8 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "您当前正在使用 ${ organization.UsedMembers } / ${ organization.MaxMembers } 个可用用户许可证"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "您当前正在使用 ${ usedMembers } / ${ maxMembers } 个可用用户许可证"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登录账户 ${ memberAddress }。"
@@ -7112,6 +7103,17 @@
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -7140,6 +7142,11 @@
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "您可以重新激活，避免等级失效"
       ]
     },
     "Info when deleting payment method": {
@@ -11196,6 +11203,9 @@
     "Subscription status": {
       "Active": [
         "已激活"
+      ],
+      "Expiring": [
+        "即将到期"
       ]
     },
     "Success": {
@@ -12545,6 +12555,12 @@
       ]
     },
     "Title subscription": {
+      "End date": [
+        "结束日期"
+      ],
+      "Plan": [
+        "等级"
+      ],
       "Status": [
         "状态"
       ]

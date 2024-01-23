@@ -487,9 +487,6 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Remove": [
         "Удалить"
       ],
@@ -610,14 +607,8 @@
       "Show side panel": [
         "Показать боковую панель"
       ],
-      "Sign in": [
-        "Войти"
-      ],
       "Sign out": [
         "Выйти"
-      ],
-      "Signing out": [
-        "Выход"
       ],
       "Skip": [
         "Пропустить"
@@ -1097,9 +1088,6 @@
       ],
       "Gender": [
         "Пол"
-      ],
-      "Geo": [
-        "Геолокация"
       ],
       "Language": [
         "Язык"
@@ -2192,12 +2180,6 @@
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
-      ],
       "Incorrect password. Please try again.": [
         "Неверный пароль. Пожалуйста, попробуйте снова."
       ],
@@ -2326,9 +2308,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
       "status page": [
         "страница статуса"
@@ -3416,6 +3395,12 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } пропущен",
+        "${ skippedCount } пропущены",
+        "${ skippedCount } пропущены",
+        "${ skippedCount } пропущены"
+      ],
       "${ speed }/s": [
         "${ speed }/с"
       ],
@@ -3806,9 +3791,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -4172,6 +4154,9 @@
       "Signature issue": [
         "Проблема с подписью"
       ],
+      "Skipped": [
+        "Пропущено"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Не удалось скачать некоторые файлы. Попробуйте скачать файлы еще раз."
       ],
@@ -4186,9 +4171,6 @@
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
-      ],
-      "support team": [
-        "служба поддержки"
       ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
@@ -4210,9 +4192,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Все еще остались файлы для передачи. Закрытие менеджера передачи завершит все операции."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -4731,9 +4710,6 @@
       "Email format": [
         "Формат сообщения"
       ],
-      "Email or username": [
-        "Эл. почта или имя пользователя"
-      ],
       "Emails": [
         "Электронные письма"
       ],
@@ -4841,9 +4817,6 @@
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Main": [
         "Главная"
@@ -6383,9 +6356,6 @@
         "${ numberOfFailedTransfer.total } неудавшихся загрузки",
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок",
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
-      ],
-      "Account suspended": [
-        "Аккаунт временно заблокирован"
       ],
       "Active": [
         "Активно"

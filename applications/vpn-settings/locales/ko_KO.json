@@ -470,9 +470,6 @@
       "Signing in": [
         "로그인 중"
       ],
-      "Signing out": [
-        "로그아웃 중"
-      ],
       "Submit": [
         "제출"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Business로 업그레이드"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary로 업그레이드"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -1862,8 +1856,8 @@
       "Access to the desktop app is limited": [
         "데스크톱 앱에 접근할 수 없습니다"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } 데스크톱 앱 베타 버전은 현재 ${ MAIL_APP_NAME } 유료 플랜을 사용 중인 모든 사람들이 이용 가능합니다. 곧 모두가 사용할 수 있게 될 예정입니다."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "접근을 위해선 오늘 업그레이드 하거나 2024년 초까지 기다려 주세요."
@@ -2054,6 +2048,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "주소를 추가하기 전에 지정 도메인을 설정해야 합니다."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "조직에 사용자를 추가하기 전에 커스텀 도메인을 구성하세요."
@@ -2380,8 +2377,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "만일 사용자가 이미 ${ MAIL_APP_NAME } 주소를 소유한다면, 입력하십시오. 그렇지 않다면 먼저 걔정 생성이 필요합니다."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "초대가 취소되며 사용자가 ${ organization.Name } 에 합류하지 않게 됩니다."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "초대가 취소되며 사용자가 ${ organizationName } 에 합류하지 않게 됩니다."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "사용자의 계정에서 ${ BRAND_NAME } Unlimited 요금제의 30일 무료 체험이 삭제됩니다*"
@@ -2421,8 +2418,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name }님이 ${ organization.Name }에서 삭제되었습니다."
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name }님이 ${ organizationName }에서 삭제되었습니다."
       ],
       "An error occurred, please try again": [
         "오류가 발생했습니다, 다시 시도하세요"
@@ -3876,8 +3873,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "현재 ${ ipAddresses } 사용 가능한 전용 서버의 ${ ipCount }을(를) 사용하고 있습니다."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "현재 ${ organization.MaxMembers } 사용 가능한 사용자 라이선스 ${ organization.UsedMembers }을(를) 사용하고 있습니다."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "현재 ${ maxMembers } 사용 가능한 사용자 라이선스 ${ usedMembers }을(를) 사용하고 있습니다."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } 계정으로 로그인했습니다."
@@ -7575,7 +7572,7 @@
     },
     "Users table: single sign-on tooltip": {
       "SSO user provided by your identity provider": [
-        "SSO 사용자는 사용자의 정보 제공사로 부터 제공되었습니다."
+        "SSO 사용자는 사용자의 정보 제공사로부터 제공되었습니다."
       ]
     },
     "Validation": {

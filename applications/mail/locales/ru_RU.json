@@ -793,9 +793,6 @@
       "Refresh the page": [
         "Обновить страницу"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Remove": [
         "Удалить"
       ],
@@ -976,14 +973,8 @@
       "Show side panel": [
         "Показать боковую панель"
       ],
-      "Sign in": [
-        "Войти"
-      ],
       "Sign out": [
         "Выйти"
-      ],
-      "Signing out": [
-        "Выход"
       ],
       "Size": [
         "Размер"
@@ -2094,9 +2085,6 @@
       ],
       "Gender": [
         "Пол"
-      ],
-      "Geo": [
-        "Геолокация"
       ],
       "Language": [
         "Язык"
@@ -3397,12 +3385,6 @@
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
-      ],
       "Incorrect username": [
         "Некорректное имя пользователя"
       ],
@@ -3567,9 +3549,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Что-то пошло не так. Пожалуйста, попробуйте еще раз."
@@ -4918,6 +4897,42 @@
         "${ currentProgress } из ${ totalProgress }",
         "${ currentProgress } из ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } цепочка писем будет помечена как:",
+        "${ elementsCount } цепочки писем будет помечены как:",
+        "${ elementsCount } цепочек писем будет помечены как:",
+        "${ elementsCount } цепочек писем будет помечены как:"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } цепочка будет перемещена",
+        "${ elementsCount } цепочки будет перемещены",
+        "${ elementsCount } цепочек будет перемещены",
+        "${ elementsCount } цепочек будет перемещены"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } сообщение будет помечено как:",
+        "${ elementsCount } сообщения будут помечены как:",
+        "${ elementsCount } сообщений будут помечены как:",
+        "${ elementsCount } сообщений будут помечены как:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } сообщение будет помечено как прочитанное.",
+        "${ elementsCount } сообщения будут помечены как прочитанные.",
+        "${ elementsCount } сообщений будут помечены как прочитанные.",
+        "${ elementsCount } сообщений будут помечены как прочитанные."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } сообщение будет помечено как непрочитанное.",
+        "${ elementsCount } сообщения будут помечены как непрочитанные.",
+        "${ elementsCount } сообщений будут помечены как непрочитанные.",
+        "${ elementsCount } сообщений будут помечены как непрочитанные."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } сообщение будет перемещено",
+        "${ elementsCount } сообщения будет перемещены",
+        "${ elementsCount } сообщений будет перемещены",
+        "${ elementsCount } сообщений будет перемещены"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } встроенное изображение",
         "${ embeddedAttachmentsCount } встроенных изображения",
@@ -5134,8 +5149,17 @@
       "and": [
         "и"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Все запланированные или отложенные сообщения будут отменены."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
+      ],
+      "Applying actions to conversations": [
+        "Применение действий к цепочкам писем"
+      ],
+      "Applying actions to messages": [
+        "Применение действий к сообщениям"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Вы уверены, что хотите удалить все письма из этой папки?"
@@ -5482,9 +5506,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -5598,6 +5619,9 @@
       ],
       "Merged": [
         "Объединённые"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Выполняются действия с сообщением. Это может занять некоторое время."
       ],
       "Message download status:": [
         "Статус загрузки сообщения:"
@@ -5899,9 +5923,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
-      "support team": [
-        "служба поддержки"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -5949,9 +5970,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Они не могут отправить вам спам, если не знают ваш адрес электронной почты. Защитите свой почтовый ящик псевдонимом hide-my-email."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Этот аккаунт был отключен из-за возможного нарушения политики."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы была возможность отправки на него, владелец адреса должен его включить."
@@ -6054,6 +6072,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Публичный ключ отправителя пока не отмечен как доверенный."
+      ],
+      "to ${ destinationElement } folder.": [
+        "в ${ destinationElement } папку."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -6318,6 +6339,30 @@
         "Вы выбрали **${ count } сообщения** с этим ярлыком",
         "Вы выбрали **${ count } сообщений** с этим ярлыком",
         "Вы выбрали **${ count } сообщений** с этим ярлыком"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Вы выбрали **${ elementsCount } цепочку писем** в ${ location }",
+        "Вы выбрали **${ elementsCount } цепочки писем** в ${ location }",
+        "Вы выбрали **${ elementsCount } цепочек писем** в ${ location }",
+        "Вы выбрали **${ elementsCount } цепочек писем** в ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Вы выбрали **${ elementsCount } цепочку писем**.",
+        "Вы выбрали **${ elementsCount } цепочки писем**.",
+        "Вы выбрали **${ elementsCount } цепочек писем**.",
+        "Вы выбрали **${ elementsCount } цепочек писем**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Вы выбрали **${ elementsCount } сообщение** в ${ location }",
+        "Вы выбрали **${ elementsCount } сообщения** в ${ location }",
+        "Вы выбрали **${ elementsCount } сообщений** в ${ location }",
+        "Вы выбрали **${ elementsCount } сообщений** в ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Вы выбрали **${ elementsCount } сообщение**.",
+        "Вы выбрали **${ elementsCount } сообщения**.",
+        "Вы выбрали **${ elementsCount } сообщений**.",
+        "Вы выбрали **${ elementsCount } сообщений**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Вы написали \"${ attachmentsFoundKeyword }\", но ни одно вложение не было добавлено. Хотите ли вы все равно отправить свое сообщение?"
@@ -6796,9 +6841,6 @@
       "Email format": [
         "Формат сообщения"
       ],
-      "Email or username": [
-        "Эл. почта или имя пользователя"
-      ],
       "Emails": [
         "Электронные письма"
       ],
@@ -6903,9 +6945,6 @@
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Main": [
         "Главная"
@@ -8663,14 +8702,8 @@
       "Schedule send": [
         "Отправка по расписанию"
       ],
-      "Search just got smarter and faster": [
-        "Поиск стал умнее и быстрее"
-      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Спам и нежелательные сообщения теперь автоматически исключаются из Всей почты. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Попробуйте это сегодня."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Теперь мы загружаем изображения по умолчанию и не даем отправителю отслеживать вас. Это можно изменить в ${ settingsLink }."
@@ -9157,8 +9190,11 @@
       "(active)": [
         "(активна)"
       ],
-      "Account suspended": [
-        "Аккаунт временно заблокирован"
+      "Action all conversations": [
+        "Действие со всеми цепочками писем"
+      ],
+      "Action all messages": [
+        "Действие со всеми сообщениями"
       ],
       "Add contact group name": [
         "Добавление имени для группы контактов"
@@ -9451,11 +9487,17 @@
       "Mark conversations as read": [
         "Отметить цепочки писем как прочитанные"
       ],
+      "Mark conversations as unread": [
+        "Пометить цепочки писем как непрочитанные"
+      ],
       "Mark email as legitimate": [
         "Пометить электронное письмо как допустимое"
       ],
       "Mark messages as read": [
         "Отметить сообщения как прочитанные"
+      ],
+      "Mark messages as unread": [
+        "Пометить сообщения как непрочитанные"
       ],
       "Merge contacts": [
         "Объединение контактов"
@@ -9486,6 +9528,12 @@
       ],
       "More selections": [
         "Ещё варианты выбора"
+      ],
+      "Move all conversations": [
+        "Переместить все цепочки писем"
+      ],
+      "Move all messages": [
+        "Переместить все сообщения"
       ],
       "Move all messages to Archive": [
         "Переместить все сообщения в Архив"

@@ -905,9 +905,6 @@
       "Signing in": [
         "サインイン中"
       ],
-      "Signing out": [
-        "サインアウト中"
-      ],
       "Size": [
         "サイズ"
       ],
@@ -2023,9 +2020,6 @@
       ],
       "Gender": [
         "性別"
-      ],
-      "Geo": [
-        "緯度・経度"
       ],
       "Language": [
         "言語"
@@ -3453,6 +3447,11 @@
         "添付ファイルなし"
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "詳細"
+      ]
+    },
     "email_forwarding_2023: Placeholder": {
       "Condition:": [
         "状態："
@@ -4581,8 +4580,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "招待はキャンセルされ、ユーザーは ${ organization.Name } に参加できなくなります。"
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "招待はキャンセルされ、ユーザーは ${ organizationName } に参加できなくなります。"
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
@@ -4630,8 +4629,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } が ${ organization.Name } から削除されました"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } が ${ organizationName } から削除されました"
       ],
       "An error occurred, please try again": [
         "エラーが発生しました。もう一度お試しください"
@@ -5586,14 +5585,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
       ]
     },
     "Info": {
@@ -7481,8 +7472,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "現在、利用可能な ${ organization.MaxMembers } ユーザー ライセンスのうち ${ organization.UsedMembers } を使用しています。"
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "現在、利用可能な ${ maxMembers } ユーザー ライセンスのうち ${ usedMembers } を使用しています。"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "アカウント ${ memberAddress } でサインインしました"
@@ -7699,6 +7690,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
       ]
     },
     "Info - folder colouring feature": {
@@ -10900,12 +10899,6 @@
       "Create another account instead": [
         "代わりに別のアカウントを作成してください"
       ],
-      "Download again ${ size }": [
-        "ダウンロード ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "ダウンロードして続行 ${ size }"
-      ],
       "Keep this plan": [
         "このプランを維持してください"
       ],
@@ -11044,9 +11037,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email エイリアスは電子メールをデータ侵害から保護します"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "${ BRAND_NAME } アカウントからロックアウトされた場合でも、**回復キット**を使用してログインしてデータを回復できます。"
-      ],
       "Includes:": [
         "含まれるもの:"
       ],
@@ -11058,9 +11048,6 @@
       ],
       "Install app and extension": [
         "アプリと拡張機能をインストールする"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "これがアカウントを完全に復元する唯一の方法であるため、この**回復キット**は安全な場所に保管してください。"
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "オンラインでの安全を確保するために ${ BRAND_NAME } を選択した 1 億人以上の人々に加わりましょう"
@@ -11161,6 +11148,11 @@
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Permission": {
+      "Organization only": [
+        "組織のみ"
       ]
     },
     "Personal calendar section description": {
@@ -13025,8 +13017,14 @@
       "Delete filter?": [
         "フィルターを削除しますか?"
       ],
+      "Delete folder?": [
+        "フォルダーを削除しますか？"
+      ],
       "Delete key permanently?": [
         "キーを完全に削除しますか?"
+      ],
+      "Delete label?": [
+        "ラベルを削除しますか？"
       ],
       "Delete logs": [
         "ログの削除"

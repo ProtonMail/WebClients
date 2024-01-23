@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Configuració del compte"
+      ],
       "Add": [
         "Afegeix"
       ],
@@ -148,9 +151,6 @@
       ],
       "Export": [
         "Exporta"
-      ],
-      "Feedback": [
-        "Comentaris"
       ],
       "Fill password": [
         "Emplena la contrasenya"
@@ -319,6 +319,9 @@
       ],
       "Show": [
         "Mostra"
+      ],
+      "Show advanced options": [
+        "Mostra les opcions avançades"
       ],
       "Sign back in": [
         "Tornar a entrar"
@@ -1044,13 +1047,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } caràcter",
-        "${ passwordOptions.options.length } caràcters"
+      "${ config.options.length } character": [
+        "${ config.options.length } caràcter",
+        "${ config.options.length } caràcters"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } paraula",
-        "${ passwordOptions.options.wordCount } paraules"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } paraula",
+        "${ config.options.wordCount } paraules"
       ],
       "1 hour": [
         "1 hora"
@@ -1234,6 +1237,9 @@
       ],
       "Item ID": [
         "ID de l'element"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Drecera de teclat: ${ shortcut }"
       ],
       "Language": [
         "Idioma"
@@ -1529,6 +1535,9 @@
       ],
       "Full Name": [
         "Nom complert"
+      ],
+      "MM/YY": [
+        "MM/AA"
       ],
       "Other": [
         "Altres"

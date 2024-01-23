@@ -849,6 +849,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registrado. Use-o para desbloquear o ${ PASS_APP_NAME }"
       ],
+      "Pinning item...": [
+        "Fixando item..."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
       ],
@@ -949,6 +952,9 @@
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
       ],
+      "Unpinning item...": [
+        "Desafiando item..."
+      ],
       "Use vaults to share this item with others.": [
         "Use cofres para compartilhar este item com outros."
       ],
@@ -1012,13 +1018,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } caracter",
-        "${ passwordOptions.options.length } caracteres"
+      "${ config.options.length } character": [
+        "${ config.options.length } caracter",
+        "${ config.options.length } caracteres"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } palavra",
-        "${ passwordOptions.options.wordCount } palavras"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } palavra",
+        "${ config.options.wordCount } palavras"
       ],
       "1 hour": [
         "1 hora"
@@ -1049,6 +1055,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Conta"
       ],
       "Alias": [
         "Alias"
@@ -1160,6 +1169,9 @@
       ],
       "Item ID": [
         "ID do item"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atalho de teclado: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
@@ -1628,6 +1640,9 @@
       "Empty note": [
         "Nota vazia"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "A data de expiração não está no formato MM/AA"
+      ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
       ],
@@ -1721,6 +1736,9 @@
       ],
       "Your session could not be resumed.": [
         "Não foi possível retomar sua sessão."
+      ],
+      "Your session is inactive.": [
+        "Sua sessão está inativa."
       ],
       "Your session was locked.": [
         "Sua sessão foi bloqueada."

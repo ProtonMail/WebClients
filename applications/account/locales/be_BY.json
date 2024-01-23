@@ -908,9 +908,6 @@
       "Signing in": [
         "Адбываецца ўваход"
       ],
-      "Signing out": [
-        "Адбываецца выхад"
-      ],
       "Size": [
         "Памер"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце, каб уключыць ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Палепшыць да Visionary"
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
@@ -2115,9 +2109,6 @@
       "Gender": [
         "Пол"
       ],
-      "Geo": [
-        "Геалакацыя"
-      ],
       "Language": [
         "Мова"
       ],
@@ -2169,7 +2160,7 @@
         "Мабільны"
       ],
       "Other": [
-        "Іншае"
+        "Іншы"
       ],
       "Pager": [
         "Пэйджар"
@@ -3159,8 +3150,8 @@
       "Access to the desktop app is limited": [
         "Доступ да настольнай праграмы абмежаваны"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }, а неўзабаве яна стане даступна ўсім карыстальнікам."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
@@ -3973,6 +3964,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "У доступе адмоўлена, правы адміністратара абмежаваны."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Cканфігурыруйце свой карыстальніцкі дамен перад тым, як дадаваць карыстальнікаў у вашу арганізацыю."
       ],
@@ -4472,7 +4466,7 @@
         "${ signIn } абнавіце вашы параметры падпіскі электроннай пошты."
       ],
       "sign in": [
-        "увайсці"
+        "ўваходу"
       ],
       "There was a problem unsubscribing you.": [
         "Узнікла праблема пры скасаванні падпіскі."
@@ -4781,8 +4775,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Калі ў карыстальніка ўжо ёсць адрас ${ MAIL_APP_NAME }, увядзіце яго тут. У адваротным выпадку спачатку неабходна стварыць уліковы запіс."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Уліковы запіс карыстальніка будзе пераведзены на тарыфны план ${ BRAND_NAME } Unlimited на 30 дзён бясплатнай пробнай версіі*."
@@ -4830,8 +4824,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Карыстальнік ${ member.Name } быў выдалены з ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Карыстальнік ${ member.Name } быў выдалены з ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Адбылася памылка. Паспрабуйце яшчэ раз"
@@ -5839,17 +5833,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -5918,7 +5901,7 @@
         "${ n } адрасы"
       ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
-        "${ none }: патрабуе не змяшчаць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна людзі выкарыстоўваюць гэтую палітыку толькі для прыбірання непаладак ці тэставання."
+        "${ none }: не пераводзіць у каранцін і не адхіляць неаўтарызаваныя электронныя лісты. Звычайна людзі выкарыстоўваюць гэту палітыку пры непаладках або тэсціраванні."
       ],
       "${ number } city": [
         "${ number } горад",
@@ -5966,10 +5949,10 @@
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "${ quarantine }: патрабуе ад платформаў атрымальніка пазначаць несанкцыянаваныя электронныя лісты як спам або змяшчаць іх у каранцін."
+        "${ quarantine }: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
-        "${ reject }: патрабуе ад платформаў атрымальніка адхіляць несанкцыянаваныя электронныя лісты."
+        "${ reject }: просіць платформы атрымальніка адхіляць неаўтарызаваныя электронныя лісты."
       ],
       "${ remainingAddresses.length } more": [
         "яшчэ ${ remainingAddresses.length }",
@@ -6326,7 +6309,7 @@
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
+        "Каб вы маглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам спатрэбіцца дадаць наступныя два запісы MX у кансоль DNS (якія размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен). У нашай базе ведаў вы зможаце знайсці прыклад і некаторыя карысныя парады ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
@@ -6482,10 +6465,10 @@
         "Лагатып Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашыя электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Упэўніцеся, што вы дадалі наступныя тры запісы CNAME у вашую кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+        "DKIM дазваляе ${ BRAND_NAME } крыптаграфічна падпісваць вашы электронныя лісты і прадухіляць падробку вашай электроннай пошты зламыснікамі. Пераканайцеся, што вы дадалі наступныя тры запісы CNAME у вашу кансоль DNS (яны размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўшчыка менавіта з вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена дзеля выдачы яго за ваш. \"p=\" (палітыка) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя электронныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Упэўніцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+        "DMARC правярае, ці паходзяць запісы SPF і DKIM адпраўніка ад вашага дамена. Гэта можа перашкодзіць зламыснікам выкарыстоўваць SPF і DKIM іншага дамена для выдачы яго за ваш. \"p=\" (policy) у гэтым запісе паказвае, як вы хочаце, каб платформы атрымальнікаў апрацоўвалі неаўтарызаваныя лісты. Мы рэкамендуем выкарыстоўваць для большасці даменаў палітыку \"p=quarantine\". Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (які размешчаны на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
@@ -6647,7 +6630,7 @@
         "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
       ],
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Для карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншай службы электроннай пошты, каб забяспечыць плаўны пераход выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
+        "Для забеспячэння плаўнага пераходу карыстальнікаў, якія пераходзяць на ${ MAIL_APP_NAME } з іншых служб электроннай пошты, выберыце ўкладку ${ boldAddresses } і дадайце ўсе актыўныя адрасы электроннай пошты перад змяненнем запісу MX."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
@@ -6773,7 +6756,7 @@
         "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "ВАЖНА: Калі кансоль DNS не дазваляе значэнням CNAME заканчвацца на кропку, вы можаце выдаліць апошнюю кропку ў значэннях CNAME."
+        "ВАЖНА: калі ваша кансоль DNS не дазваляе значэнням CNAME ставіць кропку апошнім сімвалам, вы можаце выдаліць апошні сімвал кропкі ў значэннях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важна! Пераканайцеся, што вы захавалі коды аднаўлення. У адваротным выпадку вы незваротна страціце доступ да вашага ўліковага запісу, калі згубіце вашу прыладу двухфактарнай аўтэнтыфікацыі."
@@ -6908,10 +6891,10 @@
         "У журнале пералічаны спробы аўтарызацыі ва ўсіх сэрвісах ${ BRAND_NAME }, якія выкарыстоўваюць вашы ўліковыя даныя ${ BRAND_NAME_TWO }."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
-        "Распаўсюджаныя паштовыя службы могуць адхіляць вашыя электронныя лісты або лічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць ці настроены няправільна."
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або наладжаны не адпаведным чынам."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
-        "Распаўсюджаныя паштовыя службы могуць адхіляць вашыя электронныя лісты або лічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць ці настроены няправільна."
+        "Распаўсюджаныя паштовыя службы могуць адхіляць вашы электронныя лісты або палічыць іх за спам, калі SPF/DKIM/DMARC адсутнічаюць або не наладжаны адпаведным чынам."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Пераканайцеся, што ў вас ${ addARecoveryMethod }, каб вы не страцілі доступ да свайго ўліковага запісу, калі забудзеце пароль."
@@ -7355,7 +7338,7 @@
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Упэўніцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
+        "SPF удакладняе, каму дазволена адпраўляць электронную пошту для вашага дамена. Пераканайцеся, што вы дадалі наступны запіс TXT у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен)."
       ],
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
@@ -7906,11 +7889,11 @@
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
         "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
-        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
@@ -8145,6 +8128,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9296,6 +9290,9 @@
       ],
       "Show sender images": [
         "Паказваць відарысы адпраўніка"
+      ],
+      "Show unread count in application icon": [
+        "Паказваць колькасць непрачытаных у значку праграмы"
       ],
       "Show unread count in Favicon": [
         "Паказваць колькасць непрачытаных у піктаграме сайта"
@@ -11545,12 +11542,6 @@
       "Create another account instead": [
         "Стварыць іншы ўліковы запіс"
       ],
-      "Download again ${ size }": [
-        "Спампаваць яшчэ раз ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Спампаваць, каб працягнуць ${ size }"
-      ],
       "Keep this plan": [
         "Пакінуць гэты тарыфны план"
       ],
@@ -11689,9 +11680,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Псеўданімы Hide-my-email абараняюць вашу электронную пошту ад уцечкі даных"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваш **камплект аднаўлення** дазволіць вам увайсці і аднавіць вашы даныя."
-      ],
       "Includes:": [
         "Уключае:"
       ],
@@ -11703,9 +11691,6 @@
       ],
       "Install app and extension": [
         "Усталяваць праграму і пашырэнне"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Гэта адзіны спосаб поўнага аднаўлення вашага ўліковага запісу. Пераканайцеся, што **камплект аднаўлення** захаваны ў надзейным месцы."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Далучайцеся да больш 100 мільёнаў людзей, якія ўжо выбралі ${ BRAND_NAME }, каб захаваць сваю сеткавую бяспеку."
@@ -12016,7 +12001,7 @@
     },
     "Recovery Email": {
       "Back to ${ signIn }.": [
-        "Вярнуцца ў ${ signIn }."
+        "Вярнуцца да ${ signIn }."
       ],
       "Cancel": [
         "Скасаваць"
@@ -12031,7 +12016,7 @@
         "Пошта выдалена"
       ],
       "sign in": [
-        "увайсці"
+        "ўваходу"
       ],
       "Verify now": [
         "Праверыць зараз"
@@ -14676,6 +14661,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Паведамленні ў папках Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
+      ],
+      "See number of unread messages in the application icon": [
+        "Паказваць колькасць непрачытаных паведамленняў у значку праграмы"
       ],
       "See number of unread messages in the tab icon": [
         "Праглядайце колькасць непрачытаных паведамленняў у закладцы значка"

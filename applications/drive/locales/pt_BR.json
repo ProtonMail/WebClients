@@ -493,9 +493,6 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Remove": [
         "Remover"
       ],
@@ -616,14 +613,8 @@
       "Show side panel": [
         "Mostrar o painel lateral"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign out": [
         "Encerrar sessão"
-      ],
-      "Signing out": [
-        "Encerrando a sessão"
       ],
       "Skip": [
         "Ignorar"
@@ -1096,9 +1087,6 @@
       ],
       "Gender": [
         "Gênero"
-      ],
-      "Geo": [
-        "Geolocalização"
       ],
       "Language": [
         "Idioma"
@@ -2201,12 +2189,6 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "As credenciais de início de sessão não são válidas. Tente novamente."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorreta. Tente novamente."
-      ],
       "Incorrect password. Please try again.": [
         "A senha não é válida. Tente novamente."
       ],
@@ -2330,9 +2312,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "status page": [
         "página de status"
@@ -3352,6 +3331,10 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } pulado",
+        "${ skippedCount } pulados"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -3388,6 +3371,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
+      ],
+      "All encrypted files": [
+        "Todos os arquivos citografados."
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -3581,11 +3567,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Download pausado devido a problemas de conexão; será retomado automaticamente"
       ],
+      "Download ready": [
+        "Download pronto"
+      ],
       "Downloaded": [
         "Baixado"
       ],
       "Downloading": [
         "Baixando"
+      ],
+      "Downloading all encrypted files": [
+        "Baixando todos os arquivos criptografados"
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
@@ -3725,9 +3717,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
@@ -4041,6 +4030,13 @@
       "Search Enabled": [
         "Busca habilitada"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } arquivo baixado de forma segura",
+        "${ nbFile } arquivos baixados de forma segura"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Todos os arquivos criptografados baixados de forma segura"
+      ],
       "Select a folder to move to.": [
         "Selecione uma pasta para onde deseja mover."
       ],
@@ -4113,9 +4109,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
-      "support team": [
-        "equipe de suporte"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -4140,9 +4133,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Há arquivos que ainda precisam ser transferidos. Fechar o gerenciador de transferência encerrará todas as operações."
       ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Essa conta foi suspensa devido a uma potencial violação da política."
-      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
@@ -4154,6 +4144,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Este arquivo pode ter sido excluído, movido ou indisponível. Tente entrar em contato com o proprietário do arquivo."
+      ],
+      "This item already exists in your library": [
+        "Esse item já existe na sua biblioteca"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
@@ -4236,6 +4229,9 @@
       ],
       "Trash is empty": [
         "A lixeira está vazia"
+      ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Teste o ${ DRIVE_APP_NAME }: grátis para sempre"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
@@ -4396,6 +4392,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
+      ],
+      "Your download is in progress": [
+        "Seu download está em progresso"
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
@@ -4654,9 +4653,6 @@
       "Email format": [
         "Formato do e-mail"
       ],
-      "Email or username": [
-        "E-mail ou nome de usuário"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -4764,9 +4760,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -5936,6 +5929,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium de ${ appName1 } e ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -6283,9 +6279,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } erro de upload",
         "${ numberOfFailedTransfer.total } erro de upload"
-      ],
-      "Account suspended": [
-        "Conta suspensa"
       ],
       "Active": [
         "Ativo"

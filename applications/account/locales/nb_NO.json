@@ -908,9 +908,6 @@
       "Signing in": [
         "Logger på"
       ],
-      "Signing out": [
-        "Logger av"
-      ],
       "Size": [
         "Størrelse"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Oppgrader til Visionary"
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Kjønn"
       ],
-      "Geo": [
-        "Geolokalisering"
-      ],
       "Language": [
         "Språk"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "Tilgang til skrivebordsappen er begrenset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Den vil snart være tilgjengelig for alle."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Vennligst konfigurer et egendefinert domene før du legger til adresser."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Vennligst konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Brukerens konto vil bli flyttet til en ${ BRAND_NAME } Unlimited-plan for en 30-dagers gratis prøveperiode*."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } er fjernet fra ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } er fjernet fra ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "En feil oppstod, vennligst prøv igjen"
@@ -5763,17 +5757,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
       ]
     },
     "Info": {
@@ -7761,9 +7744,9 @@
         "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
         "Du bruker for øyeblikket ${ ipCount } tilgjengelige dedikerte tjenere ut av ${ ipAddresses }."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du bruker for øyeblikket ${ organization.UsedMembers } av ${ organization.MaxMembers } tilgjengelig brukerlisens.",
-        "Du bruker for øyeblikket ${ organization.UsedMembers } ut av ${ organization.MaxMembers } tilgjengelige brukerlisenser."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelig brukerlisens.",
+        "Du bruker for øyeblikket ${ usedMembers } ut av ${ maxMembers } tilgjengelige brukerlisenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget på konto ${ memberAddress }."
@@ -7988,6 +7971,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9127,6 +9121,9 @@
       ],
       "Show sender images": [
         "Vis avsenderbilder"
+      ],
+      "Show unread count in application icon": [
+        "Vis antall ulest i applikasjonsikonet"
       ],
       "Show unread count in Favicon": [
         "Vis ulest antall i favorittikon"
@@ -11318,12 +11315,6 @@
       "Create another account instead": [
         "Opprett en annen konto istedenfor"
       ],
-      "Download again ${ size }": [
-        "Last ned igjen ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Last ned for å fortsette ${ size }"
-      ],
       "Keep this plan": [
         "Behold denne planen"
       ],
@@ -11462,9 +11453,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliaser beskytter din e-post fra datainnbrudd"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Hvis du blir låst ute av ${ BRAND_NAME }-kontoen din, vil ditt **gjenopprettingssett** la deg logge på og gjenopprette dataene dine."
-      ],
       "Includes:": [
         "Inkluderer:"
       ],
@@ -11476,9 +11464,6 @@
       ],
       "Install app and extension": [
         "Installer app og utvidelse"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Det er den eneste måten å gjenopprette kontoen din fullt ut, så sørg for at du oppbevarer dette **gjenopprettingssettet** et trygt sted."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli med over 100 millioner mennesker som har valgt ${ BRAND_NAME } for å være trygg på nettet"
@@ -14354,6 +14339,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
+      ],
+      "See number of unread messages in the application icon": [
+        "Se antall uleste meldinger i applikasjonsikonet"
       ],
       "See number of unread messages in the tab icon": [
         "Se antall uleste meldinger i faneikonet"

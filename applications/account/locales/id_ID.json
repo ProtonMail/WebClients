@@ -908,9 +908,6 @@
       "Signing in": [
         "Masuk"
       ],
-      "Signing out": [
-        "Keluar"
-      ],
       "Size": [
         "Ukuran"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Tingkatkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Tingkatkan ke Visionary"
       ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
@@ -2088,9 +2082,6 @@
       "Gender": [
         "Jenis kelamin"
       ],
-      "Geo": [
-        "Koordinat"
-      ],
       "Language": [
         "Bahasa"
       ],
@@ -3052,7 +3043,7 @@
         "Aktifkan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
       ],
       "Enable advanced logs and ${ PROTON_SENTINEL_NAME } to access these features": [
-        "Aktifkan log lanjutan dan ${ PROTON_SENTINEL_NAME } untuk mengakses berbagai fitur berikut"
+        "Aktifkan log lanjutan dan ${ PROTON_SENTINEL_NAME } untuk berbagai fitur pada kolom ini"
       ],
       "Enable advanced logs to access these features": [
         "Aktifkan log lanjutan untuk mengakses berbagai fitur berikut"
@@ -3120,8 +3111,8 @@
       "Access to the desktop app is limited": [
         "Akses ke aplikasi desktop tengah dibatasi"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } versi beta saat ini hanya tersedia bagi para pelanggan paket ${ MAIL_APP_NAME } berbayar. Versi ini akan tersedia bagi seluruh pengguna di masa yang akan datang."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
@@ -3925,6 +3916,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Izin ditolak, hak istimewa administrator telah dibatasi."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Silakan atur domain kustom sebelum menambahkan alamat"
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Mohon konfigurasi domain khusus sebelum menambahkan pengguna ke organisasi Anda."
       ],
@@ -4721,8 +4715,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Jika pengguna sudah memiliki alamat ${ MAIL_APP_NAME }, masukkan di sini. Jika belum, mereka harus membuat sebuah akun terlebih dahulu."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Undangan akan dibatalkan dan pengguna tidak dapat bergabung ke ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
@@ -4770,8 +4764,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } telah dikeluarkan dari ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } telah dikeluarkan dari ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Terjadi kesalahan, silakan coba lagi"
@@ -5728,17 +5722,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -5807,7 +5790,7 @@
         "${ number } server"
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Mohon verifikasi keabsahan kunci ini dan coba lagi."
+        "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Silakan verifikasi keabsahan kunci dan coba lagi."
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "Paket ${ plan } dihapus. Penawaran terbundel tidak tersedia dengan paket berdurasi 1 bulan."
@@ -6182,7 +6165,7 @@
         "Rata tengah"
       ],
       "Check the status of imports and forwarding.": [
-        "Periksa status proses impor dan penerusan surel yang sedang berlangsung."
+        "Periksa status proses impor dan penerusan yang sedang berlangsung."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -6707,7 +6690,7 @@
         "Memuat..."
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Log keamanan meliputi percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
+        "Log keamanan mencakup berbagai percobaan autentikasi untuk seluruh layanan ${ BRAND_NAME } yang menggunakan kredensial ${ BRAND_NAME_TWO } Anda."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
         "Layanan email terkemuka tertentu dapat menolak atau menyaring email Anda sebagai spam apabila SPF/DKIM/DRC Anda tidak ada atatu tidak diatur dengan benar."
@@ -6785,7 +6768,7 @@
         "Belum ada Gateway"
       ],
       "No imports or forwarding history.": [
-        "Tidak ada riwayat impor atau penerusan surel yang ditemukan."
+        "Tidak ada riwayat impor atau penerusan yang tercatat."
       ],
       "No label selected": [
         "Tidak ada label yang dipilih"
@@ -6935,7 +6918,7 @@
         "Mohon diperhatikan bahwa apabila Anda menghapus filter ${ nameDeleted }, kami tidak lagi akan memproses segala tindakan otomatis yang dipicu oleh filter tersebut."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat surel seandainya kami perlu menghubungi Anda."
@@ -7379,7 +7362,7 @@
         "untuk melanjutkan ke ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga mana pun."
+        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Informasi ini tidak akan dibagikan kepada layanan pihak ketiga mana pun."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
@@ -7684,8 +7667,8 @@
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
-        "Anda sedang menggunakan ${ organization.UsedMembers } dari ${ organization.MaxMembers } lisensi pengguna yang Anda miliki."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user licenses.": [
+        "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
@@ -7905,6 +7888,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8512,7 +8506,7 @@
         "Warna"
       ],
       "Composer": [
-        "Komposer"
+        "Ukuran komposer"
       ],
       "Composer default font/size": [
         "Jenis/ukuran huruf komposer bawaan"
@@ -8623,7 +8617,7 @@
         "Hapus informasi terkait pemulihan."
       ],
       "Density": [
-        "Kerapatan"
+        "Kerapatan surat"
       ],
       "Description": [
         "Deskripsi"
@@ -8857,7 +8851,7 @@
         "Nama dan alamat"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Port Forwarding)"
+        "NAT-PMP (Penerusan Port)"
       ],
       "Navigation": [
         "Navigasi"
@@ -9039,6 +9033,9 @@
       "Show sender images": [
         "Tampilkan gambar pengirim"
       ],
+      "Show unread count in application icon": [
+        "Tampilkan jumlah pesan yang belum dibaca pada ikon aplikasi"
+      ],
       "Show unread count in Favicon": [
         "Tampilkan jumlah yang belum dibaca pada Favicon"
       ],
@@ -9136,7 +9133,7 @@
         "Kata sandi baru pengguna"
       ],
       "Username": [
-        "Nama Pengguna"
+        "Nama pengguna"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -9648,7 +9645,7 @@
         "Sunting kalender"
       ],
       "Get a country's official public holidays calendar.": [
-        "Dapatkan kalender liburan umum resmi dari negara."
+        "Dapatkan kalender libur nasional resmi dari negara tertentu."
       ],
       "How to import calendars from another service": [
         "Cara untuk mengimpor kalender-kalender dari layanan surel lainnya"
@@ -11164,11 +11161,8 @@
       "Create another account instead": [
         "Buat akun lainnya"
       ],
-      "Download again ${ size }": [
-        "Unduh kembali ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Unduh untuk melanjutkan ${ size }"
+      "Download PDF ${ size }": [
+        "Unduh PDF ${ size }"
       ],
       "Keep this plan": [
         "Pertahankan paket ini"
@@ -11308,8 +11302,11 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Alias hide-my-email melindungi alamat email Anda dari ancaman kebocoran data"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Apabila Anda terkunci dari akun ${ BRAND_NAME } Anda, **kit pemulihan** Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Saya mengerti bahwa jika saya kehilangan detail pemulihan, saya dapat kehilangan akses ke akun saya secara permanen."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Apabila Anda terkunci dari Akun ${ BRAND_NAME } Anda, **alat Pemulihan** Anda akan memungkinkan Anda untuk masuk dana memulihkan data Anda."
       ],
       "Includes:": [
         "Meliputi:"
@@ -11323,8 +11320,8 @@
       "Install app and extension": [
         "Instal aplikasi dan ekstensinya"
       ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Metode ini adalah satu-satunya cara bagi Anda untuk memulihkan akun Anda sepenuhnya, jadi pastikan Anda menyimpan **kit pemulihan** ini di tempat yang aman."
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Metode ini adalah satu-satunya cara bagi Anda untuk memulihkan akun Anda sepenuhnya, jadi pastikan Anda menyimpan ini di tempat yang aman."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bergabunglah dengan lebih dari 100 juta orang yang telah memilih ${ BRAND_NAME } untuk melindungi aktivitas online mereka"
@@ -11513,7 +11510,7 @@
         "Nomor telepon"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
       "Please insert link first": [
         "Silakan sisipkan tautan terlebih dulu"
@@ -12304,7 +12301,7 @@
         "Streaming aman"
       ],
       "Support online privacy": [
-        "Dukung privasi daring"
+        "Dukung privasi online"
       ]
     },
     "specialoffer: Footer": {
@@ -14158,6 +14155,9 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Pesan yang ada pada folder Terkirim atau Draf akan tetap muncul di folder tersebut, bahkan apabila Anda memindahkannya ke folder lain."
       ],
+      "See number of unread messages in the application icon": [
+        "Lihat jumlah pesan yang belum dibaca dalam ikon aplikasi"
+      ],
       "See number of unread messages in the tab icon": [
         "Lihat jumlah pesan yang belum dibaca pada ikon tab"
       ],
@@ -14402,7 +14402,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan banyak lagi."
+        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, dan masih banyak lagi."
       ]
     },
     "VPN Plan Feature": {
@@ -14512,7 +14512,7 @@
         "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "Skip verification?": [
         "Lewati verifikasi?"

@@ -470,9 +470,6 @@
       "Signing in": [
         "Γίνεται είσοδος"
       ],
-      "Signing out": [
-        "Αποσύνδεση"
-      ],
       "Submit": [
         "Υποβολή"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Αναβαθμίστε στο Business"
-      ],
-      "Upgrade to Visionary": [
-        "Αναβάθμιση σε Visionary"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } είναι προς το παρόν διαθέσιμη σε οποιονδήποτε έχει πρόγραμμα επί πληρωμή ${ MAIL_APP_NAME }. Σύντομα θα είναι διαθέσιμη σε όλους."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Διαμορφώστε έναν προσαρμοσμένο τομέα (custom domain) πριν προσθέσετε χρήστες στον οργανισμό σας."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Εάν ο χρήστης έχει ήδη διεύθυνση ${ MAIL_APP_NAME }, πληκτρολογήστε την εδώ. Διαφορετικά, πρέπει πρώτα να δημιουργήσουν λογαριασμό."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Το ${ member.Name } αφαιρέθηκε από το ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Το ${ member.Name } αφαιρέθηκε από το ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Παρουσιάστηκε σφάλμα. Παρακαλούμε προσπαθήστε ξανά."
@@ -3910,9 +3907,9 @@
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμων αποκλειστικών διακομιστών."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τη ${ organization.MaxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
-        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τις ${ organization.MaxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τη ${ maxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
+        "Προς το παρόν χρησιμοποιείτε ${ usedMembers } από τις ${ maxMembers } διαθέσιμες άδειες χρήσης χρηστών."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."

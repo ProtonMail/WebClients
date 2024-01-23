@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "Setări cont"
+      ],
       "Add": [
         "Adăugare"
       ],
@@ -160,9 +163,6 @@
       ],
       "Export": [
         "Exportare"
-      ],
-      "Feedback": [
-        "Feedback"
       ],
       "Fill password": [
         "Completare parolă"
@@ -337,6 +337,9 @@
       ],
       "Show": [
         "Afișare"
+      ],
+      "Show advanced options": [
+        "Afișare opțiuni avansate"
       ],
       "Sign back in": [
         "Reconectare"
@@ -1213,15 +1216,15 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } caracter",
-        "${ passwordOptions.options.length } caractere",
-        "${ passwordOptions.options.length } de caractere"
+      "${ config.options.length } character": [
+        "${ config.options.length } caracter",
+        "${ config.options.length } de caractere",
+        "${ config.options.length } caractere"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } cuvânt",
-        "${ passwordOptions.options.wordCount } cuvinte",
-        "${ passwordOptions.options.wordCount } de cuvinte"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } cuvânt",
+        "${ config.options.wordCount } cuvinte",
+        "${ config.options.wordCount } de cuvinte"
       ],
       "1 hour": [
         "o oră"
@@ -1405,6 +1408,9 @@
       ],
       "Item ID": [
         "ID articol"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Combinații taste: ${ shortcut }"
       ],
       "Language": [
         "Limba"
