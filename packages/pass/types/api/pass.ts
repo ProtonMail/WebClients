@@ -37,6 +37,11 @@ export type NewUserInviteCreateRequest = {
     ExpirationTime?: number | null;
 };
 
+export type NewUserInviteCreateBatchRequest = {
+    /* New user invites */
+    NewUserInvites?: NewUserInviteCreateRequest[];
+};
+
 export type NewUserInvitePromoteRequest = {
     /* List of keys encrypted for the other user's address key and signed with your address key */
     Keys: KeyRotationKeyPair[];
@@ -100,7 +105,7 @@ export type ItemUpdateRequest = {
     /* Last item revision existing when the item was created */
     LastRevision: number;
     /* Encrypted item content encoded in Base64 */
-    Content?: string;
+    Content: string;
     /* Version of the content format used to create the item */
     ContentFormatVersion: number;
 };
@@ -118,7 +123,7 @@ export type ItemMoveSingleToShareRequest = {
 
 export type KeyRotationRequest = {
     /* Current key rotation */
-    CurrentKeyRotation?: number;
+    CurrentKeyRotation: number;
     /* New vault key base64 encoded, encrypted and signed with the current primary user key */
     VaultKey: string;
     /* New encryption keys for the items in the vault */
@@ -154,13 +159,18 @@ export type InviteCreateRequest = {
     /* Invite target type. 1 = Vault, 2 = Item */
     TargetType: number;
     /* ShareRoleID for this invite. The values are in the top level Pass docs. */
-    ShareRoleID?: string;
+    ShareRoleID: string;
     /* If this invite is generated from a new user invite. ID of the original new user invite */
     SourceNewUserInviteID?: string | null;
     /* Invite encrypted item ID (only in case the invite is of type Item) */
     ItemID?: string | null;
     /* Expiration time for the share */
     ExpirationTime?: number | null;
+};
+
+export type InviteCreateBatchRequest = {
+    /* Invites for existing users */
+    Invites: InviteCreateRequest[];
 };
 
 export type ShareUpdateRequest = {
@@ -179,8 +189,7 @@ export type VaultCreateRequest = {
     ContentFormatVersion: number;
     /* Vault key encrypted and signed with the primary user key */
     EncryptedVaultKey: string;
-    /* Mark this vault as primary vault */
-    Primary?: boolean;
+    Primary: boolean;
 };
 
 export type VaultUpdateRequest = {
@@ -214,7 +223,7 @@ export type ItemRevisionContentsResponse = {
     ItemID: string;
     Revision: number;
     ContentFormatVersion: number;
-    KeyRotation?: number;
+    KeyRotation: number;
     /* Base64 encoded item contents */
     Content: string;
     /* Base64 encoded item key. Only for vault shares. */
@@ -222,7 +231,7 @@ export type ItemRevisionContentsResponse = {
     /* Revision state. Values: 1 = Active, 2 = Trashed */
     State: number;
     /* Whether this item is pinned for this user */
-    Pinned?: boolean;
+    Pinned: boolean;
     /* In case this item contains an alias, this is the email address for the alias */
     AliasEmail?: string | null;
     /* Creation time of the item */
@@ -283,7 +292,7 @@ export type ShareGetResponse = {
     /* Permissions for this share */
     Permission: number;
     /* ShareRoleID for this share. The values are in the top level Pass docs. */
-    ShareRoleID?: string;
+    ShareRoleID: string;
     /* Base64 encoded content of the share. Only shown if it a vault share */
     Content?: string | null;
     /* Key rotation that should be used to open the content */
@@ -333,7 +342,7 @@ export type ShareKeyResponse = {
     /* Base64 encoded key */
     Key: string;
     /* UserKeyID to open this key */
-    UserKeyID?: string;
+    UserKeyID: string;
     /* When was this key created */
     CreateTime: number;
 };
@@ -345,12 +354,11 @@ export type PendingShareKeysListResponse = {
 
 export type EventIDGetResponse = {
     /* Last event ID for this share */
-    EventID?: string;
+    EventID: string;
 };
 
 export type PassEventListResponse = {
-    /* Updated share in case the vault content changes */
-    UpdatedShare?: ShareGetResponse | undefined | null;
+    UpdatedShare?: ShareGetResponse;
     /* New or updated items */
     UpdatedItems: ItemRevisionContentsResponse[];
     /* Deleted items */
@@ -364,7 +372,7 @@ export type PassEventListResponse = {
     /* If there are more events to process this will be true */
     EventsPending: boolean;
     /* If the share needs a full refresh this will be true */
-    FullRefresh?: boolean;
+    FullRefresh: boolean;
 };
 
 export type SessionLockStorageTokenResponse = {
@@ -396,8 +404,12 @@ export type InviteRecommendationsResponse = {
     RecommendedEmails: string[];
     /* Plan internal name. It will be null for free users. */
     PlanInternalName?: string;
+    /* Group display name. It will be null for free users. */
+    GroupDisplayName?: string;
     /* Emails recommended based on the user plan. Will only return something for paid users */
     PlanRecommendedEmails: string[];
+    /* Token to retrieve the next page */
+    PlanRecommendedEmailsNextToken?: string;
 };
 
 export type ActiveSharesInVaultGetResponse = {
@@ -468,7 +480,7 @@ export type ImportItemRequest = {
     /* Alias email in case this item is an alias item */
     AliasEmail?: string | null;
     /* Wether this item is the trash. Default value is false. */
-    Trashed?: boolean;
+    Trashed: boolean;
     /* When was this item created. By default it will be now */
     CreateTime?: number | null;
     /* When was this item modified. By default it will be now */
@@ -509,13 +521,13 @@ export type EncryptedKeyWithRotation = {
 
 export type AliasSuffixResponse = {
     /* Alias ending including the domain */
-    Suffix?: string;
+    Suffix: string;
     /* Signed suffix to ensure users cannot generate their own */
-    SignedSuffix?: string;
+    SignedSuffix: string;
     /* Whether this is a user domain or a public SL domain */
-    IsCustom?: boolean;
+    IsCustom: boolean;
     /* Domain that this suffix uses */
-    Domain?: string;
+    Domain: string;
 };
 
 export type AliasMailboxResponse = {
@@ -546,7 +558,7 @@ export type InviteDataForUser = {
     /* Invited email */
     InvitedEmail: string;
     /* Invited AddressID */
-    InvitedAddressID?: string;
+    InvitedAddressID: string;
     /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
     Keys: KeyRotationKeyPair[];
     VaultData?: InviteVaultDataForUser;
@@ -558,7 +570,7 @@ export type InviteDataForUser = {
 
 export type ItemRevisionResponse = {
     /* ID of the item */
-    ItemID: number;
+    ItemID: string;
     /* Latest item revision */
     Revision: number;
     /* Revision state. Values: 1 = Active, 2 = Trashed */
@@ -582,7 +594,7 @@ export type PendingShareKeyGetResponse = {
     /* AddressID for this pending share key */
     AddressID: string;
     /* AddressID that did the key rotation. Should be signing this key. */
-    RotatorAddressID?: string;
+    RotatorAddressID: string;
     /* Key rotation for this pending share key */
     KeyRotation: number;
     /* Base64 encoded encrypted shake key for this address */
@@ -619,25 +631,25 @@ export type VaultInviteData = {
 
 export type NewUserInviteGetResponse = {
     /* ID of the invite */
-    NewUserInviteID?: string;
+    NewUserInviteID: string;
     /* State of the invite. <ul><li>1 - Waiting for user creation.</li><li>2 - User has been created and invite can be created</li></ul> */
     State?: number;
     /* Type of target for this invite */
     TargetType?: number;
     /* TargetID for this invite */
-    TargetID?: string;
+    TargetID: string;
     /* Share role for this invite */
-    ShareRoleID?: string;
+    ShareRoleID: string;
     /* Invited email */
-    InvitedEmail?: string;
+    InvitedEmail: string;
     /* Email of the inviter */
-    InviterEmail?: string;
+    InviterEmail: string;
     /* Base64 encoded signature with the inviter email address keys */
-    Signature?: string;
+    Signature: string;
     /* Creation time for the invite */
-    CreateTime?: number;
+    CreateTime: number;
     /* Last modification time for the invite */
-    ModifyTime?: number;
+    ModifyTime: number;
 };
 
 export type PassPlanResponse = {
@@ -647,7 +659,7 @@ export type PassPlanResponse = {
     /* Display name of the plan */
     DisplayName: string;
     /* Force hide the upgrade button independently of plan */
-    HideUpgrade?: boolean;
+    HideUpgrade: boolean;
     /* If the user is in trial show when the trial ends. Otherwise it sill be null */
     TrialEnd?: number | null;
     /* Vault limit, null for plans with Pass plus */
@@ -660,9 +672,9 @@ export type PassPlanResponse = {
 
 export type MissingAliasDto = {
     /* Email of the alias */
-    Email?: string;
+    Email: string;
     /* Email note as stored in SL */
-    Note?: string;
+    Note: string;
 };
 
 export type InviteVaultDataForUser = {
@@ -673,14 +685,15 @@ export type InviteVaultDataForUser = {
     /* Content format version */
     ContentFormatVersion: number;
     /* Number of members that have access to this vault */
-    MemberCount?: number;
+    MemberCount: number;
     /* Number of items in this vault */
-    ItemCount?: number;
+    ItemCount: number;
 };
 
 export enum PlanType {
     free = 'free',
     plus = 'plus',
+    business = 'business',
 }
 
 export type ApiMethod = string;
@@ -768,11 +781,11 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
                                       : never
                                   : Path extends `pass/v1/share/${string}/item/untrash`
                                     ? Method extends `post`
-                                        ? { Code?: ResponseCodeSuccess; Items?: ItemTrashResponse }
+                                        ? ItemTrashResponse & { Code?: ResponseCodeSuccess }
                                         : never
                                     : Path extends `pass/v1/share/${string}/item/trash`
                                       ? Method extends `post`
-                                          ? { Code?: ResponseCodeSuccess; Items?: ItemTrashResponse }
+                                          ? ItemTrashResponse & { Code?: ResponseCodeSuccess }
                                           : never
                                       : Path extends `pass/v1/share/${string}/item/share`
                                         ? Method extends `put`
@@ -845,101 +858,92 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
                                                                       Recommendation?: InviteRecommendationsResponse;
                                                                   }
                                                                 : never
-                                                            : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+                                                            : Path extends `pass/v1/share/${string}/invite/new_user/batch`
                                                               ? Method extends `post`
                                                                   ? { Code?: ResponseCodeSuccess }
                                                                   : never
-                                                              : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
-                                                                ? Method extends `delete`
+                                                              : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+                                                                ? Method extends `post`
                                                                     ? { Code?: ResponseCodeSuccess }
                                                                     : never
-                                                                : Path extends `pass/v1/share/${string}/invite/new_user`
-                                                                  ? Method extends `post`
+                                                                : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
+                                                                  ? Method extends `delete`
                                                                       ? { Code?: ResponseCodeSuccess }
                                                                       : never
-                                                                  : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
+                                                                  : Path extends `pass/v1/share/${string}/invite/new_user`
                                                                     ? Method extends `post`
                                                                         ? { Code?: ResponseCodeSuccess }
                                                                         : never
-                                                                    : Path extends `pass/v1/share/${string}/invite/${string}`
-                                                                      ? Method extends `delete`
+                                                                    : Path extends `pass/v1/share/${string}/invite/batch`
+                                                                      ? Method extends `post`
                                                                           ? { Code?: ResponseCodeSuccess }
                                                                           : never
-                                                                      : Path extends `pass/v1/share/${string}/invite`
-                                                                        ? Method extends `get`
-                                                                            ? InvitesForVaultGetResponse & {
-                                                                                  Code?: ResponseCodeSuccess;
-                                                                              }
-                                                                            : Method extends `post`
+                                                                      : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
+                                                                        ? Method extends `post`
+                                                                            ? { Code?: ResponseCodeSuccess }
+                                                                            : never
+                                                                        : Path extends `pass/v1/share/${string}/invite/${string}`
+                                                                          ? Method extends `delete`
                                                                               ? { Code?: ResponseCodeSuccess }
                                                                               : never
-                                                                        : Path extends `pass/v1/share/${string}/event/${string}`
-                                                                          ? Method extends `get`
-                                                                              ? {
-                                                                                    Code?: ResponseCodeSuccess;
-                                                                                    Events?: PassEventListResponse;
-                                                                                }
-                                                                              : never
-                                                                          : Path extends `pass/v1/share/${string}/event`
+                                                                          : Path extends `pass/v1/share/${string}/invite`
                                                                             ? Method extends `get`
-                                                                                ? EventIDGetResponse & {
+                                                                                ? InvitesForVaultGetResponse & {
                                                                                       Code?: ResponseCodeSuccess;
                                                                                   }
-                                                                                : never
-                                                                            : Path extends `pass/v1/share/${string}/alias/random`
-                                                                              ? Method extends `post`
+                                                                                : Method extends `post`
+                                                                                  ? { Code?: ResponseCodeSuccess }
+                                                                                  : never
+                                                                            : Path extends `pass/v1/share/${string}/event/${string}`
+                                                                              ? Method extends `get`
                                                                                   ? {
                                                                                         Code?: ResponseCodeSuccess;
-                                                                                        Item?: ItemRevisionContentsResponse;
+                                                                                        Events?: PassEventListResponse;
                                                                                     }
                                                                                   : never
-                                                                              : Path extends `pass/v1/share/${string}/alias/options`
+                                                                              : Path extends `pass/v1/share/${string}/event`
                                                                                 ? Method extends `get`
-                                                                                    ? {
+                                                                                    ? EventIDGetResponse & {
                                                                                           Code?: ResponseCodeSuccess;
-                                                                                          Options?: AliasOptionsResponse;
                                                                                       }
                                                                                     : never
-                                                                                : Path extends `pass/v1/share/${string}/alias/custom`
+                                                                                : Path extends `pass/v1/share/${string}/alias/random`
                                                                                   ? Method extends `post`
                                                                                       ? {
                                                                                             Code?: ResponseCodeSuccess;
                                                                                             Item?: ItemRevisionContentsResponse;
                                                                                         }
                                                                                       : never
-                                                                                  : Path extends `pass/v1/share/${string}/alias/${string}/mailbox`
-                                                                                    ? Method extends `post`
+                                                                                  : Path extends `pass/v1/share/${string}/alias/options`
+                                                                                    ? Method extends `get`
                                                                                         ? {
                                                                                               Code?: ResponseCodeSuccess;
-                                                                                              Item?: AliasDetailsResponse;
+                                                                                              Options?: AliasOptionsResponse;
                                                                                           }
                                                                                         : never
-                                                                                    : Path extends `pass/v1/share/${string}/alias/${string}`
-                                                                                      ? Method extends `get`
+                                                                                    : Path extends `pass/v1/share/${string}/alias/custom`
+                                                                                      ? Method extends `post`
                                                                                           ? {
                                                                                                 Code?: ResponseCodeSuccess;
-                                                                                                Alias?: AliasDetailsResponse;
+                                                                                                Item?: ItemRevisionContentsResponse;
                                                                                             }
                                                                                           : never
-                                                                                      : Path extends `pass/v1/share/${string}`
-                                                                                        ? Method extends `get`
+                                                                                      : Path extends `pass/v1/share/${string}/alias/${string}/mailbox`
+                                                                                        ? Method extends `post`
                                                                                             ? {
                                                                                                   Code?: ResponseCodeSuccess;
-                                                                                                  Share?: ShareGetResponse;
+                                                                                                  Item?: AliasDetailsResponse;
                                                                                               }
-                                                                                            : Method extends `delete`
+                                                                                            : never
+                                                                                        : Path extends `pass/v1/share/${string}/alias/${string}`
+                                                                                          ? Method extends `get`
                                                                                               ? {
                                                                                                     Code?: ResponseCodeSuccess;
+                                                                                                    Alias?: AliasDetailsResponse;
                                                                                                 }
                                                                                               : never
-                                                                                        : Path extends `pass/v1/share`
-                                                                                          ? Method extends `get`
-                                                                                              ? SharesGetResponse & {
-                                                                                                    Code?: ResponseCodeSuccess;
-                                                                                                }
-                                                                                              : never
-                                                                                          : Path extends `pass/v1/invite/${string}`
-                                                                                            ? Method extends `post`
+                                                                                          : Path extends `pass/v1/share/${string}`
+                                                                                            ? Method extends `get`
                                                                                                 ? {
                                                                                                       Code?: ResponseCodeSuccess;
                                                                                                       Share?: ShareGetResponse;
@@ -949,13 +953,30 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
                                                                                                         Code?: ResponseCodeSuccess;
                                                                                                     }
                                                                                                   : never
-                                                                                            : Path extends `pass/v1/invite`
+                                                                                            : Path extends `pass/v1/share`
                                                                                               ? Method extends `get`
-                                                                                                  ? InvitesGetResponse & {
+                                                                                                  ? SharesGetResponse & {
                                                                                                         Code?: ResponseCodeSuccess;
                                                                                                     }
                                                                                                   : never
-                                                                                              : any;
+                                                                                              : Path extends `pass/v1/invite/${string}`
+                                                                                                ? Method extends `post`
+                                                                                                    ? {
+                                                                                                          Code?: ResponseCodeSuccess;
+                                                                                                          Share?: ShareGetResponse;
+                                                                                                      }
+                                                                                                    : Method extends `delete`
+                                                                                                      ? {
+                                                                                                            Code?: ResponseCodeSuccess;
+                                                                                                        }
+                                                                                                      : never
+                                                                                                : Path extends `pass/v1/invite`
+                                                                                                  ? Method extends `get`
+                                                                                                      ? InvitesGetResponse & {
+                                                                                                            Code?: ResponseCodeSuccess;
+                                                                                                        }
+                                                                                                      : never
+                                                                                                  : any;
 
 export type ApiRequest<Path extends string, Method extends ApiMethod> = Path extends `pass/v1/vault/${string}/primary`
     ? Method extends `put`
@@ -1093,78 +1114,86 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
                                                             ? Method extends `get`
                                                                 ? never
                                                                 : never
-                                                            : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+                                                            : Path extends `pass/v1/share/${string}/invite/new_user/batch`
                                                               ? Method extends `post`
-                                                                  ? NewUserInvitePromoteRequest
+                                                                  ? NewUserInviteCreateBatchRequest
                                                                   : never
-                                                              : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
-                                                                ? Method extends `delete`
-                                                                    ? never
+                                                              : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+                                                                ? Method extends `post`
+                                                                    ? NewUserInvitePromoteRequest
                                                                     : never
-                                                                : Path extends `pass/v1/share/${string}/invite/new_user`
-                                                                  ? Method extends `post`
-                                                                      ? NewUserInviteCreateRequest
+                                                                : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
+                                                                  ? Method extends `delete`
+                                                                      ? never
                                                                       : never
-                                                                  : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
+                                                                  : Path extends `pass/v1/share/${string}/invite/new_user`
                                                                     ? Method extends `post`
-                                                                        ? never
+                                                                        ? NewUserInviteCreateRequest
                                                                         : never
-                                                                    : Path extends `pass/v1/share/${string}/invite/${string}`
-                                                                      ? Method extends `delete`
-                                                                          ? never
+                                                                    : Path extends `pass/v1/share/${string}/invite/batch`
+                                                                      ? Method extends `post`
+                                                                          ? InviteCreateBatchRequest
                                                                           : never
-                                                                      : Path extends `pass/v1/share/${string}/invite`
-                                                                        ? Method extends `get`
+                                                                      : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
+                                                                        ? Method extends `post`
                                                                             ? never
-                                                                            : Method extends `post`
-                                                                              ? InviteCreateRequest
-                                                                              : never
-                                                                        : Path extends `pass/v1/share/${string}/event/${string}`
-                                                                          ? Method extends `get`
+                                                                            : never
+                                                                        : Path extends `pass/v1/share/${string}/invite/${string}`
+                                                                          ? Method extends `delete`
                                                                               ? never
                                                                               : never
-                                                                          : Path extends `pass/v1/share/${string}/event`
+                                                                          : Path extends `pass/v1/share/${string}/invite`
                                                                             ? Method extends `get`
                                                                                 ? never
-                                                                                : never
-                                                                            : Path extends `pass/v1/share/${string}/alias/random`
-                                                                              ? Method extends `post`
-                                                                                  ? ItemCreateRequest
+                                                                                : Method extends `post`
+                                                                                  ? InviteCreateRequest
                                                                                   : never
-                                                                              : Path extends `pass/v1/share/${string}/alias/options`
+                                                                            : Path extends `pass/v1/share/${string}/event/${string}`
+                                                                              ? Method extends `get`
+                                                                                  ? never
+                                                                                  : never
+                                                                              : Path extends `pass/v1/share/${string}/event`
                                                                                 ? Method extends `get`
                                                                                     ? never
                                                                                     : never
-                                                                                : Path extends `pass/v1/share/${string}/alias/custom`
+                                                                                : Path extends `pass/v1/share/${string}/alias/random`
                                                                                   ? Method extends `post`
-                                                                                      ? CustomAliasCreateRequest
+                                                                                      ? ItemCreateRequest
                                                                                       : never
-                                                                                  : Path extends `pass/v1/share/${string}/alias/${string}/mailbox`
-                                                                                    ? Method extends `post`
-                                                                                        ? SetAliasMailboxesRequest
+                                                                                  : Path extends `pass/v1/share/${string}/alias/options`
+                                                                                    ? Method extends `get`
+                                                                                        ? never
                                                                                         : never
-                                                                                    : Path extends `pass/v1/share/${string}/alias/${string}`
-                                                                                      ? Method extends `get`
-                                                                                          ? never
+                                                                                    : Path extends `pass/v1/share/${string}/alias/custom`
+                                                                                      ? Method extends `post`
+                                                                                          ? CustomAliasCreateRequest
                                                                                           : never
-                                                                                      : Path extends `pass/v1/share/${string}`
-                                                                                        ? Method extends `get`
-                                                                                            ? never
-                                                                                            : Method extends `delete`
-                                                                                              ? never
-                                                                                              : never
-                                                                                        : Path extends `pass/v1/share`
+                                                                                      : Path extends `pass/v1/share/${string}/alias/${string}/mailbox`
+                                                                                        ? Method extends `post`
+                                                                                            ? SetAliasMailboxesRequest
+                                                                                            : never
+                                                                                        : Path extends `pass/v1/share/${string}/alias/${string}`
                                                                                           ? Method extends `get`
                                                                                               ? never
                                                                                               : never
-                                                                                          : Path extends `pass/v1/invite/${string}`
-                                                                                            ? Method extends `post`
-                                                                                                ? InviteAcceptRequest
+                                                                                          : Path extends `pass/v1/share/${string}`
+                                                                                            ? Method extends `get`
+                                                                                                ? never
                                                                                                 : Method extends `delete`
                                                                                                   ? never
                                                                                                   : never
-                                                                                            : Path extends `pass/v1/invite`
+                                                                                            : Path extends `pass/v1/share`
                                                                                               ? Method extends `get`
                                                                                                   ? never
                                                                                                   : never
-                                                                                              : any;
+                                                                                              : Path extends `pass/v1/invite/${string}`
+                                                                                                ? Method extends `post`
+                                                                                                    ? InviteAcceptRequest
+                                                                                                    : Method extends `delete`
+                                                                                                      ? never
+                                                                                                      : never
+                                                                                                : Path extends `pass/v1/invite`
+                                                                                                  ? Method extends `get`
+                                                                                                      ? never
+                                                                                                      : never
+                                                                                                  : any;

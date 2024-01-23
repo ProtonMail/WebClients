@@ -1,4 +1,4 @@
-import { CONTENT_FORMAT_VERSION, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, type ShareGetResponse, ShareRole, ShareType } from '@proton/pass/types';
 
 import { createRandomKey, randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
 import { createVault } from '../vault/create-vault';
@@ -23,9 +23,10 @@ describe('openShare crypto process', () => {
         /* resolve vault key */
         const vaultKey = await openVaultKey({
             shareKey: {
-                KeyRotation: 1,
-                Key: vault.EncryptedVaultKey,
                 CreateTime: 0,
+                Key: vault.EncryptedVaultKey,
+                KeyRotation: 1,
+                UserKeyID: 'test_user_key_id',
             },
             userKeys: [userKey],
         });
@@ -43,6 +44,7 @@ describe('openShare crypto process', () => {
             Primary: false,
             Shared: false,
             ShareID: shareId,
+            ShareRoleID: ShareRole.ADMIN,
             TargetID: vaultId,
             TargetMaxMembers: 2,
             TargetMembers: 0,

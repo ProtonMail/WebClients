@@ -24,17 +24,18 @@ describe('openItem crypto process', () => {
         const createItemRequest = await createItem({ content, vaultKey });
 
         const encryptedItem: ItemRevisionContentsResponse = {
-            ItemID: itemId,
-            Revision: 1,
-            KeyRotation: 1,
-            ContentFormatVersion: createItemRequest.ContentFormatVersion,
             Content: createItemRequest.Content,
-            ItemKey: createItemRequest.ItemKey,
-            State: ItemState.Active,
+            ContentFormatVersion: createItemRequest.ContentFormatVersion,
             CreateTime: timestamp,
-            ModifyTime: timestamp,
+            ItemID: itemId,
+            ItemKey: createItemRequest.ItemKey,
+            KeyRotation: 1,
             LastUseTime: timestamp,
+            ModifyTime: timestamp,
+            Pinned: false,
+            Revision: 1,
             RevisionTime: timestamp,
+            State: ItemState.Active,
         };
 
         const item = await openItem({ encryptedItem, vaultKey });
@@ -57,17 +58,18 @@ describe('openItem crypto process', () => {
         const createItemRequest = await createItem({ content, vaultKey });
 
         const encryptedItem: ItemRevisionContentsResponse = {
-            ItemID: itemId,
-            Revision: 12,
-            KeyRotation: 2 /* ⛔️ */,
-            ContentFormatVersion: createItemRequest.ContentFormatVersion,
             Content: createItemRequest.Content,
-            ItemKey: createItemRequest.ItemKey,
-            State: ItemState.Active,
+            ContentFormatVersion: createItemRequest.ContentFormatVersion,
             CreateTime: timestamp,
-            ModifyTime: timestamp,
+            ItemID: itemId,
+            ItemKey: createItemRequest.ItemKey,
+            KeyRotation: 2 /* ⛔️ */,
             LastUseTime: timestamp,
+            ModifyTime: timestamp,
+            Pinned: false,
+            Revision: 12,
             RevisionTime: timestamp,
+            State: ItemState.Active,
         };
 
         await expect(openItem({ encryptedItem, vaultKey })).rejects.toThrow(PassCryptoItemError);
