@@ -1,3 +1,24 @@
+## Release 5.0.35 — Feb 7th, 2024
+
+### Improvements
+
+-   Improved interaction speed on the Conversation list view
+-   Improved performance when loading Drafts
+-   Improved instructions when setting up a custom domain
+
+### Fixes
+
+-   Fixed an issue where the "Move to" and "Label as" options would not be visible on the page if using "M"/"L" keyboard shortcuts at the bottom of a long message
+-   Fixed an issue where the focus on the composer could temporarily be lost if starting a new message seconds after sending the previous one
+-   Fixed an issue where sent messages could not be moved back to the Sent folder if moved to another destination by mistake
+-   Fixed an issue where an expiration time could be set in the past
+-   Fixed an issue where duplicated entries were displayed in the recipient suggestion field for email forwarding
+-   Fixed an issue where empty conditions in Filters would be accepted
+-   Fixed an issue where under specific circumstances a filter without a name could be created
+-   Improved error messaging when accessing the last search results page
+-   Fixed an issue where remote images would not be loaded under some specific conditions
+-   Fixed an issue where more than one sender per email would be accepted as a search criteria
+
 ## Release 5.0.34 — Jan 23th, 2024
 
 ### New features
