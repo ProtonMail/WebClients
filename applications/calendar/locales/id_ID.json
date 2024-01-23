@@ -219,6 +219,9 @@
       "Download": [
         "Unduh"
       ],
+      "Download now": [
+        "Unduh sekarang"
+      ],
       "Edit": [
         "Sunting"
       ],
@@ -314,6 +317,9 @@
       ],
       "Import from Outlook": [
         "Impor dari Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Pembaruan penting tersedia. Untuk dapat lanjut menggunakan aplikasi, silakan perbarui aplikasi ke versi terbaru. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Gabung ke kalender"
@@ -444,9 +450,6 @@
       "Refresh the page": [
         "Muat ulang halaman"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Remove": [
         "Hapus"
       ],
@@ -531,13 +534,7 @@
       "Show time zones": [
         "Tampilkan zona waktu"
       ],
-      "Sign in": [
-        "Masuk"
-      ],
       "Sign out": [
-        "Keluar"
-      ],
-      "Signing out": [
         "Keluar"
       ],
       "Skip": [
@@ -568,7 +565,7 @@
         "Tampilkan/sembunyikan aplikasi Contact"
       ],
       "Toggle settings": [
-        "Saklar pengaturan"
+        "Aktifkan/nonaktifkan pengaturan"
       ],
       "Trust": [
         "Percayai"
@@ -1214,9 +1211,6 @@
       ],
       "Gender": [
         "Jenis kelamin"
-      ],
-      "Geo": [
-        "Koordinat"
       ],
       "Language": [
         "Bahasa"
@@ -2464,12 +2458,6 @@
       "IMAP server is required": [
         "Server IMAP diperlukan"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Kredensial masuk salah. Silakan coba lagi."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Kata sandi kotak surat salah. Silakan coba lagi."
-      ],
       "Incorrect username": [
         "Nama pengguna salah"
       ],
@@ -2631,9 +2619,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Sebagian nama label Anda melebihi batas jumlah karakter yang diperbolehkan oleh ${ MAIL_APP_NAME }. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Terjadi suatu kesalahan, silakan ${ refresh } untuk dapat melanjutkan. Apabila Anda terus-menerus menjumpai pesan ini, harap hubungi ${ supportTeam } kami."
       ],
       "Start time must be before end time": [
         "Waktu mulai harus sebelum waktu selesai"
@@ -2967,10 +2952,10 @@
     },
     "Event info in search view; event duration": {
       "All day": [
-        "Seharian"
+        "Sepanjang hari"
       ],
       "All day, lasts ${ plusDaysToEnd } days": [
-        "Seharian, berlaku ${ plusDaysToEnd } hari"
+        "Sepanjang hari, yang berlangsung selama ${ plusDaysToEnd } hari"
       ]
     },
     "Event info. Organizer name": {
@@ -3839,9 +3824,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Apabila Anda menemui masalah dalam membuat akun, silakan minta undangan baru yang akan kami respon dalam satu hari kerja."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
@@ -4043,9 +4025,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
-      "support team": [
-        "tim dukungan"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
@@ -4081,9 +4060,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim surel terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Alamat ini nonaktif. Agar dapat mengirim ke alamat ini, pemiliknya harus mengaktifkan dulu alamat tersebut."
@@ -4125,7 +4101,7 @@
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
-        "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
+        "Coba berbagai fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum waktu rilisnya kepada publik. Mengubah peraturan ini akan memuat ulang halaman."
       ],
       "Update recurring event": [
         "Perbarui acara berulang"
@@ -4417,7 +4393,7 @@
         "Tambah ke grup"
       ],
       "All day": [
-        "Seharian"
+        "Sepanjang hari"
       ],
       "All-day event notifications": [
         "Notifikasi acara sepanjang hari"
@@ -4508,9 +4484,6 @@
       ],
       "Email format": [
         "Format surel"
-      ],
-      "Email or username": [
-        "Surel atau nama pengguna"
       ],
       "Emails": [
         "Surel"
@@ -4604,9 +4577,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Kata sandi kotak surat"
       ],
       "Main": [
         "Utama"
@@ -4941,7 +4911,7 @@
         "Sunting kalender"
       ],
       "Get a country's official public holidays calendar.": [
-        "Dapatkan kalender liburan umum resmi dari negara."
+        "Dapatkan kalender libur nasional resmi dari negara tertentu."
       ],
       "How to import calendars from another service": [
         "Cara untuk mengimpor kalender-kalender dari layanan surel lainnya"
@@ -5552,7 +5522,7 @@
         "Kata sandi"
       ],
       "Please describe the problem and include any error messages": [
-        "Mohon uraikan masalah dan sertakan pesan kesalahan apa pun"
+        "Mohon uraikan masalah Anda dan sertakan pesan kesalahan yang Anda temui"
       ],
       "Please select a country": [
         "Silakan pilih negara"
@@ -5971,7 +5941,7 @@
         "Streaming aman"
       ],
       "Support online privacy": [
-        "Dukung privasi daring"
+        "Dukung privasi online"
       ]
     },
     "specialoffer: Footer": {
@@ -6091,7 +6061,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Tambahkan liburan umum negara Anda ke kalender Anda."
+        "Tambahkan hari libur nasional negara Anda pada kalender Anda."
       ],
       "Color-coding is here!": [
         "Kode warna ada di sini!"
@@ -6106,7 +6076,7 @@
         "Undang teman ke ${ BRAND_NAME }"
       ],
       "Public holidays are here!": [
-        "Liburan umum telah hadir!"
+        "Libur telah tiba!"
       ],
       "Search for events": [
         "Cari acara"
@@ -6386,9 +6356,6 @@
     "Title": {
       "${ emailsCount } email addresses": [
         "${ emailsCount } alamat email"
-      ],
-      "Account suspended": [
-        "Akun ditangguhkan"
       ],
       "Add another notification to remind you of this event": [
         "Tambah pemberitahuan lain untuk mengingatkan Anda pada acara ini"
@@ -6900,7 +6867,7 @@
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
+        "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "Skip verification?": [
         "Lewati verifikasi?"
