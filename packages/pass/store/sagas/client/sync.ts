@@ -11,7 +11,7 @@ import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/sele
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { State } from '@proton/pass/store/types';
 import type { Maybe, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -34,7 +34,7 @@ export enum SyncType {
     PARTIAL = 'partial' /* fetches only diff */,
 }
 
-export function* synchronize(options: SynchronizationOptions, { onShareDeleted }: RootSagaOptions) {
+export function* synchronize(options: SynchronizationOptions) {
     try {
         const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
         const cachedShares = selectAllShares(state);
@@ -50,9 +50,6 @@ export function* synchronize(options: SynchronizationOptions, { onShareDeleted }
         const remoteShareIds = remote.map(prop('ShareID'));
         const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
         const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
-
-        /* notify clients of any disabled shares */
-        disabledShareIds.forEach((shareId) => onShareDeleted?.(shareId));
 
         /* only load shares that are not currently present
          * in cache and have not been registered on PassCrypto.
