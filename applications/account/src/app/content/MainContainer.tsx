@@ -313,6 +313,7 @@ const MainContainer = () => {
                         <ContactEmailsProvider>
                             <CalendarSettingsRouter
                                 user={user}
+                                subscription={subscription}
                                 loadingFeatures={loadingFeatures}
                                 calendarAppRoutes={routes.calendar}
                                 redirect={redirect}
