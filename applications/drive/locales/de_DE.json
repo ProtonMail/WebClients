@@ -253,6 +253,9 @@
       "Download apps": [
         "Apps herunterladen"
       ],
+      "Download logs": [
+        "Protokolle herunterladen"
+      ],
       "Drive Locked": [
         "Laufwerk gesperrt"
       ],
@@ -490,9 +493,6 @@
       "Refresh the page": [
         "Seite aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Remove": [
         "Entfernen"
       ],
@@ -613,14 +613,8 @@
       "Show side panel": [
         "Seitenleiste anzeigen"
       ],
-      "Sign in": [
-        "Anmelden"
-      ],
       "Sign out": [
         "Abmelden"
-      ],
-      "Signing out": [
-        "Abmeldung…"
       ],
       "Skip": [
         "Überspringen"
@@ -1093,9 +1087,6 @@
       ],
       "Gender": [
         "Geschlecht"
-      ],
-      "Geo": [
-        "Standort"
       ],
       "Language": [
         "Sprache"
@@ -2198,12 +2189,6 @@
       "IMAP server is required": [
         "IMAP-Server ist erforderlich"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Ungültige Anmeldedaten. Bitte versuche es erneut."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
-      ],
       "Incorrect password. Please try again.": [
         "Ungültiges Passwort. Bitte versuche es erneut."
       ],
@@ -2327,9 +2312,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
       "status page": [
         "Statusseite"
@@ -3586,7 +3568,7 @@
         "Download wurde aufgrund eines Verbindungsproblems angehalten; er wird automatisch fortgesetzt"
       ],
       "Download ready": [
-        "Heruntergeladener Inhalt steht bereit"
+        "Download steht bereit"
       ],
       "Downloaded": [
         "Heruntergeladen"
@@ -3735,9 +3717,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
@@ -4043,7 +4022,7 @@
         "Wiederhergestellte Dateien ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Fotos werden wiederhergestellt... bitte behalte die Registerkarte offen."
+        "Fotos werden wiederhergestellt... bitte behalte den Tab offen."
       ],
       "Retry now": [
         "Jetzt erneut versuchen"
@@ -4139,9 +4118,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
       ],
-      "support team": [
-        "Support-Team"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -4165,9 +4141,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Es gibt noch Dateien, die übertragen werden müssen. Wenn du den Übertragungsmanager schließt, werden alle Vorgänge beendet."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -4695,9 +4668,6 @@
       "Email format": [
         "E-Mail-Format"
       ],
-      "Email or username": [
-        "E‐Mail‐Adresse oder Benutzername"
-      ],
       "Emails": [
         "E-Mails"
       ],
@@ -4805,9 +4775,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mail-Server (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postfach-Passwort"
       ],
       "Main": [
         "Hauptebene"
@@ -6330,9 +6297,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } fehlgeschlagener Upload",
         "${ numberOfFailedTransfer.total } fehlgeschlagene Uploads"
-      ],
-      "Account suspended": [
-        "Konto gesperrt"
       ],
       "Active": [
         "Aktiv"
