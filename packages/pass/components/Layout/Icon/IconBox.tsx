@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
 import type { IconSize } from '@proton/components/components';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles/index';
 import clsx from '@proton/utils/clsx';
 
 import './IconBox.scss';
@@ -14,10 +15,15 @@ type Props = {
     style?: React.CSSProperties;
 };
 
-const getOuterSize = (size: IconSize) => Math.round(size * 1.8);
+/** The outer size of the icon box is calculated to be 1.8 times larger than
+ * the provided `size` prop. Icon sizes follow a taxonomy where `iconSize * 4`
+ * equals the size in pixels. To obtain the outer size, we multiply the icon size
+ * by `1.8 * 4`, resulting in a factor of `7.2`. */
+export const getIconSizePx = (size: number) => size * CSS_BASE_UNIT_SIZE;
+export const getOuterIconSize = (size: IconSize) => Math.round(getIconSizePx(size) * 1.8);
 
 export const IconBox: FC<Props> = ({ className, children, mode, pill = true, size, style }) => {
-    const outerSize = getOuterSize(size);
+    const outerSize = getOuterIconSize(size);
 
     return (
         <div

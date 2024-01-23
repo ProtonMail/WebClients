@@ -10,7 +10,7 @@ import type { Item, ItemMap, ItemRevision, ItemRevisionWithOptimistic, MaybeNull
 import clsx from '@proton/utils/clsx';
 
 import { DomainIcon, ImageStatus } from './DomainIcon';
-import { IconBox } from './IconBox';
+import { IconBox, getIconSizePx } from './IconBox';
 
 export const itemTypeToIconName: ItemMap<IconName> = {
     login: 'user',
@@ -59,7 +59,11 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
             {loadImage && (
                 <DomainIcon
                     className={clsx('w-custom h-custom absolute inset-center', iconClassName)}
-                    style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px`, '--anime-delay': '0s' }}
+                    style={{
+                        '--w-custom': `${getIconSizePx(size)}px`,
+                        '--h-custom': `${getIconSizePx(size)}px`,
+                        '--anime-delay': '0s',
+                    }}
                     onStatusChange={handleStatusChange}
                     status={imageStatus}
                     url={url ?? ''}
