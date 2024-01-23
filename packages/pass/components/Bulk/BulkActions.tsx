@@ -9,6 +9,8 @@ import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvide
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import type { ItemIdsByShareId } from '@proton/pass/types';
 
+/** FIXME: SelectedItem[] could be a more appropriate data structure.
+ * That way sagas can handle batching */
 const normalizeBulkSelection = (selection: BulkSelection): ItemIdsByShareId =>
     Object.fromEntries(
         Array.from(selection.entries()).map(([shareId, itemIds]) => [shareId, Array.from(itemIds?.values() ?? [])])
@@ -17,7 +19,7 @@ const normalizeBulkSelection = (selection: BulkSelection): ItemIdsByShareId =>
 export const BulkActions: FC = () => {
     const { matchTrash } = useNavigation();
     const { selection } = useBulkSelect();
-    const { moveMany } = useItemsActions();
+    const { moveMany, trashMany } = useItemsActions();
 
     return matchTrash ? (
         <>
@@ -40,7 +42,14 @@ export const BulkActions: FC = () => {
             >
                 <Icon name="folder-arrow-in" />
             </Button>
-            <Button shape="solid" size="small" color="weak" icon title={c('Action').t`Bulk move items to trash`}>
+            <Button
+                shape="solid"
+                size="small"
+                color="weak"
+                icon
+                title={c('Action').t`Bulk move items to trash`}
+                onClick={() => trashMany(normalizeBulkSelection(selection))}
+            >
                 <Icon name="trash" />
             </Button>
         </>

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import { itemBulkMoveIntent, itemMoveIntent } from '@proton/pass/store/actions';
+import { itemBulkMoveIntent, itemBulkTrashIntent, itemMoveIntent, itemTrashIntent } from '@proton/pass/store/actions';
 import type { ItemIdsByShareId, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -15,6 +15,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 type ItemActionsContextType = {
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
     moveMany: (items: ItemIdsByShareId) => void;
+    trash: (item: ItemRevision) => void;
+    trashMany: (items: ItemIdsByShareId) => void;
 };
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -42,6 +44,15 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         closeVaultSelect();
     };
 
+    const trashItem = (item: ItemRevision) => {
+        dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
+    };
+
+    const trashManyItems = (itemsByShareId: ItemIdsByShareId) => {
+        dispatch(itemBulkTrashIntent({ itemsByShareId }));
+        bulk.disable();
+    };
+
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -56,6 +67,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     shareId: '' /* allow all vaults */,
                     onSubmit: moveManyItems(itemsByShareId),
                 }),
+            trash: trashItem,
+            trashMany: trashManyItems,
         };
     }, []);
 
