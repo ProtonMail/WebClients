@@ -470,9 +470,6 @@
       "Signing in": [
         "Loggar in"
       ],
-      "Signing out": [
-        "Loggar ut"
-      ],
       "Submit": [
         "Skicka"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Uppgradera till Business"
-      ],
-      "Upgrade to Visionary": [
-        "Uppgradera till Visionary"
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
@@ -1870,9 +1864,6 @@
       "Access to the desktop app is limited": [
         "Åtkomst till app för stationär dator är begränsat"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
-      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
       ]
@@ -2062,6 +2053,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Åtkomst nekad, administratörsrättigheter har begränsats."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Konfigurera en anpassad domän innan du lägger till adresser."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Konfigurera en anpassad domän innan du lägger till användare till din organisation."
@@ -2388,8 +2382,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Om användaren redan har en ${ MAIL_APP_NAME }-adress anger du den här. Annars måste de skapa ett konto först."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Användarens konto kommer att flyttas till ett ${ BRAND_NAME } Unlimited-paket för en 30-dagars gratis provperiod*."
@@ -2429,8 +2423,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } har tagits bort från ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } har tagits bort från ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Ett fel uppstod, försök igen"
@@ -3899,9 +3893,9 @@
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgänglig dedikerad server.",
         "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgängliga dedikerade servrar."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du använder för närvarande ${ organization.UsedMembers } av din ${ organization.MaxMembers } tillgängliga användarlicens.",
-        "Du använder för närvarande ${ organization.UsedMembers } av dina ${ organization.MaxMembers } tillgängliga användarlicenser."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du använder för närvarande ${ usedMembers } av din ${ maxMembers } tillgängliga användarlicens.",
+        "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgängliga användarlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du är inloggad på kontot ${ memberAddress }."
