@@ -337,6 +337,11 @@
         "黑色星期五優惠"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }桌面應用程式"
+      ]
+    },
     "Button": {
       "More info": [
         "更多資訊"
@@ -601,6 +606,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
+      ],
+      "All trashed items permanently deleted": [
+        "全數垃圾項目永久刪除"
       ],
       "All trashed items successfully restored": [
         "全部垃圾項目已成功還原"
@@ -868,11 +876,11 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length }個字元"
+      "${ config.options.length } characters": [
+        "${ config.options.length }個字元"
       ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount }個字"
+      "${ config.options.wordCount } words": [
+        "${ config.options.wordCount }個字"
       ],
       "1 hour": [
         "1 小時"
@@ -1011,6 +1019,12 @@
       ],
       "Invitations": [
         "邀請"
+      ],
+      "Item ID": [
+        "項目 ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "鍵盤快速鍵: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "過去2週"
@@ -1191,6 +1205,9 @@
       ],
       "Vault": [
         "保管庫"
+      ],
+      "Vault ID": [
+        "保管庫 ID"
       ],
       "View details": [
         "查看詳情資料"

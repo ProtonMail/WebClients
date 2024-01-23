@@ -1021,13 +1021,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } tegn",
-        "${ passwordOptions.options.length } tegn"
+      "${ config.options.length } character": [
+        "${ config.options.length } tegn",
+        "${ config.options.length } tegn"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } ord",
-        "${ passwordOptions.options.wordCount } ord"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } ord",
+        "${ config.options.wordCount } ord"
       ],
       "1 hour": [
         "1 time"
@@ -1058,6 +1058,9 @@
       ],
       "A-Z": [
         "A-Å"
+      ],
+      "Account": [
+        "Konto"
       ],
       "Alias": [
         "Alias"
@@ -1169,6 +1172,9 @@
       ],
       "Item ID": [
         "Element ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Tastatursnarvei: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Siste 2 uker"

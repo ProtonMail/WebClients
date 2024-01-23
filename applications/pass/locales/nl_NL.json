@@ -965,13 +965,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } teken",
-        "${ passwordOptions.options.length } tekens"
+      "${ config.options.length } character": [
+        "${ config.options.length } teken",
+        "${ config.options.length } tekens"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } woord",
-        "${ passwordOptions.options.wordCount } woorden"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } woord",
+        "${ config.options.wordCount } woorden"
       ],
       "1 hour": [
         "1 uur"
@@ -1107,6 +1107,9 @@
       ],
       "Invitations": [
         "Uitnodigingen"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Toetsenbordsneltoets: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Afgelopen 2 weken"
