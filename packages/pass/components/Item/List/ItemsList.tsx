@@ -1,6 +1,8 @@
 import { type FC, useEffect } from 'react';
 
+import { BulkActions } from '@proton/pass/components/Bulk/BulkActions';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { BulkToggle } from '@proton/pass/components/Bulk/BulkToggle';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
 import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
@@ -8,10 +10,7 @@ import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import { type ItemRevision, type SelectedItem } from '@proton/pass/types';
-
-import { BulkActions } from '../../Bulk/BulkActions';
-import { BulkToggle } from '../../Bulk/BulkToggle';
+import { type ItemRevision } from '@proton/pass/types';
 
 export const ItemsList: FC = () => {
     const { filters, matchTrash, selectedItem, setFilters } = useNavigation();
