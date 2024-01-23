@@ -462,9 +462,6 @@
       "Refresh the page": [
         "पन्ना रिफ्रेश करें"
       ],
-      "refresh the page": [
-        "पन्ना रिफ्रेश करें"
-      ],
       "Remove": [
         "हटाएं"
       ],
@@ -585,14 +582,8 @@
       "Show side panel": [
         "साइड पैनल दिखाएं"
       ],
-      "Sign in": [
-        "साइन इन करें"
-      ],
       "Sign out": [
         "साइनआउट करें"
-      ],
-      "Signing out": [
-        "साइनआउट कर रहे"
       ],
       "Skip": [
         "छोड़ें"
@@ -1019,9 +1010,6 @@
       ],
       "Gender": [
         "लिंग"
-      ],
-      "Geo": [
-        "भूगोल"
       ],
       "Language": [
         "भाषा"
@@ -2068,12 +2056,6 @@
       "IMAP server is required": [
         "IMAP सर्वर चाहिए"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "गलत लॉगिन क्रेडेंशियल। कृपया पुन: प्रयास करें |"
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
-      ],
       "Incorrect password. Please try again.": [
         "गलत पासवर्ड। कृपया वापिस कोशिश करें।"
       ],
@@ -2185,9 +2167,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "आपके कुछ लेबल नाम ${ MAIL_APP_NAME } की अधिकतम वर्ण सीमा से अधिक हैं। कृपया इन नामों को संपादित करने के लिए आयात को अनुकूलित करें।"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "कुछ गलत हुआ, आगे बढ़ने के लिए कृपया पेज ${ refresh } करें। अगर फिर भी यह त्रुटि है तो ${ supportTeam } से सम्पर्क करें।"
       ],
       "The email addresses do not match": [
         "ईमेल पते मेल नहीं खाते"
@@ -3461,9 +3440,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "यदि आपको अपना खाता बनाने में परेशानी हो रही है, तो कृपया एक निमंत्रण का अनुरोध करें और हम एक व्यावसायिक दिन के भीतर जवाब देंगे।"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "अगर आपको लगता है कि यह गलती से हुआ है, तो कृपया हमसे ${ contactLink } से संपर्क करें।"
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
       ],
@@ -3794,9 +3770,6 @@
       "Something went wrong, please try again later.": [
         "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
       ],
-      "support team": [
-        "टीम का समर्थन"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -3817,9 +3790,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "ऐसी फाइलें हैं जिन्हें अभी भी स्थानांतरित करने की आवश्यकता है। ट्रांसफर मैनेजर को बंद करने से सभी ऑपरेशन खत्म हो जाएंगे।"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "संभावित नीति उल्लंघन के कारण इस खाते को निलंबित कर दिया गया है।"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "यह पता अक्षम है। इस पते पर भेजने में सक्षम होने के लिए, मालिक को पहले पते को सक्षम करना होगा।"
@@ -4281,9 +4251,6 @@
       "Email format": [
         "ईमेल प्रारूप"
       ],
-      "Email or username": [
-        "ईमेल या उपयोगकर्ता का नाम"
-      ],
       "Emails": [
         "ईमेल"
       ],
@@ -4391,9 +4358,6 @@
       ],
       "Mail Server (IMAP)": [
         "मेल सर्वर (IMAP)"
-      ],
-      "Mailbox password": [
-        "मेलबॉक्स पासवर्ड"
       ],
       "Main": [
         "मुख्‍य"
@@ -5739,9 +5703,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } असफल अपलोड",
         "${ numberOfFailedTransfer.total } असफल अपलोड"
-      ],
-      "Account suspended": [
-        "खाता निलंबित"
       ],
       "Active": [
         "सक्रिय"

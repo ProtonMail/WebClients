@@ -470,9 +470,6 @@
       "Signing in": [
         "Logger ind"
       ],
-      "Signing out": [
-        "Logger ud"
-      ],
       "Submit": [
         "Indsend"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Opgrader til Business"
-      ],
-      "Upgrade to Visionary": [
-        "Opgradér til Visionary"
       ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "Adgang til skrivebordsappen er begrænset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Beta-versionen af ${ MAIL_APP_NAME } desktop-appen er i øjeblikket tilgængelig for alle med et betalt ${ MAIL_APP_NAME }-abonnement. Den vil snart være tilgængelig for alle."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Opsæt et brugerdomæne, inden du tilføjer brugere til din organisation."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brugeren allerede har en ${ MAIL_APP_NAME } adresse, skal du indtaste den her. Ellers skal de først oprette en konto."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } er blevet fjernet fra ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } er blevet fjernet fra ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Der skete en fejl, prøv igen"
@@ -2983,6 +2980,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Faktureret med ${ price }"
       ],
@@ -3003,6 +3003,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder (IdP). Dette vil aktivere SAML for hele organisationen."
       ],
       "Continue with ${ freeName }": [
         "Fortsæt med ${ freeName }"
@@ -3194,6 +3197,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
+      ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
       ],
       "here": [
         "hér"
@@ -3901,9 +3907,9 @@
         "Du bruger i øjeblikket ${ ipCount } af din ${ ipAddresses } tilgængelig dedikeret server.",
         "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du bruger i øjeblikket ${ organization.UsedMembers } af din ${ organization.MaxMembers } tilgængelige brugerlicens.",
-        "Du bruger i øjeblikket ${ organization.UsedMembers } af dine ${ organization.MaxMembers } tilgængelige brugerlicenser."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
+        "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -3924,6 +3930,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
+      ],
+      "You can now return to the application to continue": [
+        "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun have en chatinstans åben ad gangen. Luk venligst tidligere samtaler, før du starter en ny."
@@ -5150,6 +5159,10 @@
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
       ],
+      "Up to ${ n } user": [
+        "Op til ${ n } bruger",
+        "Op til ${ n } brugere"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
@@ -5411,6 +5424,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -6234,6 +6250,9 @@
       ]
     },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Af sikkerhedsmæssige årsager, skal du vente **72 timer** før du kan ændre din adgangskode."
+      ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
         "Hvis du har indstillet en **gendannelsesmetode**, kan du prøve kontogendannelse i stedet. Det vil give dig mulighed for at ændre din adgangskode med det samme."
       ],
@@ -6398,6 +6417,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Premium tidlig adgang"
@@ -6585,6 +6607,10 @@
       "${ n } calendar per user": [
         "${ n } kalender pr. bruger",
         "${ n } kalendere pr. bruger"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-forbindelse pr. bruger",
+        "${ n } gratis VPN-forbindelser pr. bruger"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } højhastigheds VPN-forbindelse",
@@ -7394,6 +7420,10 @@
       "Subscription": [
         "Abonnement"
       ],
+      "Successfully created ${ n } user account": [
+        "Oprettede ${ n } brugerkonto",
+        "Oprettede ${ n } brugerkonti"
+      ],
       "Summary": [
         "Sammenfatning"
       ],
@@ -7521,6 +7551,9 @@
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
       ],
+      "Feature in early access": [
+        "Funktion i tidlig adgang"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
@@ -7583,6 +7616,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO-bruger leveret af din identitetsudbyder"
       ]
     },
     "Validation": {

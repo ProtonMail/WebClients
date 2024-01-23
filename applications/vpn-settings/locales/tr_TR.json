@@ -470,9 +470,6 @@
       "Signing in": [
         "Oturum açılıyor"
       ],
-      "Signing out": [
-        "Oturum kapatılıyor"
-      ],
       "Submit": [
         "Gönder"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Business tarifesine yükselt"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary tarifesine yükselt"
       ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "Masaüstü uygulamasına erişim kısıtlı"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasının Beta sürümünü şu anda yalnızca ${ BRAND_NAME } Visionary aboneleri kullanabilir. 2024 yılının başlarında tüm kullanıcılara sunulacak."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Yakında herkesin kullanımına sunulacak."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "İzin verilmedi, yönetici yetkileri kısıtlandı."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Lütfen adresleri eklemeden önce özel bir etki alanı yapılandırın."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Lütfen kuruluşunuza kullanıcılar eklemeden önce bir özel etki alanı ayarlayın."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Kullanıcının zaten bir ${ MAIL_APP_NAME } adresi varsa buraya yazın. Yoksa önce bir hesap açmaları gerekir."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Davet iptal edilecek ve kullanıcı ${ organization.Name } kuruluşuna katılamayacak."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Davet iptal edilecek ve kullanıcı ${ organizationName } kuruluşuna katılamayacak."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name }, ${ organization.Name } kuruluşundan kaldırıldı"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name }, ${ organizationName } kuruluşundan kaldırıldı"
       ],
       "An error occurred, please try again": [
         "Bir sorun çıktı. Lütfen yeniden deneyin"
@@ -2982,6 +2979,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "${ price } olarak faturalandı"
@@ -3907,9 +3907,9 @@
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz.",
-        "Şu anda size ayrılmış ${ organization.MaxMembers } kullanıcı lisansından ${ organization.UsedMembers } kullanıcı lisansını kullanıyorsunuz."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
@@ -5180,6 +5180,10 @@
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
       ],
+      "Up to ${ n } user": [
+        "${ n } kullanıcıya kadar",
+        "${ n } kullanıcıya kadar"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
@@ -5441,6 +5445,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ VPN_APP_NAME } hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ VPN_APP_NAME } bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -6619,8 +6626,12 @@
         "${ ipAddresses } size ayrılmış sunucu"
       ],
       "${ n } calendar per user": [
-        "Kullanıcı başına ${ n } takvim",
-        "Kullanıcı başına ${ n } takvim"
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } free VPN connection per user": [
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı",
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
@@ -7436,6 +7447,10 @@
       "Subscription": [
         "Abonelik"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } kullanıcı hesabı eklendi",
+        "${ n } kullanıcı hesabı eklendi"
+      ],
       "Summary": [
         "Özet"
       ],
@@ -7566,6 +7581,9 @@
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
       ],
+      "Feature in early access": [
+        "Erken erişim özelliği"
+      ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
       ],
@@ -7634,6 +7652,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Tek oturum açma"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Kimlik hizmeti sağlayıcınızın belirttiği tek oturum açma"
       ]
     },
     "Validation": {

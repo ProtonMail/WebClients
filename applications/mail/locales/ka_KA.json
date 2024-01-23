@@ -794,9 +794,6 @@
       "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "refresh the page": [
-        "გვერდის განახლება"
-      ],
       "Remove": [
         "წაშლა"
       ],
@@ -980,14 +977,8 @@
       "Show side panel": [
         "გვერდითი პანელის ჩვენება"
       ],
-      "Sign in": [
-        "შესვლა"
-      ],
       "Sign out": [
         "გასვლა"
-      ],
-      "Signing out": [
-        "გამოსვლა"
       ],
       "Size": [
         "ზომა"
@@ -2092,9 +2083,6 @@
       ],
       "Gender": [
         "სქესი"
-      ],
-      "Geo": [
-        "ლოკაცია"
       ],
       "Language": [
         "ენა"
@@ -3396,12 +3384,6 @@
       "IMAP server is required": [
         "IMAP სერვერის მითითება აუცილებელია"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "არასწორი შესვლის პარამეტრები. თავიდან სცადეთ."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
-      ],
       "Incorrect username": [
         "მომხმარებლის სახელი არასწორია"
       ],
@@ -3556,9 +3538,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "ჭდეების ზოგიერთი სახელი ${ MAIL_APP_NAME }-ის სიმბოლოების მაქსიმალურ სიგრძეზე დიდია. ჩაასწორეთ ეს სახელები."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "რაღაც არასწორად მუშაობს. გასაგრძელებლად ${ refresh }. თუ ჯერ კიდევ ხედავთ შეცდომის შეტყობინებას, დაუკავშირდით ჩვენს ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "რაღაც არასწორად წავიდა. თავიდან სცადეთ."
@@ -5397,9 +5376,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "თუ გექმნებათ ანგარიშის შექმნის პრობლემა, გამოითხოვეთ მოსაწვევი და ჩვენ 1 სამუშაო დღეში გიპასუხებთ."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
       ],
@@ -5838,9 +5814,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
-      "support team": [
-        "მხარდაჭერის გუნდი"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -5889,9 +5862,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "მათ არ შეუძლიათ დაგსპამონ, თუ თქვენი მისამართი არ ეცოდინებათ. დაიცავით თავი, დამალეთ თქვენი მისამართი."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "ეს მისამართი გათიშულია. ამ მისამართზე გასაგზავნად მისმა მფლობელმა ის ჯერ უნდა ჩართოს."
@@ -6732,9 +6702,6 @@
       "Email format": [
         "ელფოსტის ფორმატი"
       ],
-      "Email or username": [
-        "ელფოსტა ან მომხმარებლის სახელი"
-      ],
       "Emails": [
         "ელფოსტები"
       ],
@@ -6842,9 +6809,6 @@
       ],
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
-      ],
-      "Mailbox password": [
-        "საფოსტო ყუთის პაროლი"
       ],
       "Main": [
         "მთავარი"
@@ -8653,9 +8617,6 @@
       "Schedule send": [
         "გაგზავნის დაგეგმვა"
       ],
-      "Search just got smarter and faster": [
-        "ძებნა ახლა კიდევ უფრო ჭკვიანი და სწრაფია"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "დააყენეთ, როდის უნდა გამოჩნდეს ელფოსტა თქვენს საფოსტო ყუთში, ახალი დროებით დადუმების ფუნქციით."
       ],
@@ -8664,9 +8625,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "სპამში და ნაგვის ყუთში მდებარე ელფოსტები ახლა ყველა ელფოსტიდან ავტომატურად გამოირიცხება. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "სცადეთ დღესვე."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "ახლა გამოსახულებებს ნაგულისხმევად ჩავტვირთავთ და დავბლოკავთ გამომგზავნებს თქვენი ტრეკინგისგან. შეცვლა შეგიძლიათ აქ ${ settingsLink }."
@@ -9096,9 +9054,6 @@
       ],
       "(active)": [
         "(აქტიური)"
-      ],
-      "Account suspended": [
-        "ანგარიში შეჩერებულია"
       ],
       "Action all conversations": [
         "გადატარება ყველა საუბარზე"

@@ -222,6 +222,9 @@
       "Download": [
         "Baixa"
       ],
+      "Download now": [
+        "Descarrega ara"
+      ],
       "Edit": [
         "Edita"
       ],
@@ -447,9 +450,6 @@
       "Refresh the page": [
         "Refresca la pàgina"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Remove": [
         "Esborra"
       ],
@@ -534,14 +534,8 @@
       "Show time zones": [
         "Mostrar el fus horari"
       ],
-      "Sign in": [
-        "Inicia la sessió"
-      ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Signing out": [
-        "Tancant la sessió"
       ],
       "Skip": [
         "Omet"
@@ -1210,7 +1204,7 @@
         "Aniversari"
       ],
       "Birthday": [
-        "Aniversari"
+        "Data de naixement"
       ],
       "Display name": [
         "Nom que es mostrarà"
@@ -1226,9 +1220,6 @@
       ],
       "Gender": [
         "Gènere"
-      ],
-      "Geo": [
-        "Geolocalització"
       ],
       "Language": [
         "Idioma"
@@ -2499,12 +2490,6 @@
       "IMAP server is required": [
         "Es requereix un servidor IMAP."
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Contrasenya de bústia incorrecta. Torneu a provar-ho."
-      ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
@@ -2659,9 +2644,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "L’hora d’inici ha de ser abans de l’hora de finalització."
@@ -3898,9 +3880,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
@@ -4104,9 +4083,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "equip de suport"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "No està disponible temporalment. Comproveu-ho de nou més tard."
       ],
@@ -4142,9 +4118,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a habilitar el xifratge d’extrem a extrem."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Aquesta adreça està inhabilitada. Per tal de poder enviar-hi, el propietari l'ha d'habilitar en primer lloc."
@@ -4573,9 +4546,6 @@
       "Email format": [
         "Format de correu electrònic"
       ],
-      "Email or username": [
-        "Correu electrònic o nom d'usuari"
-      ],
       "Emails": [
         "Correus electrònics"
       ],
@@ -4668,9 +4638,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
-      ],
-      "Mailbox password": [
-        "Contrasenya de la bústia"
       ],
       "Main": [
         "Principal"
@@ -6519,9 +6486,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } adreça de correu electrònic",
         "${ emailsCount } adreces de correu electrònic"
-      ],
-      "Account suspended": [
-        "Compte suspès"
       ],
       "Add another notification to remind you of this event": [
         "Afegeix una altra notificació per recordar-vos aquest esdeveniment"

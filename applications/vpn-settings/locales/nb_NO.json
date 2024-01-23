@@ -470,9 +470,6 @@
       "Signing in": [
         "Logger på"
       ],
-      "Signing out": [
-        "Logger av"
-      ],
       "Submit": [
         "Send inn"
       ],
@@ -508,9 +505,6 @@
       ],
       "Upgrade to Business": [
         "Oppgrader til Business"
-      ],
-      "Upgrade to Visionary": [
-        "Oppgrader til Visionary"
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
@@ -1870,8 +1864,8 @@
       "Access to the desktop app is limited": [
         "Tilgang til skrivebordsappen er begrenset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Den vil snart være tilgjengelig for alle."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
@@ -2062,6 +2056,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tillatelse nektet, administratorrettigheter er begrenset."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Vennligst konfigurer et egendefinert domene før du legger til adresser."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Vennligst konfigurer et egendefinert domene før du legger til nye brukere til din organisasjon."
@@ -2388,8 +2385,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brukeren allerede har en ${ MAIL_APP_NAME }-adresse, angi den her. Ellers må de opprette en konto først."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Brukerens konto vil bli flyttet til en ${ BRAND_NAME } Unlimited-plan for en 30-dagers gratis prøveperiode*."
@@ -2429,8 +2426,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } er fjernet fra ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } er fjernet fra ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "En feil oppstod, vennligst prøv igjen"
@@ -3913,9 +3910,9 @@
         "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
         "Du bruker for øyeblikket ${ ipCount } tilgjengelige dedikerte tjenere ut av ${ ipAddresses }."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du bruker for øyeblikket ${ organization.UsedMembers } av ${ organization.MaxMembers } tilgjengelig brukerlisens.",
-        "Du bruker for øyeblikket ${ organization.UsedMembers } ut av ${ organization.MaxMembers } tilgjengelige brukerlisenser."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du bruker for øyeblikket ${ usedMembers } av ${ maxMembers } tilgjengelig brukerlisens.",
+        "Du bruker for øyeblikket ${ usedMembers } ut av ${ maxMembers } tilgjengelige brukerlisenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget på konto ${ memberAddress }."

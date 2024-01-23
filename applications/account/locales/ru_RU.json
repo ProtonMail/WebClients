@@ -210,7 +210,7 @@
         "Связаться с поддержкой"
       ],
       "Contact us": [
-        "Связаться с нами"
+        "Служба поддержки"
       ],
       "Continue": [
         "Продолжить"
@@ -905,9 +905,6 @@
       "Signing in": [
         "Выполняется вход"
       ],
-      "Signing out": [
-        "Выход"
-      ],
       "Size": [
         "Размер"
       ],
@@ -994,9 +991,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Улучшить до Visionary"
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
@@ -2101,9 +2095,6 @@
       "Gender": [
         "Пол"
       ],
-      "Geo": [
-        "Геолокация"
-      ],
       "Language": [
         "Язык"
       ],
@@ -3144,9 +3135,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Доступ к приложению для настольных компьютеров ограничен"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Бета-версия приложения ${ MAIL_APP_NAME } для настольных компьютеров в настоящее время доступна только для подписчиков ${ BRAND_NAME } Visionary. Она будет доступна всем пользователям в начале 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
@@ -4755,8 +4743,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Если у пользователя уже есть адрес ${ MAIL_APP_NAME }, введите его. В противном случае сначала необходимо создать аккаунт."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Приглашение будет отменено и пользователь не сможет присоединиться к группе «${ organization.Name }»."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Приглашение будет отменено и пользователь не сможет присоединиться к группе «${ organizationName }»."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
@@ -4804,8 +4792,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "Пользователь ${ member.Name } удален из группы «${ organization.Name }»"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "Пользователь ${ member.Name } удален из группы «${ organizationName }»"
       ],
       "An error occurred, please try again": [
         "Произошла ошибка. Попробуйте еще раз"
@@ -5813,14 +5801,6 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -5888,6 +5868,9 @@
         "${ n } адресов",
         "${ n } адресов"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: не помещать в карантин и не отклонять неавторизованные письма. Обычно люди используют эту политику только для устранения неполадок или тестирования."
+      ],
       "${ number } city": [
         "${ number } город",
         "${ number } города",
@@ -5932,6 +5915,12 @@
         "${ provisioningCounter } сервера все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
         "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
         "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: запрос платформам-получателям пометить неавторизованные письма как спам или поместить их в карантин."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: запрос платформам-получателям отклонять неавторизованные письма."
       ],
       "${ remainingAddresses.length } more": [
         "Ещё ${ remainingAddresses.length }",
@@ -6287,6 +6276,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Прежде чем вы сможете получать электронные письма для адресов пользовательских доменов по адресу ${ MAIL_APP_NAME }, вам необходимо добавить следующие две записи MX в вашей консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен). Вы можете найти пример и несколько полезных советов ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
@@ -6440,6 +6432,12 @@
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM позволяет ${ BRAND_NAME } криптографически подписывать ваши электронные письма и предотвращать подделку почты злоумышленниками. Убедитесь, что вы добавили следующие три записи CNAME в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC проверяет, исходят ли записи SPF и DKIM отправителя от вашего домена. Это может предотвратить использование злоумышленниками SPF и DKIM другого домена для выдачи себя за ваш домен. Параметр \"p=\" (политика) в этой записи указывает, как платформы-получатели должны обрабатывать несанкционированные сообщения электронной почты. Мы рекомендуем использовать политику \"p=quarantine\" для большинства доменов. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете управлять настройками своей организациии."
       ],
@@ -6487,6 +6485,9 @@
       ],
       "Each code can only be used once": [
         "Каждый код может быть использован только один раз"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Каждый домен может иметь только одну запись SPF (TXT). Если вы хотите сохранить существующую запись SPF (TXT), вы можете добавить ${ spf } к текущей записи (поместите ее после ${ spfValue })."
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -6572,6 +6573,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Приглашения на событие и RSVP будут отправлены на этом языке."
       ],
+      "Example: ${ spfExample }": [
+        "Пример: ${ spfExample }"
+      ],
       "Expired": [
         "Истёкший"
       ],
@@ -6592,6 +6596,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "Для членов организаций, использующих единое предъявление пароля (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Для пользователей, которые переходят на ${ MAIL_APP_NAME } с другой почтовой службы, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX, чтобы обеспечить плавный переход."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
@@ -6715,6 +6722,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖНО: Если ваша консоль DNS не позволяет значениям CNAME заканчиваться точкой, вы можете удалить последнюю точку в значениях CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы можете навсегда потерять доступ к своей учётной записи, если потеряете своё устройство для двухфакторной аутентификации."
@@ -6847,6 +6857,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "В журналах записаны попытки аутентификации во всех службах ${ BRAND_NAME }, которые используют ваши учетные данные ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Основные почтовые службы могут отклонить или отфильтровать ваши письма в спам, если SPF/DKIM/DMARC отсутствуют или настроены неправильно."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Основные почтовые службы могут отклонять или фильтровать ваши письма в спам, если SPF/DKIM/DMARC отсутствуют или не настроены должным образом."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Убедитесь, что вы ${ addARecoveryMethod }, чтобы вы могли попась в ваш аккаунт, если забудете пароль."
@@ -7285,6 +7301,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF уточняет, кому разрешено отправлять электронные письма на ваш домен. Убедитесь, что вы добавили следующую запись TXT в консоли DNS (расположенной на платформе, где вы приобрели пользовательский домен)."
       ],
       "Stay tuned for future promotions.": [
         "Следите за будущими акциями."
@@ -7835,11 +7854,11 @@
         "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
         "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Сейчас вы используете ${ organization.UsedMembers } из вашей ${ organization.MaxMembers } доступной пользовательской лицензии.",
-        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий.",
-        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий.",
-        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
@@ -8071,6 +8090,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -9136,6 +9163,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Добавьте все 3 из следующих записей CNAME. Примечание: обновление записей DNS может занять несколько часов."
+      ],
       "Please select files to upload": [
         "Пожалуйста, выберите файлы для загрузки"
       ],
@@ -9561,6 +9591,9 @@
       ],
       "Help translate": [
         "Помочь с переводом"
+      ],
+      "here": [
+        "здесь"
       ],
       "How to pay with Bitcoin?": [
         "Как оплатить с помощью Bitcoin?"
@@ -10190,7 +10223,7 @@
         "${ n } хранилище",
         "${ n } хранилища",
         "${ n } хранилищ",
-        "${ n } хранилища"
+        "${ n } хранилищ"
       ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
@@ -10780,6 +10813,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "В рабочие дни получайте помощь от Службы Поддержки Клиентов ${ BRAND_NAME } в течение 24 часов после поступления запроса"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Одно подключение к VPN позволяет одному устройству подключаться к ${ VPN_APP_NAME } в любой момент времени. Например, чтобы подключить телефон и ноутбук к ${ VPN_APP_NAME } одновременно, вам потребуется два подключения к VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
@@ -11430,12 +11466,6 @@
       "Create another account instead": [
         "Вместо этого создать другой аккаунт"
       ],
-      "Download again ${ size }": [
-        "Скачать снова ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Скачать для продолжения ${ size }"
-      ],
       "Keep this plan": [
         "Сохранить этот тариф"
       ],
@@ -11574,9 +11604,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Псевдонимы Hide-my-email защищают вашу электронную почту от утечек данных"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Если вы потеряете доступ в свою учетную запись ${ BRAND_NAME }, ваш **набор для восстановления** позволит вам войти и восстановить свои данные."
-      ],
       "Includes:": [
         "Включает:"
       ],
@@ -11588,9 +11615,6 @@
       ],
       "Install app and extension": [
         "Установка приложения и расширения"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Это единственный способ полностью восстановить ваш аккаунт, поэтому убедитесь, что вы храните этот **набор для восстановления** в безопасном месте."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Присоединяйтесь к более чем 100 миллионам людей, выбравшим ${ BRAND_NAME }, чтобы оставаться в безопасности в Интернете"
@@ -12758,6 +12782,12 @@
         "${ n } календаря на пользователя",
         "${ n } календарей на пользователя",
         "${ n } календарей на пользователя"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } бесплатное подключение к VPN для одного пользователя",
+        "${ n } бесплатных подключения к VPN для одного пользователя",
+        "${ n } бесплатных подключений к VPN для одного пользователя",
+        "${ n } бесплатных подключений к VPN для одного пользователя"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } высокоскоростное подключение к VPN",
@@ -14424,6 +14454,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Включение расширенного журналирования записывает IP-адрес каждого события в журнале безопасности."
+      ],
+      "Feature in early access": [
+        "Функция раннего доступа"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."

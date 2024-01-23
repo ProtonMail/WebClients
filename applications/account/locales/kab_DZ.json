@@ -848,9 +848,6 @@
       "Signing in": [
         "Tuqqna"
       ],
-      "Signing out": [
-        "Tuffɣa"
-      ],
       "Size": [
         "Tiddi"
       ],
@@ -1721,9 +1718,6 @@
       ],
       "Gender": [
         "Taswit"
-      ],
-      "Geo": [
-        "Geo"
       ],
       "Language": [
         "Tutlayt"
@@ -3831,8 +3825,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } yettwakkes seg ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } yettwakkes seg ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Teḍra-d tuccḍa. Ttxil-k ɛreḍ tikkelt niḍen"
@@ -4624,11 +4618,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info": {
@@ -6022,6 +6011,11 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
+      ]
+    },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -8559,12 +8553,6 @@
       ],
       "Create another account instead": [
         "Rnu amiḍan niḍen deg ubdil"
-      ],
-      "Download again ${ size }": [
-        "Sader tikkelt niḍen ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Sader i wakken ad tkemmleḍ ${ size }"
       ],
       "Or ${ createANewAccount }": [
         "Neɣ ${ createANewAccount }"

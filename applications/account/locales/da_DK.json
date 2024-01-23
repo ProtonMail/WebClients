@@ -908,9 +908,6 @@
       "Signing in": [
         "Logger ind"
       ],
-      "Signing out": [
-        "Logger ud"
-      ],
       "Size": [
         "Størrelse"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Upgrade to Visionary": [
-        "Opgradér til Visionary"
       ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Køn"
       ],
-      "Geo": [
-        "Geolokalisering"
-      ],
       "Language": [
         "Sprog"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "Adgang til skrivebordsappen er begrænset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Beta-versionen af ${ MAIL_APP_NAME } desktop-appen er i øjeblikket tilgængelig for alle med et betalt ${ MAIL_APP_NAME }-abonnement. Den vil snart være tilgængelig for alle."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Sæt et brugerdomæne op, før du tilføjer adresser."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Opsæt et brugerdomæne, inden du tilføjer brugere til din organisation."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Hvis brugeren allerede har en ${ MAIL_APP_NAME } adresse, skal du indtaste den her. Ellers skal de først oprette en konto."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } er blevet fjernet fra ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } er blevet fjernet fra ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Der skete en fejl, prøv igen"
@@ -5765,17 +5759,6 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -5837,6 +5820,9 @@
         "${ n } adresse",
         "${ n } adresser"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: sæt hverken uautoriserede e-mails i karantæne eller afvis dem. Normalt bruger folk kun denne politik til fejlfinding eller test."
+      ],
       "${ number } city": [
         "${ number } by",
         "${ number } byer"
@@ -5869,6 +5855,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }.",
         "${ provisioningCounter } servere er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: beder modtagerplatformene om at markere den uautoriserede e-mails som spam eller sætte dem i karantæne."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: beder modtagerplatformene om at afvise de uautoriserede e-mails."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } mere",
@@ -6196,8 +6188,14 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Før du kan modtage e-mails for dine brugerdomæne-adresser hos ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne). Du kan finde et eksempel og nogle nyttige tips ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Faktureret med ${ price }"
@@ -6340,6 +6338,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM giver ${ BRAND_NAME } mulighed for kryptografisk at underskrive dine e-mail og forhindre angribere i, at manipulere din e-mail. Sørg for at du tilføjer de følgende tre CNAME-poster i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC tjekker om afsenderens SPF- og DKIM-poster oprindeligt er fra dit domæne. Dette kan forhindre angribere i at bruge et andet domænes SPF og DKIM til at udgive sig for at være dit domæne. \"p=\" (politik) i denne post angiver, hvordan du ønsker at modtagerplatformene skal håndtere uautoriserede e-mails. Vi anbefaler at du bruger \"p=quarantine\"-politikken for de fleste domæner. Sørg for at tilføje følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
@@ -6385,6 +6389,9 @@
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Hvert domæne kan kun have en SPF (TXT)-post. Hvis du vil beholde den nuværende SPF (TXT)-post, kan du tilføje ${ spf } til din nuværende post (put det efter ${ spfValue })."
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
@@ -6470,6 +6477,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Invitationer til begivenheder og tilmeldingsbekræftelser vil blive afsendt på dette sprog."
       ],
+      "Example: ${ spfExample }": [
+        "Eksempel: ${ spfExample }"
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -6490,6 +6500,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "For medlemmer af organisationer, der bruger single sign-on (SAML SSO)"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
@@ -6611,6 +6624,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "VIGTIGT: Hvis din DNS-konsol forbyder, at CNAME-værdier slutter med et punktum, kan du fjerne det sidste punktum i CNAME-værdien."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
@@ -6741,6 +6757,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Logs inkluderer godkendelsesforsøg for alle ${ BRAND_NAME }-tjenester, der bruger dine ${ BRAND_NAME_TWO }-legitimationsoplysninger."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Store e-mailtjenester kan afvise eller filtrere dine e-mails til spam hvis SPF/DKIM/DMARC mangler eller ikke er sat ordenligt op."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
@@ -7173,6 +7195,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF angiver, hvem der har lov til at sende e-mails for dit domæne. Sørg for at tilføje følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne)."
       ],
       "Stay tuned for future promotions.": [
         "Hold øje med fremtidige kampagner."
@@ -7713,9 +7738,9 @@
         "Du bruger i øjeblikket ${ ipCount } af din ${ ipAddresses } tilgængelig dedikeret server.",
         "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du bruger i øjeblikket ${ organization.UsedMembers } af din ${ organization.MaxMembers } tilgængelige brugerlicens.",
-        "Du bruger i øjeblikket ${ organization.UsedMembers } af dine ${ organization.MaxMembers } tilgængelige brugerlicenser."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
+        "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -7751,6 +7776,9 @@
       ],
       "You can now close this window.": [
         "Du kan nu lukke dette vindue."
+      ],
+      "You can now return to the application to continue": [
+        "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
@@ -7939,6 +7967,17 @@
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktiveret, arver undermapper farven på den overordnede mappe."
@@ -7950,8 +7989,14 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Tilføj en ny adresse til de eksisterende brugere i din organisation."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Tilføj en ny bruger til din organisation og opret en adresse til den."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Af sikkerhedsmæssige årsager, bliver vi nødt til at bekræfte, at du ejer ${ domainName }. Tilføj følgende TXT-post i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne). Du kan finde et eksempel og nogle nyttige tops ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -8990,6 +9035,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Sætning består af 12 unikke ord i en bestemt rækkefølge"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Tilføj følgende 3 CNAME-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Tilføj følgende MX-poster. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Tilføj følgende TXT-post. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+      ],
       "Please select files to upload": [
         "Vælg filer til upload"
       ],
@@ -9233,6 +9287,11 @@
         "Varighed"
       ]
     },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Tilføj følgende TXT-post. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Admin"
@@ -9357,6 +9416,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9415,6 +9477,9 @@
       ],
       "Help translate": [
         "Hjælp med at oversætte"
+      ],
+      "here": [
+        "her"
       ],
       "How to pay with Bitcoin?": [
         "Hvordan betaler man med Bitcoin?"
@@ -10269,6 +10334,10 @@
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
       ],
+      "Up to ${ n } user": [
+        "Op til ${ n } bruger",
+        "Op til ${ n } brugere"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
@@ -10578,6 +10647,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ VPN_APP_NAME } på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ VPN_APP_NAME } på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -11210,12 +11282,6 @@
       "Create another account instead": [
         "Opret endnu en konto i stedet"
       ],
-      "Download again ${ size }": [
-        "Download igen ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Download for at fortsætte ${ size }"
-      ],
       "Keep this plan": [
         "Behold dette abonnement"
       ],
@@ -11354,9 +11420,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliasser beskytter din e-mail mod datalæk"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil dit **gendannelseskit** give dig mulighed for at logge ind og gendanne dine data."
-      ],
       "Includes:": [
         "Inkluderer:"
       ],
@@ -11368,9 +11431,6 @@
       ],
       "Install app and extension": [
         "Installér app og udvidelse"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Det er den eneste måde at gendanne din konto fuldt på, så vær sikker på at du opbevarer dette **gendannelseskit** et sikkert sted."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Slut dig til over 100 millioner personer, som har valgt ${ BRAND_NAME } for at holde sig sikre online"
@@ -11578,6 +11638,9 @@
       ],
       "Search for a user or address": [
         "Søg efter en bruger eller adresse"
+      ],
+      "Search parent folder": [
+        "Søg i overordnet mappe"
       ],
       "Search users": [
         "Søg brugere"
@@ -12059,6 +12122,9 @@
       ]
     },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Af sikkerhedsmæssige årsager, skal du vente **72 timer** før du kan ændre din adgangskode."
+      ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
         "Hvis du har indstillet en **gendannelsesmetode**, kan du prøve kontogendannelse i stedet. Det vil give dig mulighed for at ændre din adgangskode med det samme."
       ],
@@ -12352,6 +12418,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium tidlig adgang"
       ],
@@ -12570,6 +12639,10 @@
       "${ n } calendar per user": [
         "${ n } kalender pr. bruger",
         "${ n } kalendere pr. bruger"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-forbindelse pr. bruger",
+        "${ n } gratis VPN-forbindelser pr. bruger"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } højhastigheds VPN-forbindelse",
@@ -13930,6 +14003,10 @@
       "Success": [
         "Lykkedes"
       ],
+      "Successfully created ${ n } user account": [
+        "Oprettede ${ n } brugerkonto",
+        "Oprettede ${ n } brugerkonti"
+      ],
       "Summary": [
         "Sammenfatning"
       ],
@@ -14197,6 +14274,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
       ],
+      "Feature in early access": [
+        "Funktion i tidlig adgang"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
@@ -14211,6 +14291,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
+      ],
+      "See number of unread messages in the application icon": [
+        "Se antallet af ulæste beskeder i app-ikonet"
       ],
       "See number of unread messages in the tab icon": [
         "Se antallet af ulæste beskeder i fane-ikonet"
@@ -14418,6 +14501,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO-bruger leveret af din identitetsudbyder"
       ]
     },
     "Validation": {

@@ -794,9 +794,6 @@
       "Refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
-        "Päivitä sivu"
-      ],
       "Remove": [
         "Poista"
       ],
@@ -980,14 +977,8 @@
       "Show side panel": [
         "Näytä sivupaneeli"
       ],
-      "Sign in": [
-        "Kirjaudu sisään"
-      ],
       "Sign out": [
         "Kirjaudu ulos"
-      ],
-      "Signing out": [
-        "Kirjaudutaan ulos"
       ],
       "Size": [
         "Koko"
@@ -2092,9 +2083,6 @@
       ],
       "Gender": [
         "Sukupuoli"
-      ],
-      "Geo": [
-        "Paikkatieto"
       ],
       "Language": [
         "Kieli"
@@ -3396,12 +3384,6 @@
       "IMAP server is required": [
         "IMAP-palvelin vaaditaan"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Virheelliset kirjautumistiedot. Yritä uudelleen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Virheellinen postilaatikon salasana. Yritä uudelleen."
-      ],
       "Incorrect username": [
         "Virheellinen käyttäjätunnus"
       ],
@@ -3556,9 +3538,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ],
       "Something went wrong. Please try again.": [
         "Jotain meni pieleen. Yritä myöhemmin uudelleen."
@@ -5397,9 +5376,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
       ],
@@ -5838,9 +5814,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
-      "support team": [
-        "tukeemme"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -5889,9 +5862,6 @@
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "He eivät voi lähettää sinulle roskapostia, jos he eivät tiedä sähköpostiosoitettasi. Suojaa postilaatikkoasi Hide-my-email-aliaksilla."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
@@ -6732,9 +6702,6 @@
       "Email format": [
         "Viestien muoto"
       ],
-      "Email or username": [
-        "Sähköpostiosoite tai käyttäjätunnus"
-      ],
       "Emails": [
         "Viestit"
       ],
@@ -6842,9 +6809,6 @@
       ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postilaatikon salasana"
       ],
       "Main": [
         "Pää"
@@ -8653,9 +8617,6 @@
       "Schedule send": [
         "Ajoita lähetys"
       ],
-      "Search just got smarter and faster": [
-        "Haku on nyt älykkäämpi ja nopeampi"
-      ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
         "Määrää milloin sähköposti ilmestyy uudestaan saapuneisiin uudella torkuta -ominaisuudella."
       ],
@@ -8664,9 +8625,6 @@
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Roskapostin ja roskakorin viestejä ei enää näytetä Kaikki viestit -näkymässä oletusarvoisesti. ${ settingsLink }"
-      ],
-      "Try it today.": [
-        "Kokeile sitä tänään."
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
@@ -9096,9 +9054,6 @@
       ],
       "(active)": [
         "(käytössä)"
-      ],
-      "Account suspended": [
-        "Tili on jäädytetty"
       ],
       "Action all conversations": [
         "Käytä kaikkiin keskusteluihin"

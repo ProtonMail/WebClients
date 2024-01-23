@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account settings": [
+        "アカウントの設定"
+      ],
       "Add": [
         "追加"
       ],
@@ -71,6 +74,9 @@
       "Continue without pinning": [
         "ピンを留めずに続ける"
       ],
+      "Copy & fill in": [
+        "コピーして入力"
+      ],
       "Copy and close": [
         "コピーして閉じる"
       ],
@@ -131,6 +137,9 @@
       "Delete vault": [
         "保管庫を削除"
       ],
+      "Disable autosave on this website": [
+        "ウェブサイトでの自動保存を無効化"
+      ],
       "Discard": [
         "破棄"
       ],
@@ -154,9 +163,6 @@
       ],
       "Export": [
         "エクスポート"
-      ],
-      "Feedback": [
-        "フィードバック"
       ],
       "Fill password": [
         "パスワードを入力"
@@ -248,6 +254,9 @@
       "Move to trash": [
         "ごみ箱に移動"
       ],
+      "Not now": [
+        "後で"
+      ],
       "OK": [
         "OK"
       ],
@@ -256,6 +265,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Open web app": [
+        "ウェブアプリを開く"
       ],
       "Pass for Android": [
         "Android 版 Pass"
@@ -378,6 +390,16 @@
         "パスワード マネージャーがここにいませんか? リクエストしてください。"
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "スマートに節約。1ヶ月あたり たった ${ relativePrice } で Pass Plus をゲットしましょう。"
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "割引をゲット"
+      ]
+    },
     "bf2023: Title": {
       "Black Friday offer": [
         "ブラック フライデー オファー"
@@ -394,6 +416,14 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "Description": {
+      "A checked box means the feature is disabled.": [
+        "チェックボックスがオンになっているということは機能が無効になっていることです。"
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "${ PASS_SHORT_APP_NAME } の特定の自動機能 (自動入力、自動提案、自動保存) を実行すべきでないドメインをリストしてください。${ infoText }"
       ]
     },
     "Error": {
@@ -486,6 +516,9 @@
       ],
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
+      ],
+      "File does not match expected format": [
+        "予期しないファイル形式です"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "保管庫「${ vaultData.name }」のインポートに失敗しました: ${ description }"
@@ -690,6 +723,9 @@
       "Access successfully confirmed": [
         "アクセスが正常に確認されました"
       ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "${ PASS_APP_NAME } にアクセスするには、セッションのロックを解除するための PIN コードが必要です"
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
       ],
@@ -719,6 +755,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL } に自動保存されました"
+      ],
+      "Built in 2FA authenticator": [
+        "2要素認証の認証器を内蔵"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "このフォルダー内のアイテムを作成、編集、削除、エクスポートすることができます。"
@@ -858,6 +897,9 @@
       "items": [
         "アイテム"
       ],
+      "Leaving vault...": [
+        "保管庫を退出しています..."
+      ],
       "Let's get you started by creating your first item": [
         "最初のアイテムを作るところから始めましょう。"
       ],
@@ -878,6 +920,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
+      ],
+      "Never": [
+        "なし"
       ],
       "No login found": [
         "ログインが見つかりません"
@@ -939,6 +984,12 @@
       "Save login": [
         "ログインを保存"
       ],
+      "Select destination vault": [
+        "移動先の保管庫を選択"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "インポートした保管庫を保存する場所を選択してください。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -950,6 +1001,9 @@
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "ログイン情報や安全なメモを最大 10 人と共有"
       ],
       "Sign in or create an account to continue.": [
         "サインインするか、アカウントを作成してください。"
@@ -965,6 +1019,9 @@
       ],
       "Successfully synced all vaults": [
         "すべての保管庫が正常に同期されました"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "別の保管庫に切り替えるか、この保管庫にアイテムを作成"
       ],
       "Syncing your vaults…": [
         "保管庫を同期中…"
@@ -1011,6 +1068,9 @@
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をアップグレードします"
       ],
+      "Use vaults to share this item with others.": [
+        "このアイテムを他の人と共有するには、保管庫を使用してください。"
+      ],
       "User's access removed": [
         "ユーザーのアクセス権を削除しました。"
       ],
@@ -1025,6 +1085,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保管庫「${ payload.share.content.name }」が正常に更新されました"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "保管庫「${ share.content.name }」が削除されました"
       ],
       "Verification code": [
         "検証コード"
@@ -1079,11 +1142,11 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length } 文字"
+      "${ config.options.length } characters": [
+        "${ config.options.length } 文字"
       ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount } 単語"
+      "${ config.options.wordCount } words": [
+        "${ config.options.wordCount } 単語"
       ],
       "1 hour": [
         "1 時間"
@@ -1264,6 +1327,12 @@
       ],
       "Invitations": [
         "招待"
+      ],
+      "Item ID": [
+        "項目 ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "キーボードショートカット: ${ shortcut }"
       ],
       "Language": [
         "言語"
@@ -1466,6 +1535,9 @@
       "Vault": [
         "保管庫"
       ],
+      "Vault ID": [
+        "保管庫 ID"
+      ],
       "View details": [
         "詳細の表示"
       ],
@@ -1609,6 +1681,11 @@
         "メモを書く"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } の設定"
@@ -1663,6 +1740,9 @@
       ],
       "Leave vault ?": [
         "フォルダーをでますか？"
+      ],
+      "Log in as...": [
+        "次としてログインしています..."
       ],
       "Low disk space": [
         "ディスクの空き容量が低下"

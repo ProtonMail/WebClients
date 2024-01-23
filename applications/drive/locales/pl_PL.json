@@ -259,6 +259,9 @@
       "Download apps": [
         "Pobierz aplikacje"
       ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
       "Drive Locked": [
         "Dysk jest zablokowany"
       ],
@@ -496,9 +499,6 @@
       "Refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
-        "Odśwież stronę"
-      ],
       "Remove": [
         "Usuń"
       ],
@@ -619,14 +619,8 @@
       "Show side panel": [
         "Pokaż panel boczny"
       ],
-      "Sign in": [
-        "Zaloguj się"
-      ],
       "Sign out": [
         "Wyloguj"
-      ],
-      "Signing out": [
-        "Wylogowywanie"
       ],
       "Skip": [
         "Pomiń"
@@ -1105,9 +1099,6 @@
       ],
       "Gender": [
         "Płeć"
-      ],
-      "Geo": [
-        "Współrzędne"
       ],
       "Language": [
         "Język"
@@ -2214,12 +2205,6 @@
       "IMAP server is required": [
         "Serwer IMAP jest wymagany"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Dane logowania są nieprawidłowe. Spróbuj ponownie."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Hasło skrzynki pocztowej jest nieprawidłowe. Spróbuj ponownie."
-      ],
       "Incorrect password. Please try again.": [
         "Hasło jest nieprawidłowe. Spróbuj ponownie."
       ],
@@ -2351,9 +2336,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektóre nazwy etykiet przekraczają maksymalny limit znaków ${ MAIL_APP_NAME }. Dostosuj proces importowania, aby zmienić te nazwy."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
       "status page": [
         "stronę statusu"
@@ -3864,9 +3846,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jeśli uważasz, że nastąpiła pomyłka, skontaktuj się z nami ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
       ],
@@ -4275,9 +4254,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "pomocą techniczną"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
@@ -4301,9 +4277,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Masz pliki, które muszą zostać przesłane. Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych operacji."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ten adres jest wyłączony. Aby móc wysyłać wiadomości na ten adres, musi on zostać najpierw włączony przez właściciela."
@@ -4845,9 +4818,6 @@
       "Email format": [
         "Format wiadomości"
       ],
-      "Email or username": [
-        "Adres e-mail lub nazwa użytkownika"
-      ],
       "Emails": [
         "Wiadomości"
       ],
@@ -4955,9 +4925,6 @@
       ],
       "Mail Server (IMAP)": [
         "Serwer poczty (IMAP)"
-      ],
-      "Mailbox password": [
-        "Hasło skrzynki pocztowej"
       ],
       "Main": [
         "Główny"
@@ -6598,9 +6565,6 @@
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się"
-      ],
-      "Account suspended": [
-        "Konto zostało zawieszone"
       ],
       "Active": [
         "Aktywne"

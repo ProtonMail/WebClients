@@ -902,9 +902,6 @@
       "Signing in": [
         "Виконується вхід"
       ],
-      "Signing out": [
-        "Вихід"
-      ],
       "Size": [
         "Розмір"
       ],
@@ -991,9 +988,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Щоб увімкнути ${ PROTON_SENTINEL_NAME }, передплатіть тарифний план"
-      ],
-      "Upgrade to Visionary": [
-        "Перейти на Visionary"
       ],
       "Upgrade your plan": [
         "Покращити тарифний план"
@@ -1963,9 +1957,6 @@
       ],
       "Gender": [
         "Стать"
-      ],
-      "Geo": [
-        "Геолокація"
       ],
       "Language": [
         "Мова"
@@ -4380,8 +4371,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Якщо користувач вже має адресу ${ MAIL_APP_NAME }, введіть її тут. В іншому випадку потрібно спочатку створити обліковий запис."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Обліковий запис користувача буде переведено на тарифний план ${ BRAND_NAME } Unlimited на 30-денну безплатну пробну версію*."
@@ -4429,8 +4420,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } вилучено з ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } вилучено з ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Сталася помилка, спробуйте ще раз"
@@ -5424,14 +5415,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
       ]
     },
     "Info": {
@@ -7409,11 +7392,11 @@
         "Наразі ви використовуєте ${ ipCount } виділених серверів із ${ ipAddresses } доступних.",
         "Наразі ви використовуєте ${ ipCount } виділених серверів із ${ ipAddresses } доступних."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступної користувацької ліцензії",
-        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій.",
-        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій.",
-        "Наразі ви використовуєте ${ organization.UsedMembers } з ${ organization.MaxMembers } доступних користувацьких ліцензій."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступної користувацької ліцензії",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних користувацьких ліцензій.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних користувацьких ліцензій.",
+        "Наразі ви використовуєте ${ usedMembers } з ${ maxMembers } доступних користувацьких ліцензій."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ви увійшли в обліковий запис ${ memberAddress }."
@@ -7645,6 +7628,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
       ]
     },
     "Info - folder colouring feature": {
@@ -10882,12 +10873,6 @@
       "Create another account instead": [
         "Створити інший обліковий запис"
       ],
-      "Download again ${ size }": [
-        "Завантажити знову ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Завантажте для продовження ${ size }"
-      ],
       "Or ${ createANewAccount }": [
         "Або ${ createANewAccount }"
       ],
@@ -11008,9 +10993,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Псевдоніми Hide-my-email захищають вашу електронну пошту від витоку даних"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "У разі втрати доступу до свого облікового запису ${ BRAND_NAME } ваш **комплект для відновлення** дозволить вам увійти в обліковий запис і відновити свої дані."
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Встановити ${ PASS_APP_NAME }"
       ],
@@ -11019,9 +11001,6 @@
       ],
       "Install app and extension": [
         "Встановіть програму і розширення"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Це єдиний спосіб повністю відновити свій обліковий запис, тому обов'язково збережіть цей **комплект відновлення** в надійному місці."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб бути в безпеці онлайн"

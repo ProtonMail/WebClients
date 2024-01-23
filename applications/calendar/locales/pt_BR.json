@@ -222,6 +222,9 @@
       "Download": [
         "Baixar"
       ],
+      "Download now": [
+        "Baixar agora"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -447,9 +450,6 @@
       "Refresh the page": [
         "Atualizar a página"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Remove": [
         "Remover"
       ],
@@ -534,14 +534,8 @@
       "Show time zones": [
         "Mostrar fusos horários"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign out": [
         "Encerrar sessão"
-      ],
-      "Signing out": [
-        "Encerrando a sessão"
       ],
       "Skip": [
         "Ignorar"
@@ -1226,9 +1220,6 @@
       ],
       "Gender": [
         "Gênero"
-      ],
-      "Geo": [
-        "Geolocalização"
       ],
       "Language": [
         "Idioma"
@@ -2499,12 +2490,6 @@
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "As credenciais de início de sessão não são válidas. Tente novamente."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Senha da caixa de correio incorreta. Tente novamente."
-      ],
       "Incorrect username": [
         "Nome de usuário incorreto"
       ],
@@ -2659,9 +2644,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "A hora de início deve ser antes da hora de término"
@@ -3906,9 +3888,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
       ],
@@ -4112,9 +4091,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
-      "support team": [
-        "equipe de suporte"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporariamente indisponível. Tente mais tarde."
       ],
@@ -4150,9 +4126,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
@@ -4578,9 +4551,6 @@
       "Email format": [
         "Formato do e-mail"
       ],
-      "Email or username": [
-        "E-mail ou nome de usuário"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -4673,9 +4643,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mailbox password": [
-        "Senha da caixa de correio"
       ],
       "Main": [
         "Principal"
@@ -6082,6 +6049,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium de ${ appName1 } e ${ appName2 }"
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium de ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -6521,9 +6491,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } endereço de e-mail",
         "${ emailsCount } endereços de e-mail"
-      ],
-      "Account suspended": [
-        "Conta suspensa"
       ],
       "Add another notification to remind you of this event": [
         "Adicione outra notificação para lembrá-lo deste evento"

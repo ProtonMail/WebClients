@@ -447,9 +447,6 @@
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Remove": [
         "Αφαίρεση"
       ],
@@ -534,13 +531,7 @@
       "Show time zones": [
         "Εμφάνιση ζωνών ώρας"
       ],
-      "Sign in": [
-        "Είσοδος"
-      ],
       "Sign out": [
-        "Αποσύνδεση"
-      ],
-      "Signing out": [
         "Αποσύνδεση"
       ],
       "Skip": [
@@ -1226,9 +1217,6 @@
       ],
       "Gender": [
         "Φύλο"
-      ],
-      "Geo": [
-        "Γεωγραφικό"
       ],
       "Language": [
         "Γλώσσα"
@@ -2499,12 +2487,6 @@
       "IMAP server is required": [
         "Απαιτείται διακομιστής IMAP"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
-      ],
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
@@ -2659,9 +2641,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "Η ώρα έναρξης πρέπει να είναι πριν από την ώρα λήξης"
@@ -3906,9 +3885,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -4112,9 +4088,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "ομάδα υποστήριξης"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -4150,9 +4123,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την κρυπτογράφηση από άκρο σε άκρο."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Αυτή η διεύθυνση είναι απενεργοποιημένη. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει πρώτα να ενεργοποιήσει τη διεύθυνση."
@@ -4581,9 +4551,6 @@
       "Email format": [
         "Μορφή μηνύματος"
       ],
-      "Email or username": [
-        "Διεύθυνση ή όνομα χρήστη"
-      ],
       "Emails": [
         "Μηνύματα"
       ],
@@ -4676,9 +4643,6 @@
       ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
-      ],
-      "Mailbox password": [
-        "Κωδικός Θυρίδας"
       ],
       "Main": [
         "Κύριο"
@@ -6530,9 +6494,6 @@
       "${ emailsCount } email address": [
         "${ emailsCount } διεύθυνση email",
         "${ emailsCount } διευθύνσεις email"
-      ],
-      "Account suspended": [
-        "Ο λογαριασμός έχει ανασταλεί"
       ],
       "Add another notification to remind you of this event": [
         "Προσθέστε μια άλλη ειδοποίηση για να σας υπενθυμίσει αυτή την εκδήλωση"
