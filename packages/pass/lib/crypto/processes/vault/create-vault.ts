@@ -38,5 +38,6 @@ export const createVault = async ({
         ContentFormatVersion: CONTENT_FORMAT_VERSION,
         Content: uint8ArrayToBase64String(encryptedVaultContent),
         EncryptedVaultKey: uint8ArrayToBase64String(encryptedVaultKey.message),
+        Primary: false,
     };
 };
