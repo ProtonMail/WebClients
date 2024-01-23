@@ -1,13 +1,11 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasVpnB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
-import { Organization, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { getHasB2BPlan, getHasVpnB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    app: APP_NAMES;
     user: UserModel;
     organization?: Organization;
     subscription?: Subscription;
@@ -15,21 +13,23 @@ interface Props {
     isOrgTwoFactorEnabled: boolean;
 }
 
-const hiddenApps: APP_NAMES[] = [APPS.PROTONPASS];
-
 export const getOrganizationAppRoutes = ({
-    app,
     user,
     organization,
     subscription,
     isOrgSpamBlockListEnabled,
     isOrgTwoFactorEnabled,
 }: Props) => {
-    const isAdmin = user.isAdmin && !user.isSubUser && user.Type !== UserType.EXTERNAL;
-    const canHaveOrganization = !user.isMember && !user.isSubUser && user.Type !== UserType.EXTERNAL;
+    const isAdmin = user.isAdmin && !user.isSubUser;
+
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+
+    const canHaveOrganization = !user.isMember && !!organization && isAdmin;
+
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+
+    const hasB2BPlan = getHasB2BPlan(subscription);
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = hasFamily(subscription);
@@ -45,11 +45,11 @@ export const getOrganizationAppRoutes = ({
     const subSectionTitle = isPartOfFamily ? '' : c('Title').t`Multi-user support`;
 
     return {
-        available: Boolean(isAdmin && organization && !hiddenApps.includes(app)),
+        available: canHaveOrganization,
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
-                text: hasVpnB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
+                text: hasB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
                 available: hasOrganizationKey || hasOrganization,
@@ -60,7 +60,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Create multiple user accounts`,
                         id: 'multi-user-creation',
-                        available: organization && !!organization.RequiresKey && !hasVpnB2BPlan,
+                        available: organization && !!organization.RequiresKey && !hasB2BPlan,
                     },
                 ],
             },
