@@ -1,6 +1,6 @@
 import { ForwardedRef, Fragment, forwardRef } from 'react';
 
-import { useFlag } from '@protontech/proxy-client-react';
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
