@@ -14,10 +14,10 @@ import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actio
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
-import type { RootSagaOptions, State } from '@proton/pass/store/types';
+import type { State } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* syncWorker(options: RootSagaOptions) {
+function* syncWorker() {
     yield put(stopEventPolling());
 
     const state = (yield select()) as State;
@@ -31,7 +31,7 @@ function* syncWorker(options: RootSagaOptions) {
         yield put(withRevalidate(getUserAccessIntent(userAccessRequest(user.ID))));
         yield put(withRevalidate(getUserFeaturesIntent(userFeaturesRequest(user.ID))));
 
-        yield put(syncSuccess(yield call(synchronize, { type: SyncType.FULL }, options)));
+        yield put(syncSuccess(yield call(synchronize, { type: SyncType.FULL })));
     } catch (e: unknown) {
         yield put(syncFailure(e));
     } finally {
@@ -41,12 +41,12 @@ function* syncWorker(options: RootSagaOptions) {
 
 /* The `syncWorker` function can take a long time to complete. In order to avoid conflicts
  * with any state resetting actions, we race the `sync` against such actions. */
-export default function* watcher(options: RootSagaOptions): Generator {
+export default function* watcher(): Generator {
     while (true) {
         yield call(function* () {
             yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(options),
+                sync: syncWorker(),
                 cancel: take(stateDestroy.match),
             });
         });
