@@ -223,7 +223,7 @@ const SubscriptionPanel = ({
     const amount = (subscription?.Amount ?? 0) / cycle;
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
-    const space = getSpace(user);
+    const space = getSpace(user, storageSplitEnabled);
 
     const {
         UsedDomains = 0,
@@ -260,9 +260,9 @@ const SubscriptionPanel = ({
             );
         }
 
-        const maxBaseSpace = humanSize(space.maxBaseSpace, undefined, undefined, 0);
-        const maxDriveSpace = humanSize(space.maxDriveSpace, undefined, undefined, 0);
-        const humanMaxSpace = humanSize(space.maxBaseSpace + space.maxDriveSpace, undefined, undefined, 0);
+        const maxBaseSpace = humanSize(space.maxBaseSpace, 'GB', undefined, 1);
+        const maxDriveSpace = humanSize(space.maxDriveSpace, 'GB', undefined, 1);
+        const humanMaxSpace = humanSize(space.maxBaseSpace + space.maxDriveSpace, 'GB', undefined, 1);
 
         return (
             <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
