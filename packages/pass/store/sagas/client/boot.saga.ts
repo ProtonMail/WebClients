@@ -33,7 +33,7 @@ function* bootWorker(options: RootSagaOptions) {
         if (options.endpoint !== 'web') yield put(syncLocalSettings(yield options.getLocalSettings()));
         /* Allow failure during sync if we have a cached state,
          * worst case scenario: sync will happen on next event-loop  */
-        yield put(bootSuccess(yield synchronize({ type: SyncType.PARTIAL, allowFailure: hydratedFromCache }, options)));
+        yield put(bootSuccess(yield synchronize({ type: SyncType.PARTIAL, allowFailure: hydratedFromCache })));
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
