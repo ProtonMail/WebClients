@@ -4,6 +4,7 @@ import { plansDefaultResponse } from '@proton/components/hooks/helpers/test';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock, applyHOCs, withApi, withCache, withEventManager } from '@proton/testing/index';
 
 import SubscriptionsSection from './SubscriptionsSection';
@@ -105,7 +106,7 @@ describe('SubscriptionsSection', () => {
         const { container } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(container).toHaveTextContent('Your subscription is managed by Mozilla');
@@ -115,7 +116,7 @@ describe('SubscriptionsSection', () => {
         const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
 
@@ -129,7 +130,7 @@ describe('SubscriptionsSection', () => {
         const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
 
@@ -144,7 +145,7 @@ describe('SubscriptionsSection', () => {
         const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
 
@@ -157,7 +158,7 @@ describe('SubscriptionsSection', () => {
         const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 12.99, for 1 month');
@@ -168,7 +169,7 @@ describe('SubscriptionsSection', () => {
         const { getByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 119.88, for 12 months');
@@ -179,7 +180,7 @@ describe('SubscriptionsSection', () => {
         const { container } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(container).not.toHaveTextContent('Renews automatically');
@@ -190,7 +191,7 @@ describe('SubscriptionsSection', () => {
         const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(getByText('Reactivate')).toBeInTheDocument();
@@ -201,7 +202,7 @@ describe('SubscriptionsSection', () => {
         const { queryByTestId } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(queryByTestId('periodEndWarning')).toBeInTheDocument();
@@ -213,7 +214,7 @@ describe('SubscriptionsSection', () => {
         const { container } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         expect(container).not.toHaveTextContent('Upcoming');
@@ -224,7 +225,7 @@ describe('SubscriptionsSection', () => {
         const { getByText } = renderWithProviders(<ContextSubscriptionSection />, {
             preloadedState: {
                 subscription: getModelState(subscription),
-                plans: getModelState(plansDefaultResponse.Plans),
+                plans: getModelState({ plans: plansDefaultResponse.Plans, freePlan: FREE_PLAN }),
             },
         });
         getByText('Reactivate').click();

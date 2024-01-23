@@ -39,6 +39,7 @@ export const FREE_PLAN: FreePlanDefault = {
         [CYCLE.THIRTY]: 0,
         [CYCLE.FIFTEEN]: 0,
     },
+    storageSplitEnabled: false,
 };
 
 export const getFreeCheckResult = (

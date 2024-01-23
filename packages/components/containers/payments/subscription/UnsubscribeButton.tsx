@@ -16,12 +16,12 @@ import {
     hasNewVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
     useApi,
     useEventManager,
-    useFreePlan,
     useGetCalendars,
     useGetOrganization,
     useGetSubscription,
@@ -58,14 +58,15 @@ const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
     const [user] = useUser();
     const getSubscription = useGetSubscription();
     const getOrganization = useGetOrganization();
-    const [plans, loadingPlans] = usePlans();
-    const [freePlan, loadingFreePlan] = useFreePlan();
+    const [plansResult, loadingPlans] = usePlans();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
 
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -185,7 +186,7 @@ const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
 
     return (
         <Button
-            disabled={loading || loadingPlans || loadingFreePlan}
+            disabled={loading || loadingPlans}
             className={className}
             onClick={() => withLoading(handleClick())}
             data-testid="UnsubscribeButton"
