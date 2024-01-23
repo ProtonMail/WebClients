@@ -447,9 +447,6 @@
       "Refresh the page": [
         "Opdater siden"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -534,14 +531,8 @@
       "Show time zones": [
         "Vis tidszoner"
       ],
-      "Sign in": [
-        "Log ind"
-      ],
       "Sign out": [
         "Log ud"
-      ],
-      "Signing out": [
-        "Logger ud"
       ],
       "Skip": [
         "Spring over"
@@ -1227,9 +1218,6 @@
       "Gender": [
         "Køn"
       ],
-      "Geo": [
-        "Geolokalisering"
-      ],
       "Language": [
         "Sprog"
       ],
@@ -1268,6 +1256,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kontaktbillede"
       ]
     },
     "Contact type label": {
@@ -2494,12 +2487,6 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Forkerte loginoplysninger. Prøv venligst igen."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Forkert adgangskode til postkasse. Prøv venligst igen."
-      ],
       "Incorrect username": [
         "Forkert brugernavn"
       ],
@@ -2655,9 +2642,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
       ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
-      ],
       "Start time must be before end time": [
         "Starttidspunkt skal være før sluttidspunkt"
       ],
@@ -2753,6 +2737,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Den inviterede adresse findes ikke"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Fejl ved ændring af svar"
       ]
     },
     "Error importing calendar": {
@@ -3823,6 +3812,9 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Vis begivenheder for kalenderen ${ Name }"
+      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
@@ -3892,9 +3884,6 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
@@ -4099,9 +4088,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
-      "support team": [
-        "supportteam"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -4137,9 +4123,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
@@ -4257,6 +4240,9 @@
       ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
+      ],
+      "You can now return to the application to continue": [
+        "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
@@ -4565,9 +4551,6 @@
       "Email format": [
         "E-mailformattering"
       ],
-      "Email or username": [
-        "E-mail eller brugernavn"
-      ],
       "Emails": [
         "E-mails"
       ],
@@ -4660,9 +4643,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postkasseadgangskode"
       ],
       "Main": [
         "Hjem"
@@ -4839,6 +4819,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5657,6 +5640,9 @@
       "Search for name or email": [
         "Søg efter navn eller e-mail"
       ],
+      "Search parent folder": [
+        "Søg i overordnet mappe"
+      ],
       "Select": [
         "Vælg"
       ],
@@ -6065,6 +6051,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Premium tidlig adgang"
@@ -6506,9 +6495,6 @@
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
       ],
-      "Account suspended": [
-        "Konto suspenderet"
-      ],
       "Add another notification to remind you of this event": [
         "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
       ],
@@ -6936,6 +6922,9 @@
       ],
       "Hide side panel": [
         "Skjul sidepanel"
+      ],
+      "Load image": [
+        "Indlæs billede"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk, at PGP/Inline gennemtvinger beskeder i simpel tekst"

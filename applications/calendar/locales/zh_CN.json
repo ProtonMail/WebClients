@@ -435,9 +435,6 @@
       "Refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
-        "刷新页面"
-      ],
       "Remove": [
         "移除"
       ],
@@ -522,14 +519,8 @@
       "Show time zones": [
         "显示时区"
       ],
-      "Sign in": [
-        "登录"
-      ],
       "Sign out": [
         "退出"
-      ],
-      "Signing out": [
-        "正在退出账户"
       ],
       "Skip": [
         "跳过"
@@ -1179,9 +1170,6 @@
       ],
       "Gender": [
         "性别"
-      ],
-      "Geo": [
-        "地理位置"
       ],
       "Language": [
         "语言"
@@ -2385,12 +2373,6 @@
       "IMAP server is required": [
         "IMAP 服务器必须填写"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "登录凭据不正确，请重试。"
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "邮箱密码错误，请重试。"
-      ],
       "Incorrect username": [
         "用户名不正确"
       ],
@@ -2552,9 +2534,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
       "Start time must be before end time": [
         "起始时间必须早于结束时间"
@@ -3731,9 +3710,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "如有异议，请点击${ contactLink }联系我们。"
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
@@ -3932,9 +3908,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
-      "support team": [
-        "客服团队"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "暂时不可用。请稍后再试。"
       ],
@@ -3967,9 +3940,6 @@
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "本系列活动的组织者将不会收到您拒绝邀请的通知，因为您不能从受邀地址发送邮件。仍要删除该系列活动中的所有活动吗？"
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "此账户因可能违反用户协议而被封禁。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此地址已被停用，待其所有者予以启用后才能向该地址发送邮件。"
@@ -4392,9 +4362,6 @@
       "Email format": [
         "电子邮件格式"
       ],
-      "Email or username": [
-        "邮箱或账户名"
-      ],
       "Emails": [
         "电子邮件"
       ],
@@ -4487,9 +4454,6 @@
       ],
       "Mail Server (IMAP)": [
         "邮件服务器 (IMAP)"
-      ],
-      "Mailbox password": [
-        "邮箱密码"
       ],
       "Main": [
         "主要"
@@ -6227,9 +6191,6 @@
     "Title": {
       "${ emailsCount } email addresses": [
         "${ emailsCount } 个邮箱地址"
-      ],
-      "Account suspended": [
-        "账号已被停用"
       ],
       "Add another notification to remind you of this event": [
         "添加另一个提醒您此日程的通知"

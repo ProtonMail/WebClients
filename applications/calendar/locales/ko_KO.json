@@ -444,9 +444,6 @@
       "Refresh the page": [
         "페이지 새로 고침"
       ],
-      "refresh the page": [
-        "페이지 새로고침"
-      ],
       "Remove": [
         "삭제"
       ],
@@ -531,14 +528,8 @@
       "Show time zones": [
         "시간대 보이기"
       ],
-      "Sign in": [
-        "로그인"
-      ],
       "Sign out": [
         "로그아웃"
-      ],
-      "Signing out": [
-        "로그아웃 중"
       ],
       "Skip": [
         "건너뛰기"
@@ -1214,9 +1205,6 @@
       ],
       "Gender": [
         "성별"
-      ],
-      "Geo": [
-        "위도, 경도"
       ],
       "Language": [
         "언어"
@@ -2464,12 +2452,6 @@
       "IMAP server is required": [
         "IMAP 서버가 필요함"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "잘못된 메일함 암호입니다. 다시 시도해 주세요."
-      ],
       "Incorrect username": [
         "잘못된 사용자 이름"
       ],
@@ -2631,9 +2613,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
       ],
       "Start time must be before end time": [
         "시작 시간은 종료 시간 이전이어야 합니다."
@@ -3839,9 +3818,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
       ],
@@ -4043,9 +4019,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
       ],
-      "support team": [
-        "지원 팀"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
       ],
@@ -4081,9 +4054,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "이 계정은 규정 위반이 의심되어 정지되었습니다."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "이 주소는 사용할 수 없습니다. 이 주소로 보내려면 소유자가 먼저 주소를 사용 가능으로 설정해야 합니다."
@@ -4509,9 +4479,6 @@
       "Email format": [
         "이메일 형식"
       ],
-      "Email or username": [
-        "이메일 또는 사용자 이름"
-      ],
       "Emails": [
         "이메일"
       ],
@@ -4604,9 +4571,6 @@
       ],
       "Mail Server (IMAP)": [
         "메일 서버 (IMAP)"
-      ],
-      "Mailbox password": [
-        "메일함 비밀번호"
       ],
       "Main": [
         "메인"
@@ -6386,9 +6350,6 @@
     "Title": {
       "${ emailsCount } email addresses": [
         "${ emailsCount }개 이메일 주소"
-      ],
-      "Account suspended": [
-        "계정이 정지되었습니다."
       ],
       "Add another notification to remind you of this event": [
         "이 이벤트를 상기시키기 위해 다른 알림을 추가하세요."
