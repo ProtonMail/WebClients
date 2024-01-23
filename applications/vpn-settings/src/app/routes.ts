@@ -203,7 +203,7 @@ export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeatu
             text: multiUserTitle,
             to: '/multi-user-support',
             icon: 'users',
-            available: canHaveOrganization && hasVpnB2BPlan && !hasOrganizationKey,
+            available: canHaveOrganization && !hasOrganizationKey && hasVpnB2BPlan,
             subsections: [
                 {
                     text: multiUserTitle,
