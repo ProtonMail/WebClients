@@ -908,9 +908,6 @@
       "Signing in": [
         "შესვლა"
       ],
-      "Signing out": [
-        "გამოსვლა"
-      ],
       "Size": [
         "ზომა"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }-ის ჩასართავად ტრაფიკი ასწიეთ"
-      ],
-      "Upgrade to Visionary": [
-        "Visionary-მდე აწევა"
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "სქესი"
       ],
-      "Geo": [
-        "ლოკაცია"
-      ],
       "Language": [
         "ენა"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "კომპიუტერის აპთან წვდომა შეზღუდულია"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "${ MAIL_APP_NAME }-ის სამუშაო მაგიდის აპის ბეტა ვერსია ამჟამად ${ BRAND_NAME } Visionary გამომწერზეა შეზღუდული. ის ყველა მომხმარებლისთვის 2024-ის დასაწყისში გახდება ხელმისაწვდომი."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპის ბეტა ვერსია ხელმისაწვდომია ყველასთვის, ვისაც ${ MAIL_APP_NAME }-ის ფასიანი სატარიფო გეგმა აქვს. მალე ის ყველასთვის იქნება ხელმისაწვდომი."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "თქვენს ორგანიზაციაში მომხმარებლების ჩამატებამდე თქვენი დომენის მორგებაა საჭირო."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "თუ მომხმარებელს ${ MAIL_APP_NAME }-ის მისამართი უკვე გააჩნია, შეიყვანეთ ის აქ. წინააღმდეგ შემთხვევაში, მათ ჯერ ანგარიშის შექმნა დასჭირდებათ."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organization.Name }-სთან მიერთება აღარ შეეძლება."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "წაშლილია ${ member.Name } ${ organization.Name }-დან"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "წაშლილია ${ member.Name } ${ organizationName }-დან"
       ],
       "An error occurred, please try again": [
         "დაფიქსირდა შეცდომა. თავიდან სცადეთ"
@@ -5765,17 +5759,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -5837,6 +5820,9 @@
         "${ n } მისამართი",
         "${ n } მისამართი"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: არაავტორიზებული ელფოსტები კარანტინში ჩასმული ან უარყოფილი არ იქნება. ჩვულებრივ ხალხი ამას წეების გასამართად ან დასატესტად იყენებს."
+      ],
       "${ number } city": [
         "${ number } ქალაქი",
         "${ number } ქალაქი"
@@ -5869,6 +5855,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: მიმღების პლატფორმებისთვის არაავტორიზებული ელფოსტების სპამად მონიშვნის ან მათი კარანტინის მოთხოვნა."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: მიმღების პლატფორმებისთვის არაავტორიზებული ელფოსტების უარყოფის თხოვნა."
       ],
       "${ remainingAddresses.length } more": [
         "კიდევ ${ remainingAddresses.length }",
@@ -6196,6 +6188,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "მანამდე, სანამ ${ MAIL_APP_NAME }-ზე თქვენს დომენზე ელფოსტის მიღებას შეძლებთ, გჭირდებათ დაამატოთ შემდეგი ორი MX ჩანაწერი თქვენს DNS კონსოლში (პლატფორმაზე, სადაც თქვენი დომენი შეიძინეთ). ამის მაგალითი და სხვა სასარგებლო ინფორმაცია იხილეთ ბმულზე ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
@@ -6343,6 +6338,12 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM საშუალებას აძლევს ${ BRAND_NAME }-ს, რომ თქვენს ელფოსტებს კრიპტოგრაფიული ხელმოწერა დაამატოს და ამით შემტევებს ელფოსტაში ჩახედვის საშუალებას ართმევს. დარწმუნდით, რომ დაამატეთ შემდეგი სამი CNAME ჩანაწერი თქვენს DNS კონსლში (პლატფორმაზე, სადაც თქეენი დომენი შეიძინეთ)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC ამოწმებს, გამომგზავნის SPF და DKIM ჩანაწერები თქვენი დომენიდან მოდის, თუ არა. ამას შეუძლია, შემტევებს ხელი შეუშალოს, სხვა დომენის SPF და DKIM ჩანაწერები გამოიყენოს, რომ თქვენი დომენი განასახიეროს. ამ ჩანაწერში \"p=\" (პოლიტიკა) ჩანაწერი მიუთითებს, როგორ გნებავთ, მიმღებმა პლატფორმებმა არაავტორიზებული ელფოსტები დაამუშაოს. გირჩევთ, პოლიტიკა \"p=quarantine\" დააყენოთ დომენების უმრავლესობისთვის. დარწმუნდით, რომ დაამატეთ შემდეგი TXT ჩანაწერი თქვენს DNS კონსოლში (იპოვით პლატფორმაზე, სადაც თქვენი დომენი შეიძინეთ)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "არ დაივიწყოთ ეს პაროლი. თუ დაგავიწყდათ, თქვენი ორგანიზაციის მართვას ვეღარ შეძლებთ."
       ],
@@ -6388,6 +6389,9 @@
       ],
       "Each code can only be used once": [
         "თითოეული კოდის გამოყენება, მხოლოდ, ერთხელ შეგიძლიათ"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -6496,6 +6500,9 @@
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
         "ორგანიზაციის წევრებისთვის, რომელიც SSO-ს (SAML SSO) იყენებენ"
+      ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "მომხმარებლებისთვს, რომლებიც ${ MAIL_APP_NAME }-ზე სხვა ელფოსტის სერვისიდან გადმოდიან, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა აქტიური ელფოსტის მისამართი, სანამ MX ჩანაწერს შეცვლით, რათა შუაში ელფოსტა არ დაკარგოთ."
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
@@ -7189,6 +7196,9 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "ზოგიერთი თქვენი გამოყოფილი სერვერი, შეიძლება, მხოლოდ, შესაბამის ქვეყნებში იყოს ხელმისაწვდომი უახლესი წაშლების გამო"
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF განსაზღვრავს, ვის აქვს უფლება, თქვენს დომენზე ელფოსტა გამოაგზავნოს. დარწმუნდით, რომ დაამატეთ შედეგი TXT ჩანაწერ თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ)."
+      ],
       "Stay tuned for future promotions.": [
         "გამოგვიწერეთ ჩვენი მომავალი სარეკლამო აქციებისთვის."
       ],
@@ -7728,9 +7738,9 @@
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ.",
-        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
+        "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "შესული ბრძანდებით ანგარიშში ${ memberAddress }."
@@ -7957,6 +7967,17 @@
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "თუ ჩართულია, ქვესაქაღალდეები მშობელი საქაღალდის ფერს მემკვიდრეობით მიიღებენ."
@@ -7973,6 +7994,9 @@
       ],
       "Add a new user to your organization and create an address for it.": [
         "დაამატეთ ორგანიზაციის ახალი მომხმარებელი და მისამართი."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "უსაფრთხოებისთვის, ჩვენ გვჭირდება გადავამოწმოთ, რომ თქვენ ${ domainName }-ის მფლობელი ბრძანდებით. დაამატეთ შემდეგი TXT ჩანაწერი თქვენს DNS კონსოლში (პლატფორმაზე, სადაც დომენი შეიძინეთ). ამის მაგალითი და სხვა სასარგებლო ინფორმაცია იხილეთ ბმულზე ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -11258,12 +11282,6 @@
       "Create another account instead": [
         "სამაგიეროდ სხვა ანაგარიში შექმენით"
       ],
-      "Download again ${ size }": [
-        "თავიდან გადმოწერა ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "გასაგრძელებლად დარჩენილია ${ size }"
-      ],
       "Keep this plan": [
         "ამ გეგმის დატოვება"
       ],
@@ -11402,9 +11420,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email ფსევდონიმები თქვენს ელფოსტას მონაცემების გაჟონვისგან იცავს"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "თუ თქვენი ${ BRAND_NAME }-ის ანგარიში დაგებლოკათ, თქვენი **აღდგენის დოკუმენტი** შესვლაში და თქვენი მონაცემების აღდგენაში დაგეხმარებათ."
-      ],
       "Includes:": [
         "შეიცავს:"
       ],
@@ -11416,9 +11431,6 @@
       ],
       "Install app and extension": [
         "აპის და გაფართოების დაყენება"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "ეს ერთად-ერთი გზაა, თქვენი ანგარიში სრულად აღადგინოთ, ასე რომ, დარწმუნდით, რომ ეს **აღდგენის ინფორმაცია** სადმე დაცულ ადგილას იქონიოთ."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "შეუერთდით 100 მილიონ ადამიანზე მეტს, ვინც ინტერნეტში უსაფრთხოდ სამუშაოდ ${ BRAND_NAME } ამოირჩია"
@@ -14279,6 +14291,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "შეტყობინებები მონახაზებისა და გაგზავნილი ელფოსტების საქაღალდიდან მაინც გამოჩნდებიან თავის ადგილას, მიუხედავად იმისა, გადაიტანთ თუ არა მათ სხვა საქაღალდეში."
+      ],
+      "See number of unread messages in the application icon": [
+        "აპლიკაციის ხატულაში წაუკითხავი შეტყობინებების რაოდენობის ჩვენება"
       ],
       "See number of unread messages in the tab icon": [
         "ჩანართის ხატულაში წაუკითხავი შეტყობინებების რაოდენობის ჩვენება"

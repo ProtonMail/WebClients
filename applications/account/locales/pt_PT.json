@@ -905,9 +905,6 @@
       "Signing in": [
         "A iniciar sessão"
       ],
-      "Signing out": [
-        "A terminar sessão"
-      ],
       "Size": [
         "Tamanho"
       ],
@@ -1962,9 +1959,6 @@
       ],
       "Gender": [
         "Sexo"
-      ],
-      "Geo": [
-        "Geo-localização"
       ],
       "Language": [
         "Idioma"
@@ -4493,8 +4487,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "O convite será cancelado e o utilizador não poderá aderir a ${ organization.Name }."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "O convite será cancelado e o utilizador não poderá aderir a ${ organizationName }."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "A conta do utilizador será transferida para um plano ilimitado da ${ BRAND_NAME } para uma avaliação gratuita de 30 dias*."
@@ -4542,8 +4536,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } foi removido de ${ organization.Name }"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } foi removido de ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Ocorreu um erro. Tente de novo."
@@ -5512,17 +5506,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7440,9 +7423,9 @@
         "Utiliza atualmente ${ ipCount } de ${ ipAddresses } servidor dedicado disponível.",
         "Utiliza atualmente ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } da licença de utilizador disponível.",
-        "Utiliza atualmente ${ organization.UsedMembers } de ${ organization.MaxMembers } das licenças de utilizador disponíveis."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Utiliza atualmente ${ usedMembers } de ${ maxMembers } da licença de utilizador disponível.",
+        "Utiliza atualmente ${ usedMembers } de ${ maxMembers } das licenças de utilizador disponíveis."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Tem sessão iniciada na conta ${ memberAddress }."
@@ -7661,6 +7644,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9057,7 +9051,7 @@
         "${ Label.Name } criada"
       ],
       "${ label.Name } updated": [
-        "${ label.Name } actualizada"
+        "${ label.Name } atualizada"
       ],
       "Preference saved": [
         "Preferência guardada"
@@ -10847,12 +10841,6 @@
       "Create another account instead": [
         "Crie outra conta em vez disso"
       ],
-      "Download again ${ size }": [
-        "Descarregar novamente ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Descarregar para continuar ${ size }"
-      ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
       ],
@@ -10970,9 +10958,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Os aliases hide-my-email protegem o seu e-mail contra violações de dados."
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicie sessão e recupere os seus dados."
-      ],
       "Includes:": [
         "Incluí:"
       ],
@@ -10984,9 +10969,6 @@
       ],
       "Install app and extension": [
         "Instale a aplicação e a extensão"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "É a única maneira de restaurar totalmente a sua conta. Por isso, tenha certeza de manter o **kit de recuperação** num lugar seguro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para se manterem seguras em linha."

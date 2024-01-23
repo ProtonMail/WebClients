@@ -908,9 +908,6 @@
       "Signing in": [
         "Anmeldung erfolgt"
       ],
-      "Signing out": [
-        "Abmeldung…"
-      ],
       "Size": [
         "Größe"
       ],
@@ -997,9 +994,6 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
-      ],
-      "Upgrade to Visionary": [
-        "Auf Visionary upgraden"
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
@@ -2097,9 +2091,6 @@
       "Gender": [
         "Geschlecht"
       ],
-      "Geo": [
-        "Standort"
-      ],
       "Language": [
         "Sprache"
       ],
@@ -3133,8 +3124,8 @@
       "Access to the desktop app is limited": [
         "Zugang zur Desktop-App ist beschränkt"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Die Betaversion der ${ MAIL_APP_NAME } Desktop-App ist derzeit auf ${ BRAND_NAME } Visionary-Abonnenten beschränkt. Sie wird Anfang 2024 für alle Benutzer verfügbar sein."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
+        "Die Betaversion der ${ MAIL_APP_NAME }-Desktop-App ist derzeit für jeden mit einem kostenpflichtigen ${ MAIL_APP_NAME }-Abonnement verfügbar. Sie wird bald für alle verfügbar sein."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
@@ -3941,6 +3932,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Bitte konfiguriere eine eigene Domain, bevor du Benutzer zu deiner Organisation hinzufügst."
       ],
@@ -4741,8 +4735,8 @@
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Wenn der Benutzer bereits eine ${ MAIL_APP_NAME }-Adresse hat, gib sie hier ein. Andernfalls muss der Benutzer zuerst ein Konto erstellen."
       ],
-      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
-        "Die Einladung wird storniert und der Benutzer kann ${ organization.Name } nicht beitreten."
+      "The invitation will be cancelled and the user won't be able to join ${ organizationName }.": [
+        "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
       ],
       "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
         "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf einen ${ BRAND_NAME } Unlimited-Tarif umgestellt."
@@ -4790,8 +4784,8 @@
       ]
     },
     "familyOffer_2023:Success": {
-      "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } wurde aus ${ organization.Name } entfernt"
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } wurde aus ${ organizationName } entfernt."
       ],
       "An error occurred, please try again": [
         "Ein Fehler ist aufgetreten. Bitte erneut versuchen"
@@ -5763,17 +5757,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info": {
@@ -7202,7 +7185,7 @@
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME }-Geschäftskunden mit benutzerdefinierten Domains zur Verfügung."
+        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME } for Business-Kunden mit benutzerdefinierten Domains zur Verfügung."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
@@ -7758,9 +7741,9 @@
         "Du verwendest aktuell ${ ipCount } von deinem ${ ipAddresses } verfügbaren dedizierten Server.",
         "Du verwendest aktuell ${ ipCount } von deinen ${ ipAddresses } verfügbaren dedizierten Servern."
       ],
-      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
-        "Du verwendest aktuell ${ organization.UsedMembers } von deiner ${ organization.MaxMembers } verfügbaren Benutzerlizenz.",
-        "Du verwendest aktuell ${ organization.UsedMembers } von deinen ${ organization.MaxMembers } verfügbaren Benutzerlizenzen."
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Du verwendest aktuell ${ usedMembers } von deiner ${ maxMembers } verfügbaren Benutzerlizenz.",
+        "Du verwendest aktuell ${ usedMembers } von deinen ${ maxMembers } verfügbaren Benutzerlizenzen."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du bist beim Konto ${ memberAddress } angemeldet."
@@ -7987,6 +7970,17 @@
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Wenn aktiviert, übernehmen Unterordner die Farbe des übergeordneten Ordners."
@@ -8153,7 +8147,7 @@
         "Veraltet"
       ],
       "Primary": [
-        "Primäre"
+        "Primär"
       ]
     },
     "Key type option": {
@@ -9124,6 +9118,9 @@
       ],
       "Show sender images": [
         "Bilder der Absender anzeigen"
+      ],
+      "Show unread count in application icon": [
+        "Anzahl der ungelesenen E-Mails im Anwendungssymbol anzeigen"
       ],
       "Show unread count in Favicon": [
         "Zähler für ungelesene Nachrichten im Website-Symbol anzeigen"
@@ -11291,12 +11288,6 @@
       "Create another account instead": [
         "Stattdessen ein neues Konto erstellen"
       ],
-      "Download again ${ size }": [
-        "Erneut herunterladen ${ size }"
-      ],
-      "Download to continue ${ size }": [
-        "Herunterladen zum Fortfahren ${ size }"
-      ],
       "Keep this plan": [
         "Dieses Abonnement beibehalten"
       ],
@@ -11435,9 +11426,6 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"
       ],
-      "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem **Wiederherstellungs-Kit** anmelden und deine Daten wiederherstellen."
-      ],
       "Includes:": [
         "Enthält:"
       ],
@@ -11449,9 +11437,6 @@
       ],
       "Install app and extension": [
         "App und Erweiterung installieren"
-      ],
-      "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "Nur so kannst du dein Konto vollständig wiederherstellen, also bewahre dieses **Wiederherstellungs-Kit** an einem sicheren Ort auf."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben."
@@ -14313,6 +14298,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Wenn du die erweiterten Protokolle aktivierst, wird die IP-Adresse für jedes Ereignis im Sicherheitsprotokoll aufgezeichnet."
       ],
+      "Feature in early access": [
+        "Funktion im frühzeitigen Zugang"
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
@@ -14327,6 +14315,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
+      ],
+      "See number of unread messages in the application icon": [
+        "Anzahl der ungelesenen Nachrichten im Anwendungssymbol anzeigen"
       ],
       "See number of unread messages in the tab icon": [
         "Anzahl ungelesener Nachrichten im Tab-Symbol anzeigen"
