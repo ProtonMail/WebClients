@@ -493,9 +493,6 @@
       "Refresh the page": [
         "Oppdater siden"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Remove": [
         "Fjern"
       ],
@@ -616,14 +613,8 @@
       "Show side panel": [
         "Vis sidepanel"
       ],
-      "Sign in": [
-        "Logg på"
-      ],
       "Sign out": [
         "Logg av"
-      ],
-      "Signing out": [
-        "Logger av"
       ],
       "Skip": [
         "Hopp over"
@@ -1096,9 +1087,6 @@
       ],
       "Gender": [
         "Kjønn"
-      ],
-      "Geo": [
-        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -2201,12 +2189,6 @@
       "IMAP server is required": [
         "IMAP-tjener kreves"
       ],
-      "Incorrect login credentials. Please try again.": [
-        "Feil påloggingsinformasjon. Vennligst prøv på nytt."
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        "Feil postbokspassord. Vennligst prøv på nytt."
-      ],
       "Incorrect password. Please try again.": [
         "Feil passord, vennligst prøv igjen."
       ],
@@ -2330,9 +2312,6 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense. Vennligst tilpass importen for å redigere disse navnene."
-      ],
-      "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Noe gikk galt, vennligst ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ],
       "status page": [
         "statusside"
@@ -3739,9 +3718,6 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
       ],
-      "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Hvis du mener det er en feil, vennligst kontakt oss ${ contactLink }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
       ],
@@ -4142,9 +4118,6 @@
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
       ],
-      "support team": [
-        "støtteapparat"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Vennligst kom tilbake senere."
       ],
@@ -4168,9 +4141,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det er filer som fortsatt må overføres. Å stenge overføringsbehandleren vil avslutte alle operasjoner."
-      ],
-      "This account has been suspended due to a potential policy violation.": [
-        "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
@@ -4698,9 +4668,6 @@
       "Email format": [
         "E-postformat"
       ],
-      "Email or username": [
-        "E-post eller brukernavn"
-      ],
       "Emails": [
         "E-poster"
       ],
@@ -4808,9 +4775,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-posttjener (IMAP)"
-      ],
-      "Mailbox password": [
-        "Postbokspassord"
       ],
       "Main": [
         "Hoved"
@@ -6333,9 +6297,6 @@
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } mislykket opplasting",
         "${ numberOfFailedTransfer.total } mislykkede opplastinger"
-      ],
-      "Account suspended": [
-        "Kontoen er suspendert"
       ],
       "Active": [
         "Aktiv"
