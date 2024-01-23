@@ -1,4 +1,4 @@
-import { useFlag as useUnleashFlag } from '@protontech/proxy-client-react';
+import { useFlag as useUnleashFlag } from '@unleash/proxy-client-react';
 
 import { FeatureFlag } from './UnleashContext';
 
