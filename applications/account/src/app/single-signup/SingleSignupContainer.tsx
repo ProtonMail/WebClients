@@ -10,13 +10,13 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { getFreePlan } from '@proton/components/hooks/useFreePlan';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
@@ -68,6 +68,7 @@ interface Props {
 }
 
 const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productParam }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
@@ -152,7 +153,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
-                getFreePlan(silentApi),
+                getFreePlan({ api: silentApi, storageSplitEnabled }),
             ]);
 
             const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles({

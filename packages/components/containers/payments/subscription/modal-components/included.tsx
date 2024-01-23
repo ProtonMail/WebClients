@@ -11,8 +11,7 @@ import {
 import { Included, getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getPremium } from '@proton/shared/lib/helpers/premium';
-import { PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { FreePlanDefault, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import { getNUsersText } from '../../../payments/features/highlights';
@@ -27,10 +26,12 @@ export const getWhatsIncluded = ({
     planIDs,
     plansMap,
     vpnServers,
+    freePlan,
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
     vpnServers: VPNServersCountData;
+    freePlan: FreePlanDefault;
 }): Included[] => {
     const vpnPassBundle = planIDs[PLANS.VPN_PASS_BUNDLE];
     if (vpnPassBundle) {
@@ -134,7 +135,7 @@ export const getWhatsIncluded = ({
 
     const family = planIDs[PLANS.FAMILY];
     if (family !== undefined && family > 0) {
-        const storage = humanSize(summary.space || FREE_PLAN.MaxSpace, undefined, undefined, 0);
+        const storage = humanSize(summary.space || freePlan.MaxSpace, undefined, undefined, 0);
 
         return [
             {
@@ -168,10 +169,10 @@ export const getWhatsIncluded = ({
         {
             type: 'value',
             text: c('Info').t`Total storage`,
-            value: humanSize(summary.space || FREE_PLAN.MaxSpace, undefined, undefined, 0),
+            value: humanSize(summary.space || freePlan.MaxSpace, undefined, undefined, 0),
         },
-        { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || FREE_PLAN.MaxAddresses },
-        { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || FREE_PLAN.MaxDomains },
-        { type: 'value', text: c('Info').t`Total VPN connections`, value: summary.vpn || FREE_PLAN.MaxVPN },
+        { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || freePlan.MaxAddresses },
+        { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || freePlan.MaxDomains },
+        { type: 'value', text: c('Info').t`Total VPN connections`, value: summary.vpn || freePlan.MaxVPN },
     ];
 };
