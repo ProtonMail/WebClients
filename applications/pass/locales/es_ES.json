@@ -1021,13 +1021,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } carácter",
-        "${ passwordOptions.options.length } caracteres"
+      "${ config.options.length } character": [
+        "${ config.options.length } carácter",
+        "${ config.options.length } caracteres"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } palabra",
-        "${ passwordOptions.options.wordCount } palabras"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } palabra",
+        "${ config.options.wordCount } palabras"
       ],
       "1 hour": [
         "1 hora"
@@ -1058,6 +1058,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Cuenta"
       ],
       "Alias": [
         "Alias"
@@ -1169,6 +1172,9 @@
       ],
       "Item ID": [
         "ID del elemento"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Atajo de teclado: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"

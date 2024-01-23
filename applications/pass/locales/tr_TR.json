@@ -692,10 +692,10 @@
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Bu kasaya erişme iznini verebilir, geri alabilir ya da silebilir."
+        "Bu kasaya erişme izni verebilir, geri alabilir ya da silebilir."
       ],
       "Can grant and revoke access to this vault.": [
-        "Bu kasaya erişme iznini verebilir ya da geri alabilir."
+        "Bu kasaya erişme izni verebilir ya da geri alabilir."
       ],
       "Can view items in this vault.": [
         "Bu kasadaki ögeleri görüntüleyebilir."
@@ -1021,13 +1021,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } karakter",
-        "${ passwordOptions.options.length } karakter"
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter",
+        "${ config.options.length } karakter"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sözcük",
-        "${ passwordOptions.options.wordCount } sözcük"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sözcük",
+        "${ config.options.wordCount } sözcük"
       ],
       "1 hour": [
         "1 saat"
@@ -1169,6 +1169,9 @@
       ],
       "Item ID": [
         "Öge kimliği"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Son 2 hafta"
@@ -1733,6 +1736,9 @@
       ],
       "Your session could not be resumed.": [
         "Oturumunuz sürdürülemiyor."
+      ],
+      "Your session is inactive.": [
+        "Oturumunuz etkin değil."
       ],
       "Your session was locked.": [
         "Oturumunuz kilitlenmiş."
