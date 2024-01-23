@@ -893,13 +893,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } caràcter",
-        "${ passwordOptions.options.length } caràcters"
+      "${ config.options.length } character": [
+        "${ config.options.length } caràcter",
+        "${ config.options.length } caràcters"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } paraula",
-        "${ passwordOptions.options.wordCount } paraules"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } paraula",
+        "${ config.options.wordCount } paraules"
       ],
       "1 hour": [
         "1 hora"
@@ -1041,6 +1041,9 @@
       ],
       "Item ID": [
         "ID de l'element"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Drecera de teclat: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
@@ -1310,6 +1313,9 @@
       ],
       "Full Name": [
         "Nom complert"
+      ],
+      "MM/YY": [
+        "MM/AA"
       ],
       "Other": [
         "Altres"

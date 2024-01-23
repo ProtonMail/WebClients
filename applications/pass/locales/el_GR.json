@@ -1021,13 +1021,13 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } χαρακτήρας",
-        "${ passwordOptions.options.length } χαρακτήρες"
+      "${ config.options.length } character": [
+        "${ config.options.length } χαρακτήρας",
+        "${ config.options.length } χαρακτήρες"
       ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } λέξη",
-        "${ passwordOptions.options.wordCount } λέξεις"
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } λέξη",
+        "${ config.options.wordCount } λέξεις"
       ],
       "1 hour": [
         "1 ώρα"
@@ -1058,6 +1058,9 @@
       ],
       "A-Z": [
         "Α-Ω"
+      ],
+      "Account": [
+        "Λογαριασμός"
       ],
       "Alias": [
         "Ψευδώνυμο"
@@ -1169,6 +1172,9 @@
       ],
       "Item ID": [
         "Αναγνωριστικό στοιχείου"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Συντόμευση πληκτρολογίου: ${ shortcut }"
       ],
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"
