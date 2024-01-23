@@ -14,7 +14,7 @@ import { requestMiddleware } from '@proton/pass/store/middlewares/request-middle
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { AppStatus, ShareEventType, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -140,33 +140,6 @@ const options: RootSagaOptions = {
     },
 
     onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
-
-    onShareDeleted: (shareId) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.SHARE_SERVER_EVENT,
-                payload: {
-                    type: ShareEventType.SHARE_DISABLED,
-                    shareId,
-                },
-            }),
-            isPopupPort()
-        );
-    },
-
-    onItemsDeleted: (shareId, itemIds) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.SHARE_SERVER_EVENT,
-                payload: {
-                    type: ShareEventType.ITEMS_DELETED,
-                    shareId,
-                    itemIds,
-                },
-            }),
-            isPopupPort()
-        );
-    },
 };
 
 sagaMiddleware.run(workerRootSaga.bind(null, options));
