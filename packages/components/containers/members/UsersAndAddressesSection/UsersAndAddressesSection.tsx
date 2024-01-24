@@ -174,13 +174,15 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         // Visionary can either create a sub user or invite existing users
         if (hasVisionary(subscription) || hasNewVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
-        } else {
-            if (mode === UserManagementMode.DEFAULT && !verifiedDomains.length) {
-                createNotification({ text: getDomainError(), type: 'error' });
-                return;
-            }
-            setSubUserCreateModalOpen(true);
+            return;
         }
+
+        if (mode === UserManagementMode.DEFAULT && !verifiedDomains.length) {
+            createNotification({ text: getDomainError(), type: 'error' });
+            return;
+        }
+
+        setSubUserCreateModalOpen(true);
     };
 
     const handleLoginUser = async (member: Member) => {
