@@ -7,11 +7,11 @@ import {
     Alert,
     ErrorButton,
     type ModalSize,
-    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
+import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 
 export type ConfirmationModalProps = {
     onClose?: () => void;
@@ -44,7 +44,7 @@ export const ConfirmationModal = ({
     };
 
     return (
-        <ModalTwo onClose={onClose} onReset={onClose} open={open} size={size ?? 'small'}>
+        <PassModal onClose={onClose} onReset={onClose} open={open} size={size ?? 'small'}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 {alertText && (
@@ -63,6 +63,6 @@ export const ConfirmationModal = ({
                     {submitText}
                 </ErrorButton>
             </ModalTwoFooter>
-        </ModalTwo>
+        </PassModal>
     );
 };
