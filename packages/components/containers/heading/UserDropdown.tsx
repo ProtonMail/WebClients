@@ -318,7 +318,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                                 data-testid="userdropdown:label:email"
                                                 onClick={handleCopyEmail}
                                             >
-                                                <span className="text-ellipsis block color-weak on-hover-color-norm">
+                                                <span className="text-ellipsis block color-weak hover:color-norm">
                                                     {Email}
                                                 </span>
                                             </button>
@@ -427,7 +427,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             userSettings?.Referral?.Eligible && (
                                 <div className="block">
                                     <SettingsLink
-                                        className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                        className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                         path="/referral"
                                         onClick={close}
                                         data-testid="userdropdown:button:referral"
@@ -440,7 +440,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         <div className="block">
                             <a
-                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                 href={getShopURL()}
                                 target="_blank"
                                 data-testid="userdropdown:help:link:request-feature"
@@ -453,7 +453,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             {/* This is here while the desktop beta lasts and can be removed once it's done */}
                             {isElectronApp ? (
                                 <a
-                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                     href={getTypeformDesktopUrl(APP_VERSION, APP_NAME)}
                                     target="_blank"
                                     data-testid="userdropdown:help:link:request-feature"
@@ -462,7 +462,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 </a>
                             ) : (
                                 <a
-                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                     href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
                                     target="_blank"
                                     data-testid="userdropdown:help:link:request-feature"
@@ -476,7 +476,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             <div className="block">
                                 <button
                                     type="button"
-                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration hover:color-norm"
                                     onClick={() => {
                                         close();
                                         onOpenChat();
@@ -490,7 +490,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         <div className="flex flex-nowrap mx-auto justify-center">
                             <a
-                                className="px-1 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                className="px-1 link link-focus color-weak text-no-decoration hover:color-norm"
                                 href={
                                     APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
@@ -506,7 +506,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </span>
                             <button
                                 type="button"
-                                className="px-1 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                className="px-1 link link-focus color-weak text-no-decoration hover:color-norm"
                                 onClick={handleBugReportClick}
                                 data-testid="userdropdown:help:button:bugreport"
                             >
