@@ -11,10 +11,10 @@ import {
 import type { RequestProgress } from '@proton/pass/store/actions/with-request';
 import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionResponse, SelectedItem } from '@proton/pass/types';
+import type { BatchItemRevisionIDs, ItemRevision, ItemRevisionResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type BulkTrashChannel = RequestProgress<ItemRevisionResponse[], SelectedItem[]>;
+type BulkTrashChannel = RequestProgress<ItemRevisionResponse[], BatchItemRevisionIDs>;
 
 function* itemBulkTrashWorker(
     { onItemsUpdated }: RootSagaOptions,
@@ -33,12 +33,9 @@ function* itemBulkTrashWorker(
 
     while (true) {
         const action: BulkTrashChannel = yield take(progressChannel);
+        onItemsUpdated?.();
 
-        if (action.type === 'progress') {
-            yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
-            onItemsUpdated?.();
-        }
-
+        if (action.type === 'progress') yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
         if (action.type === 'done') yield put(itemBulkTrashSuccess(meta.request.id, {}));
         if (action.type === 'error') yield put(itemBulkTrashFailure(meta.request.id, {}, action.error));
     }
