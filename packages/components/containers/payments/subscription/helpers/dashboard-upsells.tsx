@@ -380,7 +380,7 @@ const getFamilyUpsell = ({
 
 const getBundleProUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundleProPlan = plansMap[PLANS.BUNDLE_PRO];
-    const businessStorage = humanSize(bundleProPlan?.MaxSpace ?? 500, undefined, undefined, 0);
+    const businessStorage = humanSize({ bytes: bundleProPlan?.MaxSpace ?? 500, fraction: 0 });
 
     const features: UpsellFeature[] = [
         getStorageBoostFeatureB2B(businessStorage),

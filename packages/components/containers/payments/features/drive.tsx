@@ -23,7 +23,7 @@ const getTb = (n: number) => {
 };
 
 export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(freePlan.MaxDriveSpace + freePlan.MaxDriveRewardSpace, undefined, undefined, 1);
+    const totalStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Drive storage`,
         tooltip: '',
@@ -33,7 +33,7 @@ export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardF
 };
 
 export const getFreeMailStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
-    const totalStorageSize = humanSize(freePlan.MaxBaseSpace + freePlan.MaxBaseRewardSpace, undefined, undefined, 1);
+    const totalStorageSize = humanSize({ bytes: freePlan.MaxBaseRewardSpace, fraction: 0 });
     return {
         text: c('storage_split: feature').t`Up to ${totalStorageSize} Mail storage`,
         tooltip: c('storage_split: feature')
@@ -57,19 +57,19 @@ export const getStorageFeature = (
     const { highlight = false, boldStorageSize = false } = options;
     if (bytes === -1) {
         if (!options.freePlan.storageSplitEnabled) {
-            const freeBaseStorage = options.freePlan.MaxSpace + options.freePlan.MaxRewardSpace;
-            const totalStorageSize = humanSize(freeBaseStorage, undefined, undefined, 0);
+            const freeBaseStorage = options.freePlan.MaxRewardSpace;
+            const totalStorageSize = humanSize({ bytes: freeBaseStorage, fraction: 0 });
             return {
                 text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
                 included: true,
                 icon: 'storage',
             };
         }
-        const freeBaseStorage = options.freePlan.MaxBaseSpace + options.freePlan.MaxBaseRewardSpace;
-        const freeDriveStorage = options.freePlan.MaxDriveSpace + options.freePlan.MaxDriveRewardSpace;
-        const driveStorageSize = humanSize(freeDriveStorage, undefined, undefined, 1);
-        const baseStorageSize = humanSize(freeBaseStorage, undefined, undefined, 1);
-        const totalStorageSize = humanSize(freeDriveStorage + freeBaseStorage, undefined, undefined, 1);
+        const freeBaseStorage = options.freePlan.MaxBaseRewardSpace;
+        const freeDriveStorage = options.freePlan.MaxDriveRewardSpace;
+        const driveStorageSize = humanSize({ bytes: freeDriveStorage, fraction: 0 });
+        const baseStorageSize = humanSize({ bytes: freeBaseStorage, fraction: 0 });
+        const totalStorageSize = humanSize({ bytes: freeDriveStorage + freeBaseStorage, fraction: 0 });
         return {
             text: c('new_plans: feature').t`Up to ${totalStorageSize} storage`,
             subtext: options.subtext
@@ -85,7 +85,7 @@ export const getStorageFeature = (
         ? getTb(6)
         : options.family
           ? getTb(3)
-          : humanSize(bytes, undefined, undefined, 0);
+          : humanSize({ bytes, fraction: 0 });
 
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
     const tooltip = options.family
@@ -127,7 +127,7 @@ export const getStorageFeatureB2B = (
         subtext?: boolean;
     }
 ): PlanCardFeatureDefinition => {
-    const size = humanSize(bytes, undefined, undefined, 0);
+    const size = humanSize({ bytes, fraction: 0 });
     return {
         text: c('new_plans: feature').t`${size} storage per user`,
         tooltip: c('new_plans: tooltip')

@@ -49,7 +49,10 @@ export const getWhatsIncluded = ({
     const unlimited = planIDs[PLANS.BUNDLE];
     const unlimitedPlan = plansMap[PLANS.BUNDLE];
     if (unlimited && unlimitedPlan) {
-        const storage = humanSize(unlimitedPlan.MaxSpace, undefined, undefined, 0);
+        const storage = humanSize({
+            bytes: unlimitedPlan.MaxSpace,
+            fraction: 0,
+        });
         return [
             {
                 type: 'text',
@@ -135,7 +138,10 @@ export const getWhatsIncluded = ({
 
     const family = planIDs[PLANS.FAMILY];
     if (family !== undefined && family > 0) {
-        const storage = humanSize(summary.space || freePlan.MaxSpace, undefined, undefined, 0);
+        const storage = humanSize({
+            bytes: summary.space || freePlan.MaxSpace,
+            fraction: 0,
+        });
 
         return [
             {
@@ -169,7 +175,7 @@ export const getWhatsIncluded = ({
         {
             type: 'value',
             text: c('Info').t`Total storage`,
-            value: humanSize(summary.space || freePlan.MaxSpace, undefined, undefined, 0),
+            value: humanSize({ bytes: summary.space || freePlan.MaxSpace, fraction: 0 }),
         },
         { type: 'value', text: c('Info').t`Total email addresses`, value: summary.addresses || freePlan.MaxAddresses },
         { type: 'value', text: c('Info').t`Total supported domains`, value: summary.domains || freePlan.MaxDomains },

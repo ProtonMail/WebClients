@@ -53,7 +53,7 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
                 <Row>
                     <Label style={{ cursor: 'default' }}>{c('Title').t`Total size`}</Label>
                     <Field className="pt-2">
-                        <b>{humanSize(size)}</b>
+                        <b>{humanSize({ bytes: size })}</b>
                     </Field>
                 </Row>
             </ModalTwoContent>

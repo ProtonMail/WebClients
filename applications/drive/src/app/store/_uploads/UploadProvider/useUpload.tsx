@@ -68,7 +68,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
     };
 
     const showNotEnoughSpaceNotification = (total: number) => {
-        const formattedTotal = humanSize(total);
+        const formattedTotal = humanSize({ bytes: total });
         createNotification({
             text: c('Notification').t`Not enough space to upload ${formattedTotal}`,
             type: 'error',

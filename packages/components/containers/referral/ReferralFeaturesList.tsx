@@ -5,7 +5,7 @@ import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 const ReferralFeaturesList = () => {
-    const storageSize = humanSize(15 * 1024 ** 3, undefined, undefined, 0);
+    const storageSize = humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 });
     return (
         <StripedList>
             <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>

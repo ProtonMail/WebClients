@@ -80,7 +80,7 @@ const AttachmentItem = ({
     const name = rtlSanitize(nameRaw);
     const value = Math.round(progression * 100);
     const progressionHappening = progression !== 0 || !!pendingUpload;
-    const humanAttachmentSize = progressionHappening ? `` : humanSize(attachment?.Size);
+    const humanAttachmentSize = progressionHappening ? `` : humanSize({ bytes: attachment?.Size });
 
     const primaryTitle = `${name} ${humanAttachmentSize}${getSenderVerificationString(attachmentVerified)}`;
     const primaryActionTitle = getActionTitle(primaryAction, primaryTitle);

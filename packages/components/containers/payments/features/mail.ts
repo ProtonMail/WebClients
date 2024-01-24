@@ -179,7 +179,7 @@ const getFilters = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
 };
 
 const getAttachments = (): PlanCardFeatureDefinition => {
-    const size = humanSize(26214400, undefined, undefined, 0);
+    const size = humanSize({ bytes: 26214400, fraction: 0 });
     return {
         text: c('new_plans: feature').t`${size} attachment size`,
         included: true,

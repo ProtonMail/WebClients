@@ -36,7 +36,7 @@ const ReportRow = ({ reportSummaryId }: Props) => {
             <TableCell>
                 <time>{format(endDate * 1000, 'PPp', { locale: dateLocale })}</time>
             </TableCell>
-            <TableCell label={c('Title header').t`Size`}>{humanSize(size)}</TableCell>
+            <TableCell label={c('Title header').t`Size`}>{humanSize({ bytes: size })}</TableCell>
             <TableCell>
                 <ReportRowActions key="button" reportSummaryID={reportSummaryId} rollbackState={rollbackState} />
             </TableCell>

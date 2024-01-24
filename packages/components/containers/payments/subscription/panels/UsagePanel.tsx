@@ -31,8 +31,8 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
         return null;
     }
 
-    const humanUsedSpace = humanSize(user.UsedSpace);
-    const humanMaxSpace = humanSize(user.MaxSpace);
+    const humanUsedSpace = humanSize({ bytes: user.UsedSpace });
+    const humanMaxSpace = humanSize({ bytes: user.MaxSpace });
     const UsedAddresses = addresses?.length;
     const UsedCalendars = calendars?.length;
     const maxVpn = 10;
