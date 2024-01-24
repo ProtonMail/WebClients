@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
-import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull, UniqueItem } from '@proton/pass/types';
+import type { ItemRevision, ItemRevisionID, ItemSortFilter, ItemType, MaybeNull, UniqueItem } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
@@ -112,7 +112,7 @@ export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: 
     });
 
 /** Converts an item revision to a revision request payload  */
-export const mapToRevision = (item: ItemRevision) => ({ ItemID: item.itemId, Revision: item.revision });
+export const mapToRevision = (item: ItemRevision): ItemRevisionID => ({ ItemID: item.itemId, Revision: item.revision });
 
 /** Batches a list of items by shareId : each individual share batch
  * is in turn batched according to `MAX_BATCH_ITEMS_PER_REQUEST` */

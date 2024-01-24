@@ -17,7 +17,7 @@ import withRequest, {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/actions/with-request';
-import type { ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -143,9 +143,8 @@ export const vaultMoveAllItemsIntent = createAction(
 
 export const vaultMoveAllItemsProgress = createAction(
     'vault::move::items::progress',
-    withRequestProgress(
-        (payload: { destinationShareId: string; itemIds: string[]; movedItems: ItemRevision[]; shareId: string }) =>
-            withCache({ payload })
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }) =>
+        withCache({ payload })
     )
 );
 
