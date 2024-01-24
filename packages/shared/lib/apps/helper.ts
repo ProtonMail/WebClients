@@ -61,9 +61,9 @@ export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
 export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
 
 export const getClientID = (appName: APP_NAMES): string => {
-    const app = isElectronMail() ? APPS.PROTONMAIL : isElectronPass() ? APPS.PROTONPASS : appName;
+    const app = isElectronMail ? APPS.PROTONMAIL : isElectronPass ? APPS.PROTONPASS : appName;
     const { clientID, windowsClientID = clientID, macosClientID = clientID } = APPS_CONFIGURATION[app];
-    return isElectronOnWindows() ? windowsClientID : isElectronOnMac() ? macosClientID : clientID;
+    return isElectronOnWindows ? windowsClientID : isElectronOnMac ? macosClientID : clientID;
 };
 
 export const getExtension = (appName: APP_NAMES) => {

@@ -31,7 +31,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const electronPreload = electronPreloadAmount?.Value || 0;
 
     // We increase the preloaded conversations for the electron app
-    const numberOfPreloadedConversations = isElectronApp() ? electronPreload : defaultPreload;
+    const numberOfPreloadedConversations = isElectronApp ? electronPreload : defaultPreload;
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useMailSelector(allConversations);
 
