@@ -6,7 +6,7 @@ import { Href } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
 import { BRAND_NAME, CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { ContactPublicKeyModel, MailSettings } from '@proton/shared/lib/interfaces';
+import { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proton/shared/lib/interfaces';
 import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
@@ -18,8 +18,8 @@ import ContactSchemeSelect from './ContactSchemeSelect';
 import SignEmailsSelect from './SignEmailsSelect';
 
 interface Props {
-    model: ContactPublicKeyModel;
-    setModel: Dispatch<SetStateAction<ContactPublicKeyModel | undefined>>;
+    model: ContactPublicKeyModelWithApiKeySource;
+    setModel: Dispatch<SetStateAction<ContactPublicKeyModelWithApiKeySource | undefined>>;
     mailSettings?: MailSettings;
 }
 
@@ -40,7 +40,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
     const hasCompromisedPinnedKeys = model.publicKeys.pinnedKeys.some((key) =>
         model.compromisedFingerprints.has(key.getFingerprint())
     );
-    const canUploadKeys = model.isPGPExternalWithoutWKDKeys;
+    const canUploadKeys = model.isPGPExternalWithoutExternallyFetchedKeys;
 
     /**
      * Add / update keys to model
