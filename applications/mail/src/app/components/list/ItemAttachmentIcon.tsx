@@ -18,7 +18,7 @@ interface Props {
 
 const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }: Props) => {
     const numAttachments = element ? getNumAttachments(element) : 0;
-    const numAttachmentsSize = element ? humanSize(element.Size) : 0;
+    const numAttachmentsSize = element ? humanSize({ bytes: element.Size }) : 0;
     const isButton = onClick !== undefined;
 
     if (numAttachments === 0) {

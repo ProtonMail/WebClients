@@ -105,7 +105,7 @@ const HighlightPlanDowngradeModal = ({
                                 .t`You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.`;
                         }
                         if (shortPlan.plan === PLANS.DRIVE) {
-                            const gb = humanSize(plansMap[PLANS.DRIVE]?.MaxSpace);
+                            const gb = humanSize({ bytes: plansMap[PLANS.DRIVE]?.MaxSpace });
                             return c('storage_split: info')
                                 .t`You’ll lose access to ${gb} storage and priority support.`;
                         }

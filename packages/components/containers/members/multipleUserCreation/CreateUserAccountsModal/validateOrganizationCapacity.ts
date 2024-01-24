@@ -52,7 +52,7 @@ const validateOrganizationCapacity = (usersToImport: UserTemplate[], organizatio
 
     const availableSpace = organization.MaxSpace - organization.UsedSpace;
     if (totalStorage > availableSpace) {
-        const humanReadableAvailableSpace = humanSize(availableSpace);
+        const humanReadableAvailableSpace = humanSize({ bytes: availableSpace });
         throw new OrganizationCapacityError(
             ORGANIZATION_CAPACITY_ERROR_TYPE.SPACE,
             c('Organization capacity error')
