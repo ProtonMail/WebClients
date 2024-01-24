@@ -28,7 +28,7 @@ export const IconBox: FC<Props> = ({ className, children, mode, pill = true, siz
     return (
         <div
             className={clsx(
-                'w-custom h-custom overflow-hidden relative',
+                'w-custom h-custom relative',
                 mode === 'icon' && 'pass-item-icon',
                 mode === 'image' && 'pass-item-icon pass-item-icon--has-image',
                 className,
