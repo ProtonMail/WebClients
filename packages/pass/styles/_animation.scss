@@ -11,6 +11,6 @@
 	}
 
 	to {
-		opacity: 1;
+		opacity: var(--anime-opacity, 1);
 	}
 }

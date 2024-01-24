@@ -6,9 +6,10 @@ import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Icon, Marks } from '@proton/components/components';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
-import { ItemIcon, OptimisticItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
+import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { selectShare } from '@proton/pass/store/selectors';
@@ -34,25 +35,28 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const bulk = useBulkSelect();
+    const bulkInFlight = useBulkInFlight(item);
+    const loading = optimistic || bulkInFlight;
 
     return (
         <ButtonLike
             as={Link}
             to="#"
-            className={clsx([
-                'pass-item-list--item interactive-pseudo w-full relative',
-                optimistic && !failed && 'opacity-50',
-                active && 'is-active',
-            ])}
+            className={clsx(['pass-item-list--item interactive-pseudo w-full relative', active && 'is-active'])}
             color={failed ? 'warning' : 'weak'}
             shape="ghost"
+            style={{ '--anime-opacity': loading ? '0.5' : '1' }}
             {...rest}
         >
             <div className="flex-nowrap flex w-full px-3 py-2 items-center">
-                <OptimisticItemIcon
+                <SafeItemIcon
                     item={item}
                     size={5}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
+                    iconClassName={clsx(loading && 'opacity-50')}
+                    renderIndicators={(size) => (
+                        <ItemIconIndicators size={size} loading={loading} error={item.failed} />
+                    )}
                 />
                 {bulk.enabled && (
                     <ItemIcon
@@ -82,7 +86,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                     </IconBox>
                 )}
 
-                <div className="text-left">
+                <div className={clsx('text-left', loading && !failed && 'opacity-50')}>
                     <span className="flex items-center">
                         {search && (
                             <VaultIcon size={3} icon={vault?.content.display.icon} className="color-weak mr-1" />
