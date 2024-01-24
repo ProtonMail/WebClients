@@ -1,9 +1,10 @@
-import { ApiAddressKeySource, ProcessedApiAddressKey } from '../interfaces';
+import { API_KEY_SOURCE } from '../constants';
+import { ProcessedApiKey } from '../interfaces';
 
-export const getInternalKeys = (keys: ProcessedApiAddressKey[]) => {
-    return keys.filter(({ source }) => source === ApiAddressKeySource.PROTON);
+export const getInternalKeys = (keys: ProcessedApiKey[]) => {
+    return keys.filter(({ source }) => source === API_KEY_SOURCE.PROTON);
 };
 
-export const getExternalKeys = (keys: ProcessedApiAddressKey[]) => {
-    return keys.filter(({ source }) => source !== ApiAddressKeySource.PROTON);
+export const getExternalKeys = (keys: ProcessedApiKey[]) => {
+    return keys.filter(({ source }) => source !== API_KEY_SOURCE.PROTON);
 };
