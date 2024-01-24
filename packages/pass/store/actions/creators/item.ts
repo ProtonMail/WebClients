@@ -21,9 +21,9 @@ import withSynchronousClientAction from '@proton/pass/store/actions/with-synchro
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
 import type {
+    BulkSelectionDTO,
     ItemCreateIntent,
     ItemEditIntent,
-    ItemIdsByShareId,
     ItemRevision,
     SelectedItem,
     UniqueItem,
@@ -157,9 +157,9 @@ export const itemMoveSuccess = createOptimisticAction(
 
 export const itemBulkMoveIntent = createAction(
     'item::bulk::move::intent',
-    (payload: { itemsByShareId: ItemIdsByShareId; destinationShareId: string }) =>
+    (payload: { selected: BulkSelectionDTO; destinationShareId: string }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.itemsByShareId }),
+            withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',
@@ -234,9 +234,9 @@ export const itemTrashSuccess = createOptimisticAction(
 
 export const itemBulkTrashIntent = createAction(
     'item::bulk::trash::intent',
-    (payload: { itemsByShareId: ItemIdsByShareId }) =>
+    (payload: { selected: BulkSelectionDTO }) =>
         pipe(
-            withRequest({ type: 'start', id: itemsBulkTrashRequest() }),
+            withRequest({ type: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
             withNotification({
                 expiration: -1,
                 type: 'info',

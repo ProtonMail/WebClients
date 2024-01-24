@@ -9,7 +9,7 @@ import {
     itemBulkTrashSuccess,
 } from '@proton/pass/store/actions';
 import type { RequestProgress } from '@proton/pass/store/actions/with-request';
-import { selectItemsFromSelection } from '@proton/pass/store/selectors';
+import { selectItemsFromBulkSelectionDTO } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionResponse, SelectedItem } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -17,10 +17,10 @@ import noop from '@proton/utils/noop';
 type BulkTrashChannel = RequestProgress<ItemRevisionResponse[], SelectedItem[]>;
 
 function* itemBulkTrashWorker(
-    _: RootSagaOptions,
-    { payload: { itemsByShareId }, meta }: ReturnType<typeof itemBulkTrashIntent>
+    { onItemsUpdated }: RootSagaOptions,
+    { payload: { selected }, meta }: ReturnType<typeof itemBulkTrashIntent>
 ) {
-    const items = (yield select(selectItemsFromSelection(itemsByShareId))) as ItemRevision[];
+    const items = (yield select(selectItemsFromBulkSelectionDTO(selected))) as ItemRevision[];
 
     const progressChannel = eventChannel<BulkTrashChannel>((emitter) => {
         trashItems(items, (data, progress) => emitter({ type: 'progress', progress, data }))
@@ -34,7 +34,11 @@ function* itemBulkTrashWorker(
     while (true) {
         const action: BulkTrashChannel = yield take(progressChannel);
 
-        if (action.type === 'progress') yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
+        if (action.type === 'progress') {
+            yield put(itemBulkTrashProgress(meta.request.id, action.progress, action.data));
+            onItemsUpdated?.();
+        }
+
         if (action.type === 'done') yield put(itemBulkTrashSuccess(meta.request.id, {}));
         if (action.type === 'error') yield put(itemBulkTrashFailure(meta.request.id, {}, action.error));
     }
