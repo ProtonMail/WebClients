@@ -112,7 +112,6 @@ interface Arguments {
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
     sendIcs: SendIcs;
-    cancelSingleOccurrenceEnabled: boolean;
 }
 
 const getDeleteEventActions = async ({
@@ -128,7 +127,6 @@ const getDeleteEventActions = async ({
     getCalendarKeys,
     inviteActions,
     sendIcs,
-    cancelSingleOccurrenceEnabled,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
@@ -220,8 +218,7 @@ const getDeleteEventActions = async ({
             !oldEditEventData.veventComponent ||
             isCalendarDisabled ||
             actualEventRecurrence.isSingleOccurrence ||
-            (isDeleteInvitation && !isSingleEdit) ||
-            (!cancelSingleOccurrenceEnabled && isCancelInvitation),
+            (isDeleteInvitation && !isSingleEdit),
         canOnlyDeleteThis: isDeleteInvitation && isSingleEdit,
         cannotDeleteThisAndFuture: isCancelInvitation,
         onDeleteConfirmation,
