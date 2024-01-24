@@ -19,7 +19,9 @@ const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
         return dto;
     }, {});
 
-export const BulkActions: FC = () => {
+type Props = { disabled?: boolean };
+
+export const BulkActions: FC<Props> = ({ disabled }) => {
     const { matchTrash } = useNavigation();
     const { selection } = useBulkSelect();
     const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
@@ -27,22 +29,24 @@ export const BulkActions: FC = () => {
     return matchTrash ? (
         <>
             <Button
+                color="weak"
+                disabled={disabled}
+                icon
+                onClick={() => restoreMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
-                color="weak"
-                icon
                 title={c('Action').t`Bulk restore items from trash`}
-                onClick={() => restoreMany(bulkSelectionDTO(selection))}
             >
                 <Icon name="clock-rotate-left" />
             </Button>
             <Button
+                color="weak"
+                disabled={disabled}
+                icon
+                onClick={() => deleteMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
-                color="weak"
-                icon
                 title={c('Action').t`Bulk delete items from trash`}
-                onClick={() => deleteMany(bulkSelectionDTO(selection))}
             >
                 <Icon name="trash-cross" />
             </Button>
@@ -50,22 +54,24 @@ export const BulkActions: FC = () => {
     ) : (
         <>
             <Button
-                shape="solid"
-                size="small"
                 color="weak"
+                disabled={disabled}
                 icon
                 onClick={() => moveMany(bulkSelectionDTO(selection))}
+                shape="solid"
+                size="small"
                 title={c('Action').t`Bulk move items to another vault`}
             >
                 <Icon name="folder-arrow-in" />
             </Button>
             <Button
+                color="weak"
+                disabled={disabled}
+                icon
+                onClick={() => trashMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
-                color="weak"
-                icon
                 title={c('Action').t`Bulk move items to trash`}
-                onClick={() => trashMany(bulkSelectionDTO(selection))}
             >
                 <Icon name="trash" />
             </Button>
