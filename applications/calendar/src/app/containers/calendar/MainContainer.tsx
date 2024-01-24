@@ -94,7 +94,7 @@ const MainContainer = () => {
         return <CalendarSetupContainer calendars={calendarsToSetup} onDone={() => setCalendarsToSetup([])} />;
     }
 
-    if (!isDone && !isElectronApp()) {
+    if (!isDone && !isElectronApp) {
         return <CalendarOnboardingContainer onDone={() => setWelcomeFlagsDone()} />;
     }
 

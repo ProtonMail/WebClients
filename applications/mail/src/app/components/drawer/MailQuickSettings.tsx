@@ -313,7 +313,7 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
-                {(dbExists || esEnabled) && !isElectronApp() && (
+                {(dbExists || esEnabled) && !isElectronApp && (
                     <>
                         <Tooltip
                             title={c('Info')

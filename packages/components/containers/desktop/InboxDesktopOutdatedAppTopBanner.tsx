@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import {
-    getElectronAppVersion,
+    electronAppVersion,
     isElectronApp,
     isElectronOnMac,
     isElectronOnWindows,
@@ -40,14 +40,14 @@ const DownloadButton = ({ app }: { app: DesktopClient }) => {
 };
 
 const InboxDesktopOutdatedAppTopBanner = () => {
-    const version = getElectronAppVersion();
+    const version = electronAppVersion;
     const { windowsApp, macosApp, loading } = useInboxDesktopVersion();
 
-    if (!isElectronApp() || !version || loading) {
+    if (!isElectronApp || !version || loading) {
         return null;
     }
 
-    if (isElectronOnMac() && macosApp && doesEarlyVersionNeedsManualUpdate(macosApp, version)) {
+    if (isElectronOnMac && macosApp && doesEarlyVersionNeedsManualUpdate(macosApp, version)) {
         const downloadUpdate = <DownloadButton app={macosApp} key="download-update-macos" />;
         return (
             <TopBanner className="bg-info">{c('Action')
@@ -55,7 +55,7 @@ const InboxDesktopOutdatedAppTopBanner = () => {
         );
     }
 
-    if (isElectronOnWindows() && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) {
+    if (isElectronOnWindows && windowsApp && doesEarlyVersionNeedsManualUpdate(windowsApp, version)) {
         const downloadUpdate = <DownloadButton app={windowsApp} key="download-update-windows" />;
         return (
             <TopBanner className="bg-info">{c('Action')

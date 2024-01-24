@@ -18,7 +18,7 @@ export const apps = (user?: UserModel) => {
     if (getIsSSOVPNOnlyAccount(user)) {
         return [APPS.PROTONVPN_SETTINGS];
     }
-    if (isElectronApp()) {
+    if (isElectronApp) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     }
     return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].filter(
