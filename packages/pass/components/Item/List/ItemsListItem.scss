@@ -1,6 +1,26 @@
 .button.pass-item-list--item {
 	border-radius: 0;
 	padding: 0;
+	transition: background 0.2s ease-in-out;
+
+	&-bulk {
+		border-radius: var(--border-radius-xl);
+
+		.pass-item-list--checkmark {
+			opacity: 0;
+			transition: opacity 0.15s ease-in-out;
+			background: var(--interaction-norm);
+			color: var(--text-invert);
+		}
+
+		&-selected {
+			background: var(--interaction-norm-minor-1) !important;
+
+			.pass-item-list--checkmark {
+				opacity: 1;
+			}
+		}
+	}
 
 	&:focus-visible {
 		border-color: transparent;
