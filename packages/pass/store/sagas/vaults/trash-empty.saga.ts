@@ -1,19 +1,23 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
+import { put, select, take, takeLeading } from 'redux-saga/effects';
 
-import { deleteItems } from '@proton/pass/lib/items/item.requests';
-import { emptyTrashFailure, emptyTrashIntent, emptyTrashSuccess } from '@proton/pass/store/actions';
+import { emptyTrashFailure, emptyTrashIntent, emptyTrashProgress, emptyTrashSuccess } from '@proton/pass/store/actions';
+import { type BulkDeleteChannel, bulkDeleteChannel } from '@proton/pass/store/sagas/items/item-bulk-delete.saga';
 import { selectAllTrashedItems } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
 function* emptyTrashWorker({ onItemsUpdated }: RootSagaOptions, { meta }: ReturnType<typeof emptyTrashIntent>) {
-    try {
-        const trashedItems: ItemRevision[] = yield select(selectAllTrashedItems);
-        yield deleteItems(trashedItems);
-        yield put(emptyTrashSuccess(meta.request.id));
+    const requestId = meta.request.id;
+    const trashedItems: ItemRevision[] = yield select(selectAllTrashedItems);
+    const progressChannel = bulkDeleteChannel(trashedItems);
+
+    while (true) {
+        const action: BulkDeleteChannel = yield take(progressChannel);
         onItemsUpdated?.();
-    } catch (error: unknown) {
-        yield put(emptyTrashFailure(meta.request.id, error));
+
+        if (action.type === 'progress') yield put(emptyTrashProgress(requestId, action.progress, action.data));
+        if (action.type === 'done') yield put(emptyTrashSuccess(requestId));
+        if (action.type === 'error') yield put(emptyTrashFailure(requestId, action.error));
     }
 }
 

@@ -5,7 +5,9 @@ import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemPinRequest,
     itemUnpinRequest,
+    itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
+    itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
 } from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
@@ -306,6 +308,46 @@ export const itemDeleteSuccess = createOptimisticAction(
     ({ payload }) => getItemActionId(payload)
 );
 
+export const itemBulkDeleteIntent = createAction(
+    'item::bulk::delete::intent',
+    (payload: { selected: BulkSelectionDTO }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Permanently deleting selected items`,
+            })
+        )({ payload })
+);
+
+export const itemBulkDeleteFailure = createAction(
+    'item::bulk::delete::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to delete selected items`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkDeleteProgress = createAction(
+    'item::bulk::delete::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
+export const itemBulkDeleteSuccess = createAction(
+    'item::bulk::delete::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Selected items permanently deleted`,
+        })({ payload })
+    )
+);
+
 export const itemDeleteSync = createAction('item::delete::sync', (payload: SelectedItem) => withCache({ payload }));
 
 export const itemRestoreIntent = createOptimisticAction(
@@ -339,6 +381,46 @@ export const itemRestoreSuccess = createOptimisticAction(
             })
         )({ payload }),
     ({ payload }) => getItemActionId(payload)
+);
+
+export const itemBulkRestoreIntent = createAction(
+    'item::bulk:restore::intent',
+    (payload: { selected: BulkSelectionDTO }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Restoring items from trash`,
+            })
+        )({ payload })
+);
+
+export const itemBulkRestoreFailure = createAction(
+    'item::bulk::restore::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to restore items from trash`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkRestoreProgress = createAction(
+    'item::bulk::restore::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
+export const itemBulkRestoreSuccess = createAction(
+    'item::bulk::restore::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Selected items successfully restored from trash`,
+        })({ payload })
+    )
 );
 
 export const itemAutofilled = createAction('item::autofilled', (payload: SelectedItem) => ({ payload }));

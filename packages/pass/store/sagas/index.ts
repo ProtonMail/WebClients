@@ -25,7 +25,9 @@ import inviteResend from './invites/invite-resend.saga';
 import newUserInvitePromote from './invites/new-user-invite-promote.saga';
 import newUserInviteRemove from './invites/new-user-invite-remove.saga';
 import itemAutofilled from './items/item-autofill.saga';
+import itemBulkDelete from './items/item-bulk-delete.saga';
 import itemBulkMove from './items/item-bulk-move.saga';
+import itemBulkRestore from './items/item-bulk-restore.saga';
 import itemBulkTrash from './items/item-bulk-trash.saga';
 import itemCreation from './items/item-creation.saga';
 import itemDelete from './items/item-delete.saga';
@@ -64,7 +66,10 @@ export function* workerRootSaga(options: RootSagaOptions) {
             inviteRemove,
             inviteResend,
             itemAutofilled,
+            itemBulkDelete,
             itemBulkMove,
+            itemBulkRestore,
+            itemBulkTrash,
             itemCreation,
             itemDelete,
             itemEdit,
@@ -73,7 +78,6 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemRestore,
             itemsImport,
             itemTrash,
-            itemBulkTrash,
             itemUnpin,
             newUserInvitePromote,
             newUserInviteRemove,
