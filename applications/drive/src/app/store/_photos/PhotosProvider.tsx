@@ -25,12 +25,15 @@ export const PhotosProvider: FC<{ children: ReactNode }> = ({ children }) => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
     const request = useDebouncedRequest();
-    const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
+    const [photosLoading, setIsPhotosLoading] = useState<boolean>(false);
 
     const [photos, setPhotos] = useState<Photo[]>([]);
 
     useEffect(() => {
-        void Promise.all([getDefaultShare().then(setShare), getDefaultPhotosShare().then(setPhotosShare)]);
+        void Promise.all([getDefaultShare(), getDefaultPhotosShare()]).then(([defaultShare, defaultPhotosShare]) => {
+            setShare(defaultShare);
+            setPhotosShare(defaultPhotosShare);
+        });
     }, []);
 
     const loadPhotos = async (abortSignal: AbortSignal, volumeId: string) => {
