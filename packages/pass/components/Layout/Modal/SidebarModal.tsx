@@ -1,7 +1,8 @@
 import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import type { ModalProps } from '@proton/components';
-import { ModalTwo } from '@proton/components';
+
+import { PassModal } from './PassModal';
 
 import './SidebarModal.scss';
 
@@ -25,7 +26,7 @@ export const SidebarModal = ({ children, className, ...props }: Props): ReactNod
     }, [props.onEnter]);
 
     return (
-        <ModalTwo
+        <PassModal
             rootClassName="pass-modal-two--sidebar"
             className={className}
             onBackdropClick={props.onClose}
@@ -33,6 +34,6 @@ export const SidebarModal = ({ children, className, ...props }: Props): ReactNod
             onEnter={onEnter}
         >
             <div className="h-full">{typeof children === 'function' ? children(didEnter) : children}</div>
-        </ModalTwo>
+        </PassModal>
     );
 };

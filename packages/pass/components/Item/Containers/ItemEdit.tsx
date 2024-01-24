@@ -1,8 +1,7 @@
-import { type FC, useEffect } from 'react';
+import { type FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
@@ -30,14 +29,11 @@ export const ItemEdit: FC = () => {
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useSelector(selectItemByShareIdAndId(shareId, itemId));
-    const bulk = useBulkSelect();
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
         selectItem(shareId, itemId, { mode: 'replace' });
     };
-
-    useEffect(bulk.lock, []);
 
     if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath())} push={false} />;
 
