@@ -1,17 +1,19 @@
 import type { Action, Reducer } from 'redux';
 
-import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import {
     bootSuccess,
     draftDiscard,
     draftSave,
     draftsGarbageCollect,
-    emptyTrashSuccess,
+    emptyTrashProgress,
     importItemsProgress,
     inviteAcceptSuccess,
     inviteCreationSuccess,
     itemAutofilled,
+    itemBulkDeleteProgress,
     itemBulkMoveProgress,
+    itemBulkRestoreProgress,
     itemBulkTrashProgress,
     itemCreationDismiss,
     itemCreationFailure,
@@ -38,7 +40,7 @@ import {
     itemTrashSuccess,
     itemUnpinSuccess,
     itemUsedSync,
-    restoreTrashSuccess,
+    restoreTrashProgress,
     shareDeleteSync,
     shareLeaveSuccess,
     sharesSync,
@@ -56,6 +58,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { objectFilter } from '@proton/pass/utils/object/filter';
+import { objectMap } from '@proton/pass/utils/object/map';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -259,30 +262,21 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (emptyTrashSuccess.match(action)) {
-            return Object.fromEntries(
-                Object.entries(state).map(([shareId, itemsById]) => [
-                    shareId,
-                    Object.entries(itemsById).reduce(
-                        (reduction, [itemId, item]) =>
-                            isTrashed(item) ? reduction : fullMerge(reduction, { [itemId]: item }),
-                        {}
-                    ),
-                ])
+        if (or(emptyTrashProgress.match, itemBulkDeleteProgress.match)(action)) {
+            const deletedItemIds = action.payload.batch.map(prop('ItemID'));
+            return objectMap(state, (shareId, items) =>
+                shareId === action.payload.shareId ? objectFilter(items, notIn(deletedItemIds)) : items
             );
         }
 
-        if (restoreTrashSuccess.match(action)) {
-            return Object.fromEntries(
-                Object.entries(state).map(([shareId, itemsById]) => [
-                    shareId,
-                    Object.fromEntries(
-                        Object.entries(itemsById).map(([itemId, item]) => [
-                            itemId,
-                            isTrashed(item) ? partialMerge(item, { state: ItemState.Active }) : item,
-                        ])
-                    ),
-                ])
+        if (or(restoreTrashProgress.match, itemBulkRestoreProgress.match)(action)) {
+            return objectMap(state, (shareId, items) =>
+                shareId === action.payload.shareId
+                    ? partialMerge(
+                          items,
+                          objectMap(toMap(action.payload.batch, 'ItemID'), () => ({ state: ItemState.Active }))
+                      )
+                    : items
             );
         }
 
