@@ -4,7 +4,12 @@ import { c } from 'ttag';
 import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
 import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, {
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/with-request';
+import type { BatchItemRevisionIDs } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const emptyTrashIntent = createAction('trash::empty::intent', () =>
@@ -30,11 +35,15 @@ export const emptyTrashFailure = createAction(
     )
 );
 
+export const emptyTrashProgress = createAction(
+    'trash::empty::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
 export const emptyTrashSuccess = createAction(
     'trash::empty::success',
     withRequestSuccess(() =>
         pipe(
-            withCache,
             withNotification({
                 type: 'success',
                 text: c('Info').t`All trashed items permanently deleted`,
@@ -66,15 +75,17 @@ export const restoreTrashFailure = createAction(
     )
 );
 
+export const restoreTrashProgress = createAction(
+    'trash::restore::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
 export const restoreTrashSuccess = createAction(
     'trash::restore::success',
     withRequestSuccess(() =>
-        pipe(
-            withCache,
-            withNotification({
-                type: 'success',
-                text: c('Info').t`All trashed items successfully restored`,
-            })
-        )({ payload: {} })
+        withNotification({
+            type: 'success',
+            text: c('Info').t`All trashed items successfully restored`,
+        })({ payload: {} })
     )
 );
