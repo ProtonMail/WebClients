@@ -9,6 +9,7 @@ import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
 import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useBulkLock } from '@proton/pass/hooks/useBulkLock';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { type ItemRevision } from '@proton/pass/types';
 
@@ -23,15 +24,16 @@ export const ItemsList: FC = () => {
         else selectItem(item, { inTrash: matchTrash });
     };
 
-    useEffect(bulk.disable, [selectedItem, matchTrash]);
+    const disabled = items.filtered.length === 0;
 
-    const disableFilters = !matchTrash && items.totalCount;
+    useEffect(bulk.disable, [selectedItem, matchTrash]);
+    useBulkLock([disabled]);
 
     return (
         <>
             <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto space-between">
                 <div className="flex gap-1 shrink-0 flex-1">
-                    {!bulk.enabled && disableFilters && (
+                    {!bulk.enabled && (
                         <>
                             <TypeFilter
                                 items={items.searched}
@@ -41,9 +43,9 @@ export const ItemsList: FC = () => {
                             <SortFilter value={filters.sort} onChange={(sort) => setFilters({ sort })} />
                         </>
                     )}
-                    {bulk.enabled && <BulkActions />}
+                    {bulk.enabled && <BulkActions disabled={disabled} />}
                 </div>
-                <BulkToggle />
+                <BulkToggle disabled={disabled} />
             </div>
             <ItemsListBase
                 filters={filters}
