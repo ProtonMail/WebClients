@@ -33,7 +33,7 @@ const ShareLinkButton = ({ selectedLinks }: Props) => {
                 onClick={() =>
                     showLinkSharingModal({ shareId: selectedLinks[0].rootShareId, linkId: selectedLinks[0].linkId })
                 }
-                data-testid="toolbar-share-link"
+                data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
             />
             {linkSharingModal}
         </>

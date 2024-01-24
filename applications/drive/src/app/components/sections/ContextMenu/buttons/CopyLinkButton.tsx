@@ -20,7 +20,7 @@ const CopyLinkButton = ({ shareId, linkId, close }: Props) => {
         <ContextMenuButton
             name={c('Action').t`Copy link`}
             icon="link"
-            testId="context-menu-share-link"
+            testId="context-menu-copy-link"
             action={() => copyShareLinkToClipboard(new AbortController().signal, shareId, linkId)}
             close={close}
         />
