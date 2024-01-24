@@ -23,8 +23,6 @@ const OnlineTopBanner = () => {
     const safeOnlineStatus = useDebounceInput(safeOnlineStatusValue, safeOnlineStatusValue ? 0 : OFFLINE_TIMEOUT);
     const api = useApi();
 
-    const isElectron = isElectronApp();
-
     const oldRef = useRef(safeOnlineStatus);
     const [backOnline, setBackOnline] = useState(false);
 
@@ -71,7 +69,7 @@ const OnlineTopBanner = () => {
 
     // If the device is known to be offline, the API unreachable is not displayed.
     return (
-        <TopBanner className={clsx(isElectron ? 'bg-info' : 'bg-danger')}>{c('Info')
+        <TopBanner className={clsx(isElectronApp ? 'bg-info' : 'bg-danger')}>{c('Info')
             .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
     );
 };

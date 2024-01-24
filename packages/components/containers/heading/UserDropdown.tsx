@@ -119,7 +119,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         sessionRecoveryState === SessionRecoveryState.INSECURE;
 
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
-    const isElectron = isElectronApp();
 
     const subscriptionStartedThirtyDaysAgo =
         !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
@@ -330,7 +329,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
                     )}
 
-                    {isSSOMode && !isElectron ? (
+                    {isSSOMode && !isElectronApp ? (
                         <div className="px-4 pb-2">
                             <ButtonLike
                                 as="a"
@@ -452,7 +451,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         <div className="block">
                             {/* This is here while the desktop beta lasts and can be removed once it's done */}
-                            {isElectronApp() ? (
+                            {isElectronApp ? (
                                 <a
                                     className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                     href={getTypeformDesktopUrl(APP_VERSION, APP_NAME)}

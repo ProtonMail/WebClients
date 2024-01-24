@@ -23,7 +23,6 @@ interface Props {
 
 const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) => {
     const { APP_NAME } = useConfig();
-    const isElectron = isElectronApp();
 
     const isIframe = getIsIframe();
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
@@ -45,7 +44,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
 
     return (
         <div
-            className={clsx('h-full', isElectron && 'bg-norm')}
+            className={clsx('h-full', isElectronApp && 'bg-norm')}
             // Ignore drag & drop during loading to avoid issue when user drops
             // file too soon before the app is ready causing stop of the app
             // load and showing the file instead.
