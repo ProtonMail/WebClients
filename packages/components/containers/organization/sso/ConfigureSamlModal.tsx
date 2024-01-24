@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { setupSAMLFields, setupSAMLUrl, setupSAMLXml } from '@proton/shared/lib/api/samlSSO';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain, SSO } from '@proton/shared/lib/interfaces';
+import { Domain } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
 import {
@@ -25,12 +25,14 @@ import {
     RadioGroup,
     useFormErrors,
 } from '../../../components';
-import IdentityProviderEndpointsContent from './IdentityProviderEndpointsContent';
+import IdentityProviderEndpointsContent, {
+    IdentityProviderEndpointsContentProps,
+} from './IdentityProviderEndpointsContent';
 import UploadedXmlFile from './UploadedXmlFile';
 
 enum STEP {
-    SAML_METADATA,
     IDP_VALUES,
+    SAML_METADATA,
 }
 
 enum METADATA_METHOD {
@@ -67,12 +69,13 @@ const defaultMetadataState: MetadataState = {
     },
 };
 
-interface Props extends ModalProps {
+interface Props extends ModalProps, IdentityProviderEndpointsContentProps {
     domain: Domain;
+    onClose: () => void;
 }
 
-const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
-    const [step, setStep] = useState(STEP.SAML_METADATA);
+const ConfigureSamlModal = ({ domain, onClose, issuerID, callbackURL, ...rest }: Props) => {
+    const [step, setStep] = useState(STEP.IDP_VALUES);
 
     const { createNotification } = useNotifications();
 
@@ -83,8 +86,6 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
     const [metadataMethod, setMetadataMethod] = useState<METADATA_METHOD>(METADATA_METHOD.URL);
     const [metadata, setMetadata] = useState<MetadataState>(defaultMetadataState);
-
-    const idpDetails = useRef<{ issuerID: string; callbackURL: string }>();
 
     useEffect(() => {
         const stepLabel = (() => {
@@ -103,6 +104,22 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
         footer,
         onSubmit,
     }: { title: string; content: ReactNode; footer: ReactNode; onSubmit?: () => void } = (() => {
+        if (step === STEP.IDP_VALUES) {
+            return {
+                onSubmit: () => setStep(STEP.SAML_METADATA),
+                title: c('Title').t`Enter endpoints into your identity provider`,
+                content: <IdentityProviderEndpointsContent issuerID={issuerID} callbackURL={callbackURL} />,
+                footer: (
+                    <>
+                        <div />
+                        <Button type="submit" color="norm">
+                            {c('Action').t`Continue`}
+                        </Button>
+                    </>
+                ),
+            };
+        }
+
         if (step === STEP.SAML_METADATA) {
             const handleSubmit = async () => {
                 if (!onFormSubmit()) {
@@ -111,17 +128,12 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
                 if (metadataMethod === METADATA_METHOD.URL) {
                     try {
-                        const { SSO } = await api<{ SSO: SSO }>(
+                        await api(
                             setupSAMLUrl({
                                 DomainID: domain.ID,
                                 MetadataURL: metadata[METADATA_METHOD.URL].value.trim(),
                             })
                         );
-
-                        idpDetails.current = {
-                            issuerID: SSO.IssuerID,
-                            callbackURL: SSO.CallbackURL,
-                        };
 
                         metrics.core_sso_saml_setup_total.increment({
                             status: 'success',
@@ -140,17 +152,12 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     try {
                         const xmlFileAsString = (await metadata[METADATA_METHOD.XML].file?.text()) || '';
 
-                        const { SSO } = await api<{ SSO: SSO }>(
+                        await api(
                             setupSAMLXml({
                                 DomainID: domain.ID,
                                 XML: btoa(xmlFileAsString),
                             })
                         );
-
-                        idpDetails.current = {
-                            issuerID: SSO.IssuerID,
-                            callbackURL: SSO.CallbackURL,
-                        };
 
                         metrics.core_sso_saml_setup_total.increment({
                             status: 'success',
@@ -168,7 +175,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 } else if (metadataMethod === METADATA_METHOD.TEXT) {
                     try {
                         const { url, entityId, certificate } = metadata[METADATA_METHOD.TEXT];
-                        const { SSO } = await api<{ SSO: SSO }>(
+                        await api(
                             setupSAMLFields({
                                 DomainID: domain.ID,
                                 SSOURL: url.trim(),
@@ -176,11 +183,6 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                 Certificate: certificate,
                             })
                         );
-
-                        idpDetails.current = {
-                            issuerID: SSO.IssuerID,
-                            callbackURL: SSO.CallbackURL,
-                        };
 
                         metrics.core_sso_saml_setup_total.increment({
                             status: 'success',
@@ -198,7 +200,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 }
 
                 await call();
-                setStep(STEP.IDP_VALUES);
+                onClose();
             };
 
             const handleFileUpload = async (files: File[]) => {
@@ -439,23 +441,10 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 ),
                 footer: (
                     <>
-                        <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                        <Button onClick={() => setStep(STEP.IDP_VALUES)}>{c('Action').t`Back`}</Button>
                         <Button type="submit" loading={submitting} color="norm">
-                            {c('Action').t`Continue`}
+                            {c('Action').t`Done`}
                         </Button>
-                    </>
-                ),
-            };
-        }
-
-        if (step === STEP.IDP_VALUES && idpDetails.current) {
-            return {
-                title: c('Title').t`Enter endpoints into your identity provider`,
-                content: <IdentityProviderEndpointsContent {...idpDetails.current} />,
-                footer: (
-                    <>
-                        <div />
-                        <Button onClick={onClose} color="norm">{c('Action').t`Done`}</Button>
                     </>
                 ),
             };
@@ -465,7 +454,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
     })();
 
     return (
-        <Modal as={onSubmit ? Form : undefined} onSubmit={onSubmit} size="large" onClose={onClose} {...rest}>
+        <Modal as={Form} onSubmit={onSubmit} size="large" onClose={onClose} {...rest}>
             <ModalHeader title={title} />
             <ModalContent>{content}</ModalContent>
             <ModalFooter>{footer}</ModalFooter>
