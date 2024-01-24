@@ -21,9 +21,11 @@ const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
 
 type Props = { disabled?: boolean };
 
-export const BulkActions: FC<Props> = ({ disabled }) => {
+export const BulkActions: FC<Props> = (props) => {
     const { matchTrash } = useNavigation();
-    const { selection } = useBulkSelect();
+    const { selection, count } = useBulkSelect();
+    const disabled = count === 0 || props.disabled;
+
     const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
 
     return matchTrash ? (
