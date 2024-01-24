@@ -3,7 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { vpnB2bAdminTooltipTitle } from '@proton/components/containers/members/constants';
+import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import {
     checkMemberAddressAvailability,
@@ -369,11 +369,9 @@ const SubUserCreateModal = ({
                     <label className="text-semibold mr-1" htmlFor="admin-toggle">
                         {c('Label for new member').t`Admin`}
                     </label>
-                    {isVpnB2B && (
-                        <Tooltip title={vpnB2bAdminTooltipTitle}>
-                            <Icon name="info-circle" className="color-primary" />
-                        </Tooltip>
-                    )}
+                    <Tooltip title={adminTooltipText}>
+                        <Icon name="info-circle" className="color-primary" />
+                    </Tooltip>
                     <Toggle
                         id="admin-toggle"
                         className="ml-2"
