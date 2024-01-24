@@ -5,8 +5,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
+import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
@@ -33,7 +34,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
     const userVerified = useSelector(selectUserVerified);
 
     return (
-        <ModalTwo size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
+        <PassModal size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
             <ModalTwoHeader
                 className="text-center text-break-all"
                 hasClose={false}
@@ -112,6 +113,6 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
                     </div>
                 )}
             </ModalTwoFooter>
-        </ModalTwo>
+        </PassModal>
     );
 };
