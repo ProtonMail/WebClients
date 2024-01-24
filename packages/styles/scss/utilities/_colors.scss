@@ -28,14 +28,12 @@
 
 	.color-#{$color} {
 		color: var(--#{dash-join($prefix, $color)});
+	}
 
-		@at-root {
-			.hover\:color-#{$color} {
-				&:hover,
-				&:focus {
-					color: var(--#{dash-join($prefix, $color)});
-				}
-			}
+	.hover\:color-#{$color} {
+		&:hover,
+		&:focus {
+			color: var(--#{dash-join($prefix, $color)});
 		}
 	}
 
@@ -55,14 +53,12 @@
 @each $color in (norm, weak, hint, disabled, invert) {
 	.color-#{$color} {
 		color: var(--text-#{$color});
+	}
 
-		@at-root {
-			.hover\:color-#{$color} {
-				&:hover,
-				&:focus {
-					color: var(--text-#{$color});
-				}
-			}
+	.hover\:color-#{$color} {
+		&:hover,
+		&:focus {
+			color: var(--text-#{$color});
 		}
 	}
 }
@@ -76,14 +72,6 @@
 		&:active {
 			color: inherit;
 		}
-	}
-}
-
-.on-hover-color-norm {
-	&:hover,
-	&:focus,
-	&:active {
-		color: var(--text-norm);
 	}
 }
 
