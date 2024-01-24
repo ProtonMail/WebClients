@@ -24,7 +24,6 @@ interface AppsDropdownProps {
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
-        const isElectron = isElectronApp();
         const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
 
         const availableApps = apps(user);
@@ -48,7 +47,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 ref={ref}
                 as="button"
             >
-                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectron ? '2' : '3' }}>
+                <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectronApp ? '2' : '3' }}>
                     {availableApps.map((appToLinkTo) => {
                         const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
@@ -106,7 +105,7 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
         const { APP_NAME } = useConfig();
 
         // The app swicher on Mail, Calendar and account desktop application is different
-        if (isElectronOnInboxApps(APP_NAME) && isElectronOnMac()) {
+        if (isElectronOnInboxApps(APP_NAME) && isElectronOnMac) {
             return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
         }
 

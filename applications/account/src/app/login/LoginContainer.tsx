@@ -96,7 +96,6 @@ const LoginContainer = ({
 }: Props) => {
     const { state } = useLocation<{ username?: string; authType?: AuthType; externalSSOToken?: string } | undefined>();
     const { APP_NAME } = useConfig();
-    const isElectron = isElectronApp();
     const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
     const { isElectronDisabled } = useIsInboxElectronApp();
     const loginFormRef = useRef<LoginFormRef>();
@@ -262,7 +261,7 @@ const LoginContainer = ({
 
                                             // This is required to display and upsell modal while the beta of the desktop app is running
                                             if (
-                                                isElectron &&
+                                                isElectronApp &&
                                                 error.code === API_CUSTOM_ERROR_CODES.NOT_ALLOWED &&
                                                 visionaryUpsellEnabled
                                             ) {

@@ -35,7 +35,7 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
 
     const onceRef = useRef(false);
     useEffect(() => {
-        if (onceRef.current || isElectronApp()) {
+        if (onceRef.current || isElectronApp) {
             return;
         }
 
