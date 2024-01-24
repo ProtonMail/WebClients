@@ -89,11 +89,12 @@ interface ModalProperties {
 
 interface Props extends ModalProps {
     mode: MODES;
-    onSessionRecovery?: () => void;
+    onRecoveryClick?: () => void;
     onSuccess?: () => void;
+    authCheck?: boolean;
 }
 
-const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...rest }: Props) => {
+const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCheck = true, ...rest }: Props) => {
     const dispatch = useDispatch();
     const api = useApi();
     const { call, stop, start } = useEventManager();
@@ -475,7 +476,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
         }</SettingsLink>
     );
 
-    const [authed, setAuthed] = useState(false);
+    const [authed, setAuthed] = useState(!authCheck);
 
     if (!authed) {
         return (
@@ -486,7 +487,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
                 onSuccess={async () => {
                     setAuthed(true);
                 }}
-                onSessionRecovery={onSessionRecovery}
+                onRecoveryClick={onRecoveryClick}
             />
         );
     }
