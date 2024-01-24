@@ -22,14 +22,28 @@ const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
 export const BulkActions: FC = () => {
     const { matchTrash } = useNavigation();
     const { selection } = useBulkSelect();
-    const { moveMany, trashMany } = useItemsActions();
+    const { moveMany, trashMany, deleteMany, restoreMany } = useItemsActions();
 
     return matchTrash ? (
         <>
-            <Button shape="solid" size="small" color="weak" icon title={c('Action').t`Bulk restore items from trash`}>
+            <Button
+                shape="solid"
+                size="small"
+                color="weak"
+                icon
+                title={c('Action').t`Bulk restore items from trash`}
+                onClick={() => restoreMany(bulkSelectionDTO(selection))}
+            >
                 <Icon name="clock-rotate-left" />
             </Button>
-            <Button shape="solid" size="small" color="weak" icon title={c('Action').t`Bulk delete items from trash`}>
+            <Button
+                shape="solid"
+                size="small"
+                color="weak"
+                icon
+                title={c('Action').t`Bulk delete items from trash`}
+                onClick={() => deleteMany(bulkSelectionDTO(selection))}
+            >
                 <Icon name="trash-cross" />
             </Button>
         </>

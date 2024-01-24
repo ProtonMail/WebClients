@@ -6,15 +6,28 @@ import { c } from 'ttag';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import { itemBulkMoveIntent, itemBulkTrashIntent, itemMoveIntent, itemTrashIntent } from '@proton/pass/store/actions';
+import {
+    itemBulkDeleteIntent,
+    itemBulkMoveIntent,
+    itemBulkRestoreIntent,
+    itemBulkTrashIntent,
+    itemDeleteIntent,
+    itemMoveIntent,
+    itemRestoreIntent,
+    itemTrashIntent,
+} from '@proton/pass/store/actions';
 import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
 type ItemActionsContextType = {
+    delete: (item: ItemRevision) => void;
+    deleteMany: (items: BulkSelectionDTO) => void;
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
     moveMany: (items: BulkSelectionDTO) => void;
+    restore: (item: ItemRevision) => void;
+    restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
 };
@@ -53,6 +66,24 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         bulk.disable();
     };
 
+    const deleteItem = (item: ItemRevision) => {
+        dispatch(itemDeleteIntent({ itemId: item.itemId, shareId: item.shareId, item }));
+    };
+
+    const deleteManyItems = (selected: BulkSelectionDTO) => {
+        dispatch(itemBulkDeleteIntent({ selected }));
+        bulk.disable();
+    };
+
+    const restoreItem = (item: ItemRevision) => {
+        dispatch(itemRestoreIntent({ itemId: item.itemId, shareId: item.shareId, item }));
+    };
+
+    const restoreManyItems = (selected: BulkSelectionDTO) => {
+        dispatch(itemBulkRestoreIntent({ selected }));
+        bulk.disable();
+    };
+
     const context = useMemo<ItemActionsContextType>(() => {
         return {
             move: (item, mode) =>
@@ -61,14 +92,18 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     shareId: item.shareId,
                     onSubmit: moveItem(item),
                 }),
-            moveMany: (itemsByShareId) =>
+            moveMany: (selected) =>
                 openVaultSelect({
                     mode: VaultSelectMode.Writable,
                     shareId: '' /* allow all vaults */,
-                    onSubmit: moveManyItems(itemsByShareId),
+                    onSubmit: moveManyItems(selected),
                 }),
             trash: trashItem,
             trashMany: trashManyItems,
+            delete: deleteItem,
+            deleteMany: deleteManyItems,
+            restore: restoreItem,
+            restoreMany: restoreManyItems,
         };
     }, []);
 
