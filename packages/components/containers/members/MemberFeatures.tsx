@@ -21,7 +21,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
                         <Icon name="filing-cabinet" />
                     </span>
                     <span className="flex-1 pl-1" data-testid="users-and-addresses-table:storage">
-                        {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
+                        {humanSize({ bytes: UsedSpace, unit: 'GB' })} / {humanSize({ bytes: MaxSpace, unit: 'GB' })}
                     </span>
                 </span>
             ) : null}

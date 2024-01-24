@@ -52,8 +52,8 @@ const StorageCard = ({
     usedSpace: number;
     maxSpace: number;
 }) => {
-    const humanUsedSpace = humanSize(usedSpace);
-    const humanMaxSpace = humanSize(maxSpace);
+    const humanUsedSpace = humanSize({ bytes: usedSpace });
+    const humanMaxSpace = humanSize({ bytes: maxSpace });
     const value = Math.ceil(percentage(maxSpace, usedSpace));
     return (
         <div

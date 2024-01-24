@@ -250,8 +250,8 @@ const SubscriptionPanel = ({
 
     const storageItem = (() => {
         if (!space.splitStorage || !storageSplitEnabled) {
-            const humanUsedSpace = humanSize(UsedSpace);
-            const humanMaxSpace = humanSize(MaxSpace);
+            const humanUsedSpace = humanSize({ bytes: UsedSpace });
+            const humanMaxSpace = humanSize({ bytes: MaxSpace });
             return (
                 <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
@@ -260,9 +260,9 @@ const SubscriptionPanel = ({
             );
         }
 
-        const maxBaseSpace = humanSize(space.maxBaseSpace, 'GB', undefined, 1);
-        const maxDriveSpace = humanSize(space.maxDriveSpace, 'GB', undefined, 1);
-        const humanMaxSpace = humanSize(space.maxBaseSpace + space.maxDriveSpace, 'GB', undefined, 1);
+        const maxBaseSpace = humanSize({ bytes: space.maxBaseSpace, unit: 'GB', fraction: 0 });
+        const maxDriveSpace = humanSize({ bytes: space.maxDriveSpace, unit: 'GB', fraction: 0 });
+        const humanMaxSpace = humanSize({ bytes: space.maxBaseSpace + space.maxDriveSpace, unit: 'GB', fraction: 0 });
 
         return (
             <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>

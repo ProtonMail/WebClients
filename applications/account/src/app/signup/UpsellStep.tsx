@@ -115,7 +115,7 @@ const UpsellStep = ({
         freePlan,
     });
     const upsellPlan = plansMap[upsellPlanName];
-    const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
+    const upsellPlanHumanSize = humanSize({ bytes: upsellPlan.MaxSpace, fraction: 0 });
 
     const freeFooterNotes = getFooterNotes(PLANS.FREE, cycle);
     const upsellFooterNotes = getFooterNotes(upsellPlanName, cycle);
