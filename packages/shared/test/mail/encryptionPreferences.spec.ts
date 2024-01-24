@@ -54,8 +54,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
         compromisedFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
-        isPGPExternalWithWKDKeys: false,
-        isPGPExternalWithoutWKDKeys: false,
+        isPGPExternalWithExternallyFetchedKeys: false,
+        isPGPExternalWithoutExternallyFetchedKeys: false,
         pgpAddressDisabled: false,
         isContact: true,
         isContactSignatureVerified: true,
@@ -337,8 +337,8 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             compromisedFingerprints: new Set([]),
             isPGPExternal: true,
             isPGPInternal: false,
-            isPGPExternalWithWKDKeys: true,
-            isPGPExternalWithoutWKDKeys: false,
+            isPGPExternalWithExternallyFetchedKeys: true,
+            isPGPExternalWithoutExternallyFetchedKeys: false,
             pgpAddressDisabled: false,
             isContact: true,
             isContactSignatureVerified: true,
@@ -538,7 +538,9 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             };
             const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-            expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.WKD_USER_NO_VALID_WKD_KEY);
+            expect(result?.error?.type).toEqual(
+                ENCRYPTION_PREFERENCES_ERROR_TYPES.EXTERNAL_USER_NO_VALID_EXTERNALLY_FETCHED_KEY
+            );
         });
 
         it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
@@ -576,8 +578,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         compromisedFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
-        isPGPExternalWithWKDKeys: false,
-        isPGPExternalWithoutWKDKeys: true,
+        isPGPExternalWithExternallyFetchedKeys: false,
+        isPGPExternalWithoutExternallyFetchedKeys: true,
         pgpAddressDisabled: false,
         isContact: true,
         isContactSignatureVerified: true,
@@ -770,8 +772,8 @@ describe('extractEncryptionPreferences for an own address', () => {
         compromisedFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
-        isPGPExternalWithWKDKeys: false,
-        isPGPExternalWithoutWKDKeys: false,
+        isPGPExternalWithExternallyFetchedKeys: false,
+        isPGPExternalWithoutExternallyFetchedKeys: false,
         pgpAddressDisabled: false,
         isContact: false,
         emailAddressWarnings: undefined,

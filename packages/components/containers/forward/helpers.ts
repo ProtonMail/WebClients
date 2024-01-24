@@ -2,7 +2,6 @@ import { CryptoProxy, MaybeArray, PrivateKeyReference, PublicKeyReference } from
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { updateForwarding } from '@proton/shared/lib/api/forwardings';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { castKeys } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelperWithKT';
 import { createAddressKeyRouteV2 } from '@proton/shared/lib/api/keys';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -272,9 +271,7 @@ export const acceptIncomingForwarding = async ({
     });
 
     const publicKeys = await Promise.all(
-        castKeys(forwarderAddressKeys).map((processedApiKey) =>
-            CryptoProxy.importPublicKey({ armoredKey: processedApiKey.armoredKey })
-        )
+        forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
     );
 
     let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, forwardeeAddressKeys);

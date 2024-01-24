@@ -4,7 +4,7 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { KT_VERIFICATION_STATUS } from '@proton/shared/lib/interfaces';
+import { ApiKeysConfig, KT_VERIFICATION_STATUS, PinnedKeysConfig, SelfSend } from '@proton/shared/lib/interfaces';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
 import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
@@ -47,9 +47,9 @@ const useGetEncryptionPreferences = () => {
             const selfAddress = getSelfSendAddresses(addresses).find(
                 ({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail
             );
-            let selfSend;
-            let apiKeysConfig;
-            let pinnedKeysConfig;
+            let selfSend: SelfSend | undefined;
+            let apiKeysConfig: ApiKeysConfig;
+            let pinnedKeysConfig: PinnedKeysConfig;
             if (selfAddress) {
                 // we do not trust the public keys in ownAddress (they will be deprecated in the API response soon anyway)
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
