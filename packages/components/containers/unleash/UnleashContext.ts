@@ -25,9 +25,8 @@ enum AccountFlag {
     SSOVpnSettings = 'SSOVpnSettings',
 }
 
-enum CalendarFeatureFlag {
-    CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb',
-}
+enum CalendarFeatureFlag {}
+// CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
 
 enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
