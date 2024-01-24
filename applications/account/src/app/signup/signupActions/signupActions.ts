@@ -81,7 +81,7 @@ export const handleDone = ({
     const { authResponse, user, keyPassword } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
-    if (isElectronApp()) {
+    if (isElectronApp) {
         appIntent = {
             app: APPS.PROTONMAIL,
         };
