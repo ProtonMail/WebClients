@@ -1,7 +1,7 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
-import { API_CODES, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
+import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -55,7 +55,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -133,7 +133,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -166,6 +166,104 @@ END:VCARD`.replaceAll('\n', '\r\n');
         ).Data;
 
         expect(signedCardContent).toBe(expectedCard);
+    });
+
+    it('should update the stored pinned key order when a different uploaded key is selected for sending', async () => {
+        CryptoProxy.setEndpoint({
+            ...mockedCryptoApi,
+            importPublicKey: jest.fn().mockImplementation(async ({ binaryKey }) => ({
+                getFingerprint: () => new TextDecoder().decode(binaryKey),
+                getCreationTime: () => new Date(0),
+                getExpirationTime: () => new Date(0),
+                getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
+                subkeys: [],
+                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+            })),
+            canKeyEncrypt: jest.fn().mockImplementation(() => true),
+            exportPublicKey: jest.fn().mockImplementation(({ key }) => new TextEncoder().encode(key.getFingerprint())),
+            isExpiredKey: jest.fn().mockImplementation(() => false),
+            isRevokedKey: jest.fn().mockImplementation(() => false),
+        });
+
+        const dummyKey1Base64 = btoa('dummy-pinned-key-1');
+        const dummyKey2Base64 = btoa('dummy-pinned-key-2');
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:pinned
+UID:proton-web-b2dc0409-262d-96db-8925-3ee4f0030fd8
+ITEM1.EMAIL;PREF=1:pinned1@test.com
+ITEM1.KEY;PREF=1:data:application/pgp-keys;base64,${dummyKey1Base64}
+ITEM1.KEY;PREF=2:data:application/pgp-keys;base64,${dummyKey2Base64}
+ITEM1.X-PM-ENCRYPT:true
+ITEM1.X-PM-SIGN:true
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+        const saveRequestSpy = jest.fn();
+
+        addApiMock('core/v4/keys/all', () => {
+            return { Address: { Keys: [] } };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
+        });
+
+        const { getByText } = renderWithProviders(
+            <ContactEmailSettingsModal
+                open={true}
+                {...props}
+                vCardContact={vCardContact}
+                emailProperty={vCardContact.email[0]}
+            />
+        );
+
+        const showMoreButton = getByText('Show advanced PGP settings');
+        await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        fireEvent.click(showMoreButton);
+
+        const contactKeysTable = await screen.findByTestId('contact-keys-table', undefined, { timeout: 5000 });
+        const contactKeysTableRows = within(contactKeysTable).getAllByRole('row');
+        expect(contactKeysTableRows).toHaveLength(2);
+        // test primary key row
+        await within(contactKeysTableRows[0]).findByText('dummy-pinned-key-1'); // fingerprint
+        await within(contactKeysTableRows[0]).findByTestId('primary-key-label');
+        // test other key row
+        await within(contactKeysTableRows[1]).findByText('dummy-pinned-key-2'); // fingerprint
+        expect(within(contactKeysTableRows[1]).queryByTestId('primary-key-label')).toBeNull();
+
+        // mark second key as primary
+        const dropdownButton = within(contactKeysTableRows[1]).getByTitle('Open actions dropdown');
+        fireEvent.click(dropdownButton);
+        const useForSendingButton = getByText('Use for sending');
+        fireEvent.click(useForSendingButton);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
+
+        const sentData = saveRequestSpy.mock.calls[0][0];
+        const cards = sentData.Cards;
+
+        const signedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
+        ).Data;
+
+        // confirm that pinned key order has been changed
+        expect(signedCardContent.includes(`ITEM1.KEY;PREF=1:data:application/pgp-keys;base64,${dummyKey2Base64}`)).toBe(
+            true
+        );
+        expect(signedCardContent.includes(`ITEM1.KEY;PREF=2:data:application/pgp-keys;base64,${dummyKey1Base64}`)).toBe(
+            true
+        );
+        expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT')).toBe(true);
+        expect(signedCardContent.includes('ITEM1.X-PM-SIGN')).toBe(true);
     });
 
     it('should warn if encryption is enabled and uploaded keys are not valid for sending', async () => {
@@ -224,7 +322,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -324,7 +422,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -427,7 +525,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -518,7 +616,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -559,7 +657,7 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN')).toBe(false);
     });
 
-    it('shoul display WKD keys but not internal address keys for external account with internal address keys', async () => {
+    it('should display WKD keys but not internal address keys for external account with internal address keys', async () => {
         CryptoProxy.setEndpoint({
             ...mockedCryptoApi,
             importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
@@ -617,7 +715,7 @@ END:VCARD`;
                 open={true}
                 {...props}
                 vCardContact={vCardContact}
-                emailProperty={vCardContact.email?.[0]}
+                emailProperty={vCardContact.email[0]}
             />
         );
 
@@ -672,5 +770,148 @@ END:VCARD`;
         expect(signedCardContent.includes('ITEM1.KEY;PREF=1:data:application/pgp-keys')).toBe(true);
         expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT:true')).toBe(true);
         expect(signedCardContent.includes('ITEM1.X-PM-SIGN:true')).toBe(true);
+    });
+
+    describe('contact key origin label', () => {
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@example.com
+END:VCARD`;
+
+        beforeEach(() =>
+            CryptoProxy.setEndpoint({
+                ...mockedCryptoApi,
+                importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
+                    getFingerprint: () => armoredKey,
+                    getCreationTime: () => new Date(0),
+                    getExpirationTime: () => new Date(0),
+                    getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
+                    subkeys: [],
+                    getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+                })),
+                canKeyEncrypt: jest.fn().mockImplementation(() => true),
+                exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
+                isExpiredKey: jest.fn().mockImplementation(() => false),
+                isRevokedKey: jest.fn().mockImplementation(() => false),
+            })
+        );
+
+        it('should display no origin label for internal keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [
+                        {
+                            PublicKey: 'internally mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                        },
+                    ],
+                },
+                ProtonMX: true, // internal address
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const wkdKeyFingerprint = screen.getByText('internally mocked armored key');
+                return expect(wkdKeyFingerprint).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+            expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+        });
+        it('should display WKD label for WKD keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [],
+                },
+                Unverified: {
+                    Keys: [
+                        {
+                            PublicKey: 'externally fetched mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Source: API_KEY_SOURCE.WKD,
+                        },
+                    ],
+                },
+                ProtonMX: false, // external account
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const wkdOriginLabel = screen.getByTestId('wkd-origin-label');
+                return expect(wkdOriginLabel).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('koo-origin-label')).toBeNull();
+        });
+
+        it('should display KOO label for KOO keys', async () => {
+            const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+            addApiMock('core/v4/keys/all', () => ({
+                Address: {
+                    Keys: [],
+                },
+                Unverified: {
+                    Keys: [
+                        {
+                            PublicKey: 'externally fetched mocked armored key',
+                            Flags: KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            Source: API_KEY_SOURCE.KOO,
+                        },
+                    ],
+                },
+                ProtonMX: false, // external account
+            }));
+
+            renderWithProviders(
+                <ContactEmailSettingsModal
+                    open={true}
+                    {...props}
+                    vCardContact={vCardContact}
+                    emailProperty={vCardContact.email[0]}
+                />
+            );
+
+            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            fireEvent.click(showMoreButton);
+
+            await waitFor(() => {
+                const kooOriginLabel = screen.getByTestId('koo-origin-label');
+                return expect(kooOriginLabel).toBeVisible();
+            });
+
+            expect(screen.queryByTestId('wkd-origin-label')).toBeNull();
+        });
     });
 });

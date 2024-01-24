@@ -1,6 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 
 import {
+    API_KEY_SOURCE,
     CONTACT_MIME_TYPES,
     CONTACT_PGP_SCHEMES,
     KEY_FLAG,
@@ -28,7 +29,8 @@ export type MimeTypeVcard = MIME_TYPES.PLAINTEXT;
 export interface ProcessedApiKey {
     armoredKey: string;
     flags: KEY_FLAG;
-    publicKey?: PublicKeyReference;
+    publicKey: PublicKeyReference;
+    source: API_KEY_SOURCE;
 }
 
 export interface ApiKeysConfig {
@@ -86,8 +88,8 @@ export interface ContactPublicKeyModel {
     compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
     isPGPExternal: boolean;
     isPGPInternal: boolean;
-    isPGPExternalWithWKDKeys: boolean;
-    isPGPExternalWithoutWKDKeys: boolean;
+    isPGPExternalWithExternallyFetchedKeys: boolean; // Keys from e.g. WKD or keys.openpgp.org (KOO)
+    isPGPExternalWithoutExternallyFetchedKeys: boolean;
     pgpAddressDisabled: boolean;
     isContact: boolean;
     isContactSignatureVerified?: boolean;
@@ -95,6 +97,10 @@ export interface ContactPublicKeyModel {
     emailAddressWarnings?: string[];
     emailAddressErrors?: string[];
     ktVerificationResult?: KeyTransparencyVerificationResult;
+}
+
+export interface ContactPublicKeyModelWithApiKeySource extends ContactPublicKeyModel {
+    apiKeysSourceMap: Partial<{ [source in API_KEY_SOURCE]: Set<string> }>; // map source to fingerprints
 }
 
 export interface PublicKeyModel {
@@ -115,8 +121,8 @@ export interface PublicKeyModel {
     compromisedFingerprints: Set<string>;
     isPGPExternal: boolean;
     isPGPInternal: boolean;
-    isPGPExternalWithWKDKeys: boolean;
-    isPGPExternalWithoutWKDKeys: boolean;
+    isPGPExternalWithExternallyFetchedKeys: boolean; // Keys from e.g. WKD or keys.openpgp.org (KOO)
+    isPGPExternalWithoutExternallyFetchedKeys: boolean;
     pgpAddressDisabled: boolean;
     isContact: boolean;
     isContactSignatureVerified?: boolean;
