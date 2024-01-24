@@ -498,7 +498,7 @@ const LoginForm = ({
                                             onChangeAuthType(AuthType.ExternalSSO);
                                         }}
                                     >
-                                        <div className="inline-flex items-center gap-2">
+                                        <div className="inline-flex items-center flex-nowrap gap-2">
                                             {c('Action').t`Sign in with SSO`}
                                             <Info
                                                 title={c('Info')
