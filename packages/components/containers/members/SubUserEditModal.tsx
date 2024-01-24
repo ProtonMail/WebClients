@@ -3,7 +3,7 @@ import { FormEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { vpnB2bAdminTooltipTitle } from '@proton/components/containers/members/constants';
+import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
 import {
@@ -15,11 +15,12 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Member } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import {
-    Icon,
+    Info,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -28,7 +29,6 @@ import {
     ModalProps,
     Prompt,
     Toggle,
-    Tooltip,
     useFormErrors,
     useModalState,
 } from '../../components';
@@ -135,7 +135,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                             loading={submitting}
                             onClick={() => {
                                 confirmDemotionModalProps.onClose();
-                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER }));
+                                void withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER }));
                             }}
                         >{c('Action').t`Remove`}</Button>,
                         <Button
@@ -162,7 +162,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                     if (!onFormSubmit()) {
                         return;
                     }
-                    withLoading(handleSubmit({ role: null }));
+                    void withLoading(handleSubmit({ role: null }));
                 }}
                 onClose={handleClose}
             >
@@ -220,11 +220,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                             >
                                 {c('Label for new member').t`Admin`}
                             </label>
-                            {isVpnB2B && (
-                                <Tooltip title={vpnB2bAdminTooltipTitle}>
-                                    <Icon name="info-circle" className="mr-2 color-primary" />
-                                </Tooltip>
-                            )}
+                            <Info className="mr-4" title={adminTooltipText} url={getKnowledgeBaseUrl('/user-roles')} />
                             <Toggle
                                 id="admin-toggle"
                                 checked={model.admin}
