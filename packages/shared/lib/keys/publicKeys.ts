@@ -6,14 +6,10 @@ import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '..
 import { hasBit } from '../helpers/bitset';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
-import { ApiKeysConfig, ContactPublicKeyModel, ProcessedApiKey, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
+import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { getKeyHasFlagsToEncrypt } from './keyFlags';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
-
-const getIsFullyProcessedApiKey = (key: ProcessedApiKey): key is Required<ProcessedApiKey> => {
-    return !!key.publicKey;
-};
 
 /**
  * Check if some API key data belongs to an internal user
@@ -172,7 +168,7 @@ export const getContactPublicKeyModel = async ({
     // prepare keys retrieved from the API
     const isInternalUser = getIsInternalUser(apiKeysConfig);
     const isExternalUser = !isInternalUser;
-    const processedApiKeys = apiKeysConfig.publicKeys.filter(getIsFullyProcessedApiKey);
+    const processedApiKeys = apiKeysConfig.publicKeys;
     const apiKeys = processedApiKeys.map(({ publicKey }) => publicKey);
     await Promise.all(
         processedApiKeys.map(async ({ publicKey, flags }) => {
@@ -243,8 +239,8 @@ export const getContactPublicKeyModel = async ({
         encryptionCapableFingerprints,
         isPGPExternal: isExternalUser,
         isPGPInternal: isInternalUser,
-        isPGPExternalWithWKDKeys: isExternalUser && !!apiKeys.length,
-        isPGPExternalWithoutWKDKeys: isExternalUser && !apiKeys.length,
+        isPGPExternalWithExternallyFetchedKeys: isExternalUser && !!apiKeys.length,
+        isPGPExternalWithoutExternallyFetchedKeys: isExternalUser && !apiKeys.length,
         pgpAddressDisabled: isDisabledUser(apiKeysConfig),
         isContact,
         isContactSignatureVerified,

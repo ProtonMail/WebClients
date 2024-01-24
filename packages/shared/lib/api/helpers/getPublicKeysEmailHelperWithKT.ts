@@ -1,25 +1,12 @@
 import { RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
-import {
-    Api,
-    ApiKeysConfig,
-    KT_VERIFICATION_STATUS,
-    ProcessedApiAddressKey,
-    ProcessedApiKey,
-    VerifyOutboundPublicKeys,
-} from '../../interfaces';
+import { Api, ApiKeysConfig, KT_VERIFICATION_STATUS, VerifyOutboundPublicKeys } from '../../interfaces';
 import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '../../keys';
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 
 const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_EXTERNAL, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } =
     API_CUSTOM_ERROR_CODES;
 const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_EXTERNAL, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT];
-
-export const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
-    return keys.map(({ armoredPublicKey, flags, publicKeyRef }) => {
-        return { armoredKey: armoredPublicKey, flags, publicKey: publicKeyRef };
-    });
-};
 
 const getFailedOrUnVerified = (failed: boolean) =>
     failed ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
@@ -77,7 +64,7 @@ const getPublicKeysEmailHelperWithKT = async ({
 
             if (intendedForMailEncryption && addressKeysForMailEncryption.length > 0) {
                 return {
-                    publicKeys: castKeys(addressKeysForMailEncryption),
+                    publicKeys: addressKeysForMailEncryption,
                     ktVerificationResult: addressKTResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: false,
@@ -100,7 +87,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                 };
             } else if (!intendedForMailEncryption && (addressKeysForMailEncryption.length > 0 || hasValidProtonMX)) {
                 return {
-                    publicKeys: castKeys(addressKeys), // we checked `addressKeysForMailEncryption` to determine if the recipient is internal, but we return all keys as that's requested by the caller
+                    publicKeys: addressKeys, // we checked `addressKeysForMailEncryption` to determine if the recipient is internal, but we return all keys as that's requested by the caller
                     ktVerificationResult: addressKTResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL, // as e2ee-disabled flags are ignored, then from the perspective of the caller, this is an internal recipient
                     isCatchAll: false,
@@ -121,7 +108,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             if (mailCapableUnverifiedInternalKeys.length != 0) {
                 const status = getFailedOrUnVerified(verificationFailed);
                 return {
-                    publicKeys: castKeys(mailCapableUnverifiedInternalKeys),
+                    publicKeys: mailCapableUnverifiedInternalKeys,
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: false,
@@ -140,7 +127,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     : catchAllKTResult?.status;
                 const ktVerificationResult = catchAllKTResult ? { status: status!, keysChangedRecently } : undefined;
                 return {
-                    publicKeys: castKeys(mailCapableCatchAllKeys),
+                    publicKeys: mailCapableCatchAllKeys,
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: true,
@@ -161,7 +148,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             if (mailCapableUnverifiedExternalKeys.length != 0) {
                 const firstUnverifiedKey = mailCapableUnverifiedExternalKeys[0];
                 return {
-                    publicKeys: castKeys([firstUnverifiedKey]),
+                    publicKeys: [firstUnverifiedKey],
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     isCatchAll: false,

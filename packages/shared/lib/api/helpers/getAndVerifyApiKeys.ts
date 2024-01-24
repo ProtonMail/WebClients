@@ -1,53 +1,47 @@
 import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { API_KEY_SOURCE } from '../../constants';
 import {
     Api,
-    ApiAddressKey,
-    ApiAddressKeySource,
     FetchedSignedKeyList,
     KeyTransparencyVerificationResult,
-    ProcessedApiAddressKey,
+    ProcessedApiKey,
     VerifyOutboundPublicKeys,
 } from '../../interfaces';
 import { getAllPublicKeys } from '../keys';
 
 export interface ApiKeysWithKTStatus {
-    addressKeys: ProcessedApiAddressKey[];
+    addressKeys: ProcessedApiKey[];
     addressKTResult?: KeyTransparencyVerificationResult;
-    catchAllKeys?: ProcessedApiAddressKey[];
+    catchAllKeys?: ProcessedApiKey[];
     catchAllKTResult?: KeyTransparencyVerificationResult;
-    unverifiedKeys?: ProcessedApiAddressKey[];
+    unverifiedKeys?: ProcessedApiKey[];
     hasValidProtonMX?: boolean;
     Code?: number;
     Warnings?: string[];
 }
 
-const getApiKeySource = (source: number): ApiAddressKeySource => {
-    switch (source) {
-        case 0:
-            return ApiAddressKeySource.PROTON;
-        case 1:
-            return ApiAddressKeySource.WKD;
-        default:
-            return ApiAddressKeySource.UNKNOWN;
-    }
-};
+interface ApiAddressKey {
+    PublicKey: string;
+    Flags: number;
+    Source: API_KEY_SOURCE;
+}
 
-const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): Promise<ProcessedApiAddressKey[]> => {
+const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): Promise<ProcessedApiKey[]> => {
     const promises = await Promise.all(
-        keys.map(async ({ PublicKey, Flags, Source }) => {
-            const publicKeyRef = await CryptoProxy.importPublicKey({ armoredKey: PublicKey, checkCompatibility }).catch(
-                () => null
-            );
+        keys.map(async ({ PublicKey: armoredKey, Flags, Source }) => {
+            const publicKey = await CryptoProxy.importPublicKey({ armoredKey, checkCompatibility }).catch(() => null);
 
-            if (!publicKeyRef) {return null;}
+            if (!publicKey) {
+                return null;
+            }
 
             return {
-                armoredPublicKey: PublicKey,
+                armoredKey,
                 flags: Flags,
-                publicKeyRef,
-                source: getApiKeySource(Source),
+                publicKey: publicKey,
+                source: Source,
             };
         })
     );

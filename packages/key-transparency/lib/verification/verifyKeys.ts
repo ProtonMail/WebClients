@@ -5,7 +5,7 @@ import {
     GetLatestEpoch,
     KT_VERIFICATION_STATUS,
     KeyTransparencyVerificationResult,
-    ProcessedApiAddressKey,
+    ProcessedApiKey,
     SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
@@ -141,7 +141,7 @@ export const verifySKLSignature = async (
  * Verify that public keys associated to an email address are correctly stored in KT
  */
 const verifyPublicKeys = async (
-    apiKeys: ProcessedApiAddressKey[],
+    apiKeys: ProcessedApiKey[],
     email: string,
     signedKeyList: FetchedSignedKeyList | null,
     api: Api,
@@ -171,7 +171,7 @@ const verifyPublicKeys = async (
                 // Verify key list matches the signed key list
                 await checkKeysInSKL(
                     email,
-                    apiKeys.map(({ publicKeyRef, flags }) => ({ key: publicKeyRef, flags })),
+                    apiKeys.map(({ publicKey, flags }) => ({ key: publicKey, flags })),
                     signedKeyList.Data!
                 );
             }
@@ -275,11 +275,11 @@ export const verifyPublicKeysAddressAndCatchall = async (
     email: string,
     skipVerificationOfExternalDomains: boolean,
     address: {
-        keyList: ProcessedApiAddressKey[];
+        keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
     },
     catchAll?: {
-        keyList: ProcessedApiAddressKey[];
+        keyList: ProcessedApiKey[];
         signedKeyList: FetchedSignedKeyList | null;
     }
 ): Promise<{
