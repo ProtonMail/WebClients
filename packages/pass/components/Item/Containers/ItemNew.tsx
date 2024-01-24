@@ -1,7 +1,9 @@
-import type { FC } from 'react';
+import { type FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
+import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
@@ -12,8 +14,6 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
-
-import { usePassCore } from '../../Core/PassCoreProvider';
 
 const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
     login: LoginNew,
@@ -29,6 +29,7 @@ export const ItemNew: FC = () => {
 
     const history = useHistory();
     const dispatch = useDispatch();
+    const bulk = useBulkSelect();
 
     const { type } = useParams<ItemNewRouteParams>();
     const { didDowngrade } = useSelector(selectVaultLimits);
@@ -52,6 +53,8 @@ export const ItemNew: FC = () => {
     };
 
     const handleCancel = () => history.goBack();
+
+    useEffect(bulk.lock, []);
 
     return (
         <ItemNewComponent

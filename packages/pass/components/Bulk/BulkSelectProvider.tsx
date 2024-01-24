@@ -1,4 +1,13 @@
-import { type FC, type PropsWithChildren, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import {
+    type FC,
+    type PropsWithChildren,
+    createContext,
+    useContext,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react';
 
 import type { MaybeNull, SelectedItem } from '@proton/pass/types';
 
@@ -12,6 +21,7 @@ type BulkSelectContextType = {
     disable: () => void;
     enable: () => void;
     isSelected: (item: { shareId: string; itemId: string }) => boolean;
+    lock: () => () => void;
     select: ({ shareId, itemId }: SelectedItem) => void;
     unselect: ({ shareId, itemId }: SelectedItem) => void;
 };
@@ -21,6 +31,7 @@ const BulkSelectContext = createContext<MaybeNull<BulkSelectContextType>>(null);
 export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     const [selection, setSelection] = useState<BulkSelection>(new Map());
     const [enabled, setEnabled] = useState(false);
+    const locked = useRef(false);
 
     const context = useMemo<BulkSelectContextType>(() => {
         const clear = () => setSelection(new Map());
@@ -33,6 +44,10 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
             disable: () => {
                 setEnabled(false);
                 clear();
+            },
+            lock: () => {
+                locked.current = true;
+                return () => (locked.current = false);
             },
             enable: () => setEnabled(true),
             isSelected: ({ shareId, itemId }) => selection.get(shareId)?.has(itemId) ?? false,
@@ -52,11 +67,13 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useEffect(() => {
         const handleKeyUp = (event: KeyboardEvent) => {
+            if (locked.current) return;
             if (enabled && context.count === 0) context.disable();
             if (event.key === 'Shift') document.removeEventListener('keyup', handleKeyUp);
         };
 
         const handleKeyDown = (event: KeyboardEvent) => {
+            if (locked.current) return;
             if (!enabled && event.key === 'Shift') context.enable();
         };
 
