@@ -43,7 +43,7 @@ const getStorageSizeFeature = (storageSize: string, vpn?: boolean) => {
 
 export const getUnlimitedFeatures = () => {
     return [
-        getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+        getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
         {
             name: c('specialoffer: Deal details').t`All paid Mail and Calendar features`,
             tooltip: c('specialoffer: Tooltip')
@@ -64,7 +64,7 @@ export const getUnlimitedFeatures = () => {
 
 export const getMailDealFeatures = () => {
     return [
-        getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
+        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 })),
         {
             name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             tooltip: c('summer2023: Tooltip')
@@ -75,7 +75,7 @@ export const getMailDealFeatures = () => {
 
 export const getUnlimitedDealFeatures = () => {
     return [
-        getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+        getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
         {
             name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             tooltip: c('specialoffer: Tooltip')
@@ -165,7 +165,7 @@ const getEarlyAccessFeature = () => ({
 
 export const getMailPlusInboxFeatures = () => {
     return [
-        getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
+        getStorageSizeFeature(humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 })),
         {
             name: c('specialoffer: Deal details').t`1 user`,
         },
@@ -181,7 +181,7 @@ export const getUnlimitedVPNFeatures = () => [
 ];
 
 export const getUnlimitedInboxFeatures = () => [
-    getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+    getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
     { name: c('bf2023: Deal details').t`1 user` },
     getPremiumInboxFeature(3, 15),
     getPremiumNonInboxFeature(),
@@ -208,7 +208,7 @@ export const getVisionaryInboxFeatures = () => [
 ];
 
 export const getDriveFeatures = () => [
-    getStorageSizeFeature(humanSize(200 * 1024 ** 3, undefined, undefined, 0)),
+    getStorageSizeFeature(humanSize({ bytes: 200 * 1024 ** 3, fraction: 0 })),
     { name: c('bf2023: Deal details').t`1 user` },
     {
         name: c('bf2023: Deal details').t`Extended version history`,
@@ -217,7 +217,7 @@ export const getDriveFeatures = () => [
 ];
 
 export const getUnlimitedDriveFeatures = () => [
-    getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+    getStorageSizeFeature(humanSize({ bytes: 500 * 1024 ** 3, fraction: 0 })),
     { name: c('bf2023: Deal details').t`1 user` },
     getPremiumDriveFeature(),
     getPremiumInboxFeature(3, 15),

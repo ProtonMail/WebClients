@@ -13,7 +13,7 @@ interface Props extends ModalProps {
 }
 
 const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) => {
-    const bonusSpace = organization.BonusSpace && humanSize(organization.BonusSpace, 'GB');
+    const bonusSpace = organization.BonusSpace && humanSize({ bytes: organization.BonusSpace, unit: 'GB' });
 
     return (
         <Prompt

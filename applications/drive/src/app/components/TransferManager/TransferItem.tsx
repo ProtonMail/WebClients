@@ -42,7 +42,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     const percentageDone = isDone ? 100 : Math.floor(100 * (stats.progress / progressLimit));
 
     const progress = isDone ? progressLimit : stats.progress;
-    const speed = humanSize(stats.speed);
+    const speed = humanSize({ bytes: stats.speed });
 
     const isUploadingFolder = type === TransferType.Upload && transfer.meta.mimeType === 'Folder';
 

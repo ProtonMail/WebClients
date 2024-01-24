@@ -47,8 +47,8 @@ const Storage = ({
         fromApp: app,
     });
 
-    const humanUsedSpace = humanSize(appSpace.usedSpace);
-    const humanMaxSpace = humanSize(appSpace.maxSpace);
+    const humanUsedSpace = humanSize({ bytes: appSpace.usedSpace });
+    const humanMaxSpace = humanSize({ bytes: appSpace.maxSpace });
 
     const storageText = (
         <>
