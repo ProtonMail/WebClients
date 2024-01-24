@@ -80,6 +80,13 @@ export const handleDone = ({
     }
     const { authResponse, user, keyPassword } = setupData;
 
+    // Users that creates an account after a logout don't have appIntent, foring forcing it here
+    if (isElectronApp()) {
+        appIntent = {
+            app: APPS.PROTONMAIL,
+        };
+    }
+
     return {
         cache,
         session: {
@@ -134,16 +141,6 @@ export const handleSaveRecovery = async ({
 
     if (ignoreExplore) {
         return handleDone({ cache, appIntent: cache.appIntent });
-    }
-
-    // Users that creates an account after a logout don't have appIntent, foring forcing it here
-    if (isElectronApp()) {
-        return handleDone({
-            cache,
-            appIntent: {
-                app: APPS.PROTONMAIL,
-            },
-        });
     }
 
     return {
