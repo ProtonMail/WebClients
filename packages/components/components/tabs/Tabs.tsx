@@ -154,7 +154,7 @@ export const Tabs = ({
                                         aria-controls={key}
                                         tabIndex={0}
                                         aria-selected={selected}
-                                        data-testid={`tab-header-${title}-button`}
+                                        data-testid={`tab-header-${title.replace(/\s+/, '-').toLowerCase()}-button`}
                                     >
                                         <span className={clsx(variant === 'modern' && 'text-ellipsis block')}>
                                             {title}
