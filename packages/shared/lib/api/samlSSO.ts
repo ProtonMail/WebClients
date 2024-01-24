@@ -3,6 +3,11 @@ export const getSAMLConfigs = () => ({
     method: 'GET',
 });
 
+export const getSAMLStaticInfo = () => ({
+    url: 'core/v4/saml/sp/info',
+    method: 'GET',
+});
+
 export const setupSAMLUrl = (data: { DomainID: string; MetadataURL: string }) => ({
     url: 'core/v4/saml/setup/url',
     method: 'POST',
