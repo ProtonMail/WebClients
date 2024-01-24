@@ -11,8 +11,7 @@ import ElectronDraggeableHeader from './ElectronDraggeableHeader';
  * at places where Unleash is not yet available (e.g. the login page or some error pages).
  */
 const ElectronDraggeableHeaderWrapper = () => {
-    const isElectronOnMacComputers = isElectronOnMac();
-    if (!isElectronOnMacComputers) {
+    if (!isElectronOnMac) {
         return null;
     }
 

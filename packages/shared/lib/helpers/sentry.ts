@@ -176,8 +176,7 @@ function main({
     ignoreErrors = getDefaultIgnoreErrors(),
 }: SentryOptions) {
     const { SENTRY_DSN, SENTRY_DESKTOP_DSN, APP_VERSION } = config;
-    const isElectron = isElectronApp();
-    const sentryDSN = isElectron ? SENTRY_DESKTOP_DSN || SENTRY_DSN : SENTRY_DSN;
+    const sentryDSN = isElectronApp ? SENTRY_DESKTOP_DSN || SENTRY_DSN : SENTRY_DSN;
     const { host, release, environment } = sentryConfig;
 
     // No need to configure it if we don't load the DSN

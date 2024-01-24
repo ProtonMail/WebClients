@@ -43,7 +43,7 @@ export const ThemeInjector = () => {
     const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
-        const theme = isElectronApp()
+        const theme = isElectronApp
             ? {
                   ...electronAppTheme,
                   FontSize: themeSetting.FontSize,
