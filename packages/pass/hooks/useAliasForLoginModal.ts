@@ -10,16 +10,13 @@ import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { useAliasOptions } from './useAliasOptions';
 
-export const useAliasForLoginModal = <T extends LoginItemFormValues>(
-    form: FormikContextType<T>,
-    options: { lazy: boolean }
-) => {
+export const useAliasForLoginModal = <T extends LoginItemFormValues>(form: FormikContextType<T>) => {
     const [aliasModalOpen, setAliasModalOpen] = useState(false);
 
     const { values } = form;
     const { withAlias, username, aliasPrefix } = values;
 
-    const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: options.lazy });
+    const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: true });
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const canCreateAlias = !relatedAlias && !withAlias;
@@ -40,7 +37,7 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
     }, [relatedAlias]);
 
     useEffect(() => {
-        if (options.lazy && aliasModalOpen) aliasOptions.request();
+        if (aliasModalOpen) aliasOptions.request();
     }, [aliasModalOpen]);
 
     return {
@@ -50,7 +47,6 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
         canCreate: canCreateAlias,
         willCreate: willCreateAlias,
         usernameIsAlias,
-        aliasOptions: aliasOptions.value,
-        loading: aliasOptions.loading,
+        aliasOptions: aliasOptions,
     };
 };
