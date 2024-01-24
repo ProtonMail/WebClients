@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Info, TableCell } from '@proton/components/components';
-import { vpnB2bAdminTooltipTitle } from '@proton/components/containers/members/constants';
+import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -24,7 +24,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
                 <span>{c('Title header for members table').t`Role`}</span>
                 <span className="hidden md:inline">
                     <Info
-                        title={mode === UserManagementMode.VPN_B2B ? vpnB2bAdminTooltipTitle : undefined}
+                        title={mode === UserManagementMode.VPN_B2B ? adminTooltipText : undefined}
                         url={mode === UserManagementMode.DEFAULT ? getKnowledgeBaseUrl('/user-roles') : undefined}
                     />
                 </span>
