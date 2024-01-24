@@ -25,7 +25,6 @@ const getRecurringUpdateAllPossibilities = ({
     recurrence,
     isOrganizer,
     hasSingleEdits,
-    cancelSingleOccurrenceEnabled,
 }: {
     originalVeventComponent: VcalVeventComponent;
     oldVeventComponent: VcalVeventComponent;
@@ -33,7 +32,6 @@ const getRecurringUpdateAllPossibilities = ({
     recurrence: CalendarEventRecurring;
     isOrganizer: boolean;
     hasSingleEdits: boolean;
-    cancelSingleOccurrenceEnabled: boolean;
 }) => {
     const isEditingSingleEdit = getHasRecurrenceId(oldVeventComponent);
     // If editing a single edit, we can use the dtstart as is...
@@ -69,7 +67,7 @@ const getRecurringUpdateAllPossibilities = ({
      * For series with attendees and single modifications,
      * when the change is not a breaking one we want to preserve the modifications
      */
-    if (cancelSingleOccurrenceEnabled && isOrganizer && !hasModifiedDateTimes && isRruleEqual && !hasSingleEdits && !isEditingSingleEdit) {
+    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual && !hasSingleEdits && !isEditingSingleEdit) {
         return {
             updateAllPossibilities: UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS,
             hasModifiedDateTimes,
