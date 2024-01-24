@@ -6,7 +6,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import type { Item, ItemMap, ItemRevision, ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
+import type { Item, ItemMap, ItemRevision, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { DomainIcon, ImageStatus } from './DomainIcon';
@@ -27,11 +27,11 @@ type BaseItemIconProps = {
     icon: IconName;
     iconClassName?: string;
     loadImage?: boolean;
+    normColor?: boolean;
     pill?: boolean;
     size: IconSize;
     url?: MaybeNull<string>;
-    renderIndicators?: () => ReactNode;
-    normColor?: boolean;
+    renderIndicators?: (size: IconSize) => ReactNode;
 };
 
 export const ItemIcon: FC<BaseItemIconProps> = ({
@@ -40,11 +40,11 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
     icon,
     iconClassName,
     loadImage = true,
+    normColor = true,
     pill,
     size,
     url,
     renderIndicators,
-    normColor = true,
 }) => {
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
@@ -81,20 +81,21 @@ export const ItemIcon: FC<BaseItemIconProps> = ({
                 />
             )}
 
-            {renderIndicators?.()}
+            {renderIndicators?.(size)}
         </IconBox>
     );
 };
 
-type ItemIconProps<T extends ItemRevision> = {
+type ItemIconProps = {
     className: string;
-    item: T;
+    iconClassName?: string;
+    item: ItemRevision;
     pill?: boolean;
     size: IconSize;
-    renderIndicators?: () => ReactNode;
+    renderIndicators?: (size: IconSize) => ReactNode;
 };
 
-export const SafeItemIcon: FC<ItemIconProps<ItemRevision>> = ({ className, item, pill, size, renderIndicators }) => {
+export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item, pill, size, renderIndicators }) => {
     const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
@@ -104,34 +105,31 @@ export const SafeItemIcon: FC<ItemIconProps<ItemRevision>> = ({ className, item,
             alt={data.type}
             className={className}
             icon={presentItemIcon(data)}
+            iconClassName={iconClassName}
             loadImage={loadDomainImages}
             pill={pill}
-            renderIndicators={renderIndicators}
+            renderIndicators={(size) => renderIndicators?.(size)}
             size={size}
             url={domainURL}
         />
     );
 };
 
-export const OptimisticItemIcon: FC<ItemIconProps<ItemRevisionWithOptimistic>> = (props) => {
-    const { optimistic, failed } = props.item;
+type ItemIconIndicatorsProps = { size: IconSize; loading: boolean; error: boolean };
 
-    const renderIndicators = () => {
-        if (failed) {
-            return (
-                <Icon
-                    className="absolute inset-center"
-                    color="var(--signal-warning)"
-                    name="exclamation-circle-filled"
-                    size={props.size}
-                />
-            );
-        }
+export const ItemIconIndicators: FC<ItemIconIndicatorsProps> = ({ size, loading, error }) => {
+    if (error) {
+        return (
+            <Icon
+                className="absolute inset-center"
+                color="var(--signal-warning)"
+                name="exclamation-circle-filled"
+                size={size}
+            />
+        );
+    }
 
-        if (optimistic) {
-            return <CircleLoader size="small" className="z-up color-primary absolute inset-center opacity-60" />;
-        }
-    };
+    if (loading) return <CircleLoader size="small" className="z-up color-primary absolute inset-center opacity-60" />;
 
-    return <SafeItemIcon {...props} renderIndicators={renderIndicators} />;
+    return null;
 };
