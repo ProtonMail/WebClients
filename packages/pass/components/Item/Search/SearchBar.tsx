@@ -28,7 +28,7 @@ const SEARCH_DEBOUNCE_TIME = 75;
 
 const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
-    const { filters, setFilters } = useNavigation();
+    const { filters, setFilters, matchTrash } = useNavigation();
     const bulk = useBulkSelect();
 
     const [search, setSearch] = useState<string>(initial ?? '');
@@ -42,19 +42,21 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const placeholder = useMemo(() => {
         const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
         const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
-        const vaultName = vault?.content.name.trim();
+        const vaultName = matchTrash ? c('Label').t`Trash` : vault?.content.name.trim();
 
         switch (type) {
             case '*':
-                return vault ? c('Placeholder').t`Search in ${vaultName}` : c('Placeholder').t`Search in all vaults`;
+                return vault || matchTrash
+                    ? c('Placeholder').t`Search in ${vaultName}`
+                    : c('Placeholder').t`Search in all vaults`;
             default: {
                 // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
-                return vault
+                return vault || matchTrash
                     ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
                     : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
             }
         }
-    }, [vault, type]);
+    }, [vault, type, matchTrash]);
 
     const handleClear = () => {
         setSearch('');
