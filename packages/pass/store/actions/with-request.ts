@@ -4,11 +4,13 @@ import type { Action } from 'redux';
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type RequestType = 'start' | 'failure' | 'success' | 'progress';
-/* optionally adds the extra data property on the `RequestOptions` */
+
+/** Optionally adds the extra data property on the `RequestOptions` */
 export type WithOptionalData<Req, Data> = Req & (Data extends undefined ? {} : { data: Data });
 
-/* For proper inference when creating action creators, `Data` type defaults to `undefined`
- * in order to avoid having to define the `data` in the request options when not used. */
+/** `RequestOptions` is designed for proper type inference when using
+ * request action enhancers. The `Data` type defaults to `undefined` to
+ * avoid requiring `data` when using the request action enhancers */
 export type RequestOptions<Type extends RequestType = RequestType, Data = undefined> = WithOptionalData<
     Extract<
         | { type: 'start'; id: string; revalidate?: boolean }
@@ -20,9 +22,9 @@ export type RequestOptions<Type extends RequestType = RequestType, Data = undefi
     Data
 >;
 
-/* request progress union type when tracking progress */
-export type RequestProgress<T> =
-    | { type: 'progress'; value: number }
+/** Request progress union type when tracking progress events */
+export type RequestProgress<T, D = T> =
+    | { type: 'progress'; progress: number; data: D }
     | { type: 'done'; result: T }
     | { type: 'error'; error: unknown };
 

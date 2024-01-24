@@ -7,7 +7,7 @@ import { objectDelete } from '@proton/pass/utils/object/delete';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
-export type RequestEntry<Type extends RequestType = RequestType, Data = undefined> = Extract<
+export type RequestEntry<Type extends RequestType = RequestType, Data = any> = Extract<
     | { status: 'start'; progress?: number }
     | { status: 'success'; expiresAt?: number }
     | { status: 'failure'; expiresAt?: number },
@@ -23,7 +23,11 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
 
         switch (request.type) {
             case 'start':
-                nextState[request.id] = { status: request.type, progress: 0, data: undefined };
+                nextState[request.id] = {
+                    status: request.type,
+                    progress: 0,
+                    data: 'data' in request ? request.data : undefined,
+                };
                 return nextState;
 
             case 'progress':
@@ -36,7 +40,7 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
             case 'success':
                 nextState[request.id] = {
                     status: request.type,
-                    data: ('data' in request ? request.data : undefined) as any,
+                    data: 'data' in request ? request.data : undefined,
                     ...(request.maxAge ? { expiresAt: getEpoch() + request.maxAge } : { expiresAt: undefined }),
                 };
                 return nextState;
