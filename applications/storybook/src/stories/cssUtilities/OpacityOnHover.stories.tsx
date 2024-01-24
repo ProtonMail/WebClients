@@ -1,3 +1,5 @@
+import { Button } from '@proton/atoms/Button';
+
 import { getTitle } from '../../helpers/title';
 import mdx from './OpacityOnHover.mdx';
 
@@ -13,23 +15,16 @@ export default {
 export const OpacityOnHover = () => (
     <div className="group-hover-opacity-container">
         hover or focus me, pikaaaaa…
-        <button type="button" className="button ml-4 button-outline-weak group-hover:opacity-100">
-            CHU
-        </button>
+        <Button className="ml-4 group-hover:opacity-100">CHU</Button>
     </div>
 );
 
 export const OpacityOnHoverNoWidth = () => (
     <div className="group-hover-opacity-container">
         This is the group container, hover me
-        <button
-            type="button"
-            className="button ml-4 button-outline-weak group-hover:opacity-100 group-hover:opacity-100-no-width"
-        >
-            Hidden Button
-        </button>
-        <button type="button" className="button ml-4 button-outline-weak">
+        <Button className="ml-4 group-hover:opacity-100 group-hover:opacity-100-no-width">Hidden Button</Button>
+        <Button type="button" className="ml-4">
             Button
-        </button>
+        </Button>
     </div>
 );
