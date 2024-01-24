@@ -1,6 +1,6 @@
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
-import type { Item } from './items';
+import type { IndexedByShareIdAndItemId, Item } from './items';
 
 type AliasMailbox = {
     id: number;
@@ -57,4 +57,6 @@ export type ItemImportIntent<T extends ItemType = ItemType> = Item<T, ItemImport
     modifyTime?: number;
 };
 
-export type ItemIdsByShareId = { [shareId: string]: string[] };
+/** This data-structure does not uses lists to avoid
+ * iterations when checking for inclusions  */
+export type BulkSelectionDTO = IndexedByShareIdAndItemId<true>;
