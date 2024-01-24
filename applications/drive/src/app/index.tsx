@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import '@proton/polyfill';
 
@@ -7,4 +7,6 @@ import UrlsApp from './UrlsApp';
 import './style';
 
 const publicUrl = window.location.pathname.startsWith('/urls');
-ReactDOM.render(publicUrl ? <UrlsApp /> : <App />, document.querySelector('.app-root'));
+const container = document.querySelector('.app-root');
+const root = createRoot(container!);
+root.render(publicUrl ? <UrlsApp /> : <App />);
