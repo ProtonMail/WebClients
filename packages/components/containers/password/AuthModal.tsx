@@ -29,7 +29,6 @@ import {
     useFormErrors,
 } from '../../components';
 import { useApi, useConfig, useErrorHandler, useUser, useUserSettings } from '../../hooks';
-import { useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import TotpInputs from '../account/totp/TotpInputs';
 import { getAuthTypes } from './getAuthTypes';
@@ -169,7 +168,7 @@ interface Props extends Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'on
     onCancel: (() => void) | undefined;
     onError?: (error: any) => void;
     prioritised2FAItem?: 'fido2' | 'totp';
-    onSessionRecovery?: () => void;
+    onRecoveryClick?: () => void;
 }
 
 const AuthModal = ({
@@ -179,7 +178,7 @@ const AuthModal = ({
     onClose,
     onCancel,
     prioritised2FAItem = 'fido2',
-    onSessionRecovery,
+    onRecoveryClick,
     ...rest
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -192,7 +191,6 @@ const AuthModal = ({
     const hasBeenAutoSubmitted = useRef(false);
     const errorHandler = useErrorHandler();
     const [fidoError, setFidoError] = useState(false);
-    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
@@ -303,8 +301,8 @@ const AuthModal = ({
                             loading={submitting}
                         />
 
-                        {onSessionRecovery && isSessionRecoveryInitiationAvailable && (
-                            <Button shape="underline" color="norm" onClick={onSessionRecovery}>
+                        {onRecoveryClick && (
+                            <Button shape="underline" color="norm" onClick={onRecoveryClick}>
                                 {c('Action').t`Don't know your password?`}
                             </Button>
                         )}
