@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ShareItem } from '@proton/pass/store/reducers';
@@ -35,7 +36,7 @@ export const VaultInviteFromItemModal: FC<Props> = ({
     const { vaultLimitReached } = useSelector(selectVaultLimits);
 
     return (
-        <ModalTwo size="small" enableCloseWhenClickOutside onClose={onClose} {...props}>
+        <PassModal size="small" enableCloseWhenClickOutside onClose={onClose} {...props}>
             <ModalTwoHeader
                 title={c('Action').t`Share`}
                 subline={c('Info').t`Use vaults to share this item with others.`}
@@ -87,6 +88,6 @@ export const VaultInviteFromItemModal: FC<Props> = ({
                     </Button>
                 )}
             </ModalTwoFooter>
-        </ModalTwo>
+        </PassModal>
     );
 };

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
+import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -28,6 +29,7 @@ const SEARCH_DEBOUNCE_TIME = 75;
 const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
     const { filters, setFilters } = useNavigation();
+    const bulk = useBulkSelect();
 
     const [search, setSearch] = useState<string>(initial ?? '');
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
@@ -60,9 +62,13 @@ const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
         inputRef.current?.focus();
     };
 
-    const handleFocus = () => inputRef.current?.select();
+    const handleFocus = () => {
+        bulk.lock();
+        inputRef.current?.select();
+    };
 
     const handleBlur = () => {
+        bulk.unlock();
         if (isEmptyString(search)) return;
         void onTelemetry(createTelemetryEvent(TelemetryEventName.SearchTriggered, {}, {}));
     };
