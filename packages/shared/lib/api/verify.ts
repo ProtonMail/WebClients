@@ -24,3 +24,13 @@ export const postVerifyPhone = () => ({
     url: 'core/v4/verify/phone',
     method: 'post',
 });
+
+export const reauthByEmailVerification = () => ({
+    url: 'core/v4/verify/reauth/email',
+    method: 'POST',
+});
+
+export const reauthBySmsVerification = () => ({
+    url: 'core/v4/verify/reauth/phone',
+    method: 'POST',
+});
