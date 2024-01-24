@@ -31,21 +31,18 @@ import noop from '@proton/utils/noop';
 const FORM_ID = 'new-alias';
 
 export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
-    const { domain, subdomain, displayName } = url ?? {};
+    const { domain, subdomain } = url ?? {};
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const userVerified = useSelector(selectUserVerified);
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
-        const url = subdomain ?? domain ?? '';
-        const validURL = url !== null;
+        const url = subdomain ?? domain;
 
-        return {
-            name: validURL ? url : '',
-            note: validURL ? c('Placeholder').t`Used on ${url}` : '',
-            aliasPrefix: displayName ? deriveAliasPrefix(displayName) : '',
-        };
+        return url
+            ? { name: url, note: c('Placeholder').t`Used on ${url}`, aliasPrefix: deriveAliasPrefix(url) }
+            : { name: '', note: '', aliasPrefix: '' };
     }, []);
 
     /* set initial `aliasPrefix` to an empty string to avoid a
@@ -114,11 +111,15 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
 
             if (draft) {
                 await form.setValues(values);
+                await form.setTouched({ aliasPrefix: deriveAliasPrefix(draft.name) !== draft.aliasPrefix });
                 form.setErrors(errors);
-            } else form.resetForm({ values, errors });
+            } else form.resetForm({ values, errors, touched: { aliasPrefix: false } });
         },
         lazy: !userVerified,
     });
+
+    const { values, touched, setFieldValue } = form;
+    const { name, aliasPrefix, aliasSuffix } = values;
 
     const draft = useItemDraft<NewAliasFormValues>(form, {
         type: 'alias',
@@ -126,26 +127,23 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         onHydrated: draftHydrated.resolve,
     });
 
-    const { values, touched, setFieldValue } = form;
-    const { name, aliasPrefix, aliasSuffix } = values;
-
     useEffect(() => {
-        /* update the aliasPrefix with the item's name only :
-        - if it hasn't been touched by the user yet
-        - a default alias prefix was not resolved  */
-        void draftHydrated.then((hydrated) => {
-            if (!hydrated && !defaultAliasPrefix && !touched.aliasPrefix) {
-                setFieldValue('aliasPrefix', deriveAliasPrefix(name), true).catch(noop);
-            }
-        });
-    }, [name, touched.aliasPrefix]);
+        draftHydrated
+            .then(() => {
+                const allowPrefixDerivation = !touched.aliasPrefix;
+                if (allowPrefixDerivation) void setFieldValue('aliasPrefix', deriveAliasPrefix(name), true);
+            })
+            .catch(noop);
+    }, [name]);
+
+    const ready = !aliasOptions.loading;
 
     return (
         <ItemCreatePanel
             type="alias"
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            valid={form.isValid && userVerified && !needsUpgrade}
+            valid={ready && form.isValid && userVerified && !needsUpgrade}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={
@@ -179,10 +177,10 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={!draft && didEnter && !needsUpgrade}
-                                    key={`alias-name-${didEnter}`}
+                                    autoFocus={!draft && didEnter && ready && !needsUpgrade}
+                                    key={`alias-name-${didEnter}-${ready}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
-                                    disabled={!userVerified}
+                                    disabled={!(userVerified && ready)}
                                 />
                             </FieldsetCluster>
 
@@ -190,7 +188,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                 <ValueControl
                                     icon="alias"
                                     label={c('Label').t`You are about to create`}
-                                    loading={aliasOptions.loading}
+                                    loading={!ready}
                                     error={Boolean(
                                         Object.keys(form.touched).length > 0 &&
                                             (form.errors.aliasPrefix || form.errors.aliasSuffix)
@@ -200,7 +198,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
                                 </ValueControl>
                             </FieldsetCluster>
 
-                            <AliasForm aliasOptions={aliasOptions.value} loading={aliasOptions.loading} form={form} />
+                            <AliasForm aliasOptions={aliasOptions.value} loading={!ready} form={form} />
 
                             <FieldsetCluster>
                                 <Field
