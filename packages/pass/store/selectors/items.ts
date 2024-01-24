@@ -17,7 +17,7 @@ import type {
     SelectItemsOptions,
 } from '@proton/pass/lib/search/types';
 import type {
-    ItemIdsByShareId,
+    BulkSelectionDTO,
     ItemRevision,
     ItemRevisionWithOptimistic,
     ItemType,
@@ -48,9 +48,9 @@ export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => fi
 export const selectResolvedOptimisticId = (optimisticId: string) =>
     createSelector(selectByOptimisticIds, (optimisticIds) => optimisticId in optimisticIds);
 
-export const selectItemsFromSelection = (itemIdsByShareId: ItemIdsByShareId) => (state: State) =>
-    Object.entries(itemIdsByShareId).flatMap(([shareId, itemIds]) =>
-        itemIds.map((itemId) => state.items.byShareId[shareId][itemId])
+export const selectItemsFromBulkSelectionDTO = (dto: BulkSelectionDTO) => (state: State) =>
+    Object.entries(dto).flatMap(([shareId, itemIds]) =>
+        Object.keys(itemIds).map((itemId) => state.items.byShareId[shareId][itemId])
     );
 
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);

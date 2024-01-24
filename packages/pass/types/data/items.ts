@@ -104,3 +104,5 @@ export type ItemFilters = {
     sort: ItemSortFilter;
     type: ItemTypeFilter;
 };
+
+export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };

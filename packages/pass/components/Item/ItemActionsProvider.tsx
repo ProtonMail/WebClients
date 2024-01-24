@@ -7,16 +7,16 @@ import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import { itemBulkMoveIntent, itemBulkTrashIntent, itemMoveIntent, itemTrashIntent } from '@proton/pass/store/actions';
-import type { ItemIdsByShareId, ItemRevision, MaybeNull } from '@proton/pass/types';
+import type { BulkSelectionDTO, ItemRevision, MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 /** Ongoing: move every item action definition to this
  * context object. This context should be loosely connected */
 type ItemActionsContextType = {
     move: (item: ItemRevision, mode: VaultSelectMode) => void;
-    moveMany: (items: ItemIdsByShareId) => void;
+    moveMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
-    trashMany: (items: ItemIdsByShareId) => void;
+    trashMany: (items: BulkSelectionDTO) => void;
 };
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -38,8 +38,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         closeVaultSelect();
     };
 
-    const moveManyItems = (itemsByShareId: ItemIdsByShareId) => (destinationShareId: string) => {
-        dispatch(itemBulkMoveIntent({ itemsByShareId, destinationShareId }));
+    const moveManyItems = (selected: BulkSelectionDTO) => (destinationShareId: string) => {
+        dispatch(itemBulkMoveIntent({ selected, destinationShareId }));
         bulk.disable();
         closeVaultSelect();
     };
@@ -48,8 +48,8 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
         dispatch(itemTrashIntent({ itemId: item.itemId, shareId: item.shareId, item }));
     };
 
-    const trashManyItems = (itemsByShareId: ItemIdsByShareId) => {
-        dispatch(itemBulkTrashIntent({ itemsByShareId }));
+    const trashManyItems = (selected: BulkSelectionDTO) => {
+        dispatch(itemBulkTrashIntent({ selected }));
         bulk.disable();
     };
 

@@ -51,7 +51,7 @@ import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-call
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import type { ItemType } from '@proton/pass/types';
+import type { IndexedByShareIdAndItemId, ItemType } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
 import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -62,7 +62,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 
 /** itemIds are only guaranteed to be unique per share not globally,
  * therefore we must index the item entries by `shareId`  */
-export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };
+
 export type ItemsByShareId = IndexedByShareIdAndItemId<ItemRevision>;
 
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(

@@ -7,14 +7,17 @@ import { Icon } from '@proton/components';
 import { type BulkSelection, useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import type { ItemIdsByShareId } from '@proton/pass/types';
+import type { BulkSelectionDTO } from '@proton/pass/types';
 
-/** FIXME: SelectedItem[] could be a more appropriate data structure.
- * That way sagas can handle batching */
-const normalizeBulkSelection = (selection: BulkSelection): ItemIdsByShareId =>
-    Object.fromEntries(
-        Array.from(selection.entries()).map(([shareId, itemIds]) => [shareId, Array.from(itemIds?.values() ?? [])])
-    );
+const bulkSelectionDTO = (selection: BulkSelection): BulkSelectionDTO =>
+    Array.from(selection.keys()).reduce<BulkSelectionDTO>((dto, shareId) => {
+        dto[shareId] = {};
+        selection.get(shareId)?.forEach((itemId) => {
+            dto[shareId][itemId] = true;
+        });
+
+        return dto;
+    }, {});
 
 export const BulkActions: FC = () => {
     const { matchTrash } = useNavigation();
@@ -37,7 +40,7 @@ export const BulkActions: FC = () => {
                 size="small"
                 color="weak"
                 icon
-                onClick={() => moveMany(normalizeBulkSelection(selection))}
+                onClick={() => moveMany(bulkSelectionDTO(selection))}
                 title={c('Action').t`Bulk move items to another vault`}
             >
                 <Icon name="folder-arrow-in" />
@@ -48,7 +51,7 @@ export const BulkActions: FC = () => {
                 color="weak"
                 icon
                 title={c('Action').t`Bulk move items to trash`}
-                onClick={() => trashMany(normalizeBulkSelection(selection))}
+                onClick={() => trashMany(bulkSelectionDTO(selection))}
             >
                 <Icon name="trash" />
             </Button>
