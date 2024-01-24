@@ -1,7 +1,6 @@
 @import '~@proton/styles/scss/proton-wallet';
 
-.light-gradient-card {
-	border: solid 1px var(--background-weak);
+.bg-gradient-weak-norm {
 	background: linear-gradient(180deg, var(--background-weak) 0%, var(--background-norm) 100%);
 }
 
@@ -12,10 +11,4 @@
 		var(--interaction-norm-minor-1) 37.43%,
 		var(--signal-warning) 100%
 	);
-}
-
-.full-height-content {
-	> div {
-		block-size: 100%;
-	}
 }
