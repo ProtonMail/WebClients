@@ -2,6 +2,8 @@ import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type {
     AliasAndItemCreateRequest,
+    BatchItemRevisionIDs,
+    BatchItemRevisions,
     CustomAliasCreateRequest,
     ImportItemBatchRequest,
     ImportItemRequest,
@@ -14,9 +16,7 @@ import type {
     ItemRevisionContentsResponse,
     ItemType,
     Maybe,
-    SelectedItem,
 } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -144,19 +144,13 @@ export const moveItem = async (
     return parseItemRevision(destinationShareId, encryptedItem);
 };
 
-export type MovedItemsBatch = {
-    /** original shareId the moved items belonged to */
-    shareId: string;
-    /** itemIds that were moved */
-    itemIds: string[];
-    /** the moved items  */
-    movedItems: ItemRevision[];
-};
-
 export const moveItems = async (
     items: ItemRevision[],
     destinationShareId: string,
-    onBatch?: (batch: MovedItemsBatch, progress: number) => void,
+    onBatch?: (
+        data: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string },
+        progress: number
+    ) => void,
     progress: number = 0
 ): Promise<ItemRevision[]> =>
     (
@@ -180,15 +174,7 @@ export const moveItems = async (
                 const decryptedItems = Items!.map((encrypted) => parseItemRevision(destinationShareId, encrypted));
                 const movedItems = await Promise.all(decryptedItems);
 
-                onBatch?.(
-                    {
-                        itemIds: data.Items.map(prop('ItemID')),
-                        movedItems,
-                        shareId,
-                    },
-                    (progress += movedItems.length)
-                );
-
+                onBatch?.({ batch: items, movedItems, shareId, destinationShareId }, (progress += movedItems.length));
                 return movedItems;
             })
         )
@@ -196,7 +182,7 @@ export const moveItems = async (
 
 export const trashItems = async (
     items: ItemRevision[],
-    onBatch?: (batch: SelectedItem[], progress: number) => void,
+    onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
     progress: number = 0
 ) =>
     (
@@ -208,35 +194,51 @@ export const trashItems = async (
                     data: { Items },
                 });
 
-                const batch = (response?.Items ?? []).map(({ ItemID }) => ({ shareId, itemId: ItemID }));
-                onBatch?.(batch, (progress += batch.length));
-
+                onBatch?.({ shareId, batch: Items }, (progress += Items.length));
                 return response;
             })
         )
     ).flatMap(({ Items }) => Items ?? []);
 
-export const restoreItems = (items: ItemRevision[]) =>
-    Promise.all(
-        batchByShareId(items, mapToRevision).map(({ shareId, items: Items }) =>
-            api({
-                url: `pass/v1/share/${shareId}/item/untrash`,
-                method: 'post',
-                data: { Items },
-            })
-        )
-    );
+export const restoreItems = async (
+    items: ItemRevision[],
+    onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
+    progress: number = 0
+) =>
+    (
+        await Promise.all(
+            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+                const response = await api({
+                    url: `pass/v1/share/${shareId}/item/untrash`,
+                    method: 'post',
+                    data: { Items },
+                });
 
-export const deleteItems = (items: ItemRevision[]) =>
-    Promise.all(
-        batchByShareId(items, mapToRevision).map(({ shareId, items: Items }) =>
-            api({
-                url: `pass/v1/share/${shareId}/item`,
-                method: 'delete',
-                data: { Items },
+                onBatch?.({ shareId, batch: Items }, (progress += Items.length));
+                return response;
             })
         )
-    );
+    ).flatMap(({ Items }) => Items ?? []);
+
+export const deleteItems = async (
+    items: ItemRevision[],
+    onBatch?: (data: BatchItemRevisionIDs, progress: number) => void,
+    progress: number = 0
+) =>
+    (
+        await Promise.all(
+            batchByShareId(items, mapToRevision).map(async ({ shareId, items: Items }) => {
+                await api({
+                    url: `pass/v1/share/${shareId}/item`,
+                    method: 'delete',
+                    data: { Items },
+                });
+
+                onBatch?.({ shareId, batch: Items }, (progress += items.length));
+                return Items;
+            })
+        )
+    ).flat();
 
 export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
     (
@@ -249,7 +251,7 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
 
 export const requestAllItemsForShareId = async (
     shareId: string,
-    onBatch?: (count: number) => void
+    onBatch?: (progress: number) => void
 ): Promise<ItemRevisionContentsResponse[]> => {
     const pageIterator = async (count: number, Since?: string): Promise<ItemRevisionContentsResponse[]> => {
         const { Items } = await api({

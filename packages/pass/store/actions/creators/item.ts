@@ -21,6 +21,8 @@ import withSynchronousClientAction from '@proton/pass/store/actions/with-synchro
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
 import type {
+    BatchItemRevisionIDs,
+    BatchItemRevisions,
     BulkSelectionDTO,
     ItemCreateIntent,
     ItemEditIntent,
@@ -182,9 +184,8 @@ export const itemBulkMoveFailure = createAction(
 
 export const itemBulkMoveProgress = createAction(
     'item::bulk::move::progress',
-    withRequestProgress(
-        (payload: { shareId: string; itemIds: string[]; movedItems: ItemRevision[]; destinationShareId: string }) =>
-            withCache({ payload })
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }) =>
+        withCache({ payload })
     )
 );
 
@@ -259,7 +260,7 @@ export const itemBulkTrashFailure = createAction(
 
 export const itemBulkTrashProgress = createAction(
     'item::bulk::trash::progress',
-    withRequestProgress((payload: SelectedItem[]) => withCache({ payload }))
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
 );
 
 export const itemBulkTrashSuccess = createAction(
@@ -267,7 +268,7 @@ export const itemBulkTrashSuccess = createAction(
     withRequestSuccess((payload: {}) =>
         withNotification({
             type: 'info',
-            text: c('Info').t`All items successfully moved to trash`,
+            text: c('Info').t`Selected items successfully moved to trash`,
         })({ payload })
     )
 );

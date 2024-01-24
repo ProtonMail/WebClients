@@ -43,7 +43,6 @@ import {
     shareLeaveSuccess,
     sharesSync,
     syncSuccess,
-    vaultDeleteIntent,
     vaultDeleteSuccess,
     vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
@@ -53,6 +52,7 @@ import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/c
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { IndexedByShareIdAndItemId, ItemType } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { objectFilter } from '@proton/pass/utils/object/filter';
@@ -291,20 +291,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime: getEpoch() } } });
         }
 
-        if (vaultDeleteIntent.match(action)) {
-            return objectDelete(state, action.payload.shareId);
-        }
-
-        if (vaultDeleteSuccess.match(action)) {
-            return objectDelete(state, action.payload.shareId);
-        }
-
-        if (vaultMoveAllItemsProgress.match(action)) {
-            const { shareId, movedItems, destinationShareId } = action.payload;
-            return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
-        }
-
-        if (or(shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 
@@ -312,19 +299,20 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
         }
 
-        if (itemBulkMoveProgress.match(action)) {
-            const { shareId, itemIds, destinationShareId, movedItems } = action.payload;
+        if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {
+            const { shareId, batch, destinationShareId, movedItems } = action.payload;
             return fullMerge(
-                { ...state, [shareId]: objectFilter(state[shareId], notIn(itemIds)) },
+                { ...state, [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) },
                 { [destinationShareId]: toMap(movedItems, 'itemId') }
             );
         }
 
         if (itemBulkTrashProgress.match(action)) {
-            const update = action.payload.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>(
-                (acc, { itemId, shareId }) => {
+            const shareId = action.payload.shareId;
+            const update = action.payload.batch.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>(
+                (acc, { ItemID }) => {
                     acc[shareId] = acc[shareId] ?? {};
-                    acc[shareId][itemId] = { state: ItemState.Trashed };
+                    acc[shareId][ItemID] = { state: ItemState.Trashed };
                     return acc;
                 },
                 {}
