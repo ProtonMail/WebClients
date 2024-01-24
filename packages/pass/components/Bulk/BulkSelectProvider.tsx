@@ -23,6 +23,7 @@ type BulkSelectContextType = {
     isSelected: (item: { shareId: string; itemId: string }) => boolean;
     lock: () => () => void;
     select: ({ shareId, itemId }: SelectedItem) => void;
+    unlock: () => void;
     unselect: ({ shareId, itemId }: SelectedItem) => void;
 };
 
@@ -41,22 +42,28 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
             enabled,
             selection,
             clear,
+
+            enable: () => setEnabled(true),
             disable: () => {
                 setEnabled(false);
                 clear();
             },
+
+            unlock: () => (locked.current = false),
             lock: () => {
                 locked.current = true;
                 return () => (locked.current = false);
             },
-            enable: () => setEnabled(true),
+
             isSelected: ({ shareId, itemId }) => selection.get(shareId)?.has(itemId) ?? false,
+
             select: ({ shareId, itemId }) =>
                 setSelection((curr) => {
                     const shareSet = curr.get(shareId) ?? new Set();
                     shareSet.add(itemId);
                     return new Map(curr.set(shareId, shareSet));
                 }),
+
             unselect: ({ shareId, itemId }) =>
                 setSelection((curr) => {
                     curr.get(shareId)?.delete(itemId);
