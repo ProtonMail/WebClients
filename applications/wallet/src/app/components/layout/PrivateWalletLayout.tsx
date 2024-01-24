@@ -28,7 +28,6 @@ export const PrivateWalletLayout = ({ children }: Props) => {
         >
             <PrivateMainArea
                 hasToolbar
-                className="full-height-content"
                 data-testid="wallet-view:events-area"
                 drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
                 drawerVisibilityButton={<DrawerVisibilityButton />}

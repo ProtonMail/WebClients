@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
 
@@ -31,14 +31,13 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
         <div className="mt-14">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
 
-            <div className="flex flex-row">
+            <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
                 <Card
                     data-testid="lightning-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mx-auto mt-4 py-3"
-                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
+                    className="w-full bg-gradient-weak-norm border-weak py-3"
                 >
-                    <div className="flex flex-row justify-space-between w-full">
+                    <div className="flex justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
                         <Pill color="#AD7406">Lightning</Pill>
                     </div>
@@ -46,7 +45,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-auto text-2xl"
+                        className="mt-4 text-2xl"
                         fiatClassName="mb-1"
                     >
                         {lightningBalance ?? 0}
@@ -56,10 +55,9 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                 <Card
                     data-testid="onchain-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mx-auto mt-4 py-3"
-                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
+                    className="w-full bg-gradient-weak-norm border-weak py-3"
                 >
-                    <div className="flex flex-row justify-space-between w-full">
+                    <div className="flex justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
                         <Pill color="#12869F">OnChain</Pill>
                     </div>
@@ -67,24 +65,24 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-auto text-2xl"
+                        className="mt-4 text-2xl"
                         fiatClassName="mb-1"
                     >
                         {onchainBalance ?? 0}
                     </BitcoinAmount>
                 </Card>
 
-                <ButtonLike
-                    rounded
-                    className="light-gradient-card flex w-custom h-custom mx-auto mt-4"
-                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
-                    as={Card}
+                <Button
+                    shape="outline"
+                    color="weak"
+                    fullWidth
+                    className="border-weak flex"
                     onClick={() => {
                         onAddWallet();
                     }}
                 >
-                    <div className="m-auto color-primary text-2xl">{c('Wallet Dashboard').t`Add wallet`}</div>
-                </ButtonLike>
+                    <div className="m-auto color-primary">{c('Wallet Dashboard').t`Add wallet`}</div>
+                </Button>
             </div>
         </div>
     );

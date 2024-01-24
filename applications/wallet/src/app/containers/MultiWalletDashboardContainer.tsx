@@ -14,16 +14,14 @@ export const MultiWalletDashboardContainer = () => {
 
     return (
         <>
-            <div className="flex flex-row w-full h-full flex-nowrap grow">
-                <div className="flex-1 p-8">
-                    <BalanceOverview wallets={wallets} />
-                    <YourWalletsSection
-                        onAddWallet={() => {
-                            setIsSetupModalOpenned(true);
-                        }}
-                    />
-                    <ExploreProtonWalletSection />
-                </div>
+            <div className="flex-1 p-8">
+                <BalanceOverview wallets={wallets} />
+                <YourWalletsSection
+                    onAddWallet={() => {
+                        setIsSetupModalOpenned(true);
+                    }}
+                />
+                <ExploreProtonWalletSection />
             </div>
 
             <WalletSetupModal isOpen={isSetupModalOpenned} onClose={() => setIsSetupModalOpenned(false)} />

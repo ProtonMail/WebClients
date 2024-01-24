@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Card } from '@proton/atoms/Card';
@@ -9,30 +11,30 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 interface ExploreProtonWalletItemProps {
+    children?: ReactNode;
     icon: IconName;
     color?: string;
     iconSize?: IconSize;
-    title: string;
     content: string;
 }
 
-const ExploreProtonWalletItem = ({ iconSize, color, icon, title, content }: ExploreProtonWalletItemProps) => {
+const ExploreProtonWalletItem = ({ children, iconSize, color, icon, content }: ExploreProtonWalletItemProps) => {
     return (
         <Card
             rounded
-            className="light-gradient-card mt-4 flex flex-column items-start grow max-w-custom mr-6"
+            background={false}
+            className="relative"
             style={{
-                '--max-w-custom': '11rem',
-                background: `linear-gradient(90deg, ${color}15 0%, var(--background-norm) 100%)`,
+                backgroundImage: `linear-gradient(to right, ${color}15 0%, ${color}00 100%)`,
             }}
         >
             <div
                 className={clsx('flex w-custom h-custom rounded-full mb-3')}
-                style={{ '--w-custom': '2.2rem', '--h-custom': '2.2rem', background: color }}
+                style={{ '--w-custom': '2.2rem', '--h-custom': '2.2rem', backgroundColor: color }}
             >
                 <Icon className="m-auto" size={iconSize} name={icon} color="#FFF" />
             </div>
-            <h3 className="m-0 mb-1 text-sm color-norm">{title}</h3>
+            <h3 className="m-0 mb-1 text-sm color-norm">{children}</h3>
             <p className="m-0 text-sm color-hint">{content}</p>
         </Card>
     );
@@ -43,55 +45,59 @@ export const ExploreProtonWalletSection = () => {
         <div className="mt-14">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Explore ${WALLET_APP_NAME}`}</h2>
 
-            <div className="flex flex-row justify-space-evenly">
-                <Href
-                    className="text-no-decoration"
-                    // TODO: change this with real KB link
-                    href={getKnowledgeBaseUrl('/proton-wallet-security-best-practices')}
+            <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
+                <ExploreProtonWalletItem
+                    icon="pass-shield"
+                    iconSize={18}
+                    color={ACCENT_COLORS_MAP.purple.color}
+                    content={c('Wallet Dashboard').t`How to stay safe and protect your assets.`}
                 >
-                    <ExploreProtonWalletItem
-                        icon="pass-shield"
-                        iconSize={18}
-                        color={ACCENT_COLORS_MAP.purple.color}
-                        title={c('Wallet Dashboard').t`Security & ${WALLET_APP_NAME}`}
-                        content={c('Wallet Dashboard').t`How to stay safe and protect your assets.`}
-                    />
-                </Href>
+                    <Href
+                        className="color-norm text-no-decoration expand-click-area"
+                        // TODO: change this with real KB link
+                        href={getKnowledgeBaseUrl('/proton-wallet-security-best-practices')}
+                    >
+                        {c('Wallet Dashboard').t`Security & ${WALLET_APP_NAME}`}
+                    </Href>
+                </ExploreProtonWalletItem>
 
-                <Href
-                    className="text-no-decoration"
-                    // TODO: change this with real KB link
-                    href={getKnowledgeBaseUrl('/wallets-and-accounts')}
+                <ExploreProtonWalletItem
+                    icon="wallet"
+                    color={ACCENT_COLORS_MAP.olive.color}
+                    content={c('Wallet Dashboard').t`Whats the different and how to use them.`}
                 >
-                    <ExploreProtonWalletItem
-                        icon="wallet"
-                        color={ACCENT_COLORS_MAP.olive.color}
-                        title={c('Wallet Dashboard').t`Wallets & Accounts`}
-                        content={c('Wallet Dashboard').t`Whats the different and how to use them.`}
-                    />
-                </Href>
+                    <Href
+                        className="color-norm text-no-decoration expand-click-area"
+                        // TODO: change this with real KB link
+                        href={getKnowledgeBaseUrl('/wallets-and-accounts')}
+                    >
+                        {c('Wallet Dashboard').t`Wallets & Accounts`}
+                    </Href>
+                </ExploreProtonWalletItem>
 
-                <AppLink to="/transfer" className="text-no-decoration">
-                    <ExploreProtonWalletItem
-                        icon="arrow-right-arrow-left"
-                        color={ACCENT_COLORS_MAP.fern.color}
-                        title={c('Wallet Dashboard').t`Transfer Bitcoin`}
-                        content={c('Wallet Dashboard').t`How to send and receive Bitcoin with ${BRAND_NAME}.`}
-                    />
-                </AppLink>
-
-                <Href
-                    className="text-no-decoration"
-                    // TODO: change this with real KB link
-                    href={getKnowledgeBaseUrl('/proton-wallet-mobile-wallets')}
+                <ExploreProtonWalletItem
+                    icon="arrow-right-arrow-left"
+                    color={ACCENT_COLORS_MAP.fern.color}
+                    content={c('Wallet Dashboard').t`How to send and receive Bitcoin with ${BRAND_NAME}.`}
                 >
-                    <ExploreProtonWalletItem
-                        icon="mobile"
-                        color={ACCENT_COLORS_MAP.strawberry.color}
-                        title={c('Wallet Dashboard').t`Mobile Apps`}
-                        content={c('Wallet Dashboard').t`Start using ${WALLET_APP_NAME} on your phone.`}
-                    />
-                </Href>
+                    <AppLink to="/transfer" className="color-norm text-no-decoration expand-click-area">
+                        {c('Wallet Dashboard').t`Transfer Bitcoin`}
+                    </AppLink>
+                </ExploreProtonWalletItem>
+
+                <ExploreProtonWalletItem
+                    icon="mobile"
+                    color={ACCENT_COLORS_MAP.strawberry.color}
+                    content={c('Wallet Dashboard').t`Start using ${WALLET_APP_NAME} on your phone.`}
+                >
+                    <Href
+                        className="color-norm text-no-decoration expand-click-area"
+                        // TODO: change this with real KB link
+                        href={getKnowledgeBaseUrl('/proton-wallet-mobile-wallets')}
+                    >
+                        {c('Wallet Dashboard').t`Mobile Apps`}
+                    </Href>
+                </ExploreProtonWalletItem>
             </div>
         </div>
     );
