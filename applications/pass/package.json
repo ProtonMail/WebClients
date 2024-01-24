@@ -39,7 +39,7 @@
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/jest-dom": "^6.2.0",
+        "@testing-library/jest-dom": "^6.3.0",
         "@testing-library/react": "^14.1.2",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
@@ -53,6 +53,6 @@
         "jest-environment-jsdom": "^29.7.0",
         "prettier": "^3.2.4",
         "typescript": "^5.3.3",
-        "webpack": "^5.89.0"
+        "webpack": "^5.90.0"
     }
 }
