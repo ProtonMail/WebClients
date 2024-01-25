@@ -501,11 +501,13 @@ export const resolveUpsellsToDisplay = ({
         const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
 
         switch (true) {
-            case Boolean(isTrial(subscription) && subscription.PeriodEnd):
+            case Boolean(isTrial(subscription) && hasMail(subscription) && subscription.PeriodEnd):
                 return [
                     getMailPlusUpsell({ ...upsellsPayload, isTrialEnding: true }),
                     getBundleUpsell({ ...upsellsPayload, isRecommended: true }),
                 ];
+            case Boolean(isTrial(subscription) && hasBundle(subscription) && subscription.PeriodEnd):
+                return [getBundleUpsell({ ...upsellsPayload, isTrialEnding: true })];
             case Boolean(hasMailFree):
                 return [
                     getMailPlusUpsell({ ...upsellsPayload }),

@@ -24,7 +24,7 @@ import {
     organization,
     pendingInvite,
     plans,
-    subscriptionB,
+    subscriptionBundle,
     subscriptionBusiness,
     user,
     vpnServersCount,
@@ -53,7 +53,7 @@ mockUseCalendars.mockReturnValue([calendars, false]);
 
 jest.mock('@proton/components/hooks/useSubscription');
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
-mockUseSubscription.mockReturnValue([subscriptionB, false]);
+mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
 
 jest.mock('@proton/components/hooks/useOrganization');
 const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
@@ -87,7 +87,7 @@ mockUseCache.mockReturnValue({ get: jest.fn(), delete: jest.fn() });
 
 describe('YourPlanSection', () => {
     beforeEach(() => {
-        mockUseSubscription.mockReturnValue([subscriptionB, false]);
+        mockUseSubscription.mockReturnValue([subscriptionBundle, false]);
         mockUsePendingUserInvitations.mockReturnValue([[], false]);
         mockUseOrganization.mockReturnValue([{}, false]);
     });
