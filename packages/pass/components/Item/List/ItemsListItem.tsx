@@ -12,6 +12,7 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useBulkInFlight } from '@proton/pass/hooks/useBulkInFlight';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -38,6 +39,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
     const bulkSelected = bulk.isSelected(item);
     const bulkInFlight = useBulkInFlight(item);
     const loading = optimistic || bulkInFlight;
+    const writable = (vault && isWritableVault(vault)) ?? false;
 
     return (
         <div className={clsx(bulk.enabled && 'px-1 py-0.5')}>
@@ -48,6 +50,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                     'pass-item-list--item interactive-pseudo w-full',
                     bulk.enabled && 'pass-item-list--item-bulk',
                     bulkSelected && 'pass-item-list--item-bulk-selected',
+                    bulk.enabled && (!writable || bulkInFlight) && 'pointer-events-none opacity-50',
                     active && 'is-active',
                 ])}
                 color={failed ? 'warning' : 'weak'}
