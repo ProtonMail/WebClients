@@ -1,18 +1,20 @@
 import { ElementType, ForwardedRef, forwardRef, useContext } from 'react';
 
-import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
+import { ButtonLike, ButtonLikeOwnProps, ButtonLikeProps } from '@proton/atoms';
 import NotificationContext from '@proton/components/containers/notifications/notificationContext';
-import { PolymorphicForwardRefExoticComponent } from '@proton/react-polymorphic-types';
+import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
 
-interface NotificationOwnProps {
-    close?: boolean;
-}
+type ButtonPropsFilter<T> = Omit<T, 'shape' | 'color' | 'size'>;
+type NotificationOwnProps = { close?: boolean } & ButtonPropsFilter<ButtonLikeOwnProps>;
 
-export type NotificationButtonProps<E extends ElementType> = Omit<ButtonLikeProps<E>, 'shape' | 'color' | 'size'> &
-    NotificationOwnProps;
+export type NotificationButtonProps<E extends ElementType> = PolymorphicPropsWithoutRef<
+    ButtonPropsFilter<ButtonLikeProps<E>>,
+    E
+>;
+
 const defaultElement = 'button';
 
 const NotificationButtonBase = <E extends ElementType = typeof defaultElement>(
