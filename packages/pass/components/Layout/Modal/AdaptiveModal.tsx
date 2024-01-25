@@ -4,13 +4,15 @@ import { type FC, type ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { useBulkLock } from '@proton/pass/hooks/useBulkLock';
 import clsx from '@proton/utils/clsx';
 
-import { usePassCore } from '../../Core/PassCoreProvider';
-import { Panel } from '../Panel/Panel';
+import { PassModal } from './PassModal';
 import { SidebarModal } from './SidebarModal';
 
 import './AdaptiveModal.scss';
@@ -36,15 +38,16 @@ export const AdaptiveModal: FC<PropsWithChildren<AdapativeModalProps>> = ({
     ...props
 }) => {
     const { endpoint } = usePassCore();
+    useBulkLock([props.open ?? false]);
 
     return type === 'overlay' || endpoint === 'web' ? (
-        <ModalTwo {...props} size={size} className="text-center">
+        <PassModal {...props} size={size} className="text-center">
             {closable && <ModalTwoHeader closeButtonProps={{ pill: true, icon: true }} />}
             <ModalTwoContent className={clsx(!closable && 'pt-4')}>{children}</ModalTwoContent>
             <ModalTwoFooter className="pass-onboarding-modal--actions flex flex-column justify-center">
                 {actions}
             </ModalTwoFooter>
-        </ModalTwo>
+        </PassModal>
     ) : (
         <SidebarModal {...props} className="text-center">
             <Panel

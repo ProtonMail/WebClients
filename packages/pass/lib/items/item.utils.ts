@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
+import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
-import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
+import type { ItemRevision, ItemRevisionID, ItemSortFilter, ItemType, MaybeNull, UniqueItem } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import chunk from '@proton/utils/chunk';
 
 import { isEditItemDraft } from './item.predicates';
 
@@ -106,4 +109,21 @@ export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: 
         }
 
         return false;
+    });
+
+/** Converts an item revision to a revision request payload  */
+export const mapToRevision = (item: ItemRevision): ItemRevisionID => ({ ItemID: item.itemId, Revision: item.revision });
+
+/** Batches a list of items by shareId : each individual share batch
+ * is in turn batched according to `MAX_BATCH_ITEMS_PER_REQUEST` */
+export const batchByShareId = <T extends UniqueItem, R>(
+    items: T[],
+    mapTo: (item: T) => R
+): { shareId: string; items: R[] }[] =>
+    groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
+        const batches = chunk(shareTrashedItems, MAX_BATCH_ITEMS_PER_REQUEST);
+        return batches.map((batch) => ({
+            shareId: batch[0].shareId,
+            items: batch.map(mapTo),
+        }));
     });

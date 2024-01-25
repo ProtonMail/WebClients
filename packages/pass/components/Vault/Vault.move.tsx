@@ -7,12 +7,12 @@ import { c } from 'ttag';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '@proton/pass/store/actions';
 import { type VaultShareItem } from '@proton/pass/store/reducers';
-import { selectShare, selectWritableVaultsWithItemsCount } from '@proton/pass/store/selectors';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 
 import { ConfirmationModal } from '../Confirmation/ConfirmationModal';
-import { VaultSelect } from './VaultSelect';
+import { VaultSelect, VaultSelectMode } from './VaultSelect';
 
 type Props = { vault: VaultShareItem; onClose: () => void };
 
@@ -40,7 +40,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
         <>
             <VaultSelect
                 shareId={vault.shareId}
-                optionsSelector={selectWritableVaultsWithItemsCount}
+                mode={VaultSelectMode.Writable}
                 open={step.view === 'select'}
                 title={c('Info').t`Select destination vault`}
                 onClose={onClose}

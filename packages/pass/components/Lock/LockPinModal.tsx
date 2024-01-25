@@ -1,9 +1,10 @@
 import { type FC, useEffect, useState } from 'react';
 
 import { Card } from '@proton/atoms/Card';
-import { type ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import { type ModalProps, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
+import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 
-import { useSessionLockPinSubmitEffect } from '../../hooks/useSessionLockPinSubmitEffect';
 import { PinCodeInput } from './PinCodeInput';
 
 type Props = Omit<ModalProps, 'onSubmit'> & {
@@ -24,7 +25,7 @@ export const LockPinModal: FC<Props> = ({ title, assistiveText, loading, onSubmi
     }, [modalProps.open]);
 
     return (
-        <ModalTwo {...modalProps} size="small" className="mt-10">
+        <PassModal {...modalProps} size="small" className="mt-10">
             <ModalTwoHeader title={title} />
             <ModalTwoContent className="mb-8">
                 {assistiveText && (
@@ -34,6 +35,6 @@ export const LockPinModal: FC<Props> = ({ title, assistiveText, loading, onSubmi
                 )}
                 <PinCodeInput loading={loading} value={value} onValue={setValue} />
             </ModalTwoContent>
-        </ModalTwo>
+        </PassModal>
     );
 };

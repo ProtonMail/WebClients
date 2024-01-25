@@ -385,3 +385,7 @@
 -   New onboarding welcome page after login
 -   New vault deletion confirmation modal for safety
 -   Improved note field UI in custom fields
+
+### TODO put correct version Version 1.10.0
+
+-   Bulk actions on items (move, delete, permanantly delete, restore)
