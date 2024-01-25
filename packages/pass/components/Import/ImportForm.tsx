@@ -8,6 +8,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
 import { SUPPORTED_IMPORT_FILE_TYPES } from '@proton/pass/hooks/useImportForm';
 import { extractFileExtension } from '@proton/pass/lib/import/reader';
@@ -25,6 +26,7 @@ const providerHasUnsupportedItemTypes = (provider: ImportProvider) => {
         provider !== ImportProvider.BRAVE &&
         provider !== ImportProvider.FIREFOX &&
         provider !== ImportProvider.CHROME &&
+        provider !== ImportProvider.CSV &&
         provider !== ImportProvider.EDGE &&
         provider !== ImportProvider.SAFARI &&
         provider !== ImportProvider.PROTONPASS
@@ -97,6 +99,26 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                             </Href>
                         )}
                     </div>
+
+                    {form.values.provider === ImportProvider.CSV && (
+                        <Card className="mb-4">
+                            {c('Info').t`Follow those steps to import your data with a generic CSV :`}
+                            <ol className="mt-2 mb-0">
+                                <li>
+                                    <Href href="/assets/protonpass-import.csv" download="protonpass-import.csv">
+                                        {c('Action').t`Download this CSV template`}
+                                    </Href>
+                                </li>
+                                <li>{c('Info').t`Fill in the CSV with your data`}</li>
+                                <li>{c('Info').t`Import the CSV file below.`}</li>
+                                <li>
+                                    {c('Info')
+                                        .t`After successfully importing your data, you may delete the CSV file containing your passwords for security.`}
+                                </li>
+                            </ol>
+                        </Card>
+                    )}
+
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
