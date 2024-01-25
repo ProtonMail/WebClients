@@ -2,6 +2,7 @@
 
 -   Add keyboard shortcut Ctrl/Cmd + S to save a new or existing item
 -   Take into account custom text fields when searching
+-   Support importing a generic CSV file with template provided
 
 ### Version 1.11.0
 
