@@ -167,6 +167,9 @@
       "Export": [
         "გატანა"
       ],
+      "Feedback & Help": [
+        "უკუკავშირი და დახმარება"
+      ],
       "Fill password": [
         "შეავსეთ პაროლი"
       ],
@@ -193,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "როგორ გავიტანო ჩემი მონაცემები ${ PROVIDER_INFO_MAP[form.values.provider].title }-დან?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "როგორ გამოვიყენოთ ${ PASS_APP_NAME }"
       ],
       "Import": [
         "შემოტანა"
