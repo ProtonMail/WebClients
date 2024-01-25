@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Faça o upgrade para ativar o ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Upgrade para Visionary"
+      ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
       ],
@@ -3124,6 +3127,9 @@
       "Access to the desktop app is limited": [
         "O acesso ao aplicativo de desktop é limitado"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "A versão beta do aplicativo de desktop ${ MAIL_APP_NAME } é atualmente limitada aos assinantes ${ BRAND_NAME } Visionary. Ela estará disponível para todos os usuários no início de 2024."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
       ]
@@ -3890,9 +3896,6 @@
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
-      ],
       "Not a ${ BRAND_NAME } account": [
         "Não é uma conta da ${ BRAND_NAME }"
       ],
@@ -3928,6 +3931,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configure um domínio personalizado antes de adicionar usuários à sua organização."
@@ -6323,6 +6329,9 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "O DMARC verifica se os registros SPF e DKIM do remetente são originários do seu domínio. Isso pode impedir que invasores usem SPF e DKIM de outro domínio para se passar por seu domínio. O \"p=\" (política) neste registro indica como você deseja que as plataformas de destinatários lidem com e-mails não autorizados. Recomendamos usar a política \"p=quarentena\" para a maioria dos domínios. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
       ],
@@ -6598,6 +6607,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANTE: Se o seu console DNS não permitir que os valores CNAME terminem com um ponto, você poderá remover o último ponto dos valores CNAME."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
       ],
@@ -6727,6 +6739,12 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Os registros incluem tentativas de autenticação para todos os serviços da ${ BRAND_NAME } que usam suas credenciais da ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Os principais serviços de e-mail podem rejeitar ou filtrar seus e-mails para spam se o SPF/DKIM/DMARC estiver faltando ou não estiver configurado corretamente."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
+        "Os principais serviços de e-mail podem rejeitar ou filtrar seus e-mails para spam se o SPF/DKIM/DMARC estiver faltando ou não estiver configurado corretamente."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Certifique-se de ${ addARecoveryMethod } para poder voltar à sua conta se esquecer sua senha."
@@ -7165,6 +7183,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Alguns dos seus servidores disponíveis só podem ser usados em países específicos devido a remoções recentes"
+      ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "SPF esclarece quem tem permissão para enviar e-mails para o seu domínio. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
       ],
       "Stay tuned for future promotions.": [
         "Fique atento às futuras promoções."
@@ -7744,6 +7765,9 @@
       "You can now close this window.": [
         "Agora você pode fechar essa janela."
       ],
+      "You can now return to the application to continue": [
+        "Agora você pode retornar ao aplicativo para continuar"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
       ],
@@ -7953,6 +7977,9 @@
       ]
     },
     "Info for domain modal": {
+      "Add a new address for the existing users of your organization.": [
+        "Adicione um novo endereço para os usuários existentes da sua organização."
+      ],
       "Add a new user to your organization and create an address for it.": [
         "Adicionar um novo usuário à sua organização e criar um endereço para ele."
       ]
@@ -8993,6 +9020,15 @@
       "Phrase consists of 12 unique words in a specific order": [
         "A frase consiste de 12 palavras únicas em uma ordem específica"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Adicione todos os três registros CNAME a seguir. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
+      "Please add the following two MX records. Note: DNS records can take several hours to update.": [
+        "Adicione os dois registros MX a seguir. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ],
       "Please select files to upload": [
         "Selecione os arquivos para enviar"
       ],
@@ -9064,6 +9100,9 @@
       ],
       "Show sender images": [
         "Mostrar imagens do remetente"
+      ],
+      "Show unread count in application icon": [
+        "Mostrar contagem de não lidos no ícone do aplicativo"
       ],
       "Show unread count in Favicon": [
         "Mostrar a contagem de não lidos no Favicon"
@@ -9234,6 +9273,11 @@
     "Label for default event settings": {
       "Duration": [
         "Duração"
+      ]
+    },
+    "Label for domain modal": {
+      "Please add the following TXT record. Note: DNS records can take several hours to update.": [
+        "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
       ]
     },
     "Label for new member": {
@@ -11235,6 +11279,9 @@
       "Create another account instead": [
         "Crie outra conta"
       ],
+      "Download PDF ${ size }": [
+        "Baixar PDF ${ size }"
+      ],
       "Keep this plan": [
         "Manter esse plano"
       ],
@@ -11372,6 +11419,9 @@
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Os aliases hide-my-email protegem seu e-mail contra violações de dados"
+      ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Entendo que, se perder meus detalhes de recuperação, poderei perder permanentemente o acesso à minha conta."
       ],
       "Includes:": [
         "Incluí:"
@@ -11591,6 +11641,9 @@
       ],
       "Search for a user or address": [
         "Pesquisar por um usuário ou endereço"
+      ],
+      "Search parent folder": [
+        "Pesquisar pasta pai"
       ],
       "Search users": [
         "Pesquisar usuários"
@@ -14253,6 +14306,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "As mensagens da pasta Enviados ou Rascunhos continuarão a aparecer naquela pasta, mesmo se você movê-las para outra pasta."
+      ],
+      "See number of unread messages in the application icon": [
+        "Veja o número de mensagens não lidas no ícone do aplicativo"
       ],
       "See number of unread messages in the tab icon": [
         "Ver o número de mensagens não lidas no ícone da guia"

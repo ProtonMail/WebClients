@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME } özelliğini açmak için tarifenizi yükseltin"
       ],
+      "Upgrade to Visionary": [
+        "Visionary tarifesine yükselt"
+      ],
       "Upgrade your plan": [
         "Tarifenizi yükseltin"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Masaüstü uygulamasına erişim kısıtlı"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Yakında herkesin kullanımına sunulacak."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasının Beta sürümünü şu anda yalnızca ${ BRAND_NAME } Visionary aboneleri kullanabilir. 2024 yılının başlarında tüm kullanıcılara sunulacak."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "İç kullanıcı için geçerli WKD bir gönderim anahtarı alınamadı"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı değil"
@@ -9116,6 +9116,9 @@
       "Show sender images": [
         "Gönderici görselleri görüntülensin"
       ],
+      "Show unread count in application icon": [
+        "Okunmamış sayısı uygulama simgesinde görüntülensin"
+      ],
       "Show unread count in Favicon": [
         "Okunmamış sayısı site simgesinde görüntülensin"
       ],
@@ -11282,6 +11285,9 @@
       "Create another account instead": [
         "Bunun yerine başka bir hesap oluşturun"
       ],
+      "Download PDF ${ size }": [
+        "PDF indir ${ size }"
+      ],
       "Keep this plan": [
         "Bu tarifede kal"
       ],
@@ -11420,6 +11426,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email takma adları, e-postanızı verilerinizin ele geçirilmesinden korur"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Kurtarma bilgilerimi kaybedersem hesabıma erişimi kalıcı olarak kaybedeceğimi anladım."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **Kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
+      ],
       "Includes:": [
         "İçindekiler:"
       ],
@@ -11431,6 +11443,9 @@
       ],
       "Install app and extension": [
         "Uygulamayı ve eklentiyi kurun"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bunu güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"

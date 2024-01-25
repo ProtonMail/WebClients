@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Mejore para activar ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Mejorar a Visionary"
+      ],
       "Upgrade your plan": [
         "Mejore su plan"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "El acceso a la app de escritorio está limitado"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "La versión beta de la app de escritorio de ${ MAIL_APP_NAME } está disponible para quienes tienen un plan de pago de ${ MAIL_APP_NAME }. Pronto estará disponible para todos."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } por ahora está limitada a suscriptores de ${ BRAND_NAME } Visionary. Estará disponible a todos los usuarios en 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Mejore ahora o compruebe de nuevo a inicios de 2024 para su acceso."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ninguna clave WKD recuperada para el usuario es válida para enviar"
       ],
       "Not a ${ BRAND_NAME } account": [
         "No es una cuenta de ${ BRAND_NAME }"
@@ -6221,6 +6221,12 @@
       "Cancel anytime": [
         "Cancele en cualquier momento"
       ],
+      "Can’t access your recovery email?": [
+        "¿No puede acceder a su correo de recuperación?"
+      ],
+      "Can’t access your recovery phone?": [
+        "¿No puede acceder a su teléfono de recuperación?"
+      ],
       "Center": [
         "Centrar"
       ],
@@ -6363,6 +6369,9 @@
       "Done! We sent a code to ${ destination }.": [
         "¡Listo! Le enviamos un código a ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "¿No recuerda su frase de recuperación?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
@@ -6473,6 +6482,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Ingrese su número de teléfono de recuperación y le enviaremos su nombre de usuario o dirección de correo."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Ingrese la frase de recuperación para cambiar su contraseña."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Las invitaciones a eventos y las confirmaciones de asistencia se enviarán en este idioma."
@@ -7458,6 +7470,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para continuar, seleccione un método de recuperación de cuenta para que podamos verificar la solicitud."
       ],
+      "To proceed, we must verify the request.": [
+        "Debemos verificar la solicitud para continuar."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar su conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en su dispositivo y conéctese a un servidor."
       ],
@@ -7676,6 +7691,9 @@
       ],
       "Welcome": [
         "Le damos la bienvenida"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Enviaremos un código de restablecimiento a ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos un código de restablecimiento a la dirección de correo que proporcionó para la recuperación de la cuenta."
@@ -11430,7 +11448,7 @@
         "Los alias hide-my-email protegen su correo electrónico de las filtraciones de datos."
       ],
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
-        "Entiendo que al perder mis detalles de recuperación, puedo permanentemente perder acceso a mi cuenta."
+        "Entiendo que al perder mis detalles de recuperación, puedo perder permanentemente el acceso a mi cuenta."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
         "Si se bloquea su cuenta ${ BRAND_NAME }, su **kit de recuperación** le permitirá iniciar sesión y recuperar sus datos."
