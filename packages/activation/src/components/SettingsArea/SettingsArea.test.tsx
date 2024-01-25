@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/dom';
 
 import useFeature from '@proton/components/hooks/useFeature';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { easySwitchRender } from '../../tests/render';
 import SettingsArea from './SettingsArea';
@@ -34,7 +35,7 @@ describe('SettingsArea', () => {
     it('Should render a loader while loading feature flag', async () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: true });
 
-        easySwitchRender(<SettingsArea config={settingsAreaConfig} />);
+        easySwitchRender(<SettingsArea config={settingsAreaConfig} app={APPS.PROTONMAIL} />);
 
         const forwardSection = screen.queryByTestId('SettingsArea:forwardSection');
         expect(forwardSection).toBeNull();
@@ -43,7 +44,7 @@ describe('SettingsArea', () => {
     it('Should render the forward section if feature is enabled', async () => {
         mockUseFeature.mockReturnValue({ feature: { Value: { GoogleMailSync: true } }, loading: false });
 
-        easySwitchRender(<SettingsArea config={settingsAreaConfig} />);
+        easySwitchRender(<SettingsArea config={settingsAreaConfig} app={APPS.PROTONMAIL} />);
 
         const googleInScreen = screen.getAllByText('Google');
         const gmailInScreen = screen.getByTestId('ProviderCard:googleCardForward');
