@@ -3445,9 +3445,6 @@
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
       ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle noudettu WKD-avain ei kelpaa lähetykseen"
-      ],
       "Not a valid number": [
         "Virheellinen puhelinnumero"
       ],
@@ -5852,7 +5849,7 @@
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Yhteystiedon ${ contactNames } vahvistus epäonnistui, koska sitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddresses } sinun on on allekirjoitettava yhteystieto uudelleen tai muokattava sitä.",
-        "Yhteystietojen ${ contactNames } vahvistus epäonnistui, koska niitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddresses } sinun on on allekirjoitettava yhteystiedot uudelleen tai muokattava niitä."
+        "${ contactNames } vahvistus epäonnistui: yhteystietoja ei ole allekirjoitettu oikein.\nTämä voi johtua salasanan resetoinnista.\nSinun on allekirjoitettava yhteystiedot uudelleen tai muokattava niitä, jotta voit lähettää viestin osoitteeseen ${ contactAddresses } ."
       ],
       "Themes can give your inbox a new look.": [
         "Teemoilla voit muuttaa postilaatikkosi ulkoasua."
