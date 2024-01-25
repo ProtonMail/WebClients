@@ -4,6 +4,13 @@ import unique from '@proton/utils/unique';
 
 import useHandler from '../../hooks/useHandler';
 
+interface Props {
+    activeID?: string;
+    allIDs: string[];
+    resetDependencies?: DependencyList;
+    onCheck?: (checked: boolean) => void;
+}
+
 /**
  * Implement the selection logic shared between mail and contacts
  * You have an active id which represents the selection if there is no checked items
@@ -12,9 +19,10 @@ import useHandler from '../../hooks/useHandler';
  * @param activeID The current active item
  * @param allIDs The complete list of ids in the list
  * @param resetDependencies React dependencies to reset selection if there is a change
- * @returns all helpers usefull to check one, a range or all items
+ * @param onCheck Optional action to be triggered when interacting with element checkboxes
+ * @returns all helpers useful to check one, a range or all items
  */
-const useItemsSelection = (activeID: string | undefined, allIDs: string[], resetDependencies: DependencyList) => {
+const useItemsSelection = ({ activeID, allIDs, resetDependencies, onCheck }: Props) => {
     // We are managing checked IDs through a Map and not an array for performance issues.
     const [checkedMap, setCheckedMap] = useState<{ [ID: string]: boolean }>({});
 
@@ -44,6 +52,8 @@ const useItemsSelection = (activeID: string | undefined, allIDs: string[], reset
      * Uncheck others if *replace* is true
      */
     const handleCheck = useHandler((IDs: string[], checked: boolean, replace: boolean) => {
+        // Run onCheck function when interacting with a checkbox
+        onCheck?.(checked);
         // Items can be checked and included in a new selection (select all/select range).
         // In that case they will be duplicated in the array, which could break the length we expect in the 2nd condition
         const uniqueIDs = unique(IDs);
