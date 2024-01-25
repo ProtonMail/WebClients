@@ -5,6 +5,7 @@ import { setupServer } from 'msw/node';
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useUser } from '@proton/components/index';
+import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCards from './ProviderCards';
 
@@ -133,7 +134,7 @@ afterAll(() => {
 describe('Provider cards process testing', () => {
     it('Should display the four cards on the page without user data', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
@@ -206,7 +207,7 @@ describe('Provider cards process testing', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
 
@@ -235,7 +236,7 @@ describe('Provider cards process testing', () => {
 
     it('Should click on imap calendar product', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
 
@@ -252,7 +253,7 @@ describe('Provider cards process testing', () => {
 
     it('Should click on every product in the imap modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const imap = screen.getByTestId('ProviderCard:imapCard');
 
@@ -289,7 +290,7 @@ describe('Provider cards process testing', () => {
 
     it('Should click on every product in the yahoo modal', async () => {
         mockUseUser.mockReturnValue(defaultUseUser);
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
 
@@ -327,7 +328,7 @@ describe('Provider cards process testing', () => {
     it('Should disable all cards if user is delinquent', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
 
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
@@ -343,7 +344,7 @@ describe('Provider cards process testing', () => {
     it('Should disable all cards while user is loading', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
 
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');
         const yahoo = screen.getByTestId('ProviderCard:yahooCard');
