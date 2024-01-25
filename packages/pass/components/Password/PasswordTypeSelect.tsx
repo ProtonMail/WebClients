@@ -23,7 +23,7 @@ export const PasswordTypeSelect: FC<Props> = ({ config, dense = false, setPasswo
             onValue={(type) => setPasswordOptions(type)}
         >
             <Option
-                title={c('Option').t`Memorizable Password`}
+                title={c('Option').t`Memorable Password`}
                 value="memorable"
                 className={clsx(dense && 'text-sm')}
                 preventScroll
