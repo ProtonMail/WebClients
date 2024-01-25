@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Millora per habilitar ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Actualitza a Visionary"
+      ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
@@ -3793,9 +3796,6 @@
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
       ],
       "Not a ${ BRAND_NAME } account": [
         "No és un compte de ${ BRAND_NAME }"
@@ -10089,6 +10089,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
+      ],
+      "Up to ${ n } user": [
+        "Fins a ${ n } usuari",
+        "Fins a ${ n } usuaris"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
