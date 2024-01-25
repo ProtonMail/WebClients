@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -99,21 +101,17 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
             tutorialUrl: '',
         },
         [ImportProvider.CSV]: {
-            title: 'Generic CSV',
+            title: c('Label').t`Generic CSV`,
             fileExtension: 'csv',
             tutorialUrl: '',
         },
     };
 
-// Sort alphabetically, except for generic CSV which is last
+/** Sort alphabetically, except for generic CSV which is last */
 export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) => {
-    if (a === 'csv') {
-        return 1;
-    } else if (b === 'csv') {
-        return -1;
-    } else {
-        return a.localeCompare(b);
-    }
+    if (a === 'csv') return 1;
+    if (b === 'csv') return -1;
+    else return a.localeCompare(b);
 });
 
 export type ImportReaderPayload = {

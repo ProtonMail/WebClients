@@ -8,6 +8,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
 import { SUPPORTED_IMPORT_FILE_TYPES } from '@proton/pass/hooks/useImportForm';
 import { extractFileExtension } from '@proton/pass/lib/import/reader';
@@ -98,10 +99,11 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                             </Href>
                         )}
                     </div>
+
                     {form.values.provider === ImportProvider.CSV && (
-                        <div>
-                            {c('Info').t`Follow those steps to import your data with a generic CSV:`}
-                            <ol>
+                        <Card className="mb-4">
+                            {c('Info').t`Follow those steps to import your data with a generic CSV :`}
+                            <ol className="mt-2 mb-0">
                                 <li>
                                     <Href href="/assets/protonpass-import.csv" download="protonpass-import.csv">
                                         {c('Action').t`Download this CSV template`}
@@ -114,8 +116,9 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                         .t`After successfully importing your data, you may delete the CSV file containing your passwords for security.`}
                                 </li>
                             </ol>
-                        </div>
+                        </Card>
                     )}
+
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
