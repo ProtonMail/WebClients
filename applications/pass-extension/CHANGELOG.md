@@ -3,6 +3,10 @@
 -   Add keyboard shortcut Ctrl/Cmd + S to save a new or existing item
 -   Take into account custom text fields when searching
 -   Support importing a generic CSV file with template provided
+-   Support importing collections in Bitwarden imports
+-   Increase default password length to 20 characters
+-   Fix "file too big" error during import
+-   Fix alias prefix derivation
 
 ### Version 1.11.0
 
