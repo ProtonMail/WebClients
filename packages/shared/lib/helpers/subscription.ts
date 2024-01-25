@@ -232,7 +232,11 @@ export const getPlanIDs = (subscription: Subscription | FreeSubscription | undef
 };
 
 export const isTrial = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.REFERRAL;
+    const isTrialV4 =
+        subscription?.CouponCode === COUPON_CODES.REFERRAL ||
+        subscription?.CouponCode === COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
+    const isTrialV5 = !!subscription?.IsTrial;
+    return isTrialV4 || isTrialV5;
 };
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {

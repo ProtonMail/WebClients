@@ -103,12 +103,22 @@ describe('hasLifetime', () => {
 });
 
 describe('isTrial', () => {
-    it('should be a trial', () => {
+    it('should be a trial - V4', () => {
         expect(isTrial({ ...subscription, CouponCode: COUPON_CODES.REFERRAL })).toBe(true);
     });
 
-    it('should not be a trial', () => {
+    it('should not be a trial - V4', () => {
         expect(isTrial({ ...subscription, CouponCode: 'PANDA' })).toBe(false);
+    });
+
+    it('should be a trial - V5', () => {
+        expect(isTrial({ ...subscription, IsTrial: true })).toBe(true);
+        expect(isTrial({ ...subscription, IsTrial: 1 as any })).toBe(true);
+    });
+
+    it('should not be a trial - V5', () => {
+        expect(isTrial({ ...subscription, IsTrial: false })).toBe(false);
+        expect(isTrial({ ...subscription, IsTrial: 0 as any })).toBe(false);
     });
 });
 
