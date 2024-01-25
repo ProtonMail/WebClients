@@ -229,15 +229,16 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
             <div className="flex flex-nowrap mb-4">
                 <Checkbox
                     className="mr-4 inline-block"
+                    id="sentOutside"
                     checked={isSendOutside}
                     onChange={() => setIsSendOutside(!isSendOutside)}
                 />
-                <span>
+                <label htmlFor="sentOutside">
                     {
                         // translator: full sentence "I'm sending this message to a non-Proton Mail user."
                         c('Info').t`I'm sending this message to a non-${MAIL_APP_NAME} user.`
                     }
-                </span>
+                </label>
             </div>
 
             {isSendOutside && (
