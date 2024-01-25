@@ -31,9 +31,9 @@ export enum VaultSelectMode {
 
 export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;
+    mode: MaybeNull<VaultSelectMode>;
     shareId: string;
     title?: string;
-    mode: MaybeNull<VaultSelectMode>;
     onSubmit: (shareId: string) => void;
 };
 
@@ -45,7 +45,7 @@ const vaultSelector = {
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, onSubmit, mode, shareId, title, ...props }) => {
+export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shareId, title, onSubmit, ...props }) => {
     const vaults = useSelector(mode ? vaultSelector[mode] : NOOP_LIST_SELECTOR<WithItemCount<VaultShareItem>>);
     const { didDowngrade } = useSelector(selectVaultLimits);
 
