@@ -990,10 +990,13 @@
         "Ulepsz teraz"
       ],
       "Upgrade to Business": [
-        "Ulepsz plan do wersji Business"
+        "Ulepsz do planu Business"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ulepsz plan, aby włączyć ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Ulepsz do planu Visionary"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -3144,6 +3147,9 @@
       "Access to the desktop app is limited": [
         "Dostęp do aplikacji desktopowej jest ograniczony"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników planu ${ BRAND_NAME } Visionary. Aplikacja będzie dostępna dla wszystkich użytkowników na początku 2024 roku."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
       ]
@@ -3915,9 +3921,6 @@
       ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Żaden z odzyskanych kluczy WKD dla użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "Not a ${ BRAND_NAME } account": [
         "To nie jest konto ${ BRAND_NAME }"
@@ -6299,6 +6302,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Zanim otrzymasz wiadomości na adresy niestandardowej domeny w ${ MAIL_APP_NAME }, musisz dodać następujące 2 rekordy MX w panelu sterowania u rejestratora domeny. Przykłady i wskazówki możesz znaleźć ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Zanim zaczniesz wysyłać i odbierać wiadomości e-mail z nowych adresów, musisz utworzyć dla nich klucze szyfrowania."
       ],
@@ -7322,6 +7328,9 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Niektóre z dostępnych serwerów mogą być używane tylko w określonych krajach z powodu niedawnych usunięć"
       ],
+      "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "Rekord SPF określa serwery, które mogą wysyłać wiadomości z Twojej domeny. Sprawdź, czy następujący rekord TXT został dodany w panelu sterowania u rejestratora domeny."
+      ],
       "Stay tuned for future promotions.": [
         "Bądź na bieżąco z przyszłymi promocjami."
       ],
@@ -8139,6 +8148,9 @@
       ],
       "Add a new user to your organization and create an address for it.": [
         "Dodaj nowego użytkownika do swojej organizacji i utwórz dla niego adres."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Ze względów bezpieczeństwa musimy zweryfikować, czy jesteś właścicielem domeny ${ domainName }. Dodaj następujący rekord TXT w panelu sterowania u rejestratora domeny. Przykłady i wskazówki możesz znaleźć ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -11662,6 +11674,9 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
+      ],
       "Includes:": [
         "Zawiera:"
       ],
@@ -11673,6 +11688,9 @@
       ],
       "Install app and extension": [
         "Zainstaluj aplikację i rozszerzenie"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Jest to jedyny sposób na pełne przywrócenie konta, więc upewnij się, że przechowujesz zestaw odzyskiwania w bezpiecznym miejscu."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"

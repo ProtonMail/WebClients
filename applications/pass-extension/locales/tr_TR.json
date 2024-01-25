@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Hesap"
+      ],
       "Account settings": [
         "Hesap ayarları"
       ],
@@ -164,6 +167,9 @@
       "Export": [
         "Dışa aktar"
       ],
+      "Feedback & Help": [
+        "Geri bildirim ve yardım"
+      ],
       "Fill password": [
         "Parolayı doldur"
       ],
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } nasıl kullanılır"
       ],
       "Import": [
         "İçe aktar"
@@ -1238,6 +1247,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Hesap"
       ],
       "Alias": [
         "Takma ad"

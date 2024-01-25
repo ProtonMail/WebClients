@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
+      "Upgrade to Visionary": [
+        "Auf Visionary upgraden"
+      ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Zugang zur Desktop-App ist beschränkt"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Die Betaversion der ${ MAIL_APP_NAME }-Desktop-App ist derzeit für jeden mit einem kostenpflichtigen ${ MAIL_APP_NAME }-Abonnement verfügbar. Sie wird bald für alle verfügbar sein."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Die Betaversion der ${ MAIL_APP_NAME } Desktop-App ist derzeit auf ${ BRAND_NAME } Visionary-Abonnenten beschränkt. Sie wird Anfang 2024 für alle Benutzer verfügbar sein."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Der für den Benutzer abgerufene WKD-Schlüssel ist für den Versand ungültig"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Kein ${ BRAND_NAME }-Konto"
@@ -5069,10 +5069,10 @@
         "Die E-Mail wurde gesendet ${ label }"
       ],
       "with attachments": [
-        "mit Anhang"
+        "mit Anhängen"
       ],
       "without attachments": [
-        "ohne Anhang"
+        "ohne Anhänge"
       ]
     },
     "filter: Label, jt": {
@@ -8132,7 +8132,7 @@
         "Aktiv"
       ],
       "Compromised": [
-        "Gefährdet"
+        "kompromittiert"
       ],
       "Disabled": [
         "Deaktiviert"
@@ -8147,7 +8147,7 @@
         "Veraltet"
       ],
       "Primary": [
-        "Primär"
+        "primär"
       ]
     },
     "Key type option": {
@@ -11288,6 +11288,9 @@
       "Create another account instead": [
         "Stattdessen ein neues Konto erstellen"
       ],
+      "Download PDF ${ size }": [
+        "PDF herunterladen ${ size }"
+      ],
       "Keep this plan": [
         "Dieses Abonnement beibehalten"
       ],
@@ -11426,6 +11429,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Ich verstehe, dass ich bei Verlust meiner Wiederherstellungsdaten den Zugang zu meinem Konto dauerhaft verlieren kann."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem **Wiederherstellungs-Kit** anmelden und deine Daten wiederherstellen."
+      ],
       "Includes:": [
         "Enthält:"
       ],
@@ -11437,6 +11446,9 @@
       ],
       "Install app and extension": [
         "App und Erweiterung installieren"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Dies ist die einzige Möglichkeit, dein Konto vollständig wiederherzustellen, also bewahre es an einem sicheren Ort auf."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Schließe dich den über 100 Millionen Menschen an, die ${ BRAND_NAME } gewählt haben, um online sicher zu bleiben."
@@ -14317,7 +14329,7 @@
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
       "See number of unread messages in the application icon": [
-        "Anzahl der ungelesenen Nachrichten im Anwendungssymbol anzeigen"
+        "Die Anzahl der ungelesenen Nachrichten wird im Anwendungssymbol angezeigt"
       ],
       "See number of unread messages in the tab icon": [
         "Anzahl ungelesener Nachrichten im Tab-Symbol anzeigen"

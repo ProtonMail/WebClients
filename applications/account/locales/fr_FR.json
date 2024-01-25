@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Changez d'abonnement pour activer ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to Visionary": [
+        "Passer à l'abonnement Visionary"
+      ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "L'accès à l'application de bureau est limité."
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement disponible pour tous les utilisateurs avec un abonnement payant à ${ MAIL_APP_NAME }. Elle sera prochainement disponible pour tous les utilisateurs."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement réservée aux utilisateurs ayant un abonnement ${ BRAND_NAME } Visionary. Elle sera disponible pour tous les utilisateurs début 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Changez d'abonnement dès aujourd'hui ou vérifiez à nouveau début 2024 pour y accéder."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Aucune clé WKD récupérée pour l’utilisateur n’est valide pour l’envoi."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ce n'est pas un compte ${ BRAND_NAME }."
@@ -5857,7 +5857,7 @@
         "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "${ quarantine } : demande aux plateformes du destinataire de signaler les messages non autorisés comme indésirables/spam ou de les mettre en quarantaine."
+        "${ quarantine } : demande aux plateformes du destinataire de signaler les courriels non autorisés comme indésirables/spam ou de les mettre en quarantaine."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject } : demande aux plateformes du destinataire de refuser les messages non autorisés."
@@ -6221,6 +6221,12 @@
       "Cancel anytime": [
         "Annulez quand vous le voulez"
       ],
+      "Can’t access your recovery email?": [
+        "Vous ne pouvez plus accéder à votre adresse e-mail de récupération ?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Vous ne pouvez plus accéder à votre téléphone de récupération ?"
+      ],
       "Center": [
         "Centrer"
       ],
@@ -6342,7 +6348,7 @@
         "DKIM permet à ${ BRAND_NAME } de signer par cryptographie vos messages et d'empêcher les attaquants de manipuler votre e-mail. Assurez-vous d'ajouter les trois enregistrements CNAME suivants à votre console DNS (qui se trouve dans la plateforme sur laquelle vous avez acheté le domaine personnalisé)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le \"p=\" (politique) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les messages non autorisés. Nous recommandons d'utiliser la politique \"p=quarantine\" pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme où vous avez acheté le domaine personnalisé)."
+        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le \"p=\" (politique) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les courriels non autorisés. Nous recommandons d'utiliser la politique \"p=quarantine\" pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme où vous avez acheté le domaine personnalisé)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
@@ -6362,6 +6368,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "C'est fait, nous avons envoyé un code à ${ destination }."
+      ],
+      "Don’t know your recovery phrase?": [
+        "Vous ne savez pas ce que c'est que votre phrase de récupération ?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
@@ -6473,6 +6482,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Saisissez votre numéro de téléphone de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse e-mail."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Entrez votre phrase de récupération pour changer votre mot de passe."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Les invitations aux événements et les réponses seront envoyées dans cette langue."
@@ -6626,7 +6638,7 @@
         "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
-        "IMPORTANT : si votre console DNS n'autorise pas les valeurs CNAME à se terminer par un point, vous pouvez retirer le dernier point dans les valeurs CNAME."
+        "IMPORTANT : si votre console DNS n'autorise pas les valeurs CNAME finissant par un point, vous pouvez retirer le dernier point dans les valeurs CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : assurez-vous de sauvegarder les codes de récupération. Vous risquez sinon de perdre définitivement l'accès à votre compte si vous perdez votre dispositif d'authentification à deux facteurs."
@@ -6759,7 +6771,7 @@
         "Les journaux incluent les tentatives d’authentification à tous les services ${ BRAND_NAME } qui utilisent vos identifiants ${ BRAND_NAME_TWO }."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
-        "Les principaux services de messagerie peuvent refuser ou filtrer vos messages en les considérant comme indésirables/spam si SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
+        "Les principaux services de messagerie peuvent refuser ou filtrer vos courriels en les considérant comme indésirables/spam si SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Les principaux services de messagerie peuvent refuser ou filtrer vos messages en les considérant comme indésirables/spam si SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
@@ -7458,6 +7470,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
+      "To proceed, we must verify the request.": [
+        "Pour procéder, nous devons vérifier la requête."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
       ],
@@ -7676,6 +7691,9 @@
       ],
       "Welcome": [
         "Bienvenue"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Nous allons envoyer un code de réinitialisation à ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation à l'adresse e-mail que vous avez indiquée pour la récupération du compte."
@@ -11288,6 +11306,9 @@
       "Create another account instead": [
         "Créer un autre compte à la place"
       ],
+      "Download PDF ${ size }": [
+        "Télécharger le PDF ${ size }"
+      ],
       "Keep this plan": [
         "Conserver cet abonnement"
       ],
@@ -11426,6 +11447,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Les alias « hide-my-email » protègent votre adresse e-mail contre les fuites de données."
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Je comprends qu'en cas de perte de mes informations de récupération, je peux perdre définitivement l'accès à mon compte."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, vos **informations de récupération** vous permettront de vous connecter et de récupérer vos données."
+      ],
       "Includes:": [
         "Comprend :"
       ],
@@ -11437,6 +11464,9 @@
       ],
       "Install app and extension": [
         "Installez les applications et extensions"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "C'est le seul moyen de restaurer complètement votre compte. Nous vous conseillons de le garder dans un endroit sûr."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."

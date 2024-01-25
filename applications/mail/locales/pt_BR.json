@@ -3448,9 +3448,6 @@
       "No valid address found": [
         "Nenhum endereço válido encontrado"
       ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
-      ],
       "Not a valid number": [
         "Não é um número válido"
       ],
@@ -5028,6 +5025,9 @@
       "and": [
         "e"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Todas as mensagens agendadas ou adiadas serão canceladas."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão excluídas. No entanto, os e-mails armazenados nesta pasta ${ nameDeleted } não serão excluídos e podem ser encontrados na pasta Todos os e-mails."
       ],
@@ -5474,6 +5474,9 @@
       ],
       "Merged": [
         "Mesclado"
+      ],
+      "Message actions in progress. This may take a while.": [
+        "Ações de mensagens em andamento. Isso pode demorar um pouco."
       ],
       "Message download status:": [
         "Status do download de mensagens:"
@@ -6129,6 +6132,9 @@
       ],
       "You can import one data type at a time.": [
         "Você pode importar uma categoria de dado por vez."
+      ],
+      "You can now return to the application to continue": [
+        "Agora você pode retornar ao aplicativo para continuar"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -7856,6 +7862,9 @@
       ],
       "Search name, email or group": [
         "Pesquisar nome, e-mail ou grupo"
+      ],
+      "Search parent folder": [
+        "Pesquisar pasta pai"
       ],
       "Select": [
         "Selecionar"
