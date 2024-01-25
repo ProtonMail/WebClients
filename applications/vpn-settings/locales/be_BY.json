@@ -506,6 +506,9 @@
       "Upgrade to Business": [
         "Палепшыць да Business"
       ],
+      "Upgrade to Visionary": [
+        "Палепшыць да Visionary"
+      ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
       ],
@@ -1880,8 +1883,8 @@
       "Access to the desktop app is limited": [
         "Доступ да настольнай праграмы абмежаваны"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }, а неўзабаве яна стане даступна ўсім карыстальнікам."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
@@ -3057,6 +3060,12 @@
       "Cancel anytime": [
         "Скасаваць можна ў любы час"
       ],
+      "Can’t access your recovery email?": [
+        "Не можаце атрымаць доступ да электроннай пошты для аднаўлення доступу?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Не можаце атрымаць доступ да нумара тэлефона для аднаўлення доступу?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
@@ -3153,6 +3162,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Не ведаеце сваю фразу аднаўлення?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
       ],
@@ -3227,6 +3239,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Увядзіце нумар тэлефона, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Увядзіце фразу аднаўлення, каб змяніць пароль."
       ],
       "Expired": [
         "Пратэрмінавана"
@@ -3780,6 +3795,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
+      "To proceed, we must verify the request.": [
+        "Для працягу, неабходна праверыць запыт."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
@@ -3929,6 +3947,9 @@
       ],
       "Welcome": [
         "Вітаем"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Код скідання адпраўлены на ${ boldValue }"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
