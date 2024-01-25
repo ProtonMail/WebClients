@@ -9,9 +9,9 @@ import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/a
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -41,6 +41,7 @@ type ModalsMap = {
 interface Props {
     addresses: Address[];
     user: UserModel;
+    subscription?: Subscription;
     myCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     isCalendarsLimitReached: boolean;
@@ -50,6 +51,7 @@ interface Props {
 const MyCalendarsSection = ({
     addresses,
     user,
+    subscription,
     myCalendars,
     defaultCalendar,
     isCalendarsLimitReached,
@@ -169,7 +171,7 @@ const MyCalendarsSection = ({
                 <p className="flex-1 my-0 pr-7">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}
-                    path={addUpsellPath('/upgrade', upsellRef)}
+                    path={addUpsellPath(getUpgradePath({ user, subscription }), upsellRef)}
                     color="norm"
                     shape="solid"
                     size="small"

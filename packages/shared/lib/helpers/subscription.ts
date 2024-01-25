@@ -16,15 +16,7 @@ import {
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import {
-    External,
-    Plan,
-    PlanIDs,
-    PlansMap,
-    Pricing,
-    Subscription,
-    SubscriptionPlan,
-} from '../interfaces';
+import { Audience, External, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionPlan } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -253,6 +245,10 @@ export const regularCycles = allCycles.filter((cycle) => !customCycles.includes(
 
 export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
+};
+
+export const getValidAudience = (audience: string | undefined | null): Audience | undefined => {
+    return [Audience.B2B, Audience.B2C, Audience.FAMILY].find((realAudience) => audience === realAudience);
 };
 
 export const getIsCustomCycle = (subscription?: Subscription) => {

@@ -142,7 +142,7 @@ const MainContainer: FunctionComponent = () => {
 
     const logo = <MainLogo to="/" />;
 
-    const top = <TopBanners />;
+    const top = <TopBanners app={APPS.PROTONVPN_SETTINGS} />;
 
     const header = (
         <PrivateHeader
@@ -170,6 +170,7 @@ const MainContainer: FunctionComponent = () => {
 
     const sidebar = (
         <Sidebar
+            app={APPS.PROTONVPN_SETTINGS}
             appsDropdown={null}
             logo={logo}
             expanded={expanded}
@@ -227,7 +228,7 @@ const MainContainer: FunctionComponent = () => {
                                             <GiftCodeSection />
                                             <InvoicesSection />
                                             <CancelSubscriptionSection />
-                                            <DowngradeSubscriptionSection />
+                                            <DowngradeSubscriptionSection app={app} />
                                             <CancelB2bSubscriptionSection />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>

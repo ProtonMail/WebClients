@@ -11,6 +11,7 @@ import {
     mockUserVPNServersCountApi,
     subscriptionDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
+import { APPS } from '@proton/shared/lib/constants';
 import { External } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 
@@ -27,7 +28,7 @@ beforeEach(() => {
 });
 
 it('should render', async () => {
-    const { container } = renderWithProviders(<UnsubscribeButton>Unsubscribe</UnsubscribeButton>);
+    const { container } = renderWithProviders(<UnsubscribeButton app={APPS.PROTONMAIL}>Unsubscribe</UnsubscribeButton>);
 
     await waitFor(() => {});
 
@@ -38,7 +39,7 @@ it('should open <InAppPurchaseModal> modal if subscription is managed by Google'
     const subscription = cloneDeep(subscriptionDefaultResponse);
     subscription.Subscription.External = External.Android;
 
-    const { getByTestId } = renderWithProviders(<UnsubscribeButton>Unsubscribe</UnsubscribeButton>, {
+    const { getByTestId } = renderWithProviders(<UnsubscribeButton app={APPS.PROTONMAIL}>Unsubscribe</UnsubscribeButton>, {
         preloadedState: {
             subscription: getModelState(
                 formatSubscription(subscription.Subscription, subscription.UpcomingSubscription)

@@ -22,19 +22,20 @@ import { APPS } from '@proton/shared/lib/constants';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 export interface SharedCalendarModalOwnProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     user: UserModel;
+    subscription?: Subscription;
     invitation: CalendarMemberInvitation;
 }
 
 interface Props extends ModalProps, SharedCalendarModalOwnProps {}
 
-const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, ...rest }: Props) => {
+const ShareCalendarInvitationModal = ({ addresses, calendars, user, subscription, invitation, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { contactEmailsMap } = useContactEmailsCache();
     const goToSettings = useSettingsLink();
@@ -137,7 +138,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     );
 
     if (isOtherCalendarsLimitReached && !isInvitedAddressDisabled) {
-        return <CalendarLimitReachedModal {...rest} isFreeUser={isFreeUser} />;
+        return <CalendarLimitReachedModal {...rest} isFreeUser={isFreeUser} user={user} subscription={subscription} />;
     }
 
     const title = isInvitedAddressDisabled

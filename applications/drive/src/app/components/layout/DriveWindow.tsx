@@ -56,7 +56,7 @@ const DriveWindow = ({ children }: Props) => {
         />
     ) : null;
 
-    const top = <TopBanners>{fileRecoveryBanner}</TopBanners>;
+    const top = <TopBanners app={APPS.PROTONDRIVE}>{fileRecoveryBanner}</TopBanners>;
 
     const drawerSettingsButton = (
         <QuickSettingsAppButton aria-expanded={isAppInView(DRAWER_NATIVE_APPS.QUICK_SETTINGS, appInView)} />

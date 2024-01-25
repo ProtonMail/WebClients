@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -120,7 +120,7 @@ const ForwardSection = () => {
                     description={c('email_forwarding_2023: Description')
                         .t`Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.`}
                     modalProps={upsellModalProps}
-                    upsellRef={upsellRef}
+                    upgradePath={addUpsellPath(getUpgradePath({ user }), upsellRef)}
                     features={[
                         'more-storage',
                         'more-email-addresses',

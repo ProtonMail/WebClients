@@ -51,6 +51,17 @@ export interface Plan {
     Offers: Offer[];
 }
 
+export interface FreePlanDefault extends Plan {
+    Name: PLANS.FREE;
+    Type: PLAN_TYPES.PLAN;
+    MaxBaseSpace: number;
+    MaxDriveSpace: number;
+    MaxRewardSpace: number;
+    MaxDriveRewardSpace: number;
+    MaxBaseRewardSpace: number;
+    storageSplitEnabled: boolean;
+}
+
 export const getPlanMaxIPs = (plan: Plan) => {
     if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
         return 1;
@@ -141,7 +152,7 @@ export interface SubscriptionCheckResponse {
 }
 
 export enum Audience {
-    B2C = 0,
-    B2B = 1,
-    FAMILY = 2,
+    B2C = 'b2c',
+    B2B = 'b2b',
+    FAMILY = 'family',
 }
