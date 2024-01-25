@@ -506,6 +506,9 @@
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
       ],
+      "Upgrade to Visionary": [
+        "Upgrade para Visionary"
+      ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
       ],
@@ -1864,6 +1867,9 @@
       "Access to the desktop app is limited": [
         "O acesso ao aplicativo de desktop é limitado"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "A versão beta do aplicativo de desktop ${ MAIL_APP_NAME } é atualmente limitada aos assinantes ${ BRAND_NAME } Visionary. Ela estará disponível para todos os usuários no início de 2024."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
       ]
@@ -2053,6 +2059,9 @@
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Configure um domínio personalizado antes de adicionar endereços."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configure um domínio personalizado antes de adicionar usuários à sua organização."
@@ -3184,6 +3193,9 @@
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
+      ],
       "here": [
         "aqui"
       ],
@@ -3917,6 +3929,9 @@
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
       ],
+      "You can now return to the application to continue": [
+        "Agora você pode retornar ao aplicativo para continuar"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
@@ -4477,6 +4492,9 @@
       ],
       "Select your plan": [
         "Selecione seu plano"
+      ],
+      "Single sign-on entity ID": [
+        "ID da entidade de logon único"
       ],
       "Single sign-on URL": [
         "URL único de sign-on"
@@ -7213,6 +7231,9 @@
       "Email subscriptions": [
         "Inscrições de e-mail"
       ],
+      "Enter endpoints into your identity provider": [
+        "Insira endpoints em seu provedor de identidade"
+      ],
       "Enter SAML metadata": [
         "Insira os metadados do SAML"
       ],
@@ -7567,6 +7588,9 @@
       "Feature in early access": [
         "Recurso em acesso antecipado"
       ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Chave pública do provedor de identidade para assinar declarações de autenticação. Obtenha o hash do certificado do seu provedor de identidade."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se você comprou um código de vale-presente ou recebeu um da nossa equipe de suporte, você pode inserir o código aqui."
       ],
@@ -7584,6 +7608,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado estará ativo quando o seu sistema estiver configurado no modo \"claro\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Geralmente, um URL que contém o nome do provedor de identidade dentro"
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
