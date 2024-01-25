@@ -169,7 +169,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                                 >
                                     {!loading ? (
                                         <span className="mt-1 text-xs color-weak flex items-center gap-1">
-                                            <Icon name="exclamation-circle" size={16} />
+                                            <Icon name="exclamation-circle" size={4} />
                                             <span className="text-pre-wrap flex-1">{c('Info')
                                                 .t`You cannot change the mailboxes for this alias.`}</span>
                                         </span>

@@ -32,7 +32,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
                               disabled={itemViewProps.revision.optimistic}
                               title={c('Action').t`Copy to clipboard`}
                           >
-                              <Icon name="squares" alt={c('Action').t`Copy to clipboard`} size={20} />
+                              <Icon name="squares" alt={c('Action').t`Copy to clipboard`} size={5} />
                           </Button>,
                       ]
                     : []

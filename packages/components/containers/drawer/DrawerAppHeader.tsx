@@ -148,7 +148,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
                                 shape="ghost"
                                 onClick={() => handleToggleIFrame()}
                             >
-                                <Icon name="cross-big" size={16} />
+                                <Icon name="cross-big" size={4} />
                             </Button>
                         </Tooltip>
                     </div>

@@ -49,7 +49,7 @@ export const VaultInviteRespond: FC<Invite> = (invite) => {
                 <VaultIcon
                     color={vault.content.display.color}
                     icon={vault.content.display.icon}
-                    size={32}
+                    size={8}
                     background
                     className="mb-2"
                 />

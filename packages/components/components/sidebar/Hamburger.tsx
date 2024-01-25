@@ -24,7 +24,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, ...rest }: Props) => 
             icon
         >
             <Icon
-                size={16}
+                size={4}
                 name={expanded ? 'cross' : 'hamburger'}
                 alt={expanded ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
             />

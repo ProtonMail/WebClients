@@ -30,7 +30,7 @@ const EncryptionStatusIcon = ({
     colorClassName,
 }: Props) => {
     if (loading) {
-        return <Loader className="icon-16p m-auto flex" />;
+        return <Loader className="icon-size-4 m-auto flex" />;
     }
     if (fill === undefined && isEncrypted === undefined) {
         return null;
@@ -42,7 +42,7 @@ const EncryptionStatusIcon = ({
 
     const spanClassNames = clsx(['inline-flex shrink-0 align-middle', className]);
     const icon = iconName && (
-        <Icon size={16} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
+        <Icon size={4} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
     );
 
     if (isDetailsModal) {

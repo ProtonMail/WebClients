@@ -36,7 +36,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             <SimpleDropdown
                 type="button"
                 hasCaret={false}
-                content={<Icon name="app-switch" size={24} className="apps-dropdown-button-icon shrink-0 no-print" />}
+                content={<Icon name="app-switch" size={6} className="apps-dropdown-button-icon shrink-0 no-print" />}
                 className="apps-dropdown-button shrink-0"
                 dropdownClassName="apps-dropdown rounded-lg"
                 originalPlacement="bottom-start"
@@ -71,7 +71,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                                 appName={appToLinkTo}
                                                 variant="glyph-only"
                                                 className="shrink-0"
-                                                size={36}
+                                                size={9}
                                             />
                                         </div>
                                         <span

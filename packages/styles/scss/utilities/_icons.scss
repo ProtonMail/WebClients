@@ -1,28 +1,38 @@
-@use 'sass:math';
-%icon {
+%icon-base {
 	display: inline-block;
 	vertical-align: middle;
 	fill: currentcolor;
 }
 
-@each $width in (6, 8, 10, 11, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 40, 42, 48, 56, 60, 70, 100, 110) {
-	.icon-#{$width}p {
-		@extend %icon; // 🤔
+/// Use the same sizing taxonomy as the sizing utility framework
+/// 'class_name': value_in_pixel
+@each $sizingname,
+	$size
+		in (
+			'2\\\.5': 10,
+			'2\\\.75': 11,
+			'3': 12,
+			'3\\\.5': 14,
+			'4': 16,
+			'4\\\.5': 18,
+			'5': 20,
+			'5\\\.5': 22,
+			'6': 24,
+			'7': 28,
+			'8': 32,
+			'9': 36,
+			'10': 40,
+			'11': 44,
+			'12': 48,
+			'13': 52,
+			'14': 56,
+			'15': 60
+		)
+{
+	.icon-size-#{$sizingname} {
+		@extend %icon-base; // In oder to serialize output in a same rule
 
-		inline-size: rem($width);
-		block-size: rem($width);
+		inline-size: rem($size);
+		block-size: rem($size);
 	}
-}
-
-@each $width in (50) {
-	.icon-#{$width} {
-		@extend %icon; // 🤔
-
-		inline-size: math.percentage(math.div($width, 100));
-		block-size: math.percentage(math.div($width, 100));
-	}
-}
-
-.path2x {
-	stroke-width: 1px;
 }

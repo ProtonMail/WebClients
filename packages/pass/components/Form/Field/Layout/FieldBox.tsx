@@ -45,7 +45,7 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
 const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = (props, ref) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
     const isCoreIcon = typeof icon == 'string';
-    const iconEl = isCoreIcon ? <Icon name={icon} size={20} /> : icon;
+    const iconEl = isCoreIcon ? <Icon name={icon} size={5} /> : icon;
 
     return (
         <div className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)} ref={ref}>

@@ -14,7 +14,7 @@ export const NotificationHeader: FC<Props> = ({ extra, title, onClose }) => {
     return (
         <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2">
             <h3 className="flex text-bold text-lg items-center gap-2">
-                <PassIcon status={PassIconStatus.ACTIVE} size={22} />
+                <PassIcon status={PassIconStatus.ACTIVE} size={5.5} />
                 <span className="flex-1 text-ellipsis">{title}</span>
             </h3>
 
@@ -31,7 +31,7 @@ export const NotificationHeader: FC<Props> = ({ extra, title, onClose }) => {
                     onClick={() => onClose?.({ discard: true })}
                     title={c('Action').t`Cancel`}
                 >
-                    <Icon name="cross" alt={c('Action').t`Cancel`} size={16} />
+                    <Icon name="cross" alt={c('Action').t`Cancel`} size={4} />
                 </Button>
             </div>
         </div>

@@ -23,7 +23,7 @@ const SpyTrackerIcon = (
     const icon = (
         <Icon
             name={needsMoreProtection ? 'shield-2' : 'shield-2-check-filled'}
-            size={16}
+            size={4}
             alt={title}
             data-testid="privacy:tracker-icon"
             className={clsx(
