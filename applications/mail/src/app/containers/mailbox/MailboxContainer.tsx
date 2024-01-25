@@ -187,6 +187,13 @@ const MailboxContainer = ({
     useMailboxFavicon(labelID, location);
     useScrollToTop(listRef as RefObject<HTMLElement>, [page, labelID, sort, filter, searchParameters]);
 
+    const onCheck = (checked: boolean) => {
+        // Reset select all state when interacting with checkboxes in the list
+        if (selectAll && !checked) {
+            setSelectAll(false);
+        }
+    };
+
     const {
         checkedIDs,
         selectedIDs,
@@ -195,13 +202,14 @@ const MailboxContainer = ({
         handleCheckOne,
         handleCheckOnlyOne,
         handleCheckRange,
-    } = useItemsSelection(
-        elementID,
-        elementIDs,
+    } = useItemsSelection({
+        activeID: elementID,
+        allIDs: elementIDs,
         // Using inputLabelID and page as dependency to update checkedIDs on page and location change
         // It wasn't working correctly before
-        [elementID, inputLabelID, page]
-    );
+        resetDependencies: [elementID, inputLabelID, page],
+        onCheck,
+    });
 
     useNewEmailNotification(() => handleCheckAll(false));
 
