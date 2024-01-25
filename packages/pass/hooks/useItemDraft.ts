@@ -14,10 +14,11 @@ import { first } from '@proton/pass/utils/array/first';
 import debounce from '@proton/utils/debounce';
 
 const SAVE_DRAFT_TIMEOUT = 500;
+const DRAFT_HASH = '#draft';
 
 export const useMatchDraftHash = (): boolean => {
     const { location } = useHistory();
-    return useMemo(() => location.hash === '#draft', []);
+    return useMemo(() => location.hash === DRAFT_HASH, []);
 };
 
 type UseItemDraftOptions<V extends {}> = DraftBase & {
@@ -38,7 +39,6 @@ type UseItemDraftOptions<V extends {}> = DraftBase & {
  * to avoid swarming the service worker with encryption requests */
 export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
     const history = useHistory();
-
     const isDraft = useMatchDraftHash();
     const drafts = useSelector(selectItemDrafts, () => true);
     const draft = useMemo(() => (isDraft ? first(drafts) : undefined), []);
@@ -66,18 +66,22 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
 
     useEffect(() => {
         if (ready) {
+            const { location } = history;
+            const { hash } = location;
+
             if (dirty) {
                 saveDraft(values);
-                history.replace({ hash: 'draft' });
+                if (hash !== DRAFT_HASH) history.replace({ ...location, hash: 'draft' });
             } else {
                 saveDraft.cancel();
                 if (shouldInvalidate.current) {
                     dispatch(draftDiscard(draftOptions));
                     shouldInvalidate.current = false;
-                    history.replace({ hash: '' });
+                    history.replace({ ...location, hash: '' });
                 }
             }
         }
+
         return () => saveDraft.cancel();
     }, [ready, values, dirty]);
 
