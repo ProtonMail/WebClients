@@ -2550,11 +2550,11 @@
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen extern nyckel hämtad för användaren är giltig för sändning"
+      ],
       "No valid address found": [
         "Ingen giltig adress hittades"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ingen WKD-nyckel hämtad för användaren är giltig för sändning"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Inte ett ${ BRAND_NAME }-konto"
@@ -4423,6 +4423,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Inaktuell"
       ],
@@ -5554,6 +5557,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markerat denna nyckel som inaktuell. Denna nyckel kan endast användas för signaturverifiering."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Extern nyckel hämtas automatiskt från keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Extern nyckel hämtas automatiskt via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."
