@@ -82,7 +82,7 @@ export const PinnedItemsBar: FC = () => {
                                 <SafeItemIcon
                                     className={clsx('shrink-0', itemTypeToSubThemeClassName[item.data.type])}
                                     item={item}
-                                    size={12}
+                                    size={3}
                                     pill={false}
                                 />
                             }

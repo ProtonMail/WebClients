@@ -78,7 +78,7 @@ const MessagesGeneralSection = () => {
                                     className="color-primary"
                                     name="info-circle"
                                     alt={c('Action').t`More info: Keyboard shortcuts`}
-                                    size={16}
+                                    size={4}
                                 />
                             </button>
                         </label>

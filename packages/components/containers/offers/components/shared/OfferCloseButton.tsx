@@ -24,12 +24,7 @@ const OfferCloseButton = ({ onClose, darkBackground = false }: Props) => {
                     '--top-custom': '8px',
                 }}
             >
-                <Icon
-                    className="modal-close-icon"
-                    size={12}
-                    name="cross-big"
-                    alt={c('specialoffer: Action').t`Close`}
-                />
+                <Icon className="modal-close-icon" size={3} name="cross-big" alt={c('specialoffer: Action').t`Close`} />
             </Button>
         </Tooltip>
     );

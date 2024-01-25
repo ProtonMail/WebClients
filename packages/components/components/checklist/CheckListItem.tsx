@@ -29,10 +29,10 @@ const CheckListItem = ({
     'data-testid': dataTestId,
 }: Props) => {
     const getIconSize = () => {
-        let iconSize: IconSize = 16;
+        let iconSize: IconSize = 4;
 
         if (done) {
-            iconSize = smallVariant ? 12 : 20;
+            iconSize = smallVariant ? 3 : 5;
         }
 
         return iconSize;

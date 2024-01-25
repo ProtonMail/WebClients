@@ -47,7 +47,7 @@ const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }
             {createElement(
                 isButton ? 'button' : 'div',
                 { ...commonProps, ...(isButton ? buttonProps : {}) },
-                <Icon name={icon} size={16} alt={title} />
+                <Icon name={icon} size={4} alt={title} />
             )}
         </Tooltip>
     );

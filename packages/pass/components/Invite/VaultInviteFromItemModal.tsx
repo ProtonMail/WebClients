@@ -64,7 +64,7 @@ export const VaultInviteFromItemModal: FC<Props> = ({
                                     ? VAULT_ICON_MAP[vault.content.display.icon]
                                     : 'pass-all-vaults'
                             }
-                            iconSize={20}
+                            iconSize={5}
                         />
                     </div>
                 </Button>

@@ -10,7 +10,7 @@ const VpnProLogo = ({ size }: { size: IconSize }) => {
             viewBox="0 0 26 24"
             fill="none"
             role="img"
-            className={`icon-${size}p`}
+            className={`icon-size-${size}`}
         >
             <path
                 d="M11.1506 20.1604L12.0234 18.8586L18.6533 8.8438C19.233 7.9682 18.6797 6.7936 17.6309 6.67319L1.17725 4.78418L9.7007 20.1073C10.0118 20.6557 10.7983 20.6858 11.1506 20.1604Z"

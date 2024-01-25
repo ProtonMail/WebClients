@@ -60,7 +60,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
                         onClick={onRemove}
                         type="button"
                     >
-                        <Icon name="cross" size={12} className="m-auto" />
+                        <Icon name="cross" size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>

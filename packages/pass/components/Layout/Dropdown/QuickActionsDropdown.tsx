@@ -35,7 +35,7 @@ export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProp
     color,
     disabled,
     icon = 'three-dots-vertical',
-    iconSize = 20,
+    iconSize = 5,
     menuClassName,
     offset,
     originalPlacement,

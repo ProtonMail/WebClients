@@ -24,7 +24,7 @@ const DownloadSection = ({ release, icon, platform, isBeta }: DownloadSectionPro
     return (
         <div className="flex">
             <div className="border p-7 flex-1 rounded flex flex-column items-center">
-                <Icon size={48} name={icon} className="mb-4" />
+                <Icon size={12} name={icon} className="mb-4" />
                 <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`For ${platform}`}</h3>
                 <div className="flex gap-2 items-baseline">
                     {isBeta && <Pill className="mt-2 mb-4">{c('Label').t`Beta`}</Pill>}

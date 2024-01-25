@@ -121,7 +121,7 @@ export const MenuDropdown: FC = () => {
                 >
                     <VaultIcon
                         className="shrink-0"
-                        size={16}
+                        size={4}
                         color={matchTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
                         icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
                     />
@@ -180,7 +180,7 @@ export const MenuDropdown: FC = () => {
                                         <span className="flex items-center flex-nowrap gap-2">
                                             <VaultIcon
                                                 className="shrink-0"
-                                                size={16}
+                                                size={4}
                                                 color={selected.color}
                                                 icon={selected?.icon}
                                             />

@@ -10,6 +10,11 @@ const deprecatedClasses = [
         getMessage: (match) =>
             `"${match}" is deprecated. Please migrate to the new sizing utilities https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions`,
     },
+    {
+        pattern: /\bicon-\d+p\b/,
+        getMessage: (match) =>
+            `"${match}" is deprecated. Please use "icon-size-*" utility, based on the new sizing framework https://design-system.protontech.ch/?path=/docs/components-icon--basic#sizing`,
+    },
 ];
 
 module.exports = {
