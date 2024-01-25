@@ -77,6 +77,9 @@
       "Close this banner": [
         "Sluit deze banner"
       ],
+      "Configure SAML": [
+        "SAML configureren"
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -338,6 +341,9 @@
       "Remove bonuses": [
         "Verwijder bonussen"
       ],
+      "Remove domain": [
+        "Verwijder bestand"
+      ],
       "Remove gift code": [
         "Verwijder geschenkcode"
       ],
@@ -403,6 +409,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
+      ],
+      "Select file": [
+        "Selecteer bestand"
       ],
       "Send code": [
         "Code versturen"
@@ -1874,6 +1883,14 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
@@ -2808,6 +2825,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
       ],
+      "Add domain": [
+        "domein"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
         "Server toevoegen (${ availableAddedCount } beschikbaar)"
@@ -2894,6 +2914,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
+      ],
+      "Beta": [
+        "Bèta"
       ],
       "Billed at ${ price }": [
         "Gefactureerd aan ${ price }"
@@ -4032,6 +4055,9 @@
       "Amount due": [
         "Verschuldigd bedrag"
       ],
+      "Assertion Consumer Service URL": [
+        "URL"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -4185,6 +4211,9 @@
       "Interval": [
         "Interval"
       ],
+      "Issuer ID": [
+        "Emittent ID"
+      ],
       "Keep me signed in": [
         "Houd me ingelogd"
       ],
@@ -4202,6 +4231,9 @@
       ],
       "Main": [
         "Primair"
+      ],
+      "Method for importing metadata": [
+        "Importeren metagegevens"
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
@@ -5060,6 +5092,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
       ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
       "For next-level password management and identity protection.": [
         "Voor wachtwoordbeheer en identiteitsbescherming op een hoger niveau."
       ],
@@ -5436,6 +5471,9 @@
       "IP Address copied to clipboard": [
         "IP-adres gekopieerd naar het klembord"
       ],
+      "Key copied to the clipboard": [
+        "klembord"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
       ],
@@ -5627,6 +5665,14 @@
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Geen toestemming"
+      ],
+      "Send to all": [
+        "Verzend"
       ]
     },
     "Placeholder": {
@@ -5878,6 +5924,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ],
+      "This permission expires soon": [
+        "vervalt binnenkort"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
