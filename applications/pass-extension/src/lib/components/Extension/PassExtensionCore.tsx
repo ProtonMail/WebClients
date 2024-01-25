@@ -11,6 +11,7 @@ import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { pageMessage, resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -94,11 +95,13 @@ const createOnboardingAck =
  * context. Send a pageMessage (as of now the importer is
  * handled in the settings page) to decrypt the payload
  * before reading the .zip file contents */
-const prepareImport: PassCoreContextValue['prepareImport'] = (payload) =>
-    sendMessage.on(pageMessage({ type: WorkerMessageType.IMPORT_PREPARE, payload }), (res) => {
-        if (res.type === 'error') throw new Error(res.error);
-        return res.payload;
-    });
+const prepareImport: PassCoreContextValue['prepareImport'] = async (payload) =>
+    isProtonPassEncryptedImport(payload)
+        ? sendMessage.on(pageMessage({ type: WorkerMessageType.IMPORT_DECRYPT, payload }), (res) => {
+              if (res.type === 'error') throw new Error(res.error);
+              return res.payload;
+          })
+        : payload;
 
 const exportData: PassCoreContextValue['exportData'] = (payload) =>
     sendMessage.on(pageMessage({ type: WorkerMessageType.EXPORT_REQUEST, payload }), (res) => {

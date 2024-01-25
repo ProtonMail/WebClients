@@ -65,7 +65,7 @@ export enum WorkerMessageType {
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
-    IMPORT_PREPARE = 'IMPORT_PREPARE',
+    IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_REQUEST = 'LOCALE_REQUEST',
     LOG_EVENT = 'LOG_EVENT',
@@ -121,7 +121,7 @@ export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_CO
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
-export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_PREPARE, ImportReaderPayload>;
+export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -224,7 +224,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
-    [WorkerMessageType.IMPORT_PREPARE]: { payload: ImportReaderPayload };
+    [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
