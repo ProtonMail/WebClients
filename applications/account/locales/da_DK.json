@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Opgradér til Visionary"
+      ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Adgang til skrivebordsappen er begrænset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Beta-versionen af ${ MAIL_APP_NAME } desktop-appen er i øjeblikket tilgængelig for alle med et betalt ${ MAIL_APP_NAME }-abonnement. Den vil snart være tilgængelig for alle."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"

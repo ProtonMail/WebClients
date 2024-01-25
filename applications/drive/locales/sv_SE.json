@@ -4492,6 +4492,9 @@
       "Expired": [
         "Löpt ut"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Inaktuell"
       ],
@@ -5532,6 +5535,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markerat denna nyckel som inaktuell. Denna nyckel kan endast användas för signaturverifiering."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Extern nyckel hämtas automatiskt från keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Extern nyckel hämtas automatiskt via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denna nyckel används för att kryptera meddelanden till denna kontakt"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi rekommenderar att du “Sluta lita på“ denna nyckel."

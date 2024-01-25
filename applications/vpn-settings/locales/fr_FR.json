@@ -506,6 +506,9 @@
       "Upgrade to Business": [
         "Passer à l'abonnement Business"
       ],
+      "Upgrade to Visionary": [
+        "Passer à l'abonnement Visionary"
+      ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
@@ -1864,8 +1867,8 @@
       "Access to the desktop app is limited": [
         "L'accès à l'application de bureau est limité."
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement disponible pour tous les utilisateurs avec un abonnement payant à ${ MAIL_APP_NAME }. Elle sera prochainement disponible pour tous les utilisateurs."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement réservée aux utilisateurs ayant un abonnement ${ BRAND_NAME } Visionary. Elle sera disponible pour tous les utilisateurs début 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Changez d'abonnement dès aujourd'hui ou vérifiez à nouveau début 2024 pour y accéder."
@@ -3001,6 +3004,12 @@
       "Cancel anytime": [
         "Annulez quand vous le voulez"
       ],
+      "Can’t access your recovery email?": [
+        "Vous ne pouvez plus accéder à votre adresse e-mail de récupération ?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Vous ne pouvez plus accéder à votre téléphone de récupération ?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
@@ -3093,6 +3102,9 @@
       "Done! We sent a code to ${ destination }.": [
         "C'est fait, nous avons envoyé un code à ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Vous ne savez pas ce que c'est que votre phrase de récupération ?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
       ],
@@ -3167,6 +3179,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Saisissez votre numéro de téléphone de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse e-mail."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Entrez votre phrase de récupération pour changer votre mot de passe."
       ],
       "Expired": [
         "Expiré"
@@ -3708,6 +3723,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
+      "To proceed, we must verify the request.": [
+        "Pour procéder, nous devons vérifier la requête."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
       ],
@@ -3857,6 +3875,9 @@
       ],
       "Welcome": [
         "Bienvenue"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Nous allons envoyer un code de réinitialisation à ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation à l'adresse e-mail que vous avez indiquée pour la récupération du compte."

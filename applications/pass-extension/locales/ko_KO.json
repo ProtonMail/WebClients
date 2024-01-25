@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "계정"
+      ],
       "Account settings": [
         "계정 설정"
       ],
@@ -164,6 +167,9 @@
       "Export": [
         "내보내기"
       ],
+      "Feedback & Help": [
+        "피드백 및 지원"
+      ],
       "Fill password": [
         "비밀번호 채우기"
       ],
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 사용법 안내"
       ],
       "Import": [
         "불러오기"
@@ -337,6 +346,9 @@
       ],
       "Show": [
         "보기"
+      ],
+      "Show advanced options": [
+        "고급 옵션 표시"
       ],
       "Sign back in": [
         "다시 로그인하세요"
@@ -1218,6 +1230,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "계정"
       ],
       "Alias": [
         "별명"

@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Uppgradera till Visionary"
+      ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
@@ -3120,6 +3123,9 @@
       "Access to the desktop app is limited": [
         "Åtkomst till app för stationär dator är begränsat"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
       ]
@@ -3883,11 +3889,11 @@
       "No emails found to import - the account does not have an inbox": [
         "Inga e-postmeddelanden hittades att importera - kontot har ingen inkorg"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen extern nyckel hämtad för användaren är giltig för sändning"
+      ],
       "No valid address found": [
         "Ingen giltig adress hittades"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ingen WKD-nyckel hämtad för användaren är giltig för sändning"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Inte ett ${ BRAND_NAME }-konto"
@@ -6214,6 +6220,12 @@
       "Cancel anytime": [
         "Avbryt när som helst"
       ],
+      "Can’t access your recovery email?": [
+        "Kan du inte komma åt din e-post för återställning?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Kan du inte komma åt din telefon för återställning?"
+      ],
       "Center": [
         "Centrera"
       ],
@@ -6353,6 +6365,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Klart! Vi skickade en kod till ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Kan du inte din återställningsfras?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
       ],
@@ -6463,6 +6478,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Ange ditt telefonnummer för återställning så skickar vi ditt användarnamn eller din e-postadress."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Ange din återställningsfras för att ändra ditt lösenord nu."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Händelseinbjudningar och OSA kommer att skickas på detta språk."
@@ -7451,6 +7469,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "För att fortsätta, välj en metod för kontoåterställning så att vi kan verifiera begäran."
       ],
+      "To proceed, we must verify the request.": [
+        "För att fortsätta måste vi verifiera begäran."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "För att säkra din internetanslutning, ladda ner och installera ${ VPN_APP_NAME }-applikationen för din enhet och anslut till en server."
       ],
@@ -7669,6 +7690,9 @@
       ],
       "Welcome": [
         "Välkommen"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Vi skickar en återställningskod till ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi kommer skicka en återställningskod till e-postadressen som du angav för kontoåterställning."
@@ -11297,6 +11321,9 @@
       "Create another account instead": [
         "Skapa ett annat konto istället"
       ],
+      "Download PDF ${ size }": [
+        "Ladda ner PDF ${ size }"
+      ],
       "Keep this plan": [
         "Behåll detta paket"
       ],
@@ -11435,6 +11462,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-alias skyddar din e-post från dataintrång"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Jag förstår att om jag förlorar mina återställningsuppgifter kan jag permanent förlora åtkomsten till mitt konto."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt **återställningskit** att låta dig logga in och återställa dina data."
+      ],
       "Includes:": [
         "Inkluderar:"
       ],
@@ -11446,6 +11479,9 @@
       ],
       "Install app and extension": [
         "Installera app och tillägg"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Det är det enda sättet att helt återställa ditt konto, så se till att du förvarar det någonstans på ett säkert sätt."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli en del av över 100 miljoner människor som har valt ${ BRAND_NAME } för att hålla sig säkra online"

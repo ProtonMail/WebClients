@@ -167,6 +167,9 @@
       "Export": [
         "Exportar"
       ],
+      "Feedback & Help": [
+        "Feedback e ajuda"
+      ],
       "Fill password": [
         "Preencher senha"
       ],
@@ -193,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como eu exporto meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Como usar o ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importar"
