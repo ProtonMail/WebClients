@@ -4,6 +4,7 @@ import { setupServer } from 'msw/node';
 
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
+import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCards from '../../SettingsArea/ProviderCards/ProviderCards';
 
@@ -89,7 +90,7 @@ afterAll(() => {
 
 describe('OAuth start step', () => {
     it.skip('Should render the product selection modal when clicking on Google', async () => {
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const google = screen.getByTestId('ProviderCard:googleCard');
 
@@ -101,7 +102,7 @@ describe('OAuth start step', () => {
     });
 
     it.skip('Should render the product selection modal when clicking on Outlook', async () => {
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         const outlook = screen.getByTestId('ProviderCard:outlookCard');
 
@@ -113,7 +114,7 @@ describe('OAuth start step', () => {
     });
 
     it('Should render the instruction modal if Google is selected', async () => {
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         // Open the product modal
         const google = screen.getByTestId('ProviderCard:googleCard');
@@ -144,7 +145,7 @@ describe('OAuth start step', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         // Open the product modal
         const outlook = screen.getByTestId('ProviderCard:outlookCard');
@@ -165,7 +166,7 @@ describe('OAuth start step', () => {
             })
         );
 
-        easySwitchRender(<ProviderCards />);
+        easySwitchRender(<ProviderCards app={APPS.PROTONMAIL} />);
 
         // Open the product modal
         const google = screen.getByTestId('ProviderCard:googleCard');

@@ -6,7 +6,7 @@ import { SettingsParagraph, SettingsSectionWide } from '@proton/components/conta
 import { PrivateMainSettingsArea, SettingsAreaConfig } from '@proton/components/containers/layout';
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { useFeature } from '@proton/components/hooks';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { EasySwitchFeatureFlag } from '../../interface';
 import EasySwitchStoreProvider from '../../logic/StoreProvider';
@@ -16,9 +16,10 @@ import ProviderCards from './ProviderCards/ProviderCards';
 
 interface Props {
     config: SettingsAreaConfig;
+    app: APP_NAMES;
 }
 
-const SettingsArea = ({ config }: Props) => {
+const SettingsArea = ({ config, app }: Props) => {
     const { loading } = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
 
     if (loading) {
@@ -43,7 +44,7 @@ const SettingsArea = ({ config }: Props) => {
                         {c('Info')
                             .t`Import your emails, calendars, and contacts from another service to ${BRAND_NAME}.`}
                     </SettingsParagraph>
-                    <ProviderCards />
+                    <ProviderCards app={app} />
                 </SettingsSectionWide>
                 <SettingsSectionWide>
                     <ReportsTable />

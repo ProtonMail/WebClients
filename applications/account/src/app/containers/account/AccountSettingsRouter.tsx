@@ -163,7 +163,7 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(easySwitch) && (
                 <Route path={getSectionPath(path, easySwitch)}>
                     <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag="MaintenanceImporter">
-                        <EasySwitchSettingsArea config={easySwitch} />
+                        <EasySwitchSettingsArea config={easySwitch} app={app} />
                     </SettingsMaintenanceLayoutWrapper>
                 </Route>
             )}
