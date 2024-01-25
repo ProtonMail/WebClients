@@ -2,29 +2,24 @@ import { type FC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
+import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
-import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import { VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
     itemCreationIntent,
-    itemDeleteIntent,
     itemEditDismiss,
     itemEditIntent,
-    itemMoveIntent,
     itemPinIntent,
-    itemRestoreIntent,
-    itemTrashIntent,
     itemUnpinIntent,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
@@ -33,12 +28,9 @@ import {
     selectItemWithOptimistic,
     selectResolvedOptimisticId,
     selectShare,
-    selectWritableSharedVaultsWithItemsCount,
-    selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     login: LoginView,
@@ -50,11 +42,11 @@ const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
 export const ItemView: FC = () => {
     const { selectItem, matchTrash, preserveSearch } = useNavigation();
     const inviteContext = useInviteContext();
+    const itemActions = useItemsActions();
 
     const dispatch = useDispatch();
     const { shareId, itemId } = useParams<SelectedItem>();
     const [inviteOpen, setInviteOpen] = useState(false);
-    const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
     const optimisticResolved = useSelector(selectResolvedOptimisticId(itemId));
@@ -79,11 +71,11 @@ export const ItemView: FC = () => {
 
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
-    const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
-    const handleMove = () => openVaultSelect(item.shareId, selectWritableVaultsWithItemsCount);
-    const handleMoveToSharedVault = () => openVaultSelect(item.shareId, selectWritableSharedVaultsWithItemsCount);
-    const handleRestore = () => dispatch(itemRestoreIntent({ item, itemId, shareId }));
-    const handleDelete = () => dispatch(itemDeleteIntent({ item, itemId, shareId }));
+    const handleTrash = () => itemActions.trash(item);
+    const handleMove = () => itemActions.move(item, VaultSelectMode.Writable);
+    const handleMoveToSharedVault = () => itemActions.move(item, VaultSelectMode.Shared);
+    const handleRestore = () => itemActions.restore(item);
+    const handleDelete = () => itemActions.delete(item);
     const handleInviteClick = () => setInviteOpen(true);
     const handleVaultManage = () => inviteContext.manageAccess(shareId);
 
@@ -109,19 +101,6 @@ export const ItemView: FC = () => {
         }
     };
 
-    const doMoveItem = (destinationShareId: string) => {
-        const optimisticId = uniqueId();
-        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
-
-        selectItem(destinationShareId, optimisticId, {
-            mode: 'replace',
-            filters: { selectedShareId: destinationShareId },
-        });
-
-        closeVaultSelect();
-        setInviteOpen(false);
-    };
-
     const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
 
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as FC<ItemViewProps>;
@@ -142,14 +121,6 @@ export const ItemView: FC = () => {
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
                 handlePinClick={handlePinClick}
-            />
-
-            <VaultSelect
-                downgradeMessage={c('Info')
-                    .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
-                onSubmit={doMoveItem}
-                onClose={closeVaultSelect}
-                {...modalState}
             />
 
             <VaultInviteFromItemModal

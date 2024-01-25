@@ -22,19 +22,13 @@ export const ItemsProvider: FC<PropsWithChildren> = ({ children }) => {
     const itemId = selectedItem?.itemId;
 
     const items = useSelector(
-        selectItemsSearchResult(
-            matchTrash
-                ? {
-                      search: filters.search,
-                      trashed: true,
-                  }
-                : {
-                      type: filters.type === '*' ? null : filters.type,
-                      search: filters.search,
-                      shareId: filters.selectedShareId,
-                      sort: filters.sort,
-                  }
-        )
+        selectItemsSearchResult({
+            type: filters.type === '*' ? null : filters.type,
+            search: filters.search,
+            shareId: matchTrash ? null : filters.selectedShareId,
+            sort: filters.sort,
+            trashed: matchTrash,
+        })
     );
 
     useEffect(() => {

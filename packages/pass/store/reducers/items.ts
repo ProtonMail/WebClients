@@ -1,16 +1,20 @@
 import type { Action, Reducer } from 'redux';
 
-import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import {
     bootSuccess,
     draftDiscard,
     draftSave,
     draftsGarbageCollect,
-    emptyTrashSuccess,
+    emptyTrashProgress,
     importItemsProgress,
     inviteAcceptSuccess,
     inviteCreationSuccess,
     itemAutofilled,
+    itemBulkDeleteProgress,
+    itemBulkMoveProgress,
+    itemBulkRestoreProgress,
+    itemBulkTrashProgress,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -36,30 +40,33 @@ import {
     itemTrashSuccess,
     itemUnpinSuccess,
     itemUsedSync,
-    restoreTrashSuccess,
+    restoreTrashProgress,
     shareDeleteSync,
     shareLeaveSuccess,
     sharesSync,
     syncSuccess,
-    vaultDeleteIntent,
     vaultDeleteSuccess,
-    vaultMoveAllItemsSuccess,
+    vaultMoveAllItemsProgress,
 } from '@proton/pass/store/actions';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
-import type { ItemType } from '@proton/pass/types';
+import type { IndexedByShareIdAndItemId, ItemType } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
+import { objectFilter } from '@proton/pass/utils/object/filter';
+import { objectMap } from '@proton/pass/utils/object/map';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 /** itemIds are only guaranteed to be unique per share not globally,
  * therefore we must index the item entries by `shareId`  */
-export type ItemsByShareId = { [shareId: string]: { [itemId: string]: ItemRevision } };
+
+export type ItemsByShareId = IndexedByShareIdAndItemId<ItemRevision>;
 
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
@@ -255,30 +262,21 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (emptyTrashSuccess.match(action)) {
-            return Object.fromEntries(
-                Object.entries(state).map(([shareId, itemsById]) => [
-                    shareId,
-                    Object.entries(itemsById).reduce(
-                        (reduction, [itemId, item]) =>
-                            isTrashed(item) ? reduction : fullMerge(reduction, { [itemId]: item }),
-                        {}
-                    ),
-                ])
+        if (or(emptyTrashProgress.match, itemBulkDeleteProgress.match)(action)) {
+            const deletedItemIds = action.payload.batch.map(prop('ItemID'));
+            return objectMap(state, (shareId, items) =>
+                shareId === action.payload.shareId ? objectFilter(items, notIn(deletedItemIds)) : items
             );
         }
 
-        if (restoreTrashSuccess.match(action)) {
-            return Object.fromEntries(
-                Object.entries(state).map(([shareId, itemsById]) => [
-                    shareId,
-                    Object.fromEntries(
-                        Object.entries(itemsById).map(([itemId, item]) => [
-                            itemId,
-                            isTrashed(item) ? partialMerge(item, { state: ItemState.Active }) : item,
-                        ])
-                    ),
-                ])
+        if (or(restoreTrashProgress.match, itemBulkRestoreProgress.match)(action)) {
+            return objectMap(state, (shareId, items) =>
+                shareId === action.payload.shareId
+                    ? partialMerge(
+                          items,
+                          objectMap(toMap(action.payload.batch, 'ItemID'), () => ({ state: ItemState.Active }))
+                      )
+                    : items
             );
         }
 
@@ -287,25 +285,34 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime: getEpoch() } } });
         }
 
-        if (vaultDeleteIntent.match(action)) {
-            return objectDelete(state, action.payload.shareId);
-        }
-
-        if (vaultDeleteSuccess.match(action)) {
-            return objectDelete(state, action.payload.shareId);
-        }
-
-        if (vaultMoveAllItemsSuccess.match(action)) {
-            const { shareId, movedItems, destinationShareId } = action.payload;
-            return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
-        }
-
-        if (or(shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
+        if (or(vaultDeleteSuccess.match, shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
         }
 
         if (inviteAcceptSuccess.match(action)) {
             return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
+        }
+
+        if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {
+            const { shareId, batch, destinationShareId, movedItems } = action.payload;
+            return fullMerge(
+                { ...state, [shareId]: objectFilter(state[shareId], notIn(batch.map(prop('itemId')))) },
+                { [destinationShareId]: toMap(movedItems, 'itemId') }
+            );
+        }
+
+        if (itemBulkTrashProgress.match(action)) {
+            const shareId = action.payload.shareId;
+            const update = action.payload.batch.reduce<IndexedByShareIdAndItemId<Partial<ItemRevision>>>(
+                (acc, { ItemID }) => {
+                    acc[shareId] = acc[shareId] ?? {};
+                    acc[shareId][ItemID] = { state: ItemState.Trashed };
+                    return acc;
+                },
+                {}
+            );
+
+            return partialMerge(state, update);
         }
 
         return state;

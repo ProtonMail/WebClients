@@ -22,6 +22,10 @@ import inviteRemove from '@proton/pass/store/sagas/invites/invite-remove.saga';
 import inviteResend from '@proton/pass/store/sagas/invites/invite-resend.saga';
 import newUserInvitePromote from '@proton/pass/store/sagas/invites/new-user-invite-promote.saga';
 import newUserInviteRemove from '@proton/pass/store/sagas/invites/new-user-invite-remove.saga';
+import itemBulkDelete from '@proton/pass/store/sagas/items/item-bulk-delete.saga';
+import itemBulkMove from '@proton/pass/store/sagas/items/item-bulk-move.saga';
+import itemBulkRestore from '@proton/pass/store/sagas/items/item-bulk-restore.saga';
+import itemBulkTrash from '@proton/pass/store/sagas/items/item-bulk-trash.saga';
 import itemCreation from '@proton/pass/store/sagas/items/item-creation.saga';
 import itemDelete from '@proton/pass/store/sagas/items/item-delete.saga';
 import itemEdit from '@proton/pass/store/sagas/items/item-edit.saga';
@@ -60,15 +64,19 @@ export function* rootSaga(options: RootSagaOptions) {
             inviteReject,
             inviteRemove,
             inviteResend,
+            itemBulkDelete,
+            itemBulkMove,
+            itemBulkRestore,
+            itemBulkTrash,
             itemCreation,
             itemDelete,
             itemEdit,
             itemMove,
+            itemPin,
             itemRestore,
             itemsImport,
-            itemPin,
-            itemUnpin,
             itemTrash,
+            itemUnpin,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
