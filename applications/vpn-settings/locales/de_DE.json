@@ -506,6 +506,9 @@
       "Upgrade to Business": [
         "Auf Business upgraden"
       ],
+      "Upgrade to Visionary": [
+        "Auf Visionary upgraden"
+      ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
@@ -1864,8 +1867,8 @@
       "Access to the desktop app is limited": [
         "Zugang zur Desktop-App ist beschränkt"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Die Betaversion der ${ MAIL_APP_NAME }-Desktop-App ist derzeit für jeden mit einem kostenpflichtigen ${ MAIL_APP_NAME }-Abonnement verfügbar. Sie wird bald für alle verfügbar sein."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Die Betaversion der ${ MAIL_APP_NAME } Desktop-App ist derzeit auf ${ BRAND_NAME } Visionary-Abonnenten beschränkt. Sie wird Anfang 2024 für alle Benutzer verfügbar sein."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
@@ -2762,7 +2765,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Füge diesen Eintrag zu deiner Domain im Kontrollpanel deines Domain-Namen-Registrars hinzu"
+        "Füge diesen Eintrag im Kontrollpanel deines Domain-Registrars hinzu."
       ]
     },
     "Human verification method": {
@@ -7585,7 +7588,7 @@
         "Funktion im frühzeitigen Zugang"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertions. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
+        "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertationen. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
@@ -7594,7 +7597,7 @@
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO": [
-        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf"
+        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
@@ -7606,7 +7609,7 @@
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "In der Regel eine URL, die den Namen des Identitätsanbieters enthält"
+        "In der Regel eine URL, die den Namen des Identitätsanbieters enthält."
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"

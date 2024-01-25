@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Effettua l'upgrade per abilitare ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Effettua l'upgrade a Visionary"
+      ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "L'accesso all'app desktop è limitato"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Sarà presto disponibile per tutti."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La versione beta dell'app desktop di ${ MAIL_APP_NAME } è attualmente limitata agli abbonati a ${ BRAND_NAME } Visionary. Sarà disponibile a tutti gli utenti all'inizio del 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
@@ -3890,11 +3893,11 @@
       "No emails found to import - the account does not have an inbox": [
         "Nessuna email trovata da importare - l'account non ha una cartella di posta ricevuta"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Nessuna chiave esterna recuperata per l'utente è valida per l'invio"
+      ],
       "No valid address found": [
         "Nessun indirizzo valido trovato"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nessuna chiave WKD recuperata per l'utente è valida per l'invio"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Non è un account ${ BRAND_NAME }"
@@ -6221,6 +6224,12 @@
       "Cancel anytime": [
         "Annulla in qualsiasi momento"
       ],
+      "Can’t access your recovery email?": [
+        "Non riesci ad accedere alla tua email di recupero?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Non riesci ad accedere al tuo telefono di recupero?"
+      ],
       "Center": [
         "Centra"
       ],
@@ -6363,6 +6372,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Fatto! Abbiamo inviato un codice a ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Non conosci la tua frase di recupero?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
       ],
@@ -6473,6 +6485,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Inserisci il tuo numero di telefono di recupero e ti invieremo il tuo nome utente o indirizzo email."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Inserisci la tua frase di recupero per cambiare la tua password adesso."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Gli inviti agli eventi e le richieste di risposta verranno inviati in questa lingua."
@@ -7461,6 +7476,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
       ],
+      "To proceed, we must verify the request.": [
+        "Per procedere dobbiamo verificare la richiesta."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per proteggere la tua connessione a internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server."
       ],
@@ -7679,6 +7697,9 @@
       ],
       "Welcome": [
         "Ti diamo il benvenuto"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Invieremo un codice di reimpostazione a ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di recupero all'indirizzo email fornito per il recupero dell'account."
@@ -11318,6 +11339,9 @@
       "Create another account instead": [
         "Crea invece un altro account"
       ],
+      "Download PDF ${ size }": [
+        "Scarica il PDF ${ size }"
+      ],
       "Keep this plan": [
         "Mantieni questo piano"
       ],
@@ -11456,6 +11480,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Gli alias Hide-my-email proteggono la tua email dalle violazioni dei dati"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Comprendo che se perdessi i miei dati di recupero, potrei perdere definitivamente l'accesso al mio account."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Se non riesci ad accedere al tuo account ${ BRAND_NAME }, il tuo **Kit di recupero** ti consentirà di accedere e recuperare i tuoi dati."
+      ],
       "Includes:": [
         "Include:"
       ],
@@ -11467,6 +11497,9 @@
       ],
       "Install app and extension": [
         "Installa l'app e l'estensione"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "È l'unico modo per ripristinare completamente il tuo account, quindi assicurati di conservarlo in un posto sicuro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Unisciti ad oltre 100 milioni di persone che hanno scelto ${ BRAND_NAME } per stare al sicuro online"

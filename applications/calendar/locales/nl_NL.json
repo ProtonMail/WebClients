@@ -1249,6 +1249,11 @@
         "Website"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "afbeelding"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -2313,6 +2318,14 @@
         "Update voor een afspraak die begint op ${ formattedStart }"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
@@ -2503,9 +2516,6 @@
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
@@ -5718,6 +5728,9 @@
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
+      "This permission expires soon": [
+        "vervalt binnenkort"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
       ],
@@ -6847,6 +6860,9 @@
       ],
       "Hide side panel": [
         "Verberg zijpaneel"
+      ],
+      "Load image": [
+        "Laad foto"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"

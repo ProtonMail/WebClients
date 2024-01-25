@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Αναβάθμιση σε Visionary"
+      ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } είναι προς το παρόν διαθέσιμη σε οποιονδήποτε έχει πρόγραμμα επί πληρωμή ${ MAIL_APP_NAME }. Σύντομα θα είναι διαθέσιμη σε όλους."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Δεν είναι ${ BRAND_NAME } λογαριασμός"
@@ -9119,6 +9119,9 @@
       "Show sender images": [
         "Προβολή εικόνων αποστολέα"
       ],
+      "Show unread count in application icon": [
+        "Προβολή του αριθμού των μην αναγνωσμένων στο εικονίδιο εφαρμογής"
+      ],
       "Show unread count in Favicon": [
         "Προβολή του αριθμού των μην αναγνωσμένων στο Favicon"
       ],
@@ -11285,6 +11288,9 @@
       "Create another account instead": [
         "Δημιουργήστε έναν άλλο λογαριασμό"
       ],
+      "Download PDF ${ size }": [
+        "Λήψη PDF ${ size }"
+      ],
       "Keep this plan": [
         "Διατηρήστε αυτό το πλάνο"
       ],
@@ -11423,6 +11429,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Τα Hide-my-email ψευδώνυμα προστατεύουν το ηλεκτρονικό ταχυδρομείο σας από παραβιάσεις δεδομένων"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Κατανοώ ότι αν χάσω τα στοιχεία ανάκτησης, ενδέχεται να χάσω οριστικά την πρόσβαση στον λογαριασμό μου."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας, το **κιτ Ανάκτησης** θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
+      ],
       "Includes:": [
         "Περιλαμβάνει:"
       ],
@@ -11434,6 +11446,9 @@
       ],
       "Install app and extension": [
         "Εγκατάσταση εφαρμογής και προέκτασης"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Είναι ο μόνος τρόπος για να επαναφέρετε πλήρως τον λογαριασμό σας, οπότε βεβαιωθείτε να το διατηρήσετε κάπου ασφαλές."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Ενταχθείτε στους περισσότερους από 100 εκατομμυρίων ανθρώπους που έχουν επιλέξει το ${ BRAND_NAME } για να παραμείνουν ασφαλείς στο διαδίκτυο"

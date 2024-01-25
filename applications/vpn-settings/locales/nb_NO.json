@@ -506,6 +506,9 @@
       "Upgrade to Business": [
         "Oppgrader til Business"
       ],
+      "Upgrade to Visionary": [
+        "Oppgrader til Visionary"
+      ],
       "Upgrade your plan": [
         "Oppgrader planen din"
       ],
@@ -1864,8 +1867,8 @@
       "Access to the desktop app is limited": [
         "Tilgang til skrivebordsappen er begrenset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Den vil snart være tilgjengelig for alle."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
@@ -3001,6 +3004,12 @@
       "Cancel anytime": [
         "Avslutt når som helst"
       ],
+      "Can’t access your recovery email?": [
+        "Får du ikke tilgang til gjenopprettings-e-posten din?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Har du ikke tilgang til telefonen for gjenoppretting?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
@@ -3093,6 +3102,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Kjenner du ikke gjenopprettingsfrasen din?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
       ],
@@ -3167,6 +3179,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Angi ditt gjenopprettingstelefonnummer og vi vil sende deg ditt brukernavn eller e-postadresse."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Skriv inn gjenopprettingsfrasen for å endre passordet ditt nå."
       ],
       "Expired": [
         "Utløpt"
@@ -3711,6 +3726,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "For å fortsette, velg en kontogjenopprettingsmetode slik at vi kan verifisere forespørselen."
       ],
+      "To proceed, we must verify the request.": [
+        "For å fortsette, må vi verifisere forespørselen."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en tjener."
       ],
@@ -3860,6 +3878,9 @@
       ],
       "Welcome": [
         "Velkommen"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Vi sender en tilbakestillingskode til ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi vil sende en tilbakestillingskode til e-postadressen du oppga for kontogjenoppretting."

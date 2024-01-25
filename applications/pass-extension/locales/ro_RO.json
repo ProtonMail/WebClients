@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Cont"
+      ],
       "Account settings": [
         "Setări cont"
       ],
@@ -164,6 +167,9 @@
       "Export": [
         "Exportare"
       ],
+      "Feedback & Help": [
+        "Feedback și ajutor"
+      ],
       "Fill password": [
         "Completare parolă"
       ],
@@ -190,6 +196,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Cum se pot exporta datele din ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Cum se folosește ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importare"
@@ -1218,8 +1227,8 @@
     "Label": {
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
-        "${ config.options.length } de caractere",
-        "${ config.options.length } caractere"
+        "${ config.options.length } caractere",
+        "${ config.options.length } de caractere"
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } cuvânt",
@@ -1255,6 +1264,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Cont"
       ],
       "Alias": [
         "Alias"

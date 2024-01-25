@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце, каб уключыць ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Палепшыць да Visionary"
+      ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
       ],
@@ -3150,8 +3153,8 @@
       "Access to the desktop app is limited": [
         "Доступ да настольнай праграмы абмежаваны"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }, а неўзабаве яна стане даступна ўсім карыстальнікам."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
@@ -3924,9 +3927,6 @@
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ніводны з атрыманых ключоў WKD для карыстальніка несапраўдны для адпраўкі"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
@@ -6341,6 +6341,12 @@
       "Cancel anytime": [
         "Скасаваць можна ў любы час"
       ],
+      "Can’t access your recovery email?": [
+        "Не можаце атрымаць доступ да электроннай пошты для аднаўлення доступу?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Не можаце атрымаць доступ да нумара тэлефона для аднаўлення доступу?"
+      ],
       "Center": [
         "Па цэнтры"
       ],
@@ -6491,6 +6497,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Гатова! Мы адправілі код на ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Не ведаеце сваю фразу аднаўлення?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
       ],
@@ -6601,6 +6610,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Увядзіце нумар тэлефона, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Увядзіце фразу аднаўлення, каб змяніць пароль."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Запрашэнні на падзею і RSVP будзе адпраўлена на гэтай мове."
@@ -7604,6 +7616,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
+      "To proceed, we must verify the request.": [
+        "Для працягу, неабходна праверыць запыт."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
@@ -7822,6 +7837,9 @@
       ],
       "Welcome": [
         "Вітаем"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Код скідання адпраўлены на ${ boldValue }"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
@@ -11542,6 +11560,9 @@
       "Create another account instead": [
         "Стварыць іншы ўліковы запіс"
       ],
+      "Download PDF ${ size }": [
+        "Спампаваць PDF ${ size }"
+      ],
       "Keep this plan": [
         "Пакінуць гэты тарыфны план"
       ],
@@ -11680,6 +11701,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Псеўданімы Hide-my-email абараняюць вашу электронную пошту ад уцечкі даных"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Я разумею, што пры страце падрабязнасцяў аднаўлення, я магу незваротна згубіць доступ да свайго ўліковага запісу."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваш **Камплект аднаўлення** дазволіць вам увайсці і аднавіць вашы даныя."
+      ],
       "Includes:": [
         "Уключае:"
       ],
@@ -11691,6 +11718,9 @@
       ],
       "Install app and extension": [
         "Усталяваць праграму і пашырэнне"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Гэта адзіны спосаб поўнага аднаўлення вашага ўліковага запісу. Пераканайцеся, што ён захаваны ў надзейным месцы."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Далучайцеся да больш 100 мільёнаў людзей, якія ўжо выбралі ${ BRAND_NAME }, каб захаваць сваю сеткавую бяспеку."
