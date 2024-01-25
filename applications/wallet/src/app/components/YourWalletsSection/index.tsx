@@ -48,7 +48,7 @@ export const YourWalletsSection = ({ onAddWallet }: Props) => {
                             <BitcoinAmount
                                 unit={bitcoinUnit}
                                 fiat={fiatCurrency}
-                                className="mt-auto text-2xl"
+                                className="mt-6 text-2xl"
                                 fiatClassName="mb-1"
                             >
                                 {getWalletBalance(wallet)}

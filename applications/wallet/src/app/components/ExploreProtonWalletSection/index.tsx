@@ -23,7 +23,7 @@ const ExploreProtonWalletItem = ({ children, iconSize, color, icon, content }: E
         <Card
             rounded
             background={false}
-            className="relative"
+            className="relative flex flex-column"
             style={{
                 backgroundImage: `linear-gradient(to right, ${color}15 0%, ${color}00 100%)`,
             }}
@@ -34,8 +34,10 @@ const ExploreProtonWalletItem = ({ children, iconSize, color, icon, content }: E
             >
                 <Icon className="m-auto" size={iconSize} name={icon} color="#FFF" />
             </div>
-            <h3 className="m-0 mb-1 text-sm color-norm">{children}</h3>
-            <p className="m-0 text-sm color-hint">{content}</p>
+            <div>
+                <h3 className="m-0 my-1 text-sm color-norm">{children}</h3>
+                <p className="m-0 text-sm color-hint">{content}</p>
+            </div>
         </Card>
     );
 };
