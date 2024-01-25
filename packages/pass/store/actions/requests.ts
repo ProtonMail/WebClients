@@ -7,6 +7,10 @@ export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::
 export const itemPinRequest = (shareId: string, itemId: string) => `item::pin::${shareId}::${itemId}`;
 export const itemUnpinRequest = (shareId: string, itemId: string) => `item::unpin::${shareId}::${itemId}`;
 export const itemsImportRequest = () => `items::import`;
+export const itemsBulkMoveRequest = () => `items::bulk::move`;
+export const itemsBulkTrashRequest = () => `items::bulk::trash`;
+export const itemsBulkDeleteRequest = () => `items::bulk::delete`;
+export const itemsBulkRestoreRequest = () => `items::bulk::restore`;
 
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;

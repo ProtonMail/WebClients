@@ -84,7 +84,7 @@ const getSettings =
                 extra: (
                     <VaultSetting
                         label={c('Label').t`Autosave vault`}
-                        optionsSelector={selectWritableVaults}
+                        optionsSelector={selectWritableVaults} //  FIXME: use VaultSelectMode
                         valueSelector={selectAutosaveVault}
                         onSubmit={({ shareId }) => onSettingsUpdate({ autosave: { shareId } })}
                     />
@@ -127,7 +127,7 @@ const getSettings =
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
+    const loading = Boolean(useSelector(selectRequestInFlight(settingsEditRequest('behaviors'))));
 
     return (
         <>
