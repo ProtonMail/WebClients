@@ -52,3 +52,7 @@
 
 -   First working version of Pass web-app
 -   Early access to paid users only
+
+### TODO put correct version Version 1.10.0
+
+-   Bulk actions on items (move, delete, permanantly delete, restore)

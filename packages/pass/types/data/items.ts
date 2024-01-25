@@ -1,5 +1,6 @@
 import { type XorObfuscation } from '@proton/pass/utils/obfuscate/xor';
 
+import type { ItemIDRevision2 } from '../api/pass';
 import type { OpenedItem } from '../crypto';
 import type {
     ExtraFieldType,
@@ -75,6 +76,8 @@ export type ItemRevision<T extends ItemType = ItemType> = Omit<OpenedItem, 'cont
     shareId: string;
 };
 
+export type ItemRevisionID = ItemIDRevision2;
+
 export type UnsafeItemRevision<T extends ItemType = ItemType> = Deobfuscate<ItemRevision<T>>;
 
 /**
@@ -104,3 +107,8 @@ export type ItemFilters = {
     sort: ItemSortFilter;
     type: ItemTypeFilter;
 };
+
+export type IndexedByShareIdAndItemId<T> = { [shareId: string]: { [itemId: string]: T } };
+
+export type BatchItemRevisionIDs = { shareId: string; batch: ItemRevisionID[] };
+export type BatchItemRevisions = { shareId: string; batch: ItemRevision[] };

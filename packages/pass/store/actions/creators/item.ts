@@ -2,16 +2,36 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
+import {
+    itemPinRequest,
+    itemUnpinRequest,
+    itemsBulkDeleteRequest,
+    itemsBulkMoveRequest,
+    itemsBulkRestoreRequest,
+    itemsBulkTrashRequest,
+} from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, {
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/with-request';
 import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
-import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem, UniqueItem } from '@proton/pass/types';
+import type {
+    BatchItemRevisionIDs,
+    BatchItemRevisions,
+    BulkSelectionDTO,
+    ItemCreateIntent,
+    ItemEditIntent,
+    ItemRevision,
+    SelectedItem,
+    UniqueItem,
+} from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
@@ -139,6 +159,48 @@ export const itemMoveSuccess = createOptimisticAction(
     ({ payload }) => getItemActionId(payload)
 );
 
+export const itemBulkMoveIntent = createAction(
+    'item::bulk::move::intent',
+    (payload: { selected: BulkSelectionDTO; destinationShareId: string }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving items`,
+            })
+        )({ payload })
+);
+
+export const itemBulkMoveFailure = createAction(
+    'item::bulk::move::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to move items`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkMoveProgress = createAction(
+    'item::bulk::move::progress',
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; destinationShareId: string }) =>
+        withCache({ payload })
+    )
+);
+
+export const itemBulkMoveSuccess = createAction(
+    'item::bulk::move::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`All items successfully moved`,
+        })({ payload })
+    )
+);
+
 export const itemTrashIntent = createOptimisticAction(
     'item::trash::intent',
     (
@@ -171,6 +233,46 @@ export const itemTrashSuccess = createOptimisticAction(
             })
         )({ payload }),
     ({ payload }) => getItemActionId(payload)
+);
+
+export const itemBulkTrashIntent = createAction(
+    'item::bulk::trash::intent',
+    (payload: { selected: BulkSelectionDTO }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving items to trash`,
+            })
+        )({ payload })
+);
+
+export const itemBulkTrashFailure = createAction(
+    'item::bulk::trash::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to move items to trash`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkTrashProgress = createAction(
+    'item::bulk::trash::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
+export const itemBulkTrashSuccess = createAction(
+    'item::bulk::trash::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Selected items successfully moved to trash`,
+        })({ payload })
+    )
 );
 
 export const itemDeleteIntent = createOptimisticAction(
@@ -206,6 +308,46 @@ export const itemDeleteSuccess = createOptimisticAction(
     ({ payload }) => getItemActionId(payload)
 );
 
+export const itemBulkDeleteIntent = createAction(
+    'item::bulk::delete::intent',
+    (payload: { selected: BulkSelectionDTO }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Permanently deleting selected items`,
+            })
+        )({ payload })
+);
+
+export const itemBulkDeleteFailure = createAction(
+    'item::bulk::delete::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to delete selected items`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkDeleteProgress = createAction(
+    'item::bulk::delete::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
+export const itemBulkDeleteSuccess = createAction(
+    'item::bulk::delete::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Selected items permanently deleted`,
+        })({ payload })
+    )
+);
+
 export const itemDeleteSync = createAction('item::delete::sync', (payload: SelectedItem) => withCache({ payload }));
 
 export const itemRestoreIntent = createOptimisticAction(
@@ -239,6 +381,46 @@ export const itemRestoreSuccess = createOptimisticAction(
             })
         )({ payload }),
     ({ payload }) => getItemActionId(payload)
+);
+
+export const itemBulkRestoreIntent = createAction(
+    'item::bulk:restore::intent',
+    (payload: { selected: BulkSelectionDTO }) =>
+        pipe(
+            withRequest({ type: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Restoring items from trash`,
+            })
+        )({ payload })
+);
+
+export const itemBulkRestoreFailure = createAction(
+    'item::bulk::restore::failure',
+    withRequestFailure((payload: {}, error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to restore items from trash`,
+            error,
+        })({ payload, error })
+    )
+);
+
+export const itemBulkRestoreProgress = createAction(
+    'item::bulk::restore::progress',
+    withRequestProgress((payload: BatchItemRevisionIDs) => withCache({ payload }))
+);
+
+export const itemBulkRestoreSuccess = createAction(
+    'item::bulk::restore::success',
+    withRequestSuccess((payload: {}) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Selected items successfully restored from trash`,
+        })({ payload })
+    )
 );
 
 export const itemAutofilled = createAction('item::autofilled', (payload: SelectedItem) => ({ payload }));
