@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ota ${ PROTON_SENTINEL_NAME } käyttöön päivittämällä tilauksesi"
       ],
+      "Upgrade to Visionary": [
+        "Päivitä Visionary-tilaukseen"
+      ],
       "Upgrade your plan": [
         "päivittämällä tilauksesi"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Pääsy työpöytäsovellukseen on rajoitettu"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "${ MAIL_APP_NAME } -työpöytäsovelluksen betaversio on tällä hetkellä niiden, joilla on maksullinen ${ MAIL_APP_NAME } -tilaus, saatavilla. Pian se on kaikkien saatavilla."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME } -työpöytäsovelluksen beta-versio on tällä hetkellä vain ${ BRAND_NAME } Visionary- tilaajien käytettävissä. Se tulee kaikkien käyttäjien saataville vuoden 2024 alussa."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Päivitä tilauksesi tänään, tai tarkista pääsysi uudelleen vuoden 2024 alussa."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Mikään käyttäjälle noudettu WKD-avain ei kelpaa lähetykseen"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Tämä ei ole ${ BRAND_NAME }-tili"
@@ -9119,6 +9119,9 @@
       "Show sender images": [
         "Näytä lähettäjien kuvat"
       ],
+      "Show unread count in application icon": [
+        "Näytä lukemattomien viestien määrä sovelluksen kuvakkeessa"
+      ],
       "Show unread count in Favicon": [
         "Näytä lukemattomien viestien määrä faviconissa"
       ],
@@ -11285,6 +11288,9 @@
       "Create another account instead": [
         "Luo sen sijaan toinen tili"
       ],
+      "Download PDF ${ size }": [
+        "Lataa PDF ${ size }"
+      ],
       "Keep this plan": [
         "Pidä tämä tilaus"
       ],
@@ -11423,6 +11429,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliakset suojaavat sähköpostiasi tietomurroilta"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Ymmärrän, että kadottaessani palautustiedot, voin menettää pääsyn tililleni pysyvästi."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Jos et pääse sisään ${ BRAND_NAME } -tilillesi, **Palautuspaketin** avulla voit kirjautua sisään ja palauttaa tietosi."
+      ],
       "Includes:": [
         "Sisältää:"
       ],
@@ -11434,6 +11446,9 @@
       ],
       "Install app and extension": [
         "Asenna sovellus ja lisäosa"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"

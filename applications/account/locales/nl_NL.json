@@ -3638,6 +3638,14 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
@@ -3842,9 +3850,6 @@
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Geen ${ BRAND_NAME }-account"
@@ -6126,6 +6131,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
+      "Beta": [
+        "Bèta"
+      ],
       "Billed at ${ price }": [
         "Gefactureerd aan ${ price }"
       ],
@@ -6760,7 +6768,7 @@
         "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Nu beschikbaar in beta, met het desktop programma kunt u makkelijk ${ MAIL_APP_NAME } starten direct vanaf uw bureaublad en blijf u gefocust zonder door uw browser afgeleid te worden."
+        "Nu beschikbaar in bèta, met het desktop programma kunt u makkelijk ${ MAIL_APP_NAME } starten direct vanaf uw bureaublad en blijf u gefocust zonder door uw browser afgeleid te worden."
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -8403,6 +8411,9 @@
       "Awarded": [
         "Toegekend"
       ],
+      "Beta": [
+        "Bèta"
+      ],
       "Billing address": [
         "Facturatie adres"
       ],
@@ -9342,6 +9353,9 @@
       "Help translate": [
         "Help met vertalen"
       ],
+      "here": [
+        "hier"
+      ],
       "How to pay with Bitcoin?": [
         "Hoe betalen met Bitcoin?"
       ],
@@ -9386,6 +9400,9 @@
       ],
       "Sign in": [
         "Inloggen"
+      ],
+      "switch account": [
+        "verander abonnement"
       ],
       "Terms": [
         "Voorwaarden"
@@ -10268,6 +10285,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
       ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
       "For next-level password management and identity protection.": [
         "Voor wachtwoordbeheer en identiteitsbescherming op een hoger niveau."
       ],
@@ -10691,6 +10711,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP-adres gekopieerd naar het klembord"
+      ],
+      "Key copied to the clipboard": [
+        "klembord"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Sleutel met vingerafdruk ${ fp } is verwijderd."
@@ -11354,6 +11377,14 @@
         "Nieuwe krediet-/bankkaart"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Geen toestemming"
+      ],
+      "Send to all": [
+        "Verzend"
+      ]
+    },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Maak een agenda om op de hoogte te blijven van uw planning en tegelijkertijd uw gegevens veilig te houden."
@@ -11756,6 +11787,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ],
+      "This permission expires soon": [
+        "vervalt binnenkort"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
@@ -13257,6 +13291,9 @@
       "Delete calendar": [
         "Agenda verwijderen"
       ],
+      "Delete filter?": [
+        "Verwijder filter?"
+      ],
       "Delete folder?": [
         "Wis map"
       ],
@@ -13281,6 +13318,9 @@
       ],
       "Delete version history?": [
         "Versiegeschiedenis verwijderen?"
+      ],
+      "Desktop app": [
+        "app"
       ],
       "Disable ${ email }": [
         "Schakel ${ email } uit"
@@ -13773,6 +13813,9 @@
       ],
       "Summary": [
         "Overzicht"
+      ],
+      "Switch account": [
+        "abonnement"
       ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"
