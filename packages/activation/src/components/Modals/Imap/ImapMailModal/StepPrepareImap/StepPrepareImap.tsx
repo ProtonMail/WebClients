@@ -11,7 +11,10 @@ import {
     PrimaryButton,
     useModalState,
 } from '@proton/components/components';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useUser } from '@proton/components/hooks';
+import { APPS } from '@proton/shared/lib/constants';
+import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import CustomizeMailImportModal from '../../../CustomizeMailImportModal/CustomizeMailImportModal';
 import ProviderWrapper from '../ProviderWrapper';
@@ -25,6 +28,7 @@ const { MAX_FOLDERS_LIMIT_REACHED, FOLDER_NAMES_TOO_LONG, UNAVAILABLE_NAMES, RES
     MailImportPayloadError;
 
 const StepPrepare = () => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const [user] = useUser();
     const [displayCustomizeModalProps, handleDisplayCustomizeModal, renderCustomizeModal] = useModalState();
     const {
@@ -44,6 +48,7 @@ const StepPrepare = () => {
         hasCategories,
     } = useStepPrepare({ user, handleCloseCustomizeModal: () => handleDisplayCustomizeModal(false) });
     const { importLabel, importPeriod, importAddress } = fields;
+    const space = getAppSpace(getSpace(user, storageSplitEnabled), APPS.PROTONMAIL);
 
     return (
         <ModalTwo onClose={handleCancel} size="xlarge" open as={Form} onSubmit={handleSubmit}>
@@ -54,7 +59,7 @@ const StepPrepare = () => {
                         isLabelMapping={isLabelMapping}
                         errors={errors}
                         // TODO: Check why user.MaxSpace * 2
-                        showSizeWarning={importSize + user.UsedSpace >= user.MaxSpace * 2}
+                        showSizeWarning={importSize + space.usedSpace >= space.maxSpace * 2}
                     />
 
                     <StepPrepareHeader fromEmail={email} toEmail={importAddress?.Email || ''} />

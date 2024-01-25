@@ -20,7 +20,7 @@ interface ItemProps {
 const MessagePrintFooterItem = ({ attachment }: ItemProps) => {
     const nameRaw = `${attachment ? attachment.Name : ''}`;
     const name = rtlSanitize(nameRaw);
-    const humanAttachmentSize = humanSize(attachment?.Size);
+    const humanAttachmentSize = humanSize({ bytes: attachment?.Size });
 
     return (
         <div className="proton-print-footer-item flex flex-nowrap rounded">

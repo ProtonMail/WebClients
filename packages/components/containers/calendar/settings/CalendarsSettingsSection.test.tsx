@@ -11,7 +11,7 @@ import {
     BRAND_NAME,
     MAIL_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
+import { RequireOnly, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     addressBuilder,
@@ -91,11 +91,14 @@ const renderComponent = ({
         ],
     };
 
+    const subscription = {} as Subscription;
+
     render(
         <Router history={memoryHistory}>
             <CalendarsSettingsSection
                 config={config}
                 user={user}
+                subscription={subscription}
                 addresses={addresses}
                 calendars={calendars}
                 myCalendars={myCalendars}

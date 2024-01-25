@@ -24,7 +24,7 @@ import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getExtension } from '@proton/shared/lib/apps/helper';
@@ -163,6 +163,7 @@ export const defaultSignupModel: SignupModelV2 = {
         [Audience.B2B]: PLANS.MAIL_PRO,
         [Audience.FAMILY]: PLANS.FAMILY,
     },
+    freePlan: FREE_PLAN,
     upsell: defaultUpsell,
     inviteData: undefined,
     plans: [],
@@ -204,6 +205,7 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
+    const storageSplitEnabled = useFlag('SplitStorage');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -338,6 +340,7 @@ const SingleSignupContainerV2 = ({
 
         if (toApp === APPS.PROTONDRIVE) {
             return getDriveConfiguration({
+                freePlan: model.freePlan,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
@@ -353,6 +356,7 @@ const SingleSignupContainerV2 = ({
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
+                freePlan: model.freePlan,
             });
         }
         if (toApp === APPS.PROTONPASS) {
@@ -375,6 +379,7 @@ const SingleSignupContainerV2 = ({
         return getGenericConfiguration({
             mode: signupParameters.mode,
             plan,
+            freePlan: model.freePlan,
             planParameters: model.planParameters,
             plansMap: model.plansMap,
             isLargeViewport: viewportWidth['>=large'],
@@ -539,35 +544,41 @@ const SingleSignupContainerV2 = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, { subscriptionData, upsell, ...userInfo }] =
-                await Promise.all([
-                    silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                    silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
-                    invite?.type === 'mail'
-                        ? await silentApi(checkReferrer(invite.data.referrer))
-                              .then(() => ({
-                                  referrer: invite.data.referrer,
-                                  invite: invite.data.invite || '',
-                              }))
-                              .catch(() => undefined)
-                        : undefined,
-                    getUserInfo({
-                        api: silentApi,
-                        user: resumedSession?.User,
-                        plans,
-                        plansMap,
-                        upsellPlanCard,
-                        planParameters,
-                        signupParameters,
-                        options: {
-                            planIDs: planParameters.planIDs,
-                            currency,
-                            cycle,
-                            coupon: signupParameters.coupon,
-                        },
-                        toApp: product,
-                    }),
-                ]);
+            const [
+                { Domains: domains },
+                paymentMethodStatus,
+                referralData,
+                { subscriptionData, upsell, ...userInfo },
+                freePlan,
+            ] = await Promise.all([
+                silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
+                silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
+                invite?.type === 'mail'
+                    ? await silentApi(checkReferrer(invite.data.referrer))
+                          .then(() => ({
+                              referrer: invite.data.referrer,
+                              invite: invite.data.invite || '',
+                          }))
+                          .catch(() => undefined)
+                    : undefined,
+                getUserInfo({
+                    api: silentApi,
+                    user: resumedSession?.User,
+                    plans,
+                    plansMap,
+                    upsellPlanCard,
+                    planParameters,
+                    signupParameters,
+                    options: {
+                        planIDs: planParameters.planIDs,
+                        currency,
+                        cycle,
+                        coupon: signupParameters.coupon,
+                    },
+                    toApp: product,
+                }),
+                getFreePlan({ api: silentApi, storageSplitEnabled }),
+            ]);
 
             let session: SessionData | undefined;
             if (resumedSession) {
@@ -611,6 +622,7 @@ const SingleSignupContainerV2 = ({
                 plans,
                 planParameters,
                 plansMap,
+                freePlan,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentMethodStatus,

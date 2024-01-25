@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 
 import { CYCLE } from '@proton/shared/lib/constants';
 import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
 
@@ -12,6 +13,7 @@ jest.mock('../../../../hooks', () => ({
 }));
 
 jest.mock('../../Checkout', () => ({ children }: any) => <>{children}</>);
+const freePlan = FREE_PLAN;
 
 describe('SubscriptionCheckout', () => {
     let checkResult: SubscriptionCheckResponse;
@@ -35,6 +37,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={dummyServers}
@@ -58,6 +61,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={dummyServers}
@@ -81,6 +85,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={dummyServers}
@@ -104,6 +109,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={dummyServers}
@@ -140,6 +146,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
@@ -183,6 +190,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
@@ -226,6 +234,7 @@ describe('SubscriptionCheckout', () => {
 
         let { container } = render(
             <SubscriptionCheckout
+                freePlan={freePlan}
                 checkResult={checkResult}
                 plansMap={{}}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}

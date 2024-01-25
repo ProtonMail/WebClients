@@ -150,11 +150,11 @@ export function RevisionDetailsModal({
                         </>
                     }
                 >
-                    <span title={bytesSize(revision.size)}>{humanSize(revision.size)}</span>
+                    <span title={bytesSize(revision.size)}>{humanSize({ bytes: revision.size })}</span>
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Original size`}>
                     {xattrs?.Common.Size ? (
-                        <span title={bytesSize(xattrs?.Common.Size)}>{humanSize(xattrs?.Common.Size)}</span>
+                        <span title={bytesSize(xattrs?.Common.Size)}>{humanSize({ bytes: xattrs?.Common.Size })}</span>
                     ) : isLoading ? (
                         <EllipsisLoader />
                     ) : (
@@ -256,11 +256,13 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                             }
                             dataTestId="file-size"
                         >
-                            <span title={bytesSize(link.size)}>{humanSize(link.size)}</span>
+                            <span title={bytesSize(link.size)}>{humanSize({ bytes: link.size })}</span>
                         </DetailsRow>
                         {link.originalSize !== undefined && (
                             <DetailsRow label={c('Title').t`Original size`}>
-                                <span title={bytesSize(link.originalSize)}>{humanSize(link.originalSize)}</span>
+                                <span title={bytesSize(link.originalSize)}>
+                                    {humanSize({ bytes: link.originalSize })}
+                                </span>
                             </DetailsRow>
                         )}
                     </>

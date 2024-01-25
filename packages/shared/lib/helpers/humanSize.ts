@@ -66,17 +66,47 @@ export const getUnit = (bytes: number): SizeUnits => {
     return 'GB';
 };
 
-const transformTo = (bytes: number, unit: SizeUnits, withoutUnit: boolean, fractionDigits = 2) => {
-    const value = (bytes / sizeUnits[unit]).toFixed(fractionDigits);
+const transformTo = ({
+    bytes,
+    unit,
+    withoutUnit,
+    fractionDigits = 2,
+    truncate,
+}: {
+    bytes: number;
+    unit: SizeUnits;
+    withoutUnit?: boolean;
+    fractionDigits?: number;
+    truncate?: boolean;
+}) => {
+    const completeValue = bytes / sizeUnits[unit];
+    let value: string;
+    if (fractionDigits === 0 && !truncate) {
+        value = `${Number(completeValue.toFixed(1))}`;
+    } else {
+        value = completeValue.toFixed(fractionDigits);
+    }
     const suffix = withoutUnit ? '' : ` ${getSizeFormat(unit, Number(value))}`;
 
     return value + suffix;
 };
 
-const humanSize = (bytes = 0, forceUnit?: SizeUnits, withoutUnit = false, maybeFractionDigits?: number) => {
-    const unit = forceUnit || getUnit(bytes);
-    const fractionDigits = maybeFractionDigits === undefined && unit === 'B' ? 0 : maybeFractionDigits;
-    return transformTo(bytes, unit, withoutUnit, fractionDigits);
+const humanSize = ({
+    bytes = 0,
+    unit: maybeUnit,
+    fraction: maybeFraction,
+    withoutUnit,
+    truncate,
+}: {
+    truncate?: boolean;
+    bytes: number | undefined;
+    unit?: SizeUnits;
+    withoutUnit?: boolean;
+    fraction?: number;
+}) => {
+    const unit = maybeUnit || getUnit(bytes);
+    const fractionDigits = maybeFraction === undefined && unit === 'B' ? 0 : maybeFraction;
+    return transformTo({ bytes, unit, withoutUnit, fractionDigits, truncate });
 };
 
 export default humanSize;
@@ -94,12 +124,12 @@ export default humanSize;
  */
 export const shortHumanSize = (bytes = 0) => {
     if (bytes < sizeUnits.KB) {
-        return humanSize(bytes, 'KB', false, 0);
+        return humanSize({ bytes, unit: 'KB', truncate: true, fraction: 0 });
     }
     if (bytes < sizeUnits.GB) {
-        return humanSize(bytes, undefined, false, 0);
+        return humanSize({ bytes, truncate: true, fraction: 0 });
     }
-    return humanSize(bytes, undefined, false, 1);
+    return humanSize({ bytes, fraction: 1 });
 };
 
 /**

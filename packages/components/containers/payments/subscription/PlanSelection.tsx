@@ -10,6 +10,7 @@ import {
     Audience,
     Currency,
     Cycle,
+    FreePlanDefault,
     Organization,
     Plan,
     PlanIDs,
@@ -84,6 +85,7 @@ interface Props {
     cycle: Cycle;
     plans: Plan[];
     plansMap: PlansMap;
+    freePlan: FreePlanDefault;
     vpnServers: VPNServersCountData;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal';
@@ -154,6 +156,7 @@ const PlanSelection = ({
     planIDs,
     plans,
     plansMap,
+    freePlan,
     vpnServers,
     cycle,
     currency,
@@ -214,6 +217,7 @@ const PlanSelection = ({
     const features = getAllFeatures({
         plansMap,
         serversCount: vpnServers,
+        freePlan,
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
@@ -223,7 +227,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers });
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
 
         if (!shortPlan) {
             return null;

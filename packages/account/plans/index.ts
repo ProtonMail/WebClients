@@ -2,15 +2,15 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { queryPlans } from '@proton/shared/lib/api/payments';
-import type { Plan } from '@proton/shared/lib/interfaces';
+import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
+import type { FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import type { ModelState } from '../interface';
 
 const name = 'plans';
 
 export interface PlansState {
-    [name]: ModelState<Plan[]>;
+    [name]: ModelState<{ plans: Plan[]; freePlan: FreePlanDefault }>;
 }
 
 type SliceState = PlansState[typeof name];
@@ -19,10 +19,18 @@ type Model = NonNullable<SliceState['value']>;
 export const selectPlans = (state: PlansState) => state.plans;
 
 const modelThunk = createAsyncModelThunk<Model, PlansState, ProtonThunkArguments>(`${name}/fetch`, {
-    miss: ({ extraArgument }) => {
-        return extraArgument.api<{ Plans: Plan[] }>(queryPlans()).then(({ Plans }) => {
+    miss: async ({ extraArgument }) => {
+        const plans = extraArgument.api<{ Plans: Plan[] }>(queryPlans()).then(({ Plans }) => {
             return Plans;
         });
+        const freePlan = getFreePlan({
+            api: extraArgument.api,
+            storageSplitEnabled: extraArgument.unleashClient.isEnabled('SplitStorage'),
+        });
+        return {
+            plans: await plans,
+            freePlan: await freePlan,
+        };
     },
     previous: previousSelector(selectPlans),
 });

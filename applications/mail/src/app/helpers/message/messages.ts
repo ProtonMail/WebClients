@@ -20,7 +20,7 @@ const { SENT, DRAFTS, INBOX, SPAM } = MAILBOX_LABEL_IDS;
 
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
-    const sizeLabel = humanSize(size);
+    const sizeLabel = humanSize({ bytes: size });
 
     const embeddedImages = getEmbeddedImages({ messageImages });
     const embeddedAttachmentsWithDups = embeddedImages.map(({ attachment }) => attachment);

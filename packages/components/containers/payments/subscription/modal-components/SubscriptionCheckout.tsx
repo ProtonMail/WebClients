@@ -13,7 +13,15 @@ import {
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    Currency,
+    Cycle,
+    FreePlanDefault,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 
 import {
     Badge,
@@ -119,6 +127,7 @@ const AddonTooltip = ({
 };
 
 interface BaseProps {
+    freePlan: FreePlanDefault;
     submit?: ReactNode;
     loading?: boolean;
     plansMap: PlansMap;
@@ -149,6 +158,7 @@ const SubscriptionCheckout = ({
     gift,
     isOptimistic,
     planIDs,
+    freePlan,
     checkResult,
     loading,
     subscription,
@@ -194,7 +204,7 @@ const SubscriptionCheckout = ({
     const amountDue = checkResult.AmountDue || 0;
     const giftValue = Math.abs(checkResult.Gift || 0);
 
-    const list = getWhatsIncluded({ planIDs, plansMap, vpnServers });
+    const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
 
     const membersAmount = (() => {
         if (enableDetailedAddons) {

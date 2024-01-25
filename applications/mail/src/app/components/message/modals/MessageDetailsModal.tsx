@@ -64,7 +64,7 @@ const MessageDetailsModal = ({
     const folders = getCurrentFolders(message.data, labelID, customFolders, mailSettings);
     const locationText = folders.map((folder) => folder.name).join(', ');
 
-    const sizeText = humanSize(getSize(message.data || ({} as Element)));
+    const sizeText = humanSize({ bytes: getSize(message.data || ({} as Element)) });
 
     const {
         numberOfImageTrackers,

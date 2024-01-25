@@ -18,7 +18,7 @@ import metrics from '@proton/metrics';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, FreePlanDefault, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import Content from '../public/Content';
@@ -34,6 +34,7 @@ interface Props {
     onChangeCurrency: (currency: Currency) => void;
     cycle: Cycle;
     plans: Plan[];
+    freePlan: FreePlanDefault;
     onBack?: () => void;
     vpnServers: VPNServersCountData;
     mostPopularPlanName?: PLANS;
@@ -69,6 +70,7 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 const UpsellStep = ({
     plans,
     vpnServers,
+    freePlan,
     cycle,
     currency,
     onChangeCurrency,
@@ -97,22 +99,23 @@ const UpsellStep = ({
         }
 
         if (upsellPlanName === PLANS.DRIVE || mostPopularPlanName === PLANS.DRIVE) {
-            return getFreeDrivePlan();
+            return getFreeDrivePlan(freePlan);
         }
 
         if (upsellPlanName === PLANS.PASS_PLUS) {
             return getFreePassPlan();
         }
 
-        return getFreePlan();
+        return getFreePlan(freePlan);
     })();
 
     const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, {
         vpnServers,
         boldStorageSize: true,
+        freePlan,
     });
     const upsellPlan = plansMap[upsellPlanName];
-    const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
+    const upsellPlanHumanSize = humanSize({ bytes: upsellPlan.MaxSpace, fraction: 0 });
 
     const freeFooterNotes = getFooterNotes(PLANS.FREE, cycle);
     const upsellFooterNotes = getFooterNotes(upsellPlanName, cycle);
@@ -128,6 +131,7 @@ const UpsellStep = ({
         const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, {
             boldStorageSize: true,
             vpnServers,
+            freePlan,
         });
 
         if (!mostPopularShortPlan) {

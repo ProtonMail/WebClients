@@ -1,4 +1,6 @@
-import { APPS, APP_NAMES, APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, APP_UPSELL_REF_PATH, PLANS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { Audience, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 /**
  * Add an upsell ref param to a URL
@@ -10,6 +12,41 @@ export const addUpsellPath = (link: string, upsellPath?: string) => {
 
     const hasParams = link.includes('?');
     return hasParams ? `${link}&ref=${upsellPath}` : `${link}?ref=${upsellPath}`;
+};
+
+export const getUpgradePath = ({
+    user,
+    subscription,
+    plan,
+    app,
+    audience,
+}: {
+    user?: UserModel;
+    plan?: PLANS;
+    subscription?: Subscription;
+    audience?: Audience;
+    app?: APP_NAMES;
+}) => {
+    const params = new URLSearchParams();
+    if (plan) {
+        params.set('plan', plan);
+    }
+    if (audience) {
+        params.set('audience', audience);
+    }
+    if (!user || user.isFree) {
+        if (app === APPS.PROTONVPN_SETTINGS) {
+            return `/dashboard${params.size ? `?${params}` : ''}`;
+        }
+        return `/upgrade${params.size ? `?${params}` : ''}`;
+    }
+    const currentPlan = getPlan(subscription);
+    // A plan is needed to open the subscription modal
+    if (!params.has('plan')) {
+        params.set('plan', currentPlan?.Name ?? PLANS.BUNDLE);
+    }
+    params.set('target', 'compare');
+    return `/dashboard?${params}`;
 };
 
 /**

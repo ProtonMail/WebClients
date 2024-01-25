@@ -11,9 +11,38 @@ import {
     WrappedPaypalPayment,
 } from '@proton/components/payments/core/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { ProductParam, getProductHeaders } from '../apps/product';
-import { Currency, Cycle, Renew } from '../interfaces';
+import { Api, Currency, Cycle, FreePlanDefault, Renew } from '../interfaces';
+
+export const queryFreePlan = (params?: QueryPlansParams) => ({
+    url: 'payments/v4/plans/default',
+    method: 'get',
+    params,
+});
+
+export const getFreePlan = ({
+    api,
+    currency,
+    storageSplitEnabled,
+}: {
+    api: Api;
+    currency?: Currency;
+    storageSplitEnabled: boolean;
+}) =>
+    api<{ Plans: FreePlanDefault }>(queryFreePlan(currency ? { Currency: currency } : undefined))
+        .then(({ Plans }): FreePlanDefault => {
+            return {
+                ...Plans,
+                MaxBaseSpace: Plans.MaxBaseSpace ?? Plans.MaxSpace,
+                MaxBaseRewardSpace: Plans.MaxBaseRewardSpace ?? Plans.MaxRewardSpace,
+                MaxDriveSpace: Plans.MaxDriveSpace ?? Plans.MaxSpace,
+                MaxDriveRewardSpace: Plans.MaxDriveRewardSpace ?? Plans.MaxRewardSpace,
+                storageSplitEnabled,
+            };
+        })
+        .catch(() => FREE_PLAN);
 
 export const getSubscription = () => ({
     url: 'payments/v4/subscription',
