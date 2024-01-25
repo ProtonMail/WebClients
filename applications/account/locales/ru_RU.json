@@ -992,6 +992,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Улучшить до Visionary"
+      ],
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
@@ -3136,6 +3139,9 @@
       "Access to the desktop app is limited": [
         "Доступ к приложению для настольных компьютеров ограничен"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бета-версия приложения ${ MAIL_APP_NAME } для настольных компьютеров в настоящее время доступна только для подписчиков ${ BRAND_NAME } Visionary. Она будет доступна всем пользователям в начале 2024 года."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
       ]
@@ -3904,9 +3910,6 @@
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ни один из ключей, полученных из WKD для пользователя не годен для отправки"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Не аккаунт ${ BRAND_NAME }"
@@ -6052,7 +6055,7 @@
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
       "active": [
-        "активен"
+        "активный"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
@@ -6739,7 +6742,7 @@
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
       "inactive": [
-        "неактивно"
+        "неактивный"
       ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
