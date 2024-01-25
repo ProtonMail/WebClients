@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Mejora para activar ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to Visionary": [
+        "Mejorar a Visionary"
+      ],
       "Upgrade your plan": [
         "Mejora tu plan"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "El acceso a la aplicación de escritorio está limitado."
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } está disponible para quienes tienen un plan de pago de ${ MAIL_APP_NAME }. Pronto estará disponible para todos."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } por ahora está limitada a suscriptores de ${ BRAND_NAME } Visionary. Estará disponible a todos los usuarios en 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Mejora ahora o comprueba de nuevo a inicios de 2024 para su acceso."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "No se ha encontrado una dirección válida."
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ninguna clave WKD recuperada para el usuario es válida para el envío."
       ],
       "Not a ${ BRAND_NAME } account": [
         "No es una cuenta de ${ BRAND_NAME }."
@@ -11288,6 +11288,9 @@
       "Create another account instead": [
         "Crea una nueva cuenta en su lugar"
       ],
+      "Download PDF ${ size }": [
+        "Descargar PDF ${ size }"
+      ],
       "Keep this plan": [
         "Mantener este plan"
       ],
@@ -11426,6 +11429,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Los alias hide-my-email protegen tu correo electrónico de las filtraciones de datos."
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Entiendo que al perder mis detalles de recuperación, puedo permanentemente perder acceso a mi cuenta."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Si se bloquea tu cuenta ${ BRAND_NAME }, tu **kit de recuperación** te permitirá iniciar sesión y recuperar tus datos."
+      ],
       "Includes:": [
         "Incluye:"
       ],
@@ -11437,6 +11446,9 @@
       ],
       "Install app and extension": [
         "Instala la aplicación y la extensión"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Es la única forma de restaurar tu cuenta, por lo que tomes las medidas necesarias para mantenerlo a salvo."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Únete a más de 100 millones de personas que han elegido ${ BRAND_NAME } para tu seguridad en línea"

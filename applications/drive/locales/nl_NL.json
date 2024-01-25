@@ -313,6 +313,9 @@
       "Get started": [
         "Aan de slag"
       ],
+      "Get Started": [
+        "Aan de slag"
+      ],
       "Get verification code": [
         "Krijg verificatie code"
       ],
@@ -1105,6 +1108,11 @@
       ],
       "URL": [
         "Website"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "afbeelding"
       ]
     },
     "Contact type label": {
@@ -2032,6 +2040,14 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Update voor een afspraak die begint op ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
       ]
     },
     "Error": {
@@ -5552,6 +5568,9 @@
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
+      "This permission expires soon": [
+        "vervalt binnenkort"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
       ],
@@ -6613,6 +6632,9 @@
       ],
       "Hide side panel": [
         "Verberg zijpaneel"
+      ],
+      "Load image": [
+        "Laad foto"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
