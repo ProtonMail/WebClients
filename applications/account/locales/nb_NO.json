@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Oppgrader til Visionary"
+      ],
       "Upgrade your plan": [
         "Oppgrader planen din"
       ],
@@ -3124,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Tilgang til skrivebordsappen er begrenset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Den vil snart være tilgjengelig for alle."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
@@ -3892,9 +3895,6 @@
       ],
       "No valid address found": [
         "Ingen gyldig adresse funnet"
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Ingen WKD-nøkkel hentet for brukeren er gyldig for sending."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Ikke en ${ BRAND_NAME }-konto"
@@ -6221,6 +6221,12 @@
       "Cancel anytime": [
         "Avslutt når som helst"
       ],
+      "Can’t access your recovery email?": [
+        "Får du ikke tilgang til gjenopprettings-e-posten din?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Har du ikke tilgang til telefonen for gjenoppretting?"
+      ],
       "Center": [
         "Midtstill"
       ],
@@ -6363,6 +6369,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Ferdig! Vi sendte en kode til ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Kjenner du ikke gjenopprettingsfrasen din?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
       ],
@@ -6473,6 +6482,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Angi ditt gjenopprettingstelefonnummer og vi vil sende deg ditt brukernavn eller e-postadresse."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Skriv inn gjenopprettingsfrasen for å endre passordet ditt nå."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Hendelseinvitasjoner og RSVP-er vil bli sendt på dette språket."
@@ -7461,6 +7473,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "For å fortsette, velg en kontogjenopprettingsmetode slik at vi kan verifisere forespørselen."
       ],
+      "To proceed, we must verify the request.": [
+        "For å fortsette, må vi verifisere forespørselen."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en tjener."
       ],
@@ -7679,6 +7694,9 @@
       ],
       "Welcome": [
         "Velkommen"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Vi sender en tilbakestillingskode til ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi vil sende en tilbakestillingskode til e-postadressen du oppga for kontogjenoppretting."
@@ -11315,6 +11333,9 @@
       "Create another account instead": [
         "Opprett en annen konto istedenfor"
       ],
+      "Download PDF ${ size }": [
+        "Last ned PDF ${ size }"
+      ],
       "Keep this plan": [
         "Behold denne planen"
       ],
@@ -11453,6 +11474,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliaser beskytter din e-post fra datainnbrudd"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Jeg forstår at hvis jeg mister gjenopprettingsdetaljene mine, kan jeg miste tilgangen til kontoen min permanent."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Hvis du blir låst ute av ${ BRAND_NAME }-kontoen din, vil ditt **gjenopprettingssett** la deg logge på og gjenopprette dataene dine."
+      ],
       "Includes:": [
         "Inkluderer:"
       ],
@@ -11464,6 +11491,9 @@
       ],
       "Install app and extension": [
         "Installer app og utvidelse"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Det er den eneste måten å gjenopprette kontoen din på, så sørg for at du oppbevarer det på et trygt sted."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli med over 100 millioner mennesker som har valgt ${ BRAND_NAME } for å være trygg på nettet"
