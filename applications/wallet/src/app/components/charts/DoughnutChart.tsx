@@ -18,7 +18,7 @@ export const DoughnutChart = ({ data, datasetProvidedAsPercentage = false }: Pro
     const total = datasetProvidedAsPercentage ? 1 : data.reduce((acc, [value]) => acc + value, 0);
 
     return (
-        <div className="flex items-center">
+        <div className="flex items-center w-full">
             <div className="mr-4" style={{ width: 80 }}>
                 <Donut
                     segments={data.map(([value, color]) => {
@@ -26,7 +26,7 @@ export const DoughnutChart = ({ data, datasetProvidedAsPercentage = false }: Pro
                     })}
                 />
             </div>
-            <div>
+            <div className="flex-1">
                 {/* TODO: maybe later find a way to show more than 4 elements */}
                 {data.slice(0, 4).map(([value, color, label], index) => (
                     <div key={`donut-label-${index}-${color}`} className="mb-1 flex items-center">
@@ -39,7 +39,7 @@ export const DoughnutChart = ({ data, datasetProvidedAsPercentage = false }: Pro
                             }}
                         />
                         <Tooltip title={label}>
-                            <strong className="text-sm max-w-custom text-ellipsis" style={{ '--max-w-custom': '6rem' }}>
+                            <strong className="text-sm max-w-custom text-ellipsis max-w-full">
                                 <span className="sr-only">{((value / total) * 100).toFixed(2)}%</span>
                                 {label}
                             </strong>
