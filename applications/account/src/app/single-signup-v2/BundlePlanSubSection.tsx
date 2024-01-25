@@ -25,7 +25,7 @@ const BundlePlanSubSection = ({
     className?: string;
     vpnServersCountData: VPNServersCountData;
 }) => {
-    const logoSize = 32;
+    const logoSize = 8;
     return (
         <div className={clsx(className, 'bg-weak p-4 rounded-xl w-full')}>
             <div className="color-weak text-center text-sm mb-4">

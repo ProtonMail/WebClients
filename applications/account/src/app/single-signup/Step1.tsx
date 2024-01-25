@@ -19,7 +19,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
+import { Icon, IconSize, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
     CurrencySelector,
@@ -97,6 +97,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
+import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -180,12 +181,13 @@ const getPlanInformation = (
     vpnServersCountData: VPNServersCountData,
     flow: 'pricing' | 'signup'
 ) => {
-    const iconSize = 28;
+    const iconSize: IconSize = 7;
+    const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
 
     if (selectedPlan.Name === PLANS.FREE) {
         const freeServers = getFreeServers(vpnServersCountData.free.servers, vpnServersCountData.free.countries);
         return {
-            logo: <FreeLogo size={iconSize} app={APPS.PROTONVPN_SETTINGS} />,
+            logo: <FreeLogo size={iconImgSize} app={APPS.PROTONVPN_SETTINGS} />,
             title: getFreeTitle(BRAND_NAME),
             features: [getCountries(freeServers), getNoAds(), getBandwidth()],
         };
@@ -215,7 +217,7 @@ const getPlanInformation = (
         return {
             logo: (
                 <div>
-                    <img src={bundle} width={iconSize} height={iconSize} alt={selectedPlan.Title} />
+                    <img src={bundle} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
                 </div>
             ),
             title: selectedPlan.Title,
@@ -233,7 +235,7 @@ const getPlanInformation = (
         return {
             logo: (
                 <div>
-                    <img src={bundleVpnPass} width={iconSize} height={iconSize} alt={selectedPlan.Title} />
+                    <img src={bundleVpnPass} width={iconImgSize} height={iconImgSize} alt={selectedPlan.Title} />
                 </div>
             ),
             title: selectedPlan.Title,
@@ -821,11 +823,11 @@ const Step1 = ({
     const iconColorClassName = background === 'bf2023' ? 'color-norm' : 'color-primary';
     const features = [
         {
-            left: <Icon size={24} className={iconColorClassName} name="code" />,
+            left: <Icon size={6} className={iconColorClassName} name="code" />,
             text: c('Info').t`Open source`,
         },
         {
-            left: <Icon size={24} className={iconColorClassName} name="eye-slash" />,
+            left: <Icon size={6} className={iconColorClassName} name="eye-slash" />,
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
@@ -834,7 +836,7 @@ const Step1 = ({
         },
         viewportWidth['>=large'] &&
             [PLANS.VPN, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
-                left: <Icon size={24} className={iconColorClassName} name="servers" />,
+                left: <Icon size={6} className={iconColorClassName} name="servers" />,
                 text: getVpnServers(vpnServersCountData.paid.servers),
             },
     ].filter(isTruthy);
@@ -1170,7 +1172,7 @@ const Step1 = ({
                                                   title={vpnPlan?.Title}
                                                   description={c('bf2023: info')
                                                       .t`Secure browsing and premium VPN features.`}
-                                                  logo={<VpnLogo variant="glyph-only" size={24} />}
+                                                  logo={<VpnLogo variant="glyph-only" size={6} />}
                                                   textProps={{
                                                       className: 'lg:min-h-custom',
                                                       style: textRect?.height
@@ -1438,7 +1440,7 @@ const Step1 = ({
                                                     size="small"
                                                     onClick={handleUpsellVPNPassBundle}
                                                 >
-                                                    <Icon name="trash" size={14} />
+                                                    <Icon name="trash" size={3.5} />
                                                     <span className="ml-2">{c('bf2023: Action').t`Remove`}</span>
                                                 </Button>
                                             )

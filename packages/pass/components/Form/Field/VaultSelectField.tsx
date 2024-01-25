@@ -49,7 +49,7 @@ export const VaultSelectField: FC<VaultSelectFieldProps> = ({
     return (
         <SelectField
             {...props}
-            icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size={20} background />}
+            icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size={5} background />}
             renderSelected={() =>
                 selectedVault?.title ?? (
                     <span className="color-weak">{placeholder ?? c('Placeholder').t`Pick a vault`}</span>
@@ -72,7 +72,7 @@ export const VaultSelectField: FC<VaultSelectFieldProps> = ({
                                 <VaultIcon
                                     icon={content.display.icon}
                                     color={content.display.color}
-                                    size={16}
+                                    size={4}
                                     highlighted={selected}
                                 />
                                 <span className="flex-1 text-ellipsis">{content.name}</span>
@@ -80,7 +80,7 @@ export const VaultSelectField: FC<VaultSelectFieldProps> = ({
                                     <Icon
                                         name="users"
                                         color={`var(${selected ? '--interaction-norm-contrast' : '--text-weak'})`}
-                                        size={16}
+                                        size={4}
                                     />
                                 )}
                             </div>
@@ -93,7 +93,7 @@ export const VaultSelectField: FC<VaultSelectFieldProps> = ({
                             <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={icon}
-                                    size={16}
+                                    size={4}
                                     color={selectedId ? VaultColor.COLOR_CUSTOM : color}
                                     highlighted={selectedId === value}
                                 />

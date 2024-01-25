@@ -25,7 +25,7 @@ const Token = ({ index, value, onRemove }: TokenProps) => {
                     title={c('email_forwarding_2023: Action').t`Remove “${value}”`}
                     onClick={() => onRemove(index)}
                 >
-                    <Icon name="cross" size={11} />
+                    <Icon name="cross" size={2.75} />
                     <span className="sr-only">{c('email_forwarding_2023: Action').t`Remove “${value}”`}</span>
                 </button>
             </span>

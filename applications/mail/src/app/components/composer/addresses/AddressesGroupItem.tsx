@@ -105,7 +105,7 @@ const AddressesGroupItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     <span className="inline-flex shrink-0 composer-addresses-item-icon px-2 ml-0.5 *:pointer-events-none h-full">
-                        <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="m-auto" />
+                        <Icon name="users" size={3} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
@@ -124,7 +124,7 @@ const AddressesGroupItem = ({
                         className="composer-addresses-item-remove inline-flex shrink-0 p-2 *:pointer-events-none h-full relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
-                        <Icon name="cross" size={12} className="m-auto" />
+                        <Icon name="cross" size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>

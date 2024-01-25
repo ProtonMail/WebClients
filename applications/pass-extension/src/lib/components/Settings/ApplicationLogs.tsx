@@ -58,7 +58,7 @@ export const ApplicationLogs: FC = () => {
                         onClick={() => setShowLogs(false)}
                         className="absolute top-0 right-0 mt-2 mr-2"
                     >
-                        <Icon name="cross" size={12} />
+                        <Icon name="cross" size={3} />
                     </Button>
                     <div className="overflow-auto max-h-custom" style={{ '--max-h-custom': '18.75rem' }}>
                         {logs.map((log, i) => (

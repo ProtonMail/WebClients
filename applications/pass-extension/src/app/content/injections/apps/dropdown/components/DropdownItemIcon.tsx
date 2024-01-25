@@ -11,9 +11,9 @@ export type DropdownItemIconProps = { url: string; icon: IconName } | { url?: ne
 
 export const DropdownItemIcon: FC<DropdownItemIconProps> = ({ url, icon }) =>
     isPassIcon(icon) ? (
-        <IconBox size={20} mode="transparent">
-            <PassIcon status={icon} size={24} className="absolute inset-center" />
+        <IconBox size={5} mode="transparent">
+            <PassIcon status={icon} size={6} className="absolute inset-center" />
         </IconBox>
     ) : (
-        <ItemIcon url={url} icon={icon} size={20} alt="" />
+        <ItemIcon url={url} icon={icon} size={5} alt="" />
     );

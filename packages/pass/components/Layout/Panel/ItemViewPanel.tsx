@@ -157,7 +157,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                             : handleInviteClick
                                     }
                                 >
-                                    <Icon name="users-plus" alt={c('Action').t`Share`} size={20} />
+                                    <Icon name="users-plus" alt={c('Action').t`Share`} size={5} />
                                 </Button>
                             ),
 
@@ -172,7 +172,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     title={c('Action').t`See members`}
                                     onClick={handleManageClick}
                                 >
-                                    <Icon name="users-plus" alt={c('Action').t`See members`} size={20} />
+                                    <Icon name="users-plus" alt={c('Action').t`See members`} size={5} />
                                 </Button>
                             ),
 

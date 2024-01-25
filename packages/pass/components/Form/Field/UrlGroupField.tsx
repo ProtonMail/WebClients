@@ -87,7 +87,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                             size="small"
                                             title={c('Action').t`Delete`}
                                         >
-                                            <Icon name="cross" size={20} className="color-weak" />
+                                            <Icon name="cross" size={5} className="color-weak" />
                                         </Button>
                                     </li>
                                 ))}

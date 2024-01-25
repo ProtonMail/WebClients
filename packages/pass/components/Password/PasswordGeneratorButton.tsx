@@ -32,7 +32,7 @@ const PasswordGeneratorButtonRaw: FC<Props> = ({ onSubmit, type, ...rest }) => {
             onClick={handleOnClick}
             {...rest}
         >
-            <Icon name="arrows-rotate" size={20} />
+            <Icon name="arrows-rotate" size={5} />
         </Button>
     );
 };

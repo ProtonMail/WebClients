@@ -110,7 +110,7 @@ export const PauseList: FC = () => {
                                 <small>{c('Label').t`Autosave`}</small>
                             </TableHeaderCell>
                             <TableHeaderCell>
-                                <Icon name="pass-trash" size={16} className="mr-2" />
+                                <Icon name="pass-trash" size={4} className="mr-2" />
                             </TableHeaderCell>
                         </TableRow>
                     </TableHeader>
@@ -155,7 +155,7 @@ export const PauseList: FC = () => {
                                             icon
                                             pill
                                         >
-                                            <Icon name="cross" size={12} />
+                                            <Icon name="cross" size={3} />
                                         </Button>
                                     </div>
                                 </TableCell>

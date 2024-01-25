@@ -54,13 +54,7 @@ const handleExpOnChange = (newValue: string, prevMonth: string, prevYear: string
 };
 
 const WarningIcon = ({ className }: { className?: string }) => {
-    return (
-        <Icon
-            name="exclamation-circle-filled"
-            className={clsx('shrink-0 color-danger', className)}
-            size={18}
-        />
-    );
+    return <Icon name="exclamation-circle-filled" className={clsx('shrink-0 color-danger', className)} size={4.5} />;
 };
 
 export interface Props {
@@ -217,7 +211,7 @@ const CreditCard = ({
                 return <img src={bankIcon} title={niceType} alt={niceType} width="24" />;
             }
 
-            return <Icon name="credit-card" size={16} className="mr-1" />;
+            return <Icon name="credit-card" size={4} className="mr-1" />;
         })();
 
         creditCardForm = (
@@ -306,7 +300,7 @@ const CreditCard = ({
                             {card.number && bankIcon ? (
                                 <img src={bankIcon} title={niceType} alt={niceType} width="32" />
                             ) : (
-                                <Icon name="credit-card-detailed" size={32} />
+                                <Icon name="credit-card-detailed" size={8} />
                             )}
                         </div>
                     }

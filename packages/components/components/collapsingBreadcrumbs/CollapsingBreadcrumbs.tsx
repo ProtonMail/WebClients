@@ -69,7 +69,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
                         )}
                         {!isLast && (
                             <li className="rtl:mirror shrink-0" aria-hidden="true">
-                                <Icon size={16} name="chevron-right" />
+                                <Icon size={4} name="chevron-right" />
                             </li>
                         )}
                     </Fragment>

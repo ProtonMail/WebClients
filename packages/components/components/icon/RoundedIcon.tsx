@@ -29,7 +29,7 @@ const RoundedIcon = (
             title={title}
             ref={ref}
         >
-            <Icon size={12} className={iconClassName} name={name} {...rest} />
+            <Icon size={3} className={iconClassName} name={name} {...rest} />
         </span>
     );
 };
