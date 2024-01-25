@@ -32,7 +32,13 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const { metadata, ...uneditable } = item;
     const { name, itemUuid } = metadata;
 
+    /** To ensure proper sequencing in handling alias options and details. we use an awaiter.
+     * If alias options or details are cached, the execution order of 'onAliasOptionsLoaded'
+     * after the 'aliasOptions.request()' call cannot be guaranteed. The awaiter is employed to
+     * ensure that the sequence is maintained correctly. */
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
+    const { current: aliasDetailsLoaded } = useRef(awaiter<void>());
+    const reconcilied = useRef(false);
 
     /* If vault is not shared, we can safely assume the user is
      * the owner of the alias and can edit the mailboxes */
@@ -75,6 +81,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         shareId: vault.shareId,
         lazy: true,
         onAliasOptionsLoaded: async ({ mailboxes }) => {
+            await aliasDetailsLoaded;
+
             const draft = await draftHydrated;
             const formValues = draft ?? form.values;
             const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
@@ -91,6 +99,8 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                 await form.setValues(values);
                 form.setErrors(errors);
             } else form.resetForm({ values, errors });
+
+            reconcilied.current = true;
         },
     });
 
@@ -101,6 +111,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         onAliasDetailsLoaded: (mailboxes) => {
             mailboxesForAlias.current = mailboxes ?? [];
             aliasOptions.request();
+            aliasDetailsLoaded.resolve();
         },
     });
 
@@ -115,7 +126,10 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         onHydrated: draftHydrated.resolve,
     });
 
-    const loading = (aliasDetails.loading && aliasDetails.value.length === 0) || aliasOptions.loading;
+    /* check for length in case request gets revalidated in the background */
+    const detailsLoading = aliasDetails.loading && aliasDetails.value.length === 0;
+    const optionsLoading = aliasOptions.loading;
+    const loading = !reconcilied.current || detailsLoading || optionsLoading;
 
     return (
         <ItemEditPanel
