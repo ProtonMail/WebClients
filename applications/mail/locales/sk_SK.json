@@ -3487,9 +3487,6 @@
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
       ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Žiadny WKD kľúč pre užívateľov nie je platný pre odosielanie"
-      ],
       "Not a valid number": [
         "Neplatné číslo"
       ],
@@ -4969,6 +4966,12 @@
         "${ elementsCount } konverzácií bude presunuté",
         "${ elementsCount } konverzácií bude presunutých"
       ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } konverzácia bude odznačená od:",
+        "${ elementsCount } konverzácie budú odznačené od:",
+        "${ elementsCount } konverzácií bude odznačených od:",
+        "${ elementsCount } konverzácií bude odznačených od:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } správa bude označená ako:",
         "${ elementsCount } správy budú označené ako:",
@@ -4992,6 +4995,12 @@
         "${ elementsCount } správy budú presunuté",
         "${ elementsCount } správ bude presunuté",
         "${ elementsCount } správ bude presunutých"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } správa bude odznačená od:",
+        "${ elementsCount } správy budú odznačené od:",
+        "${ elementsCount } správ bude odznačených od:",
+        "${ elementsCount } správ bude odznačených od:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázok",
