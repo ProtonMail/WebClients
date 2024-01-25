@@ -1,19 +1,22 @@
-import type { Maybe } from '@proton/pass/types';
+import { createSelector } from '@reduxjs/toolkit';
 
-import type { RequestType } from '../actions/with-request';
-import type { RequestEntry, RequestState } from '../reducers/request';
+import type { RequestType } from '@proton/pass/store/actions/with-request';
+import type { RequestEntry, RequestState } from '@proton/pass/store/reducers/request';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 
 export const selectRequest =
-    (namespaceOrId: string) =>
-    ({ request }: { request: RequestState }): Maybe<RequestEntry> =>
+    <D>(namespaceOrId: string) =>
+    ({ request }: { request: RequestState }): Maybe<RequestEntry<RequestType, D>> =>
         request?.[namespaceOrId];
 
-export const selectRequestStatus =
-    (namespaceOrId: string) =>
-    ({ request }: { request: RequestState }): Maybe<RequestType> =>
-        request?.[namespaceOrId]?.status;
+export const selectRequestStatus = <D>(namespaceOrId: string) =>
+    createSelector(selectRequest<D>(namespaceOrId), (request) => request?.status);
 
-export const selectRequestInFlight =
-    (namespaceOrId: string) =>
-    (state: { request: RequestState }): boolean =>
-        selectRequestStatus(namespaceOrId)(state) === 'start';
+export const selectRequestInFlight = <D>(namespaceOrId: string) =>
+    createSelector(selectRequest<D>(namespaceOrId), (request): MaybeNull<RequestEntry<'start', D>> => {
+        if (request?.status === 'start') return request;
+        return null;
+    });
+
+export const selectRequestInFlightData = <D>(namespaceOrId: string) =>
+    createSelector(selectRequestInFlight<D>(namespaceOrId), (request): MaybeNull<D> => request?.data ?? null);

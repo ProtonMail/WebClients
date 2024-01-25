@@ -87,7 +87,7 @@ export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     case 'all':
                         return navigate(getLocalPath(), { filters: { selectedShareId: null, search: '' } });
                     case 'trash':
-                        return navigate(getTrashRoute(), { filters: { selectedShareId: null, search: '' } });
+                        return navigate(getTrashRoute(), { filters: { selectedShareId: null, search: '', type: '*' } });
                     default: {
                         return navigate(getLocalPath(), { filters: { selectedShareId: selected, search: '' } });
                     }
