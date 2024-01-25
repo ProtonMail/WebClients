@@ -12,7 +12,7 @@ export type ButtonLikeShape = 'solid' | 'outline' | 'ghost' | 'underline';
 
 export type ButtonLikeSize = 'small' | 'medium' | 'large';
 
-interface ButtonLikeOwnProps {
+export interface ButtonLikeOwnProps {
     /**
      * Whether the button should render a loader.
      * Button is disabled when this prop is true.
