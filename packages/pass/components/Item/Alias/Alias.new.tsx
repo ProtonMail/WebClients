@@ -26,7 +26,6 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import noop from '@proton/utils/noop';
 
 const FORM_ID = 'new-alias';
 
@@ -36,6 +35,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const userVerified = useSelector(selectUserVerified);
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
+    const reconciled = useRef(false);
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
         const url = subdomain ?? domain;
@@ -90,6 +90,13 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         },
         validate: validateNewAliasForm,
         validateOnChange: true,
+        validateOnMount: false,
+    });
+
+    const draft = useItemDraft<NewAliasFormValues>(form, {
+        type: 'alias',
+        mode: 'new',
+        onHydrated: draftHydrated.resolve,
     });
 
     const aliasOptions = useAliasOptions({
@@ -110,33 +117,26 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             const errors = validateNewAliasForm(values);
 
             if (draft) {
-                await form.setValues(values);
+                await form.setValues(values, true);
                 await form.setTouched({ aliasPrefix: deriveAliasPrefix(draft.name) !== draft.aliasPrefix });
                 form.setErrors(errors);
             } else form.resetForm({ values, errors, touched: { aliasPrefix: false } });
+
+            reconciled.current = true;
         },
         lazy: !userVerified,
     });
 
     const { values, touched, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
-
-    const draft = useItemDraft<NewAliasFormValues>(form, {
-        type: 'alias',
-        mode: 'new',
-        onHydrated: draftHydrated.resolve,
-    });
+    const ready = !aliasOptions.loading;
 
     useEffect(() => {
-        draftHydrated
-            .then(() => {
-                const allowPrefixDerivation = !touched.aliasPrefix;
-                if (allowPrefixDerivation) void setFieldValue('aliasPrefix', deriveAliasPrefix(name), true);
-            })
-            .catch(noop);
+        if (reconciled.current) {
+            const allowPrefixDerivation = !touched.aliasPrefix;
+            if (allowPrefixDerivation) void setFieldValue('aliasPrefix', deriveAliasPrefix(name));
+        }
     }, [name]);
-
-    const ready = !aliasOptions.loading;
 
     return (
         <ItemCreatePanel
