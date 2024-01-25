@@ -1,27 +1,41 @@
-/// <reference types="react" />
-
-// Block external access to auxiliary types
-export {};
+import type {
+    ComponentPropsWithRef,
+    ComponentPropsWithoutRef,
+    ElementType,
+    ExoticComponent,
+    ForwardRefExoticComponent,
+    JSX,
+    PropsWithRef,
+    PropsWithoutRef,
+    ReactNode,
+} from 'react';
 
 type Merge<T, U> = Omit<T, keyof U> & U;
 
-type PropsWithAs<P, T extends React.ElementType> = P & { as?: T };
+type PropsWithAs<P, T extends ElementType> = P & { as?: T };
+type UnknownProps<P> = P & { [key: string]: unknown };
 
-export type PolymorphicPropsWithoutRef<P, T extends React.ElementType> = Merge<
-    T extends keyof JSX.IntrinsicElements
-        ? React.PropsWithoutRef<JSX.IntrinsicElements[T]>
-        : React.ComponentPropsWithoutRef<T>,
-    PropsWithAs<P, T>
+type ExtractPropsWithRef<T> = T extends keyof JSX.IntrinsicElements
+    ? PropsWithRef<JSX.IntrinsicElements[T]>
+    : ComponentPropsWithRef<T>;
+
+type ExtractPropsWithoutRef<T> = T extends keyof JSX.IntrinsicElements
+    ? PropsWithoutRef<JSX.IntrinsicElements[T]>
+    : ComponentPropsWithoutRef<T>;
+
+type PolymorphicRefForwardingFunction<P, T extends ElementType> = <InstanceT extends ElementType = T>(
+    props: PolymorphicPropsWithRef<P, InstanceT>
+) => ReactNode;
+
+type PolymorphicExoticComponent<P = {}, T extends ElementType> = Merge<
+    ExoticComponent<UnknownProps<P>>,
+    PolymorphicRefForwardingFunction<P, T>
 >;
 
-export type PolymorphicPropsWithRef<P, T extends React.ElementType> = Merge<
-    T extends keyof JSX.IntrinsicElements
-        ? React.PropsWithRef<JSX.IntrinsicElements[T]>
-        : React.ComponentPropsWithRef<T>,
-    PropsWithAs<P, T>
->;
+export type PolymorphicPropsWithoutRef<P, T extends ElementType> = Merge<ExtractPropsWithoutRef<T>, PropsWithAs<P, T>>;
+export type PolymorphicPropsWithRef<P, T extends ElementType> = Merge<ExtractPropsWithRef<T>, PropsWithAs<P, T>>;
 
-export type PolymorphicForwardRefExoticComponent<P, T extends React.ElementType> = Merge<
-    React.ForwardRefExoticComponent<P & { [key: string]: unknown }>,
+export type PolymorphicForwardRefExoticComponent<P, T extends ElementType> = Merge<
+    ForwardRefExoticComponent<UnknownProps<P>>,
     PolymorphicExoticComponent<P, T>
 >;
