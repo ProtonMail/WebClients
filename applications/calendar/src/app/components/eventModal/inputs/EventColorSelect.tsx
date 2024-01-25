@@ -6,7 +6,7 @@ import { ColorPicker, Spotlight, UpsellModal, useModalState, useSpotlightShow } 
 import { FeatureCode } from '@proton/components/containers/features';
 import { useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
@@ -17,7 +17,8 @@ interface Props {
 }
 
 const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
-    const [{ hasPaidMail }] = useUser();
+    const [user] = useUser();
+    const hasPaidMail = user.hasPaidMail;
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const color = useMemo(() => {
@@ -91,11 +92,14 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
                     description={c('Description')
                         .t`Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.`}
                     title={c('Title').t`Add some color to your day`}
-                    upsellRef={getUpsellRef({
-                        app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
-                        component: UPSELL_COMPONENT.MODAL,
-                        feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
-                    })}
+                    upgradePath={addUpsellPath(
+                        getUpgradePath({ user }),
+                        getUpsellRef({
+                            app: APP_UPSELL_REF_PATH.CALENDAR_UPSELL_REF_PATH,
+                            component: UPSELL_COMPONENT.MODAL,
+                            feature: CALENDAR_UPSELL_PATHS.COLOR_PER_EVENT,
+                        })
+                    )}
                     headerType="calendar"
                     hideInfo={isDrawerApp}
                 />

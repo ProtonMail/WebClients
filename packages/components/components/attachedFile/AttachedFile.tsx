@@ -25,7 +25,7 @@ const AttachedFile = ({ file, iconName, className, clear, onClear, ...rest }: Pr
                     <div className="text-ellipsis" title={fileName}>
                         {fileName}
                     </div>
-                    <div>{`${extension.toUpperCase()} - ${humanSize(file.size)}`}</div>
+                    <div>{`${extension.toUpperCase()} - ${humanSize({ bytes: file.size })}`}</div>
                 </div>
                 {clear && onClear && (
                     <Button className="shrink-0" onClick={onClear}>

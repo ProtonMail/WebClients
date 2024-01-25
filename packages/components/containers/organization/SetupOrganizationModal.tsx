@@ -228,7 +228,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         }
 
         if (step === STEPS.STORAGE) {
-            const formattedStorage = humanSize(storageValue);
+            const formattedStorage = humanSize({ bytes: storageValue });
             return {
                 title: c('Title').t`Allocate storage`,
                 section: (

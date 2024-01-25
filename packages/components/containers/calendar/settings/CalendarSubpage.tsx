@@ -16,7 +16,7 @@ import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/ca
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import {
     CalendarMember,
     CalendarMemberInvitation,
@@ -40,6 +40,7 @@ interface Props {
     defaultCalendar?: VisualCalendar;
     addresses?: Address[];
     user: UserModel;
+    subscription?: Subscription;
 }
 
 const CalendarSubpage = ({
@@ -49,6 +50,7 @@ const CalendarSubpage = ({
     defaultCalendar,
     addresses,
     user,
+    subscription,
 }: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
@@ -178,6 +180,7 @@ const CalendarSubpage = ({
                         calendar={calendar}
                         addresses={addresses}
                         user={user}
+                        subscription={subscription}
                         isLoading={loadingShareData}
                         canShare={user.hasNonDelinquentScope}
                         members={members}

@@ -58,7 +58,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
     };
 
     const inviteEmail = <strong>{`${invite.InviterEmail}`}</strong>;
-    const assignedStorage = <strong>{humanSize(invite.MaxSpace, undefined, false, 0)}</strong>;
+    const assignedStorage = <strong>{humanSize({ bytes: invite.MaxSpace, fraction: 0 })}</strong>;
 
     const BRAND_NAME_TWO = BRAND_NAME;
 

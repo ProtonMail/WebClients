@@ -14,7 +14,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
@@ -27,6 +27,8 @@ import {
     useEventManager,
     useNotifications,
     useSearchParamsEffect,
+    useSubscription,
+    useUser,
     useUserSettings,
 } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
@@ -42,6 +44,8 @@ const SentinelSection = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
     const [userSettings] = useUserSettings();
+    const [user] = useUser();
+    const [subscription] = useSubscription();
     const api = useApi();
     const [loadingSentinel, withLoadingSentinel] = useLoading();
     const { call } = useEventManager();
@@ -93,7 +97,7 @@ const SentinelSection = ({ app }: Props) => {
             component: UPSELL_COMPONENT.BUTTON,
             fromApp: app,
         });
-        goToSettings(`/upgrade?ref=${upsellRef}`, undefined, false);
+        goToSettings(addUpsellPath(getUpgradePath({ user, subscription, app: APP_NAME }), upsellRef), undefined, false);
     };
 
     const getUpgradeMessage = () => {

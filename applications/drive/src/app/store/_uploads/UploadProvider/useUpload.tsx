@@ -3,9 +3,12 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useEventManager, useGetUser, useNotifications, useOnline, usePreventLeave } from '@proton/components';
+import useFlag from '@proton/components/containers/unleash/useFlag';
+import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { FileThresholdModalType, useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
@@ -33,6 +36,7 @@ import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
 export default function useUpload(): [UploadProviderState, UploadModalContainer] {
     const onlineStatus = useOnline();
+    const storageSplitEnabled = useFlag('SplitStorage');
     const getUser = useGetUser();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -57,13 +61,14 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
         const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
         const remaining = control.calculateRemainingUploadBytes();
         await call(); // Process events to get updated UsedSpace.
-        const { MaxSpace, UsedSpace } = await getUser();
-        const hasEnoughSpace = MaxSpace > UsedSpace + remaining + totalFileListSize;
+        const user = await getUser();
+        const space = getAppSpace(getSpace(user, storageSplitEnabled), APPS.PROTONDRIVE);
+        const hasEnoughSpace = space.maxSpace > space.usedSpace + remaining + totalFileListSize;
         return { hasEnoughSpace, total: totalFileListSize };
     };
 
     const showNotEnoughSpaceNotification = (total: number) => {
-        const formattedTotal = humanSize(total);
+        const formattedTotal = humanSize({ bytes: total });
         createNotification({
             text: c('Notification').t`Not enough space to upload ${formattedTotal}`,
             type: 'error',

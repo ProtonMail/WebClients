@@ -69,7 +69,7 @@ describe('Encrypted Outside message attachments', () => {
             getByText(Attachments[i].nameSplitEnd);
 
             const attachmentSizeText = getByTestId('attachment-item:size').textContent;
-            expect(attachmentSizeText).toEqual(humanSize(Attachments[i].Size));
+            expect(attachmentSizeText).toEqual(humanSize({ bytes: Attachments[i].Size }));
 
             assertIcon(items[i].querySelector('svg'), icons[i], undefined, 'mime');
         }

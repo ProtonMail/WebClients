@@ -61,7 +61,7 @@ import {
     hasLifetime,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -193,8 +193,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const goToSettings = useSettingsLink();
     const path = APPS_CONFIGURATION[APP_NAME].publicPath;
 
-    const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
-    const upgradePathname = isVPN ? '/dashboard' : '/upgrade';
+    const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -203,7 +202,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         fromApp: app,
     });
 
-    const upgradeUrl = `${upgradePathname}?ref=${upsellRef}`;
+    const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
 
     return (

@@ -3,6 +3,7 @@ import { ReactNode, createContext, useContext, useRef } from 'react';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getHasLegacyPlans, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { Nullable } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -55,7 +56,9 @@ interface Props {
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
-    const [plans = [], loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
 
     const loading = loadingSubscription || loadingPlans || loadingOrganization;
@@ -90,6 +93,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     app={app}
                     subscription={subscription}
                     plans={plans}
+                    freePlan={freePlan}
                     organization={organization}
                     onSubscribed={() => {
                         handleClose();

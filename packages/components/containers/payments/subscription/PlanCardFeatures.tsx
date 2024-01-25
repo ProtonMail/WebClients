@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactNode, cloneElement, isValidElement } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,7 @@ import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];
-    icon?: boolean;
+    icon?: boolean | ReactNode;
     highlight?: boolean;
     margin?: boolean;
     odd?: boolean;
@@ -48,6 +48,18 @@ export const PlanCardFeatureList = ({
         >
             {features.map((feature) => {
                 const iconToDisplay = (() => {
+                    if (
+                        icon !== true &&
+                        icon !== false &&
+                        icon !== undefined &&
+                        icon !== null &&
+                        isValidElement<{
+                            size: IconSize;
+                        }>(icon)
+                    ) {
+                        return cloneElement(icon, { size: iconSize });
+                    }
+
                     if (feature.highlight && highlight) {
                         return <Icon size={iconSize} name="fire" className="color-warning" />;
                     }
@@ -84,7 +96,15 @@ export const PlanCardFeatureList = ({
                                 {iconToDisplay}
                             </span>
                             <span className="flex-1 text-left">
-                                <span className="mr-2 align-middle">{feature.text}</span>
+                                <span className="mr-2 align-middle">
+                                    {feature.text}
+                                    {feature.subtext && (
+                                        <>
+                                            <br />
+                                            <span className="text-sm">{feature.subtext}</span>
+                                        </>
+                                    )}
+                                </span>
                                 {tooltip && feature.tooltip ? (
                                     <Info
                                         url={feature.iconUrl}

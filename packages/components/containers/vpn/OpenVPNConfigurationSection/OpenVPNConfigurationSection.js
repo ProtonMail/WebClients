@@ -33,7 +33,8 @@ const PROTOCOL = {
 const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, excludedCategories = [] }) => {
     const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
-    const [plans, loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
     const { loading, result = {}, fetch: fetchLogicals } = useVPNLogicals();
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();

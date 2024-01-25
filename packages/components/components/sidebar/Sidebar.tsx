@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,13 +6,15 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import { UserDropdown, useActiveBreakpoint } from '../..';
-import { useConfig, useSubscription, useUser } from '../../hooks';
+import UserDropdown from '../../containers/heading/UserDropdown';
+import useFlag from '../../containers/unleash/useFlag';
+import { useActiveBreakpoint, useConfig, useSubscription, useUser } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
 import { getMeterColor } from '../progress';
@@ -20,8 +22,77 @@ import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';
 
+const Storage = ({
+    appSpace,
+    app,
+    user,
+    subscription,
+    version,
+}: {
+    appSpace: ReturnType<typeof getAppSpace>;
+    app: APP_NAMES;
+    user: UserModel;
+    subscription?: Subscription;
+    version?: ReactNode;
+}) => {
+    const spacePercentage = percentage(appSpace.maxSpace, appSpace.usedSpace);
+    const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
+
+    const canAddStorage = getCanAddStorage({ user, subscription });
+
+    const upsellRef = getUpsellRefFromApp({
+        app,
+        feature: SHARED_UPSELL_PATHS.STORAGE,
+        component: UPSELL_COMPONENT.BUTTON,
+        fromApp: app,
+    });
+
+    const humanUsedSpace = humanSize({ bytes: appSpace.usedSpace });
+    const humanMaxSpace = humanSize({ bytes: appSpace.maxSpace });
+
+    const storageText = (
+        <>
+            <span
+                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
+                style={{ '--signal-success': 'initial' }}
+                // Used by Drive E2E tests
+                data-testid="app-used-space"
+            >
+                {humanUsedSpace}
+            </span>
+            &nbsp;/&nbsp;<span className="max-space">{humanMaxSpace}</span>
+        </>
+    );
+
+    return (
+        <>
+            <SidebarStorageMeter
+                label={`${c('Storage').t`Your current storage:`} ${humanUsedSpace} / ${humanMaxSpace}`}
+                value={spacePercentagePrecision}
+            />
+            <div className="flex flex-nowrap justify-space-between py-2">
+                <span>
+                    {canAddStorage ? (
+                        <Tooltip title={c('Storage').t`Upgrade storage`}>
+                            <SettingsLink
+                                path={addUpsellPath(getUpgradePath({ user, subscription }), upsellRef)}
+                                className="app-infos-storage text-no-decoration text-xs m-0"
+                            >
+                                {storageText}
+                            </SettingsLink>
+                        </Tooltip>
+                    ) : (
+                        <span className="app-infos-storage text-xs m-0">{storageText}</span>
+                    )}
+                </span>
+                <span className="app-infos-compact">{version}</span>
+            </div>
+        </>
+    );
+};
+
 interface Props extends ComponentPropsWithoutRef<'div'> {
-    app?: APP_NAMES;
+    app: APP_NAMES;
     logo?: ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
@@ -34,7 +105,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
-    extraFooter?: ReactNode;
+    preFooter?: ReactNode;
+    postFooter?: ReactNode;
     /**
      * If `true`, the sidebar children container will grow to the maximum
      * available size.
@@ -58,10 +130,12 @@ const Sidebar = ({
     children,
     version,
     contactsButton,
-    extraFooter,
+    preFooter,
+    postFooter,
     growContent = true,
     ...rest
 }: Props) => {
+    const storageSplitEnabled = useFlag('SplitStorage');
     const rootRef = useRef<HTMLDivElement>(null);
     const focusTrapProps = useFocusTrap({
         active: expanded,
@@ -70,47 +144,8 @@ const Sidebar = ({
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
-    const spacePercentage = percentage(MaxSpace, UsedSpace);
-    const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
+    const appSpace = getAppSpace(getSpace(user, storageSplitEnabled), app);
     const { viewportWidth } = useActiveBreakpoint();
-
-    const upsellRef = getUpsellRefFromApp({
-        app: APP_NAME,
-        feature: SHARED_UPSELL_PATHS.STORAGE,
-        component: UPSELL_COMPONENT.BUTTON,
-        fromApp: app,
-    });
-
-    const canAddStorage = useMemo(() => {
-        if (!subscription) {
-            return false;
-        }
-        if (isSubUser) {
-            return false;
-        }
-        if (isMember) {
-            return false;
-        }
-        if (hasNewVisionary(subscription) || hasVisionary(subscription) || hasMailProfessional(subscription)) {
-            return false;
-        }
-        return true;
-    }, [subscription, user]);
-
-    const storageText = (
-        <>
-            <span
-                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
-                style={{ '--signal-success': 'initial' }}
-                // Used by Drive E2E tests
-                data-testid="app-used-space"
-            >
-                {humanSize(UsedSpace)}
-            </span>
-            &nbsp;/&nbsp;<span className="max-space">{humanSize(MaxSpace)}</span>
-        </>
-    );
 
     return (
         <>
@@ -170,33 +205,17 @@ const Sidebar = ({
                     {contactsButton}
                     {children}
                 </div>
-                {APP_NAME !== APPS.PROTONVPN_SETTINGS && MaxSpace > 0 ? (
+                {app !== APPS.PROTONVPN_SETTINGS && APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
-                        <SidebarStorageMeter
-                            label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
-                                MaxSpace
-                            )}`}
-                            value={spacePercentagePrecision}
+                        {preFooter}
+                        <Storage
+                            appSpace={appSpace}
+                            app={app}
+                            user={user}
+                            subscription={subscription}
+                            version={version}
                         />
-                        <div className="flex flex-nowrap justify-space-between py-2">
-                            <span>
-                                {canAddStorage ? (
-                                    <Tooltip title={c('Storage').t`Upgrade storage`}>
-                                        <SettingsLink
-                                            path={addUpsellPath('/upgrade', upsellRef)}
-                                            className="app-infos-storage text-no-decoration text-xs m-0"
-                                        >
-                                            {storageText}
-                                        </SettingsLink>
-                                    </Tooltip>
-                                ) : (
-                                    <span className="app-infos-storage text-xs m-0">{storageText}</span>
-                                )}
-                            </span>
-
-                            <span className="app-infos-compact">{version}</span>
-                        </div>
-                        {extraFooter}
+                        {postFooter}
                     </div>
                 ) : (
                     <div className="border-top">

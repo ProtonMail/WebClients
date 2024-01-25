@@ -4,7 +4,7 @@ import {
     getPendingInvitations,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { HolidaysDirectoryCalendar, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { MyCalendarsSection, PrivateMainAreaLoading, PrivateMainSettingsArea, SectionConfig } from '../..';
@@ -14,6 +14,7 @@ import OtherCalendarsSection from '../settings/OtherCalendarsSection';
 export interface CalendarsSettingsSectionProps {
     config: SectionConfig;
     user: UserModel;
+    subscription?: Subscription;
     addresses: Address[];
     calendars: VisualCalendar[];
     myCalendars: VisualCalendar[];
@@ -28,6 +29,7 @@ export interface CalendarsSettingsSectionProps {
 const CalendarsSettingsSection = ({
     config,
     user,
+    subscription,
     addresses,
     calendars,
     myCalendars,
@@ -56,6 +58,7 @@ const CalendarsSettingsSection = ({
                 defaultCalendar={defaultCalendar}
                 addresses={addresses}
                 user={user}
+                subscription={subscription}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isCalendarsLimitReached}
             />
@@ -67,6 +70,7 @@ const CalendarsSettingsSection = ({
                 holidaysDirectory={holidaysDirectory}
                 unknownCalendars={unknownCalendars}
                 addresses={addresses}
+                subscription={subscription}
                 user={user}
                 canAdd={canAddCalendar}
                 isCalendarsLimitReached={isOtherCalendarsLimitReached}

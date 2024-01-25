@@ -9,6 +9,7 @@ import {
 import { createToken, subscribe } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Audience, Organization, Plan } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import {
     apiMock,
@@ -96,6 +97,7 @@ describe('SubscriptionContainer', () => {
             subscription: defaultSubscriptionCache,
             organization: organizationDefaultResponse.Organization as any as Organization,
             plans: plansDefaultResponse.Plans as any as Plan[],
+            freePlan: FREE_PLAN,
         };
     });
 
