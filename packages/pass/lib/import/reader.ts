@@ -23,16 +23,11 @@ export const extractFileExtension = (fileName: string): string => {
     return parts[parts.length - 1];
 };
 
-export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> => {
-    switch (payload.provider) {
-        case ImportProvider.PROTONPASS: {
-            const fileExtension = extractFileExtension(payload.file.name);
-            if (fileExtension === 'pgp') return { ...payload, file: await decryptProtonPassImport(payload) };
-        }
-        default:
-            return payload;
-    }
-};
+export const isProtonPassEncryptedImport = (payload: ImportReaderPayload): boolean =>
+    payload.provider === ImportProvider.PROTONPASS && extractFileExtension(payload.file.name) === 'pgp';
+
+export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> =>
+    isProtonPassEncryptedImport(payload) ? { ...payload, file: await decryptProtonPassImport(payload) } : payload;
 
 export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPayload> => {
     const file = transferableToFile(payload.file);
