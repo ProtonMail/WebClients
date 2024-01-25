@@ -14,7 +14,7 @@ type DragOverReturn = [
         onDragLeave: DragEventHandler;
         onDragOver: DragEventHandler;
         onDrop: DragEventHandler;
-    }
+    },
 ];
 
 /**
@@ -35,7 +35,7 @@ const useDragOver = (
             if (dragOver === 0) {
                 onDragEnter?.(event);
             }
-            setDragOver(dragOver + 1);
+            setDragOver((old) => old + 1);
         }
     };
     const handleDragLeave = (event: DragEvent) => {
@@ -44,7 +44,7 @@ const useDragOver = (
             if (dragOver === 1) {
                 onDragLeave?.(event);
             }
-            setDragOver(dragOver - 1);
+            setDragOver((old) => old - 1);
         }
     };
     const handleDragOver = (event: DragEvent) => {
