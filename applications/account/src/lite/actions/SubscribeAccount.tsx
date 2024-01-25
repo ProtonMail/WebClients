@@ -46,6 +46,7 @@ import {
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
@@ -80,7 +81,9 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
     const [subscription, loadingSubscription] = useSubscription();
-    const [plans = [], loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
     const [error, setError] = useState({ title: '', message: '', error: '' });
 
@@ -267,6 +270,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 app={app}
                                 subscription={subscription}
                                 plans={plans}
+                                freePlan={freePlan}
                                 organization={organization}
                                 step={step}
                                 cycle={parsedCycle}

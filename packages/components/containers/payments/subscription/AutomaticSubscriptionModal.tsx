@@ -182,7 +182,8 @@ const AutomaticSubscriptionModal = () => {
     const protonConfig = useConfig();
 
     const [open, loadingModal] = useSubscriptionModal();
-    const [plans, loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
     const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
     const [user] = useUser();

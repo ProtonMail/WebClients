@@ -49,6 +49,7 @@ import {
     Audience,
     Currency,
     Cycle,
+    FreePlanDefault,
     Organization,
     Plan,
     PlanIDs,
@@ -157,6 +158,7 @@ export interface SubscriptionContainerProps {
     subscription: SubscriptionModel;
     organization: Organization;
     plans: Plan[];
+    freePlan: FreePlanDefault;
 }
 
 const SubscriptionContainer = ({
@@ -183,6 +185,7 @@ const SubscriptionContainer = ({
     subscription,
     organization,
     plans,
+    freePlan,
 }: SubscriptionContainerProps) => {
     const TITLE = {
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
@@ -251,7 +254,7 @@ const SubscriptionContainer = ({
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
-        defaultSelectedProductPlans || getDefaultSelectedProductPlans(app, planIDs)
+        defaultSelectedProductPlans || getDefaultSelectedProductPlans({ appName: app, planIDs })
     );
 
     const [model, setModel] = useState<Model>(() => {
@@ -738,6 +741,7 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                 <PlanSelection
                     app={app}
+                    freePlan={freePlan}
                     loading={loadingCheck}
                     plans={plans}
                     plansMap={plansMap}
@@ -791,6 +795,7 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
+                                freePlan={freePlan}
                                 submit={
                                     <Button
                                         color="norm"
@@ -947,6 +952,7 @@ const SubscriptionContainer = ({
                                 data-testid="subscription-checkout"
                             >
                                 <SubscriptionCheckout
+                                    freePlan={freePlan}
                                     submit={
                                         <SubscriptionSubmitButton
                                             currency={model.currency}
@@ -1081,6 +1087,7 @@ const SubscriptionContainer = ({
                             data-testid="subscription-checkout"
                         >
                             <SubscriptionCheckout
+                                freePlan={freePlan}
                                 submit={
                                     <SubscriptionSubmitButton
                                         currency={model.currency}

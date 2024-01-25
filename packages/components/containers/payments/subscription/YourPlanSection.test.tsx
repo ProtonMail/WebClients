@@ -15,6 +15,7 @@ import {
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import YourPlanSection from './YourPlanSection';
 import {
@@ -40,7 +41,7 @@ mockUseUser.mockReturnValue([user, false]);
 
 jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
-mockUsePlans.mockReturnValue([plans, false]);
+mockUsePlans.mockReturnValue([{ plans, freePlan: FREE_PLAN }, false]);
 
 jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;

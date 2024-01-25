@@ -41,14 +41,15 @@ import { subscriptionExpires } from './subscription/helpers';
 export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
 
 const SubscriptionsSection = () => {
-    const [plans, loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans;
     const [current, loadingSubscription] = useSubscription();
     const upcoming = current?.UpcomingSubscription ?? undefined;
     const api = useApi();
     const eventManager = useEventManager();
     const [reactivating, withReactivating] = useLoading();
 
-    if (!current || loadingSubscription || loadingPlans) {
+    if (!current || !plans || loadingSubscription || loadingPlans) {
         return <Loader />;
     }
 

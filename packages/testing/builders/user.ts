@@ -11,8 +11,12 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         Type: 1,
         CreateTime: 1589313678,
         MaxSpace: 7516192768,
+        MaxBaseSpace: 7516192768,
+        MaxDriveSpace: 7516192768,
         MaxUpload: 26214400,
         UsedSpace: 99993,
+        UsedDriveSpace: 99993,
+        UsedBaseSpace: 99993,
         Subscribed: 1,
         Services: 1,
         MnemonicStatus: 4,
@@ -20,6 +24,13 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         Private: 1,
         Delinquent: 0,
         DriveEarlyAccess: 0,
+        ProductUsedSpace: {
+            Drive: 0,
+            Mail: 99993,
+            Calendar: 0,
+            Contact: 0,
+            Pass: 0,
+        },
         Idle: 0,
         Keys: [
             {

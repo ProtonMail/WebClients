@@ -7,6 +7,7 @@ import { Step, Stepper } from '@proton/atoms/Stepper';
 import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
@@ -14,7 +15,7 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -118,6 +119,7 @@ const SignupContainer = ({
     loginUrl,
 }: Props) => {
     const { APP_NAME } = useConfig();
+    const storageSplitEnabled = useFlag('SplitStorage');
 
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
     const isMailTrial = isMailTrialSignup(location);
@@ -257,7 +259,7 @@ const SignupContainer = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
+            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans, freePlan] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
                 referrer
@@ -277,6 +279,7 @@ const SignupContainer = ({
                             : undefined
                     )
                 ).then(({ Plans }) => Plans),
+                getFreePlan({ api: silentApi, storageSplitEnabled }),
             ]);
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
@@ -288,6 +291,7 @@ const SignupContainer = ({
             setModelDiff({
                 domains,
                 plans: Plans,
+                freePlan,
                 plansMap: toMap(model.plans, 'Name') as PlansMap,
                 paymentMethodStatus,
                 referralData,
@@ -743,6 +747,7 @@ const SignupContainer = ({
             )}
             {step === Upsell && (
                 <UpsellStep
+                    freePlan={model.freePlan}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
