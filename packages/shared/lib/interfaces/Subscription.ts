@@ -105,6 +105,10 @@ export interface Subscription {
     Plans: SubscriptionPlan[];
     External: External;
     UpcomingSubscription?: Subscription | null;
+    /**
+     * That's a V5 property. It's not available for V4.
+     */
+    IsTrial?: boolean;
 }
 
 export interface SubscriptionModel extends Subscription {
