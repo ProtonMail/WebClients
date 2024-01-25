@@ -30,6 +30,7 @@ interface Arguments {
     isEmailForwardingEnabled: boolean;
     hasUserAccessToInboxDesktop: boolean;
     isNotifInboxDesktopAppOn: boolean;
+    isStorageSplitEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -52,6 +53,7 @@ export const getRoutes = ({
     isEmailForwardingEnabled,
     hasUserAccessToInboxDesktop,
     isNotifInboxDesktopAppOn,
+    isStorageSplitEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -68,6 +70,7 @@ export const getRoutes = ({
             isProtonSentinelEligible,
             isProtonSentinelFeatureEnabled,
             isProtonSentinelUpsellEnabled,
+            isStorageSplitEnabled,
         }),
         mail: getMailAppRoutes({
             app,

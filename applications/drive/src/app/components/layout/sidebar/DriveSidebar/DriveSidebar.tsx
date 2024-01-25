@@ -1,24 +1,10 @@
-import { ReactNode, useEffect, useMemo, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { ButtonLike } from '@proton/atoms/Button';
-import {
-    AppsDropdown,
-    Icon,
-    SettingsLink,
-    Sidebar,
-    SidebarContactItem,
-    SidebarNav,
-    useDrawer,
-    useSubscription,
-    useUser,
-} from '@proton/components';
+import { AppsDropdown, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
+import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
-import { APPS, DRIVE_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
-import { hasDrive, hasFree } from '@proton/shared/lib/helpers/subscription';
-import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
@@ -51,18 +37,6 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
 
     const displayContactsInHeader = useDisplayContactsWidget();
 
-    const [user] = useUser();
-    const [subscription] = useSubscription();
-    const { isMember, isSubUser } = user;
-
-    const shouldShowDriveUpsell = useMemo(() => {
-        if (!subscription || isSubUser || isMember) {
-            return false;
-        }
-
-        return hasFree(subscription) || hasDrive(subscription);
-    }, [isMember, isSubUser, subscription]);
-
     /*
      * The sidebar supports multiple shares, but as we currently have
      * only one main share in use, we gonna use the default share only,
@@ -71,6 +45,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     const shares = defaultShare ? [defaultShare] : [];
     return (
         <Sidebar
+            app={APPS.PROTONDRIVE}
             appsDropdown={<AppsDropdown app={APPS.PROTONDRIVE} />}
             logo={logo}
             expanded={isHeaderExpanded}
@@ -88,27 +63,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
                 )
             }
             growContent={false}
-            extraFooter={
-                shouldShowDriveUpsell && (
-                    <ButtonLike
-                        className="my-2 w-full flex gap-2 items-center justify-center"
-                        as={SettingsLink}
-                        color="norm"
-                        shape="outline"
-                        path={addUpsellPath(
-                            '/upgrade',
-                            getUpsellRefFromApp({
-                                app: APPS.PROTONDRIVE,
-                                feature: DRIVE_UPSELL_PATHS.SIDEBAR,
-                                component: UPSELL_COMPONENT.BUTTON,
-                            })
-                        )}
-                    >
-                        <Icon name="cloud" />
-                        {c('Storage').t`Get more storage`}
-                    </ButtonLike>
-                )
-            }
+            postFooter={<SidebarStorageUpsell app={APPS.PROTONDRIVE} />}
         >
             <SidebarNav>
                 <div>

@@ -74,7 +74,6 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                 </SettingsParagraph>
 
                 <UpgradeBanner
-                    free={user.isFree}
                     audience={Audience.B2B}
                     upsellPath={getUpsellRefFromApp({
                         app: APP_NAME,

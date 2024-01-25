@@ -1,5 +1,6 @@
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Loader } from '../../../components';
 import { useLoad, usePlans, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
@@ -16,7 +17,9 @@ interface Props {
 
 const UpgradeVpnSection = ({ app }: Props) => {
     const [user] = useUser();
-    const [plans = [], loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [serversCount, serversCountLoading] = useVPNServersCount();
@@ -35,6 +38,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
         currency,
         subscription,
         plans,
+        freePlan,
         serversCount,
         openSubscriptionModal,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),

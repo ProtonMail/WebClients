@@ -17,8 +17,8 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
     const [user] = useUser();
     const [bugReportModal, setBugReportOpen, render] = useModalState();
 
-    const inviteSpace = humanSize(invite.MaxSpace, undefined, false, 0);
-    const usedSpace = humanSize(user.UsedSpace, undefined, false, 0);
+    const inviteSpace = humanSize({ bytes: invite.MaxSpace, withoutUnit: false, fraction: 0 });
+    const usedSpace = humanSize({ bytes: user.UsedSpace, withoutUnit: false, fraction: 0 });
 
     let errorDescription: string | string[] = '';
 

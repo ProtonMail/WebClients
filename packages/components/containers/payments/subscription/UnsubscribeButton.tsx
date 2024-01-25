@@ -6,7 +6,7 @@ import { Button, ButtonProps } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { APP_NAMES, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
@@ -16,6 +16,7 @@ import {
     hasNewVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import {
@@ -48,21 +49,24 @@ const { MAIL, VPN } = PLAN_SERVICES;
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
+    app: APP_NAMES;
 }
 
-const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
+const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
     const api = useApi();
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
     const getSubscription = useGetSubscription();
     const getOrganization = useGetOrganization();
-    const [plans, loadingPlans] = usePlans();
+    const [plansResult, loadingPlans] = usePlans();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
     const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
 
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -115,14 +119,23 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         }
 
         const currentPlan = getPlan(subscription);
-        const shortPlan = currentPlan ? getShortPlan(currentPlan.Name as PLANS, plansMap, { vpnServers }) : undefined;
+        const shortPlan = currentPlan
+            ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
+                  vpnServers,
+                  freePlan,
+              })
+            : undefined;
         const { PeriodEnd = 0 } = subscription || {};
 
         // We only show the plan downgrade modal for plans that are defined with features
-        if (shortPlan) {
+        if (shortPlan && freePlan) {
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <HighlightPlanDowngradeModal
+                        freePlan={freePlan}
+                        app={app}
+                        user={user}
+                        plansMap={plansMap}
                         shortPlan={shortPlan}
                         periodEnd={PeriodEnd}
                         onConfirm={resolve}

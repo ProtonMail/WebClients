@@ -18,7 +18,15 @@ export const getCurrency = (
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
 
-export const getDefaultSelectedProductPlans = (appName: ProductParam, planIDs: PlanIDs) => {
+export const getDefaultSelectedProductPlans = ({
+    appName,
+    plan,
+    planIDs,
+}: {
+    appName: ProductParam;
+    plan?: string;
+    planIDs: PlanIDs;
+}) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
         defaultB2CPlan = PLANS.VPN;
@@ -27,8 +35,12 @@ export const getDefaultSelectedProductPlans = (appName: ProductParam, planIDs: P
     } else if (appName === APPS.PROTONPASS) {
         defaultB2CPlan = PLANS.PASS_PLUS;
     }
-    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find((x) => planIDs[x]);
-    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((x) => planIDs[x]);
+    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find(
+        (planName) => plan === planName || planIDs[planName]
+    );
+    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find(
+        (planName) => plan === planName || planIDs[planName]
+    );
     const defaultB2BPlan = PLANS.MAIL_PRO;
     return {
         [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,

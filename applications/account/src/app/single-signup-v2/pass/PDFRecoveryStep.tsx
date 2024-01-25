@@ -29,7 +29,7 @@ const PDFRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
     const onceRef = useRef(false);
     const [understood, setUnderstood] = useState(false);
 
-    const size = `(${humanSize(mnemonic.blob.size)})`;
+    const size = `(${humanSize({ bytes: mnemonic.blob.size })})`;
 
     const handleDownload = () => {
         if (onceRef.current) {

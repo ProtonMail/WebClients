@@ -85,19 +85,19 @@ const getSegments = (totalStorage: Props['totalStorage'], allocatedStorage: numb
     return [
         {
             label: c('Info').t`Already used`,
-            size: humanSize(totalStorage.memberUsedSpace),
+            size: humanSize({ bytes: totalStorage.memberUsedSpace }),
             tooltip: c('Info').t`Storage used by this user`,
             value: [alreadyUsedPercentage, ThemeColor.Danger],
         },
         {
             label: c('Info').t`Already allocated`,
-            size: humanSize(totalStorage.organizationUsedSpace),
+            size: humanSize({ bytes: totalStorage.organizationUsedSpace }),
             tooltip: c('Info').t`Storage allocated to other users in this organisation`,
             value: [alreadyAllocatedPercentage, ThemeColor.Warning],
         },
         {
             label: c('Info').t`Allocated`,
-            size: humanSize(allocatedStorage),
+            size: humanSize({ bytes: allocatedStorage }),
             tooltip: c('Info').t`Storage allocated to this user`,
             value: [allocatedPercentage, ThemeColor.Success],
         },
@@ -191,11 +191,15 @@ const MemberStorageSelector = ({
                     {orgInitialization ? (
                         <>
                             <div>
-                                <b>{c('Info').t`Admin account allocation`}</b>: {humanSize(parsedValueInBytes, unit)}
+                                <b>{c('Info').t`Admin account allocation`}</b>:{' '}
+                                {humanSize({
+                                    bytes: parsedValueInBytes,
+                                    unit,
+                                })}
                             </div>
                             <div>
                                 <b>{c('Info').t`Storage for users`}</b>:{' '}
-                                {humanSize(range.max - parsedValueInBytes, unit)}
+                                {humanSize({ bytes: range.max - parsedValueInBytes, unit })}
                             </div>
                         </>
                     ) : (

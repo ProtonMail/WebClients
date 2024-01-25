@@ -13,7 +13,7 @@ import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
@@ -36,11 +36,19 @@ interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
+    subscription?: Subscription;
     drawerView?: VIEWS;
     hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
 
-const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactivatedCalendarsRef }: Props) => {
+const MainContainerSetup = ({
+    user,
+    subscription,
+    addresses,
+    calendars,
+    drawerView,
+    hasReactivatedCalendarsRef,
+}: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
@@ -114,6 +122,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactiv
                                 isSmallViewport={viewportWidth['<=small']}
                                 drawerView={drawerView}
                                 user={user}
+                                subscription={subscription}
                                 addresses={addresses}
                                 activeAddresses={activeAddresses}
                                 visibleCalendars={visibleCalendars}
