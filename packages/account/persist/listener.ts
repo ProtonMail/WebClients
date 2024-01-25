@@ -28,6 +28,11 @@ export const startPersistListener = <T extends UserState>(
         effect: async (action, listenerApi) => {
             listenerApi.unsubscribe();
 
+            // Disable if session isn't "remember me"
+            if (!listenerApi.extra.authentication.getPersistent()) {
+                return;
+            }
+
             const run = () => {
                 const { authentication, config, eventManager, unleashClient } = listenerApi.extra;
 
