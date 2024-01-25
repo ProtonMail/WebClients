@@ -995,6 +995,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Migrare la Visionary"
+      ],
       "Upgrade your plan": [
         "Modificare plan"
       ],
@@ -3137,8 +3140,8 @@
       "Access to the desktop app is limited": [
         "Accesul la aplicația pentru desktop este limitat"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. It will soon be available to everyone.": [
-        "Versiunea beta a aplicației desktop ${ MAIL_APP_NAME } este disponibilă în prezent pentru oricine are un plan cu plată ${ MAIL_APP_NAME }. În curând aplicația va fi disponibilă pentru toată lumea."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Versiunea beta a aplicației pentru desktop ${ MAIL_APP_NAME } este în prezent limitată la abonații cu planul ${ BRAND_NAME } Visionary. Aceasta va fi disponibilă pentru toți utilizatorii la începutul anului 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
@@ -3908,9 +3911,6 @@
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
-      ],
-      "No WKD key retrieved for user is valid for sending": [
-        "Nicio cheie WKD recuperată pentru utilizator nu este validă pentru trimitere"
       ],
       "Not a ${ BRAND_NAME } account": [
         "Nu este un cont ${ BRAND_NAME }."
@@ -9208,6 +9208,9 @@
       "Show sender images": [
         "Afișare imagini expeditori"
       ],
+      "Show unread count in application icon": [
+        "Afișare număr necitite pe pictograma aplicației"
+      ],
       "Show unread count in Favicon": [
         "Afișare contor necitite pe Favicon"
       ],
@@ -11439,6 +11442,9 @@
       "Create another account instead": [
         "Creare alt cont"
       ],
+      "Download PDF ${ size }": [
+        "Descărcare PDF ${ size }"
+      ],
       "Keep this plan": [
         "Păstrez planul"
       ],
@@ -11577,6 +11583,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasurile hide-my-email vă protejează adresa de e-mail împotriva divulgării datelor personale."
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Înțeleg că, dacă îmi pierd detaliile de recuperare, este posibil să pierd definitiv accesul la contul meu."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Dacă nu mai puteți accesa contul ${ BRAND_NAME }, **Pachetul de recuperare** vă va permite să vă conectați și să recuperați datele."
+      ],
       "Includes:": [
         "Include:"
       ],
@@ -11588,6 +11600,9 @@
       ],
       "Install app and extension": [
         "Instalați aplicația și extensia"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că păstrați acest pachet de recuperare undeva în siguranță."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Alăturați-vă celor peste 100 de milioane de oameni care au ales ${ BRAND_NAME } pentru a rămâne în siguranță online."
