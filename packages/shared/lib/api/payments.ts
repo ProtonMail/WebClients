@@ -27,8 +27,19 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { ProductParam, getProductHeaders } from '../apps/product';
 import { Api, Currency, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
+export type PaymentsVersion = 'v4' | 'v5';
+let paymentsVersion: PaymentsVersion = 'v4';
+
+export function setPaymentsVersion(version: PaymentsVersion) {
+    paymentsVersion = version;
+}
+
+export function getPaymentsVersion(): PaymentsVersion {
+    return paymentsVersion;
+}
+
 export const queryFreePlan = (params?: QueryPlansParams) => ({
-    url: 'payments/v4/plans/default',
+    url: `payments/${paymentsVersion}/plans/default`,
     method: 'get',
     params,
 });
@@ -54,17 +65,6 @@ export const getFreePlan = ({
             };
         })
         .catch(() => FREE_PLAN);
-
-export type PaymentsVersion = 'v4' | 'v5';
-let paymentsVersion: PaymentsVersion = 'v4';
-
-export function setPaymentsVersion(version: PaymentsVersion) {
-    paymentsVersion = version;
-}
-
-export function getPaymentsVersion(): PaymentsVersion {
-    return paymentsVersion;
-}
 
 export const getSubscription = (forceVersion?: PaymentsVersion) => ({
     url: `payments/${forceVersion ?? paymentsVersion}/subscription`,
