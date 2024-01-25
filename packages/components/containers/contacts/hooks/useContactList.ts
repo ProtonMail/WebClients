@@ -89,7 +89,7 @@ const useContactList = ({ search, contactID, contactGroupID }: Props) => {
         handleCheckOne,
         handleCheckOnlyOne,
         handleCheckRange,
-    } = useItemsSelection(contactID, contactIDs, [contactID, contactGroupID]);
+    } = useItemsSelection({ activeID: contactID, allIDs: contactIDs, resetDependencies: [contactID, contactGroupID] });
 
     const hasCheckedAllFiltered = useMemo(() => {
         const filteredContactsLength = filteredContacts.length;
