@@ -4,7 +4,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import WorkerMessageBroker from '../channel';
 
 export const createImportService = () => {
-    WorkerMessageBroker.registerMessage(WorkerMessageType.IMPORT_PREPARE, async ({ payload }) => ({
+    WorkerMessageBroker.registerMessage(WorkerMessageType.IMPORT_DECRYPT, async ({ payload }) => ({
         payload: await prepareImport(payload),
     }));
 

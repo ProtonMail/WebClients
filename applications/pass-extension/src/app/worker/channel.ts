@@ -26,7 +26,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.AUTOFILL_SELECT,
         WorkerMessageType.AUTOSAVE_REQUEST,
         WorkerMessageType.EXPORT_REQUEST,
-        WorkerMessageType.IMPORT_PREPARE,
+        WorkerMessageType.IMPORT_DECRYPT,
         WorkerMessageType.LOG_REQUEST,
         WorkerMessageType.ONBOARDING_ACK,
         WorkerMessageType.ONBOARDING_REQUEST,
