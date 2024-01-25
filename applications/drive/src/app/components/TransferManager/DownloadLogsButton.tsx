@@ -14,7 +14,7 @@ export default function DownloadLogsButton({ onClick }: { onClick: () => void })
                 icon
                 className="transfers-manager-list-item-controls-button"
             >
-                <Icon size={12} name="wrench" alt={'More'} />
+                <Icon size={3} name="wrench" alt={'More'} />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>

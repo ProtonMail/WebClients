@@ -277,7 +277,7 @@ const AddressesInput = ({
                                 icon
                                 data-testid="composer:to-button"
                             >
-                                <Icon name="user-plus" size={16} alt={addContactButton} />
+                                <Icon name="user-plus" size={4} alt={addContactButton} />
                             </Button>
                         </Tooltip>
                     </span>

@@ -51,7 +51,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 title={c('Action').t`Previous`}
                 data-testid="file-preview:navigation:prev"
             >
-                <Icon name="chevron-left" size={16} alt={c('Action').t`Previous`} />
+                <Icon name="chevron-left" size={4} alt={c('Action').t`Previous`} />
             </Button>
             <span className="mx-2">
                 <span data-testid="preview:current-attachment">{current}</span>
@@ -67,7 +67,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 title={c('Action').t`Next`}
                 data-testid="file-preview:navigation:next"
             >
-                <Icon name="chevron-right" size={16} alt={c('Action').t`Next`} />
+                <Icon name="chevron-right" size={4} alt={c('Action').t`Next`} />
             </Button>
         </div>
     );

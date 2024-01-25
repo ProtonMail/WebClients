@@ -28,7 +28,7 @@ const BitcoinQRCode = ({
             <QRCode value={url} className={clsx(className, blurred)} {...rest} />
             {status === 'pending' && <CircleLoader size="medium" className="absolute inset-center" />}
             {status === 'confirmed' && (
-                <Icon name="checkmark-circle" size={36} className="absolute inset-center color-success" />
+                <Icon name="checkmark-circle" size={9} className="absolute inset-center color-success" />
             )}
         </div>
     );

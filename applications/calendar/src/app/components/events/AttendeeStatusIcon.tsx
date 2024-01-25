@@ -8,17 +8,17 @@ const iconClassName = '';
 
 const IconYes = () => (
     <span className={`${iconContainerClassName} color-success`}>
-        <Icon name="checkmark-circle-filled" className={iconClassName} size={12} />
+        <Icon name="checkmark-circle-filled" className={iconClassName} size={3} />
     </span>
 );
 const IconMaybe = () => (
     <span className={`${iconContainerClassName} color-warning`}>
-        <Icon name="question-circle-filled" className={iconClassName} size={12} />
+        <Icon name="question-circle-filled" className={iconClassName} size={3} />
     </span>
 );
 const IconNo = () => (
     <span className={`${iconContainerClassName} color-danger`}>
-        <Icon name="cross-circle-filled" className={iconClassName} size={12} />
+        <Icon name="cross-circle-filled" className={iconClassName} size={3} />
     </span>
 );
 const IconNeedsAction = () => null;
@@ -38,21 +38,21 @@ const ParticipantStatusIcon = ({ partstat }: Props) => {
     if (partstat === ACCEPTED) {
         return (
             <span className={`${iconContainerClassName} color-success`}>
-                <Icon name="checkmark-circle-filled" className={iconClassName} size={16} />
+                <Icon name="checkmark-circle-filled" className={iconClassName} size={4} />
             </span>
         );
     }
     if (partstat === TENTATIVE) {
         return (
             <span className={`${iconContainerClassName} color-warning`}>
-                <Icon name="question-circle-filled" className={iconClassName} size={16} />
+                <Icon name="question-circle-filled" className={iconClassName} size={4} />
             </span>
         );
     }
     if (partstat === DECLINED) {
         return (
             <span className={`${iconContainerClassName} color-danger`}>
-                <Icon name="cross-circle-filled" className={iconClassName} size={16} />
+                <Icon name="cross-circle-filled" className={iconClassName} size={4} />
             </span>
         );
     }

@@ -1142,7 +1142,7 @@ export const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
 /**
  * Mail Composer toolbar
  */
-export const COMPOSER_TOOLBAR_ICON_SIZE = 14;
+export const COMPOSER_TOOLBAR_ICON_SIZE = 3.5;
 
 /**
  * Messages list pagination

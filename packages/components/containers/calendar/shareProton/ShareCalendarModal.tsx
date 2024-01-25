@@ -228,7 +228,7 @@ const loadRecipient = async ({
 const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }: ExtendedRecipient) => {
     if (loading) {
         return {
-            icon: <Loader className="icon-16p pl-2 m-auto flex shrink-0" />,
+            icon: <Loader className="icon-size-4 pl-2 m-auto flex shrink-0" />,
         };
     }
     if (error) {
@@ -245,7 +245,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     return {
         icon: (
             <span className="inline-flex pl-2 shrink-0 my-auto">
-                <Icon size={16} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
+                <Icon size={4} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
             </span>
         ),
         iconTooltip: isKeyPinned

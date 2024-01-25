@@ -405,7 +405,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
                                 data-testid={`label-dropdown:label-${Name}`}
                                 onClick={() => handleApplyDirectly(ID)}
                             >
-                                <Icon name="circle-filled" size={16} color={Color} className="shrink-0 relative mx-2" />
+                                <Icon name="circle-filled" size={4} color={Color} className="shrink-0 relative mx-2" />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>

@@ -19,7 +19,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
             {item.cachedThumbnailUrl ? (
                 <img src={item.cachedThumbnailUrl} className="file-browser-grid-item--thumbnail" alt={iconText} />
             ) : (
-                <FileIcon size={48} mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} />
+                <FileIcon size={12} mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} />
             )}
         </>
     );

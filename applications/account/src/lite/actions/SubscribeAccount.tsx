@@ -379,23 +379,23 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                     {[
                                         {
                                             title: MAIL_APP_NAME,
-                                            logo: <MailLogo variant="glyph-only" size={20} />,
+                                            logo: <MailLogo variant="glyph-only" size={5} />,
                                         },
                                         {
                                             title: CALENDAR_APP_NAME,
-                                            logo: <CalendarLogo variant="glyph-only" size={20} />,
+                                            logo: <CalendarLogo variant="glyph-only" size={5} />,
                                         },
                                         {
                                             title: DRIVE_APP_NAME,
-                                            logo: <DriveLogo variant="glyph-only" size={20} />,
+                                            logo: <DriveLogo variant="glyph-only" size={5} />,
                                         },
                                         {
                                             title: VPN_APP_NAME,
-                                            logo: <VpnLogo variant="glyph-only" size={20} />,
+                                            logo: <VpnLogo variant="glyph-only" size={5} />,
                                         },
                                         {
                                             title: PASS_APP_NAME,
-                                            logo: <PassLogo variant="glyph-only" size={20} />,
+                                            logo: <PassLogo variant="glyph-only" size={5} />,
                                         },
                                     ].map(({ title, logo }) => {
                                         return (

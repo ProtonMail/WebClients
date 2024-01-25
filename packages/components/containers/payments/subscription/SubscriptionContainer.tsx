@@ -883,7 +883,7 @@ const SubscriptionContainer = ({
                                                                 shape="outline"
                                                                 onClick={handleUpsellVPNPassBundle}
                                                             >
-                                                                <Icon name="trash" size={14} />
+                                                                <Icon name="trash" size={3.5} />
                                                                 <span className="ml-2">
                                                                     {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
                                                                 </span>

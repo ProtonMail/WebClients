@@ -59,11 +59,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
                 {...restDropdownProps}
                 as="button"
                 type="button"
-                className={clsx([
-                    className,
-                    displayColorName && 'w-1/2',
-                    'field select flex items-center py-0 pl-2',
-                ])}
+                className={clsx([className, displayColorName && 'w-1/2', 'field select flex items-center py-0 pl-2'])}
                 hasCaret
                 ref={anchorRef}
                 isOpen={isOpen}
@@ -75,7 +71,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
                     <Icon
                         className="shrink-0"
                         name="circle-filled"
-                        size={28}
+                        size={7}
                         color={iconColor}
                         alt={displayColorName ? undefined : colorName}
                     />
