@@ -253,7 +253,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                                             .finally(() => aliasModal.setOpen(true))
                                                     }
                                                 >
-                                                    <Icon name="alias" size={20} />
+                                                    <Icon name="alias" size={5} />
                                                 </Button>
                                             ),
                                         ].filter(Boolean) as ReactElement[]

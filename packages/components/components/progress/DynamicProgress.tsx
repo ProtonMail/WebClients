@@ -28,31 +28,31 @@ const DynamicProgress = ({
               icon: <Loader />,
           }
         : success
-        ? {
-              icon: (
-                  <span className="inline-flex bg-success rounded-50 p-2">
-                      <Icon name="checkmark" size={24} />
-                  </span>
-              ),
-              progressClassname: 'progress-bar--success',
-          }
-        : partialSuccess
-        ? {
-              icon: (
-                  <span className="inline-flex bg-warning rounded-50 p-2">
-                      <Icon name="cross" size={24} />
-                  </span>
-              ),
-              progressClassname: 'progress-bar--warning',
-          }
-        : {
-              icon: (
-                  <span className="inline-flex bg-danger rounded-50 p-2">
-                      <Icon name="cross" size={24} />
-                  </span>
-              ),
-              progressClassname: 'progress-bar--error',
-          };
+          ? {
+                icon: (
+                    <span className="inline-flex bg-success rounded-50 p-2">
+                        <Icon name="checkmark" size={6} />
+                    </span>
+                ),
+                progressClassname: 'progress-bar--success',
+            }
+          : partialSuccess
+            ? {
+                  icon: (
+                      <span className="inline-flex bg-warning rounded-50 p-2">
+                          <Icon name="cross" size={6} />
+                      </span>
+                  ),
+                  progressClassname: 'progress-bar--warning',
+              }
+            : {
+                  icon: (
+                      <span className="inline-flex bg-danger rounded-50 p-2">
+                          <Icon name="cross" size={6} />
+                      </span>
+                  ),
+                  progressClassname: 'progress-bar--error',
+              };
 
     return (
         <div className={clsx(['text-center', !display && 'mb-4'])}>

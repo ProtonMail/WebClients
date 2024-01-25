@@ -104,7 +104,7 @@ const HeaderCell = <T,>({
             {item.getText()}
             {item.type === 'numAccesses' && (
                 <Tooltip className="pl-1" title={getNumAccessesTooltipMessage()}>
-                    <Icon name="info-circle" size={14} alt={getNumAccessesTooltipMessage()} />
+                    <Icon name="info-circle" size={3.5} alt={getNumAccessesTooltipMessage()} />
                 </Tooltip>
             )}
         </TableHeaderCell>

@@ -1,4 +1,5 @@
 import clsx from '@proton/utils/clsx';
+
 import Icon, { IconName, IconSize } from '../icon/Icon';
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
     size?: IconSize;
     iconName?: IconName;
 }
-const DropdownCaret = ({ className, isOpen, size = 16, iconName = 'chevron-down-filled' }: Props) => {
+const DropdownCaret = ({ className, isOpen, size = 4, iconName = 'chevron-down-filled' }: Props) => {
     return <Icon className={clsx([isOpen && 'rotateX-180', className])} size={size} name={iconName} />;
 };
 

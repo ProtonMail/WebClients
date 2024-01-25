@@ -105,7 +105,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
                                 )
                             }
                         </span>
-                        <Icon size={12} className="ml-1" name="chevron-down" />
+                        <Icon size={3} className="ml-1" name="chevron-down" />
                     </Button>
                 </li>
             );

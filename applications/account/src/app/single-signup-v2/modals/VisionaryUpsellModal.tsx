@@ -60,7 +60,7 @@ const VisionaryUpsellModal = ({ plan, appName, onClose, onUpgrade, onContinue, .
                                 return (
                                     <StripedItem
                                         key={key}
-                                        left={<Icon className="color-success" name="checkmark" size={20} />}
+                                        left={<Icon className="color-success" name="checkmark" size={5} />}
                                     >
                                         {right}
                                     </StripedItem>

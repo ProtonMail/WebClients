@@ -264,7 +264,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                                                             .finally(() => aliasModal.setOpen(true))
                                                     }
                                                 >
-                                                    <Icon name="alias" size={20} />
+                                                    <Icon name="alias" size={5} />
                                                 </Button>
                                             ),
                                         ].filter(Boolean) as ReactElement[]

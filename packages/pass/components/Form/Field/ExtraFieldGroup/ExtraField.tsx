@@ -58,7 +58,7 @@ export const getExtraFieldOption = (type: ExtraFieldType) => getExtraFieldOption
 
 const DeleteButton: FC<{ onDelete: () => void }> = ({ onDelete }) => (
     <Button icon pill color="weak" onClick={onDelete} shape="solid" size="medium" title={c('Action').t`Delete`}>
-        <Icon name="cross" size={20} />
+        <Icon name="cross" size={5} />
     </Button>
 );
 

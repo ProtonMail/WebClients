@@ -81,7 +81,7 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
                             <StripedItem
                                 key={key}
                                 className={clsx(status === 'coming-soon' && 'color-weak')}
-                                left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
+                                left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
                                 tooltip={tooltip}
                             >
                                 {text}

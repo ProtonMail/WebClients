@@ -23,7 +23,7 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true
             height="36"
             fill="none"
             role="img"
-            className={clsx('logo', size && variant === 'glyph-only' && `icon-${size}p`, variant, className)}
+            className={clsx('logo', size && variant === 'glyph-only' && `icon-size-${size}`, variant, className)}
             aria-labelledby={`${uid}-title`}
             {...rest}
         >

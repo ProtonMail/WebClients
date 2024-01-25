@@ -257,7 +257,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                                         <Icon
                                             name="circle-filled"
                                             color={option.value.Color}
-                                            size={12}
+                                            size={3}
                                             className="mr-2 shrink-0 self-center my-auto"
                                         />
                                         <span className="mr-2 text-ellipsis">

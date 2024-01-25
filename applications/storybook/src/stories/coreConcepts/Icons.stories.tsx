@@ -18,10 +18,10 @@ export default {
 
 type IconProps = React.ComponentProps<typeof Icon>;
 
-const sizes: Required<IconProps>['size'][] = [16, 20, 28, 40, 60];
+const sizes: Required<IconProps>['size'][] = [4, 5, 7, 10, 15];
 
 export const Icons = () => {
-    const [selectedSize, setSelectedSize] = useState<Required<IconProps>['size']>(40);
+    const [selectedSize, setSelectedSize] = useState<Required<IconProps>['size']>(10);
     const primaryIconNames: IconName[] = iconSvg.match(/id="ic-([^"]+)/g).map((x: string) => x.replace('id="ic-', ''));
     const [search, setSearch] = useState('');
 

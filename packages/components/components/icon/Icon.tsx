@@ -2,29 +2,29 @@ import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
+/**
+ * Icon sizes based on sizing framwork taxonomy
+ * https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions#framework
+ */
 export type IconSize =
-    | 6
-    | 8
-    | 10
-    | 11
-    | 12
-    | 14
-    | 16
-    | 18
-    | 20
-    | 22
-    | 24
-    | 28
-    | 32
-    | 36
-    | 40
-    | 42
-    | 48
-    | 56
-    | 60
-    | 70
-    | 100
-    | 110;
+      2.5  // 10px
+    | 2.75 // 11px
+    | 3    // 12px
+    | 3.5  // 14px
+    | 4    // 16px
+    | 4.5  // 18px
+    | 5    // 20px
+    | 5.5  // 22px
+    | 6    // 24px
+    | 7    // 28px
+    | 8    // 32px
+    | 9    // 36px
+    | 10   // 40px
+    | 11   // 44px
+    | 12   // 48px
+    | 13   // 52px
+    | 14   // 56px
+    | 15;  // 60px
 
 export type IconName =
     | 'alias'
@@ -364,7 +364,10 @@ export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     alt?: string;
     /** If specified, renders an inline title element */
     title?: string;
-    /** The size of the icon */
+    /**
+     * The size of the icon
+     * Refer to the sizing taxonomy: https://design-system.protontech.ch/?path=/docs/components-icon--basic#sizing
+     */
     size?: IconSize;
     /** How many degrees the icon should be rotated */
     rotate?: number;
@@ -375,7 +378,7 @@ export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
 }
 
 const Icon = forwardRef<SVGSVGElement, IconProps>(
-    ({ name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 16, rotate = 0, ...rest }, ref) => {
+    ({ name, alt, title, color, className = '', viewBox = '0 0 16 16', size = 4, rotate = 0, ...rest }, ref) => {
         const style = {
             ...(color && { color }),
             ...(rotate && { transform: `rotate(${rotate}deg)` }),
@@ -386,7 +389,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
                 <svg
                     style={style}
                     viewBox={viewBox}
-                    className={clsx([`icon-${size}p`, className])}
+                    className={clsx([`icon-size-${size}`, className])}
                     role="img"
                     focusable="false"
                     ref={ref}

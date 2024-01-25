@@ -127,9 +127,9 @@ const AttachmentItem = ({
                         aria-hidden="true"
                     >
                         {progressionHappening ? (
-                            <CircularProgress progress={value} size={20} className="mr-2" />
+                            <CircularProgress progress={value} size={5} className="mr-2" />
                         ) : (
-                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} className="mr-2" />
+                            <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={5} className="mr-2" />
                         )}
                     </button>
                     <Tooltip title={primaryActionTitle}>

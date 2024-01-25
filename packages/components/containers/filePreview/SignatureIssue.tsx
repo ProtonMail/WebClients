@@ -22,7 +22,7 @@ const SignatureIssue = ({
                     style={{ '--w-custom': viewportWidth['<=small'] ? '18.75rem' : '31.25rem' }}
                 >
                     <div className="text-center">
-                        <Icon name="lock-exclamation-filled" size={60} className="color-danger" />
+                        <Icon name="lock-exclamation-filled" size={15} className="color-danger" />
                     </div>
                     <div className="mt-4 mb-8">{signatureConfirmation}</div>
                 </div>

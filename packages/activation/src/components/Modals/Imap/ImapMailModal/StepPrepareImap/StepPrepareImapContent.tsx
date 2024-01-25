@@ -71,7 +71,7 @@ const StepPrepareContent = ({
 
                 {showMaxFoldersError && (
                     <Tooltip title={trans.errorMaxItems()} originalPlacement="right">
-                        <Icon className="ml-2 color-danger" name="exclamation-circle-filled" size={18} />
+                        <Icon className="ml-2 color-danger" name="exclamation-circle-filled" size={4.5} />
                     </Tooltip>
                 )}
             </div>
