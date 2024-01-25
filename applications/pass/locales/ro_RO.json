@@ -1037,8 +1037,8 @@
     "Label": {
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
-        "${ config.options.length } de caractere",
-        "${ config.options.length } caractere"
+        "${ config.options.length } caractere",
+        "${ config.options.length } de caractere"
       ],
       "${ config.options.wordCount } word": [
         "${ config.options.wordCount } cuvânt",
@@ -1074,6 +1074,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "Cont"
       ],
       "Alias": [
         "Alias"
