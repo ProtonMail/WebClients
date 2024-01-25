@@ -82,3 +82,16 @@ export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, op
         return job;
     }) as F;
 };
+
+export type CancelablePromise<T> = Promise<T> & { cancel: () => void };
+
+export const cancelable = <T>(promise: Promise<T>, canceled: boolean = false) => {
+    const cancelablePromise = new Promise(async (resolve, reject) => {
+        const result = await promise;
+        return canceled ? reject() : resolve(result);
+    }) as CancelablePromise<T>;
+
+    cancelablePromise.cancel = () => (canceled = true);
+
+    return cancelablePromise;
+};
