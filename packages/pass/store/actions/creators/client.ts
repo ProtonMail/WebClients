@@ -7,7 +7,7 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
 import withRequest, { withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
+import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus, Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -51,7 +51,7 @@ export const bootSuccess = createAction('boot::success', (payload: Maybe<Synchro
     withRequest({ id: bootRequest(), type: 'success' })({ payload })
 );
 
-export const syncIntent = createAction('sync::intent', () =>
+export const syncIntent = createAction('sync::intent', (type: SyncType) =>
     pipe(
         withRequest({ id: syncRequest(), type: 'start' }),
         withNotification({
@@ -61,7 +61,7 @@ export const syncIntent = createAction('sync::intent', () =>
             showCloseButton: false,
             loading: true,
         })
-    )({ payload: {} })
+    )({ payload: { type } })
 );
 
 export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
