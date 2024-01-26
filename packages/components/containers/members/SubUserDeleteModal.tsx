@@ -3,7 +3,6 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
-import { Prompt } from '@proton/components/components';
 import { useLoading } from '@proton/hooks';
 import { NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -20,7 +19,6 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '../../components';
-import { UserManagementMode } from './types';
 
 const clean = (value: string) => {
     return removeDiacritics(value.toLowerCase().replace(/\s+/g, ''));
@@ -29,37 +27,15 @@ const clean = (value: string) => {
 interface Props extends ModalProps<'form'> {
     member: Member;
     onDelete: (member: Member) => Promise<void>;
-    mode: UserManagementMode;
 }
 
-const SubUserDeleteModal = ({ member, onDelete, mode, ...rest }: Props) => {
+const SubUserDeleteModal = ({ member, onDelete, ...rest }: Props) => {
     const [username, setUsername] = useState('');
     const isValid = clean(username) === clean(member.Name);
     const { validator, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
 
     const handleClose = loading ? undefined : rest.onClose;
-
-    if (mode === UserManagementMode.VPN_B2B) {
-        const handleDelete = async () => {
-            await withLoading(onDelete(member));
-            rest.onClose?.();
-        };
-        return (
-            <Prompt
-                title={c('Title').t`Delete user?`}
-                open={rest.open}
-                onClose={rest.onClose}
-                buttons={[
-                    <Button color="danger" loading={loading} onClick={handleDelete}>{c('Action')
-                        .t`Delete user`}</Button>,
-                    <Button disabled={loading} onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
-                ]}
-            >
-                <p>{c('Info').t`They will be removed from your organization`}</p>
-            </Prompt>
-        );
-    }
 
     return (
         <ModalTwo
@@ -75,7 +51,7 @@ const SubUserDeleteModal = ({ member, onDelete, mode, ...rest }: Props) => {
             }}
             onClose={handleClose}
         >
-            <ModalTwoHeader title={c('Title').t`Delete user`} />
+            <ModalTwoHeader title={c('Title').t`Delete user?`} />
             <ModalTwoContent>
                 <div className="mb-4">
                     {c('Info')
@@ -99,7 +75,7 @@ const SubUserDeleteModal = ({ member, onDelete, mode, ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button disabled={loading} onClick={handleClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="danger" loading={loading} type="submit">{c('Action').t`Delete`}</Button>
+                <Button color="danger" loading={loading} type="submit">{c('Action').t`Delete user`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

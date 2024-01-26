@@ -15,14 +15,15 @@ type HeaderCellItem = {
 };
 
 interface Props {
-    showFeatures?: boolean;
-    addressesTitle?: string;
+    useEmail?: boolean;
+    showFeaturesColumn?: boolean;
 }
 
-const UsersAndAddressesSectionHeader = ({
-    showFeatures = false,
-    addressesTitle = c('Title header for members table').t`Addresses`,
-}: Props) => {
+const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props) => {
+    const addressesTitle = useEmail
+        ? c('Title header for members table').t`Email`
+        : c('Title header for members table').t`Addresses`;
+
     const headerCells: HeaderCellItem[] = [
         { key: 'name', node: c('Title header for members table').t`Name`, className: 'w-3/10' },
         {
@@ -48,7 +49,7 @@ const UsersAndAddressesSectionHeader = ({
             ),
             className: 'w-1/4',
         },
-        showFeatures && {
+        showFeaturesColumn && {
             key: 'features',
             node: (
                 <>
