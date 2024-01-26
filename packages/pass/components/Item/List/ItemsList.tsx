@@ -45,7 +45,7 @@ export const ItemsList: FC = () => {
                     )}
                     {bulk.enabled && <BulkActions disabled={disabled} />}
                 </div>
-                <BulkToggle disabled={disabled} />
+                <BulkToggle disabled={!bulk.enabled && disabled} />
             </div>
             <ItemsListBase
                 filters={filters}
