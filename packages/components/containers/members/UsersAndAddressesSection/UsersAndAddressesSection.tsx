@@ -308,7 +308,14 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
                 {renderSubUserEditModal && tmpMember && (
-                    <SubUserEditModal member={tmpMember} mode={mode} {...subUserEditModalProps} />
+                    <SubUserEditModal
+                        member={tmpMember}
+                        showStorageSelector={mode === UserManagementMode.DEFAULT}
+                        showVPNToggle={mode === UserManagementMode.DEFAULT}
+                        showPrivateToggle={mode === UserManagementMode.DEFAULT}
+                        showAddressesSection={mode === UserManagementMode.DEFAULT}
+                        {...subUserEditModalProps}
+                    />
                 )}
                 {renderUserInviteOrEditModal && (
                     <UserInviteOrEditModal
