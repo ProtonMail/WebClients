@@ -1,6 +1,5 @@
 import { put, select } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -26,7 +25,6 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { fullMerge, merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-export type SynchronizationOptions = { type: SyncType; allowFailure?: boolean };
 export type SynchronizationResult = { shares: SharesState; items: ItemsByShareId };
 
 export enum SyncType {
@@ -34,113 +32,106 @@ export enum SyncType {
     PARTIAL = 'partial' /* fetches only diff */,
 }
 
-export function* synchronize(options: SynchronizationOptions) {
-    try {
-        const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
-        const cachedShares = selectAllShares(state);
-        const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
+export function* synchronize(type: SyncType) {
+    const state: State = asIfNotOptimistic((yield select()) as State, reducerMap);
+    const cachedShares = selectAllShares(state);
+    const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
 
-        /* `cachedShareIds`: all shares currently in local cache
-         * `inactiveCachedShareIds` : cached shares which can no longer be opened
-         * `remoteShareIds` : all shares available server-side
-         * `deletedShareIds` : local shares which have been deleted
-         * `disabledShareIds` : `deletedShareIds` + `inactiveCachedShareIds` */
-        const cachedShareIds = cachedShares.map(prop('shareId'));
-        const inactiveCachedShareIds = cachedShareIds.filter(invert(PassCrypto.canOpenShare));
-        const remoteShareIds = remote.map(prop('ShareID'));
-        const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
-        const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
+    /* `cachedShareIds`: all shares currently in local cache
+     * `inactiveCachedShareIds` : cached shares which can no longer be opened
+     * `remoteShareIds` : all shares available server-side
+     * `deletedShareIds` : local shares which have been deleted
+     * `disabledShareIds` : `deletedShareIds` + `inactiveCachedShareIds` */
+    const cachedShareIds = cachedShares.map(prop('shareId'));
+    const inactiveCachedShareIds = cachedShareIds.filter(invert(PassCrypto.canOpenShare));
+    const remoteShareIds = remote.map(prop('ShareID'));
+    const deletedShareIds = cachedShareIds.filter(notIn(remoteShareIds));
+    const disabledShareIds = Array.from(new Set(deletedShareIds.concat(inactiveCachedShareIds)));
 
-        /* only load shares that are not currently present
-         * in cache and have not been registered on PassCrypto.
-         * Share loading may fail if the userkey it was encrypted
-         * with is inactive */
-        const remoteShares = (yield Promise.all(
-            remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (encryptedShare) => ({
-                shareId: encryptedShare.ShareID,
-                share: await parseShareResponse(encryptedShare),
-            }))
-        )) as { shareId: string; share: Maybe<Share> }[];
+    /* only load shares that are not currently present
+     * in cache and have not been registered on PassCrypto.
+     * Share loading may fail if the userkey it was encrypted
+     * with is inactive */
+    const remoteShares = (yield Promise.all(
+        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (encryptedShare) => ({
+            shareId: encryptedShare.ShareID,
+            share: await parseShareResponse(encryptedShare),
+        }))
+    )) as { shareId: string; share: Maybe<Share> }[];
 
-        /* split active from inactive shares */
-        const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
-        const totalInactiveShares = inactiveRemoteShares.length + inactiveCachedShareIds.length;
+    /* split active from inactive shares */
+    const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
+    const totalInactiveShares = inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
-        /* update the disabled shareIds list with any inactive remote shares */
-        disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
+    /* update the disabled shareIds list with any inactive remote shares */
+    disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
 
-        /* Check if PassCrypto may have been cleared due to
-         * an inactive or locked session during this sequence,
-         * which could result in detecting  inactive shares  */
-        if (totalInactiveShares > 0 && PassCrypto.ready) {
-            yield put(
-                notification({
-                    endpoint: 'popup',
-                    type: 'error',
-                    expiration: -1,
-                    key: NotificationKey.INACTIVE_SHARES,
-                    text: '',
-                })
-            );
-        }
-
-        /* when checking the presence of an active vault we must both
-         * check the active remote shares and the local cached shares */
-        const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
-        const incomingShareIds = incomingShares.map(prop('shareId'));
-        const hasDefaultVault = incomingShares
-            .concat(cachedShares)
-            .some(and(isActiveVault, isWritableVault, isOwnVault));
-
-        /* When syncing, if no owned writable vault exists, create it. This
-         * accounts for first login, default vault being disabledl. */
-        if (!hasDefaultVault) {
-            logger.info(`[Sync] No default vault found, creating initial vault..`);
-            const defaultVault: Share<ShareType.Vault> = yield createVault({
-                content: {
-                    name: 'Personal',
-                    description: 'Personal vault',
-                    display: {},
-                },
-            });
-
-            incomingShares.push(defaultVault);
-        }
-
-        logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
-        logger.info(`[Sync] User has ${remote.length} share(s) in database`);
-        logger.info(`[Sync] ${deletedShareIds.length} share(s) deleted`);
-        logger.info(`[Sync] User has ${totalInactiveShares} total inactive share(s)`);
-        logger.info(`[Sync] ${incomingShares.length} share(s) need to be synced`);
-        logger.info(`[Sync] Performing ${options.type} sync`);
-
-        /* On full sync : we want to request all items for each share
-         * On partial sync : only request items for new shares (event-loop
-         * will take care of updates) and remove items from deleted shares */
-        const fullSync = options.type === SyncType.FULL;
-        const itemShareIds = (fullSync ? remoteShareIds : incomingShareIds).filter(notIn(disabledShareIds));
-        const itemState = fullSync ? {} : objectFilter(selectItems(state), notIn(disabledShareIds));
-
-        const syncedItems = (yield Promise.all(
-            itemShareIds.map(
-                async (shareId): Promise<ItemsByShareId> => ({
-                    [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
-                })
-            )
-        )) as ItemsByShareId[];
-
-        /* Exclude the deleted shares from the cached shares
-         * and merge with the new shares */
-        const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
-
-        const result: SynchronizationResult = {
-            shares: toMap(shares, 'shareId'),
-            items: fullMerge(itemState, syncedItems.reduce(diadic(merge), {})),
-        };
-
-        return result;
-    } catch (err) {
-        const { sessionInactive, sessionLocked } = api.getState();
-        if (sessionInactive || sessionLocked || !options.allowFailure) throw err;
+    /* Check if PassCrypto may have been cleared due to
+     * an inactive or locked session during this sequence,
+     * which could result in detecting  inactive shares  */
+    if (totalInactiveShares > 0 && PassCrypto.ready) {
+        yield put(
+            notification({
+                endpoint: 'popup',
+                type: 'error',
+                expiration: -1,
+                key: NotificationKey.INACTIVE_SHARES,
+                text: '',
+            })
+        );
     }
+
+    /* when checking the presence of an active vault we must both
+     * check the active remote shares and the local cached shares */
+    const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
+    const incomingShareIds = incomingShares.map(prop('shareId'));
+    const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
+
+    /* When syncing, if no owned writable vault exists, create it. This
+     * accounts for first login, default vault being disabledl. */
+    if (!hasDefaultVault) {
+        logger.info(`[Sync] No default vault found, creating initial vault..`);
+        const defaultVault: Share<ShareType.Vault> = yield createVault({
+            content: {
+                name: 'Personal',
+                description: 'Personal vault',
+                display: {},
+            },
+        });
+
+        incomingShares.push(defaultVault);
+    }
+
+    logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
+    logger.info(`[Sync] User has ${remote.length} share(s) in database`);
+    logger.info(`[Sync] ${deletedShareIds.length} share(s) deleted`);
+    logger.info(`[Sync] User has ${totalInactiveShares} total inactive share(s)`);
+    logger.info(`[Sync] ${incomingShares.length} share(s) need to be synced`);
+    logger.info(`[Sync] Performing ${type} sync`);
+
+    /* On full sync : we want to request all items for each share
+     * On partial sync : only request items for new shares (event-loop
+     * will take care of updates) and remove items from deleted shares */
+    const fullSync = type === SyncType.FULL;
+    const itemShareIds = (fullSync ? remoteShareIds : incomingShareIds).filter(notIn(disabledShareIds));
+    const itemState = fullSync ? {} : objectFilter(selectItems(state), notIn(disabledShareIds));
+
+    const syncedItems = (yield Promise.all(
+        itemShareIds.map(
+            async (shareId): Promise<ItemsByShareId> => ({
+                [shareId]: toMap(await requestItemsForShareId(shareId), 'itemId'),
+            })
+        )
+    )) as ItemsByShareId[];
+
+    /* Exclude the deleted shares from the cached shares
+     * and merge with the new shares */
+    const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
+
+    const result: SynchronizationResult = {
+        shares: toMap(shares, 'shareId'),
+        items: fullMerge(itemState, syncedItems.reduce(diadic(merge), {})),
+    };
+
+    return result;
 }
