@@ -12,7 +12,9 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { AccountPath } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -36,6 +38,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const vaultActions = useVaultActions();
 
     const { filters, matchTrash } = useNavigation();
+    const navigateToOrganization = useNavigateToAccount(AccountPath.USERS);
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -82,6 +85,13 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+
+                <DropdownMenuButton
+                    onClick={navigateToOrganization}
+                    label={c('Action').t`Admin panel`}
+                    icon="users"
+                    className="mx-3 pr-2 py-1"
+                />
 
                 <Submenu
                     icon="bolt"
