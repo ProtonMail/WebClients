@@ -31,9 +31,8 @@ function* bootWorker(options: RootSagaOptions) {
 
         /* Force sync the proxied settings from local storage */
         if (options.endpoint !== 'web') yield put(syncLocalSettings(yield options.getLocalSettings()));
-        /* Allow failure during sync if we have a cached state,
-         * worst case scenario: sync will happen on next event-loop  */
-        yield put(bootSuccess(yield synchronize({ type: SyncType.PARTIAL, allowFailure: hydratedFromCache })));
+        yield put(bootSuccess(hydratedFromCache ? undefined : yield synchronize(SyncType.FULL)));
+
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
@@ -57,6 +56,6 @@ export default function* watcher(options: RootSagaOptions) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Sign back in`)));
             options.onBoot?.({ ok: false, clearCache: false });
-        } else yield put(cacheRequest({ throttle: false }));
+        } else yield put(cacheRequest({ throttle: true }));
     });
 }
