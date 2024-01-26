@@ -57,6 +57,6 @@ export default function* watcher(options: RootSagaOptions) {
             logger.warn(`[Saga::Boot] boot cancelled [caching=${Boolean(caching)}, destroyed=${Boolean(destroyed)}]`);
             yield put(bootFailure(new Error(c('Action').t`Sign back in`)));
             options.onBoot?.({ ok: false, clearCache: false });
-        } else yield put(cacheRequest({ throttle: false }));
+        } else yield put(cacheRequest({ throttle: true }));
     });
 }
