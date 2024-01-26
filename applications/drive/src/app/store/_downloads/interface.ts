@@ -78,7 +78,7 @@ export type OnSignatureIssueCallback = (
     link: LinkDownload,
     signatureIssues: SignatureIssues
 ) => Promise<void>;
-type OnErrorCallback = (err: any) => void;
+type OnErrorCallback = (err: Error) => void;
 
 export type ChildrenLinkMeta = Pick<
     DecryptedLink,

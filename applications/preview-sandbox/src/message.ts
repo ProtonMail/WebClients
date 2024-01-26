@@ -52,6 +52,6 @@ export const handleMessage = (message: IncomingMessage) => {
     if (message.type === 'data') {
         void handleData(message);
     } else {
-        postError(new Error('Unexpected message type', { cause: { type: message.type } }));
+        postError(new Error(`Unexpected message type: ${message.type}`));
     }
 };

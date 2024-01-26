@@ -5,6 +5,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { generateNodeKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
 import { useLink } from '../_links';
 import useShare from './useShare';
@@ -29,13 +30,13 @@ export default function useShareActions() {
             getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
             generateNodeKeys(addressPrivateKey).catch((e) =>
                 Promise.reject(
-                    new Error('Failed to generate share node keys during share creation', {
-                        cause: {
-                            e,
+                    new EnrichedError('Failed to generate share node keys during share creation', {
+                        tags: {
                             shareId,
                             volumeId,
                             linkId,
                         },
+                        extra: { e },
                     })
                 )
             ),
@@ -53,13 +54,13 @@ export default function useShareActions() {
             privateKeys: parentPrivateKey,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt link name session key during share creation', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt link name session key during share creation', {
+                    tags: {
                         shareId,
                         volumeId,
                         linkId,
                     },
+                    extra: { e },
                 })
             )
         );
@@ -73,13 +74,13 @@ export default function useShareActions() {
                 .then(uint8ArrayToBase64String)
                 .catch((e) =>
                     Promise.reject(
-                        new Error('Failed to encrypt link passphrase during share creation', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to encrypt link passphrase during share creation', {
+                            tags: {
                                 shareId,
                                 volumeId,
                                 linkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
@@ -87,13 +88,13 @@ export default function useShareActions() {
                 .then(uint8ArrayToBase64String)
                 .catch((e) =>
                     Promise.reject(
-                        new Error('Failed to encrypt link name during share creation', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to encrypt link name during share creation', {
+                            tags: {
                                 shareId,
                                 volumeId,
                                 linkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),

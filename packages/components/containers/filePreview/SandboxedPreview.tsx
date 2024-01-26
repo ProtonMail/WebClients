@@ -2,7 +2,9 @@ import { FC, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import UnsupportedPreview from './UnsupportedPreview';
@@ -28,8 +30,13 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             return;
         }
 
-        const handleError = (e: any) => {
-            traceError(e);
+        const handleError = (e: SafeErrorObject) => {
+            // We rebuild the error as Sentry does not log objects properly
+            const error = new Error(getNonEmptyErrorMessage(e));
+            error.name = e.name || 'Error';
+            error.stack = e.stack;
+
+            traceError(error);
             setError(true);
         };
 

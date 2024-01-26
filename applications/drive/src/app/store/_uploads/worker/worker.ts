@@ -20,7 +20,6 @@ import {
 } from '../../_photos/exifInfo';
 import { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
 import { Media, ThumbnailInfo } from '../media';
-import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
 import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
@@ -50,7 +49,7 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
         } = await generateContentKeys(privateKey);
 
         if (!contentKeyPacket) {
-            uploadWorker.postError('Could not generate file keys');
+            uploadWorker.postError(new Error('Could not generate file keys'));
             return;
         }
 
@@ -64,7 +63,7 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
             privateKey,
         });
     } catch (err: any) {
-        uploadWorker.postError(getErrorString(err));
+        uploadWorker.postError(err);
     }
 }
 
@@ -108,13 +107,13 @@ async function start(
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
-                uploadWorker.postNotifySentry,
+                (e) => uploadWorker.postNotifySentry(e),
                 hashInstance,
                 verifier
             ),
             thumbnails && generateThumbnailEncryptedBlocks(thumbnails, addressPrivateKey, sessionKey)
         )
-        .catch((err) => uploadWorker.postError(getErrorString(err)));
+        .catch((err) => uploadWorker.postError(err));
 
     buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlocks?: ThumbnailEncryptedBlock[]) => {
         uploadWorker.postCreateBlocks(blocks, thumbnailBlocks);
@@ -189,11 +188,11 @@ async function start(
         pauser,
         uploadingBlocksGenerator,
         (progress: number) => uploadWorker.postProgress(progress),
-        (error: string) => uploadWorker.postNetworkError(error),
+        (error: Error) => uploadWorker.postNetworkError(error),
         (message: string) => uploadWorker.postLog(message)
     )
         .then(finish)
-        .catch((err) => uploadWorker.postError(getErrorString(err)));
+        .catch((err) => uploadWorker.postError(err));
 }
 
 /**
