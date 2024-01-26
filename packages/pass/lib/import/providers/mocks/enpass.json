@@ -465,6 +465,165 @@
             "archived": 0,
             "auto_submit": 1,
             "category": "login",
+            "createdAt": 1697729073,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 10,
+                    "updated_at": 1698057141,
+                    "value": "Emily",
+                    "value_updated_at": 1698057141
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490049,
+                            "value": "wendyappleseed@enpass.io"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535521734,
+                            "value": "emmaappleseed@enpass.io"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535522120,
+                            "value": "emilyappleseed@enpass.io"
+                        }
+                    ],
+                    "label": "E-mail",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 12,
+                    "updated_at": 1697729073,
+                    "value": "emily@enpass.io",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 3,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 11,
+                    "updated_at": 1697729073,
+                    "value": "herbert nadia banal slag broken violin somber modern cdc posing",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534489965,
+                            "value": "https://www.facebook.com/login/"
+                        }
+                    ],
+                    "label": "Website",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 13,
+                    "updated_at": 1697729073,
+                    "value": "https://www.twitter.com/",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 101,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "One-time code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "totp",
+                    "uid": 102,
+                    "updated_at": 1697729073,
+                    "value": "qg4r pwyf 4t23 v62g 4ta3 ne43 74",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security question",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1698057029,
+                    "value": "Example extra field, predefined",
+                    "value_updated_at": 1698057029
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security answer",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Custom field name",
+                    "order": 10,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 8418,
+                    "updated_at": 1698057029,
+                    "value": "Example extra field, user-defined",
+                    "value_updated_at": 1698057029
+                }
+            ],
+            "folders": ["4b0b9809-2368-466b-a5a9-e5a415cfdf2a"],
+            "icon": {
+                "fav": "www.twitter.com",
+                "image": {
+                    "file": "web/twitter.com"
+                },
+                "type": 2,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "emily@enpass.io",
+            "template_type": "login.default",
+            "title": "Twitter",
+            "trashed": 0,
+            "updated_at": 1698057141,
+            "uuid": "0ba11053-b4c9-48d8-92e3-fbb5f2a9c2ce"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "login",
             "createdAt": 1698057167,
             "favorite": 0,
             "icon": {
