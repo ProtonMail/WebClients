@@ -66,7 +66,17 @@ const processLoginItem = (
         trashed: isTrashedItem(item),
         createTime: item.createdAt,
         modifyTime: item.updated_at,
-        extraFields: remaining.map(mapToExtraField),
+        extraFields: remaining.map(mapToExtraField).concat(
+            extracted.username && extracted.email
+                ? [
+                      {
+                          data: { content: extracted.email },
+                          fieldName: 'E-mail',
+                          type: 'text',
+                      },
+                  ]
+                : []
+        ),
         username: extracted.username || extracted.email,
         password: extracted.password,
         totp: extracted.totp,
