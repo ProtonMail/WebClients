@@ -250,19 +250,34 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
 
-    const settingsTitle = (() => {
+    const settingsParagraphContent = (() => {
         if (hasFamily(subscription)) {
             return c('familyOffer_2023:Info for members section')
                 .t`Add, remove, and make changes to user accounts in your family group.`;
         }
 
-        const maxMembers = organization?.MaxMembers || 0;
-        const usedMembers = organization?.UsedMembers || 0;
-        if (hasVpnB2BPlan) {
-            return c('Info').ngettext(
-                msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
-                `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
-                maxMembers
+        if (hasB2BPlan) {
+            const maxMembers = organization?.MaxMembers || 0;
+            const usedMembers = organization?.UsedMembers || 0;
+            return (
+                <>
+                    {c('Info').ngettext(
+                        msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
+                        `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
+                        maxMembers
+                    )}
+                    {user.canPay && (
+                        <Button
+                            className="ml-2"
+                            shape="outline"
+                            color="norm"
+                            size="small"
+                            onClick={handleGetMoreLicense}
+                        >
+                            {c('Action').t`Get more licenses`}
+                        </Button>
+                    )}
+                </>
             );
         }
 
@@ -276,12 +291,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
             <SettingsParagraph large className="flex items-baseline mb-6">
-                {settingsTitle}
-                {hasVpnB2BPlan && user.canPay && (
-                    <Button className="ml-2" shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
-                        {c('Action').t`Get more licenses`}
-                    </Button>
-                )}
+                {settingsParagraphContent}
             </SettingsParagraph>
             <Block className="flex items-start">
                 {renderAddAddressModal && filteredMembers && (
