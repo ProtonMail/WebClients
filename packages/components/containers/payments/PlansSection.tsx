@@ -9,7 +9,12 @@ import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, APP_NAMES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getIsB2BPlan, getPlanIDs, getValidAudience, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import {
+    getIsB2BAudienceFromPlan,
+    getPlanIDs,
+    getValidAudience,
+    getValidCycle,
+} from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -102,7 +107,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             step,
             cycle,
             currency,
-            defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BPlan(planID as any))
+            defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BAudienceFromPlan(planID as any))
                 ? Audience.B2B
                 : Audience.B2C,
             metrics: {
