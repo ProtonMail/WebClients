@@ -7,8 +7,6 @@ import {
     cloneElement,
     forwardRef,
     useCallback,
-    useContext,
-    useEffect,
     useState,
 } from 'react';
 
@@ -20,7 +18,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { generateUID } from '../../helpers';
 import { Popper, PopperPlacement, usePopper } from '../popper';
-import { TooltipExclusiveContext } from './TooltipExclusive';
 import useTooltipHandlers from './useTooltipHandlers';
 
 import './Tooltip.scss';
@@ -139,8 +136,6 @@ const TooltipBase = (
         updateAnimationFrame,
     });
 
-    const exclusive = useContext(TooltipExclusiveContext);
-
     const tooltipHandlers = useTooltipHandlers({
         open,
         close,
@@ -155,17 +150,6 @@ const TooltipBase = (
     // Types are wrong? Not sure why ref doesn't exist on a ReactElement
     // @ts-ignore
     const mergedRef = useCombinedRefs(child?.ref, reference, ref);
-
-    useEffect(() => {
-        if (!exclusive) {
-            return;
-        }
-        if (isOpen) {
-            exclusive.add(uid);
-        } else {
-            exclusive.remove(uid);
-        }
-    }, [isOpen]);
 
     if (!title) {
         return cloneElement(child, {
@@ -194,7 +178,7 @@ const TooltipBase = (
             <Popper
                 divRef={floating}
                 id={uid}
-                isOpen={(!exclusive || exclusive.last === uid) && !!title && isOpen}
+                isOpen={!!title && isOpen}
                 style={{ ...position, ...arrow }}
                 onAnimationEnd={(event) => {
                     if (event.animationName.includes('anime-tooltip-out-last')) {
