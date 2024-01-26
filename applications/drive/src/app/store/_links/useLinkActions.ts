@@ -11,6 +11,7 @@ import {
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
@@ -54,34 +55,34 @@ export default function useLinkActions() {
             await Promise.all([
                 generateLookupHash(name, parentHashKey).catch((e) =>
                     Promise.reject(
-                        new Error('Failed to generate folder link lookup hash during folder creation', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to generate folder link lookup hash during folder creation', {
+                            tags: {
                                 shareId,
                                 parentLinkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
                 generateNodeKeys(parentPrivateKey, addressKey).catch((e) =>
                     Promise.reject(
-                        new Error('Failed to generate folder link node keys during folder creation', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to generate folder link node keys during folder creation', {
+                            tags: {
                                 shareId,
                                 parentLinkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
                 encryptName(name, parentPrivateKey, addressKey).catch((e) =>
                     Promise.reject(
-                        new Error('Failed to encrypt folder link name during folder creation', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to encrypt folder link name during folder creation', {
+                            tags: {
                                 shareId,
                                 parentLinkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
@@ -92,12 +93,12 @@ export default function useLinkActions() {
         // name or content to have option to trust some users more or less.
         const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey).catch((e) =>
             Promise.reject(
-                new Error('Failed to encrypt node hash key during folder creation', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to encrypt node hash key during folder creation', {
+                    tags: {
                         shareId,
                         parentLinkId,
                     },
+                    extra: { e },
                 })
             )
         );
@@ -156,12 +157,12 @@ export default function useLinkActions() {
             privateKeys: parentPrivateKey,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt link name session key during rename', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt link name session key during rename', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 })
             )
         );
@@ -170,12 +171,12 @@ export default function useLinkActions() {
             parentHashKey
                 ? generateLookupHash(newName, parentHashKey).catch((e) =>
                       Promise.reject(
-                          new Error('Failed to generate link lookup hash during rename', {
-                              cause: {
-                                  e,
+                          new EnrichedError('Failed to generate link lookup hash during rename', {
+                              tags: {
                                   shareId,
                                   linkId,
                               },
+                              extra: { e },
                           })
                       )
                   )
@@ -187,12 +188,12 @@ export default function useLinkActions() {
                 signingKeys: addressKey,
             }).catch((e) =>
                 Promise.reject(
-                    new Error('Failed to encrypt link name during rename', {
-                        cause: {
-                            e,
+                    new EnrichedError('Failed to encrypt link name during rename', {
+                        tags: {
                             shareId,
                             linkId,
                         },
+                        extra: { e },
                     })
                 )
             ),

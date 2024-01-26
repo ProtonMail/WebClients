@@ -1,7 +1,8 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import { getRefreshError } from '../../utils/errorHandling/RefreshError';
+import { convertSafeError } from '../../utils/errorHandling/EnrichedError';
+import { RefreshError, getRefreshError } from '../../utils/errorHandling/RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
 import type {
     EncryptedBlock,
@@ -14,12 +15,6 @@ import type {
     VerificationData,
 } from './interface';
 import type { Media, ThumbnailInfo } from './media';
-import { getErrorString } from './utils';
-
-/**
- * An unique identifier for refresh-type errors used in postMessage communication.
- */
-const PLEASE_REFRESH = 'please_refresh';
 
 type GenerateKeysMessage = {
     command: 'generate_keys';
@@ -132,12 +127,12 @@ type DoneMessage = {
 
 type NetworkErrorMessage = {
     command: 'network_error';
-    error: string;
+    error: SafeErrorObject;
 };
 
 type ErrorMessage = {
     command: 'error';
-    error: string;
+    error: SafeErrorObject;
 };
 
 type NotifySentryMessage = {
@@ -186,8 +181,8 @@ interface WorkerControllerHandlers {
     createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => void;
     onProgress: (increment: number) => void;
     finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => void;
-    onNetworkError: (error: string) => void;
-    onError: (error: string) => void;
+    onNetworkError: (error: Error) => void;
+    onError: (error: Error) => void;
     onHeartbeatTimeout: () => void;
     onCancel: () => void;
     notifySentry: (error: Error) => void;
@@ -234,7 +229,7 @@ export class UploadWorker {
                             console.warn(e);
                             this.postNotifySentry(e);
 
-                            this.postError(PLEASE_REFRESH);
+                            this.postError(new RefreshError());
                             return;
                         }
 
@@ -312,7 +307,7 @@ export class UploadWorker {
                 return;
             }
 
-            this.postError(getErrorString(event.error, event.message));
+            this.postError(event.error || new Error(event.message));
         });
         // @ts-ignore
         worker.addEventListener('unhandledrejection', (event: PromiseRejectionEvent) => {
@@ -321,7 +316,13 @@ export class UploadWorker {
                 return;
             }
 
-            this.postError(event.reason);
+            let error = event.reason;
+
+            if (typeof error === 'string') {
+                error = new Error(error);
+            }
+
+            this.postError(error);
         });
     }
 
@@ -378,17 +379,21 @@ export class UploadWorker {
         } satisfies DoneMessage);
     }
 
-    postNetworkError(error: string) {
+    postNetworkError(error: Error) {
         this.worker.postMessage({
             command: 'network_error',
-            error,
+            error: getSafeErrorObject(error),
         } satisfies NetworkErrorMessage);
     }
 
-    postError(error: string) {
+    postError(error: Error) {
+        if (!error) {
+            error = new Error('Unknown error');
+        }
+
         this.worker.postMessage({
             command: 'error',
-            error,
+            error: getSafeErrorObject(error),
         } satisfies ErrorMessage);
     }
 
@@ -461,7 +466,7 @@ export class UploadWorkerController {
 
         this.workerTimeout = setTimeout(() => {
             worker?.terminate();
-            onError(getRefreshError().message);
+            onError(getRefreshError());
         }, WORKER_INIT_WAIT_TIME);
 
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
@@ -507,16 +512,16 @@ export class UploadWorkerController {
                 case 'error':
                     this.clearHeartbeatTimeout();
 
-                    if (data.error === PLEASE_REFRESH) {
-                        onError(getRefreshError().message);
+                    if (data.error.name === 'RefreshError') {
+                        onError(getRefreshError());
                         break;
                     }
 
-                    onError(data.error);
+                    onError(convertSafeError(data.error));
                     break;
                 case 'notify_sentry':
                     log(`Notifying Sentry with: ${data.error}`);
-                    notifySentry(data.error);
+                    notifySentry(convertSafeError(data.error));
                     break;
                 case 'heartbeat':
                     log('Got heartbeat');
@@ -548,11 +553,11 @@ export class UploadWorkerController {
             // failure to load the worker URL in this way, so this is why we have this condition.
             // https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
             if (!('filename' in event)) {
-                onError(getRefreshError().message);
+                onError(getRefreshError());
                 return;
             }
 
-            onError(getErrorString(event.error, event.message));
+            onError(event.error || new Error(event.message));
         });
     }
 

@@ -5,6 +5,7 @@ import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { computeKeyPassword } from '@proton/srp';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
@@ -36,10 +37,12 @@ export default function usePublicShare() {
 
         const computedPassword = await computeKeyPassword(sessionInfo.password, Token.SharePasswordSalt).catch((e) =>
             Promise.reject(
-                new Error('Failed to compute key password for shared page', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to compute key password for shared page', {
+                    tags: {
                         linkId: Token.LinkID,
+                    },
+                    extra: {
+                        e,
                         public: true,
                     },
                 })
@@ -50,10 +53,12 @@ export default function usePublicShare() {
             passwords: [computedPassword],
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt share passphrase for shared page', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt share passphrase for shared page', {
+                    tags: {
                         linkId: Token.LinkID,
+                    },
+                    extra: {
+                        e,
                         public: true,
                     },
                 })
@@ -65,10 +70,12 @@ export default function usePublicShare() {
             passphrase: sharePassphrase.data,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to import share private key for shared page', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to import share private key for shared page', {
+                    tags: {
                         linkId: Token.LinkID,
+                    },
+                    extra: {
+                        e,
                         public: true,
                     },
                 })
