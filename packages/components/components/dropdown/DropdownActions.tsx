@@ -12,7 +12,7 @@ import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
-const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
+const wrapTooltip = (text: string | ReactNode, tooltip?: string, fakeDisabled?: boolean) => {
     if (!tooltip) {
         return text;
     }
@@ -22,7 +22,7 @@ const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     return (
         <>
             <span className="mr-2">{text}</span>
-            <Info title={tooltip} />
+            <Info title={tooltip} fakeDisabled={fakeDisabled} />
         </>
     );
 };
@@ -121,10 +121,19 @@ const DropdownActions = ({
                 data-testid="dropdownActions:dropdown"
             >
                 <DropdownMenu>
-                    {restList.map(({ text, tooltip, ...restProps }, index) => {
+                    {restList.map(({ text, tooltip, disabled, ...restProps }, index) => {
+                        // Fake disabled is used to have enabled tooltipe while the buttom is supposed to be disabled
+                        const fakeDisabled = !!(disabled && tooltip);
+
                         return (
-                            <DropdownMenuButton className="text-left" key={index} {...restProps}>
-                                {wrapTooltip(text, tooltip)}
+                            <DropdownMenuButton
+                                className="text-left"
+                                key={index}
+                                fakeDisabled={fakeDisabled}
+                                disabled={fakeDisabled ? false : disabled}
+                                {...restProps}
+                            >
+                                {wrapTooltip(text, tooltip, fakeDisabled)}
                             </DropdownMenuButton>
                         );
                     })}
