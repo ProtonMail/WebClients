@@ -38,7 +38,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
      * ensure that the sequence is maintained correctly. */
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
     const { current: aliasDetailsLoaded } = useRef(awaiter<void>());
-    const reconcilied = useRef(false);
+    const reconciled = useRef(false);
 
     /* If vault is not shared, we can safely assume the user is
      * the owner of the alias and can edit the mailboxes */
@@ -100,7 +100,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
                 form.setErrors(errors);
             } else form.resetForm({ values, errors });
 
-            reconcilied.current = true;
+            reconciled.current = true;
         },
     });
 
@@ -129,7 +129,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     /* check for length in case request gets revalidated in the background */
     const detailsLoading = aliasDetails.loading && aliasDetails.value.length === 0;
     const optionsLoading = aliasOptions.loading;
-    const loading = !reconcilied.current || detailsLoading || optionsLoading;
+    const loading = !reconciled.current || detailsLoading || optionsLoading;
 
     return (
         <ItemEditPanel

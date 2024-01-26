@@ -19,6 +19,7 @@ import { createTelemetryService } from 'proton-pass-extension/app/worker/service
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 
+import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
@@ -45,7 +46,7 @@ import { createImportService } from '../services/import';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
-    const api = exposeApi(createApi({ config }));
+    const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
 
