@@ -102,7 +102,13 @@ export default function useShareUrl() {
                     },
                     extra: {
                         e,
-                        keyIds: privateKeys.map((key) => key.getKeyID()),
+                        keyIds: privateKeys.reduce(
+                            (acc, key) => ({
+                                ...acc,
+                                [key.getKeyID()]: key.subkeys.map((subkey) => subkey.getKeyID()),
+                            }),
+                            {}
+                        ),
                     },
                 })
             )
