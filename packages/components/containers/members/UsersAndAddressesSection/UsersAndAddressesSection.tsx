@@ -177,7 +177,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             return;
         }
 
-        if (mode === UserManagementMode.DEFAULT && !verifiedDomains.length) {
+        if (!hasB2BPlan && !verifiedDomains.length) {
             createNotification({ text: getDomainError(), type: 'error' });
             return;
         }
@@ -452,7 +452,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             {memberName}
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            {!hasVpnB2BPlan && Boolean(member.Private) && !hasFamily(subscription) && (
+                                            {!hasB2BPlan && !hasFamily(subscription) && Boolean(member.Private) && (
                                                 <Badge
                                                     type="origin"
                                                     className="rounded-sm"
