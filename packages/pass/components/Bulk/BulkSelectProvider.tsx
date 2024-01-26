@@ -9,7 +9,8 @@ import {
     useState,
 } from 'react';
 
-import type { MaybeNull, SelectedItem } from '@proton/pass/types';
+import type { SelectedItem } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 export type BulkSelection = Map<string, Set<string>>;
 
@@ -27,7 +28,19 @@ type BulkSelectContextType = {
     unselect: ({ shareId, itemId }: SelectedItem) => void;
 };
 
-const BulkSelectContext = createContext<MaybeNull<BulkSelectContextType>>(null);
+const BulkSelectContext = createContext<BulkSelectContextType>({
+    count: 0,
+    enabled: false,
+    selection: new Map(),
+    clear: noop,
+    disable: noop,
+    enable: noop,
+    isSelected: () => false,
+    lock: () => noop,
+    select: noop,
+    unlock: noop,
+    unselect: noop,
+});
 
 export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     const [selection, setSelection] = useState<BulkSelection>(new Map());
@@ -96,4 +109,4 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
     return <BulkSelectContext.Provider value={context}>{children}</BulkSelectContext.Provider>;
 };
 
-export const useBulkSelect = (): BulkSelectContextType => useContext(BulkSelectContext)!;
+export const useBulkSelect = (): BulkSelectContextType => useContext(BulkSelectContext);
