@@ -32,9 +32,7 @@ const EmojiPicker = (props: any) => {
         const picker = new Picker({ ...props, data, ref });
 
         // Inject custom CSS inside the custom elements of the emoji picker
-        const style = document.createElement('style');
-        style.innerHTML = emojiPickerCss;
-        picker.shadowRoot?.appendChild(style);
+        picker.injectStyles(emojiPickerCss);
     }, []);
 
     return <div ref={ref} />;
