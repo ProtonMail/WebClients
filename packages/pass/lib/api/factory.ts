@@ -11,6 +11,7 @@ import type {
     ApiSubscribtionEvent,
     Maybe,
 } from '@proton/pass/types';
+import { awaiter } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
@@ -36,6 +37,10 @@ import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
+    /** Specifies the maximum number of concurrent requests. If not provided,
+     * all requests will be processed immediately. When a value is set, ongoing
+     * requests will be deferred until the threshold is ready for additional processing. */
+    threshold?: number;
     getAuth?: () => Maybe<ApiAuth>;
 };
 
@@ -48,7 +53,7 @@ export const getAPIAuth = () => {
     return { UID, AccessToken, RefreshToken, RefreshTime };
 };
 
-export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): Api => {
+export const createApi = ({ config, getAuth = getAPIAuth, threshold }: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscribtionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
@@ -56,6 +61,7 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
         appVersionBad: false,
         offline: false,
         pendingCount: 0,
+        queued: [],
         serverTime: undefined,
         sessionInactive: false,
         sessionLocked: false,
@@ -71,9 +77,17 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
     });
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
-    const api = async ({ output = 'json', ...rest }: ApiOptions): Promise<ApiResult> => {
-        const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
+    const api = async (options: ApiOptions): Promise<ApiResult> => {
         state.pendingCount += 1;
+
+        if (threshold && state.pendingCount > threshold) {
+            const trigger = awaiter<void>();
+            state.queued.push(trigger);
+            await trigger;
+        }
+
+        const { output = 'json', ...rest } = options;
+        const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
 
         return apiCall(config)
             .then((response) => {
@@ -117,7 +131,10 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
 
                 throw e;
             })
-            .finally(() => (state.pendingCount -= 1));
+            .finally(() => {
+                state.pendingCount -= 1;
+                state.queued.shift()?.resolve();
+            });
     };
 
     api.getState = () => state;
@@ -137,6 +154,7 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
         await api.idle();
 
         state.pendingCount = 0;
+        state.queued = [];
         state.serverTime = undefined;
         state.appVersionBad = false;
         state.offline = false;

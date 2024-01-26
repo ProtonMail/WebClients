@@ -1,3 +1,4 @@
+import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { type PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -13,4 +14,4 @@ import * as config from '../app/config';
 export const PASS_CONFIG = { ...config, SSO_URL: getAppHref('/', APPS.PROTONACCOUNT) } as PassConfig;
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
-exposeApi(createApi({ config }));
+exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
