@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useLink } from '../_links';
 import { useVolumesState } from '../_volumes';
 import { Device } from './interface';
@@ -44,7 +45,16 @@ export function useDevicesListingProvider() {
 
                         // Send an error report for this
                         sendErrorReport(
-                            new Error('Decrypting device failed', { cause: { e, volumeId, shareId, linkId } })
+                            new EnrichedError('Decrypting device failed', {
+                                tags: {
+                                    volumeId,
+                                    shareId,
+                                    linkId,
+                                },
+                                extra: {
+                                    e,
+                                },
+                            })
                         );
                     }
                 }

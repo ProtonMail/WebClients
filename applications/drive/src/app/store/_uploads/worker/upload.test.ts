@@ -162,7 +162,7 @@ describe('upload jobs', () => {
         // First call + automatic retry + after resume.
         expect(mockUploadBlockCallback).toBeCalledTimes(3);
         expect(mockNetworkErrorCallback).toBeCalledTimes(1);
-        expect(mockNetworkErrorCallback).toBeCalledWith('network error');
+        expect(mockNetworkErrorCallback).toHaveBeenCalledWith(new Error('network error'));
         expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
         expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });

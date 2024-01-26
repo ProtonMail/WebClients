@@ -36,11 +36,11 @@ export default function initDownload(
     const sizePromise = new SizeTimeoutPromise(SIZE_WAIT_TIME);
     const controls = getControls(links, {
         ...callbacks,
-        onInit: (size: number, linkSizes) => {
+        onInit: (size, linkSizes) => {
             callbacks.onInit?.(size, linkSizes);
             sizePromise.set(size);
         },
-        onError: (err: any) => {
+        onError: (err) => {
             callbacks.onError?.(err);
             gotErr = err;
         },

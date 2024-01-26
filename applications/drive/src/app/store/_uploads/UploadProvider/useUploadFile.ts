@@ -21,6 +21,7 @@ import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKe
 import { TransferCancel, TransferSkipped } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
@@ -421,8 +422,8 @@ export default function useUploadFile() {
                             verifierSessionKey,
                         } satisfies VerificationData;
                     } catch (e) {
-                        throw new Error('Upload failed: Verification of data failed', {
-                            cause: e,
+                        throw new EnrichedError('Upload failed: Verification of data failed', {
+                            extra: { e },
                         });
                     }
                 },
