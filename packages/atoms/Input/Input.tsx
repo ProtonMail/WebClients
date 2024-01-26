@@ -12,6 +12,7 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix
     suffix?: ReactNode;
     containerRef?: Ref<HTMLDivElement>;
     containerProps?: ComponentPropsWithRef<'div'>;
+    inputContainerClassName?: string;
     inputClassName?: string;
     prefixClassName?: string;
 }
@@ -28,6 +29,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         containerProps,
         containerRef,
         inputClassName,
+        inputContainerClassName,
         prefixClassName,
         className: classNameProp,
         ...rest
@@ -58,7 +60,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                 </div>
             )}
 
-            <div className="flex flex-1">
+            <div className={clsx('flex flex-1', inputContainerClassName)}>
                 <input
                     autoComplete="off"
                     autoCapitalize="off"
@@ -81,9 +83,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
             </div>
 
             {suffix && (
-                <div className="input-adornment mr-2 flex items-center shrink-0 flex-nowrap gap-2">
-                    {suffix}
-                </div>
+                <div className="input-adornment mr-2 flex items-center shrink-0 flex-nowrap gap-2">{suffix}</div>
             )}
         </div>
     );
