@@ -29,7 +29,7 @@ import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
 import { useShare } from '../../_shares';
 import { useVolumesState } from '../../_volumes';
-import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
+import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
     FileKeys,
@@ -69,6 +69,16 @@ export default function useUploadFile() {
     const { findAvailableName, getLinkByName, findDuplicateContentHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
+
+    const request = <T>(args: object, abortSignal?: AbortSignal) => {
+        return debouncedRequest<T>(
+            {
+                ...args,
+                maxRetryWaitSeconds: MAX_TOO_MANY_REQUESTS_WAIT,
+            },
+            abortSignal
+        );
+    };
 
     const initFileUpload = (
         shareId: string,
@@ -114,7 +124,7 @@ export default function useUploadFile() {
             // Do not abort using signal - file could be created and we
             // wouldn't know ID to do proper cleanup.
             const createFilePromise = () =>
-                debouncedRequest<CreateFileResult>(
+                request<CreateFileResult>(
                     queryCreateFile(shareId, {
                         ContentKeyPacket: keys.contentKeyPacket,
                         ContentKeyPacketSignature: keys.contentKeyPacketSignature,
@@ -181,7 +191,7 @@ export default function useUploadFile() {
 
             // Do not abort using signal - revision could be created and we
             // wouldn't know ID to do proper cleanup.
-            const { Revision } = await debouncedRequest<CreateFileRevisionResult>(
+            const { Revision } = await request<CreateFileRevisionResult>(
                 queryCreateFileRevision(shareId, link.linkId, currentActiveRevisionID, clientUid)
             ).catch((err) => {
                 if (err.data?.Code === 2500) {
@@ -392,15 +402,10 @@ export default function useUploadFile() {
 
                     log(`Requesting verifier data`);
                     try {
-                        const { VerificationCode, ContentKeyPacket } =
-                            await debouncedRequest<GetVerificationDataResult>(
-                                queryVerificationData(
-                                    shareId,
-                                    createdFileRevision.fileID,
-                                    createdFileRevision.revisionID
-                                ),
-                                abortSignal
-                            );
+                        const { VerificationCode, ContentKeyPacket } = await request<GetVerificationDataResult>(
+                            queryVerificationData(shareId, createdFileRevision.fileID, createdFileRevision.revisionID),
+                            abortSignal
+                        );
 
                         const verifierSessionKey = await CryptoProxy.decryptSessionKey({
                             binaryMessage: base64StringToUint8Array(ContentKeyPacket),
@@ -436,7 +441,7 @@ export default function useUploadFile() {
                         } thumbnail blocks`
                     );
                     const addressKeyInfo = await getShareKeys(abortSignal);
-                    const { UploadLinks, ThumbnailLinks } = await debouncedRequest<RequestUploadResult>(
+                    const { UploadLinks, ThumbnailLinks } = await request<RequestUploadResult>(
                         queryRequestUpload({
                             BlockList: fileBlocks.map((block) => ({
                                 Index: block.index,
@@ -491,7 +496,7 @@ export default function useUploadFile() {
                         finalizeCalled = true;
 
                         log(`Commiting revision`);
-                        await debouncedRequest(
+                        await request(
                             queryUpdateFileRevision(
                                 shareId,
                                 createdFileRevision.fileID,
@@ -544,7 +549,7 @@ export default function useUploadFile() {
                                 ]);
                             } else {
                                 log(`Deleting revision`);
-                                await debouncedRequest(
+                                await request(
                                     queryDeleteFileRevision(
                                         shareId,
                                         createdFileRevision.fileID,
