@@ -34,9 +34,9 @@ import { getPlanFromCheckout, hasPlanIDs, supportAddons, switchPlan } from '@pro
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
-    getHasB2BPlan,
     getHasVpnB2BPlan,
-    getIsB2BPlan,
+    getIsB2BAudienceFromPlan,
+    getIsB2BAudienceFromSubscription,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasMigrationDiscount,
@@ -230,7 +230,7 @@ const SubscriptionContainer = ({
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
 
     const [audience, setAudience] = useState(() => {
-        if ((plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)) {
+        if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
             return Audience.B2B;
         }
         return defaultAudience;
