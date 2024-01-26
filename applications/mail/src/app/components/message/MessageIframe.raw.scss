@@ -356,6 +356,20 @@ blockquote.protonmail_quote
 	padding-block-end: 1em;
 	overflow: auto;
 
+	.flex {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.inline-flex {
+		display: inline-flex;
+		flex-wrap: wrap;
+	}
+
+	.flex-nowrap {
+		flex-wrap: nowrap;
+	}
+
 	&.proton-plain-text {
 		&,
 		.proton-print {
@@ -414,7 +428,7 @@ blockquote.protonmail_quote
 		color: var(--text-norm);
 	}
 
-	.maxw-100 {
+	.max-w-full {
 		max-inline-size: 100%;
 	}
 
@@ -432,6 +446,14 @@ blockquote.protonmail_quote
 		white-space: pre;
 	}
 
+	.gap-2 {
+		gap: 0.5rem;
+	}
+
+	.mr-1 {
+		margin-inline-end: 0.25rem;
+	}
+
 	&.proton-dark-theme .proton-print-content {
 		// only dark styles
 		color: black;
@@ -442,6 +464,11 @@ blockquote.protonmail_quote
 		border-block-start: 1px solid var(--border-weak);
 		padding-block-start: 1em;
 		background-color: var(--background-norm);
+		box-sizing: border-box;
+
+		* {
+			box-sizing: inherit;
+		}
 
 		&-sizes {
 			margin-block-end: 1em;
@@ -455,18 +482,19 @@ blockquote.protonmail_quote
 			&-embedded-count {
 				align-items: baseline;
 			}
+
+			&-embedded-count {
+				margin-inline-start: 1em;
+			}
 		}
 
 		&-item {
-			max-inline-size: 100%;
 			border: 1px solid var(--border-weak);
-			padding-block: 0.5em;
-			padding-inline: 0.25em;
+			padding: 0.5em;
 			border-radius: var(--border-radius-md);
 		}
 
 		&-item-size {
-			margin-inline-start: 0.25rem;
 			font-size: 0.75em;
 			color: var(--text-weak);
 		}
@@ -483,14 +511,16 @@ blockquote.protonmail_quote
     * add in this all elements which need to be hardly reseted for print
     */
 	body,
-	html {
+	html,
+	.reset4print,
+	iframe {
 		background-color: white;
 		background-image: none;
 		border: 0;
 		box-shadow: none;
 		color: black;
 		float: none;
-		block-size: auto;
+		block-size: auto !important;
 		margin: 0;
 		max-inline-size: 100%;
 		min-block-size: 0;
@@ -501,6 +531,7 @@ blockquote.protonmail_quote
 		visibility: visible;
 		max-block-size: none;
 		display: block;
+		overflow: visible;
 	}
 
 	.proton-print .message-print-header,
@@ -509,17 +540,17 @@ blockquote.protonmail_quote
 		color: black;
 	}
 
-	body {
-		padding: 0.5em;
-		overflow: auto;
+	html {
+		overflow: hidden;
 	}
 
-	/**
-    * avoid problematic page break
-    */
-	ul,
-	ol {
-		page-break-inside: avoid;
+	body {
+		padding: 0.5em;
+		overflow: visible;
+	}
+
+	.print-modal {
+		--size: 20cm;
 	}
 
 	h1,

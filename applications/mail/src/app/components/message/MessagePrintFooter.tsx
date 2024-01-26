@@ -23,11 +23,9 @@ const MessagePrintFooterItem = ({ attachment }: ItemProps) => {
     const humanAttachmentSize = humanSize({ bytes: attachment?.Size });
 
     return (
-        <div className="proton-print-footer-item flex flex-nowrap rounded">
-            <div className="flex items-baseline flex-nowrap">
-                <FileNameDisplay text={name} />
-                <div className="proton-print-footer-item-size shrink-0">{humanAttachmentSize}</div>
-            </div>
+        <div className="proton-print-footer-item flex flex-wrap items-baseline rounded max-w-full">
+            <FileNameDisplay text={name} className="proton-print-footer-item-filename mr-1" />
+            <div className="proton-print-footer-item-size shrink-0">{humanAttachmentSize}</div>
         </div>
     );
 };
