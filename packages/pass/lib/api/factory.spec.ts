@@ -51,6 +51,7 @@ describe('API factory', () => {
                 appVersionBad: false,
                 offline: false,
                 pendingCount: 0,
+                queued: [],
                 serverTime: undefined,
                 sessionInactive: false,
                 sessionLocked: false,
@@ -85,6 +86,34 @@ describe('API factory', () => {
             resolvers[2](mockAPIResponse());
             await call3;
             expect(api.getState().pendingCount).toEqual(0);
+        });
+
+        test('should support request treshold', async () => {
+            const backPressuredApi = createApi({ config, getAuth, threshold: 1 });
+            const resolvers: ((res: Response) => void)[] = [];
+
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)));
+
+            const call1 = backPressuredApi({});
+            const call2 = backPressuredApi({});
+            const call3 = backPressuredApi({});
+
+            expect(fetchMock).toHaveBeenCalledTimes(1);
+            expect(backPressuredApi.getState().pendingCount).toEqual(3);
+
+            resolvers[0](mockAPIResponse());
+            await call1;
+            expect(fetchMock).toHaveBeenCalledTimes(2);
+
+            resolvers[1](mockAPIResponse());
+            await call2;
+            expect(fetchMock).toHaveBeenCalledTimes(3);
+
+            resolvers[2](mockAPIResponse());
+            await call3;
         });
     });
 
