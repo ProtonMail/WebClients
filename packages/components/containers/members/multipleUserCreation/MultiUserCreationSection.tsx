@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
-import { UserManagementMode } from '@proton/components/containers/members/types';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
@@ -13,8 +12,15 @@ import { useCustomDomains } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';
-import { downloadSampleCSV } from './csv';
+import { CsvConfig, downloadSampleCSV } from './csv';
 import { UserTemplate } from './types';
+
+const csvConfig: CsvConfig = {
+    multipleAddresses: true,
+    includeStorage: true,
+    includeVpnAccess: true,
+    includePrivateSubUser: true,
+};
 
 const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
     const [customDomains = []] = useCustomDomains();
@@ -28,6 +34,10 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
         setCreateUserAccountsModal(true);
     };
 
+    const handleDownloadClick = () => {
+        downloadSampleCSV(csvConfig);
+    };
+
     return (
         <>
             {renderCreateUserAccountsModal && usersToImport && (
@@ -36,7 +46,7 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                     app={app}
                     verifiedDomains={verifiedDomains}
                     {...createUserAccountsModal}
-                    mode={UserManagementMode.DEFAULT}
+                    expectedCsvConfig={csvConfig}
                 />
             )}
             <SettingsSectionWide>
@@ -57,9 +67,9 @@ const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
                             </span>
                         </Tooltip>
                     ) : (
-                        <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" />
+                        <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" csvConfig={csvConfig} />
                     )}
-                    <Button onClick={downloadSampleCSV}>{c('Action').t`Download CSV sample`}</Button>
+                    <Button onClick={handleDownloadClick}>{c('Action').t`Download CSV sample`}</Button>
                 </div>
             </SettingsSectionWide>
         </>
