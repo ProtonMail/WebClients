@@ -10,7 +10,7 @@ import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constant
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { getHasVpnB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -55,7 +55,6 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
-import { UserManagementMode } from '../types';
 import { getDomainError } from '../validateAddUser';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
@@ -77,8 +76,16 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
 
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const mode = hasVpnB2BPlan ? UserManagementMode.VPN_B2B : UserManagementMode.DEFAULT;
+    const hasB2BPlan = getHasB2BPlan(subscription);
+
+    const useEmail = hasB2BPlan;
+    const allowStorageConfiguration = !hasB2BPlan;
+    const allowVpnAccessConfiguration = !hasB2BPlan;
+    const allowPrivateMemberConfiguration = !hasB2BPlan;
+
+    const showMultipleUserUploadButton = hasB2BPlan;
+    const showAddressesSection = !hasB2BPlan;
+    const showFeaturesColumn = !hasB2BPlan;
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
@@ -177,7 +184,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             return;
         }
 
-        if (!hasB2BPlan && !verifiedDomains.length) {
+        if (!useEmail && !verifiedDomains.length) {
             createNotification({ text: getDomainError(), type: 'error' });
             return;
         }
@@ -216,18 +223,23 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     // Members for which addresses can be created
-    const filteredMembers =
-        mode === UserManagementMode.DEFAULT
-            ? members?.filter((member) => {
-                  return getAvailableAddressDomains({
-                      user,
-                      member,
-                      protonDomains,
-                      customDomains,
-                      premiumDomains,
-                  }).length;
-              })
-            : members;
+    const filteredMembers = (() => {
+        if (useEmail) {
+            return members;
+        }
+
+        return members?.filter((member) => {
+            const availableAddressDomains = getAvailableAddressDomains({
+                user,
+                member,
+                protonDomains,
+                customDomains,
+                premiumDomains,
+            });
+
+            return availableAddressDomains.length;
+        });
+    })();
 
     const userFound = membersSelected.length;
 
@@ -285,8 +297,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             .t`Add, remove, and make changes to user accounts in your organization.`;
     })();
 
-    const showFeatures = !hasB2BPlan;
-
     return (
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
@@ -301,7 +311,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     <SubUserDeleteModal
                         member={tmpMember}
                         onDelete={handleDeleteUserConfirm}
-                        mode={mode}
                         {...subUserDeleteModalProps}
                     />
                 )}
@@ -312,18 +321,24 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     <SubUserCreateModal
                         organization={organization}
                         verifiedDomains={verifiedDomains}
-                        mode={mode}
                         app={app}
+                        useEmail={useEmail}
+                        allowStorageConfiguration={allowStorageConfiguration}
+                        allowVpnAccessConfiguration={allowVpnAccessConfiguration}
+                        allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        showMultipleUserUploadButton={showMultipleUserUploadButton}
+                        disableStorageValidation={!allowStorageConfiguration}
+                        disableDomainValidation={useEmail}
                         {...subUserCreateModalProps}
                     />
                 )}
                 {renderSubUserEditModal && tmpMember && (
                     <SubUserEditModal
                         member={tmpMember}
-                        showStorageSelector={mode === UserManagementMode.DEFAULT}
-                        showVPNToggle={mode === UserManagementMode.DEFAULT}
-                        showPrivateToggle={mode === UserManagementMode.DEFAULT}
-                        showAddressesSection={mode === UserManagementMode.DEFAULT}
+                        allowStorageConfiguration={allowStorageConfiguration}
+                        allowVpnAccessConfiguration={allowVpnAccessConfiguration}
+                        allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        showAddressesSection={showAddressesSection}
                         {...subUserEditModalProps}
                     />
                 )}
@@ -410,17 +425,10 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
                 <thead>
                     <tr>
-                        <UsersAndAddressesSectionHeader
-                            showFeatures={showFeatures}
-                            addressesTitle={
-                                mode === UserManagementMode.MINIMAL
-                                    ? c('Title header for members table').t`Email`
-                                    : undefined
-                            }
-                        />
+                        <UsersAndAddressesSectionHeader showFeaturesColumn={showFeaturesColumn} useEmail={useEmail} />
                     </tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={showFeatures ? 5 : 4}>
+                <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
@@ -452,15 +460,17 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             {memberName}
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            {!hasB2BPlan && !hasFamily(subscription) && Boolean(member.Private) && (
-                                                <Badge
-                                                    type="origin"
-                                                    className="rounded-sm"
-                                                    data-testid="users-and-addresses-table:memberIsPrivate"
-                                                >
-                                                    {c('Private Member').t`private`}
-                                                </Badge>
-                                            )}
+                                            {allowPrivateMemberConfiguration &&
+                                                !hasFamily(subscription) &&
+                                                Boolean(member.Private) && (
+                                                    <Badge
+                                                        type="origin"
+                                                        className="rounded-sm"
+                                                        data-testid="users-and-addresses-table:memberIsPrivate"
+                                                    >
+                                                        {c('Private Member').t`private`}
+                                                    </Badge>
+                                                )}
                                             {member['2faStatus'] > 0 && (
                                                 <Badge type="origin" className="rounded-sm">
                                                     {c('Enabled 2FA').t`2FA`}
@@ -504,7 +514,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         )}
                                     </div>
                                 </TableCell>
-                                {showFeatures && (
+                                {showFeaturesColumn && (
                                     <TableCell>
                                         <MemberFeatures member={member} organization={organization} />
                                     </TableCell>
