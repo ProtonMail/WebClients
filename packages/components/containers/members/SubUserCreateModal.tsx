@@ -47,7 +47,6 @@ import {
     Toggle,
     Tooltip,
     useFormErrors,
-    useModalState,
 } from '../../components';
 import {
     useApi,
@@ -118,8 +117,6 @@ const SubUserCreateModal = ({
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    const [bulkUserCreateModalProps, setBulkUserModalOpen] = useModalState();
 
     const domainOptions = verifiedDomains.map(({ DomainName }) => ({ text: DomainName, value: DomainName }));
 
@@ -209,11 +206,9 @@ const SubUserCreateModal = ({
     };
 
     const setBulkStep = () => {
-        setBulkUserModalOpen(true);
         setStep(Step.BULK);
     };
     const setSingleStep = () => {
-        setBulkUserModalOpen(false);
         setStep(Step.SINGLE);
     };
 
@@ -230,8 +225,8 @@ const SubUserCreateModal = ({
     if (step === Step.BULK) {
         return (
             <SubUserBulkCreateModal
+                open
                 verifiedDomains={verifiedDomains}
-                {...bulkUserCreateModalProps}
                 onBack={setSingleStep}
                 onClose={handleClose}
                 app={app}
