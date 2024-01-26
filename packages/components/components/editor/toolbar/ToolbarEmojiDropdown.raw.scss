@@ -1,11 +1,80 @@
-section#root {
-	background-color: var(--background-norm);
+@import '~@proton/styles/scss/lib';
 
-	.sticky {
-		background-color: var(--background-norm);
-	}
+:host,
+#root {
+	--font-family: inherit !important;
+	--font-size: 1em !important;
 
-	.search input[type='search'] {
+	color: var(--text-norm);
+}
+
+#root {
+	// #root#root
+	&#{&} {
+		--border-radius: var(--border-radius-md);
+		--category-icon-size: 1.125rem;
+		--color-border-over: var(--border-weak);
+		--color-border: var(--border-norm);
+		--shadow: var(--shadow-lifted);
+		--shadow-color: var(--shadow-default-color);
+		--padding: 1rem;
+
 		background-color: var(--background-norm);
+
+		.scroll::-webkit-scrollbar-thumb {
+			border-color: var(--background-norm);
+		}
+
+		.sticky {
+			background-color: var(--background-norm);
+		}
+
+		.search {
+			.icon {
+				color: var(--text-hint);
+			}
+
+			input[type='search'] {
+				border-radius: var(--border-radius-md);
+				border: 1px solid var(--field-norm);
+				background-color: var(--field-background-color);
+				color: var(--field-text-color);
+				/* stylelint-disable-next-line */
+				padding-block: 0.4375rem;
+
+				&:hover {
+					border-color: var(--field-hover);
+					background-color: var(--field-hover-background-color);
+					color: var(--field-hover-text-color);
+				}
+
+				&:focus {
+					border-color: var(--focus-outline);
+					background-color: var(--field-focus-background-color);
+					color: var(--field-focus-text-color);
+					box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+				}
+			}
+		}
+
+		.menu {
+			padding: 0.25rem;
+			background-color: var(--background-norm);
+			box-shadow: var(--shadow-norm);
+		}
+
+		#nav {
+			.bar {
+				background-color: var(--interaction-norm);
+			}
+
+			button {
+				color: var(--text-weak);
+
+				&[aria-selected] {
+					color: var(--interaction-norm);
+				}
+			}
+		}
 	}
 }
