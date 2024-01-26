@@ -9,7 +9,7 @@ interface TooltipExclusiveContextValue {
     remove: (id: string) => void;
 }
 
-export const TooltipExclusiveContext = createContext<TooltipExclusiveContextValue>({} as TooltipExclusiveContextValue);
+export const TooltipExclusiveContext = createContext<TooltipExclusiveContextValue | null>(null);
 
 const TooltipExclusive = ({ children }: { children: ReactNode }) => {
     const [tooltips, setTooltips] = useState<string[]>([]);

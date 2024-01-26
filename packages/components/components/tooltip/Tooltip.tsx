@@ -139,7 +139,7 @@ const TooltipBase = (
         updateAnimationFrame,
     });
 
-    const exclusive = useContext(TooltipExclusiveContext) || {};
+    const exclusive = useContext(TooltipExclusiveContext);
 
     const tooltipHandlers = useTooltipHandlers({
         open,
@@ -157,10 +157,13 @@ const TooltipBase = (
     const mergedRef = useCombinedRefs(child?.ref, reference, ref);
 
     useEffect(() => {
+        if (!exclusive) {
+            return;
+        }
         if (isOpen) {
-            exclusive.add?.(uid);
+            exclusive.add(uid);
         } else {
-            exclusive.remove?.(uid);
+            exclusive.remove(uid);
         }
     }, [isOpen]);
 
@@ -191,7 +194,7 @@ const TooltipBase = (
             <Popper
                 divRef={floating}
                 id={uid}
-                isOpen={(exclusive.last === uid || !exclusive.last) && !!title && isOpen}
+                isOpen={(!exclusive || exclusive.last === uid) && !!title && isOpen}
                 style={{ ...position, ...arrow }}
                 onAnimationEnd={(event) => {
                     if (event.animationName.includes('anime-tooltip-out-last')) {
