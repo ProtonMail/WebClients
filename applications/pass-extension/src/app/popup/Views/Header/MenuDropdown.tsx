@@ -28,7 +28,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
+import { AccountPath, PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import browser from '@proton/pass/lib/globals/browser';
@@ -67,7 +67,7 @@ export const MenuDropdown: FC = () => {
     const vaultActions = useVaultActions();
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
-    const navigateToAccount = useNavigateToAccount();
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = withTap(close);
