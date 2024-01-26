@@ -351,37 +351,47 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
                 <div className="flex items-center mb-2 gap-2 mr-4">
-                    {hasSetupOrganization && (
-                        <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
-                            {c('Action').t`Invite user`}
-                        </Button>
-                    )}
+                    {hasB2BPlan ? (
+                        <>
+                            {hasSetupOrganizationWithKeys && (
+                                <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
+                                    {c('Action').t`Add user`}
+                                </Button>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            {hasSetupOrganization && (
+                                <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
+                                    {c('Action').t`Invite user`}
+                                </Button>
+                            )}
 
-                    {hasSetupOrganizationWithKeys && (
-                        <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
-                            {c('Action').t`Add user`}
-                        </Button>
-                    )}
+                            {hasSetupOrganizationWithKeys && (
+                                <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
+                                    {c('Action').t`Add user`}
+                                </Button>
+                            )}
 
-                    {/* Only family and visionary can invite existing Proton users */}
-                    {canInviteProtonUsers &&
-                        (hasReachedLimit ? (
-                            <Info
-                                className="color-danger"
-                                title={c('familyOffer_2023:Family plan')
-                                    .t`You have reached the limit of 10 accepted invitations in 6 months.`}
-                            />
-                        ) : (
-                            <Info
-                                title={c('familyOffer_2023:Family plan')
-                                    .t`Only 10 accepted invitations are allowed in a 6-month period.`}
-                            />
-                        ))}
+                            {/* Only family and visionary can invite existing Proton users */}
+                            {canInviteProtonUsers &&
+                                (hasReachedLimit ? (
+                                    <Info
+                                        className="color-danger"
+                                        title={c('familyOffer_2023:Family plan')
+                                            .t`You have reached the limit of 10 accepted invitations in 6 months.`}
+                                    />
+                                ) : (
+                                    <Info
+                                        title={c('familyOffer_2023:Family plan')
+                                            .t`Only 10 accepted invitations are allowed in a 6-month period.`}
+                                    />
+                                ))}
 
-                    {hasVpnB2BPlan ? null : (
-                        <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
-                            {c('Action').t`Add address`}
-                        </Button>
+                            <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
+                                {c('Action').t`Add address`}
+                            </Button>
+                        </>
                     )}
                 </div>
                 <div className="ml-0 lg:ml-auto mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
