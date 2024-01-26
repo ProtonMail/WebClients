@@ -27,7 +27,7 @@ describe('Import Enpass json', () => {
 
         const [primary] = payload.vaults;
         expect(primary.name).not.toBeUndefined();
-        expect(primary.items.length).toEqual(8);
+        expect(primary.items.length).toEqual(9);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
@@ -48,33 +48,55 @@ describe('Import Enpass json', () => {
         expect(loginItem1ExtraField2.data.content).toEqual('Example extra field, user-defined');
         expect(loginItem1ExtraField2.type).toEqual('hidden');
 
+        /* Login with username and email, email should be extra field */
+        const loginItem5 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
+        expect(loginItem5.type).toEqual('login');
+        expect(loginItem5.metadata.name).toEqual('Twitter');
+        expect(loginItem5.metadata.note).toEqual('');
+        expect(loginItem5.content.username).toEqual('Emily');
+        expect(loginItem5.content.password).toEqual('herbert nadia banal slag broken violin somber modern cdc posing');
+        expect(loginItem5.content.urls[0]).toEqual('https://www.twitter.com/');
+        expect(loginItem5.content.totpUri).toEqual(
+            'otpauth://totp/Twitter?secret=QG4RPWYF4T23V62G4TA3NE4374&algorithm=SHA1&digits=6&period=30'
+        );
+        const loginItem5ExtraField1 = loginItem5.extraFields[0] as ItemExtraField<'text'>;
+        expect(loginItem5ExtraField1.fieldName).toEqual('Security question');
+        expect(loginItem5ExtraField1.data.content).toEqual('Example extra field, predefined');
+        const loginItem5ExtraField2 = loginItem5.extraFields[1] as ItemExtraField<'hidden'>;
+        expect(loginItem5ExtraField2.fieldName).toEqual('Custom field name');
+        expect(loginItem5ExtraField2.data.content).toEqual('Example extra field, user-defined');
+        expect(loginItem5ExtraField2.type).toEqual('hidden');
+        const loginItem5ExtraField3 = loginItem5.extraFields[2] as ItemExtraField<'text'>;
+        expect(loginItem5ExtraField3.fieldName).toEqual('E-mail');
+        expect(loginItem5ExtraField3.data.content).toEqual('emily@enpass.io');
+
         /* Login with a username and no email */
-        const loginItem2 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Yahoo!');
         expect(loginItem2.content.username).toEqual('');
         expect(loginItem2.metadata.note).toEqual('example note');
 
         /* Trashed login */
-        const loginItem3 = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'login'>;
+        const loginItem3 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem3.type).toEqual('login');
         expect(loginItem3.metadata.name).toEqual('Trashed');
         expect(loginItem3.trashed).toEqual(true);
 
         /* Transhed login */
-        const loginItem4 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
+        const loginItem4 = deobfuscateItem(primary.items[4]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem4.type).toEqual('login');
         expect(loginItem4.metadata.name).toEqual('Archived');
         expect(loginItem4.trashed).toEqual(true);
 
         /* Note */
-        const noteItem1 = deobfuscateItem(primary.items[4]) as unknown as ItemImportIntent<'login'>;
+        const noteItem1 = deobfuscateItem(primary.items[5]) as unknown as ItemImportIntent<'login'>;
         expect(noteItem1.type).toEqual('note');
         expect(noteItem1.metadata.name).toEqual('Note');
         expect(noteItem1.metadata.note).toEqual('Note text');
 
         /* Credit Card */
-        const creditCardItem1 = deobfuscateItem(primary.items[5]) as unknown as ItemImportIntent<'creditCard'>;
+        const creditCardItem1 = deobfuscateItem(primary.items[6]) as unknown as ItemImportIntent<'creditCard'>;
         expect(creditCardItem1.type).toEqual('creditCard');
         expect(creditCardItem1.metadata.name).toEqual('Credit Card');
         expect(creditCardItem1.metadata.note).toEqual('');
@@ -85,7 +107,7 @@ describe('Import Enpass json', () => {
         expect(creditCardItem1.content.pin).toEqual('9874');
 
         /* Credit card - extracted login item */
-        const creditCardLoginItem1 = deobfuscateItem(primary.items[6]) as unknown as ItemImportIntent<'login'>;
+        const creditCardLoginItem1 = deobfuscateItem(primary.items[7]) as unknown as ItemImportIntent<'login'>;
         expect(creditCardLoginItem1.type).toEqual('login');
         expect(creditCardLoginItem1.metadata.name).toEqual(creditCardItem1.metadata.name);
         expect(creditCardLoginItem1.content.username).toEqual('Emily_ENP');
@@ -96,7 +118,7 @@ describe('Import Enpass json', () => {
         expect(creditCardLoginItem1.content.urls).toEqual(['http://global.americanexpress.com/']);
 
         /* Password */
-        const passwordItem1 = deobfuscateItem(primary.items[7]) as unknown as ItemImportIntent<'login'>;
+        const passwordItem1 = deobfuscateItem(primary.items[8]) as unknown as ItemImportIntent<'login'>;
         expect(passwordItem1.metadata.name).toEqual('Password');
         expect(passwordItem1.content.username).toEqual('username');
         expect(passwordItem1.content.password).toEqual('password');
