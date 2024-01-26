@@ -61,7 +61,13 @@ export function* synchronize(type: SyncType) {
 
     /* split active from inactive shares */
     const [activeRemoteShares, inactiveRemoteShares] = partition(remoteShares, ({ share }) => Boolean(share));
-    const totalInactiveShares = inactiveRemoteShares.length + inactiveCachedShareIds.length;
+
+    /* in the case of a partial partial sync : inactive shares
+     * should be resolved for both remote and local shares. */
+    const totalInactiveShares =
+        type === SyncType.FULL
+            ? inactiveRemoteShares.length
+            : inactiveRemoteShares.length + inactiveCachedShareIds.length;
 
     /* update the disabled shareIds list with any inactive remote shares */
     disabledShareIds.push(...inactiveRemoteShares.map(prop('shareId')));
@@ -74,7 +80,7 @@ export function* synchronize(type: SyncType) {
             notification({
                 endpoint: 'popup',
                 type: 'error',
-                expiration: -1,
+                expiration: 5_000,
                 key: NotificationKey.INACTIVE_SHARES,
                 text: '',
             })
