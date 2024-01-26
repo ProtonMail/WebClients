@@ -24,7 +24,6 @@ import {
     Option,
     SelectTwo,
     TextArea,
-    TooltipExclusive,
 } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
 import { TruncatedText } from '../../../components/truncatedText';
@@ -367,50 +366,48 @@ export const CalendarModal = ({
     };
 
     return (
-        <TooltipExclusive>
-            <ModalTwo
-                size={getSize(type)}
-                fullscreenOnMobile
-                className="w-full"
-                open={open}
-                onClose={onClose}
-                as={Form}
-                dense
-                onSubmit={() => {
-                    if (!loadingAction) {
-                        handleSubmit();
-                    }
-                }}
-                onExit={onExit}
-            >
-                {loadingSetup ? (
-                    <Loader />
-                ) : (
-                    <>
-                        <ModalTwoHeader title={getTitle(type)} subline={getSubline()} />
-                        <ModalTwoContent className="calendar-modal-content">
-                            {hasError ? <GenericError /> : getContentRows(type)}
-                        </ModalTwoContent>
-                        <ModalTwoFooter>
-                            {hasError ? (
-                                <Button onClick={() => window.location.reload()} className="ml-auto" color="norm">
-                                    {c('Action').t`Close`}
+        <ModalTwo
+            size={getSize(type)}
+            fullscreenOnMobile
+            className="w-full"
+            open={open}
+            onClose={onClose}
+            as={Form}
+            dense
+            onSubmit={() => {
+                if (!loadingAction) {
+                    handleSubmit();
+                }
+            }}
+            onExit={onExit}
+        >
+            {loadingSetup ? (
+                <Loader />
+            ) : (
+                <>
+                    <ModalTwoHeader title={getTitle(type)} subline={getSubline()} />
+                    <ModalTwoContent className="calendar-modal-content">
+                        {hasError ? <GenericError /> : getContentRows(type)}
+                    </ModalTwoContent>
+                    <ModalTwoFooter>
+                        {hasError ? (
+                            <Button onClick={() => window.location.reload()} className="ml-auto" color="norm">
+                                {c('Action').t`Close`}
+                            </Button>
+                        ) : (
+                            <>
+                                <Button onClick={onClose} disabled={loadingAction}>
+                                    {c('Action').t`Cancel`}
                                 </Button>
-                            ) : (
-                                <>
-                                    <Button onClick={onClose} disabled={loadingAction}>
-                                        {c('Action').t`Cancel`}
-                                    </Button>
-                                    <Button loading={loadingAction} type="submit" color="norm">
-                                        {c('Action').t`Save`}
-                                    </Button>
-                                </>
-                            )}
-                        </ModalTwoFooter>
-                    </>
-                )}
-            </ModalTwo>
-        </TooltipExclusive>
+                                <Button loading={loadingAction} type="submit" color="norm">
+                                    {c('Action').t`Save`}
+                                </Button>
+                            </>
+                        )}
+                    </ModalTwoFooter>
+                </>
+            )}
+        </ModalTwo>
     );
 };
 
