@@ -7,8 +7,6 @@ import { adminTooltipText } from '@proton/components/containers/members/constant
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { UserManagementMode } from '../types';
-
 type HeaderCellItem = {
     key: string;
     node: string | JSX.Element;
@@ -16,43 +14,41 @@ type HeaderCellItem = {
     style?: CSSProperties;
 };
 
-const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) => {
-    const roleCell: HeaderCellItem = {
-        key: 'role',
-        node: (
-            <div className="flex gap-2 flex *:flex items-center">
-                <span>{c('Title header for members table').t`Role`}</span>
-                <span className="hidden md:inline">
-                    <Info
-                        title={mode === UserManagementMode.VPN_B2B ? adminTooltipText : undefined}
-                        url={mode === UserManagementMode.DEFAULT ? getKnowledgeBaseUrl('/user-roles') : undefined}
-                    />
-                </span>
-            </div>
-        ),
-        className: 'w-1/6',
-    };
-    const addressTitle =
-        mode === UserManagementMode.VPN_B2B
-            ? c('Title header for members table').t`Email`
-            : c('Title header for members table').t`Addresses`;
+interface Props {
+    showFeatures?: boolean;
+    addressesTitle?: string;
+}
 
+const UsersAndAddressesSectionHeader = ({
+    showFeatures = false,
+    addressesTitle = c('Title header for members table').t`Addresses`,
+}: Props) => {
     const headerCells: HeaderCellItem[] = [
         { key: 'name', node: c('Title header for members table').t`Name`, className: 'w-3/10' },
-        mode === UserManagementMode.DEFAULT && roleCell,
+        {
+            key: 'role',
+            node: (
+                <div className="flex gap-2 flex *:flex items-center">
+                    <span>{c('Title header for members table').t`Role`}</span>
+                    <span className="hidden md:inline">
+                        <Info title={adminTooltipText} url={getKnowledgeBaseUrl('/user-roles')} />
+                    </span>
+                </div>
+            ),
+            className: 'w-1/6',
+        },
         {
             key: 'addresses',
             node: (
                 <>
-                    <span className="text-ellipsis inline-block align-bottom max-w-full" title={addressTitle}>
-                        {addressTitle}
+                    <span className="text-ellipsis inline-block align-bottom max-w-full" title={addressesTitle}>
+                        {addressesTitle}
                     </span>
                 </>
             ),
             className: 'w-1/4',
         },
-        mode === UserManagementMode.VPN_B2B && roleCell,
-        mode === UserManagementMode.DEFAULT && {
+        showFeatures && {
             key: 'features',
             node: (
                 <>
