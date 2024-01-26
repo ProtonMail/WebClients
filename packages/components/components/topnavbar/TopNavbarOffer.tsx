@@ -9,7 +9,7 @@ import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { OfferModal, useOfferModal } from '../../containers';
 import { OfferConfig } from '../../containers/offers/interface';
 import { subscriptionModalClassName } from '../../containers/payments/subscription/constants';
-import { useSubscription, useUser, useWelcomeFlags } from '../../hooks';
+import { useActiveBreakpoint, useSubscription, useUser, useWelcomeFlags } from '../../hooks';
 import { PromotionButton } from '../button/PromotionButton';
 import TopNavbarListItem from './TopNavbarListItem';
 
@@ -37,6 +37,8 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         currency,
         onChangeCurrency,
     } = useOfferModal(offerConfig);
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     // Listen custom event to open offer modal
     useEffect(() => {
@@ -88,6 +90,9 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
         setOfferModalOpen(true);
     }, [loading, loadingSubscription, user.hasPaidMail, subscription, welcomeFlags.isDone]);
 
+    const CTAText = offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`;
+    const upgradeIcon = CTAText.length > 20 && viewportWidth['>=large'] ? undefined : offerConfig.icon || 'bag-percent';
+
     return (
         <>
             <TopNavbarListItem collapsedOnDesktop={false} noShrink>
@@ -95,9 +100,10 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     as="button"
                     type="button"
                     color="norm"
+                    size={CTAText.length > 14 ? 'small' : 'medium'}
                     responsive
                     shape={offerConfig.shapeButton || 'solid'}
-                    iconName={offerConfig.icon || 'bag-percent'}
+                    iconName={upgradeIcon}
                     onClick={() => {
                         setOfferModalOpen(true);
                         setFetchOffer(true);
@@ -105,7 +111,7 @@ const TopNavbarOffer = ({ offerConfig, ignoreVisited, ignoreOnboarding }: Props)
                     loading={loadingOffer && !offer}
                     data-testid="cta:special-offer"
                 >
-                    {offerConfig.getCTAContent?.() || c('specialoffer: Action').t`Special offer`}
+                    {CTAText}
                 </PromotionButton>
             </TopNavbarListItem>
             {renderOfferModal && offer && (
