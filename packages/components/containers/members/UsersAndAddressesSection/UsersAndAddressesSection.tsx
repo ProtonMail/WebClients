@@ -270,6 +270,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             .t`Add, remove, and make changes to user accounts in your organization.`;
     })();
 
+    const showFeatures = !hasB2BPlan;
+
     return (
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
@@ -381,31 +383,20 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
                 <thead>
                     <tr>
-                        <UsersAndAddressesSectionHeader mode={mode} />
+                        <UsersAndAddressesSectionHeader
+                            showFeatures={showFeatures}
+                            addressesTitle={
+                                mode === UserManagementMode.MINIMAL
+                                    ? c('Title header for members table').t`Email`
+                                    : undefined
+                            }
+                        />
                     </tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={hasVpnB2BPlan ? 4 : 5}>
+                <TableBody loading={loadingMembers} colSpan={showFeatures ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
-                        const roleCell = (
-                            <TableCell
-                                className="text-cut"
-                                data-testid="users-and-addresses-table:memberRole"
-                                style={{ verticalAlign: 'baseline' }}
-                            >
-                                <div className="flex flex-column flex-nowrap">
-                                    <MemberRole member={member} />
-                                    {isInvitationPending && (
-                                        <span>
-                                            <Badge type="origin" className="rounded-sm color-weak">{c(
-                                                'familyOffer_2023:Family plan'
-                                            ).t`Pending`}</Badge>
-                                        </span>
-                                    )}
-                                </div>
-                            </TableCell>
-                        );
 
                         const memberName = (() => {
                             if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
@@ -461,7 +452,22 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         </div>
                                     </div>
                                 </TableCell>
-                                {!hasVpnB2BPlan && roleCell}
+                                <TableCell
+                                    className="text-cut"
+                                    data-testid="users-and-addresses-table:memberRole"
+                                    style={{ verticalAlign: 'baseline' }}
+                                >
+                                    <div className="flex flex-column flex-nowrap">
+                                        <MemberRole member={member} />
+                                        {isInvitationPending && (
+                                            <span>
+                                                <Badge type="origin" className="rounded-sm color-weak">{c(
+                                                    'familyOffer_2023:Family plan'
+                                                ).t`Pending`}</Badge>
+                                            </span>
+                                        )}
+                                    </div>
+                                </TableCell>
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <div>
                                         {member.State && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED ? (
@@ -471,8 +477,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         )}
                                     </div>
                                 </TableCell>
-                                {hasVpnB2BPlan && roleCell}
-                                {!hasVpnB2BPlan && (
+                                {showFeatures && (
                                     <TableCell>
                                         <MemberFeatures member={member} organization={organization} />
                                     </TableCell>
