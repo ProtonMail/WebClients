@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
 import { ToolbarButton } from '@proton/components/components/toolbar';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { useCalendarSearch } from './CalendarSearchProvider';
 
@@ -23,6 +24,8 @@ const CalendarSearchInput = (
     ref: Ref<HTMLDivElement>
 ) => {
     const { search, searchParams } = useCalendarSearch();
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -74,6 +77,25 @@ const CalendarSearchInput = (
         }
     }, [isSearchActive]);
 
+    const searchText = c('Action').t`Search`;
+
+    const prefixInputSearch = viewportWidth['<=small'] ? (
+        <Button
+            type="submit"
+            shape="ghost"
+            icon
+            size="small"
+            onClick={handleSearch}
+            disabled={cannotSearch}
+            className="shrink-0"
+            title={searchText}
+        >
+            <Icon name="magnifier" alt={searchText} />
+        </Button>
+    ) : (
+        <Icon name="magnifier" alt={searchText} className="shrink-0" />
+    );
+
     return (
         <>
             <ToolbarButton
@@ -104,11 +126,12 @@ const CalendarSearchInput = (
                             id="search-keyword-field"
                             autoFocus
                             disabled={!isSearchActive}
+                            inputContainerClassName="self-center"
                             prefix={
                                 loading ? (
                                     <Icon name="arrow-rotate-right" className="location-refresh-rotate" />
                                 ) : (
-                                    <Icon name="magnifier" alt={c('Action').t`Search`} />
+                                    prefixInputSearch
                                 )
                             }
                             suffix={
@@ -123,8 +146,10 @@ const CalendarSearchInput = (
                                         title={c('Action').t`Clear search`}
                                         onClick={handleClear}
                                         data-testid="clear-button"
+                                        icon={viewportWidth['<=small']}
                                     >
-                                        {c('Action').t`Clear`}
+                                        <span className="hidden md:flex">{c('Action').t`Clear`}</span>
+                                        <Icon name="cross-big" className="md:hidden" />
                                     </Button>
                                 ) : null
                             }
@@ -137,8 +162,10 @@ const CalendarSearchInput = (
                     color="norm"
                     onClick={handleSearch}
                     disabled={cannotSearch}
-                    className="hidden md:inline-flex"
-                >{c('Action').t`Search`}</Button>
+                    className="hidden md:inline-flex shrink-0"
+                >
+                    {searchText}
+                </Button>
             </div>
         </>
     );
