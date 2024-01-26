@@ -14,6 +14,7 @@ import {
     PASS_REQUEST_URL,
     PASS_X_URL,
 } from '@proton/pass/constants';
+import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
@@ -93,7 +94,7 @@ export const useMenuItems = ({
             {
                 icon: 'arrow-rotate-right',
                 label: c('Action').t`Manually sync your data`,
-                onClick: withAction(() => dispatch(syncIntent())),
+                onClick: withAction(() => dispatch(syncIntent(SyncType.FULL))),
             },
             ...(extra.advanced ?? []),
         ],
