@@ -37,17 +37,17 @@ import MemberStorageSelector, { getStorageRange, getTotalStorage } from './Membe
 
 interface Props extends ModalProps<'form'> {
     member: Member;
-    showStorageSelector?: boolean;
-    showVPNToggle?: boolean;
-    showPrivateToggle?: boolean;
+    allowStorageConfiguration?: boolean;
+    allowVpnAccessConfiguration?: boolean;
+    allowPrivateMemberConfiguration?: boolean;
     showAddressesSection?: boolean;
 }
 
 const SubUserEditModal = ({
     member,
-    showStorageSelector,
-    showVPNToggle,
-    showPrivateToggle,
+    allowStorageConfiguration,
+    allowVpnAccessConfiguration,
+    allowPrivateMemberConfiguration,
     showAddressesSection,
     ...rest
 }: Props) => {
@@ -181,7 +181,7 @@ const SubUserEditModal = ({
                         label={c('Label').t`Name`}
                         placeholder={NAME_PLACEHOLDER}
                     />
-                    {showStorageSelector && (
+                    {allowStorageConfiguration && (
                         <MemberStorageSelector
                             className="mb-5"
                             value={model.storage}
@@ -192,7 +192,7 @@ const SubUserEditModal = ({
                         />
                     )}
 
-                    {showVPNToggle && hasVPN ? (
+                    {allowVpnAccessConfiguration && hasVPN ? (
                         <div className="flex mb-5">
                             <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                                 {c('Label for new member').t`VPN connections`}
@@ -205,7 +205,7 @@ const SubUserEditModal = ({
                         </div>
                     ) : null}
 
-                    {showPrivateToggle && canMakePrivate && (
+                    {allowPrivateMemberConfiguration && canMakePrivate && (
                         <div className="flex mb-6">
                             <label className="text-semibold mr-4" htmlFor="private-toggle">
                                 {c('Label for new member').t`Private`}
