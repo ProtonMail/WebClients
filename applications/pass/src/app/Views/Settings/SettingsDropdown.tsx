@@ -8,6 +8,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 
@@ -20,7 +21,7 @@ export const SettingsDropdown: FC = () => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
-    const navigateToAccount = useNavigateToAccount();
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
     const settings = useMemo<SettingAction[]>(
         () => [
