@@ -77,12 +77,11 @@ const options: RootSagaOptions = {
      * clear */
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
-            store.dispatch(startEventPolling());
-            store.dispatch(draftsGarbageCollect());
-
             ctx.setStatus(AppStatus.READY);
             ctx.service.telemetry?.start().catch(noop);
 
+            store.dispatch(startEventPolling());
+            store.dispatch(draftsGarbageCollect());
             WorkerMessageBroker.buffer.flush();
 
             const lockStatus = authStore.getLockStatus();

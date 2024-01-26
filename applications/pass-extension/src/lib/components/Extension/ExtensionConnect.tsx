@@ -10,6 +10,7 @@ import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
 import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
+import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { AppState, ClientEndpoint, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
@@ -76,7 +77,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
         dispatch(sessionLockIntent());
     }, []);
 
-    const sync = useCallback(() => dispatch(syncIntent()), []);
+    const sync = useCallback(() => dispatch(syncIntent(SyncType.FULL)), []);
 
     useWorkerStateEvents({
         tabId,

@@ -7,6 +7,7 @@ import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/man
 import { getUserAccessIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
 import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
+import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull, UserEvent } from '@proton/pass/types';
@@ -67,7 +68,7 @@ function* onUserEvent(
             const keyPassword = getAuthStore().getPassword();
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses });
-            yield put(syncIntent()); /* trigger a full data sync */
+            yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
         }
     }
 }
