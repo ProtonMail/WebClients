@@ -9,11 +9,11 @@ export type NewUserInviteRemoveIntent = { newUserInviteId: string; shareId: stri
 export type InviteCreateIntent = { shareId: string; email: string; role: ShareRole };
 export type InviteCreateSuccess =
     | {
-          item: SelectedItem;
-          movedItem: ItemRevision;
           share: Share<ShareType.Vault>;
           shareId: string;
           withVaultCreation: true;
+          item?: SelectedItem;
+          movedItem?: ItemRevision;
       }
     | { shareId: string; withVaultCreation: false };
 
