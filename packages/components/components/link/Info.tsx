@@ -19,6 +19,7 @@ interface Props extends Omit<IconProps, 'title' | 'name'> {
     className?: string;
     questionMark?: boolean;
     filled?: boolean;
+    fakeDisabled?: boolean;
     colorPrimary?: boolean;
 }
 
@@ -32,6 +33,7 @@ const Info = ({
     questionMark = false,
     filled = false,
     colorPrimary = true,
+    fakeDisabled = false,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('tooltip'));
@@ -66,7 +68,8 @@ const Info = ({
             <button
                 tabIndex={buttonTabIndex}
                 className={clsx(
-                    'info-button inline-flex color-inherit relative interactive-pseudo interactive--no-background rounded-full',
+                    'info-button inline-flex color-inherit relative rounded-full',
+                    !fakeDisabled && 'interactive-pseudo interactive--no-background',
                     buttonClass
                 )}
                 onClick={handleClick}
