@@ -11,6 +11,9 @@ export const MAX_ITEM_NOTE_LENGTH = 25_000;
 export const SESSION_RESUME_RETRY_TIMEOUT = 15; /* seconds */
 export const SESSION_RESUME_MAX_RETRIES = 7;
 
+/** Matches the `SETTINGS_MAX_CONCURRENT_STREAMS=25` production config */
+export const API_CONCURRENCY_TRESHOLD = 25;
+
 export const PASS_WEB_APP_URL = 'https://pass.proton.me';
 export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
 export const PASS_VIDEO_URL = 'https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1';

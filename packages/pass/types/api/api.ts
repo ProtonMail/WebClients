@@ -1,3 +1,4 @@
+import type { Awaiter } from '@proton/pass/utils/fp/promises';
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 
@@ -17,6 +18,7 @@ export type ApiState = {
     appVersionBad: boolean;
     offline: boolean;
     pendingCount: number;
+    queued: Awaiter<void>[];
     serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
