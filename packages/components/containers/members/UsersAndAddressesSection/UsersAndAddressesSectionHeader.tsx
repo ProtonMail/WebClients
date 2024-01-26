@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties, JSX } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,9 +11,9 @@ import { UserManagementMode } from '../types';
 
 type HeaderCellItem = {
     key: string;
-    node: string | React.JSX.Element;
+    node: string | JSX.Element;
     className?: string;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
 };
 
 const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) => {
