@@ -25,7 +25,7 @@ import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export type VaultInviteCreateProps =
     | { withVaultCreation: false; vault: VaultShareItem }
-    | { withVaultCreation: true; item: SelectedItem; onVaultCreated?: (shareId: string) => void };
+    | { withVaultCreation: true; item?: SelectedItem; onVaultCreated?: (shareId: string) => void };
 
 export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
     Extract<VaultInviteCreateProps, { withVaultCreation: T }>,
