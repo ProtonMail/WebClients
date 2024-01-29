@@ -74,7 +74,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
         <Tabs
             className="w-full"
             contentClassName="p-0"
-            navContainerClassName="pass-settings--tabs mb-2"
+            navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
             onChange={handleOnChange}
             tabs={tabs}
             value={activeTab}
@@ -84,7 +84,7 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
 
 export const Settings: FC<RouteChildrenProps> = (props) => {
     return (
-        <div className="pass-settings flex flex-column w-full p-4 h-full">
+        <div className="pass-settings flex flex-column w-full p-4 pt-0 h-full overflow-auto">
             <LockConfirmContextProvider>
                 <SettingsTabs {...props} />
             </LockConfirmContextProvider>
