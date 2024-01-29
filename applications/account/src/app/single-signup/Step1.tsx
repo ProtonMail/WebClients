@@ -489,8 +489,6 @@ const Step1 = ({
         }));
     };
 
-    const showLifetimeDeal = !isB2bPlan && !options.checkResult.Coupon?.Code;
-
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
@@ -1882,20 +1880,6 @@ const Step1 = ({
                                             )}
 
                                             <div className="mx-3 flex flex-column gap-2">
-                                                {showLifetimeDeal && actualCheckout.discountPercent > 0 && (
-                                                    <div className={clsx('flex justify-space-between text-rg')}>
-                                                        <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
-                                                        <span>
-                                                            <span className="color-success">
-                                                                {(() => {
-                                                                    const discountPercentage = `−${actualCheckout.discountPercent}%`;
-                                                                    return c('Info').t`${discountPercentage} forever`;
-                                                                })()}
-                                                            </span>
-                                                        </span>
-                                                    </div>
-                                                )}
-
                                                 <div
                                                     className={clsx(
                                                         'text-bold',
