@@ -22,7 +22,7 @@ export interface Props {
     mode?: UserManagementMode;
 }
 
-const ImportCSVFileButton = ({
+const UploadCSVFileButton = ({
     onUpload,
     className,
     children = c('Select file').t`Upload CSV file`,
@@ -157,4 +157,4 @@ const ImportCSVFileButton = ({
     );
 };
 
-export default ImportCSVFileButton;
+export default UploadCSVFileButton;
