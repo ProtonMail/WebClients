@@ -14,7 +14,7 @@ import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels
 
 export const useStar = () => {
     const api = useApi();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useMailDispatch();
 
@@ -42,7 +42,7 @@ export const useStar = () => {
         } finally {
             dispatch(backendActionFinished());
             start();
-            await call();
+            // await call();
         }
     }, []);
 
