@@ -86,7 +86,7 @@ export default function FoldersSection() {
                         </SettingsLayout>
                     ) : null}
 
-                    <div className="my-7">
+                    <div className="flex gap-4 my-7">
                         {canCreateFolder ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add folder`}
@@ -99,7 +99,6 @@ export default function FoldersSection() {
                         )}
                         {folders.length ? (
                             <Button
-                                className="ml-4"
                                 shape="outline"
                                 title={c('Title').t`Sort folders alphabetically`}
                                 loading={loading}
