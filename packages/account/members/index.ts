@@ -114,7 +114,8 @@ const slice = createSlice({
                 return;
             }
 
-            if (action.payload.Members) {
+            const isFreeMembers = original(state)?.value === freeMembers;
+            if (action.payload.Members && !isFreeMembers) {
                 state.value = updateCollection({
                     model: state.value,
                     events: action.payload.Members,
@@ -136,8 +137,6 @@ const slice = createSlice({
                     },
                 });
             } else {
-                const isFreeMembers = original(state)?.value === freeMembers;
-
                 if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
                     // Do not get any members update when user becomes unsubscribed.
                     state.value = freeMembers;

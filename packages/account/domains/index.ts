@@ -63,15 +63,14 @@ const slice = createSlice({
                 return;
             }
 
-            if (action.payload.Domains) {
+            const isFreeDomains = original(state)?.value === freeDomains;
+            if (action.payload.Domains && !isFreeDomains) {
                 state.value = updateCollection({
                     model: state.value,
                     events: action.payload.Domains,
                     itemKey: 'Domain',
                 });
             } else {
-                const isFreeDomains = original(state)?.value === freeDomains;
-
                 if (!isFreeDomains && action.payload.User && !canFetch(action.payload.User)) {
                     // Do not get any domain update when user becomes unsubscribed.
                     state.value = freeDomains;
