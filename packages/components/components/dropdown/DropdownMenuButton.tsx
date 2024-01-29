@@ -43,11 +43,6 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                 ])}
                 aria-busy={loading}
                 onClick={(e) => {
-                    if (disabled || loading || fakeDisabled) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return;
-                    }
                     rest.onClick?.(e);
                 }}
                 {...rest}
