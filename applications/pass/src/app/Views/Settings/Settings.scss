@@ -1,6 +1,9 @@
 @import '~@proton/styles/scss/lib/config';
 
 .pass-settings--tabs {
+	background-color: var(--background-norm);
+	z-index: 1;
+
 	nav {
 		border-color: var(--border-norm);
 	}
