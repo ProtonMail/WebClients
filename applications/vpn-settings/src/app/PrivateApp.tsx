@@ -60,11 +60,7 @@ const PrivateApp = ({ store, locales }: Props) => {
         <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ErrorBoundary big component={<StandardErrorPage big />}>
-                    <StandardPrivateApp
-                        hasPrivateMemberKeyGeneration
-                        hasReadableMemberKeyActivation
-                        hasMemberKeyMigration
-                    >
+                    <StandardPrivateApp>
                         <state.MainContainer />
                     </StandardPrivateApp>
                 </ErrorBoundary>
