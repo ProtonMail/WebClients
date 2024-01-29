@@ -10,7 +10,7 @@ export const OtherMailPreferencesSection = () => {
     return (
         <div className="mt-8">
             <SenderImages />
-            {isUnreadFaviconEnabled && !isElectronApp() && <UnreadFaviconCounter />}
+            {isUnreadFaviconEnabled && !isElectronApp && <UnreadFaviconCounter />}
         </div>
     );
 };
