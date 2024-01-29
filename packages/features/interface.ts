@@ -28,6 +28,7 @@ export enum FeatureCode {
      * Ideally we would rename it to that on the server as well (and when that happens
      * we can remove this comment :)).
      */
+    AccountSecurityDismissed2FACard = 'AccountSecurityDismissed2FACard',
     AliasPromotion = 'AliasPromotion',
     AlmostAllMail = 'AlmostAllMail',
     AlmostAllMailSpotlight = 'AlmostAllMailSpotlight',

@@ -2,6 +2,7 @@ import { ComponentPropsWithRef, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { NotificationCounter } from '@proton/atoms/NotificationCounter';
 import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { PopperPlacement, Tooltip } from '@proton/components/components';
@@ -15,6 +16,7 @@ export interface Props extends ComponentPropsWithRef<'button'> {
     /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
     notificationDotColor?: ThemeColor;
+    notificationDotCounter?: number;
 }
 
 const DrawerAppButton = ({
@@ -23,6 +25,7 @@ const DrawerAppButton = ({
     onClick,
     alt,
     notificationDotColor,
+    notificationDotCounter,
     tooltipPlacement = 'left',
     ...rest
 }: Props) => {
@@ -37,11 +40,22 @@ const DrawerAppButton = ({
             {...rest}
         >
             {buttonContent}
-            {notificationDotColor && (
+            {notificationDotColor && notificationDotCounter === undefined && (
                 <NotificationDot
                     className="top-0 right-0 notification-dot--top-right"
                     color={notificationDotColor}
                     alt={c('Action').t`Attention required`}
+                />
+            )}
+            {notificationDotColor && notificationDotCounter !== undefined && (
+                <NotificationCounter
+                    className="top-0 right-0 notification-counter--top-right"
+                    color={notificationDotColor}
+                    alt={
+                        // translator: this is in a small rounded icon placed on top of security center button, to show the number of items to pay attention to
+                        c('Action').t`Attention required`
+                    }
+                    count={notificationDotCounter}
                 />
             )}
             {alt ? <span className="sr-only">{alt}</span> : null}

@@ -32,7 +32,7 @@ export default function useQuickSettingsReminders() {
 export const QuickSettingsRemindersProvider = ({ children }: { children: ReactNode }) => {
     const { APP_NAME } = useConfig();
 
-    const recoveryNotification = useRecoveryNotification(false);
+    const recoveryNotification = useRecoveryNotification(false, true);
 
     const reminders: ThemeColor[] = [recoveryNotification?.color].filter(isTruthy);
 
