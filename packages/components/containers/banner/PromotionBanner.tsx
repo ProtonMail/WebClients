@@ -54,7 +54,7 @@ const PromotionBanner = ({
         >
             <div
                 className={clsx(
-                    'inline-flex mx-auto flex-nowrap items-center ',
+                    'inline-flex mx-auto flex-nowrap items-center flex-column md:flex-row gap-2 md:gap-0',
                     (() => {
                         if (contentCentered) {
                             return 'm-0.5 px-2';
@@ -80,7 +80,7 @@ const PromotionBanner = ({
                         {description && (
                             <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>{description}</div>
                         )}
-                        {cta && <div className="shrink-0 ml-2 max-w-1/2 text-right">{cta}</div>}
+                        {cta && <div className="shrink-0 ml-2 w-full md:w-auto md:max-w-1/3 text-right">{cta}</div>}
                     </>
                 )}
             </div>

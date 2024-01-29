@@ -220,6 +220,7 @@ const YourStorageSection = ({ app }: Props) => {
                                     color="norm"
                                     shape="ghost"
                                     className="text-bold"
+                                    fullWidth
                                 >
                                     {c('storage_split: info').t`Get more storage`}
                                 </ButtonLike>
