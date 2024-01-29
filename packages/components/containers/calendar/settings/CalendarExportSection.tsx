@@ -56,12 +56,18 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
 
             <div className="flex">
                 {selectedCalendar && (
-                    <span className="flex-1 mr-4">
+                    <span className="flex-1 mr-4 relative">
+                        <label
+                            id={`label-calendar-${selectedCalendar.ID}`}
+                            htmlFor={`calendar-${selectedCalendar.ID}`}
+                            className="sr-only"
+                        >{c('Action').t`Select a calendar to export`}</label>
                         <CalendarSelect
                             calendarID={selectedCalendar.ID}
                             options={calendarOptions}
                             onChange={handleSelectCalendar}
                             freeze={false}
+                            aria-describedby={`label-calendar-${selectedCalendar.ID}`}
                         />
                     </span>
                 )}
