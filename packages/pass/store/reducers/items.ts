@@ -254,7 +254,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: { pinned: false } } });
         }
 
-        if (inviteCreationSuccess.match(action) && action.payload.withVaultCreation) {
+        if (
+            inviteCreationSuccess.match(action) &&
+            action.payload.withVaultCreation &&
+            action.payload.item &&
+            action.payload.movedItem
+        ) {
             const { item, shareId, movedItem } = action.payload;
             return fullMerge(
                 { ...state, [item.shareId]: objectDelete(state[item.shareId], item.itemId) },
