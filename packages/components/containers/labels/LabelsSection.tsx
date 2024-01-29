@@ -83,7 +83,7 @@ function LabelsSection() {
                 <Loader />
             ) : (
                 <>
-                    <div className="mb-7">
+                    <div className="flex gap-4 mb-7">
                         {canCreateLabel ? (
                             <Button color="norm" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Add label`}
@@ -97,7 +97,6 @@ function LabelsSection() {
                         {localLabels.length ? (
                             <Button
                                 shape="outline"
-                                className="ml-4"
                                 title={c('Title').t`Sort labels alphabetically`}
                                 loading={loading}
                                 onClick={() => withLoading(handleSortLabel())}
