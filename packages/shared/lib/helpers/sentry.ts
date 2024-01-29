@@ -263,4 +263,39 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     }
 };
 
+type MailInitiative = 'drawer-security-center';
+export type SentryInitiative = MailInitiative;
+type CaptureExceptionArgs = Parameters<typeof captureException>;
+
+/**
+ * Capture error with an additional initiative tag
+ * @param initiative
+ * @param error
+ */
+export const traceInitiativeError = (initiative: MailInitiative, error: CaptureExceptionArgs[0]) => {
+    if (!isLocalhost(window.location.host)) {
+        captureException(error, {
+            tags: {
+                initiative,
+            },
+        });
+    }
+};
+
+/**
+ * Capture message with an additional initiative tag
+ * @param initiative
+ * @param error
+ */
+export const captureInitiativeMessage: (initiative: SentryInitiative, message: string) => void = (
+    initiative,
+    message
+) => {
+    captureMessage(message, {
+        tags: {
+            initiative,
+        },
+    });
+};
+
 export default main;

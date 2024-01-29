@@ -2,8 +2,13 @@ import log from 'loglevel';
 
 import type { Callback } from '@proton/pass/types';
 
+/** re-import the globals in case any pass code
+ * is loaded outside of our build pipeline */
+import '../../globals.d';
+
 log.setLevel(
     (() => {
+        if (typeof BUILD_TARGET === 'undefined' || typeof ENV === 'undefined') return 'SILENT';
         if (BUILD_TARGET !== 'web') return 'INFO';
         return ENV === 'development' ? 'INFO' : 'SILENT';
     })(),

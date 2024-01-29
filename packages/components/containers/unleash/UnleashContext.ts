@@ -15,6 +15,8 @@ enum CommonFeatureFlag {
     PassWebAppLink = 'PassWebAppLink',
     MailDesktopAppAccess = 'MailDesktopAppAccess',
     SplitStorage = 'SplitStorage',
+    DrawerSecurityCenter = 'DrawerSecurityCenter',
+    DrawerSecurityCenterDisplayPassAliases = 'DrawerSecurityCenterDisplayPassAliases',
 }
 
 enum AccountFlag {
