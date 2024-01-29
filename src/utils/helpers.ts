@@ -28,17 +28,6 @@ export const getBasePath = (): string => {
     }
 };
 
-export const isLogginOut = (host: string) => {
-    try {
-        log.info("isLogginOut", host);
-        const hostURl = new URL(host);
-        return hostURl.href.includes("/switch?flow=logout");
-    } catch (error) {
-        log.error("isLogginOut", error);
-        return false;
-    }
-};
-
 export const isHostCalendar = (host: string) => {
     try {
         const urls = getConfig(app.isPackaged).url;

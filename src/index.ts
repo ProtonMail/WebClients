@@ -7,14 +7,12 @@ import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import {
-    clearStorage,
     isAccoutLite,
     isHostAccount,
     isHostAllowed,
     isHostCalendar,
     isHostMail,
     isHostOAuth,
-    isLogginOut,
     isMac,
     isUpsellURL,
     isWindows,
@@ -133,13 +131,6 @@ app.on("web-contents-created", (_ev, contents) => {
 
     contents.on("will-navigate", (details) => {
         log.info("will-navigate");
-        if (isLogginOut(details.url)) {
-            log.info("User is login out, clearing application data");
-            // We add a small timeout to let the logout process finish
-            clearStorage(true, 500);
-            return details;
-        }
-
         if (!isHostAllowed(details.url, app.isPackaged) && !isHostOAuth(details.url)) {
             return preventDefault(details);
         }

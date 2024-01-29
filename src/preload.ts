@@ -6,5 +6,8 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         if (type === "updateNotification") {
             ipcRenderer.send("updateNotification", payload);
         }
+        if (type === "userLogout") {
+            ipcRenderer.send("userLogout");
+        }
     },
 });
