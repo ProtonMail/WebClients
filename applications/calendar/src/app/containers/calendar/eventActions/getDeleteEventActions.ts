@@ -6,6 +6,7 @@ import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
@@ -110,6 +111,7 @@ interface Arguments {
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
+    getCalendarEventRaw: GetCalendarEventRaw;
     inviteActions: InviteActions;
     sendIcs: SendIcs;
 }
@@ -125,6 +127,7 @@ const getDeleteEventActions = async ({
     getCalendarBootstrap,
     getAddressKeys,
     getCalendarKeys,
+    getCalendarEventRaw,
     inviteActions,
     sendIcs,
 }: Arguments): Promise<{
@@ -244,6 +247,7 @@ const getDeleteEventActions = async ({
         inviteActions: updatedInviteActions,
         selfAttendeeToken,
         sendIcs,
+        getCalendarEventRaw,
     });
     const successText = getRecurringEventDeletedText(deleteType, deleteInviteActions);
     return {

@@ -1387,6 +1387,7 @@ const InteractiveCalendarView = ({
                 getCalendarBootstrap: readCalendarBootstrap,
                 getAddressKeys,
                 getCalendarKeys,
+                getCalendarEventRaw,
                 inviteActions,
                 sendIcs: handleSendIcs,
             });
