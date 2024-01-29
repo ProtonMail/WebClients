@@ -1,0 +1,17 @@
+@import '~@proton/styles/scss/lib';
+
+$size-counter: rem(16) !default;
+
+.notification-counter {
+	inline-size: $size-counter;
+	block-size: $size-counter;
+
+	&-number {
+		line-height: $size-counter;
+	}
+
+	&--top-right {
+		margin-inline-end: -#{em(3)}; // design request
+		margin-block-start: -#{em(3)};
+	}
+}
