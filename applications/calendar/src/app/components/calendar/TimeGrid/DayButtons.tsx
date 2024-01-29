@@ -24,6 +24,8 @@ const DayButtons = ({
     hasBoldLabels = false,
 }: Props) => {
     const result = days.map((day) => {
+        const eventFullDetail = formatUTC(day, 'PPPP', { locale: dateLocale });
+
         return (
             <button
                 className="flex-1 justify-center calendar-grid-heading flex items-center p-2 text-lg"
@@ -32,7 +34,8 @@ const DayButtons = ({
                 aria-current={isSameDay(day, now) ? 'date' : undefined}
                 aria-pressed={isSameDay(day, date) ? true : undefined}
                 onClick={() => onClickDate?.(day)}
-                title={formatUTC(day, 'PPPP', { locale: dateLocale })}
+                title={eventFullDetail}
+                aria-label={eventFullDetail}
             >
                 <span className="calendar-grid-heading-day color-weak">
                     <span className="calendar-grid-heading-day-fullname">{weekdays[day.getUTCDay()]}</span>
