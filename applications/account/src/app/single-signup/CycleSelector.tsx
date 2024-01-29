@@ -20,6 +20,13 @@ export const getBilledAtText = (price: string): string | null => {
     return c('Info').t`Billed at ${price}`;
 };
 
+export const getBilledAtPerMonthText = (price: string, cycle: CYCLE): string | null => {
+    if (cycle === CYCLE.MONTHLY) {
+        return c('Info').t`per month`;
+    }
+    return c('Info').t`per month, billed at ${price}`;
+};
+
 export const getBilledText = (cycle: CYCLE): string | null => {
     switch (cycle) {
         case CYCLE.MONTHLY:
@@ -71,7 +78,10 @@ const CycleItemView = ({
     bg?: boolean;
 }) => {
     return (
-        <div className="lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0" style={{ '--max-w-custom': '30em' }}>
+        <div
+            className="lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0"
+            style={{ '--max-w-custom': '30em' }}
+        >
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div
                 className={clsx(
@@ -191,13 +201,10 @@ const CycleSelector = ({
                         highlightPrice={cycleItem === upsellCycle}
                         selected={cycle === cycleItem}
                         text={getShortBillingText(cycleItem)}
-                        billedText={
-                            cycleMapping.couponDiscount
-                                ? getBilledAtText(
-                                      getSimplePriceString(currency, currentCheckout.withDiscountPerCycle, '')
-                                  )
-                                : getBilledText(cycleItem)
-                        }
+                        billedText={getBilledAtPerMonthText(
+                            getSimplePriceString(currency, currentCheckout.withDiscountPerCycle, ''),
+                            cycleItem
+                        )}
                         key={cycleItem}
                         currency={currency}
                         totalPerMonth={currentCheckout.withDiscountPerMonth}
