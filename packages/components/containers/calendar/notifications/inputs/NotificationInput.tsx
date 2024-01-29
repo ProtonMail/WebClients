@@ -88,9 +88,7 @@ const NotificationInput = ({
                         fullWidth ? 'md:my-0 md:mr-2' : 'lg:my-0 lg:mr-2',
                         !(isAllDay && at) && `w-full ${fullWidth ? 'md:w-custom' : 'lg:w-custom'}`
                     )}
-                    style={
-                        !(isAllDay && at) ? { [`--${fullWidth ? 'md' : 'lg'}-w-custom`]: '10em' } : undefined
-                    }
+                    style={!(isAllDay && at) ? { [`--${fullWidth ? 'md' : 'lg'}-w-custom`]: '10em' } : undefined}
                 >
                     <SelectTwo
                         id={id}
@@ -114,7 +112,7 @@ const NotificationInput = ({
                 {hasValueInput && (
                     <span className="shrink-0 mr-2 w-custom" style={{ '--w-custom': '5em' }}>
                         <IntegerInput
-                            id={NOTIFICATION_INPUT_ID}
+                            id={`${NOTIFICATION_INPUT_ID}-${id}`}
                             data-testid="notification-time-input"
                             step={1}
                             min={0}
@@ -133,12 +131,14 @@ const NotificationInput = ({
                                 }
                             }}
                             title={chooseANumberText}
+                            aria-describedby={`${id} ${NOTIFICATION_INPUT_ID}-${id} time-before-${id} time-before-at-${id} time-before-hour-${id}`}
                             {...errorProps}
                         />
                     </span>
                 )}
                 <SelectTwo
                     data-testid="notification-time-dropdown"
+                    id={`time-before-${id}`}
                     className="flex-1"
                     size={{ width: DropdownSizeUnit.Dynamic }}
                     value={optionsValue}
@@ -155,6 +155,8 @@ const NotificationInput = ({
                         });
                     }}
                     title={whenToSendText}
+                    aria-describedby={`${id} ${NOTIFICATION_INPUT_ID}-${id} time-before-${id} time-before-at-${id} time-before-hour-${id}`}
+                    //aria-label="Select un truc pour voir"
                     {...errorProps}
                 >
                     {textOptions.map(({ value, text }) => (
@@ -171,16 +173,21 @@ const NotificationInput = ({
                                 fullWidth ? 'md:mt-0' : 'lg:mt-0'
                             )}
                         >
-                            <span className={clsx('shrink-0 ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}>
+                            <span
+                                id={`time-before-at-${id}`}
+                                className={clsx('shrink-0 ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}
+                            >
                                 {atText}
                             </span>
                             <span className="w-custom" style={{ '--w-custom': '8em' }}>
                                 <TimeInput
+                                    id={`time-before-hour-${id}`}
                                     data-testid="notification-time-at"
                                     value={at}
                                     disabled={disabled}
                                     onChange={(at) => onEdit({ ...notification, at })}
                                     title={timeToSendText}
+                                    aria-describedby={`${id} ${NOTIFICATION_INPUT_ID}-${id} time-before-${id} time-before-at-${id} time-before-hour-${id}`}
                                     {...errorProps}
                                 />
                             </span>
