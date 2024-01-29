@@ -19,13 +19,15 @@ function* createInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
 
         if (payload.withVaultCreation) {
             const { name, description, icon, color, item, ...inviteCreate } = payload;
-            const itemToMove: Maybe<ItemRevision> = yield select(selectItemByShareIdAndId(item.shareId, item.itemId));
-            if (itemToMove === undefined) throw new Error();
-
             const vaultContent = { name, description, display: { icon, color } };
-
             const createdShare: Share<ShareType.Vault> = yield createVault({ content: vaultContent });
-            const movedItem: ItemRevision = yield moveItem(itemToMove, item.shareId, createdShare.shareId);
+
+            const itemToMove: Maybe<ItemRevision> = item
+                ? yield select(selectItemByShareIdAndId(item.shareId, item.itemId))
+                : undefined;
+
+            const movedItem: Maybe<ItemRevision> =
+                itemToMove && item ? yield moveItem(itemToMove, item.shareId, createdShare.shareId) : undefined;
 
             yield invitedPublicKey
                 ? createInvite({ ...inviteCreate, shareId: createdShare.shareId, invitedPublicKey })
