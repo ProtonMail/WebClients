@@ -4,6 +4,7 @@ import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegra
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
@@ -38,6 +39,7 @@ interface DeleteRecurringArguments {
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
     sendIcs: SendIcs;
+    getCalendarEventRaw: GetCalendarEventRaw;
 }
 
 export const getDeleteRecurringEventActions = async ({
@@ -56,6 +58,7 @@ export const getDeleteRecurringEventActions = async ({
     inviteActions,
     selfAttendeeToken,
     sendIcs,
+    getCalendarEventRaw,
 }: DeleteRecurringArguments): Promise<{
     multiSyncActions: SyncEventActionOperations[];
     inviteActions: InviteActions;
@@ -168,41 +171,41 @@ export const getDeleteRecurringEventActions = async ({
 
     if (type === RECURRING_TYPES.ALL) {
         if (!recurrences.length) {
-            throw new Error('Can not delete all events without any recurrences');
+            throw new Error('Cannot delete all events without any recurrences');
         }
+
         const updatePartstatOperations: UpdatePartstatOperation[] = [];
-        if (isDeclineInvitation || isCancelInvitation) {
+        const resetPartstatOperations: UpdatePartstatOperation[] = [];
+        const dropPersonalPartOperations: UpdatePersonalPartOperation[] = [];
+
+        if (isDeclineInvitation && originalVeventComponent) {
             const { inviteActions: cleanInviteActions, timestamp } = await sendIcs({
                 inviteActions,
                 vevent: originalVeventComponent,
-                cancelVevent: originalVeventComponent,
             });
             updatedInviteActions = cleanInviteActions;
-            if (isDeclineInvitation && originalVeventComponent) {
-                // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
-                // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
-                const updatePartstatOperation = getUpdatePartstatOperation({
-                    eventComponent: originalVeventComponent,
-                    event: originalEvent,
-                    timestamp,
-                    inviteActions: updatedInviteActions,
-                    silence: true,
-                });
-                if (updatePartstatOperation) {
-                    updatePartstatOperations.push(updatePartstatOperation);
-                }
+            // even though we are going to delete the event, we need to update the partstat first to notify the organizer for
+            // Proton-Proton invites. Hopefully a better API will allow us to do it differently in the future
+            const updatePartstatOperation = getUpdatePartstatOperation({
+                eventComponent: originalVeventComponent,
+                event: originalEvent,
+                timestamp,
+                inviteActions: updatedInviteActions,
+                silence: true,
+            });
+            if (updatePartstatOperation) {
+                updatePartstatOperations.push(updatePartstatOperation);
             }
         }
-        // For invitations, we do not delete single edits (unless explicitly told so), but reset partstat if necessary
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         const eventsToDelete =
+            // For an attendee deleting a recurring invitation, we do not delete single edits (unless explicitly told so),
+            // but reset partstat if necessary
             isAttendee && !deleteSingleEdits
                 ? [originalEvent].concat(singleEditRecurrences.filter((event) => getIsEventCancelled(event)))
                 : recurrences;
-        const deleteOperations = eventsToDelete.map(unary(getDeleteSyncOperation));
-        const resetPartstatOperations: UpdatePartstatOperation[] = [];
-        const dropPersonalPartOperations: UpdatePersonalPartOperation[] = [];
-        if (selfAttendeeToken) {
+
+        if (isAttendee && selfAttendeeToken) {
             const { updatePartstatActions, updatePersonalPartActions } = getResetPartstatActions(
                 singleEditRecurrences,
                 selfAttendeeToken,
@@ -230,6 +233,25 @@ export const getDeleteRecurringEventActions = async ({
                 );
             }
         }
+
+        if (isCancelInvitation && originalVeventComponent) {
+            const veventsToDelete = await Promise.all([
+                originalVeventComponent,
+                ...singleEditRecurrences.map((event) =>
+                    getCalendarEventRaw(event).then(({ veventComponent }) => veventComponent)
+                ),
+            ]);
+            await Promise.all(
+                veventsToDelete.map(async (cancelVevent) =>
+                    sendIcs({
+                        inviteActions,
+                        cancelVevent,
+                    })
+                )
+            );
+        }
+
+        const deleteOperations = eventsToDelete.map(unary(getDeleteSyncOperation));
 
         return {
             multiSyncActions: [
