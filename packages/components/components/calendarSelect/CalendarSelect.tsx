@@ -29,7 +29,7 @@ const CalendarSelect = ({ calendarID, options, onChange, displayColor = true, fr
     }
 
     return (
-        <SelectTwo value={calendarID} onChange={onChange} {...rest}>
+        <SelectTwo id={`calendar-${calendarID}`} value={calendarID} onChange={onChange} {...rest}>
             {options.map(({ id, name, color }) => (
                 <Option key={id} value={id} title={name}>
                     <div className="flex flex-nowrap items-center">
