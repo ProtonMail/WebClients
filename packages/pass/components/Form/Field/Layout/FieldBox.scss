@@ -16,7 +16,8 @@
 				input:focus-visible,
 				textarea:focus-visible,
 				button[aria-expanded='false']:focus,
-				button[aria-expanded='true']
+				button[aria-expanded='true'],
+				[contenteditable='true']:focus
 			) {
 			&::before {
 				border-color: var(--interaction-norm);
