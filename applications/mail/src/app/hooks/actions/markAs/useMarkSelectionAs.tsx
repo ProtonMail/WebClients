@@ -135,7 +135,7 @@ export const useMarkSelectionAs = () => {
                 } finally {
                     dispatch(backendActionFinished());
                     start();
-                    await call();
+                    // await call();
                 }
                 return tokens;
             };

@@ -15,7 +15,6 @@ import {
     Icon,
     Tooltip,
     useApi,
-    useEventManager,
     useFeature,
     useFolders,
     useModalState,
@@ -110,7 +109,6 @@ const HeaderMoreDropdown = ({
     const star = useStar();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
-    const { call } = useEventManager();
     const closeDropdown = useRef<() => void>();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
@@ -154,7 +152,6 @@ const HeaderMoreDropdown = ({
             labelID,
             status: MARK_AS_STATUS.UNREAD,
         });
-        await call();
     };
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
