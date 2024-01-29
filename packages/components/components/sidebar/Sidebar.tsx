@@ -101,7 +101,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     version?: ReactNode;
     hasAppLinks?: boolean;
     appsDropdown: ReactNode;
-    contactsButton?: ReactNode;
     /**
      * Extra content that will be rendered below the storage meter and version.
      */
@@ -129,7 +128,6 @@ const Sidebar = ({
     primary,
     children,
     version,
-    contactsButton,
     preFooter,
     postFooter,
     growContent = true,
@@ -202,7 +200,6 @@ const Sidebar = ({
                     )}
                     tabIndex={-1}
                 >
-                    {contactsButton}
                     {children}
                 </div>
                 {app !== APPS.PROTONVPN_SETTINGS && APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
