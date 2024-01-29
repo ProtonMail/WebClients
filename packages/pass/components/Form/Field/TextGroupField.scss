@@ -1,0 +1,30 @@
+li.pass-field-text-group--item {
+	background-color: var(--interaction-norm-minor-1);
+
+	input {
+		min-inline-size: unset;
+		inline-size: auto;
+	}
+
+	button {
+		color: var(--interaction-weak-contrast);
+		border-color: transparent;
+
+		span {
+			user-select: text;
+
+			&:focus {
+				outline: none;
+				color: var(--interaction-weak-contrast);
+			}
+		}
+	}
+	&#{'\\:error'} {
+		background-color: transparent;
+		border-color: var(--signal-danger);
+
+		button {
+			color: var(--signal-danger);
+		}
+	}
+}
