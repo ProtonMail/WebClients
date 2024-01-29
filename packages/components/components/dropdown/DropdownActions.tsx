@@ -124,6 +124,7 @@ const DropdownActions = ({
                     {restList.map(({ text, tooltip, disabled, ...restProps }, index) => {
                         // Fake disabled is used to have enabled tooltipe while the buttom is supposed to be disabled
                         const fakeDisabled = !!(disabled && tooltip);
+                        const rest = fakeDisabled ? {} : restProps;
 
                         return (
                             <DropdownMenuButton
@@ -131,7 +132,7 @@ const DropdownActions = ({
                                 key={index}
                                 fakeDisabled={fakeDisabled}
                                 disabled={fakeDisabled ? false : disabled}
-                                {...restProps}
+                                {...rest}
                             >
                                 {wrapTooltip(text, tooltip, fakeDisabled)}
                             </DropdownMenuButton>
