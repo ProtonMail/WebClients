@@ -24,6 +24,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession, persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
+    APPS,
     CLIENT_TYPES,
     COUPON_CODES,
     ENCRYPTION_CONFIGS,
@@ -32,6 +33,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
@@ -77,6 +79,13 @@ export const handleDone = ({
         throw new Error('Missing auth response');
     }
     const { authResponse, user, keyPassword } = setupData;
+
+    // Users that creates an account after a logout don't have appIntent, foring forcing it here
+    if (isElectronApp) {
+        appIntent = {
+            app: APPS.PROTONMAIL,
+        };
+    }
 
     return {
         cache,
