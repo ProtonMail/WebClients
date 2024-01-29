@@ -10,7 +10,7 @@ import {
     FeatureCode,
     Icon,
     Sidebar,
-    SidebarContactItem,
+    SidebarDrawerItems,
     SidebarList,
     SidebarListItemHeaderLink,
     SidebarNav,
@@ -20,7 +20,6 @@ import {
     Spotlight,
     Tooltip,
     useApi,
-    useDrawer,
     useEventManager,
     useFeature,
     useModalState,
@@ -42,7 +41,6 @@ import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/cal
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS } from '@proton/shared/lib/constants';
-import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
@@ -78,7 +76,6 @@ const CalendarSidebar = ({
     const api = useApi();
     const [user] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { toggleDrawerApp } = useDrawer();
 
     const [loadingVisibility, withLoadingVisibility] = useLoadingByKey();
     const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
@@ -327,16 +324,6 @@ const CalendarSidebar = ({
             onToggleExpand={onToggleExpand}
             primary={primaryAction}
             version={<CalendarSidebarVersion />}
-            contactsButton={
-                displayContactsInHeader && (
-                    <SidebarContactItem
-                        onClick={() => {
-                            onToggleExpand();
-                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
-                        }}
-                    />
-                )
-            }
         >
             {renderCalendarModal && (
                 <CalendarModal
@@ -360,6 +347,7 @@ const CalendarSidebar = ({
                 <div className="shrink-0">{miniCalendar}</div>
                 {myCalendarsList}
                 {otherCalendarsList}
+                {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={onToggleExpand} />}
             </SidebarNav>
         </Sidebar>
     );
