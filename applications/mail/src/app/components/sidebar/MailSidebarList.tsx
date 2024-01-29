@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -40,11 +40,12 @@ export type UnreadCounts = { [labelID: string]: number | undefined };
 
 interface Props {
     labelID: string;
+    postItems: ReactNode;
 }
 
 const formatFolderID = (folderID: string): string => `folder_expanded_state_${folderID}`;
 
-const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
+const MailSidebarList = ({ labelID: currentLabelID, postItems }: Props) => {
     const location = useLocation();
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
@@ -319,6 +320,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                             updateFocusItem={updateFocusItem}
                         />
                     )}
+                    {postItems}
                 </SidebarList>
             </div>
         </LabelActionsContextProvider>
