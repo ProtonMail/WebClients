@@ -2,6 +2,7 @@ import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -57,7 +58,11 @@ export default function useShare() {
         return getShareWithKey(abortSignal, shareId);
     };
 
-    const getShareKeys = async (abortSignal: AbortSignal, shareId: string): Promise<ShareKeys> => {
+    const getShareKeys = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkPrivateKey?: PrivateKeyReference
+    ): Promise<ShareKeys> => {
         const keys = sharesKeys.get(shareId);
         if (keys) {
             return keys;
@@ -65,18 +70,47 @@ export default function useShare() {
 
         const share = await getShareWithKey(abortSignal, shareId);
 
-        const { decryptedPassphrase, sessionKey } = await driveCrypto.decryptSharePassphrase(share).catch((e) =>
-            Promise.reject(
-                new EnrichedError('Failed to decrypt share passphrase', {
+        /**
+         * Decrypt the share with linkPrivateKey (NodeKey) if provided and fallback if it failed
+         * Fallback will use user's privateKey (retrieved in driveCrypto.decryptSharePassphrase function)
+         */
+        const decryptSharePassphrase = async (
+            fallback: boolean = false
+        ): ReturnType<typeof driveCrypto.decryptSharePassphrase> => {
+            // TODO: Change the logic when we will migrate to encryption with only link's privateKey
+            // If the share passphrase was encrypted with multiple KeyPacket,
+            // that mean it was encrypted with link's privateKey and user's privateKey
+            const haveMultipleEncryptionKey = await CryptoProxy.getMessageInfo({
+                armoredMessage: share.passphrase,
+            }).then((messageInfo) => messageInfo.encryptionKeyIDs.length > 1);
+            const decryptWithLinkPrivateKey = !!linkPrivateKey && !fallback && haveMultipleEncryptionKey;
+            try {
+                return await driveCrypto.decryptSharePassphrase(
+                    share,
+                    decryptWithLinkPrivateKey ? [linkPrivateKey] : undefined
+                );
+            } catch (e) {
+                if (decryptWithLinkPrivateKey) {
+                    sendErrorReport(
+                        new EnrichedError('Failed to decrypt share passphrase with link privateKey', {
+                            tags: { keyId: linkPrivateKey.getKeyID(), shareId },
+                            extra: { e },
+                        })
+                    );
+                    return decryptSharePassphrase(true);
+                }
+                throw new EnrichedError('Failed to decrypt share passphrase', {
                     tags: {
                         shareId,
                     },
                     extra: {
                         e,
                     },
-                })
-            )
-        );
+                });
+            }
+        };
+
+        const { decryptedPassphrase, sessionKey } = await decryptSharePassphrase();
         const privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: share.key,
             passphrase: decryptedPassphrase,
@@ -110,8 +144,12 @@ export default function useShare() {
     /**
      * getShareSessionKey returns session key used for sharing links.
      */
-    const getShareSessionKey = async (abortSignal: AbortSignal, shareId: string): Promise<SessionKey> => {
-        const keys = await getShareKeys(abortSignal, shareId);
+    const getShareSessionKey = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkPrivateKey?: PrivateKeyReference
+    ): Promise<SessionKey> => {
+        const keys = await getShareKeys(abortSignal, shareId, linkPrivateKey);
         if (!keys.sessionKey) {
             // This should not happen. All shares have session key, only
             // publicly shared link will not have it, but it is bug if
