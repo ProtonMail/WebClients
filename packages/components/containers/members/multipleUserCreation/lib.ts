@@ -7,7 +7,6 @@ import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 
-import { UserManagementMode } from '../types';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { UserTemplate } from './types';
@@ -18,14 +17,12 @@ export const createUser = async ({
     getAddresses,
     organizationKey,
     keyTransparencyVerify,
-    mode,
 }: {
     user: UserTemplate;
     api: Api;
     getAddresses: GetAddresses;
     organizationKey: PrivateKeyReference | undefined;
     keyTransparencyVerify: KeyTransparencyVerify;
-    mode: UserManagementMode;
 }) => {
     const { emailAddresses, password, displayName, totalStorage, vpnAccess, privateSubUser } = user;
 
@@ -113,8 +110,8 @@ export const createUser = async ({
         config: createMember({
             Name: displayName,
             Private: +privateSubUser,
-            MaxSpace: mode === UserManagementMode.VPN_B2B ? 0 : Math.round(totalStorage),
-            MaxVPN: vpnAccess || mode === UserManagementMode.VPN_B2B ? VPN_CONNECTIONS : 0,
+            MaxSpace: Math.round(totalStorage),
+            MaxVPN: vpnAccess ? VPN_CONNECTIONS : 0,
         }),
     });
 
