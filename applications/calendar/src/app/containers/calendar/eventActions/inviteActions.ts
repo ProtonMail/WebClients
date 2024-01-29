@@ -467,7 +467,7 @@ export const getSendIcsAction =
             }
         }
 
-        // Organizer cancelation
+        // Organizer cancellation
         if (type === CANCEL_INVITATION) {
             try {
                 if (!sharedEventID) {
