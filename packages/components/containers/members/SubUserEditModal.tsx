@@ -19,8 +19,6 @@ import { Member } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import {
-    Alert,
-    ConfirmModal,
     Icon,
     InputFieldTwo,
     ModalTwo as Modal,
@@ -28,11 +26,13 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
+    Prompt,
     Toggle,
     Tooltip,
     useFormErrors,
+    useModalState,
 } from '../../components';
-import { useApi, useEventManager, useModals, useNotifications, useOrganization } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useOrganization } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import { UserManagementMode } from './types';
@@ -46,8 +46,8 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
     const [organization] = useOrganization();
     const storageSizeUnit = GIGA;
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const { validator, onFormSubmit } = useFormErrors();
+    const [confirmDemotionModalProps, setConfirmDemotionModal, renderConfirmDemotion] = useModalState();
 
     const initialModel = useMemo(
         () => ({
@@ -78,7 +78,12 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
         updateModel({ ...model, ...partial });
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async ({ role }: { role: MEMBER_ROLE | null }) => {
+        if (role === null && canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
+            setConfirmDemotionModal(true);
+            return;
+        }
+
         let hasChanges = false;
         if (initialModel.name !== model.name) {
             await api(updateName(member.ID, model.name));
@@ -105,138 +110,151 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
             hasChanges = true;
         }
 
-        if (canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
-            try {
-                await new Promise((resolve, reject) => {
-                    createModal(
-                        <ConfirmModal
-                            onClose={reject}
-                            onConfirm={() => resolve(undefined)}
-                            title={c('Title').t`Change role`}
-                        >
-                            <Alert className="mb-4">
-                                {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
-                                    ? c('Info')
-                                          .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
-                                    : c('Info')
-                                          .t`Are you sure you want to remove administrative privileges from this user?`}
-                            </Alert>
-                        </ConfirmModal>
-                    );
-                });
-
-                await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-                hasChanges = true;
-            } catch (e) {
-                /* do nothing, user declined confirm-modal to revoke admin rights from member */
-            }
+        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
+            hasChanges = true;
         }
 
-        await call();
-        rest.onClose?.();
         if (hasChanges) {
+            await call();
             createNotification({ text: c('Success').t`User updated` });
         }
+        rest.onClose?.();
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
 
     return (
-        <Modal
-            as="form"
-            size="large"
-            {...rest}
-            onSubmit={(event: FormEvent) => {
-                event.preventDefault();
-                event.stopPropagation();
-                if (!onFormSubmit()) {
-                    return;
-                }
-                withLoading(handleSubmit());
-            }}
-            onClose={handleClose}
-        >
-            <ModalHeader title={c('Title').t`Edit user`} />
-            <ModalContent>
-                <InputFieldTwo
-                    id="name"
-                    value={model.name}
-                    error={validator([requiredValidator(model.name)])}
-                    onValue={(value: string) => updatePartialModel({ name: value })}
-                    label={c('Label').t`Name`}
-                    placeholder={NAME_PLACEHOLDER}
-                />
-                {isDefault && (
-                    <MemberStorageSelector
-                        className="mb-5"
-                        value={model.storage}
-                        sizeUnit={storageSizeUnit}
-                        totalStorage={getTotalStorage(member, organization)}
-                        range={getStorageRange(member, organization)}
-                        onChange={(storage) => updatePartialModel({ storage })}
+        <>
+            {renderConfirmDemotion && (
+                <Prompt
+                    title={c('Title').t`Change role`}
+                    buttons={[
+                        <Button
+                            color="danger"
+                            loading={submitting}
+                            onClick={() => {
+                                confirmDemotionModalProps.onClose();
+                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER }));
+                            }}
+                        >{c('Action').t`Remove`}</Button>,
+                        <Button
+                            onClick={() => {
+                                confirmDemotionModalProps.onClose();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    {...confirmDemotionModalProps}
+                >
+                    {member.Subscriber === MEMBER_SUBSCRIBER.PAYER
+                        ? c('Info')
+                              .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
+                        : c('Info').t`Are you sure you want to remove administrative privileges from this user?`}
+                </Prompt>
+            )}
+            <Modal
+                as="form"
+                size="large"
+                {...rest}
+                onSubmit={(event: FormEvent) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (!onFormSubmit()) {
+                        return;
+                    }
+                    withLoading(handleSubmit({ role: null }));
+                }}
+                onClose={handleClose}
+            >
+                <ModalHeader title={c('Title').t`Edit user`} />
+                <ModalContent>
+                    <InputFieldTwo
+                        id="name"
+                        value={model.name}
+                        error={validator([requiredValidator(model.name)])}
+                        onValue={(value: string) => updatePartialModel({ name: value })}
+                        label={c('Label').t`Name`}
+                        placeholder={NAME_PLACEHOLDER}
                     />
-                )}
+                    {isDefault && (
+                        <MemberStorageSelector
+                            className="mb-5"
+                            value={model.storage}
+                            sizeUnit={storageSizeUnit}
+                            totalStorage={getTotalStorage(member, organization)}
+                            range={getStorageRange(member, organization)}
+                            onChange={(storage) => updatePartialModel({ storage })}
+                        />
+                    )}
 
-                {hasVPN && isDefault ? (
-                    <div className="flex mb-5">
-                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
-                            {c('Label for new member').t`VPN connections`}
-                        </label>
-                        <Toggle
-                            id="vpn-toggle"
-                            checked={model.vpn}
-                            onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
-                        />
-                    </div>
-                ) : null}
-
-                {canMakePrivate && isDefault && (
-                    <div className="flex mb-6">
-                        <label className="text-semibold mr-4" htmlFor="private-toggle">
-                            {c('Label for new member').t`Private`}
-                        </label>
-                        <Toggle
-                            id="private-toggle"
-                            checked={model.private}
-                            onChange={({ target }) => updatePartialModel({ private: target.checked })}
-                        />
-                    </div>
-                )}
-                {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex items-center mb-6">
-                        <label className={clsx(['text-semibold', isVpnB2B ? 'mr-1' : 'mr-4'])} htmlFor="admin-toggle">
-                            {c('Label for new member').t`Admin`}
-                        </label>
-                        {isVpnB2B && (
-                            <Tooltip title={vpnB2bAdminTooltipTitle}>
-                                <Icon name="info-circle" className="mr-2 color-primary" />
-                            </Tooltip>
-                        )}
-                        <Toggle
-                            id="admin-toggle"
-                            checked={model.admin}
-                            onChange={({ target }) => updatePartialModel({ admin: target.checked })}
-                        />
-                    </div>
-                )}
-                {isDefault && (
-                    <div>
-                        <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
-                        <div>
-                            <Addresses organization={organization} memberID={member.ID} />
+                    {hasVPN && isDefault ? (
+                        <div className="flex mb-5">
+                            <label className="text-semibold mr-4" htmlFor="vpn-toggle">
+                                {c('Label for new member').t`VPN connections`}
+                            </label>
+                            <Toggle
+                                id="vpn-toggle"
+                                checked={model.vpn}
+                                onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
+                            />
                         </div>
-                    </div>
-                )}
-            </ModalContent>
-            <ModalFooter>
-                <Button className={clsx([isVpnB2B && 'visibility-hidden'])} onClick={handleClose} disabled={submitting}>
-                    {c('Action').t`Cancel`}
-                </Button>
-                <Button loading={submitting} type="submit" color="norm">
-                    {c('Action').t`Save`}
-                </Button>
-            </ModalFooter>
-        </Modal>
+                    ) : null}
+
+                    {canMakePrivate && isDefault && (
+                        <div className="flex mb-6">
+                            <label className="text-semibold mr-4" htmlFor="private-toggle">
+                                {c('Label for new member').t`Private`}
+                            </label>
+                            <Toggle
+                                id="private-toggle"
+                                checked={model.private}
+                                onChange={({ target }) => updatePartialModel({ private: target.checked })}
+                            />
+                        </div>
+                    )}
+                    {(canMakeAdmin || canRevokeAdmin) && (
+                        <div className="flex items-center mb-6">
+                            <label
+                                className={clsx(['text-semibold', isVpnB2B ? 'mr-1' : 'mr-4'])}
+                                htmlFor="admin-toggle"
+                            >
+                                {c('Label for new member').t`Admin`}
+                            </label>
+                            {isVpnB2B && (
+                                <Tooltip title={vpnB2bAdminTooltipTitle}>
+                                    <Icon name="info-circle" className="mr-2 color-primary" />
+                                </Tooltip>
+                            )}
+                            <Toggle
+                                id="admin-toggle"
+                                checked={model.admin}
+                                onChange={({ target }) => updatePartialModel({ admin: target.checked })}
+                            />
+                        </div>
+                    )}
+                    {isDefault && (
+                        <div>
+                            <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
+                            <div>
+                                <Addresses organization={organization} memberID={member.ID} />
+                            </div>
+                        </div>
+                    )}
+                </ModalContent>
+                <ModalFooter>
+                    <Button
+                        className={clsx([isVpnB2B && 'visibility-hidden'])}
+                        onClick={handleClose}
+                        disabled={submitting}
+                    >
+                        {c('Action').t`Cancel`}
+                    </Button>
+                    <Button loading={submitting} type="submit" color="norm">
+                        {c('Action').t`Save`}
+                    </Button>
+                </ModalFooter>
+            </Modal>
+        </>
     );
 };
 
