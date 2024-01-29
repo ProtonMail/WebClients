@@ -37,12 +37,44 @@ const queue = createQueue();
 
 export const useModelThunkDispatcher = (store: any) => {
     useEffect(() => {
-        const consume = () => {
+        const dispatchAll = () => {
             queue.consume((thunk: any) => store.dispatch(thunk()));
         };
+
+        let queued = false;
+        let cancel: () => void;
+        const consume = () => {
+            if (queued) {
+                return;
+            }
+
+            queued = true;
+            // Not supported on safari
+            if (!!globalThis.requestIdleCallback) {
+                const handle = requestIdleCallback(
+                    () => {
+                        queued = false;
+                        dispatchAll();
+                    },
+                    { timeout: 100 }
+                );
+                cancel = () => {
+                    cancelIdleCallback(handle);
+                };
+            } else {
+                const handle = setTimeout(() => {
+                    queued = false;
+                    dispatchAll();
+                }, 10);
+                cancel = () => {
+                    clearTimeout(handle);
+                };
+            }
+        };
+
         const originalEnqueue = queue.enqueue;
         queue.enqueue = (newThunk: any) => {
-            let result = originalEnqueue(newThunk);
+            const result = originalEnqueue(newThunk);
             consume();
             return result;
         };
@@ -50,6 +82,7 @@ export const useModelThunkDispatcher = (store: any) => {
         return () => {
             queue.enqueue = originalEnqueue;
             queue.resetId();
+            cancel();
         };
     }, [store]);
 };
