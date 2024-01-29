@@ -1,10 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { AppsDropdown, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
+import { AppsDropdown, Sidebar, SidebarDrawerItems, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
-import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
@@ -24,7 +23,6 @@ interface Props {
 const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }: Props) => {
     const { activeShareId } = useActiveShare();
     const { getDefaultShare } = useDefaultShare();
-    const { toggleDrawerApp } = useDrawer();
     const debug = useDebug();
 
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
@@ -52,22 +50,13 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
             onToggleExpand={toggleHeaderExpanded}
             primary={primary}
             version={<DriveSidebarFooter />}
-            contactsButton={
-                displayContactsInHeader && (
-                    <SidebarContactItem
-                        onClick={() => {
-                            toggleHeaderExpanded();
-                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
-                        }}
-                    />
-                )
-            }
             growContent={false}
             postFooter={<SidebarStorageUpsell app={APPS.PROTONDRIVE} />}
         >
             <SidebarNav>
                 <div>
                     <DriveSidebarList shareId={activeShareId} userShares={shares} />
+                    {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={toggleHeaderExpanded} />}
                 </div>
             </SidebarNav>
             {debug ? <button onClick={createDevice}>Create device</button> : null}
