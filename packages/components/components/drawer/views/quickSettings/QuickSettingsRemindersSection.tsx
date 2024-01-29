@@ -13,7 +13,7 @@ interface Props {
 const QuickSettingsRemindersSection = ({ inAppReminders = [] }: Props) => {
     const goToSettings = useSettingsLink();
 
-    const insideDropdownRecoveryNotification = useRecoveryNotification(false);
+    const insideDropdownRecoveryNotification = useRecoveryNotification(false, true);
 
     const reminders: QuickSettingsReminders[] = useMemo(() => {
         const recoveryNotificationReminder: QuickSettingsReminders | undefined = insideDropdownRecoveryNotification
