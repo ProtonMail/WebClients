@@ -1606,7 +1606,7 @@
         "이메일 바닥글에 링크 추가"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } 를 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하세요."
       ],
       "Copy": [
         "복사"
@@ -5722,6 +5722,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -5755,9 +5766,6 @@
       ],
       "${ current } of ${ total }": [
         "${ total } 중 ${ current }"
-      ],
-      "${ discountPercentage } forever": [
-        "영구적으로 ${ discountPercentage }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME }가 더 이상 사용자의 이전 버전의 파일을 보관하지 않습니다."
@@ -6149,9 +6157,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "무료 플랜으로 다운그레이드하면, 만약에 나중에 다시 업그레이드 한다 해도 다음 혜택을 영구적으로 잃을 것입니다."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "다운그레이드시 다음 혜택을 잃게됩니다. 정말 계속하시겠습니까?"
-      ],
       "By leaving now, changes may not be saved": [
         "지금 나갈 경우 변경사항이 저장되지 않을 수도 있습니다"
       ],
@@ -6160,6 +6165,12 @@
       ],
       "Cancel anytime": [
         "언제든지 취소하세요"
+      ],
+      "Can’t access your recovery email?": [
+        "복구 이메일에 접근할 수 없나요?"
+      ],
+      "Can’t access your recovery phone?": [
+        "복구 전화번호에 접근할 수 없나요?"
       ],
       "Center": [
         "가운데 정렬"
@@ -6299,6 +6310,9 @@
       "Done! We sent a code to ${ destination }.": [
         "완료! ${ destination } 로 코드를 전송했습니다."
       ],
+      "Don’t know your recovery phrase?": [
+        "복구 구문을 잊어버리셨나요?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
       ],
@@ -6410,6 +6424,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "복구 전화번호를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "비밀번호 변경을 즉시 하려면 복구 구문을 입력하십시오."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "이벤트 초대 및 답변은 이 언어로 발송됩니다."
       ],
@@ -6445,12 +6462,6 @@
       ],
       "Free forever": [
         "영구적으로 무료"
-      ],
-      "Free up some space or add more storage space.": [
-        "공간을 조금 비우거나 스토리지를 더 추가하세요."
-      ],
-      "Free up some space or contact your administrator.": [
-        "저장공간을 비우거나 관리자에게 연락하세요."
       ],
       "free up space by deleting older messages or other data": [
         "오래된 메시지 및 타 데이터를 삭제하여 공간을 비우세요"
@@ -7385,6 +7396,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "진행하려면, 요청을 확인할 수 있도록 계정 복구 방법을 선택하세요."
       ],
+      "To proceed, we must verify the request.": [
+        "계속하기 위해, 요청 검증이 필요합니다."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "인터넷 연결을 안전하게 보호하려면, 기기에 맞는 ${ VPN_APP_NAME } 애플리케이션을 다운로드 및 설치하여 서버에 접속하세요."
       ],
@@ -7604,6 +7618,9 @@
       "Welcome": [
         "환영합니다"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "${ boldValue }(으)로 재설정 코드를 보내드립니다."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "계정 복구를 위해 제공하신 이메일 주소로 재설정 코드를 보내드립니다."
       ],
@@ -7757,12 +7774,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "ICS의 이벤트에서 불러올 활성 상태의 개인 캘린더가 필요합니다."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 공간의 ${ spaceDisplayed }% (을) 를 사용했습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 용량의 100%에 도달했습니다. 새 이메일을 보내거나 받을 수 없습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "암호화된 데이터를 복원해야 할 경우를 대비하여 키의 백업을 내보내야 합니다."
       ],
@@ -7888,17 +7899,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9458,9 +9458,6 @@
       "Trouble signing in?": [
         "로그인에 문제를 겪고 계신가요?"
       ],
-      "Upgrade account": [
-        "계정 업그레이드"
-      ],
       "Upgrade your plan": [
         "요금제 업그레이드"
       ],
@@ -9882,9 +9879,6 @@
       ],
       "From ${ price }": [
         "시작 가격: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "나의 ${ currentPlanName } 계정 유지"
       ],
       "Upgrade": [
         "업그레이드"
@@ -10392,11 +10386,6 @@
         "/월"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
-        "${ currentPlanName } 계정에 ${ daysRemaining }일이 남았습니다."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "\"결제\"를 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
@@ -10611,17 +10600,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "특별히 설계된 NetShield는 광고, 추적기 및 맬웨어를 차단하여 장치를 보호하고 브라우징 속도를 높입니다."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ freeStorageSize }로 시작하고, 이용 중에 더 많은 저장 용량을 잠금 해제하세요. 저장 공간은 ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } 간에 공유됩니다."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "스토리지 공간이 ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 그리고 ${ DRIVE_APP_NAME }에 공유됩니다. 관리자는 조직의 사용자들에게 각각의 다른 스토리지 공간을 할당할 수 있습니다"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } 및 ${ DRIVE_APP_NAME }에 사용자 간 스토리지 공간이 공유됩니다."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent와 같은 파일 공유 프로토콜 지원"
@@ -12331,11 +12311,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "이 구독이 자동으로 매 2년마다 취소될때 까지 같은 주기로 갱신됩니다."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "영구적으로 갱신됨"
       ]
     },
     "specialoffer: Link": {
