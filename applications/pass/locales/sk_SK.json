@@ -1417,6 +1417,14 @@
         "Víta vás ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položiek",
+        "${ count } položiek"
+      ]
+    },
     "Option": {
       "Commas": [
         "Čiarky"
@@ -1424,7 +1432,7 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Zapamätateľné heslo"
       ],
       "Numbers": [

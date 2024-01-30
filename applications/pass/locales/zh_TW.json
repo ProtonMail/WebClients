@@ -718,6 +718,12 @@
       "Item successfully moved": [
         "項目成功移除"
       ],
+      "Item successfully pinned": [
+        "項目成功標記"
+      ],
+      "Item successfully unpinned": [
+        "項目成功取消標記"
+      ],
       "items": [
         "項目"
       ],
@@ -1235,6 +1241,11 @@
         "歡迎使用 ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } items": [
+        "${ count } 個項目"
+      ]
+    },
     "Option": {
       "Commas": [
         "逗號"
@@ -1242,8 +1253,8 @@
       "Hyphens": [
         "連字號"
       ],
-      "Memorizable Password": [
-        "記憶性密碼"
+      "Memorable Password": [
+        "紀錄密碼"
       ],
       "Numbers": [
         "數字"
