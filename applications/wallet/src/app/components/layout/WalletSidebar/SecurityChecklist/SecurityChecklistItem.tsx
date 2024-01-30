@@ -40,7 +40,7 @@ export const SecurityChecklistItem = ({ label, done, loading, path }: Props) => 
                 <Icon
                     name={done ? 'checkmark-circle-filled' : 'chevron-right'}
                     className={clsx(done ? 'color-success' : 'color-weak')}
-                    size={done ? 16 : 20}
+                    size={done ? 8 : 10}
                 />
             )}
         </>

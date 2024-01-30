@@ -15,11 +15,14 @@ interface Props {
     wallets?: WalletWithAccountsWithBalanceAndTxs[];
 }
 
+const { PROTONWALLET: PROTONWALLET_APP } = APPS;
+
 const WalletSidebar = ({ expanded = false, wallets }: Props) => {
     return (
         <Sidebar
+            app={PROTONWALLET_APP}
             expanded={expanded}
-            appsDropdown={<AppsDropdown app={APPS.PROTONWALLET} />}
+            appsDropdown={<AppsDropdown app={PROTONWALLET_APP} />}
             logo={<MainLogo to="/" data-testid="main-logo" />}
             version={<AppVersion changelog={changelog} />}
         >

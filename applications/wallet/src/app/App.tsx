@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect, useState } from 'react';
 import { Router } from 'react-router-dom';
 
-import FlagProvider from '@protontech/proxy-client-react';
+import FlagProvider from '@unleash/proxy-client-react';
 import {
     ArcElement,
     CategoryScale,
