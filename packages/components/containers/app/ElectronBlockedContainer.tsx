@@ -21,7 +21,7 @@ const ElectronBlockedContainer = () => {
         <>
             <ElectronDraggeableHeaderWrapper />
             <IllustrationPlaceholder
-                className="h100 justify-center"
+                className="h-full justify-center"
                 title={c('Error message').t`App currently unavailable`}
                 url={errorGeneric}
                 children={children}
