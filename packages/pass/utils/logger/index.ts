@@ -2,7 +2,13 @@ import log from 'loglevel';
 
 import type { Callback } from '@proton/pass/types';
 
-log.setLevel('info', false);
+log.setLevel(
+    (() => {
+        if (BUILD_TARGET !== 'web') return 'INFO';
+        return ENV === 'development' ? 'INFO' : 'SILENT';
+    })(),
+    false
+);
 
 export const logId = (id: string) =>
     id.length > 10 ? `[${id.slice(0, 5)}…${id.slice(id.length - 5, id.length)}]` : `[${id}]`;
