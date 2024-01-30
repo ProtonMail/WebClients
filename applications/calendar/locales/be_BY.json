@@ -2602,6 +2602,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ніводны з атрыманых знешніх ключоў карыстальніка не падыходзіць для адпраўкі"
+      ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
       ],
@@ -4007,12 +4010,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Вызваліце ​​месца або павялічце памер сховішча."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Вызваліце ​​месца або звяжыцеся з вашым адміністратарам."
-      ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
       ],
@@ -4307,11 +4304,8 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
-      "Update recurring event": [
-        "Абнавіць перыядычную падзею"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
+        "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
@@ -4396,12 +4390,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Мінулы раз вы адхілілі запрашэнне. Папрасіце ўладальніка адправіць яго паўторна"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі 100% даступнай ёмістасці сховішча. У вас больш няма магчымасці адпраўляць або атрымліваць новыя лісты. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
@@ -5013,9 +5001,6 @@
       ],
       "Request an invite": [
         "Запытаць запрашэнне"
-      ],
-      "Upgrade account": [
-        "Палепшыць уліковы запіс"
       ],
       "What’s this?": [
         "Што гэта?"
@@ -5787,6 +5772,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Знешні ключ аўтаматычна атрыманы з сайта keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Знешні ключ аўтаматычна атрыманы праз WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рэкамендуем вам \"не давяраць\" гэтаму ключу."
       ]
@@ -6484,6 +6478,44 @@
       ],
       "Your current storage:": [
         "Ваша бягучае сховішча:"
+      ]
+    },
+    "storage_split: info": {
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% запоўнена"
+      ],
+      "contact your administrator": [
+        "звязацца з адміністратарам"
+      ],
+      "upgrade for more storage": [
+        "палепшыце тарыфны план, каб атрымаць больш сховішча"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваша ${ appStorage } амаль запоўнена"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваша ${ appStorage } запоўнена"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ваша ${ storage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ваша сховішча запоўнена"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
       ]
     },
     "Subscribe to calendar modal": {
