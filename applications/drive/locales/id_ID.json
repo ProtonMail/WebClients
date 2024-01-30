@@ -434,7 +434,7 @@
         "Pindahkan ke sampah"
       ],
       "New": [
-        "Baru"
+        "Berkas/folder baru"
       ],
       "New message": [
         "Pesan baru"
@@ -3621,20 +3621,14 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
-      "Free up some space or add more storage space.": [
-        "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Kosongkan beberapa ruang atau hubungi administrator Anda."
-      ],
       "from the version history?": [
         "dari riwayat versi secara permanen?"
       ],
       "Get the app to backup photos from your phone.": [
-        "Dapatkan aplikasi untuk menyinkron foto dari ponsel Anda."
+        "Dapatkan aplikasi mobile untuk menyinkronkan foto dari ponsel Anda."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Dapatkan aplikasi desktop untuk menyinkron berkas dari komputer Anda."
+        "Dapatkan aplikasi desktop untuk menyinkronkan berkas dari komputer Anda."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Kenali ${ DRIVE_APP_NAME } lebih dalam dan dapatkan bonus kuota penyimpanan 500 GB! Jangan lewatkan kesempatan ini sekarang juga."
@@ -3775,7 +3769,7 @@
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
       "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
-        "Butuh untuk berbagi berkas? Dapatkanlah ${ DRIVE_APP_NAME },\ncara teraman untuk membagikan, menyimpan, dan menyinkronkan berkas Anda."
+        "Perlu untuk berbagi berkas? Dapatkan ${ DRIVE_APP_NAME },\ncara teraman untuk membagikan, menyimpan, dan menyinkronkan berkas Anda."
       ],
       "Network issue": [
         "Masalah jaringan"
@@ -4299,12 +4293,6 @@
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus selamat datang 500 MB Anda dan "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
       ],
@@ -4472,9 +4460,6 @@
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
-      ],
-      "Audio file": [
-        "Berkas audio"
       ],
       "Authenticator app": [
         "Aplikasi autentikator"
@@ -4653,9 +4638,6 @@
       "I understand the risk": [
         "Saya paham akan resikonya"
       ],
-      "Image": [
-        "Gambar"
-      ],
       "Import all messages": [
         "Impor seluruh pesan"
       ],
@@ -4824,9 +4806,6 @@
       "System information": [
         "Informasi sistem"
       ],
-      "Text": [
-        "Teks"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4841,9 +4820,6 @@
       ],
       "Type": [
         "Jenis"
-      ],
-      "Unknown file": [
-        "Berkas yang tidak diketahui"
       ],
       "Unlock drive": [
         "Buka kunci drive"
@@ -4862,9 +4838,6 @@
       ],
       "Verification code": [
         "Kode verifikasi"
-      ],
-      "Video file": [
-        "Berkas video"
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -4957,9 +4930,6 @@
       "Trash": [
         "Sampah"
       ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
       "What’s this?": [
         "Apa ini?"
       ]
@@ -5017,6 +4987,251 @@
       ],
       "Plain text": [
         "Teks polos"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Kontainer audio/video 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Kontainer audio/video 3GPP2"
+      ],
+      "7-zip archive": [
+        "Arsip 7-zip"
+      ],
+      "AAC audio": [
+        "Audio AAC"
+      ],
+      "AbiWord document": [
+        "Dokumen AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Format eBook Amazon Kindle"
+      ],
+      "Android Package": [
+        "Paket Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animated Portable Network Graphics"
+      ],
+      "Apple Installer Package": [
+        "Paket Instalasi Apple"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
+      "Archive document": [
+        "Dokumen arsip"
+      ],
+      "Audio file": [
+        "Berkas audio"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
+      ],
+      "AVI video": [
+        "Video AVI"
+      ],
+      "Binary data": [
+        "Data biner"
+      ],
+      "Bourne shell script": [
+        "Script shell Bourne"
+      ],
+      "BZip archive": [
+        "Arsip BZip"
+      ],
+      "BZip2 archive": [
+        "Arsip BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Comma-separated values (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Publikasi elektronik (EPUB)"
+      ],
+      "Flash Video": [
+        "Video Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "Arsip Terkompresi GZip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Pra-prosesor Hypertext (Personal Home Page/PHP)"
+      ],
+      "iCalendar format": [
+        "Format iCalendar"
+      ],
+      "Icon format": [
+        "Format ikon"
+      ],
+      "Image": [
+        "Gambar"
+      ],
+      "Java Archive (JAR)": [
+        "Arsip Java (JAR)"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "Gambar JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "Audio MP3"
+      ],
+      "MPEG transport stream": [
+        "Stream transpor MPEG"
+      ],
+      "MPEG Video": [
+        "Video MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Font MS Embedded OpenType"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
+      ],
+      "OGG audio": [
+        "Audio OGG"
+      ],
+      "OGG video": [
+        "Video OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Dokumen presentasi OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Dokumen spreadsheet OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Dokumen teks OpenDocument"
+      ],
+      "OpenType font": [
+        "Font OpenType"
+      ],
+      "Opus audio": [
+        "Audio Opus"
+      ],
+      "Portable Network Graphics": [
+        "Portable Network Graphics"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "Arsip RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text Format (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Scalable Vector Graphics (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Small Web Format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Scalable Vector Graphics (SVG)"
+      ],
+      "Tape Archive (TAR)": [
+        "Arsip Tape (TAR)"
+      ],
+      "Text": [
+        "Teks"
+      ],
+      "TrueType Font": [
+        "Font TrueType"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Berkas yang tidak diketahui"
+      ],
+      "Video file": [
+        "Berkas video"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "Audio WEBM"
+      ],
+      "WEBM video": [
+        "Video WEBM"
+      ],
+      "WEBP image": [
+        "Gambar WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap Graphics"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
+      ],
+      "ZIP archive": [
+        "Arsip ZIP"
       ]
     },
     "Modal title": {
@@ -5306,13 +5521,13 @@
         "Gagal mengosongkan sampah"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Berkas lama Anda akan terhapus dalam 72 jam"
+        "Berkas lama Anda akan dihapus dalam 72 jam"
       ],
       "Your settings failed to be saved": [
         "Pengaturan Anda gagal disimpan"
       ],
       "Your settings have been changed successfully": [
-        "Pengaturan Anda telah disimpan"
+        "Pengaturan Anda berhasil diubah"
       ]
     },
     "Oauth instructions": {
@@ -5429,6 +5644,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } telah menandai kunci ini sebagai kunci yang usang. Kunci ini hanya akan dapat digunakan untuk memverifikasi tanda tangan."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Kunci eksternal diperoleh secara otomatis dari keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Kunci eksternal diperoleh secara otomatis melalui WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Kunci ini digunakan untuk mengenkripsi pesan yang tertuju pada kontak ini"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci ini."
@@ -5848,10 +6072,10 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Pergi ke paket langganan"
+        "Tuju daftar paket langganan"
       ],
       "Upgrade": [
-        "Tingkatkan"
+        "Tingkatkan akun"
       ]
     },
     "specialoffer: Offers": {
@@ -5982,6 +6206,53 @@
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Ruang penyimpanan ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% penuh"
+      ],
+      "contact your administrator": [
+        "hubungi administrator Anda"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "upgrade for more storage": [
+        "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } Anda hampir penuh"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } Anda penuh"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } Anda penuh. Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
       ]
     },
     "Success": {
