@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useState } from 'react';
 
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
@@ -11,43 +11,16 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
-import type { WorkerMessage } from '@proton/pass/types';
-import { type ClientEndpoint, WorkerMessageType } from '@proton/pass/types';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
+import { type ClientEndpoint } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-import locales from '../../../app/locales';
-import { PassExtensionCore } from './PassExtensionCore';
+import { ExtensionCore } from './ExtensionCore';
+import { ExtensionLocalized } from './ExtensionLocalized';
 
-export const ExtensionApp = ({
-    endpoint,
-    children,
-}: {
-    endpoint: ClientEndpoint;
-    children: (ready: boolean, locale: string) => ReactNode;
-}) => {
+type Props = { endpoint: ClientEndpoint; children: (ready: boolean) => ReactNode };
+
+export const ExtensionApp: FC<Props> = ({ endpoint, children }) => {
     const [ready, setReady] = useState(false);
-    const [locale, setLocale] = useState(DEFAULT_LOCALE);
-
-    /* resolve the extension locale through the I18nService instead of reading
-     * from the store as some extension sub-apps are not redux connected but
-     * should be aware of the current localisation setting */
-    const getExtensionLocale = () =>
-        sendMessage.on(resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }), (res) =>
-            res.type === 'success' ? res.locale : DEFAULT_LOCALE
-        );
-
-    const watchLocale = (message: WorkerMessage) => {
-        if (message.type === WorkerMessageType.SETTINGS_UPDATE) {
-            const nextLocale = message.payload.locale ?? locale;
-            loadLocale(nextLocale, locales)
-                .then(() => setLocale(nextLocale))
-                .catch(noop);
-        }
-    };
 
     useEffect(() => {
         setupExtensionContext({
@@ -58,31 +31,23 @@ export const ExtensionApp = ({
             },
             onRecycle: noop,
         })
-            .then(async (ctx) => {
-                const currentLocale = await getExtensionLocale();
-                setLocale(currentLocale);
-                setTtagLocales(locales);
-
-                ctx.port.onMessage.addListener(watchLocale);
-                return loadLocale(currentLocale, locales);
-            })
             .then(() => setReady(true))
-            .catch(console.warn);
+            .catch(noop);
     }, []);
 
     return (
-        <PassExtensionCore endpoint={endpoint}>
+        <ExtensionCore endpoint={endpoint}>
             <Icons />
             <ThemeProvider />
             <NotificationsProvider>
                 <ModalsProvider>
-                    {children(ready, locale)}
+                    <ExtensionLocalized>{children(ready)}</ExtensionLocalized>
                     <Portal>
                         <ModalsChildren />
                         <NotificationsChildren />
                     </Portal>
                 </ModalsProvider>
             </NotificationsProvider>
-        </PassExtensionCore>
+        </ExtensionCore>
     );
 };

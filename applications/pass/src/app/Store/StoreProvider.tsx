@@ -2,6 +2,7 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { useNotifications } from '@proton/components/hooks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -10,18 +11,16 @@ import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
     draftsGarbageCollect,
     passwordHistoryGarbageCollect,
-    settingsEditIntent,
     startEventPolling,
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
-import { i18n } from '../../lib/i18n';
+import { settings } from '../../lib/settings';
 import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClientRef } from '../Context/ClientProvider';
@@ -30,6 +29,7 @@ import { rootSaga } from './root.saga';
 import { sagaMiddleware, store } from './store';
 
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
+    const core = usePassCore();
     const authService = useAuthService();
     const client = useClientRef();
     const sw = useServiceWorker();
@@ -40,13 +40,15 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         const runner = sagaMiddleware.run(
             rootSaga.bind(null, {
                 endpoint: 'web',
+
                 getAppState: () => client.current.state,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()!),
                 getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
-                getLocalSettings: async () => INITIAL_SETTINGS,
+                getSettings: settings.resolve,
                 getTelemetry: () => telemetry,
+
                 onBoot: (res) => {
                     if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
@@ -59,11 +61,11 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         if (res.clearCache) void deletePassDB(authStore.getUserID()!);
                     }
                 },
-                onLocaleUpdated: (locale: string) => {
-                    store.dispatch(settingsEditIntent('locale', { locale }));
-                    void i18n.setLocale(locale);
-                },
+
+                onLocaleUpdated: core.i18n.setLocale,
                 onNotification: pipe(enhance, createNotification),
+                onSettingsUpdated: settings.sync,
+
                 setCache: async (encryptedCache) => {
                     /** Cache only if the tab is visible to avoid extraneous IDB writes */
                     if (isDocumentVisible()) return writeDBCache(authStore.getUserID()!, encryptedCache);

@@ -1,7 +1,6 @@
 import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '@proton/pass/store/actions';
-import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
@@ -9,7 +8,7 @@ import type { RootSagaOptions } from '@proton/pass/store/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 function* settingsEditWorker(
-    { onSettingsUpdated }: RootSagaOptions,
+    { onSettingsUpdated, onLocaleUpdated }: RootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof settingsEditIntent>>
 ) {
     try {
@@ -17,10 +16,10 @@ function* settingsEditWorker(
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in payload) settings.disallowedDomains = {};
 
-        const showNotification = meta.request.id !== settingsEditRequest('locale');
-
+        if (payload.locale) onLocaleUpdated?.(payload.locale);
         yield onSettingsUpdated?.(partialMerge(settings, payload));
-        yield put(settingsEditSuccess(meta.request.id, payload, showNotification, meta.sender?.endpoint));
+
+        yield put(settingsEditSuccess(meta.request.id, payload, meta.request.data.silent, meta.sender?.endpoint));
     } catch (e) {
         yield put(settingsEditFailure(meta.request.id, e, meta.sender?.endpoint));
     }
