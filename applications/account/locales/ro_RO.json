@@ -5796,6 +5796,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -5833,9 +5844,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } din ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } permanent"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
@@ -6269,9 +6277,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Revenind la planul gratuit, veți pierde permanent aceste avantaje, chiar dacă ulterior veți trece la unul cu plată."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
-      ],
       "By leaving now, changes may not be saved": [
         "Dacă ieșiți acum, este posibil ca schimbările să nu fie salvate."
       ],
@@ -6280,6 +6285,12 @@
       ],
       "Cancel anytime": [
         "Anulați oricând"
+      ],
+      "Can’t access your recovery email?": [
+        "Nu vă puteți accesa adresa de e-mail de recuperare?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Nu vă puteți accesa telefonul de recuperare?"
       ],
       "Center": [
         "Centrare"
@@ -6427,6 +6438,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Gata! S-a trimis un cod către ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Nu vă cunoașteți fraza de recuperare?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nu vedeți nimic? Verificați dacă aveți oprite modulele de blocare a ferestrelor flotante."
       ],
@@ -6538,6 +6552,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduceți numărul de telefon de recuperare și veți primi numele de utilizator sau adresa de e-mail."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Introduceți acum fraza de recuperare pentru a vă modifica parola."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Invitațiile la evenimente și RSVP vor fi trimise în această limbă."
       ],
@@ -6573,12 +6590,6 @@
       ],
       "Free forever": [
         "Gratuit pentru totdeauna"
-      ],
-      "Free up some space or add more storage space.": [
-        "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Eliberați ceva spațiu sau contactați administratorul."
       ],
       "free up space by deleting older messages or other data": [
         "eliberați spațiu prin ștergerea mesajelor mai vechi sau a altor date"
@@ -7534,6 +7545,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pentru a continua, selectați o metodă de recuperare a contului pentru a putea verifica solicitarea."
       ],
+      "To proceed, we must verify the request.": [
+        "Pentru a continua, trebuie să verificăm solicitarea."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server."
       ],
@@ -7753,6 +7767,9 @@
       "Welcome": [
         "Bun venit"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Veți primi un cod de resetare la ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Veți primi un cod de resetare la adresa de e-mail pe care ați furnizat-o pentru recuperarea contului."
       ],
@@ -7918,12 +7935,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "S-a atins capacitatea maximă de stocare. Nu se mai pot trimite sau primi mesaje. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Ar trebui să exportați o copie de rezervă a acestei chei în cazul în care trebuie să restaurați datele pe care le-ați criptat."
       ],
@@ -8051,17 +8062,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9633,9 +9633,6 @@
       "Trouble signing in?": [
         "Aveți probleme la autentificare?"
       ],
-      "Upgrade account": [
-        "Modificare cont"
-      ],
       "Upgrade your plan": [
         "Treceți la alt plan"
       ],
@@ -10079,9 +10076,6 @@
       ],
       "From ${ price }": [
         "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
       ],
       "Upgrade": [
         "Modificare"
@@ -10627,13 +10621,6 @@
         "/lună"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Mai aveți încă o zi rămasă pentru contul cu planul ${ currentPlanName }.",
-        "Mai aveți încă ${ daysRemaining } zile rămase pentru contul cu planul ${ currentPlanName }.",
-        "Mai aveți încă ${ daysRemaining } de zile rămase pentru contul cu planul ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Plătire», sunteți de acord cu ${ termsAndConditions }."
@@ -10850,17 +10837,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield special conceput să vă protejeze dispozitivul și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Începeți cu ${ freeStorageSize } și deblocați mai mult spațiu pe parcurs. Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Spațiul de stocare este partajat între utilizatori în aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
@@ -11091,7 +11069,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Pentru ca importarea să funcționeze, trebuie să selectați toate elementele solicitate așa cum e arătat în imagine."
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate articolele solicitate așa cum e arătat în imagine."
       ]
     },
     "Oauth instructions video alternative": {
@@ -12630,11 +12608,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Ofertă pe viață"
       ]
     },
     "specialoffer: Link": {
