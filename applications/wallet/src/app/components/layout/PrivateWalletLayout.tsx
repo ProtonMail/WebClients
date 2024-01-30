@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { DrawerSidebar, PrivateAppContainer, PrivateMainArea, TopBanners, useToggle } from '@proton/components';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { useOnchainWalletContext } from '../../contexts';
 import { WalletDrawerApp } from './WalletDrawerApp';
@@ -21,7 +22,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
 
     return (
         <PrivateAppContainer
-            top={<TopBanners />}
+            top={<TopBanners app={APPS.PROTONWALLET} />}
             header={<WalletHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />}
             sidebar={<WalletSidebar expanded={expanded} wallets={wallets} />}
             drawerApp={<WalletDrawerApp />}
