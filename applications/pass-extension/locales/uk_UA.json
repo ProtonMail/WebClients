@@ -1400,6 +1400,14 @@
         "Ласкаво просимо до ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } елемент",
+        "${ count } елементи",
+        "${ count } елементи",
+        "${ count } елементів"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
@@ -1412,7 +1420,7 @@
       "Hyphens": [
         "Дефіси"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Пароль, який легко запам'ятати"
       ],
       "Numbers": [
