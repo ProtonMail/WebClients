@@ -6,6 +6,7 @@
 import {
     SHA256,
     SHA512,
+    argon2,
     armorBytes,
     canKeyEncrypt,
     checkKeyCompatibility,
@@ -41,9 +42,10 @@ import {
     verifyCleartextMessage,
     verifyMessage,
 } from 'pmcrypto';
-import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
+import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
 import { UserID, config, enums } from 'pmcrypto/lib/openpgp';
 
+import { ARGON2_PARAMS } from '../constants';
 import { arrayToHexString } from '../utils';
 import {
     ComputeHashStreamOptions,
@@ -971,6 +973,14 @@ export class Api extends KeyManagementApi {
             default:
                 throw new Error(`Unsupported algorithm: ${algorithm}`);
         }
+    }
+
+    /**
+     * Compute argon2 key derivation of the given `password`
+     */
+    async computeArgon2({ password, salt, params = ARGON2_PARAMS.RECOMMENDED }: Argon2Options) {
+        const result = await argon2({ password, salt, params });
+        return result;
     }
 
     /**
