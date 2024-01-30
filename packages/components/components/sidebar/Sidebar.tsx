@@ -151,7 +151,7 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectronApp && 'mt-2')}
+                className="sidebar flex flex-nowrap flex-column no-print outline-none"
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
@@ -172,9 +172,9 @@ const Sidebar = ({
                 )}
 
                 {isElectronOnMac && (
-                    <div className="flex flex-column">
-                        <div className="ml-auto mr-3 mb-1 mt-1 z-1">{appsDropdown}</div>
-                        {primary && <div className="px-3 pb-2 pt-1">{primary}</div>}
+                    <div className="flex flex-column px-4">
+                        <div className="ml-auto my-3 z-1">{appsDropdown}</div>
+                        {primary && <div className="pb-2">{primary}</div>}
                     </div>
                 )}
 
