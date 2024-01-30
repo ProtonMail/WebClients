@@ -20,6 +20,7 @@ export const selectUserVerified = ({ user }: State) =>
     user.user?.Type !== UserType.EXTERNAL || user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
 
 /* Specification for pass specific plans in `/user/access` response :
+ * `business` -> Plan: Business | Trial: null | Limits: none
  * `paid` -> Plan: Plus | Trial: null | Limits: none
  * `trial` -> Plan: Plus | Trial: unix timestamp end | Limits
  * `free` -> Plan: Free | Trial: null | Limits */
@@ -27,6 +28,8 @@ export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
     switch (plan?.Type) {
         case PlanType.plus:
             return plan.TrialEnd && getEpoch() < plan.TrialEnd ? UserPassPlan.TRIAL : UserPassPlan.PLUS;
+        case PlanType.business:
+            return UserPassPlan.BUSINESS;
         default: {
             return UserPassPlan.FREE;
         }
@@ -37,6 +40,7 @@ export const selectPlanDisplayName = createSelector([selectUserPlan, selectPassP
     switch (passPlan) {
         case UserPassPlan.TRIAL:
             return c('Info').t`Pass Plus trial`;
+        case UserPassPlan.BUSINESS:
         case UserPassPlan.FREE:
         case UserPassPlan.PLUS:
             return userPlan?.DisplayName;
