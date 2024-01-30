@@ -124,7 +124,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
-                available: (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
+                available: !hasB2BPlan && (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
                 subsections: [
                     {
                         text: c('Title').t`Spam, block, and allow lists`,
