@@ -498,10 +498,10 @@
         "Avaa"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ],
       "Upgrade now": [
-        "Päivitä nyt"
+        "Päivitä tilaus nyt"
       ],
       "Upgrade to Business": [
         "Päivitä Business-tilaukseen"
@@ -510,7 +510,7 @@
         "Päivitä Visionary-tilaukseen"
       ],
       "Upgrade your plan": [
-        "päivittämällä tilauksesi"
+        "Päivitä tilauksesi"
       ],
       "Use ${ label } theme": [
         "Käytä ${ label }-teemaa"
@@ -824,7 +824,7 @@
         "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Tallennustila jaetaan kaikkien ${ BRAND_NAME } -sovellusten välillä."
+        "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-sovellusten välillä."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Säilytä jopa 200 versiota kustakin tiedostosta jopa 10 vuoden ajan."
@@ -1860,7 +1860,7 @@
         "Proton Mail -logo ja plus-merkki"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "Erota elämäsi eri alueet useilla sähköpostiosoitteilla päivittämällä tilauksesi ja avaa samalla myös muita premium-ominaisuuksia."
+        "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ]
     },
     "Desktop app upsell": {
@@ -1871,7 +1871,7 @@
         "${ MAIL_APP_NAME } -työpöytäsovelluksen beta-versio on tällä hetkellä vain ${ BRAND_NAME } Visionary- tilaajien käytettävissä. Se tulee kaikkien käyttäjien saataville vuoden 2024 alussa."
       ],
       "Upgrade today or check again in early 2024 for access.": [
-        "Päivitä tilauksesi tänään, tai tarkista pääsysi uudelleen vuoden 2024 alussa."
+        "Päivitä tilauksesi tänään tai tarkista tilanne uudelleen vuoden 2024 alussa."
       ]
     },
     "Downgrade account reason": {
@@ -2016,7 +2016,7 @@
         "Virheellinen koodi"
       ],
       "Invalid expiration date": [
-        "Virheellinen voimassaolon päättymisaika"
+        "Virheellinen erääntymisaika"
       ],
       "Invalid invitation link": [
         "Virheellinen kutsulinkki"
@@ -2166,7 +2166,7 @@
         "Olet kuluttanut tilaukseesi sisältyvän osoitekiintiön. Lisää uusia osoitteita päivittämällä tilauksesi."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Olet kuluttanut tilaukseesi sisältyvän käyttäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
+        "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
         "Sinun on aktivoitava organisaation avaimet. Ilman aktivointia et voi luoda tai käyttää ei-yksityisiä käyttäjiä."
@@ -2330,7 +2330,7 @@
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Sinulle varattu tallennustila: ${ assignedStorage }"
+        "Käyttöösi varattu tallennustila: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "Tilaus laskutetaan Visionary- tai perhetilauksen ensisijaiselta ylläpitäjältä."
@@ -2369,7 +2369,7 @@
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää lisäämään tallennustilaasi."
+        "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Nykyinen tilauksesi ei voi liittyä Visionary- tai perhetilaukseen."
@@ -2532,7 +2532,7 @@
         "Kaksivaiheinen todennus todennuslaitteella poistettiin käytöstä"
       ],
       "Add a name to identify your security key with.": [
-        "Lisää todennuslaitteellesi tunnistettava nimi."
+        "Anna todennuslaitteellesi tunnistettava nimi."
       ],
       "Allow platform keys": [
         "Salli alustojen avaimet"
@@ -2672,13 +2672,13 @@
         "(1 viesti neljännesvuodessa)"
       ],
       "(1-2 emails per month)": [
-        "(1-2 viestiä kuukaudessa)"
+        "(1–2 viestiä kuukaudessa)"
       ],
       "(2-4 emails per year)": [
-        "(2-4 viestiä vuodessa)"
+        "(2–4 viestiä vuodessa)"
       ],
       "(4-6 emails per year)": [
-        "(4-6 viestiä vuodessa)"
+        "(4–6 viestiä vuodessa)"
       ],
       "(during your first month)": [
         "(ensimmäisen kuukautesi aikana)"
@@ -2788,9 +2788,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } ikuisesti"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
@@ -2909,7 +2906,7 @@
         "Lisävalinnat"
       ],
       "Admin account allocation": [
-        "Ylläpitotilin varaus"
+        "Varattu ylläpitäjän tilille"
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
@@ -2918,7 +2915,7 @@
         "Varattu"
       ],
       "Already allocated": [
-        "Varattu jo"
+        "Jo varattu"
       ],
       "Already used": [
         "Jo käytetty"
@@ -2995,14 +2992,17 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Alentamalla ilmaiseen palveluun, menetät nämä edut pysyvästi, vaikka päivittäisit tilauksesi tulevaisuudessa uudelleen."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Alentamalla menetät seuraavat edut. Haluatko varmasti jatkaa?"
-      ],
       "By leaving now, changes may not be saved": [
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
       "Cancel anytime": [
         "Peru milloin tahansa"
+      ],
+      "Can’t access your recovery email?": [
+        "Etkö voi käyttää palautussähköpostiasi?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Etkö voi käyttää palautuspuhelintasi?"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
@@ -3050,6 +3050,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Hyvitys edellisen tilausjaksosi käyttämättömästä osuudesta"
       ],
+      "Current plan": [
+        "Nykyinen tilaus"
+      ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
       ],
@@ -3096,8 +3099,14 @@
       "Done! We sent a code to ${ destination }.": [
         "Valmis! Koodi lähetettiin kohteeseen ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Etkö tiedä palautuslausekettasi?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Etkö näe mitään? Muista sammuttaa pop-up estot."
+      ],
+      "Downgrade": [
+        "Alenna"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
@@ -3171,6 +3180,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Syötä palautuspuhelimesi numero niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Syötä palautuslausekkeesi vaihtaaksesi salasanasi."
+      ],
       "Expired": [
         "Voimassaolo päättynyt"
       ],
@@ -3188,12 +3200,6 @@
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
-      ],
-      "Free up some space or add more storage space.": [
-        "Vapauta tai hanki lisää tallennustilaa."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Vapauta tilaa tai ole yhteydessä ylläpitoosi."
       ],
       "Gateways": [
         "yhdyskäytäviä"
@@ -3322,10 +3328,10 @@
         "KK/VV"
       ],
       "Must be between 3 and 20 characters long.": [
-        "Täytyy sisältää 3-20 merkkiä."
+        "Täytyy sisältää 3–20 merkkiä."
       ],
       "Must contain only letters, digits, and dashes (-).": [
-        "Voi sisältää vain kirjaimia, numeroita ja väliviivoja (-)."
+        "Voi sisältää vain kirjaimia, numeroita ja viivoja (-)."
       ],
       "Must not contain spaces.": [
         "Ei voi sisältää välilyöntejä."
@@ -3706,10 +3712,13 @@
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata erilaisia sähköpostiuutiskirjeitä ja ${ blogLink } ajoittain."
+        "Pysyäksesi ajan tasalla ${ BRAND_NAME }-tuotteiden viimeisimmistä muutoksista, voit tilata erilaisia sähköpostiuutiskirjeitä ja vierailla silloin tällöin ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Jatka valitsemalla tilin palautustapa, jolla pyyntö voidaan vahvistaa."
+      ],
+      "To proceed, we must verify the request.": [
+        "Pyyntö on vahvistettava, jotta voit jatkaa."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Suojataksesi Internet-yhteytesi, lataa ja asenna ${ VPN_APP_NAME } -sovellus laitteellesi ja yhdistä palvelimeen."
@@ -3861,6 +3870,9 @@
       "Welcome": [
         "Tervetuloa"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Nollauskoodisi lähetetään seuraavaan osoitteeseen tai numeroon: ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Lähetämme palautuskoodin tilin palautusta varten ilmoittamaasi sähköpostiosoitteeseen."
       ],
@@ -3964,12 +3976,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Olet käyttänyt ${ spaceDisplayed } % tallennuskapasiteetistasi. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Olet käyttänyt 100 % tallennuskapasiteetistasi. Et voi lähettää tai vastaanottaa uusia viestejä. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
@@ -4580,7 +4586,7 @@
     },
     "Label for news": {
       "${ app } product updates": [
-        "${ app } tuotepäivitykset"
+        "${ app } -tuotepäivitykset"
       ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }in beta-julkaisut"
@@ -4601,13 +4607,13 @@
         "${ BRAND_NAME }in tuotejulkaisut"
       ],
       "${ BRAND_NAME } user survey": [
-        "${ BRAND_NAME } käyttäjäkysely"
+        "${ BRAND_NAME }in käyttäjäkyselyt"
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
       ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } uusia ominaisuuksia"
+        "${ MAIL_APP_NAME }in ja ${ CALENDAR_SHORT_APP_NAME }in uudet ominaisuudet"
       ]
     },
     "Label on payment method": {
@@ -4693,9 +4699,6 @@
       "Trouble signing in?": [
         "Ongelmia kirjautumisessa?"
       ],
-      "Upgrade account": [
-        "Päivitä tili"
-      ],
       "Upgrade your plan": [
         "Päivitä tilauksesi"
       ],
@@ -4703,7 +4706,7 @@
         "Näytä opas"
       ],
       "visit our blog": [
-        "vierailla blogissamme"
+        "blogissamme"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Miten UDP- ja TCP-protokollat eroavat toisistaan?"
@@ -4723,7 +4726,7 @@
         "Päivitä tilaus"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Päivitä tilauksesi saadaksesi käyttöösi chat-asiakaspalvelun sekä muita premium-ominaisuuksia, tai ilmoita ongelmastasi ilmaisella tukilomakeellamme."
+        "Päivitä tilauksesi käyttääksesi chat-asiakaspalvelua ja muista premium-ominaisuuksia, tai ilmoita ongelmastasi ilmaisella tukilomakeellamme."
       ]
     },
     "Loading info": {
@@ -4826,14 +4829,11 @@
       "From ${ price }": [
         "Alkaen ${ price }"
       ],
-      "Keep my ${ currentPlanName } account": [
-        "Säilytä ${ currentPlanName }-tilini"
-      ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ],
       "Upgrade now": [
-        "Päivitä nyt"
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: action": {
@@ -5194,7 +5194,7 @@
         "15 sähköpostiosoitetta"
       ],
       "Up to 3 TB of storage": [
-        "Jopa 3 Gt tallennustilaa"
+        "Jopa 3 Tb tallennustilaa"
       ],
       "User credential management": [
         "Käyttäjien tunnusten hallinta"
@@ -5327,12 +5327,6 @@
         "/kuukausi"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "${ currentPlanName }-tilisi on voimassa vielä ${ daysRemaining } päivän.",
-        "${ currentPlanName }-tilisi on voimassa vielä ${ daysRemaining } päivää."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Painaessasi \"Maksa\" hyväksyt ${ termsAndConditions }."
@@ -5371,7 +5365,7 @@
         "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian ja salatun tiedostojen jakamisen ja muuta."
+        "${ DRIVE_APP_NAME }: Suojaa tiedostosi salatulla pilvitallennuksella. Sisältää versiohistorian ja salatun tiedostojen jakamisen sekä paljon muuta."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Suojaa viestisi päästä päähän -salauksella. Sisältää mm. tuen omille sähköpostiverkkotunnuksille, 15 sähköpostiosoitetta sekä rajattomasti Hide-my-email-aliaksia."
@@ -5395,7 +5389,7 @@
         "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkkien erääntyminen"
+        "Hallitse jakamiesi tiedostojen käyttöä suojaamalla ne salasanoilla ja määrittämällä linkeille erääntymisajat"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain } uutiskirjeille."
@@ -5521,17 +5515,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield suojaa laitettasi ja nopeuttaa selaustasi estämällä mainoksia, seurantoja ja haittaohjelmia"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Aloita ${ freeStorageSize } tallennustilalla ja kasvata sitä matkan varrella tarpeen mukaan. Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä. Ylläpitäjät voivat määrittää käytettävissä olevan tilan organisaatioissaan käyttäjäkohtaisesti."
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Tallennustila on jaettu ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ja ${ DRIVE_APP_NAME } käyttäjien kesken"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Tallennustila jaetaan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ja ${ PASS_APP_NAME } -käyttäjien kesken."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tuki BitTorrentin kaltaisille tiedostonjakoprotokollille"
@@ -6463,17 +6454,12 @@
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Elinikäinen tarjous"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ]
     },
     "specialoffer: Offers": {
@@ -6550,7 +6536,7 @@
         "Vuodenvaihteen ale"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Päivitä tilauksesi ja säästä lisää kahden vuoden ${ planName } -tilauksella"
+        "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6604,6 +6590,66 @@
       ],
       "Your current storage:": [
         "Nykyinen tallennustilasi:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Säilytä ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "${ totalStorageSize } Drive-tallennustilaa"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "${ totalStorageSize } Mail-tallennustilaa"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tallennustila"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage }stasi on käytetty ${ percentage } %"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Alentamalla menetät seuraavat edut. Haluatko varmasti jatkaa?"
+      ],
+      "contact your administrator": [
+        "ota yhteyttä ylläpitoosi"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Kaikille ${ BRAND_NAME }-palveluille"
+      ],
+      "upgrade for more storage": [
+        "hanki lisää päivittämällä tilauksesi"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage }si on lähes täynnä"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage }si on täynnä"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage }stasi on käytetty ${ percentage } %. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage }stasi on käytetty ${ percentage } %. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Tallennnustilastasi on käytetty ${ percentage } %. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
       ]
     },
     "Subscription": {
@@ -6731,7 +6777,7 @@
         "Poista käytöstä"
       ],
       "Enable auto-pay support": [
-        "Ota automaattisen maksun tuki käyttöön"
+        "Käytä automaattisiin maksuihin"
       ],
       "Keep auto-pay": [
         "PIdä automaattinen maksu"
@@ -7046,7 +7092,7 @@
         "Lisää käyttäjiä"
       ],
       "Allocate storage": [
-        "Varaa tallennustilaa"
+        "Tallennustilan varaus"
       ],
       "Amount": [
         "Summa"
@@ -7187,6 +7233,9 @@
       ],
       "Downgrade account": [
         "Alenna tili"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Alennetaanko tilaukseen ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Lataa ${ VPN_APP_NAME }"
@@ -7464,7 +7513,7 @@
         "Vaihda kahden salasanan tilaan"
       ],
       "TV sign in": [
-        "Television kirjautuminen"
+        "Televisioon kirjautuminen"
       ],
       "Two-factor authentication": [
         "Kaksivaiheinen todennus"
@@ -7622,10 +7671,10 @@
     },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Saa viimeisimmät tietosuojauutiset ja mitä tapahtuu ${ BRAND_NAME } -universumissa"
+        "Vastaanota tuoreimmat tietosuojauutiset ja tietoa ${ BRAND_NAME }-universumin tapahtumista."
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
-        "Osallistu kyselyihin parantaaksesi ${ BRAND_NAME } -palveluita"
+        "Auta parantamaan ${ BRAND_NAME }in palveluita osallistumalla kyselyihin."
       ]
     },
     "Tor out of date": {

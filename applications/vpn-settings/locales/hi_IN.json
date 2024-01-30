@@ -2527,9 +2527,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "एक नि: शुल्क योजना में अपग्रेड करने से, आप स्थायी रूप से इन लाभों को खो देंगे, भले ही आप भविष्य में फिर से अपग्रेड करें।"
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "डाउनग्रेड करने से आप निम्नलिखित लाभों को खो देंगे। क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
-      ],
       "By leaving now, changes may not be saved": [
         "अब छोड़ने से, परिवर्तनों को बचाया नहीं जा सकता है"
       ],
@@ -2658,12 +2655,6 @@
       ],
       "Free forever": [
         "हमेशा मुफ्त"
-      ],
-      "Free up some space or add more storage space.": [
-        "कुछ स्थान खाली करें या अधिक संग्रहण स्थान जोड़ें।"
-      ],
-      "Free up some space or contact your administrator.": [
-        "कुछ जगह खाली करें या अपने व्यवस्थापक से संपर्क करें।"
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
@@ -3233,12 +3224,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
@@ -3819,9 +3804,6 @@
       "Trouble signing in?": [
         "साइन-इन में परेशानी?"
       ],
-      "Upgrade account": [
-        "खाते को अपग्रेड करें"
-      ],
       "Upgrade your plan": [
         "अपना प्लान अपग्रेड करें"
       ],
@@ -3918,9 +3900,6 @@
       ],
       "From ${ price }": [
         "${ price } से"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "मेरा ${ currentPlanName } खाता रखें"
       ],
       "Upgrade": [
         "अपग्रेड"
@@ -4328,12 +4307,6 @@
         "/महीने"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "आपके ${ currentPlanName } खाते पे अभी भी ${ daysRemaining } दिन बचा हैं",
-        "आपके ${ currentPlanName } खाते पे अभी भी ${ daysRemaining } दिन बचे हैं"
-      ]
-    },
     "new_plans: signup": {
       "terms and conditions": [
         "नियम और शर्तें"
@@ -4485,12 +4458,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "खास तरीके से डिज़ाइन किया NetShield आपके डिवाइस की रक्षा और आपके ब्राउज़िंग को तेज़ करता है विज्ञापनों, ट्रैकर, और मालवेयर को ब्लॉक करके।"
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ freeStorageSize } से शुरू करें और आगे जाकर और स्टोरेज लें। स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है।"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "स्टोरेज जगह का इस्तेमाल ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, और ${ DRIVE_APP_NAME } करते है। संगठन के यूज़र को अलग-अलग स्टोरेज जगह देने की ताक्त एडमिन के पास है"
@@ -5033,11 +5000,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "यह सदस्यता रद्द होने तक हर 2 साल में उसी दर पर स्वतः नवीनीकृत हो जाएगी।"
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "ज़िंदगीभर का सौदा"
       ]
     },
     "specialoffer: Link": {

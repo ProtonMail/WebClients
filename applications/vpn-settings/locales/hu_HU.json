@@ -2367,9 +2367,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } örökre"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: teljes méretű kép"
       ],
@@ -2536,9 +2533,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
       ],
@@ -2670,12 +2664,6 @@
       ],
       "Free forever": [
         "Örökre ingyenes"
-      ],
-      "Free up some space or add more storage space.": [
-        "Szabadítson fel helyet vagy vásároljon több területet."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Szabadítson fel területet vagy írjon az adminisztrátornak."
       ],
       "Gateways": [
         "Átjárók"
@@ -3288,12 +3276,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal számlájához hozzá kell rendelnie egy bankkártyát vagy egy bankszámlát. Ha ezek egyike sincs, kattintson a lentebbi gombra."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "A bejelentkezés után az ${ destination } oldalra kerül átirányításra."
@@ -3920,9 +3902,6 @@
       "Trouble signing in?": [
         "Probléma a bejelentkezéssel?"
       ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ],
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
       ],
@@ -4006,9 +3985,6 @@
       ],
       "From ${ price }": [
         "Már ${ price }-tól"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Megtartom a ${ currentPlanName } fiókot"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -4417,12 +4393,6 @@
         "/hó"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből.",
-        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből."
-      ]
-    },
     "new_plans: signup": {
       "terms and conditions": [
         "felhasználási feltételek"
@@ -4565,12 +4535,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "A különleges kialakítású NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával"
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kezdjen ${ freeStorageSize } tárhellyel, majd szerezzen többet később. A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } és a ${ DRIVE_APP_NAME } közt."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt. A szervezet egyes felhasználói közt az adminisztrátorok osztják szét a tárhelyet"
@@ -5256,11 +5220,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül"
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Örök ajánlat"
       ]
     },
     "specialoffer: Link": {

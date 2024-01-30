@@ -2609,9 +2609,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } para sempre"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho máximo"
       ],
@@ -2802,9 +2799,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao regredir para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a atualizar de novo no futuro."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Ao fazer downgrade, perderá os seguintes benefícios. Tem a certeza de que deseja continuar?"
-      ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar guardadas"
       ],
@@ -2968,12 +2962,6 @@
       ],
       "Free forever": [
         "Grátis para sempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Liberte algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Liberte algum espaço ou contacte um administrador."
       ],
       "Gateways": [
         "Gateways"
@@ -3715,12 +3703,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Tem de ter um cartão de crédito ou uma conta bancária vinculados à sua conta PayPal. Se não o tem, clique no botão abaixo."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
       ],
@@ -4398,9 +4380,6 @@
       "Trouble signing in?": [
         "Tem problemas em iniciar sessão?"
       ],
-      "Upgrade account": [
-        "Actualizar a conta"
-      ],
       "Upgrade your plan": [
         "Atualize o seu plano"
       ],
@@ -4484,7 +4463,7 @@
         "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Encontre-o utilizando o seu e-mail ou número de telefone de recuperação e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
       "Private and secure email, no credit card required": [
-        "Endereço eletrónico privado e seguro, sem necessidade de cartão de crédito"
+        "E-mail privado e seguro, sem necessidade de cartão de crédito"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Redefina a palavra-passe da sua conta ${ BRAND_NAME }"
@@ -4527,9 +4506,6 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter a minha conta ${ currentPlanName }"
       ],
       "Upgrade": [
         "Alterar a subscrição"
@@ -4585,8 +4561,8 @@
         "${ n } endereços de e-mail/aliases"
       ],
       "${ n } email address per user": [
-        "${ n } endereço de e-mail por usuário",
-        "${ n } endereços de e-mail por usuário"
+        "${ n } endereço de e-mail por utilizador",
+        "${ n } endereços de e-mail por utilizador"
       ],
       "${ n } filter": [
         "${ n } filtro",
@@ -5012,12 +4988,6 @@
         "/mês"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Ainda tem ${ daysRemaining } dia restante na sua conta ${ currentPlanName }.",
-        "Ainda tem ${ daysRemaining } dias restantes na sua conta ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Ao clicar em \"Pagar\", concorda com os nossos ${ termsAndConditions }."
@@ -5188,17 +5158,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Especialmente concebido, o NetShield protege o seu dispositivo e acelera a navegação bloqueando anúncios, rastreadores e malware."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comece com ${ freeStorageSize } e desbloqueie mais armazenamento progressivamente. O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }. Os administradores podem atribuir diferentes volumes de armazenamento aos utilizadores da sua organização"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é partilhado entre os utilizadores e entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
@@ -6034,11 +5995,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta vitalícia."
       ]
     },
     "specialoffer: Link": {
