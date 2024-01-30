@@ -9,4 +9,8 @@ module.exports = {
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     testTimeout: 30000,
     resolver: './jest.resolver.js',
+    globals: {
+        BUILD_TARGET: 'test',
+        ENV: 'test',
+    },
 };
