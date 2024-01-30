@@ -5354,12 +5354,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
       ],
-      "Free up some space or add more storage space.": [
-        "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Gib etwas Platz frei oder wende dich an deinen Administrator."
-      ],
       "From": [
         "Von"
       ],
@@ -6201,12 +6195,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du hast die maximale Anzahl von 5 Antworten erreicht."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast ${ spaceDisplayed } % deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du hast **${ count } Unterhaltung** in diesem Ordner ausgewählt",
@@ -7216,9 +7204,6 @@
       "Trash": [
         "Papierkorb"
       ],
-      "Upgrade account": [
-        "Konto-Upgrade durchführen"
-      ],
       "What’s this?": [
         "Was ist das?"
       ],
@@ -7814,6 +7799,9 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } hat diesen Schlüssel als veraltet markiert. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Dieser Schlüssel wird zum Verschlüsseln von Nachrichten an diesen Kontakt verwendet."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -8671,6 +8659,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Mehr Speicherplatz erhalten"
+      ],
       "Release notes": [
         "Versionshinweise"
       ],
@@ -8679,6 +8670,23 @@
       ],
       "Your current storage:": [
         "Dein aktueller Speicherplatz:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-Speicherplatz"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% voll."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dein ${ appStorage }-Speicherplatz ist fast voll."
+      ],
+      "Your ${ appStorage } is full": [
+        "Dein ${ appStorage }-Speicherplatz ist voll."
+      ],
+      "Your storage is full": [
+        "Dein Speicherplatz ist voll."
       ]
     },
     "Success": {

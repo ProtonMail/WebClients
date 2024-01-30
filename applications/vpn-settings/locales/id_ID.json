@@ -2772,9 +2772,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } selamanya"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: gambar ukuran penuh"
       ],
@@ -2967,14 +2964,17 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati berbagai keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
-      ],
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
       "Cancel anytime": [
         "Batalkan kapan pun"
+      ],
+      "Can’t access your recovery email?": [
+        "Tidak dapat mengakses email pemulihan Anda?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Tidak dapat mengakses ponsel pemulihan Anda?"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -3021,6 +3021,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
       ],
+      "Current plan": [
+        "Paket saat ini"
+      ],
       "Custom email domains": [
         "Domain surel khusus"
       ],
@@ -3066,8 +3069,14 @@
       "Done! We sent a code to ${ destination }.": [
         "Berhasil! Kami telah mengirimkan kode Anda ke ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Tidak mengetahui frasa pemulihan Anda?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
+      ],
+      "Downgrade": [
+        "Turunkan"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Proses penurunan akun akan memutus seluruh sambungan ke server ${ VPN_APP_NAME } berbayar."
@@ -3141,6 +3150,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat surel Anda."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Masukkan frasa keamanan Anda untuk mengubah kata sandi Anda sekarang juga."
+      ],
       "Expired": [
         "Kedaluwarsa"
       ],
@@ -3158,12 +3170,6 @@
       ],
       "Free forever": [
         "Selamanya gratis"
-      ],
-      "Free up some space or add more storage space.": [
-        "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Kosongkan beberapa ruang atau hubungi administrator Anda."
       ],
       "Gateways": [
         "Gateway"
@@ -3675,6 +3681,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
       ],
+      "To proceed, we must verify the request.": [
+        "Untuk dapat melanjutkan, kami harus memverifikasi permintaan ini."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan instal aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan hubungkan diri Anda ke server yang tersedia."
       ],
@@ -3742,7 +3751,7 @@
         "Gunakan berbagai jenis alamat surel dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } di luar aplikasi resmi kami, semisal melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
+        "Gunakan informasi kredensial berikut pada saat Anda ingin terhubung ke server ${ VPN_APP_NAME } di luar aplikasi, semisal: Melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
       ],
       "Users": [
         "Pengguna"
@@ -3825,6 +3834,9 @@
       "Welcome": [
         "Selamat datang"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Kami akan mengirimkan kode pengaturan ulang ke ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Kami akan mengirimkan kode untuk mengatur ulang akun ke alamat surel yang telah Anda tentukan sebelumnya."
       ],
@@ -3879,6 +3891,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Anda menggunakan ruang penyimpanan lebih dari yang dimiliki oleh paket ${ downgradedPlanName }. Silakan hapus sebagian data untuk dapat menurunkan paket."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat surel yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
@@ -3923,12 +3938,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
@@ -4649,9 +4658,6 @@
       "Trouble signing in?": [
         "Mengalami masalah saat akan masuk?"
       ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
@@ -4780,9 +4786,6 @@
       ],
       "From ${ price }": [
         "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
       ],
       "Upgrade": [
         "Tingkatkan"
@@ -5263,11 +5266,6 @@
         "/bulan"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
-        "Anda masih memiliki ${ daysRemaining } hari tersisa pada langganan ${ currentPlanName } Anda."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
@@ -5455,17 +5453,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Teknologi NetShield kami dirancang secara khusus untuk melindungi perangkat Anda dan mempercepat perambanan Anda dengan memblokir iklan, program pelacak, serta malware"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Mulai dengan ${ freeStorageSize } dan dapatkan kuota penyimpanan tambahan seiring waktunya. Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan. Para administrator dapat mengatur besar kuota penyimpanan yang akan dapat digunakan oleh masing-masing pengguna di dalam organisasi mereka"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ruang penyimpanan terbagi untuk seluruh pengguna antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, dan ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Dukungan untuk protokol file-sharing seperti BitTorrent"
@@ -5480,7 +5475,7 @@
         "Kami tidak menyimpan log sesi yang merekam aktivitas daring Anda, dan kami juga tidak merekam informasi metadata yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH yang bertujuan untuk melindungi rekam jejak kesehatan pribadi (PHI) tiap-tiap individu. Kami menawarkan Perjanjian Kerjasama Bisnis (BAA) yang telah ditandangani bagi seluruh pelanggan ${ BRAND_NAME } for Business kami."
+        "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH, yang ditujukan untuk melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Seluruh pelanggan ${ BRAND_NAME } for Business akan dapat menerima Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Pada saat Anda terhubung ke VPN kami, kueri DNS Anda akan terkirim melalui terowongan VPN terenkripsi kami yang akan meningkatkan privasi dan keamanan Anda"
@@ -6373,17 +6368,12 @@
         "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Penawaran seumur hidup"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Pergi ke paket langganan"
+        "Tuju daftar paket langganan"
       ],
       "Upgrade": [
-        "Tingkatkan"
+        "Tingkatkan akun"
       ]
     },
     "specialoffer: Offers": {
@@ -6513,6 +6503,75 @@
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Pertahankan paket ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Ruang penyimpanan untuk data yang dihasilkan oleh ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Ruang penyimpanan Drive hingga ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Ruang penyimpanan Mail hingga ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Ruang penyimpanan ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% penuh"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Dengan menurunkan akun Anda, Anda tidak akan lagi dapat menikmati berbagai keutamaan berikut. Apakah Anda yakin untuk menurunkan akun Anda?"
+      ],
+      "contact your administrator": [
+        "hubungi administrator Anda"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Untuk seluruh layanan ${ BRAND_NAME }"
+      ],
+      "upgrade for more storage": [
+        "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Untuk sementara, kami akan menambahkan saldo ini pada Akun ${ BRAND_NAME } Anda."
+      ],
+      "You still have **${ daysRemaining }** days left on your **${ currentPlanName }** plan.": [
+        "Anda masih memiliki **${ daysRemaining }** hari tersisa pada paket **${ currentPlanName }** Anda."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } Anda hampir penuh"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } Anda penuh"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } Anda penuh. Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
       ]
     },
     "Subscription": {
@@ -7081,6 +7140,9 @@
       ],
       "Downgrade account": [
         "Turunkan jenis akun"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Turunkan ke ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"

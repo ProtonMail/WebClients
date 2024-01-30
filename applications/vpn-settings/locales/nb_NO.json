@@ -2789,9 +2789,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } for alltid"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
       ],
@@ -2995,9 +2992,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved å nedgradere til en gratis plan, vil du permanent miste disse fordelene, selv om du oppgraderer igjen i fremtiden."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Ved å nedgradere vil du miste følgende fordeler. Er du sikker på at du vil fortsette?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ved å forlate nå, kan det hende at endringer ikke lagres"
       ],
@@ -3056,6 +3050,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kreditt for den ubrukte delen av ditt forrige planabonnement"
       ],
+      "Current plan": [
+        "Gjeldende plan"
+      ],
       "Custom email domains": [
         "Egendefinerte e-postdomener"
       ],
@@ -3107,6 +3104,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser ingenting? Husk å slå av blokkering av sprett-opp-vinduer."
+      ],
+      "Downgrade": [
+        "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
@@ -3200,12 +3200,6 @@
       ],
       "Free forever": [
         "Gratis for alltid"
-      ],
-      "Free up some space or add more storage space.": [
-        "Frigjør litt plass eller legg til mer lagringsplass."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigjør litt plass eller kontakt administratoren din."
       ],
       "Gateways": [
         "Gatewayer"
@@ -3938,6 +3932,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget på konto ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere den en gang for å sikre riktig e-postadresse for bekreftelse."
       ],
@@ -3985,12 +3982,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du må ha et kredittkort eller en bankkonto knyttet til din PayPal konto. Hvis din PayPal konto ikke har det, vennligst klikk knappen nedenfor."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd ${ spaceDisplayed }% av lagringsplassen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd 100% av din lagringskapasitet. Du kan ikke sende eller motta nye e-poster. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
@@ -4717,9 +4708,6 @@
       "Trouble signing in?": [
         "Problemer med å logge på?"
       ],
-      "Upgrade account": [
-        "Oppgrader kontoen"
-      ],
       "Upgrade your plan": [
         "Oppgrader planen din"
       ],
@@ -4849,9 +4837,6 @@
       ],
       "From ${ price }": [
         "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
       ],
       "Upgrade": [
         "Oppgrader"
@@ -5351,12 +5336,6 @@
         "/måned"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Du har fortsatt ${ daysRemaining } dag igjen på din ${ currentPlanName }-konto.",
-        "Du har fortsatt ${ daysRemaining } dager igjen på din ${ currentPlanName }-konto."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Ved å klikke på \"Betal\", sier du deg enig med våre ${ termsAndConditions }."
@@ -5545,17 +5524,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Spesialdesignet NetShield beskytter enheten din og øker hastigheten på surfingen ved å blokkere annonser, sporere og skadelig programvare."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Start med ${ freeStorageSize } og lås opp mer lagringsplass etter hvert. Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagringsplass er delt over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Lagringsplass er delt mellom ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }. Administratorer kan tildele ulike lagringsmengder til brukere i deres organisasjon"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lagringsplass er delt mellom brukere over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Lagringsplass er delt mellom brukere over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } og ${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Støtte for fildelingsprotokoller som BitTorrent."
@@ -6508,11 +6484,6 @@
         "Dette abonnementet fornyes automatisk hvert 2. år med samme pris til det kanselleres."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Livstidtilbud"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå til abonnementsplaner"
@@ -6649,6 +6620,88 @@
       ],
       "Your current storage:": [
         "Din gjeldende lagringsplass:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Behold ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Lagring for data generert av ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, og ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Opptil ${ totalStorageSize } Drive-lagring"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Opptil ${ totalStorageSize } Mail-lagring"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-lagring"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% full"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Ved å nedgradere vil du miste følgende fordeler. Er du sikker på at du vil fortsette?"
+      ],
+      "contact your administrator": [
+        "kontakt administratoren din"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "For alle ${ BRAND_NAME }-tjenester"
+      ],
+      "upgrade for more storage": [
+        "oppgrader for mer lagringsplass"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Vi legger til kredittene for den gjenværende tiden til ${ BRAND_NAME }-kontoen din."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Du har fortsatt **${ daysRemaining }** dag igjen på din **${ currentPlanName }**-plan.",
+        "Du har fortsatt **${ daysRemaining }** dager igjen på din **${ currentPlanName }**-plan."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Din ${ appStorage } er nesten full"
+      ],
+      "Your ${ appStorage } is full": [
+        "Din ${ appStorage } er full"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er ${ percentage }% full. For å sende eller motta e-post, frigjør plas eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Lagringsplassen din er full"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Du mister tilgang til ekstra lagringsplass, e-postadresser, aliaser, kalendere samt prioritert støtte."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Du mister tilgang til den høyeste VPN-hastigheten, beskyttelse for 10 enheter, høyhastighets strømming, annonseblokkering og beskyttelse mot skadelig programvare, samt prioritert støtte."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Du mister tilgangen til ubegrensede pålogginger og notater, ubegrensede hide-my-email-aliaser, 20 hvelv samt prioritert støtte."
       ]
     },
     "Subscription": {
@@ -7229,6 +7282,9 @@
       ],
       "Downgrade account": [
         "Nedgrader kontoen"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Nedgradere til ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"

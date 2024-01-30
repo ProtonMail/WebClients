@@ -3688,12 +3688,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Frigör lite utrymme eller lägg till mer lagringsutrymme."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigör lite utrymme eller kontakta din administratör."
-      ],
       "from the version history?": [
         "från versionshistoriken?"
       ],
@@ -4372,12 +4366,6 @@
         "Du har ${ expiresInDays } dag kvar att göra anspråk på din 500 MB välkomstbonus och ",
         "Du har ${ expiresInDays } dagar kvar att göra anspråk på din 500 MB välkomstbonus och "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nått ${ spaceDisplayed }% av din lagringskapacitet. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nått 100 % av din lagringskapacitet. Du kan inte skicka eller ta emot nya e-postmeddelanden. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
       ],
@@ -4552,9 +4540,6 @@
       ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
-      ],
-      "Audio file": [
-        "Ljudfil"
       ],
       "Authenticator app": [
         "Autentiseringsapp"
@@ -4734,9 +4719,6 @@
       "I understand the risk": [
         "Jag förstår risken"
       ],
-      "Image": [
-        "Bild"
-      ],
       "Import all messages": [
         "Importera alla meddelanden"
       ],
@@ -4905,9 +4887,6 @@
       "System information": [
         "Systeminformation"
       ],
-      "Text": [
-        "Text"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4922,9 +4901,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unknown file": [
-        "Okänd fil"
       ],
       "Unlock drive": [
         "Lås upp Drive"
@@ -4943,9 +4919,6 @@
       ],
       "Verification code": [
         "Verifieringskod"
-      ],
-      "Video file": [
-        "Videofil"
       ],
       "What happened?": [
         "Vad hände?"
@@ -5038,9 +5011,6 @@
       "Trash": [
         "Papperskorg"
       ],
-      "Upgrade account": [
-        "Uppgradera konto"
-      ],
       "What’s this?": [
         "Vad är detta?"
       ]
@@ -5103,6 +5073,179 @@
       ],
       "Plain text": [
         "Oformaterad text"
+      ]
+    },
+    "Mimetype": {
+      "AAC audio": [
+        "AAC-ljud"
+      ],
+      "AbiWord document": [
+        "AbiWord-dokument"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
+      "Audio file": [
+        "Ljudfil"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
+      ],
+      "AVI video": [
+        "AVI-video"
+      ],
+      "Binary data": [
+        "Binära data"
+      ],
+      "BZip archive": [
+        "BZip-arkiv"
+      ],
+      "BZip2 archive": [
+        "BZip2-arkiv"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Electronic publication (EPUB)"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
+      ],
+      "iCalendar format": [
+        "iCalendar-format"
+      ],
+      "Icon format": [
+        "Ikonformat"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Java Archive (JAR)": [
+        "Java Archive (JAR)"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "JPEG-bilder"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "MP3-ljud"
+      ],
+      "MPEG Video": [
+        "MPEG-video"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
+      ],
+      "OGG audio": [
+        "OGG-ljud"
+      ],
+      "OGG video": [
+        "OGG-video"
+      ],
+      "Opus audio": [
+        "Opus-ljud"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "RAR-arkiv"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text Format (RTF)"
+      ],
+      "Small web format (SWF)": [
+        "Small web format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "TrueType Font": [
+        "TrueType-typsnitt"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Okänd fil"
+      ],
+      "Video file": [
+        "Videofil"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "WEBM-ljud"
+      ],
+      "WEBM video": [
+        "WEBM-video"
+      ],
+      "WEBP image": [
+        "WEBP-bild"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
+      ],
+      "ZIP archive": [
+        "ZIP-arkiv"
       ]
     },
     "Modal title": {
@@ -6117,6 +6260,53 @@
       ],
       "Your current storage:": [
         "Ditt nuvarande lagringsutrymme:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagringsutrymme"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fullt"
+      ],
+      "contact your administrator": [
+        "kontakta din administratör"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "För att skicka eller ta emot e-post, frigör utrymme eller uppgradera för mer lagringsutrymme."
+      ],
+      "upgrade for more storage": [
+        "uppgradera för mer lagringsutrymme"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ditt ${ appStorage } är nästan fullt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ditt ${ appStorage } är fullt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ditt ${ storage } är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt lagringsutrymme är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ditt lagringsutrymme är fullt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
       ]
     },
     "Success": {

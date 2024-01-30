@@ -29,6 +29,21 @@
       "Back": [
         "Zurück"
       ],
+      "Bulk delete items from trash": [
+        "Mehrfacheinträge aus dem Papierkorb löschen"
+      ],
+      "Bulk move items to another vault": [
+        "Mehrfacheinträge in einen anderen Tresor verschieben"
+      ],
+      "Bulk move items to trash": [
+        "Mehrfacheinträge in den Papierkorb verschieben"
+      ],
+      "Bulk restore items from trash": [
+        "Mehrfacheinträge vom Papierkorb wiederherstellen"
+      ],
+      "Bulk select items": [
+        "Mehrfachauswahl von Einträgen"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Tresor löschen"
       ],
+      "Deselect": [
+        "Auswahl aufheben"
+      ],
       "Discard": [
         "Verwerfen"
       ],
       "Dismiss": [
         "Verwerfen"
+      ],
+      "Download this CSV template": [
+        "Diese CSV-Vorlage herunterladen"
       ],
       "Edit": [
         "Bearbeiten"
@@ -449,17 +470,29 @@
       "Failed resending invite.": [
         "Fehler beim erneuten Senden der Einladung."
       ],
+      "Failed to delete selected items": [
+        "Ausgewählten Einträge konnten nicht gelöscht werden"
+      ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
       ],
+      "Failed to move items": [
+        "Einträge konnte nicht verschoben werden"
+      ],
+      "Failed to move items to trash": [
+        "Einträge konnten nicht aus dem papierkorb wiederhergestellt werden"
+      ],
       "Failed to pin item": [
         "Anheften des Eintrags fehlgeschlagen"
       ],
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
+      ],
+      "Failed to restore items from trash": [
+        "Einträge konnten nicht aus dem Papierkorb wiederhergestellt werden"
       ],
       "Failed to transfer this vault's ownership.": [
         "Fehler beim Übertragen der Tresor-Inhaberschaft."
@@ -664,11 +697,17 @@
       "Admin": [
         "Administrator"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle Einträge von \"${ payload.content.name }\" erfolgreich verschoben."
+      ],
+      "All items successfully moved": [
+        "Einträge erfolgreich verschoben"
       ],
       "All trashed items permanently deleted": [
         "Alle Einträge im Papierkorb dauerhaft gelöscht."
@@ -733,6 +772,9 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Der Export wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
       ],
+      "Fill in the CSV with your data": [
+        "Fülle die CSV-Datei mit deinen Daten aus."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
@@ -744,6 +786,9 @@
       ],
       "Import in progress:": [
         "Import im Gange:"
+      ],
+      "Import the CSV file below.": [
+        "Importiere die CSV-Datei unten."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } Eintrag importiert",
@@ -831,6 +876,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Einträge verschieben"
+      ],
+      "Moving items to trash": [
+        "Einträge in den Papierkorb verschieben"
+      ],
       "Never": [
         "Niemals"
       ],
@@ -848,6 +899,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Permanently deleting selected items": [
+        "Ausgewählte Einträge dauerhaft löschen"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-Code erfolgreich registriert. Verwende ihn, um ${ PASS_APP_NAME } zu entsperren."
@@ -882,6 +936,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
+      "Restoring items from trash": [
+        "Einträge vom Papierkorb wiederherstellen"
+      ],
       "Restoring trashed items...": [
         "Stelle Einträge aus dem Papierkorb wieder her..."
       ],
@@ -890,6 +947,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
+      ],
+      "Selected items permanently deleted": [
+        "Ausgewählte Einträge dauerhaft gelöscht"
+      ],
+      "Selected items successfully moved to trash": [
+        "Ausgewählte Einträge erfolgreich in den Papierkorb verschoben"
+      ],
+      "Selected items successfully restored from trash": [
+        "Ausgewählte Einträge erfolgreich vom Papierkorb wiederhergestellt"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -1140,6 +1206,9 @@
       "Forwards to": [
         "Leitet weiter an"
       ],
+      "Generic CSV": [
+        "Generische CSV"
+      ],
       "Grant": [
         "Zulassen"
       ],
@@ -1388,6 +1457,15 @@
         "Willkommen bei ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } Eintrag",
+        "${ count } Einträge"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Du hast ${ semiboldText } in diesem Tresor ausgewählt"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommas"
@@ -1395,7 +1473,7 @@
       "Hyphens": [
         "Bindestriche"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Einprägsames Passwort"
       ],
       "Numbers": [
@@ -1551,6 +1629,9 @@
       ],
       "Move all items ?": [
         "Alle Einträge verschieben?"
+      ],
+      "No items selected": [
+        "Keine Einträge ausgewählt"
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"

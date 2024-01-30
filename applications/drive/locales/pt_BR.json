@@ -3688,12 +3688,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Libere algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algum espaço ou contate seu administrador."
-      ],
       "from the version history?": [
         "do histórico de versões?"
       ],
@@ -4320,6 +4314,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado para a versão de ${ formattedRevisionDate }. Todas as outras versões serão salvas."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Com ${ DRIVE_APP_NAME } seus dados são protegidos por criptografia de ponta a ponta."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
       ],
@@ -4362,12 +4359,6 @@
       "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
         "Você tem ${ expiresInDays } dia restantes para reivindicar seu bônus de boas-vindas de 500 MB e ",
         "Você tem ${ expiresInDays } dias restantes para reivindicar seu bônus de boas-vindas de 500 MB e "
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
@@ -4540,9 +4531,6 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
-      ],
-      "Audio file": [
-        "Arquivo de áudio"
       ],
       "Authenticator app": [
         "Aplicativo autenticador"
@@ -4722,9 +4710,6 @@
       "I understand the risk": [
         "Eu entendo o risco"
       ],
-      "Image": [
-        "Imagem"
-      ],
       "Import all messages": [
         "Importar todas as mensagens"
       ],
@@ -4893,9 +4878,6 @@
       "System information": [
         "Informações do sistema"
       ],
-      "Text": [
-        "Texto"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4910,9 +4892,6 @@
       ],
       "Type": [
         "Tipo"
-      ],
-      "Unknown file": [
-        "Arquivo desconhecido"
       ],
       "Unlock drive": [
         "Desbloquear drive"
@@ -4931,9 +4910,6 @@
       ],
       "Verification code": [
         "Código de verificação"
-      ],
-      "Video file": [
-        "Arquivo de vídeo"
       ],
       "What happened?": [
         "O que aconteceu?"
@@ -5026,9 +5002,6 @@
       "Trash": [
         "Lixeira"
       ],
-      "Upgrade account": [
-        "Upgrade de conta"
-      ],
       "What’s this?": [
         "O que é isso?"
       ]
@@ -5091,6 +5064,194 @@
       ],
       "Plain text": [
         "Texto sem formatação"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Contêiner de áudio/vídeo 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Contêiner de áudio/vídeo 3GPP2"
+      ],
+      "7-zip archive": [
+        "Arquivo 7-zip"
+      ],
+      "AAC audio": [
+        "Áudio AAC"
+      ],
+      "AbiWord document": [
+        "Documento AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Formato de documento portátil do Adobe (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Formato do Amazon Kindle eBook"
+      ],
+      "Android Package": [
+        "Pacote do Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Gráficos de rede portáteis animados"
+      ],
+      "Apple Installer Package": [
+        "Pacote de instalação da Apple"
+      ],
+      "Archive document": [
+        "Documento de arquivo"
+      ],
+      "Audio file": [
+        "Arquivo de áudio"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "Formato de arquivo de imagem AV1 (AVIF)"
+      ],
+      "AVI video": [
+        "Vídeo AVI"
+      ],
+      "Binary data": [
+        "Dados binários"
+      ],
+      "Bourne shell script": [
+        "Script de shell Bourne"
+      ],
+      "BZip archive": [
+        "Arquivo BZip"
+      ],
+      "BZip2 archive": [
+        "Arquivo BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Folhas de estilo em cascata (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Valores separados por vírgula (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Publicação digital (EPUB)"
+      ],
+      "Flash Video": [
+        "Vídeo Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Formato para intercâmbio de gráficos (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "Arquivo GZip comprimido"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Linguagem de marcação de hipertexto (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Preprocessador de hipertexto (Página de início pessoal)"
+      ],
+      "iCalendar format": [
+        "Formato iCalendar"
+      ],
+      "Icon format": [
+        "Formato de ícone"
+      ],
+      "Image": [
+        "Imagem"
+      ],
+      "Java Archive (JAR)": [
+        "Arquivo Java (JAR)"
+      ],
+      "JPEG images": [
+        "Images JPEG"
+      ],
+      "MP3 audio": [
+        "Áudio MP3"
+      ],
+      "MPEG transport stream": [
+        "Fluxo de transporte MPEG"
+      ],
+      "MPEG Video": [
+        "Vídeo MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Fontes OpenType integradas em MS"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Interface digital de instrumento musical (MIDI)"
+      ],
+      "OGG audio": [
+        "Áudio OGG"
+      ],
+      "OGG video": [
+        "Vídeo OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Documento de apresentação OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Documento de planilha OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Documento de texto OpenDocument"
+      ],
+      "OpenType font": [
+        "Fonte OpenType"
+      ],
+      "Opus audio": [
+        "Áudio Opus"
+      ],
+      "Portable Network Graphics": [
+        "Gráficos de rede portáteis"
+      ],
+      "RAR archive": [
+        "Arquivo RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "Formato de texto rico (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Gráficos vetoriais escaláveis (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Formato Small web (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Formato de arquivo de imagem marcada (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Arquivo de fita (TAR)"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "TrueType Font": [
+        "Fonte TrueType"
+      ],
+      "Unknown file": [
+        "Arquivo desconhecido"
+      ],
+      "Video file": [
+        "Arquivo de vídeo"
+      ],
+      "Waveform Audio Format": [
+        "Formato de áudio Waveform"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "Áudio WEBM"
+      ],
+      "WEBM video": [
+        "Vídeo WEBM"
+      ],
+      "WEBP image": [
+        "Imagem WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Gráficos de mapa de bits do Windows OS/2"
+      ],
+      "ZIP archive": [
+        "Arquivo ZIP"
       ]
     },
     "Modal title": {
@@ -6096,6 +6257,26 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "armazenamento de ${ app }"
+      ],
+      "contact your administrator": [
+        "contate seu administrador"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O ${ appStorage } está cheio."
+      ],
+      "Your storage is full": [
+        "Seu armazenamento está cheio"
       ]
     },
     "Success": {

@@ -2789,9 +2789,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } for evigt"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: billede i fuld størrelse"
       ],
@@ -2995,14 +2992,17 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Ved at nedgradere mister du følgende fordele. Er du sikker på, at du vil fortsætte?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
       ],
       "Cancel anytime": [
         "Opsig når som helst"
+      ],
+      "Can’t access your recovery email?": [
+        "Kan du ikke få adgang til din gendannelses-e-mail?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Kan du ikke få adgang til din gendannelses telefon?"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -3096,6 +3096,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Færdig! Vi sendte en kode til ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Kender du ikke din gendannelsessætning?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
       ],
@@ -3171,6 +3174,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Indtast din gendannelsessætning for at ændre din adgangskode nu."
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -3188,12 +3194,6 @@
       ],
       "Free forever": [
         "Gratis for evigt"
-      ],
-      "Free up some space or add more storage space.": [
-        "Frigør plads eller tilføj mere lagerplads."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigør lidt plads eller kontakt din administrator."
       ],
       "Gateways": [
         "Gateways"
@@ -3711,6 +3711,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "For at fortsætte skal du vælge en metode til kontogendannelse, så vi kan bekræfte anmodningen."
       ],
+      "To proceed, we must verify the request.": [
+        "For at fortsætte skal vi bekræfte anmodningen."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en server."
       ],
@@ -3861,6 +3864,9 @@
       "Welcome": [
         "Velkommen"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Vi sender en nulstillingskode til ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
       ],
@@ -3964,12 +3970,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
@@ -4177,11 +4177,17 @@
       "Allowed domain": [
         "Tilladt domæne"
       ],
+      "Allowed Domain": [
+        "Tilladt domæne"
+      ],
       "Amount": [
         "Beløb"
       ],
       "Amount due": [
         "Forfaldent beløb"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL-adresse til forbrugertjeneste"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -4305,6 +4311,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "Har du forslag til vores team?"
+      ],
+      "e.g. example.com": [
+        "f.eks. example.com"
       ],
       "Email": [
         "E-mail"
@@ -4461,6 +4470,9 @@
       ],
       "Proration": [
         "Proration"
+      ],
+      "Public certificate (X.509)": [
+        "Offentligt certifikat (X.509)"
       ],
       "Recovery email address": [
         "E-mailadresse til gendannelse"
@@ -4672,9 +4684,6 @@
       "Trouble signing in?": [
         "Problemer med at logge på?"
       ],
-      "Upgrade account": [
-        "Opgradér konto"
-      ],
       "Upgrade your plan": [
         "Opgradér abonnement"
       ],
@@ -4804,9 +4813,6 @@
       ],
       "From ${ price }": [
         "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
       ],
       "Upgrade": [
         "Opgradér"
@@ -5306,12 +5312,6 @@
         "/måned"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Du har stadig ${ daysRemaining } dag tilbage på din ${ currentPlanName }-konto.",
-        "Du har stadig ${ daysRemaining } dage tilbage på din ${ currentPlanName }-konto."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Ved at klikke på \"Betal\" accepterer du vores ${ termsAndConditions }."
@@ -5500,17 +5500,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Det specialudviklede NetShield beskytter din enhed og gør din browsing hurtigere ved at blokere reklamer, trackere og malware."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Start med ${ freeStorageSize } og lås op for mere lagerplads undervejs. Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }. Administratorer kan tildele forskellige mængder lagerplads til brugere i deres organisation"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lagerplads er delt mellem brugere på tværs af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
@@ -6440,11 +6431,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Livsvarigt tilbud"
       ]
     },
     "specialoffer: Link": {
