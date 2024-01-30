@@ -3822,12 +3822,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Вызваліце ​​месца або павялічце памер сховішча."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Вызваліце ​​месца або звяжыцеся з вашым адміністратарам."
-      ],
       "from the version history?": [
         "з гісторыі версій?"
       ],
@@ -4414,7 +4408,7 @@
         "Абнаўленне пошуку на дыску..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
+        "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "Uploaded": [
         "Запампавана"
@@ -4517,12 +4511,6 @@
         "У вас яшчэ ёсць яшчэ ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 500 МБ і ",
         "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 500 МБ і ",
         "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 500 МБ і "
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі 100% даступнай ёмістасці сховішча. У вас больш няма магчымасці адпраўляць або атрымліваць новыя лісты. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
@@ -4704,9 +4692,6 @@
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
-      "Audio file": [
-        "Аўдыяфайл"
-      ],
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
@@ -4887,9 +4872,6 @@
       "I understand the risk": [
         "Я разумею рызыку"
       ],
-      "Image": [
-        "Відарыс"
-      ],
       "Import all messages": [
         "Імпартаваць усе паведамленні"
       ],
@@ -5058,9 +5040,6 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
-      "Text": [
-        "Тэкст"
-      ],
       "Theme": [
         "Тэма"
       ],
@@ -5075,9 +5054,6 @@
       ],
       "Type": [
         "Тып"
-      ],
-      "Unknown file": [
-        "Невядомы файл"
       ],
       "Unlock drive": [
         "Разблакіраваць дыск"
@@ -5096,9 +5072,6 @@
       ],
       "Verification code": [
         "Праверачны код"
-      ],
-      "Video file": [
-        "Відэафайл"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -5191,9 +5164,6 @@
       "Trash": [
         "Сметніца"
       ],
-      "Upgrade account": [
-        "Палепшыць уліковы запіс"
-      ],
       "What’s this?": [
         "Што гэта?"
       ]
@@ -5266,6 +5236,245 @@
       ],
       "Plain text": [
         "Звычайны тэкст"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Кантэйнер аўдыя/відэа 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Кантэйнер аўдыя/відэа 3GPP2"
+      ],
+      "7-zip archive": [
+        "Архіў 7-zip"
+      ],
+      "AAC audio": [
+        "Аўдыя AAC"
+      ],
+      "AbiWord document": [
+        "Дакумент AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "PDF (Adobe Portable Document Format)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Фармат электроннай кнігі Kindle"
+      ],
+      "Android Package": [
+        "Пакет Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "APNG (Animated Portable Network Graphics)"
+      ],
+      "Apple Installer Package": [
+        "Пакет усталявання Apple"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Archive document": [
+        "Архіўны дакумент"
+      ],
+      "Audio file": [
+        "Аўдыяфайл"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AVIF (AV1 Image File Format)"
+      ],
+      "AVI video": [
+        "Відэа AVI"
+      ],
+      "Binary data": [
+        "Дваічныя даныя"
+      ],
+      "Bourne shell script": [
+        "Сцэнарый Bourne shell"
+      ],
+      "BZip archive": [
+        "Архіў BZip"
+      ],
+      "BZip2 archive": [
+        "Архіў BZip2"
+      ],
+      "C-Shell script": [
+        "Сцэнарый C-Shell"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Каскадныя табліцы стыляў (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Значэнні раздзеленыя коскамі (.csv)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Электронная публікацыя (EPUB)"
+      ],
+      "Flash Video": [
+        "Відэа Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "GIF (Graphics Interchange Format)"
+      ],
+      "GZip Compressed Archive": [
+        "Сціснуты архіў GZip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Мова разметкі гіпертэксту (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Гіпертэкставы прэпрацэсар (асабістая хатняя старонка)"
+      ],
+      "iCalendar format": [
+        "Фармат iCalendar"
+      ],
+      "Icon format": [
+        "Фармат значка (ICO)"
+      ],
+      "Image": [
+        "Відарыс"
+      ],
+      "Java Archive (JAR)": [
+        "Архіў Java (JAR)"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "Відарыс JPEG"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "Аўдыя MP3"
+      ],
+      "MPEG transport stream": [
+        "MPEG-TS (MPEG transport stream)"
+      ],
+      "MPEG Video": [
+        "Відэа MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Шрыфты Embedded OpenType"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "MIDI (Musical Instrument Digital Interface)"
+      ],
+      "OGG audio": [
+        "Аўдыя OGG"
+      ],
+      "OGG video": [
+        "Відэа OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Дакумент прэзентацый OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Дакумент электронных табліц OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Тэкставы дакумент OpenDocument"
+      ],
+      "OpenType font": [
+        "Шрыфт OpenType"
+      ],
+      "Opus audio": [
+        "Аўдыя Opus"
+      ],
+      "Portable Network Graphics": [
+        "PNG (Portable Network Graphics)"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "Архіў RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "RTF (Rich Text Format)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "SVG (Scalable Vector Graphics)"
+      ],
+      "Small web format (SWF)": [
+        "SWF (Small Web Format)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "TIFF (Tagged Image File Format)"
+      ],
+      "Tape Archive (TAR)": [
+        "Стужкавы архіў (TAR)"
+      ],
+      "Text": [
+        "Тэкст"
+      ],
+      "TrueType Font": [
+        "Шрыфт TrueType"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Невядомы файл"
+      ],
+      "Video file": [
+        "Відэафайл"
+      ],
+      "Waveform Audio Format": [
+        "WAV (Waveform Audio Format)"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "WOFF (Web Open Font Format)"
+      ],
+      "WEBM audio": [
+        "Аўдыя WebM"
+      ],
+      "WEBM video": [
+        "Відэа WEBM"
+      ],
+      "WEBP image": [
+        "Відарыс WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "BMP (Windows OS/2 Bitmap Graphics)"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
+      ],
+      "ZIP archive": [
+        "Архіў ZIP"
       ]
     },
     "Modal title": {
@@ -5738,6 +5947,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } пазначыў гэты ключ як састарэлы. Гэты ключ можа выкарыстоўвацца толькі для праверкі подпісу."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Знешні ключ аўтаматычна атрыманы з сайта keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Знешні ключ аўтаматычна атрыманы праз WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Гэты ключ выкарыстоўваецца для шыфравання паведамленняў гэтаму кантакту"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рэкамендуем вам \"не давяраць\" гэтаму ключу."
@@ -6351,6 +6569,50 @@
       ],
       "Your current storage:": [
         "Ваша бягучае сховішча:"
+      ]
+    },
+    "storage_split: info": {
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% запоўнена"
+      ],
+      "contact your administrator": [
+        "звязацца з адміністратарам"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Калі вы хочаце і далей запампоўваць і сінхранізаваць файлы, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
+      ],
+      "upgrade for more storage": [
+        "палепшыце тарыфны план, каб атрымаць больш сховішча"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваша ${ appStorage } амаль запоўнена"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваша ${ appStorage } запоўнена"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ваша ${ storage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ваша сховішча запоўнена"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
       ]
     },
     "Success": {

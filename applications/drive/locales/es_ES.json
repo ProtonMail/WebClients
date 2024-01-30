@@ -3688,12 +3688,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Libera algo de espacio o añade más espacio de almacenamiento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libera algo de espacio o ponte en contacto con tu administrador."
-      ],
       "from the version history?": [
         "del historial de versiones?"
       ],
@@ -4372,12 +4366,6 @@
         "Te queda ${ expiresInDays } día para reclamar tus 500 MB de bono de bienvenida y ",
         "Te quedan ${ expiresInDays } días para reclamar tus 500 MB de bono de bienvenida y "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Has alcanzado el ${ spaceDisplayed }% de tu capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Has alcanzado el 100% de tu capacidad de almacenamiento. No podrás enviar o recibir nuevos correos electrónicos. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
       ],
@@ -4492,6 +4480,9 @@
       "Expired": [
         "Expirada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleto"
       ],
@@ -4549,9 +4540,6 @@
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
-      ],
-      "Audio file": [
-        "Archivo de audio"
       ],
       "Authenticator app": [
         "Aplicación de autenticación"
@@ -4731,9 +4719,6 @@
       "I understand the risk": [
         "Entiendo el riesgo."
       ],
-      "Image": [
-        "Imagen"
-      ],
       "Import all messages": [
         "Importar todos los mensajes"
       ],
@@ -4902,9 +4887,6 @@
       "System information": [
         "Información del sistema"
       ],
-      "Text": [
-        "Texto"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4919,9 +4901,6 @@
       ],
       "Type": [
         "Tipo"
-      ],
-      "Unknown file": [
-        "Archivo desconocido"
       ],
       "Unlock drive": [
         "Desbloquear unidad"
@@ -4940,9 +4919,6 @@
       ],
       "Verification code": [
         "Código de verificación"
-      ],
-      "Video file": [
-        "Archivo de vídeo"
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
@@ -5035,9 +5011,6 @@
       "Trash": [
         "Papelera"
       ],
-      "Upgrade account": [
-        "Mejorar mi cuenta"
-      ],
       "What’s this?": [
         "¿Qué es esto?"
       ]
@@ -5100,6 +5073,194 @@
       ],
       "Plain text": [
         "Texto plano"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Contenedor de audio/video 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Contenedor de audio/video 3GPP2"
+      ],
+      "7-zip archive": [
+        "Archivo 7-zip"
+      ],
+      "AAC audio": [
+        "Audio AAC"
+      ],
+      "AbiWord document": [
+        "Documento AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Formato de documento portátil de Adobe (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Formato eBook de Amazon Kindle"
+      ],
+      "Android Package": [
+        "Paquete de Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Gráficos de red portátiles animados"
+      ],
+      "Apple Installer Package": [
+        "Paquete de instalación de Apple"
+      ],
+      "Archive document": [
+        "Documento de archivo"
+      ],
+      "Audio file": [
+        "Archivo de audio"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "Formato de archivo de imagen AV1 (AVIF)"
+      ],
+      "AVI video": [
+        "Video AVI"
+      ],
+      "Binary data": [
+        "Datos binarios"
+      ],
+      "Bourne shell script": [
+        "Script Bourne shell"
+      ],
+      "BZip archive": [
+        "Archivo BZip"
+      ],
+      "BZip2 archive": [
+        "Archivo BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Hojas de estilo en cascada (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Valores separados por comas (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Publicación electrónica (EPUB)"
+      ],
+      "Flash Video": [
+        "Video Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Formato de intercambio de gráficos (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "Archivo GZip comprimido"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Lenguaje de marcado de hipertexto (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Preprocesador de hipertexto (página de inicio personal)"
+      ],
+      "iCalendar format": [
+        "Formato iCalendar"
+      ],
+      "Icon format": [
+        "Formato de iconos (ICO)"
+      ],
+      "Image": [
+        "Imagen"
+      ],
+      "Java Archive (JAR)": [
+        "Archivo Java (JAR)"
+      ],
+      "JPEG images": [
+        "Imágenes JPEG"
+      ],
+      "MP3 audio": [
+        "Audio MP3"
+      ],
+      "MPEG transport stream": [
+        "Flujo de transporte MPEG"
+      ],
+      "MPEG Video": [
+        "Video MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Fuentes OpenType integradas en MS"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Interfaz digital para instrumentos musicales (MIDI)"
+      ],
+      "OGG audio": [
+        "Audio OGG"
+      ],
+      "OGG video": [
+        "Video OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Documento de presentación OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Documento de hoja de cálculo OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Documento de texto OpenDocument"
+      ],
+      "OpenType font": [
+        "Fuente OpenType"
+      ],
+      "Opus audio": [
+        "Audio Opus"
+      ],
+      "Portable Network Graphics": [
+        "Gráficos de red portátiles (PNG)"
+      ],
+      "RAR archive": [
+        "Archivo RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "Formato de texto enriquecido (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Gráficos vectoriales escalables (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Formato Small web (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Formato de archivo de imagen etiquetada (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Archivo en cinta (TAR)"
+      ],
+      "Text": [
+        "Texto"
+      ],
+      "TrueType Font": [
+        "Fuente TrueType"
+      ],
+      "Unknown file": [
+        "Archivo desconocido"
+      ],
+      "Video file": [
+        "Archivo de video"
+      ],
+      "Waveform Audio Format": [
+        "Formato de audio Waveform"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "Audio WEBM"
+      ],
+      "WEBM video": [
+        "Video WEBM"
+      ],
+      "WEBP image": [
+        "Imagen WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Gráficos de mapa de bits de Windows OS/2"
+      ],
+      "ZIP archive": [
+        "Archivo ZIP"
       ]
     },
     "Modal title": {
@@ -5532,6 +5693,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede utilizarse para verificar la firma."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Se ha recuperado la clave externa automáticamente desde keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Se ha obtenido la clave externa obtenida automáticamente mediante WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Se usa esta clave para cifrar los mensajes a este contacto"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -6105,6 +6275,53 @@
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "almacenamiento de ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } lleno al ${ percentage }%"
+      ],
+      "contact your administrator": [
+        "contacta con tu administrador"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Para continuar cargando y sincronizando archivos, libera espacio o mejora para obtener más almacenamiento."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Para enviar o recibir correos, libera espacio o mejora para obtener más almacenamiento."
+      ],
+      "upgrade for more storage": [
+        "mejora para obtener más almacenamiento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El ${ appStorage } está casi lleno."
+      ],
+      "Your ${ appStorage } is full": [
+        "El ${ appStorage } está lleno."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para enviar o recibir correos, libera espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para cargar o sincronizar archivos, libera espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "El ${ storage } está lleno. Para enviar o recibir correos, libera espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está lleno. Para cargar o sincronizar archivos, libera espacio o ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está un ${ percentage }% lleno. Para enviar o recibir correos, libera espacio o ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "El almacenamiento está lleno."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está lleno. Para enviar o recibir correos, libera espacio o ${ upgrade }."
       ]
     },
     "Success": {
