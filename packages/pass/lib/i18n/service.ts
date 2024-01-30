@@ -34,7 +34,7 @@ export const createI18nService = (options: I18nServiceOptions) => {
     const setLocale = async (locale?: string) => {
         try {
             logger.info(`[I18nService] changing locale to ${locale}`);
-            const nextLocale = locale ?? getNavigatorLocale();
+            const nextLocale = locale ?? (await getLocale());
 
             if (nextLocale !== localeCode) {
                 await loadLocale(nextLocale, options.locales);
