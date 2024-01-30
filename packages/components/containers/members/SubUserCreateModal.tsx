@@ -25,6 +25,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Address, CachedOrganizationKey, Domain, Member, Organization } from '@proton/shared/lib/interfaces';
 import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -56,6 +57,7 @@ import {
     useGetUser,
     useGetUserKeys,
     useNotifications,
+    useSubscription,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
@@ -92,6 +94,9 @@ const SubUserCreateModal = ({
     const getOrganizationKey = useGetOrganizationKey();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
+
+    const [subscription] = useSubscription();
+    const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
 
@@ -144,7 +149,7 @@ const SubUserCreateModal = ({
                 Name: model.name || model.address,
                 Private: +model.private,
                 MaxSpace: +model.storage,
-                MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
+                MaxVPN: hasVpnB2bPlan || model.vpn ? VPN_CONNECTIONS : 0,
             }),
         });
 
