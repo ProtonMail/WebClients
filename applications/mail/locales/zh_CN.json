@@ -5032,12 +5032,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
       ],
-      "Free up some space or add more storage space.": [
-        "释放一些存储空间或付费扩容。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "释放一些空间或联系您的管理员。"
-      ],
       "From": [
         "发件人"
       ],
@@ -5820,12 +5814,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "您已经达到5回复的最大限制。"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的存储空间已用尽，不能继续收发邮件。${ freeUpMessage }${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "您在此文件夹中选择了 **${ count } 个会话**"
@@ -6792,9 +6780,6 @@
       ],
       "Trash": [
         "废件箱"
-      ],
-      "Upgrade account": [
-        "升级账户"
       ],
       "What’s this?": [
         "这是什么？"
@@ -8127,6 +8112,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "获得更多存储空间"
+      ],
       "Release notes": [
         "版本说明"
       ],

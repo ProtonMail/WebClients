@@ -5473,12 +5473,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
       ],
-      "Free up some space or add more storage space.": [
-        "Освободите место или добавьте больше места для хранения."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Освободите место или свяжитесь с вашим администратором."
-      ],
       "From": [
         "От"
       ],
@@ -6306,12 +6300,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Вы достигли максимального количества в 5 ответов."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Вы выбрали **${ count } цепочку писем** из этой папки",
@@ -7336,9 +7324,6 @@
       ],
       "Trash": [
         "Корзина"
-      ],
-      "Upgrade account": [
-        "Повысить учётную запись"
       ],
       "What’s this?": [
         "Что это такое?"
@@ -8735,6 +8720,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Получите больше места для хранения"
+      ],
       "Release notes": [
         "Примечания к выпуску"
       ],
