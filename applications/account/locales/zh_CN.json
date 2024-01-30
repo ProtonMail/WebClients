@@ -5106,6 +5106,17 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -5139,9 +5150,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "终身享受 ${ discountPercentage } 折扣"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } 将不再保留文件的旧版本。"
@@ -5494,9 +5502,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降级为免费用户，无论今后是否再次付费升级，您都将永远失去这些特权。"
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "账户降级后您将失去下列权益。确定要继续吗？"
-      ],
       "By leaving now, changes may not be saved": [
         "若现在离开，所作更改将不会被保存"
       ],
@@ -5766,12 +5771,6 @@
       ],
       "Free forever": [
         "永久免费"
-      ],
-      "Free up some space or add more storage space.": [
-        "释放一些存储空间或付费扩容。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "释放一些空间或联系您的管理员。"
       ],
       "free up space by deleting older messages or other data": [
         "删除旧邮件和其他数据释放空间"
@@ -6192,6 +6191,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "请注意，如果删除这个域名，且其下所有地址都将被停用。"
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "请注意，${ nameDeleted }删除后，所有由其触发的自动任务都不会被处理。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
@@ -6982,12 +6984,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "从ICS导入日程之前需要有一个在用的个人日历。"
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的存储空间已用尽，不能继续收发邮件。${ freeUpMessage }${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您需要导出此密钥的备份，以供恢复其加密的数据。"
       ],
@@ -7098,17 +7094,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
       ]
     },
     "Info - folder colouring feature": {
@@ -8598,9 +8583,6 @@
       "Trouble signing in?": [
         "登录遇到问题？"
       ],
-      "Upgrade account": [
-        "升级账户"
-      ],
       "Upgrade your plan": [
         "升级套餐"
       ],
@@ -8969,9 +8951,6 @@
       ],
       "From ${ price }": [
         "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
       ],
       "Upgrade": [
         "升级账户"
@@ -9428,11 +9407,6 @@
         "/月"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
-        "您的 ${ currentPlanName } 账户等级还有 ${ daysRemaining } 天的有效期。"
-      ]
-    },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "创建 ${ BRAND_NAME } 账户即表示您接受我们的${ terms }。"
@@ -9610,12 +9584,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能"
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "从 ${ freeStorageSize } 起，可逐步扩大。${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。管理员可为机构内各用户分配不同大小的存储空间。"
@@ -10937,11 +10905,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "每两年账户将以相同费率自动续费，直至手动退订。"
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "终身优惠"
       ]
     },
     "specialoffer: Link": {
