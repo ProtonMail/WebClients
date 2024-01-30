@@ -24,6 +24,7 @@ import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
@@ -44,6 +45,7 @@ const bootstrapApp = () => {
     const api = createApi({ config, sendLocaleHeaders: true });
     const authentication = bootstrap.createAuthentication({ initialAuth: false, mode: 'standalone' });
     bootstrap.init({ config, authentication, locales });
+    initSafariFontFixClassnames();
 
     const cache = createCache<string, any>();
     const store = setupStore();
