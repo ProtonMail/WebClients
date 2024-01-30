@@ -32,7 +32,7 @@ export const ItemsList: FC = () => {
     return (
         <>
             <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto space-between">
-                <div className="flex gap-1 shrink-0 flex-1">
+                <div className="flex gap-1 shrink-0 flex-1 flex-nowrap">
                     {!bulk.enabled && (
                         <>
                             <TypeFilter

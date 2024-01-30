@@ -25,7 +25,7 @@ import type { EventChannel } from './types';
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
-    { getAuthStore, getTelemetry }: RootSagaOptions
+    { getAuthStore, getTelemetry, onLocaleUpdated }: RootSagaOptions
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
@@ -42,6 +42,12 @@ function* onUserEvent(
         const { Telemetry } = event.UserSettings;
         const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
         if (Telemetry !== userSettings?.Telemetry) telemetry[Telemetry === 1 ? 'start' : 'stop']();
+    }
+
+    if (event.UserSettings?.Locale) {
+        const { Locale } = event.UserSettings;
+        const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
+        if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
     /* if the subscription/invoice changes, refetch the user Plan */

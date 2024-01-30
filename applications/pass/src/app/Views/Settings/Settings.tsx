@@ -9,8 +9,10 @@ import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockCon
 import { Import } from '@proton/pass/components/Settings/Import';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { type Unpack } from '@proton/pass/types';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Export } from './Tabs/Export';
+import { General } from './Tabs/General';
 import { Security } from './Tabs/Security';
 import { Support } from './Tabs/Support';
 
@@ -20,6 +22,11 @@ type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>
 
 const getSettingsTabs: () => SettingTab[] = () => {
     const tabs = [
+        {
+            hash: 'general',
+            title: c('Label').t`General`,
+            content: <General />,
+        },
         {
             hash: 'security',
             title: c('Label').t`Security`,
@@ -56,8 +63,8 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
 };
 
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
-    const { openSettings } = usePassCore();
     const navigateToAccount = useNavigateToAccount();
+    const { config, openSettings } = usePassCore();
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const tabs = useMemo(getSettingsTabs, []);
@@ -71,14 +78,22 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
 
     return (
-        <Tabs
-            className="w-full"
-            contentClassName="p-0"
-            navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
-            onChange={handleOnChange}
-            tabs={tabs}
-            value={activeTab}
-        />
+        <>
+            <Tabs
+                className="w-full"
+                contentClassName="p-0"
+                navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
+                onChange={handleOnChange}
+                tabs={tabs}
+                value={activeTab}
+            />
+            <div className="mt-auto">
+                <hr />
+                <span className="block text-sm color-weak text-center">
+                    {PASS_APP_NAME} v{config.APP_VERSION}
+                </span>
+            </div>
+        </>
     );
 };
 

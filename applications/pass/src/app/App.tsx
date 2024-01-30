@@ -11,6 +11,7 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -27,6 +28,7 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
+import { i18n } from '../lib/i18n';
 import { onboarding } from '../lib/onboarding';
 import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
@@ -89,11 +91,12 @@ export const App = () => {
             <ServiceWorkerContext.Consumer>
                 {(sw) => (
                     <PassCoreProvider
-                        endpoint="web"
                         config={PASS_CONFIG}
+                        endpoint="web"
                         exportData={exportData}
                         generateOTP={generateOTP}
                         getDomainImage={getDomainImageFactory(sw)}
+                        i18n={i18n}
                         onLink={onLink}
                         onOnboardingAck={onboarding.acknowledge}
                         onTelemetry={telemetry.push}
@@ -113,10 +116,14 @@ export const App = () => {
                                                         <NavigationProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <Route
-                                                                        path="*"
-                                                                        render={() => (loggedIn ? <Main /> : <Lobby />)}
-                                                                    />
+                                                                    <Localized>
+                                                                        <Route
+                                                                            path="*"
+                                                                            render={() =>
+                                                                                loggedIn ? <Main /> : <Lobby />
+                                                                            }
+                                                                        />
+                                                                    </Localized>
                                                                     <Portal>
                                                                         <ModalsChildren />
                                                                         <NotificationsChildren />
