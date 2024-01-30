@@ -40,6 +40,7 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
+    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
@@ -52,11 +53,10 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
+// import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import isTruthy from '@proton/utils/isTruthy';
@@ -64,6 +64,7 @@ import noop from '@proton/utils/noop';
 
 import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
+import { PublicThemeProvider, getPublicTheme } from '../containers/PublicThemeProvider';
 import { Paths } from '../content/helper';
 import { isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
 import { InviteData, SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
@@ -72,6 +73,7 @@ import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../si
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
+import Layout from './Layout';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
@@ -81,11 +83,12 @@ import { getGenericConfiguration } from './generic/configuration';
 import {
     getFreeSubscriptionData,
     getHasBusinessUpsell,
+    getPlanCardSubscriptionData,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import { SignupMode, SignupModelV2, SignupParameters2, SignupTheme, Steps, Upsell, UpsellTypes } from './interface';
+import { SignupMode, SignupModelV2, SignupParameters2, Steps, Upsell, UpsellTypes } from './interface';
 import { getMailConfiguration } from './mail/configuration';
 import {
     TelemetryMeasurementData,
@@ -114,27 +117,14 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
     };
 };
 
-const subscriptionDataCycleMapping = [
-    {
-        planIDs: {},
-        mapping: {
-            [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
-            [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
-            [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
-            [CYCLE.FIFTEEN]: getDefaultSubscriptionData(CYCLE.FIFTEEN),
-            [CYCLE.THIRTY]: getDefaultSubscriptionData(CYCLE.THIRTY),
-        },
+const subscriptionDataCycleMapping = {
+    [PLANS.FREE]: {
+        [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
+        [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
+        [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
+        [CYCLE.FIFTEEN]: getDefaultSubscriptionData(CYCLE.FIFTEEN),
+        [CYCLE.THIRTY]: getDefaultSubscriptionData(CYCLE.THIRTY),
     },
-];
-
-const getSignupTheme = (toApp: APP_NAMES | undefined, signupParameters: SignupParameters2): SignupTheme => {
-    const darkTheme =
-        getHas2023OfferCoupon(signupParameters.coupon) || signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
-    return {
-        type: darkTheme ? ThemeTypes.Carbon : undefined,
-        background: darkTheme ? 'bf' : undefined,
-        intent: toApp || darkTheme ? APPS.PROTONMAIL : undefined,
-    };
 };
 
 export const defaultUpsell: Upsell = {
@@ -147,7 +137,7 @@ export const defaultUpsell: Upsell = {
 export const defaultSignupModel: SignupModelV2 = {
     session: undefined,
     domains: [],
-    subscriptionData: subscriptionDataCycleMapping[0].mapping[CYCLE.YEARLY],
+    subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
     subscriptionDataCycleMapping,
     paymentMethodStatus: {
         Card: false,
@@ -209,6 +199,7 @@ const SingleSignupContainerV2 = ({
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
+    const audience = location.pathname === SSO_PATHS.PASS_SIGNUP_B2B ? Audience.B2B : Audience.B2C;
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
     useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
@@ -307,6 +298,10 @@ const SingleSignupContainerV2 = ({
             };
         }
 
+        if (toApp === APPS.PROTONPASS && audience === Audience.B2B && !result.coupon) {
+            result.coupon = COUPON_CODES.PASS_B2B_INTRO;
+        }
+
         return {
             ...result,
             localID: Number.isInteger(localID) ? localID : undefined,
@@ -317,29 +312,13 @@ const SingleSignupContainerV2 = ({
 
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
 
-    const {
-        logo,
-        features,
-        title,
-        planCards,
-        benefits,
-        product,
-        shortProductAppName,
-        productAppName,
-        preload,
-        signupTypes,
-        onboarding,
-        setupImg,
-        defaults,
-        generateMnemonic,
-        CustomStep,
-        cycles,
-    } = (() => {
+    const signupConfiguration = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
         const plan = model.optimistic.plan || selectedPlan;
 
         if (toApp === APPS.PROTONDRIVE) {
             return getDriveConfiguration({
+                audience,
                 freePlan: model.freePlan,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
@@ -349,6 +328,7 @@ const SingleSignupContainerV2 = ({
         }
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
             return getMailConfiguration({
+                audience,
                 mode: signupParameters.mode,
                 plan,
                 planParameters: model.planParameters,
@@ -361,6 +341,7 @@ const SingleSignupContainerV2 = ({
         }
         if (toApp === APPS.PROTONPASS) {
             return getPassConfiguration({
+                audience,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
@@ -373,10 +354,13 @@ const SingleSignupContainerV2 = ({
                     PLANS.BUNDLE_PRO,
                     PLANS.VPN_PASS_BUNDLE,
                     PLANS.PASS_PLUS,
+                    PLANS.PASS_BUSINESS,
+                    PLANS.PASS_PRO,
                 ].some((plan) => planIDs[plan]),
             });
         }
         return getGenericConfiguration({
+            audience,
             mode: signupParameters.mode,
             plan,
             freePlan: model.freePlan,
@@ -387,6 +371,18 @@ const SingleSignupContainerV2 = ({
             hideFreePlan: signupParameters.hideFreePlan,
         });
     })();
+    const {
+        planCards,
+        product,
+        shortProductAppName,
+        productAppName,
+        preload,
+        onboarding,
+        setupImg,
+        defaults,
+        generateMnemonic,
+        CustomStep,
+    } = signupConfiguration;
 
     useEffect(() => {
         const run = async () => {
@@ -443,6 +439,9 @@ const SingleSignupContainerV2 = ({
                 if (signupParameters.mode === SignupMode.Onboarding) {
                     return 'pass_web_first_onboard';
                 }
+                if (audience === Audience.B2B) {
+                    return 'pass_signup_b2b';
+                }
                 return 'pass_signup';
             }
             return 'generic_signup';
@@ -459,7 +458,7 @@ const SingleSignupContainerV2 = ({
         }).catch(noop);
     };
 
-    const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
+    const upsellPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
 
     const triggerModals = (
         session: SessionData,
@@ -539,6 +538,7 @@ const SingleSignupContainerV2 = ({
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const cycle = signupParameters.cycle || defaults.cycle;
             const invite = signupParameters.invite;
+            const coupon = signupParameters.coupon;
 
             const plansMap = toMap(plans, 'Name') as PlansMap;
 
@@ -550,6 +550,7 @@ const SingleSignupContainerV2 = ({
                 referralData,
                 { subscriptionData, upsell, ...userInfo },
                 freePlan,
+                subscriptionDataCycleMapping,
             ] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
@@ -562,6 +563,7 @@ const SingleSignupContainerV2 = ({
                           .catch(() => undefined)
                     : undefined,
                 getUserInfo({
+                    audience,
                     api: silentApi,
                     user: resumedSession?.User,
                     plans,
@@ -573,11 +575,32 @@ const SingleSignupContainerV2 = ({
                         planIDs: planParameters.planIDs,
                         currency,
                         cycle,
-                        coupon: signupParameters.coupon,
+                        coupon,
                     },
                     toApp: product,
                 }),
                 getFreePlan({ api: silentApi, storageSplitEnabled }),
+                (async () => {
+                    const [b2b, b2c] = await Promise.all(
+                        ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
+                            const plans = planCards[audienceToFetch].map(({ plan }) => plan);
+                            let couponToFetch = coupon;
+                            // Assumes the coupon is only valid for the specified audience.
+                            if (audienceToFetch !== audience) {
+                                couponToFetch = undefined;
+                            }
+                            return getPlanCardSubscriptionData({
+                                plans,
+                                plansMap,
+                                cycles: signupConfiguration.cycles || [CYCLE.MONTHLY, CYCLE.YEARLY],
+                                api: silentApi,
+                                coupon: couponToFetch,
+                                currency,
+                            });
+                        })
+                    );
+                    return { ...b2b, ...b2c };
+                })(),
             ]);
 
             let session: SessionData | undefined;
@@ -623,6 +646,7 @@ const SingleSignupContainerV2 = ({
                 planParameters,
                 plansMap,
                 freePlan,
+                subscriptionDataCycleMapping,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentMethodStatus,
@@ -710,7 +734,7 @@ const SingleSignupContainerV2 = ({
                 if (
                     !reset &&
                     Object.keys(previousPlanIDs).length <= 1 &&
-                    planCards.some((planCard) => previousPlanIDs[planCard.plan] > 0)
+                    planCards[audience].some((planCard) => previousPlanIDs[planCard.plan] > 0)
                 ) {
                     return previousPlanIDs;
                 }
@@ -718,6 +742,7 @@ const SingleSignupContainerV2 = ({
             })();
 
             const { subscriptionData, upsell } = await getUserInfo({
+                audience,
                 api: silentApi,
                 options: {
                     cycle: signupParameters.cycle || model.subscriptionData.cycle,
@@ -767,6 +792,7 @@ const SingleSignupContainerV2 = ({
 
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
+                audience,
                 user,
                 plans: model.plans,
                 plansMap: model.plansMap,
@@ -964,10 +990,10 @@ const SingleSignupContainerV2 = ({
         return result.cache;
     };
 
-    const theme = getSignupTheme(toApp, signupParameters);
+    const theme = getPublicTheme(toApp, audience, viewportWidth);
 
     return (
-        <>
+        <PublicThemeProvider value={theme}>
             {preload}
             {renderLoginModal && (
                 <LoginModal
@@ -996,7 +1022,7 @@ const SingleSignupContainerV2 = ({
                 <UnlockModal
                     {...unlockModalProps}
                     title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
-                    dark={theme.background === 'bf'}
+                    dark={theme.dark}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     subscriptionData={model.subscriptionData}
@@ -1044,7 +1070,7 @@ const SingleSignupContainerV2 = ({
             {renderSubUserModal && (
                 <SubUserModal
                     {...subUserModalProps}
-                    dark={theme.background === 'bf'}
+                    dark={theme.dark}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     plansMap={model.plansMap}
@@ -1061,27 +1087,17 @@ const SingleSignupContainerV2 = ({
             <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
+                        signupConfiguration={signupConfiguration}
                         activeSessions={activeSessions}
                         signupParameters={signupParameters}
-                        signupTypes={signupTypes}
-                        theme={theme}
                         relativePrice={relativePrice}
                         step1Ref={step1Ref}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
-                        features={features}
                         isLargeViewport={viewportWidth['>=large']}
-                        logo={logo}
-                        title={title}
                         api={normalApi}
-                        benefits={benefits}
                         measure={measure}
-                        app={product}
-                        shortAppName={shortProductAppName}
-                        appName={productAppName}
                         selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}
-                        cycles={cycles}
-                        planCards={planCards}
                         onOpenSwitch={() => {
                             setSwitchModal(true);
                         }}
@@ -1197,80 +1213,81 @@ const SingleSignupContainerV2 = ({
                     />
                 )}
                 {model.step === Steps.Loading && (
-                    <Step2
-                        theme={theme}
-                        logo={logo}
-                        steps={(() => {
-                            const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
-                            const hasPayment = hasPlans && model.subscriptionData.checkResult.AmountDue > 0;
-                            const hasSession = !!model.session?.user;
+                    <Layout logo={signupConfiguration.logo} hasDecoration={false}>
+                        <Step2
+                            logo={signupConfiguration.logo}
+                            steps={(() => {
+                                const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
+                                const hasPayment = hasPlans && model.subscriptionData.checkResult.AmountDue > 0;
+                                const hasSession = !!model.session?.user;
 
-                            const list = [
-                                hasPayment && c('pass_signup_2023: Info').t`Verifying your payment`,
-                                !hasSession && c('pass_signup_2023: Info').t`Creating your account`,
-                                !hasPayment &&
-                                    hasSession &&
-                                    hasPlans &&
-                                    c('pass_signup_2023: Info').t`Updating your account`,
-                                canGenerateMnemonic && c('pass_signup_2023: Info').t`Preparing your Recovery Kit`,
-                            ].filter(isTruthy);
-                            if (!list.length) {
-                                list.push(c('pass_signup_2023: Info').t`Updating your account`);
-                            }
-                            return list;
-                        })()}
-                        product={productAppName}
-                        img={setupImg}
-                        onSetup={async () => {
-                            const cache = model.cache;
-                            if (!cache) {
-                                throw new Error('Missing cache');
-                            }
+                                const list = [
+                                    hasPayment && c('pass_signup_2023: Info').t`Verifying your payment`,
+                                    !hasSession && c('pass_signup_2023: Info').t`Creating your account`,
+                                    !hasPayment &&
+                                        hasSession &&
+                                        hasPlans &&
+                                        c('pass_signup_2023: Info').t`Updating your account`,
+                                    canGenerateMnemonic && c('pass_signup_2023: Info').t`Preparing your Recovery Kit`,
+                                ].filter(isTruthy);
+                                if (!list.length) {
+                                    list.push(c('pass_signup_2023: Info').t`Updating your account`);
+                                }
+                                return list;
+                            })()}
+                            product={productAppName}
+                            img={setupImg}
+                            onSetup={async () => {
+                                const cache = model.cache;
+                                if (!cache) {
+                                    throw new Error('Missing cache');
+                                }
 
-                            try {
-                                if (cache.type === 'user') {
-                                    const result = await handleSetupExistingUser(cache);
-                                    if (onboarding.user) {
-                                        setModelDiff({
-                                            cache: result,
-                                            step: Steps.Custom,
-                                        });
-                                    } else {
-                                        await handleLoginUser(result);
+                                try {
+                                    if (cache.type === 'user') {
+                                        const result = await handleSetupExistingUser(cache);
+                                        if (onboarding.user) {
+                                            setModelDiff({
+                                                cache: result,
+                                                step: Steps.Custom,
+                                            });
+                                        } else {
+                                            await handleLoginUser(result);
+                                        }
                                     }
-                                }
-                                if (cache.type === 'signup') {
-                                    const result = await handleSetupNewUser(cache);
-                                    if (onboarding.signup) {
-                                        setModelDiff({
-                                            cache: result,
-                                            step: Steps.Custom,
-                                        });
-                                    } else {
-                                        throw new Error('Not implemented');
+                                    if (cache.type === 'signup') {
+                                        const result = await handleSetupNewUser(cache);
+                                        if (onboarding.signup) {
+                                            setModelDiff({
+                                                cache: result,
+                                                step: Steps.Custom,
+                                            });
+                                        } else {
+                                            throw new Error('Not implemented');
+                                        }
                                     }
+                                } catch (error) {
+                                    await startUnAuthFlow().catch(noop);
+                                    handleError(error);
+                                    setModelDiff({
+                                        cache: undefined,
+                                        step: Steps.Account,
+                                    });
                                 }
-                            } catch (error) {
-                                await startUnAuthFlow().catch(noop);
-                                handleError(error);
-                                setModelDiff({
-                                    cache: undefined,
-                                    step: Steps.Account,
-                                });
-                            }
-                        }}
-                    />
+                            }}
+                        />
+                    </Layout>
                 )}
                 {model.step === Steps.Custom && (
                     <CustomStep
-                        theme={theme}
+                        audience={audience}
                         measure={measure}
                         fork={fork}
                         model={model}
                         onChangeModel={setModelDiff}
                         productAppName={productAppName}
                         setupImg={setupImg}
-                        logo={logo}
+                        logo={signupConfiguration.logo}
                         onSetup={async (result) => {
                             if (result.type === 'user') {
                                 return handleLoginUser(result);
@@ -1286,7 +1303,7 @@ const SingleSignupContainerV2 = ({
                     />
                 )}
             </UnAuthenticated>
-        </>
+        </PublicThemeProvider>
     );
 };
 export default SingleSignupContainerV2;

@@ -18,13 +18,13 @@ import { MnemonicData } from '../../signup/interfaces';
 import RecoveryStepUnderstoodCheckbox from './RecoveryStepUnderstoodCheckbox';
 import recoveryKit from './recovery-kit.svg';
 
-interface Props {
+export interface PDFRecoveryProps {
     onContinue: () => Promise<void>;
     mnemonic: MnemonicData;
     onMeasureClick: (type: 'recovery_download' | 'recovery_download_again' | 'recovery_continue') => void;
 }
 
-const PDFRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
+const PDFRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: PDFRecoveryProps) => {
     const [loading, withLoading] = useLoading();
     const onceRef = useRef(false);
     const [understood, setUnderstood] = useState(false);
