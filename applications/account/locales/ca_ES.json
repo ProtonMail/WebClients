@@ -5651,6 +5651,17 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -5686,9 +5697,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } per sempre"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } ja no mantindrà versions anteriors dels vostres fitxers."
@@ -6070,9 +6078,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
-      ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
@@ -6341,12 +6346,6 @@
       ],
       "Free forever": [
         "Gratuït per sempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
       ],
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
@@ -7615,12 +7614,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Necessiteu tenir un calendari personal actiu per a importar els esdeveniments d'un fitxer ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "És recomanable que exporteu una còpia de seguretat d'aquesta clau per si necessiteu restaurar les dades que va xifrar."
       ],
@@ -7747,17 +7740,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9297,9 +9279,6 @@
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
       ],
-      "Upgrade account": [
-        "Millorar el compte"
-      ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
@@ -9729,9 +9708,6 @@
       ],
       "From ${ price }": [
         "Des de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conserva el meu compte ${ currentPlanName }"
       ],
       "Upgrade": [
         "Millora"
@@ -10255,12 +10231,6 @@
         "/mes"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Encara us queda ${ daysRemaining } dia al compte ${ currentPlanName }.",
-        "Encara us queden ${ daysRemaining } dies al compte ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Fent clic a \"Pagar\", accepteu els nostres ${ termsAndConditions }."
@@ -10470,17 +10440,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comenceu amb ${ freeStorageSize } i desbloquegeu més emmagatzematge sobre la marxa. L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre usuaris i entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
@@ -12146,11 +12107,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta de per vida"
       ]
     },
     "specialoffer: Link": {

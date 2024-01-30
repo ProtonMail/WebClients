@@ -5804,6 +5804,14 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -5843,9 +5851,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } из ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } навсегда"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } больше не будет сохранять предыдущие версии ваших файлов."
@@ -6300,9 +6305,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
-      ],
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
@@ -6311,6 +6313,12 @@
       ],
       "Cancel anytime": [
         "Отменить в любое время"
+      ],
+      "Can’t access your recovery email?": [
+        "Нет доступа к резервному адресу электронной почты?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Нет доступа к номеру телефона для восстановления?"
       ],
       "Center": [
         "Центрировать"
@@ -6462,6 +6470,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Не знаете вашу фразу для восстановления?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
       ],
@@ -6573,6 +6584,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введите свой резервный номер телефона, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Введите фразу для восстановления, чтобы изменить пароль."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Приглашения на событие и RSVP будут отправлены на этом языке."
       ],
@@ -6608,12 +6622,6 @@
       ],
       "Free forever": [
         "Бесплатно навсегда"
-      ],
-      "Free up some space or add more storage space.": [
-        "Освободите место или добавьте больше места для хранения."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Освободите место или свяжитесь с вашим администратором."
       ],
       "free up space by deleting older messages or other data": [
         "освободить место путем удаления старых сообщений или других данных"
@@ -7572,6 +7580,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
+      "To proceed, we must verify the request.": [
+        "Для продолжения нам необходимо проверить запрос."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
       ],
@@ -7791,6 +7802,9 @@
       "Welcome": [
         "Добро пожаловать"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Код сброса будет отправлен на ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
       ],
@@ -7959,12 +7973,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Для импорта событий из ICS необходимо иметь активный личный календарь."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Вам следует экспортировать резервную копию этого ключа на случай, если вам понадобится восстановить зашифрованные им данные."
       ],
@@ -8093,14 +8101,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -9652,9 +9652,6 @@
       "Trouble signing in?": [
         "Проблемы со входом?"
       ],
-      "Upgrade account": [
-        "Повысить учётную запись"
-      ],
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
@@ -10109,9 +10106,6 @@
       ],
       "From ${ price }": [
         "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
       ],
       "Upgrade": [
         "Улучшить"
@@ -10664,14 +10658,6 @@
         "/месяц"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } день.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дней.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Нажимая на кнопку \"Оплатить\", вы соглашаетесь с нашими ${ termsAndConditions }."
@@ -10889,17 +10875,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет просмотр страниц, блокируя рекламу, трекеры и вредоносные программы"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Начните с ${ freeStorageSize } и постепенно увеличивайте размер хранилища. Его объем распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Хранилище распределяется между пользователями на ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
@@ -12577,11 +12554,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Бессрочное предложение"
       ]
     },
     "specialoffer: Link": {

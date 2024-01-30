@@ -818,6 +818,9 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Seleccione un calendario para exportar"
+      ],
       "Select calendar view": [
         "Seleccionar vista de calendario"
       ],
@@ -3893,6 +3896,9 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ninguna clave externa recuperada para el usuario es válida para enviar"
+      ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
       ],
@@ -5759,6 +5765,17 @@
         "Parte del contenido de su calendario es incompatible y no será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
@@ -5794,9 +5811,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } para siempre"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } no conservará versiones anteriores de sus archivos."
@@ -6209,9 +6223,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo su plan en el futuro."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al pasar a un plan con menos funciones perderá los siguientes beneficios. ¿Está seguro de que quiere continuar?"
-      ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
       ],
@@ -6295,6 +6306,9 @@
       "Credits earned": [
         "Créditos ganados"
       ],
+      "Current plan": [
+        "Plan actual"
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -6374,6 +6388,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
+      ],
+      "Downgrade": [
+        "Bajar"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
@@ -6521,12 +6538,6 @@
       ],
       "Free forever": [
         "Gratis para siempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Libere algo de espacio o añada más espacio de almacenamiento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con la administración."
       ],
       "free up space by deleting older messages or other data": [
         "liberar espacio eliminando mensajes antiguos u otros datos"
@@ -7766,6 +7777,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Ha iniciado sesión en la cuenta ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Está usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimine o borre datos para poder cambiar de plan."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "También puede fusionar calendarios importados con calendarios existentes de ${ BRAND_NAME }."
       ],
@@ -7853,12 +7867,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Necesita tener un calendario personal activo para importar sus eventos desde un archivo ICS."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Alcanzó el ${ spaceDisplayed }% de su capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Alcanzó el 100% de su capacidad de almacenamiento. No puede enviar o recibir correos electrónicos nuevos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Debe exportar una copia de seguridad de esta clave en caso de que necesite restaurar los datos cifrados."
@@ -7986,17 +7994,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9559,9 +9556,6 @@
       "Trouble signing in?": [
         "¿Problemas para iniciar sesión?"
       ],
-      "Upgrade account": [
-        "Mejorar cuenta"
-      ],
       "Upgrade your plan": [
         "Mejore su plan"
       ],
@@ -9994,9 +9988,6 @@
       ],
       "From ${ price }": [
         "Desde ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
       ],
       "Upgrade": [
         "Mejorar"
@@ -10523,12 +10514,6 @@
         "/mes"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Aún le queda ${ daysRemaining } día en su cuenta de ${ currentPlanName }.",
-        "Aún le quedan ${ daysRemaining } días en su cuenta de ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Al pulsar en \"Pagar\", acepta nuestros ${ termsAndConditions }."
@@ -10744,17 +10729,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield protege su dispositivo y le permite navegar mucho más rápido bloqueando anuncios, rastreadores y malware"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Empiece con ${ freeStorageSize } y añada espacio cuando lo necesite. El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }. Los administradores pueden asignar cantidades distintas a los usuarios de su organización"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "El espacio de almacenamiento es compartido entre usuarios en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "El espacio de almacenamiento es compartido entre usuarios en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } y ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Compatibilidad con protocolos de intercambio de archivos como BitTorrent"
@@ -12475,11 +12457,6 @@
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta de por vida"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir a los planes de suscripción"
@@ -12630,6 +12607,106 @@
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Seguir en ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Almacenamiento para datos generados por ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Hasta ${ totalStorageSize } de almacenamiento en Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Hasta ${ totalStorageSize } de almacenamiento en Mail"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "almacenamiento de ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } lleno al ${ percentage }%"
+      ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** de ${ humanMaxSpace }"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Al bajar de plan perderá los siguientes beneficios. ¿En verdad desea continuar?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Considere mejorar su plan para continuar usando su cuenta sin interrupciones."
+      ],
+      "contact your administrator": [
+        "contacte con su administrador"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Para todos los servicios de ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Obtener más almacenamiento"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Pruebe ${ app } en todo su potencial"
+      ],
+      "upgrade for more storage": [
+        "mejore para obtener más almacenamiento"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Mejore su plan para continuar usando su cuenta sin interrupciones."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Mejore su plan para aumentar su almacenamiento."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Añadiremos los créditos restantes a su cuenta de ${ BRAND_NAME }."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Aún le queda **${ daysRemaining }** día en su plan de **${ currentPlanName }**.",
+        "Aún le quedan **${ daysRemaining }** días en su plan de **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El ${ appStorage } está casi lleno."
+      ],
+      "Your ${ appStorage } is full": [
+        "El ${ appStorage } está lleno."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "El ${ storage } está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "El almacenamiento está lleno."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Perderá acceso a ${ gb } de almacenamiento y al soporte prioritario."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Perderá acceso a almacenamiento adicional, direcciones de correo, alias y calendarios así como al soporte prioritario."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Perderá acceso a la velocidad máxima de VPN, protección para 10 dispositivos, streaming de gran velocidad y bloqueador de malware y anuncios así como al soporte prioritario."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Perderá acceso a notas e inicios de sesión ilimitados, alias ilimitados de hide-my-email y 20 bóvedas así como al soporte prioritario."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13572,6 +13649,9 @@
       "Downgrade account": [
         "Pasar a un plan inferior"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "¿Bajar a ${ downgradedPlanName }?"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
       ],
@@ -14168,6 +14248,9 @@
       ],
       "Your SMTP token": [
         "Su token SMTP"
+      ],
+      "Your storage": [
+        "Su almacenamiento"
       ],
       "Your subscriptions": [
         "Sus suscripciones"
