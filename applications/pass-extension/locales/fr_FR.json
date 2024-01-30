@@ -38,6 +38,21 @@
       "Back": [
         "Précédent"
       ],
+      "Bulk delete items from trash": [
+        "Supprimer un groupe d'éléments dans la corbeille"
+      ],
+      "Bulk move items to another vault": [
+        "Déplacer le groupe d'éléments vers un autre coffre-fort"
+      ],
+      "Bulk move items to trash": [
+        "Déplacer un groupe d'éléments vers la corbeille"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurer un groupe d'éléments depuis la corbeille"
+      ],
+      "Bulk select items": [
+        "Sélectionner un groupe d'éléments"
+      ],
       "Cancel": [
         "Annuler"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Supprimer le coffre-fort"
       ],
+      "Deselect": [
+        "Désélectionner"
+      ],
       "Disable autosave on this website": [
         "Désactiver l'enregistrement automatique sur ce site internet"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Terminé"
+      ],
+      "Download this CSV template": [
+        "Télécharger ce modèle CSV"
       ],
       "Edit": [
         "Modifier"
@@ -529,17 +550,29 @@
       "Failed resending invite.": [
         "L'invitation n'a pas pu être renvoyée."
       ],
+      "Failed to delete selected items": [
+        "Les éléments sélectionnés n'ont pas été supprimés."
+      ],
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Failed to move items": [
+        "Le déplacement des éléments n'a pas abouti."
+      ],
+      "Failed to move items to trash": [
+        "Le déplacement des éléments vers la corbeille n'a pas abouti."
+      ],
       "Failed to pin item": [
         "L'élément n'a pas pu être épinglé."
       ],
       "Failed to remove user's access.": [
         "L'accès de l'utilisateur n'a pas pu être retiré."
+      ],
+      "Failed to restore items from trash": [
+        "La restauration des éléments depuis la corbeille n'a pas abouti."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
@@ -778,11 +811,17 @@
       "Admin": [
         "Administrateur"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Une fois vos données importées, vous pouvez supprimer en toute sécurité le fichier CSV contenant vos mots de passe."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tous les éléments ont été déplacés depuis « ${ payload.content.name } »."
+      ],
+      "All items successfully moved": [
+        "Tous les éléments ont été déplacés."
       ],
       "All trashed items permanently deleted": [
         "Tous les éléments dans la corbeille ont été définitivement supprimés."
@@ -868,6 +907,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "L'exportation est chiffrée en PGP et nécessite une phrase secrète forte."
       ],
+      "Fill in the CSV with your data": [
+        "Remplir le fichier CSV avec vos données"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Suiviez ces étapes pour importer vos data au format générique CSV :"
+      ],
       "For easy access to your passwords and more.": [
         "Pour un accès facile à vos mots de passe et à d'autres informations sensibles."
       ],
@@ -891,6 +936,9 @@
       ],
       "Import in progress:": [
         "L'importation est en cours :"
+      ],
+      "Import the CSV file below.": [
+        "Importez le fichier CSV ci-dessous."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } élément importé",
@@ -975,6 +1023,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
+      "Moving items": [
+        "Déplacement d'éléments"
+      ],
+      "Moving items to trash": [
+        "Déplacement des éléments vers la corbeille"
+      ],
       "Never": [
         "Jamais"
       ],
@@ -1004,6 +1058,9 @@
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
+      ],
+      "Permanently deleting selected items": [
+        "Suppression permanente des éléments sélectionnés"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Épinglez ${ PASS_APP_NAME } à votre barre d'outils."
@@ -1041,6 +1098,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
       ],
+      "Restoring items from trash": [
+        "Restauration des éléments depuis la corbeille"
+      ],
       "Restoring trashed items...": [
         "Restauration des éléments mis à la corbeille en cours"
       ],
@@ -1052,6 +1112,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Sélectionnez l'endroit où vous voulez que vos coffres-forts importés soient enregistrés."
+      ],
+      "Selected items permanently deleted": [
+        "Les éléments sélectionnés ont été définitivement supprimés."
+      ],
+      "Selected items successfully moved to trash": [
+        "Les éléments sélectionnés ont été déplacés vers la corbeille."
+      ],
+      "Selected items successfully restored from trash": [
+        "Les éléments sélectionnés ont été restaurés depuis la corbeille."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -1371,6 +1440,9 @@
       "General": [
         "Général"
       ],
+      "Generic CSV": [
+        "CSV générique"
+      ],
       "Grant": [
         "Autoriser"
       ],
@@ -1640,6 +1712,15 @@
         "Bienvenue dans ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } élément",
+        "${ count } éléments"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Vous avez sélectionné ${ semiboldText } dans ce coffre-fort."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenue dans ${ appName }"
@@ -1652,8 +1733,8 @@
       "Hyphens": [
         "Tirets"
       ],
-      "Memorizable Password": [
-        "Mot de passe facile à mémoriser"
+      "Memorable Password": [
+        "Facile à mémoriser"
       ],
       "Numbers": [
         "Chiffres"
@@ -1829,6 +1910,9 @@
       ],
       "Move all items ?": [
         "Déplacer tous les éléments ?"
+      ],
+      "No items selected": [
+        "Aucun élément n'est sélectionné."
       ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
