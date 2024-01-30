@@ -4633,12 +4633,6 @@
       "For messages newer than ${ oldestDate }": [
         "I yiznan akk inegguza ɣef ${ oldestDate }"
       ],
-      "Free up some space or add more storage space.": [
-        "Slelli kra n tallunt neɣ rnu tallunt-nniḍen n weḥraz."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Slelli kra n tallunt neɣ nermes anedbal-inek .m."
-      ],
       "From": [
         "Sɣur"
       ],
@@ -5296,12 +5290,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Tessawḍeḍ amḍan afellay n 5 n tririyin."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Tewwḍeḍ ɣer 100% n tallunt-inek .m n weḥraz. Ur tezmireḍ ara ad tazneḍ neɣ ad teṭṭefeḍ imaylen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Tferneḍ **${ count } udiwenni** seg ukaram-a",
@@ -6236,9 +6224,6 @@
       ],
       "Trash": [
         "Taqecwalt n yiḍumman"
-      ],
-      "Upgrade account": [
-        "Sali aswir n umiḍan"
       ],
       "What’s this?": [
         "D acu-t wa?"
@@ -7323,6 +7308,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Awi ugar n uḥraz"
+      ],
       "Release notes": [
         "Tizmilin n llqem"
       ],

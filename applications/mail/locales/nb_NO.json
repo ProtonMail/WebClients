@@ -3451,6 +3451,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Fant ingen e-poster å importere - kontoen har ikke en innboks"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen ekstern nøkkel hentet for bruker er gyldig for sending"
+      ],
       "No valid address found": [
         "Ingen gyldig adresse funnet"
       ],
@@ -5354,12 +5357,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
       ],
-      "Free up some space or add more storage space.": [
-        "Frigjør litt plass eller legg til mer lagringsplass."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigjør litt plass eller kontakt administratoren din."
-      ],
       "From": [
         "Fra"
       ],
@@ -6201,12 +6198,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du har nådd maksimalt antall 5 svar."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd ${ spaceDisplayed }% av lagringsplassen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd 100% av din lagringskapasitet. Du kan ikke sende eller motta nye e-poster. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Du har valgt **${ count } samtale** fra denne mappen",
@@ -7216,9 +7207,6 @@
       "Trash": [
         "Papirkurv"
       ],
-      "Upgrade account": [
-        "Oppgrader kontoen"
-      ],
       "What’s this?": [
         "Hva er det der?"
       ],
@@ -7814,6 +7802,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markert denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ekstern nøkkel hentet automatisk fra keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ekstern nøkkel hentet automatisk via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
@@ -8671,6 +8668,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Få mer lagringskapasitet"
+      ],
       "Release notes": [
         "Utgivelsesmerknader"
       ],
@@ -8679,6 +8679,53 @@
       ],
       "Your current storage:": [
         "Din gjeldende lagringsplass:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-lagring"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% full"
+      ],
+      "contact your administrator": [
+        "kontakt administratoren din"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
+      ],
+      "upgrade for more storage": [
+        "oppgrader for mer lagringsplass"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Din ${ appStorage } er nesten full"
+      ],
+      "Your ${ appStorage } is full": [
+        "Din ${ appStorage } er full"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er ${ percentage }% full. For å sende eller motta e-post, frigjør plas eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Lagringsplassen din er full"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
       ]
     },
     "Success": {
