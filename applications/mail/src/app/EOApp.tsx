@@ -19,6 +19,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 
 import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
@@ -34,6 +35,7 @@ const boostrapApp = () => {
     if ('chrome' in window) {
         registerMailToProtocolHandler();
     }
+    initSafariFontFixClassnames();
     const cache = createCache();
 
     return {
