@@ -38,6 +38,21 @@
       "Back": [
         "Geri"
       ],
+      "Bulk delete items from trash": [
+        "Çöpteki ögeleri toplu olarak sil"
+      ],
+      "Bulk move items to another vault": [
+        "Ögeleri toplu olarak başka bir kasaya taşı"
+      ],
+      "Bulk move items to trash": [
+        "Ögeleri toplu olarak çöpe at"
+      ],
+      "Bulk restore items from trash": [
+        "Çöpteki ögeleri toplu olarak çıkar"
+      ],
+      "Bulk select items": [
+        "Ögeleri toplu olarak seç"
+      ],
       "Cancel": [
         "İptal"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Kasayı sil"
       ],
+      "Deselect": [
+        "Bırak"
+      ],
       "Disable autosave on this website": [
         "Bu sitede otomatik kayıt kullanılmasın"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Tamam"
+      ],
+      "Download this CSV template": [
+        "Bu CSV kalıbını indir"
       ],
       "Edit": [
         "Düzenle"
@@ -529,17 +550,29 @@
       "Failed resending invite.": [
         "Davet yeniden gönderilemedi."
       ],
+      "Failed to delete selected items": [
+        "Seçilmiş ögeler silinemedi"
+      ],
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
       ],
+      "Failed to move items": [
+        "Ögeler taşınamadı"
+      ],
+      "Failed to move items to trash": [
+        "Ögeler çöpe atılamadı"
+      ],
       "Failed to pin item": [
         "Öge sabitlenemedi"
       ],
       "Failed to remove user's access.": [
         "Kullanıcının erişimi kaldırılamadı."
+      ],
+      "Failed to restore items from trash": [
+        "Ögeler çöpten çıkarılamadı"
       ],
       "Failed to transfer this vault's ownership.": [
         "Bu kasanın sahipliği aktarılamadı"
@@ -778,11 +811,17 @@
       "Admin": [
         "Yönetici"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
+      ],
+      "All items successfully moved": [
+        "Tüm ögeler taşındı"
       ],
       "All trashed items permanently deleted": [
         "Çöpe atılmış tüm ögeler kalıcı olarak silindi"
@@ -868,6 +907,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Dışa aktarma PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
       ],
+      "Fill in the CSV with your data": [
+        "CSV dosyasına verilerinizi ekleyin"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Verilerinizi bir CSV dosyasından içe aktarmak için şu adımları izleyin:"
+      ],
       "For easy access to your passwords and more.": [
         "Parolalarınıza ve diğer bilgilerinize kolayca erişmek için."
       ],
@@ -891,6 +936,9 @@
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
+      ],
+      "Import the CSV file below.": [
+        "Aşağıdan CSV dosyasını içe aktarın."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } öge içe aktarıldı",
@@ -975,6 +1023,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
+      "Moving items": [
+        "Ögeler taşınıyor"
+      ],
+      "Moving items to trash": [
+        "Ögeler çöpe atılıyor"
+      ],
       "Never": [
         "Asla"
       ],
@@ -1004,6 +1058,9 @@
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
+      ],
+      "Permanently deleting selected items": [
+        "Seçilmiş ögeler kalıcı olarak siliniyor"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
@@ -1041,6 +1098,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
       ],
+      "Restoring items from trash": [
+        "Ögeler çöpten çıkarılıyor"
+      ],
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
       ],
@@ -1052,6 +1112,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "İçe aktarılan kasaların kaydedileceği yeri seçin."
+      ],
+      "Selected items permanently deleted": [
+        "Seçilmiş ögeler kalıcı olarak silindi"
+      ],
+      "Selected items successfully moved to trash": [
+        "Seçilmiş ögeler çöpe atıldı"
+      ],
+      "Selected items successfully restored from trash": [
+        "Seçilmiş ögeler çöpten çıkarıldı"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -1371,6 +1440,9 @@
       "General": [
         "Genel"
       ],
+      "Generic CSV": [
+        "CSV dosyası"
+      ],
       "Grant": [
         "İzin ver"
       ],
@@ -1640,6 +1712,15 @@
         "${ brandNameJSX } uygulamasına hoş geldiniz"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Bu kasadaki ${ semiboldText } ögeyi seçtiniz"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
@@ -1652,7 +1733,7 @@
       "Hyphens": [
         "Tire"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Hatırlanabilir parola"
       ],
       "Numbers": [
@@ -1829,6 +1910,9 @@
       ],
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"
+      ],
+      "No items selected": [
+        "Herhangi bir öge seçilmemiş"
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"

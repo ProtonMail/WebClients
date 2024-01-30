@@ -1226,6 +1226,12 @@
         "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Boas-vindas ao ${ appName }"
@@ -1237,6 +1243,9 @@
       ],
       "Hyphens": [
         "Hífens"
+      ],
+      "Memorable Password": [
+        "Palavra-passe memorável"
       ],
       "Numbers": [
         "Números"
