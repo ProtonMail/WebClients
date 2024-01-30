@@ -20,7 +20,7 @@ import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/share
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
-import { APP_NAMES, CLIENT_TYPES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -31,9 +31,10 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
+import unique from '@proton/utils/unique';
 
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
-import { getSignupSearchParams } from '../signup/searchParams';
+import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
     handleDone,
@@ -43,6 +44,7 @@ import {
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
+import { getPlanCardSubscriptionData } from '../single-signup-v2/helper';
 import { SignupDefaults, SignupModelV2, Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
@@ -51,7 +53,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
-import { getInitialSubscriptionDataForAllCycles, getUpsellShortPlan } from './helper';
+import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
 import { TelemetryMeasurementData } from './measure';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
@@ -156,13 +158,18 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 getFreePlan({ api: silentApi, storageSplitEnabled }),
             ]);
 
-            const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles({
-                api: silentApi,
-                signupParameters,
-                Plans,
-                defaults,
-            });
+            const cycle = signupParameters.cycle || defaults.cycle;
+            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const plansMap = toMap(Plans, 'Name') as PlansMap;
+            const planParameters = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
+            const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
+                plansMap,
+                plans: unique([planParameters.plan.Name as PLANS, PLANS.VPN]),
+                cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+                api: silentApi,
+                currency,
+                coupon: signupParameters.coupon,
+            });
 
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
@@ -175,6 +182,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             // Disable bitcoin in this signup because it doesn't handle signed in state
             paymentMethodStatus.Bitcoin = false;
+
+            const subscriptionData =
+                subscriptionDataCycleMapping[planParameters.plan.Name as PLANS]?.[cycle] ||
+                subscriptionDataCycleMapping[PLANS.VPN]?.[CYCLE.TWO_YEARS];
 
             setModelDiff({
                 domains,
@@ -447,16 +458,23 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         isB2bPlan={isB2bPlan}
                         background={background}
                         onSetup={async () => {
-                            if (!cache || cache.type !== 'signup') {
+                            if (!cache || cache.type !== 'signup' || !cache.setupData?.api) {
                                 throw new Error('Missing cache');
                             }
 
                             try {
                                 const password = cache.accountData.password;
-                                const keyPassword = cache.setupData?.keyPassword || '';
+                                const user = cache.setupData.user;
+                                const keyPassword = cache.setupData.keyPassword || '';
                                 const orgName = signupParameters.orgName || '';
 
-                                await handleSetupOrg({ api: silentApi, password, keyPassword, orgName }).catch(noop);
+                                await handleSetupOrg({
+                                    api: silentApi,
+                                    password,
+                                    keyPassword,
+                                    orgName,
+                                    user,
+                                }).catch(noop);
 
                                 metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
                                     status: 'success',
