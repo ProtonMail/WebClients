@@ -11,6 +11,7 @@ export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
      */
     liClassName?: string;
     actionType?: 'delete';
+    fakeDisabled?: boolean; // This is used when a button has a tooltip while being disabled
     'data-testid'?: string;
 }
 
@@ -22,6 +23,7 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
             disabled,
             loading,
             children,
+            fakeDisabled,
             liClassName, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
             actionType, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
             ...rest
@@ -36,9 +38,13 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                 className={clsx([
                     'dropdown-item-button w-full px-4 py-2',
                     isSelected && 'dropdown-item--is-selected',
+                    fakeDisabled && 'dropdown-item--fake-disabled',
                     className,
                 ])}
                 aria-busy={loading}
+                onClick={(e) => {
+                    rest.onClick?.(e);
+                }}
                 {...rest}
             >
                 {loading ? (
