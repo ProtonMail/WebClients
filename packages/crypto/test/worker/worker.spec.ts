@@ -12,7 +12,7 @@ import {
     revokeKey as openpgp_revokeKey,
 } from 'pmcrypto/lib/openpgp';
 
-import { S2kTypeForConfig, SessionKey, VERIFICATION_STATUS } from '../../lib';
+import { ARGON2_PARAMS, S2kTypeForConfig, SessionKey, VERIFICATION_STATUS } from '../../lib';
 import {
     arrayToHexString,
     binaryStringToArray,
@@ -857,6 +857,24 @@ Z3SSOseslp6+4nnQ3zOqnisO
             );
             expect(testHashSHA1).to.equal('3f3feea4f73d400fe98b7518a4b21ad4fc80476d');
             expect(testHashSHA1Streamed).to.equal(testHashSHA1);
+        });
+
+        it('computeArgon2', async () => {
+            const expected = '6904f1422410f8360c6538300210a2868f5e80cd88606ec7d6e7e93b49983cea';
+            const passwordBytes = hexStringToArray('0101010101010101010101010101010101010101010101010101010101010101');
+
+            const promise = CryptoWorker.computeArgon2({
+                password: new TextDecoder().decode(passwordBytes),
+                salt: hexStringToArray('0202020202020202020202020202020202020202020202020202020202020202'),
+                params: ARGON2_PARAMS.MINIMUM,
+            });
+            // Since v6 is only used for testing, we have yet to add the standalone argon2 support
+            if (v6Canary) {
+                await expect(promise).to.be.rejectedWith(/Not implemented/);
+            } else {
+                const tag = await promise;
+                expect(arrayToHexString(tag)).to.equal(expected);
+            }
         });
 
         it('replaceUserIDs - the target key user IDs match the source key ones', async () => {
