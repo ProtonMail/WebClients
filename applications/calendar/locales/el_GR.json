@@ -3867,12 +3867,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
-      ],
       "Frequency modifications will be lost.": [
         "Οι τροποποιήσεις συχνότητας θα χαθούν."
       ],
@@ -4163,9 +4157,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
-      "Update recurring event": [
-        "Ενημέρωση επαναλαμβανόμενης εκδήλωσης"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
       ],
@@ -4252,12 +4243,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλούμε ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
@@ -4862,9 +4847,6 @@
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
       "What’s this?": [
         "Τι είναι αυτό;"
       ]
@@ -5175,7 +5157,7 @@
         "${ n } ημερολόγια ανά χρήστη"
       ],
       "Auto-delete spam and trashed messages": [
-        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
