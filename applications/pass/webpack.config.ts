@@ -9,6 +9,7 @@ const result = (env: any): webpack.Configuration => {
     result.plugins?.push(
         new webpack.DefinePlugin({
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
+            BUILD_TARGET: JSON.stringify('web'),
         })
     );
 
