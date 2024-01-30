@@ -13,6 +13,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import noop from '@proton/utils/noop';
@@ -40,6 +41,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
     setupGuestCrossStorage();
     const appName = config.APP_NAME;
+
+    initSafariFontFixClassnames();
 
     const run = async () => {
         const appContainerPromise = getAppContainer();
