@@ -32,7 +32,8 @@ export const getSenderImageUrl = (
     bimiSelector?: string,
     mode?: SenderImageMode
 ) => {
-    const config = getLogo(emailAddress, size, bimiSelector, mode, UID);
+    const cleanedEmailAddress = emailAddress.toLowerCase();
+    const config = getLogo(cleanedEmailAddress, size, bimiSelector, mode, UID);
     const prefixedUrl = `${apiUrl}/${config.url}`;
     const url = createUrl(prefixedUrl, config.params, window.location.origin);
     return url.toString();
