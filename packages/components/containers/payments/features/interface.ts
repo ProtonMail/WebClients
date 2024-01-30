@@ -54,6 +54,8 @@ export interface ShortPlan {
         | PLANS.MAIL
         | PLANS.DRIVE
         | PLANS.PASS_PLUS
+        | PLANS.PASS_PRO
+        | PLANS.PASS_BUSINESS
         | PLANS.BUNDLE_PRO
         | PLANS.MAIL_PRO
         | PLANS.VPN

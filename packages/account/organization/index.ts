@@ -76,3 +76,7 @@ const slice = createSlice({
 
 export const organizationReducer = { [name]: slice.reducer };
 export const organizationThunk = modelThunk.thunk;
+
+export const MAX_CHARS_API = {
+    ORG_NAME: 40,
+};

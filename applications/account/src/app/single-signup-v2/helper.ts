@@ -14,7 +14,9 @@ import {
     FREE_SUBSCRIPTION,
     PLANS,
 } from '@proton/shared/lib/constants';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getPlanFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getHas2023OfferCoupon,
     getNormalCycleFromCustomCycle,
@@ -24,6 +26,9 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Api,
+    Audience,
+    Currency,
+    CycleMapping,
     Organization,
     Plan,
     PlansMap,
@@ -32,7 +37,7 @@ import {
     SubscriptionPlan,
     User,
 } from '@proton/shared/lib/interfaces';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import {
     canPay as getCanPay,
     isAdmin as getIsAdmin,
@@ -43,7 +48,7 @@ import {
 import noop from '@proton/utils/noop';
 
 import { getSubscriptionPrices } from '../signup/helper';
-import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
 import { Options, PlanParameters, SignupParameters2, Upsell, UpsellTypes } from './interface';
 
@@ -137,6 +142,7 @@ const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
 };
 
 const getUpsell = ({
+    audience,
     currentPlan,
     subscription,
     plansMap,
@@ -144,6 +150,7 @@ const getUpsell = ({
     planParameters,
     toApp,
 }: {
+    audience: Audience;
     currentPlan?: SubscriptionPlan | undefined;
     upsellPlanCard?: PlanCard;
     subscription?: Subscription;
@@ -294,28 +301,32 @@ const getUpsell = ({
                 };
             }
         } else {
-            if (
-                getHasAnyPlusPlan(currentPlan.Name) &&
-                ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
-                    planParameters.plan.Name as any
-                )
-            ) {
-                return {
-                    ...defaultValue,
-                    plan: plansMap[PLANS.BUNDLE],
-                    mode: UpsellTypes.UPSELL,
-                };
-            }
+            if (audience === Audience.B2B) {
+                return defaultValue;
+            } else {
+                if (
+                    getHasAnyPlusPlan(currentPlan.Name) &&
+                    ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
+                        planParameters.plan.Name as any
+                    )
+                ) {
+                    return {
+                        ...defaultValue,
+                        plan: plansMap[PLANS.BUNDLE],
+                        mode: UpsellTypes.UPSELL,
+                    };
+                }
 
-            if (
-                getHasBusinessUpsell(currentPlan.Name) &&
-                ![PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
-            ) {
-                return {
-                    ...defaultValue,
-                    plan: plansMap[PLANS.BUNDLE_PRO],
-                    mode: UpsellTypes.UPSELL,
-                };
+                if (
+                    getHasBusinessUpsell(currentPlan.Name) &&
+                    ![PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+                ) {
+                    return {
+                        ...defaultValue,
+                        plan: plansMap[PLANS.BUNDLE_PRO],
+                        mode: UpsellTypes.UPSELL,
+                    };
+                }
             }
         }
     }
@@ -346,21 +357,45 @@ export const getRelativeUpsellPrice = (
     return pricingUpsell.plans[cycle] / cycle - pricingCurrentPlan.plans[cycle] / cycle;
 };
 
-const hasAccess = (toApp: APP_NAMES, user: User) => {
+const hasAccess = ({
+    toApp,
+    user,
+    audience,
+    currentPlan,
+}: {
+    toApp: APP_NAMES;
+    user: User;
+    audience: Audience;
+    currentPlan?: SubscriptionPlan;
+}) => {
     if (toApp === APPS.PROTONPASS) {
+        if (audience === Audience.B2B) {
+            return [
+                PLANS.PASS_PRO,
+                PLANS.PASS_BUSINESS,
+                PLANS.NEW_VISIONARY,
+                PLANS.FAMILY,
+                PLANS.BUNDLE_PRO,
+                PLANS.ENTERPRISE,
+            ].includes(currentPlan?.Name as any);
+        }
         return hasPaidPass(user);
     }
+
     if ([APPS.PROTONMAIL, APPS.PROTONCALENDAR].includes(toApp as any)) {
         return hasPaidMail(user);
     }
+
     if (toApp === APPS.PROTONDRIVE) {
         return hasPaidDrive(user);
     }
+
     return false;
 };
 
 export const getUserInfo = async ({
     api,
+    audience,
     user,
     options,
     plansMap,
@@ -375,6 +410,7 @@ export const getUserInfo = async ({
     options: Options;
     plansMap: PlansMap;
     plans: Plan[];
+    audience: Audience;
     upsellPlanCard?: PlanCard;
     planParameters: PlanParameters;
     signupParameters: SignupParameters2;
@@ -401,7 +437,7 @@ export const getUserInfo = async ({
                 admin: false,
                 access: false,
             },
-            upsell: getUpsell({ plansMap, upsellPlanCard, options, planParameters, toApp }),
+            upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp }),
         };
     }
 
@@ -443,7 +479,16 @@ export const getUserInfo = async ({
         }
     })();
 
-    const upsell = getUpsell({ currentPlan, subscription, upsellPlanCard, plansMap, options, planParameters, toApp });
+    const upsell = getUpsell({
+        audience,
+        currentPlan,
+        subscription,
+        upsellPlanCard,
+        plansMap,
+        options,
+        planParameters,
+        toApp,
+    });
 
     const subscriptionData = await (() => {
         const optionsWithSubscriptionDefaults = {
@@ -478,16 +523,7 @@ export const getUserInfo = async ({
         await api(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
     }
 
-    if (
-        (user && hasAccess(toApp, user) && (!getHas2023OfferCoupon(options.coupon) || !state.payable)) ||
-        [
-            PLANS.NEW_VISIONARY,
-            PLANS.BUNDLE_PRO,
-            PLANS.ENTERPRISE,
-            PLANS.VPN_PRO,
-            PLANS.VPN_BUSINESS /* VPN technically doesn't but in lack of better handling*/,
-        ].includes(currentPlan?.Name as any)
-    ) {
+    if (user && hasAccess({ toApp, user, audience, currentPlan })) {
         state.access = true;
     }
 
@@ -585,4 +621,92 @@ export const runAfterScroll = (el: Element, done: () => void) => {
     };
 
     requestAnimationFrame(cb);
+};
+
+export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMapping<SubscriptionData> }>;
+export const getPlanCardSubscriptionData = async ({
+    plans,
+    plansMap,
+    api,
+    coupon,
+    currency,
+    cycles,
+}: {
+    cycles: CYCLE[];
+    plans: PLANS[];
+    plansMap: PlansMap;
+    api: Api;
+    coupon?: string;
+    currency: Currency;
+}): Promise<SubscriptionDataCycleMapping> => {
+    const result = await Promise.all(
+        plans.flatMap((plan) =>
+            cycles
+                .map((cycle) => [plan, cycle] as const)
+                .map(async ([plan, cycle]): Promise<SubscriptionData> => {
+                    const planIDs = plan === PLANS.FREE ? {} : { [plan]: 1 };
+                    if (!coupon && (plan === PLANS.PASS_BUSINESS || plan === PLANS.PASS_PRO)) {
+                        coupon = COUPON_CODES.PASS_B2B_INTRO;
+                    }
+                    if (!coupon || plan === PLANS.ENTERPRISE) {
+                        return {
+                            planIDs,
+                            currency,
+                            cycle,
+                            checkResult: {
+                                ...getOptimisticCheckResult({ planIDs, plansMap, cycle }),
+                                Currency: currency,
+                                PeriodEnd: 0,
+                                Additions: null,
+                            },
+                        };
+                    }
+                    const subscriptionData = await getSubscriptionData(api, {
+                        planIDs,
+                        cycle,
+                        coupon,
+                        currency,
+                    });
+                    return subscriptionData;
+                })
+        )
+    );
+
+    return result.reduce<SubscriptionDataCycleMapping>((acc, subscriptionData) => {
+        const plan = !hasPlanIDs(subscriptionData.planIDs)
+            ? FREE_PLAN
+            : getPlanFromPlanIDs(plansMap, subscriptionData.planIDs);
+        if (!plan) {
+            return acc;
+        }
+        let cycleMapping = acc[plan.Name as unknown as keyof typeof acc];
+        if (!cycleMapping) {
+            cycleMapping = {};
+            acc[plan.Name as unknown as keyof typeof acc] = cycleMapping;
+        }
+        cycleMapping[subscriptionData.cycle] = subscriptionData;
+        return acc;
+    }, {});
+};
+
+export const getSubscriptionMapping = ({
+    subscriptionDataCycleMapping,
+    planName,
+    planIDs: newPlanIDs,
+}: {
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
+    planName: PLANS | ADDON_NAMES;
+    planIDs: PlanIDs;
+}) => {
+    // ugh
+    let subscriptionMapping = subscriptionDataCycleMapping?.[planName as unknown as PLANS];
+    if (!subscriptionMapping) {
+        return undefined;
+    }
+    const firstKey = Object.keys(subscriptionMapping)[0] as unknown as keyof typeof subscriptionMapping;
+    const planIDs = subscriptionMapping[firstKey]?.planIDs;
+    if (!isDeepEqual(planIDs, newPlanIDs)) {
+        subscriptionMapping = undefined;
+    }
+    return subscriptionMapping;
 };
