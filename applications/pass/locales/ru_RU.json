@@ -1412,6 +1412,14 @@
         "Добро пожаловать в ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элемента",
+        "${ count } элементов",
+        "${ count } элементов"
+      ]
+    },
     "Option": {
       "Commas": [
         "Запятые"
@@ -1419,7 +1427,7 @@
       "Hyphens": [
         "Дефисы"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Запоминающийся пароль"
       ],
       "Numbers": [

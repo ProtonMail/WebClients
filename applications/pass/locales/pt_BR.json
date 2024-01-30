@@ -29,6 +29,21 @@
       "Back": [
         "Voltar"
       ],
+      "Bulk delete items from trash": [
+        "Excluir itens em massa da lixeira"
+      ],
+      "Bulk move items to another vault": [
+        "Mover itens em massa para outro cofre"
+      ],
+      "Bulk move items to trash": [
+        "Mover itens em massa para a lixeira"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurar itens em massa da lixeira"
+      ],
+      "Bulk select items": [
+        "Selecionar itens em massa"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Excluir cofre"
       ],
+      "Deselect": [
+        "Desmarcar"
+      ],
       "Discard": [
         "Descartar"
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Download this CSV template": [
+        "Baixar esse modelo CSV"
       ],
       "Edit": [
         "Editar"
@@ -382,6 +403,9 @@
       "Authentication error": [
         "Erro de autenticação"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Falha na autenticação. Confirme sua senha do ${ BRAND_NAME } para prosseguir com a exportação"
+      ],
       "Auto-lock could not be activated": [
         "Não foi possível ativar o bloqueio automático"
       ],
@@ -446,17 +470,29 @@
       "Failed resending invite.": [
         "Falha ao reenviar o convite."
       ],
+      "Failed to delete selected items": [
+        "Falha ao excluir itens selecionados"
+      ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Falha ao mover os itens"
+      ],
+      "Failed to move items to trash": [
+        "Falha ao mover os itens para a lixeira"
+      ],
       "Failed to pin item": [
         "Falha ao fixar item"
       ],
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
+      ],
+      "Failed to restore items from trash": [
+        "Falha ao restaurar os itens da lixeira"
       ],
       "Failed to transfer this vault's ownership.": [
         "Falha ao transferir a propriedade deste cofre."
@@ -661,11 +697,17 @@
       "Admin": [
         "Administrador"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
+      ],
+      "All items successfully moved": [
+        "Todos os itens movidos"
       ],
       "All trashed items permanently deleted": [
         "Todos os itens da lixeira foram excluídos permanentemente"
@@ -730,6 +772,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "A exportação é criptografada usando PGP e requer uma frase de segurança forte."
       ],
+      "Fill in the CSV with your data": [
+        "Preencha o CSV com seus dados"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Siga estas etapas para importar seus dados com um CSV genérico:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
       ],
@@ -741,6 +789,9 @@
       ],
       "Import in progress:": [
         "Importação em progresso:"
+      ],
+      "Import the CSV file below.": [
+        "Importe o arquivo CSV abaixo."
       ],
       "Imported ${ payload.total } item": [
         "Importado ${ payload.total } item",
@@ -828,6 +879,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Movendo itens"
+      ],
+      "Moving items to trash": [
+        "Movendo itens para a lixeira"
+      ],
       "Never": [
         "Nunca"
       ],
@@ -845,6 +902,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "As senhas com mais de 1 dia serão automaticamente excluídas do histórico."
+      ],
+      "Permanently deleting selected items": [
+        "Excluindo permanentemente itens selecionados"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registrado. Use-o para desbloquear o ${ PASS_APP_NAME }"
@@ -879,6 +939,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
       ],
+      "Restoring items from trash": [
+        "Restaurando itens da lixeira"
+      ],
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
       ],
@@ -887,6 +950,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecione onde quer salvar seus cofres importados."
+      ],
+      "Selected items permanently deleted": [
+        "Itens selecionados excluídos permanentemente"
+      ],
+      "Selected items successfully moved to trash": [
+        "Itens selecionados movidos com sucesso para a lixeira"
+      ],
+      "Selected items successfully restored from trash": [
+        "Itens selecionados restaurados da lixeira com sucesso"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -1137,6 +1209,9 @@
       "Forwards to": [
         "Encaminhar para"
       ],
+      "Generic CSV": [
+        "CSV genérico"
+      ],
       "Grant": [
         "Conceder"
       ],
@@ -1385,6 +1460,15 @@
         "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Você selecionou ${ semiboldText } neste cofre"
+      ]
+    },
     "Option": {
       "Commas": [
         "Vírgulas"
@@ -1392,7 +1476,7 @@
       "Hyphens": [
         "Hifens"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Senha memorável"
       ],
       "Numbers": [
@@ -1548,6 +1632,9 @@
       ],
       "Move all items ?": [
         "Mover todos os itens?"
+      ],
+      "No items selected": [
+        "Nenhum item selecionado"
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"

@@ -1320,6 +1320,12 @@
         "Welkom bij ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
+      ]
+    },
     "Option": {
       "Commas": [
         "Komma's"
@@ -1327,7 +1333,7 @@
       "Hyphens": [
         "Koppeltekens"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Memorabel wachtwoord"
       ],
       "Numbers": [
