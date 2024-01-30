@@ -52,6 +52,7 @@ import {
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
@@ -96,6 +97,7 @@ const bootstrapApp = () => {
     bootstrap.init({ config, authentication, locales });
     initMainHost();
     initElectronClassnames();
+    initSafariFontFixClassnames();
     extendStore({ config, api, authentication });
     const store = setupStore();
     return {
