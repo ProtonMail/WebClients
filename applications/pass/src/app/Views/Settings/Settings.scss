@@ -8,3 +8,12 @@
 		border-color: var(--border-norm);
 	}
 }
+
+/* override checkboxes */
+.checkbox-container {
+	gap: 1rem;
+
+	.checkbox-fakecheck {
+		margin-inline: 0.625rem !important;
+	}
+}

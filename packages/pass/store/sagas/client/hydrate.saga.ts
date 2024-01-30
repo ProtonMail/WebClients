@@ -1,8 +1,9 @@
-import { put, select, takeLatest } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decryptCachedState, sanitizeCache } from '@proton/pass/lib/crypto/utils/cache.decrypt';
-import { getUserState } from '@proton/pass/lib/user/user.requests';
+import type { UserData } from '@proton/pass/lib/user/user.requests';
+import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
     cacheRequest,
@@ -10,8 +11,10 @@ import {
     stateHydrate,
     stateSync,
     stopEventPolling,
+    syncLocalSettings,
 } from '@proton/pass/store/actions';
 import type { SafeUserState } from '@proton/pass/store/reducers';
+import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -26,12 +29,29 @@ type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State 
     | { allowFailure: false; onError?: () => Generator }
 );
 
+function* resolveUserState() {
+    const { access, addresses, eventId, features, user, userSettings }: UserData = yield getUserData();
+    yield put(syncLocalSettings({ locale: userSettings.Locale }));
+
+    const userState: SafeUserState = {
+        ...access,
+        addresses,
+        eventId,
+        features,
+        user,
+        userSettings: {
+            Email: { Status: userSettings.Email.Status },
+            Telemetry: userSettings.Telemetry,
+        },
+    };
+
+    return userState;
+}
+
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
  * boolean flag indicating wether hydration happened from cache or not. */
-export function* hydrateFromCache(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
+export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
     try {
-        const currentState: State = yield select();
-
         const authStore = getAuthStore();
         const keyPassword = authStore.getPassword();
         const sessionLockToken = authStore.getLockToken();
@@ -41,9 +61,10 @@ export function* hydrateFromCache(config: HydrateCacheOptions, { getCache, getAu
             .then(sanitizeCache)
             .catch((err) => (config.allowFailure ? undefined : throwError(err)));
 
-        const userState: SafeUserState = cache?.state.user ?? (yield getUserState());
+        const userState: SafeUserState = cache?.state.user ?? (yield call(resolveUserState));
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
+        const currentState: State = yield select();
 
         const state: State = {
             ...(cache?.state ? config.merge(currentState, cache.state) : currentState),
@@ -71,7 +92,7 @@ function* hydrateWorker(options: RootSagaOptions) {
      * to avoid this and the error handling below. */
     yield wait(500);
 
-    yield hydrateFromCache(
+    yield hydrate(
         {
             allowFailure: false,
             merge: (_, incoming) => incoming,
@@ -83,6 +104,10 @@ function* hydrateWorker(options: RootSagaOptions) {
         },
         options
     );
+
+    /* locale may have been updated */
+    options.onLocaleUpdated?.(yield select(selectLocale));
+
     yield put(startEventPolling());
 }
 

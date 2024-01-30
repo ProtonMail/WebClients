@@ -13,6 +13,7 @@ import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/acti
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
+import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -68,7 +69,7 @@ const options: RootSagaOptions = {
         })
     ),
 
-    getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
+    getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
     getAppState: withContext((ctx) => ctx.getState()),
 
@@ -79,6 +80,7 @@ const options: RootSagaOptions = {
         if (res.ok) {
             ctx.setStatus(AppStatus.READY);
             ctx.service.telemetry?.start().catch(noop);
+            ctx.service.i18n.setLocale(selectLocale(store.getState()));
 
             store.dispatch(startEventPolling());
             store.dispatch(draftsGarbageCollect());
@@ -116,6 +118,8 @@ const options: RootSagaOptions = {
 
     /* Update the extension's badge count on every item state change */
     onItemsUpdated: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+
+    onLocaleUpdated: withContext(async (ctx, locale) => ctx.service.i18n.setLocale(locale)),
 
     /* Either broadcast notification or buffer it
      * if no target ports are opened. Assume that if no
