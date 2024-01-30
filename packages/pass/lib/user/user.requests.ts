@@ -1,10 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
-import type {
-    FeatureFlagState,
-    SafeUserAccessState,
-    SafeUserState,
-    UserSettingsState,
-} from '@proton/pass/store/reducers';
+import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
 import type { ApiOptions } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
@@ -15,7 +10,7 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import type { User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     logger.info(`[User] syncing feature flags`);
@@ -33,20 +28,22 @@ export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<SafeUs
     return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
 };
 
-export const getUserSettings = async (): Promise<UserSettingsState> => {
-    try {
-        logger.info(`[User] syncing settings`);
-        const { Email, Telemetry } = (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
-        return {
-            Email: { Status: Email.Status },
-            Telemetry: Telemetry,
-        };
-    } catch {
-        return {};
-    }
+export const getUserSettings = async (): Promise<UserSettings> => {
+    logger.info(`[User] syncing settings`);
+    return (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
 };
 
-export const getUserState = async (): Promise<SafeUserState> => {
+export type UserData = {
+    access: SafeUserAccessState;
+    addresses: Record<string, Address>;
+    eventId: string;
+    features: FeatureFlagState;
+    user: User;
+    userSettings: UserSettings;
+};
+
+/** Resolves all necessary user data to build up the user state */
+export const getUserData = async (): Promise<UserData> => {
     const [user, eventId, userSettings, addresses, access, features] = await Promise.all([
         api<{ User: User }>(getUser()).then(prop('User')),
         api<{ EventID: string }>(getLatestID()).then(prop('EventID')),
@@ -57,7 +54,7 @@ export const getUserState = async (): Promise<SafeUserState> => {
     ]);
 
     return {
-        ...access,
+        access,
         addresses,
         eventId,
         features,

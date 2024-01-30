@@ -214,7 +214,7 @@ export const Settings: FC = () => {
     return (
         <>
             <ExtensionApp endpoint="page">
-                {(ready, locale) =>
+                {(ready) =>
                     ready && (
                         <ReduxProvider
                             store={(() =>
@@ -222,7 +222,7 @@ export const Settings: FC = () => {
                                 (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
                         >
                             <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-                            <SettingsApp key={locale} />
+                            <SettingsApp />
                         </ReduxProvider>
                     )
                 }

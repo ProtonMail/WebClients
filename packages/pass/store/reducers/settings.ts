@@ -10,6 +10,7 @@ import {
     settingsEditSuccess,
     syncLocalSettings,
     updatePauseListItem,
+    userEvent,
 } from '@proton/pass/store/actions';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
@@ -90,6 +91,11 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
         return partialMerge<SettingsState>(update, action.payload);
+    }
+
+    if (userEvent.match(action)) {
+        const locale = action.payload.UserSettings?.Locale;
+        return locale ? partialMerge(state, { locale }) : state;
     }
 
     if (updatePauseListItem.match(action)) {

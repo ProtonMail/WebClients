@@ -1,19 +1,25 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
+import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
+    /** i18n service instance */
+    i18n: I18nService;
+    /** current locale */
+    locale: string;
     /** Resolves a users */
     exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
@@ -53,10 +59,20 @@ const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
 /** The `PassCoreProvider` must be made available on all pass
  * clients : it provides implementations for processes that are
  * dependent on the platform. */
-export const PassCoreProvider: FC<PropsWithChildren<PassCoreContextValue>> = ({ children, ...core }) => (
-    <ConfigProvider config={core.config}>
-        <PassCoreContext.Provider value={useMemo(() => core, [])}>{children}</PassCoreContext.Provider>
-    </ConfigProvider>
-);
+export const PassCoreProvider: FC<PropsWithChildren<Omit<PassCoreContextValue, 'locale'>>> = ({
+    children,
+    ...core
+}) => {
+    const [locale, setAppLocale] = useState(DEFAULT_LOCALE);
+    const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale }), [locale]);
+
+    useEffect(() => core.i18n.subscribe(({ locale }) => setAppLocale(locale)), []);
+
+    return (
+        <ConfigProvider config={core.config}>
+            <PassCoreContext.Provider value={context}>{children}</PassCoreContext.Provider>
+        </ConfigProvider>
+    );
+};
 
 export const usePassCore = (): PassCoreContextValue => useContext(PassCoreContext)!;
