@@ -1,7 +1,8 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, useCallback, useRef } from 'react';
+import { type FC, useCallback, useMemo, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
+import locales from 'proton-pass-extension/app/locales';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
@@ -11,10 +12,12 @@ import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { pageMessage, resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import { createI18nService } from '@proton/pass/lib/i18n/service';
 import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 const getDomainImageFactory =
@@ -112,8 +115,24 @@ const exportData: PassCoreContextValue['exportData'] = (payload) =>
 const onForceUpdate: PassCoreContextValue['onForceUpdate'] = () =>
     sendMessage(pageMessage({ type: WorkerMessageType.WORKER_RELOAD }));
 
-export const PassExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
+export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
+
+    const i18n = useMemo(
+        () =>
+            createI18nService({
+                locales,
+                /* resolve the extension locale through the I18nService instead of reading
+                 * from the store as some extension sub-apps are not redux connected but
+                 * should be aware of the current localisation setting */
+                getLocale: () =>
+                    sendMessage.on(
+                        resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }),
+                        (res) => (res.type === 'success' ? res.locale : DEFAULT_LOCALE)
+                    ),
+            }),
+        []
+    );
 
     return (
         <PassCoreProvider
@@ -132,6 +151,7 @@ export const PassExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint 
             prepareImport={prepareImport}
             promptForPermissions={promptForPermissions}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
+            i18n={i18n}
         >
             {children}
         </PassCoreProvider>

@@ -1,4 +1,4 @@
-import { Router } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
 
 import {
     CompatibilityCheck,
@@ -11,6 +11,7 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
@@ -27,6 +28,7 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
+import { i18n } from '../lib/i18n';
 import { onboarding } from '../lib/onboarding';
 import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
@@ -35,7 +37,8 @@ import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerPro
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
-import { AuthSwitch } from './Views/AuthSwitch';
+import { Lobby } from './Views/Lobby';
+import { Main } from './Views/Main';
 import * as config from './config';
 
 const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
@@ -88,11 +91,12 @@ export const App = () => {
             <ServiceWorkerContext.Consumer>
                 {(sw) => (
                     <PassCoreProvider
-                        endpoint="web"
                         config={PASS_CONFIG}
+                        endpoint="web"
                         exportData={exportData}
                         generateOTP={generateOTP}
                         getDomainImage={getDomainImageFactory(sw)}
+                        i18n={i18n}
                         onLink={onLink}
                         onOnboardingAck={onboarding.acknowledge}
                         onTelemetry={telemetry.push}
@@ -112,7 +116,14 @@ export const App = () => {
                                                         <NavigationProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <AuthSwitch loggedIn={loggedIn} />
+                                                                    <Localized>
+                                                                        <Route
+                                                                            path="*"
+                                                                            render={() =>
+                                                                                loggedIn ? <Main /> : <Lobby />
+                                                                            }
+                                                                        />
+                                                                    </Localized>
                                                                     <Portal>
                                                                         <ModalsChildren />
                                                                         <NotificationsChildren />

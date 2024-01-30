@@ -20,7 +20,7 @@ const Popup = () => {
 
     return (
         <ExtensionApp endpoint="popup">
-            {(ready, locale) =>
+            {(ready) =>
                 ready && (
                     <ReduxProvider
                         store={(() =>
@@ -29,7 +29,7 @@ const Popup = () => {
                     >
                         <ErrorBoundary component={<ExtensionError />}>
                             <PopupProvider>
-                                <App key={locale} />
+                                <App />
                             </PopupProvider>
                         </ErrorBoundary>
                     </ReduxProvider>
