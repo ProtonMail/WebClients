@@ -23,6 +23,7 @@ import { createDrawerApi } from '@proton/shared/lib/drawer/createDrawerApi';
 import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -47,6 +48,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
     setupGuestCrossStorage();
     initElectronClassnames();
+    initSafariFontFixClassnames();
 
     const appName = config.APP_NAME;
 
