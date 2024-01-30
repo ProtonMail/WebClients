@@ -3293,6 +3293,10 @@
       "Choose a date in the future.": [
         "Välj ett datum i framtiden."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Välj ett datum inom den kommande ${ n } dagen.",
+        "Välj ett datum inom de kommande ${ n } dagarna."
+      ],
       "Condition incomplete": [
         "Villkor ofullständig"
       ],
@@ -5349,12 +5353,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Frigör lite utrymme eller lägg till mer lagringsutrymme."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigör lite utrymme eller kontakta din administratör."
-      ],
       "From": [
         "Från"
       ],
@@ -6197,12 +6195,6 @@
       "You have reached the maximum number of 5 replies.": [
         "Du har nått gränsen på maximalt 5 svar."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nått ${ spaceDisplayed }% av din lagringskapacitet. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nått 100 % av din lagringskapacitet. Du kan inte skicka eller ta emot nya e-postmeddelanden. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Du valde **${ count } konversation** från denna mapp",
         "Du valde **${ count } konversationer** från denna mapp"
@@ -6739,6 +6731,9 @@
       "Frequency": [
         "Frekvens"
       ],
+      "From (senders in message print header)": [
+        "Från (avsändare i meddelande utskrifts huvud)"
+      ],
       "From:": [
         "Från:"
       ],
@@ -7210,9 +7205,6 @@
       ],
       "Trash": [
         "Papperskorg"
-      ],
-      "Upgrade account": [
-        "Uppgradera konto"
       ],
       "What’s this?": [
         "Vad är detta?"
@@ -8667,6 +8659,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Skaffa mer lagringsutrymme"
+      ],
       "Release notes": [
         "Utgivningsnoteringar"
       ],
@@ -8675,6 +8670,53 @@
       ],
       "Your current storage:": [
         "Ditt nuvarande lagringsutrymme:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagringsutrymme"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fullt"
+      ],
+      "contact your administrator": [
+        "kontakta din administratör"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "För att skicka eller ta emot e-post, frigör utrymme eller uppgradera för mer lagringsutrymme."
+      ],
+      "upgrade for more storage": [
+        "uppgradera för mer lagringsutrymme"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ditt ${ appStorage } är nästan fullt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ditt ${ appStorage } är fullt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ditt ${ storage } är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ditt ${ storage } är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt lagringsutrymme är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ditt lagringsutrymme är fullt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
       ]
     },
     "Success": {

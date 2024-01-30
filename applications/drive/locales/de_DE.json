@@ -3688,12 +3688,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
       ],
-      "Free up some space or add more storage space.": [
-        "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Gib etwas Platz frei oder wende dich an deinen Administrator."
-      ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
       ],
@@ -4372,12 +4366,6 @@
         "Du hast noch ${ expiresInDays } Tag Zeit, um deinen 500 MB Willkommensbonus in Anspruch zu nehmen und ",
         "Du hast noch ${ expiresInDays } Tage Zeit, um deinen 500 MB Willkommensbonus in Anspruch zu nehmen und "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast ${ spaceDisplayed } % deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
       ],
@@ -4549,9 +4537,6 @@
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
-      ],
-      "Audio file": [
-        "Audiodatei"
       ],
       "Authenticator app": [
         "Authenticator App"
@@ -4731,9 +4716,6 @@
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
       ],
-      "Image": [
-        "Bild"
-      ],
       "Import all messages": [
         "Alle Nachrichten importieren"
       ],
@@ -4902,9 +4884,6 @@
       "System information": [
         "Systeminformationen"
       ],
-      "Text": [
-        "Text"
-      ],
       "Theme": [
         "Farbschema"
       ],
@@ -4919,9 +4898,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unknown file": [
-        "Unbekannte Datei"
       ],
       "Unlock drive": [
         "Laufwerk entsperren"
@@ -4940,9 +4916,6 @@
       ],
       "Verification code": [
         "Verifizierungscode"
-      ],
-      "Video file": [
-        "Videodatei"
       ],
       "What happened?": [
         "Problembeschreibung"
@@ -5035,9 +5008,6 @@
       "Trash": [
         "Papierkorb"
       ],
-      "Upgrade account": [
-        "Konto-Upgrade durchführen"
-      ],
       "What’s this?": [
         "Was ist das?"
       ]
@@ -5100,6 +5070,251 @@
       ],
       "Plain text": [
         "Klartext"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP-Audio-/Video-Container"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2-Audio-/Video-Container"
+      ],
+      "7-zip archive": [
+        "7-Zip-Archiv"
+      ],
+      "AAC audio": [
+        "AAC-Audio"
+      ],
+      "AbiWord document": [
+        "AbiWord-Dokument"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook-Format"
+      ],
+      "Android Package": [
+        "Android-Paket"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animated Portable Network Graphics (APNG)"
+      ],
+      "Apple Installer Package": [
+        "Apple-Installationspaket"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
+      "Archive document": [
+        "Archiv-Dokument"
+      ],
+      "Audio file": [
+        "Audiodatei"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
+      ],
+      "AVI video": [
+        "AVI-Video"
+      ],
+      "Binary data": [
+        "Binärdaten"
+      ],
+      "Bourne shell script": [
+        "Bourne-Shell-Skript"
+      ],
+      "BZip archive": [
+        "BZip-Archiv"
+      ],
+      "BZip2 archive": [
+        "BZip2-Archiv"
+      ],
+      "C-Shell script": [
+        "C-Shell-Skript"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Kommagetrennte Werte (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Elektronische Publikation (EPUB)"
+      ],
+      "Flash Video": [
+        "Flash-Video"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "GZip-komprimiertes Archiv"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Hypertext Preprocessor (Persönliche Startseite)"
+      ],
+      "iCalendar format": [
+        "iCalendar-Format"
+      ],
+      "Icon format": [
+        "Icon-Format"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Java Archive (JAR)": [
+        "Java-Archiv (JAR)"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "JPEG-Bilder"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "MP3-Audio"
+      ],
+      "MPEG transport stream": [
+        "MPEG-Transportstrom"
+      ],
+      "MPEG Video": [
+        "MPEG-Video"
+      ],
+      "MS Embedded OpenType fonts": [
+        "MS Embedded OpenType-Schriftarten"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
+      ],
+      "OGG audio": [
+        "OGG-Audio"
+      ],
+      "OGG video": [
+        "OGG-Video"
+      ],
+      "OpenDocument presentation document": [
+        "OpenDocument-Präsentationsdokument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "OpenDocument-Tabellendokument"
+      ],
+      "OpenDocument text document": [
+        "OpenDocument-Textdokument"
+      ],
+      "OpenType font": [
+        "OpenType-Schriftart"
+      ],
+      "Opus audio": [
+        "Opus-Audio"
+      ],
+      "Portable Network Graphics": [
+        "Portable Network Graphics (PNG)"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "RAR-Archiv"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text-Format (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Skalierbare Vektorgrafik (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Small Web Format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape-Archiv (TAR)"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "TrueType Font": [
+        "TrueType-Schriftart"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Unbekannte Datei"
+      ],
+      "Video file": [
+        "Videodatei"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio-Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "WEBM-Audio"
+      ],
+      "WEBM video": [
+        "WEBM-Video"
+      ],
+      "WEBP image": [
+        "WEBP-Bild"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap-Grafik"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
+      ],
+      "ZIP archive": [
+        "ZIP-Archiv"
       ]
     },
     "Modal title": {
@@ -5532,6 +5747,9 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } hat diesen Schlüssel als veraltet markiert. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Dieser Schlüssel wird zum Verschlüsseln von Nachrichten an diesen Kontakt verwendet."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
@@ -6105,6 +6323,23 @@
       ],
       "Your current storage:": [
         "Dein aktueller Speicherplatz:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-Speicherplatz"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% voll."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dein ${ appStorage }-Speicherplatz ist fast voll."
+      ],
+      "Your ${ appStorage } is full": [
+        "Dein ${ appStorage }-Speicherplatz ist voll."
+      ],
+      "Your storage is full": [
+        "Dein Speicherplatz ist voll."
       ]
     },
     "Success": {

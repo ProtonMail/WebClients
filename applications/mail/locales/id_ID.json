@@ -3430,6 +3430,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Tidak ada surel yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Tidak ada kunci eksternal untuk penerima yang valid untuk pengiriman"
+      ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
       ],
@@ -5254,12 +5257,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
-      "Free up some space or add more storage space.": [
-        "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Kosongkan beberapa ruang atau hubungi administrator Anda."
-      ],
       "From": [
         "Dari"
       ],
@@ -6090,12 +6087,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Kapasitas penyimpanan Anda telah mencapai 100%. Anda tidak akan dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
@@ -7091,9 +7082,6 @@
       "Trash": [
         "Sampah"
       ],
-      "Upgrade account": [
-        "Tingkatkan akun"
-      ],
       "What’s this?": [
         "Apa ini?"
       ],
@@ -7677,6 +7665,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } telah menandai kunci ini sebagai kunci yang usang. Kunci ini hanya akan dapat digunakan untuk memverifikasi tanda tangan."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Kunci eksternal diperoleh secara otomatis dari keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Kunci eksternal diperoleh secara otomatis melalui WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Kunci ini digunakan untuk mengenkripsi pesan yang tertuju pada kontak ini"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci ini."
@@ -8335,10 +8332,10 @@
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "Pergi ke paket langganan"
+        "Tuju daftar paket langganan"
       ],
       "Upgrade": [
-        "Tingkatkan"
+        "Tingkatkan akun"
       ]
     },
     "specialoffer: Offers": {
@@ -8459,6 +8456,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Kini Anda dapat mengambil tindakan terhadap seluruh email dalam satu folder secara langsung."
+      ],
       "Schedule send": [
         "Jadwalkan pengiriman"
       ],
@@ -8504,6 +8504,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Dapatkan penyimpanan tambahan"
+      ],
       "Release notes": [
         "Catatan rilis"
       ],
@@ -8512,6 +8515,53 @@
       ],
       "Your current storage:": [
         "Penyimpanan Anda saat ini:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Ruang penyimpanan ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% penuh"
+      ],
+      "contact your administrator": [
+        "hubungi administrator Anda"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "upgrade for more storage": [
+        "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } Anda hampir penuh"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } Anda penuh"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda ${ percentage }% penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } Anda penuh. Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } Anda penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ruang penyimpanan Anda penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
       ]
     },
     "Success": {

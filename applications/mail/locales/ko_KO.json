@@ -1479,7 +1479,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } 를 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하세요."
       ]
     },
     "Calendar attachment tooltip": {
@@ -5245,12 +5245,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
       ],
-      "Free up some space or add more storage space.": [
-        "공간을 조금 비우거나 스토리지를 더 추가하세요."
-      ],
-      "Free up some space or contact your administrator.": [
-        "저장공간을 비우거나 관리자에게 연락하세요."
-      ],
       "From": [
         "보낸 사람"
       ],
@@ -6081,12 +6075,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "최대 5개 답장에 도달했습니다."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 공간의 ${ spaceDisplayed }% (을) 를 사용했습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 용량의 100%에 도달했습니다. 새 이메일을 보내거나 받을 수 없습니다. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "이 폴더에 있는 **대화 ${ count }개**를 선택했습니다"
@@ -7081,9 +7069,6 @@
       ],
       "Trash": [
         "휴지통"
-      ],
-      "Upgrade account": [
-        "계정 업그레이드"
       ],
       "What’s this?": [
         "이게 무엇인가요?"
@@ -8492,6 +8477,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "더 많은 스토리지 얻기"
+      ],
       "Release notes": [
         "릴리즈 노트"
       ],

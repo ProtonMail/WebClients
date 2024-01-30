@@ -3390,16 +3390,16 @@
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα διαγραμμένα στοιχεία;"
+        "Θέλετε σίγουρα να εξαλείψετε οριστικά όλα τα στοιχεία από τα Διαγραμμένα;"
       ],
       "Are you sure you want to permanently delete": [
         "Θέλετε σίγουρα να διαγράψετε μόνιμα το"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά το διαγραμμένο \"${ itemName }\";"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά το \"${ itemName }\" από τα Διαγραμμένα;"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
+        "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
@@ -3662,12 +3662,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
-      ],
       "from the version history?": [
         "από το ιστορικό εκδόσεων;"
       ],
@@ -3745,7 +3739,7 @@
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Τα στοιχεία που μετακινούνται στον κάδο απορριμμάτων θα παραμείνουν εδώ μέχρι να διαγραφούν"
+        "Τα στοιχεία που μετακινούνται στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να διαγραφούν"
       ],
       "It’s easy and secure": [
         "Είναι εύκολο και ασφαλές"
@@ -4186,7 +4180,7 @@
         "Διαγραμμένα"
       ],
       "Trash is empty": [
-        "Ο κάδος απορριμμάτων είναι άδειος"
+        "Τα Διαγραμμένα είναι άδεια"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "Δοκιμάστε ${ DRIVE_APP_NAME }: Δωρεάν για πάντα"
@@ -4320,12 +4314,6 @@
       "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
         "Σας απομένουν ${ expiresInDays } ημέρα για να διεκδικήσετε το μπόνους καλωσορίσματος 500 MB και ",
         "Σας απομένουν ${ expiresInDays } ημέρες για να διεκδικήσετε το μπόνους καλωσορίσματος 500 MB και "
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
@@ -4495,9 +4483,6 @@
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
-      ],
-      "Audio file": [
-        "Αρχείο ήχου"
       ],
       "Authenticator app": [
         "Εφαρμογή επαλήθευσης"
@@ -4674,9 +4659,6 @@
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
       ],
-      "Image": [
-        "Εικόνα"
-      ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
       ],
@@ -4845,9 +4827,6 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
-      "Text": [
-        "Κείμενο"
-      ],
       "Theme": [
         "Θέμα"
       ],
@@ -4862,9 +4841,6 @@
       ],
       "Type": [
         "Τύπος"
-      ],
-      "Unknown file": [
-        "Άγνωστο αρχείο"
       ],
       "Unlock drive": [
         "Ξεκλείδωμα αρχειοθήκης"
@@ -4883,9 +4859,6 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
-      ],
-      "Video file": [
-        "Αρχείο βίντεο"
       ],
       "What happened?": [
         "Τι συνέβη;"
@@ -4977,9 +4950,6 @@
       ],
       "Trash": [
         "Διαγραμμένα"
-      ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
@@ -5091,7 +5061,7 @@
         "${ n } ημερολόγια ανά χρήστη"
       ],
       "Auto-delete spam and trashed messages": [
-        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"

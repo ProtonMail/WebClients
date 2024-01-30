@@ -38,6 +38,21 @@
       "Back": [
         "Atrás"
       ],
+      "Bulk delete items from trash": [
+        "Eliminar un grupo de elementos en la papelera"
+      ],
+      "Bulk move items to another vault": [
+        "Mover un grupo de elementos a otra caja fuerte"
+      ],
+      "Bulk move items to trash": [
+        "Mover un grupo de elementos"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurar un grupo de elementos en la papelera"
+      ],
+      "Bulk select items": [
+        "Seleccionar un grupo de elementos"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Eliminar caja fuerte"
       ],
+      "Deselect": [
+        "Anular la selección"
+      ],
       "Disable autosave on this website": [
         "Desactivar el guardado automático en este sitio web"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Hecho"
+      ],
+      "Download this CSV template": [
+        "Descargar esta plantilla CSV"
       ],
       "Edit": [
         "Editar"
@@ -529,17 +550,29 @@
       "Failed resending invite.": [
         "Error al reenviar la invitación."
       ],
+      "Failed to delete selected items": [
+        "No se han podido eliminar los elementos seleccionados."
+      ],
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Error al mover elementos"
+      ],
+      "Failed to move items to trash": [
+        "Error al mover elementos a la papelera"
+      ],
       "Failed to pin item": [
         "No se pudo anclar el elemento"
       ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
+      ],
+      "Failed to restore items from trash": [
+        "Error al restaurar elementos en la papelera"
       ],
       "Failed to transfer this vault's ownership.": [
         "Error al transferir la propiedad de esta caja fuerte."
@@ -778,11 +811,17 @@
       "Admin": [
         "Administrador"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
+      ],
+      "All items successfully moved": [
+        "Todos los elementos han sido movidos."
       ],
       "All trashed items permanently deleted": [
         "Todos los elementos de la papelera han sido eliminados permanentemente."
@@ -868,6 +907,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "La exportación está cifrada con PGP y requiere una frase de contraseña segura."
       ],
+      "Fill in the CSV with your data": [
+        "Rellenar el CSV con tus datos"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Sigue estos pasos para importar sus datos con un CSV genérico:"
+      ],
       "For easy access to your passwords and more.": [
         "Para acceder fácilmente a tus contraseñas y más."
       ],
@@ -891,6 +936,9 @@
       ],
       "Import in progress:": [
         "Importación en progreso:"
+      ],
+      "Import the CSV file below.": [
+        "Importa el archivo CSV a continuación."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } elemento importado",
@@ -975,6 +1023,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Moviendo elementos"
+      ],
+      "Moving items to trash": [
+        "Moviendo elemento a la papelera"
+      ],
       "Never": [
         "Nunca"
       ],
@@ -1004,6 +1058,9 @@
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
+      ],
+      "Permanently deleting selected items": [
+        "Eliminando permanentemente los elementos selecionados"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fija ${ PASS_APP_NAME } en tu barra de herramientas"
@@ -1041,6 +1098,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
       ],
+      "Restoring items from trash": [
+        "Restaurando un grupo de elementos"
+      ],
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
@@ -1052,6 +1112,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecciona dónde quieres guardar tus cajas fuertes importadas."
+      ],
+      "Selected items permanently deleted": [
+        "Los elementos seleccionados han sido eliminados permanentemente."
+      ],
+      "Selected items successfully moved to trash": [
+        "Se han movido los elementos seleccionados a la papelera."
+      ],
+      "Selected items successfully restored from trash": [
+        "Se han restaurado los elementos seleccionados en la papelera."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -1371,6 +1440,9 @@
       "General": [
         "General"
       ],
+      "Generic CSV": [
+        "CSV genérico"
+      ],
       "Grant": [
         "Conceder"
       ],
@@ -1640,6 +1712,15 @@
         "Te damos la bienvenida a ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementos"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Has seleccionado ${ semiboldText } en esta caja fuerte."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Te damos la bienvenida a ${ appName }"
@@ -1652,7 +1733,7 @@
       "Hyphens": [
         "Guiones"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Contraseña memorizable"
       ],
       "Numbers": [
@@ -1829,6 +1910,9 @@
       ],
       "Move all items ?": [
         "¿Mover todos los elementos?"
+      ],
+      "No items selected": [
+        "No hay elementos seleccionados."
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"

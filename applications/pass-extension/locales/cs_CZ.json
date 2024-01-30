@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Účet"
+      ],
       "Account settings": [
         "Nastavení účtu"
       ],
@@ -163,6 +166,9 @@
       ],
       "Export": [
         "Exportovat"
+      ],
+      "Feedback & Help": [
+        "Zpětná vazba & Pomoc"
       ],
       "Fill password": [
         "Vyplnit heslo"
@@ -1270,6 +1276,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "Účet"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1659,6 +1668,14 @@
         "Vítejte v ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Vítejte v ${ appName }"
@@ -1671,7 +1688,7 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Zapamatovatelné heslo"
       ],
       "Numbers": [

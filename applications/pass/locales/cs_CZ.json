@@ -1091,6 +1091,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "Účet"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1417,6 +1420,14 @@
         "Vítejte v ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
+      ]
+    },
     "Option": {
       "Commas": [
         "Čárky"
@@ -1424,7 +1435,7 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Zapamatovatelné heslo"
       ],
       "Numbers": [
