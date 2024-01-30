@@ -9,6 +9,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import initLogicalProperties from '@proton/shared/lib/logical/logical';
 
 import PrivateApp from './PrivateApp';
@@ -24,6 +25,7 @@ const bootstrapApp = () => {
     const authentication = bootstrap.createAuthentication();
     bootstrap.init({ config, authentication, locales });
     initLogicalProperties();
+    initSafariFontFixClassnames();
     extendStore({ authentication, api, history, config });
     return setupStore();
 };
