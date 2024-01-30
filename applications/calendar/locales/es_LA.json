@@ -2554,6 +2554,9 @@
       "No emails found to import - the account does not have an inbox": [
         "No se encontraron correos para importar, la cuenta no tiene un buzón"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ninguna clave externa recuperada para el usuario es válida para enviar"
+      ],
       "No valid address found": [
         "Ninguna dirección válida encontrada"
       ],
@@ -3873,12 +3876,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirija correos entrantes desde otra cuenta a su buzón seguro de ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Libere algo de espacio o añada más espacio de almacenamiento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con la administración."
-      ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
       ],
@@ -4169,9 +4166,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
-      "Update recurring event": [
-        "Actualizar evento recurrente"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
       ],
@@ -4258,12 +4252,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Rechazó esta invitación anteriormente. Pregunte al propietario por otra invitación."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Alcanzó el ${ spaceDisplayed }% de su capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Alcanzó el 100% de su capacidad de almacenamiento. No puede enviar o recibir correos electrónicos nuevos. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Perderá todos los cambios sin guardar."
@@ -4426,6 +4414,9 @@
       ],
       "Expired": [
         "Expirada"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Obsoleta"
@@ -4867,9 +4858,6 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
-      ],
-      "Upgrade account": [
-        "Mejorar cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -5567,6 +5555,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Clave externa obtenida automáticamente de keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Clave externa obtenida automáticamente mediante WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Esta clave es usada para cifrar los mensajes a este contacto"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que \"desconfíe\" de estas claves."
       ]
@@ -6222,6 +6219,47 @@
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "almacenamiento de ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } lleno al ${ percentage }%"
+      ],
+      "contact your administrator": [
+        "contacte con su administrador"
+      ],
+      "upgrade for more storage": [
+        "mejore para obtener más almacenamiento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "El ${ appStorage } está casi lleno."
+      ],
+      "Your ${ appStorage } is full": [
+        "El ${ appStorage } está lleno."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está un ${ percentage }% lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "El ${ storage } está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "El ${ storage } está lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "El almacenamiento está lleno."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
       ]
     },
     "Subscribe to calendar modal": {

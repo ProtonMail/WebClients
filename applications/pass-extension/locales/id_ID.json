@@ -38,6 +38,21 @@
       "Back": [
         "Kembali"
       ],
+      "Bulk delete items from trash": [
+        "Hapus banyak item sekaligus dari sampah"
+      ],
+      "Bulk move items to another vault": [
+        "Pindahkan banyak item sekaligus ke brankas lainnya"
+      ],
+      "Bulk move items to trash": [
+        "Pindahkan banyak item sekaligus ke sampah"
+      ],
+      "Bulk restore items from trash": [
+        "Pulihkan banyak item sekaligus dari sampah"
+      ],
+      "Bulk select items": [
+        "Pilih banyak item sekaligus"
+      ],
       "Cancel": [
         "Batal"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Hapus brankas"
       ],
+      "Deselect": [
+        "Lepas pilihan"
+      ],
       "Disable autosave on this website": [
         "Nonaktifkan penyimpanan otomatis pada situs web ini"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Selesai"
+      ],
+      "Download this CSV template": [
+        "Unduh template CSV ini"
       ],
       "Edit": [
         "Sunting"
@@ -528,17 +549,29 @@
       "Failed resending invite.": [
         "Undangan gagal dikirim ulang."
       ],
+      "Failed to delete selected items": [
+        "Item yang dipilih gagal dihapus"
+      ],
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Item gagal dipindahkan"
+      ],
+      "Failed to move items to trash": [
+        "Item gagal dipindahkan ke sampah"
+      ],
       "Failed to pin item": [
         "Item gagal disematkan"
       ],
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
+      ],
+      "Failed to restore items from trash": [
+        "Item gagal dipulihkan dari sampah"
       ],
       "Failed to transfer this vault's ownership.": [
         "Kepemilikan brankas gagal dipindahkan."
@@ -767,11 +800,17 @@
       "Admin": [
         "Admin"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
+      ],
+      "All items successfully moved": [
+        "Seluruh item berhasil dipindahkan"
       ],
       "All trashed items permanently deleted": [
         "Seluruh item yang dibuang dihapus secara permanen"
@@ -857,6 +896,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Ekspor terenkripsi menggunakan PGP dan memerlukan frasa sandi yang kuat."
       ],
+      "Fill in the CSV with your data": [
+        "Isi CSV dengan data Anda"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Ikuti langkah-langkah berikut untuk mengimpor data Anda dengan berkas CSV umum:"
+      ],
       "For easy access to your passwords and more.": [
         "Untuk akses mudah ke kata sandi Anda dan lainnya."
       ],
@@ -880,6 +925,9 @@
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
+      ],
+      "Import the CSV file below.": [
+        "Impor CSV pada kolom di bawah ini."
       ],
       "Imported ${ payload.total } items": [
         "${ payload.total } item diimpor"
@@ -962,6 +1010,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Memindahkan item"
+      ],
+      "Moving items to trash": [
+        "Memindahkan item ke sampah"
+      ],
       "Never": [
         "Tidak pernah"
       ],
@@ -991,6 +1045,9 @@
       ],
       "Pending access to the shared data": [
         "Akses ditunda ke data terbagi"
+      ],
+      "Permanently deleting selected items": [
+        "Menghapus item yang dipilih secara permanen"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
@@ -1028,6 +1085,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Terlindung oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
       ],
+      "Restoring items from trash": [
+        "Memulihkan item dari sampah"
+      ],
       "Restoring trashed items...": [
         "Memulihkan semua item yang dibuang..."
       ],
@@ -1039,6 +1099,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Tentukan di mana brankas yang Anda impor akan tersimpan."
+      ],
+      "Selected items permanently deleted": [
+        "Item yang dipilih dihapus secara permanen"
+      ],
+      "Selected items successfully moved to trash": [
+        "Item yang dipilih berhasil dipindahkan ke sampah"
+      ],
+      "Selected items successfully restored from trash": [
+        "Item yang dipilih berhasil dipulihkan dari sampah"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -1354,6 +1423,9 @@
       "General": [
         "Umum"
       ],
+      "Generic CSV": [
+        "Berkas CSV umum"
+      ],
       "Grant": [
         "Izinkan"
       ],
@@ -1623,6 +1695,14 @@
         "Selamat datang di ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } items": [
+        "${ count } item"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Anda memilih ${ semiboldText } pada brankas ini"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
@@ -1635,7 +1715,7 @@
       "Hyphens": [
         "Tanda hubung"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Kata Sandi yang Mudah Diingat"
       ],
       "Numbers": [
@@ -1811,6 +1891,9 @@
       ],
       "Move all items ?": [
         "Pindahkan semua item?"
+      ],
+      "No items selected": [
+        "Tidak ada item yang dipilih"
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"

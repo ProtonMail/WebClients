@@ -38,6 +38,21 @@
       "Back": [
         "이전"
       ],
+      "Bulk delete items from trash": [
+        "휴지통에서 항목 대량 복원"
+      ],
+      "Bulk move items to another vault": [
+        "다른 금고로 항목을 대량 이동"
+      ],
+      "Bulk move items to trash": [
+        "휴지통으로 항목을 대량 이동"
+      ],
+      "Bulk restore items from trash": [
+        "휴지통에서 대량 복원"
+      ],
+      "Bulk select items": [
+        "대량의 선택된 항목"
+      ],
       "Cancel": [
         "취소"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "금고 삭제"
       ],
+      "Deselect": [
+        "선택 해제"
+      ],
       "Disable autosave on this website": [
         "이 웹사이트에서 자동 저장 비활성화"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "완료"
+      ],
+      "Download this CSV template": [
+        "CSV 양식 다운로드"
       ],
       "Edit": [
         "편집"
@@ -528,17 +549,29 @@
       "Failed resending invite.": [
         "초대 재전송 실패."
       ],
+      "Failed to delete selected items": [
+        "선택한 항목을 지우기 실패했습니다."
+      ],
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
       ],
+      "Failed to move items": [
+        "항목 이동 실패"
+      ],
+      "Failed to move items to trash": [
+        "항목을 휴지통으로 이동하지 못했습니다."
+      ],
       "Failed to pin item": [
         "항목 고정 실패"
       ],
       "Failed to remove user's access.": [
         "사용자 접근 삭제 실패."
+      ],
+      "Failed to restore items from trash": [
+        "휴지통 내의 항목 복구 실패"
       ],
       "Failed to transfer this vault's ownership.": [
         "금고 소유권 이전 실패."
@@ -767,11 +800,17 @@
       "Admin": [
         "관리자"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
+      ],
+      "All items successfully moved": [
+        "전체 항목을 성공적으로 이동했습니다."
       ],
       "All trashed items permanently deleted": [
         "모든 항목을 성공적으로 삭제했습니다."
@@ -857,6 +896,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "내보내기가 PGP을 사용해 암호화되머 강력한 암호가 필요합니다."
       ],
+      "Fill in the CSV with your data": [
+        "사용자의 데이터인 CSV를 채워 넣으십시오"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "생성된 CSV로 데이터를 불러오려면 다음 단계를 따르세요:"
+      ],
       "For easy access to your passwords and more.": [
         "비밀번호 등에 쉽게 접근할 수 있습니다."
       ],
@@ -880,6 +925,9 @@
       ],
       "Import in progress:": [
         "처리가 진행 중입니다:"
+      ],
+      "Import the CSV file below.": [
+        "아래에 CSV 파일을 불어오십시오."
       ],
       "Imported ${ payload.total } items": [
         "${ payload.total }개 항목을 불러왔습니다"
@@ -962,6 +1010,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving items": [
+        "항목 이동 중"
+      ],
+      "Moving items to trash": [
+        "항목을 휴지통으로 이동 중"
+      ],
       "Never": [
         "안 함"
       ],
@@ -991,6 +1045,9 @@
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
+      ],
+      "Permanently deleting selected items": [
+        "선택 항목을 영구적으로 삭제하는 중"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }를 툴바에 고정하세요."
@@ -1028,6 +1085,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
       ],
+      "Restoring items from trash": [
+        "휴지통에서 항목 복구 중"
+      ],
       "Restoring trashed items...": [
         "휴지통 내 항목 복구 중..."
       ],
@@ -1039,6 +1099,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "불러온 금고가 저장될 위치를 선택하세요."
+      ],
+      "Selected items permanently deleted": [
+        "선택한 항목을 영구적으로 지웠습니다."
+      ],
+      "Selected items successfully moved to trash": [
+        "선택된 항목이 성공적으로 휴지통에 이동되었습니다."
+      ],
+      "Selected items successfully restored from trash": [
+        "휴지통에서 선택된 항목을 성공적으로 복구했습니다."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
@@ -1354,6 +1423,9 @@
       "General": [
         "일반"
       ],
+      "Generic CSV": [
+        "일반 CSV"
+      ],
       "Grant": [
         "허용"
       ],
@@ -1623,6 +1695,14 @@
         "${ brandNameJSX }에 오신 것을 환영합니다."
       ]
     },
+    "Message": {
+      "${ count } items": [
+        "${ count }개 항목"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "이 금고애서 ${ semiboldText }개 선택했습니다."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName }에 오신 것을 환영합니다"
@@ -1635,8 +1715,8 @@
       "Hyphens": [
         "하이픈"
       ],
-      "Memorizable Password": [
-        "기억 가능한 비밀번호"
+      "Memorable Password": [
+        "기억할 수 있는 비밀번호"
       ],
       "Numbers": [
         "숫자"
@@ -1811,6 +1891,9 @@
       ],
       "Move all items ?": [
         "모든 항목을 이동하시겠어요?"
+      ],
+      "No items selected": [
+        "선택된 항목 없음"
       ],
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"

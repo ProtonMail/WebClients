@@ -2117,7 +2117,7 @@
     },
     "Contact image": {
       "Contact image": [
-        "afbeelding"
+        "Contact foto"
       ]
     },
     "Contact type label": {
@@ -3054,7 +3054,7 @@
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Toegang krijgen tot aangepaste sluimertijden als u uw abonnement upgradet."
+        "Toegang krijgen tot aangepaste snooztijden als u uw abonnement upgradet."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
@@ -3220,7 +3220,7 @@
     },
     "eoy2023: Deal details": {
       "6 TB": [
-        "TB"
+        "6 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -5191,7 +5191,7 @@
         "E-mails zijn automatisch ondertekend"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Mails getagged met het label ${ nameDeleted } zullen niet gewist worden en zijn terug te vinden in hun respectievelijke map."
+        "Mails getagd met het label ${ nameDeleted } zullen niet gewist worden en zijn terug te vinden in hun respectievelijke map."
       ],
       "embedded image": [
         "ingesloten afbeelding",
@@ -5257,12 +5257,6 @@
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
-      ],
-      "Free up some space or add more storage space.": [
-        "Maak ruimte vrij of voeg meer opslagruimte toe."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
       "From": [
         "Afzender"
@@ -5691,7 +5685,7 @@
         "Gesnoozed tot ${ dateString } om ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Gesluimerd tot vandaag, ${ formattedTime }"
+        "Gesnoozed tot vandaag, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Gesnoozed tot morgen, ${ formattedTime }"
@@ -6098,12 +6092,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "U heeft het maximale aantal van 5 reacties bereikt."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "U heeft **${ count } gesprek** uit deze map geselecteerd",
@@ -7095,9 +7083,6 @@
       "Trash": [
         "Prullenbak"
       ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
       "What’s this?": [
         "Wat is dit?"
       ],
@@ -7468,7 +7453,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten sluimeren en ontvangen wanneer u wilt"
+        "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -7929,7 +7914,7 @@
         "Geen resultaten"
       ],
       "No snoozed messages": [
-        "Geen gesluimerde berichten"
+        "Geen gesnoozede berichten"
       ],
       "No unread messages found": [
         "Geen ongelezen berichten gevonden"
@@ -8508,6 +8493,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Krijg meer opslag"
+      ],
       "Release notes": [
         "Belangrijkste wijzigingen"
       ],

@@ -1654,6 +1654,14 @@
         "Добро пожаловать в ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элемента",
+        "${ count } элементов",
+        "${ count } элементов"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -1666,7 +1674,7 @@
       "Hyphens": [
         "Дефисы"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Запоминающийся пароль"
       ],
       "Numbers": [

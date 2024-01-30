@@ -1422,7 +1422,7 @@
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi aplikacjami ${ BRAND_NAME }."
+        "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi usługami ${ BRAND_NAME }."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Przechowuj do 200 wersji każdego pliku przez okres aż do 10 lat."
@@ -3448,6 +3448,9 @@
       "Last name is too long": [
         "Nazwisko jest zbyt długie"
       ],
+      "Maximum expiration time reached.": [
+        "Maksymalny czas wygaśnięcia został osiągnięty."
+      ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maksymalna liczba ${ attachmentsCountLimit } załączników została przekroczona"
       ],
@@ -3483,6 +3486,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Żaden z odzyskanych kluczy zewnętrznych dla użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
@@ -5545,12 +5551,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
-      ],
       "From": [
         "Od"
       ],
@@ -6414,12 +6414,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Osiągnięto maksymalną liczbę 5 odpowiedzi."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Zaznaczono **${ count } wątek** z tego folderu",
@@ -7457,9 +7451,6 @@
       "Trash": [
         "Kosz"
       ],
-      "Upgrade account": [
-        "Ulepsz konto"
-      ],
       "What’s this?": [
         "Co to jest?"
       ],
@@ -8079,6 +8070,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "Adres ${ emailAddress } oznaczył klucz jako przestarzały. Ten klucz może zostać użyty tylko do weryfikacji podpisu."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Zewnętrzny klucz został automatycznie pobrany z keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Zewnętrzny klucz został automatycznie pobrany przez WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Ten klucz jest używany do szyfrowania wiadomości dla tego kontaktu"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Zalecamy przestać ufać temu kluczowi."
@@ -8942,6 +8942,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Zaproś znajomych do usługi ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Wykonaj akcję dla wszystkich wiadomości w pojedynczym folderze."
+      ],
       "Schedule send": [
         "Zaplanuj wysyłanie"
       ],
@@ -8987,6 +8990,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Uzyskaj więcej przestrzeni dyskowej"
+      ],
       "Release notes": [
         "Lista zmian"
       ],
@@ -8995,6 +9001,23 @@
       ],
       "Your current storage:": [
         "Obecna przestrzeń dyskowa:"
+      ]
+    },
+    "storage_split: info": {
+      "contact your administrator": [
+        "skontaktuj się z administratorem"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Your storage is full": [
+        "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ upgrade }."
       ]
     },
     "Success": {

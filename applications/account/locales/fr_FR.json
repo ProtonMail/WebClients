@@ -818,6 +818,9 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Sélectionner le calendrier à exporter"
+      ],
       "Select calendar view": [
         "Sélectionner l'affichage du calendrier"
       ],
@@ -3893,6 +3896,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Aucune clé externe récupérée pour l’utilisateur n’est valide pour l’envoi."
+      ],
       "No valid address found": [
         "Aucune adresse valide n'a été trouvée."
       ],
@@ -5759,6 +5765,17 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -5794,9 +5811,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } sur ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } à vie"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } ne conservera plus les versions précédentes de vos fichiers."
@@ -5857,7 +5871,7 @@
         "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
-        "${ quarantine } : demande aux plateformes du destinataire de signaler les courriels non autorisés comme indésirables/spam ou de les mettre en quarantaine."
+        "${ quarantine } : demande aux plateformes du destinataire d'identifier comme indésirables/spam les e-mails non autorisés ou de les mettre en quarantaine."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject } : demande aux plateformes du destinataire de refuser les messages non autorisés."
@@ -6189,7 +6203,7 @@
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Avant de recevoir des messages sur les adresses de votre domaine personnalisé sur ${ MAIL_APP_NAME }, vous devez ajouter les deux enregistrements MX suivants dans votre console DNS (qui se trouve dans la plateforme sur laquelle vous avez acheté le domaine personnalisé). Vous trouverez un exemple et quelques astuces utiles ${ kbLink }."
+        "Avant de recevoir des messages sur les adresses de votre domaine personnalisé sur ${ MAIL_APP_NAME }, vous devez ajouter les deux enregistrements MX suivants dans votre console DNS qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé). Le lien suivant vous fournira un exemple et quelques astuces utiles ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
@@ -6208,9 +6222,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "En passant à l'abonnement Free, vous perdrez définitivement ces avantages, même si vous repassez par la suite à un abonnement supérieur."
-      ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "En passant à un abonnement inférieur, vous perdrez les avantages suivants. Vous voulez vraiment continuer ?"
       ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
@@ -6295,6 +6306,9 @@
       "Credits earned": [
         "Crédits gagnés"
       ],
+      "Current plan": [
+        "Abonnement actuel"
+      ],
       "Custom": [
         "Personnalisé"
       ],
@@ -6345,10 +6359,10 @@
         "Logo Discover ProtectBuy"
       ],
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DKIM permet à ${ BRAND_NAME } de signer par cryptographie vos messages et d'empêcher les attaquants de manipuler votre e-mail. Assurez-vous d'ajouter les trois enregistrements CNAME suivants à votre console DNS (qui se trouve dans la plateforme sur laquelle vous avez acheté le domaine personnalisé)."
+        "DKIM permet à ${ BRAND_NAME } de signer par cryptographie vos messages et d'empêcher les attaquants de manipuler votre e-mail. Assurez-vous d'ajouter les trois enregistrements CNAME suivants à votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le \"p=\" (politique) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les courriels non autorisés. Nous recommandons d'utiliser la politique \"p=quarantine\" pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme où vous avez acheté le domaine personnalisé)."
+        "DMARC vérifie si les enregistrements SPF et DKIM de l'expéditeur proviennent de votre domaine. Cela peut empêcher les attaquants d'utiliser le SPF et le DKIM d'un autre domaine pour usurper l'identité de votre domaine. Le \"p=\" (policy) dans cet enregistrement indique comment vous souhaitez que les plateformes destinataires gèrent les messages non autorisés. Nous recommandons d'utiliser la politique \"p=quarantine\" pour la plupart des domaines. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
@@ -6375,6 +6389,9 @@
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
       ],
+      "Downgrade": [
+        "Passer à un abonnement inférieur"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passer à un abonnement inférieur mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
       ],
@@ -6400,7 +6417,7 @@
         "Chaque code ne peut être utilisé qu'une seule fois."
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
-        "Chaque domaine ne peut avoir qu'un seul enregistrement SPF (TXT). Si vous souhaitez conserver l'enregistrement SPF (TXT) existant, vous pouvez ajouter ${ spf } à votre enregistrement actuel (ajoutez-le après ${ spfValue })."
+        "Un domaine ne peut avoir qu'un seul enregistrement SPF (TXT). Si vous souhaitez conserver l'enregistrement SPF (TXT) existant, vous pouvez ajouter ${ spf } à votre enregistrement actuel (ajoutez-le après ${ spfValue })."
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
@@ -6521,12 +6538,6 @@
       ],
       "Free forever": [
         "Gratuit pour toujours"
-      ],
-      "Free up some space or add more storage space.": [
-        "Libérez de l’espace ou ajoutez plus d’espace de stockage."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libérez de l’espace ou contactez votre administrateur."
       ],
       "free up space by deleting older messages or other data": [
         "libérer de l'espace en supprimant les anciens messages ou d'autres données"
@@ -6771,7 +6782,7 @@
         "Les journaux incluent les tentatives d’authentification à tous les services ${ BRAND_NAME } qui utilisent vos identifiants ${ BRAND_NAME_TWO }."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
-        "Les principaux services de messagerie peuvent refuser ou filtrer vos courriels en les considérant comme indésirables/spam si SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
+        "Les principaux services de messagerie peuvent refuser ou filtrer vos e-mails en les considérant comme indésirables/spam si les enregistrements SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Les principaux services de messagerie peuvent refuser ou filtrer vos messages en les considérant comme indésirables/spam si SPF/DKIM/DMARC sont manquants ou ne sont pas correctement configurés."
@@ -7212,7 +7223,7 @@
         "Certains des serveurs disponibles peuvent uniquement être utilisés dans certains pays en raison de suppressions récentes."
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
-        "Le SPF précise qui est autorisé à envoyer des messages pour votre domaine. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve dans la plateforme sur laquelle vous avez acheté le domaine personnalisé)."
+        "SPF précise qui est autorisé à envoyer des messages pour votre domaine. Assurez-vous d'ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé)."
       ],
       "Stay tuned for future promotions.": [
         "Ne manquez pas les prochaines promotions."
@@ -7766,6 +7777,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Vous utilisez plus d'espace de stockage par rapport à celui inclus dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à retirer ou supprimer des données pour pouvoir passer à un abonnement inférieur."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Vous pouvez aussi fusionner des calendriers importés avec des calendriers ${ BRAND_NAME } existants."
       ],
@@ -7853,12 +7867,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Pour importer vos événements à partir d'un fichier ICS, vous devez avoir un calendrier personnel actif."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux messages. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Nous vous recommandons d'exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer les données qu'elle a chiffrées."
@@ -7988,17 +7996,6 @@
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -8017,7 +8014,7 @@
         "Ajoutez un nouvel utilisateur à votre organisation et créez-lui une adresse."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
-        "Pour des raisons de sécurité, nous devons vérifier que vous êtes le propriétaire pour ${ domainName }. Ajoutez l'enregistrement TXT suivant dans votre console DNS (qui se trouve dans la plateforme sur laquelle vous avez acheté le domaine personnalisé). Vous trouverez un exemple et quelques astuces utiles ${ kbLink }."
+        "Pour des raisons de sécurité, nous devons vérifier que vous êtes bien le propriétaire du domaine ${ domainName }. Veuillez ajouter l'enregistrement TXT suivant dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé). Vous trouverez un exemple et quelques astuces utiles ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -9057,10 +9054,10 @@
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
       "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
-        "Ajoutez les 3 enregistrements CNAME suivants. Note :la mise à jour des enregistrements DNS peut prendre plusieurs heures."
+        "Ajoutez les 3 enregistrements CNAME suivants. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ],
       "Please add the following two MX records. Note: DNS records can take several hours to update.": [
-        "Veuillez ajouter les 2 enregistrements MX suivants. Attention : la mise à jour des enregistrements DNS peut durer plusieurs heures."
+        "Veuillez ajouter les 2 enregistrements MX suivants. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
       ],
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Veuillez ajouter l'enregistrement TXT suivant. Attention : les enregistrements DNS peuvent prendre plusieurs heures pour être mis à jour."
@@ -9559,9 +9556,6 @@
       "Trouble signing in?": [
         "Un problème pour se connecter ?"
       ],
-      "Upgrade account": [
-        "Passer à un abonnement supérieur"
-      ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
       ],
@@ -9994,9 +9988,6 @@
       ],
       "From ${ price }": [
         "À partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conserver mon compte ${ currentPlanName }"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -10523,12 +10514,6 @@
         "/mois"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Il vous reste encore ${ daysRemaining } jour sur votre compte ${ currentPlanName }.",
-        "Il vous reste encore ${ daysRemaining } jours sur votre compte ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "En cliquant sur « Payer », vous acceptez nos ${ termsAndConditions }."
@@ -10744,17 +10729,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield est une fonctionnalité spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Commencez avec ${ freeStorageSize } et débloquez plus d'espace de stockage au fur et à mesure. L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } et ${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }. Les administrateurs peuvent allouer un volume de stockage différent à chaque utilisateur de leur organisation."
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre les utilisateurs et entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Espace de stockage partagé entre utilisateurs entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } et ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
@@ -12475,11 +12457,6 @@
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Offre à vie"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -12630,6 +12607,106 @@
       ],
       "Your current storage:": [
         "Votre stockage actuel :"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Conserver ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Espace de stockage pour les données générées par ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Jusqu'à ${ totalStorageSize } d'espace de stockage total pour Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Jusqu'à ${ totalStorageSize } d'espace de stockage total pour Mail"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "espace de stockage de ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } plein à ${ percentage } %"
+      ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** sur ${ humanMaxSpace }"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "En passant à un abonnement inférieur, vous perdrez les avantages suivants. Voulez-vous vraiment continuer ?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Pensez à changer d'abonnement pour continuer à utiliser votre compte sans interruptions."
+      ],
+      "contact your administrator": [
+        "contacter votre administrateur"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Pour tous les services ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Obtenir plus d'espace de stockage"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Explorez tout le potentiel de ${ app }"
+      ],
+      "upgrade for more storage": [
+        "changer d'abonnement pour obtenir plus d'espace de stockage"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Pour continuer à utiliser votre compte sans interruptions, vous devez changer d'abonnement."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Passez à un abonnement supérieur et augmentez votre espace de stockage."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Il vous reste encore **${ daysRemaining }** jour sur votre compte **${ currentPlanName }**.",
+        "Il vous reste encore **${ daysRemaining }** jours sur votre compte **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Votre ${ appStorage } est presque plein."
+      ],
+      "Your ${ appStorage } is full": [
+        "Votre ${ appStorage } est plein."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Votre ${ storage } est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Votre ${ storage } est plein à ${ percentage } %. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Votre ${ storage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Votre ${ storage } est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Votre espace de stockage est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Votre espace de stockage est plein."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Vous n'aurez plus accès à ${ gb } d'espace de stockage et à l'assistance prioritaire."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Vous n'aurez plus accès à espace de stockage supplémentaire, aux adresses e-mail, alias, calendriers et à l'assistance prioritaire."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Vous n'aurez plus accès l'accès à la vitesse VPN la plus élevée, la protection pour 10 appareils, au streaming haute vitesse, au bloqueur de publicités et à la protection contre les logiciels malveillants et à l'assistance prioritaire."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Vous n'aurez plus accès aux identifiants et notes de manière illimité, aux alias hide-my-email, à l'assistance prioritaire et vous serez limité à 20 coffres-forts."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13572,6 +13649,9 @@
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Souhaitez-vous passer à ${ downgradedPlanName } ?"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
       ],
@@ -14169,6 +14249,9 @@
       "Your SMTP token": [
         "Votre jeton SMTP"
       ],
+      "Your storage": [
+        "Votre espace de stockage"
+      ],
       "Your subscriptions": [
         "Vos abonnements"
       ],
@@ -14347,7 +14430,7 @@
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "See number of unread messages in the application icon": [
-        "Affiche le nombre de messages non lus sur l'icône dans l'onglet de navigation."
+        "Afficher le nombre de messages non lus sur l'icône de l'application."
       ],
       "See number of unread messages in the tab icon": [
         "Affichez le nombre de messages non lus sur l'icône dans l'onglet de navigation"

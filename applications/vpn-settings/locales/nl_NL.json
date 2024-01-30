@@ -1885,7 +1885,7 @@
     },
     "eoy2023: Deal details": {
       "6 TB": [
-        "TB"
+        "6 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -2724,9 +2724,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } voor altijd"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
       ],
@@ -2826,7 +2823,7 @@
         "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
       ],
       "Add domain": [
-        "domein"
+        "Domein toevoegen"
       ],
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
@@ -2926,9 +2923,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
-      ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
       ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
@@ -3093,12 +3087,6 @@
       ],
       "Free forever": [
         "Altijd gratis"
-      ],
-      "Free up some space or add more storage space.": [
-        "Maak ruimte vrij of voeg meer opslagruimte toe."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
       "Gateways": [
         "Gateways"
@@ -3843,12 +3831,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
@@ -4056,7 +4038,7 @@
         "Verschuldigd bedrag"
       ],
       "Assertion Consumer Service URL": [
-        "URL"
+        "URL van Assertion Consumer Service"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -4212,7 +4194,7 @@
         "Interval"
       ],
       "Issuer ID": [
-        "Emittent ID"
+        "ID uitgevende instelling"
       ],
       "Keep me signed in": [
         "Houd me ingelogd"
@@ -4538,9 +4520,6 @@
       "Trouble signing in?": [
         "Problemen met inloggen?"
       ],
-      "Upgrade account": [
-        "Account upgraden"
-      ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
       ],
@@ -4670,9 +4649,6 @@
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
       ],
       "Upgrade": [
         "Upgraden"
@@ -5056,7 +5032,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten sluimeren en ontvangen wanneer u wilt"
+        "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -5166,12 +5142,6 @@
     "new_plans: Plan frequency": {
       "/month": [
         "/maand"
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "U hebt nog ${ daysRemaining } dag over van uw ${ currentPlanName }-account.",
-        "U hebt nog ${ daysRemaining } dagen over van uw ${ currentPlanName }-account."
       ]
     },
     "new_plans: signup": {
@@ -5359,17 +5329,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Begin met ${ freeStorageSize } en ontgrendel meer opslagruimte na verloop van tijd. De opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "De opslagruimte wordt gedeeld tussen gebruikers in ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
@@ -5472,7 +5433,7 @@
         "IP-adres gekopieerd naar het klembord"
       ],
       "Key copied to the clipboard": [
-        "klembord"
+        "Sleutel naar het klembord gekopieerd"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 inloggegevens opnieuw gegenereerd"
@@ -5672,7 +5633,7 @@
         "Geen toestemming"
       ],
       "Send to all": [
-        "Verzend"
+        "Sturen aan alle"
       ]
     },
     "Placeholder": {
@@ -6247,11 +6208,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Deal voor het leven"
       ]
     },
     "specialoffer: Link": {
@@ -7017,7 +6973,7 @@
         "Nieuwsbrieven"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Vul uw ${ BRAND_NAME } account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+        "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"

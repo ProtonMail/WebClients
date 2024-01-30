@@ -1993,9 +1993,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "با تنزیل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر دوباره در آینده طرح را ارتقا دهید."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "با تنزیل درجه منافع زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
-      ],
       "By leaving now, changes may not be saved": [
         "اگر حال ترک کنید، تغییرات ممکن است ذخیره نشوند"
       ],
@@ -2094,12 +2091,6 @@
       ],
       "expires ${ expirationDate }": [
         "در ${ expirationDate } منقضی میشود"
-      ],
-      "Free up some space or add more storage space.": [
-        "مقداری فضا آزاد کنید یا فضای ذخیره سازی بیشتری اضافه کنید."
-      ],
-      "Free up some space or contact your administrator.": [
-        "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
       ],
       "Get ${ upsellPlanName }": [
         "دریافت ${ upsellPlanName }"
@@ -2490,12 +2481,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمه زیر کلیک کنید."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "شما به ${ spaceDisplayed }% ظرفیت ذخیره‌سازی خود رسیده‌اید. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "شما به 100٪ ظرفیت ذخیره‌سازی خود رسیده‌اید. شما نمی‌توانید رایانامه‌های جدیدی ارسال یا دریافت کنید. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
@@ -2998,9 +2983,6 @@
       "Trouble signing in?": [
         "با وارد شدن مشکلی دارید؟"
       ],
-      "Upgrade account": [
-        "ارتقای حساب"
-      ],
       "Upgrade your plan": [
         "طرح خود را ارتقا دهید"
       ],
@@ -3086,9 +3068,6 @@
       ],
       "From ${ price }": [
         "از ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "حساب فعلی ${ currentPlanName } $ من را حفظ کن"
       ],
       "Upgrade now": [
         "اکنون ارتقا دهید"
@@ -3401,12 +3380,6 @@
         "/ماهانه"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "شما هنوز ${ daysRemaining } روز از حساب ${ currentPlanName } خود دارید.",
-        "شما هنوز ${ daysRemaining } روز از حساب ${ currentPlanName } خود دارید."
-      ]
-    },
     "new_plans: signup": {
       "terms and conditions": [
         "شرایط و ضوابط"
@@ -3539,12 +3512,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield به گونه ای طراحی شده تا با مسدود کردن تبلیغات، ردیاب ها و بدافزارها دستگاه شما را امن و سرعت ارتباط شما را افزایش میدهد"
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "با ${ freeStorageSize } شروع کنید و فضای بیشتری را در طول مسیر باز کنید. فضای ذخیره‌سازی مابین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته میشود."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "فضای ذخیره‌سازی مابین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته میشود"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "فضای ذخیره‌سازی مابین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته میشود. مدیران میتوانند فضای مختلفی به کاربران سازمان خود اختصاص دهند"

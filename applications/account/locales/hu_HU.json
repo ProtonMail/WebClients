@@ -4993,6 +4993,14 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
@@ -5028,9 +5036,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } örökre"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "A ${ DRIVE_APP_NAME } már nem fogja megőrizni a fájljaid korábbi verzióit."
@@ -5391,9 +5396,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
       ],
@@ -5638,12 +5640,6 @@
       ],
       "Free forever": [
         "Örökre ingyenes"
-      ],
-      "Free up some space or add more storage space.": [
-        "Szabadítson fel helyet vagy vásároljon több területet."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Szabadítson fel területet vagy írjon az adminisztrátornak."
       ],
       "free up space by deleting older messages or other data": [
         "szabadítson fel helyet a régi üzenetek vagy más adatok törlésével"
@@ -6795,12 +6791,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Egy ICS fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Exportáljon egy biztonsági mentést erről a kulcsról, abban az esetben, ha szüksége lenne visszaállítani azokat az adatokat, amelyeket titkosított vele."
       ],
@@ -6903,14 +6893,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info - folder colouring feature": {
@@ -8395,9 +8377,6 @@
       "Trouble signing in?": [
         "Probléma a bejelentkezéssel?"
       ],
-      "Upgrade account": [
-        "Csomag váltása"
-      ],
       "Upgrade your plan": [
         "Váltson nagyobb csomagra"
       ],
@@ -8785,9 +8764,6 @@
       ],
       "From ${ price }": [
         "Már ${ price }-tól"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Megtartom a ${ currentPlanName } fiókot"
       ],
       "Upgrade now": [
         "Váltás nagyobb csomagra"
@@ -9223,12 +9199,6 @@
         "/hó"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből.",
-        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből."
-      ]
-    },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Egy ${ BRAND_NAME } felhasználói fiók létrehozásával, elfogadja a ${ terms }-et"
@@ -9398,12 +9368,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "A különleges kialakítású NetShield megvédi eszközeit és felgyorsítja a böngészés sebességét, a reklámok, követők és kártevő szoftverek letiltásával"
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Kezdjen ${ freeStorageSize } tárhellyel, majd szerezzen többet később. A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } és a ${ DRIVE_APP_NAME } közt."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt. A szervezet egyes felhasználói közt az adminisztrátorok osztják szét a tárhelyet"
@@ -10683,11 +10647,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül"
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Örök ajánlat"
       ]
     },
     "specialoffer: Link": {
