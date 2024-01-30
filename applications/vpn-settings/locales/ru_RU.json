@@ -2795,9 +2795,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } навсегда"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: изображение в полном размере"
       ],
@@ -3023,14 +3020,17 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
-      ],
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
       "Cancel anytime": [
         "Отменить в любое время"
+      ],
+      "Can’t access your recovery email?": [
+        "Нет доступа к резервному адресу электронной почты?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Нет доступа к номеру телефона для восстановления?"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
@@ -3122,6 +3122,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Готово! Мы отправили код на ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Не знаете вашу фразу для восстановления?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
       ],
@@ -3194,6 +3197,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введите свой резервный номер телефона, и мы отправим вам ваше имя пользователя или адрес электронной почты."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Введите фразу для восстановления, чтобы изменить пароль."
+      ],
       "Expired": [
         "Истёкший"
       ],
@@ -3211,12 +3217,6 @@
       ],
       "Free forever": [
         "Бесплатно навсегда"
-      ],
-      "Free up some space or add more storage space.": [
-        "Освободите место или добавьте больше места для хранения."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Освободите место или свяжитесь с вашим администратором."
       ],
       "Gateways": [
         "Шлюзы"
@@ -3740,6 +3740,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
+      "To proceed, we must verify the request.": [
+        "Для продолжения нам необходимо проверить запрос."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Чтобы защитить свое подключение к Интернету, скачайте и установите приложение ${ VPN_APP_NAME } для своего устройства и подключитесь к серверу."
       ],
@@ -3887,6 +3890,9 @@
       "Welcome": [
         "Добро пожаловать"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Код сброса будет отправлен на ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
       ],
@@ -3994,12 +4000,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "После входа в систему вы будете перенаправлены на ${ destination }"
@@ -4555,6 +4555,9 @@
       "Username": [
         "Имя пользователя"
       ],
+      "Value": [
+        "Значение"
+      ],
       "Verification code": [
         "Код подтверждения"
       ],
@@ -4711,9 +4714,6 @@
       "Trouble signing in?": [
         "Проблемы со входом?"
       ],
-      "Upgrade account": [
-        "Повысить учётную запись"
-      ],
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
@@ -4845,9 +4845,6 @@
       ],
       "From ${ price }": [
         "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
       ],
       "Upgrade": [
         "Улучшить"
@@ -5373,14 +5370,6 @@
         "/месяц"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } день.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дней.",
-        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Нажимая на кнопку \"Оплатить\", вы соглашаетесь с нашими ${ termsAndConditions }."
@@ -5571,17 +5560,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет просмотр страниц, блокируя рекламу, трекеры и вредоносные программы"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Начните с ${ freeStorageSize } и постепенно увеличивайте размер хранилища. Его объем распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Объем хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы хранилища для пользователей своей организации"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Хранилище распределяется между пользователями на ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Поддержка протоколов обмена файлами, таких как BitTorrent"
@@ -6464,11 +6444,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Бессрочное предложение"
       ]
     },
     "specialoffer: Link": {

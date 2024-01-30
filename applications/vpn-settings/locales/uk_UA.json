@@ -2619,9 +2619,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } назавжди"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: повнорозмірне зображення"
       ],
@@ -2683,7 +2680,7 @@
         "Знайдено ${ userFound } користувачів"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "${ vpnPlus } вимагає з'єднання на рівні країни."
+        "Для з'єднання на рівні країни потрібен ${ vpnPlus }."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функції Secure Core необхідна передплата ${ vpnPlus }."
@@ -2837,9 +2834,6 @@
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Повернувшись на безплатний тарифний план, ви остаточно втратите ці переваги, навіть якщо в майбутньому поновите передплату."
-      ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
       ],
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
@@ -3012,12 +3006,6 @@
       "Free forever": [
         "Безплатно назавжди"
       ],
-      "Free up some space or add more storage space.": [
-        "Звільніть місце або збільште обсяг сховища."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Звільніть місце або зверніться до свого адміністратора."
-      ],
       "Gateways": [
         "Мережеві шлюзи"
       ],
@@ -3082,7 +3070,7 @@
         "Установіть файл конфігурації країни для під'єднання до випадкового сервера у вибраній країні."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Установіть файл конфігурації безплатного сервера для під'єднання до певного сервера в одному з трьох безплатних розташувань."
+        "Установіть файл конфігурації, щоб під'єднатися до певного сервера Free в одному з трьох безплатних розташувань."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
         "Встановіть файл конфігурації Secure Core для отримання переваг додаткового захисту від компрометації кінцевої точки з'єднання VPN."
@@ -3771,12 +3759,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Ви досягли ${ spaceDisplayed }% свого обсягу сховища. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
       ],
@@ -4452,9 +4434,6 @@
       "Trouble signing in?": [
         "Проблеми з входом?"
       ],
-      "Upgrade account": [
-        "Покращити обліковий запис"
-      ],
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
@@ -4482,7 +4461,7 @@
         "Оновити передплату"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміумфункцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
+        "Передплатіть тарифний план для доступу до підтримки в чаті та інших преміальних функцій, або скористайтеся нашою формою підтримки та повідомте про свою проблему."
       ]
     },
     "Loading info": {
@@ -4583,9 +4562,6 @@
       ],
       "From ${ price }": [
         "Від ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
       ],
       "Upgrade": [
         "Покращити"
@@ -5102,14 +5078,6 @@
         "/місяць"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "У вас все ще залишився ${ daysRemaining } день чинної передплати ${ currentPlanName }.",
-        "У вас все ще залишилося ${ daysRemaining } дні чинної передплати ${ currentPlanName }.",
-        "У вас все ще залишилося ${ daysRemaining } днів чинної передплати ${ currentPlanName }.",
-        "У вас все ще залишилося ${ daysRemaining } дні чинної передплати ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Натискаючи \"Оплатити\", ви погоджуєтеся з нашими ${ termsAndConditions }."
@@ -5279,17 +5247,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Спеціально розроблений NetShield захищає ваш пристрій та пришвидшує користування інтернетом, блокуючи рекламу, стеження та зловмисні програми"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Почніть з ${ freeStorageSize } та розблокуйте більше обсягу сховища згодом. Обсяг сховища використовується спільно для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Обсяг сховища використовується спільно для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } та ${ DRIVE_APP_NAME }. Адміністратори можуть призначати різний обсяг сховища користувачам своєї організації"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Простір сховища спільний для користувачів ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Підтримка протоколів обміну даними, як-от BitTorrent"
@@ -5422,7 +5381,7 @@
         "Конфігурації країн"
       ],
       "Free server configs": [
-        "Конфігурації безплатного сервера"
+        "Конфігурації безплатних серверів"
       ],
       "I found another service that I like better": [
         "Я використовую інший сервіс, який мені більше подобається"
@@ -6027,11 +5986,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Ця передплата автоматично продовжуватиметься раз на 2 роки за такою ж ціною, поки її не буде скасовано."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Довічна угода"
       ]
     },
     "specialoffer: Link": {

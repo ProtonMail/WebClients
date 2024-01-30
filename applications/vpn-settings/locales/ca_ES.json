@@ -2716,9 +2716,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } per sempre"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
       ],
@@ -2900,9 +2897,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Si baixeu a un pla gratuït, perdreu per sempre aquests avantatges, fins i tot si en tornareu a actualitzar."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
-      ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
@@ -3058,12 +3052,6 @@
       ],
       "Free forever": [
         "Gratuït per sempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
       ],
       "Gateways": [
         "Passarel·les"
@@ -3767,12 +3755,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té, cliqueu el botó de sota."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
@@ -4459,9 +4441,6 @@
       "Trouble signing in?": [
         "Teniu problemes per iniciar la sessió?"
       ],
-      "Upgrade account": [
-        "Millorar el compte"
-      ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
@@ -4591,9 +4570,6 @@
       ],
       "From ${ price }": [
         "Des de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conserva el meu compte ${ currentPlanName }"
       ],
       "Upgrade": [
         "Millora"
@@ -5090,12 +5066,6 @@
         "/mes"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Encara us queda ${ daysRemaining } dia al compte ${ currentPlanName }.",
-        "Encara us queden ${ daysRemaining } dies al compte ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Fent clic a \"Pagar\", accepteu els nostres ${ termsAndConditions }."
@@ -5278,17 +5248,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comenceu amb ${ freeStorageSize } i desbloquegeu més emmagatzematge sobre la marxa. L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Els administradors poden assignar diferents quantitats d'emmagatzematge als usuaris de la seva organització"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "L'espai d'emmagatzematge es comparteix entre usuaris i entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, i ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport per a protocols de compartició fitxers com BitTorrent"
@@ -6183,11 +6144,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta de per vida"
       ]
     },
     "specialoffer: Link": {
