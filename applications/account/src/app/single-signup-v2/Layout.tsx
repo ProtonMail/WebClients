@@ -6,55 +6,60 @@ import { PublicTopBanners } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { usePublicTheme } from '../containers/PublicThemeProvider';
 import LayoutLogosV2 from '../public/LayoutLogosV2';
 import Box from './Box';
 import LayoutHeader from './LayoutHeader';
-import { SignupTheme } from './interface';
 
 import './Layout.scss';
 
 export interface Props {
-    theme: SignupTheme;
     logo: ReactNode;
     children: ReactNode;
     bottomRight?: ReactNode;
     hasDecoration?: boolean;
     headerClassName?: string;
     languageSelect?: boolean;
+    afterLogo?: ReactNode;
     onBack?: () => void;
     className?: string;
     footer?: ReactNode;
 }
 
 const Layout = ({
-    theme,
     footer,
     logo,
     children,
     hasDecoration,
     headerClassName,
     languageSelect = true,
+    afterLogo,
     onBack,
     bottomRight,
     className,
 }: Props) => {
+    const theme = usePublicTheme();
     return (
         <div
             className={clsx(
-                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
-                theme.background === 'bf' ? 'signup-v2-bg--bf2023' : 'signup-v2-bg',
+                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative signup-v2-wrapper',
+                theme.background === 'bf' && 'signup-v2-bg--bf2023',
+                theme.background === 'b2b' && 'signup-v2-bg--b2b',
+                theme.layout.className,
+                !theme.background && 'signup-v2-bg',
                 theme.intent && `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
                 className
             )}
         >
             <PublicTopBanners />
             <LayoutHeader
-                isDarkBg={theme.background === 'bf'}
+                isDarkBg={theme.dark}
                 hasDecoration={hasDecoration}
                 className={headerClassName}
                 onBack={onBack}
                 languageSelect={languageSelect}
                 logo={logo}
+                afterLogo={afterLogo}
             />
             <div className="flex-auto flex flex-nowrap flex-column justify-space-between mx-6">
                 {children}

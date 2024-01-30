@@ -1,7 +1,6 @@
 import {
     Dispatch,
     Fragment,
-    Key,
     MutableRefObject,
     ReactNode,
     SetStateAction,
@@ -9,6 +8,7 @@ import {
     useRef,
     useState,
 } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -27,7 +27,7 @@ import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APP_NAMES, BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -39,6 +39,7 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Api,
+    Audience,
     Currency,
     Cycle,
     Plan,
@@ -49,20 +50,23 @@ import {
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { usePublicTheme } from '../containers/PublicThemeProvider';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
+import { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
 import AccountSwitcherItem from './AccountSwitcherItem';
+import AudienceTabs from './Audience';
 import Box from './Box';
 import BoxContent from './BoxContent';
 import BoxHeader from './BoxHeader';
 import FeatureItem from './FeatureItem';
 import FreeLogo from './FreeLogo';
+import Guarantee from './Guarantee';
 import Layout from './Layout';
-import { PlanCard, PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
+import { PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { getFreeSubscriptionData, getFreeTitle } from './helper';
@@ -71,10 +75,10 @@ import {
     OnOpenLogin,
     OnOpenSwitch,
     OptimisticOptions,
+    SignupConfiguration,
     SignupMode,
     SignupModelV2,
     SignupParameters2,
-    SignupTheme,
     UpsellTypes,
 } from './interface';
 import { getFreePassFeatures } from './pass/configuration';
@@ -85,20 +89,24 @@ export interface Step1Rref {
 }
 
 const Step1 = ({
-    signupTypes,
+    signupConfiguration: {
+        logo,
+        features,
+        title,
+        productAppName: appName,
+        shortProductAppName: shortAppName,
+        product: app,
+        benefits,
+        signupTypes,
+        cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+        planCards,
+        audience,
+        audiences,
+    },
     signupParameters,
-    theme,
     relativePrice,
-    logo,
-    features,
-    app,
-    shortAppName,
-    appName,
-    title,
     selectedPlan,
     currentPlan,
-    benefits,
-    planCards,
     onComplete,
     model,
     setModel,
@@ -114,20 +122,11 @@ const Step1 = ({
     activeSessions,
     measure,
     mode,
-    cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
 }: {
+    signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
-    signupTypes: SignupType[];
-    theme: SignupTheme;
     relativePrice: string | undefined;
-    app: APP_NAMES;
-    shortAppName: string;
-    appName: string;
-    logo: ReactNode;
-    title: ReactNode;
-    features: { key: Key; text: ReactNode; left: ReactNode }[];
     selectedPlan: Plan;
-    planCards: PlanCard[];
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     measure: Measure;
@@ -150,14 +149,12 @@ const Step1 = ({
     setModel: Dispatch<SetStateAction<SignupModelV2>>;
     currentPlan: SubscriptionPlan | undefined;
     mode: SignupMode;
-    benefits: ReactNode;
     api: Api;
     onOpenLogin: OnOpenLogin;
     onOpenSwitch: OnOpenSwitch;
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: LocalSessionPersisted[];
-    cycles?: CYCLE[];
 }) => {
     const silentApi = getSilentApi(normalApi);
     const [loadingSignup, withLoadingSignup] = useLoading();
@@ -166,6 +163,9 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
+    const theme = usePublicTheme();
+
+    const history = useHistory();
 
     const createFlow = useFlowRef();
 
@@ -213,16 +213,12 @@ const Step1 = ({
 
         try {
             const validateFlow = createFlow();
+            const couponCode = model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon;
 
+            // If there's a couponCode, we ignore optimistically setting new values because they'll be incorrect.
             setOptimisticDiff(newOptimistic);
 
-            const checkResult = await getSubscriptionPrices(
-                silentApi,
-                newPlanIDs,
-                newCurrency,
-                newCycle,
-                model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon
-            );
+            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, couponCode);
 
             if (!validateFlow()) {
                 return;
@@ -307,7 +303,7 @@ const Step1 = ({
     const hasSelectedFree = options.plan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
     const isOnboardingMode = mode === SignupMode.Onboarding;
 
-    const isDarkBg = theme.background === 'bf';
+    const isDarkBg = theme.dark;
 
     let step = 1;
 
@@ -341,9 +337,20 @@ const Step1 = ({
         checkResult: options.checkResult,
     });
 
+    const audienceTabs = hasPlanSelector ? (
+        <AudienceTabs
+            audience={audience}
+            audiences={audiences}
+            onChangeAudience={(audience) => {
+                handleChangePlan({ [audience.defaultPlan]: 1 }, audience.defaultPlan);
+                history.push(audience.pathname);
+            }}
+        />
+    ) : undefined;
+
     return (
         <Layout
-            theme={theme}
+            afterLogo={audienceTabs}
             logo={logo}
             footer={renewalNotice}
             hasDecoration
@@ -353,14 +360,14 @@ const Step1 = ({
             <div className="flex items-center flex-column">
                 <div
                     className={clsx(
-                        'single-signup-header-v2 text-center mt-8 mb-4',
+                        'single-signup-header-v2 text-center mt-6 md:mt-8 mb-4',
                         signupParameters.mode == SignupMode.Invite && 'max-w-full'
                     )}
                 >
                     <h1 className="m-0 large-font lg:px-4 text-semibold">{title}</h1>
                 </div>
                 {!isOnboardingMode && hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
-                    <div className="flex flex-nowrap mb-4 gap-1 md:gap-8">
+                    <div className="flex flex-nowrap mb-4 gap-1 md:gap-8 text-sm md:text-rg">
                         {features.map(({ key, left, text }, i, arr) => {
                             return (
                                 <Fragment key={key}>
@@ -376,7 +383,12 @@ const Step1 = ({
                 {(() => {
                     const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
                         return (
-                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary md:text-lg inline-flex flex-nowrap mt-4">
+                            <div
+                                className={clsx(
+                                    'signup-v2-offer-banner py-2 px-4 rounded-lg md:text-lg inline-flex flex-nowrap mt-4',
+                                    !theme.dark && 'color-primary'
+                                )}
+                            >
                                 <Icon name={iconName} size={3.5} className="shrink-0 mt-1" />
                                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
@@ -406,7 +418,31 @@ const Step1 = ({
                         return null;
                     }
 
-                    const bestPlanCard = planCards.find((planCard) => planCard.type === 'best');
+                    const passBizYearlyCycle = model.subscriptionDataCycleMapping[PLANS.PASS_BUSINESS]?.[CYCLE.YEARLY];
+                    if (
+                        audience === Audience.B2B &&
+                        options.cycle === CYCLE.YEARLY &&
+                        passBizYearlyCycle &&
+                        !!passBizYearlyCycle.checkResult.Coupon?.Code
+                    ) {
+                        const checkout = getCheckout({
+                            planIDs: { [PLANS.PASS_BUSINESS]: 1 },
+                            plansMap: model.plansMap,
+                            checkResult: passBizYearlyCycle.checkResult,
+                        });
+                        const price = (
+                            <strong key="price">
+                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth, '')}
+                            </strong>
+                        );
+                        const title = model.plansMap[PLANS.PASS_BUSINESS]?.Title || '';
+                        // translator: full sentence is: Special launch offer: Get Pass Business for ${options.currency} per user monthly!
+                        const textLaunchOffer = c('pass_signup_2023: Info')
+                            .jt`Limited time offer: Get ${title} for ${price} per user monthly!`;
+                        return wrap('hourglass', textLaunchOffer);
+                    }
+
+                    const bestPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
                     const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
                     if (!bestPlanCard || !bestPlan) {
                         return null;
@@ -434,102 +470,119 @@ const Step1 = ({
                     return wrap('hourglass', textLaunchOffer);
                 })()}
                 {hasPlanSelector && (
-                    <Box className="mt-8 w-full">
-                        <BoxHeader
-                            step={step++}
-                            title={
-                                model.upsell.mode === UpsellTypes.PLANS
-                                    ? c('pass_signup_2023: Header').t`Select your plan`
-                                    : c('pass_signup_2023: Header').t`Upgrade your plan`
-                            }
-                            right={
-                                <>
-                                    {model.upsell.mode === UpsellTypes.PLANS && mode !== SignupMode.MailReferral && (
-                                        <CycleSelector
-                                            mode="buttons"
-                                            cycle={options.cycle}
-                                            options={cycleOptions}
-                                            onSelect={(newCycle) => {
-                                                return withLoadingPaymentDetails(handleChangeCycle(newCycle)).catch(
-                                                    noop
-                                                );
-                                            }}
-                                            size="small"
-                                            color="norm"
-                                            separators={false}
-                                            shape="ghost"
-                                            className="gap-1"
-                                            removeBackgroundColorOnGroup={true}
-                                        />
-                                    )}
-                                </>
-                            }
-                        />
-                        <BoxContent>
-                            {model.upsell.mode === UpsellTypes.PLANS ? (
-                                <PlanCardSelector
-                                    plansMap={model.plansMap}
-                                    plan={options.plan.Name}
-                                    cycle={options.cycle}
-                                    currency={options.currency}
-                                    planCards={planCards}
-                                    onSelect={(planIDs, planName) => {
-                                        return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(
-                                            noop
-                                        );
-                                    }}
-                                    onSelectedClick={() => {
-                                        accountDetailsRef.current?.scrollInto('email');
-                                    }}
-                                />
-                            ) : (
-                                <UpsellCardSelector
-                                    relativePrice={relativePrice}
-                                    plansMap={model.plansMap}
-                                    currentPlan={currentPlan}
-                                    freePlan={model.freePlan}
-                                    subscription={model.session?.subscription}
-                                    checkout={checkout}
-                                    plan={options.plan}
-                                    cycle={options.cycle}
-                                    currency={options.currency}
-                                    coupon={options.checkResult?.Coupon?.Code}
-                                    vpnServersCountData={vpnServersCountData}
-                                    onSelect={() => {
-                                        accountStepPaymentRef.current?.scrollIntoView();
-                                    }}
-                                    onKeep={async () => {
-                                        await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
-                                    }}
-                                />
-                            )}
-                            {model.upsell.mode === UpsellTypes.PLANS && (
-                                <div className="flex justify-start lg:justify-end mt-1 justify-center gap-4">
-                                    <div className="color-primary">
-                                        <CurrencySelector
-                                            mode="select-two"
-                                            className="h-full px-3"
-                                            currency={options.currency}
-                                            onSelect={(currency) =>
-                                                withLoadingPaymentDetails(handleChangeCurrency(currency))
-                                            }
-                                            unstyled
-                                        />
-                                    </div>
-                                </div>
-                            )}
-                        </BoxContent>
-                    </Box>
+                    <>
+                        <Box className="mt-8 w-full">
+                            <BoxHeader
+                                step={step++}
+                                title={
+                                    model.upsell.mode === UpsellTypes.PLANS
+                                        ? c('pass_signup_2023: Header').t`Select your plan`
+                                        : c('pass_signup_2023: Header').t`Upgrade your plan`
+                                }
+                                right={
+                                    <>
+                                        {model.upsell.mode === UpsellTypes.PLANS &&
+                                            mode !== SignupMode.MailReferral && (
+                                                <CycleSelector
+                                                    mode="buttons"
+                                                    cycle={options.cycle}
+                                                    options={cycleOptions}
+                                                    onSelect={(newCycle) => {
+                                                        return withLoadingPaymentDetails(
+                                                            handleChangeCycle(newCycle)
+                                                        ).catch(noop);
+                                                    }}
+                                                    size="small"
+                                                    color="norm"
+                                                    separators={false}
+                                                    shape="ghost"
+                                                    className="p-1"
+                                                    pill
+                                                />
+                                            )}
+                                    </>
+                                }
+                            />
+                            <BoxContent>
+                                {model.upsell.mode === UpsellTypes.PLANS ? (
+                                    <PlanCardSelector
+                                        subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
+                                        audience={audience}
+                                        plansMap={model.plansMap}
+                                        plan={options.plan.Name}
+                                        cycle={options.cycle}
+                                        currency={options.currency}
+                                        dark={theme.dark}
+                                        planCards={planCards[audience]}
+                                        onSelect={(planIDs, planName) => {
+                                            return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(
+                                                noop
+                                            );
+                                        }}
+                                        onSelectedClick={() => {
+                                            accountDetailsRef.current?.scrollInto('email');
+                                        }}
+                                    />
+                                ) : (
+                                    <UpsellCardSelector
+                                        audience={audience}
+                                        relativePrice={relativePrice}
+                                        plansMap={model.plansMap}
+                                        currentPlan={currentPlan}
+                                        freePlan={model.freePlan}
+                                        subscription={model.session?.subscription}
+                                        checkout={checkout}
+                                        plan={options.plan}
+                                        cycle={options.cycle}
+                                        currency={options.currency}
+                                        coupon={options.checkResult?.Coupon?.Code}
+                                        vpnServersCountData={vpnServersCountData}
+                                        onSelect={() => {
+                                            accountStepPaymentRef.current?.scrollIntoView();
+                                        }}
+                                        onKeep={async () => {
+                                            await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
+                                        }}
+                                    />
+                                )}
+                                {model.upsell.mode === UpsellTypes.PLANS && (
+                                    <>
+                                        <div className="flex justify-center lg:justify-end">
+                                            <div className="inline-block mt-3 mb-2">
+                                                <CurrencySelector
+                                                    mode="select-two"
+                                                    className="h-full ml-auto px-3 color-primary"
+                                                    currency={options.currency}
+                                                    onSelect={(currency) =>
+                                                        withLoadingPaymentDetails(handleChangeCurrency(currency))
+                                                    }
+                                                    unstyled
+                                                />
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={clsx(
+                                                hasSelectedFree && 'visibility-hidden',
+                                                'flex justify-center'
+                                            )}
+                                        >
+                                            <Guarantee />
+                                        </div>
+                                    </>
+                                )}
+                            </BoxContent>
+                        </Box>
+                    </>
                 )}
                 <Box className={clsx('mt-12 w-full', isOnboardingMode && !hasSelectedFree && 'hidden')}>
                     {(() => {
                         const step2Summary = isOnboardingMode ? (
-                            <RightSummary gradient={isDarkBg} className="mx-auto md:mx-0 rounded-xl">
+                            <RightSummary variant="gradientBorder" className="mx-auto md:mx-0 rounded-xl">
                                 <RightPlanSummary
                                     title={getFreeTitle(shortAppName)}
                                     price={getSimplePriceString(options.currency, 0, '')}
                                     regularPrice={getSimplePriceString(options.currency, 0, '')}
-                                    logo={<FreeLogo app={app} dark={theme.background === 'bf'} />}
+                                    logo={<FreeLogo app={app} dark={theme.dark} />}
                                     discount={0}
                                     free
                                     features={getFreePassFeatures()}
@@ -537,8 +590,8 @@ const Step1 = ({
                             </RightSummary>
                         ) : (
                             <RightSummary
-                                gradient={!isDarkBg}
-                                className={clsx('p-6 hidden md:flex rounded-xl', isDarkBg && 'border border-weak')}
+                                variant={isDarkBg ? 'gradientBorder' : 'gradient'}
+                                className={clsx('p-6 hidden md:flex rounded-xl')}
                             >
                                 {benefits}
                             </RightSummary>
@@ -586,9 +639,9 @@ const Step1 = ({
                                                 {hasSelectedFree && (
                                                     <Button
                                                         color="norm"
-                                                        fullWidth
+                                                        pill
                                                         size="large"
-                                                        className="mt-6"
+                                                        className="mt-6 block mx-auto"
                                                         onClick={async () => {
                                                             await handleCompletion(
                                                                 getFreeSubscriptionData(model.subscriptionData)
@@ -720,7 +773,8 @@ const Step1 = ({
                                                                         size="large"
                                                                         loading={loadingSignup}
                                                                         color="norm"
-                                                                        fullWidth
+                                                                        className="block mx-auto"
+                                                                        pill
                                                                     >
                                                                         {cta}
                                                                     </Button>
@@ -764,6 +818,9 @@ const Step1 = ({
                                 accountStepPaymentRef={accountStepPaymentRef}
                                 api={normalApi}
                                 model={model}
+                                handleOptimistic={(args) =>
+                                    withLoadingPaymentDetails(handleOptimistic(args)).catch(noop)
+                                }
                                 options={options}
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}

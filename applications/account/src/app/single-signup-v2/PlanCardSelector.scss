@@ -1,34 +1,82 @@
 @import '~@proton/styles/scss/lib';
 
 .card-plan {
-	--card-background: rgba(240 236 255 / 1); // can't use opacity because some issues with card borders
+	--card-background: var(--background-norm); // can't use opacity because some issues with card borders
+	--card-transition: background-color 0.2s ease, border 0.2s ease, opacity 0.2s ease, color 0.2s ease,
+		box-shadow 0.4s ease, transform 0.4s ease;
 
 	&-highlight {
+		transition: var(--card-transition);
 		inset-inline-start: 50%;
 		transform: translateX(-50%) translateY(-50%);
 
 		&#{&} {
-			background-color: var(--card-background);
+			background-color: var(--background-weak);
+			color: var(--primary);
 
 			&--selected {
 				background-color: var(--primary);
+				color: var(--text-invert);
+				transform: translateX(-50%) translateY(-50%) scale(1.05);
+
+				@at-root .ui-prominent & {
+					color: var(--text-norm);
+				}
 			}
 		}
 	}
 
-	background-color: var(--background-norm);
+	background-color: var(--card-background);
+	transition: var(--card-transition);
+	outline: none;
 
-	--card-box-shadow-color1: rgb(172 154 247 / 0.28);
-	--card-box-shadow-color2: rgb(246 198 146 / 0.3);
-	--card-box-shadow-color3: rgb(108 73 254 / 0.3);
-	--card-box-shadow-color4: rgb(205 79 232 / 0.3);
+	--card-box-shadow-color1: rgb(205 79 232 / 0.28);
+	--card-box-shadow-color2: rgb(108 73 254 / 0.3);
+	--card-box-shadow-color3: rgb(246 198 146 / 0.3);
+	--card-box-shadow-color4: rgb(172 154 246 / 0.3);
+
+	&::after,
+	&::before {
+		content: '';
+		border-radius: inherit;
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+		pointer-events: none;
+	}
+
+	&::before {
+		inset: -1px;
+		border: var(--interaction-norm-major-3) solid 2px;
+		opacity: 0;
+		transition: var(--card-transition);
+	}
 
 	&[aria-pressed='true'] {
+		transform: translateY(-0.4rem);
 		box-shadow:
-			0 0 7px 3px var(--card-box-shadow-color1),
-			-5px -3px 6px 3px var(--card-box-shadow-color2),
-			6px 3px 7px 3px var(--card-box-shadow-color3),
-			-4px 4px 5px 2px var(--card-box-shadow-color4);
+			-4px 4px 5px 2px var(--card-box-shadow-color1),
+			6px 3px 7px 3px var(--card-box-shadow-color2),
+			-5px -3px 6px 3px var(--card-box-shadow-color3),
+			0 0 7px 3px var(--card-box-shadow-color4);
+
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&:focus-visible {
+		outline: none;
+
+		&::after {
+			border: 1px solid var(--focus-outline);
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			z-index: 0;
+		}
+	}
+
+	&[type='button']:hover {
+		background-color: var(--interaction-default-hover);
 	}
 }
 

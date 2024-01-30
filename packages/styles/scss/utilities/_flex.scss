@@ -55,13 +55,25 @@ $dummy-map: ();
 
 // Add `order` utilities to the map
 // Use a for in case we need more
-@for $i from 0 through 1 {
+@for $i from 0 through 3 {
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
 			order-#{$i}:
 				(
 					order: #{$i},
+				)
+		)
+	);
+}
+
+@each $order in (initial) {
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			order-#{$order}:
+				(
+					order: #{$order},
 				)
 		)
 	);
