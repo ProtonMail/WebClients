@@ -8,13 +8,10 @@ import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { APPS } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
-import { i18n } from './i18n';
 
 export const PASS_CONFIG = { ...config, SSO_URL: getAppHref('/', APPS.PROTONACCOUNT) } as PassConfig;
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
-i18n.init().catch(noop);

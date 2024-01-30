@@ -1,6 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { AppState, ClientEndpoint, MaybeNull } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
@@ -19,7 +19,7 @@ export interface RootSagaOptions {
     getAppState: () => AppState;
     getAuthStore: () => AuthStore;
     getAuthService: () => AuthService;
-    getLocalSettings: () => Promise<ProxiedSettings>;
+    getSettings: () => MaybePromise<ProxiedSettings>;
     getTelemetry: () => MaybeNull<Telemetry>;
 
     /** Fine-tune the event channel polling interval - this will
@@ -36,15 +36,20 @@ export interface RootSagaOptions {
     /** Callback with the result of the boot sequence. The `clearCache`
      * flag indicates if the boot failure should result in a cache wipe */
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
+
     /** Callback used when account locale is updated */
     onLocaleUpdated?: (locale: string) => void;
+
     /** Callback for handling notification effects */
     onNotification?: (notification: Notification) => void;
+
     /** Callback for propagating feature flags updates */
     onFeatureFlagsUpdated?: (features: FeatureFlagState) => void;
+
     /** Called whenever some changes were committed to the items state */
     onItemsUpdated?: () => void;
-    /** Callback triggered when settings have been updates: leverage
+
+    /** Callback triggered when settings have been updated: leverage
      * this to persist the settings to storage if needed. */
-    onSettingsUpdated?: (settings: ProxiedSettings) => Promise<void>;
+    onSettingsUpdated?: (settings: ProxiedSettings) => MaybePromise<void>;
 }
