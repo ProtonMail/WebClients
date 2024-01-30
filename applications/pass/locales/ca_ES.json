@@ -1257,6 +1257,12 @@
         "Us donem la benvinguda a ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ]
+    },
     "Option": {
       "Commas": [
         "Comes"
@@ -1264,7 +1270,7 @@
       "Hyphens": [
         "Guions"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Contrasenya fàcil de recordar"
       ],
       "Numbers": [
