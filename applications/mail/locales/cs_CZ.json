@@ -5530,12 +5530,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
       ],
-      "Free up some space or add more storage space.": [
-        "Uvolněte místo nebo přidejte další úložný prostor."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
-      ],
       "From": [
         "Od"
       ],
@@ -6390,12 +6384,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Dosáhli jste maximálního počtu 5 odpovědí."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100 % kapacity vašeho úložiště. Už nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybrali **${ count } konverzaci**",
@@ -7432,9 +7420,6 @@
       ],
       "Trash": [
         "Koš"
-      ],
-      "Upgrade account": [
-        "Navýšit účet"
       ],
       "What’s this?": [
         "Co je to?"
@@ -8960,6 +8945,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Získat více úložného prostoru"
+      ],
       "Release notes": [
         "Seznam změn"
       ],
@@ -9963,6 +9951,9 @@
       ],
       "Subject missing": [
         "Chybí předmět"
+      ],
+      "This field cannot be empty": [
+        "Toto pole nemůže být prázdné"
       ],
       "This field cannot contain only spaces": [
         "Toto pole nesmí obsahovat pouze mezery"

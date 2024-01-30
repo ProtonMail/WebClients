@@ -4837,6 +4837,10 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "A conversa ${ elementsCount } será rotulada como:",
+        "As conversas ${ elementsCount } serão rotuladas como:"
+      ],
       "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } conversa será marcada como lida.",
         "${ elementsCount } conversas serão marcadas como lidas."
@@ -4847,7 +4851,15 @@
       ],
       "${ elementsCount } conversation will be moved": [
         "${ elementsCount } conversa será movida",
-        "${ elementsCount } mensagens serão conversas"
+        "${ elementsCount } conversas serão movidas"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "A conversa ${ elementsCount } não será rotulada de:",
+        "As conversas de ${ elementsCount } não serão rotuladas de:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "A mensagem ${ elementsCount } será rotulada como:",
+        "As mensagens ${ elementsCount } serão rotuladas como:"
       ],
       "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } mensagens será marcada como lida.",
@@ -4860,6 +4872,10 @@
       "${ elementsCount } message will be moved": [
         "${ elementsCount } mensagem será movida",
         "${ elementsCount } mensagens serão movidas"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "A mensagem ${ elementsCount } não será rotulada de:",
+        "Mensagens ${ elementsCount } não serão rotuladas de:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } imagem incorporada",
@@ -5332,12 +5348,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Libere algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algum espaço ou contate seu administrador."
-      ],
       "From": [
         "De"
       ],
@@ -5715,6 +5725,10 @@
       ],
       "Select a service provider to start": [
         "Selecione um provedor de serviços para começar"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Selecione todos os ${ elementsCount } em ${ location }",
+        "Selecione todos os ${ elementsCount } em ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
@@ -6176,12 +6190,6 @@
       "You have reached the maximum number of 5 replies.": [
         "Você atingiu o número máximo de 5 respostas."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You selected **${ count } conversation** from this folder": [
         "Você selecionou **${ count } conversa** desta pasta",
         "Você selecionou **${ count } conversas** desta pasta"
@@ -6198,9 +6206,17 @@
         "Você selecionou **${ count } mensagem** com este marcador",
         "Você selecionou **${ count } mensagens** com este marcador"
       ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Você selecionou **${ elementsCount } conversa** em ${ location }",
+        "Você selecionou **${ elementsCount } conversas** em ${ location }"
+      ],
       "You selected **${ elementsCount } conversation**.": [
         "Você selecionou **${ elementsCount } conversa**.",
         "Você selecionou **${ elementsCount } conversas**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Você selecionou **${ elementsCount } mensagem** em ${ location }",
+        "Você selecionou **${ elementsCount } mensagens** em ${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "Você selecionou **${ elementsCount } mensagem**.",
@@ -7181,9 +7197,6 @@
       ],
       "Trash": [
         "Lixeira"
-      ],
-      "Upgrade account": [
-        "Upgrade de conta"
       ],
       "What’s this?": [
         "O que é isso?"
@@ -8634,6 +8647,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Obter mais armazenamento"
+      ],
       "Release notes": [
         "Notas de lançamento"
       ],
@@ -8642,6 +8658,26 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "armazenamento de ${ app }"
+      ],
+      "contact your administrator": [
+        "contate seu administrador"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O ${ appStorage } está cheio."
+      ],
+      "Your storage is full": [
+        "Seu armazenamento está cheio"
       ]
     },
     "Success": {
@@ -9561,6 +9597,9 @@
       ],
       "Subject missing": [
         "Faltando assunto"
+      ],
+      "This field cannot be empty": [
+        "Este campo não pode ficar vazio"
       ],
       "To": [
         "Para"

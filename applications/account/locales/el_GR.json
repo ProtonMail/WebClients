@@ -5759,6 +5759,17 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -5794,9 +5805,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } από ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } για πάντα"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "Το ${ DRIVE_APP_NAME } δε θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
@@ -6209,9 +6217,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Με την υποβάθμιση σε ένα Δωρεάν Λογαριασμό, θα χάσετε μόνιμα αυτά τα οφέλη, ακόμη και αν αναβαθμίσετε ξανά στο μέλλον."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Με την υποβάθμιση θα χάσετε τα παρακάτω προνόμια. Θέλετε σίγουρα να προχωρήσετε;"
-      ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
@@ -6220,6 +6225,12 @@
       ],
       "Cancel anytime": [
         "Ακύρωσε οποιαδήποτε στιγμή"
+      ],
+      "Can’t access your recovery email?": [
+        "Δεν μπορείτε να αποκτήσετε πρόσβαση στο email ανάκτησης;"
+      ],
+      "Can’t access your recovery phone?": [
+        "Δεν μπορείτε να αποκτήσετε πρόσβαση στο τηλέφωνο ανάκτησης;"
       ],
       "Center": [
         "Κέντρο"
@@ -6363,6 +6374,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Έγινε! Στείλαμε έναν κωδικό στο ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Δεν γνωρίζετε τη φράση ανάκτησης;"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
       ],
@@ -6474,6 +6488,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Εισάγετε τον αριθμό τηλεφώνου ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Εισαγάγετε τη φράση ανάκτησης για να αλλάξετε τον κωδικό πρόσβασής σας τώρα."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Οι προσκλήσεις συμβάντων και τα RSVP θα αποσταλλούν σε αυτή τη γλώσσα."
       ],
@@ -6509,12 +6526,6 @@
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
-      ],
-      "Free up some space or add more storage space.": [
-        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
       ],
       "free up space by deleting older messages or other data": [
         "ελευθερώστε χώρο διαγράφοντας παλαιότερα μηνύματα ή άλλα δεδομένα"
@@ -7458,6 +7469,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Για να συνεχίσετε, επιλέξτε μια μέθοδο ανάκτησης λογαριασμού, ώστε να επαληθεύσουμε το αίτημα."
       ],
+      "To proceed, we must verify the request.": [
+        "Για να προχωρήσουμε, πρέπει να επαληθεύσουμε το αίτημα."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή."
       ],
@@ -7677,6 +7691,9 @@
       "Welcome": [
         "Καλώς ήρθατε"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Θα στείλουμε έναν κωδικό επαναφοράς στο ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
       ],
@@ -7836,12 +7853,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας από αρχείο ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Θα πρέπει να εξάγετε αντίγραφο ασφαλείας αυτού του κλειδιού, για ενδεχόμενη ανάγκη σας ανάκτησης δεδομένων που κρυπτογράφησε."
       ],
@@ -7968,17 +7979,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9541,9 +9541,6 @@
       "Trouble signing in?": [
         "Πρόβλημα σύνδεσης;"
       ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πλάνο σας"
       ],
@@ -9977,9 +9974,6 @@
       "From ${ price }": [
         "Από ${ price }"
       ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
       "Upgrade": [
         "Αναβάθμιση"
       ],
@@ -10116,7 +10110,7 @@
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
       "Auto-delete spam and trashed messages": [
-        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
       ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
@@ -10505,12 +10499,6 @@
         "/μήνα"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Σας απομένει ${ daysRemaining } ημέρα στον ${ currentPlanName } λογαριασμό σας.",
-        "Σας απομένουν ${ daysRemaining } ημέρες στον ${ currentPlanName } λογαριασμό σας."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Πληρωμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -10726,17 +10714,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Το ειδικά σχεδιασμένο NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ξεκινήστε με ${ freeStorageSize } και ξεκλειδώστε περισσότερο χώρο αποθήκευσης στην πορεία. Ο χώρος αποθήκευσης είναι κοινόχρηστος στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Ο χώρος αποθήκευσης είναι κοινόχρηστος στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }. Οι διαχειριστές μπορούν να εκχωρήσουν διαφορετικές ποσότητες χώρου αποθήκευσης σε χρήστες στον οργανισμό τους"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των χρηστών στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent"
@@ -12455,11 +12434,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Συμφωνία εφ' όρου ζωής"
       ]
     },
     "specialoffer: Link": {

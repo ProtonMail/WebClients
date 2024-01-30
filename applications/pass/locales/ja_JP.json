@@ -1313,6 +1313,11 @@
         "${ brandNameJSX } へようこそ"
       ]
     },
+    "Message": {
+      "${ count } items": [
+        "${ count } 件のアイテム"
+      ]
+    },
     "Option": {
       "Commas": [
         "コンマ"
@@ -1320,8 +1325,8 @@
       "Hyphens": [
         "ハイフン"
       ],
-      "Memorizable Password": [
-        "記憶可能なパスワード"
+      "Memorable Password": [
+        "覚えやすいパスワード"
       ],
       "Numbers": [
         "数字"

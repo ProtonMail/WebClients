@@ -1399,6 +1399,9 @@
       ],
       "Help us fight for online privacy": [
         "協助我們爭取線上隱私"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "此${ plan }方案為時間限定"
       ]
     },
     "bf2023: Offers": {
@@ -5115,6 +5118,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "已有一個帳號？${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "已有帳戶? ${ signIn }或${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5632,6 +5638,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -5665,9 +5682,6 @@
       ],
       "${ current } of ${ total }": [
         "${ total } 中的 ${ current }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } 永久折扣"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } 將不再為您的檔案保留先前的版本。"
@@ -6044,9 +6058,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "一旦降級至免費方案，您將永久失去這些優惠，即便您日後再次升級也是如此。"
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "若降級，您將失去以下好處。您確定您想要繼續嗎？"
-      ],
       "By leaving now, changes may not be saved": [
         "若現在離開，所作變更將不儲存"
       ],
@@ -6325,12 +6336,6 @@
       ],
       "Free forever": [
         "永遠免費"
-      ],
-      "Free up some space or add more storage space.": [
-        "請釋出部分空間或增加更多儲存空間。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "請釋出部分空間或聯絡您的系統管理員。"
       ],
       "free up space by deleting older messages or other data": [
         "刪除較舊的郵件或其它資料，以釋出空間"
@@ -7241,6 +7246,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的需求。"
       ],
+      "To proceed, we must verify the request.": [
+        "繼續處理，你必須驗證要求。"
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "為了保護您的網路連線，下載並安裝 ${ VPN_APP_NAME } 軟體到您的裝置上，並連接至伺服器。"
       ],
@@ -7607,12 +7615,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "您需要有使用中的個人行事曆才可以從 ICS 匯入您的行程。"
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 100%。您無法傳送或接收新的電郵。${ freeUpMessage }${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
       ],
@@ -7735,17 +7737,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9274,9 +9265,6 @@
       "Trouble signing in?": [
         "登入遇到困難嗎？"
       ],
-      "Upgrade account": [
-        "升級帳號"
-      ],
       "Upgrade your plan": [
         "升級您的方案"
       ],
@@ -9698,9 +9686,6 @@
       ],
       "From ${ price }": [
         "${ price }起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
       ],
       "Upgrade": [
         "升級"
@@ -10208,11 +10193,6 @@
         "/月"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
-        "您的 ${ currentPlanName } 帳號尚餘 ${ daysRemaining } 天。"
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "按下\"付款\"，代表您同意我們的${ termsAndConditions }."
@@ -10424,17 +10404,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield 保護您的裝置並透過攔截廣告、追蹤程式與惡意軟體來加快您的瀏覽速度"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "一開始享有 ${ freeStorageSize } 並沿途解鎖更多儲存空間。儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME }。管理員可分配不同儲存空間大小予組織中的使用者"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "儲存空間會在 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 間共享"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支援檔案分享協定，例如 BitTorrent"
@@ -10962,6 +10933,9 @@
       "Continue": [
         "繼續"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "不升級繼續使用${ appName }"
+      ],
       "Continue to ${ free }": [
         "繼續使用 ${ free }"
       ],
@@ -10973,6 +10947,9 @@
       ],
       "Create another account instead": [
         "創建另一個帳號"
+      ],
+      "Download PDF ${ size }": [
+        "下載PDF ${ size }"
       ],
       "Keep this plan": [
         "保持此方案"
@@ -11081,6 +11058,9 @@
       ],
       "End-to-end encryption": [
         "端對端加密"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "**每月${ relativePrice }及更多**，讓您存取付費版密碼管理器${ BRAND_NAME }功能!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
@@ -12090,11 +12070,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "終身優惠"
       ]
     },
     "specialoffer: Link": {

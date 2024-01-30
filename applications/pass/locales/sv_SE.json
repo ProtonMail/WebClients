@@ -29,6 +29,21 @@
       "Back": [
         "Tillbaka"
       ],
+      "Bulk delete items from trash": [
+        "Massradera objekt från papperskorg"
+      ],
+      "Bulk move items to another vault": [
+        "Massflytta objekt till annat valv"
+      ],
+      "Bulk move items to trash": [
+        "Massflytta objekt till papperskorg"
+      ],
+      "Bulk restore items from trash": [
+        "Massåterställ objekt från papperskorg"
+      ],
+      "Bulk select items": [
+        "Välj flera objekt"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Ta bort valv"
       ],
+      "Deselect": [
+        "Avmarkera"
+      ],
       "Discard": [
         "Avfärda"
       ],
       "Dismiss": [
         "Avfärda"
+      ],
+      "Download this CSV template": [
+        "Ladda ner denna CSV-mall"
       ],
       "Edit": [
         "Redigera"
@@ -446,17 +467,29 @@
       "Failed resending invite.": [
         "Misslyckades skicka inbjudan igen."
       ],
+      "Failed to delete selected items": [
+        "Misslyckades att ta bort markerade objekt"
+      ],
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
       ],
+      "Failed to move items": [
+        "Misslyckades att flytta objekt"
+      ],
+      "Failed to move items to trash": [
+        "Misslyckades att flytta objekt till papperskorg"
+      ],
       "Failed to pin item": [
         "Misslyckades att fästa objekt"
       ],
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
+      ],
+      "Failed to restore items from trash": [
+        "Misslyckades att återställa objekt från papperskorg"
       ],
       "Failed to transfer this vault's ownership.": [
         "Misslyckades att överföra detta valvs äganderätt."
@@ -661,11 +694,17 @@
       "Admin": [
         "Admin"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
+      ],
+      "All items successfully moved": [
+        "Alla objekt flyttades"
       ],
       "All trashed items permanently deleted": [
         "Alla kastade objekt borttagna permanent"
@@ -730,6 +769,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Export är krypterad med PGP och kräver en stark lösenfras."
       ],
+      "Fill in the CSV with your data": [
+        "Fyll i CSV med dina data"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Följ dessa steg för att importera dina data med en generisk CSV:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
@@ -741,6 +786,9 @@
       ],
       "Import in progress:": [
         "Import pågår:"
+      ],
+      "Import the CSV file below.": [
+        "Importera CSV-filen nedan."
       ],
       "Imported ${ payload.total } item": [
         "Importerade ${ payload.total } objekt",
@@ -825,6 +873,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving items": [
+        "Flyttar objekt"
+      ],
+      "Moving items to trash": [
+        "Flyttar objekt till papperskorg"
+      ],
       "Never": [
         "Aldrig"
       ],
@@ -842,6 +896,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Lösenord äldre än 1 dag tas automatiskt bort från historik."
+      ],
+      "Permanently deleting selected items": [
+        "Tar bort markerade objekt permanent"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
@@ -876,6 +933,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
       ],
+      "Restoring items from trash": [
+        "Återställer objekt från papperskorg"
+      ],
       "Restoring trashed items...": [
         "Återställer kastade objekt..."
       ],
@@ -884,6 +944,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Välj var du vill att dina importerade valv ska sparas."
+      ],
+      "Selected items permanently deleted": [
+        "Markerade objekt togs bort permanent"
+      ],
+      "Selected items successfully moved to trash": [
+        "Markerade objekt flyttades till papperskorg"
+      ],
+      "Selected items successfully restored from trash": [
+        "Markerade objekt återställda från papperskorg"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
@@ -1134,6 +1203,9 @@
       "Forwards to": [
         "Vidarebefordras till"
       ],
+      "Generic CSV": [
+        "Generisk CSV"
+      ],
       "Grant": [
         "Bevilja"
       ],
@@ -1382,6 +1454,15 @@
         "Välkommen till ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Du markerade ${ semiboldText } i detta valv"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommatecken"
@@ -1389,7 +1470,7 @@
       "Hyphens": [
         "Bindestreck"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Minnesvärt lösenord"
       ],
       "Numbers": [
@@ -1545,6 +1626,9 @@
       ],
       "Move all items ?": [
         "Flytta alla objekt?"
+      ],
+      "No items selected": [
+        "Inga objekt markerade"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"

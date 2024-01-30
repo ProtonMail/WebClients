@@ -3919,6 +3919,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Brak wiadomości do zaimportowania. Konto nie posiada skrzynki odbiorczej"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Żaden z odzyskanych kluczy zewnętrznych dla użytkownika nie jest przeznaczony do wysyłania wiadomości"
+      ],
       "No valid address found": [
         "Nie znaleziono prawidłowego adresu"
       ],
@@ -5827,6 +5830,17 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -5866,9 +5880,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } na zawsze"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } nie zachowa poprzednich wersji plików."
@@ -6323,9 +6334,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Obniżając plan, utracisz następujące bonusy. Czy na pewno chcesz kontynuować?"
-      ],
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
       ],
@@ -6334,6 +6342,12 @@
       ],
       "Cancel anytime": [
         "Anuluj w dowolnym momencie"
+      ],
+      "Can’t access your recovery email?": [
+        "Nie masz dostępu do adresu pomocniczego?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Nie masz dostępu do numeru pomocniczego?"
       ],
       "Center": [
         "Wyśrodkuj"
@@ -6406,6 +6420,9 @@
       ],
       "Credits earned": [
         "Środki zostały dodane"
+      ],
+      "Current plan": [
+        "Obecny plan"
       ],
       "Custom": [
         "Niestandardowe"
@@ -6485,8 +6502,14 @@
       "Done! We sent a code to ${ destination }.": [
         "Gotowe! Kod został wysłany do ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Nie znasz hasła odzyskiwania?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
+      ],
+      "Downgrade": [
+        "Obniż plan"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Obniżenie planu spowoduje zakończenie wszystkich połączeń z płatnymi serwerami ${ VPN_APP_NAME }."
@@ -6596,6 +6619,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Wpisz numer pomocniczy w celu wysłania Twojej nazwy użytkownika lub adresu e-mail."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Wpisz hasło odzyskiwania, aby zmienić hasło."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Zaproszenia zostaną wysłane w tym języku."
       ],
@@ -6628,12 +6654,6 @@
       ],
       "Free forever": [
         "Darmowy na zawsze"
-      ],
-      "Free up some space or add more storage space.": [
-        "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
       ],
       "free up space by deleting older messages or other data": [
         "usunąć starsze wiadomości lub inne dane, aby zwolnić przestrzeń dyskową"
@@ -7595,6 +7615,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Aby kontynuować, wybierz metodę odzyskiwania konta, abyśmy mogli zweryfikować żądanie."
       ],
+      "To proceed, we must verify the request.": [
+        "Aby kontynuować, musimy zweryfikować żądanie."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
@@ -7814,6 +7837,9 @@
       "Welcome": [
         "Witaj"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Wyślemy kod resetowania na ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Wyślemy kod resetowania na adres pomocniczy."
       ],
@@ -7985,12 +8011,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia z pliku ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Utwórz kopię zapasową klucza na wypadek konieczności przywrócenia zaszyfrowanych danych."
       ],
@@ -8119,17 +8139,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9704,9 +9713,6 @@
       "Trouble signing in?": [
         "Problem z logowaniem?"
       ],
-      "Upgrade account": [
-        "Ulepsz konto"
-      ],
       "Upgrade your plan": [
         "Ulepsz plan"
       ],
@@ -10161,9 +10167,6 @@
       ],
       "From ${ price }": [
         "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
       ],
       "Upgrade": [
         "Ulepsz"
@@ -10728,14 +10731,6 @@
         "/ miesiąc"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Pozostał ${ daysRemaining } dzień korzystania z konta ${ currentPlanName }.",
-        "Pozostały ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
-        "Pozostało ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
-        "Pozostało ${ daysRemaining } dnia korzystania z konta ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Płacąc, akceptujesz ${ termsAndConditions }."
@@ -10953,17 +10948,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Zacznij od ${ freeStorageSize } i odblokuj więcej miejsca. Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } i ${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }. Administratorzy mogą przydzielać różną przestrzeń dyskową użytkownikom w swojej organizacji"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Przestrzeń dyskowa jest dzielona pośród użytkowników pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pośród użytkowników pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } i ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Wsparcie protokołów udostępniania plików, takich jak BitTorrent"
@@ -12741,11 +12733,6 @@
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta nieograniczona czasowo"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Przejdź do planów subskrypcji"
@@ -12898,6 +12885,81 @@
       ],
       "Your current storage:": [
         "Obecna przestrzeń dyskowa:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Zachowaj plan ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Do ${ totalStorageSize } przestrzeni dyskowej"
+      ]
+    },
+    "storage_split: info": {
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** z ${ humanMaxSpace }"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Obniżając plan, utracisz następujące bonusy. Czy na pewno chcesz kontynuować?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Rozważ ulepszenie planu, aby używać konta bez ograniczeń."
+      ],
+      "contact your administrator": [
+        "skontaktuj się z administratorem"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Uzyskaj więcej przestrzeni dyskowej"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Wypróbuj pełny potencjał ${ app }"
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Ulepsz plan, aby używać konta bez ograniczeń."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Ulepsz plan, aby zwiększyć przestrzeń dyskową."
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Za pozostały czas otrzymasz środki na konto ${ BRAND_NAME }."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Pozostał **${ daysRemaining }** dzień korzystania z planu **${ currentPlanName }**.",
+        "Pozostały **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
+        "Pozostało **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
+        "Pozostało **${ daysRemaining }** dnia korzystania z planu **${ currentPlanName }**."
+      ],
+      "Your storage is full": [
+        "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Po obniżeniu planu stracisz dostęp do ${ gb } przestrzeni dyskowej i priorytetowego wsparcia."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Po obniżeniu planu stracisz dostęp do dodatkowej przestrzeni dyskowej, adresów e-mail, aliasów, kalendarzy i priorytetowego wsparcia."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Po obniżeniu planu stracisz dostęp do najszybszej prędkości VPN, ochrony do 10 urządzeń, szybkiego streamingu, blokady reklam i złośliwego oprogramowania oraz priorytetowego wsparcia."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Po obniżeniu planu stracisz dostęp do nieograniczonych danych logowania, notatek, aliasów hide-my-email, 20 sejfów i priorytetowego wsparcia."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13882,6 +13944,9 @@
       "Downgrade account": [
         "Obniż plan"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Obniżyć plan do wersji ${ downgradedPlanName }?"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
       ],
@@ -14484,6 +14549,9 @@
       ],
       "Your SMTP token": [
         "Twój token SMTP"
+      ],
+      "Your storage": [
+        "Twoja przestrzeń dyskowa"
       ],
       "Your subscriptions": [
         "Twoja subskrypcja"

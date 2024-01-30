@@ -915,7 +915,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } 를 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하세요."
       ]
     },
     "Calendar access select label": {
@@ -3800,12 +3800,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
       ],
-      "Free up some space or add more storage space.": [
-        "공간을 조금 비우거나 스토리지를 더 추가하세요."
-      ],
-      "Free up some space or contact your administrator.": [
-        "저장공간을 비우거나 관리자에게 연락하세요."
-      ],
       "Frequency modifications will be lost.": [
         "빈도 수정사항을 잃게 됩니다."
       ],
@@ -4094,9 +4088,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
-      "Update recurring event": [
-        "반복 이벤트 업데이트"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
       ],
@@ -4183,12 +4174,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "이 초대에 거부되었습니다. 관리자에게 재초대를 요청하십시오"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 공간의 ${ spaceDisplayed }% (을) 를 사용했습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 용량의 100%에 도달했습니다. 새 이메일을 보내거나 받을 수 없습니다. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
@@ -4788,9 +4773,6 @@
       ],
       "Request an invite": [
         "가입 요청하기"
-      ],
-      "Upgrade account": [
-        "계정 업그레이드"
       ],
       "What’s this?": [
         "이게 무엇인가요?"
