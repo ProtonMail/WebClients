@@ -4617,6 +4617,11 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -4643,9 +4648,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } n ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } i lebda"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } d tarameɣtut"
@@ -5123,12 +5125,6 @@
       ],
       "Free forever": [
         "Baṭel i lebda"
-      ],
-      "Free up some space or add more storage space.": [
-        "Slelli kra n tallunt neɣ rnu tallunt-nniḍen n weḥraz."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Slelli kra n tallunt neɣ nermes anedbal-inek .m."
       ],
       "free up space by deleting older messages or other data": [
         "slelli tallunt s tukksa n yiznan iqburen neɣ isefka-nniḍen"
@@ -5942,12 +5938,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im seg ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Tewwḍeḍ ɣer 100% n tallunt-inek .m n weḥraz. Ur tezmireḍ ara ad tazneḍ neɣ ad teṭṭefeḍ imaylen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ad tettuwellheḍ ɣer PyPal i usenqed n uxelleṣ-ik•im."
       ],
@@ -6008,11 +5998,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -7406,9 +7391,6 @@
       "Trouble signing in?": [
         "Γur-k uguren n tuqqna?"
       ],
-      "Upgrade account": [
-        "Sali aswir n umiḍan"
-      ],
       "Upgrade your plan": [
         "Sali aɣawas-ik"
       ],
@@ -7785,9 +7767,6 @@
       "From ${ price }": [
         "Seg ${ price }"
       ],
-      "Keep my ${ currentPlanName } account": [
-        "Eǧǧ amiḍan-iw ${ currentPlanName }"
-      ],
       "Upgrade": [
         "Leqqem"
       ],
@@ -8098,12 +8077,6 @@
         "/ayyur"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Mazal-ak ɣur-k ${ daysRemaining } wass ɣef umiḍan-ik ${ currentPlanName }.",
-        "Mazal ɣur-k ${ daysRemaining } wussan ɣef umiḍan-ik ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "Payment details": [
         "Talqayt n lexlas"
@@ -8149,12 +8122,6 @@
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield yettufeṣṣel s wudem uslig i ummesten n yibenk-inek·inem yerna ad yerr iminig-ik·im ad iteddu s zzerb s usewḥel n udellel, imakaren d yir yiseɣẓanen"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, d ${ DRIVE_APP_NAME }"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Tallunt n uḥraz tettwabḍa gar iseqdacen deg ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, d ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Tadhelt i yineggafen n beṭṭu n yifuyla am BitTorrent"

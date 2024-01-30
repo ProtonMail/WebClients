@@ -1477,6 +1477,12 @@
         "Us donem la benvinguda a ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Us donem la benvinguda a ${ appName }"
@@ -1489,7 +1495,7 @@
       "Hyphens": [
         "Guions"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Contrasenya fàcil de recordar"
       ],
       "Numbers": [

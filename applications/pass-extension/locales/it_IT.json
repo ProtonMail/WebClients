@@ -38,6 +38,21 @@
       "Back": [
         "Indietro"
       ],
+      "Bulk delete items from trash": [
+        "Elimina in blocco gli elementi dal cestino"
+      ],
+      "Bulk move items to another vault": [
+        "Sposta in blocco gli elementi in un'altra cassaforte"
+      ],
+      "Bulk move items to trash": [
+        "Sposta in blocco gli elementi nel cestino"
+      ],
+      "Bulk restore items from trash": [
+        "Ripristina in blocco gli elementi dal cestino"
+      ],
+      "Bulk select items": [
+        "Seleziona gli elementi in blocco"
+      ],
       "Cancel": [
         "Annulla"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Elimina cassaforte"
       ],
+      "Deselect": [
+        "Deseleziona"
+      ],
       "Disable autosave on this website": [
         "Disabilita il salvataggio automatico su questo sito web"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Fatto"
+      ],
+      "Download this CSV template": [
+        "Scarica questo modello CSV"
       ],
       "Edit": [
         "Modifica"
@@ -529,17 +550,29 @@
       "Failed resending invite.": [
         "Reinvio dell'invito non riuscito."
       ],
+      "Failed to delete selected items": [
+        "Impossibile eliminare gli elementi selezionati"
+      ],
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
       ],
+      "Failed to move items": [
+        "Impossibile spostare gli elementi"
+      ],
+      "Failed to move items to trash": [
+        "Impossibile spostare gli elementi nel cestino"
+      ],
       "Failed to pin item": [
         "Fissaggio dell'elemento non riuscito"
       ],
       "Failed to remove user's access.": [
         "Rimozione dell'accesso dell'utente non riuscita."
+      ],
+      "Failed to restore items from trash": [
+        "Impossibile recuperare gli elementi dal cestino"
       ],
       "Failed to transfer this vault's ownership.": [
         "Trasferimento della proprietà dalla cassaforte non riuscita."
@@ -778,11 +811,17 @@
       "Admin": [
         "Amministratore"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias \"${ item.aliasEmail }\" è stato spostato nel cestino - non inoltrerà più alla tua casella di posta"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tutti gli elementi di \"${ payload.content.name }\" spostati con successo"
+      ],
+      "All items successfully moved": [
+        "Tutti gli elementi sono stati spostati"
       ],
       "All trashed items permanently deleted": [
         "Tutti gli elementi nel cestino sono stati eliminati definitivamente"
@@ -868,6 +907,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "L'esportazione è crittografata mediante PGP e richiede una passphrase forte."
       ],
+      "Fill in the CSV with your data": [
+        "Compila il file CSV con i tuoi dati"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Segui quei passaggi per importare i tuoi dati con un file CSV generico:"
+      ],
       "For easy access to your passwords and more.": [
         "Per un facile accesso alle tue password e molto altro."
       ],
@@ -891,6 +936,9 @@
       ],
       "Import in progress:": [
         "Importazione in corso:"
+      ],
+      "Import the CSV file below.": [
+        "Importa il file CSV qui sotto."
       ],
       "Imported ${ payload.total } item": [
         "Importato ${ payload.total } elemento",
@@ -975,6 +1023,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
+      "Moving items": [
+        "Spostamento degli elementi"
+      ],
+      "Moving items to trash": [
+        "Spostamento degli elementi nel cestino"
+      ],
       "Never": [
         "Mai"
       ],
@@ -1004,6 +1058,9 @@
       ],
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
+      ],
+      "Permanently deleting selected items": [
+        "Eliminazione definitiva degli elementi selezionati"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fissa ${ PASS_APP_NAME } sulla barra degli strumenti"
@@ -1041,6 +1098,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protetto da ${ PROTON_SENTINEL_LINK }, il nostro programma avanzato di protezione dell'account."
       ],
+      "Restoring items from trash": [
+        "Ripristino degli elementi dal cestino"
+      ],
       "Restoring trashed items...": [
         "Ripristino degli elementi nel cestino in corso"
       ],
@@ -1052,6 +1112,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Seleziona dove vuoi che le tue casseforti importate siano salvate."
+      ],
+      "Selected items permanently deleted": [
+        "Gli elementi selezionati sono stati eliminati definitivamente"
+      ],
+      "Selected items successfully moved to trash": [
+        "Gli elementi selezionati sono stati spostati nel cestino"
+      ],
+      "Selected items successfully restored from trash": [
+        "Gli elementi selezionati sono stati ripristinati dal cestino"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -1371,6 +1440,9 @@
       "General": [
         "Generale"
       ],
+      "Generic CSV": [
+        "CSV generico"
+      ],
       "Grant": [
         "Concedi"
       ],
@@ -1640,6 +1712,15 @@
         "Benvenuto in ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementi"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Hai selezionato ${ semiboldText } in questa cassaforte"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ti diamo il benvenuto in ${ appName }"
@@ -1652,7 +1733,7 @@
       "Hyphens": [
         "Trattini"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Password facile da ricordare"
       ],
       "Numbers": [
@@ -1829,6 +1910,9 @@
       ],
       "Move all items ?": [
         "Spostare tutti gli elementi?"
+      ],
+      "No items selected": [
+        "Nessun elemento selezionato"
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"

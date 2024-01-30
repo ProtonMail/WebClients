@@ -959,7 +959,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "${ MAIL_APP_NAME } 를 계속 사용하세요."
+        "${ MAIL_APP_NAME }을 계속 사용하세요."
       ]
     },
     "Checkout row": {
@@ -3597,12 +3597,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
       ],
-      "Free up some space or add more storage space.": [
-        "공간을 조금 비우거나 스토리지를 더 추가하세요."
-      ],
-      "Free up some space or contact your administrator.": [
-        "저장공간을 비우거나 관리자에게 연락하세요."
-      ],
       "from the version history?": [
         "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
       ],
@@ -4251,12 +4245,6 @@
       "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
         "${ expiresInDays }일 내에 500 MB 환영 보너스 저장 공간을 받고 "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 공간의 ${ spaceDisplayed }% (을) 를 사용했습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "저장 용량의 100%에 도달했습니다. 새 이메일을 보내거나 받을 수 없습니다. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
       ],
@@ -4421,9 +4409,6 @@
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
-      ],
-      "Audio file": [
-        "오디오 파일"
       ],
       "Authenticator app": [
         "인증 앱"
@@ -4599,9 +4584,6 @@
       "I understand the risk": [
         "위험 사항을 이해했어요."
       ],
-      "Image": [
-        "이미지"
-      ],
       "Import all messages": [
         "모든 메시지 가져오기"
       ],
@@ -4770,9 +4752,6 @@
       "System information": [
         "시스템 정보"
       ],
-      "Text": [
-        "텍스트"
-      ],
       "Theme": [
         "테마"
       ],
@@ -4787,9 +4766,6 @@
       ],
       "Type": [
         "유형"
-      ],
-      "Unknown file": [
-        "알 수 없는 파일"
       ],
       "Unlock drive": [
         "드라이브 잠금 해제"
@@ -4808,9 +4784,6 @@
       ],
       "Verification code": [
         "인증 코드"
-      ],
-      "Video file": [
-        "비디오 파일"
       ],
       "What happened?": [
         "무슨 일인가요?"
@@ -4902,9 +4875,6 @@
       ],
       "Trash": [
         "휴지통"
-      ],
-      "Upgrade account": [
-        "계정 업그레이드"
       ],
       "What’s this?": [
         "이게 무엇인가요?"

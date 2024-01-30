@@ -52,7 +52,7 @@
         "Lisää uusi ryhmä"
       ],
       "Add note": [
-        "Lisää merkintä"
+        "Lisää muistiinpano"
       ],
       "Add notification": [
         "Lisää ilmoitus"
@@ -222,6 +222,9 @@
       "Download": [
         "Lataa"
       ],
+      "Download now": [
+        "Lataa nyt"
+      ],
       "Edit": [
         "Muokkaa"
       ],
@@ -317,6 +320,9 @@
       ],
       "Import from Outlook": [
         "Tuo Outlookista"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Tärkeä päivitys on saatavilla. Jatka sovelluksen käyttöä päivittämällä se uusimpaan versioon. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Liity kalenteriin"
@@ -589,10 +595,10 @@
         "Päivitä palautuslauseke"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ],
       "Upgrade now": [
-        "Päivitä nyt"
+        "Päivitä tilaus nyt"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -836,7 +842,7 @@
         "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Tallennustila jaetaan kaikkien ${ BRAND_NAME } -sovellusten välillä."
+        "Tallennustila jaetaan kaikkien ${ BRAND_NAME }-sovellusten välillä."
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Säilytä jopa 200 versiota kustakin tiedostosta jopa 10 vuoden ajan."
@@ -2181,7 +2187,7 @@
         "Proton Mail -logo ja plus-merkki"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
+        "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Tämä voi kestää muutamia minuutteja. Voit käyttää Calendaria odottaessasi normaalisti."
@@ -2547,6 +2553,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Tuotavia sähköpostiviestejä ei löytynyt - tilillä ei ole saapuneet-kansiota"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Mikään käyttäjälle saaduista avaimista ei kelpaa lähetykseen"
       ],
       "No valid address found": [
         "Kelvollista osoitetta ei löytynyt"
@@ -3112,7 +3121,7 @@
         "Valitettavasti et voi tällä hetkellä vaihtaa tilaustasi."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
-        "Sinulle varattu tallennustila: ${ assignedStorage }"
+        "Käyttöösi varattu tallennustila: ${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
         "Tilaus laskutetaan Visionary- tai perhetilauksen ensisijaiselta ylläpitäjältä."
@@ -3142,7 +3151,7 @@
         "Tililläsi on enemmän sähköpostiosoitteita kuin mitä sinulla on käytettävissäsi tässä tilauksessa. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää lisäämään tallennustilaasi."
+        "Tilisi käyttää ${ usedSpace } tallennustilaa, mikä ylittää sinulle varatun ${ inviteSpace } määrän. Poista joitakin tietoja tai pyydä tilauksen ylläpitäjää korottamaan tallennustilaasi."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Nykyinen tilauksesi ei voi liittyä Visionary- tai perhetilaukseen."
@@ -3867,12 +3876,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
       ],
-      "Free up some space or add more storage space.": [
-        "Vapauta tai hanki lisää tallennustilaa."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Vapauta tilaa tai ole yhteydessä ylläpitoosi."
-      ],
       "Frequency modifications will be lost.": [
         "Toistuvuuden muutokset menetetään."
       ],
@@ -4163,9 +4166,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
       ],
-      "Update recurring event": [
-        "Päivitä toistuva tapahtuma"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
       ],
@@ -4251,13 +4251,7 @@
         "Olet aktivoinut avaimesi uudelleen ja seuraaviin kalentereihin liitettyjen tapahtumien salaukset voidaan nyt purkaa."
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
-        "Olet aiemmin kieltäytynyt tästä kutsusta. Pyydä järjestäjää lähettämään uusi kutsu"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Olet käyttänyt ${ spaceDisplayed } % tallennuskapasiteetistasi. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Olet käyttänyt 100 % tallennuskapasiteetistasi. Et voi lähettää tai vastaanottaa uusia viestejä. ${ freeUpMessage } ${ upgradeLink }"
+        "Olet aiemmin kieltäytynyt tästä kutsusta. Pyydä järjestäjää lähettämään uusi kutsu."
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
@@ -4862,9 +4856,6 @@
       "Request an invite": [
         "Pyydä kutsu"
       ],
-      "Upgrade account": [
-        "Päivitä tili"
-      ],
       "What’s this?": [
         "Mikä tämä on?"
       ]
@@ -4953,7 +4944,7 @@
         "Hallitse kalentereita"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -5162,7 +5153,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Päivitä nyt"
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -5208,7 +5199,7 @@
         "15 sähköpostiosoitetta"
       ],
       "Up to 3 TB of storage": [
-        "Jopa 3 Gt tallennustilaa"
+        "Jopa 3 Tb tallennustilaa"
       ]
     },
     "new_plans: feature info": {
@@ -6075,7 +6066,7 @@
         "Siirry tilauksiin"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Päivitä tilaus"
       ]
     },
     "specialoffer: Offers": {
@@ -6152,7 +6143,7 @@
         "Vuodenvaihteen ale"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Päivitä tilauksesi ja säästä lisää kahden vuoden ${ planName } -tilauksella"
+        "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6216,6 +6207,47 @@
       ],
       "Your current storage:": [
         "Nykyinen tallennustilasi:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tallennustila"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage }stasi on käytetty ${ percentage } %"
+      ],
+      "contact your administrator": [
+        "ota yhteyttä ylläpitoosi"
+      ],
+      "upgrade for more storage": [
+        "hanki lisää päivittämällä tilauksesi"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage }si on lähes täynnä"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage }si on täynnä"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage }stasi on käytetty ${ percentage } %. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage }stasi on käytetty ${ percentage } %. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Tallennnustilastasi on käytetty ${ percentage } %. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -7033,7 +7065,7 @@
         "Yhteystiedon allekirjoituksen varmennus epäonnistui."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Toimintoa ei ole mahdollista perua. Jatka syöttämällä kenttään sana ${ boldDanger }."
+        "Tätä ei ole mahdollista kumota. Jatka syöttämällä kenttään sana ${ boldDanger }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Tämä tuonti saattaa ylittää ${ BRAND_NAME }-tilisi tämänhetkisen vapaan tallennuskapasiteetin. Harkitse tuontisi mukautusta."

@@ -3870,12 +3870,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Libere algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algum espaço ou contate seu administrador."
-      ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
       ],
@@ -4166,9 +4160,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
       ],
-      "Update recurring event": [
-        "Atualizar evento recorrente"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
       ],
@@ -4255,12 +4246,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Você anteriormente rejeitou esse convite. Pergunte ao proprietário para reenviar o convite"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
@@ -4864,9 +4849,6 @@
       ],
       "Request an invite": [
         "Solicitar um convite"
-      ],
-      "Upgrade account": [
-        "Upgrade de conta"
       ],
       "What’s this?": [
         "O que é isso?"
@@ -6219,6 +6201,26 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "armazenamento de ${ app }"
+      ],
+      "contact your administrator": [
+        "contate seu administrador"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O ${ appStorage } está cheio."
+      ],
+      "Your storage is full": [
+        "Seu armazenamento está cheio"
       ]
     },
     "Subscribe to calendar modal": {

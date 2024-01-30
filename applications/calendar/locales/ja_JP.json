@@ -3691,12 +3691,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
       ],
-      "Free up some space or add more storage space.": [
-        "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "スペースを解放するか、管理者にお問い合わせしてください。"
-      ],
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
       ],
@@ -3982,9 +3976,6 @@
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
-      "Update recurring event": [
-        "定期的な予定の更新"
-      ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
       ],
@@ -4068,12 +4059,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "一度招待を拒否しているため、主催者からもう一度招待される必要があります。"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "保存されていない変更はすべて失なわれます。"
@@ -4665,9 +4650,6 @@
       ],
       "Request an invite": [
         "登録を申請"
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
       ],
       "What’s this?": [
         "これは何ですか?"

@@ -1060,12 +1060,21 @@
         "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ]
+    },
     "Option": {
       "Commas": [
         "Vírgulas"
       ],
       "Hyphens": [
         "Hífens"
+      ],
+      "Memorable Password": [
+        "Palavra-passe memorável"
       ],
       "Numbers": [
         "Números"
