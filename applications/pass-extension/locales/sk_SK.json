@@ -1659,6 +1659,14 @@
         "Víta vás ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položiek",
+        "${ count } položiek"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Víta vás ${ appName }"
@@ -1671,7 +1679,7 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Zapamätateľné heslo"
       ],
       "Numbers": [

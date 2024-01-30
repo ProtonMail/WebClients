@@ -1539,6 +1539,12 @@
         "Welkom bij ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
@@ -1551,7 +1557,7 @@
       "Hyphens": [
         "Koppeltekens"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Memorabel wachtwoord"
       ],
       "Numbers": [
