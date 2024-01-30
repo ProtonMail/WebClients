@@ -8,6 +8,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -25,6 +26,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     bootstrap.init({ config, authentication, locales });
     initMainHost();
     initElectronClassnames();
+    initSafariFontFixClassnames();
 
     const appName = config.APP_NAME;
 
