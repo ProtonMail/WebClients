@@ -18,7 +18,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
@@ -70,7 +70,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+    const hasB2BPlan = getHasB2BPlan(subscription);
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
@@ -99,7 +99,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const setStepStorage = async () => {
-        if (hasVpnB2BPlan) {
+        if (hasB2BPlan) {
             // If user setting up organization for VPN B2B plan then the storage step must be skipped.
             await finalizeOrganizationCreation();
         } else {
