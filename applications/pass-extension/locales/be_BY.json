@@ -38,6 +38,21 @@
       "Back": [
         "Назад"
       ],
+      "Bulk delete items from trash": [
+        "Масавае выдаленне элементаў са сметніцы"
+      ],
+      "Bulk move items to another vault": [
+        "Масавае перамяшчэнне элементаў у іншае сховішча"
+      ],
+      "Bulk move items to trash": [
+        "Масавае перамяшчэнне элементаў у сметніцу"
+      ],
+      "Bulk restore items from trash": [
+        "Масавае аднаўленне элементаў са сметніцы"
+      ],
+      "Bulk select items": [
+        "Масавы выбар элементаў"
+      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Выдаліць сховішча"
       ],
+      "Deselect": [
+        "Зняць выбар"
+      ],
       "Disable autosave on this website": [
         "Адключыць аўтазахаванне на гэтым сайце"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Гатова"
+      ],
+      "Download this CSV template": [
+        "Спампаваць гэты шаблон CSV"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -531,17 +552,29 @@
       "Failed resending invite.": [
         "Збой паўторнай адпраўкі запрашэння"
       ],
+      "Failed to delete selected items": [
+        "Не ўдалося выдаліць выбраныя элементы"
+      ],
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Не ўдалося выдаліць усе элементы з \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Не ўдалося перамясціць элементы"
+      ],
+      "Failed to move items to trash": [
+        "Не ўдалося перамясціць элементы ў сметніцу"
+      ],
       "Failed to pin item": [
         "Не ўдалося замацаваць элемент"
       ],
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
+      ],
+      "Failed to restore items from trash": [
+        "Не ўдалося аднавіць элементы са сметніцы"
       ],
       "Failed to transfer this vault's ownership.": [
         "Збой перадачы права ўласнасці гэтага сховішча"
@@ -800,11 +833,17 @@
       "Admin": [
         "Адміністратар"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
+      ],
+      "All items successfully moved": [
+        "Усе элементы паспяхова перамешчаны"
       ],
       "All trashed items permanently deleted": [
         "Усе элементы са сметніцы незваротна выдалены"
@@ -890,6 +929,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Экспартаванне зашыфравана з дапамогай PGP і патрабуе надзейнай парольнай фразы."
       ],
+      "Fill in the CSV with your data": [
+        "Запоўніце CSV сваімі данымі"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV :"
+      ],
       "For easy access to your passwords and more.": [
         "Для лёгкага доступу да вашых пароляў і не толькі."
       ],
@@ -913,6 +958,9 @@
       ],
       "Import in progress:": [
         "Выконваецца імпартаванне:"
+      ],
+      "Import the CSV file below.": [
+        "Імпартуйце ніжні файл CSV."
       ],
       "Imported ${ payload.total } item": [
         "Імпартаваны ${ payload.total } элемент",
@@ -1001,6 +1049,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Перамяшчэнне элементаў"
+      ],
+      "Moving items to trash": [
+        "Перамяшчэнне элементаў у сметніцу"
+      ],
       "Never": [
         "Ніколі"
       ],
@@ -1030,6 +1084,9 @@
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
+      ],
+      "Permanently deleting selected items": [
+        "Незваротнае выдаленне выбраных элементаў"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
@@ -1067,6 +1124,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
       ],
+      "Restoring items from trash": [
+        "Аднаўленне элементаў са сметніцы"
+      ],
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
@@ -1078,6 +1138,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
+      ],
+      "Selected items permanently deleted": [
+        "Выбраныя элементы незваротна выдалены"
+      ],
+      "Selected items successfully moved to trash": [
+        "Выбраныя элементы паспяхова перамешчаны ў сметніцу"
+      ],
+      "Selected items successfully restored from trash": [
+        "Выбраныя элементы паспяхова адноўлены са сметніцы"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -1405,6 +1474,9 @@
       "General": [
         "Агульныя"
       ],
+      "Generic CSV": [
+        "Агульны CSV"
+      ],
       "Grant": [
         "Дазволіць"
       ],
@@ -1674,6 +1746,17 @@
         "Вітаем у ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элементы",
+        "${ count } элементаў",
+        "${ count } элементаў"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Вы выбралі ${ semiboldText } у гэтым сховішчы"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаем у ${ appName }"
@@ -1686,8 +1769,8 @@
       "Hyphens": [
         "Злучкі"
       ],
-      "Memorizable Password": [
-        "Запамінальны пароль"
+      "Memorable Password": [
+        "Пароль, які лёгка запомніць"
       ],
       "Numbers": [
         "Лічбы"
@@ -1865,6 +1948,9 @@
       ],
       "Move all items ?": [
         "Перамясціць усе элементы?"
+      ],
+      "No items selected": [
+        "Элемент не выбраны"
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"

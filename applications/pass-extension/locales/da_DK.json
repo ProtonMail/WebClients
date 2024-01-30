@@ -535,6 +535,12 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Kunne ikke flytte elementer"
+      ],
+      "Failed to move items to trash": [
+        "Kunne ikke flytte elementer til papirkurven"
+      ],
       "Failed to pin item": [
         "Kunne ikke fastgøre element"
       ],
@@ -1640,6 +1646,12 @@
         "Velkommen til ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
@@ -1652,8 +1664,8 @@
       "Hyphens": [
         "Bindestreger"
       ],
-      "Memorizable Password": [
-        "Adgangskode, man kan huske"
+      "Memorable Password": [
+        "Huskværdig adgangskode"
       ],
       "Numbers": [
         "Tal"

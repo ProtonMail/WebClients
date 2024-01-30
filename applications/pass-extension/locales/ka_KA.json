@@ -38,6 +38,21 @@
       "Back": [
         "უკან"
       ],
+      "Bulk delete items from trash": [
+        "ერთზე მეტი ელემენტის წაშლა ნაგვის ყუთიდან"
+      ],
+      "Bulk move items to another vault": [
+        "ერთზე მეტი ელემენტის გადატანა სხვა საცავში"
+      ],
+      "Bulk move items to trash": [
+        "ერთზე მეტი ელემენტის გადატანა ნაგვის ყუთში"
+      ],
+      "Bulk restore items from trash": [
+        "ერთზე მეტი ელემენტის აღდგენა ნაგვის ყუთიდან"
+      ],
+      "Bulk select items": [
+        "ერთზე მეტი ელემენტის მონიშვნა"
+      ],
       "Cancel": [
         "გაუქმება"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "საცავის წაშლა"
       ],
+      "Deselect": [
+        "მონიშვნის მოხსნა"
+      ],
       "Disable autosave on this website": [
         "ავტოშენახვის გამორთვა ამ ვებგვერდზე"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "მზადაა"
+      ],
+      "Download this CSV template": [
+        "გადმოწერეთ ეს CSV ნიმუში"
       ],
       "Edit": [
         "ჩასწორება"
@@ -529,17 +550,29 @@
       "Failed resending invite.": [
         "მოწვევის თავიდან გაგზავნის შეცდომა."
       ],
+      "Failed to delete selected items": [
+        "მონიშნული ელემენტების წაშლა ჩავარდა"
+      ],
       "Failed to edit user's access.": [
         "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან, ჩავარდა"
       ],
+      "Failed to move items": [
+        "ელემენტების გადატანა ჩავარდა"
+      ],
+      "Failed to move items to trash": [
+        "ჩავარდა ერთზე მეტი ელემენტის გადატანა ნაგვის ყუთში"
+      ],
       "Failed to pin item": [
         "ელემენტის მიმაგრება ჩავარდა"
       ],
       "Failed to remove user's access.": [
         "მომხმარებლის წვდომის წაშლა ჩავარდა."
+      ],
+      "Failed to restore items from trash": [
+        "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
       ],
       "Failed to transfer this vault's ownership.": [
         "ამ საცავის მფლობელობის გადატანა ჩავარდა."
@@ -778,11 +811,17 @@
       "Admin": [
         "ადმინისტრატორი"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
+      ],
+      "All items successfully moved": [
+        "ყველა ელემენტის გადატანა წარმატებულია"
       ],
       "All trashed items permanently deleted": [
         "ყველა ელემენტი ნაგვის ყუთიდან სამუდამოდ წაიშალა"
@@ -868,6 +907,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "გატანა დაშიფრულია PGP-ის გამოყენებით და რთულ საკვანძო ფრაზას მითხოვს."
       ],
+      "Fill in the CSV with your data": [
+        "შეავსეთ CSV თქვენი მონაცემებით"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "მიყევით ამ ნაბიჯებს, რომ შემოიტანოთ თქვენი მონაცემები ზოგადი CSV-ით:"
+      ],
       "For easy access to your passwords and more.": [
         "თქვენს პაროლებთან იოლი წვდომისთვის და ა.შ."
       ],
@@ -891,6 +936,9 @@
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
+      ],
+      "Import the CSV file below.": [
+        "ქვემორე CSV ფაილის შემოტანა."
       ],
       "Imported ${ payload.total } item": [
         "შემოტანილია ${ payload.total } ელემენტი",
@@ -975,6 +1023,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
+      "Moving items": [
+        "მიმდინარეობს ელემენტების გადატანა"
+      ],
+      "Moving items to trash": [
+        "ელემენტების გადატანა ნაგვის ყუთში"
+      ],
       "Never": [
         "არასოდეს"
       ],
@@ -1004,6 +1058,9 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Permanently deleting selected items": [
+        "მონიშნული ელემენტების სამუდამოდ წაშლა"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
@@ -1041,6 +1098,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
       ],
+      "Restoring items from trash": [
+        "მიმდნარეობს ელემენტების აღდგენა ნაგვის ყუთიდან"
+      ],
       "Restoring trashed items...": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
       ],
@@ -1052,6 +1112,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
+      ],
+      "Selected items permanently deleted": [
+        "მონიშნული ელემენტები სამუდამოდ წაიშალა"
+      ],
+      "Selected items successfully moved to trash": [
+        "მონიშნული ელემენტები წარმატებით იქნა გადატანილი ნაგვის ყუთში"
+      ],
+      "Selected items successfully restored from trash": [
+        "მონიშნული ელემენტები წარმატებით იქნა აღდგენილი ნაგვის ყუთიდან"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
@@ -1371,6 +1440,9 @@
       "General": [
         "ზოგადი"
       ],
+      "Generic CSV": [
+        "ზოგადი CSV"
+      ],
       "Grant": [
         "უფლების მიცემა"
       ],
@@ -1640,6 +1712,15 @@
         "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "აირჩიეთ ${ semiboldText } ამ საცავში"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
@@ -1652,7 +1733,7 @@
       "Hyphens": [
         "დეფისები"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "დამახსოვრებადი პაროლი"
       ],
       "Numbers": [
@@ -1829,6 +1910,9 @@
       ],
       "Move all items ?": [
         "გადავიტანო ყველა ელემენტი?"
+      ],
+      "No items selected": [
+        "ელემენტები მონიშნული არაა"
       ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
