@@ -2763,6 +2763,11 @@
         "Nome de usuário"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Adicione este registro ao seu domínio no painel de controle do seu registrador de nomes de domínio"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2783,9 +2788,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } para sempre"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagem em tamanho real"
@@ -2990,17 +2992,23 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Ao fazer o downgrade você perderá os seguintes benefícios. Você tem certeza que quer prosseguir?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
       "Cancel anytime": [
         "Cancele a qualquer momento"
       ],
+      "Can’t access your recovery email?": [
+        "Não consegue acessar seu e-mail de recuperação?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Não consegue acessar seu e-mail de recuperação?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configure a autenticação SAML para sua organização através de um provedor de identidade (IdP). Isso habilitará o SAML para toda a organização."
       ],
       "Continue with ${ freeName }": [
         "Continuar com ${ freeName }"
@@ -3041,6 +3049,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ],
+      "Current plan": [
+        "Plano atual"
       ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
@@ -3088,8 +3099,14 @@
       "Done! We sent a code to ${ destination }.": [
         "Pronto! Enviamos um código para ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Não sabe sua frase de recuperação?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
+      ],
+      "Downgrade": [
+        "Fazer downgrade"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
@@ -3163,6 +3180,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Digite o seu número de telefone de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Digite sua frase de recuperação para alterar sua senha agora."
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -3180,12 +3200,6 @@
       ],
       "Free forever": [
         "Grátis para sempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Libere algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algum espaço ou contate seu administrador."
       ],
       "Gateways": [
         "Gateways"
@@ -3706,6 +3720,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para prosseguir, selecione um método de recuperação de conta para que possamos verificar a sua solicitação."
       ],
+      "To proceed, we must verify the request.": [
+        "Para prosseguir, devemos verificar a solicitação."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor."
       ],
@@ -3856,6 +3873,9 @@
       "Welcome": [
         "Bem-vindo"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Enviaremos um código de redefinição para ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de redefinição para o endereço de e-mail que você forneceu para a recuperação da conta."
       ],
@@ -3959,12 +3979,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, clique no botão abaixo."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Você será redirecionado para ${ destination } depois de iniciar sessão."
@@ -4478,6 +4492,9 @@
       "Recovery phrase": [
         "Frase de recuperação"
       ],
+      "Reply (ACS) URL": [
+        "URL de resposta (ACS)"
+      ],
       "Require 2FA for administrators": [
         "Requer A2F para administradores"
       ],
@@ -4685,9 +4702,6 @@
       "Trouble signing in?": [
         "Problemas para iniciar sessão?"
       ],
-      "Upgrade account": [
-        "Upgrade de conta"
-      ],
       "Upgrade your plan": [
         "Faça upgrade de seu plano"
       ],
@@ -4817,9 +4831,6 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -5319,12 +5330,6 @@
         "/mês"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Você ainda tem ${ daysRemaining } dia restante na sua conta ${ currentPlanName }.",
-        "Você ainda tem ${ daysRemaining } dias restantes na sua conta ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Pagar\", você concorda com os nossos ${ termsAndConditions }"
@@ -5513,17 +5518,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Especialmente projetado, o NetShield protege seu dispositivo e acelera sua navegação ao bloquear anúncios, rastreadores e malware"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comece com ${ freeStorageSize } e desbloqueie mais armazenamento com o passar do tempo. O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }. Os administradores podem alocar quantidades de armazenamento diferentes aos usuários da organização"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
@@ -6464,11 +6466,6 @@
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta vitalícia"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -6605,6 +6602,45 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Manter o ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Armazenamento para dados gerados pelo ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Armazenamento do Drive de até ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Armazenamento do Mail de até ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "armazenamento de ${ app }"
+      ],
+      "contact your administrator": [
+        "contate seu administrador"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O ${ appStorage } está cheio."
+      ],
+      "Your storage is full": [
+        "Seu armazenamento está cheio"
       ]
     },
     "Subscription": {
@@ -7188,6 +7224,9 @@
       ],
       "Downgrade account": [
         "Fazer downgrade da conta"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Fazer o downgrade para o ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"

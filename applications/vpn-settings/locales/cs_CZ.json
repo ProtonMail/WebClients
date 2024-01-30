@@ -1884,7 +1884,7 @@
         "Přístup k aplikaci pro stolní PC je omezený"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitele tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na předplatitele tarifu ${ BRAND_NAME } Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
@@ -2443,7 +2443,7 @@
     },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organizationName }": [
-        "${ member.Name } byl odstraněn z ${ organizationName }"
+        "${ member.Name } odebrán(a) z ${ organizationName }"
       ],
       "An error occurred, please try again": [
         "Došlo k chybě, zkuste to prosím znovu"
@@ -2820,9 +2820,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } navždy"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázek v plné velikosti"
       ],
@@ -3048,9 +3045,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Pokud svůj aktuální tarif snížíte na bezplatnou verzi, navždy ztratíte současné výhody, i když v budoucnu svůj účet znovu povýšíte."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"
-      ],
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
       ],
@@ -3095,6 +3089,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
+      ],
+      "Current plan": [
+        "Aktuální tarif"
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
@@ -3146,6 +3143,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nic nevidíte? Nezapomeňte vypnout blokování vyskakovacích oken."
+      ],
+      "Downgrade": [
+        "Snížit"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
@@ -3233,12 +3233,6 @@
       ],
       "Free forever": [
         "Navždy zdarma"
-      ],
-      "Free up some space or add more storage space.": [
-        "Uvolněte místo nebo přidejte další úložný prostor."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
       ],
       "Gateways": [
         "Brány"
@@ -4020,12 +4014,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musíte mít propojený s platební kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100 % kapacity vašeho úložiště. Už nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
@@ -4533,7 +4521,7 @@
         "Obnovovací fráze"
       ],
       "Require 2FA for administrators": [
-        "Vyžaduje dvoufázové oveření pro administrátory"
+        "Vyžaduje dvoufázové oveření pro správce"
       ],
       "Require 2FA for everyone": [
         "Vyžaduje dvoufázové ověření pro všechny"
@@ -4736,9 +4724,6 @@
       "Trouble signing in?": [
         "Potíže s přihlášením?"
       ],
-      "Upgrade account": [
-        "Navýšit účet"
-      ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
       ],
@@ -4870,9 +4855,6 @@
       ],
       "From ${ price }": [
         "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechat můj ${ currentPlanName } účet"
       ],
       "Upgrade": [
         "Navýšit"
@@ -5410,14 +5392,6 @@
         "/měsíčně"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Pořád Vám zbývá ${ daysRemaining } den Vašeho ${ currentPlanName } účtu.",
-        "Pořád Vám zbývají ${ daysRemaining } dny Vašeho ${ currentPlanName } účtu.",
-        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu.",
-        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Zaplatit\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -5608,17 +5582,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Začněte s ${ freeStorageSize } a odemkněte dodatečný prostor jakmile to bude potřeba. Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný prostor je sdílen mezi uživateli napříč ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
@@ -6610,11 +6575,6 @@
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Doživotní nabídka"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Přejít na předplatné"
@@ -6753,6 +6713,16 @@
       ],
       "Your current storage:": [
         "Vaše současné úložiště:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Ponechat ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ]
     },
     "Subscription": {
@@ -7802,13 +7772,13 @@
     },
     "User role": {
       "Admin": [
-        "Administrátor"
+        "Správce"
       ],
       "Member": [
         "Člen"
       ],
       "Primary admin": [
-        "Hlavní Admin"
+        "Hlavní správce"
       ]
     },
     "Users table: single sign-on enabled": {
