@@ -2,7 +2,7 @@ import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decryptCachedState, sanitizeCache } from '@proton/pass/lib/crypto/utils/cache.decrypt';
-import type { UserData} from '@proton/pass/lib/user/user.requests';
+import type { UserData } from '@proton/pass/lib/user/user.requests';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
     cacheCancel,
@@ -14,6 +14,7 @@ import {
     syncLocalSettings,
 } from '@proton/pass/store/actions';
 import type { SafeUserState } from '@proton/pass/store/reducers';
+import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
@@ -103,6 +104,10 @@ function* hydrateWorker(options: RootSagaOptions) {
         },
         options
     );
+
+    /* locale may have been updated */
+    options.onLocaleUpdated?.(yield select(selectLocale));
+
     yield put(startEventPolling());
 }
 
