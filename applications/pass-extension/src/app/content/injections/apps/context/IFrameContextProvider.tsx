@@ -11,7 +11,7 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
-import { PassExtensionCore } from 'proton-pass-extension/lib/components/Extension/PassExtensionCore';
+import { ExtensionCore } from 'proton-pass-extension/lib/components/Extension/ExtensionCore';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
@@ -153,6 +153,8 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
                         return setFeatures(message.payload);
                     case WorkerMessageType.SETTINGS_UPDATE:
                         return setSettings(message.payload);
+                    case WorkerMessageType.LOCALE_UPDATED:
+                        return setSettings((prev) => ({ ...prev, locale: message.payload.locale }));
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -269,9 +271,9 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     );
 
     return (
-        <PassExtensionCore endpoint={endpoint}>
+        <ExtensionCore endpoint={endpoint}>
             <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>
-        </PassExtensionCore>
+        </ExtensionCore>
     );
 };
 

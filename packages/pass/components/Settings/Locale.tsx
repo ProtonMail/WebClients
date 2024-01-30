@@ -18,7 +18,7 @@ export const Locale: FC = () => {
         <SettingsPanel title={c('Label').t`Language`}>
             <LocaleSelect
                 value={locale ?? DEFAULT_LOCALE}
-                onChange={(locale) => dispatch(settingsEditIntent('locale', { locale }))}
+                onChange={(locale) => dispatch(settingsEditIntent('locale', { locale }, true))}
             />
         </SettingsPanel>
     );

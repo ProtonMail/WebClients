@@ -68,6 +68,7 @@ export enum WorkerMessageType {
     IMPORT_DECRYPT = 'IMPORT_DECRYPT',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_REQUEST = 'LOCALE_REQUEST',
+    LOCALE_UPDATED = 'LOCALE_UPDATED',
     LOG_EVENT = 'LOG_EVENT',
     LOG_REQUEST = 'LOG_REQUEST',
     NOTIFICATION = 'NOTIFICATION',
@@ -124,6 +125,7 @@ export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STA
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_DECRYPT, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
+export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
@@ -177,6 +179,7 @@ export type WorkerMessage =
     | ImportDecryptMessage
     | LoadContentScriptMessage
     | LocaleRequestMessage
+    | LocaleUpdatedMessage
     | LogEventMessage
     | LogRequestMessage
     | NotificationMessage
