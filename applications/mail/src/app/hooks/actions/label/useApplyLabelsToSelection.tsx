@@ -213,7 +213,7 @@ export const useApplyLabelsToSelection = () => {
                     dispatch(backendActionFinished());
                     if (!undoing) {
                         start();
-                        // await call();
+                        await call();
                     }
                 }
                 return tokens;
