@@ -3,43 +3,39 @@ import { withContext } from 'proton-pass-extension/app/worker/context';
 import store from 'proton-pass-extension/app/worker/store';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { updatePauseListItem } from '@proton/pass/store/actions';
-import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
-import noop from '@proton/utils/noop';
 
-export type SettingsService = ReturnType<typeof createSettingsService>;
+const SettingsStorageKey = 'settings';
 
 export const createSettingsService = () => {
-    /* We have to proxy the redux store settings in local storage
-     * in case the user is logged out (session invalidated, locked etc..)
-     * but need to preserve the user settings in the content-script */
-    const sync = withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
-        await service.i18n.setLocale(settings.locale).catch(noop);
-        await service.storage.local.setItem('settings', JSON.stringify(settings));
-
-        logger.info('[Worker::Settings] synced settings');
-
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.SETTINGS_UPDATE,
-                payload: settings,
-            })
-        );
-    });
-
-    const resolve = withContext<() => Promise<ProxiedSettings>>(async ({ service }) => {
-        try {
+    const service = createCoreSettingsService({
+        clear: withContext(({ service }) => service.storage.local.removeItem(SettingsStorageKey)),
+        resolve: withContext(async ({ service }) => {
             const settings = await service.storage.local.getItem('settings');
-            if (!settings) throw new Error();
+            if (!settings) throw new Error('settings not found');
 
             return JSON.parse(settings);
-        } catch (e) {
-            return INITIAL_SETTINGS;
-        }
+        }),
+        /* We have to proxy the redux store settings in local storage
+         * in case the user is logged out (session invalidated, locked etc..)
+         * but need to preserve the user settings in the content-script */
+        sync: withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
+            logger.info('[Worker::Settings] synced settings');
+            await service.storage.local.setItem('settings', JSON.stringify(settings));
+
+            WorkerMessageBroker.ports.broadcast(
+                backgroundMessage({
+                    type: WorkerMessageType.SETTINGS_UPDATE,
+                    payload: settings,
+                })
+            );
+        }),
     });
 
     /* on extension install : Set the initial proxied
@@ -53,9 +49,11 @@ export const createSettingsService = () => {
         WorkerMessageType.PAUSE_WEBSITE,
         withPayload(async ({ criteria, hostname }) => {
             store.dispatch(updatePauseListItem({ criteria, hostname }));
-            await sync(selectProxiedSettings(store.getState()));
+            await service.sync(selectProxiedSettings(store.getState()));
             return true;
         })
     );
-    return { onInstall, sync, resolve };
+    return { onInstall, ...service };
 };
+
+export type SettingsService = ReturnType<typeof createSettingsService>;
