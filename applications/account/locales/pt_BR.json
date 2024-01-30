@@ -818,6 +818,9 @@
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Selecione um calendário para exportar"
+      ],
       "Select calendar view": [
         "Selecionar visualização do calendário"
       ],
@@ -5762,6 +5765,17 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
@@ -5798,9 +5812,6 @@
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
       ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } para sempre"
-      ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } não manterá mais as versões anteriores de seus arquivos."
       ],
@@ -5822,6 +5833,9 @@
       "${ n } address": [
         "${ n } endereço",
         "${ n } endereços"
+      ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: não coloque em quarentena nem rejeite e-mails não autorizados. Normalmente, as pessoas usam esta política apenas para solucionar problemas ou testar."
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -5855,6 +5869,12 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: solicitando às plataformas destinatárias que marquem os e-mails não autorizados como spam ou os coloquem em quarentena."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: solicitando às plataformas destinatárias que rejeitem os e-mails não autorizados."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } a mais",
@@ -6182,6 +6202,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Antes de poder receber e-mails para seus endereços de domínio personalizados em ${ MAIL_APP_NAME }, você precisa adicionar os dois registros MX a seguir em seu console DNS (localizado na plataforma onde você comprou o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
       ],
@@ -6200,9 +6223,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao fazer o downgrade para um plano gratuito, você perderá permanentemente esses benefícios, mesmo que você faça o upgrade novamente no futuro."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Ao fazer o downgrade você perderá os seguintes benefícios. Você tem certeza que quer prosseguir?"
-      ],
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
@@ -6211,6 +6231,12 @@
       ],
       "Cancel anytime": [
         "Cancele a qualquer momento"
+      ],
+      "Can’t access your recovery email?": [
+        "Não consegue acessar seu e-mail de recuperação?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Não consegue acessar seu e-mail de recuperação?"
       ],
       "Center": [
         "Centralizar"
@@ -6280,6 +6306,9 @@
       "Credits earned": [
         "Créditos recebidos"
       ],
+      "Current plan": [
+        "Plano atual"
+      ],
       "Custom": [
         "Personalizado"
       ],
@@ -6329,6 +6358,9 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "O DKIM permite que ${ BRAND_NAME } assine criptograficamente seus e-mails e evite que invasores adulterem seu e-mail. Certifique-se de adicionar os três registros CNAME a seguir em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
+      ],
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "O DMARC verifica se os registros SPF e DKIM do remetente são originários do seu domínio. Isso pode impedir que invasores usem SPF e DKIM de outro domínio para se passar por seu domínio. O \"p=\" (política) neste registro indica como você deseja que as plataformas de destinatários lidem com e-mails não autorizados. Recomendamos usar a política \"p=quarentena\" para a maioria dos domínios. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
       ],
@@ -6351,8 +6383,14 @@
       "Done! We sent a code to ${ destination }.": [
         "Pronto! Enviamos um código para ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Não sabe sua frase de recuperação?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
+      ],
+      "Downgrade": [
+        "Fazer downgrade"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
@@ -6377,6 +6415,9 @@
       ],
       "Each code can only be used once": [
         "Cada código só pode ser usado uma única vez"
+      ],
+      "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
+        "Cada domínio só pode ter um registro SPF (TXT). Se quiser manter o registro SPF (TXT) existente, você pode adicionar ${ spf } ao seu registro atual (coloque-o depois de ${ spfValue })."
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -6459,6 +6500,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Digite o seu número de telefone de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Digite sua frase de recuperação para alterar sua senha agora."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Os convites para eventos e as confirmações de presença serão enviados nesse idioma."
       ],
@@ -6486,17 +6530,14 @@
       "For members of organizations using single sign-on (SAML SSO)": [
         "Para membros da organização usando o login único (SAML SSO)"
       ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Para usuários que estão migrando de outro serviço de e-mail para ${ MAIL_APP_NAME }, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição tranquila."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
       ],
       "Free forever": [
         "Grátis para sempre"
-      ],
-      "Free up some space or add more storage space.": [
-        "Libere algum espaço ou adicione mais espaço de armazenamento."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Libere algum espaço ou contate seu administrador."
       ],
       "free up space by deleting older messages or other data": [
         "liberar espaço, apagando mensagens antigas ou outros dados"
@@ -7443,6 +7484,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Para prosseguir, selecione um método de recuperação de conta para que possamos verificar a sua solicitação."
       ],
+      "To proceed, we must verify the request.": [
+        "Para prosseguir, devemos verificar a solicitação."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor."
       ],
@@ -7662,6 +7706,9 @@
       "Welcome": [
         "Bem-vindo"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Enviaremos um código de redefinição para ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de redefinição para o endereço de e-mail que você forneceu para a recuperação da conta."
       ],
@@ -7821,12 +7868,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "Você precisa ter um calendário ativo para importar seus eventos a partir de um ICS."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Você atingiu 100% da sua capacidade de armazenamento. Você não pode enviar ou receber novos e-mails. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Você deve exportar um backup dessa chave caso você precise recuperar os dados criptografados por ela."
       ],
@@ -7955,17 +7996,6 @@
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -7982,6 +8012,9 @@
       ],
       "Add a new user to your organization and create an address for it.": [
         "Adicionar um novo usuário à sua organização e criar um endereço para ele."
+      ],
+      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Por motivos de segurança, precisamos verificar se você é o proprietário de ${ domainName }. Adicione o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis ${ kbLink }."
       ]
     },
     "Info for payment methods": {
@@ -9523,9 +9556,6 @@
       "Trouble signing in?": [
         "Problemas para iniciar sessão?"
       ],
-      "Upgrade account": [
-        "Upgrade de conta"
-      ],
       "Upgrade your plan": [
         "Faça upgrade de seu plano"
       ],
@@ -9958,9 +9988,6 @@
       ],
       "From ${ price }": [
         "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -10487,12 +10514,6 @@
         "/mês"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Você ainda tem ${ daysRemaining } dia restante na sua conta ${ currentPlanName }.",
-        "Você ainda tem ${ daysRemaining } dias restantes na sua conta ${ currentPlanName }."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Pagar\", você concorda com os nossos ${ termsAndConditions }"
@@ -10708,17 +10729,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Especialmente projetado, o NetShield protege seu dispositivo e acelera sua navegação ao bloquear anúncios, rastreadores e malware"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Comece com ${ freeStorageSize } e desbloqueie mais armazenamento com o passar do tempo. O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }. Os administradores podem alocar quantidades de armazenamento diferentes aos usuários da organização"
       ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }"
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "O espaço de armazenamento é compartilhado entre usuários entre o ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } e o ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suporte para protocolos de compartilhamento de arquivos como BitTorrent"
@@ -11423,6 +11441,9 @@
       "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
         "Entendo que, se perder meus detalhes de recuperação, poderei perder permanentemente o acesso à minha conta."
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Se sua conta ${ BRAND_NAME } for bloqueada, seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
+      ],
       "Includes:": [
         "Incluí:"
       ],
@@ -11434,6 +11455,9 @@
       ],
       "Install app and extension": [
         "Instale o aplicativo e a extensão"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "É a única maneira de restaurar totalmente sua conta, portanto, mantenha-a em um lugar seguro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para manter a segurança on-line"
@@ -12442,11 +12466,6 @@
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Oferta vitalícia"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Acessar planos de assinatura"
@@ -12597,6 +12616,54 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Manter o ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Armazenamento para dados gerados pelo ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Armazenamento do Drive de até ${ totalStorageSize }"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Armazenamento do Mail de até ${ totalStorageSize }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "armazenamento de ${ app }"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Considere fazer upgrade seu plano para continuar usando sua conta sem interrupções."
+      ],
+      "contact your administrator": [
+        "contate seu administrador"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Para todos os serviços da ${ BRAND_NAME }"
+      ],
+      "Get more storage": [
+        "Obter mais armazenamento"
+      ],
+      "upgrade for more storage": [
+        "faça upgrade para mais armazenamento"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Faça upgrade seu plano para continuar usando sua conta sem interrupções."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Seu ${ appStorage } está quase cheio"
+      ],
+      "Your ${ appStorage } is full": [
+        "O ${ appStorage } está cheio."
+      ],
+      "Your storage is full": [
+        "Seu armazenamento está cheio"
       ]
     },
     "Subscribe to calendar modal": {
@@ -13539,6 +13606,9 @@
       "Downgrade account": [
         "Fazer downgrade da conta"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Fazer o downgrade para o ${ downgradedPlanName }?"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Baixar ${ VPN_APP_NAME }"
       ],
@@ -14040,6 +14110,9 @@
       "Theme": [
         "Tema"
       ],
+      "This field cannot be empty": [
+        "Este campo não pode ficar vazio"
+      ],
       "Time zone": [
         "Fuso horário"
       ],
@@ -14129,6 +14202,9 @@
       ],
       "Your SMTP token": [
         "Seu token SMTP"
+      ],
+      "Your storage": [
+        "Seu armazenamento"
       ],
       "Your subscriptions": [
         "Suas assinaturas"

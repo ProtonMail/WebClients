@@ -818,6 +818,9 @@
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Выбраць каляндар для экспартавання"
+      ],
       "Select calendar view": [
         "Выбраць выгляд календара"
       ],
@@ -993,7 +996,7 @@
         "Палепшыць да Business"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
-        "Палепшыце, каб уключыць ${ PROTON_SENTINEL_NAME }"
+        "Палепшыце свой тарыфны план, каб уключыць ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade to Visionary": [
         "Палепшыць да Visionary"
@@ -3157,7 +3160,7 @@
         "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
-        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
+        "Палепшыце свой тарыфны план сёння або праверце даступнасць на пачатку 2024 года."
       ]
     },
     "Disable account": {
@@ -3924,6 +3927,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Не знойдзена лістоў для імпартавання - уліковы запіс не мае ўваходных"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Ніводны з атрыманых знешніх ключоў карыстальніка не падыходзіць для адпраўкі"
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
@@ -5833,6 +5839,17 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -5872,9 +5889,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } назаўсёды"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } больш не будзе пакідаць папярэднія версіі вашых файлаў."
@@ -6329,9 +6343,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Пры пераходзе на бясплатны тарыфны план вы незваротна страціце гэтыя перавагі, нават калі ў будучыні вы зноў пяройдзеце на яго."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Панізіўшы тарыфны план, вы страціце наступныя перавагі. Вы сапраўды хочаце працягнуць?"
-      ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
@@ -6419,6 +6430,9 @@
       "Credits earned": [
         "Заробленыя крэдыты"
       ],
+      "Current plan": [
+        "Бягучы тарыфны план"
+      ],
       "Custom": [
         "Карыстальніцкі"
       ],
@@ -6502,6 +6516,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
+      ],
+      "Downgrade": [
+        "Панізіць"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
@@ -6649,12 +6666,6 @@
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
-      ],
-      "Free up some space or add more storage space.": [
-        "Вызваліце ​​месца або павялічце памер сховішча."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Вызваліце ​​месца або звяжыцеся з вашым адміністратарам."
       ],
       "free up space by deleting older messages or other data": [
         "вызваліць месца шляхам выдалення старых паведамленняў або іншых даных"
@@ -7701,7 +7712,7 @@
         "Абнавіць фразу аднаўлення"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
+        "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
@@ -7916,6 +7927,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Вы выкарыстоўваеце больш сховішча, чым гэта прадугледжана тарыфным планам ${ downgradedPlanName }. Выдаліце або перамясціце даныя, калі вы ўсё яшчэ хочаце панізіць свой тарыфны план."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Вы таксама можаце аб'яднаць імпартаваныя календары з існуючымі календарамі ${ BRAND_NAME }."
       ],
@@ -8011,12 +8025,6 @@
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Вам неабходна мець актыўны асабісты каляндар для імпартавання вашых падзей з ICS."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Вы дасягнулі 100% даступнай ёмістасці сховішча. У вас больш няма магчымасці адпраўляць або атрымліваць новыя лісты. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Вы павінны экспартаваць рэзервовую копію гэтага ключа на выпадак, калі вам спатрэбіцца аднавіць даныя, якія ім зашыфраваны."
@@ -8146,17 +8154,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9731,9 +9728,6 @@
       "Trouble signing in?": [
         "Праблемы з уваходам?"
       ],
-      "Upgrade account": [
-        "Палепшыць уліковы запіс"
-      ],
       "Upgrade your plan": [
         "Палепшыць тарыфны план"
       ],
@@ -10188,9 +10182,6 @@
       ],
       "From ${ price }": [
         "Ад ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -10755,14 +10746,6 @@
         "/месяц"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "У вас яшчэ застаўся ${ daysRemaining } дзень тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
-        "У вас яшчэ засталося ${ daysRemaining } дні тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
-        "У вас яшчэ засталося ${ daysRemaining } дзён тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
-        "У вас яшчэ засталося ${ daysRemaining } дні тарыфнага плана ${ currentPlanName } на вашым уліковым запісе."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Націснуўшы на кнопку \"Заплаціць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
@@ -10812,7 +10795,7 @@
         "Змяніць тарыфны план?"
       ],
       "Unlock premium features by upgrading": [
-        "Палепшыце тарыфны план і разблакіруйце прэміяльныя функцыі"
+        "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
       ]
     },
     "new_plans: Title": {
@@ -10980,17 +10963,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашу прыладу і паскорыць прагляд старонак, дзякуючы блакіраванню рэкламы, праграм сачэння і шкодных праграм"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Пачніце з ${ freeStorageSize } і паступова павялічвайце сховішча. Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }. Адміністратары могуць вылучаць розныя аб'ёмы сховішча для карыстальнікаў у межах іх арганізацыі"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Прастора сховішча размеркавана паміж карыстальнікамі сярод ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
@@ -11705,7 +11679,7 @@
         "Я разумею, што пры страце падрабязнасцяў аднаўлення, я магу незваротна згубіць доступ да свайго ўліковага запісу."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Калі вы заблакіруеце свой уліковы запіс ${ BRAND_NAME }, ваш **Камплект аднаўлення** дазволіць вам увайсці і аднавіць вашы даныя."
+        "Калі вы не маеце доступу да свайго ўліковага запісу ${ BRAND_NAME }, ваш **Камплект аднаўлення** дазволіць вам увайсці і аднавіць вашы даныя."
       ],
       "Includes:": [
         "Уключае:"
@@ -12771,11 +12745,6 @@
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Пажыццёвая прапанова"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Перайсці да тарыфных планаў"
@@ -12928,6 +12897,88 @@
       ],
       "Your current storage:": [
         "Ваша бягучае сховішча:"
+      ]
+    },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Да ${ totalStorageSize } сховішча ў Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Да ${ totalStorageSize } сховішча ў Mail"
+      ]
+    },
+    "storage_split: info": {
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% запоўнена"
+      ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** з ${ humanMaxSpace }"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Падумайце пра тое, каб палепшыць свой тарыфны план і вы зможаце працягнуць карыстацца сваім уліковым запісам без перапыненняў."
+      ],
+      "contact your administrator": [
+        "звязацца з адміністратарам"
+      ],
+      "Get more storage": [
+        "Атрымаць больш месца ў сховішчы"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Раскрыйце поўны патэнцыял ${ app }"
+      ],
+      "upgrade for more storage": [
+        "палепшыце тарыфны план, каб атрымаць больш сховішча"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Палепшыце свой тарыфны план, каб працягнуць карыстацца сваім уліковым запісам без перапыненняў."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Палепшыце свой тарыфны план, каб павялічыць сховішча."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
+        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ваша ${ appStorage } амаль запоўнена"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ваша ${ appStorage } запоўнена"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ваша ${ storage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ваша ${ storage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ваша сховішча запоўнена"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Вы згубіце доступ да ${ gb } у сховішчы і прыярытэтнай падтрымкі."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Вы згубіце доступ да дадатковага сховішча, адрасоў электроннай пошты, псеўданімаў, календароў, а таксама да прыярытэтнай падтрымкі."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Вы згубіце доступ да наступных функцый: высакахуткаснага VPN; абарону 10 прылад; трансляцый на высокай хуткасці; блакіроўку рэкламы і шкодных праграм; прыярытэтную падтрымку."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць уваходаў і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13912,6 +13963,9 @@
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Панізіць да ${ downgradedPlanName }?"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
@@ -14515,6 +14569,9 @@
       "Your SMTP token": [
         "Ваш токен SMTP"
       ],
+      "Your storage": [
+        "Ваша сховішча"
+      ],
       "Your subscriptions": [
         "Вашы падпіскі"
       ],
@@ -14860,7 +14917,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Палепшыце да ${ passPlusPlanName }, каб мець неабмежаваную колькасць псеўданімаў Hide-my-email"
+        "Палепшыце свой тарыфны план да ${ passPlusPlanName }, каб мець неабмежаваную колькасць псеўданімаў Hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылады да VPN",

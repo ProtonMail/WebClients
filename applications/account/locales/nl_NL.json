@@ -3640,7 +3640,7 @@
     },
     "eoy2023: Deal details": {
       "6 TB": [
-        "TB"
+        "6 TB"
       ],
       "6 users": [
         "6 gebruikers"
@@ -5708,6 +5708,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -5743,9 +5754,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } van ${ total }"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } voor altijd"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } zal niet langer vorige versies van uw bestanden behouden."
@@ -6146,9 +6154,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
-      ],
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
@@ -6343,7 +6348,7 @@
         "E-mailvoorkeuren opgeslagen"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Mails getagged met het label ${ nameDeleted } zullen niet gewist worden en zijn terug te vinden in hun respectievelijke map."
+        "Mails getagd met het label ${ nameDeleted } zullen niet gewist worden en zijn terug te vinden in hun respectievelijke map."
       ],
       "Enable this address to join this calendar": [
         "Schakel dit adres in om lid te worden van deze agenda"
@@ -6428,12 +6433,6 @@
       ],
       "Free forever": [
         "Altijd gratis"
-      ],
-      "Free up some space or add more storage space.": [
-        "Maak ruimte vrij of voeg meer opslagruimte toe."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Maak ruimte vrij of neem contact op met uw beheerder."
       ],
       "free up space by deleting older messages or other data": [
         "ruimte vrijmaken door oudere berichten of andere gegevens te verwijderen"
@@ -7737,12 +7736,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken uit ICS te importeren."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde, wilt herstellen."
       ],
@@ -7866,17 +7859,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9402,16 +9384,13 @@
         "Inloggen"
       ],
       "switch account": [
-        "verander abonnement"
+        "account wisselen"
       ],
       "Terms": [
         "Voorwaarden"
       ],
       "Trouble signing in?": [
         "Problemen met inloggen?"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
       ],
       "Upgrade your plan": [
         "Upgrade uw abonnement"
@@ -9843,9 +9822,6 @@
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -10234,7 +10210,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten sluimeren en ontvangen wanneer u wilt"
+        "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -10365,12 +10341,6 @@
     "new_plans: Plan frequency": {
       "/month": [
         "/maand"
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "U hebt nog ${ daysRemaining } dag over van uw ${ currentPlanName }-account.",
-        "U hebt nog ${ daysRemaining } dagen over van uw ${ currentPlanName }-account."
       ]
     },
     "new_plans: signup": {
@@ -10585,17 +10555,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Begin met ${ freeStorageSize } en ontgrendel meer opslagruimte na verloop van tijd. De opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "De opslagruimte wordt gedeeld tussen gebruikers in ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
@@ -10713,7 +10674,7 @@
         "IP-adres gekopieerd naar het klembord"
       ],
       "Key copied to the clipboard": [
-        "klembord"
+        "Sleutel naar het klembord gekopieerd"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Sleutel met vingerafdruk ${ fp } is verwijderd."
@@ -11382,7 +11343,7 @@
         "Geen toestemming"
       ],
       "Send to all": [
-        "Verzend"
+        "Sturen aan alle"
       ]
     },
     "Personal calendar section description": {
@@ -12253,11 +12214,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Deal voor het leven"
       ]
     },
     "specialoffer: Link": {
@@ -13320,7 +13276,7 @@
         "Versiegeschiedenis verwijderen?"
       ],
       "Desktop app": [
-        "app"
+        "Bureaublad app"
       ],
       "Disable ${ email }": [
         "Schakel ${ email } uit"
@@ -13401,7 +13357,7 @@
         "Versleuteling en sleutels"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Vul uw ${ BRAND_NAME } account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+        "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -13815,7 +13771,7 @@
         "Overzicht"
       ],
       "Switch account": [
-        "abonnement"
+        "Account wisselen"
       ],
       "Switch to one-password mode": [
         "Overschakelen naar één-wachtwoord modus"

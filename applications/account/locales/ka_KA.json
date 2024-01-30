@@ -5759,6 +5759,17 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
@@ -5794,9 +5805,6 @@
       ],
       "${ current } of ${ total }": [
         "${ current } ${ total }-დან"
-      ],
-      "${ discountPercentage } forever": [
-        "${ discountPercentage } სამუდამოდ"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } თქვენი ფაილების წინა ვერსიებს აღარ შეინახავს."
@@ -6209,9 +6217,6 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "უფასო გეგმაზე ჩამოწევით ამ ბენეფიტებს სამუდამოდ დაკარგავთ. მაშინაც კი, თუ მომავალში ფასიან ტარიფზე ისევ განახლდებით."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "სატარიფო გეგმის ჩამოწევით თქვენ შემდეგ უპირატესობებს დაკარგავთ. დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
-      ],
       "By leaving now, changes may not be saved": [
         "თუ გახვალთ, ცვლილებები არ შეინახება"
       ],
@@ -6220,6 +6225,12 @@
       ],
       "Cancel anytime": [
         "გააუქმეთ ნებისმიერ დროს"
+      ],
+      "Can’t access your recovery email?": [
+        "არ გაქვთ წვდომა თქვენი აღდგენის ელფოსტასთან?"
+      ],
+      "Can’t access your recovery phone?": [
+        "არ გაქვთ წვდომა თქვენი აღდგენის ტელეფონთან?"
       ],
       "Center": [
         "ცენტრი"
@@ -6363,6 +6374,9 @@
       "Done! We sent a code to ${ destination }.": [
         "მზადაა! კოდი გაგზავნილია ${ destination }-ზე."
       ],
+      "Don’t know your recovery phrase?": [
+        "არ იცით თქვენი აღდგენის ფრაზა?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
       ],
@@ -6474,6 +6488,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ტელეფონის ნომერი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "შეიყვანეთ აღდგენის ფრაზა, რომ თქვენი პაროლი ახლავე შეცვალოთ."
+      ],
       "Event invitations and RSVPs will be sent in this language.": [
         "მოვლენების მოსაწვევებისა და RSVP-ები გაგზავნილი იქნება ამ ენით."
       ],
@@ -6509,12 +6526,6 @@
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
-      ],
-      "Free up some space or add more storage space.": [
-        "გაათავისუფლეთ ან დაამატეთ ადგილი."
-      ],
-      "Free up some space or contact your administrator.": [
-        "გაათავისუფლეთ ცოტა ადგილი ან დაუკავშირდით თქვენს ადმინისტრატორს."
       ],
       "free up space by deleting older messages or other data": [
         "გაათავისუფლეთ ადგილი ძველი შეტყობინებებისა და სხვა მონაცემების წაშლით"
@@ -7455,6 +7466,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "გასაგრძელებლად აირჩიეთ ანგარიშის აღდგენის მეთოდი, რათა შევძლოთ მოთხოვნის გადამოწმება."
       ],
+      "To proceed, we must verify the request.": [
+        "გასაგრძელებლად, ჯერ, თქვენი მოთხოვნა უნდა გადავამოწმოთ."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "ინტერნეტ-შეერთების დასაცავად გადმოწერეთ და დააყენეთ აპლიკაცია ${ VPN_APP_NAME } თქვენი მოწყობილობისთვის და მიუერთდით სერვერს."
       ],
@@ -7674,6 +7688,9 @@
       "Welcome": [
         "მოგესალმებით"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "ჩამოკრის კოდი გამოგეგზავნებათ მისამართზე ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "პაროლის შეცვლის ბმული აღდგენის ველში შეყვანილი ელფოსტის მისამართზე გამოიგზავნება."
       ],
@@ -7833,12 +7850,6 @@
       "You need to have an active personal calendar to import your events from ICS.": [
         "მოვლენების ICS-დან შემოსატანად პირადი კალენდრების ქონაა საჭირო."
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "მიაღწიეთ თქვენი საცავის ${ spaceDisplayed }%-ს. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "იყენებთ თქვენი საცავის მოცულობის 100%-ს. თქვენ აღარ შეგიძლიათ მიიღოთ ან გააგზავნოთ ახალი ელფოსტები ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "გაიტანეთ ამ გასაღების მარქაფი იმ შემთხვევისთვის, თუ მისით დაშიფრული მონაცემების აღდგენა დაგჭირდათ."
       ],
@@ -7965,17 +7976,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9538,9 +9538,6 @@
       "Trouble signing in?": [
         "შესვლის პრობლემები გაქვთ?"
       ],
-      "Upgrade account": [
-        "ანგარიშის გეგმის აწევა"
-      ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
       ],
@@ -9973,9 +9970,6 @@
       ],
       "From ${ price }": [
         "${ price }-დან"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
@@ -10502,12 +10496,6 @@
         "/თვე"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "${ currentPlanName }-ის ანგარიშზე ${ daysRemaining } დღე დაგრჩათ.",
-        "${ currentPlanName }-ის ანგარიშზე ${ daysRemaining } დღე დაგრჩათ."
-      ]
-    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "\"გადახდაზე\" დაწკაპუნების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditions }."
@@ -10723,17 +10711,8 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield-ი იცავს თქვენს მოწყობილობას და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით"
       ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "დაიწყეთ ${ freeStorageSize }-ით და გზადაგზა მეტი და მეტი საცავი მიიღეთ. საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME }-ს შორის."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }-სა და ${ DRIVE_APP_NAME }-ს შორის"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "საცავი გაზიარებულია ${ MAIL_APP_NAME }-ს, ${ CALENDAR_APP_NAME }-სა და ${ DRIVE_APP_NAME }-ს შორის. ადმინისტრატორებს თავის ორგანიზაციებში მომხმარებლებზე მიმაგრებული საცავის ზომის კონტროლი შეუძლიათ"
-      ],
-      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "საცავის სივრცე გაზიარებულია მომხმარებლებისთვის ${ MAIL_APP_NAME }-ის, ${ CALENDAR_APP_NAME }-ის და ${ DRIVE_APP_NAME }-სთვის"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent-ის მსგავსი ფაილების გასაზიარებელი პროტოკოლების მხარდაჭერა"
@@ -12452,11 +12431,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ]
-    },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "უვადო კონტრაქტი"
       ]
     },
     "specialoffer: Link": {
