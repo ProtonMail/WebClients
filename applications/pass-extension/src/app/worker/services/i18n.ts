@@ -1,41 +1,38 @@
-import { createCoreI18nService } from '@proton/pass/lib/i18n/service';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { createI18nService as createCoreI18nService } from '@proton/pass/lib/i18n/service';
 import { WorkerMessageType } from '@proton/pass/types';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import { getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
+import noop from '@proton/utils/noop';
 
 import locales from '../../locales';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 
 export const createI18nService = () => {
-    const hasRegion = (locale: string) => /[_-]/.test(locale);
+    const service = createCoreI18nService({
+        locales,
+        getLocale: withContext(async (ctx) => {
+            const { locale } = await ctx.service.settings.resolve();
+            return locale;
+        }),
+        onLocaleChange: withContext(({ service }, locale) => {
+            WorkerMessageBroker.ports.broadcast(
+                backgroundMessage({
+                    type: WorkerMessageType.LOCALE_UPDATED,
+                    payload: { locale },
+                })
+            );
 
-    const getDefaultLocale = (): string => {
-        const [fst, snd] = navigator.languages;
-        if (!fst && !snd) return DEFAULT_LOCALE;
+            void service.settings.resolve().then((settings) => service.settings.sync({ ...settings, locale }));
+        }),
+    });
 
-        return !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst;
-    };
-
-    const getLocale = withContext<() => Promise<string>>(async (ctx) =>
-        getClosestLocaleCode(
-            await (async () => {
-                try {
-                    const { locale } = await ctx.service.settings.resolve();
-                    return locale ?? getDefaultLocale();
-                } catch {
-                    return getDefaultLocale();
-                }
-            })(),
-            locales
-        )
-    );
+    service.getLocale().then(service.setLocale).catch(noop);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOCALE_REQUEST, async () => ({
-        locale: await getLocale(),
+        locale: await service.getLocale(),
     }));
 
-    return createCoreI18nService(locales, getLocale);
+    return service;
 };
 
 export type I18NService = ReturnType<typeof createI18nService>;
