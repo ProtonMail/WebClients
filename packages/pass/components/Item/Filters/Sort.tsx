@@ -62,11 +62,11 @@ export const SortFilter: FC<Props> = ({ value, onChange }) => {
                 shape="solid"
                 size="small"
                 title={c('Action').t`Sort vault items`}
-                className="text-sm text-semibold flex-auto grow-0 shrink-0"
+                className="text-sm text-semibold flex-auto grow-0"
             >
                 <span className="sr-only">{getSortOptionDetails(value).label}</span>
-                <Icon name={getSortOptionDetails(value).icon as IconName} className="inline mr-2" />
-                {getSortOptionDetails(value).shortLabel}
+                <Icon name={getSortOptionDetails(value).icon as IconName} className="inline mr-2 shrink-0" />
+                <span className="text-ellipsis">{getSortOptionDetails(value).shortLabel}</span>
             </DropdownButton>
 
             <Dropdown
