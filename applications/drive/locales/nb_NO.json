@@ -3688,12 +3688,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
       ],
-      "Free up some space or add more storage space.": [
-        "Frigjør litt plass eller legg til mer lagringsplass."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Frigjør litt plass eller kontakt administratoren din."
-      ],
       "from the version history?": [
         "fra versjonshistorikken?"
       ],
@@ -4372,12 +4366,6 @@
         "Du har ${ expiresInDays } dag igjen til å kreve din 500 MB velkomstbonus og ",
         "Du har ${ expiresInDays } dager igjen til å kreve din 500 MB velkomstbonus og "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd ${ spaceDisplayed }% av lagringsplassen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du har nådd 100% av din lagringskapasitet. Du kan ikke sende eller motta nye e-poster. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle endringer som ikke er lagret."
       ],
@@ -4549,9 +4537,6 @@
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
-      ],
-      "Audio file": [
-        "Lydfil"
       ],
       "Authenticator app": [
         "Autentiseringsapp"
@@ -4731,9 +4716,6 @@
       "I understand the risk": [
         "Jeg forstår risikoen"
       ],
-      "Image": [
-        "Bilde"
-      ],
       "Import all messages": [
         "Importer alle meldinger"
       ],
@@ -4902,9 +4884,6 @@
       "System information": [
         "Systeminformasjon"
       ],
-      "Text": [
-        "Tekst"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4919,9 +4898,6 @@
       ],
       "Type": [
         "Type"
-      ],
-      "Unknown file": [
-        "Ukjent fil"
       ],
       "Unlock drive": [
         "Lås opp stasjon"
@@ -4940,9 +4916,6 @@
       ],
       "Verification code": [
         "Verifiseringskode"
-      ],
-      "Video file": [
-        "Videofil"
       ],
       "What happened?": [
         "Hva skjedde?"
@@ -5035,9 +5008,6 @@
       "Trash": [
         "Papirkurv"
       ],
-      "Upgrade account": [
-        "Oppgrader kontoen"
-      ],
       "What’s this?": [
         "Hva er det der?"
       ]
@@ -5100,6 +5070,251 @@
       ],
       "Plain text": [
         "Ren tekst"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP audio/video-konteiner"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 audio/video-konteiner"
+      ],
+      "7-zip archive": [
+        "7-zip-arkiv"
+      ],
+      "AAC audio": [
+        "AAC-lyd"
+      ],
+      "AbiWord document": [
+        "AbiWord-dokument"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook format"
+      ],
+      "Android Package": [
+        "Android-pakke"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animert bærbar nettverksgrafikk"
+      ],
+      "Apple Installer Package": [
+        "Apple installasjonspakke"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
+      "Archive document": [
+        "Arkiver dokument"
+      ],
+      "Audio file": [
+        "Lydfil"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
+      ],
+      "AVI video": [
+        "AVI video"
+      ],
+      "Binary data": [
+        "Binære data"
+      ],
+      "Bourne shell script": [
+        "Bourne shell-skript"
+      ],
+      "BZip archive": [
+        "BZip-arkiv"
+      ],
+      "BZip2 archive": [
+        "BZip2-arkiv"
+      ],
+      "C-Shell script": [
+        "C-Shell-skript"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Kommaseparerte verdier (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Electronic publication (EPUB)"
+      ],
+      "Flash Video": [
+        "Flash video"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "GZip komprimert arkiv"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Hypertekst-preprosessor (personlig hjemmeside)"
+      ],
+      "iCalendar format": [
+        "iCalendar-format"
+      ],
+      "Icon format": [
+        "Ikonformat"
+      ],
+      "Image": [
+        "Bilde"
+      ],
+      "Java Archive (JAR)": [
+        "Java Archive (JAR)"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "JPEG-bilder"
+      ],
+      "JSON": [
+        "JSON"
+      ],
+      "JSON-LD": [
+        "JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "MP3-lyd"
+      ],
+      "MPEG transport stream": [
+        "MPEG transport stream"
+      ],
+      "MPEG Video": [
+        "MPEG Video"
+      ],
+      "MS Embedded OpenType fonts": [
+        "MS Embedded OpenType-skrifttyper"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
+      ],
+      "OGG": [
+        "OGG"
+      ],
+      "OGG audio": [
+        "OGG-lyd"
+      ],
+      "OGG video": [
+        "OGG video"
+      ],
+      "OpenDocument presentation document": [
+        "OpenDocument presentasjonsdokument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "OpenDocument regnearkdokument"
+      ],
+      "OpenDocument text document": [
+        "OpenDocument tekstdokument"
+      ],
+      "OpenType font": [
+        "OpenType-skrifttype"
+      ],
+      "Opus audio": [
+        "Opus-lyd"
+      ],
+      "Portable Network Graphics": [
+        "Bærbar nettverksgrafikk"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "RAR-arkiv"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rikt tekstformat (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Skalerbar vektorgrafikk (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "Small web format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape Archive (TAR)"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "TrueType Font": [
+        "TrueType skrifttype"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Ukjent fil"
+      ],
+      "Video file": [
+        "Videofil"
+      ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
+      "WEBM audio": [
+        "WEBM-lyd"
+      ],
+      "WEBM video": [
+        "WEBM-video"
+      ],
+      "WEBP image": [
+        "WEBP-bilde"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap Graphics"
+      ],
+      "XHTML": [
+        "XHTML"
+      ],
+      "XML": [
+        "XML"
+      ],
+      "XUL": [
+        "XUL"
+      ],
+      "ZIP archive": [
+        "ZIP-arkiv"
       ]
     },
     "Modal title": {
@@ -5532,6 +5747,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markert denne nøkkelen som foreldet. Nøkkelen kan kun bli brukt for bekreftelse av signatur."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ekstern nøkkel hentet automatisk fra keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ekstern nøkkel hentet automatisk via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denne nøkkelen brukes til å kryptere meldinger til denne kontakten."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler at du \"ikke stoler på\" denne nøkkelen."
@@ -6105,6 +6329,53 @@
       ],
       "Your current storage:": [
         "Din gjeldende lagringsplass:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app }-lagring"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% full"
+      ],
+      "contact your administrator": [
+        "kontakt administratoren din"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
+      ],
+      "upgrade for more storage": [
+        "oppgrader for mer lagringsplass"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Din ${ appStorage } er nesten full"
+      ],
+      "Your ${ appStorage } is full": [
+        "Din ${ appStorage } er full"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage }% full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er ${ percentage }% full. For å sende eller motta e-post, frigjør plas eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Lagringsplassen din er full"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
       ]
     },
     "Success": {

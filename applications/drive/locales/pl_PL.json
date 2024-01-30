@@ -3816,12 +3816,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Zwolnij część miejsca lub skontaktuj się ze swoim administratorem."
-      ],
       "from the version history?": [
         "z historii wersji?"
       ],
@@ -4512,12 +4506,6 @@
         "Masz ${ expiresInDays } dni, aby odebrać bonus powitalny 500 MB i ",
         "Masz ${ expiresInDays } dnia, aby odebrać bonus powitalny 500 MB i "
       ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Wykorzystano 100% dostępnej przestrzeni dyskowej. Nie możesz wysyłać ani odbierać wiadomości. ${ freeUpMessage } ${ upgradeLink }"
-      ],
       "You will lose all unsaved changes.": [
         "Stracisz wszystkie niezapisane zmiany."
       ],
@@ -4697,9 +4685,6 @@
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
-      ],
-      "Audio file": [
-        "Plik dźwiękowy"
       ],
       "Authenticator app": [
         "Aplikacja uwierzytelniająca"
@@ -4881,9 +4866,6 @@
       "I understand the risk": [
         "Rozumiem ryzyko"
       ],
-      "Image": [
-        "Obraz"
-      ],
       "Import all messages": [
         "Importuj wszystkie wiadomości"
       ],
@@ -5052,9 +5034,6 @@
       "System information": [
         "Informacje o systemie"
       ],
-      "Text": [
-        "Tekst"
-      ],
       "Theme": [
         "Motyw"
       ],
@@ -5069,9 +5048,6 @@
       ],
       "Type": [
         "Typ"
-      ],
-      "Unknown file": [
-        "Nieznany plik"
       ],
       "Unlock drive": [
         "Odblokuj dysk"
@@ -5090,9 +5066,6 @@
       ],
       "Verification code": [
         "Kod weryfikacyjny"
-      ],
-      "Video file": [
-        "Plik wideo"
       ],
       "What happened?": [
         "Co się stało?"
@@ -5185,9 +5158,6 @@
       "Trash": [
         "Kosz"
       ],
-      "Upgrade account": [
-        "Ulepsz konto"
-      ],
       "What’s this?": [
         "Co to jest?"
       ]
@@ -5260,6 +5230,251 @@
       ],
       "Plain text": [
         "Zwykły tekst"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Plik 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Plik 3GPP2"
+      ],
+      "7-zip archive": [
+        "Archiwum 7-Zip"
+      ],
+      "AAC audio": [
+        "Plik dźwiękowy AAC"
+      ],
+      "AbiWord document": [
+        "AbiWord"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Dokument PDF"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle"
+      ],
+      "Android Package": [
+        "Pakiet Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Obraz APNG"
+      ],
+      "Apple Installer Package": [
+        "Plik instalacyjny Apple"
+      ],
+      "Apple Keynote": [
+        "Apple Keynote"
+      ],
+      "Apple Numbers": [
+        "Apple Numbers"
+      ],
+      "Apple Pages": [
+        "Apple Pages"
+      ],
+      "Archive document": [
+        "Archiwum"
+      ],
+      "Audio file": [
+        "Plik dźwiękowy"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "Obraz AVIF"
+      ],
+      "AVI video": [
+        "Plik wideo AVI"
+      ],
+      "Binary data": [
+        "Plik binarny"
+      ],
+      "Bourne shell script": [
+        "Skrypt sh"
+      ],
+      "BZip archive": [
+        "Archiwum BZip"
+      ],
+      "BZip2 archive": [
+        "Archiwum BZip2"
+      ],
+      "C-Shell script": [
+        "Skrypt csh"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Arkusz CSS"
+      ],
+      "Comma-separated values (CSV)": [
+        "Plik CSV"
+      ],
+      "Electronic publication (EPUB)": [
+        "Plik EPUB"
+      ],
+      "Flash Video": [
+        "Plik wideo Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Obraz GIF"
+      ],
+      "GZip Compressed Archive": [
+        "Archiwum Gzip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Plik HTML"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Plik PHP"
+      ],
+      "iCalendar format": [
+        "iCalendar"
+      ],
+      "Icon format": [
+        "Obraz ICO"
+      ],
+      "Image": [
+        "Obraz"
+      ],
+      "Java Archive (JAR)": [
+        "Archiwum JAR"
+      ],
+      "JavaScript": [
+        "JavaScript"
+      ],
+      "JPEG images": [
+        "Obraz JPEG"
+      ],
+      "JSON": [
+        "Plik JSON"
+      ],
+      "JSON-LD": [
+        "Plik JSON-LD"
+      ],
+      "Microsoft Excel": [
+        "Microsoft Excel"
+      ],
+      "Microsoft Excel (OpenXML)": [
+        "Microsoft Excel (OpenXML)"
+      ],
+      "Microsoft PowerPoint": [
+        "Microsoft PowerPoint"
+      ],
+      "Microsoft PowerPoint (OpenXML)": [
+        "Microsoft PowerPoint (OpenXML)"
+      ],
+      "Microsoft Visio": [
+        "Microsoft Visio"
+      ],
+      "Microsoft Word": [
+        "Microsoft Word"
+      ],
+      "Microsoft Word (OpenXML)": [
+        "Microsoft Word (OpenXML)"
+      ],
+      "MP3 audio": [
+        "Plik dźwiękowy MP3"
+      ],
+      "MPEG transport stream": [
+        "Strumień MPEG"
+      ],
+      "MPEG Video": [
+        "Plik wideo MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Czcionka EOT"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Plik MIDI"
+      ],
+      "OGG": [
+        "Plik OGG"
+      ],
+      "OGG audio": [
+        "Plik dźwiękowy OGG"
+      ],
+      "OGG video": [
+        "Plik wideo OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Prezentacja OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Arkusz kalkulacyjny OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Dokument OpenDocument"
+      ],
+      "OpenType font": [
+        "Czcionka OpenType"
+      ],
+      "Opus audio": [
+        "Plik dźwiękowy Opus"
+      ],
+      "Portable Network Graphics": [
+        "Obraz PNG"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "RAR archive": [
+        "Archiwum RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "Tekst RTF"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Obraz SVG"
+      ],
+      "Small web format (SWF)": [
+        "Plik SWF"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Obraz TIFF"
+      ],
+      "Tape Archive (TAR)": [
+        "Archiwum TAR"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "TrueType Font": [
+        "Czcionka TrueType"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
+      "Unknown file": [
+        "Nieznany plik"
+      ],
+      "Video file": [
+        "Plik wideo"
+      ],
+      "Waveform Audio Format": [
+        "Plik dźwiękowy WAV"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Czcionka WOFF"
+      ],
+      "WEBM audio": [
+        "Plik dźwiękowy WEBM"
+      ],
+      "WEBM video": [
+        "Plik wideo WEBM"
+      ],
+      "WEBP image": [
+        "Obraz WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Obraz BMP"
+      ],
+      "XHTML": [
+        "Plik XHTML"
+      ],
+      "XML": [
+        "Plik XML"
+      ],
+      "XUL": [
+        "Plik XUL"
+      ],
+      "ZIP archive": [
+        "Archiwum ZIP"
       ]
     },
     "Modal title": {
@@ -5732,6 +5947,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "Adres ${ emailAddress } oznaczył klucz jako przestarzały. Ten klucz może zostać użyty tylko do weryfikacji podpisu."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Zewnętrzny klucz został automatycznie pobrany z keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Zewnętrzny klucz został automatycznie pobrany przez WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Ten klucz jest używany do szyfrowania wiadomości dla tego kontaktu"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Zalecamy przestać ufać temu kluczowi."
@@ -6345,6 +6569,23 @@
       ],
       "Your current storage:": [
         "Obecna przestrzeń dyskowa:"
+      ]
+    },
+    "storage_split: info": {
+      "contact your administrator": [
+        "skontaktuj się z administratorem"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
+      ],
+      "upgrade for more storage": [
+        "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Your storage is full": [
+        "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ upgrade }."
       ]
     },
     "Success": {
