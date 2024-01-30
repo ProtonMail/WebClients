@@ -29,6 +29,21 @@
       "Back": [
         "Tilbake"
       ],
+      "Bulk delete items from trash": [
+        "Masseslett elementer fra papirkurven"
+      ],
+      "Bulk move items to another vault": [
+        "Masseflytt elementer til et annet hvelv"
+      ],
+      "Bulk move items to trash": [
+        "Masseflytt elementer til papirkurven"
+      ],
+      "Bulk restore items from trash": [
+        "Massegjenopprett elementer fra papirkurven"
+      ],
+      "Bulk select items": [
+        "Massevelg elementer"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Slett hvelv"
       ],
+      "Deselect": [
+        "Fjern markeringen"
+      ],
       "Discard": [
         "Forkast"
       ],
       "Dismiss": [
         "Avvis"
+      ],
+      "Download this CSV template": [
+        "Last ned denne CSV-malen"
       ],
       "Edit": [
         "Rediger"
@@ -449,17 +470,29 @@
       "Failed resending invite.": [
         "Sending av invitering på nytt mislyktes."
       ],
+      "Failed to delete selected items": [
+        "Kunne ikke slette valgte elementer"
+      ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brukerens tilgang."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Kunne ikke flytte elementer"
+      ],
+      "Failed to move items to trash": [
+        "Kunne ikke flytte elementer til papirkurven"
+      ],
       "Failed to pin item": [
         "Kunne ikke feste element"
       ],
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brukerens tilgang."
+      ],
+      "Failed to restore items from trash": [
+        "Kunne ikke gjenopprette elementer fra papirkurven"
       ],
       "Failed to transfer this vault's ownership.": [
         "Kunne ikke overføre hvelvets eierskap."
@@ -664,11 +697,17 @@
       "Admin": [
         "Administrator"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" flyttet"
+      ],
+      "All items successfully moved": [
+        "Alle elementer er flyttet"
       ],
       "All trashed items permanently deleted": [
         "Alle papirkurvelementer slettet permanent"
@@ -733,6 +772,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Eksport krypteres ved hjelp av PGP og krever en sterk passfrase."
       ],
+      "Fill in the CSV with your data": [
+        "Fyll ut CSV-filen med dataene dine"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil :"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
       ],
@@ -744,6 +789,9 @@
       ],
       "Import in progress:": [
         "Import pågår:"
+      ],
+      "Import the CSV file below.": [
+        "Importer CSV-filen nedenfor."
       ],
       "Imported ${ payload.total } item": [
         "Importerte ${ payload.total } element",
@@ -831,6 +879,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Flytter elementer"
+      ],
+      "Moving items to trash": [
+        "Flytter elementer til papirkurven"
+      ],
       "Never": [
         "Aldri"
       ],
@@ -848,6 +902,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Passord eldre enn 1 dag slettes automatisk fra historikken."
+      ],
+      "Permanently deleting selected items": [
+        "Sletter valgte elementer permanent"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-koden er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }."
@@ -882,6 +939,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
       ],
+      "Restoring items from trash": [
+        "Gjenoppretter elementer fra papirkurven"
+      ],
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
       ],
@@ -890,6 +950,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Velg hvor du ønsker det/de importerte hvelvet(ene) skal lagres."
+      ],
+      "Selected items permanently deleted": [
+        "Valgte elementer permanent slettet"
+      ],
+      "Selected items successfully moved to trash": [
+        "Valgte elementer er flyttet til papirkurven"
+      ],
+      "Selected items successfully restored from trash": [
+        "Valgte elementer er gjenopprettet fra papirkurven"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
@@ -1140,6 +1209,9 @@
       "Forwards to": [
         "Videresendes til"
       ],
+      "Generic CSV": [
+        "Generisk CSV"
+      ],
       "Grant": [
         "Gi"
       ],
@@ -1388,6 +1460,15 @@
         "Velkommen til ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Du valgte ${ semiboldText } i dette hvelvet"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommaer"
@@ -1395,7 +1476,7 @@
       "Hyphens": [
         "Bindestreker"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Minneverdig passord"
       ],
       "Numbers": [
@@ -1551,6 +1632,9 @@
       ],
       "Move all items ?": [
         "Flytte alle elementer?"
+      ],
+      "No items selected": [
+        "Ingen elementer valgt"
       ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"

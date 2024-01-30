@@ -29,6 +29,21 @@
       "Back": [
         "Wstecz"
       ],
+      "Bulk delete items from trash": [
+        "Usuń elementy z Kosza"
+      ],
+      "Bulk move items to another vault": [
+        "Przenieś elementy do innego sejfu"
+      ],
+      "Bulk move items to trash": [
+        "Przenieś elementy do Kosza"
+      ],
+      "Bulk restore items from trash": [
+        "Przywróć elementy z Kosza"
+      ],
+      "Bulk select items": [
+        "Zaznacz elementy"
+      ],
       "Cancel": [
         "Anuluj"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Usuń sejf"
       ],
+      "Deselect": [
+        "Odznacz"
+      ],
       "Discard": [
         "Odrzuć"
       ],
       "Dismiss": [
         "Odrzuć"
+      ],
+      "Download this CSV template": [
+        "Pobierz szablon pliku CSV"
       ],
       "Edit": [
         "Edytuj"
@@ -451,17 +472,29 @@
       "Failed resending invite.": [
         "Wystąpił błąd podczas wysyłania zaproszenia."
       ],
+      "Failed to delete selected items": [
+        "Nie udało się przenieść zaznaczonych elementów"
+      ],
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
+      "Failed to move items": [
+        "Nie udało się przenieść elementów"
+      ],
+      "Failed to move items to trash": [
+        "Nie udało się przenieść elementów do Kosza"
+      ],
       "Failed to pin item": [
         "Nie udało się przypiąć elementu"
       ],
       "Failed to remove user's access.": [
         "Nie udało się usunąć uprawień użytkownika."
+      ],
+      "Failed to restore items from trash": [
+        "Nie udało się przywrócić elementów z Kosza"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nie udało się zmienić właściciela sejfu."
@@ -684,11 +717,17 @@
       "Admin": [
         "Administrator"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" został przeniesiony do Kosza. Spowoduje to zatrzymanie przekierowywania wiadomości"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Wszystkie elementy z sejfu \"${ payload.content.name }\" zostały przeniesione"
+      ],
+      "All items successfully moved": [
+        "Wszystkie elementy zostały przeniesione"
       ],
       "All trashed items permanently deleted": [
         "Wszystkie usunięte elementy zostały trwale usunięte"
@@ -753,6 +792,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Plik eksportu danych jest zaszyfrowany za pomocą PGP i wymaga silnego hasła."
       ],
+      "Fill in the CSV with your data": [
+        "Wypełnij plik CSV danymi"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Wykonaj te kroki, aby zaimportować dane za pomocą ogólnego pliku CSV:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
@@ -764,6 +809,9 @@
       ],
       "Import in progress:": [
         "Importowanie jest w toku:"
+      ],
+      "Import the CSV file below.": [
+        "Importuj poniższy plik CSV"
       ],
       "Imported ${ payload.total } item": [
         "Zaimportowano ${ payload.total } element",
@@ -855,6 +903,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Przenoszenie elementów"
+      ],
+      "Moving items to trash": [
+        "Przenoszenie elementów do Kosza"
+      ],
       "Never": [
         "Nigdy"
       ],
@@ -872,6 +926,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Hasła starsze niż dzień zostaną automatycznie usunięte z historii."
+      ],
+      "Permanently deleting selected items": [
+        "Trwałe usuwanie zaznaczonych elementów"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kod PIN został zapisany. Użyj go, aby odblokować ${ PASS_APP_NAME }"
@@ -906,6 +963,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
       ],
+      "Restoring items from trash": [
+        "Przywracanie elementów z Kosza"
+      ],
       "Restoring trashed items...": [
         "Przywracanie usuniętych elementów..."
       ],
@@ -914,6 +974,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
+      ],
+      "Selected items permanently deleted": [
+        "Zaznaczone elementy zostały trwale usunięte"
+      ],
+      "Selected items successfully moved to trash": [
+        "Zaznaczone elementy zostały przeniesione do Kosza"
+      ],
+      "Selected items successfully restored from trash": [
+        "Zaznaczone elementy zostały przywrócone z Kosza"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -1172,6 +1241,9 @@
       "Forwards to": [
         "Przekaż do"
       ],
+      "Generic CSV": [
+        "Ogólny plik CSV"
+      ],
       "Grant": [
         "Przyznaj"
       ],
@@ -1417,6 +1489,17 @@
         "Witaj w ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementy",
+        "${ count } elementów",
+        "${ count } elementów"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Zaznaczono ${ semiboldText } w sejfie"
+      ]
+    },
     "Option": {
       "Commas": [
         "Przecinki"
@@ -1424,7 +1507,7 @@
       "Hyphens": [
         "Myślniki"
       ],
-      "Memorizable Password": [
+      "Memorable Password": [
         "Hasło wyrazowe"
       ],
       "Numbers": [
@@ -1582,6 +1665,9 @@
       ],
       "Move all items ?": [
         "Przenieść wszystkie elementy?"
+      ],
+      "No items selected": [
+        "Nie zaznaczono elementów"
       ],
       "Our welcome gift to you": [
         "Nasz prezent powitalny"

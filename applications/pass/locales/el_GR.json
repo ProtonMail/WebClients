@@ -29,6 +29,21 @@
       "Back": [
         "Πίσω"
       ],
+      "Bulk delete items from trash": [
+        "Μαζική διαγραφή αντικειμένων από τα διαγραμμένα"
+      ],
+      "Bulk move items to another vault": [
+        "Μαζική μετακίνηση στοιχείων σε άλλη κρύπτη"
+      ],
+      "Bulk move items to trash": [
+        "Μαζική μετακίνηση αντικειμένων στα διαγραμμένα"
+      ],
+      "Bulk restore items from trash": [
+        "Μαζική επαναφορά αντικειμένων από τα διαγραμμένα"
+      ],
+      "Bulk select items": [
+        "Μαζική επιλογή στοιχείων"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Διαγραφή κρύπτης"
       ],
+      "Deselect": [
+        "Αποεπιλογή"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Download this CSV template": [
+        "Κατεβάστε αυτό το πρότυπο CSV"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -435,7 +456,7 @@
         "Άδειο αρχείο CSV"
       ],
       "Emptying trash failed": [
-        "Το άδειασμα του κάδου απορριμμάτων απέτυχε"
+        "Το άδειασμα των διαγραμμένων απέτυχε"
       ],
       "Encrypted JSON not supported": [
         "Το κρυπτογραφημένο JSON δεν υποστηρίζεται"
@@ -449,17 +470,29 @@
       "Failed resending invite.": [
         "Απέτυχε η εκ νέου αποστολή πρόσκλησης."
       ],
+      "Failed to delete selected items": [
+        "Αποτυχία διαγραφής επιλεγμένων στοιχείων."
+      ],
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Αποτυχία μετακίνησης όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Failed to move items": [
+        "Αποτυχία μετακίνησης στοιχείων"
+      ],
+      "Failed to move items to trash": [
+        "Αποτυχία μετακίνησης στοιχείων στα διαγραμμένα"
+      ],
       "Failed to pin item": [
         "Αποτυχία καρφιτσώματος στοιχείου"
       ],
       "Failed to remove user's access.": [
         "Αποτυχία κατάργησης πρόσβασης χρήστη."
+      ],
+      "Failed to restore items from trash": [
+        "Αποτυχία επαναφοράς στοιχείων από τα διαγραμμένα"
       ],
       "Failed to transfer this vault's ownership.": [
         "Αποτυχία μεταβίβασης της ιδιοκτησίας αυτής της κρύπτης."
@@ -537,7 +570,7 @@
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
       ],
       "Trashing item failed": [
-        "Η μετακίνηση στοιχείου στον κάδο απορριμάτων απέτυχε"
+        "Η μετακίνηση στοιχείου στα διαγραμμένα απέτυχε"
       ],
       "Unable to boot": [
         "Δεν είναι δυνατή η εκκίνηση"
@@ -664,17 +697,23 @@
       "Admin": [
         "Διαχειριστής"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στον κάδο απορριμμάτων - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
+        "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στα διαγραμμένα - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
       ],
+      "All items successfully moved": [
+        "Όλα τα στοιχεία μετακινήθηκαν επιτυχώς"
+      ],
       "All trashed items permanently deleted": [
-        "Όλα τα απορριφθέντα στοιχεία διαγράφηκαν οριστικά"
+        "Όλα τα διαγραμμένα στοιχεία διαγράφηκαν οριστικά"
       ],
       "All trashed items successfully restored": [
-        "Όλα τα απορριφθέντα στοιχεία αποκαταστάθηκαν με επιτυχία"
+        "Όλα τα διαγραμμένα στοιχεία αποκαταστάθηκαν με επιτυχία"
       ],
       "An item previously shared with you was removed": [
         "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε"
@@ -725,13 +764,19 @@
         "Πρόγραμμα επεξεργασίας"
       ],
       "Emptying trash...": [
-        "Άδειασμα κάδου απορριμάτων..."
+        "Άδειασμα διαγραμμένων..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Η εξαγωγή κρυπτογραφείται χρησιμοποιώντας PGP και απαιτεί μια ισχυρή φράση πρόσβασης."
+      ],
+      "Fill in the CSV with your data": [
+        "Συμπληρώστε το CSV με τα δεδομένα σας"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Ακολουθήστε αυτά τα βήματα για να εισαγάγετε τα δεδομένα σας με ένα γενικό αρχείο CSV:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
@@ -744,6 +789,9 @@
       ],
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
+      ],
+      "Import the CSV file below.": [
+        "Εισαγάγετε το παρακάτω αρχείο CSV."
       ],
       "Imported ${ payload.total } item": [
         "Εισαγόμενο ${ payload.total } στοιχείο",
@@ -831,6 +879,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Μετακίνηση στοιχείων"
+      ],
+      "Moving items to trash": [
+        "Μετακίνηση στοιχείων στα διαγραμμένα"
+      ],
       "Never": [
         "Ποτέ"
       ],
@@ -848,6 +902,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Permanently deleting selected items": [
+        "Οριστική διαγραφή επιλεγμένων στοιχείων"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Ο κωδικός PIN καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
@@ -882,14 +939,26 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
       ],
+      "Restoring items from trash": [
+        "Επαναφορά στοιχείων από τα διαγραμμένα"
+      ],
       "Restoring trashed items...": [
-        "Η επαναφορά των απορριφθέντων στοιχείων..."
+        "Επαναφορά διαγραμμένων στοιχείων..."
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Επιλέξτε πού θέλετε να αποθηκεύονται η/οι κρύπτη(ες) που έχετε εισαγάγει."
+      ],
+      "Selected items permanently deleted": [
+        "Τα επιλεγμένα στοιχεία διαγράφηκαν οριστικά"
+      ],
+      "Selected items successfully moved to trash": [
+        "Τα επιλεγμένα στοιχεία μετακινήθηκαν με επιτυχία στα διαγραμμένα"
+      ],
+      "Selected items successfully restored from trash": [
+        "Τα επιλεγμένα στοιχεία αποκαταστάθηκαν με επιτυχία από τα διαγραμμένα"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -1123,7 +1192,7 @@
         "Δημιουργήθηκε"
       ],
       "Empty trash": [
-        "Άδειασε τον κάδο απορριμμάτων"
+        "Άδειασμα Διαγραμμένων"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Κρυπτογραφήστε το ${ PASS_APP_NAME } αρχείο εξαγωγής δεδομένων σας"
@@ -1139,6 +1208,9 @@
       ],
       "Forwards to": [
         "Προώθηση σε"
+      ],
+      "Generic CSV": [
+        "Γενικό CSV"
       ],
       "Grant": [
         "Παραχώρηση"
@@ -1324,7 +1396,7 @@
         "TOTP"
       ],
       "Trash": [
-        "Κάδος Απορριμμάτων"
+        "Διαγραμμένα"
       ],
       "Type": [
         "Τύπος"
@@ -1388,6 +1460,15 @@
         "Καλώς ήρθατε στο ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } στοιχείο",
+        "${ count } στοιχεία"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη"
+      ]
+    },
     "Option": {
       "Commas": [
         "Κόμματα"
@@ -1395,8 +1476,8 @@
       "Hyphens": [
         "Παύλες"
       ],
-      "Memorizable Password": [
-        "Απομνημόνευτος Κωδικός Πρόσβασης"
+      "Memorable Password": [
+        "Αξιομνημόνευτος Κωδικός Πρόσβασης"
       ],
       "Numbers": [
         "Αριθμοί"
@@ -1552,6 +1633,9 @@
       "Move all items ?": [
         "Μετακίνηση όλων των στοιχείων ;"
       ],
+      "No items selected": [
+        "Δεν επιλέχθηκαν αντικείμενα"
+      ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
       ],
@@ -1580,7 +1664,7 @@
         "Μεταβίβαση κυριότητας"
       ],
       "Trash empty": [
-        "Ο κάδος απορριμμάτων είναι άδειος"
+        "Τα Διαγραμμένα είναι άδεια"
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
@@ -1663,7 +1747,7 @@
         "Δεν υπάρχουν στοιχεία"
       ],
       "No items in trash matching": [
-        "Δεν υπάρχουν στοιχεία στον κάδο απορριμάτων που να ταιριάζουν"
+        "Δεν υπάρχουν στοιχεία στα διαγραμμένα που να ταιριάζουν"
       ],
       "No items matching": [
         "Δεν υπάρχουν στοιχεία που να ταιριάζουν"

@@ -29,6 +29,21 @@
       "Back": [
         "Înapoi"
       ],
+      "Bulk delete items from trash": [
+        "Ștergere grup de articole din gunoi"
+      ],
+      "Bulk move items to another vault": [
+        "Mutare grup de articole în alt seif"
+      ],
+      "Bulk move items to trash": [
+        "Mutare grup de articole în gunoi"
+      ],
+      "Bulk restore items from trash": [
+        "Restaurare grup de articole din gunoi"
+      ],
+      "Bulk select items": [
+        "Selectare grup de articole"
+      ],
       "Cancel": [
         "Anulare"
       ],
@@ -119,11 +134,17 @@
       "Delete vault": [
         "Ștergere seif"
       ],
+      "Deselect": [
+        "Deselectare"
+      ],
       "Discard": [
         "Renunțare"
       ],
       "Dismiss": [
         "Renunțare"
+      ],
+      "Download this CSV template": [
+        "Descărcați acest șablon de fișier CSV"
       ],
       "Edit": [
         "Editare"
@@ -450,17 +471,29 @@
       "Failed resending invite.": [
         "Eșuare retrimitere invitație."
       ],
+      "Failed to delete selected items": [
+        "Ștergerea articolelor selectate a eșuat."
+      ],
       "Failed to edit user's access.": [
         "Eșuare editare acces utilizator."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Eșuare mutare toate articolele din „${ payload.content.name }”."
       ],
+      "Failed to move items": [
+        "Mutarea articolelor a eșuat."
+      ],
+      "Failed to move items to trash": [
+        "Mutarea articolelor în gunoi a eșuat."
+      ],
       "Failed to pin item": [
         "Fixarea articolului a eșuat."
       ],
       "Failed to remove user's access.": [
         "Eșuare eliminare acces utilizator."
+      ],
+      "Failed to restore items from trash": [
+        "Restaurarea articolelor din gunoi a eșuat."
       ],
       "Failed to transfer this vault's ownership.": [
         "Eșuare transfer proprietar pentru acest seif."
@@ -674,11 +707,17 @@
       "Admin": [
         "Administrator"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "S-au mutat toate articolele din „${ payload.content.name }”."
+      ],
+      "All items successfully moved": [
+        "S-au mutat toate articolele."
       ],
       "All trashed items permanently deleted": [
         "Toate articolele din gunoi au fost șterse permanent."
@@ -743,6 +782,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Exportarea este criptată folosind PGP și necesită o frază complexă."
       ],
+      "Fill in the CSV with your data": [
+        "Completați fișierul CSV cu datele necesare."
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Urmați acești pași pentru a importa datele dintr-un fișier CSV generic:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
@@ -755,10 +800,13 @@
       "Import in progress:": [
         "Importare în derulare:"
       ],
+      "Import the CSV file below.": [
+        "Importați mai jos fișierul CSV."
+      ],
       "Imported ${ payload.total } item": [
         "S-a importat ${ payload.total } element.",
-        "S-au importat ${ payload.total } elemente.",
-        "S-au importat ${ payload.total } de elemente."
+        "S-au importat ${ payload.total } articole.",
+        "S-au importat ${ payload.total } de articole."
       ],
       "Imported on ${ date }": [
         "Importat la ${ date }"
@@ -789,8 +837,8 @@
       ],
       "item": [
         "element",
-        "elemente",
-        "de elemente"
+        "articole",
+        "de articole"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Articolul „${ payload.item.data.metadata.name }” a fost creat."
@@ -843,6 +891,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving items": [
+        "Se mută articolele."
+      ],
+      "Moving items to trash": [
+        "Se mută articolele în gunoi."
+      ],
       "Never": [
         "Niciodată"
       ],
@@ -860,6 +914,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Parolele mai vechi de o zi sunt șterse automat din istoric."
+      ],
+      "Permanently deleting selected items": [
+        "Articolele selectate se șterg permanent."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S-a reușit înregistrarea codului PIN. Folosiți-l pentru a debloca ${ PASS_APP_NAME }."
@@ -894,6 +951,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
+      "Restoring items from trash": [
+        "Se restaurează articolele din gunoi."
+      ],
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
       ],
@@ -902,6 +962,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selectați unde doriți să fie salvate seifurile importate."
+      ],
+      "Selected items permanently deleted": [
+        "Articolele selectate s-au șters permanent."
+      ],
+      "Selected items successfully moved to trash": [
+        "Articolele selectate s-au mutat în gunoi."
+      ],
+      "Selected items successfully restored from trash": [
+        "Articolele selectate s-au restaurat din gunoi."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
@@ -1156,6 +1225,9 @@
       "Forwards to": [
         "Redirecționare către"
       ],
+      "Generic CSV": [
+        "CSV generic"
+      ],
       "Grant": [
         "Permitere"
       ],
@@ -1331,10 +1403,10 @@
         "Astăzi"
       ],
       "Total imported items : ": [
-        "Total elemente importate : "
+        "Total articole importate : "
       ],
       "Total items : ": [
-        "Total elemente: "
+        "Total articole: "
       ],
       "TOTP": [
         "TOTP"
@@ -1404,6 +1476,16 @@
         "Bun venit la ${ brandNameJSX }"
       ]
     },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } articole",
+        "${ count } de articole"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Articole selectate în acest seif: ${ semiboldText }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Virgule"
@@ -1411,8 +1493,8 @@
       "Hyphens": [
         "Cratime"
       ],
-      "Memorizable Password": [
-        "Parole memorabile"
+      "Memorable Password": [
+        "Parole ușor de reținut"
       ],
       "Numbers": [
         "Cifre"
@@ -1568,6 +1650,9 @@
       ],
       "Move all items ?": [
         "Se mută toate articolele?"
+      ],
+      "No items selected": [
+        "Nu sunt selectate articole"
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
