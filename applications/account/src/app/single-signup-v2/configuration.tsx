@@ -13,6 +13,8 @@ import {
     getFamilyPlan,
     getMailPlan,
     getNewVisionaryPlan,
+    getPassBusinessPlan,
+    getPassEssentialsPlan,
     getPassPlan,
     getVPNPlan,
 } from '@proton/components/containers/payments/features/plan';
@@ -59,6 +61,26 @@ export const getSummaryPlan = ({
             ...shortPlan,
             plan,
             features: getCustomPassFeatures(),
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.PASS_PRO) {
+        const shortPlan = getPassEssentialsPlan(plan);
+        return {
+            logo: <PassLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.PASS_BUSINESS) {
+        const shortPlan = getPassBusinessPlan(plan);
+        return {
+            logo: <PassLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+            features: [],
         };
     }
 

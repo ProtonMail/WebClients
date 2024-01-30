@@ -58,6 +58,7 @@ const defaultPlanCards: PlanCard[] = [
 it('should render', () => {
     const { container } = render(
         <PlanCardSelector
+            subscriptionDataCycleMapping={{}}
             cycle={CYCLE.MONTHLY}
             currency="CHF"
             plan={PLANS.PASS_PLUS}
@@ -73,6 +74,7 @@ it('should render', () => {
 it('should display the discount price comparing against the monthly price', () => {
     const { container } = render(
         <PlanCardSelector
+            subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
             plan={PLANS.PASS_PLUS}
@@ -102,6 +104,7 @@ it('should display the discount price against the same cycle if it is discounted
 
     const { container } = render(
         <PlanCardSelector
+            subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
             plan={PLANS.PASS_PLUS}

@@ -4,7 +4,7 @@
 	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
 }
 
-.bg-transparent {
+.bg-transparent.bg-transparent {
 	background-color: transparent;
 }
 
@@ -13,6 +13,10 @@
 }
 
 .signup-v2 {
+	&-wrapper {
+		transition: background 0.5s ease;
+	}
+
 	&-bg {
 		@include media('>xsmall') {
 			background: radial-gradient(38.47% 29.48% at 50% -3.24%, var(--background-norm) 0%, transparent 100%),
@@ -58,9 +62,22 @@
 		}
 	}
 
+	&-bg--b2b {
+		.right-summary {
+			--summary-gradient-border-color: 74 66 108;
+		}
+
+		.right-summary--gradient {
+			background: linear-gradient(180deg, #2a2247 0%, rgb(42 34 71 / 0.3) 100%);
+		}
+
+		@include media('>xsmall') {
+			background: linear-gradient(180deg, #392982 0%, transparent 40%);
+		}
+	}
+
 	&-offer-banner {
-		background: linear-gradient(81.4deg, var(--promotion-background-start) 0%, var(--promotion-background-end) 100%),
-			var(--background-norm);
+		background: rgb(109 74 255 / 0.3);
 	}
 }
 
@@ -69,10 +86,17 @@
 
 	.large-font {
 		font-size: rem(40);
-		color: var(--optional-promotion-text-color);
 
 		@include media('<=small') {
 			font-size: rem(24);
 		}
+	}
+}
+
+.signup-v2-account-gradient {
+	background: linear-gradient(68.66deg, #e8e2ff 1.3%, #f7f5ff 50%);
+
+	&.ui-prominent {
+		background: linear-gradient(62.88deg, #32226f 29.93%, #1d1738 100%);
 	}
 }

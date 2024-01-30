@@ -128,6 +128,19 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/storefront.theme.css',
+        files: [
+            {
+                path: './themes/src/storefront/standard-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/storefront/prominent-base.css',
+                type: 'dark',
+            },
+        ],
+    },
 ];
 
 export default config;

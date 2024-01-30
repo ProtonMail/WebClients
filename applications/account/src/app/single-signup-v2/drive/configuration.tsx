@@ -9,7 +9,7 @@ import { getVPNConnections } from '@proton/components/containers/payments/featur
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
@@ -64,8 +64,10 @@ export const getDriveConfiguration = ({
     vpnServersCountData,
     hideFreePlan,
     freePlan,
+    audience,
 }: {
     hideFreePlan: boolean;
+    audience: Audience.B2B | Audience.B2C;
     plansMap?: PlansMap;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -115,9 +117,10 @@ export const getDriveConfiguration = ({
     return {
         logo,
         title,
+        audience,
         features,
         benefits,
-        planCards,
+        planCards: { [Audience.B2C]: planCards, [Audience.B2B]: [] },
         signupTypes: [SignupType.Email, SignupType.Username],
         generateMnemonic: false,
         onboarding: {

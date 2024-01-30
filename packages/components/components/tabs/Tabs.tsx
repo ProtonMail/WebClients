@@ -170,7 +170,7 @@ export const Tabs = ({
             {gap}
             <div
                 id={key}
-                className={clsx(['tabs-tabcontent pt-4', contentClassName])}
+                className={clsx('tabs-tabcontent', content ? 'pt-4' : '', contentClassName)}
                 role="tabpanel"
                 aria-labelledby={label}
             >

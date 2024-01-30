@@ -510,7 +510,7 @@ export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): T
 
     return {
         discount,
-        discountPercentage: Math.round((discount / totalNoDiscount) * 100),
+        discountPercentage: discount > 0 ? Math.round((discount / totalNoDiscount) * 100) : 0,
         total,
         totalPerMonth,
         totalNoDiscountPerMonth: totalNoDiscount / cycle,

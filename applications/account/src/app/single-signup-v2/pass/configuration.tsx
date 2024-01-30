@@ -10,9 +10,11 @@ import {
     getHideMyEmailAliases,
     getItems,
     getLoginsAndNotes,
+    getUnlimitedVaultSharingText,
     getVaultSharing,
     getVaultSharingText,
 } from '@proton/components/containers/payments/features/pass';
+import { getPassBusinessPlan, getPassEssentialsPlan } from '@proton/components/containers/payments/features/plan';
 import {
     getAdvancedVPNCustomizations,
     getNetShield,
@@ -26,23 +28,80 @@ import {
     PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     PLANS,
+    PLAN_NAMES,
+    SSO_PATHS,
     VPN_APP_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import onboardingFamilyPlan from '@proton/styles/assets/img/onboarding/familyPlan.svg';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { SignupType } from '../../signup/interfaces';
 import Benefits, { BenefitItem } from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
-import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
-import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
+import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
+import LetsTalkSubsection from '../LetsTalkSubsection';
+import { planCardFeatureProps } from '../PlanCardSelector';
+import {
+    getBasedString,
+    getBenefits,
+    getGenericBenefits,
+    getGenericFeatures,
+    getJoinString,
+} from '../configuration/helper';
 import { SignupConfiguration, SignupMode } from '../interface';
+import setupAccount from '../mail/account-setup.svg';
 import CustomStep from './CustomStep';
 import { getInfo } from './InstallExtensionStep';
-import setupPass from './onboarding.svg';
 import recoveryKit from './recovery-kit.svg';
+
+export const getPassB2BBenefits = (isPaidPass: boolean): BenefitItem[] => {
+    return [
+        {
+            key: 1,
+            text: c('pass_signup_2023: Info').t`Open source and audited`,
+            icon: {
+                name: 'magnifier' as const,
+            },
+        },
+        ...(isPaidPass
+            ? [
+                  {
+                      key: 2,
+                      text: getUnlimitedVaultSharingText(),
+                      icon: {
+                          name: 'vault' as const,
+                      },
+                  },
+                  {
+                      key: 3,
+                      text: getBasedString(),
+                      icon: {
+                          name: 'shield' as const,
+                      },
+                  },
+              ]
+            : [
+                  {
+                      key: 4,
+                      text: c('pass_signup_2023: Info').t`End-to-end encrypted notes`,
+                      icon: {
+                          name: 'lock' as const,
+                      },
+                  },
+              ]),
+        {
+            key: 5,
+            text: c('pass_signup_2023: Info').t`From the team that knows encryption`,
+            icon: {
+                name: 'lock' as const,
+            },
+        },
+    ].filter(isTruthy);
+};
 
 export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
     return [
@@ -101,47 +160,110 @@ export const getCustomPassFeatures = () => {
 
 export const getPassConfiguration = ({
     mode,
+    audience,
     hideFreePlan,
     isLargeViewport,
     vpnServersCountData,
     isPaidPass,
     isPaidPassVPNBundle,
+    plansMap,
 }: {
     mode: SignupMode;
+    audience: Audience.B2B | Audience.B2C;
     hideFreePlan: boolean;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
+    plansMap?: PlansMap;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
     const title = c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`;
+    const b2bTitle = c('pass_signup_2023: Info').t`Get the security and features your business needs`;
     const inviteTitle = c('pass_signup_2023: Info').t`You have been invited to join ${PASS_APP_NAME}`;
     const onboardingTitle = c('pass_signup_2023: Info').t`Unlock ${PASS_APP_NAME} premium features by upgrading`;
 
     const features = getGenericFeatures(isLargeViewport);
+    const planTitle = plansMap?.[PLANS.PASS_PRO]?.Title || PLAN_NAMES[PLANS.PASS_PRO];
 
-    const planCards: PlanCard[] = [
-        !hideFreePlan && {
-            plan: PLANS.FREE,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreePassFeatures()} />,
-            type: 'standard' as const,
-            guarantee: false,
-        },
-        {
-            plan: PLANS.PASS_PLUS,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
-            type: 'best' as const,
-            guarantee: true,
-        },
-        {
-            plan: PLANS.BUNDLE,
-            subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
-            type: 'standard' as const,
-            guarantee: true,
-        },
-    ].filter(isTruthy);
+    const planCards: SignupConfiguration['planCards'] = {
+        [Audience.B2B]: [
+            {
+                plan: PLANS.PASS_PRO,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('pass_signup_2023: Info')
+                            .t`Essential protection and secure collaboration for unlimited users`}
+                        features={
+                            <PlanCardFeatureList
+                                {...planCardFeatureProps}
+                                features={getPassEssentialsPlan(plansMap?.[PLANS.PASS_PRO]).features}
+                            />
+                        }
+                    />
+                ),
+                type: 'standard' as const,
+                guarantee: false,
+            },
+            {
+                plan: PLANS.PASS_BUSINESS,
+                subsection: (
+                    <FeatureListPlanCardSubSection
+                        description={c('pass_signup_2023: Info')
+                            .t`Advanced protection that goes beyond industry standards`}
+                        features={
+                            <div>
+                                <div
+                                    className={clsx(
+                                        planCardFeatureProps.className,
+                                        planCardFeatureProps.itemClassName,
+                                        'text-left'
+                                    )}
+                                >
+                                    {c('pass_signup_2023: Info').t`Everything from ${planTitle}, plus...`}
+                                </div>
+                                <PlanCardFeatureList
+                                    {...planCardFeatureProps}
+                                    tooltip={true}
+                                    features={getPassBusinessPlan(plansMap?.[PLANS.PASS_PRO]).features}
+                                />
+                            </div>
+                        }
+                    />
+                ),
+                type: 'best' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.ENTERPRISE,
+                subsection: <LetsTalkSubsection vpnServersCountData={vpnServersCountData} />,
+                type: 'standard' as const,
+                guarantee: true,
+                interactive: false,
+            },
+        ],
+        [Audience.B2C]: [
+            !hideFreePlan && {
+                plan: PLANS.FREE,
+                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreePassFeatures()} />,
+                type: 'standard' as const,
+                guarantee: false,
+            },
+            {
+                plan: PLANS.PASS_PLUS,
+                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
+                type: 'best' as const,
+                guarantee: true,
+            },
+            {
+                plan: PLANS.BUNDLE,
+                subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
+                type: 'standard' as const,
+                guarantee: true,
+            },
+        ].filter(isTruthy),
+    };
 
     const benefits = (() => {
         if (isPaidPassVPNBundle) {
@@ -181,13 +303,13 @@ export const getPassConfiguration = ({
             );
         }
 
-        const benefitItems = getPassBenefits(isPaidPass);
+        const benefitItems = audience === Audience.B2B ? getPassB2BBenefits(isPaidPass) : getPassBenefits(isPaidPass);
         return (
             benefitItems && (
                 <div>
                     <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
                     <Benefits className="mt-5 mb-5" features={benefitItems} />
-                    <div>{getJoinString()}</div>
+                    <div>{getJoinString(audience)}</div>
                 </div>
             )
         );
@@ -196,7 +318,7 @@ export const getPassConfiguration = ({
     return {
         logo,
         title: {
-            [SignupMode.Default]: title,
+            [SignupMode.Default]: audience === Audience.B2B ? b2bTitle : title,
             [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: inviteTitle,
             [SignupMode.MailReferral]: title,
@@ -204,10 +326,33 @@ export const getPassConfiguration = ({
         features,
         benefits,
         planCards,
+        audience,
+        audiences: [
+            {
+                value: Audience.B2C,
+                pathname: SSO_PATHS.PASS_SIGNUP,
+                title: c('pass_signup_2023: title').t`For invididuals`,
+                defaultPlan: PLANS.PASS_PLUS,
+            },
+            {
+                value: Audience.B2B,
+                pathname: SSO_PATHS.PASS_SIGNUP_B2B,
+                title: c('pass_signup_2023: title').t`For businesses`,
+                defaultPlan: PLANS.PASS_BUSINESS,
+            },
+        ],
         signupTypes: [SignupType.Email],
         generateMnemonic: true,
         defaults: {
-            plan: mode === SignupMode.Invite ? PLANS.FREE : PLANS.PASS_PLUS,
+            plan: (() => {
+                if (mode === SignupMode.Invite) {
+                    return PLANS.FREE;
+                }
+                if (audience === Audience.B2B) {
+                    return PLANS.PASS_BUSINESS;
+                }
+                return PLANS.PASS_PLUS;
+            })(),
             cycle: CYCLE.YEARLY,
         },
         onboarding: {
@@ -217,11 +362,12 @@ export const getPassConfiguration = ({
         product: APPS.PROTONPASS,
         shortProductAppName: PASS_SHORT_APP_NAME,
         productAppName: PASS_APP_NAME,
-        setupImg: <img src={setupPass} alt="" />,
+        setupImg: <img src={setupAccount} alt="" />,
         preload: (
             <>
                 <link rel="prefetch" href={recoveryKit} as="image" />
-                <link rel="prefetch" href={setupPass} as="image" />
+                <link rel="prefetch" href={setupAccount} as="image" />
+                {audience === Audience.B2B && <link rel="prefetch" href={onboardingFamilyPlan} as="image" />}
                 {getInfo(null, noop).preload}
             </>
         ),

@@ -106,6 +106,23 @@
 		}
 	}
 
+	// pill
+	&-pill {
+		border-radius: var(--border-radius-full);
+
+		&:not([class*='button-group-solid']) {
+			gap: var(--space-1);
+		}
+	}
+
+	&[class*='button-group-pill'] &-item {
+		border-radius: var(--border-radius-full);
+	}
+
+	&-small[class*='button-group-pill'] &-item {
+		padding-inline: em(10);
+	}
+
 	// small
 	&-small[class*='button-group-outline'] {
 		padding: em(2);

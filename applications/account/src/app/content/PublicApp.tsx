@@ -57,7 +57,6 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
@@ -79,7 +78,7 @@ import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupContainer from '../signup/SignupContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
-import { getProductParams } from '../signup/searchParams';
+import { getProductParams, getThemeFromLocation } from '../signup/searchParams';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
 import SingleSignupContainer from '../single-signup/SingleSignupContainer';
@@ -449,14 +448,14 @@ const BasePublicApp = ({ onLogin }: Props) => {
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
     const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
-    const loader =
-        hasBFCoupon && location.pathname.includes('signup') ? (
-            <UnAuthenticated theme={ThemeTypes.Carbon}>
-                <AccountLoaderPage />
-            </UnAuthenticated>
-        ) : (
-            <AccountLoaderPage />
-        );
+    const theme = getThemeFromLocation(location, searchParams);
+    const loader = theme ? (
+        <UnAuthenticated theme={theme.themeType}>
+            <AccountLoaderPage className={theme.className} isDarkBg={theme.isDarkBg} />
+        </UnAuthenticated>
+    ) : (
+        <AccountLoaderPage />
+    );
 
     return (
         <>
@@ -636,7 +635,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                     );
                                                 })()}
                                             </Route>
-                                            <Route path={SSO_PATHS.PASS_SIGNUP}>
+                                            <Route path={[SSO_PATHS.PASS_SIGNUP, SSO_PATHS.PASS_SIGNUP_B2B]}>
                                                 <SingleSignupContainerV2
                                                     paths={paths}
                                                     metaTags={getSignupMeta(APPS.PROTONPASS)}

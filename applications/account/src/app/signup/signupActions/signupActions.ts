@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 
+import { MAX_CHARS_API } from '@proton/account';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
@@ -10,7 +11,7 @@ import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
-import { updateOrganizationKeysV2, updateOrganizationName } from '@proton/shared/lib/api/organization';
+import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { setPaymentMethod, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
@@ -39,13 +40,14 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
 import {
     generateKeySaltAndPassphrase,
-    generateOrganizationKeys,
+    generatePasswordlessOrganizationKey,
     getDecryptedUserKeysHelper,
     handleSetupKeys,
 } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import {
@@ -257,11 +259,13 @@ export const handleSetPassword = async ({
 
 export const handleSetupOrg = async ({
     api,
+    user,
     password,
     keyPassword,
     orgName,
 }: {
     api: Api;
+    user: User;
     password: string;
     keyPassword: string;
     orgName: string;
@@ -269,30 +273,38 @@ export const handleSetupOrg = async ({
     const members = await getAllMembers(api);
     const selfMember = members.find(({ Self }) => !!Self);
     const selfMemberID = selfMember?.ID;
+    const [userKey] = await getDecryptedUserKeysHelper(user, keyPassword);
 
     if (!selfMemberID) {
         throw new Error('Missing member id');
     }
+    if (!userKey) {
+        throw new Error('Missing user key');
+    }
 
     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
     // So that other users can get connections allocated.
-    await api(updateVPN(selfMemberID, VPN_CONNECTIONS));
-    await api(updateOrganizationName(orgName));
+    if (hasPaidVpn(user)) {
+        await api(updateVPN(selfMemberID, VPN_CONNECTIONS)).catch(noop);
+    }
+    // Slice the org name (to ensure the request passes validation), specifically for VPN B2B signup where it's passed as a query param and not validated.
+    await api(updateOrganizationName(orgName.slice(0, MAX_CHARS_API.ORG_NAME)));
 
-    const { privateKeyArmored, backupKeySalt, backupArmoredPrivateKey } = await generateOrganizationKeys({
-        keyPassword,
-        backupPassword: password,
+    const { encryptedToken, signature, privateKeyArmored } = await generatePasswordlessOrganizationKey({
+        userKey: userKey.privateKey,
         encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
     });
 
     await srpAuth({
         api,
         credentials: { password },
-        config: updateOrganizationKeysV2({
+        config: createPasswordlessOrganizationKeys({
+            Token: encryptedToken,
+            Signature: signature,
             PrivateKey: privateKeyArmored,
-            BackupPrivateKey: backupArmoredPrivateKey,
-            BackupKeySalt: backupKeySalt,
             Members: [],
+            AdminInvitations: [],
+            AdminActivations: [],
         }),
     });
 };

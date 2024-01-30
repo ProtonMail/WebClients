@@ -240,6 +240,7 @@ export const SSO_PATHS = {
     VPN_PRICING: '/vpn/pricing',
     VPN_SIGN_IN: '/vpn',
     PASS_SIGNUP: '/pass/signup',
+    PASS_SIGNUP_B2B: '/pass/signup/business',
     PASS_SIGN_IN: '/pass',
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
@@ -799,6 +800,7 @@ export enum COUPON_CODES {
     ANNIVERSARY23 = 'ANNIVERSARY23',
     END_OF_YEAR_2023 = 'EOY2023',
     EOY_2023_1M_INTRO = 'EOY1MINTRO',
+    PASS_B2B_INTRO = 'PASS2024B2BINTRO',
 }
 
 export const GIFT_CODE_LENGTH = 16;
