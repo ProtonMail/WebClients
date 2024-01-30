@@ -15,11 +15,13 @@ import {
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
+import { selectLocale } from '@proton/pass/store/selectors';
 import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
+import { i18n } from '../../lib/i18n';
 import { settings } from '../../lib/settings';
 import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
@@ -52,9 +54,13 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 onBoot: (res) => {
                     if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
+
                         telemetry.start().catch(noop);
+                        i18n.setLocale(selectLocale(store.getState()));
+
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
+
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
                     } else {
                         client.current.setStatus(AppStatus.ERROR);

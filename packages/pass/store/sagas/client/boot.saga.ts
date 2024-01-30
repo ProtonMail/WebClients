@@ -18,7 +18,7 @@ import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 
-import { hydrateFromCache } from './hydrate.saga';
+import { hydrate } from './hydrate.saga';
 
 function* bootWorker(options: RootSagaOptions) {
     try {
@@ -27,7 +27,7 @@ function* bootWorker(options: RootSagaOptions) {
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
         const mergeCache = (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true });
-        const hydratedFromCache: boolean = yield hydrateFromCache({ allowFailure: true, merge: mergeCache }, options);
+        const hydratedFromCache: boolean = yield hydrate({ allowFailure: true, merge: mergeCache }, options);
 
         /* Force sync the proxied settings from local storage */
         if (options.endpoint !== 'web') yield put(syncLocalSettings(yield options.getSettings()));
