@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 .dropdown {
 	/*
@@ -267,6 +267,19 @@
 						z-index: -1;
 					}
 				}
+			}
+		}
+
+		// Used when the dropdown action item has a tooltip while being disabled
+		& &--fake-disabled {
+			& span {
+				color: var(--text-norm);
+				opacity: 0.5;
+			}
+
+			&:hover {
+				cursor: default;
+				background-color: var(--background-norm);
 			}
 		}
 
