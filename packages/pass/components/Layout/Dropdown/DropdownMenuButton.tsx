@@ -144,7 +144,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     ellipsis={ellipsis}
                     danger={danger}
                     label={label}
-                    labelClassname={labelClassname}
+                    labelClassname={clsx('text-left', labelClassname)}
                     extra={
                         <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraPadding)}>
                             {isSelected && (
