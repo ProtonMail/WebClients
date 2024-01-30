@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -8,10 +8,10 @@ import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProton
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink, useDownload } from '../../../store';
+import { getPercentageFormatter } from '../../../utils/intl/numberFormatter';
 import { isTransferActive } from '../../../utils/transfer';
 import { TransferState } from '../../TransferManager/transfer';
 import Spinner from './Spinner';
@@ -231,13 +231,6 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     }, [downloads]);
 
     const percentageValue = totalSize !== 0 ? Math.round((100 * downloadedSize) / totalSize) / 100 : 0;
-    const formatPercentage = useMemo(
-        () =>
-            Intl.NumberFormat(dateLocale.code, {
-                style: 'percent',
-            }),
-        [dateLocale.code]
-    );
 
     const currentDownload = downloads[0];
 
@@ -264,7 +257,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     <div className="flex items-center gap-2 pl-3">
                         {getHeaderText({
                             transferState: currentDownload.state,
-                            percentageValue: formatPercentage.format(percentageValue),
+                            percentageValue: getPercentageFormatter().format(percentageValue),
                         })}
                     </div>
                     <Tooltip title={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}>
@@ -288,7 +281,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     <div className="flex items-center gap-2 pl-3">
                         {getHeaderText({
                             transferState: currentDownload.state,
-                            percentageValue: formatPercentage.format(percentageValue),
+                            percentageValue: getPercentageFormatter().format(percentageValue),
                         })}
                     </div>
                     <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
