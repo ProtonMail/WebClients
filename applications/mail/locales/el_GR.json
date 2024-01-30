@@ -5345,12 +5345,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Ελευθερώστε χώρο ή επικοινωνήστε με το διαχειριστή σας."
-      ],
       "From": [
         "Από"
       ],
@@ -5408,7 +5402,7 @@
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
       "Include Spam/Trash.": [
-        "Συμπεριλάβετε Ανεπιθύμητα/Κάδο Απορριμάτων."
+        "Συμπεριλάβετε Ανεπιθύμητα/Διαγραμμένα."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -6192,12 +6186,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Έχετε φτάσει τον μέγιστο αριθμό των 5 απαντήσεων."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε ${ spaceDisplayed }% της χωρητικότητας αποθήκευσης. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Επιλέξατε **${ count } συνομιλία** από αυτόν το φάκελο",
@@ -7207,9 +7195,6 @@
       "Trash": [
         "Διαγραμμένα"
       ],
-      "Upgrade account": [
-        "Αναβάθμιση λογαριασμού"
-      ],
       "What’s this?": [
         "Τι είναι αυτό;"
       ],
@@ -7536,7 +7521,7 @@
         "${ n } ημερολόγια ανά χρήστη"
       ],
       "Auto-delete spam and trashed messages": [
-        "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+        "Αυτόματη διαγραφή διαγραμμένων και απορριφθέντων μηνυμάτων"
       ],
       "Calendar sharing": [
         "Κοινή χρήση ημερολογίου"
@@ -8621,7 +8606,7 @@
         "Αναβολή για αργότερα"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου στα Ανεπιθύμητα και στον Κάδου απορριμμάτων εξαιρούνται πλέον αυτόματα από την ενότητα Όλα τα Μηνύματα. ${ settingsLink }"
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου στα Ανεπιθύμητα και στα Διαγραμμένα εξαιρούνται πλέον αυτόματα από την ενότητα Όλα τα Μηνύματα. ${ settingsLink }"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Τώρα φορτώνουμε εικόνες από προεπιλογή και αποκλείουμε τους αποστολείς από την παρακολούθησή σας. Αυτό μπορεί να αλλάξει στις ${ settingsLink }."
@@ -8656,6 +8641,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      ],
       "Release notes": [
         "Σημειώσεις έκδοσης"
       ],

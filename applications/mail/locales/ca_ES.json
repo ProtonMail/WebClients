@@ -5303,12 +5303,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
-      "Free up some space or add more storage space.": [
-        "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
-      ],
-      "Free up some space or contact your administrator.": [
-        "Allibereu espai o poseu-vos en contacte amb el vostre administrador."
-      ],
       "From": [
         "De"
       ],
@@ -6140,12 +6134,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "Heu assolit el nombre màxim de 5 respostes."
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Heu seleccionat **${ count } conversa** d'aquesta carpeta",
@@ -7138,9 +7126,6 @@
       ],
       "Trash": [
         "Paperera"
-      ],
-      "Upgrade account": [
-        "Millorar el compte"
       ],
       "What’s this?": [
         "Què és això?"
@@ -8585,6 +8570,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
+      ],
       "Release notes": [
         "Notes de la versió"
       ],

@@ -5070,12 +5070,6 @@
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
       ],
-      "Free up some space or add more storage space.": [
-        "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
-      ],
-      "Free up some space or contact your administrator.": [
-        "スペースを解放するか、管理者にお問い合わせしてください。"
-      ],
       "From": [
         "差出人"
       ],
@@ -5861,12 +5855,6 @@
       ],
       "You have reached the maximum number of 5 replies.": [
         "返信数の上限（5件）の達しました。"
-      ],
-      "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversations** from this folder": [
         "このフォルダー内の **${ count } 件の会話**を選択中"
@@ -6824,9 +6812,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
       ],
       "What’s this?": [
         "これは何ですか?"
@@ -8173,6 +8158,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "ストレージを増やす"
+      ],
       "Release notes": [
         "更新情報"
       ],
