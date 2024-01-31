@@ -18,7 +18,8 @@ const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
         const { hash } = location;
 
         try {
-            const mailtoIndex = hash.indexOf('mailto=mailto:');
+            const decodedHash = decodeURIComponent(hash);
+            const mailtoIndex = decodedHash.indexOf('mailto=mailto:');
             if (mailtoIndex >= 0) {
                 // We don't want to select the #mailto= but just the mailto: part
                 const mailto = hash.substring(mailtoIndex + 'mailto='.length, hash.length);
