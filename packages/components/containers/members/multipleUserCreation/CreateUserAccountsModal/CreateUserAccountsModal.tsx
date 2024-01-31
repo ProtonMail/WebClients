@@ -101,6 +101,7 @@ interface Props extends ModalProps {
     expectedCsvConfig?: CsvConfig;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }
 
 const CreateUserAccountsModal = ({
@@ -111,6 +112,7 @@ const CreateUserAccountsModal = ({
     expectedCsvConfig = {},
     disableStorageValidation,
     disableDomainValidation,
+    disableAddressValidation,
     ...rest
 }: Props) => {
     const api = useApi();
@@ -229,6 +231,7 @@ const CreateUserAccountsModal = ({
             verifiedDomains,
             disableStorageValidation,
             disableDomainValidation,
+            disableAddressValidation,
         });
         if (error) {
             return createNotification({ type: 'error', text: error });
