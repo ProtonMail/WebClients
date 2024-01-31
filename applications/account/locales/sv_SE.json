@@ -998,9 +998,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Visionary": [
-        "Uppgradera till Visionary"
-      ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
@@ -3125,9 +3122,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Åtkomst till app för stationär dator är begränsat"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
@@ -6357,6 +6351,9 @@
       "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
         "DKIM tillåter ${ BRAND_NAME } att kryptografiskt signera din e-post och förhindra angripare från att manipulera din e-post. Se till att du lägger till följande tre CNAME-poster i din DNS-konsol (finns på plattformen där du köpte den anpassade domänen)."
       ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC kontrollerar att avsändarens SPF och DKIM uppgifter härstammar från din domän. Detta kan förhindra attackerare från att använda en annan domäns SPF och DKIM uppgifter för att utge sig för att vara din domän. \"p=\" (policy) i denna uppgift indikerar hur du vill att mottagarens platform hanterar obehörig e-post. Vi rekommenderar användningen av \"p=quarantine\"-policyn för de flesta domäner. Säkerställ att du lägger till följande TXT-uppgift i din DNS konsol (finns på den plattform där du köpte din domän)."
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
@@ -6954,6 +6951,9 @@
       ],
       "per month": [
         "per månad"
+      ],
+      "per month, billed at ${ price }": [
+        "per månad, faktureras med ${ price }"
       ],
       "per month, billed every 12 months": [
         "per månad, faktureras var 12:e månad"
