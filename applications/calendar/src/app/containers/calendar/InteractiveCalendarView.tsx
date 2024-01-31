@@ -126,11 +126,11 @@ import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useOpenCalendarEvents from '../../hooks/useOpenCalendarEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
-    CleanSendIcsActionData,
     InviteActions,
+    OnSendPrefsErrors,
     RecurringActionData,
     ReencryptInviteActionData,
-    SendIcsActionData,
+    SendIcs,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
@@ -861,12 +861,12 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendPrefsErrors = async ({
+    const handleSendPrefsErrors: OnSendPrefsErrors = async ({
         inviteActions,
         vevent,
         cancelVevent,
         noCheckSendPrefs,
-    }: SendIcsActionData) => {
+    }: any) => {
         const { Sign } = await getMailSettings();
         const sendPreferencesMap: SimpleMap<AugmentedSendPreferences> = {};
         const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
@@ -889,7 +889,7 @@ const InteractiveCalendarView = ({
         if (!hasErrors || noCheckSendPrefs) {
             return { sendPreferencesMap, inviteActions, vevent, cancelVevent };
         }
-        return new Promise<CleanSendIcsActionData>((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             confirm.current = { resolve, reject };
             updateModal('sendWithErrorsConfirmationModal', {
                 isOpen: true,
@@ -903,9 +903,9 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const handleSendIcs = async (
-        { inviteActions, vevent, cancelVevent, noCheckSendPrefs }: SendIcsActionData,
-        calendarID?: string
+    const handleSendIcs: SendIcs = async (
+        { inviteActions, vevent, cancelVevent, noCheckSendPrefs }: any,
+        calendarID
     ) => {
         const onRequestError = () => {
             if (calendarID) {

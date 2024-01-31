@@ -9,7 +9,7 @@ import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
@@ -21,9 +21,9 @@ import { modelToVeventComponent } from '../../../components/eventModal/eventForm
 import { getCanEditSharedEventData } from '../../../helpers/event';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
-    CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
+    OnSendPrefsErrors,
     ReencryptInviteActionData,
     SendIcs,
     SendIcsActionData,
@@ -36,7 +36,7 @@ import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
-import { AugmentedSendPreferences, CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
+import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
@@ -67,7 +67,7 @@ const getSaveSingleEventActionsHelper = async ({
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
-    onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
+    onSendPrefsErrors: OnSendPrefsErrors;
     onSaveConfirmation: OnSaveConfirmationCb;
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
@@ -146,17 +146,9 @@ interface Arguments {
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     getAddressKeys: GetAddressKeys;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
-    sendIcs: (
-        data: SendIcsActionData,
-        calendarID?: string
-    ) => Promise<{
-        veventComponent?: VcalVeventComponent;
-        inviteActions: InviteActions;
-        timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-    }>;
+    sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
-    onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
+    onSendPrefsErrors: OnSendPrefsErrors;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }
 
@@ -269,7 +261,6 @@ const getSaveEventActions = async ({
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
             isAttendee,
-            selfAddress,
             inviteActions: updatedInviteActions,
             getCalendarKeys,
             onSaveConfirmation,
