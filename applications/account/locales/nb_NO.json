@@ -998,9 +998,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Visionary": [
-        "Oppgrader til Visionary"
-      ],
       "Upgrade your plan": [
         "Oppgrader planen din"
       ],
@@ -3130,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "Tilgang til skrivebordsappen er begrenset"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket tilgjengelig for alle med en betalt ${ MAIL_APP_NAME }-plan. Oppgrader i dag for å få tilgang."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
@@ -6961,6 +6958,9 @@
       ],
       "per month": [
         "per måned"
+      ],
+      "per month, billed at ${ price }": [
+        "per måned, fakturert til ${ price }"
       ],
       "per month, billed every 12 months": [
         "per måned, faktureres hver 12. måned"

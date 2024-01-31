@@ -998,9 +998,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Effettua l'upgrade per abilitare ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Visionary": [
-        "Effettua l'upgrade a Visionary"
-      ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
       ],
@@ -3130,8 +3127,8 @@
       "Access to the desktop app is limited": [
         "L'accesso all'app desktop è limitato"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "La versione beta dell'app desktop di ${ MAIL_APP_NAME } è attualmente limitata agli abbonati a ${ BRAND_NAME } Visionary. Sarà disponibile a tutti gli utenti all'inizio del 2024."
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Esegui l'upgrade per ottenere l'accesso."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
@@ -6961,6 +6958,9 @@
       ],
       "per month": [
         "al mese"
+      ],
+      "per month, billed at ${ price }": [
+        "al mese, fatturato a ${ price }"
       ],
       "per month, billed every 12 months": [
         "al mese con fatturazione ogni 12 mesi"
