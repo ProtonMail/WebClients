@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { Address } from '@proton/shared/lib/interfaces';
+import { Address, RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -44,6 +44,32 @@ export interface SendIcsActionData {
     noCheckSendPrefs?: boolean;
 }
 
+export type SendIcs = {
+    (
+        data: RequireSome<SendIcsActionData, 'vevent'>,
+        calendarID?: string
+    ): Promise<{
+        veventComponent: VcalVeventComponent;
+        inviteActions: InviteActions;
+        timestamp: number;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    }>;
+    (
+        data: SendIcsActionData,
+        calendarID?: string
+    ): Promise<{
+        veventComponent?: VcalVeventComponent;
+        inviteActions: InviteActions;
+        timestamp: number;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+    }>;
+};
+
+export type OnSendPrefsErrors = {
+    (data: RequireSome<SendIcsActionData, 'vevent'>): Promise<RequireSome<CleanSendIcsActionData, 'vevent'>>;
+    (data: SendIcsActionData): Promise<CleanSendIcsActionData>;
+};
+
 export interface ReencryptInviteActionData {
     calendarEvent: CalendarEvent;
     calendarID: string;
@@ -52,13 +78,6 @@ export interface ReencryptInviteActionData {
 export interface CleanSendIcsActionData extends SendIcsActionData {
     sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
 }
-
-export type SendIcs = (data: SendIcsActionData, calendarID?: string) => Promise<{
-    veventComponent?: VcalVeventComponent;
-    inviteActions: InviteActions;
-    timestamp: number;
-    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-}>
 
 export interface UpdatePartstatOperation {
     data: {
