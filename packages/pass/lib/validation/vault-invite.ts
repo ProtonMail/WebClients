@@ -10,9 +10,19 @@ export const validateShareInviteValues = (values: InviteFormValues) => {
 
     let errors: FormikErrors<InviteFormValues> = {};
 
-    if (!validateEmailAddress(values.email)) {
-        errors.email = c('Warning').t`Please enter a valid email address`;
-    }
+    const emails = values.members.reduce<{ errors: string[]; pass: boolean }>(
+        (acc, { value }) => {
+            if (!validateEmailAddress(value.email)) {
+                acc.pass = false;
+                acc.errors.push(c('Validation').t`Invalid email`);
+            } else acc.errors.push('');
+
+            return acc;
+        },
+        { errors: [], pass: true }
+    );
+
+    if (!emails.pass) errors.members = emails.errors;
 
     return errors;
 };
