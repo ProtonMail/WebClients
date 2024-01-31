@@ -259,6 +259,9 @@
       "Download apps": [
         "Stáhnout aplikace"
       ],
+      "Download logs": [
+        "Stáhnout logy"
+      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -5235,6 +5238,35 @@
         "Prostý text"
       ]
     },
+    "Mimetype": {
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Formát Amazon Kindle eBook"
+      ],
+      "BZip archive": [
+        "Archiv BZip"
+      ],
+      "Electronic publication (EPUB)": [
+        "Elektronická publikace (EPUB)"
+      ],
+      "Java Archive (JAR)": [
+        "Archiv Java (JAR)"
+      ],
+      "OpenDocument presentation document": [
+        "Dokument prezentace OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Tabulkový dokument OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Textový dokument OpenDocument"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text Format (RTF)"
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Jak importovat kalendáře z jiné služby"
@@ -6318,6 +6350,11 @@
       ],
       "Your current storage:": [
         "Vaše současné úložiště:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } úložiště"
       ]
     },
     "Success": {
