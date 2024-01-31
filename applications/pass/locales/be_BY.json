@@ -693,6 +693,9 @@
         "${ n } элементаў",
         "${ n } элементаў"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
@@ -796,7 +799,7 @@
         "Запоўніце CSV сваімі данымі"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV :"
+        "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
@@ -1223,6 +1226,9 @@
       "Created": [
         "Створана"
       ],
+      "Display": [
+        "Адлюстроўваць"
+      ],
       "Empty trash": [
         "Ачысціць сметніцу"
       ],
@@ -1240,6 +1246,9 @@
       ],
       "Forwards to": [
         "Пераслаць на"
+      ],
+      "General": [
+        "Агульныя"
       ],
       "Generic CSV": [
         "Агульны CSV"
@@ -1279,6 +1288,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
+      ],
+      "Language": [
+        "Мова"
       ],
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
@@ -1388,6 +1400,9 @@
       "Select an email address": [
         "Выберыце адрас электроннай пошты"
       ],
+      "Select preferred language": [
+        "Выберыце пажаданую мову"
+      ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
       ],
@@ -1399,6 +1414,9 @@
       ],
       "Set PIN code": [
         "Задаць PIN-код"
+      ],
+      "Show website favicons": [
+        "Паказваць піктаграмы вэб-сайтаў"
       ],
       "Special characters (!&*)": [
         "Спецыяльныя сімвалы (!&*)"
@@ -1670,7 +1688,7 @@
         "Перамясціць усе элементы?"
       ],
       "No items selected": [
-        "Элемент не выбраны"
+        "Элементы не выбраны"
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"

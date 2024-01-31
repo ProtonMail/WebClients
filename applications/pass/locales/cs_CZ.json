@@ -660,6 +660,9 @@
         "${ n } položek",
         "${ n } položek"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
@@ -1154,6 +1157,9 @@
       "Created": [
         "Vytvořeno"
       ],
+      "Display": [
+        "Zobrazení"
+      ],
       "Empty trash": [
         "Vyprázdnit koš"
       ],
@@ -1171,6 +1177,9 @@
       ],
       "Forwards to": [
         "Přeposílá na"
+      ],
+      "General": [
+        "Obecné"
       ],
       "Grant": [
         "Udělit"
@@ -1207,6 +1216,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová zkratka: ${ shortcut }"
+      ],
+      "Language": [
+        "Jazyk"
       ],
       "Last 2 weeks": [
         "Minulé 2 týdny"
@@ -1316,6 +1328,9 @@
       "Select an email address": [
         "Zvolit e-mailovou adresu"
       ],
+      "Select preferred language": [
+        "Vyberte preferovaný jazyk"
+      ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
       ],
@@ -1327,6 +1342,9 @@
       ],
       "Set PIN code": [
         "Nastavit PIN kód"
+      ],
+      "Show website favicons": [
+        "Zobrazit ikony webových stránek"
       ],
       "Special characters (!&*)": [
         "Speciální znaky (!&*)"

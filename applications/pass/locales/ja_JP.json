@@ -604,6 +604,9 @@
       "${ n } items": [
         "${ n } アイテム"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } は、ログイン情報、メモ、クレジット カードのみをインポートします。"
       ],
@@ -1050,6 +1053,9 @@
       "Created": [
         "作成日時"
       ],
+      "Display": [
+        "表示"
+      ],
       "Empty trash": [
         "ごみ箱を空にする"
       ],
@@ -1067,6 +1073,9 @@
       ],
       "Forwards to": [
         "転送先"
+      ],
+      "General": [
+        "一般"
       ],
       "Grant": [
         "付与"
@@ -1103,6 +1112,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
+      ],
+      "Language": [
+        "言語"
       ],
       "Last 2 weeks": [
         "過去 2 週間"
@@ -1212,6 +1224,9 @@
       "Select an email address": [
         "メールアドレスを選択"
       ],
+      "Select preferred language": [
+        "お好みの言語を選択"
+      ],
       "Select your password manager": [
         "パスワードマネージャーを選択"
       ],
@@ -1223,6 +1238,9 @@
       ],
       "Set PIN code": [
         "PIN コードを設定"
+      ],
+      "Show website favicons": [
+        "ウェブサイトのファビコンを表示する"
       ],
       "Special characters (!&*)": [
         "特殊文字 (!&*)"
