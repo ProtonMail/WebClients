@@ -675,6 +675,9 @@
         "${ n } öge",
         "${ n } öge"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Display": [
+        "Görünüm"
+      ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "Şuraya iletiyor"
+      ],
+      "General": [
+        "Genel"
       ],
       "Generic CSV": [
         "CSV dosyası"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
+      ],
+      "Language": [
+        "Dil"
       ],
       "Last 2 weeks": [
         "Son 2 hafta"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "Bir e-posta adresi seçin"
       ],
+      "Select preferred language": [
+        "Kullanılacak dili seçin"
+      ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "PIN kodu ayarla"
+      ],
+      "Show website favicons": [
+        "Site simgeleri görüntülensin"
       ],
       "Special characters (!&*)": [
         "Özel karakterler (!&*)"
