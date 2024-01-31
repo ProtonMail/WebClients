@@ -22,10 +22,10 @@ export const NotificationContent: FC = () => {
     return (
         <NotificationSwitch
             key={locale}
+            onMessage={postMessage}
+            settings={settings}
             state={notificationState}
             visible={visible}
-            settings={settings}
-            onMessage={postMessage}
             onClose={(options) => {
                 setNotificationState(null);
                 closeIFrame(options);

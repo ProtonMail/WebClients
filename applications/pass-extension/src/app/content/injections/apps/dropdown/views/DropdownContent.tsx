@@ -9,7 +9,7 @@ import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: FC = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
+    const { workerState, visible, resizeIFrame, closeIFrame, postMessage, locale } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownActions>>(null);
 
     const onReset = () => setDropdownState(null);
@@ -33,13 +33,14 @@ export const DropdownContent: FC = () => {
 
     return (
         <DropdownSwitch
+            key={locale}
+            loggedIn={workerState?.loggedIn ?? false}
+            onClose={onClose}
+            onMessage={postMessage}
+            onReset={onReset}
             ref={dropdownRef}
             state={dropdownState}
             status={workerState?.status ?? AppStatus.IDLE}
-            loggedIn={workerState?.loggedIn ?? false}
-            onMessage={postMessage}
-            onClose={onClose}
-            onReset={onReset}
             visible={visible}
         />
     );
