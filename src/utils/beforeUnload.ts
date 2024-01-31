@@ -16,7 +16,7 @@ const beforeUnloadChoice = (window: BrowserWindow) => {
 
 export const handleBeforeHandle = (window: BrowserWindow) => {
     window.webContents.on("will-prevent-unload", (ev) => {
-        log.info("will-prevent-unload", ev);
+        log.info("will-prevent-unload");
         const choice = beforeUnloadChoice(window);
         const leave = choice === 0;
         if (leave) {

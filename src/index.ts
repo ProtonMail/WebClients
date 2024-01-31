@@ -18,7 +18,8 @@ import {
     isWindows,
     saveWindowsPosition,
 } from "./utils/helpers";
-import { getSessionID, handleMailToUrls } from "./utils/urlHelpers";
+import { logURL } from "./utils/logs";
+import { getSessionID, handleMailToUrls } from "./utils/url";
 import {
     handleCalendarWindow,
     handleMailWindow,
@@ -39,7 +40,7 @@ saveAppID();
 
 // Log initialization
 log.initialize({ preload: true });
-log.info("App start on mac:", isMac, "is windows: ", isWindows);
+log.info("App start is mac:", isMac, "is windows: ", isWindows);
 
 // Move uninstaller on macOS
 moveUninstaller();
@@ -80,7 +81,7 @@ app.whenReady().then(() => {
 
     // Normally this only works on macOS and is not required for Windows
     app.on("open-url", (e, url) => {
-        log.info("Opening url", url);
+        logURL("open-url", url);
         handleMailToUrls(url);
     });
 
@@ -92,11 +93,10 @@ app.whenReady().then(() => {
         }
 
         if (ALLOWED_PERMISSIONS.includes(_permission)) {
-            log.info("Permission request accepted", _permission, host);
             return callback(true);
         }
 
-        log.info("Permission request rejected", _permission, host);
+        log.info("Permission request rejected", _permission);
         callback(false);
     });
 });
@@ -157,19 +157,19 @@ app.on("web-contents-created", (_ev, contents) => {
             // Upsell links should be opened in browser to avoid 3D secure issues
             log.info("Account link");
             if (isAccoutLite(url) || isUpsellURL(url)) {
-                log.info("Upsell link or lite account, open in browser", url);
+                logURL("Upsell link or lite account, open in browser", url);
                 shell.openExternal(url);
                 return { action: "deny" };
             }
             return { action: "allow" };
         } else if (isHostAllowed(url, app.isPackaged)) {
-            log.info("Open internal link", url);
+            logURL("Open internal link", url);
             return { action: "allow" };
         } else if (isHostOAuth(url)) {
-            log.info("Open OAuth link", url);
+            logURL("Open OAuth link", url);
             return { action: "allow" };
         } else {
-            log.info("Open external link", url);
+            logURL("Open external link", url);
             shell.openExternal(url);
         }
 

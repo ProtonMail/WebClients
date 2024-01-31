@@ -5,8 +5,9 @@ import { handleBeforeHandle } from "./beforeUnload";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
+import { logURL } from "./logs";
 import { setApplicationMenu } from "./menu";
-import { getSessionID } from "./urlHelpers";
+import { getSessionID } from "./url";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
@@ -37,7 +38,7 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
 };
 
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
-    log.info("createWindow", url, visible, windowConfig);
+    logURL("createWindow", url);
     const { x, y, width, height } = windowConfig;
 
     const window = new BrowserWindow({
@@ -68,12 +69,12 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     window.loadURL(url);
 
     if (visible) {
-        log.info("createWindow, visible", url);
+        logURL("createWindow, visible", url);
         window.showInactive();
         window.setOpacity(1);
         window.focus();
     } else {
-        log.info("createWindow, hidden", url);
+        logURL("createWindow, hidden", url);
         window.hide();
         window.setOpacity(0);
     }
@@ -82,7 +83,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
 };
 
 const createGenericWindow = (session: Session, url: string, mapKey: APP, visible: boolean, windowConfig: Rectangle) => {
-    log.info("createGenericWindow", url, mapKey, visible, windowConfig);
+    logURL("createGenericWindow", url);
     const window = createWindow(session, url, visible, windowConfig);
 
     // Used to keep track of closing windows on macOS and hide them during leave-full-screen callback
@@ -210,12 +211,12 @@ export const refreshCalendarPage = (sessionID: number) => {
         const calendarURL = calendarWindow.webContents.getURL();
         const calendarHasSessionID = getSessionID(calendarURL);
         if (calendarHasSessionID) {
-            log.error("refreshCalendarPage, no session ID", calendarURL);
+            logURL("refreshCalendarPage, calendarHasSessionID", calendarURL);
             return;
         }
 
         const newCalendarUrl = `${config.url.calendar}/${sessionID}/`;
-        log.info("refreshCalendarPage, newCalendarUrl", newCalendarUrl);
+        logURL("refreshCalendarPage, newCalendarUrl", newCalendarUrl);
         calendarWindow.loadURL(newCalendarUrl);
     }
 };

@@ -4,6 +4,7 @@ import { join } from "path";
 import { setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
 import { ALLOWED_OAUTH_URLS } from "./constants";
+import { logURL } from "./logs";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -90,7 +91,7 @@ export const isUpsellURL = (host: string) => {
 
 export const isHostOAuth = (host: string) => {
     try {
-        log.info("isHostOAuth", host);
+        logURL("isHostOAuth", host);
         return ALLOWED_OAUTH_URLS.some((url) => host.startsWith(url));
     } catch (error) {
         log.error("isHostOAuth", error);
@@ -100,7 +101,7 @@ export const isHostOAuth = (host: string) => {
 
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
     try {
-        log.info("isHostAllowed", host, isPackaged);
+        logURL("isHostAllowed", host);
         const urls = getConfig(isPackaged).url;
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {
@@ -172,7 +173,8 @@ export const saveWindowsPosition = (shouldDestroy: boolean) => {
     BrowserWindow.getAllWindows().forEach((window) => {
         if (window.isVisible()) {
             const url = window.webContents.getURL();
-            log.info("Saving window position, since visible", url, window.getBounds());
+            logURL("saveWindowsPosition", url);
+            log.info("saveWindowsPosition bounds", window.getBounds());
             if (isHostCalendar(url)) {
                 setWindowState(window.getBounds(), "CALENDAR");
             } else if (isHostMail(url)) {
