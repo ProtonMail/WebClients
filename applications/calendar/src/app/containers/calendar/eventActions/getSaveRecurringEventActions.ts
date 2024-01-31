@@ -17,10 +17,11 @@ import unary from '@proton/utils/unary';
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
-    CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
+    OnSendPrefsErrors,
     ReencryptInviteActionData,
+    SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -31,7 +32,6 @@ import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
-import { AugmentedSendPreferences } from '../interface';
 import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import createSingleRecurrence from '../recurrence/createSingleRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
@@ -39,7 +39,7 @@ import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
-import getSaveSingleEventActions from './getSaveSingleEventActions';
+import { createIntermediateEvent } from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
@@ -62,15 +62,10 @@ interface SaveRecurringArguments {
     isAttendee: boolean;
     isBreakingChange: boolean;
     inviteActions: InviteActions;
-    sendIcs: (data: SendIcsActionData) => Promise<{
-        veventComponent?: VcalVeventComponent;
-        inviteActions: InviteActions;
-        timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-    }>;
+    sendIcs: SendIcs;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
-    onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
+    onSendPrefsErrors: OnSendPrefsErrors;
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     selfAttendeeToken?: string;
 }
@@ -94,7 +89,6 @@ const getSaveRecurringEventActions = async ({
     },
     recurrence,
     updateAllPossibilities,
-    addresses,
     getAddressKeys,
     getCalendarKeys,
     inviteActions,
@@ -105,7 +99,6 @@ const getSaveRecurringEventActions = async ({
     sendIcs,
     handleSyncActions,
     onSendPrefsErrors,
-    onEquivalentAttendees,
     reencryptSharedEvent,
     selfAttendeeToken,
 }: SaveRecurringArguments): Promise<{
@@ -238,44 +231,61 @@ const getSaveRecurringEventActions = async ({
             oldRecurrenceVeventComponentWithSequence,
             method
         );
-        let createOperationWithAttendees;
+        let updateOperationWithAttendees;
         if (isSendInviteType) {
-            const updatedInviteActions = {
-                ...inviteActions,
-                // We are creating a single edit, which is like creating a new event
-                type: INVITE_ACTION_TYPES.SEND_INVITATION,
-            };
-            const selfAddress = addresses.find(({ ID }) => ID === newAddressID);
-            if (!selfAddress) {
-                throw new Error('Wrong member data');
-            }
-            const { multiSyncActions } = await getSaveSingleEventActions({
-                newEditEventData: {
-                    calendarID: newCalendarID,
-                    addressID: newAddressID,
-                    memberID: newMemberID,
-                    veventComponent: updatedVeventComponent,
+            const {
+                intermediateEvent,
+                vevent: intermediateVevent,
+                inviteActions: intermediateInviteActions,
+            } = await createIntermediateEvent({
+                inviteActions: {
+                    ...inviteActions,
+                    // We are creating a single edit, which is like creating a new event
+                    type: INVITE_ACTION_TYPES.SEND_INVITATION,
                 },
+                vevent: updatedVeventComponent,
                 hasDefaultNotifications,
-                selfAddress,
-                canEditOnlyPersonalPart,
-                isAttendee,
-                inviteActions: updatedInviteActions,
+                calendarID: newCalendarID,
+                addressID: newAddressID,
+                memberID: newMemberID,
                 getCalendarKeys,
-                sendIcs,
-                reencryptSharedEvent,
                 onSendPrefsErrors,
-                onEquivalentAttendees,
                 handleSyncActions,
             });
-            createOperationWithAttendees = multiSyncActions[0].operations[0];
+            const {
+                veventComponent: finalVevent,
+                inviteActions: finalInviteActions,
+                sendPreferencesMap,
+            } = await sendIcs(
+                {
+                    inviteActions: intermediateInviteActions,
+                    vevent: intermediateVevent,
+                    cancelVevent: oldVeventComponent,
+                    noCheckSendPrefs: true,
+                },
+                // we pass the calendarID here as we want to call the event manager in case the operation fails
+                newCalendarID
+            );
+
+            const addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                veventComponent: finalVevent,
+                inviteActions: finalInviteActions,
+                sendPreferencesMap,
+            });
+            updateOperationWithAttendees = getUpdateSyncOperation({
+                veventComponent: updatedVeventComponent,
+                calendarEvent: intermediateEvent,
+                hasDefaultNotifications,
+                isAttendee,
+                addedAttendeesPublicKeysMap,
+            });
         }
         const hasStartChanged = getHasStartChanged(
             newRecurrenceVeventWithSequence,
             oldRecurrenceVeventComponentWithSequence
         );
-        const createOperation =
-            createOperationWithAttendees ||
+        const createOrUpdateOperation =
+            updateOperationWithAttendees ||
             getCreateSyncOperation({
                 veventComponent: newRecurrenceVeventWithSequence,
                 hasDefaultNotifications,
@@ -287,7 +297,7 @@ const getSaveRecurringEventActions = async ({
                     calendarID: originalCalendarID,
                     addressID: originalAddressID,
                     memberID: originalMemberID,
-                    operations: [...maybeUpdateParentOperations, createOperation],
+                    operations: [...maybeUpdateParentOperations, createOrUpdateOperation],
                 },
             ],
             inviteActions,
