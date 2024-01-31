@@ -81,6 +81,7 @@ interface Props extends ModalProps {
     showMultipleUserUploadButton?: boolean;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }
 
 const SubUserCreateModal = ({
@@ -96,6 +97,7 @@ const SubUserCreateModal = ({
     showMultipleUserUploadButton,
     disableStorageValidation,
     disableDomainValidation,
+    disableAddressValidation,
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
@@ -196,6 +198,7 @@ const SubUserCreateModal = ({
             verifiedDomains,
             disableStorageValidation,
             disableDomainValidation,
+            disableAddressValidation,
         });
         if (error) {
             return error;
@@ -243,6 +246,7 @@ const SubUserCreateModal = ({
                 app={app}
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
+                disableAddressValidation={disableAddressValidation}
                 csvConfig={{
                     multipleAddresses: !useEmail,
                     includeStorage: allowStorageConfiguration,

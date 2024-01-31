@@ -18,6 +18,7 @@ const validateAddUser = ({
     verifiedDomains,
     disableStorageValidation,
     disableDomainValidation,
+    disableAddressValidation,
 }: {
     privateUser: boolean;
     organization: Organization | undefined;
@@ -25,6 +26,7 @@ const validateAddUser = ({
     verifiedDomains: Domain[];
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }) => {
     const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
     const {
@@ -49,7 +51,7 @@ const validateAddUser = ({
     if (MaxMembers - UsedMembers < 1) {
         return c('Error').t`You have used all users in your plan. Please upgrade your plan to add a new user.`;
     }
-    if (MaxAddresses - UsedAddresses < 1) {
+    if (!disableAddressValidation && MaxAddresses - UsedAddresses < 1) {
         return c('Error').t`You have used all addresses in your plan. Please upgrade your plan to add a new address.`;
     }
     if (!disableStorageValidation && MaxSpace - AssignedSpace < 1) {
