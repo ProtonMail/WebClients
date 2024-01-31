@@ -95,7 +95,7 @@ const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...res
                                         <Icon
                                             name="pin-angled-filled"
                                             size={2.75}
-                                            className="absolute-center"
+                                            className="absolute inset-center"
                                             color="black"
                                         />
                                     </IconBox>
