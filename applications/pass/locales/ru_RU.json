@@ -655,6 +655,9 @@
         "${ n } элементов",
         "${ n } элементов"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
       ],
@@ -1146,6 +1149,9 @@
       "Created": [
         "Создано"
       ],
+      "Display": [
+        "Показать"
+      ],
       "Empty trash": [
         "Очистить корзину"
       ],
@@ -1163,6 +1169,9 @@
       ],
       "Forwards to": [
         "Переслать"
+      ],
+      "General": [
+        "Общие"
       ],
       "Grant": [
         "Предоставить"
@@ -1199,6 +1208,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбинация клавиш: ${ shortcut }"
+      ],
+      "Language": [
+        "Язык"
       ],
       "Last 2 weeks": [
         "Последние 2 недели"
@@ -1308,6 +1320,9 @@
       "Select an email address": [
         "Выберите адрес электронной почты"
       ],
+      "Select preferred language": [
+        "Выберите предпочитаемый язык"
+      ],
       "Select your password manager": [
         "Выберите свой менеджер паролей"
       ],
@@ -1319,6 +1334,9 @@
       ],
       "Set PIN code": [
         "Установите PIN-код"
+      ],
+      "Show website favicons": [
+        "Показать значки сайтов"
       ],
       "Special characters (!&*)": [
         "Специальные символы (!&*)"
