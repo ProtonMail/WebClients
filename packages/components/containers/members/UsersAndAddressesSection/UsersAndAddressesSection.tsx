@@ -10,7 +10,13 @@ import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constant
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { getHasB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasB2BPlan,
+    getHasPassB2BPlan,
+    hasFamily,
+    hasNewVisionary,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -76,6 +82,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
 
+    const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasB2BPlan = getHasB2BPlan(subscription);
 
     const useEmail = hasB2BPlan;
@@ -329,6 +336,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         showMultipleUserUploadButton={showMultipleUserUploadButton}
                         disableStorageValidation={!allowStorageConfiguration}
                         disableDomainValidation={useEmail}
+                        disableAddressValidation={hasPassB2BPlan}
                         {...subUserCreateModalProps}
                     />
                 )}
