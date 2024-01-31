@@ -45,8 +45,6 @@ import locales from './locales';
 import { WalletStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
 
-import './app.scss';
-
 setTtagLocales(locales);
 setupGuestCrossStorage();
 newVersionUpdater(config);
