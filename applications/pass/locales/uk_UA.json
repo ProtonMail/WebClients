@@ -119,6 +119,9 @@
       "Dismiss": [
         "Відхилити"
       ],
+      "Download this CSV template": [
+        "Завантажте цей шаблон CSV"
+      ],
       "Edit": [
         "Змінити"
       ],
@@ -572,6 +575,9 @@
         "Елементів: ${ n }",
         "Елементів: ${ n }"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } рази",
@@ -586,6 +592,9 @@
       ],
       "Admin": [
         "Адміністратор"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдонім \"${ item.aliasEmail }\" переміщено у смітник - він перестане пересилати електронні листи на вашу поштову скриньку"
@@ -632,6 +641,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Експорт зашифрований за допомогою PGP і вимагає надійної парольної фрази."
       ],
+      "Fill in the CSV with your data": [
+        "Заповніть CSV своїми даними"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Виконайте ці кроки, щоб імпортувати дані у загальному форматі CSV:"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "З міркувань безпеки ваш доступ потребує підтвердження."
       ],
@@ -640,6 +655,9 @@
       ],
       "Import in progress:": [
         "Виконується імпорт:"
+      ],
+      "Import the CSV file below.": [
+        "Імпортуйте файл CSV нижче."
       ],
       "Imported ${ payload.total } item": [
         "Імпортовано ${ payload.total } елемент",
@@ -934,6 +952,9 @@
       "Created": [
         "Створено"
       ],
+      "Display": [
+        "Показувати"
+      ],
       "Empty trash": [
         "Очистити смітник"
       ],
@@ -948,6 +969,12 @@
       ],
       "Forwards to": [
         "Пересилається на"
+      ],
+      "General": [
+        "Загальні"
+      ],
+      "Generic CSV": [
+        "Загальний CSV"
       ],
       "Grant": [
         "Дозволити"
@@ -981,6 +1008,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Комбінація клавіш: ${ shortcut }"
+      ],
+      "Language": [
+        "Мова"
       ],
       "Last 2 weeks": [
         "Останні 2 тижні"
@@ -1087,6 +1117,9 @@
       "Select an email address": [
         "Виберіть адресу електронної пошти"
       ],
+      "Select preferred language": [
+        "Оберіть мову"
+      ],
       "Select your password manager": [
         "Виберіть менеджер паролів"
       ],
@@ -1098,6 +1131,9 @@
       ],
       "Set PIN code": [
         "Встановити PIN-код"
+      ],
+      "Show website favicons": [
+        "Показувати піктограми вебсайтів"
       ],
       "Special characters (!&*)": [
         "Спеціальні символи (!&*)"
