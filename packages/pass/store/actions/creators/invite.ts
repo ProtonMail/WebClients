@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import {
@@ -18,7 +18,7 @@ import type { InviteState } from '@proton/pass/store/reducers';
 import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
-    InviteCreateSuccess,
+    InviteBatchCreateSuccess,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -29,31 +29,39 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 
-export const inviteCreationIntent = createAction('invite::create::intent', (payload: InviteFormValues) =>
+export const inviteBatchCreateIntent = createAction('invite::batch::create::intent', (payload: InviteFormValues) =>
     withRequest({ type: 'start', id: inviteCreateRequest(uniqueId()) })({ payload })
 );
 
-export const inviteCreationSuccess = createAction(
-    'invite::create::success',
+export const inviteBatchCreateSuccess = createAction(
+    'invite::batch::create::success',
     withRequestSuccess(
-        (payload: InviteCreateSuccess) =>
+        (payload: InviteBatchCreateSuccess, count: number) =>
             pipe(
                 withCache,
                 withNotification({
                     type: 'info',
-                    text: c('Info').t`Invite successfully sent`,
+                    text:
+                        count > 1
+                            ? // Translator : count will always be greater than 1
+                              c('Info').t`${count} invites successfully sent`
+                            : c('Info').t`Invite successfully sent`,
                 })
             )({ payload }),
         { data: ({ shareId }) => ({ shareId }) }
     )
 );
 
-export const inviteCreationFailure = createAction(
-    'invite::create::failure',
-    withRequestFailure((error: unknown) =>
+export const inviteBatchCreateFailure = createAction(
+    'invite::batch::create::failure',
+    withRequestFailure((error: unknown, count: number) =>
         withNotification({
             type: 'error',
-            text: c('Error').t`Cannot send invitation to this address at the moment`,
+            text: c('Error').ngettext(
+                msgid`Cannot send invitation at the moment`,
+                `Cannot send invitations at the moment`,
+                count
+            ),
             error,
         })({ payload: {}, error })
     )

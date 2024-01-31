@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
+import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import type { Draft } from '@proton/pass/store/reducers';
 import type { ItemRevision, ItemRevisionID, ItemSortFilter, ItemType, MaybeNull, UniqueItem } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -121,7 +121,7 @@ export const batchByShareId = <T extends UniqueItem, R>(
     mapTo: (item: T) => R
 ): { shareId: string; items: R[] }[] =>
     groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
-        const batches = chunk(shareTrashedItems, MAX_BATCH_ITEMS_PER_REQUEST);
+        const batches = chunk(shareTrashedItems, MAX_BATCH_PER_REQUEST);
         return batches.map((batch) => ({
             shareId: batch[0].shareId,
             items: batch.map(mapTo),

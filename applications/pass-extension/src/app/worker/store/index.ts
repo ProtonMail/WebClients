@@ -80,7 +80,7 @@ const options: RootSagaOptions = {
         if (res.ok) {
             ctx.setStatus(AppStatus.READY);
             ctx.service.telemetry?.start().catch(noop);
-            void ctx.service.i18n.setLocale(selectLocale(store.getState()));
+            ctx.service.i18n.setLocale(selectLocale(store.getState())).catch(noop);
 
             store.dispatch(startEventPolling());
             store.dispatch(draftsGarbageCollect());

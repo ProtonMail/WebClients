@@ -9,7 +9,6 @@ import {
     emptyTrashProgress,
     importItemsProgress,
     inviteAcceptSuccess,
-    inviteCreationSuccess,
     itemAutofilled,
     itemBulkDeleteProgress,
     itemBulkMoveProgress,
@@ -43,6 +42,7 @@ import {
     restoreTrashProgress,
     shareDeleteSync,
     shareLeaveSuccess,
+    sharedVaultCreated,
     sharesSync,
     syncSuccess,
     vaultDeleteSuccess,
@@ -254,16 +254,13 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return partialMerge(state, { [shareId]: { [itemId]: { pinned: false } } });
         }
 
-        if (
-            inviteCreationSuccess.match(action) &&
-            action.payload.withVaultCreation &&
-            action.payload.item &&
-            action.payload.movedItem
-        ) {
-            const { item, shareId, movedItem } = action.payload;
+        if (sharedVaultCreated.match(action) && action.payload.move) {
+            const { shareId } = action.payload.share;
+            const { before, after } = action.payload.move;
+
             return fullMerge(
-                { ...state, [item.shareId]: objectDelete(state[item.shareId], item.itemId) },
-                { [shareId]: { [movedItem.itemId]: movedItem } }
+                { ...state, [before.shareId]: objectDelete(state[before.shareId], before.itemId) },
+                { [shareId]: { [after.itemId]: after } }
             );
         }
 

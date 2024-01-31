@@ -4,7 +4,7 @@ import {
     bootSuccess,
     getShareAccessOptionsSuccess,
     inviteAcceptSuccess,
-    inviteCreationSuccess,
+    inviteBatchCreateSuccess,
     inviteRemoveSuccess,
     newUserInvitePromoteSuccess,
     newUserInviteRemoveSuccess,
@@ -15,6 +15,7 @@ import {
     shareEvent,
     shareLeaveSuccess,
     shareRemoveMemberAccessSuccess,
+    sharedVaultCreated,
     sharesSync,
     syncSuccess,
     vaultCreationSuccess,
@@ -89,11 +90,12 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
         return partialMerge(state, { [shareId]: { owner: false, shareRoleId: ShareRole.ADMIN, members } });
     }
 
-    if (inviteCreationSuccess.match(action)) {
-        return action.payload.withVaultCreation
-            ? partialMerge(state, { [action.payload.shareId]: { ...action.payload.share, shared: true } })
-            : partialMerge(state, { [action.payload.shareId]: { shared: true } });
+    if (sharedVaultCreated.match(action)) {
+        const { share } = action.payload;
+        return partialMerge(state, { [share.shareId]: share });
     }
+
+    if (inviteBatchCreateSuccess.match(action)) partialMerge(state, { [action.payload.shareId]: { shared: true } });
 
     if (newUserInvitePromoteSuccess.match(action)) {
         const { shareId, invites, newUserInvites } = action.payload;
@@ -127,7 +129,8 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (getShareAccessOptionsSuccess.match(action)) {
         const { shareId, invites, newUserInvites, members } = action.payload;
-        return partialMerge(state, { [shareId]: { invites, members, newUserInvites } });
+        const shared = (invites?.length ?? 0) > 0 || (newUserInvites?.length ?? 0) > 0 || members.length > 1;
+        return partialMerge(state, { [shareId]: { invites, members, newUserInvites, shared } });
     }
 
     if (shareEditMemberAccessSuccess.match(action)) {
