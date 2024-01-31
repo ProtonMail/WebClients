@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import {
     Children,
     type ForwardRefRenderFunction,
+    type MouseEventHandler,
     type ReactElement,
     type ReactNode,
     cloneElement,
@@ -20,6 +22,7 @@ export type FieldBoxProps = {
     children?: ReactNode | undefined;
     className?: string;
     icon?: IconName | ReactElement;
+    onClick?: MouseEventHandler;
 };
 
 const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<ReactElement> =>
@@ -48,7 +51,11 @@ const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = 
     const iconEl = isCoreIcon ? <Icon name={icon} size={5} /> : icon;
 
     return (
-        <div className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)} ref={ref}>
+        <div
+            className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)}
+            ref={ref}
+            onClick={props.onClick}
+        >
             {icon && (
                 <span
                     className={clsx('flex justify-center items-center shrink-0 pr-4', isCoreIcon && 'mt-2')}
