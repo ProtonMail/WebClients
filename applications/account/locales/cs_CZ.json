@@ -995,9 +995,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Navyšte pro povolení ${ PROTON_SENTINEL_NAME }"
       ],
-      "Upgrade to Visionary": [
-        "Navýšit na Visionary"
-      ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
       ],
@@ -3152,9 +3149,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Přístup k aplikaci pro stolní PC je omezený"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na předplatitele tarifu ${ BRAND_NAME } Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
@@ -12890,6 +12884,9 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "${ app } úložiště"
+      ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** z ${ humanMaxSpace }"
       ],

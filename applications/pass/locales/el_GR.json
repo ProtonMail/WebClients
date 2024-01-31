@@ -675,6 +675,9 @@
         "${ n } στοιχείο",
         "${ n } στοιχεία"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Display": [
+        "Προβολή"
+      ],
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "Προώθηση σε"
+      ],
+      "General": [
+        "Γενικά"
       ],
       "Generic CSV": [
         "Γενικό CSV"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
+      ],
+      "Language": [
+        "Γλώσσα"
       ],
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "Επιλέξτε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
+      "Select preferred language": [
+        "Επιλέξτε την προτιμώμενη γλώσσα"
+      ],
       "Select your password manager": [
         "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "Ορισμός κωδικού PIN"
+      ],
+      "Show website favicons": [
+        "Εμφάνιση favicons ιστότοπου"
       ],
       "Special characters (!&*)": [
         "Ειδικοί χαρακτήρες (!&*)"

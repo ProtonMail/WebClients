@@ -675,6 +675,9 @@
         "${ n } item",
         "${ n } itens"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "Criado"
       ],
+      "Display": [
+        "Exibição"
+      ],
       "Empty trash": [
         "Esvaziar lixeira"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "Encaminhar para"
+      ],
+      "General": [
+        "Geral"
       ],
       "Generic CSV": [
         "CSV genérico"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
+      ],
+      "Language": [
+        "Idioma"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "Selecione um endereço de e-mail"
       ],
+      "Select preferred language": [
+        "Selecionar idioma preferido"
+      ],
       "Select your password manager": [
         "Selecione o seu gerenciador de senhas"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "Definir código PIN"
+      ],
+      "Show website favicons": [
+        "Mostrar favicons do site"
       ],
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"

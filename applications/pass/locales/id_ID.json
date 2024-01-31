@@ -666,6 +666,9 @@
       "${ n } items": [
         "${ n } item"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
       ],
@@ -1175,6 +1178,9 @@
       "Created": [
         "Waktu pembuatan"
       ],
+      "Display": [
+        "Tampilan"
+      ],
       "Empty trash": [
         "Kosongkan sampah"
       ],
@@ -1192,6 +1198,9 @@
       ],
       "Forwards to": [
         "Teruskan ke"
+      ],
+      "General": [
+        "Umum"
       ],
       "Generic CSV": [
         "Berkas CSV umum"
@@ -1231,6 +1240,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pintasan keyboard: ${ shortcut }"
+      ],
+      "Language": [
+        "Bahasa"
       ],
       "Last 2 weeks": [
         "2 minggu terakhir"
@@ -1340,6 +1352,9 @@
       "Select an email address": [
         "Pilih alamat surel"
       ],
+      "Select preferred language": [
+        "Pilih bahasa yang diinginkan"
+      ],
       "Select your password manager": [
         "Pilih pengelola kata sandi Anda"
       ],
@@ -1351,6 +1366,9 @@
       ],
       "Set PIN code": [
         "Tentukan kode PIN"
+      ],
+      "Show website favicons": [
+        "Tampilkan ikon favorit situs web"
       ],
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
