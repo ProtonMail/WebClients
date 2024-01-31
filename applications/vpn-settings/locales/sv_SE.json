@@ -506,9 +506,6 @@
       "Upgrade to Business": [
         "Uppgradera till Business"
       ],
-      "Upgrade to Visionary": [
-        "Uppgradera till Visionary"
-      ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
       ],
@@ -1866,9 +1863,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Åtkomst till app för stationär dator är begränsat"
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
@@ -3399,6 +3393,9 @@
       ],
       "per month": [
         "per månad"
+      ],
+      "per month, billed at ${ price }": [
+        "per månad, faktureras med ${ price }"
       ],
       "per month, billed every 12 months": [
         "per månad, faktureras var 12:e månad"

@@ -506,9 +506,6 @@
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
       ],
-      "Upgrade to Visionary": [
-        "Upgrade para Visionary"
-      ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
       ],
@@ -1867,9 +1864,6 @@
       "Access to the desktop app is limited": [
         "O acesso ao aplicativo de desktop é limitado"
       ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "A versão beta do aplicativo de desktop ${ MAIL_APP_NAME } é atualmente limitada aos assinantes ${ BRAND_NAME } Visionary. Ela estará disponível para todos os usuários no início de 2024."
-      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
       ]
@@ -3017,7 +3011,7 @@
         "Copiado para a área de transferência"
       ],
       "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
-        "Copie e cole este URL no campo URL ACS (Assertion Consumer Service) do seu provedor de identidade"
+        "Copie e cole este URL no campo URL AAC (Afirmação de Atendimento ao Consumidor) do seu provedor de identidade"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Copie e cole este URL no campo ID do seu provedor de identidade"
@@ -3886,7 +3880,7 @@
         "Estamos atualizando seu plano atual para um plano aprimorado que oferece mais pelo mesmo preço. Enquanto nossos sistemas estiverem sendo atualizados, você não poderá alterá-los. Enviaremos um e-mail assim que estiver pronto."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Ao ativar SAML para ${ appName } no seu provedor de identidade, você poderá ser solicitado(a) a usar a URL de retorno (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
+        "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."

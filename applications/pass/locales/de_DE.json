@@ -675,6 +675,9 @@
         "${ n } Eintrag",
         "${ n } Einträge"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
       ],
@@ -774,6 +777,9 @@
       ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Befolge diese Schritte, um deine Daten mit einer generischen CSV zu importieren:"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
@@ -1188,6 +1194,9 @@
       "Created": [
         "Erstellt"
       ],
+      "Display": [
+        "Darstellung"
+      ],
       "Empty trash": [
         "Papierkorb leeren"
       ],
@@ -1205,6 +1214,9 @@
       ],
       "Forwards to": [
         "Leitet weiter an"
+      ],
+      "General": [
+        "Allgemein"
       ],
       "Generic CSV": [
         "Generische CSV"
@@ -1244,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastaturkürzel: ${ shortcut }"
+      ],
+      "Language": [
+        "Sprache"
       ],
       "Last 2 weeks": [
         "Letzte 2 Wochen"
@@ -1353,6 +1368,9 @@
       "Select an email address": [
         "E-Mail-Adresse auswählen"
       ],
+      "Select preferred language": [
+        "Bevorzugte Sprache auswählen"
+      ],
       "Select your password manager": [
         "Passwort-Manager auswählen"
       ],
@@ -1364,6 +1382,9 @@
       ],
       "Set PIN code": [
         "PIN-Code festlegen"
+      ],
+      "Show website favicons": [
+        "Website-Symbole anzeigen"
       ],
       "Special characters (!&*)": [
         "Sonderzeichen (!&*)"

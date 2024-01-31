@@ -116,6 +116,9 @@
       "Delete vault": [
         "Elimina la caixa forta"
       ],
+      "Deselect": [
+        "Anul·la la selecció"
+      ],
       "Discard": [
         "Descarta"
       ],
@@ -598,6 +601,9 @@
         "${ n } element",
         "${ n } elements"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
@@ -994,6 +1000,9 @@
       "Created": [
         "Creat"
       ],
+      "Display": [
+        "Visualització"
+      ],
       "Empty trash": [
         "Buida la paperera"
       ],
@@ -1011,6 +1020,12 @@
       ],
       "Forwards to": [
         "Reenvia a"
+      ],
+      "General": [
+        "General"
+      ],
+      "Generic CSV": [
+        "CSV genèric"
       ],
       "Grant": [
         "Autoritza"
@@ -1047,6 +1062,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
+      ],
+      "Language": [
+        "Idioma"
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
@@ -1156,6 +1174,9 @@
       "Select an email address": [
         "Seleccioneu una adreça de correu electrònic"
       ],
+      "Select preferred language": [
+        "Trieu la llengua preferida"
+      ],
       "Select your password manager": [
         "Seleccioneu el gestor de contrasenyes"
       ],
@@ -1167,6 +1188,9 @@
       ],
       "Set PIN code": [
         "Establir codi PIN"
+      ],
+      "Show website favicons": [
+        "Mostra els favicons del lloc web"
       ],
       "Special characters (!&*)": [
         "Caràcters especials (!&*)"

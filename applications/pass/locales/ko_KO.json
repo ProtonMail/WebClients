@@ -666,6 +666,9 @@
       "${ n } items": [
         "${ n }개 항목"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
       ],
@@ -1175,6 +1178,9 @@
       "Created": [
         "제작"
       ],
+      "Display": [
+        "표시"
+      ],
       "Empty trash": [
         "휴지통 비우기"
       ],
@@ -1192,6 +1198,9 @@
       ],
       "Forwards to": [
         "다음으로 전달:"
+      ],
+      "General": [
+        "일반"
       ],
       "Generic CSV": [
         "일반 CSV"
@@ -1231,6 +1240,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "키보드 단축키: ${ shortcut }"
+      ],
+      "Language": [
+        "언어"
       ],
       "Last 2 weeks": [
         "지난 2주"
@@ -1340,6 +1352,9 @@
       "Select an email address": [
         "이메일 주소 선택"
       ],
+      "Select preferred language": [
+        "선호하는 언어 선택"
+      ],
       "Select your password manager": [
         "비밀 번호 관리자를 선택하세요"
       ],
@@ -1351,6 +1366,9 @@
       ],
       "Set PIN code": [
         "PIN 코드 설정"
+      ],
+      "Show website favicons": [
+        "웹사이트 아이콘 표시"
       ],
       "Special characters (!&*)": [
         "특수 문자 (!&*)"
