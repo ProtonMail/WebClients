@@ -330,6 +330,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         verifiedDomains={verifiedDomains}
                         app={app}
                         useEmail={useEmail}
+                        optionalName={hasB2BPlan}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
