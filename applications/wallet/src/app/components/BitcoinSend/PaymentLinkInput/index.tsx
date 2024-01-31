@@ -56,11 +56,11 @@ export const PaymentLinkInput = ({ onPaymentLinkSubmit, onCreateTxFromScratch }:
                                 handleClickPasteButton();
                             }}
                         >
-                            <Icon size={10} name="note" />{' '}
+                            <Icon size={5} name="note" />{' '}
                             <span className="block ml-2">{c('Wallet Send').t`Paste`}</span>
                         </Button>
                         <Button size="large" className="flex flex-row items-center" onClick={() => openModal()}>
-                            <Icon size={10} name="camera" />{' '}
+                            <Icon size={5} name="camera" />{' '}
                             <span className="block ml-2">{c('Wallet Send').t`Scan`}</span>
                         </Button>
                     </div>
