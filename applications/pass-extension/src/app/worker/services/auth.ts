@@ -109,6 +109,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear();
+
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 

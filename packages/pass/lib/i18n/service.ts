@@ -4,7 +4,7 @@ import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
-import { getLanguageCode } from '@proton/shared/lib/i18n/helper';
+import { getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { type TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -23,20 +23,24 @@ export const createI18nService = (options: I18nServiceOptions) => {
 
     const hasRegion = (locale: string) => /[_-]/.test(locale);
 
-    const getNavigatorLocale = (): string => {
+    const getFallbackLocale = (): string => {
         const [fst, snd] = navigator.languages;
         if (!fst && !snd) return DEFAULT_LOCALE;
-        return !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst;
+
+        return getClosestLocaleCode(
+            !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst,
+            options.locales
+        );
     };
 
-    const getLocale = async () => (await options.getLocale()) ?? getNavigatorLocale();
+    const getLocale = async () => (await options.getLocale()) ?? getFallbackLocale();
 
     const setLocale = async (locale?: string) => {
         try {
-            logger.info(`[I18nService] changing locale to ${locale}`);
             const nextLocale = locale ?? (await getLocale());
 
             if (nextLocale !== localeCode) {
+                logger.info(`[I18nService] changing locale to ${locale}`);
                 await loadLocale(nextLocale, options.locales);
                 options.onLocaleChange?.(nextLocale);
                 pubsub.publish({ locale: nextLocale });
@@ -47,6 +51,7 @@ export const createI18nService = (options: I18nServiceOptions) => {
     return {
         setLocale,
         getLocale,
+        getFallbackLocale,
         subscribe: (fn: Subscriber<LocaleEvent>) => pubsub.subscribe(fn),
         unsubscribe: () => pubsub.unsubscribe(),
     };

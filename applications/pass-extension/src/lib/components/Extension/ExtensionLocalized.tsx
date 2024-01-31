@@ -1,9 +1,8 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, useEffect } from 'react';
+import { type FC, Fragment, useEffect } from 'react';
 
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { Localized } from '@proton/pass/components/Core/Localized';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { WorkerMessage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -19,14 +18,14 @@ export const ExtensionLocalized: FC<PropsWithChildren> = ({ children }) => {
         const watchLocale = (message: WorkerMessage) => {
             if (message.type === WorkerMessageType.LOCALE_UPDATED) {
                 const nextLocale = message.payload.locale;
-                core.i18n.setLocale(nextLocale);
+                void core.i18n.setLocale(nextLocale);
             }
         };
 
         core.i18n
             .getLocale()
             .then((locale) => {
-                core.i18n.setLocale(locale);
+                void core.i18n.setLocale(locale);
                 context.port.onMessage.addListener(watchLocale);
             })
             .catch(noop);
@@ -34,5 +33,5 @@ export const ExtensionLocalized: FC<PropsWithChildren> = ({ children }) => {
         return () => context.port.onMessage.removeListener(watchLocale);
     }, [context]);
 
-    return <Localized>{children}</Localized>;
+    return <Fragment key={core.locale}>{children}</Fragment>;
 };

@@ -1,3 +1,4 @@
+import { clientReady } from '@proton/pass/lib/client';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { createI18nService as createCoreI18nService } from '@proton/pass/lib/i18n/service';
 import { WorkerMessageType } from '@proton/pass/types';
@@ -14,7 +15,7 @@ export const createI18nService = () => {
             const { locale } = await ctx.service.settings.resolve();
             return locale;
         }),
-        onLocaleChange: withContext(({ service }, locale) => {
+        onLocaleChange: withContext(({ service, getState }, locale) => {
             WorkerMessageBroker.ports.broadcast(
                 backgroundMessage({
                     type: WorkerMessageType.LOCALE_UPDATED,
@@ -22,17 +23,20 @@ export const createI18nService = () => {
                 })
             );
 
-            void service.settings.resolve().then((settings) => service.settings.sync({ ...settings, locale }));
+            if (clientReady(getState().status)) {
+                service.settings
+                    .resolve()
+                    .then((settings) => service.settings.sync({ ...settings, locale }))
+                    .catch(noop);
+            }
         }),
     });
-
-    service.getLocale().then(service.setLocale).catch(noop);
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.LOCALE_REQUEST, async () => ({
         locale: await service.getLocale(),
     }));
 
-    return service;
+    return { ...service, init: () => service.getLocale().then(service.setLocale) };
 };
 
 export type I18NService = ReturnType<typeof createI18nService>;
