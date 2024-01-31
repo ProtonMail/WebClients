@@ -132,7 +132,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
                 onboarding.reset();
                 telemetry.stop();
-                settings.clear();
+                void settings.clear();
 
                 localStorage.removeItem(getSessionKey(localID));
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
