@@ -1,27 +1,48 @@
-@import '~@proton/styles/scss/lib';
+@use "sass:map";
+@import "~@proton/styles/scss/lib";
 
 .orderableHelper {
-	z-index: 30;
-	display: flex;
-	align-items: center;
+	z-index: map.get($z-indexes, 'up');
 	color: var(--text-norm);
 	background: var(--background-norm);
-	border: solid var(--border-norm);
-	border-block-width: 1px;
-	border-inline-width: 0;
+	border: 1px solid var(--border-norm);
+	border-radius: var(--border-radius-lg) !important;
+	box-shadow: var(--shadow-lifted);
 
-	/**
-     * We replace td with custom class here because we don't have direct access to it.
-     * See: https://github.com/ProtonMail/@proton/components/pull/113/files#r305374317
-     */
 	td {
-		flex: 1;
 		border: none;
-		block-size: 100%;
+	}
+}
 
-		&:first-child {
-			flex-grow: 0;
-			flex-basis: rem(35);
+@include media("<=medium") {
+	.orderableTable {
+		tbody {
+			tr {
+				position: relative;
+				padding-inline-start: rem(40);
+				margin-block-end: -1px !important;
+
+				&:not(:last-child) {
+					border-end-start-radius: 0;
+					border-end-end-radius: 0;
+				}
+
+				&:not(:first-child) {
+					border-start-start-radius: 0;
+					border-start-end-radius: 0;
+				}
+			}
+
+			td:first-child {
+				position: absolute;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				inset-inline-start: var(--space-2);
+				padding: 0;
+				block-size: calc(100% - var(--space-3) * 2);
+				inline-size: rem(24);
+			}
 		}
 	}
 }
