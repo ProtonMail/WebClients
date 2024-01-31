@@ -506,9 +506,6 @@
       "Upgrade to Business": [
         "Mejorar a Business"
       ],
-      "Upgrade to Visionary": [
-        "Mejorar a Visionary"
-      ],
       "Upgrade your plan": [
         "Mejora tu plan"
       ],
@@ -1866,9 +1863,6 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "El acceso a la aplicación de escritorio está limitado."
-      ],
-      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } por ahora está limitada a suscriptores de ${ BRAND_NAME } Visionary. Estará disponible a todos los usuarios en 2024."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Mejora ahora o comprueba de nuevo a inicios de 2024 para su acceso."
@@ -3407,6 +3401,9 @@
       ],
       "per month": [
         "al mes"
+      ],
+      "per month, billed at ${ price }": [
+        "mensual, facturado a ${ price }"
       ],
       "per month, billed every 12 months": [
         "al mes, facturado cada 12 meses"
