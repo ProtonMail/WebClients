@@ -17,7 +17,6 @@ import { isProtonPassEncryptedImport } from '@proton/pass/lib/import/reader';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 const getDomainImageFactory =
@@ -128,7 +127,7 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
                 getLocale: () =>
                     sendMessage.on(
                         resolveMessageFactory(endpoint)({ type: WorkerMessageType.LOCALE_REQUEST }),
-                        (res) => (res.type === 'success' ? res.locale : DEFAULT_LOCALE)
+                        (res) => (res.type === 'success' ? res.locale : undefined)
                     ),
             }),
         []
