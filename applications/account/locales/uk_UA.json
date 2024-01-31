@@ -989,9 +989,6 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Щоб увімкнути ${ PROTON_SENTINEL_NAME }, передплатіть тарифний план"
       ],
-      "Upgrade to Visionary": [
-        "Перейти на Visionary"
-      ],
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
@@ -5486,6 +5483,9 @@
         "${ n } адрес",
         "${ n } адрес"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: не відправляти на карантин і не відхиляти несанкціоновані листи. Зазвичай люди використовують цю політику лише для усунення несправностей або тестування."
+      ],
       "${ number } city": [
         "${ number } місто",
         "${ number } міста",
@@ -5530,6 +5530,12 @@
         "${ provisioningCounter } сервери все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }."
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: прохання до платформи одержувача позначати несанкціоновані листи як спам або відправити їх на карантин."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: прохання до платформи отримувача відхилити несанкціоновані листи."
       ],
       "${ remainingAddresses.length } more": [
         "ще ${ remainingAddresses.length }",
@@ -5879,6 +5885,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Перш ніж ви зможете отримувати листи на адреси вашого власного домену за адресою ${ MAIL_APP_NAME }, вам потрібно додати два наступні MX-записи у DNS-консолі (розташованій на платформі, на якій ви придбали власний домен). Ви можете знайти приклад і кілька корисних порад ${ kbLink }."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
@@ -6022,6 +6031,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM дозволяє ${ BRAND_NAME } криптографічно підписувати ваші електронні листи і запобігати підробці вашої е-пошти зловмисниками. Переконайтеся, що ви додали наступні три записи CNAME у консолі DNS (розташованій на платформі, де ви придбали власний домен)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC перевіряє, чи записи SPF і DKIM відправника походять з вашого домену. Це може запобігти використанню зловмисниками SPF і DKIM іншого домену, щоб видати себе за ваш домен. \"p=\" (політика) в цьому записі вказує, як ви хочете, щоб платформи одержувачів обробляли несанкціоновані листи. Ми рекомендуємо використовувати політику \"p=quarantine\" для більшості доменів. Переконайтеся, що ви додали наступний TXT-запис у консоль DNS (розташовану на платформі, на якій ви придбали власний домен)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
@@ -6287,6 +6302,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
       ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "ВАЖЛИВО: Якщо ваша консоль DNS не допускає, щоб значення CNAME закінчувалися крапкою, ви можете видалити останню крапку в значеннях CNAME."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
       ],
@@ -6418,6 +6436,9 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Журнали містять записи про спроби автентифікації для всіх служб ${ BRAND_NAME }, які використовують ваші облікові дані ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Основні поштові сервіси можуть відхиляти або фільтрувати ваші листи як спам, якщо SPF/DKIM/DMARC відсутні або налаштовані неправильно."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
@@ -11962,6 +11983,12 @@
         "${ n } календарів на користувача",
         "${ n } календарів на користувача"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } безкоштовне VPN-з'єднання на користувача",
+        "${ n } безкоштовні VPN-з'єднання на користувача",
+        "${ n } безкоштовних VPN-з'єднань на користувача",
+        "${ n } безкоштовних VPN-з'єднань на користувача"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } високошвидкісне VPN-з'єднання",
         "${ n } високошвидкісні VPN-з'єднання",
@@ -13339,6 +13366,12 @@
       ],
       "Success": [
         "Успішно"
+      ],
+      "Successfully created ${ n } user account": [
+        "Успішно створено ${ n } обліковий запис",
+        "Успішно створено ${ n } облікові записи",
+        "Успішно створено ${ n } облікових записів",
+        "Успішно створено ${ n } облікових записів"
       ],
       "Summary": [
         "Підсумок"
