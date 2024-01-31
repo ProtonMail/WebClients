@@ -4793,6 +4793,10 @@
         "${ currentProgress } van ${ totalProgress }",
         "${ currentProgress } van ${ totalProgress }"
       ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } berichten worden gelabeld als:",
+        "${ elementsCount } berichten worden gelabeld als:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ingesloten afbeelding",
         "${ embeddedAttachmentsCount } ingesloten afbeeldingen"
@@ -6109,7 +6113,15 @@
         "U heeft **${ count } bericht** geselecteerd met dit label",
         "U heeft **${ count } berichten** geselecteerd met dit label"
       ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Selecteer**${ elementsCount } gesprek **in ${ location }",
+        "Selecteer**${ elementsCount } gesprekken **in ${ location }"
+      ],
       "You selected **${ elementsCount } conversation**.": [
+        "U selecteerde **${ elementsCount } gesprek**.",
+        "U selecteerde **${ elementsCount } gesprekken**."
+      ],
+      "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
       ],
