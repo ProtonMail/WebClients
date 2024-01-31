@@ -50,7 +50,7 @@ export const ExploreProtonWalletSection = () => {
             <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
                 <ExploreProtonWalletItem
                     icon="pass-shield"
-                    iconSize={8}
+                    iconSize={5}
                     color={ACCENT_COLORS_MAP.purple.color}
                     content={c('Wallet Dashboard').t`How to stay safe and protect your assets.`}
                 >
