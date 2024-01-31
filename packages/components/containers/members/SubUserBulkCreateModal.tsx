@@ -70,6 +70,7 @@ interface Props extends ModalProps {
     csvConfig: CsvConfig;
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }
 
 const SubUserBulkCreateModal = ({
@@ -79,6 +80,7 @@ const SubUserBulkCreateModal = ({
     csvConfig,
     disableStorageValidation,
     disableDomainValidation,
+    disableAddressValidation,
     ...rest
 }: Props) => {
     const [step, setStep] = useState<Step>(Step.INSTRUCTION);
@@ -100,6 +102,7 @@ const SubUserBulkCreateModal = ({
                 expectedCsvConfig={csvConfig}
                 disableStorageValidation={disableStorageValidation}
                 disableDomainValidation={disableDomainValidation}
+                disableAddressValidation={disableAddressValidation}
                 {...createUserAccountsModal}
                 {...rest}
             />
