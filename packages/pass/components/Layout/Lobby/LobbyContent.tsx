@@ -38,7 +38,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     const brandNameJSX = (
         <img
             src={passBrandText}
-            className="pass-lobby--brand-text ml-2 h-custom"
+            className="pass-lobby--brand-text ml-2 h-custom shrink-0"
             style={{ '--h-custom': '1.5rem' }}
             key="brand"
             alt=""
@@ -76,7 +76,7 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
     return (
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
-                <span className="pass-lobby--heading text-bold text-norm flex items-end justify-center user-select-none">
+                <span className="pass-lobby--heading text-bold text-norm text-no-wrap flex flex-nowrap items-end justify-center user-select-none">
                     {locked
                         ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
                         : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
