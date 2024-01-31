@@ -56,7 +56,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         client.current.setStatus(AppStatus.READY);
 
                         telemetry.start().catch(noop);
-                        i18n.setLocale(selectLocale(store.getState()));
+                        void i18n.setLocale(selectLocale(store.getState()));
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
