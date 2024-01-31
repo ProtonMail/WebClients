@@ -675,6 +675,9 @@
         "${ n } kohde",
         "${ n } kohdetta"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "Luotu"
       ],
+      "Display": [
+        "Ulkoasu"
+      ],
       "Empty trash": [
         "Tyhjennä roskakori"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "Ohjaa osoitteeseen"
+      ],
+      "General": [
+        "Yleiset"
       ],
       "Generic CSV": [
         "Yleispätevä CSV"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
+      ],
+      "Language": [
+        "Kieli"
       ],
       "Last 2 weeks": [
         "Kahden viikon aikana"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "Valitse sähköpostiosoite"
       ],
+      "Select preferred language": [
+        "Valitse ensisijainen kieli"
+      ],
       "Select your password manager": [
         "Valitse salasanahallintasi"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "Aseta PIN-koodi"
+      ],
+      "Show website favicons": [
+        "Näytä sivustokuvakkeet"
       ],
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
