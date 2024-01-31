@@ -3,6 +3,7 @@ import log from "electron-log/main";
 import { join } from "path";
 import { setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
+import { ALLOWED_OAUTH_URLS } from "./constants";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -27,6 +28,17 @@ export const getBasePath = (): string => {
     }
 };
 
+export const isLogginOut = (host: string) => {
+    try {
+        log.info("isLogginOut", host);
+        const hostURl = new URL(host);
+        return hostURl.href.includes("/switch?flow=logout");
+    } catch (error) {
+        log.error("isLogginOut", error);
+        return false;
+    }
+};
+
 export const isHostCalendar = (host: string) => {
     try {
         const urls = getConfig(app.isPackaged).url;
@@ -47,6 +59,52 @@ export const isHostMail = (host: string) => {
         return urls.mail === hostURl.origin;
     } catch (error) {
         log.error("isHostMail", error);
+        return false;
+    }
+};
+
+export const isHostAccount = (host: string) => {
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
+
+        return urls.account === hostURl.origin;
+    } catch (error) {
+        log.error("isHostAccount", error);
+        return false;
+    }
+};
+
+export const isAccoutLite = (host: string) => {
+    try {
+        const hostURl = new URL(host);
+        return hostURl.pathname.includes("/lite");
+    } catch (error) {
+        log.error("isAccoutLite", error);
+        return false;
+    }
+};
+
+export const isUpsellURL = (host: string) => {
+    try {
+        const hostURl = new URL(host);
+        const plan = hostURl.searchParams.get("plan");
+        const billing = hostURl.searchParams.get("billing");
+        const currency = hostURl.searchParams.get("currency");
+        const coupon = hostURl.searchParams.get("coupon");
+        return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
+    } catch (error) {
+        log.error("isUpsellURL", error);
+        return false;
+    }
+};
+
+export const isHostOAuth = (host: string) => {
+    try {
+        log.info("isHostOAuth", host);
+        return ALLOWED_OAUTH_URLS.some((url) => host.startsWith(url));
+    } catch (error) {
+        log.error("isHostOAuth", error);
         return false;
     }
 };

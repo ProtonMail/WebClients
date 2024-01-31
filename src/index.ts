@@ -1,12 +1,26 @@
-import { app, BrowserWindow, session, shell } from "electron";
+import { BrowserWindow, Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
+import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
-import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
-import { getSessionID } from "./utils/urlHelpers";
+import {
+    clearStorage,
+    isAccoutLite,
+    isHostAccount,
+    isHostAllowed,
+    isHostCalendar,
+    isHostMail,
+    isHostOAuth,
+    isLogginOut,
+    isMac,
+    isUpsellURL,
+    isWindows,
+    saveWindowsPosition,
+} from "./utils/helpers";
+import { getSessionID, handleMailToUrls } from "./utils/urlHelpers";
 import {
     handleCalendarWindow,
     handleMailWindow,
@@ -35,6 +49,13 @@ moveUninstaller();
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");
 
+// Detects if the application is default handler for mailto, works on macOS for now
+if (app.isDefaultProtocolClient("mailto")) {
+    log.info("App is default mailto client");
+} else {
+    log.info("App is not default mailto client");
+}
+
 app.whenReady().then(() => {
     const secureSession = session.fromPartition(PARTITION, {
         cache: false,
@@ -45,12 +66,24 @@ app.whenReady().then(() => {
     // Check updates
     checkForUpdates();
 
+    // Trigger blank notification to force presence in settings
+    new Notification();
+
+    // Handle IPC calls coming from the destkop application
+    handleIPCCalls();
+
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
             log.info("Activate app, all windows hidden");
             const window = BrowserWindow.getAllWindows()[0];
             handleMailWindow(window.webContents);
         }
+    });
+
+    // Normally this only works on macOS and is not required for Windows
+    app.on("open-url", (e, url) => {
+        log.info("Opening url", url);
+        handleMailToUrls(url);
     });
 
     // Security addition, reject all permissions except notifications
@@ -84,6 +117,7 @@ app.on("web-contents-created", (_ev, contents) => {
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
+        log.info("did-navigate-in-page");
         if (!isHostAllowed(url, app.isPackaged)) {
             return preventDefault(ev);
         }
@@ -98,7 +132,15 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        if (!isHostAllowed(details.url, app.isPackaged)) {
+        log.info("will-navigate");
+        if (isLogginOut(details.url)) {
+            log.info("User is login out, clearing application data");
+            // We add a small timeout to let the logout process finish
+            clearStorage(true, 500);
+            return details;
+        }
+
+        if (!isHostAllowed(details.url, app.isPackaged) && !isHostOAuth(details.url)) {
             return preventDefault(details);
         }
 
@@ -120,8 +162,20 @@ app.on("web-contents-created", (_ev, contents) => {
             return { action: "deny" };
         }
 
-        if (isHostAllowed(url, app.isPackaged)) {
+        if (isHostAccount(url)) {
+            // Upsell links should be opened in browser to avoid 3D secure issues
+            log.info("Account link");
+            if (isAccoutLite(url) || isUpsellURL(url)) {
+                log.info("Upsell link or lite account, open in browser", url);
+                shell.openExternal(url);
+                return { action: "deny" };
+            }
+            return { action: "allow" };
+        } else if (isHostAllowed(url, app.isPackaged)) {
             log.info("Open internal link", url);
+            return { action: "allow" };
+        } else if (isHostOAuth(url)) {
+            log.info("Open OAuth link", url);
             return { action: "allow" };
         } else {
             log.info("Open external link", url);

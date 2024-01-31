@@ -1,7 +1,7 @@
 {
     "name": "proton-mail",
     "productName": "Proton Mail",
-    "version": "0.9.1",
+    "version": "0.9.3",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "main": ".webpack/main",
     "scripts": {
@@ -55,7 +55,6 @@
     },
     "dependencies": {
         "crypto": "^1.0.1",
-        "electron-context-menu": "^3.6.1",
         "electron-log": "^5.0.1",
         "electron-squirrel-startup": "^1.0.0",
         "electron-store": "^8.1.0",

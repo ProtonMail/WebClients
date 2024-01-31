@@ -1,12 +1,14 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
-import contextMenu from "electron-context-menu";
 import log from "electron-log/main";
-import { getWindowState, setWindowState } from "../store/windowsStore";
+import { getWindowState } from "../store/windowsStore";
+import { handleBeforeHandle } from "./beforeUnload";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getSessionID } from "./urlHelpers";
+
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
 
 interface WindowCreationProps {
     session: Session;
@@ -17,27 +19,18 @@ interface WindowCreationProps {
 const config = getConfig(app.isPackaged);
 export const windowMap = new Map<APP, BrowserWindow>();
 
-contextMenu({
-    showInspectElement: config.devTools,
-    showSaveImage: true,
-});
-
-const windowOSConfig: BrowserWindowConstructorOptions = {};
-
-const macOSConfig: BrowserWindowConstructorOptions = {
-    frame: false,
-    titleBarStyle: "hidden",
-    vibrancy: "sidebar",
-    trafficLightPosition: { x: 12, y: 18 },
-};
-
-const getOSSpecificConfig = () => {
+const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
         log.info("getOSSpecificConfig, macOSConfig");
-        return macOSConfig;
+        return {
+            frame: false,
+            titleBarStyle: "hidden",
+            vibrancy: "sidebar",
+            trafficLightPosition: { x: 12, y: 18 },
+        };
     } else if (isWindows) {
         log.info("getOSSpecificConfig, windowOSConfig");
-        return windowOSConfig;
+        return {};
     }
     log.info("getOSSpecificConfig, empty object");
     return {};
@@ -58,7 +51,8 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         minWidth: WINDOW_SIZES.MIN_WIDTH,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: true,
+            devTools: config.devTools,
+            preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: true,
             // Security additions
             session,
@@ -70,6 +64,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     });
 
     setApplicationMenu(app.isPackaged);
+    handleBeforeHandle(window);
     window.loadURL(url);
 
     if (visible) {
@@ -90,25 +85,54 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     log.info("createGenericWindow", url, mapKey, visible, windowConfig);
     const window = createWindow(session, url, visible, windowConfig);
 
-    window.on("close", (ev) => {
-        log.info("close", mapKey);
-        setWindowState(window.getBounds(), mapKey);
-        if (isWindows) {
-            ev.preventDefault();
-            window.hide();
-            window.setOpacity(0);
+    // Used to keep track of closing windows on macOS and hide them during leave-full-screen callback
+    let closingMacOSFullscreen = false;
 
-            // Close the application if all windows are closed
-            if (areAllWindowsClosedOrHidden()) {
-                log.info("close, areAllWindowsClosedOrHidden on Windows");
-                BrowserWindow.getAllWindows().forEach((window) => window.destroy());
-                app.quit();
-            }
-        } else if (isMac) {
-            ev.preventDefault();
+    // TODO handle Linux close events
+    // Windows on close event
+    window.on("close", (ev) => {
+        if (!isWindows) {
+            return;
+        }
+
+        ev.preventDefault();
+        window.hide();
+        window.setOpacity(0);
+
+        // Close the application if all windows are closed
+        if (areAllWindowsClosedOrHidden()) {
+            log.info("close, areAllWindowsClosedOrHidden on Windows");
+            BrowserWindow.getAllWindows().forEach((window) => window.destroy());
+            app.quit();
+        }
+    });
+
+    // macOS on close event
+    window.on("close", (ev) => {
+        if (!isMac) {
+            return;
+        }
+
+        ev.preventDefault();
+        if (window.isFullScreen()) {
+            log.info("close, isFullScreen on macOS");
+            closingMacOSFullscreen = true;
+            window.setFullScreen(false);
+        } else {
             window.hide();
             window.setOpacity(0);
         }
+    });
+
+    // Handle macOS fullscreen close event
+    window.on("leave-full-screen", () => {
+        if (!closingMacOSFullscreen || !isMac) {
+            return;
+        }
+        log.info("close, leave-full-screen on macOS");
+        window.hide();
+        window.setOpacity(0);
+        closingMacOSFullscreen = false;
     });
 
     windowMap.set(mapKey, window);
@@ -194,4 +218,14 @@ export const refreshCalendarPage = (sessionID: number) => {
         log.info("refreshCalendarPage, newCalendarUrl", newCalendarUrl);
         calendarWindow.loadURL(newCalendarUrl);
     }
+};
+
+export const getMailWindow = () => {
+    log.info("getMailWindow", windowMap.has("MAIL"));
+    return windowMap.get("MAIL");
+};
+
+export const getCalendarWindow = () => {
+    log.info("getCalendarWindow", windowMap.has("CALENDAR"));
+    return windowMap.get("CALENDAR");
 };

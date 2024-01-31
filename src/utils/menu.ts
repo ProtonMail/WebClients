@@ -1,6 +1,6 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
 import { uninstallProton } from "../macos/uninstall";
-import { clearStorage, isMac, openLogFolder } from "./helpers";
+import { clearStorage, isMac, isWindows, openLogFolder } from "./helpers";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -25,6 +25,11 @@ const insertInMenu = ({ menu, key, otherOsEntries, macEntries, allOSEntries }: M
 };
 
 export const setApplicationMenu = (isPackaged: boolean) => {
+    if (isWindows) {
+        Menu.setApplicationMenu(null);
+        return;
+    }
+
     const temp: MenuItemConstructorOptions[] = [
         {
             label: "File",
@@ -53,6 +58,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "cut" },
                 { role: "copy" },
                 { role: "paste" },
+                { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
                 { role: "selectAll" },
             ],
         },
