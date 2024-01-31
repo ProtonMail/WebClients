@@ -18,6 +18,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
+import { createI18nService } from '@proton/pass/lib/i18n/service';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState, Maybe, MaybeNull, RecursivePartial, WorkerMessage } from '@proton/pass/types';
@@ -25,14 +26,13 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
 type IFrameContextValue = {
     endpoint: string;
     features: RecursivePartial<FeatureFlagState>;
-    locale: string;
+    locale: Maybe<string>;
     port: MaybeNull<Runtime.Port>;
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
@@ -49,7 +49,7 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
 const IFrameContext = createContext<IFrameContextValue>({
     endpoint: '',
     features: {},
-    locale: DEFAULT_LOCALE,
+    locale: undefined,
     port: null,
     settings: INITIAL_SETTINGS,
     userEmail: null,
@@ -72,8 +72,11 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
-    const [locale, setLocale] = useState(DEFAULT_LOCALE);
+
     const activityProbe = useExtensionActivityProbe(contentScriptMessage);
+
+    const [locale, setLocale] = useState(DEFAULT_LOCALE);
+    const i18n = useMemo(() => createI18nService({ locales, getLocale: noop, onLocaleChange: setLocale }), []);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -232,13 +235,8 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     }, [visible]);
 
     useEffect(() => {
-        if (settings?.locale) {
-            const nextLocale = settings.locale ?? DEFAULT_LOCALE;
-            loadLocale(nextLocale, locales)
-                .then(() => setLocale(nextLocale))
-                .catch(noop);
-        }
-    }, [settings?.locale]);
+        i18n.setLocale(settings.locale).catch(noop);
+    }, [settings.locale]);
 
     const context = useMemo<IFrameContextValue>(
         () => ({
@@ -251,9 +249,9 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
             visible,
             workerState,
             closeIFrame,
-            resizeIFrame,
             postMessage,
             registerHandler,
+            resizeIFrame,
         }),
         [
             features,
@@ -264,9 +262,9 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
             visible,
             workerState,
             closeIFrame,
-            resizeIFrame,
             postMessage,
             registerHandler,
+            resizeIFrame,
         ]
     );
 

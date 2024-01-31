@@ -108,6 +108,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     context.service.onboarding.init().catch(noop);
     context.service.apiProxy.clean?.().catch(noop);
+    context.service.i18n.init().catch(noop);
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {

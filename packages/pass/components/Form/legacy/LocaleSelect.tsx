@@ -6,7 +6,7 @@ import { Option, SelectTwo } from '@proton/components/components';
 import { useConfig } from '@proton/components/hooks';
 
 type Props = {
-    value: string;
+    value?: string;
     onChange: (locale: string) => void;
 };
 
