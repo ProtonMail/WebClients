@@ -11,6 +11,7 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink, useDownload } from '../../../store';
+import { getPercentageFormatter } from '../../../utils/intl/numberFormatter';
 import { isTransferActive } from '../../../utils/transfer';
 import { TransferState } from '../../TransferManager/transfer';
 import Spinner from './Spinner';
@@ -26,7 +27,7 @@ const getHeaderText = ({
     percentageValue,
 }: {
     transferState: TransferState;
-    percentageValue: number;
+    percentageValue: string;
 }) => {
     switch (transferState) {
         case TransferState.Error:
@@ -48,7 +49,7 @@ const getHeaderText = ({
             return (
                 <>
                     <Spinner />
-                    <span className="text-bold">{c('Label').jt`Downloading ${percentageValue}%`}</span>
+                    <span className="text-bold">{c('Label').jt`Downloading ${percentageValue}`}</span>
                 </>
             );
         default:
@@ -229,7 +230,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
         }
     }, [downloads]);
 
-    const percentageValue = totalSize !== 0 ? Math.round((100 * downloadedSize) / totalSize) : 0;
+    const percentageValue = totalSize !== 0 ? Math.round((100 * downloadedSize) / totalSize) / 100 : 0;
 
     const currentDownload = downloads[0];
 
@@ -254,7 +255,10 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     onClick={() => setIsMinimized(!isMinimized)}
                 >
                     <div className="flex items-center gap-2 pl-3">
-                        {getHeaderText({ transferState: currentDownload.state, percentageValue })}
+                        {getHeaderText({
+                            transferState: currentDownload.state,
+                            percentageValue: getPercentageFormatter().format(percentageValue),
+                        })}
                     </div>
                     <Tooltip title={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}>
                         <ButtonLike
@@ -275,7 +279,10 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
             ) : (
                 <div className="share-transfer-manager-header w-full flex items-center justify-space-between">
                     <div className="flex items-center gap-2 pl-3">
-                        {getHeaderText({ transferState: currentDownload.state, percentageValue })}
+                        {getHeaderText({
+                            transferState: currentDownload.state,
+                            percentageValue: getPercentageFormatter().format(percentageValue),
+                        })}
                     </div>
                     <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
                         <Button icon shape="ghost" data-testid="share-transfer-manager:close">
