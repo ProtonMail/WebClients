@@ -675,6 +675,9 @@
         "${ n } element",
         "${ n } elementer"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "Opprettet"
       ],
+      "Display": [
+        "Vis"
+      ],
       "Empty trash": [
         "Tøm papirkurven"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "Videresendes til"
+      ],
+      "General": [
+        "Generelt"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
+      ],
+      "Language": [
+        "Språk"
       ],
       "Last 2 weeks": [
         "Siste 2 uker"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "Velg en e-postadresse"
       ],
+      "Select preferred language": [
+        "Velg ønsket språk"
+      ],
       "Select your password manager": [
         "Velg passordbehandleren din"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "Angi PIN-kode"
+      ],
+      "Show website favicons": [
+        "Vis favorittikon for nettsteder"
       ],
       "Special characters (!&*)": [
         "Spesialtegn (!&*)"

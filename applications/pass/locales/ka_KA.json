@@ -675,6 +675,9 @@
         "${ n } ელემენტი",
         "${ n } ელემენტი"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
       ],
@@ -1191,6 +1194,9 @@
       "Created": [
         "შექმნილია"
       ],
+      "Display": [
+        "ჩვენება"
+      ],
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
@@ -1208,6 +1214,9 @@
       ],
       "Forwards to": [
         "გადაგზავნა"
+      ],
+      "General": [
+        "ზოგადი"
       ],
       "Generic CSV": [
         "ზოგადი CSV"
@@ -1247,6 +1256,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
+      ],
+      "Language": [
+        "ენა"
       ],
       "Last 2 weeks": [
         "ბოლო 2 კვირა"
@@ -1356,6 +1368,9 @@
       "Select an email address": [
         "აირჩიეთ ელფოსტის მისამართი"
       ],
+      "Select preferred language": [
+        "ამოირჩიეთ სასურველი ენა"
+      ],
       "Select your password manager": [
         "აირჩიეთ თქვენი პაროლების მმართველი"
       ],
@@ -1367,6 +1382,9 @@
       ],
       "Set PIN code": [
         "PIN-კოდის დაყენება"
+      ],
+      "Show website favicons": [
+        "ვებგვერდის favicon-ების ჩვენება"
       ],
       "Special characters (!&*)": [
         "სპეცსიმბოლოები (!&*)"

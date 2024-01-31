@@ -672,6 +672,9 @@
         "${ n } objekt",
         "${ n } objekt"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
       ],
@@ -1185,6 +1188,9 @@
       "Created": [
         "Skapad"
       ],
+      "Display": [
+        "Visa"
+      ],
       "Empty trash": [
         "Töm papperskorg"
       ],
@@ -1202,6 +1208,9 @@
       ],
       "Forwards to": [
         "Vidarebefordras till"
+      ],
+      "General": [
+        "Allmänt"
       ],
       "Generic CSV": [
         "Generisk CSV"
@@ -1241,6 +1250,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
+      ],
+      "Language": [
+        "Språk"
       ],
       "Last 2 weeks": [
         "Senaste 2 veckorna"
@@ -1350,6 +1362,9 @@
       "Select an email address": [
         "Välj en e-postadress"
       ],
+      "Select preferred language": [
+        "Välj föredraget språk"
+      ],
       "Select your password manager": [
         "Välj din lösenordshanterare"
       ],
@@ -1361,6 +1376,9 @@
       ],
       "Set PIN code": [
         "Ställ in PIN-kod"
+      ],
+      "Show website favicons": [
+        "Visa webbplatsens favicon"
       ],
       "Special characters (!&*)": [
         "Specialtecken (!&*)"

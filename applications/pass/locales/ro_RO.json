@@ -684,6 +684,9 @@
         "${ n } articole",
         "${ n } de articole"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
       ],
@@ -1207,6 +1210,9 @@
       "Created": [
         "Creat la"
       ],
+      "Display": [
+        "Afișare"
+      ],
       "Empty trash": [
         "Golire «Gunoi»"
       ],
@@ -1224,6 +1230,9 @@
       ],
       "Forwards to": [
         "Redirecționare către"
+      ],
+      "General": [
+        "Generale"
       ],
       "Generic CSV": [
         "CSV generic"
@@ -1263,6 +1272,9 @@
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Combinații taste: ${ shortcut }"
+      ],
+      "Language": [
+        "Limba"
       ],
       "Last 2 weeks": [
         "Ultimele două săptămâni"
@@ -1372,6 +1384,9 @@
       "Select an email address": [
         "Selectați o adresă de e-mail"
       ],
+      "Select preferred language": [
+        "Selectați limba preferată"
+      ],
       "Select your password manager": [
         "Selectare manager de parole"
       ],
@@ -1383,6 +1398,9 @@
       ],
       "Set PIN code": [
         "Setare cod PIN"
+      ],
+      "Show website favicons": [
+        "Afișare pictogramă site web"
       ],
       "Special characters (!&*)": [
         "Caractere speciale (!&*)"
