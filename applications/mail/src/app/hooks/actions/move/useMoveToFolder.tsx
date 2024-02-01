@@ -1,24 +1,19 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 
-import { useGetLabels } from '@proton/components/hooks/useCategories';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { useMoveSelectionToFolder } from 'proton-mail/hooks/actions/move/useMoveSelectionToFolder';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
-import { isCustomLabel } from '../../../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../../../helpers/message/messages';
 import { Element } from '../../../models/element';
 
-const { INBOX } = MAILBOX_LABEL_IDS;
-
 export interface MoveParams {
     elements: Element[];
-    folderID: string;
+    destinationLabelID: string;
     folderName: string;
-    fromLabelID: string;
+    sourceLabelID: string;
     createFilters?: boolean;
     silent?: boolean;
     askUnsub?: boolean;
@@ -27,7 +22,6 @@ export interface MoveParams {
 }
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
-    const getLabels = useGetLabels();
     const { moveSelectionToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, moveAllModal } =
         useMoveSelectionToFolder(setContainFocus);
     const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder(setContainFocus);
@@ -35,9 +29,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const moveToFolder = useCallback(
         async ({
             elements,
-            folderID,
+            destinationLabelID,
             folderName,
-            fromLabelID,
+            sourceLabelID,
             createFilters = false,
             silent = false,
             askUnsub = true,
@@ -48,20 +42,17 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 return;
             }
 
-            const labels = (await getLabels()) || [];
-
             const isMessage = testIsMessage(elements[0]);
-            const destinationLabelID = isCustomLabel(fromLabelID, labels) ? INBOX : fromLabelID;
 
             const authorizedToMove = isMessage
-                ? getMessagesAuthorizedToMove(elements as Message[], folderID)
+                ? getMessagesAuthorizedToMove(elements as Message[], destinationLabelID)
                 : elements;
 
             if (selectAll) {
                 await moveAllToFolder({
-                    fromLabelID,
+                    type: MoveAllType.selectAll,
+                    sourceLabelID,
                     authorizedToMove,
-                    folderID,
                     destinationLabelID,
                     isMessage,
                     onCheckAll,
@@ -69,14 +60,13 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             } else {
                 await moveSelectionToFolder({
                     elements,
-                    folderID,
+                    sourceLabelID,
                     folderName,
-                    fromLabelID,
+                    destinationLabelID,
                     createFilters,
                     silent,
                     askUnsub,
                     isMessage,
-                    destinationLabelID,
                     authorizedToMove,
                 });
             }
