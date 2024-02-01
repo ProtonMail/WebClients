@@ -11,28 +11,25 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
-import { ExtensionCore } from 'proton-pass-extension/lib/components/Extension/ExtensionCore';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { createI18nService } from '@proton/pass/lib/i18n/service';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState, Maybe, MaybeNull, RecursivePartial, WorkerMessage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
-import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
 type IFrameContextValue = {
     endpoint: string;
     features: RecursivePartial<FeatureFlagState>;
-    locale: Maybe<string>;
     port: MaybeNull<Runtime.Port>;
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
@@ -49,7 +46,6 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
 const IFrameContext = createContext<IFrameContextValue>({
     endpoint: '',
     features: {},
-    locale: undefined,
     port: null,
     settings: INITIAL_SETTINGS,
     userEmail: null,
@@ -66,6 +62,7 @@ const IFrameContext = createContext<IFrameContextValue>({
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
 export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({ endpoint, children }) => {
+    const { i18n } = usePassCore();
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
@@ -74,9 +71,6 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
     const [visible, setVisible] = useState<boolean>(false);
 
     const activityProbe = useExtensionActivityProbe(contentScriptMessage);
-
-    const [locale, setLocale] = useState(DEFAULT_LOCALE);
-    const i18n = useMemo(() => createI18nService({ locales, getLocale: noop, onLocaleChange: setLocale }), []);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -157,7 +151,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
                     case WorkerMessageType.SETTINGS_UPDATE:
                         return setSettings(message.payload);
                     case WorkerMessageType.LOCALE_UPDATED:
-                        return setSettings((prev) => ({ ...prev, locale: message.payload.locale }));
+                        return i18n.setLocale(settings.locale).catch(noop);
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -234,15 +228,10 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         else activityProbe.cancel();
     }, [visible]);
 
-    useEffect(() => {
-        i18n.setLocale(settings.locale).catch(noop);
-    }, [settings.locale]);
-
     const context = useMemo<IFrameContextValue>(
         () => ({
             endpoint,
             features,
-            locale,
             port,
             settings,
             userEmail,
@@ -255,7 +244,6 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         }),
         [
             features,
-            locale,
             port,
             settings,
             userEmail,
@@ -268,11 +256,7 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
         ]
     );
 
-    return (
-        <ExtensionCore endpoint={endpoint}>
-            <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>
-        </ExtensionCore>
-    );
+    return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
 };
 
 export const useIFrameContext = () => useContext(IFrameContext);
