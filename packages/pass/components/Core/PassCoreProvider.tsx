@@ -11,6 +11,7 @@ import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proto
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -66,7 +67,10 @@ export const PassCoreProvider: FC<PropsWithChildren<Omit<PassCoreContextValue, '
     const [locale, setAppLocale] = useState(DEFAULT_LOCALE);
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale }), [locale]);
 
-    useEffect(() => core.i18n.subscribe(({ locale }) => setAppLocale(locale)), []);
+    useEffect(() => {
+        core.i18n.getLocale().then(core.i18n.setLocale).catch(noop);
+        core.i18n.subscribe(({ locale }) => setAppLocale(locale));
+    }, []);
 
     return (
         <ConfigProvider config={core.config}>
