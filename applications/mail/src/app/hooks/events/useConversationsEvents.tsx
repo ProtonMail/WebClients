@@ -42,7 +42,10 @@ export const useConversationsEvent = () => {
             { toCreate: [], toUpdate: [], toDelete: {} }
         );
 
-        void dispatch(eventMessageUpdate({ toCreate, toUpdate, toDelete }));
+        const isStateEqual = toCreate.length === 0 && toUpdate.length === 0 && Object.keys(toDelete).length === 0;
+        if (!isStateEqual) {
+            void dispatch(eventMessageUpdate({ toCreate, toUpdate, toDelete }));
+        }
 
         // Conversation events
         for (const { ID, Action, Conversation } of Conversations) {
