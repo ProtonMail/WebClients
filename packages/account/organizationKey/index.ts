@@ -25,7 +25,7 @@ const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThun
     miss: async ({ dispatch, extraArgument }) => {
         const [user, organization] = await Promise.all([dispatch(userThunk()), dispatch(organizationThunk())]);
         if (!user.isAdmin || !organization.HasKeys) {
-            return;
+            return { Key: {}, placeholder: true };
         }
         const Key = await extraArgument.api<OrganizationKey>(getOrganizationKeys());
         return getCachedOrganizationKey({ keyPassword: extraArgument.authentication.getPassword(), Key });
