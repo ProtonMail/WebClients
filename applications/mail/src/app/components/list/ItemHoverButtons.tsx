@@ -70,9 +70,9 @@ const ItemHoverButtons = ({
         event.stopPropagation();
         void moveToFolder({
             elements: [element],
-            folderID: ARCHIVE,
+            sourceLabelID: labelID,
+            destinationLabelID: ARCHIVE,
             folderName: c('Title').t`Archive`,
-            fromLabelID: labelID,
         });
     };
 
@@ -80,9 +80,9 @@ const ItemHoverButtons = ({
         event.stopPropagation();
         void moveToFolder({
             elements: [element],
-            folderID: TRASH,
+            sourceLabelID: labelID,
+            destinationLabelID: TRASH,
             folderName: c('Title').t`Trash`,
-            fromLabelID: labelID,
         });
     };
 
