@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
@@ -59,24 +60,36 @@ const SSOInfoForm = ({ domain, sso, onImportSamlClick }: Props) => {
     const entity = ssoDiff.entity ?? ssoInfo.entity;
     const certificate = ssoDiff.certificate ?? ssoInfo.certificate;
 
+    useEffect(() => {
+        void metrics.core_sso_saml_info_page_load_total.increment({});
+    }, []);
+
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
             return;
         }
 
-        await api(
-            updateSAMLConfig(sso.ID, {
-                DomainID: domain.ID,
-                SSOURL: url,
-                SSOEntityID: entity,
-                Certificate: certificate,
-            })
-        );
+        try {
+            await api(
+                updateSAMLConfig(sso.ID, {
+                    DomainID: domain.ID,
+                    SSOURL: url,
+                    SSOEntityID: entity,
+                    Certificate: certificate,
+                })
+            );
 
-        await call();
-        setSsoDiff({});
+            await call();
+            setSsoDiff({});
 
-        createNotification({ text: c('Info').t`SAML configuration saved` });
+            createNotification({ text: c('Info').t`SAML configuration saved` });
+
+            metrics.core_sso_saml_update_info_total.increment({ status: 'success' });
+        } catch (error) {
+            observeApiError(error, (status) => {
+                metrics.core_sso_saml_update_info_total.increment({ status });
+            });
+        }
     };
 
     return (
