@@ -4239,7 +4239,7 @@
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can now return to the application to continue": [
-        "Voit nyt jatkaa palaamalla sovellukseen"
+        "Voit jatkaa palaamalla sovellukseen"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
@@ -4971,7 +4971,7 @@
         "Muokkaa kalenteria"
       ],
       "Get a country's official public holidays calendar.": [
-        "Hanki tietyn maan yleiset viralliset vapaapäivät."
+        "Näe eri maiden viralliset yleiset vapaapäivät."
       ],
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -5551,6 +5551,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } merkitsi avaimen vanhentuneeksi. Avainta voidaan käyttää vain allekirjoitusten vahvistukseen."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ulkoinen avain noudettiin automaattisesti osoitteesta keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ulkoinen avain noudettiin automaattisesti WKD:n välityksellä."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Tälle yhteystiedolle lähetettävät viestit salataan tällä avaimella"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Suosittelemme, että muutat avaimen \"epäluotettavaksi\"."
@@ -6174,7 +6183,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Lisää oman maasi yleiset vapaapäivät kalenteriisi."
+        "Lisää maasi yleiset vapaapäivät kalenteriisi."
       ],
       "Color-coding is here!": [
         "Värikoodaus on täällä!"

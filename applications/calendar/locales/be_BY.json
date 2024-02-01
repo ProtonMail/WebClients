@@ -6481,6 +6481,9 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% запоўнена"
       ],
