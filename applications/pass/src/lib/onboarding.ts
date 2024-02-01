@@ -1,4 +1,5 @@
 import {
+    createB2BRule,
     createBlackFridayRule,
     createPendingShareAccessRule,
     createSecurityRule,
@@ -15,5 +16,6 @@ export const onboarding = createOnboardingService({
         createTrialRule(store),
         createBlackFridayRule(store),
         createSecurityRule(store),
+        createB2BRule(store),
     ],
 });

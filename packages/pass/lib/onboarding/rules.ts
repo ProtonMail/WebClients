@@ -81,6 +81,15 @@ export const createTrialRule = (store: Store<State>) =>
         },
     });
 
+export const createB2BRule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.B2B_ONBOARDING,
+        when: (previous) => {
+            const passPlan = selectPassPlan(store.getState());
+            return !previous && passPlan === UserPassPlan.BUSINESS;
+        },
+    });
+
 export const createSecurityRule = (store: Store<State>) =>
     createOnboardingRule({
         message: OnboardingMessage.SECURE_EXTENSION,
