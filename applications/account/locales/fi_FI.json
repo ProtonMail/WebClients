@@ -818,6 +818,9 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Valitse vietävä kalenteri"
+      ],
       "Select calendar view": [
         "Valitse kalenterinäkymä"
       ],
@@ -1203,10 +1206,10 @@
     },
     "Alias promotion": {
       "Get 10 aliases for free!": [
-        "Hanki 10 ilmaista aliasta!"
+        "Hanki 10 aliasta ilmaiseksi!"
       ],
       "Get unlimited aliases!": [
-        "Hanki rajattomasti aliaksia!"
+        "Hanki aliaksia rajattomasti!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
@@ -3037,7 +3040,7 @@
         "Kaikki kalenterin tapahtumat poistetaan."
       ],
       "You will no longer have access to this calendar.": [
-        "Sinulla ei ole enää pääsyä tähän kalenteriin."
+        "Menetät kalenterin käyttöoikeuden."
       ]
     },
     "Delinquent modal title": {
@@ -5394,7 +5397,7 @@
     },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
-        "Juhlapäivät"
+        "Yleiset vapaapäivät"
       ],
       "Other": [
         "Muut"
@@ -6158,7 +6161,7 @@
         "Automaattivastaus on käytössä kunnes se kytketään pois käytöstä."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "Automaattivastaus on aina käytössä valittuina viikonpäivinä, valittujen tuntien välillä."
+        "Automaattivastaus on aina käytössä valittuina viikonpäivinä, valitulla tuntivälillä."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Saatavilla macOS, Windows ja Linux -alustoille."
@@ -6950,6 +6953,9 @@
       "per month": [
         "kuukaudessa"
       ],
+      "per month, billed at ${ price }": [
+        "kuukaudessa, laskutetaan ${ price }"
+      ],
       "per month, billed every 12 months": [
         "kuukaudessa, laskutus 12 kuukauden välein"
       ],
@@ -7181,10 +7187,10 @@
         "Määritetään organisaatiotasi"
       ],
       "Settings update failed": [
-        "Asetusten päivitys epäonnistui"
+        "Asetusmuutos epäonnistui"
       ],
       "Settings updated": [
-        "Asetukset päivitettiin"
+        "Asetukset on muutettu"
       ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
@@ -7401,7 +7407,7 @@
         "Tämä lopettaa nykyisen tilauksen ja menetät kaikki kertyneet uskollisuusedut. Jäljellä oleva tilausaika palautetaan tilillesi krediitteinä."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Tämä poistaa kaikki aiemmat versiot tiedostoistasi, jotka ovat vanhempia kuin ${ rententionLabel }."
+        "Tämä poistaa tiedostojesi kaikki aiemmat versiot, jotka ovat vanhempia kuin ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
         "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
@@ -7768,6 +7774,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Olet kirjautunut tunnuksella ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Voit myös yhdistää tuotavat kalenterit olemassaoleviin ${ BRAND_NAME }-kalentereihin."
       ],
@@ -7801,7 +7810,7 @@
         "Voit nyt sulkea tämä ikkunan."
       ],
       "You can now return to the application to continue": [
-        "Voit nyt jatkaa palaamalla sovellukseen"
+        "Voit jatkaa palaamalla sovellukseen"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
@@ -9739,7 +9748,7 @@
         "Muokkaa kalenteria"
       ],
       "Get a country's official public holidays calendar.": [
-        "Hanki tietyn maan yleiset viralliset vapaapäivät."
+        "Näe eri maiden viralliset yleiset vapaapäivät."
       ],
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -10200,7 +10209,7 @@
         "Ilmainen VPN yhdelle laitteelle"
       ],
       "Fully refundable for 30 days": [
-        "Täysin palautettavissa 30 päivän ajan"
+        "Täysin hyvitettävissä 30 päivän ajan"
       ],
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
@@ -11829,7 +11838,7 @@
         "Peruessasi tilauksen, menetät kalenterin käyttöoikeuden ja tililtäsi poistetaan kaikki sen tapahtumat. Tapahtumat kuitenkin säilyvät alkuperäisessä julkisessa linkissä."
       ],
       "You will no longer have access to this calendar.": [
-        "Sinulla ei ole enää pääsyä tähän kalenteriin."
+        "Menetät kalenterin käyttöoikeuden."
       ]
     },
     "Remove calendar section text": {
@@ -12263,9 +12272,6 @@
       ],
       "Order": [
         "Järjestä"
-      ],
-      "Status": [
-        "Tila"
       ]
     },
     "Settings/labels": {
@@ -12635,6 +12641,9 @@
       "Get more storage": [
         "Hanki lisää tallennustilaa"
       ],
+      "Try out ${ app } to its full potential": [
+        "Kokeile ${ app } -sovelluksen kaikkia ominaisuuksia"
+      ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
       ],
@@ -12643,6 +12652,10 @@
       ],
       "Upgrade your plan to increase your storage.": [
         "Kasvata tallennustilaasi päivittämällä tilauksesi."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
       ],
       "Your ${ appStorage } is almost full": [
         "${ appStorage }si on lähes täynnä"
@@ -13589,7 +13602,7 @@
         "Poistetaanko käyttäjä?"
       ],
       "Delete version history?": [
-        "Poista versiohistoria?"
+        "Poistetaanko versiohistoria?"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -14354,7 +14367,7 @@
         "Vähennä tunnisteiden määrää mukauttamalla tuontia"
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Poista roskakori- ja roskapostiviestit 30 päivän kuluttua. Automaattisen poiston ottaminen käyttöön antaa roskakorissa/roskapostissa jo oleville viesteille poistopäivämäärän, joka perustuu siihen päivämäärään, jolloin ne on siirretty sinne."
+        "Poista roskakori- ja roskapostiviestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo oleville viestien poistopäiväksi päivän, jona ne siirrettiin sinne."
       ],
       "Device information such as operating system": [
         "Tietoja laitteesta, kuten mm. käyttöjärjestelmä"
