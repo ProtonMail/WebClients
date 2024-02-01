@@ -32,6 +32,7 @@ import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
 import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import browser from '@proton/pass/lib/globals/browser';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -40,7 +41,6 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { withTap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -138,10 +138,7 @@ export const MenuDropdown: FC = () => {
                     <DropdownMenu>
                         <div className="flex items-center justify-space-between flex-nowrap gap-2 py-2 px-4">
                             <span
-                                className={clsx(
-                                    'flex items-center flex-nowrap',
-                                    passPlan === UserPassPlan.PLUS && 'ui-orange'
-                                )}
+                                className={clsx('flex items-center flex-nowrap', isPaidPlan(passPlan) && 'ui-orange')}
                             >
                                 <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
                                 <span className="text-left">
@@ -153,7 +150,7 @@ export const MenuDropdown: FC = () => {
                             </span>
                         </div>
 
-                        {passPlan !== UserPassPlan.PLUS && (
+                        {!isPaidPlan(passPlan) && (
                             <div className="pb-2 px-4">
                                 <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
                             </div>
