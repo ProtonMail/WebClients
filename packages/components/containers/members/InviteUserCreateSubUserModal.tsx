@@ -94,6 +94,9 @@ const InviteUserCreateSubUserModal = ({ organization, verifiedDomains, onInviteU
                     verifiedDomains={verifiedDomains}
                     {...subUserCreateModalProps}
                     onClose={() => modalState.onClose()}
+                    allowStorageConfiguration
+                    allowVpnAccessConfiguration
+                    allowPrivateMemberConfiguration
                     app={app}
                 />
             )}

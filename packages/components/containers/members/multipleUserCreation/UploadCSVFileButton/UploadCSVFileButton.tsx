@@ -7,8 +7,7 @@ import { useModals, useNotifications } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { FileInput } from '../../../../components';
-import { UserManagementMode } from '../../types';
-import { downloadSampleCSV, downloadVPNB2BSampleCSV, parseMultiUserCsv } from '../csv';
+import { CsvConfig, downloadSampleCSV, parseMultiUserCsv } from '../csv';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from '../errors/CsvConversionError';
 import { CsvFormatError, TooManyUsersError } from '../errors/CsvFormatErrors';
 import { UserTemplate } from '../types';
@@ -19,15 +18,15 @@ export interface Props {
     className?: string;
     children?: ReactNode;
     color?: ButtonProps['color'];
-    mode?: UserManagementMode;
+    csvConfig: CsvConfig;
 }
 
-const ImportCSVFileButton = ({
+const UploadCSVFileButton = ({
     onUpload,
     className,
     children = c('Select file').t`Upload CSV file`,
     color,
-    mode = UserManagementMode.DEFAULT,
+    csvConfig,
 }: Props) => {
     const [importing, setImporting] = useState(false);
     const { createNotification } = useNotifications();
@@ -37,11 +36,7 @@ const ImportCSVFileButton = ({
         <InlineLinkButton
             key="csvTemplateButton"
             onClick={() => {
-                if (mode === UserManagementMode.VPN_B2B) {
-                    return downloadVPNB2BSampleCSV();
-                }
-
-                return downloadSampleCSV();
+                return downloadSampleCSV(csvConfig);
             }}
         >
             {
@@ -56,7 +51,7 @@ const ImportCSVFileButton = ({
 
     const handleFiles = async (files: File[]) => {
         try {
-            const { users, errors } = await parseMultiUserCsv(files, mode);
+            const { users, errors } = await parseMultiUserCsv(files, csvConfig);
 
             if (errors.length) {
                 const requiredEmailErrors = errors.filter(
@@ -157,4 +152,4 @@ const ImportCSVFileButton = ({
     );
 };
 
-export default ImportCSVFileButton;
+export default UploadCSVFileButton;

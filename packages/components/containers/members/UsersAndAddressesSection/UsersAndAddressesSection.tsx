@@ -10,7 +10,13 @@ import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constant
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { getHasVpnB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasB2BPlan,
+    getHasPassB2BPlan,
+    hasFamily,
+    hasNewVisionary,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
@@ -55,7 +61,6 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
-import { UserManagementMode } from '../types';
 import { getDomainError } from '../validateAddUser';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
@@ -77,8 +82,17 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
 
-    const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const mode = hasVpnB2BPlan ? UserManagementMode.VPN_B2B : UserManagementMode.DEFAULT;
+    const hasPassB2BPlan = getHasPassB2BPlan(subscription);
+    const hasB2BPlan = getHasB2BPlan(subscription);
+
+    const useEmail = hasB2BPlan;
+    const allowStorageConfiguration = !hasB2BPlan;
+    const allowVpnAccessConfiguration = !hasB2BPlan;
+    const allowPrivateMemberConfiguration = !hasB2BPlan;
+
+    const showMultipleUserUploadButton = hasB2BPlan;
+    const showAddressesSection = !hasB2BPlan;
+    const showFeaturesColumn = !hasB2BPlan;
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
@@ -174,13 +188,15 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         // Visionary can either create a sub user or invite existing users
         if (hasVisionary(subscription) || hasNewVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
-        } else {
-            if (mode === UserManagementMode.DEFAULT && !verifiedDomains.length) {
-                createNotification({ text: getDomainError(), type: 'error' });
-                return;
-            }
-            setSubUserCreateModalOpen(true);
+            return;
         }
+
+        if (!useEmail && !verifiedDomains.length) {
+            createNotification({ text: getDomainError(), type: 'error' });
+            return;
+        }
+
+        setSubUserCreateModalOpen(true);
     };
 
     const handleLoginUser = async (member: Member) => {
@@ -214,18 +230,23 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     // Members for which addresses can be created
-    const filteredMembers =
-        mode === UserManagementMode.DEFAULT
-            ? members?.filter((member) => {
-                  return getAvailableAddressDomains({
-                      user,
-                      member,
-                      protonDomains,
-                      customDomains,
-                      premiumDomains,
-                  }).length;
-              })
-            : members;
+    const filteredMembers = (() => {
+        if (useEmail) {
+            return members;
+        }
+
+        return members?.filter((member) => {
+            const availableAddressDomains = getAvailableAddressDomains({
+                user,
+                member,
+                protonDomains,
+                customDomains,
+                premiumDomains,
+            });
+
+            return availableAddressDomains.length;
+        });
+    })();
 
     const userFound = membersSelected.length;
 
@@ -248,19 +269,34 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
 
-    const settingsTitle = (() => {
+    const settingsParagraphContent = (() => {
         if (hasFamily(subscription)) {
             return c('familyOffer_2023:Info for members section')
                 .t`Add, remove, and make changes to user accounts in your family group.`;
         }
 
-        const maxMembers = organization?.MaxMembers || 0;
-        const usedMembers = organization?.UsedMembers || 0;
-        if (hasVpnB2BPlan) {
-            return c('Info').ngettext(
-                msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
-                `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
-                maxMembers
+        if (hasB2BPlan) {
+            const maxMembers = organization?.MaxMembers || 0;
+            const usedMembers = organization?.UsedMembers || 0;
+            return (
+                <>
+                    {c('Info').ngettext(
+                        msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
+                        `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
+                        maxMembers
+                    )}
+                    {user.canPay && (
+                        <Button
+                            className="ml-2"
+                            shape="outline"
+                            color="norm"
+                            size="small"
+                            onClick={handleGetMoreLicense}
+                        >
+                            {c('Action').t`Get more licenses`}
+                        </Button>
+                    )}
+                </>
             );
         }
 
@@ -272,12 +308,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
             <SettingsParagraph large className="flex items-baseline mb-6">
-                {settingsTitle}
-                {hasVpnB2BPlan && user.canPay && (
-                    <Button className="ml-2" shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
-                        {c('Action').t`Get more licenses`}
-                    </Button>
-                )}
+                {settingsParagraphContent}
             </SettingsParagraph>
             <Block className="flex items-start">
                 {renderAddAddressModal && filteredMembers && (
@@ -287,7 +318,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     <SubUserDeleteModal
                         member={tmpMember}
                         onDelete={handleDeleteUserConfirm}
-                        mode={mode}
                         {...subUserDeleteModalProps}
                     />
                 )}
@@ -298,13 +328,28 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     <SubUserCreateModal
                         organization={organization}
                         verifiedDomains={verifiedDomains}
-                        mode={mode}
                         app={app}
+                        useEmail={useEmail}
+                        optionalName={hasB2BPlan}
+                        allowStorageConfiguration={allowStorageConfiguration}
+                        allowVpnAccessConfiguration={allowVpnAccessConfiguration}
+                        allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        showMultipleUserUploadButton={showMultipleUserUploadButton}
+                        disableStorageValidation={!allowStorageConfiguration}
+                        disableDomainValidation={useEmail}
+                        disableAddressValidation={hasPassB2BPlan}
                         {...subUserCreateModalProps}
                     />
                 )}
                 {renderSubUserEditModal && tmpMember && (
-                    <SubUserEditModal member={tmpMember} mode={mode} {...subUserEditModalProps} />
+                    <SubUserEditModal
+                        member={tmpMember}
+                        allowStorageConfiguration={allowStorageConfiguration}
+                        allowVpnAccessConfiguration={allowVpnAccessConfiguration}
+                        allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
+                        showAddressesSection={showAddressesSection}
+                        {...subUserEditModalProps}
+                    />
                 )}
                 {renderUserInviteOrEditModal && (
                     <UserInviteOrEditModal
@@ -330,37 +375,47 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
                 <div className="flex items-center mb-2 gap-2 mr-4">
-                    {hasSetupOrganization && (
-                        <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
-                            {c('Action').t`Invite user`}
-                        </Button>
-                    )}
+                    {hasB2BPlan ? (
+                        <>
+                            {hasSetupOrganizationWithKeys && (
+                                <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
+                                    {c('Action').t`Add user`}
+                                </Button>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            {hasSetupOrganization && (
+                                <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
+                                    {c('Action').t`Invite user`}
+                                </Button>
+                            )}
 
-                    {hasSetupOrganizationWithKeys && (
-                        <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
-                            {c('Action').t`Add user`}
-                        </Button>
-                    )}
+                            {hasSetupOrganizationWithKeys && (
+                                <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
+                                    {c('Action').t`Add user`}
+                                </Button>
+                            )}
 
-                    {/* Only family and visionary can invite existing Proton users */}
-                    {canInviteProtonUsers &&
-                        (hasReachedLimit ? (
-                            <Info
-                                className="color-danger"
-                                title={c('familyOffer_2023:Family plan')
-                                    .t`You have reached the limit of 10 accepted invitations in 6 months.`}
-                            />
-                        ) : (
-                            <Info
-                                title={c('familyOffer_2023:Family plan')
-                                    .t`Only 10 accepted invitations are allowed in a 6-month period.`}
-                            />
-                        ))}
+                            {/* Only family and visionary can invite existing Proton users */}
+                            {canInviteProtonUsers &&
+                                (hasReachedLimit ? (
+                                    <Info
+                                        className="color-danger"
+                                        title={c('familyOffer_2023:Family plan')
+                                            .t`You have reached the limit of 10 accepted invitations in 6 months.`}
+                                    />
+                                ) : (
+                                    <Info
+                                        title={c('familyOffer_2023:Family plan')
+                                            .t`Only 10 accepted invitations are allowed in a 6-month period.`}
+                                    />
+                                ))}
 
-                    {hasVpnB2BPlan ? null : (
-                        <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
-                            {c('Action').t`Add address`}
-                        </Button>
+                            <Button shape="outline" disabled={loadingAddAddresses} onClick={handleAddAddress}>
+                                {c('Action').t`Add address`}
+                            </Button>
+                        </>
                     )}
                 </div>
                 <div className="ml-0 lg:ml-auto mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
@@ -379,31 +434,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
                 <thead>
                     <tr>
-                        <UsersAndAddressesSectionHeader mode={mode} />
+                        <UsersAndAddressesSectionHeader showFeaturesColumn={showFeaturesColumn} useEmail={useEmail} />
                     </tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={hasVpnB2BPlan ? 4 : 5}>
+                <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
-                        const roleCell = (
-                            <TableCell
-                                className="text-cut"
-                                data-testid="users-and-addresses-table:memberRole"
-                                style={{ verticalAlign: 'baseline' }}
-                            >
-                                <div className="flex flex-column flex-nowrap">
-                                    <MemberRole member={member} />
-                                    {isInvitationPending && (
-                                        <span>
-                                            <Badge type="origin" className="rounded-sm color-weak">{c(
-                                                'familyOffer_2023:Family plan'
-                                            ).t`Pending`}</Badge>
-                                        </span>
-                                    )}
-                                </div>
-                            </TableCell>
-                        );
 
                         const memberName = (() => {
                             if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
@@ -432,15 +469,17 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             {memberName}
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            {!hasVpnB2BPlan && Boolean(member.Private) && !hasFamily(subscription) && (
-                                                <Badge
-                                                    type="origin"
-                                                    className="rounded-sm"
-                                                    data-testid="users-and-addresses-table:memberIsPrivate"
-                                                >
-                                                    {c('Private Member').t`private`}
-                                                </Badge>
-                                            )}
+                                            {allowPrivateMemberConfiguration &&
+                                                !hasFamily(subscription) &&
+                                                Boolean(member.Private) && (
+                                                    <Badge
+                                                        type="origin"
+                                                        className="rounded-sm"
+                                                        data-testid="users-and-addresses-table:memberIsPrivate"
+                                                    >
+                                                        {c('Private Member').t`private`}
+                                                    </Badge>
+                                                )}
                                             {member['2faStatus'] > 0 && (
                                                 <Badge type="origin" className="rounded-sm">
                                                     {c('Enabled 2FA').t`2FA`}
@@ -459,7 +498,22 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         </div>
                                     </div>
                                 </TableCell>
-                                {!hasVpnB2BPlan && roleCell}
+                                <TableCell
+                                    className="text-cut"
+                                    data-testid="users-and-addresses-table:memberRole"
+                                    style={{ verticalAlign: 'baseline' }}
+                                >
+                                    <div className="flex flex-column flex-nowrap">
+                                        <MemberRole member={member} />
+                                        {isInvitationPending && (
+                                            <span>
+                                                <Badge type="origin" className="rounded-sm color-weak">{c(
+                                                    'familyOffer_2023:Family plan'
+                                                ).t`Pending`}</Badge>
+                                            </span>
+                                        )}
+                                    </div>
+                                </TableCell>
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <div>
                                         {member.State && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED ? (
@@ -469,8 +523,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         )}
                                     </div>
                                 </TableCell>
-                                {hasVpnB2BPlan && roleCell}
-                                {!hasVpnB2BPlan && (
+                                {showFeaturesColumn && (
                                     <TableCell>
                                         <MemberFeatures member={member} organization={organization} />
                                     </TableCell>

@@ -48,6 +48,8 @@ const PlanCustomization = ({
             PLANS.ENTERPRISE,
             PLANS.VPN_PRO,
             PLANS.VPN_BUSINESS,
+            PLANS.PASS_PRO,
+            PLANS.PASS_BUSINESS,
         ].includes(currentPlan.Name as PLANS);
 
     return (

@@ -19,8 +19,8 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
-    getHasB2BPlan,
     getHasVpnB2BPlan,
+    getIsB2BAudienceFromSubscription,
     getPrimaryPlan,
     getVPNDedicatedIPs,
     hasPassPlus,
@@ -169,7 +169,7 @@ const ActionButtons = ({
                     >{c('Action').t`Edit billing details`}</Button>
                 ) : null
             }
-            {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
+            {user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription) ? (
                 <Button
                     onClick={handleCustomizeSubscription}
                     className="mb-2"
@@ -455,7 +455,7 @@ const SubscriptionPanel = ({
 
     const getDefault = () => {
         const items: (Item | false)[] = [
-            (MaxMembers > 1 || getHasB2BPlan(subscription)) && {
+            (MaxMembers > 1 || getIsB2BAudienceFromSubscription(subscription)) && {
                 icon: 'users',
                 text: c('Subscription attribute').ngettext(
                     msgid`${UsedMembers} of ${MaxMembers} user`,
