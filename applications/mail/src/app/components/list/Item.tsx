@@ -227,7 +227,7 @@ const Item = ({
                     attachmentsMetadata={filteredThumbnails}
                     hideUnreadButton={hideUnreadButton}
                     userSettings={userSettings}
-                    isHovered={isHovered}
+                    isHovered={isHovered || snoozeDropdownState}
                     showAttachmentThumbnails={showAttachmentThumbnails}
                     isDelightMailListEnabled={isDelightMailListEnabled}
                 />
