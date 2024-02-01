@@ -23597,7 +23597,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jssha@npm:^3.1.2, jssha@npm:~3.3.1":
+"jssha@npm:^3.3.1, jssha@npm:~3.3.1":
   version: 3.3.1
   resolution: "jssha@npm:3.3.1"
   checksum: 10c0/dccd89d1cb9ffdf27e34edfff6ca261a0b130554839ae1a9601e6c959d050daaac8095f02971ee0e13c624c886cad3e0e4fc52b056f53251a99094fde2a41188
@@ -29127,7 +29127,7 @@ __metadata:
     pdf-parse: "npm:^1.1.1"
     prettier: "npm:^3.2.5"
     proxy-agent: "npm:^6.3.1"
-    totp-generator: "npm:^0.0.14"
+    totp-generator: "npm:^1.0.0"
     typescript: "npm:^5.3.3"
     vcf: "npm:^2.1.2"
     zod: "npm:^3.22.4"
@@ -34862,12 +34862,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"totp-generator@npm:^0.0.14":
-  version: 0.0.14
-  resolution: "totp-generator@npm:0.0.14"
+"totp-generator@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "totp-generator@npm:1.0.0"
   dependencies:
-    jssha: "npm:^3.1.2"
-  checksum: 10c0/8a265f75bfabd3cbd5b37de42fbc275f4752b86d50ed8f8b8d4c26f03fa65e2230ee725f21df833be73898a92f7284cb01ebb33f61a4efbfad2381ce8acc9543
+    jssha: "npm:^3.3.1"
+  checksum: 10c0/a766e9c66eb5460e33f0d7bd917be3e1bea3a7848c61b553b1b591edd51cc8250df06a3a2176074f4f87548f40f4be1c4456b9bcd97c0ca9a08871c0172b8f91
   languageName: node
   linkType: hard
 
