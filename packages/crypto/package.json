@@ -21,7 +21,7 @@
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/chai": "^4.3.11",
         "@types/chai-as-promised": "^7.1.8",
-        "chai": "^5.0.0",
+        "chai": "^5.0.3",
         "chai-as-promised": "^7.1.1",
         "eslint": "^8.56.0",
         "eslint-plugin-chai-friendly": "^0.7.4",
@@ -30,12 +30,12 @@
         "karma-chrome-launcher": "^3.2.0",
         "karma-firefox-launcher": "^2.1.2",
         "karma-jasmine": "^5.1.0",
-        "karma-webpack": "^5.0.0",
+        "karma-webpack": "^5.0.1",
         "playwright": "^1.41.1",
         "prettier": "^3.2.4",
         "ts-loader": "^9.5.1",
         "typescript": "^5.3.3",
-        "webpack": "^5.90.0",
+        "webpack": "^5.90.1",
         "webpack-cli": "^5.1.4"
     }
 }
