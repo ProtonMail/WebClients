@@ -1,5 +1,6 @@
 import { type FC, useCallback, useEffect, useRef, useState } from 'react';
 
+import { Localized } from '@proton/pass/components/Core/Localized';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -9,7 +10,7 @@ import { DropdownSwitch } from '../components/DropdownSwitch';
 
 export const DropdownContent: FC = () => {
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const { workerState, visible, resizeIFrame, closeIFrame, postMessage, locale } = useIFrameContext();
+    const { workerState, visible, resizeIFrame, closeIFrame, postMessage } = useIFrameContext();
     const [dropdownState, setDropdownState] = useState<MaybeNull<DropdownActions>>(null);
 
     const onReset = () => setDropdownState(null);
@@ -32,16 +33,17 @@ export const DropdownContent: FC = () => {
     });
 
     return (
-        <DropdownSwitch
-            key={locale}
-            loggedIn={workerState?.loggedIn ?? false}
-            onClose={onClose}
-            onMessage={postMessage}
-            onReset={onReset}
-            ref={dropdownRef}
-            state={dropdownState}
-            status={workerState?.status ?? AppStatus.IDLE}
-            visible={visible}
-        />
+        <Localized>
+            <DropdownSwitch
+                loggedIn={workerState?.loggedIn ?? false}
+                onClose={onClose}
+                onMessage={postMessage}
+                onReset={onReset}
+                ref={dropdownRef}
+                state={dropdownState}
+                status={workerState?.status ?? AppStatus.IDLE}
+                visible={visible}
+            />
+        </Localized>
     );
 };
