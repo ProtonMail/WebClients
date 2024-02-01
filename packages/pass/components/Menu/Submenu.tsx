@@ -48,7 +48,7 @@ export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, it
                         parentClassName="w-full pass-submenu--item text-lg"
                         size="small"
                         key={label}
-                        label={label}
+                        label={<span className="text-ellipsis">{label}</span>}
                         icon={icon}
                     />
                 ))}
