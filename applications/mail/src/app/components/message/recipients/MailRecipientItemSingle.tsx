@@ -11,9 +11,6 @@ import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -69,7 +66,6 @@ const MailRecipientItemSingle = ({
 
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
-    const mailSettings = useMailModel('MailSettings');
     const onCompose = useOnCompose();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
@@ -143,13 +139,7 @@ const MailRecipientItemSingle = ({
 
         if (recipient.Address) {
             const humanLabelID = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
-            let newPathname = `/${humanLabelID}`;
-
-            if (mailSettings.ViewLayout === VIEW_LAYOUT.COLUMN) {
-                const pathname = history.location.pathname.split('/');
-                pathname[1] = humanLabelID;
-                newPathname = pathname.join('/');
-            }
+            const newPathname = `/${humanLabelID}`;
 
             history.push(
                 changeSearchParams(newPathname, history.location.hash, {
