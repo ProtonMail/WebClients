@@ -2,7 +2,8 @@ import { type FC } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
-import { ExtensionLocalized } from 'proton-pass-extension/lib/components/Extension/ExtensionLocalized';
+
+import { Localized } from '@proton/pass/components/Core/Localized';
 
 import { InstallationSuccess } from './Views/InstallationSuccess';
 import { ResumeSession } from './Views/ResumeSession';
@@ -14,7 +15,7 @@ export const Onboarding: FC = () => (
     <ExtensionApp endpoint="page">
         {(ready) =>
             ready && (
-                <ExtensionLocalized>
+                <Localized>
                     <HashRouter>
                         <Switch>
                             <Route path="/resume">
@@ -28,7 +29,7 @@ export const Onboarding: FC = () => (
                             </Route>
                         </Switch>
                     </HashRouter>
-                </ExtensionLocalized>
+                </Localized>
             )
         }
     </ExtensionApp>
