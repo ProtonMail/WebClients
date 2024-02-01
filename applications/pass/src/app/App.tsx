@@ -85,63 +85,59 @@ const exportData: PassCoreContextValue['exportData'] = async (options) => {
     return transferableToFile(await createPassExport(data, options));
 };
 
-export const App = () => {
-    return (
-        <ServiceWorkerProvider>
-            <ServiceWorkerContext.Consumer>
-                {(sw) => (
-                    <PassCoreProvider
-                        config={PASS_CONFIG}
-                        endpoint="web"
-                        exportData={exportData}
-                        generateOTP={generateOTP}
-                        getDomainImage={getDomainImageFactory(sw)}
-                        i18n={i18n}
-                        onLink={onLink}
-                        onOnboardingAck={onboarding.acknowledge}
-                        onTelemetry={telemetry.push}
-                        openSettings={openSettings}
-                        prepareImport={prepareImport}
-                    >
-                        <CompatibilityCheck>
-                            <Icons />
-                            <ThemeProvider />
-                            <ErrorBoundary component={<StandardErrorPage big />}>
-                                <NotificationsProvider>
-                                    <ModalsProvider>
-                                        <ClientProvider>
-                                            <ClientContext.Consumer>
-                                                {({ state: { loggedIn } }) => (
-                                                    <Router history={history}>
-                                                        <NavigationProvider>
-                                                            <AuthServiceProvider>
-                                                                <StoreProvider>
-                                                                    <Localized>
-                                                                        <Route
-                                                                            path="*"
-                                                                            render={() =>
-                                                                                loggedIn ? <Main /> : <Lobby />
-                                                                            }
-                                                                        />
-                                                                    </Localized>
-                                                                    <Portal>
-                                                                        <ModalsChildren />
-                                                                        <NotificationsChildren />
-                                                                    </Portal>
-                                                                </StoreProvider>
-                                                            </AuthServiceProvider>
-                                                        </NavigationProvider>
-                                                    </Router>
-                                                )}
-                                            </ClientContext.Consumer>
-                                        </ClientProvider>
-                                    </ModalsProvider>
-                                </NotificationsProvider>
-                            </ErrorBoundary>
-                        </CompatibilityCheck>
-                    </PassCoreProvider>
-                )}
-            </ServiceWorkerContext.Consumer>
-        </ServiceWorkerProvider>
-    );
-};
+export const App = () => (
+    <ServiceWorkerProvider>
+        <ServiceWorkerContext.Consumer>
+            {(sw) => (
+                <PassCoreProvider
+                    config={PASS_CONFIG}
+                    endpoint="web"
+                    exportData={exportData}
+                    generateOTP={generateOTP}
+                    getDomainImage={getDomainImageFactory(sw)}
+                    i18n={i18n}
+                    onLink={onLink}
+                    onOnboardingAck={onboarding.acknowledge}
+                    onTelemetry={telemetry.push}
+                    openSettings={openSettings}
+                    prepareImport={prepareImport}
+                >
+                    <CompatibilityCheck>
+                        <Icons />
+                        <ThemeProvider />
+                        <ErrorBoundary component={<StandardErrorPage big />}>
+                            <NotificationsProvider>
+                                <ModalsProvider>
+                                    <ClientProvider>
+                                        <ClientContext.Consumer>
+                                            {({ state: { loggedIn } }) => (
+                                                <Router history={history}>
+                                                    <NavigationProvider>
+                                                        <AuthServiceProvider>
+                                                            <StoreProvider>
+                                                                <Localized>
+                                                                    <Route
+                                                                        path="*"
+                                                                        render={() => (loggedIn ? <Main /> : <Lobby />)}
+                                                                    />
+                                                                </Localized>
+                                                                <Portal>
+                                                                    <ModalsChildren />
+                                                                    <NotificationsChildren />
+                                                                </Portal>
+                                                            </StoreProvider>
+                                                        </AuthServiceProvider>
+                                                    </NavigationProvider>
+                                                </Router>
+                                            )}
+                                        </ClientContext.Consumer>
+                                    </ClientProvider>
+                                </ModalsProvider>
+                            </NotificationsProvider>
+                        </ErrorBoundary>
+                    </CompatibilityCheck>
+                </PassCoreProvider>
+            )}
+        </ServiceWorkerContext.Consumer>
+    </ServiceWorkerProvider>
+);
