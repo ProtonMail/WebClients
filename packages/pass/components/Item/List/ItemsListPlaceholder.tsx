@@ -8,25 +8,16 @@ import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { ItemsListPlaceholderBusiness } from '@proton/pass/components/Item/List/ItemsListPlaceholderBusiness';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
-import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import {
-    selectAllVaults,
-    selectOwnReadOnlyVaults,
-    selectPassPlan,
-    selectShare,
-    selectVaultLimits,
-} from '@proton/pass/store/selectors';
+import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
@@ -54,7 +45,6 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const ownedReadOnlyShareIds = useSelector(selectOwnReadOnlyVaults).map(prop('shareId'));
     const isOwnedReadOnly = selectedShareId && ownedReadOnlyShareIds.includes(selectedShareId);
     const hasMultipleVaults = useSelector(selectAllVaults).length > 1;
-    const plan = useSelector(selectPassPlan);
 
     const empty = totalCount === 0;
     const hasSearch = Boolean(search.trim());
@@ -114,14 +104,6 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                 </Card>
                 <UpgradeButton upsellRef={UpsellRef.LIMIT_VAULT} className="pass-sub-sidebar--hidable" />
             </div>
-        );
-    }
-
-    if (plan === UserPassPlan.BUSINESS && empty && !hasMultipleVaults && !matchTrash) {
-        return (
-            <VaultActionsProvider>
-                <ItemsListPlaceholderBusiness />
-            </VaultActionsProvider>
         );
     }
 

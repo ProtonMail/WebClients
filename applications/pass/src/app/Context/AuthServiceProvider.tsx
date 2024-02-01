@@ -12,8 +12,10 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
+import { getUserAccess, getUserData } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { AppStatus, type Maybe, OnboardingMessage, SessionLockStatus } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -24,6 +26,7 @@ import {
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB } from '../../lib/database';
@@ -114,11 +117,26 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 client.current.setStatus(AppStatus.AUTHORIZING);
             },
 
-            onAuthorized: (_, localID) => {
+            onAuthorized: async (_, localID) => {
                 client.current.setStatus(AppStatus.AUTHORIZED);
 
                 const redirect = stripLocalBasenameFromPathname(redirectPath.current);
-                history.replace((getBasename(localID) ?? '/') + redirect);
+
+                /* to check if is onboarding, plan is b2b, user is admin, and onborading is not acknowlaged */
+
+                const { user } = await getUserData();
+                const { plan } = await getUserAccess();
+
+                const isB2BOnboarding =
+                    (plan.Type as unknown as UserPassPlan) === UserPassPlan.BUSINESS &&
+                    isAdmin(user) &&
+                    onboarding.checkMessage(OnboardingMessage.B2B_ONBOARDING);
+                if (isB2BOnboarding) {
+                    history.replace((getBasename(localID) ?? '/onboarding') + redirect);
+                } else {
+                    history.replace((getBasename(localID) ?? '/') + redirect);
+                }
+
                 onboarding.init().catch(noop);
 
                 client.current.setStatus(AppStatus.BOOTING);
