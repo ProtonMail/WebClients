@@ -141,6 +141,10 @@ export const IFrameContextProvider: FC<PropsWithChildren<{ endpoint: IFrameEndpo
                         setWorkerState(message.payload.workerState);
                         setSettings(message.payload.settings);
                         setFeatures(message.payload.features);
+                        /** immediately set the locale on iframe init : the `IFramContextProvider`
+                         * does not use the standard `ExtensionApp` wrapper which takes care of
+                         * hydrating the initial locale and watching for language changes */
+                        i18n.setLocale(message.payload.settings.locale).catch(noop);
                         return;
                     case IFrameMessageType.IFRAME_HIDDEN:
                         return setVisible(false);
