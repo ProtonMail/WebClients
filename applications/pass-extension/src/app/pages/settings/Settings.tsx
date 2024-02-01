@@ -7,13 +7,13 @@ import { APP_VERSION } from 'proton-pass-extension/app/config';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
 import { ExtensionConnect, useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { ExtensionLocalized } from 'proton-pass-extension/lib/components/Extension/ExtensionLocalized';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
+import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
@@ -188,9 +188,9 @@ const SettingsApp: FC = () => {
     }, []);
 
     return (
-        <HashRouter>
-            <ExtensionConnect endpoint="page" messageFactory={pageMessage} onWorkerMessage={handleWorkerMessage}>
-                <ExtensionLocalized>
+        <Localized>
+            <HashRouter>
+                <ExtensionConnect endpoint="page" messageFactory={pageMessage} onWorkerMessage={handleWorkerMessage}>
                     <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                     <div
                         className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
@@ -206,9 +206,9 @@ const SettingsApp: FC = () => {
                             />
                         </Switch>
                     </div>
-                </ExtensionLocalized>
-            </ExtensionConnect>
-        </HashRouter>
+                </ExtensionConnect>
+            </HashRouter>
+        </Localized>
     );
 };
 
