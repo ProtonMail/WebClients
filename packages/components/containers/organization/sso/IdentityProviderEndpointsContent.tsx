@@ -5,12 +5,12 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 
-interface Props {
+export interface IdentityProviderEndpointsContentProps {
     issuerID: string;
     callbackURL: string;
 }
 
-const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: Props) => {
+const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: IdentityProviderEndpointsContentProps) => {
     // Using a function here so that we can extend to other applications without requiring retranslation of this string
     const getDescriptionString = (appName: typeof VPN_APP_NAME) => {
         // translator: variable here is an application name. Example full sentence "When enabling SAML for Proton VPN in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields."

@@ -1,11 +1,14 @@
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useSamlSSO } from '@proton/components/hooks/useSAMLConfigs';
+import { getSAMLStaticInfo } from '@proton/shared/lib/api/samlSSO';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
-import { useCustomDomains } from '../../../hooks';
+import { useApi, useCustomDomains } from '../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -15,6 +18,7 @@ import {
 } from '../../account';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
+import { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import RemoveSSODomain from './RemoveSSODomain';
 import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
@@ -25,12 +29,14 @@ const ConfigureSamlContent = ({
     configureSamlModalProps,
     setConfigureSamlModalOpen,
     renderConfigureSamlModal,
+    identityProviderEndpointsContentProps,
 }: {
     domain: Domain;
     ssoConfigs: SSO[];
     configureSamlModalProps: ModalStateProps;
     setConfigureSamlModalOpen: (newValue: boolean) => void;
     renderConfigureSamlModal: boolean | undefined;
+    identityProviderEndpointsContentProps: IdentityProviderEndpointsContentProps;
 }) => {
     const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
 
@@ -38,11 +44,17 @@ const ConfigureSamlContent = ({
 
     return (
         <>
-            {renderConfigureSamlModal && <ConfigureSamlModal domain={domain} {...configureSamlModalProps} />}
+            {renderConfigureSamlModal && (
+                <ConfigureSamlModal
+                    domain={domain}
+                    {...configureSamlModalProps}
+                    {...identityProviderEndpointsContentProps}
+                />
+            )}
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="domainName" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Allowed Domain`}</span>
+                    <label htmlFor="domainName" className="text-semibold flex items-center gap-2">
+                        <span>{c('Label').t`Allowed Domain`}</span>
                         <Info
                             title={c('Tooltip').t`Specify the domain which is allowed to authenticate with SAML SSO`}
                         />
@@ -64,6 +76,7 @@ const ConfigureSamlContent = ({
                     domain={domain}
                     sso={ssoConfigForDomain}
                     onImportSamlClick={() => setConfigureSamlModalOpen(true)}
+                    {...identityProviderEndpointsContentProps}
                 />
             ) : (
                 <div className="flex gap-4">
@@ -95,11 +108,25 @@ const ConfigureSamlContent = ({
 const SamlAuthenticationSection = () => {
     const [customDomains] = useCustomDomains();
     const [ssoConfigs] = useSamlSSO();
+    const api = useApi();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
+    const [samlStaticInfo, setSamlStaticInfo] = useState<IdentityProviderEndpointsContentProps>();
 
-    if (!customDomains || !ssoConfigs) {
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await api<{ EntityID: string; CallbackURL: string }>(getSAMLStaticInfo());
+            setSamlStaticInfo({
+                issuerID: response.EntityID,
+                callbackURL: response.CallbackURL,
+            });
+        };
+
+        void fetchData();
+    }, []);
+
+    if (!customDomains || !ssoConfigs || !samlStaticInfo) {
         return <Loader />;
     }
 
@@ -127,6 +154,7 @@ const SamlAuthenticationSection = () => {
                         configureSamlModalProps={configureSamlModalProps}
                         setConfigureSamlModalOpen={setConfigureSamlModalOpen}
                         renderConfigureSamlModal={renderConfigureSamlModal}
+                        identityProviderEndpointsContentProps={samlStaticInfo}
                     />
                 ) : (
                     <Button
