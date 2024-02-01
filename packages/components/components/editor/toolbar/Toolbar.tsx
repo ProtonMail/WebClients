@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { useActiveBreakpoint } from '../../../hooks';
 import { ButtonGroup } from '../../button';
 import Icon from '../../icon/Icon';
-import { DEFAULT_FONT_SIZE } from '../constants';
+import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '../constants';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
@@ -64,7 +64,7 @@ const Toolbar = ({
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}
                 onClickDefault={config.defaultFont.showModal}
-                defaultValue={mailSettings?.FontFace}
+                defaultValue={mailSettings?.FontFace || DEFAULT_FONT_FACE_ID}
                 showDefaultFontSelector={metadata.supportDefaultFontSelector}
             />
             <ToolbarFontSizeDropdown
