@@ -27,7 +27,7 @@ export const getOrganizationKeyInfo = (
     organization: Organization | undefined,
     organizationKey?: CachedOrganizationKey
 ) => {
-    const organizationHasKeys = !!organization?.HasKeys;
+    const organizationHasKeys = !!organization?.HasKeys && !organizationKey?.placeholder;
     // If the user has the organization key (not the organization itself).
     const userHasActivatedOrganizationKeys = !!organizationKey?.Key?.PrivateKey;
     return {
