@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,6 +6,7 @@ import { Button, Href } from '@proton/atoms';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { setupSAMLFields, setupSAMLUrl, setupSAMLXml } from '@proton/shared/lib/api/samlSSO';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -85,6 +86,17 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
     const idpDetails = useRef<{ issuerID: string; callbackURL: string }>();
 
+    useEffect(() => {
+        const stepLabel = (() => {
+            if (step === STEP.IDP_VALUES) {
+                return 'idpvalues';
+            }
+
+            return 'metadata';
+        })();
+        void metrics.core_sso_saml_setup_modal_load_total.increment({ step: stepLabel });
+    }, [step]);
+
     const {
         title,
         content,
@@ -98,46 +110,91 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 }
 
                 if (metadataMethod === METADATA_METHOD.URL) {
-                    const { SSO } = await api<{ SSO: SSO }>(
-                        setupSAMLUrl({
-                            DomainID: domain.ID,
-                            MetadataURL: metadata[METADATA_METHOD.URL].value.trim(),
-                        })
-                    );
+                    try {
+                        const { SSO } = await api<{ SSO: SSO }>(
+                            setupSAMLUrl({
+                                DomainID: domain.ID,
+                                MetadataURL: metadata[METADATA_METHOD.URL].value.trim(),
+                            })
+                        );
 
-                    idpDetails.current = {
-                        issuerID: SSO.IssuerID,
-                        callbackURL: SSO.CallbackURL,
-                    };
+                        idpDetails.current = {
+                            issuerID: SSO.IssuerID,
+                            callbackURL: SSO.CallbackURL,
+                        };
+
+                        metrics.core_sso_saml_setup_total.increment({
+                            status: 'success',
+                            method: 'url',
+                        });
+                    } catch (error) {
+                        observeApiError(error, (status) =>
+                            metrics.core_sso_saml_setup_total.increment({
+                                status,
+                                method: 'url',
+                            })
+                        );
+                        throw error;
+                    }
                 } else if (metadataMethod === METADATA_METHOD.XML) {
-                    const xmlFileAsString = (await metadata[METADATA_METHOD.XML].file?.text()) || '';
+                    try {
+                        const xmlFileAsString = (await metadata[METADATA_METHOD.XML].file?.text()) || '';
 
-                    const { SSO } = await api<{ SSO: SSO }>(
-                        setupSAMLXml({
-                            DomainID: domain.ID,
-                            XML: btoa(xmlFileAsString),
-                        })
-                    );
+                        const { SSO } = await api<{ SSO: SSO }>(
+                            setupSAMLXml({
+                                DomainID: domain.ID,
+                                XML: btoa(xmlFileAsString),
+                            })
+                        );
 
-                    idpDetails.current = {
-                        issuerID: SSO.IssuerID,
-                        callbackURL: SSO.CallbackURL,
-                    };
+                        idpDetails.current = {
+                            issuerID: SSO.IssuerID,
+                            callbackURL: SSO.CallbackURL,
+                        };
+
+                        metrics.core_sso_saml_setup_total.increment({
+                            status: 'success',
+                            method: 'xml',
+                        });
+                    } catch (error) {
+                        observeApiError(error, (status) =>
+                            metrics.core_sso_saml_setup_total.increment({
+                                status,
+                                method: 'xml',
+                            })
+                        );
+                        throw error;
+                    }
                 } else if (metadataMethod === METADATA_METHOD.TEXT) {
-                    const { url, entityId, certificate } = metadata[METADATA_METHOD.TEXT];
-                    const { SSO } = await api<{ SSO: SSO }>(
-                        setupSAMLFields({
-                            DomainID: domain.ID,
-                            SSOURL: url.trim(),
-                            SSOEntityID: entityId.trim(),
-                            Certificate: certificate,
-                        })
-                    );
+                    try {
+                        const { url, entityId, certificate } = metadata[METADATA_METHOD.TEXT];
+                        const { SSO } = await api<{ SSO: SSO }>(
+                            setupSAMLFields({
+                                DomainID: domain.ID,
+                                SSOURL: url.trim(),
+                                SSOEntityID: entityId.trim(),
+                                Certificate: certificate,
+                            })
+                        );
 
-                    idpDetails.current = {
-                        issuerID: SSO.IssuerID,
-                        callbackURL: SSO.CallbackURL,
-                    };
+                        idpDetails.current = {
+                            issuerID: SSO.IssuerID,
+                            callbackURL: SSO.CallbackURL,
+                        };
+
+                        metrics.core_sso_saml_setup_total.increment({
+                            status: 'success',
+                            method: 'text',
+                        });
+                    } catch (error) {
+                        observeApiError(error, (status) =>
+                            metrics.core_sso_saml_setup_total.increment({
+                                status,
+                                method: 'text',
+                            })
+                        );
+                        throw error;
+                    }
                 }
 
                 await call();
