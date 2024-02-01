@@ -538,6 +538,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
+                                        disableMemberSignIn={hasB2BPlan}
                                     />
                                 </TableCell>
                             </TableRow>
