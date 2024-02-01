@@ -3402,6 +3402,9 @@
       "per month": [
         "kuukaudessa"
       ],
+      "per month, billed at ${ price }": [
+        "kuukaudessa, laskutetaan ${ price }"
+      ],
       "per month, billed every 12 months": [
         "kuukaudessa, laskutus 12 kuukauden välein"
       ],
@@ -3923,6 +3926,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Olet kirjautunut tunnuksella ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
@@ -3941,7 +3947,7 @@
         "Voit nyt käyttää ja hallita tiliä ylläptäjänä."
       ],
       "You can now return to the application to continue": [
-        "Voit nyt jatkaa palaamalla sovellukseen"
+        "Voit jatkaa palaamalla sovellukseen"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vain yksi keskustelu voi olla avoinna kerrallaan. Sulje edellinen keskustelu ennen uuden aloittamista."
@@ -5040,7 +5046,7 @@
         "Ilmainen VPN yhdelle laitteelle"
       ],
       "Fully refundable for 30 days": [
-        "Täysin palautettavissa 30 päivän ajan"
+        "Täysin hyvitettävissä 30 päivän ajan"
       ],
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
@@ -6617,6 +6623,10 @@
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
       ],
       "Your ${ appStorage } is almost full": [
         "${ appStorage }si on lähes täynnä"
