@@ -4,6 +4,7 @@ import { Router } from 'react-router-dom';
 import FlagProvider from '@unleash/proxy-client-react';
 
 import {
+    AccountSpotlightsProvider,
     AuthenticationProvider,
     CalendarModelEventManagerProvider,
     ErrorBoundary,
@@ -71,15 +72,17 @@ const PrivateApp = () => {
                                                     extraThunkArguments.calendarModelEventManager
                                                 }
                                             >
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        hasReadableMemberKeyActivation
-                                                        hasMemberKeyMigration
-                                                        hasPrivateMemberKeyGeneration
-                                                    >
-                                                        <state.MainContainer />
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
+                                                <AccountSpotlightsProvider>
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </AccountSpotlightsProvider>
                                             </CalendarModelEventManagerProvider>
                                         </EventManagerProvider>
                                     </Router>
