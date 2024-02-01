@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, JSX, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -27,6 +27,7 @@ import {
     useGetUserKeys,
     useKTVerifier,
     useNotifications,
+    useSubscription,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -35,13 +36,14 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
+import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Domain } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import removeIndex from '@proton/utils/removeIndex';
 
-import { UserManagementMode } from '../../types';
 import validateAddUser from '../../validateAddUser';
+import { CsvConfig } from '../csv';
 import InvalidAddressesError from '../errors/InvalidAddressesError';
 import UnavailableAddressesError from '../errors/UnavailableAddressesError';
 import { createUser } from '../lib';
@@ -95,11 +97,24 @@ const filterOptions = (searchValue: string, usersToImport: UserTemplate[]) => {
 interface Props extends ModalProps {
     usersToImport: UserTemplate[];
     app: APP_NAMES;
-    mode: UserManagementMode;
     verifiedDomains: Domain[];
+    expectedCsvConfig?: CsvConfig;
+    disableStorageValidation?: boolean;
+    disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }
 
-const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose, mode, ...rest }: Props) => {
+const CreateUserAccountsModal = ({
+    verifiedDomains,
+    usersToImport,
+    app,
+    onClose,
+    expectedCsvConfig = {},
+    disableStorageValidation,
+    disableDomainValidation,
+    disableAddressValidation,
+    ...rest
+}: Props) => {
     const api = useApi();
     const getAddresses = useGetAddresses();
     const getOrganization = useGetOrganization();
@@ -108,6 +123,9 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
     const getUserKeys = useGetUserKeys();
     const getUser = useGetUser();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => getUser());
+
+    const [subscription] = useSubscription();
+    const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
 
     const abortControllerRef = useRef<AbortController>();
     const { createNotification } = useNotifications();
@@ -126,10 +144,6 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
     const [unavailableAddresses, setUnavailableAddresses] = useState<string[]>([]);
     const [orphanedAddresses, setOrphanedAddresses] = useState<string[]>([]);
     const [importing, withImporting] = useLoading();
-
-    const showStorageColumn = mode === UserManagementMode.DEFAULT;
-    const showPasswordColumn = mode === UserManagementMode.VPN_B2B;
-    const showRoleColumn = mode === UserManagementMode.VPN_B2B;
 
     /**
      * Prompt on browser instance closing if users are being imported
@@ -195,7 +209,18 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
     };
 
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
-        const selectedUsers = usersToImport.filter((user) => selectedUserIds.includes(user.id));
+        const selectedUsers = usersToImport
+            .filter((user) => selectedUserIds.includes(user.id))
+            .map((user) => {
+                if (hasVpnB2bPlan) {
+                    return {
+                        ...user,
+                        vpnAccess: true,
+                    };
+                }
+
+                return user;
+            });
 
         const organization = await getOrganization();
         const organizationKey = await getOrganizationKey();
@@ -204,7 +229,9 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
             organization,
             organizationKey,
             verifiedDomains,
-            mode,
+            disableStorageValidation,
+            disableDomainValidation,
+            disableAddressValidation,
         });
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -255,7 +282,6 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                     getAddresses,
                     organizationKey: organizationKey?.privateKey,
                     keyTransparencyVerify,
-                    mode,
                 });
 
                 localSuccessfullyCreatedUsers.push(user);
@@ -358,19 +384,15 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                                     checked={isSelectAllChecked}
                                     onChange={handleSelectAllFilteredOptionsClick}
                                 />,
-                                <div>
-                                    {mode === UserManagementMode.DEFAULT
-                                        ? c('TableHeader').t`Display name`
-                                        : c('TableHeader').t`Name`}
-                                </div>,
-                                mode === UserManagementMode.DEFAULT
+                                <div>{c('TableHeader').t`Name`}</div>,
+                                expectedCsvConfig.multipleAddresses
                                     ? c('TableHeader').t`Email addresses`
                                     : c('TableHeader').t`Email address`,
-                                showStorageColumn && (
+                                expectedCsvConfig.includeStorage && (
                                     <div className="text-right">{c('TableHeader').t`Total storage`}</div>
                                 ),
-                                showPasswordColumn && <div>{c('TableHeader').t`Password`}</div>,
-                                showRoleColumn && <div>{c('TableHeader').t`Role`}</div>,
+                                <div>{c('TableHeader').t`Password`}</div>,
+                                <div>{c('TableHeader').t`Role`}</div>,
                             ].filter(isTruthy)}
                         />
                         <TableBody colSpan={3}>
@@ -398,7 +420,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                                                 ))}
                                             </ul>
                                         </TableCell>
-                                        {showStorageColumn && (
+                                        {expectedCsvConfig.includeStorage && (
                                             <TableCell
                                                 key="totalStorage"
                                                 className="text-right text-no-wrap align-top"
@@ -407,16 +429,16 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                                                 {humanReadableStorage}
                                             </TableCell>
                                         )}
-                                        {showPasswordColumn && (
+                                        {
                                             <TableCell key="password" className="align-top">
                                                 {password}
                                             </TableCell>
-                                        )}
-                                        {showRoleColumn && (
+                                        }
+                                        {
                                             <TableCell key="role" className="align-top">
                                                 {c('Info').t`Member`}
                                             </TableCell>
-                                        )}
+                                        }
                                     </tr>
                                 );
                             })}

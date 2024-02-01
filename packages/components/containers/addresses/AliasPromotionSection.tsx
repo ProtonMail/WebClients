@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import { Icon } from '@proton/components/components/icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { getIsB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { FeatureCode } from '../../containers';
@@ -29,7 +29,7 @@ const AliasPromotionSection = () => {
         !feature.Value ||
         !subscription ||
         !subscription.Plans ||
-        getIsB2BPlan(subscription.Plans[0].Name)
+        getIsB2BAudienceFromPlan(subscription.Plans[0].Name)
     ) {
         return null;
     }

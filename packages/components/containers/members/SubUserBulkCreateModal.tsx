@@ -7,7 +7,6 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
 import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
-import { downloadVPNB2BSampleCSV } from '@proton/components/containers/members/multipleUserCreation/csv';
 import { UserTemplate } from '@proton/components/containers/members/multipleUserCreation/types';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Domain } from '@proton/shared/lib/interfaces';
@@ -20,7 +19,7 @@ import {
     ModalProps,
     useModalState,
 } from '../../components';
-import { UserManagementMode } from './types';
+import { CsvConfig, downloadSampleCSV } from './multipleUserCreation/csv';
 
 enum Step {
     INSTRUCTION,
@@ -30,9 +29,14 @@ enum Step {
 interface IntroModalProps extends ModalProps {
     onBack: () => void;
     onCSVFileUpload: (usersToImport: UserTemplate[]) => void;
+    csvConfig: CsvConfig;
 }
 
-const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
+const IntroModal = ({ onBack, onCSVFileUpload, csvConfig, ...rest }: IntroModalProps) => {
+    const handleDownloadClick = () => {
+        downloadSampleCSV(csvConfig);
+    };
+
     return (
         <Modal {...rest}>
             <ModalHeader
@@ -42,7 +46,7 @@ const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
             <ModalContent className="pb-1">
                 <ol className="flex flex-column gap-2 pl-5 mb-6">
                     <li>
-                        <InlineLinkButton onClick={downloadVPNB2BSampleCSV} color="norm" className="py-0">
+                        <InlineLinkButton onClick={handleDownloadClick} color="norm" className="py-0">
                             {c('Action').t`Download our CSV template`}
                         </InlineLinkButton>
                     </li>
@@ -53,7 +57,7 @@ const IntroModal = ({ onBack, onCSVFileUpload, ...rest }: IntroModalProps) => {
             </ModalContent>
             <ModalFooter>
                 <Button onClick={onBack}>{c('Action').t`Back`}</Button>
-                <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" mode={UserManagementMode.VPN_B2B} />
+                <UploadCSVFileButton onUpload={onCSVFileUpload} color="norm" csvConfig={csvConfig} />
             </ModalFooter>
         </Modal>
     );
@@ -63,12 +67,26 @@ interface Props extends ModalProps {
     onBack: () => void;
     app: APP_NAMES;
     verifiedDomains: Domain[];
+    csvConfig: CsvConfig;
+    disableStorageValidation?: boolean;
+    disableDomainValidation?: boolean;
+    disableAddressValidation?: boolean;
 }
 
-const SubUserBulkCreateModal = ({ verifiedDomains, onBack, app, ...rest }: Props) => {
+const SubUserBulkCreateModal = ({
+    onBack,
+    app,
+    verifiedDomains,
+    csvConfig,
+    disableStorageValidation,
+    disableDomainValidation,
+    disableAddressValidation,
+    ...rest
+}: Props) => {
     const [step, setStep] = useState<Step>(Step.INSTRUCTION);
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
+
     const onCSVFileUpload = (usersToImport: UserTemplate[]) => {
         setUsersToImport(usersToImport);
         setCreateUserAccountsModal(true);
@@ -81,13 +99,16 @@ const SubUserBulkCreateModal = ({ verifiedDomains, onBack, app, ...rest }: Props
                 usersToImport={usersToImport}
                 app={app}
                 verifiedDomains={verifiedDomains}
+                expectedCsvConfig={csvConfig}
+                disableStorageValidation={disableStorageValidation}
+                disableDomainValidation={disableDomainValidation}
+                disableAddressValidation={disableAddressValidation}
                 {...createUserAccountsModal}
-                mode={UserManagementMode.VPN_B2B}
                 {...rest}
             />
         );
     }
-    return <IntroModal {...rest} onBack={onBack} onCSVFileUpload={onCSVFileUpload} />;
+    return <IntroModal {...rest} onBack={onBack} onCSVFileUpload={onCSVFileUpload} csvConfig={csvConfig} />;
 };
 
 export default SubUserBulkCreateModal;
