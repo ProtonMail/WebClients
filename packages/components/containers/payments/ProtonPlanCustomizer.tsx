@@ -461,6 +461,8 @@ const ProtonPlanCustomizer = ({
                         ADDON_NAMES.MEMBER_ENTERPRISE,
                         ADDON_NAMES.MEMBER_VPN_PRO,
                         ADDON_NAMES.MEMBER_VPN_BUSINESS,
+                        ADDON_NAMES.MEMBER_PASS_PRO,
+                        ADDON_NAMES.MEMBER_PASS_BUSINESS,
                     ].includes(addonNameKey)
                 ) {
                     return (
