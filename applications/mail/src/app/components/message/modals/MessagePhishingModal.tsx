@@ -37,9 +37,9 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
 
         await moveToFolder({
             elements: [message.data || ({} as Element)],
-            folderID: SPAM,
+            sourceLabelID: '',
+            destinationLabelID: SPAM,
             folderName: '',
-            fromLabelID: '',
             silent: true,
             askUnsub: false,
         });

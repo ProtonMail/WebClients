@@ -356,9 +356,9 @@ const MailboxContainer = ({
             const elements = getElementsFromIDs(selectedIDs);
             await moveToFolder({
                 elements,
-                folderID: LabelID,
+                sourceLabelID: labelID,
+                destinationLabelID: LabelID,
                 folderName,
-                fromLabelID: labelID,
                 selectAll,
             });
             if (selectedIDs.includes(elementID || '')) {

@@ -135,9 +135,9 @@ const HeaderMoreDropdown = ({
         const folderName = getFolderName(folderID, folders);
         await moveToFolder({
             elements: [message.data || ({} as Element)],
-            folderID,
+            sourceLabelID: fromFolderID,
+            destinationLabelID: folderID,
             folderName,
-            fromLabelID: fromFolderID,
         });
     };
 
