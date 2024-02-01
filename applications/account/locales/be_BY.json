@@ -3153,6 +3153,9 @@
       "Access to the desktop app is limited": [
         "Доступ да настольнай праграмы абмежаваны"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } цяпер даступна любому карыстальніку з платным тарыфным планам ${ MAIL_APP_NAME }. Палепшыце свой тарыфны план, каб атрымаць доступ."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Палепшыце свой тарыфны план сёння або праверце даступнасць на пачатку 2024 года."
       ]
@@ -12554,9 +12557,6 @@
       ],
       "Order": [
         "Парадак"
-      ],
-      "Status": [
-        "Статус"
       ]
     },
     "Settings/labels": {
@@ -12919,6 +12919,9 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% запоўнена"
       ],
