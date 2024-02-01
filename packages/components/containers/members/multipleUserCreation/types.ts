@@ -9,25 +9,19 @@ export interface UserTemplate {
 }
 
 export interface ImportedCSVUser {
+    Name: any;
     EmailAddresses: any;
     Password: any;
-    DisplayName: any;
     TotalStorage: any;
     VPNAccess: any;
     PrivateSubUser: any;
 }
 
-export interface ExportedCSVUser {
-    EmailAddresses: string;
-    Password: string;
-    DisplayName: string;
-    TotalStorage: number;
-    VPNAccess: 1 | 0;
-    PrivateSubUser: 1 | 0;
-}
-
-export interface ExportedVpnB2BCSVUser {
-    EmailAddress: string;
-    Password: string;
+export interface SampleCsvUser {
     Name: string;
+    Password: string;
+    EmailAddresses: string;
+    TotalStorage?: number;
+    VPNAccess?: 1 | 0;
+    PrivateSubUser?: 1 | 0;
 }
