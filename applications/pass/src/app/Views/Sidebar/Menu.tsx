@@ -14,13 +14,13 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
     selectPlanDisplayName,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -110,9 +110,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                 <div className="flex items-center justify-space-between shrink-0 flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
-                    <span
-                        className={clsx('flex items-center flex-nowrap', passPlan === UserPassPlan.PLUS && 'ui-orange')}
-                    >
+                    <span className={clsx('flex items-center flex-nowrap', isPaidPlan(passPlan) && 'ui-orange')}>
                         <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
                         <span className="text-left">
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
