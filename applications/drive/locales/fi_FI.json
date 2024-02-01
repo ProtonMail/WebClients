@@ -4027,6 +4027,10 @@
       "Search Enabled": [
         "Haku on käytössä"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } tiedosto ladattiin turvallisesti",
+        "${ nbFile } tiedostoa ladattiin turvallisesti"
+      ],
       "Securely downloaded all encrypted files": [
         "Lataa kaikki salatut tiedostot turvallisesti"
       ],
@@ -4350,7 +4354,7 @@
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can now return to the application to continue": [
-        "Voit nyt jatkaa palaamalla sovellukseen"
+        "Voit jatkaa palaamalla sovellukseen"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
@@ -4634,8 +4638,8 @@
       "Downloading": [
         "Ladataan"
       ],
-      "Downloading ${ percentageValue }%": [
-        "Ladattu ${ percentageValue } %"
+      "Downloading ${ percentageValue }": [
+        "Ladattu ${ percentageValue }"
       ],
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
@@ -5686,6 +5690,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } merkitsi avaimen vanhentuneeksi. Avainta voidaan käyttää vain allekirjoitusten vahvistukseen."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ulkoinen avain noudettiin automaattisesti osoitteesta keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ulkoinen avain noudettiin automaattisesti WKD:n välityksellä."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Tälle yhteystiedolle lähetettävät viestit salataan tällä avaimella"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Suosittelemme, että muutat avaimen \"epäluotettavaksi\"."

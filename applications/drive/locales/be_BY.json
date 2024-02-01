@@ -4794,8 +4794,8 @@
       "Downloading": [
         "Спампоўванне"
       ],
-      "Downloading ${ percentageValue }%": [
-        "Спампавана ${ percentageValue }%"
+      "Downloading ${ percentageValue }": [
+        "Спампавана ${ percentageValue }"
       ],
       "Duplicate found": [
         "Знойдзены дублікат"
@@ -6572,6 +6572,9 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "сховішча ${ app }"
+      ],
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% запоўнена"
       ],
