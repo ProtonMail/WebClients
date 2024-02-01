@@ -4,7 +4,6 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { PopupProvider } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { ExtensionLocalized } from 'proton-pass-extension/lib/components/Extension/ExtensionLocalized';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSizeSurgery';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
@@ -17,6 +16,7 @@ import './Popup.scss';
 
 const Popup = () => {
     usePopupSizeSurgery();
+
     const store = useRef<ReturnType<typeof createClientStore>>();
 
     return (
@@ -30,9 +30,7 @@ const Popup = () => {
                     >
                         <ErrorBoundary component={<ExtensionError />}>
                             <PopupProvider>
-                                <ExtensionLocalized>
-                                    <App />
-                                </ExtensionLocalized>
+                                <App />
                             </PopupProvider>
                         </ErrorBoundary>
                     </ReduxProvider>
