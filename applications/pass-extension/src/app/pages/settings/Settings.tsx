@@ -19,6 +19,7 @@ import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectPassPlan,
     selectPlanDisplayName,
@@ -26,7 +27,6 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Developer } from './Views/Developer';
@@ -123,7 +123,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                             </span>
                         </div>
                         <div className="flex items-end flex-column">
-                            {passPlan !== UserPassPlan.PLUS && (
+                            {!isPaidPlan(passPlan) && (
                                 <>
                                     <span className="block mb-1">
                                         {planDisplayName}
