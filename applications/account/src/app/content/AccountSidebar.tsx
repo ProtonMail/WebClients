@@ -21,11 +21,13 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Drive`,
+        [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
     };
     const backButtonCopyTitle = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to files`,
+        [APPS.PROTONPASS]: c('Navigation').t`Back to vaults`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
