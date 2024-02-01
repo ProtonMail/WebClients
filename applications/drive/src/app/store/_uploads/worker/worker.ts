@@ -164,7 +164,7 @@ async function start(
                                   duration,
                               }
                             : undefined,
-                    digests:  { sha1 },
+                    digests: { sha1 },
                     ...(exifInfo ? getPhotoExtendedAttributes(exifInfo) : {}),
                 },
                 privateKey,
