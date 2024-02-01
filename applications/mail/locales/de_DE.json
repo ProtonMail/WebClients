@@ -3451,6 +3451,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Der für den Benutzer abgerufene externe Schlüssel ist für den Versand ungültig."
+      ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
       ],
@@ -7800,6 +7803,12 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } hat diesen Schlüssel als veraltet markiert. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Externer Schlüssel wurde automatisch von keys.openpgp.org abgerufen."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Externer Schlüssel wurde automatisch über WKD abgerufen."
+      ],
       "This key is used to encrypt messages to this contact": [
         "Dieser Schlüssel wird zum Verschlüsseln von Nachrichten an diesen Kontakt verwendet."
       ],
@@ -8679,14 +8688,44 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% voll."
       ],
+      "contact your administrator": [
+        "wende dich an deinen Administrator."
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder upgrade für zusätzlichen Speicherplatz."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Um weiterhin E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder upgrade für zusätzlichen Speicherplatz."
+      ],
+      "upgrade for more storage": [
+        "upgrade für zusätzlichen Speicherplatz."
+      ],
       "Your ${ appStorage } is almost full": [
         "Dein ${ appStorage }-Speicherplatz ist fast voll."
       ],
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Dein ${ storage } ist zu ${ percentage }% voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Dein ${ storage } ist zu ${ percentage }% voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Dein ${ storage } ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Dein ${ storage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Dein Speicherplatz ist zu ${ percentage }% voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
+      ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
       ]
     },
     "Success": {
