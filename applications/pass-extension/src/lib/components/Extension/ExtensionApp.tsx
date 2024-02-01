@@ -1,6 +1,7 @@
 import { type FC, type ReactNode, useEffect, useState } from 'react';
 
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
 
 import {
     Icons,
@@ -36,17 +37,19 @@ export const ExtensionApp: FC<Props> = ({ endpoint, children }) => {
 
     return (
         <ExtensionCore endpoint={endpoint}>
-            <Icons />
-            <ThemeProvider />
-            <NotificationsProvider>
-                <ModalsProvider>
-                    {children(ready)}
-                    <Portal>
-                        <ModalsChildren />
-                        <NotificationsChildren />
-                    </Portal>
-                </ModalsProvider>
-            </NotificationsProvider>
+            <WithExtensionLocale>
+                <Icons />
+                <ThemeProvider />
+                <NotificationsProvider>
+                    <ModalsProvider>
+                        {children(ready)}
+                        <Portal>
+                            <ModalsChildren />
+                            <NotificationsChildren />
+                        </Portal>
+                    </ModalsProvider>
+                </NotificationsProvider>
+            </WithExtensionLocale>
         </ExtensionCore>
     );
 };
