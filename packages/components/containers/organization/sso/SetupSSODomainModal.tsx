@@ -1,10 +1,11 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useApi, useEventManager } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics/index';
 import { addDomain } from '@proton/shared/lib/api/domains';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Domain } from '@proton/shared/lib/interfaces';
@@ -36,6 +37,18 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
     const [domainName, setDomainName] = useState('');
     const [domain, setDomain] = useState<Domain>();
 
+    useEffect(() => {
+        const stepLabel = (() => {
+            if (step === STEP.TXT_RECORD) {
+                return 'txt-record';
+            }
+
+            return 'domain-input';
+        })();
+
+        void metrics.core_sso_setup_domain_modal_load_total.increment({ step: stepLabel });
+    }, [step]);
+
     const api = useApi();
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
@@ -53,13 +66,23 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
                     return;
                 }
 
-                const { Domain } = await api<{ Domain: Domain }>(
-                    addDomain({ Name: domainName, AllowedForMail: false, AllowedForSSO: true })
-                );
-                setDomain(Domain);
+                try {
+                    const { Domain } = await api<{ Domain: Domain }>(
+                        addDomain({ Name: domainName, AllowedForMail: false, AllowedForSSO: true })
+                    );
+                    setDomain(Domain);
 
-                await call();
-                setStep(STEP.TXT_RECORD);
+                    await call();
+                    setStep(STEP.TXT_RECORD);
+                } catch (error) {
+                    observeApiError(error, (status) =>
+                        metrics.core_sso_setup_domain_total.increment({
+                            status,
+                        })
+                    );
+
+                    throw error;
+                }
             };
             return {
                 title: c('Info').t`Add domain`,
