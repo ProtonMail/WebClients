@@ -2,6 +2,7 @@ import type { Store } from 'redux';
 
 import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectCreatedItemsCount,
     selectFeatureFlag,
@@ -64,7 +65,7 @@ export const createBlackFridayRule = (store: Store<State>) =>
         message: OnboardingMessage.BLACK_FRIDAY_OFFER,
         when: (previous) => {
             const passPlan = selectPassPlan(store.getState());
-            if (passPlan === UserPassPlan.PLUS) return false;
+            if (isPaidPlan(passPlan)) return false;
 
             const now = api.getState().serverTime?.getTime() ?? Date.now();
             return !previous && now > PASS_BF_2023_DATES[0] && now < PASS_BF_2023_DATES[1];
