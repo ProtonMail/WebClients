@@ -88,6 +88,7 @@ export const FONT_FACES: Record<FontFace, { id: string; label: string; value: st
 };
 
 export const DEFAULT_FONT_FACE = FONT_FACES.ARIAL.value;
+export const DEFAULT_FONT_FACE_ID = FONT_FACES.ARIAL.id;
 
 export enum FONT_SIZES {
     '10px' = '7.5pt',
