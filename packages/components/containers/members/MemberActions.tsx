@@ -18,6 +18,7 @@ interface Props {
     onRevoke: (member: Member) => Promise<void>;
     addresses: PartialMemberAddress[] | undefined;
     organization?: Organization;
+    disableMemberSignIn?: boolean;
 }
 
 const MemberActions = ({
@@ -29,6 +30,7 @@ const MemberActions = ({
     onRevoke,
     addresses = [],
     organization,
+    disableMemberSignIn,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
@@ -39,6 +41,7 @@ const MemberActions = ({
     const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
 
     const canLogin =
+        !disableMemberSignIn &&
         APP_NAME !== APPS.PROTONVPN_SETTINGS &&
         hasSetupOrganizationWithKeys &&
         !member.Self &&
