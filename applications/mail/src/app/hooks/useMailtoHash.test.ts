@@ -66,4 +66,15 @@ describe('useMailtoHash', () => {
         renderHook(() => useMailtoHash({ isSearch: true }));
         expect(mockReturn).not.toHaveBeenCalled();
     });
+
+    it('Should call onMailTo with decoded URL', () => {
+        const mailto = 'mailto%3Ahello%40test.com';
+        const decodedMailTo = 'mailto:hello@test.com';
+        const newHash = `#mailto=${mailto}`;
+        window.location.hash = newHash;
+
+        renderHook(() => useMailtoHash({ isSearch: false }));
+        expect(mockReturn).toHaveBeenCalled();
+        expect(mockReturn).toHaveBeenCalledWith(decodedMailTo);
+    });
 });
