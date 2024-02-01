@@ -852,7 +852,7 @@
         "Setare ca implicit"
       ],
       "Set catch-all": [
-        "Setare adresă colectoare"
+        "Setare adresă de agregare"
       ],
       "Set new password": [
         "Setare parolă nouă"
@@ -6637,7 +6637,7 @@
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail „colectoare\", pentru a primi mesajele trimise către domeniul propriu, dar la o adresă de e-mail inexistentă (ex: greșeli de redactare)."
+        "Dacă aveți un domeniu personal cu ${ MAIL_APP_NAME }, puteți seta o adresă de e-mail de agregare, pentru a primi mesajele trimise către domeniul propriu, dar către o adresă de e-mail inexistentă (ex: greșeli de redactare)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
@@ -10236,7 +10236,7 @@
         "Partajare calendar"
       ],
       "Catch-all": [
-        "Colectare toate mesajele primite"
+        "Adresă de agregare"
       ],
       "Centralized billing": [
         "Facturare centralizată"
@@ -12416,9 +12416,6 @@
       ],
       "Order": [
         "Ordonare"
-      ],
-      "Status": [
-        "Stare"
       ]
     },
     "Settings/labels": {
@@ -12976,7 +12973,7 @@
         "Se anulează importarea"
       ],
       "Catch-all address updated": [
-        "Adresă colectoare actualizată"
+        "Adresă de agregare actualizată"
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
@@ -13511,10 +13508,10 @@
         "Verificare card"
       ],
       "Catch-All address": [
-        "Adresă colectoare"
+        "Adresă de agregare"
       ],
       "Catch-all address": [
-        "Adresă colectoare"
+        "Adresă de agregare"
       ],
       "Change login password": [
         "Schimbare parolă conectare"
@@ -14353,7 +14350,7 @@
         "Adresa"
       ],
       "Catch-All": [
-        "Colectare toate"
+        "Adresă de agregare"
       ],
       "Status": [
         "Stare"

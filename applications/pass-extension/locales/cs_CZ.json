@@ -140,6 +140,9 @@
       "Delete vault": [
         "Smazat trezor"
       ],
+      "Deselect": [
+        "Zrušit výběr"
+      ],
       "Disable autosave on this website": [
         "Zakázat automatické ukládání na této webové stránce"
       ],
@@ -344,6 +347,9 @@
       "Show": [
         "Zobrazit"
       ],
+      "Show advanced options": [
+        "Zobrazit pokročilé možnosti"
+      ],
       "Sign back in": [
         "Přihlásit se zpět"
       ],
@@ -530,6 +536,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Přesunutí všech položek z \"${ payload.content.name }\" selhalo"
+      ],
+      "Failed to move items": [
+        "Přesun položek selhal"
       ],
       "Failed to pin item": [
         "Připnutí položky selhalo"
@@ -995,6 +1004,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Přesouvání položek"
+      ],
+      "Moving items to trash": [
+        "Přesouvání položek do koše"
+      ],
       "Never": [
         "Nikdy"
       ],
@@ -1398,6 +1413,9 @@
       ],
       "General": [
         "Obecné"
+      ],
+      "Generic CSV": [
+        "Obyčejný CSV"
       ],
       "Grant": [
         "Udělit"
@@ -1867,6 +1885,9 @@
       ],
       "Move all items ?": [
         "Přesunout všechny položky?"
+      ],
+      "No items selected": [
+        "Žádné vybrané položky"
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"

@@ -449,6 +449,9 @@
       "Failed resending invite.": [
         "Kunne ikke sende invitation igen."
       ],
+      "Failed to delete selected items": [
+        "Kunne ikke slette de valgte elementer"
+      ],
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
       ],
@@ -466,6 +469,9 @@
       ],
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
+      ],
+      "Failed to restore items from trash": [
+        "Kunne ikke gendanne elementer fra papirkurven"
       ],
       "Failed to transfer this vault's ownership.": [
         "Det lykkedes ikke at overføre ejerskabet af denne boks."
@@ -679,6 +685,9 @@
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
       ],
+      "All items successfully moved": [
+        "Alle elementer blev flyttet"
+      ],
       "All trashed items permanently deleted": [
         "Alle elementer i papirkurven slettet permanent"
       ],
@@ -840,6 +849,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Flytter elementer"
+      ],
+      "Moving items to trash": [
+        "Flytter elementer til papirkurven"
+      ],
       "Never": [
         "Aldrig"
       ],
@@ -857,6 +872,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
+      ],
+      "Permanently deleting selected items": [
+        "De valgte elementer slettes permanent"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
@@ -891,6 +909,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
       ],
+      "Restoring items from trash": [
+        "Gendanner elementer fra papirkurven"
+      ],
       "Restoring trashed items...": [
         "Gendanner elementer i papirkurven..."
       ],
@@ -899,6 +920,12 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vælg, hvor du vil gemme din(e) importerede boks(e)."
+      ],
+      "Selected items permanently deleted": [
+        "De valgte elementer blev slettet permanent"
+      ],
+      "Selected items successfully moved to trash": [
+        "De valgte elementer blev flyttet til papirkurven"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"

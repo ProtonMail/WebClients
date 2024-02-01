@@ -1856,6 +1856,9 @@
       "Access to the desktop app is limited": [
         "Akses ke aplikasi desktop tengah dibatasi"
       ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Aplikasi desktop ${ MAIL_APP_NAME } versi beta saat ini hanya tersedia bagi pelanggan paket ${ MAIL_APP_NAME } berbayar. Tingkatkan akun Anda sekarang juga untuk memperoleh akses ke aplikasi ini."
+      ],
       "Upgrade today or check again in early 2024 for access.": [
         "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
       ]
@@ -3371,6 +3374,9 @@
       ],
       "per month": [
         "per bulan"
+      ],
+      "per month, billed at ${ price }": [
+        "per bulan, dengan harga ${ price }"
       ],
       "per month, billed every 12 months": [
         "per bulan, ditagihkan setiap 12 bulan"
