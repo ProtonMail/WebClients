@@ -6,12 +6,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
-import { useMoveAll } from '../../hooks/actions/useMoveAll';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
@@ -95,7 +95,7 @@ const MoreDropdown = ({
     const { canSnooze, canUnsnooze } = useSnooze();
 
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
-    const { moveAll, modal: moveAllModal } = useMoveAll();
+    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -115,8 +115,20 @@ const MoreDropdown = ({
 
     const handleEmptyLabel = () => emptyLabel(labelID);
 
-    const handleMoveAllToArchive = () => moveAll(labelID, ARCHIVE, TelemetryMailSelectAllEvents.button_move_to_archive);
-    const handleMoveAllToTrash = () => moveAll(labelID, TRASH, TelemetryMailSelectAllEvents.button_move_to_trash);
+    const handleMoveAllToArchive = () =>
+        moveAllToFolder({
+            type: MoveAllType.moveAll,
+            sourceLabelID: labelID,
+            destinationLabelID: ARCHIVE,
+            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_archive,
+        });
+    const handleMoveAllToTrash = () =>
+        moveAllToFolder({
+            type: MoveAllType.moveAll,
+            sourceLabelID: labelID,
+            destinationLabelID: TRASH,
+            telemetryEvent: TelemetryMailSelectAllEvents.button_move_to_trash,
+        });
 
     const inbox = (
         <DropdownMenuButton
