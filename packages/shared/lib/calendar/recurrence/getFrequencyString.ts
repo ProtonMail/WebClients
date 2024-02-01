@@ -573,6 +573,7 @@ const getCustomMonthlyString = (
     const onDayString = date ? getOnDayString(date, monthlyType) : '';
     if (endType === END_TYPE.NEVER) {
         if (interval === 1) {
+            // translator: example: Monthly <on the last Thursday/on day 8>
             return c('Monthly recurring event, frequency').t`Monthly ${onDayString}`;
         }
         // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
@@ -585,6 +586,7 @@ const getCustomMonthlyString = (
     if (endType === END_TYPE.AFTER_N_TIMES) {
         const timesString = getTimesString(count);
         if (interval === 1) {
+            // translator: example: Monthly <on the last Thursday/on day 8>, <3 times>
             return c('Monthly recurring event, frequency (times)').t`Monthly ${onDayString}, ${timesString}`;
         }
         // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
@@ -598,9 +600,10 @@ const getCustomMonthlyString = (
         const dateString = format(until, 'PP', { locale });
         const untilString = getUntilString(dateString);
         if (interval === 1) {
+            // translator: example: Monthly <on the last Thursday/on day 8>, <until Feb 29, 2024>
             return c('Monthly recurring event, frequency (until)').t`Monthly ${onDayString}, ${untilString}`;
         }
-        // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
+        // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy. Example: Every <2> months <on the last Thursday/on day 8>, <until Feb 29, 2024>
         return c('Monthly recurring event, frequency (until)').ngettext(
             msgid`Every ${interval} month ${onDayString}, ${untilString}`,
             `Every ${interval} months ${onDayString}, ${untilString}`,
@@ -629,9 +632,10 @@ const getCustomYearlyString = (
     if (endType === END_TYPE.AFTER_N_TIMES) {
         const timesString = getTimesString(count);
         if (interval === 1) {
+            // translator: Example: Yearly, <3 times>
             return c('Yearly recurring event, frequency (times)').t`Yearly, ${timesString}`;
         }
-        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy
+        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy. Example: Every <2> years, <3 times>
         return c('Yearly recurring event, frequency (times)').ngettext(
             msgid`Every ${interval} year, ${timesString}`,
             `Every ${interval} years, ${timesString}`,
@@ -643,9 +647,10 @@ const getCustomYearlyString = (
         const dateString = format(until, 'PP', { locale });
         const untilString = getUntilString(dateString);
         if (interval === 1) {
+            // translator: Example: Yearly, <until Feb 29, 2024>
             return c('Yearly recurring event, frequency (until)').t`Yearly, ${untilString}`;
         }
-        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy
+        // translator: When interval = 1 we do not use this string; we use 'yearly' instead. Treat the case of interval = 1 as dummy. Example: Every <2> years, <until Feb 29, 2024>
         return c('Yearly recurring event, frequency (until)').ngettext(
             msgid`Every ${interval} year, ${untilString}`,
             `Every ${interval} years, ${untilString}`,
