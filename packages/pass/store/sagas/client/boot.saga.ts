@@ -30,7 +30,7 @@ function* bootWorker(options: RootSagaOptions) {
         const hydratedFromCache: boolean = yield hydrate({ allowFailure: true, merge: mergeCache }, options);
 
         /* Force sync the proxied settings from local storage */
-        if (options.endpoint !== 'web') yield put(syncLocalSettings(yield options.getSettings()));
+        yield put(syncLocalSettings(yield options.getSettings()));
         yield put(bootSuccess(hydratedFromCache ? undefined : yield synchronize(SyncType.FULL)));
 
         options.onBoot?.({ ok: true });
