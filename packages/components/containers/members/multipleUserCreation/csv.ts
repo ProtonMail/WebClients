@@ -3,12 +3,18 @@ import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
 import { GIGA } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { UserManagementMode } from '../types';
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
 import CsvConversionError, { CSV_CONVERSION_ERROR_TYPE } from './errors/CsvConversionError';
 import { CSV_FORMAT_ERROR_TYPE, CsvFormatError, TooManyUsersError } from './errors/CsvFormatErrors';
 import ImportFileError, { IMPORT_ERROR_TYPE } from './errors/ImportFileError';
-import { ExportedCSVUser, ExportedVpnB2BCSVUser, ImportedCSVUser, UserTemplate } from './types';
+import { ImportedCSVUser, SampleCsvUser, UserTemplate } from './types';
+
+export interface CsvConfig {
+    multipleAddresses?: boolean;
+    includeStorage?: boolean;
+    includeVpnAccess?: boolean;
+    includePrivateSubUser?: boolean;
+}
 
 const parseCsv = async <T>(file: File, config: Omit<ParseLocalConfig<T>, 'complete' | 'error'> = {}) =>
     new Promise<ParseResult<T>>((resolve, reject) => {
@@ -21,8 +27,8 @@ const parseCsv = async <T>(file: File, config: Omit<ParseLocalConfig<T>, 'comple
 
 const toCsv = <T>(data: T[]) => Papa.unparse(data);
 
-const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, mode: UserManagementMode) => {
-    const { EmailAddresses, Password, DisplayName, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
+const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, { multipleAddresses }: CsvConfig) => {
+    const { Name, EmailAddresses, Password, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
 
     if (!EmailAddresses || typeof EmailAddresses !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.EMAIL_REQUIRED);
@@ -32,18 +38,22 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, mode: UserM
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
     }
 
-    const emailAddresses = EmailAddresses.split(',').map((item) => item.trim());
+    const emailAddresses = (() => {
+        const splitAddresses = EmailAddresses.split(',');
 
-    if (mode === UserManagementMode.VPN_B2B && emailAddresses.length > 1) {
+        return (multipleAddresses ? splitAddresses : [splitAddresses[0]]).map((item) => item.trim());
+    })();
+
+    if (!multipleAddresses && emailAddresses.length > 1) {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.INVALID_TYPE);
     }
 
     const displayName = (() => {
-        if (!DisplayName || typeof DisplayName !== 'string') {
+        if (!Name || typeof Name !== 'string') {
             return emailAddresses[0];
         }
 
-        return DisplayName;
+        return Name;
     })();
 
     const totalStorage = (() => {
@@ -91,7 +101,7 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, mode: UserM
     return user;
 };
 
-const convertCSVUsers = (csvUsers: ImportedCSVUser[], mode: UserManagementMode) => {
+const convertCSVUsers = (csvUsers: ImportedCSVUser[], config: CsvConfig) => {
     const users: UserTemplate[] = [];
     const errors: {
         type: CSV_CONVERSION_ERROR_TYPE;
@@ -101,7 +111,7 @@ const convertCSVUsers = (csvUsers: ImportedCSVUser[], mode: UserManagementMode) 
     csvUsers.forEach((csvUser, index) => {
         const rowNumber = index + 1;
         try {
-            const convertedUser = convertCSVUser(csvUser, rowNumber, mode);
+            const convertedUser = convertCSVUser(csvUser, rowNumber, config);
             users.push(convertedUser);
         } catch (error: any) {
             if (error instanceof CsvConversionError) {
@@ -119,15 +129,9 @@ const convertCSVUsers = (csvUsers: ImportedCSVUser[], mode: UserManagementMode) 
     };
 };
 
-const headerMap: Record<UserManagementMode, Partial<Record<keyof ImportedCSVUser, string>>> = {
-    [UserManagementMode.DEFAULT]: {},
-    [UserManagementMode.VPN_B2B]: {
-        EmailAddresses: 'EmailAddress',
-        DisplayName: 'Name',
-    },
-};
+export const parseMultiUserCsv = async (files: File[], config: CsvConfig = {}) => {
+    const { multipleAddresses } = config;
 
-export const parseMultiUserCsv = async (files: File[], mode: UserManagementMode) => {
     if (files.length === 0) {
         throw new ImportFileError(IMPORT_ERROR_TYPE.NO_FILE_SELECTED);
     }
@@ -149,13 +153,15 @@ export const parseMultiUserCsv = async (files: File[], mode: UserManagementMode)
         header: true,
         transformHeader: (originalValue) => {
             const value = originalValue.trim();
-            for (const [fieldName, header] of Object.entries(headerMap[mode])) {
-                if (value === fieldName) {
-                    return '';
-                } else if (value === header) {
-                    return fieldName;
-                }
+
+            if (value === 'DisplayName') {
+                return 'Name';
             }
+
+            if (value === 'EmailAddress') {
+                return 'EmailAddresses';
+            }
+
             return value;
         },
         transform: (value) => value.trim(),
@@ -170,10 +176,23 @@ export const parseMultiUserCsv = async (files: File[], mode: UserManagementMode)
         throw new TooManyUsersError();
     }
 
-    if (!meta.fields?.includes('EmailAddresses')) {
+    if (multipleAddresses && !meta.fields?.includes('EmailAddresses')) {
         throw new CsvFormatError({
             type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD,
-            fieldName: headerMap[mode]?.EmailAddresses ?? 'EmailAddresses',
+            fieldName: 'EmailAddresses',
+        });
+    }
+
+    if (
+        !multipleAddresses &&
+        !meta.fields?.includes(
+            // Checking EmailAddresses here because the EmailAddress header is transformed to EmailAddresses in transformHeader
+            'EmailAddresses'
+        )
+    ) {
+        throw new CsvFormatError({
+            type: CSV_FORMAT_ERROR_TYPE.MISSING_REQUIRED_FIELD,
+            fieldName: 'EmailAddress',
         });
     }
 
@@ -190,12 +209,12 @@ export const parseMultiUserCsv = async (files: File[], mode: UserManagementMode)
         throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS, rowsThatErrored });
     }
 
-    return convertCSVUsers(csvUsers, mode);
+    return convertCSVUsers(csvUsers, config);
 };
 
-const defaultSampleCSV: ExportedCSVUser[] = [
+const defaultSampleCSV: SampleCsvUser[] = [
     {
-        DisplayName: 'Alice',
+        Name: 'Alice',
         EmailAddresses: 'alice@mydomain.com',
         Password: 'alice_password',
         TotalStorage: 1,
@@ -203,7 +222,7 @@ const defaultSampleCSV: ExportedCSVUser[] = [
         PrivateSubUser: 0,
     },
     {
-        DisplayName: 'Bob',
+        Name: 'Bob',
         EmailAddresses: 'bob@mydomain.com',
         Password: 'bob_password',
         TotalStorage: 1,
@@ -211,7 +230,7 @@ const defaultSampleCSV: ExportedCSVUser[] = [
         PrivateSubUser: 1,
     },
     {
-        DisplayName: 'Charlie',
+        Name: 'Charlie',
         EmailAddresses: 'charlie@mydomain.com, anotheraddress@mydomain.com, notanotherone@mydomain.com',
         Password: 'charlie_password',
         TotalStorage: 1,
@@ -220,57 +239,54 @@ const defaultSampleCSV: ExportedCSVUser[] = [
     },
 ];
 
-export const getSampleCSV = (userArray: ExportedCSVUser[] = defaultSampleCSV) => {
+export function getSampleCSV(
+    userArray: SampleCsvUser[] = defaultSampleCSV,
+    { multipleAddresses, includeStorage, includeVpnAccess, includePrivateSubUser }: CsvConfig = {}
+) {
     const commentLine = {
-        DisplayName: '# Display name for the user',
-        EmailAddresses:
-            '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
+        Name: '# Display name for the user (optional) must be unique',
+        ...(multipleAddresses
+            ? {
+                  EmailAddresses:
+                      '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
+              }
+            : { EmailAddress: '# Enter the email address you want to set up for this user' }),
         Password: '# Add a password for their account',
-        TotalStorage: '# Amount of storage the user will have in GiB',
-        VPNAccess: '# Enter 1 to give the user a VPN account',
-        PrivateSubUser: '# Enter 1 to make the user account private',
+        ...(includeStorage ? { TotalStorage: '# Amount of storage the user will have in GiB' } : {}),
+        ...(includeVpnAccess
+            ? {
+                  VPNAccess: '# Enter 1 to give the user a VPN account',
+              }
+            : {}),
+        ...(includePrivateSubUser
+            ? {
+                  PrivateSubUser: '# Enter 1 to make the user account private',
+              }
+            : {}),
     };
 
-    return toCsv([commentLine, ...userArray]);
-};
+    return toCsv([
+        commentLine,
+        ...userArray.map((user) => {
+            const { EmailAddresses, TotalStorage, VPNAccess, PrivateSubUser, ...rest } = user;
+            return {
+                ...(multipleAddresses
+                    ? { EmailAddresses }
+                    : {
+                          // Only use the first email from the sample data
+                          EmailAddress: EmailAddresses.split(',')[0],
+                      }),
+                ...(includeStorage ? { TotalStorage } : {}),
+                ...(includeVpnAccess ? { VPNAccess } : {}),
+                ...(includePrivateSubUser ? { PrivateSubUser } : {}),
+                ...rest,
+            };
+        }),
+    ]);
+}
 
-export const downloadSampleCSV = () => {
-    const csv = getSampleCSV();
-    const blob = new Blob([csv], { type: 'text/csv' });
-
-    downloadFile(blob, 'example_proton_bulk_user_upload.csv');
-};
-
-const defaultVpnB2BSampleCSV: ExportedVpnB2BCSVUser[] = [
-    {
-        Name: 'Alice',
-        EmailAddress: 'alice@mydomain.com',
-        Password: 'alice_password',
-    },
-    {
-        Name: 'Bob',
-        EmailAddress: 'bob@mydomain.com',
-        Password: 'bob_password',
-    },
-    {
-        Name: 'Charlie',
-        EmailAddress: 'charlie@mydomain.com',
-        Password: 'charlie_password',
-    },
-];
-
-export const getVpnB2BSampleCSV = (userArray: ExportedVpnB2BCSVUser[] = defaultVpnB2BSampleCSV) => {
-    const commentLine = {
-        Name: '# Names (optional) must be unique',
-        EmailAddress: '# Enter the email address you want to set up for this user',
-        Password: '# Add a password for their account',
-    };
-
-    return toCsv([commentLine, ...userArray]);
-};
-
-export const downloadVPNB2BSampleCSV = () => {
-    const csv = getVpnB2BSampleCSV();
+export const downloadSampleCSV = (config: CsvConfig = {}) => {
+    const csv = getSampleCSV(undefined, config);
     const blob = new Blob([csv], { type: 'text/csv' });
 
     downloadFile(blob, 'example_proton_bulk_user_upload.csv');
