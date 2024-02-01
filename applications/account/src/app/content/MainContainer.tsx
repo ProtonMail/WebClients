@@ -7,6 +7,7 @@ import {
     AppLink,
     FeatureCode,
     Logo,
+    PassForBusinessLogo,
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
@@ -36,6 +37,7 @@ import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -197,6 +199,8 @@ const MainContainer = () => {
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
 
+    const hasPassB2bPlan = getHasPassB2BPlan(subscription);
+
     const logo = (
         <AppLink
             to={to}
@@ -204,7 +208,7 @@ const MainContainer = () => {
             target="_self"
             className="relative interactive-pseudo-protrude interactive--no-background"
         >
-            <Logo appName={app} />
+            {app === APPS.PROTONPASS && hasPassB2bPlan ? <PassForBusinessLogo /> : <Logo appName={app} />}
         </AppLink>
     );
 
