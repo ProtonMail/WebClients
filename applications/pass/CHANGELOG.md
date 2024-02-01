@@ -1,3 +1,11 @@
+### Version 1.12.0
+
+-   Add bulk item actions from items list
+-   Support language switching
+-   Improve API request concurrency
+-   Fix generic import CSV content
+-   Fix Enpass import when both username/email in login item
+
 ### Version 1.11.1
 
 -   Add keyboard shortcut Ctrl/Cmd + S to save a new or existing item
