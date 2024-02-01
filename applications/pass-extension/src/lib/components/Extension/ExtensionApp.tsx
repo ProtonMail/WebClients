@@ -15,7 +15,6 @@ import { type ClientEndpoint } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import { ExtensionCore } from './ExtensionCore';
-import { ExtensionLocalized } from './ExtensionLocalized';
 
 type Props = { endpoint: ClientEndpoint; children: (ready: boolean) => ReactNode };
 
@@ -41,7 +40,7 @@ export const ExtensionApp: FC<Props> = ({ endpoint, children }) => {
             <ThemeProvider />
             <NotificationsProvider>
                 <ModalsProvider>
-                    <ExtensionLocalized>{children(ready)}</ExtensionLocalized>
+                    {children(ready)}
                     <Portal>
                         <ModalsChildren />
                         <NotificationsChildren />
