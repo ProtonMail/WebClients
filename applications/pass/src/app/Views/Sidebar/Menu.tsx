@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { OnboardingButton } from '@proton/pass/components/B2BOnboarding/OnboardingButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
@@ -26,6 +27,7 @@ import {
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { onboarding } from '../../../lib/onboarding';
 import { useAuthService } from '../../Context/AuthServiceProvider';
 import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
@@ -83,15 +85,18 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         className="flex-noshrink"
                     />
                 )}
+                <OnboardingButton onboarding={onboarding} />
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                <DropdownMenuButton
-                    onClick={navigateToOrganization}
-                    label={c('Action').t`Admin panel`}
-                    icon="users"
-                    className="mx-3 pr-2 py-1"
-                />
+                <div className="mx-3 pr-2 relative shrink-0">
+                    <DropdownMenuButton
+                        onClick={navigateToOrganization}
+                        label={c('Action').t`Admin panel`}
+                        icon="users"
+                        className="py-1"
+                    />
+                </div>
 
                 <Submenu
                     icon="bolt"
