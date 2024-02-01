@@ -31,7 +31,7 @@
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
-        "@types/react": "^18.2.48",
+        "@types/react": "^18.2.51",
         "@types/react-dom": "^18.2.18",
         "@types/react-router-dom": "^5.3.3",
         "client-zip": "^2.4.4",
@@ -46,13 +46,13 @@
         "react-window": "^1.8.10",
         "ttag": "^1.8.6",
         "web-streams-polyfill": "^3.3.2",
-        "webpack": "^5.90.0"
+        "webpack": "^5.90.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@testing-library/jest-dom": "^6.3.0",
-        "@testing-library/react": "^14.1.2",
+        "@testing-library/jest-dom": "^6.4.1",
+        "@testing-library/react": "^14.2.0",
         "@testing-library/react-hooks": "^8.0.1",
         "@types/mime-types": "^2.1.4",
         "@types/react-window": "^1.8.8",
