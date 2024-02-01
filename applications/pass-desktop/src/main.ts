@@ -21,6 +21,7 @@ import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { isSquirrelStartup } from './startup';
+import { certificateVerifyProc } from './tls';
 import { SourceType, updateElectronApp } from './update';
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -38,6 +39,9 @@ const createSession = () => {
     secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => callback(false));
 
     if (app.isPackaged) {
+        // Use certificate pinning
+        secureSession.setCertificateVerifyProc(certificateVerifyProc);
+
         // Allow cross-origin requests when fetching favicon blobs and similar from the API
         secureSession.webRequest.onHeadersReceived({ urls: [`${config.API_URL}/*`] }, (details, callback) => {
             const responseHeaders = {
