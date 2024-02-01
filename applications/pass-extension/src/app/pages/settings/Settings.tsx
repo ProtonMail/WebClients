@@ -7,6 +7,7 @@ import { APP_VERSION } from 'proton-pass-extension/app/config';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
 import { ExtensionConnect, useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
+import { ExtensionLocalized } from 'proton-pass-extension/lib/components/Extension/ExtensionLocalized';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 import { c, msgid } from 'ttag';
@@ -189,20 +190,23 @@ const SettingsApp: FC = () => {
     return (
         <HashRouter>
             <ExtensionConnect endpoint="page" messageFactory={pageMessage} onWorkerMessage={handleWorkerMessage}>
-                <div
-                    className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
-                    style={{ '--min-h-custom': '100vh' }}
-                >
-                    <Switch>
-                        <Route
-                            render={({ location: { pathname } }) => (
-                                <LockConfirmContextProvider>
-                                    <SettingsTabs pathname={pathname} />
-                                </LockConfirmContextProvider>
-                            )}
-                        />
-                    </Switch>
-                </div>
+                <ExtensionLocalized>
+                    <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+                    <div
+                        className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
+                        style={{ '--min-h-custom': '100vh' }}
+                    >
+                        <Switch>
+                            <Route
+                                render={({ location: { pathname } }) => (
+                                    <LockConfirmContextProvider>
+                                        <SettingsTabs pathname={pathname} />
+                                    </LockConfirmContextProvider>
+                                )}
+                            />
+                        </Switch>
+                    </div>
+                </ExtensionLocalized>
             </ExtensionConnect>
         </HashRouter>
     );
@@ -221,7 +225,6 @@ export const Settings: FC = () => {
                                 store.current ??
                                 (store.current = createClientStore('page', ExtensionContext.get().tabId)))()}
                         >
-                            <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
                             <SettingsApp />
                         </ReduxProvider>
                     )
