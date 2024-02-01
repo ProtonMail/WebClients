@@ -40,11 +40,11 @@
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "husky": "^8.0.3",
-        "lint-staged": "^15.2.0",
+        "lint-staged": "^15.2.1",
         "prettier": "^3.2.4",
-        "sort-package-json": "^2.6.0"
+        "sort-package-json": "^2.7.0"
     },
-    "packageManager": "yarn@4.0.2",
+    "packageManager": "yarn@4.1.0",
     "engines": {
         "node": ">= v20.11.0"
     }
