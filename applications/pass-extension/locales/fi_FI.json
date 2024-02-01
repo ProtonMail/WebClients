@@ -511,7 +511,7 @@
         "Muuttunutta holvia ei voitu avata"
       ],
       "Could not resolve share members": [
-        "Jaon jäseniä ei voitu määrittää"
+        "Jaon jäseniä ei voitu selvittää"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
@@ -554,10 +554,10 @@
         "Valittujen kohteiden poisto epäonnistui"
       ],
       "Failed to edit user's access.": [
-        "Käyttäjän käyttöoikeusmuutos epäonnistui."
+        "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Kaikkien kohteiden siirto sijainnista \"${ payload.content.name }\" ei onnistunut"
+        "Osaa sijainnin \"${ payload.content.name }\" kohteista ei voitu siirtää"
       ],
       "Failed to move items": [
         "Kohteiden siirto epäonnistui"
@@ -569,7 +569,7 @@
         "Kohteen kiinnitys epäonnistui"
       ],
       "Failed to remove user's access.": [
-        "Käyttäjän käyttöoikeuden poisto epäonnistui."
+        "Käyttäjän käyttöoikeuden mitätöinti epäonnistui."
       ],
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
@@ -659,7 +659,7 @@
         "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
       "The URL is in the list": [
-        "URL on jo listalla"
+        "URL-osoite on jo listalla"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -803,7 +803,7 @@
         "Käyttöoikeus vahvistettiin"
       ],
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "Tarvitset PIN-koodin ${ PASS_APP_NAME }-istuntosi avaukseen"
+        "${ PASS_APP_NAME }-istuntosi avaus vaatii PIN-koodin"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
@@ -818,7 +818,7 @@
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
-        "Kaikki kohteet paikasta \"${ payload.content.name }\" siirretty onnistuneesti"
+        "Kohteen \"${ payload.content.name }\" kaikki kohteet on siirretty"
       ],
       "All items successfully moved": [
         "Kaikki kohteet siirrettiin"
@@ -827,13 +827,13 @@
         "Kaikki roskakorin kohteet poistettiin pysyvästi"
       ],
       "All trashed items successfully restored": [
-        "Roskakorista palautettiin kaikki kohteet"
+        "Kaikki roskakorin kohteet on palautettu"
       ],
       "An item previously shared with you was removed": [
         "Sinulle aiemmin jaettu kohde on poistettu"
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
-        "Haluatko varmasti siirtää kaikki holvin \"${ fromVaultName }\" kohteen holviin \"${ toVaultName }\"?"
+        "Haluatko varmasti siirtää kaikki holvin \"${ fromVaultName }\" kohteet holviin \"${ toVaultName }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
@@ -866,7 +866,7 @@
         "Kopioitiin leikepöydälle"
       ],
       "Creating alias...": [
-        "Luodaan aliasta.."
+        "Luodaan aliasta..."
       ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
@@ -875,7 +875,7 @@
         "Poistetut kohteet siirretään ensin tänne"
       ],
       "Deleting \"${ payload.content.name }\"": [
-        "Poistetaan \"${ payload.content.name }\""
+        "Poistetaan kohdetta \"${ payload.content.name }\""
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Tutustu ${ PASS_APP_NAME }-YouTube-videoon"
@@ -917,19 +917,19 @@
         "Helppo pääsy salasanoihisi ja muihin tietoihisi."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Turvallisuussyistä pääsysi on vahvistettava"
+        "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Turvallisuussyistä pääsysi on vahvistettava"
+        "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Luotuja salasanoja säilytetään yhden päivän ajan."
       ],
       "Generating alias...": [
-        "Luodaan aliasta.."
+        "Luodaan aliasta..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Tilaa Pass Plus ja saat rajattomasti aliaksia, nautit ainutlaatuisista ominaisuuksista ja tuet meitä."
+        "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Täältä löydät kaikki tarvittavat tiedot, jotta pääset alkuun."
@@ -1021,7 +1021,7 @@
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Siirretään kaikkia kohteita paikasta \"${ payload.content.name }\""
+        "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -1033,7 +1033,7 @@
         "Ei koskaan"
       ],
       "No login found": [
-        "Kirjautumistietoa ei löytynyt"
+        "Kirjautumistietoja ei löytynyt"
       ],
       "None": [
         "Ei mitään"
@@ -1045,7 +1045,7 @@
         "Omistaja"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Omistajuus siirretty onnistuneesti. Et ole enää tämän holvin omistaja."
+        "Omistajuus siirrettiin, etkä ole enää tämän holvin omistaja."
       ],
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
@@ -1102,7 +1102,7 @@
         "Kohteita palautetaan roskakorista"
       ],
       "Restoring trashed items...": [
-        "Kohteita palautetaan roskakorista..."
+        "Palautetaan roskakorin kohteita..."
       ],
       "Save login": [
         "Tallenna kirjautumistieto"
@@ -1111,7 +1111,7 @@
         "Valitse kohdeholvi"
       ],
       "Select where you want your imported vault(s) to be saved.": [
-        "Valitse minne tuodut holvit tallennetaan."
+        "Valitse tuotavien holvien tallennuskohde."
       ],
       "Selected items permanently deleted": [
         "Valitut kohteet poistettiin pysyvästi"
@@ -1162,7 +1162,7 @@
         "Kiitos, ongelmasta on ilmoitettu"
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun klikkaat tai keskityt kenttään."
+        "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun kenttää klikataan tai se kohdistetaan."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
@@ -1211,7 +1211,7 @@
         "Käyttäjän käyttöoikeus mitätöitiin"
       ],
       "User's access sucessfuly updated": [
-        "Käyttäjän käyttöoikeus muutettiin"
+        "Käyttäjän käyttöoikeutta muutettiin"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -1238,7 +1238,7 @@
         "Luot aliasta:"
       ],
       "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Mahdollistaa kirjautumistietojen nopean automaattitäytön painamalla ${ PASS_APP_NAME }in kuvaketta."
+        "Mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME }-kuvakkeesta."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
@@ -1513,7 +1513,7 @@
         "Muokattu"
       ],
       "More than a month": [
-        "Enemmän kuin yksi kuukausi"
+        "Yli kuukausi sitten"
       ],
       "Most recent": [
         "Käytön mukaan"
@@ -1888,7 +1888,7 @@
         "Myönnä käyttöoikeudet"
       ],
       "Hide my email": [
-        "Hide my email"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
@@ -1921,7 +1921,7 @@
         "Salasana"
       ],
       "Pending access to the shared data": [
-        "Odotetaan jaettujen tietojen käyttöoikeutta"
+        "Odotetaan käyttöoikeutta jaettuihin tietoihin"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
@@ -2085,7 +2085,7 @@
         "Otsikko vaaditaan"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Siirretäänkö holvin omistus käyttäjälle ${ email }?"
+        "Siirretäänkö holvin omistajuus tunnukselle ${ email }?"
       ],
       "Trash alias ?": [
         "Siirretäänkö alias roskakoriin?"
