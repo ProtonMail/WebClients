@@ -9,5 +9,8 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         if (type === "userLogout") {
             ipcRenderer.send("userLogout");
         }
+        if (type === "clearAppData") {
+            ipcRenderer.send("userLogout");
+        }
     },
 });
