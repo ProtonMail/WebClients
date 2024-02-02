@@ -1,5 +1,7 @@
 // This type must be updated in the Electron application as well
-export type IPCInboxMessage = { type: 'updateNotification'; payload: number };
+export type IPCInboxMessage =
+    | { type: 'updateNotification'; payload: number }
+    | { type: 'userLogout'; payload: undefined };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**

@@ -141,6 +141,10 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         });
     };
 
+    const handleSignout = (clearDeviceRecovery: boolean) => {
+        dispatch(signoutAction({ clearDeviceRecovery }));
+    };
+
     const handleSignOutClick = () => {
         close();
         if (sessionRecoveryInitiated) {
@@ -148,7 +152,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
-            dispatch(signoutAction({ clearDeviceRecovery: false }));
+            handleSignout(false);
         }
     };
 
@@ -210,16 +214,11 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
-                    onSignOut={() => dispatch(signoutAction({ clearDeviceRecovery: false }))}
+                    onSignOut={() => handleSignout(false)}
                     {...sessionRecoverySignOutConfirmPrompt}
                 />
             )}
-            {renderConfirmSignOutModal && (
-                <ConfirmSignOutModal
-                    onSignOut={(clearDeviceRecovery) => dispatch(signoutAction({ clearDeviceRecovery }))}
-                    {...confirmSignOutModal}
-                />
-            )}
+            {renderConfirmSignOutModal && <ConfirmSignOutModal onSignOut={handleSignout} {...confirmSignOutModal} />}
             <ReferralSpotlight
                 show={shouldShowSpotlight}
                 anchorRef={anchorRef}
