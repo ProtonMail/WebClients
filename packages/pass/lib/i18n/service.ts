@@ -27,17 +27,14 @@ export const createI18nService = (options: I18nServiceOptions) => {
         const [fst, snd] = navigator.languages;
         if (!fst && !snd) return DEFAULT_LOCALE;
 
-        return getClosestLocaleCode(
-            !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst,
-            options.locales
-        );
+        return !hasRegion(fst) && hasRegion(snd) && getLanguageCode(fst) === getLanguageCode(snd) ? snd : fst;
     };
 
     const getLocale = async () => (await options.getLocale()) ?? getFallbackLocale();
 
     const setLocale = async (locale?: string) => {
         try {
-            const nextLocale = locale ?? (await getLocale());
+            const nextLocale = getClosestLocaleCode(locale ?? (await getLocale()), options.locales);
 
             await loadLocale(nextLocale, options.locales);
             options.onLocaleChange?.(nextLocale);
