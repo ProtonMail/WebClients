@@ -3,6 +3,7 @@ import { createAction } from '@reduxjs/toolkit';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { handleLogout } from '@proton/shared/lib/authentication/logout';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 export const signoutAction = createAction('auth/signout', (payload: { clearDeviceRecovery: boolean }) => ({ payload }));
 
@@ -17,6 +18,10 @@ export const authenticationListener = (startListening: SharedStartListening<Stat
                 listenerApi.extra.eventManager.stop();
                 await listenerApi.extra.api({ ...revoke(), silence: true });
             } finally {
+                if (canInvokeInboxDesktopIPC) {
+                    window.ipcInboxMessageBroker!.send('userLogout', undefined);
+                }
+
                 handleLogout({
                     appName: listenerApi.extra.config.APP_NAME,
                     type: 'full',
