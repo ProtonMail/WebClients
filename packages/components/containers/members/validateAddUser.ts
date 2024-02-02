@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { Domain, Organization } from '@proton/shared/lib/interfaces';
+import { OrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 export const getDomainError = () => {
     return c('Error').t`Please configure a custom domain before adding users to your organization.`;
@@ -14,21 +14,20 @@ export const getDomainAdressError = () => {
 const validateAddUser = ({
     privateUser,
     organization,
-    organizationKey,
     verifiedDomains,
     disableStorageValidation,
     disableDomainValidation,
     disableAddressValidation,
+    organizationKeyInfo,
 }: {
     privateUser: boolean;
     organization: Organization | undefined;
-    organizationKey: CachedOrganizationKey | undefined;
     verifiedDomains: Domain[];
     disableStorageValidation?: boolean;
     disableDomainValidation?: boolean;
     disableAddressValidation?: boolean;
+    organizationKeyInfo: OrganizationKeyInfo;
 }) => {
-    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
     const {
         MaxMembers = 0,
         HasKeys,
@@ -58,14 +57,9 @@ const validateAddUser = ({
         return c('Error').t`All storage space has been allocated. Please reduce storage allocated to other users.`;
     }
     if (!privateUser) {
-        if (organizationKeyInfo.userNeedsToActivateKey) {
-            return c('Error').t`The organization key must be activated first.`;
-        }
-        if (organizationKeyInfo.userNeedsToReactivateKey) {
-            return c('Error').t`The organization key must be activated first.`;
-        }
-        if (!organizationKey?.privateKey) {
-            return c('Error').t`Organization key is not decrypted.`;
+        const result = validateOrganizationKey(organizationKeyInfo);
+        if (result) {
+            return result;
         }
     }
 };

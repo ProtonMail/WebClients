@@ -313,7 +313,7 @@ export const upgradeV2KeysHelper = async ({
     const organizationKey =
         user.Role === USER_ROLES.ADMIN_ROLE
             ? await api<tsOrganizationKey>(getOrganizationKeys()).then((Key) => {
-                  return getCachedOrganizationKey({ keyPassword, Key });
+                  return getCachedOrganizationKey({ keyPassword, Key, userKeys });
               })
             : undefined;
 

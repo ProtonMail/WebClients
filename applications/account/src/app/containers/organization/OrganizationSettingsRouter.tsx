@@ -75,7 +75,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(domains) && (
                 <Route path={getSectionPath(path, domains)}>
                     <PrivateMainSettingsArea config={domains}>
-                        <DomainsSection />
+                        <DomainsSection onceRef={onceRef} />
                         <CatchAllSection />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -83,14 +83,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(orgKeys) && (
                 <Route path={getSectionPath(path, orgKeys)}>
                     <PrivateMainSettingsArea config={orgKeys}>
-                        <OrganizationSection
-                            app={app}
-                            organization={organization}
-                            onSetupOrganization={() => {
-                                // Disable automatic activation modal when setting up an organization
-                                onceRef.current = true;
-                            }}
-                        />
+                        <OrganizationSection app={app} organization={organization} />
                         <OrganizationPasswordSection organization={organization} onceRef={onceRef} />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -99,7 +92,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <SubscriptionModalProvider app={app}>
                         <PrivateMainSettingsArea config={users}>
-                            <UsersAndAddressesSection app={app} />
+                            <UsersAndAddressesSection app={app} onceRef={onceRef} />
                             <MultiUserCreationSection app={app} />
                         </PrivateMainSettingsArea>
                     </SubscriptionModalProvider>

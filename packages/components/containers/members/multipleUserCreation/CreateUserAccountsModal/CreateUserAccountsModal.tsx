@@ -38,6 +38,7 @@ import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Domain } from '@proton/shared/lib/interfaces';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import removeIndex from '@proton/utils/removeIndex';
@@ -224,10 +225,12 @@ const CreateUserAccountsModal = ({
 
         const organization = await getOrganization();
         const organizationKey = await getOrganizationKey();
+        const addresses = await getAddresses();
+        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
         const error = validateAddUser({
             privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
             organization,
-            organizationKey,
+            organizationKeyInfo,
             verifiedDomains,
             disableStorageValidation,
             disableDomainValidation,
