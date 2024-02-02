@@ -63,7 +63,6 @@ const ContactsWidgetGroupsContainer = ({
 
     const { checkedIDs, selectedIDs, handleCheckAll, handleCheckOne } = useItemsSelection({
         allIDs: groupIDs,
-        resetDependencies: [groups],
     });
 
     const allChecked = checkedIDs.length > 0 && checkedIDs.length === filteredGroups.length;
