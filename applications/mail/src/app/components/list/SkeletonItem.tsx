@@ -79,7 +79,6 @@ const SkeletonItem = ({
                     unread={false}
                     breakpoints={breakpoints}
                     isSelected={false}
-                    isHovered={false}
                 />
             </div>
         </div>
