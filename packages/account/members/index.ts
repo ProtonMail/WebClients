@@ -1,21 +1,19 @@
-import { createAsyncThunk, createSlice, original } from '@reduxjs/toolkit';
+import { PayloadAction, ThunkAction, UnknownAction, createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Member, User } from '@proton/shared/lib/interfaces';
+import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
-import { AddressesState } from '../addresses';
+import { AddressesState, addressesThunk } from '../addresses';
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { UserState, userThunk } from '../user';
 
 const name = 'members' as const;
-
-export type EnhancedMember = Member & { addressState: 'stale' | 'partial' | 'full' | 'pending' | 'rejected' };
 
 export interface MembersState extends UserState, AddressesState {
     [name]: ModelState<EnhancedMember[]>;
@@ -48,33 +46,9 @@ const modelThunk = createAsyncModelThunk<Model, MembersState, ProtonThunkArgumen
     previous: previousSelector(selectMembers),
 });
 
-const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: EnhancedMember) => {
+const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
     return state.value?.find((member) => member.ID === target.ID);
 };
-
-export const getMemberAddresses = createAsyncThunk<
-    Address[],
-    { member: EnhancedMember; retry?: boolean },
-    {
-        state: MembersState;
-        extra: ProtonThunkArguments;
-    }
->(
-    `${name}/fetch-address`,
-    ({ member: targetMember }, { extra }) => {
-        return getAllMemberAddresses(extra.api, targetMember.ID).then(sortAddresses);
-    },
-    {
-        condition: ({ member: targetMember, retry }, { getState }) => {
-            const member = getMemberFromState(selectMembers(getState()), targetMember);
-            return !(
-                Boolean(member?.Self) ||
-                member?.addressState === 'pending' ||
-                (member?.addressState === 'rejected' && !retry)
-            );
-        },
-    }
-);
 
 const initialState: SliceState = {
     value: undefined,
@@ -83,31 +57,29 @@ const initialState: SliceState = {
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
-    extraReducers: (builder) => {
-        handleAsyncModel(builder, modelThunk);
-
-        builder.addCase(getMemberAddresses.pending, (state, action) => {
-            const member = getMemberFromState(state, action.meta.arg.member);
+    reducers: {
+        memberFetchFulfilled: (state, action: PayloadAction<{ member: Member; addresses: Address[] }>) => {
+            const member = getMemberFromState(state, action.payload.member);
+            if (member) {
+                member.addressState = 'full';
+                member.Addresses = action.payload.addresses;
+            }
+        },
+        memberFetchPending: (state, action: PayloadAction<{ member: Member }>) => {
+            const member = getMemberFromState(state, action.payload.member);
             if (member) {
                 member.addressState = 'pending';
             }
-        });
-
-        builder.addCase(getMemberAddresses.rejected, (state, action) => {
-            const member = getMemberFromState(state, action.meta.arg.member);
+        },
+        memberFetchRejected: (state, action: PayloadAction<{ member: Member }>) => {
+            const member = getMemberFromState(state, action.payload.member);
             if (member) {
                 member.addressState = 'rejected';
             }
-        });
-
-        builder.addCase(getMemberAddresses.fulfilled, (state, action) => {
-            const member = getMemberFromState(state, action.meta.arg.member);
-            if (member) {
-                member.addressState = 'full';
-                member.Addresses = action.payload;
-            }
-        });
+        },
+    },
+    extraReducers: (builder) => {
+        handleAsyncModel(builder, modelThunk);
 
         builder.addCase(serverEvent, (state, action) => {
             if (!state.value) {
@@ -150,6 +122,61 @@ const slice = createSlice({
         });
     },
 });
+
+const getTemporaryPromiseMap = (() => {
+    let map: undefined | Map<string, Promise<Address[]>>;
+    return () => {
+        if (!map) {
+            map = new Map();
+        }
+        return map;
+    };
+})();
+
+export const getMemberAddresses = ({
+    member: targetMember,
+    retry,
+}: {
+    member: Member;
+    retry?: boolean;
+}): ThunkAction<Promise<Address[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    const fetch = (api: Api, ID: string) => getAllMemberAddresses(api, ID).then(sortAddresses);
+
+    const map = getTemporaryPromiseMap();
+
+    return async (dispatch, getState, extra) => {
+        const member = getMemberFromState(selectMembers(getState()), targetMember);
+        if (!member) {
+            return [];
+        }
+        if (Boolean(member.Self)) {
+            return dispatch(addressesThunk());
+        }
+        if (member.addressState === 'full' && member.Addresses) {
+            return member.Addresses;
+        }
+        if (member.addressState === 'rejected' && !retry) {
+            return [];
+        }
+        const oldPromise = map.get(member.ID);
+        if (oldPromise) {
+            return oldPromise;
+        }
+        const promise = fetch(extra.api, member.ID);
+        try {
+            map.set(member.ID, promise);
+            dispatch(slice.actions.memberFetchPending({ member }));
+            const result = await promise;
+            dispatch(slice.actions.memberFetchFulfilled({ member, addresses: result }));
+            return result;
+        } catch (e) {
+            dispatch(slice.actions.memberFetchRejected({ member }));
+            throw e;
+        } finally {
+            map.delete(member.ID);
+        }
+    };
+};
 
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk.thunk;
