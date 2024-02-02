@@ -10,7 +10,7 @@ import AccountSecuritySuccess from './AccountSecuritySuccess';
 import { selectAccountSecurityElements, selectAccountSecurityIssuesCount } from './slice/accountSecuritySlice';
 
 const AccountSecurity = () => {
-    const { accountRecoverySet, dataRecoverySet, twoFactorAuthSetOrDismissed } =
+    const { accountRecoverySet, dataRecoverySet, twoFactorAuthSetOrDismissed, twoFactorAuthSet } =
         baseUseSelector(selectAccountSecurityElements);
     const issuesCount = baseUseSelector(selectAccountSecurityIssuesCount);
     const dismissed2FACardFeature = useFeature(FeatureCode.AccountSecurityDismissed2FACard);
@@ -20,7 +20,7 @@ const AccountSecurity = () => {
             <h3 className="text-rg text-bold mt-1 mb-2">{c('Title').t`Account security`}</h3>
 
             {issuesCount === 0 ? (
-                <AccountSecuritySuccess />
+                <AccountSecuritySuccess twoFactorAuthSet={twoFactorAuthSet} />
             ) : (
                 <div className="flex flex-column flex-nowrap gap-2 w-full">
                     {!accountRecoverySet && (
