@@ -3,7 +3,7 @@ import UAParser from 'ua-parser-js';
 import { SUPPORTED_ELECTRON_APP } from '@proton/components/hooks/useIsElectronApp';
 
 import { APPS, APP_NAMES } from '../constants';
-import { getBrowser, getOS, isMac, isWindows } from './browser';
+import { isMac, isWindows } from './browser';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
@@ -31,12 +31,3 @@ export const isElectronPass = isElectronApp && /ProtonPass/i.test(ua.ua);
  */
 export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>([0-9][.]).{3})/i)?.groups
     ?.version;
-
-/*
- * This is present until GA, it helps gathering user feedbacks in a Typeform.
- */
-export const getTypeformDesktopUrl = (appVersion: string, appName: APP_NAMES) => {
-    const browser = getBrowser();
-    const os = getOS();
-    return `https://form.typeform.com/to/XNqstRfx#electron_version=${browser.version}=&os=${os.name}&app_version=${appName}@${appVersion}`;
-};
