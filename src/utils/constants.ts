@@ -8,12 +8,6 @@ export const MACOS_PARTITION = "persist:macos";
 
 export const ALLOWED_PERMISSIONS = ["notifications", "clipboard-sanitized-write", "persistent-storage"];
 
-export const ALLOWED_OAUTH_URLS = [
-    "https://accounts.google.com/",
-    "https://login.microsoftonline.com/",
-    "https://login.live.com/",
-];
-
 export const STORE_WINDOW_KEY = "WindowsStore";
 
 export const WINDOW_SIZES = {

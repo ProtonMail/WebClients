@@ -12,7 +12,6 @@ import {
     isHostAllowed,
     isHostCalendar,
     isHostMail,
-    isHostOAuth,
     isMac,
     isUpsellURL,
     isWindows,
@@ -131,7 +130,7 @@ app.on("web-contents-created", (_ev, contents) => {
 
     contents.on("will-navigate", (details) => {
         log.info("will-navigate");
-        if (!isHostAllowed(details.url, app.isPackaged) && !isHostOAuth(details.url)) {
+        if (!isHostAllowed(details.url, app.isPackaged) && !global.oauthProcess) {
             return preventDefault(details);
         }
 
@@ -165,8 +164,8 @@ app.on("web-contents-created", (_ev, contents) => {
         } else if (isHostAllowed(url, app.isPackaged)) {
             logURL("Open internal link", url);
             return { action: "allow" };
-        } else if (isHostOAuth(url)) {
-            logURL("Open OAuth link", url);
+        } else if (global.oauthProcess) {
+            logURL("OAuth Process", url);
             return { action: "allow" };
         } else {
             logURL("Open external link", url);

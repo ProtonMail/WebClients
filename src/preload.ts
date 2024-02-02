@@ -12,5 +12,8 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
         if (type === "clearAppData") {
             ipcRenderer.send("userLogout");
         }
+        if (type === "oauthPopupOpened") {
+            ipcRenderer.send("oauthPopupOpened", payload);
+        }
     },
 });

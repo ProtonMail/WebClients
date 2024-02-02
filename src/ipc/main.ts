@@ -16,4 +16,8 @@ export const handleIPCCalls = () => {
         log.info("IPC clearAppData");
         clearStorage(true, 500);
     });
+    ipcMain.on("oauthPopupOpened", (_e, payload) => {
+        log.info("IPC oauthPopupOpened", payload);
+        global.oauthProcess = payload === "oauthPopupStarted";
+    });
 };
