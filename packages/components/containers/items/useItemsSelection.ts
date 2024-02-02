@@ -7,7 +7,7 @@ import useHandler from '../../hooks/useHandler';
 interface Props {
     activeID?: string;
     allIDs: string[];
-    resetDependencies: DependencyList;
+    resetDependencies?: DependencyList;
     onCheck?: (checked: boolean) => void;
 }
 
@@ -18,7 +18,7 @@ interface Props {
  * Items can be any object, we only deal with IDs
  * @param activeID The current active item
  * @param allIDs The complete list of ids in the list
- * @param resetDependencies React dependencies to reset selection if there is a change, cannot be empty since it would loop
+ * @param resetDependencies React dependencies to reset selection if there is a change
  * @param onCheck Optional action to be triggered when interacting with element checkboxes
  * @returns all helpers useful to check one, a range or all items
  */
@@ -31,7 +31,7 @@ const useItemsSelection = ({ activeID, allIDs, resetDependencies, onCheck }: Pro
 
     const isChecked = (ID: string) => !!checkedMap[ID];
 
-    useEffect(() => setCheckedMap({}), resetDependencies);
+    useEffect(() => setCheckedMap({}), resetDependencies || []);
 
     const checkedIDs = useMemo(() => {
         return Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
