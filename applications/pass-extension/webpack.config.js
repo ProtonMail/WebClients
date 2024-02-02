@@ -188,10 +188,16 @@ module.exports = {
                         if (CLEAN_MANIFEST) {
                             switch (BUILD_TARGET) {
                                 case 'firefox':
-                                    manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
+                                    manifest.content_scripts[1].matches = [
+                                        'https://account.proton.me/*',
+                                        'https://pass.proton.me/*',
+                                    ];
                                     break;
                                 case 'chrome':
-                                    manifest.externally_connectable.matches = ['https://account.proton.me/*'];
+                                    manifest.externally_connectable.matches = [
+                                        'https://account.proton.me/*',
+                                        'https://pass.proton.me/*',
+                                    ];
                             }
                         }
 
