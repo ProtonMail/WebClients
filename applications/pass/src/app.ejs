@@ -29,14 +29,15 @@
         <meta name="twitter:image" content="<%= ogImage %>" />
         <meta name="twitter:image:alt" content="The shiny <%= appName %> logo" />
 
-        <meta name="google-play-app" content="app-id=me.proton.android.pass" />
+        <meta name="google-play-app" content="app-id=proton.android.pass" />
+        <meta name="apple-itunes-app" content="app-id=6443490629" />
 
         <meta name="google" content="notranslate" />
 
-        <link rel="icon" href="/assets/favicon.ico" sizes="any">
+        <link rel="icon" href="/assets/favicon.ico" sizes="any" />
         <!-- Working around https://bugzilla.mozilla.org/show_bug.cgi?id=1801614
            * otherwise Firefox picks the 1024x1024 declination of the apple-touch-icon -->
-        <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025">
+        <link rel="icon" href="/assets/favicon.ico" sizes="1025x1025" />
         <link rel="icon" href="<%= require('./favicon.svg') %>" type="image/svg+xml" />
     </head>
     <body id="pass-web">
