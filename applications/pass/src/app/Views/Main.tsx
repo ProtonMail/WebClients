@@ -26,6 +26,7 @@ import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
 
 const extensionClient = getExtensionSupportedBrowser();
+const showTopBar = isDesktop() && extensionClient !== undefined;
 
 export const Main: FC = () => {
     const client = useClient();
@@ -39,7 +40,7 @@ export const Main: FC = () => {
                         <PasswordProvider>
                             <SpotlightProvider>
                                 <div className="content-container flex flex-1 shrink-0 flex-column">
-                                    {isDesktop() && extensionClient && <TopBar client={extensionClient} />}
+                                    {showTopBar && <TopBar client={extensionClient} />}
                                     <div className="flex flex-row flex-nowrap overflow-hidden flex-1 relative w-full h-full anime-fade-in">
                                         <Sidebar expanded={expanded} onToggle={toggle}>
                                             <VaultActionsProvider>
