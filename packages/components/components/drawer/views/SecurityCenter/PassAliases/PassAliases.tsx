@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
 import PassAliasesUpsellModal from '@proton/components/components/upsell/modal/types/PassAliasesUpsellModal';
-import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { ErrorBoundary, GenericError, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
 import { useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -17,6 +17,7 @@ import { DrawerAppSection } from '../../shared';
 import AliasesList from './AliasesList';
 import HasNoAliases from './HasNoAliases';
 import { PassAliasesProvider, usePassAliasesContext } from './PassAliasesProvider';
+import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import CreatePassAliasesForm from './modals/CreatePassAliasesForm/CreatePassAliasesForm';
 import TryProtonPass from './modals/TryProtonPass/TryProtonPass';
 
@@ -96,10 +97,22 @@ const PassAliases = () => {
 
 export default function PassAliasesWrapper() {
     return (
-        <PassBridgeProvider>
-            <PassAliasesProvider>
-                <PassAliases />
-            </PassAliasesProvider>
-        </PassBridgeProvider>
+        <ErrorBoundary
+            initiative="drawer-security-center"
+            renderFunction={(e) => (
+                <>
+                    <GenericError />
+                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR && (
+                        <p className="text-center self-stretch">{c('Error').t`Aliases could not be loaded`}</p>
+                    )}
+                </>
+            )}
+        >
+            <PassBridgeProvider>
+                <PassAliasesProvider>
+                    <PassAliases />
+                </PassAliasesProvider>
+            </PassBridgeProvider>
+        </ErrorBoundary>
     );
 }

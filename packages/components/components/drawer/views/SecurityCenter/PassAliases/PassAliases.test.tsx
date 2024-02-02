@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
 
 import { useNotifications } from '@proton/components/hooks';
+import { PassBridge } from '@proton/pass/lib/bridge/types';
 import { mockNotifications } from '@proton/testing/index';
 
 import PassAliases from './PassAliases';
@@ -13,11 +14,37 @@ import * as passAliasesProvider from './PassAliasesProvider';
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
     PassBridgeProvider: ({ children }: { children: ReactNode }) => children,
-    usePassBridge: () => {},
+    usePassBridge: (): PassBridge => {
+        return {
+            vault: {
+                getDefault: async () => {
+                    return {
+                        shareId: 'test-share-id',
+                        content: {
+                            name: 'Test Vault',
+                        },
+                    } as any;
+                },
+            },
+            alias: {
+                create: jest.fn(),
+                getAliasOptions: jest.fn(),
+                getAllByShareId: async () => [],
+            },
+            hydrate: async () => undefined,
+            ready: async () => true,
+        };
+    },
 }));
 jest.mock('@proton/components/hooks/useUser', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/hooks/useSubscription', () => jest.fn().mockImplementation(() => [{}, false]));
 jest.mock('@proton/components/components/link/SettingsLink', () => 'string');
+jest.mock('@proton/components/containers/app/ErrorBoundary', () => {
+    return {
+        __esModule: true,
+        default: ({ children }: { children: ReactNode }) => children,
+    };
+});
 
 describe('PassAliases', () => {
     const mockedUseNotifications = mocked(useNotifications);

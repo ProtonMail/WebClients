@@ -9,6 +9,7 @@ interface Props {
     big?: boolean;
     resetKey?: string;
     component?: ReactNode;
+    renderFunction?: (error: Error | undefined) => ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
     initiative?: SentryInitiative;
 }
@@ -60,6 +61,10 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         if (props.component || props.component === null) {
             return props.component;
         }
+        if (props.renderFunction) {
+            return props.renderFunction(state.error);
+        }
+
         return <GenericError className={props.className} big={props.big} />;
     }
 }

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useModalStateObject } from '@proton/components/components';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
 import { useNotifications, useSubscription } from '@proton/components/hooks';
+import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
@@ -16,18 +17,27 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { hasFree, hasMailPlus, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 
 import { fetchPassBridgeInfos, filterPassAliases } from './PassAliases.helpers';
+import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import type { CreateModalFormState, PassAliasesVault } from './interface';
+
+/**
+ * Memoize the pass aliases items to avoid displaying a loader on every drawer opening
+ * In the long term we should have pass relying on the event loop.
+ * However we decided to not go this way because implementation time
+ */
+let memoisedPassAliasesItems: PassBridgeAliasItem[] = [];
 
 const usePassAliasesSetup = () => {
     const PassBridge = usePassBridge();
     const passAliasesUpsellModal = useModalStateObject();
     const isMounted = useIsMounted();
     const [subscription] = useSubscription();
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(memoisedPassAliasesItems.length ? false : true);
     const [passAliasVault, setPassAliasVault] = useState<PassAliasesVault>();
-    const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>([]);
+    const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>(memoisedPassAliasesItems);
     const [userHadVault, setUserHadVault] = useState(false);
     const { createNotification } = useNotifications();
+    const throwError = useAsyncError();
     const hasUnlimitedAliasesPlan: boolean = (() => {
         if (!subscription) {
             return false;
@@ -61,6 +71,7 @@ const usePassAliasesSetup = () => {
 
             if (isMounted()) {
                 setPassAliasesItems(filteredAliases);
+                memoisedPassAliasesItems = filteredAliases;
             }
 
             textToClipboard(formValues.alias);
@@ -100,26 +111,27 @@ const usePassAliasesSetup = () => {
 
     useEffect(() => {
         const initPassBridge = async () => {
-            try {
-                await PassBridge.ready();
-                const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
-                const filteredAliases = filterPassAliases(aliases);
+            await PassBridge.ready();
+            const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
+            const filteredAliases = filterPassAliases(aliases);
 
-                if (isMounted()) {
-                    setPassAliasVault(vault);
-                    setPassAliasesItems(filteredAliases);
-                    setUserHadVault(userHadVault);
-                }
-            } catch (e) {
-                console.error(e);
-                traceInitiativeError('drawer-security-center', e);
-            } finally {
-                if (isMounted()) {
-                    setLoading(false);
-                }
+            if (isMounted()) {
+                setPassAliasVault(vault);
+                setPassAliasesItems(filteredAliases);
+                memoisedPassAliasesItems = filteredAliases;
+                setUserHadVault(userHadVault);
+                setLoading(false);
             }
         };
-        void initPassBridge();
+        void initPassBridge().catch((e) => {
+            createNotification({
+                text: c('Error').t`Aliases could not be loaded`,
+                type: 'error',
+            });
+            traceInitiativeError('drawer-security-center', e);
+
+            throwError(new Error(FAILED_TO_INIT_PASS_BRIDGE_ERROR));
+        });
     }, []);
 
     return {
