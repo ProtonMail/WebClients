@@ -179,7 +179,7 @@ const Sidebar = ({
                 )}
 
                 {isElectronOnWindows && (
-                    <div className="flex gap-4 justify-between items-center flex-nowrap px-3 pb-2 pt-1">
+                    <div className="flex flex-nowrap gap-4 items-center justify-between my-3 px-3">
                         {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
                         <div className="shrink-0">{appsDropdown}</div>
                     </div>
