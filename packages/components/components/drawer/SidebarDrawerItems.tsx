@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { NotificationDot } from '@proton/atoms/NotificationDot';
 import { ThemeColor } from '@proton/colors/types';
 import { baseUseSelector } from '@proton/redux-shared-store';
-import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_NATIVE_APPS, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
 import { IconName } from '../icon/Icon';
@@ -31,6 +31,32 @@ const SidebarDrawerItem = ({ name, icon, onClick, right }: SidebarDrawerItemProp
     );
 };
 
+const SecurityCenterDrawerItem = ({
+    toggleDrawerApp,
+    toggleHeaderDropdown,
+}: {
+    toggleHeaderDropdown: () => void;
+    toggleDrawerApp: (args: OpenDrawerArgs) => () => void;
+}) => {
+    const issuesCount = baseUseSelector(selectAccountSecurityIssuesCount);
+
+    return (
+        <SidebarDrawerItem
+            onClick={() => {
+                toggleHeaderDropdown();
+                toggleDrawerApp({ app: DRAWER_NATIVE_APPS.SECURITY_CENTER })();
+            }}
+            icon="shield"
+            name={c('Header').t`Security Center`}
+            right={
+                issuesCount ? (
+                    <NotificationDot color={ThemeColor.Warning} alt={c('Info').t`Attention required`} />
+                ) : undefined
+            }
+        />
+    );
+};
+
 interface SidebarDrawerItemsProps {
     toggleHeaderDropdown: () => void;
 }
@@ -38,7 +64,6 @@ interface SidebarDrawerItemsProps {
 const SidebarDrawerItems = ({ toggleHeaderDropdown }: SidebarDrawerItemsProps) => {
     const { toggleDrawerApp } = useDrawer();
     const displaySecurityCenter = useSecurityCenter();
-    const issuesCount = baseUseSelector(selectAccountSecurityIssuesCount);
 
     return (
         <div className="navigation-item h-auto shrink-0 px-3 mb-4 mt-2 md:hidden">
@@ -51,18 +76,9 @@ const SidebarDrawerItems = ({ toggleHeaderDropdown }: SidebarDrawerItemsProps) =
                 name={c('Header').t`Contacts`}
             />
             {displaySecurityCenter && (
-                <SidebarDrawerItem
-                    onClick={() => {
-                        toggleHeaderDropdown();
-                        toggleDrawerApp({ app: DRAWER_NATIVE_APPS.SECURITY_CENTER })();
-                    }}
-                    icon="shield"
-                    name={c('Header').t`Security Center`}
-                    right={
-                        issuesCount ? (
-                            <NotificationDot color={ThemeColor.Warning} alt={c('Info').t`Attention required`} />
-                        ) : undefined
-                    }
+                <SecurityCenterDrawerItem
+                    toggleDrawerApp={toggleDrawerApp}
+                    toggleHeaderDropdown={toggleHeaderDropdown}
                 />
             )}
         </div>
