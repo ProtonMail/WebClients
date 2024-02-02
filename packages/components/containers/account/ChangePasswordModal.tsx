@@ -16,7 +16,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { Address } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
 import { srpVerify } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
@@ -337,7 +337,7 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                         const updateKeysPayload = await getUpdateKeysPayload(
                             addressesKeys,
                             userKeysList,
-                            organizationKey?.privateKey,
+                            getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
                             keyPassword,
                             keySalt
                         );
@@ -398,7 +398,7 @@ const ChangePasswordModal = ({ mode, onRecoveryClick, onSuccess, onClose, authCh
                 const updateKeysPayload = await getUpdateKeysPayload(
                     addressesWithKeys,
                     userKeysList,
-                    organizationKey?.privateKey,
+                    getIsPasswordless(organizationKey?.Key) ? undefined : organizationKey?.privateKey,
                     keyPassword,
                     keySalt
                 );

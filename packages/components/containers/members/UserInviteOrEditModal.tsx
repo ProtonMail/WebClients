@@ -4,38 +4,33 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { editMemberInvitation, inviteMember, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
-import { GIGA, MAIL_APP_NAME, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { editMemberInvitation, inviteMember } from '@proton/shared/lib/api/members';
+import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { Domain, FAMILY_PLAN_INVITE_STATE, Member, Organization } from '@proton/shared/lib/interfaces';
+import { Domain, Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
 import {
-    Alert,
-    ConfirmModal,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalStateProps,
-    Toggle,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
-import Addresses from '../addresses/Addresses';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalStateProps {
     organization?: Organization;
     domains: Domain[];
-    member: Member | null;
+    member: Member | null | undefined;
 }
 
 const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const { createModal } = useModals();
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
@@ -43,11 +38,6 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
     const storageRange = getStorageRange(member ?? {}, organization);
     const storageSizeUnit = GIGA;
     const isEditing = !!member?.ID;
-    const isInvitationPending = member?.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED;
-    const hasVPN = Boolean(organization?.MaxVPN);
-    const canMakeAdmin = !member?.Self && !isInvitationPending && member?.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
-    const canRevokeAdmin = !member?.Self && !isInvitationPending && member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
-    const canUpdateVPNConnection = isEditing && !isInvitationPending && hasVPN;
 
     const initialModel = useMemo(
         () => ({
@@ -77,56 +67,10 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
         createNotification({ text: c('Success').t`Invitation sent` });
     };
 
-    const revokeAdmin = async () => {
-        await new Promise((resolve, reject) => {
-            createModal(
-                <ConfirmModal onClose={reject} onConfirm={() => resolve(undefined)} title={c('Title').t`Change role`}>
-                    <Alert className="mb-4">
-                        {member!.Subscriber === MEMBER_SUBSCRIBER.PAYER
-                            ? c('Info')
-                                  .t`This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.`
-                            : c('Info').t`Are you sure you want to remove administrative privileges from this user?`}
-                    </Alert>
-                </ConfirmModal>
-            );
-        });
-
-        await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-    };
-
     const editInvitation = async () => {
         let updated = false;
-        // Editing a pending invitation uses a different endpoint than updating a user that accepted the invite
-        if (isInvitationPending) {
-            await api(editMemberInvitation(member!.ID, model.storage));
-            updated = true;
-        } else {
-            // Make consecutive API calls to update the member (API restriction)
-            if (initialModel.storage !== model.storage) {
-                await api(updateQuota(member!.ID, model.storage));
-                updated = true;
-            }
-
-            if (canUpdateVPNConnection && initialModel.vpn !== model.vpn) {
-                await api(updateVPN(member!.ID, model.vpn ? VPN_CONNECTIONS : 0));
-                updated = true;
-            }
-
-            if (canMakeAdmin && model.admin && initialModel.admin !== model.admin) {
-                await api(updateRole(member!.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-                updated = true;
-            }
-
-            if (canRevokeAdmin && !model.admin && initialModel.admin !== model.admin) {
-                try {
-                    await revokeAdmin();
-                    updated = true;
-                } catch (error) {
-                    /* do nothing, user declined confirm-modal to revoke admin rights from member */
-                }
-            }
-        }
-
+        await api(editMemberInvitation(member!.ID, model.storage));
+        updated = true;
         if (updated) {
             createNotification({ text: c('familyOffer_2023:Success').t`Member updated` });
         }
@@ -142,7 +86,7 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
         modalState.onClose();
     };
 
-    const mailFieldValidator = isEditing ? [requiredValidator(model.address), emailValidator(model.address)] : [];
+    const mailFieldValidator = !isEditing ? [requiredValidator(model.address), emailValidator(model.address)] : [];
     const modalTitle = isEditing
         ? c('familyOffer_2023:Title').t`Edit user storage`
         : c('familyOffer_2023:Title').t`Invite a user`;
@@ -157,6 +101,7 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
             size="large"
             {...modalState}
             onClose={handleClose}
+            noValidate
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -184,7 +129,6 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
                         placeholder="thomas.anderson@proton.me"
                         disableChange={submitting}
                         autoFocus
-                        required
                     />
                 )}
 
@@ -196,41 +140,6 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
                     totalStorage={totalStorage}
                     onChange={handleChange('storage')}
                 />
-
-                {canUpdateVPNConnection ? (
-                    <div className="flex mb-5">
-                        <label className="text-semibold mr-4" htmlFor="vpn-toggle">
-                            {c('Label for new member').t`VPN connections`}
-                        </label>
-                        <Toggle
-                            id="vpn-toggle"
-                            checked={model.vpn}
-                            onChange={({ target }) => setModel({ ...model, vpn: target.checked })}
-                        />
-                    </div>
-                ) : null}
-
-                {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex mb-6">
-                        <label className="text-semibold mr-4" htmlFor="admin-toggle">
-                            {c('Label for new member').t`Admin`}
-                        </label>
-                        <Toggle
-                            id="admin-toggle"
-                            checked={model.admin}
-                            onChange={({ target }) => setModel({ ...model, admin: target.checked })}
-                        />
-                    </div>
-                )}
-
-                {isEditing && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_ENABLED && (
-                    <div>
-                        <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
-                        <div>
-                            <Addresses organization={organization} memberID={member.ID} />
-                        </div>
-                    </div>
-                )}
             </ModalContent>
             <ModalFooter>
                 <Button onClick={handleClose} disabled={submitting}>

@@ -50,7 +50,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                     .t`You must activate your organization private key with the backup organization key password provided to you by your organization administrator.`,
                 warning: c('Info')
                     .t`Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.`,
-                success: c('Info').t`Organization keys activated`,
+                success: c('passwordless').t`Organization key activated`,
             };
         }
 
@@ -66,7 +66,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                     .jt`Enter the Organization Password to restore administrator privileges. ${learnMore}`,
                 warning: c('Info')
                     .t`If another administrator changed this password, you will need to ask them for the new Organization Password.`,
-                success: c('Info').t`Organization keys restored`,
+                success: c('passwordless').t`Organization key restored`,
             };
         }
 

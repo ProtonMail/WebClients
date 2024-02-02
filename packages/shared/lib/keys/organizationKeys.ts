@@ -1,14 +1,29 @@
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { c } from 'ttag';
+
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
+import { arrayToHexString } from '@proton/crypto/lib/utils';
+import { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
+import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getAllMemberAddresses } from '../api/members';
 import { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
-import { Api, EncryptionConfig, KeyPair, Member } from '../interfaces';
+import type {
+    Address,
+    EncryptionConfig,
+    KeyPair,
+    Member,
+    OrganizationKey,
+    PasswordlessOrganizationKey,
+} from '../interfaces';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { splitKeys } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
+
+export const SIGNATURE_CONTEXT = {
+    SHARE_ORGANIZATION_KEY_TOKEN: 'account.key-token.organization',
+};
 
 export const getBackupKeyData = async ({
     backupPassword,
@@ -55,6 +70,40 @@ export const generateOrganizationKeys = async ({
     };
 };
 
+export const generateOrganizationKeyToken = async (userKey: PrivateKeyReference) => {
+    const randomBytes = crypto.getRandomValues(new Uint8Array(32));
+    const token = arrayToHexString(randomBytes);
+    return encryptAddressKeyToken({
+        token,
+        userKey,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+    });
+};
+
+export const generatePasswordlessOrganizationKey = async ({
+    userKey,
+    encryptionConfig,
+}: {
+    userKey: PrivateKeyReference;
+    encryptionConfig: EncryptionConfig;
+}) => {
+    if (!userKey) {
+        throw new Error('Missing primary user key');
+    }
+    const { token, encryptedToken, signature } = await generateOrganizationKeyToken(userKey);
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
+        ...encryptionConfig,
+    });
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: token });
+    return {
+        privateKey,
+        privateKeyArmored,
+        encryptedToken,
+        signature,
+    };
+};
+
 export const reformatOrganizationKey = async (privateKey: PrivateKeyReference, passphrase: string) => {
     const reformattedPrivateKey = await CryptoProxy.reformatKey({
         userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
@@ -66,27 +115,20 @@ export const reformatOrganizationKey = async (privateKey: PrivateKeyReference, p
 };
 
 interface ReEncryptOrganizationTokens {
-    api: Api;
-    publicMembers: Member[];
+    publicMembers: { member: Member; memberAddresses: Address[] }[];
     oldOrganizationKey: KeyPair;
     newOrganizationKey: KeyPair;
 }
 
 export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
-    api,
     publicMembers = [],
     oldOrganizationKey,
     newOrganizationKey,
-}: ReEncryptOrganizationTokens) => {
-    const result: UpdateOrganizationKeysPayloadV2['Members'] = [];
-
-    // Performed iteratively to not spam the API
-    for (const member of publicMembers) {
+}: ReEncryptOrganizationTokens): Promise<UpdateOrganizationKeysPayloadV2['Members']> => {
+    const run = async ({ member, memberAddresses }: { member: Member; memberAddresses: Address[] }) => {
         if (!member.Keys?.length) {
-            continue;
+            return;
         }
-
-        const memberAddresses = await getAllMemberAddresses(api, member.ID);
 
         const memberKeysAndReEncryptedTokens = await Promise.all(
             member.Keys.map(async ({ Token, PrivateKey, ID }) => {
@@ -168,7 +210,7 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
             .filter(isTruthy)
             .flat();
 
-        result.push({
+        return {
             ID: member.ID,
             UserKeyTokens: memberKeysAndReEncryptedTokens.map(({ ID, token }) => {
                 return {
@@ -177,26 +219,26 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
                 };
             }),
             AddressKeyTokens,
-        });
-    }
+        };
+    };
 
-    return result;
+    const result = await Promise.all(publicMembers.map(run));
+
+    return result.filter(isTruthy);
 };
 
 export const getReEncryptedPublicMemberTokensPayloadLegacy = async ({
     publicMembers = [],
-    api,
     oldOrganizationKey,
     newOrganizationKey,
 }: ReEncryptOrganizationTokens) => {
     let result: UpdateOrganizationKeysPayloadLegacy['Tokens'] = [];
 
     // Performed iteratively to not spam the API
-    for (const member of publicMembers) {
+    for (const { member, memberAddresses } of publicMembers) {
         if (!member.Keys?.length) {
             continue;
         }
-        const memberAddresses = await getAllMemberAddresses(api, member.ID);
         const memberUserAndAddressKeys = memberAddresses.reduce((acc, { Keys: AddressKeys }) => {
             return acc.concat(AddressKeys);
         }, member.Keys);
@@ -271,5 +313,160 @@ export const generateMemberAddressKey = async ({
         activationToken,
         privateKeyArmoredOrganization,
         organizationToken,
+    };
+};
+
+export const getIsPasswordless = (orgKey?: OrganizationKey): orgKey is PasswordlessOrganizationKey => {
+    return !!orgKey && !!orgKey.Signature && !!orgKey.Token && !!orgKey.PrivateKey;
+};
+
+export const reencryptOrganizationToken = async ({
+    Token,
+    decryptionKeys,
+    encryptionKey,
+    signingKey,
+}: {
+    Token: string;
+    decryptionKeys: PrivateKeyReference[];
+    encryptionKey: PublicKeyReference;
+    signingKey: PrivateKeyReference;
+}) => {
+    const { sessionKey, message } = await decryptKeyPacket({ armoredMessage: Token, decryptionKeys });
+    return encryptAndSignKeyPacket({
+        sessionKey,
+        binaryData: message.data,
+        encryptionKey,
+        signingKey,
+    });
+};
+
+export const verifyOrganizationTokenSignature = async ({
+    armoredSignature,
+    binaryData,
+    verificationKeys,
+}: {
+    armoredSignature: string;
+    binaryData: Uint8Array;
+    verificationKeys: PublicKeyReference[];
+}) => {
+    const result = await CryptoProxy.verifyMessage({
+        armoredSignature,
+        binaryData,
+        verificationKeys,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, required: true },
+    });
+
+    if (result.verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+        const error = new Error(c('Error').t`Signature verification failed`);
+        error.name = 'SignatureError';
+        throw error;
+    }
+};
+
+export const acceptInvitation = async ({
+    Token,
+    Signature,
+    verificationKeys,
+    decryptionKeys,
+    encryptionKey,
+}: {
+    Token: string;
+    Signature: string;
+    verificationKeys: PublicKeyReference[];
+    decryptionKeys: PrivateKeyReference[];
+    encryptionKey: PrivateKeyReference;
+}) => {
+    const { sessionKey, message } = await decryptKeyPacket({
+        armoredMessage: Token,
+        decryptionKeys,
+    });
+    await verifyOrganizationTokenSignature({
+        armoredSignature: Signature,
+        binaryData: message.data,
+        verificationKeys,
+    });
+    return encryptAndSignKeyPacket({
+        sessionKey,
+        binaryData: message.data,
+        encryptionKey: encryptionKey,
+        signingKey: encryptionKey,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+    });
+};
+
+export const getPrivateMemberPublicKey = async ({
+    getPublicKeysForInbox,
+    email,
+}: {
+    email: string;
+    getPublicKeysForInbox: GetPublicKeysForInbox;
+}) => {
+    const publicKeysResult = email
+        ? await getPublicKeysForInbox({
+              email,
+              lifetime: 0,
+          })
+        : undefined;
+    return publicKeysResult?.publicKeys[0]?.publicKey;
+};
+
+export const generatePrivateMemberInvitation = async ({
+    signer,
+    data,
+    member,
+    publicKey,
+    addressID,
+}: {
+    signer: {
+        privateKey: PrivateKeyReference;
+        addressID: string;
+    };
+    data: {
+        sessionKey: SessionKey;
+        binaryData: Uint8Array;
+    };
+    member: Member;
+    addressID: string;
+    publicKey: PublicKeyReference;
+}) => {
+    const result = await encryptAndSignKeyPacket({
+        sessionKey: data.sessionKey,
+        binaryData: data.binaryData,
+        encryptionKey: publicKey,
+        signingKey: signer.privateKey,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+    });
+    return {
+        MemberID: member.ID,
+        TokenKeyPacket: result.keyPacket,
+        Signature: result.signature,
+        SignatureAddressID: signer.addressID,
+        EncryptionAddressID: addressID,
+    };
+};
+
+export const generatePublicMemberInvitation = async ({
+    member,
+    data,
+    privateKey,
+}: {
+    member: Member;
+    privateKey: PrivateKeyReference;
+    data: {
+        sessionKey: SessionKey;
+        binaryData: Uint8Array;
+    };
+}) => {
+    const result = await encryptAndSignKeyPacket({
+        sessionKey: data.sessionKey,
+        binaryData: data.binaryData,
+        encryptionKey: privateKey,
+        signingKey: privateKey,
+        context: { value: SIGNATURE_CONTEXT.SHARE_ORGANIZATION_KEY_TOKEN, critical: true },
+    });
+    return {
+        MemberID: member.ID,
+        TokenKeyPacket: result.keyPacket,
+        Signature: result.signature,
     };
 };

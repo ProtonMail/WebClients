@@ -2,7 +2,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
-import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens } from '../../lib/keys';
+import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens, splitKeys } from '../../lib/keys';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 
 const getSetup = async (forceSameUserKey = false) => {
@@ -61,6 +61,7 @@ const getSetup = async (forceSameUserKey = false) => {
         User,
         Addresses,
         userKeys,
+        privateKeys: splitKeys(userKeys).privateKeys,
     };
 };
 
@@ -68,9 +69,9 @@ describe('re-encrypt address keys', () => {
     it('should get address key tokens and re-encrypt to another user key', async () => {
         const setup = await getSetup();
         const tokens = await getReplacedAddressKeyTokens({
-            userKeys: setup.userKeys,
             addresses: setup.Addresses,
             privateKey: setup.userKeys[0].privateKey,
+            privateKeys: setup.privateKeys,
         });
         const decryptedTokens = await Promise.all(
             tokens.AddressKeyTokens.map(async (addressKeyToken) => {
@@ -87,9 +88,9 @@ describe('re-encrypt address keys', () => {
     it('should not re-encrypt tokens to the same user key', async () => {
         const setup = await getSetup(true);
         const tokens = await getReplacedAddressKeyTokens({
-            userKeys: setup.userKeys,
             addresses: setup.Addresses,
             privateKey: setup.userKeys[0].privateKey,
+            privateKeys: setup.privateKeys,
         });
         const decryptedTokens = await Promise.all(
             tokens.AddressKeyTokens.map(async (addressKeyToken) => {

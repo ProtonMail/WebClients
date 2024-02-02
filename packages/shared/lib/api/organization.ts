@@ -55,23 +55,55 @@ export const updateOrganizationKeysLegacy = ({
     data: { PrivateKey, BackupPrivateKey, BackupKeySalt, Tokens },
 });
 
+interface Members {
+    ID: string;
+    UserKeyTokens: {
+        ID: string;
+        Token: string;
+    }[];
+    AddressKeyTokens: {
+        ID: string;
+        Token: string;
+        Signature: string;
+        OrgSignature: string;
+    }[];
+}
+
+export interface UpdatePasswordlessOrganizationKeysPayload {
+    PrivateKey: string;
+    Signature: string;
+    Token: string;
+    Members: Members[];
+    AdminInvitations: {
+        MemberID: string;
+        TokenKeyPacket: string;
+        Signature: string;
+        SignatureAddressID: string;
+        EncryptionAddressID: string;
+    }[];
+    AdminActivations: {
+        MemberID: string;
+        TokenKeyPacket: string;
+        Signature: string;
+    }[];
+}
+
+export const createPasswordlessOrganizationKeys = (data: UpdatePasswordlessOrganizationKeysPayload) => ({
+    url: 'core/v4/organizations/keys',
+    method: 'post',
+    data,
+});
+
+export const updatePasswordlessOrganizationKeys = (data: UpdatePasswordlessOrganizationKeysPayload) => ({
+    ...createPasswordlessOrganizationKeys(data),
+    method: 'put',
+});
+
 export interface UpdateOrganizationKeysPayloadV2 {
     PrivateKey: string;
     BackupPrivateKey: string;
     BackupKeySalt: string;
-    Members: {
-        ID: string;
-        UserKeyTokens: {
-            ID: string;
-            Token: string;
-        }[];
-        AddressKeyTokens: {
-            ID: string;
-            Token: string;
-            Signature: string;
-            OrgSignature: string;
-        }[];
-    }[];
+    Members: Members[];
 }
 
 export const updateOrganizationKeysV2 = ({

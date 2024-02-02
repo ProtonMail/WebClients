@@ -104,6 +104,7 @@ const MainContainer: FunctionComponent = () => {
         };
     });
     const app = APPS.PROTONVPN_SETTINGS;
+    const onceRef = useRef<boolean>(false);
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -279,7 +280,7 @@ const MainContainer: FunctionComponent = () => {
                                 <Route path={routes.users.to}>
                                     <SubscriptionModalProvider app={app}>
                                         <PrivateMainSettingsArea config={routes.users}>
-                                            <UsersAndAddressesSection app={app} />
+                                            <UsersAndAddressesSection app={app} onceRef={onceRef} />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
                                 </Route>

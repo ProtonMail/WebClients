@@ -84,6 +84,36 @@ export const updateRole = (memberID: string, Role: number) => ({
     data: { Role },
 });
 
+export const activatePasswordlessKey = (data: { TokenKeyPacket: string; Signature: string }) => ({
+    method: 'put',
+    url: `core/v4/organizations/keys/activate`,
+    data,
+});
+
+export const updateRolePasswordless = ({
+    memberID,
+    ...data
+}: {
+    memberID: string;
+    Role: number;
+} & (
+    | {
+          OrganizationKeyActivation: { TokenKeyPacket: string; Signature: string };
+      }
+    | {
+          OrganizationKeyInvitation: {
+              TokenKeyPacket: string;
+              Signature: string;
+              SignatureAddressID: string;
+              EncryptionAddressID: string;
+          };
+      }
+)) => ({
+    method: 'put',
+    url: `core/v4/members/${memberID}/role`,
+    data,
+});
+
 export const updateVPN = (memberID: string, MaxVPN: number) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/vpn`,
