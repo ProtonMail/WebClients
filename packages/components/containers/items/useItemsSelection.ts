@@ -31,7 +31,7 @@ const useItemsSelection = ({ activeID, allIDs, resetDependencies, onCheck }: Pro
 
     const isChecked = (ID: string) => !!checkedMap[ID];
 
-    useEffect(() => setCheckedMap({}), resetDependencies);
+    useEffect(() => setCheckedMap({}), resetDependencies || []);
 
     const checkedIDs = useMemo(() => {
         return Object.keys(checkedMap).filter((ID) => checkedMap[ID]);
