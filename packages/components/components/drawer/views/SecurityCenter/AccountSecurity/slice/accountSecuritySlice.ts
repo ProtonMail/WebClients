@@ -40,13 +40,19 @@ export const securityCenterReducer = { [name]: slice.reducer };
 /*
  * Selectors
  */
+const selectIsPrivateUser = (state: AccountSecuritySlice) => state.user.value?.isPrivate;
 const selectAccountSecurity = (state: AccountSecuritySlice) => state.accountSecurity;
 const selectAccountSecurityLoading = (state: AccountSecuritySlice) => state.accountSecurity.loading;
 const selectTwoFactorAuthDismissed = (state: AccountSecuritySlice) =>
     state.features.AccountSecurityDismissed2FACard?.Value === true;
 
+export const selectCanDisplayAccountSecuritySection = createSelector(
+    selectIsPrivateUser,
+    (isPrivateUser) => !!isPrivateUser
+);
+
 export const selectAccountSecurityElements = createSelector(
-    [selectAccountSecurity, selectTwoFactorAuthDismissed],
+    [selectAccountSecurity, selectTwoFactorAuthDismissed, selectIsPrivateUser],
     (accountSecurity, twoFactorAuthDismissed) => {
         const { accountRecoverySet, dataRecoverySet, twoFactorAuthSet } = accountSecurity;
 
@@ -54,17 +60,24 @@ export const selectAccountSecurityElements = createSelector(
             accountRecoverySet,
             dataRecoverySet,
             twoFactorAuthSetOrDismissed: twoFactorAuthSet || twoFactorAuthDismissed,
+            twoFactorAuthSet,
         };
     }
 );
 
 export const selectAccountSecurityIssuesCount = createSelector(
-    [selectAccountSecurityElements, selectAccountSecurityLoading],
-    (elements, loading) => {
-        if (loading) {
+    [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
+    (elements, loading, canDisplayAccountSecurity) => {
+        if (loading || !canDisplayAccountSecurity) {
             return 0;
         }
 
-        return Object.values(elements).filter((isValid) => !isValid).length;
+        const elementsValidForCounter = [
+            elements.accountRecoverySet,
+            elements.dataRecoverySet,
+            elements.twoFactorAuthSetOrDismissed,
+        ];
+
+        return elementsValidForCounter.filter((value) => !value).length;
     }
 );
