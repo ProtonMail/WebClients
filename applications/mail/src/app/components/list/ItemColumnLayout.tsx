@@ -47,7 +47,6 @@ interface Props {
     isDelightMailListEnabled?: boolean;
     hideUnreadButton?: boolean;
     userSettings?: UserSettings;
-    isHovered?: boolean;
     showAttachmentThumbnails?: boolean;
 }
 
@@ -66,7 +65,6 @@ const ItemColumnLayout = ({
     attachmentsMetadata = [],
     hideUnreadButton,
     userSettings,
-    isHovered,
     showAttachmentThumbnails,
     isDelightMailListEnabled,
 }: Props) => {
@@ -239,16 +237,14 @@ const ItemColumnLayout = ({
                             </div>
                         </div>
                     </div>
-                    {isHovered ? (
-                        <ItemHoverButtons
-                            element={element}
-                            labelID={labelID}
-                            elementID={elementID}
-                            onBack={onBack}
-                            size="small"
-                            isDelightMailListEnabled={isDelightMailListEnabled}
-                        />
-                    ) : null}
+                    <ItemHoverButtons
+                        element={element}
+                        labelID={labelID}
+                        elementID={elementID}
+                        onBack={onBack}
+                        size="small"
+                        isDelightMailListEnabled={isDelightMailListEnabled}
+                    />
                 </div>
 
                 {hasLabels && !isCompactView && (
@@ -403,15 +399,13 @@ const ItemColumnLayout = ({
                         </div>
                     </div>
                 </div>
-                {isHovered ? (
-                    <ItemHoverButtons
-                        element={element}
-                        labelID={labelID}
-                        elementID={elementID}
-                        onBack={onBack}
-                        isDelightMailListEnabled={isDelightMailListEnabled}
-                    />
-                ) : null}
+                <ItemHoverButtons
+                    element={element}
+                    labelID={labelID}
+                    elementID={elementID}
+                    onBack={onBack}
+                    isDelightMailListEnabled={isDelightMailListEnabled}
+                />
             </div>
 
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}
