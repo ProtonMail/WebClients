@@ -64,8 +64,8 @@ export const PassCoreProvider: FC<PropsWithChildren<Omit<PassCoreContextValue, '
     children,
     ...core
 }) => {
-    const [locale, setAppLocale] = useState(DEFAULT_LOCALE);
-    const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale }), [locale]);
+    const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
+    const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
         core.i18n.getLocale().then(core.i18n.setLocale).catch(noop);
