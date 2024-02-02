@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasB2BPlan, getHasVpnB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -29,7 +29,7 @@ export const getOrganizationAppRoutes = ({
 
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
-    const hasB2BPlan = getHasB2BPlan(subscription);
+    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = hasFamily(subscription);
@@ -49,7 +49,7 @@ export const getOrganizationAppRoutes = ({
         header: sectionTitle,
         routes: {
             users: <SectionConfig>{
-                text: hasB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
+                text: hasVpnOrPassB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
                 available: hasOrganizationKey || hasOrganization,
@@ -60,7 +60,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Create multiple user accounts`,
                         id: 'multi-user-creation',
-                        available: organization && !!organization.RequiresKey && !hasB2BPlan,
+                        available: organization && !!organization.RequiresKey && !hasVpnOrPassB2BPlan,
                     },
                 ],
             },
@@ -91,7 +91,7 @@ export const getOrganizationAppRoutes = ({
                         id: 'organization',
                     },
                     {
-                        text: c('Title').t`Password and keys`,
+                        text: c('Title').t`Organization key`,
                         id: 'password-keys',
                         available: hasOrganizationKey,
                     },
@@ -124,7 +124,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Organization filters`,
                 to: '/organization-filters',
                 icon: 'filter',
-                available: !hasB2BPlan && (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
+                available: !hasVpnOrPassB2BPlan && (hasOrganizationKey || hasOrganization) && isOrgSpamBlockListEnabled,
                 subsections: [
                     {
                         text: c('Title').t`Spam, block, and allow lists`,

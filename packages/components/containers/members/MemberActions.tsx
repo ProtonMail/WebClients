@@ -3,26 +3,33 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { APPS, MEMBER_PRIVATE, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { Member, Organization, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import {
+    CachedOrganizationKey,
+    EnhancedMember,
+    Organization,
+    PartialMemberAddress,
+} from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useConfig } from '../..';
 import { DropdownActions } from '../../components';
 
 interface Props {
-    member: Member;
-    onLogin: (member: Member) => void;
-    onChangePassword: (member: Member) => void;
-    onEdit: (member: Member) => void;
-    onDelete: (member: Member) => void;
-    onRevoke: (member: Member) => Promise<void>;
+    member: EnhancedMember;
+    onLogin: (member: EnhancedMember) => void;
+    onChangePassword: (member: EnhancedMember) => void;
+    onEdit: (member: EnhancedMember) => void;
+    onDelete: (member: EnhancedMember) => void;
+    onRevoke: (member: EnhancedMember) => Promise<void>;
     addresses: PartialMemberAddress[] | undefined;
     organization?: Organization;
     disableMemberSignIn?: boolean;
+    organizationKey?: CachedOrganizationKey;
 }
 
 const MemberActions = ({
     member,
+    organizationKey,
     onEdit,
     onDelete,
     onLogin,
@@ -47,6 +54,7 @@ const MemberActions = ({
         !member.Self &&
         member.Private === MEMBER_PRIVATE.READABLE &&
         member.Keys.length > 0 &&
+        !!organizationKey?.privateKey &&
         addresses.length > 0;
 
     const canChangePassword =
@@ -54,6 +62,7 @@ const MemberActions = ({
         !member.Self &&
         member.Private === MEMBER_PRIVATE.READABLE &&
         member.Keys.length > 0 &&
+        !!organizationKey?.privateKey &&
         addresses.length > 0;
 
     const list = [
@@ -66,15 +75,13 @@ const MemberActions = ({
         canLogin && {
             text: c('Member action').t`Sign in`,
             onClick: () => {
-                // Add Addresses to member, missing when updated through event loop
-                onLogin({ ...member, Addresses: addresses });
+                onLogin(member);
             },
         },
         canChangePassword && {
             text: c('Member action').t`Change password`,
             onClick: () => {
-                // Add Addresses to member, missing when updated through event loop
-                onChangePassword({ ...member, Addresses: addresses });
+                onChangePassword(member);
             },
         },
         canRevokeSessions && {

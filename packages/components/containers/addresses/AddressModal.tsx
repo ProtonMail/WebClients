@@ -18,7 +18,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
+import { Address, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
 import {
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
@@ -228,8 +228,8 @@ const AddressModal = ({ member, members, ...rest }: Props) => {
                                     value={member.ID}
                                     title={member.Name}
                                     disabled={
-                                        member.State === FAMILY_PLAN_INVITE_STATE.STATUS_DISABLED ||
-                                        member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED
+                                        member.State === MEMBER_STATE.STATUS_DISABLED ||
+                                        member.State === MEMBER_STATE.STATUS_INVITED
                                     }
                                 >
                                     {member.Name}

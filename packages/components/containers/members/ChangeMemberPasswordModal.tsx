@@ -8,13 +8,15 @@ import {
     useBeforeUnload,
     useEventManager,
     useGetAddressKeys,
+    useGetAddresses,
+    useGetOrganization,
+    useGetOrganizationKey,
     useNotifications,
 } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { authMember } from '@proton/shared/lib/api/members';
-import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import { disable2FA } from '@proton/shared/lib/api/settings';
 import { getUser, lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -23,14 +25,11 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, Api, OrganizationKey, User } from '@proton/shared/lib/interfaces';
+import { Address, Api, User } from '@proton/shared/lib/interfaces';
 import { Member } from '@proton/shared/lib/interfaces/Member';
-import {
-    generateKeySaltAndPassphrase,
-    getCachedOrganizationKey,
-    getDecryptedUserKeysHelper,
-} from '@proton/shared/lib/keys';
+import { generateKeySaltAndPassphrase, getDecryptedUserKeys, getIsPasswordless } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import { Credentials, srpVerify } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
@@ -67,7 +66,10 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
+    const getOrganization = useGetOrganization();
+    const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
+    const getOrganizationKey = useGetOrganizationKey();
     const { validator, onFormSubmit } = useFormErrors();
 
     const lockAndClose = (memberApi?: Api) => {
@@ -159,17 +161,24 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
 
     const changeMemberPassword = async ({ memberApi, credentials }: { memberApi: Api; credentials: Credentials }) => {
         const keyPassword = authentication.getPassword();
-        const User = await memberApi<{ User: User }>(getUser()).then(({ User }) => formatUser(User));
+        const userAsMember = await memberApi<{ User: User }>(getUser()).then(({ User }) => formatUser(User));
+        const organizationKey = await getOrganizationKey();
+        const organization = await getOrganization();
+        const addresses = await getAddresses();
+        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
+        const error = validateOrganizationKey(organizationKeyInfo);
 
-        const [addresses, userKeysList, organizationKey] = await Promise.all([
+        if (error) {
+            createNotification({ type: 'error', text: error });
+            return;
+        }
+        if (!organizationKey?.privateKey) {
+            throw new Error('Missing private key');
+        }
+
+        const [memberAddresses, userKeysList] = await Promise.all([
             getAllAddresses(memberApi),
-            getDecryptedUserKeysHelper(User, keyPassword),
-            User.isAdmin
-                ? getCachedOrganizationKey({
-                      keyPassword,
-                      Key: await memberApi<OrganizationKey>(getOrganizationKeys()),
-                  })
-                : undefined,
+            getDecryptedUserKeys(userAsMember.Keys, keyPassword, organizationKey),
         ]);
 
         if (userKeysList.length === 0) {
@@ -180,11 +189,11 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
 
         const { passphrase: newKeyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(inputs.newPassword);
 
-        const addressesWithKeys = await getAddressesWithKeysList(addresses);
+        const addressesWithKeys = await getAddressesWithKeysList(memberAddresses);
         const updateKeysPayload = await getUpdateKeysPayload(
             addressesWithKeys,
             userKeysList,
-            organizationKey?.privateKey,
+            getIsPasswordless(organizationKey.Key) ? undefined : organizationKey.privateKey,
             newKeyPassword,
             keySalt
         );

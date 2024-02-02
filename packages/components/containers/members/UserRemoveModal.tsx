@@ -1,26 +1,29 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { deleteMember } from '@proton/shared/lib/api/members';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { FAMILY_PLAN_INVITE_STATE, Member, Organization } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE, Member, Organization } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
-    member: Member;
+    member: Member | undefined;
     organization?: Organization;
 }
 
-const UserRemoveModal = ({ member, organization, ...rest }: Props) => {
+const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props) => {
     const api = useApi();
+    const [member] = useState(initialMember!);
     const { call } = useEventManager();
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
-    const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
+    const isInvitationPending = !!(member.State === MEMBER_STATE.STATUS_INVITED);
 
     const handleClose = () => {
         if (submitting) {

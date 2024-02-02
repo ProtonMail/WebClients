@@ -42,10 +42,9 @@ import SetupOrganizationModal from './SetupOrganizationModal';
 interface Props {
     app: APP_NAMES;
     organization?: Organization;
-    onSetupOrganization?: () => void;
 }
 
-const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) => {
+const OrganizationSection = ({ app, organization }: Props) => {
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
     const [user] = useUser();
@@ -131,7 +130,6 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                                 <AuthModal onCancel={reject} onSuccess={resolve} config={unlockPasswordChanges()} />
                             );
                         });
-                        onSetupOrganization?.();
                         createModal(<SetupOrganizationModal />);
                     }}
                 >
@@ -193,7 +191,6 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                                 await preAuthKTVerifier.preAuthKTCommit(user.ID);
                             }
 
-                            onSetupOrganization?.();
                             createModal(<SetupOrganizationModal />);
                         };
 

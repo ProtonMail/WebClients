@@ -23,6 +23,7 @@ enum AccountFlag {
     VisionarySignup = 'VisionarySignup',
     DesktopAppUpsellModal = 'DesktopAppUpsellModal',
     SSOVpnSettings = 'SSOVpnSettings',
+    OrganizationPasswordlessKey = 'OrganizationPasswordlessKey',
 }
 
 enum CalendarFeatureFlag {}
