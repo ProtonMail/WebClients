@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { type ProtonThunkArguments, baseUseDispatch, baseUseSelector } from '@proton/redux-shared-store';
-import type { Address, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import type { Address, EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { type AddressesState, selectAddresses } from '../addresses';
-import { type EnhancedMember, type MembersState, getMemberAddresses, selectMembers } from './index';
+import { type MembersState, getMemberAddresses, selectMembers } from './index';
 
 type Result = {
     [key: string]: (PartialMemberAddress | Address)[] | undefined;
@@ -39,7 +40,7 @@ export const useMemberAddresses = ({
 
     const retry = (members: EnhancedMember[]) => {
         members.forEach((member) => {
-            dispatch(getMemberAddresses({ member, retry: true }));
+            dispatch(getMemberAddresses({ member, retry: true })).catch(noop);
         });
     };
 
@@ -52,12 +53,8 @@ export const useMemberAddresses = ({
                 // Ignore
                 return;
             }
-            if (member.addressState === 'full' && member.Addresses) {
-                // All good
-                return;
-            }
             if (member.addressState === 'stale' || member.addressState === 'partial' || !member.Addresses) {
-                dispatch(getMemberAddresses({ member }));
+                dispatch(getMemberAddresses({ member })).catch(noop);
             }
         });
     }, [members, partial]);

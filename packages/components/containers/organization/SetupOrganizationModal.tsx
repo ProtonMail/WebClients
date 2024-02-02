@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import {
+    createPasswordlessOrganizationKeys,
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
     updateOrganizationName,
@@ -18,8 +20,12 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getHasB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
+import { getHasVpnOrPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import {
+    generateOrganizationKeys,
+    generatePasswordlessOrganizationKey,
+    getHasMigratedAddressKeys,
+} from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
@@ -37,10 +43,11 @@ import {
     useSettingsLink,
 } from '../../components';
 import {
+    useAddresses,
     useApi,
     useAuthentication,
     useEventManager,
-    useGetAddresses,
+    useGetUserKeys,
     useMembers,
     useNotifications,
     useOrganization,
@@ -56,13 +63,16 @@ enum STEPS {
 }
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
+    const passwordlessEnabled = useFlag('OrganizationPasswordlessKey');
     const api = useApi();
     const authentication = useAuthentication();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 
-    const getAddresses = useGetAddresses();
+    const [addresses] = useAddresses();
+    const passwordlessMode = passwordlessEnabled && getHasMigratedAddressKeys(addresses);
+    const getUserKeys = useGetUserKeys();
     const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
@@ -70,7 +80,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
-    const hasB2BPlan = getHasB2BPlan(subscription);
+    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
@@ -99,12 +109,31 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const setStepStorage = async () => {
-        if (hasB2BPlan) {
+        if (hasVpnOrPassB2BPlan) {
             // If user setting up organization for VPN B2B plan then the storage step must be skipped.
             await finalizeOrganizationCreation();
         } else {
             setStep(STEPS.STORAGE);
         }
+    };
+
+    const setupPasswordless = async () => {
+        const userKey = (await getUserKeys())[0]?.privateKey;
+        const { encryptedToken, signature, privateKeyArmored } = await generatePasswordlessOrganizationKey({
+            userKey,
+            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+        });
+        await api(
+            createPasswordlessOrganizationKeys({
+                Token: encryptedToken,
+                Signature: signature,
+                PrivateKey: privateKeyArmored,
+                Members: [],
+                AdminInvitations: [],
+                AdminActivations: [],
+            })
+        );
+        return;
     };
 
     const { title, onSubmit, section } = (() => {
@@ -138,6 +167,12 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     // So that other users can get connections allocated.
                     await (hasPaidVpn && api(updateVPN(selfMemberID, VPN_CONNECTIONS)));
                     await api(updateOrganizationName(model.name));
+
+                    if (organization?.RequiresKey && passwordlessMode) {
+                        await setupPasswordless();
+                        await setStepStorage();
+                        return;
+                    }
 
                     if (organization?.RequiresKey) {
                         setStep(STEPS.PASSWORD);
@@ -201,7 +236,6 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
                         });
 
-                    const addresses = await getAddresses();
                     if (getHasMigratedAddressKeys(addresses)) {
                         await api(
                             updateOrganizationKeysV2({

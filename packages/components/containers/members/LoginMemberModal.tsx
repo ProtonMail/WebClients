@@ -2,9 +2,11 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { getOrganizationTokenThunk } from '@proton/account';
 import { Button, ButtonLike } from '@proton/atoms';
 import { useAuthentication } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import { useDispatch } from '@proton/redux-shared-store';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -18,29 +20,11 @@ import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User } from '@proton/shared/lib/interfaces';
-import { CachedOrganizationKey, Organization } from '@proton/shared/lib/interfaces';
 import { Member } from '@proton/shared/lib/interfaces/Member';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
 import { LearnMore, Prompt, PromptProps } from '../../components';
 import { AuthModal } from '../password';
-
-export const validateMemberLogin = (
-    organization: Organization | undefined,
-    organizationKey: CachedOrganizationKey | undefined
-) => {
-    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
-    if (organizationKeyInfo.userNeedsToActivateKey) {
-        return c('Error').t`The organization key must be activated first.`;
-    }
-    if (organizationKeyInfo.userNeedsToReactivateKey) {
-        return c('Error').t`Permission denied, administrator privileges have been restricted.`;
-    }
-    if (!organizationKey?.privateKey) {
-        return c('Error').t`Organization key is not decrypted.`;
-    }
-};
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
     member: Member;
@@ -53,6 +37,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
     const [authed, setAuthed] = useState(false);
     const [data, setData] = useState<{ LocalID: number }>();
     const authentication = useAuthentication();
+    const dispatch = useDispatch();
 
     const switchUrl = useMemo(() => {
         const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
@@ -78,9 +63,11 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
                 return validatedSession.LocalID;
             }
 
+            const token = await dispatch(getOrganizationTokenThunk());
+
             await persistSessionWithPassword({
                 api: memberApi,
-                keyPassword: authentication.getPassword(),
+                keyPassword: token,
                 User,
                 LocalID,
                 UID,
