@@ -39,12 +39,11 @@ export const createI18nService = (options: I18nServiceOptions) => {
         try {
             const nextLocale = locale ?? (await getLocale());
 
-            if (nextLocale !== localeCode) {
-                logger.info(`[I18nService] changing locale to ${locale}`);
-                await loadLocale(nextLocale, options.locales);
-                options.onLocaleChange?.(nextLocale);
-                pubsub.publish({ locale: nextLocale });
-            }
+            await loadLocale(nextLocale, options.locales);
+            options.onLocaleChange?.(nextLocale);
+            pubsub.publish({ locale: nextLocale });
+
+            if (nextLocale !== localeCode) logger.info(`[I18nService] changing locale to ${locale}`);
         } catch {}
     };
 
