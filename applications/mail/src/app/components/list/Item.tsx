@@ -1,4 +1,4 @@
-import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
 import { Breakpoints, ItemCheckbox } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -82,7 +82,6 @@ const Item = ({
     showAttachmentThumbnails,
     isDelightMailListEnabled,
 }: Props) => {
-    const [isHovered, setHover] = useState(false);
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
 
@@ -160,8 +159,6 @@ const Item = ({
             data-shortcut-target="item-container-wrapper"
         >
             <div
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
                 draggable
@@ -227,7 +224,6 @@ const Item = ({
                     attachmentsMetadata={filteredThumbnails}
                     hideUnreadButton={hideUnreadButton}
                     userSettings={userSettings}
-                    isHovered={isHovered || snoozeDropdownState}
                     showAttachmentThumbnails={showAttachmentThumbnails}
                     isDelightMailListEnabled={isDelightMailListEnabled}
                 />
