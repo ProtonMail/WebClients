@@ -313,7 +313,7 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
-                {(dbExists || esEnabled) && !isElectronApp && (
+                {(dbExists || esEnabled || isElectronApp) && (
                     <>
                         <Tooltip
                             title={c('Info')
@@ -323,7 +323,9 @@ const MailQuickSettings = () => {
                                 onClick={() => setClearBrowserDataModalOpen(true)}
                                 data-testid="mail-quick-settings:clear-cache-button"
                             >
-                                {c('Action').t`Clear browser data`}
+                                {isElectronApp
+                                    ? c('Action').t`Clear application data`
+                                    : c('Action').t`Clear browser data`}
                             </QuickSettingsButton>
                         </Tooltip>
                     </>
