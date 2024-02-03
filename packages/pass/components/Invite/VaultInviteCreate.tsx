@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { type FC, type ReactNode, useRef } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -11,8 +11,8 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
-import type { inviteCreationSuccess } from '@proton/pass/store/actions';
-import { inviteCreationIntent } from '@proton/pass/store/actions';
+import type { inviteBatchCreateSuccess } from '@proton/pass/store/actions';
+import { inviteBatchCreateIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { Callback, InviteFormValues, SelectedItem } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
@@ -31,10 +31,11 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
+    const emailFieldRef = useRef<HTMLInputElement>(null);
 
     const createInvite = useActionRequest({
-        action: inviteCreationIntent,
-        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteCreationSuccess>>) => {
+        action: inviteBatchCreateIntent,
+        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteBatchCreateSuccess>>) => {
             const { shareId } = req.data;
             if (props.withVaultCreation) props.onVaultCreated?.(shareId);
             manageAccess(shareId);
@@ -63,8 +64,9 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                       withVaultCreation: false,
                   }),
         },
+        isInitialValid: false,
         validateOnChange: true,
-        validate: validateShareInviteValues,
+        validate: validateShareInviteValues(emailFieldRef),
         onSubmit: (values, { setFieldValue }) => {
             switch (values.step) {
                 case 'members':
@@ -126,11 +128,13 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
             {(didEnter): ReactNode => (
                 <Panel
                     loading={createInvite.loading}
+                    className="pass-panel--full"
                     header={
                         <PanelHeader
                             actions={[
                                 <Button
                                     className="shrink-0"
+                                    disabled={form.values.step === 'review' && createInvite.loading}
                                     icon
                                     key="modal-close-button"
                                     onClick={attributes.closeAction}
@@ -145,7 +149,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                 </Button>,
                                 <Button
                                     color="norm"
-                                    disabled={createInvite.loading || !form.isValid || !form.dirty}
+                                    disabled={createInvite.loading || !form.isValid}
                                     form={FORM_ID}
                                     key="modal-submit-button"
                                     loading={createInvite.loading}
@@ -159,8 +163,8 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     }
                 >
                     <FormikProvider value={form}>
-                        <Form id={FORM_ID}>
-                            <VaultInviteForm form={form} autoFocus={didEnter} />
+                        <Form id={FORM_ID} className="flex-1">
+                            <VaultInviteForm form={form} autoFocus={didEnter} ref={emailFieldRef} />
                         </Form>
                     </FormikProvider>
                 </Panel>

@@ -1,28 +1,58 @@
+import type { RefObject } from 'react';
+
 import { type FormikErrors } from 'formik';
-import { c } from 'ttag';
 
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import type { InviteFormValues } from '@proton/pass/types';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-export const validateShareInviteValues = (values: InviteFormValues) => {
+export enum InviteEmailsError {
+    DUPLICATE = 'DUPLICATE',
+    INVALID = 'INVALID',
+    EMPTY = 'EMPTY',
+}
+
+export const validateShareInviteValues = (emailFieldRef: RefObject<HTMLInputElement>) => (values: InviteFormValues) => {
     if (values.step === 'vault' && values.withVaultCreation) return validateVaultValues(values);
 
     let errors: FormikErrors<InviteFormValues> = {};
 
-    const emails = values.members.reduce<{ errors: string[]; pass: boolean }>(
-        (acc, { value }) => {
-            if (!validateEmailAddress(value.email)) {
-                acc.pass = false;
-                acc.errors.push(c('Validation').t`Invalid email`);
-            } else acc.errors.push('');
+    if (values.step === 'members') {
+        const emails = values.members.reduce<{ errors: string[]; pass: boolean; seen: Set<string> }>(
+            (acc, { value }) => {
+                if (acc.seen.has(value.email)) {
+                    acc.errors.push(InviteEmailsError.DUPLICATE);
+                    acc.pass = false;
+                } else if (!validateEmailAddress(value.email)) {
+                    acc.pass = false;
+                    acc.errors.push(InviteEmailsError.INVALID);
+                } else acc.errors.push('');
 
-            return acc;
-        },
-        { errors: [], pass: true }
-    );
+                acc.seen.add(value.email);
 
-    if (!emails.pass) errors.members = emails.errors;
+                return acc;
+            },
+            { errors: [], pass: true, seen: new Set() }
+        );
+
+        errors.members = emails.errors;
+
+        /** Validate the trailing input value : this value lives
+         * outside of the formik state values - as such adapt the
+         * validation logic accordingly */
+        const trailing = emailFieldRef.current?.value?.trim() ?? '';
+        const validTrailingEmail = validateEmailAddress(trailing);
+
+        if (emails.errors.length === 0 && !validTrailingEmail) {
+            emails.pass = false;
+            errors.members.push(InviteEmailsError.EMPTY);
+        } else if (trailing && !validTrailingEmail) {
+            emails.pass = false;
+            errors.members.push(InviteEmailsError.INVALID);
+        }
+
+        if (emails.pass) delete errors.members;
+    }
 
     return errors;
 };
