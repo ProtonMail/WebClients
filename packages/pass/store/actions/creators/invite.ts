@@ -5,6 +5,7 @@ import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import {
     inviteAcceptRequest,
     inviteCreateRequest,
+    inviteRecommendationsRequest,
     inviteRejectRequest,
     inviteRemoveRequest,
     inviteResendRequest,
@@ -19,6 +20,8 @@ import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/p
 import type {
     InviteAcceptIntent,
     InviteBatchCreateSuccess,
+    InviteRecommendationsIntent,
+    InviteRecommendationsSuccess,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -224,6 +227,30 @@ export const newUserInviteRemoveFailure = createAction(
         withNotification({
             type: 'error',
             text: c('Error').t`Failed removing the invite.`,
+            error,
+        })({ payload: {} })
+    )
+);
+
+export const inviteRecommendationsIntent = createAction(
+    'invite::recommendations::intent',
+    (payload: InviteRecommendationsIntent, requestId: string) =>
+        withRequest({ type: 'start', id: inviteRecommendationsRequest(requestId) })({ payload })
+);
+
+export const inviteRecommendationsSuccess = createAction(
+    'invite::recommendations::success',
+    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }), {
+        data: (payload) => payload,
+    })
+);
+
+export const inviteRecommendationsFailure = createAction(
+    'invite::recommendations::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Could not load recommendations at the moment.`,
             error,
         })({ payload: {} })
     )
