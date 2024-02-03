@@ -37,9 +37,10 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                 </div>
             ) : (
                 <VirtualList
+                    interpolationIndexes={interpolationIndexes}
                     ref={listRef}
                     rowCount={interpolation.length}
-                    interpolationIndexes={interpolationIndexes}
+                    rowHeight={(idx) => (interpolationIndexes.includes(idx) ? 28 : 54)}
                     rowRenderer={({ style, index, key }) => {
                         const row = interpolation[index];
 
