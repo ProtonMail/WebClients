@@ -5,6 +5,7 @@ import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import type { inviteRecommendationsSuccess } from '@proton/pass/store/actions';
 import { inviteRecommendationsIntent } from '@proton/pass/store/actions';
+import type { MaybeNull } from '@proton/pass/types';
 import type { InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -15,6 +16,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
      * to independently request recommendation data */
     const requestId = useMemo(() => uniqueId(), []);
     const startsWith = useDebouncedValue(autocomplete, 250);
+    const emptyBoundary = useRef<MaybeNull<string>>(null);
     const didLoad = useRef(false);
 
     const [state, setState] = useState<InviteRecommendationsSuccess>({
@@ -29,6 +31,9 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         action: inviteRecommendationsIntent,
         onSuccess: ({ data }: RequestEntryFromAction<ReturnType<typeof inviteRecommendationsSuccess>>) => {
             didLoad.current = true;
+            const empty = data.emails.length + (data.organization?.emails.length ?? 0) === 0;
+            emptyBoundary.current = empty ? startsWith : null;
+
             setState((prev) => ({
                 ...data,
                 organization: data.organization
@@ -50,8 +55,9 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
 
     useEffect(() => {
         if (didLoad) {
-            setState((prev) => ({ ...prev, since: null }));
+            if (emptyBoundary.current && startsWith.startsWith(emptyBoundary.current)) return;
             revalidate({ pageSize, shareId, since: null, startsWith }, requestId);
+            setState((prev) => ({ ...prev, since: null }));
         }
     }, [startsWith]);
 
