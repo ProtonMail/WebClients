@@ -5,6 +5,7 @@ import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/dat
 import type {
     InviteAcceptIntent,
     InviteNewUserDTO,
+    InviteRecommendationsIntent,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -144,3 +145,21 @@ export const rejectInvite = async ({ inviteToken }: InviteRejectIntent) =>
         url: `pass/v1/invite/${inviteToken}`,
         method: 'delete',
     });
+
+export const getInviteRecommendations = async (
+    { shareId, pageSize, since, startsWith }: InviteRecommendationsIntent,
+    signal?: AbortSignal
+) => {
+    return (
+        await api({
+            url: `pass/v1/share/${shareId}/invite/recommended_emails`,
+            params: {
+                PlanPageSize: pageSize,
+                StartsWith: startsWith?.toLowerCase(),
+                ...(since ? { PlanSince: since } : {}),
+            },
+            method: 'get',
+            signal: signal,
+        })
+    ).Recommendation!;
+};
