@@ -1,31 +1,18 @@
 import { type FC } from 'react';
-import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
-import { BusinessOnboardingPanel } from '@proton/pass/components/B2BOnboarding/BusinessOnboardingPanel';
-import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
-import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { selectAllVaults, selectPassPlan } from '@proton/pass/store/selectors';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
+import { B2BOnboarding } from '@proton/pass/components/Onboarding/Panel/B2BOnboarding';
 
 export const Onboarding: FC = () => {
-    /* TODO redirect to list view if normal onboarding */
-    const { matchTrash } = useNavigation();
-    const activeOnboarding = true;
-    const { totalCount } = useItems();
+    const { enabled } = useOnboarding();
 
-    const hasMultipleVaults = useSelector(selectAllVaults).length > 1;
-    const plan = useSelector(selectPassPlan);
-
-    const empty = totalCount === 0;
-    if ((plan === UserPassPlan.BUSINESS && empty && !hasMultipleVaults && !matchTrash) || activeOnboarding) {
-        return (
-            <SubSidebar>
-                <VaultActionsProvider>
-                    <BusinessOnboardingPanel />
-                </VaultActionsProvider>
-            </SubSidebar>
-        );
-    }
+    return enabled ? (
+        <div className="flex flex-column justify-center w-full h-full">
+            <B2BOnboarding />
+        </div>
+    ) : (
+        <Redirect to={getLocalPath()} push={false} />
+    );
 };
