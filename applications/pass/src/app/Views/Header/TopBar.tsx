@@ -8,7 +8,7 @@ import chrome from '@proton/pass/assets/import/chrome-icon-48.png';
 import edge from '@proton/pass/assets/import/edge-icon-48.png';
 import firefox from '@proton/pass/assets/import/firefox-icon-48.png';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePassExtensionInstalled } from '@proton/pass/hooks/usePassExtensionInstalled';
+import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import type { SupportedExtensionClient } from '@proton/pass/lib/extension/utils/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
@@ -21,21 +21,20 @@ const BrowserImages: Record<SupportedExtensionClient, string> = {
     [Clients.Firefox]: firefox,
 };
 
-export const TopBar: FC<{ client: SupportedExtensionClient }> = ({ client }) => {
+export const TopBar: FC = () => {
     const { onLink } = usePassCore();
+    const { installed, supportedBrowser } = usePassExtensionLink();
+    const browser = supportedBrowser ? clients[supportedBrowser] : null;
 
-    const passExtensionInstalled = usePassExtensionInstalled();
-    const browser = clients[client];
-
-    return (
+    return supportedBrowser && browser ? (
         <div
             className={clsx(
                 'pass-spotlight-panel hidden md:block text-sm',
-                passExtensionInstalled && 'pass-spotlight-panel--hidden'
+                installed && 'pass-spotlight-panel--hidden'
             )}
         >
             <div className="flex gap-2 shrink-0 flex-1 items-center px-3 py-2 pass-spotlight-content weak">
-                <img src={BrowserImages[client]} width="24" height="24" alt="" />
+                <img src={BrowserImages[supportedBrowser]} width="24" height="24" alt="" />
                 <span>
                     {
                         // translator: Install Proton Pass for Brave to quickly autofill your logins.
@@ -47,5 +46,5 @@ export const TopBar: FC<{ client: SupportedExtensionClient }> = ({ client }) => 
                 </Button>
             </div>
         </div>
-    );
+    ) : null;
 };
