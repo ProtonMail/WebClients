@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Scroll } from '@proton/atoms/Scroll';
 import onboardingExtension from '@proton/pass/assets/b2b-onboarding/icons/extension-icon.svg';
 import onboardingImport from '@proton/pass/assets/b2b-onboarding/icons/import-icon.svg';
 import onboardingShare from '@proton/pass/assets/b2b-onboarding/icons/share-icon.svg';
@@ -17,6 +18,8 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { selectOnboardingState } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
+
+import './B2BOnboarding.scss';
 
 type OnboardingCardType = Pick<OnboardingCardProps, 'imageSrc' | 'title' | 'description' | 'onClick' | 'actionDone'>;
 
@@ -70,16 +73,15 @@ export const B2BOnboarding: FC = () => {
     );
 
     return (
-        <div className="flex flex-column w-full items-center overflow-x-auto">
-            <div
-                className="absolute top-custom right-custom"
-                style={{ '--right-custom': '24px', '--top-custom': '10px' }}
-            >
-                <OnboardingArrow />
+        <Scroll className="flex-1 flex-column align-center w-full pass-onboarding">
+            <div className="flex justify-center pt-12 pb-2">
+                <h2 className="text-bold flex mt-10">{c('Title').t`Get Started`}</h2>
+                <div className="pass-onboarding--arrow absolute self-end mr-8 mt-2 pb-4 top-0 right-0">
+                    <OnboardingArrow />
+                </div>
             </div>
-            <div className="flex w-2/3 max-w-custom gap-4 justify-center" style={{ '--max-w-custom': '30rem' }}>
-                <h2 className="text-bold flex justify-center mt-14">{c('Title').t`Get Started`}</h2>
 
+            <div className="flex w-full m-auto gap-4 md:w-2/3 max-w-custom p-4" style={{ '--max-w-custom': '30rem' }}>
                 {onboardingCards.map(({ imageSrc, title, description, onClick, actionDone }) => (
                     <OnboardingCard
                         key={title}
@@ -91,6 +93,6 @@ export const B2BOnboarding: FC = () => {
                     />
                 ))}
             </div>
-        </div>
+        </Scroll>
     );
 };

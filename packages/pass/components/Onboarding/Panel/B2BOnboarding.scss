@@ -1,0 +1,12 @@
+.pass-onboarding {
+	.pass-onboarding--arrow {
+		opacity: 1;
+		transition: opacity 0.15s ease-in-out;
+	}
+
+	&:has(div.scroll-start-shadow-visible) {
+		.pass-onboarding--arrow {
+			opacity: 0;
+		}
+	}
+}

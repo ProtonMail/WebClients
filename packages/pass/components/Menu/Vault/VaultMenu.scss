@@ -25,10 +25,5 @@
 		.pass-vault--count {
 			color: var(--interaction-norm-contrast) !important;
 		}
-		&.onboarding-button {
-			> button {
-				background-image: linear-gradient(to right, rgba(246, 197, 146, 0.7), rgba(167, 121, 255, 0.7)) !important;
-			}
-		}
 	}
 }

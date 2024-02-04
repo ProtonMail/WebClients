@@ -12,12 +12,12 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { OnboardingButton } from '@proton/pass/components/Onboarding/Menu/OnboardingButton';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { useOnboarding } from '@proton/pass/hooks/useOnboarding';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
