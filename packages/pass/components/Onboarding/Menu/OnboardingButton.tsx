@@ -8,7 +8,7 @@ import { default as DropdownMenuButtonCore } from '@proton/components/components
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
-import { useOnboarding } from '@proton/pass/hooks/useOnboarding';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 
 import './OnboardingButton.scss';
 
