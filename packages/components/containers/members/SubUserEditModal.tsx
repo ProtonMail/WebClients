@@ -1,24 +1,28 @@
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import {
+    MemberKeyPayload,
+    editMember,
+    getMemberAddresses,
+    getMemberKeyPayload,
+    getPrivateAdminError,
+} from '@proton/account';
+import { Button, Card } from '@proton/atoms';
 import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
-import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
-import {
-    GIGA,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    MEMBER_SUBSCRIBER,
-    NAME_PLACEHOLDER,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Member } from '@proton/shared/lib/interfaces';
+import { EnhancedMember } from '@proton/shared/lib/interfaces';
+import { getIsPasswordless } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import {
+    Icon,
     Info,
     InputFieldTwo,
     ModalTwo as Modal,
@@ -28,15 +32,24 @@ import {
     ModalProps,
     Prompt,
     Toggle,
+    Tooltip,
     useFormErrors,
     useModalState,
 } from '../../components';
-import { useApi, useEventManager, useNotifications, useOrganization } from '../../hooks';
+import {
+    useApi,
+    useErrorHandler,
+    useEventManager,
+    useGetPublicKeysForInbox,
+    useNotifications,
+    useOrganization,
+    useOrganizationKey,
+} from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalProps<'form'> {
-    member: Member;
+    member: EnhancedMember;
     allowStorageConfiguration?: boolean;
     allowVpnAccessConfiguration?: boolean;
     allowPrivateMemberConfiguration?: boolean;
@@ -52,10 +65,20 @@ const SubUserEditModal = ({
     ...rest
 }: Props) => {
     const [organization] = useOrganization();
+    const [organizationKey] = useOrganizationKey();
+    const dispatch = useDispatch();
     const storageSizeUnit = GIGA;
     const { call } = useEventManager();
+    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmDemotionModalProps, setConfirmDemotionModal, renderConfirmDemotion] = useModalState();
+    const [confirmPromotionModalProps, setConfirmPromotionModal, renderConfirmPromotion] = useModalState();
+    const memberKeyPacketPayload = useRef<MemberKeyPayload | null>(null);
+    const passwordlessMode = getIsPasswordless(organizationKey?.Key);
+
+    useEffect(() => {
+        dispatch(getMemberAddresses({ member })).catch(noop);
+    }, []);
 
     const initialModel = useMemo(
         () => ({
@@ -72,55 +95,36 @@ const SubUserEditModal = ({
 
     const [submitting, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = getSilentApi(normalApi);
 
     const hasVPN = Boolean(organization?.MaxVPN);
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
     const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
     const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const errorHandler = useErrorHandler();
 
     const updatePartialModel = (partial: Partial<typeof model>) => {
         updateModel({ ...model, ...partial });
     };
 
     const handleSubmit = async ({ role }: { role: MEMBER_ROLE | null }) => {
-        if (role === null && canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
-            setConfirmDemotionModal(true);
-            return;
-        }
-
-        let hasChanges = false;
-        if (initialModel.name !== model.name) {
-            await api(updateName(member.ID, model.name));
-            hasChanges = true;
-        }
-
-        if (initialModel.storage !== model.storage) {
-            await api(updateQuota(member.ID, model.storage));
-            hasChanges = true;
-        }
-
-        if (hasVPN && initialModel.vpn !== model.vpn) {
-            await api(updateVPN(member.ID, model.vpn ? VPN_CONNECTIONS : 0));
-            hasChanges = true;
-        }
-
-        if (canMakePrivate && model.private && model.private !== initialModel.private) {
-            await api(privatizeMember(member.ID));
-            hasChanges = true;
-        }
-
-        if (canMakeAdmin && model.admin && model.admin !== initialModel.admin) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-            hasChanges = true;
-        }
-
-        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-            hasChanges = true;
-        }
-
-        if (hasChanges) {
+        const result = await dispatch(
+            editMember({
+                member,
+                memberDiff: {
+                    name: initialModel.name !== model.name ? model.name : undefined,
+                    storage: initialModel.storage !== model.storage ? model.storage : undefined,
+                    vpn: hasVPN && initialModel.vpn !== model.vpn ? model.vpn : undefined,
+                    private:
+                        canMakePrivate && model.private && model.private !== initialModel.private ? true : undefined,
+                    role: role !== null ? role : undefined,
+                },
+                memberKeyPacketPayload: memberKeyPacketPayload.current,
+                api: silentApi,
+            })
+        );
+        if (result) {
             await call();
             createNotification({ text: c('Success').t`User updated` });
         }
@@ -157,6 +161,45 @@ const SubUserEditModal = ({
                         : c('Info').t`Are you sure you want to remove administrative privileges from this user?`}
                 </Prompt>
             )}
+            {renderConfirmPromotion && (
+                <Prompt
+                    title={c('Title').t`Change role`}
+                    buttons={[
+                        <Button
+                            color="norm"
+                            loading={submitting}
+                            onClick={() => {
+                                confirmPromotionModalProps.onClose();
+                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_ADMIN }));
+                            }}
+                        >{c('Action').t`Make admin`}</Button>,
+                        <Button
+                            onClick={() => {
+                                confirmPromotionModalProps.onClose();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    {...confirmPromotionModalProps}
+                >
+                    <div className="mb-2">
+                        {c('Info').t`Are you sure you want to give administrative privileges to this user?`}
+                    </div>
+                    <Card rounded className="text-break">
+                        {(() => {
+                            if (!memberKeyPacketPayload.current) {
+                                return '';
+                            }
+                            const { member, email } = memberKeyPacketPayload.current;
+                            return (
+                                <>
+                                    <div className="text-bold">{member.Name}</div>
+                                    <div>{email}</div>
+                                </>
+                            );
+                        })()}
+                    </Card>
+                </Prompt>
+            )}
             <Modal
                 as="form"
                 size="large"
@@ -167,7 +210,43 @@ const SubUserEditModal = ({
                     if (!onFormSubmit()) {
                         return;
                     }
-                    void withLoading(handleSubmit({ role: null }));
+
+                    let role: MEMBER_ROLE | null = (() => {
+                        if (canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
+                            return MEMBER_ROLE.ORGANIZATION_MEMBER;
+                        }
+                        if (canMakeAdmin && model.admin && model.admin !== initialModel.admin) {
+                            return MEMBER_ROLE.ORGANIZATION_ADMIN;
+                        }
+                        return null;
+                    })();
+
+                    const run = async () => {
+                        memberKeyPacketPayload.current = null;
+
+                        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+                            setConfirmDemotionModal(true);
+                            return;
+                        }
+
+                        if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
+                            memberKeyPacketPayload.current = await getMemberKeyPayload({
+                                organizationKey,
+                                getPublicKeysForInbox,
+                                member,
+                                memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+                            });
+
+                            if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
+                                setConfirmPromotionModal(true);
+                                return;
+                            }
+                        }
+
+                        await handleSubmit({ role });
+                    };
+
+                    withLoading(run()).catch(errorHandler);
                 }}
                 onClose={handleClose}
             >
@@ -228,6 +307,15 @@ const SubUserEditModal = ({
                                 checked={model.admin}
                                 onChange={({ target }) => updatePartialModel({ admin: target.checked })}
                             />
+                            {passwordlessMode &&
+                                model.private &&
+                                model.admin &&
+                                member.addressState === 'full' &&
+                                !member.Addresses?.[0]?.HasKeys && (
+                                    <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                                        <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                    </Tooltip>
+                                )}
                         </div>
                     )}
                     {showAddressesSection && (

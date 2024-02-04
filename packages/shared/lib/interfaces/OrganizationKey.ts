@@ -1,8 +1,18 @@
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
+import type { MEMBER_ORG_KEY_STATE } from './Member';
+
 export interface OrganizationKey {
     PrivateKey?: string;
+    Token?: string;
+    Signature?: string;
+    SignatureAddress?: string | null;
+    AccessToOrgKey?: MEMBER_ORG_KEY_STATE;
+    EncryptionAddressID?: string;
 }
+
+export type PasswordlessOrganizationKey = OrganizationKey &
+    Required<Pick<OrganizationKey, 'Token' | 'Signature' | 'PrivateKey'>>;
 
 export type CachedOrganizationKey =
     | {
