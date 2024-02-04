@@ -231,6 +231,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
+    [WorkerMessageType.ONBOARDING_CHECK]: { enabled: boolean };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
