@@ -14,7 +14,7 @@ import {
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { getHasB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
@@ -74,7 +74,7 @@ export const getAccountAppRoutes = ({
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
 
-    const hasB2BPlan = getHasB2BPlan(subscription);
+    const hasVPNOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
 
     const cancellablePlan = hasCancellablePlan(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
@@ -139,12 +139,12 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-b2b-subscription',
                         // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
-                        available: isPaid && canPay && !cancellablePlan && hasB2BPlan,
+                        available: isPaid && canPay && !cancellablePlan && hasVPNOrPassB2BPlan,
                     },
                     {
                         text: c('Title').t`Downgrade account`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay && !cancellablePlan && !hasB2BPlan,
+                        available: isPaid && canPay && !cancellablePlan && !hasVPNOrPassB2BPlan,
                     },
                 ],
             },

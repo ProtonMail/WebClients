@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import {
@@ -46,6 +46,7 @@ const MailSettingsRouter = ({
 }) => {
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
+    const onceRef = useRef<boolean>(false);
 
     const {
         routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, desktop, backup, privacy },
@@ -95,7 +96,7 @@ const MailSettingsRouter = ({
             {getIsSectionAvailable(domainNames) && (
                 <Route path={getSectionPath(path, domainNames)}>
                     <PrivateMainSettingsArea config={domainNames}>
-                        <DomainsSection />
+                        <DomainsSection onceRef={onceRef} />
                         <CatchAllSection />
                     </PrivateMainSettingsArea>
                 </Route>

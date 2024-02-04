@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { MutableRefObject, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,20 +6,26 @@ import { useMemberAddresses } from '@proton/account';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { APP_NAMES, MEMBER_ROLE, MEMBER_SUBSCRIBER, MEMBER_TYPE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
-    getHasB2BPlan,
     getHasPassB2BPlan,
+    getHasVpnOrPassB2BPlan,
+    hasBundlePro,
     hasFamily,
+    hasMailPro,
     hasNewVisionary,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
-import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
+import { EnhancedMember, MEMBER_STATE, Member } from '@proton/shared/lib/interfaces';
+import {
+    getIsDomainActive,
+    getOrganizationKeyInfo,
+    validateOrganizationKey,
+} from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
 import {
@@ -34,6 +40,7 @@ import {
     useModalState,
 } from '../../../components';
 import {
+    useAddresses,
     useApi,
     useCustomDomains,
     useEventManager,
@@ -41,17 +48,18 @@ import {
     useMembers,
     useNotifications,
     useOrganization,
+    useOrganizationKey,
     useProtonDomains,
     useSubscription,
     useUser,
 } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { AddressModal } from '../../addresses';
-import RestoreAdministratorPrivileges from '../../organization/RestoreAdministratorPrivileges';
+import useOrganizationModals from '../../organization/useOrganizationModals';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
-import LoginMemberModal, { validateMemberLogin } from '../LoginMemberModal';
+import LoginMemberModal from '../LoginMemberModal';
 import MemberActions from '../MemberActions';
 import MemberAddresses from '../MemberAddresses';
 import MemberFeatures from '../MemberFeatures';
@@ -64,41 +72,45 @@ import UserRemoveModal from '../UserRemoveModal';
 import { getDomainError } from '../validateAddUser';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
-const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
+const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
     const [organization, loadingOrganization] = useOrganization();
+    const [organizationKey] = useOrganizationKey();
     const getOrganizationKey = useGetOrganizationKey();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
     const [members, loadingMembers] = useMembers();
     const [subscription] = useSubscription();
+    const [addresses] = useAddresses();
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
     const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
-    const [tmpMember, setTmpMember] = useState<Member | null>(null);
+    const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const api = useApi();
     const { call } = useEventManager();
     const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
+    const organizationModals = useOrganizationModals(onceRef);
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
-    const hasB2BPlan = getHasB2BPlan(subscription);
+    const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
+    const hasInboxB2BPlan = hasBundlePro(subscription) || hasMailPro(subscription);
 
-    const useEmail = hasB2BPlan;
-    const allowStorageConfiguration = !hasB2BPlan;
-    const allowVpnAccessConfiguration = !hasB2BPlan;
-    const allowPrivateMemberConfiguration = !hasB2BPlan;
+    const useEmail = hasVpnOrPassB2BPlan;
+    const allowStorageConfiguration = !hasVpnOrPassB2BPlan;
+    const allowVpnAccessConfiguration = !hasVpnOrPassB2BPlan;
+    const allowPrivateMemberConfiguration = !hasVpnOrPassB2BPlan;
 
-    const showMultipleUserUploadButton = hasB2BPlan;
-    const showAddressesSection = !hasB2BPlan;
-    const showFeaturesColumn = !hasB2BPlan;
+    const showMultipleUserUploadButton = hasVpnOrPassB2BPlan;
+    const showAddressesSection = !hasVpnOrPassB2BPlan;
+    const showFeaturesColumn = !hasVpnOrPassB2BPlan;
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
 
     const cleanOption = {
-        onClose: () => setTmpMember(null),
+        onExit: () => setTmpMemberID(null),
     };
 
     const [addAddressModalProps, setAddAddressModalOpen, renderAddAddressModal] = useModalState();
@@ -148,8 +160,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         createNotification({ text: c('Success message').t`User deleted` });
     };
 
-    const handleDeleteUser = (member: Member) => {
-        setTmpMember(member);
+    const handleDeleteUser = (member: EnhancedMember) => {
+        setTmpMemberID(member.ID);
 
         //  We can remove members if the user is a Proton member (excluding logged user)
         if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
@@ -159,7 +171,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         }
     };
 
-    const handleRevokeUserSessions = async (member: Member) => {
+    const handleRevokeUserSessions = async (member: EnhancedMember) => {
         await api(revokeSessions(member.ID));
         await call();
         createNotification({ text: c('Success message').t`Sessions revoked` });
@@ -173,11 +185,16 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setAddAddressModalOpen(true);
     };
 
-    const handleEditUser = (member: Member) => {
-        setTmpMember(member);
+    const handleEditUser = (member: EnhancedMember) => {
+        setTmpMemberID(member.ID);
 
         // We can open the invite modal if the user is a Proton member (excluding logged user)
-        if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
+        if (
+            canInviteProtonUsers &&
+            member.Type === MEMBER_TYPE.PROTON &&
+            !member.Self &&
+            member.State === MEMBER_STATE.STATUS_INVITED
+        ) {
             setUserInviteOrEditModalOpen(true);
         } else {
             setSubUserEditModalOpen(true);
@@ -199,23 +216,23 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setSubUserCreateModalOpen(true);
     };
 
-    const handleLoginUser = async (member: Member) => {
+    const handleLoginUser = async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
-        const error = validateMemberLogin(organization, organizationKey);
+        const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
-        setTmpMember(member);
+        setTmpMemberID(member.ID);
         setLoginMemberModalOpen(true);
     };
 
-    const handleChangeMemberPassword = async (member: Member) => {
+    const handleChangeMemberPassword = async (member: EnhancedMember) => {
         const organizationKey = await getOrganizationKey();
-        const error = validateMemberLogin(organization, organizationKey);
+        const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
-        setTmpMember(member);
+        setTmpMemberID(member.ID);
         setChangeMemberPasswordModalOpen(true);
     };
 
@@ -268,6 +285,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         loadingCustomDomains ||
         (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
     const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
+    const selfMember = members?.find((member) => member.Self);
 
     const settingsParagraphContent = (() => {
         if (hasFamily(subscription)) {
@@ -275,7 +293,10 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 .t`Add, remove, and make changes to user accounts in your family group.`;
         }
 
-        if (hasB2BPlan) {
+        const defaultString = c('familyOffer_2023:Info for members section')
+            .t`Add, remove, and make changes to user accounts in your organization.`;
+
+        if (hasVpnOrPassB2BPlan || hasInboxB2BPlan) {
             const maxMembers = organization?.MaxMembers || 0;
             const usedMembers = organization?.UsedMembers || 0;
             return (
@@ -285,7 +306,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
                         maxMembers
                     )}
-                    {user.canPay && (
+                    {user.canPay && selfMember?.Subscriber === MEMBER_SUBSCRIBER.PAYER && (
                         <Button
                             className="ml-2"
                             shape="outline"
@@ -300,13 +321,15 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             );
         }
 
-        return c('familyOffer_2023:Info for members section')
-            .t`Add, remove, and make changes to user accounts in your organization.`;
+        return defaultString;
     })();
+
+    const tmpMember = members?.find((member) => tmpMemberID === member.ID);
 
     return (
         <SettingsSectionWide>
-            <RestoreAdministratorPrivileges />
+            {organizationModals.info}
+            {organizationModals.modals}
             <SettingsParagraph large className="flex items-baseline mb-6">
                 {settingsParagraphContent}
             </SettingsParagraph>
@@ -314,14 +337,14 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 {renderAddAddressModal && filteredMembers && (
                     <AddressModal members={filteredMembers} {...addAddressModalProps} />
                 )}
-                {renderSubUserDeleteModal && tmpMember && (
+                {renderSubUserDeleteModal && (
                     <SubUserDeleteModal
                         member={tmpMember}
                         onDelete={handleDeleteUserConfirm}
                         {...subUserDeleteModalProps}
                     />
                 )}
-                {renderUserRemoveModal && tmpMember && (
+                {renderUserRemoveModal && (
                     <UserRemoveModal member={tmpMember} organization={organization} {...userRemoveModalProps} />
                 )}
                 {renderSubUserCreateModal && (
@@ -330,7 +353,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         verifiedDomains={verifiedDomains}
                         app={app}
                         useEmail={useEmail}
-                        optionalName={hasB2BPlan}
+                        optionalName={hasVpnOrPassB2BPlan}
                         allowStorageConfiguration={allowStorageConfiguration}
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
@@ -375,7 +398,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     />
                 )}
                 <div className="flex items-center mb-2 gap-2 mr-4">
-                    {hasB2BPlan ? (
+                    {hasVpnOrPassB2BPlan ? (
                         <>
                             {hasSetupOrganizationWithKeys && (
                                 <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
@@ -440,7 +463,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 <TableBody loading={loadingMembers} colSpan={showFeaturesColumn ? 5 : 4}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
-                        const isInvitationPending = !!(member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED);
+                        const isInvitationPending = !!(member.State === MEMBER_STATE.STATUS_INVITED);
 
                         const memberName = (() => {
                             if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
@@ -516,7 +539,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 </TableCell>
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <div>
-                                        {member.State && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED ? (
+                                        {member.State && member.State === MEMBER_STATE.STATUS_INVITED ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
                                             <MemberAddresses addresses={memberAddresses} />
@@ -530,6 +553,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 )}
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <MemberActions
+                                        organizationKey={organizationKey}
                                         onEdit={handleEditUser}
                                         onDelete={handleDeleteUser}
                                         onRevoke={handleRevokeUserSessions}
@@ -538,7 +562,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
-                                        disableMemberSignIn={hasB2BPlan}
+                                        disableMemberSignIn={hasVpnOrPassB2BPlan}
                                     />
                                 </TableCell>
                             </TableRow>

@@ -51,7 +51,7 @@ export const setupMemberKeyLegacy = async ({
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
-    const AddressKeysWithOnSKLPublish = await Promise.all(
+    const addressKeysWithOnSKLPublish = await Promise.all(
         memberAddresses.map(async (address) => {
             const { privateKey, privateKeyArmored } = await generateAddressKey({
                 email: address.Email,
@@ -85,34 +85,37 @@ export const setupMemberKeyLegacy = async ({
                     MemberKey: privateKeyArmoredOrganization,
                     Token: organizationToken,
                 },
+                privateKey,
                 onSKLPublishSuccess,
             };
         })
     );
 
-    const AddressKeys = AddressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey);
+    const primary = addressKeysWithOnSKLPublish[0];
     const PrimaryKey = {
-        UserKey: AddressKeys[0].UserKey,
-        MemberKey: AddressKeys[0].MemberKey,
-        Token: AddressKeys[0].Token,
+        UserKey: primary.addressKey.UserKey,
+        MemberKey: primary.addressKey.MemberKey,
+        Token: primary.addressKey.Token,
     };
 
-    await srpVerify({
+    const { Member } = await srpVerify<{ Member: tsMember }>({
         api,
         credentials: { password },
         config: setupMemberKeyRoute({
             MemberID: member.ID,
-            AddressKeys,
+            AddressKeys: addressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey),
             PrimaryKey,
             KeySalt: keySalt,
         }),
     });
 
     await Promise.all(
-        AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>
+        addressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>
             onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
         )
     );
+
+    return { Member, userPrivateKey: primary.privateKey };
 };
 
 export const setupMemberKeyV2 = async ({
@@ -178,7 +181,7 @@ export const setupMemberKeyV2 = async ({
     );
     const AddressKeys = AddressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey);
 
-    await srpVerify({
+    const { Member } = await srpVerify<{ Member: tsMember }>({
         api,
         credentials: { password },
         config: setupMemberKeyRoute({
@@ -198,6 +201,8 @@ export const setupMemberKeyV2 = async ({
             onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
         )
     );
+
+    return { Member, userPrivateKey };
 };
 
 export const getShouldSetupMemberKeys = (member: tsMember | undefined) => {

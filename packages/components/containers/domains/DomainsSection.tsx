@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { MutableRefObject, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -19,9 +19,9 @@ import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
-import { useCustomDomains, useGetCustomDomains, useDomainsAddresses, useOrganization, useUser } from '../../hooks';
+import { useCustomDomains, useDomainsAddresses, useGetCustomDomains, useOrganization, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
-import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
+import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';
 import DomainModal from './DomainModal';
@@ -37,12 +37,13 @@ const DomainsSectionText = () => {
     );
 };
 
-const DomainsSectionInternal = () => {
+const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const getCustomDomains = useGetCustomDomains();
     const [domainsAddressesMap, loadingDomainsAddressesMap] = useDomainsAddresses(customDomains);
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
+    const organizationModals = useOrganizationModals(onceRef);
 
     const [tmpDomainProps, setTmpDomainProps] = useState<{ domain: Domain; domainAddresses: DomainAddress[] } | null>(
         null
@@ -69,6 +70,7 @@ const DomainsSectionInternal = () => {
 
     return (
         <SettingsSectionWide>
+            {organizationModals.modals}
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
             {renderEditDomain && tmpDomainProps && (
                 <DomainModal
@@ -92,7 +94,7 @@ const DomainsSectionInternal = () => {
                 <Loader />
             ) : (
                 <>
-                    <RestoreAdministratorPrivileges />
+                    {organizationModals.info}
                     <DomainsSectionText />
 
                     <div className="mb-4">
@@ -198,11 +200,11 @@ const DomainsSectionUpgrade = () => {
     );
 };
 
-const DomainsSection = () => {
+const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [user] = useUser();
     const hasPermission = user.isAdmin && !user.isSubUser && hasPaidMail(user);
 
-    return hasPermission ? <DomainsSectionInternal /> : <DomainsSectionUpgrade />;
+    return hasPermission ? <DomainsSectionInternal onceRef={onceRef} /> : <DomainsSectionUpgrade />;
 };
 
 export default DomainsSection;
