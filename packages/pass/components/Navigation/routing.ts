@@ -20,7 +20,6 @@ export const getLocalPath = (path: string = '') => {
 };
 
 export const maybeTrash = (path: string, inTrash?: boolean) => `${inTrash ? 'trash/' : ''}${path}`;
-export const getTrashRoute = () => getLocalPath('trash');
 
 /** Resolves the item route given a shareId and an itemId. */
 export const getItemRoute = (shareId: string, itemId: string, trashed?: boolean) =>
@@ -28,6 +27,8 @@ export const getItemRoute = (shareId: string, itemId: string, trashed?: boolean)
 
 /** Resolves the new item route given an item type. */
 export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type}`);
+export const getTrashRoute = () => getLocalPath('trash');
+export const getOnboardingRoute = () => getLocalPath('onboarding');
 
 const INITIAL_FILTERS: ItemFilters = { search: '', sort: 'recent', type: '*', selectedShareId: null };
 
