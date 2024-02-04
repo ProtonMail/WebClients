@@ -168,7 +168,7 @@ export const getHasPassB2BPlan = (subscription: Subscription | FreeSubscription 
     return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
 
-export const getHasB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getHasVpnOrPassB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
     return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
 };
 
