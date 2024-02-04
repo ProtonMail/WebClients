@@ -2,23 +2,13 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { createMember, getPrivateAdminError } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
-import {
-    checkMemberAddressAvailability,
-    createMember,
-    createMemberAddress,
-    updateRole,
-} from '@proton/shared/lib/api/members';
-import {
-    APP_NAMES,
-    DEFAULT_ENCRYPTION_CONFIG,
-    ENCRYPTION_CONFIGS,
-    GIGA,
-    MEMBER_ROLE,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -26,9 +16,9 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { Address, CachedOrganizationKey, Domain, Member, Organization } from '@proton/shared/lib/interfaces';
-import { setupMemberKeys } from '@proton/shared/lib/keys';
-import { srpVerify } from '@proton/shared/lib/srp';
+import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
+import { getIsPasswordless } from '@proton/shared/lib/keys';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -49,13 +39,14 @@ import {
     useFormErrors,
 } from '../../components';
 import {
+    useAddresses,
     useApi,
+    useErrorHandler,
     useEventManager,
-    useGetAddresses,
-    useGetOrganizationKey,
+    useGetPublicKeysForInbox,
     useGetUser,
-    useGetUserKeys,
     useNotifications,
+    useOrganizationKey,
     useSubscription,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
@@ -102,12 +93,16 @@ const SubUserCreateModal = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const api = useApi();
-    const getAddresses = useGetAddresses();
-    const getUserKeys = useGetUserKeys();
-    const getOrganizationKey = useGetOrganizationKey();
+    const normalApi = useApi();
+    const silentApi = getSilentApi(normalApi);
+    const dispatch = useDispatch();
+    const [organizationKey] = useOrganizationKey();
+    const [addresses] = useAddresses();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
+    const errorHandler = useErrorHandler();
+    const getPublicKeysForInbox = useGetPublicKeysForInbox();
+    const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
@@ -124,11 +119,13 @@ const SubUserCreateModal = ({
         confirm: '',
         address: '',
         domain: verifiedDomains[0]?.DomainName ?? null,
-        vpn: organization && hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
+        vpn:
+            organization &&
+            hasVPN &&
+            (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
-
+    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());
     const [submitting, withLoading] = useLoading();
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -148,53 +145,27 @@ const SubUserCreateModal = ({
         return { Local, Domain };
     };
 
-    const save = async (organizationKey: CachedOrganizationKey | undefined) => {
-        const normalizedAddress = getNormalizedAddress();
-        await api(checkMemberAddressAvailability(normalizedAddress));
-
-        const userKeys = await getUserKeys();
-
-        const { Member } = await srpVerify<{ Member: Member }>({
-            api,
-            credentials: { password: model.password },
-            config: createMember({
-                Name: model.name || model.address,
-                Private: +model.private,
-                MaxSpace: +model.storage,
-                MaxVPN: hasVpnB2bPlan || model.vpn ? VPN_CONNECTIONS : 0,
-            }),
-        });
-
-        const { Address } = await api<{ Address: Address }>(createMemberAddress(Member.ID, normalizedAddress));
-
-        if (!model.private) {
-            if (!organizationKey?.privateKey) {
-                throw new Error('Organization key is not decrypted');
-            }
-            const ownerAddresses = await getAddresses();
-            await setupMemberKeys({
-                api,
-                ownerAddresses,
-                member: Member,
-                memberAddresses: [Address],
-                organizationKey: organizationKey.privateKey,
-                encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
-                password: model.password,
+    const save = async () => {
+        return dispatch(
+            createMember({
+                api: silentApi,
+                member: {
+                    ...model,
+                    address: getNormalizedAddress(),
+                    role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
+                },
+                keyTransparencyCommit,
                 keyTransparencyVerify,
-            });
-            await keyTransparencyCommit(userKeys);
-        }
-
-        if (model.admin) {
-            await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-        }
+                getPublicKeysForInbox,
+            })
+        );
     };
 
     const validate = (organizationKey: CachedOrganizationKey | undefined) => {
         const error = validateAddUser({
             privateUser: model.private,
             organization,
-            organizationKey,
+            organizationKeyInfo: getOrganizationKeyInfo(organization, organizationKey, addresses),
             verifiedDomains,
             disableStorageValidation,
             disableDomainValidation,
@@ -203,7 +174,6 @@ const SubUserCreateModal = ({
         if (error) {
             return error;
         }
-
         const normalizedAddress = getNormalizedAddress();
         if (!validateEmailAddress(`${normalizedAddress.Local}@${normalizedAddress.Domain}`)) {
             return c('Error').t`Email address is invalid`;
@@ -211,12 +181,11 @@ const SubUserCreateModal = ({
     };
 
     const handleSubmit = async () => {
-        const organizationKey = await getOrganizationKey();
         const error = validate(organizationKey);
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
-        await save(organizationKey);
+        await save();
         await call();
         onClose?.();
         createNotification({ text: c('Success').t`User created` });
@@ -298,7 +267,7 @@ const SubUserCreateModal = ({
                 if (!onFormSubmit()) {
                     return;
                 }
-                void withLoading(handleSubmit());
+                void withLoading(handleSubmit()).catch(errorHandler);
             }}
         >
             <ModalHeader title={c('Title').t`Add new user`} />
@@ -391,6 +360,11 @@ const SubUserCreateModal = ({
                         checked={model.admin}
                         onChange={({ target }) => handleChange('admin')(target.checked)}
                     />
+                    {passwordlessMode && model.private && model.admin && (
+                        <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                            <Icon className="color-danger ml-2" name="info-circle-filled" />
+                        </Tooltip>
+                    )}
                 </div>
                 <SubUserCreateHint className="mt-8" />
             </ModalContent>

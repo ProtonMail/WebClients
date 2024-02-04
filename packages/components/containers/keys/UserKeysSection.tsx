@@ -11,6 +11,7 @@ import {
     useAuthentication,
     useEventManager,
     useGetAddresses,
+    useGetOrganizationKey,
     useIsDeviceRecoveryAvailable,
     useIsDeviceRecoveryEnabled,
     useModals,
@@ -31,6 +32,7 @@ const UserKeysSections = () => {
     const { call } = useEventManager();
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
+    const getOrganizationKey = useGetOrganizationKey();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
     const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
     const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
@@ -68,10 +70,12 @@ const UserKeysSections = () => {
             throw new Error('Missing keys');
         }
         const addresses = await getAddresses();
+        const organizationKey = await getOrganizationKey();
 
         const newKey = await addUserKeysProcess({
             api,
             user: User,
+            organizationKey,
             isDeviceRecoveryAvailable,
             isDeviceRecoveryEnabled,
             call,

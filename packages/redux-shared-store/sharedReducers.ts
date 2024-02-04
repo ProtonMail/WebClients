@@ -1,6 +1,7 @@
 import {
     addressKeysReducer,
     addressesReducer,
+    membersReducer,
     organizationKeyReducer,
     organizationReducer,
     subscriptionReducer,
@@ -37,5 +38,6 @@ export const sharedReducers = {
     ...importerConfigReducer,
     ...vpnServersCountReducer,
     ...welcomeFlagsReducer,
+    ...membersReducer,
     features: featuresReducer.reducer,
 };
