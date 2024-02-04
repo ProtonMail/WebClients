@@ -4,7 +4,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { deleteForwarding, rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { Address, ForwardingState, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens } from '@proton/shared/lib/keys';
+import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens, splitKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useKTVerifier } from '..';
@@ -46,9 +46,10 @@ const IncomingForwardActions = ({ forward, addresses }: Props) => {
             // The token is validated with the primary user key, and this is to ensure that the address tokens are encrypted to the primary user key.
             // NOTE: Reencrypting address token happens automatically when generating a new user key, but there are users who generated user keys before that functionality existed.
             const primaryUserKey = userKeys[0].privateKey;
+            const splitUserKeys = splitKeys(userKeys);
             const replacedResult = await getReplacedAddressKeyTokens({
-                userKeys,
                 addresses,
+                privateKeys: splitUserKeys.privateKeys,
                 privateKey: primaryUserKey,
             });
             if (replacedResult.AddressKeyTokens.length) {

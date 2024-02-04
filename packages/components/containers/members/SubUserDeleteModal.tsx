@@ -25,11 +25,12 @@ const clean = (value: string) => {
 };
 
 interface Props extends ModalProps<'form'> {
-    member: Member;
+    member: Member | undefined;
     onDelete: (member: Member) => Promise<void>;
 }
 
-const SubUserDeleteModal = ({ member, onDelete, ...rest }: Props) => {
+const SubUserDeleteModal = ({ member: initialMember, onDelete, ...rest }: Props) => {
+    const [member] = useState(initialMember!);
     const [username, setUsername] = useState('');
     const isValid = clean(username) === clean(member.Name);
     const { validator, onFormSubmit } = useFormErrors();
