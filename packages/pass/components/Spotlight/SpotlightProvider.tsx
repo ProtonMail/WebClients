@@ -48,7 +48,7 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
 });
 
 export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
-    const { onOnboardingAck } = usePassCore();
+    const { onboardingAcknowledge } = usePassCore();
     const { latestInvite, respondToInvite } = useInviteContext();
 
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
@@ -79,7 +79,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     const acknowledge = useCallback((messageType: OnboardingMessage, cb: Callback = noop) => {
-        onOnboardingAck?.(messageType);
+        onboardingAcknowledge?.(messageType);
         cb();
         setOnboardingMessage(null);
     }, []);
