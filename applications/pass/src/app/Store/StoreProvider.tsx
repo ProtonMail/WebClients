@@ -1,8 +1,11 @@
 import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
@@ -15,8 +18,8 @@ import {
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import { selectLocale } from '@proton/pass/store/selectors';
-import { AppStatus } from '@proton/pass/types';
+import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
+import { AppStatus, OnboardingMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
@@ -33,6 +36,9 @@ import { sagaMiddleware, store } from './store';
 export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const core = usePassCore();
     const authService = useAuthService();
+    const history = useHistory();
+    const { installed } = usePassExtensionLink();
+
     const client = useClientRef();
     const sw = useServiceWorker();
     const { createNotification } = useNotifications();
@@ -51,17 +57,25 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getSettings: settings.resolve,
                 getTelemetry: () => telemetry,
 
-                onBoot: (res) => {
+                onBoot: async (res) => {
                     if (res.ok) {
+                        const state = store.getState();
+
                         client.current.setStatus(AppStatus.READY);
 
                         telemetry.start().catch(noop);
-                        void i18n.setLocale(selectLocale(store.getState()));
+                        void i18n.setLocale(selectLocale(state));
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
-
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
+
+                        if (
+                            selectOnboardingEnabled(installed)(state) &&
+                            (await core.onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING))
+                        ) {
+                            history.replace(getLocalPath('onboarding'));
+                        }
                     } else {
                         client.current.setStatus(AppStatus.ERROR);
                         if (res.clearCache) void deletePassDB(authStore.getUserID()!);

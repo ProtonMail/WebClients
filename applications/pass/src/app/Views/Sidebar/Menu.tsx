@@ -7,16 +7,17 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { OnboardingButton } from '@proton/pass/components/B2BOnboarding/OnboardingButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { OnboardingButton } from '@proton/pass/components/Onboarding/Menu/OnboardingButton';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { useOnboarding } from '@proton/pass/hooks/useOnboarding';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectHasRegisteredLock,
@@ -27,13 +28,13 @@ import {
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import { onboarding } from '../../../lib/onboarding';
 import { useAuthService } from '../../Context/AuthServiceProvider';
 import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
+    const onboarding = useOnboarding();
 
     const authService = useAuthService();
     const menu = useMenuItems({ onAction: onToggle });
@@ -85,7 +86,8 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         className="flex-noshrink"
                     />
                 )}
-                <OnboardingButton onboarding={onboarding} />
+
+                {onboarding.enabled && <OnboardingButton />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
