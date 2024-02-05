@@ -1,5 +1,7 @@
 import getRandomString from '@proton/utils/getRandomString';
 
+import { isChromiumBased } from '../helpers/browser';
+
 export type ExtensionMessage<T = {}> = { type: string } & T;
 
 /* extension communicating with account should
@@ -16,7 +18,7 @@ export type ExtensionMessageFallbackResponse<P extends {}> = ExtensionMessageRes
 };
 
 export const sendMessageSupported = () =>
-    'chrome' in window && (window as any).chrome?.runtime?.sendMessage !== undefined;
+    isChromiumBased() && (window as any).chrome?.runtime?.sendMessage !== undefined;
 
 /* Extension messaging must account for Chrome & Firefox specifics :
  * Chrome : we can leverage the `externally_connectable` permissions
