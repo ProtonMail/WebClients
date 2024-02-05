@@ -53,8 +53,12 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         const { status, loggedIn } = context.getState();
         context.service.formManager.sync();
 
-        if (!loggedIn) context.service.autofill.reset();
-        else if (clientReady(status)) await context.service.autofill.reconciliate();
+        if (!loggedIn) {
+            /** If the user is unexpectedly logged out, clear autofill cached
+             * data and detach any autosave notification that may be present */
+            context.service.autofill.reset();
+            context.service.iframe.detachNotification();
+        } else if (clientReady(status)) await context.service.autofill.reconciliate();
     };
 
     const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
