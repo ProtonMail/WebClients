@@ -8,6 +8,7 @@ import {
     rotatePasswordlessOrganizationKeys,
 } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -59,6 +60,8 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
         return c('passwordless').t`Change organization key`;
     })();
 
+    const confirmText = c('passwordless').t`Are you sure you want to change your organization key?`;
+
     return (
         <>
             {renderAuthModal && config && (
@@ -79,16 +82,29 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
             <ModalTwo open {...rest} onClose={onClose}>
                 <ModalTwoHeader title={title} {...rest} />
                 <ModalTwoContent>
-                    <AdministratorList
-                        loading={loadingInit}
-                        members={result?.memberKeyPayloads}
-                        expandByDefault={false}
-                    >
-                        <div>
-                            {c('passwordless').t`Are you sure you want to change your organization key?`}{' '}
-                            {c('passwordless').t`All administrators will get access to the key.`}
-                        </div>
-                    </AdministratorList>
+                    {(() => {
+                        if (loadingInit) {
+                            return (
+                                <div className="text-center">
+                                    <CircleLoader />
+                                </div>
+                            );
+                        }
+
+                        if (!result?.memberKeyPayloads.length) {
+                            return <div>{confirmText}</div>;
+                        }
+
+                        return (
+                            <div>
+                                <div className="mb-4">
+                                    {confirmText} {c('passwordless').t`All administrators will get access to the key.`}
+                                </div>
+
+                                <AdministratorList members={result?.memberKeyPayloads} expandByDefault={false} />
+                            </div>
+                        );
+                    })()}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
