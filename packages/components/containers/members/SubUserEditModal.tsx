@@ -206,10 +206,10 @@ const SubUserEditModal = ({
                 as="form"
                 size="large"
                 {...rest}
-                onSubmit={(event: FormEvent) => {
+                onSubmit={(event: FormEvent<HTMLFormElement>) => {
                     event.preventDefault();
                     event.stopPropagation();
-                    if (!onFormSubmit()) {
+                    if (!onFormSubmit(event.currentTarget)) {
                         return;
                     }
 

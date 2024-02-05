@@ -265,10 +265,10 @@ const SubUserCreateModal = ({
             as="form"
             {...rest}
             onClose={handleClose}
-            onSubmit={(event: FormEvent) => {
+            onSubmit={(event: FormEvent<HTMLFormElement>) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (!onFormSubmit()) {
+                if (!onFormSubmit(event.currentTarget)) {
                     return;
                 }
                 void withLoading(handleSubmit()).catch(errorHandler);
