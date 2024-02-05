@@ -2,9 +2,16 @@
  * reduced motion MQ: for vestibular disorders
  */
 @mixin reduce-motion {
-	*,
-	*::before,
-	*::after {
+	// keep-motion is for some SUPER particular cases where the animation must be kept, ie
+	// - it brings sense to the action
+	// - it's triggered by the user
+	// - it's super small and played less than 3s
+	// doc: https://www.w3.org/WAI/GL/wiki/Animation_caused_by_user_interaction
+	// example, reload spinner on folders in Mail side bar
+
+	*:not(.keep-motion),
+	*:not(.keep-motion)::before,
+	*:not(.keep-motion)::after {
 		// Using values greater than 0 to have animation events still triggering
 		animation-delay: 0.01ms !important;
 		animation-duration: 0.01ms !important;
