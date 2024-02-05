@@ -317,7 +317,8 @@ export type PaymentMethodFlows =
     | 'credit'
     | 'donation'
     | 'subscription'
-    | 'add-card';
+    | 'add-card'
+    | 'add-paypal';
 
 export type V5Payments = {
     v: 5;
