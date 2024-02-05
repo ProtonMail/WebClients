@@ -25,17 +25,20 @@ const ReactivatePasswordlessOrganizationKey = ({
                 {(() => {
                     if (otherAdminsWithKeyAccess.length) {
                         return (
-                            <AdministratorList
-                                loading={false}
-                                members={otherAdminsWithKeyAccess.map((member) => ({
-                                    member,
-                                    email: member.Addresses?.[0]?.Email || member.Name,
-                                }))}
-                                expandByDefault={true}
-                            >
-                                {c('passwordless')
-                                    .t`Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.`}
-                            </AdministratorList>
+                            <div>
+                                <div className="mb-4">
+                                    {c('passwordless')
+                                        .t`Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.`}
+                                </div>
+
+                                <AdministratorList
+                                    members={otherAdminsWithKeyAccess.map((member) => ({
+                                        member,
+                                        email: member.Addresses?.[0]?.Email || member.Name,
+                                    }))}
+                                    expandByDefault={true}
+                                />
+                            </div>
                         );
                     }
 
