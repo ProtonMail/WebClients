@@ -62,7 +62,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             primary={
                 backButtonTitle &&
                 backButtonText && (
-                    <StartUsingPassSpotlight>
+                    <StartUsingPassSpotlight app={app}>
                         <SidebarBackButton
                             to="/"
                             toApp={app}
