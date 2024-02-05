@@ -79,23 +79,23 @@ app.whenReady().then(() => {
     });
 
     // Normally this only works on macOS and is not required for Windows
-    app.on("open-url", (e, url) => {
+    app.on("open-url", (_e, url) => {
         logURL("open-url", url);
         handleMailToUrls(url);
     });
 
     // Security addition, reject all permissions except notifications
-    secureSession.setPermissionRequestHandler((_webContents, _permission, callback) => {
-        const { host, protocol } = new URL(_webContents.getURL());
+    secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
+        const { host, protocol } = new URL(webContents.getURL());
         if (!isHostAllowed(host, app.isPackaged) || protocol !== "https:") {
             return callback(false);
         }
 
-        if (ALLOWED_PERMISSIONS.includes(_permission)) {
+        if (ALLOWED_PERMISSIONS.includes(permission)) {
             return callback(true);
         }
 
-        log.info("Permission request rejected", _permission);
+        log.info("Permission request rejected", permission);
         callback(false);
     });
 });
