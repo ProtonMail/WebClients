@@ -251,8 +251,7 @@ const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
     } else if (isChargebeeEvent(event)) {
         // ignore chargebee event
     } else {
-        // console.log('ignore unknown event');
-        // console.log('There is no handler for the event. Event will be ignorred. Event: ', e.data);
+        // ignore unknown event
     }
 };
 

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     Autopay,
     PAYMENT_METHOD_TYPES,
@@ -11,7 +12,12 @@ import {
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
-import { setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '@proton/shared/lib/api/payments';
+import {
+    getPaymentsVersion,
+    setPaymentMethodV4,
+    setPaymentMethodV5,
+    updatePaymentMethod,
+} from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -45,6 +51,8 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
         setRenewState,
         ...renewToggleProps
     } = useRenewToggle({ initialRenewState: renewState });
+
+    const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
         amount: 0,
@@ -92,6 +100,8 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                     renewState,
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,
+                    paymentsVersion: getPaymentsVersion(),
+                    chargebeeEnabled: chargebeeContext.enableChargebee,
                 };
 
                 captureMessage('Payments: failed to add card', {

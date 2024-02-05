@@ -30,11 +30,16 @@ import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components/com
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import { GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '@proton/shared/lib/api/payments';
+import {
+    GetChargebeeConfigurationResponse,
+    getChargebeeConfiguration,
+    getPaymentsVersion,
+} from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
+import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
 import {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -380,6 +385,8 @@ export const useCbIframe = (): CbIframeHandles => {
 
     const [iframeConfigured, setIframeConfigured] = useState(false);
 
+    const chargebeeContext = useChargebeeContext();
+
     const markConfigured = <T,>(promise: Promise<T>) =>
         promise.then((result) => {
             setIframeConfigured(true);
@@ -489,7 +496,8 @@ export const useCbIframe = (): CbIframeHandles => {
             const error = getSentryError(e);
             if (error) {
                 const context = {
-                    // todo: add more context
+                    paymentsVersion: getPaymentsVersion(),
+                    chargebeeEnabled: chargebeeContext.enableChargebee,
                 };
 
                 captureMessage('Payments: Unhandled Chargebee error', {

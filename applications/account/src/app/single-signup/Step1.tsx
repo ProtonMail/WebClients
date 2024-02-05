@@ -54,6 +54,7 @@ import VPNPassPromotionButton from '@proton/components/containers/payments/subsc
 import { useActiveBreakpoint, useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     BillingAddress,
     PAYMENT_METHOD_TYPES,
@@ -68,6 +69,7 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDON_NAMES,
@@ -658,6 +660,8 @@ const Step1 = ({
         return true;
     };
 
+    const chargebeeContext = useChargebeeContext();
+
     const paymentFacade = usePaymentFacade({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
@@ -991,6 +995,8 @@ const Step1 = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v1', {
