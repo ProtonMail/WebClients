@@ -7,25 +7,32 @@ import clsx from '@proton/utils/clsx';
 import './VirtualList.scss';
 
 type Props = {
-    rowRenderer: ListRowRenderer;
-    rowCount: number;
     interpolationIndexes?: number[];
+    rowCount: number;
+    onScrollEnd?: () => void;
+    rowHeight: (index: number) => number;
+    rowRenderer: ListRowRenderer;
 };
 
 const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
-    { rowRenderer, rowCount, interpolationIndexes = [] },
+    { interpolationIndexes = [], rowCount, rowHeight, onScrollEnd, rowRenderer },
     virtualListRef
 ) => {
     const [shadows, setShadows] = useState({ top: false, bottom: false });
 
-    const handleScroll = useCallback(({ scrollTop, clientHeight, scrollHeight }: ScrollParams) => {
-        const scrollable = clientHeight > 0 && scrollHeight > clientHeight;
+    const handleScroll = useCallback(
+        ({ scrollTop, clientHeight, scrollHeight }: ScrollParams) => {
+            const scrollable = clientHeight > 0 && scrollHeight > clientHeight;
 
-        setShadows({
-            top: scrollable && scrollTop > 0 && scrollHeight > clientHeight,
-            bottom: scrollable && scrollTop + clientHeight < scrollHeight,
-        });
-    }, []);
+            if (scrollTop + clientHeight >= scrollHeight) onScrollEnd?.();
+
+            setShadows({
+                top: scrollable && scrollTop > 0 && scrollHeight > clientHeight,
+                bottom: scrollable && scrollTop + clientHeight < scrollHeight,
+            });
+        },
+        [onScrollEnd]
+    );
 
     useEffect(() => {
         (virtualListRef as RefObject<List>).current?.recomputeRowHeights();
@@ -57,7 +64,7 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
                         rowCount={rowCount}
                         height={height}
                         width={width - 1} /* account for react-virtualized ceiling */
-                        rowHeight={({ index }) => (interpolationIndexes.includes(index) ? 28 : 54)}
+                        rowHeight={({ index }) => rowHeight(index)}
                     />
                 )}
             </AutoSizer>

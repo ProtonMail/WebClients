@@ -33,11 +33,12 @@ export const shareEditMemberRoleRequest = (userShareId: string) => `share::membe
 export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`;
 export const shareAccessOptionsRequest = (shareId: string) => `share::access-options::${shareId}`;
 
-export const inviteCreateRequest = (optimisticId: string) => `invite::create::${optimisticId}`;
+export const inviteCreateRequest = (requestId: string) => `invite::create::${requestId}`;
 export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
 export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;
 export const inviteRejectRequest = (token: string) => `invite::reject::${token}`;
 export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
+export const inviteRecommendationsRequest = (requestId: string) => `invite::recommendations::${requestId}`;
 
 export const newUserInvitePromoteRequest = (newUserInviteId: string) => `new-user-invite::promote::${newUserInviteId}`;
 export const newUserInviteRemoveRequest = (newUserInviteId: string) => `new-user-invite::remove::${newUserInviteId}`;
