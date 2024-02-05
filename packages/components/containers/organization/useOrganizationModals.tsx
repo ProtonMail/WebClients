@@ -60,13 +60,14 @@ const UserNeedsToInvite = ({
                     <Href href={getKnowledgeBaseUrl('/restore-administrator')} className="inline-block">
                         {c('Link').t`Learn more`}
                     </Href>
-                    <AdministratorList
-                        loading={false}
-                        members={otherAdminsWithMissingOrgKeys.map((member) => ({
-                            member,
-                            email: member.Addresses?.[0]?.Email || member.Name || '',
-                        }))}
-                    />
+                    <div className="mt-4">
+                        <AdministratorList
+                            members={otherAdminsWithMissingOrgKeys.map((member) => ({
+                                member,
+                                email: member.Addresses?.[0]?.Email || member.Name || '',
+                            }))}
+                        />
+                    </div>
                 </div>
             </div>
             <Button color="norm" className="mr-4" onClick={onRestorePrivilegesClick}>

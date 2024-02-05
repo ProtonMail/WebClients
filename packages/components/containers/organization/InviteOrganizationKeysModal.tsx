@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -67,9 +67,29 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
             <ModalTwoContent>
                 <div>{c('passwordless')
                     .t`This will send the latest organization key to the administrators that currently don't have access to it.`}</div>
-                <AdministratorList loading={loadingInit} members={result} expandByDefault={true}>
-                    {c('passwordless').t`The following administrators will get access to the organization key.`}
-                </AdministratorList>
+                {(() => {
+                    if (loadingInit) {
+                        return (
+                            <div className="text-center">
+                                <CircleLoader />
+                            </div>
+                        );
+                    }
+
+                    if (!result?.length) {
+                        return null;
+                    }
+
+                    return (
+                        <div>
+                            <div className="mb-4">
+                                {c('passwordless')
+                                    .t`The following administrators will get access to the organization key.`}
+                            </div>
+                            <AdministratorList members={result} expandByDefault={true} />
+                        </div>
+                    );
+                })()}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
