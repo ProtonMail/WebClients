@@ -7,6 +7,7 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { BillingAddress, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
@@ -15,7 +16,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import { subscribe as apiSubscribe, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { subscribe as apiSubscribe, deleteSubscription, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -245,6 +246,7 @@ const SubscriptionContainer = ({
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
+    const chargebeeContext = useChargebeeContext();
 
     const [audience, setAudience] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -699,6 +701,8 @@ const SubscriptionContainer = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
                     captureMessage('Payments: failed to handle subscription', {
                         level: 'error',
