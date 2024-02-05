@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account';
-import { Button } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useErrorHandler, useEventManager, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
@@ -21,21 +22,22 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { call } = useEventManager();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const { createNotification } = useNotifications();
     const [result, setResult] = useState<null | MemberKeyPayload[]>(null);
     const errorHandler = useErrorHandler();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useEffect(() => {
         const run = async () => {
             setResult(null);
             const result = await dispatch(
                 getMemberKeyPayloads({
-                    getPublicKeysForInbox,
+                    verifyOutboundPublicKeys,
                     members,
+                    api: silentApi,
                 })
             );
             setResult(result);
@@ -65,9 +67,29 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
             <ModalTwoContent>
                 <div>{c('passwordless')
                     .t`This will send the latest organization key to the administrators that currently don't have access to it.`}</div>
-                <AdministratorList loading={loadingInit} members={result} expandByDefault={true}>
-                    {c('passwordless').t`The following administrators will get access to the organization key.`}
-                </AdministratorList>
+                {(() => {
+                    if (loadingInit) {
+                        return (
+                            <div className="text-center">
+                                <CircleLoader />
+                            </div>
+                        );
+                    }
+
+                    if (!result?.length) {
+                        return null;
+                    }
+
+                    return (
+                        <div>
+                            <div className="mb-4">
+                                {c('passwordless')
+                                    .t`The following administrators will get access to the organization key.`}
+                            </div>
+                            <AdministratorList members={result} expandByDefault={true} />
+                        </div>
+                    );
+                })()}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
