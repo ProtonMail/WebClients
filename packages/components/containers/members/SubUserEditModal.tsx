@@ -10,7 +10,6 @@ import {
     getPrivateAdminError,
 } from '@proton/account';
 import { Button, Card } from '@proton/atoms';
-import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -40,13 +39,14 @@ import {
     useApi,
     useErrorHandler,
     useEventManager,
-    useGetPublicKeysForInbox,
     useNotifications,
     useOrganization,
     useOrganizationKey,
 } from '../../hooks';
 import Addresses from '../addresses/Addresses';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import { adminTooltipText } from './constants';
 
 interface Props extends ModalProps<'form'> {
     member: EnhancedMember;
@@ -69,7 +69,7 @@ const SubUserEditModal = ({
     const dispatch = useDispatch();
     const storageSizeUnit = GIGA;
     const { call } = useEventManager();
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { validator, onFormSubmit } = useFormErrors();
     const [confirmDemotionModalProps, setConfirmDemotionModal, renderConfirmDemotion] = useModalState();
     const [confirmPromotionModalProps, setConfirmPromotionModal, renderConfirmPromotion] = useModalState();
@@ -232,7 +232,8 @@ const SubUserEditModal = ({
                         if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
                             memberKeyPacketPayload.current = await getMemberKeyPayload({
                                 organizationKey,
-                                getPublicKeysForInbox,
+                                verifyOutboundPublicKeys,
+                                api: silentApi,
                                 member,
                                 memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
                             });
