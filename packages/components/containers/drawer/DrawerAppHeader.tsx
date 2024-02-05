@@ -137,7 +137,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
         <div className="relative ui-standard color-norm shrink-0" ref={wrapperRef}>
             <Header className="header--drawer p-3">
                 <div className="drawer-app-header-actions flex justify-space-between items-center w-full">
-                    <span className="text-bold text-lg">{title}</span>
+                    <h2 className="text-bold text-lg">{title}</h2>
 
                     <div className="flex items-center flex-nowrap gap-2">
                         <Tooltip title={c('Action').t`Close`}>
@@ -148,7 +148,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
                                 shape="ghost"
                                 onClick={() => handleToggleIFrame()}
                             >
-                                <Icon name="cross-big" size={4} />
+                                <Icon name="cross-big" size={4} alt={c('Action').t`Close`} />
                             </Button>
                         </Tooltip>
                     </div>

@@ -10,6 +10,7 @@ import { ThemeSetting } from '../themes/themes';
 export enum DRAWER_NATIVE_APPS {
     QUICK_SETTINGS = 'quick-settings',
     CONTACTS = 'contacts',
+    SECURITY_CENTER = 'security-center',
 }
 export type DrawerApp = typeof APPS.PROTONCALENDAR | `${DRAWER_NATIVE_APPS}`;
 export type IframeSrcMap = Partial<Record<DrawerApp, string | undefined>>;
