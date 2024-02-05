@@ -144,7 +144,9 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmDemotionModalProps.onClose();
-                                void withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER }));
+                                void withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER })).catch(
+                                    errorHandler
+                                );
                             }}
                         >{c('Action').t`Remove`}</Button>,
                         <Button
@@ -170,7 +172,7 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmPromotionModalProps.onClose();
-                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_ADMIN }));
+                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(errorHandler);
                             }}
                         >{c('Action').t`Make admin`}</Button>,
                         <Button
