@@ -1,6 +1,6 @@
 import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 
-import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { SentryInitiative, traceError, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import GenericError from '../error/GenericError';
 
@@ -9,7 +9,9 @@ interface Props {
     big?: boolean;
     resetKey?: string;
     component?: ReactNode;
+    renderFunction?: (error: Error | undefined) => ReactNode;
     onError?: (error: Error, info: ErrorInfo) => void;
+    initiative?: SentryInitiative;
 }
 
 interface State {
@@ -43,7 +45,11 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
     componentDidCatch(error: Error, info: ErrorInfo) {
         const { props } = this;
         props.onError?.(error, info);
-        traceError(error);
+        if (props.initiative) {
+            traceInitiativeError(props.initiative, error);
+        } else {
+            traceError(error);
+        }
         console.error(error);
     }
 
@@ -55,6 +61,10 @@ class ErrorBoundary extends Component<PropsWithRef<PropsWithChildren<Props>>, St
         if (props.component || props.component === null) {
             return props.component;
         }
+        if (props.renderFunction) {
+            return props.renderFunction(state.error);
+        }
+
         return <GenericError className={props.className} big={props.big} />;
     }
 }

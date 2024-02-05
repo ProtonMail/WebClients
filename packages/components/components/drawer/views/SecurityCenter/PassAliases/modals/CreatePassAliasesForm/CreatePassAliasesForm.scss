@@ -1,0 +1,79 @@
+@import '~@proton/styles/scss/lib';
+
+.stacked-field {
+	/*
+	 small reset
+	 */
+	.input-element {
+		padding: 0;
+	}
+
+	.field-two {
+		&-label {
+			font-weight: var(--font-weight-normal);
+			color: var(--text-weak);
+
+			&-container {
+				gap: 0;
+			}
+		}
+
+		&-assist--kept {
+			color: var(--text-weak);
+		}
+
+		// no reserved height for error message
+		&-assist {
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	/*
+	 groups of inputs	
+	 */
+	&-group {
+		> :first-child {
+			border-start-start-radius: var(--border-radius-lg);
+			border-start-end-radius: var(--border-radius-lg);
+		}
+
+		> :last-child {
+			border-block-end: 1px solid var(--border-weak);
+			border-end-start-radius: var(--border-radius-lg);
+			border-end-end-radius: var(--border-radius-lg);
+		}
+
+		.stacked-field:focus-within {
+			// small trick to avoid missing border when getting focus
+			&:not(:last-child)::after {
+				content: '';
+				position: absolute;
+				inset-inline: 0;
+				inset-block-end: 0;
+				block-size: 0;
+				border-block-end: 1px solid var(--focus-outline);
+			}
+		}
+	}
+
+	/*
+	  States
+	 */
+	// bigger field
+	&--bigger-field .input-element {
+		font-size: rem(16);
+	}
+
+	&--errors {
+		border: 1px solid var(--signal-danger);
+	}
+
+	&:focus-within {
+		border-color: var(--focus-outline);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+	}
+}

@@ -1,0 +1,27 @@
+@import '~@proton/styles/scss/lib';
+
+.security-card {
+	&-dismiss-button {
+		transform: translate(-50%, -50%);
+		border: 0;
+	}
+
+	&-container &-dismiss-button {
+		--padding-block: #{em(2)};
+		--padding-inline: #{em(2)};
+	}
+
+	&-icon {
+		&-container {
+			inline-size: rem(28);
+		}
+
+		&-warning {
+			background-color: var(--signal-warning-minor-1);
+		}
+
+		&-danger {
+			background-color: var(--signal-danger-minor-2);
+		}
+	}
+}

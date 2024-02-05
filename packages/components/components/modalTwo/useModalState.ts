@@ -11,12 +11,24 @@ export interface ModalStateProps {
     onExit: () => void;
 }
 
-const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?: () => void }) => {
+type ModalStateOptions = Partial<Pick<ModalStateProps, 'open' | 'onClose' | 'onExit'>>;
+type ModalStateReturnTuple = [
+    modalProps: ModalStateProps,
+    openModal: (newValue: boolean) => void,
+    renderModal: boolean,
+];
+interface ModalStateReturnObj {
+    modalProps: ModalStateReturnTuple[0];
+    openModal: ModalStateReturnTuple[1];
+    render: ModalStateReturnTuple[2];
+}
+
+const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     const { open: controlledOpen, onClose, onExit } = options || {};
 
     const [key, setKey] = useState(() => generateUID());
     const [open, setOpen] = useControlled(controlledOpen);
-    const [render, setRender] = useState(open);
+    const [render, setRender] = useState(!!open);
 
     const handleSetOpen = useCallback((newValue: boolean) => {
         if (newValue) {
@@ -49,6 +61,16 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
     );
 
     return [modalProps, handleSetOpen, render] as const;
+};
+
+export const useModalStateObject = (options?: ModalStateOptions): ModalStateReturnObj => {
+    const [modalProps, openModal, render] = useModalState(options);
+
+    return {
+        modalProps,
+        openModal,
+        render,
+    };
 };
 
 export default useModalState;
