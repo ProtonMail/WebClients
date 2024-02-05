@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @use 'sass:math';
 
 .spotlight {
@@ -7,7 +7,7 @@
 	position: fixed;
 	z-index: map.get($z-indexes, 'tooltips');
 	min-inline-size: 10em;
-	max-inline-size: 20em;
+	max-inline-size: 25em;
 	transform: scale(1);
 	border-radius: var(--border-radius-md);
 	background-color: var(--background-norm);

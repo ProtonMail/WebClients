@@ -1,3 +1,5 @@
+import { Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
@@ -5,9 +7,10 @@ import { ButtonLike } from '@proton/atoms';
 import { Icon } from '../icon';
 import AppLink, { AppLinkProps } from '../link/AppLink';
 
-const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
+const SidebarBackButton = ({ children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     return (
         <ButtonLike
+            ref={ref}
             as={AppLink}
             size="large"
             color="weak"
@@ -22,4 +25,4 @@ const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
     );
 };
 
-export default SidebarBackButton;
+export default forwardRef<HTMLAnchorElement, AppLinkProps>(SidebarBackButton);
