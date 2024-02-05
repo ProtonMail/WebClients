@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -15,6 +15,7 @@ import {
     PaymentVerificatorV5,
 } from '../core';
 import { PaymentProcessorHook } from './interface';
+import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
@@ -60,17 +61,18 @@ export const useChargebeeCard = (
     const [verifyingToken, withVerifyingToken] = useLoading();
     const processingToken = fetchingToken || verifyingToken;
 
-    const paymentProcessorRef = useRef(
-        new ChargebeeCardPaymentProcessor(
-            verifyPayment,
-            api,
-            amountAndCurrency,
-            handles,
-            events,
-            !!verifyOnly,
-            chargebeeKillSwitch,
-            onChargeable
-        )
+    const paymentProcessor = usePaymentProcessor(
+        () =>
+            new ChargebeeCardPaymentProcessor(
+                verifyPayment,
+                api,
+                amountAndCurrency,
+                handles,
+                events,
+                !!verifyOnly,
+                chargebeeKillSwitch,
+                onChargeable
+            )
     );
 
     useEffect(() => {
@@ -79,8 +81,6 @@ export const useChargebeeCard = (
             postalCode: setPostalCode,
             submitted: setSubmitted,
         };
-
-        const paymentProcessor = paymentProcessorRef.current;
 
         paymentProcessor.onStateUpdated(
             (updatedProperties) => {
@@ -96,33 +96,33 @@ export const useChargebeeCard = (
             }
         );
 
-        return () => paymentProcessorRef.current.destroy();
+        return () => paymentProcessor.destroy();
     }, []);
 
     useEffect(() => {
-        paymentProcessorRef.current.amountAndCurrency = amountAndCurrency;
-        paymentProcessorRef.current.reset();
+        paymentProcessor.amountAndCurrency = amountAndCurrency;
+        paymentProcessor.reset();
     }, [amountAndCurrency]);
 
     useEffect(() => {
-        paymentProcessorRef.current.onTokenIsChargeable = onChargeable;
+        paymentProcessor.onTokenIsChargeable = onChargeable;
     }, [onChargeable]);
 
-    const reset = () => paymentProcessorRef.current.reset();
+    const reset = () => paymentProcessor.reset();
 
     const fetchPaymentToken = async () => {
-        const promise = paymentProcessorRef.current.fetchPaymentToken();
+        const promise = paymentProcessor.fetchPaymentToken();
         withFetchingToken(promise).catch(noop);
         return promise;
     };
     const verifyPaymentToken = () => {
-        const tokenPromise = paymentProcessorRef.current.verifyPaymentToken();
+        const tokenPromise = paymentProcessor.verifyPaymentToken();
         withVerifyingToken(tokenPromise).catch(noop);
         return tokenPromise;
     };
 
     const processPaymentToken = async () => {
-        if (!paymentProcessorRef.current.fetchedPaymentToken) {
+        if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
 
@@ -142,11 +142,11 @@ export const useChargebeeCard = (
         verifyingToken,
         countryCode,
         postalCode,
-        setPostalCode: (postalCode: string) => paymentProcessorRef.current.setPostalCode(postalCode),
-        setCountryCode: (countryCode: string) => paymentProcessorRef.current.setCountryCode(countryCode),
+        setPostalCode: (postalCode: string) => paymentProcessor.setPostalCode(postalCode),
+        setCountryCode: (countryCode: string) => paymentProcessor.setCountryCode(countryCode),
         errors: submitted ? errors : {},
         submitted,
-        paymentProcessor: paymentProcessorRef.current,
+        paymentProcessor,
         processPaymentToken,
         processingToken,
         reset,
