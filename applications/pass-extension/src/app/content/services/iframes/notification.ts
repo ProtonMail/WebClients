@@ -63,12 +63,14 @@ export const createNotification = (): InjectedNotification => {
     });
 
     const open = async (payload: NotificationActions) => {
-        await waitUntil(() => iframe.state.ready, 50);
-
-        if (!iframe.state.visible) {
-            iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
-            iframe.open(payload.action);
-        }
+        await waitUntil(() => iframe.state.ready, 50)
+            .then(() => {
+                if (!iframe.state.visible) {
+                    iframe.sendPortMessage({ type: IFrameMessageType.NOTIFICATION_ACTION, payload });
+                    iframe.open(payload.action);
+                }
+            })
+            .catch(noop);
     };
 
     iframe.registerMessageHandler(
