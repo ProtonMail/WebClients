@@ -1,6 +1,17 @@
+import { JSX } from 'react';
+
 import { c } from 'ttag';
 
-import { AppVersion, AppsDropdown, Sidebar, SidebarBackButton, SidebarList, SidebarNav } from '@proton/components';
+import {
+    AppVersion,
+    AppsDropdown,
+    Sidebar,
+    SidebarBackButton,
+    SidebarList,
+    SidebarNav,
+    StartUsingPassSpotlight,
+    useAccountSpotlights,
+} from '@proton/components';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
 import SidebarListWrapper from '../containers/SidebarListWrapper';
@@ -21,16 +32,28 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONMAIL]: c('Navigation').t`Inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Drive`,
+        [APPS.PROTONPASS]: c('Navigation').t`Pass vaults`,
     };
     const backButtonCopyTitle = {
         [APPS.PROTONMAIL]: c('Navigation').t`Back to inbox`,
         [APPS.PROTONCALENDAR]: c('Navigation').t`Back to calendar`,
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to files`,
+        [APPS.PROTONPASS]: c('Navigation').t`Back to vaults`,
     };
 
     const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
     const backButtonTitle = backButtonCopyTitle[app as keyof typeof backButtonCopyTitle];
     const prefix = `/${appSlug}`;
+
+    const {
+        passOnboardingSpotlights: { startUsingPassSpotlight },
+    } = useAccountSpotlights();
+
+    const handleClick = () => {
+        if (app === APPS.PROTONPASS) {
+            startUsingPassSpotlight.close();
+        }
+    };
 
     return (
         <Sidebar
@@ -39,16 +62,19 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
             primary={
                 backButtonTitle &&
                 backButtonText && (
-                    <SidebarBackButton
-                        to="/"
-                        toApp={app}
-                        target="_self"
-                        title={backButtonTitle}
-                        aria-label={backButtonTitle}
-                        data-testid={`account:back-to-app`}
-                    >
-                        {backButtonText}
-                    </SidebarBackButton>
+                    <StartUsingPassSpotlight>
+                        <SidebarBackButton
+                            to="/"
+                            toApp={app}
+                            target="_self"
+                            title={backButtonTitle}
+                            aria-label={backButtonTitle}
+                            data-testid={`account:back-to-app`}
+                            onClick={handleClick}
+                        >
+                            {backButtonText}
+                        </SidebarBackButton>
+                    </StartUsingPassSpotlight>
                 )
             }
             logo={logo}
