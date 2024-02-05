@@ -262,6 +262,7 @@ const SubUserEditModal = ({
                         onValue={(value: string) => updatePartialModel({ name: value })}
                         label={c('Label').t`Name`}
                         placeholder={NAME_PLACEHOLDER}
+                        autoFocus
                     />
                     {allowStorageConfiguration && (
                         <MemberStorageSelector
