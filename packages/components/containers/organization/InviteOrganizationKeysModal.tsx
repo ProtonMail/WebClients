@@ -10,7 +10,8 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { EnhancedMember } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useErrorHandler, useEventManager, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AdministratorList from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {
@@ -21,21 +22,22 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
     const dispatch = useDispatch();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const { call } = useEventManager();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const { createNotification } = useNotifications();
     const [result, setResult] = useState<null | MemberKeyPayload[]>(null);
     const errorHandler = useErrorHandler();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     useEffect(() => {
         const run = async () => {
             setResult(null);
             const result = await dispatch(
                 getMemberKeyPayloads({
-                    getPublicKeysForInbox,
+                    verifyOutboundPublicKeys,
                     members,
+                    api: silentApi,
                 })
             );
             setResult(result);
