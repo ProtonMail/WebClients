@@ -13,12 +13,10 @@ import {
     BRAND_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
-    MEMBER_ADDON_PREFIX,
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
-import { getPlanIDs, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
@@ -65,12 +63,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
         return <Loader />;
     }
 
-    const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
-    const isSubscribedToMemberCapablePlan =
-        organization.MaxMembers > 1 || Object.keys(supportedAddons).some((key) => key.startsWith(MEMBER_ADDON_PREFIX));
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     // Upsell
-    if (!isSubscribedToMemberCapablePlan) {
+    if (!hasMemberCapablePlan) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph>
@@ -123,7 +119,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 </SettingsParagraph>
                 <PrimaryButton
                     onClick={async () => {
-                        if (!isSubscribedToMemberCapablePlan) {
+                        if (!hasMemberCapablePlan) {
                             return createNotification({
                                 type: 'error',
                                 text: c('Error')
@@ -154,7 +150,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 <PrimaryButton
                     loading={loading}
                     onClick={async () => {
-                        if (!isSubscribedToMemberCapablePlan) {
+                        if (!hasMemberCapablePlan) {
                             return createNotification({
                                 type: 'error',
                                 text: c('Error')
