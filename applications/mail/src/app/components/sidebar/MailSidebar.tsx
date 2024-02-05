@@ -1,10 +1,9 @@
 import { memo, useCallback } from 'react';
 
-import { AppsDropdown, MainLogo, Sidebar, SidebarContactItem, SidebarNav, useDrawer } from '@proton/components';
+import { AppsDropdown, MainLogo, Sidebar, SidebarDrawerItems, SidebarNav } from '@proton/components';
 import SidebarStorageUpsell from '@proton/components/containers/payments/subscription/SidebarStorageUpsell';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import { APPS } from '@proton/shared/lib/constants';
-import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -28,7 +27,6 @@ const MailSidebar = ({ labelID }: Props) => {
     const onCompose = useOnCompose();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
-    const { toggleDrawerApp } = useDrawer();
     const { displayState } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
         void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
@@ -49,20 +47,22 @@ const MailSidebar = ({ labelID }: Props) => {
             primary={<MailSidebarPrimaryButton handleCompose={handleCompose} />}
             logo={logo}
             version={<SidebarVersion />}
-            contactsButton={
-                displayContactsInHeader && (
-                    <SidebarContactItem
-                        onClick={() => {
-                            dispatch(layoutActions.setSidebarExpanded(false));
-                            toggleDrawerApp({ app: DRAWER_NATIVE_APPS.CONTACTS })();
-                        }}
-                    />
-                )
-            }
             preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
         >
             <SidebarNav className="flex">
-                <MailSidebarList labelID={labelID} />
+                <MailSidebarList
+                    labelID={labelID}
+                    postItems={
+                        displayContactsInHeader && (
+                            <SidebarDrawerItems
+                                toggleHeaderDropdown={() => {
+                                    dispatch(layoutActions.setSidebarExpanded(false));
+                                }}
+                            />
+                        )
+                    }
+                />
+
                 {displayState === CHECKLIST_DISPLAY_TYPE.REDUCED && <UsersOnboardingChecklist smallVariant />}
             </SidebarNav>
         </Sidebar>

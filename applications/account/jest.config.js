@@ -17,4 +17,5 @@ module.exports = {
     reporters: ['default', ['jest-junit', { outputName: 'test-report.xml' }]],
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     coverageReporters: ['text', 'lcov', 'cobertura'],
+    resolver: './jest.resolver.js',
 };

@@ -71,6 +71,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                         FeatureCode.ESAutomaticBackgroundIndexing,
                         FeatureCode.MailActionsChunkSize,
                         FeatureCode.SLIntegration,
+                        FeatureCode.AccountSecurityDismissed2FACard,
                     ])
                 ),
             ]);

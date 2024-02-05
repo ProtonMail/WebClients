@@ -12,6 +12,8 @@ import clsx from '@proton/utils/clsx';
 
 import { useDrawer } from '../../hooks';
 import DrawerContactModals from './DrawerContactModals';
+import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
+import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 import './DrawerApp.scss';
 
@@ -33,6 +35,10 @@ interface Props {
 
 const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomActions }: Props) => {
     const { appInView, iframeSrcMap } = useDrawer();
+    const isSecurityCenterEnabled = useSecurityCenter();
+
+    const isDisplayedOnMobile =
+        appInView === DRAWER_NATIVE_APPS.CONTACTS || appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER;
 
     useLayoutEffect(() => {
         if (appInView !== undefined) {
@@ -50,10 +56,13 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                 className={clsx([
                     'drawer-app border-left border-weak bg-norm overflow-hidden no-print',
                     !appInView && 'hidden',
-                    appInView !== DRAWER_NATIVE_APPS.CONTACTS && 'drawer-app--hide-on-mobile',
+                    !isDisplayedOnMobile && 'drawer-app--hide-on-mobile',
                 ])}
             >
-                <ErrorBoundary component={<StandardErrorPage />}>
+                <ErrorBoundary
+                    component={<StandardErrorPage />}
+                    initiative={appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER ? 'drawer-security-center' : undefined}
+                >
                     <div className="drawer-app-inner h-full w-full">
                         {Object.entries(iframeSrcMap)
                             .filter(([, src]) => src)
@@ -67,6 +76,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                                     allow="clipboard-read; clipboard-write"
                                 />
                             ))}
+
                         {appInView === DRAWER_NATIVE_APPS.CONTACTS && (
                             <DrawerContactView
                                 onCompose={onCompose}
@@ -77,6 +87,10 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
 
                         {appInView === DRAWER_NATIVE_APPS.QUICK_SETTINGS && (
                             <DrawerSettingsView customAppSettings={customAppSettings} />
+                        )}
+
+                        {isSecurityCenterEnabled && appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER && (
+                            <DrawerSecurityCenterView />
                         )}
                     </div>
                 </ErrorBoundary>
