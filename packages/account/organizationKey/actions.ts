@@ -38,8 +38,8 @@ import type {
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
+    VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
-import type { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 import {
     acceptInvitation,
     generateOrganizationKeys,
@@ -51,9 +51,9 @@ import {
     getIsPasswordless,
     getOrganizationKeyToken,
     getPrimaryKey,
-    getPrivateMemberPublicKey,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
+    getVerifiedPublicKeys,
     setupMemberKeys,
     splitKeys,
 } from '@proton/shared/lib/keys';
@@ -122,12 +122,14 @@ class ConstraintError extends Error {}
 
 export const getMemberKeyPayload = async ({
     organizationKey,
-    getPublicKeysForInbox,
+    api,
+    verifyOutboundPublicKeys,
     member,
     memberAddresses,
 }: {
     organizationKey: CachedOrganizationKey;
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    api: Api;
     member: Member;
     memberAddresses: Address[];
 }): Promise<MemberKeyPayload> => {
@@ -161,11 +163,14 @@ export const getMemberKeyPayload = async ({
         throw new ConstraintError(getPrivateAdminError());
     }
     const email = address.Email;
-    const publicKey = await getPrivateMemberPublicKey({
-        getPublicKeysForInbox,
-        email,
-    });
-    if (!publicKey) {
+    const memberPublicKey = (
+        await getVerifiedPublicKeys({
+            api,
+            verifyOutboundPublicKeys,
+            email,
+        })
+    )[0]?.publicKey;
+    if (!memberPublicKey) {
         throw new Error(getPrivateAdminError());
     }
     return {
@@ -173,16 +178,18 @@ export const getMemberKeyPayload = async ({
         member,
         address,
         email,
-        publicKey,
+        publicKey: memberPublicKey,
     };
 };
 
 export const getMemberKeyPayloads = ({
-    getPublicKeysForInbox,
+    verifyOutboundPublicKeys,
     members,
+    api,
 }: {
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     members: EnhancedMember[];
+    api: Api;
 }): ThunkAction<Promise<MemberKeyPayload[]>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk());
@@ -196,7 +203,8 @@ export const getMemberKeyPayloads = ({
                         return await getMemberKeyPayload({
                             member,
                             memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
-                            getPublicKeysForInbox,
+                            verifyOutboundPublicKeys,
+                            api,
                             organizationKey,
                         });
                     } catch (e) {
@@ -256,9 +264,11 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
 };
 
 export const getKeyRotationPayload = ({
-    getPublicKeysForInbox,
+    verifyOutboundPublicKeys,
+    api,
 }: {
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    api: Api;
 }): ThunkAction<Promise<OrganizationKeyRotationPayload>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const userKeys = await dispatch(userKeysThunk());
@@ -286,7 +296,8 @@ export const getKeyRotationPayload = ({
         const [memberKeyPayloads, publicMembersToReEncryptPayload] = await Promise.all([
             dispatch(
                 getMemberKeyPayloads({
-                    getPublicKeysForInbox,
+                    api,
+                    verifyOutboundPublicKeys,
                     members: otherAdminMembers,
                 })
             ),
@@ -657,13 +668,13 @@ export const createMember = ({
     member: model,
     keyTransparencyVerify,
     keyTransparencyCommit,
-    getPublicKeysForInbox,
+    verifyOutboundPublicKeys,
     api,
 }: {
     member: CreateMemberPayload;
     keyTransparencyVerify: KeyTransparencyVerify;
     keyTransparencyCommit: KeyTransparencyCommit;
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     api: Api;
 }): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
@@ -726,7 +737,8 @@ export const createMember = ({
                         organizationKey,
                         member: memberWithKeys,
                         memberAddresses,
-                        getPublicKeysForInbox,
+                        verifyOutboundPublicKeys,
+                        api,
                     });
                     await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
                 } else {
@@ -753,10 +765,12 @@ export type AcceptOrganizationKeyInvitePayload =
       };
 export const prepareAcceptOrganizationKeyInvite = ({
     adminEmail,
-    getPublicKeysForInbox,
+    verifyOutboundPublicKeys,
+    api,
 }: {
     adminEmail: string;
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    api: Api;
 }): ThunkAction<
     Promise<AcceptOrganizationKeyInvitePayload>,
     OrganizationKeyState,
@@ -785,18 +799,14 @@ export const prepareAcceptOrganizationKeyInvite = ({
             throw new Error('Missing address keys');
         }
 
-        const apiKeysConfig = await getPublicKeysForInbox({
-            email: adminEmail,
-            lifetime: 0,
-        });
-
-        const apiErrors = apiKeysConfig.Errors || [];
-        if (apiErrors.length > 0) {
-            throw new Error(apiErrors[0]);
-        }
-
-        const verificationKeys = apiKeysConfig.publicKeys.map(({ publicKey }) => publicKey);
-        if (!verificationKeys?.length) {
+        const adminEmailPublicKeys = (
+            await getVerifiedPublicKeys({
+                api,
+                email: adminEmail,
+                verifyOutboundPublicKeys,
+            })
+        ).map(({ publicKey }) => publicKey);
+        if (!adminEmailPublicKeys.length) {
             return {
                 state: 'public-keys',
                 result: null,
@@ -809,7 +819,7 @@ export const prepareAcceptOrganizationKeyInvite = ({
                 Token: organizationKey.Key.Token,
                 Signature: organizationKey.Key.Signature,
                 decryptionKeys: splitAddressKeys.privateKeys,
-                verificationKeys,
+                verificationKeys: adminEmailPublicKeys,
                 encryptionKey: primaryUserKey.privateKey,
             });
             return {
