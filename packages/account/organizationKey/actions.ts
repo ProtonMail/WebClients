@@ -71,6 +71,10 @@ export const getPrivateAdminError = () => {
     return c('passwordless').t`Private users can be promoted to admin when they've signed in for the first time`;
 };
 
+export const getPublicAdminError = () => {
+    return c('passwordless').t`Non-private users can be promoted to admin when they have setup keys`;
+};
+
 export const getPrivatizeError = () => {
     return c('passwordless').t`You must privatize all users before generating a new organization key`;
 };
@@ -139,7 +143,7 @@ export const getMemberKeyPayload = async ({
 
     if (member.Private === MEMBER_PRIVATE.READABLE) {
         if (!member.Keys?.length) {
-            throw new ConstraintError(getPrivateAdminError());
+            throw new ConstraintError(getPublicAdminError());
         }
         // Only needed to decrypt the user keys here.
         if (!organizationKey?.privateKey) {
