@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState } from 'react';
+import { KeyboardEvent, ReactNode, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -180,6 +180,11 @@ const MemberStorageSelector = ({
                         aria-describedby={uid}
                         onValue={(value: string) => {
                             setTmpValue(value.replace(/[^\d.]/g, ''));
+                        }}
+                        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                            if (event.key === 'Enter') {
+                                handleSafeChange(parsedValueInUnit);
+                            }
                         }}
                         onBlur={() => {
                             handleSafeChange(parsedValueInUnit);
