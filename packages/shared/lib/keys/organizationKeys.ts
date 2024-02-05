@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
+import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { decryptKeyPacket, encryptAndSignKeyPacket } from '@proton/shared/lib/keys/keypacket';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -10,11 +10,13 @@ import isTruthy from '@proton/utils/isTruthy';
 import { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
 import type {
     Address,
+    Api,
     EncryptionConfig,
     KeyPair,
     Member,
     OrganizationKey,
     PasswordlessOrganizationKey,
+    VerifyOutboundPublicKeys,
 } from '../interfaces';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { getPrimaryKey } from './getPrimaryKey';
@@ -394,20 +396,28 @@ export const acceptInvitation = async ({
     });
 };
 
-export const getPrivateMemberPublicKey = async ({
-    getPublicKeysForInbox,
+export const getVerifiedPublicKeys = async ({
+    api,
     email,
+    verifyOutboundPublicKeys,
 }: {
     email: string;
-    getPublicKeysForInbox: GetPublicKeysForInbox;
+    api: Api;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
 }) => {
-    const publicKeysResult = email
-        ? await getPublicKeysForInbox({
-              email,
-              lifetime: 0,
-          })
-        : undefined;
-    return publicKeysResult?.publicKeys[0]?.publicKey;
+    if (!email) {
+        throw new Error('Missing email');
+    }
+
+    const { addressKeys } = await getAndVerifyApiKeys({
+        api,
+        email,
+        verifyOutboundPublicKeys,
+        internalKeysOnly: false,
+        noCache: true,
+    });
+
+    return addressKeys;
 };
 
 export const generatePrivateMemberInvitation = async ({
