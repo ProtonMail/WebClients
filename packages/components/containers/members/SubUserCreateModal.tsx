@@ -64,6 +64,7 @@ interface Props extends ModalProps {
     organization?: Organization;
     verifiedDomains: Domain[];
     app: APP_NAMES;
+    onSuccess?: () => void;
     optionalName?: boolean;
     useEmail?: boolean;
     allowStorageConfiguration?: boolean;
@@ -80,6 +81,7 @@ const SubUserCreateModal = ({
     verifiedDomains,
     onClose,
     app,
+    onSuccess,
     optionalName,
     useEmail,
     allowStorageConfiguration,
@@ -189,6 +191,8 @@ const SubUserCreateModal = ({
         await call();
         onClose?.();
         createNotification({ text: c('Success').t`User created` });
+
+        onSuccess?.();
     };
 
     const setBulkStep = () => {
