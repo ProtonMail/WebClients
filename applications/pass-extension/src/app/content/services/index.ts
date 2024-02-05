@@ -114,11 +114,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             port.onMessage.addListener(onPortMessage);
             context.service.formManager.observe();
 
-            const didDetect = await context.service.formManager
-                .detect({ reason: 'InitialLoad', flush: true })
-                .catch(() => false);
-
-            if (!didDetect) await context.service.autosave.reconciliate().catch(noop);
+            await context.service.formManager.detect({ reason: 'InitialLoad', flush: true }).catch(noop);
         }
     };
 
