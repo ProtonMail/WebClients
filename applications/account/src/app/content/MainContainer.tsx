@@ -41,7 +41,11 @@ import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import {
+    getIsPublicUserWithoutProtonAddress,
+    getIsSSOVPNOnlyAccount,
+    getRequiresAddressSetup,
+} from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
@@ -285,6 +289,10 @@ const MainContainer = () => {
 
     if (getIsSSOVPNOnlyAccount(user) && appFromPathname !== APPS.PROTONVPN_SETTINGS) {
         return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
+    }
+
+    if (getIsPublicUserWithoutProtonAddress(user) && appFromPathname !== APPS.PROTONPASS) {
+        return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
     }
 
     return (
