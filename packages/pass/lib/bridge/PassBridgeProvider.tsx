@@ -1,7 +1,8 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useRef } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
 import { useAddresses, useApi, useAuthentication, useUser } from '@proton/components/hooks';
+import useInstance from '@proton/hooks/useInstance';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { createPassBridge } from '.';
@@ -15,9 +16,13 @@ export const PassBridgeProvider: FC<PropsWithChildren> = ({ children }) => {
     const [addresses] = useAddresses();
     const authStore = useAuthentication();
 
-    const bridge = useRef(createPassBridge({ api, user, addresses: addresses!, authStore }));
+    const bridge = useInstance(() => createPassBridge(api));
 
-    return <PassBridgeContext.Provider value={bridge.current}>{children}</PassBridgeContext.Provider>;
+    useEffect(() => {
+        void bridge.hydrate({ user, addresses: addresses ?? [], authStore });
+    }, [user, addresses]);
+
+    return <PassBridgeContext.Provider value={bridge}>{children}</PassBridgeContext.Provider>;
 };
 
 export const usePassBridge = () => {

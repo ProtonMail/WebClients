@@ -1,12 +1,23 @@
 import type { AliasDetails, AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import type { Address, Api as CoreApi, User } from '@proton/shared/lib/interfaces';
+import type { Address, User } from '@proton/shared/lib/interfaces';
+
+export type PassBridgeInitOptions = {
+    addresses: Address[];
+    authStore: AuthenticationStore;
+    user: User;
+};
 
 export interface PassBridge {
+    ready: () => Promise<boolean>;
+    hydrate: (options: PassBridgeInitOptions) => Promise<void>;
     vault: {
-        /** Resolves the default - oldest, active and owned - vault.
-         * If it does not exist, will create one and return it */
-        getDefault: () => Promise<Share<ShareType.Vault>>;
+        /**
+         * Resolves the default - oldest, active and owned - vault.
+         * If it does not exist, will create one and return it
+         * @param hadVault callback to indicate if the user had a vault
+         */
+        getDefault: (hadVault?: (hadVault: boolean) => void) => Promise<Share<ShareType.Vault>>;
     };
     alias: {
         /** Creates an alias item. Call `PassBridge.alias.getAliasOptions` in order
@@ -20,13 +31,6 @@ export interface PassBridge {
         getAllByShareId: (shareId: string) => Promise<PassBridgeAliasItem[]>;
     };
 }
-
-export type PassBridgeOptions = {
-    api: CoreApi;
-    addresses: Address[];
-    authStore: AuthenticationStore;
-    user: User;
-};
 
 export type PassBridgeAliasItem = {
     item: ItemRevision<'alias'>;

@@ -7,6 +7,7 @@ export * from './Href';
 export * from './InlineLinkButton';
 export * from './Input';
 export * from './Kbd';
+export * from './NotificationCounter';
 export * from './NotificationDot';
 export * from './Pill';
 export * from './Scroll';

@@ -4,6 +4,7 @@ import DOMPurify from 'dompurify';
 
 import { isElement } from '@proton/shared/lib/helpers/dom';
 
+import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from './constants';
 import { CreateNotificationOptions, Notification, NotificationOffset } from './interfaces';
 
 function createNotificationManager(
@@ -58,7 +59,7 @@ function createNotificationManager(
     const createNotification = ({
         id = idx++,
         key,
-        expiration = 5000,
+        expiration = NOTIFICATION_DEFAULT_EXPIRATION_TIME,
         type = 'success',
         text,
         showCloseButton = true,
@@ -93,7 +94,7 @@ function createNotificationManager(
                         node.setAttribute('class', 'color-inherit');
                     }
                 });
-                expiration = Math.max(5000, expiration);
+                expiration = Math.max(NOTIFICATION_DEFAULT_EXPIRATION_TIME, expiration);
                 text = <div dangerouslySetInnerHTML={{ __html: sanitizedElement.innerHTML }} />;
             }
         }

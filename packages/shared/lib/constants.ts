@@ -542,6 +542,8 @@ export enum MAIL_UPSELL_PATHS {
     FORWARD_EMAILS = 'forward-emails',
     SMTP_SUBMISSION = 'smtp-submission',
     SNOOZE_MESSAGE = 'snooze-message',
+    PROTON_SENTINEL = 'proton-sentinel',
+    PASS_ALIASES = 'pass-aliases',
 }
 
 export enum CALENDAR_UPSELL_PATHS {

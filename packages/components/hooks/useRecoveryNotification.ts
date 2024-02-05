@@ -16,7 +16,8 @@ import useRecoveryStatus from './useRecoveryStatus';
 import useUser from './useUser';
 
 const useRecoveryNotification = (
-    isLessInvasive: boolean
+    isLessInvasive: boolean,
+    isQuickSettings?: boolean
 ): { path: string; text: string; color: ThemeColor } | undefined => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -82,7 +83,7 @@ const useRecoveryNotification = (
 
     const mnemonicCanBeSet =
         user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
-    if (isMnemonicAvailable && mnemonicCanBeSet) {
+    if (isMnemonicAvailable && mnemonicCanBeSet && !isQuickSettings) {
         return {
             path: '/recovery?action=generate-recovery-phrase',
             text: c('Action').t`Set recovery phrase`,
@@ -90,11 +91,13 @@ const useRecoveryNotification = (
         };
     }
 
-    return {
-        path: '/recovery',
-        text: c('Action').t`Activate recovery`,
-        color: ThemeColor.Warning,
-    };
+    if (!isQuickSettings) {
+        return {
+            path: '/recovery',
+            text: c('Action').t`Activate recovery`,
+            color: ThemeColor.Warning,
+        };
+    }
 };
 
 export default useRecoveryNotification;
