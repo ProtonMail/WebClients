@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 
-import { PaymentsVersion, buyCredit, payInvoice, subscribe } from '@proton/shared/lib/api/payments';
+import { PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Api, ChargebeeEnabled, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
@@ -58,6 +58,7 @@ export interface Operations {
     buyCredit: () => Promise<unknown>;
     payInvoice: () => Promise<unknown>;
     subscribe: (operationsDataParam?: OperationsSubscriptionData) => Promise<unknown>;
+    savePaymentMethod: () => Promise<unknown>;
 }
 
 function getOperations(
@@ -108,6 +109,19 @@ function getOperations(
                     paymentsVersion
                 )
             ).then(wrappedAfterOperation);
+        },
+        savePaymentMethod: async () => {
+            const PaymentToken = params.PaymentToken;
+            if (!PaymentToken) {
+                throw new Error('Could not save payment method without a payment token');
+            }
+
+            return api(
+                setPaymentMethodV5({
+                    PaymentToken,
+                    v: 5,
+                })
+            );
         },
     };
 }
