@@ -22,11 +22,11 @@ export const createAutosaveService = () => {
         }
     );
 
-    /* Reconciliation is responsible for syncing the service
-     * worker state with our local detection in order to take
-     * the appropriate action for auto-save */
+    /** Autosave reconciliation is responsible for syncing the service worker state with our
+     * local detection in order to take the appropriate the appropriate action for auto-save */
     const reconciliate = withContext<() => Promise<boolean>>(
         async ({ getExtensionContext, service: { formManager } }) => {
+            /* Resolve any on-going submissions for the current domain */
             const submission = await sendMessage.on(
                 contentScriptMessage({ type: WorkerMessageType.FORM_ENTRY_REQUEST }),
                 (response) => (response.type === 'success' ? response.submission : undefined)
@@ -34,13 +34,21 @@ export const createAutosaveService = () => {
 
             if (submission !== undefined) {
                 const { status, partial, domain, type } = submission;
-                const currentDomain = getExtensionContext().url.domain;
-                const formTypeChangeOrRemoved = !formManager
-                    .getTrackedForms()
-                    .some(({ formType }) => formType === type);
 
+                const currentDomain = getExtensionContext().url.domain;
                 const domainmatch = currentDomain === domain;
-                const canCommit = domainmatch && formTypeChangeOrRemoved;
+
+                /** Check if any of the currently tracked forms match the
+                 * submission's form type and are not currently submitting.
+                 * The submit state is checked to avoid stashing form submission
+                 * data for `FORM_TYPE_PRESENT` in case reconciliation happens
+                 * as a result of a form submission. */
+                const submissionTypeMatch = formManager
+                    .getTrackedForms()
+                    .some(({ formType, tracker }) => formType === type && !tracker?.getState().isSubmitting);
+
+                const formTypeChangedOrRemoved = !submissionTypeMatch;
+                const canCommit = domainmatch && formTypeChangedOrRemoved;
 
                 /* if we have a non-partial staging form submission at
                  * this stage either commit it if no forms of the same
@@ -56,12 +64,12 @@ export const createAutosaveService = () => {
                     );
                 }
 
-                if (isFormEntryPromptable(submission) && formTypeChangeOrRemoved) return promptAutoSave(submission);
+                if (isFormEntryPromptable(submission) && formTypeChangedOrRemoved) return promptAutoSave(submission);
 
                 /* if the form type is still detected on the current page :
                  * only stash the form submission if it is not "partial". This
                  * avois losing form data on multi-step forms */
-                if (!formTypeChangeOrRemoved && !partial) {
+                if (!formTypeChangedOrRemoved && !partial) {
                     void sendMessage(
                         contentScriptMessage({
                             type: WorkerMessageType.FORM_ENTRY_STASH,
