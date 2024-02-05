@@ -39,6 +39,10 @@ rm -rf "${repoDir}/PassDesktop/win32/x64"
 mv "${PROJECT_ROOT}/out/make/squirrel.windows/x64" "${repoDir}/PassDesktop/win32/"
 git lfs track "*.exe" "*.nupkg"
 
+# Generate version.json
+now=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+echo "{\"releases\": [{\"version\": \"${TAG}\", \"releaseDate\": \"${now}\", \"rolloutPercentage\": 0}]}" > "${repoDir}/PassDesktop/version.json"
+
 # Commit and push
 git add .
 git commit -m "Pass Desktop ${VERSION}"
