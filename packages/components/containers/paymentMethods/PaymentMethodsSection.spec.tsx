@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 
 import {
@@ -87,6 +87,7 @@ describe('PaymentMethodsSection', () => {
                         PayerID: 'PayerID123',
                         Payer: 'Arthur Morgan',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
             ],
             false,

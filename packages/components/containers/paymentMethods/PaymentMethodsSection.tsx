@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -12,15 +12,25 @@ import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
-import PayPalModal from '../payments/PayPalModal';
+import { default as PayPalV4Modal, PayPalV5Modal } from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
+
+const AddPaypalButton = ({ onClick }: { onClick: () => void }) => {
+    return (
+        <Button shape="outline" onClick={onClick}>
+            <Icon name="brand-paypal" className="mr-2" />
+            <span>{c('Action').t`Add PayPal`}</span>
+        </Button>
+    );
+};
 
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();
     const [paymentMethods = [], loadingPaymentMethods] = usePaymentMethods();
     const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
-    const [paypalModalProps, setPaypalModalOpen, renderPaypalModal] = useModalState();
+    const [paypalV4ModalProps, setPaypalV4ModalOpen, renderPaypalV4Modal] = useModalState();
+    const [paypalV5ModalProps, setPaypalV5ModalOpen, renderPaypalV5Modal] = useModalState();
     const chargebeeEnabled = useChargebeeEnabledCache();
 
     if (loadingPaymentMethods || loadingCheck) {
@@ -36,9 +46,17 @@ const PaymentMethodsSection = () => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const canAddPaypal =
-        !paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL) &&
-        chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED;
+    const canAddV4 = chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED;
+
+    const canAddPaypalV4 =
+        !paymentMethods.some(
+            (method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL && method.External === MethodStorage.INTERNAL
+        ) && canAddV4;
+
+    const canAddPaypalV5 =
+        !paymentMethods.some(
+            (method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL && method.External === MethodStorage.EXTERNAL
+        ) && !canAddV4;
 
     return (
         <SettingsSection>
@@ -51,17 +69,13 @@ const PaymentMethodsSection = () => {
                     <Icon name="credit-card" className="mr-2" />
                     <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
-
-                {canAddPaypal && (
-                    <Button shape="outline" onClick={() => setPaypalModalOpen(true)}>
-                        <Icon name="brand-paypal" className="mr-2" />
-                        <span>{c('Action').t`Add PayPal`}</span>
-                    </Button>
-                )}
+                {canAddPaypalV4 && <AddPaypalButton onClick={() => setPaypalV4ModalOpen(true)} />}
+                {canAddPaypalV5 && <AddPaypalButton onClick={() => setPaypalV5ModalOpen(true)} />}
             </div>
             <PaymentMethodsTable loading={false} methods={paymentMethods} />
             {renderCreditCardModal && <EditCardModal {...creditCardModalProps} />}
-            {renderPaypalModal && <PayPalModal {...paypalModalProps} />}
+            {renderPaypalV4Modal && <PayPalV4Modal {...paypalV4ModalProps} />}
+            {renderPaypalV5Modal && <PayPalV5Modal {...paypalV5ModalProps} />}
         </SettingsSection>
     );
 };
