@@ -18,6 +18,7 @@ import { getTotalBillingText } from '@proton/components/containers/payments/help
 import useHandler from '@proton/components/hooks/useHandler';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
@@ -28,6 +29,7 @@ import {
 } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { WithLoading } from '@proton/hooks/useLoading';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -137,6 +139,8 @@ const AccountStepPayment = ({
             setTimeout(() => formRef.current?.scrollIntoView({ behavior: 'smooth' }), 0);
         },
     }));
+
+    const chargebeeContext = useChargebeeContext();
 
     const flow: PaymentMethodFlows = 'signup-pass';
 
@@ -252,6 +256,8 @@ const AccountStepPayment = ({
                         cycle: options.cycle,
                         plan: options.plan,
                         planName: options.plan?.Name,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: Failed to handle single-signup-v2', {

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { checkInvoice } from '@proton/shared/lib/api/payments';
+import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
@@ -45,6 +46,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const amount = AmountDue ?? 0;
     const currency = Currency as Currency;
 
+    const chargebeeContext = useChargebeeContext();
+
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
@@ -83,6 +86,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: failed to pay invoice', {

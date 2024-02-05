@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { AmountAndCurrency, PAYMENT_METHOD_TYPES, TokenPaymentMethod } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { buyCredit } from '@proton/shared/lib/api/payments';
+import { buyCredit, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
     APPS,
     DEFAULT_CREDITS_AMOUNT,
@@ -61,6 +62,7 @@ const CreditsModal = (props: ModalProps) => {
     const i18nCurrency = i18n[currency];
     const api = useApi();
     const pollEventsMultipleTimes = usePollEvents();
+    const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
@@ -176,6 +178,8 @@ const CreditsModal = (props: ModalProps) => {
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: failed to handle credits', {
