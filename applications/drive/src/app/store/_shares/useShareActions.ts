@@ -1,9 +1,18 @@
+import { useCallback } from 'react';
+
 import { usePreventLeave } from '@proton/components';
-import { queryCreateShare, queryDeleteShare } from '@proton/shared/lib/api/drive/share';
+import {
+    queryCreateShare,
+    queryDeleteShare,
+    queryMigrateLegacyShares,
+    queryUnmigratedShares,
+} from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { generateShareKeys } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import chunk from '@proton/utils/chunk';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
@@ -17,7 +26,7 @@ export default function useShareActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
-    const { getShareCreatorKeys } = useShare();
+    const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
         const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link, linkPrivateKey] =
@@ -128,8 +137,69 @@ export default function useShareActions() {
         await preventLeave(debouncedRequest(queryDeleteShare(shareId)));
     };
 
+    // Migrate old user shares encrypted with AddressPrivateKey with new one encrypted with LinkPrivateKey (NodeKey)
+    const migrateShares = useCallback(
+        (abortSignal: AbortSignal = new AbortController().signal) =>
+            new Promise(async (resolve) => {
+                const shareIds = await debouncedRequest<{ ShareIDs: string[] }>(queryUnmigratedShares())
+                    .then(({ ShareIDs }) => ShareIDs)
+                    .catch((err) => {
+                        if (err?.data?.Code === HTTP_STATUS_CODE.NOT_FOUND) {
+                            void resolve(undefined);
+                            return undefined;
+                        }
+                        throw err;
+                    });
+                if (shareIds?.length === 0) {
+                    return;
+                }
+                const shareIdsBatches = chunk(shareIds, 50);
+                for (const shareIdsBatch of shareIdsBatches) {
+                    let unreadableShareIDs: string[] = [];
+                    let passPhraseNodeKeyPackets: { ShareID: string; PassphraseNodeKeyPacket: string }[] = [];
+
+                    for (const shareId of shareIdsBatch) {
+                        const share = await getShare(abortSignal, shareId);
+                        const [linkPrivateKey, shareSessionKey] = await Promise.all([
+                            getLinkPrivateKey(abortSignal, share.shareId, share.rootLinkId, true),
+                            getShareSessionKey(abortSignal, share.shareId).catch(() => {
+                                unreadableShareIDs.push(share.shareId);
+                            }),
+                        ]);
+
+                        if (!shareSessionKey) {
+                            break;
+                        }
+
+                        await getEncryptedSessionKey(shareSessionKey, linkPrivateKey)
+                            .then(uint8ArrayToBase64String)
+                            .then((PassphraseNodeKeyPacket) => {
+                                passPhraseNodeKeyPackets.push({
+                                    ShareID: share.shareId,
+                                    PassphraseNodeKeyPacket,
+                                });
+                            });
+                    }
+                    await debouncedRequest(
+                        queryMigrateLegacyShares({
+                            PassphraseNodeKeyPackets: passPhraseNodeKeyPackets,
+                            UnreadableShareIDs: unreadableShareIDs.length ? unreadableShareIDs : undefined,
+                        })
+                    ).catch((err) => {
+                        if (err?.data?.Code === HTTP_STATUS_CODE.NOT_FOUND) {
+                            return resolve(null);
+                        }
+                        throw err;
+                    });
+                }
+                return resolve(null);
+            }),
+        [debouncedRequest, getLinkPrivateKey, getShare, getShareSessionKey]
+    );
+
     return {
         createShare,
         deleteShare,
+        migrateShares,
     };
 }
