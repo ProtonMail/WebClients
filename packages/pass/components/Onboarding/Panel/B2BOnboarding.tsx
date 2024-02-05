@@ -1,4 +1,4 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -15,7 +15,8 @@ import { OnboardingArrow } from '@proton/pass/components/Onboarding/Panel/Onboar
 import type { OnboardingCardProps } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
 import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { selectOnboardingState } from '@proton/pass/store/selectors';
+import { VaultSelect, VaultSelectMode } from '@proton/pass/components/Vault/VaultSelect';
+import { selectOnboardingState, selectWritableVaults } from '@proton/pass/store/selectors';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';
 
@@ -32,6 +33,9 @@ export const B2BOnboarding: FC = () => {
     const { vaultCreated, vaultImported, vaultShared } = useSelector(selectOnboardingState);
     const { installed, supportedBrowser } = usePassExtensionLink();
     const browser = supportedBrowser ? clients[supportedBrowser] : null;
+
+    const vaults = useSelector(selectWritableVaults);
+    const [selectVault, setSelectVault] = useState<boolean>(false);
 
     const onboardingCards = useMemo<OnboardingCardType[]>(
         () => [
@@ -53,7 +57,7 @@ export const B2BOnboarding: FC = () => {
                 imageSrc: onboardingShare,
                 title: c('Title').t`Share vaults with your team`,
                 description: c('Info').t`Invite specific people and set the right permissions.`,
-                onClick: () => inviteContext.createSharedVault({ item: undefined }),
+                onClick: () => setSelectVault(true),
                 actionDone: vaultShared,
             },
             ...(browser
@@ -73,26 +77,45 @@ export const B2BOnboarding: FC = () => {
     );
 
     return (
-        <Scroll className="flex-1 flex-column align-center w-full pass-onboarding">
-            <div className="flex justify-center pt-12 pb-2">
-                <h2 className="text-bold flex mt-10">{c('Title').t`Get Started`}</h2>
-                <div className="pass-onboarding--arrow absolute self-end mr-8 mt-2 pb-4 top-0 right-0">
-                    <OnboardingArrow />
+        <>
+            <Scroll className="flex-1 flex-column align-center w-full pass-onboarding">
+                <div className="flex justify-center pt-12 pb-2">
+                    <h2 className="text-bold flex mt-10">{c('Title').t`Get Started`}</h2>
+                    <div className="pass-onboarding--arrow absolute self-end mr-8 mt-2 pb-4 top-0 right-0">
+                        <OnboardingArrow />
+                    </div>
                 </div>
-            </div>
 
-            <div className="flex w-full m-auto gap-4 md:w-2/3 max-w-custom p-4" style={{ '--max-w-custom': '30rem' }}>
-                {onboardingCards.map(({ imageSrc, title, description, onClick, actionDone }) => (
-                    <OnboardingCard
-                        key={title}
-                        imageSrc={imageSrc}
-                        title={title}
-                        description={description}
-                        onClick={onClick}
-                        actionDone={actionDone}
-                    />
-                ))}
-            </div>
-        </Scroll>
+                <div
+                    className="flex w-full m-auto gap-4 md:w-2/3 max-w-custom p-4"
+                    style={{ '--max-w-custom': '30rem' }}
+                >
+                    {onboardingCards.map(({ imageSrc, title, description, onClick, actionDone }) => (
+                        <OnboardingCard
+                            key={title}
+                            imageSrc={imageSrc}
+                            title={title}
+                            description={description}
+                            onClick={onClick}
+                            actionDone={actionDone}
+                        />
+                    ))}
+                </div>
+            </Scroll>
+
+            <VaultSelect
+                mode={VaultSelectMode.Writable}
+                open={selectVault}
+                title={c('Info').t`Select vault to share`}
+                onClose={() => setSelectVault(false)}
+                onSubmit={(shareId) => {
+                    const vault = vaults.find((vault) => vault.shareId === shareId);
+                    if (vault) {
+                        inviteContext.createInvite({ vault });
+                        setSelectVault(false);
+                    }
+                }}
+            />
+        </>
     );
 };
