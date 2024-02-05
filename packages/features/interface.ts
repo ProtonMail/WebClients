@@ -119,4 +119,5 @@ export enum FeatureCode {
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
+    PassOnboardingSpotlights = 'PassOnboardingSpotlights',
 }

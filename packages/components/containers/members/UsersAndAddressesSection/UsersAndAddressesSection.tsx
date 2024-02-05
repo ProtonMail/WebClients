@@ -53,7 +53,8 @@ import {
     useSubscription,
     useUser,
 } from '../../../hooks';
-import { SettingsParagraph, SettingsSectionWide } from '../../account';
+import { SettingsParagraph, SettingsSectionWide, useAccountSpotlights } from '../../account';
+import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import { AddressModal } from '../../addresses';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
@@ -92,6 +93,10 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
+
+    const {
+        passOnboardingSpotlights: { setupOrgSpotlight },
+    } = useAccountSpotlights();
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
@@ -352,6 +357,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         organization={organization}
                         verifiedDomains={verifiedDomains}
                         app={app}
+                        onSuccess={() => {
+                            if (hasPassB2BPlan) {
+                                setupOrgSpotlight.close();
+                            }
+                        }}
                         useEmail={useEmail}
                         optionalName={hasVpnOrPassB2BPlan}
                         allowStorageConfiguration={allowStorageConfiguration}
@@ -401,9 +411,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     {hasVpnOrPassB2BPlan ? (
                         <>
                             {hasSetupOrganizationWithKeys && (
-                                <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
-                                    {c('Action').t`Add user`}
-                                </Button>
+                                <SetupOrgSpotlight>
+                                    <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
+                                        {c('Action').t`Add user`}
+                                    </Button>
+                                </SetupOrgSpotlight>
                             )}
                         </>
                     ) : (
