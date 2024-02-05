@@ -77,8 +77,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         if (EXCLUDED_SUBMIT_FORM_TYPES.includes(form.formType)) return;
 
         const { username, password } = getFormData();
+        const hasCredentials = Boolean(username?.length || password?.length);
 
-        if (!state.isSubmitting && username !== undefined) {
+        if (!state.isSubmitting && hasCredentials) {
             state.isSubmitting = true;
             await sendMessage(
                 contentScriptMessage({
