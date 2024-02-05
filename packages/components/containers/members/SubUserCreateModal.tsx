@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { createMember, getPrivateAdminError } from '@proton/account';
 import { Button } from '@proton/atoms';
-import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -43,16 +42,17 @@ import {
     useApi,
     useErrorHandler,
     useEventManager,
-    useGetPublicKeysForInbox,
     useGetUser,
     useNotifications,
     useOrganizationKey,
     useSubscription,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
+import { adminTooltipText } from './constants';
 import validateAddUser from './validateAddUser';
 
 enum Step {
@@ -101,7 +101,7 @@ const SubUserCreateModal = ({
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
     const errorHandler = useErrorHandler();
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     const [subscription] = useSubscription();
@@ -156,7 +156,7 @@ const SubUserCreateModal = ({
                 },
                 keyTransparencyCommit,
                 keyTransparencyVerify,
-                getPublicKeysForInbox,
+                verifyOutboundPublicKeys,
             })
         );
     };

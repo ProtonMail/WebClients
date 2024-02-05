@@ -16,14 +16,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { Icon, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import {
-    useApi,
-    useErrorHandler,
-    useGetPublicKeysForInbox,
-    useNotifications,
-    useOrganization,
-    useOrganizationKey,
-} from '../../hooks';
+import { useApi, useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {
     onResetKeys?: () => void;
@@ -37,7 +31,7 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
     const { createNotification } = useNotifications();
     const dispatch = useDispatch();
     const errorHandler = useErrorHandler();
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const [payload, setPayload] = useState<AcceptOrganizationKeyInvitePayload | null>(null);
     const silentApi = getSilentApi(useApi());
 
@@ -48,8 +42,9 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
         withLoadingInit(
             dispatch(
                 prepareAcceptOrganizationKeyInvite({
+                    api: silentApi,
                     adminEmail,
-                    getPublicKeysForInbox,
+                    verifyOutboundPublicKeys,
                 })
             )
                 .then(setPayload)
