@@ -23,6 +23,7 @@ import {
 import { useConfig } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import {
     PAYMENT_METHOD_TYPES,
     TokenPayment,
@@ -33,6 +34,7 @@ import {
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -77,6 +79,8 @@ const PaymentStep = ({
 
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const hasGuarantee = plan?.Name === PLANS.VPN;
+
+    const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
         amount: subscriptionData.checkResult.AmountDue,
@@ -154,6 +158,8 @@ const PaymentStep = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: failed to handle classic signup', {

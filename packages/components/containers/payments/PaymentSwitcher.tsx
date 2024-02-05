@@ -69,8 +69,6 @@ export const useChargebeeFeature = () => {
 
         async function run() {
             const chargebeeEnabled = await isChargebeeEnabled();
-            console.log(`Chargebee enabled: ${chargebeeEnabled}. chargebeeSignupsFlag: ${chargebeeSignupsFlag}.`);
-
             setChargebeeEnabled(chargebeeEnabled);
             setLoaded(true);
         }
