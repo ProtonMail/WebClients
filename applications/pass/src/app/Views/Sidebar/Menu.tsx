@@ -25,7 +25,9 @@ import {
     selectPlanDisplayName,
     selectUser,
 } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
@@ -48,6 +50,8 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
+
+    const b2bAdmin = user && isAdmin(user) && passPlan === UserPassPlan.BUSINESS;
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
@@ -82,23 +86,24 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         onClick={onLock}
                         label={c('Action').t`Lock ${PASS_APP_NAME}`}
                         icon="lock"
-                        labelClassname="mx-3"
-                        className="flex-noshrink"
+                        parentClassName="mx-3"
+                        className="rounded"
                     />
                 )}
 
                 {onboarding.enabled && <OnboardingButton />}
 
-                <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-
-                <div className="mx-3 pr-2 relative shrink-0">
+                {b2bAdmin && (
                     <DropdownMenuButton
                         onClick={navigateToOrganization}
                         label={c('Action').t`Admin panel`}
                         icon="users"
-                        className="py-1"
+                        parentClassName="mx-3"
+                        className="rounded"
                     />
-                </div>
+                )}
+
+                <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                 <Submenu
                     icon="bolt"
