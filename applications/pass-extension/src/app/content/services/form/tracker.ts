@@ -1,6 +1,6 @@
 import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
-import type { FieldHandle, FormHandle, FormTracker } from 'proton-pass-extension/app/content/types';
+import type { FieldHandle, FormHandle, FormTracker, FormTrackerState } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
 
 import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
@@ -13,8 +13,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
 
-type FormTrackerState = { isSubmitting: boolean };
-
 type FieldsForFormResults = WeakMap<
     FieldHandle,
     {
@@ -26,6 +24,8 @@ type FieldsForFormResults = WeakMap<
 
 /** We do not want to trigger form submission for these form types */
 const EXCLUDED_SUBMIT_FORM_TYPES = [FormType.NOOP, FormType.MFA, FormType.RECOVERY];
+/** Heuristic duration after which we reset the internal `isSubmitting` flag. */
+const SUBMITTING_RESET_TIMEOUT = 500;
 
 const canProcessAction = withContext<(action: DropdownAction) => boolean>(({ getFeatures }, action) => {
     const features = getFeatures();
@@ -46,20 +46,20 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const listeners = createListenerStore();
     const state: FormTrackerState = { isSubmitting: false };
 
-    /* FIXME: should account for hidden fields - should also
-     * account for different form types for more control */
+    /** Resolves form data for autosaving purposes, prioritizing usernames over
+     * hidden usernames and email fields. Additionally, prioritizes new passwords
+     * over current passwords to detect changes */
     const getFormData = (): { username?: string; password?: string } => {
         const nonEmptyField = (field: FieldHandle) => !isEmptyString(field.value);
 
-        /* in the case of username or email fields : we always consider the
-         * first non-empty field as the final `username` candidate */
+        /* Determine the username based on priority: username > hidden username > email */
         const username = first(form.getFieldsFor(FieldType.USERNAME, nonEmptyField));
         const usernameHidden = first(form.getFieldsFor(FieldType.USERNAME_HIDDEN, nonEmptyField));
         const email = first(form.getFieldsFor(FieldType.EMAIL, nonEmptyField));
 
-        /* in the case of passwords : we may be dealing with confirmation
-         * cases and/or  temporary passwords being detected - as a heuristic :
-         * always choose the last one.*/
+        /* Determine the password based on priority: new password > current password.
+         * We may be dealing with confirmation fields and/or temporary passwords being
+         * detected - as a heuristic : always pick the last one. */
         const passwordNew = lastItem(form.getFieldsFor(FieldType.PASSWORD_NEW, nonEmptyField));
         const passwordCurrent = lastItem(form.getFieldsFor(FieldType.PASSWORD_CURRENT, nonEmptyField));
 
@@ -73,12 +73,13 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         /* Exit early when there is nothing to stage (eg. MFA and NOOP forms).
          * This check is done here instead of not binding the listener in the
          * first place because the `formType` can change for a particular form
-         * (eg. rerendering in SPAs). */
+         * (eg. re-rendering in SPAs). */
         if (EXCLUDED_SUBMIT_FORM_TYPES.includes(form.formType)) return;
 
         const { username, password } = getFormData();
+        const hasCredentials = Boolean(username?.length || password?.length);
 
-        if (!state.isSubmitting && username !== undefined) {
+        if (!state.isSubmitting && hasCredentials) {
             state.isSubmitting = true;
             await sendMessage(
                 contentScriptMessage({
@@ -92,12 +93,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 })
             );
 
-            /* TODO: attach a short-lived mutation observer to
-             * detect if the form is still there in order to
-             * stash the submission if we can infer a failure
-             * TODO: for SPA forms we should also handle the
-             * xmlhttprequests intercepted failures here */
-            setTimeout(() => (state.isSubmitting = false), 500);
+            /* FIXME: Handle intercepted xmlhttprequests failures here */
+            setTimeout(() => (state.isSubmitting = false), SUBMITTING_RESET_TIMEOUT);
         }
     };
 
@@ -141,8 +138,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         return results;
     };
 
-    /* reconciliating the form trackers involves syncing
-     * the form's trackable fields.*/
+    /** Reconciliating the form trackers involves syncing the form's trackable fields.*/
     const reconciliate = withContext<() => Promise<void>>(async ({ getState, service }) => {
         const { loggedIn } = getState();
         const fieldsToTrack = getTrackableFields();
@@ -171,8 +167,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             ?.focus();
     });
 
-    /* when detaching the form tracker : remove every listener
-     * for both the current tracker and all fields*/
+    /** When detaching the form tracker : remove every listener
+     * for both the current tracker and all fields */
     const detach = () => {
         listeners.removeAll();
         form.getFields().forEach((field) => field.detach());
@@ -183,5 +179,10 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         listeners.addListener(button, 'click', onSubmitHandler);
     });
 
-    return { detach, reconciliate, submit };
+    return {
+        detach,
+        getState: () => state,
+        reconciliate,
+        submit,
+    };
 };
