@@ -58,10 +58,9 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         return rule.when(ack, state);
     };
 
-    const checkMessage = (message: OnboardingMessage): boolean => {
+    const checkMessage = (message: OnboardingMessage): { enabled: boolean } => {
         const rule = options.rules.find((rule) => rule.message === message);
-        if (!rule) return false;
-        return checkRule(rule);
+        return { enabled: rule ? checkRule(rule) : false };
     };
 
     /* Define extra rules in the `ONBOARDING_RULES` constant :

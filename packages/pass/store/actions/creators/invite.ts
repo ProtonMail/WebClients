@@ -1,10 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import {
     inviteAcceptRequest,
     inviteCreateRequest,
+    inviteRecommendationsRequest,
     inviteRejectRequest,
     inviteRemoveRequest,
     inviteResendRequest,
@@ -18,7 +19,9 @@ import type { InviteState } from '@proton/pass/store/reducers';
 import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
-    InviteCreateSuccess,
+    InviteBatchCreateSuccess,
+    InviteRecommendationsIntent,
+    InviteRecommendationsSuccess,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -29,31 +32,39 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 
-export const inviteCreationIntent = createAction('invite::create::intent', (payload: InviteFormValues) =>
+export const inviteBatchCreateIntent = createAction('invite::batch::create::intent', (payload: InviteFormValues) =>
     withRequest({ type: 'start', id: inviteCreateRequest(uniqueId()) })({ payload })
 );
 
-export const inviteCreationSuccess = createAction(
-    'invite::create::success',
+export const inviteBatchCreateSuccess = createAction(
+    'invite::batch::create::success',
     withRequestSuccess(
-        (payload: InviteCreateSuccess) =>
+        (payload: InviteBatchCreateSuccess, count: number) =>
             pipe(
                 withCache,
                 withNotification({
                     type: 'info',
-                    text: c('Info').t`Invite successfully sent`,
+                    text:
+                        count > 1
+                            ? // Translator : count will always be greater than 1
+                              c('Info').t`${count} invites successfully sent`
+                            : c('Info').t`Invite successfully sent`,
                 })
             )({ payload }),
         { data: ({ shareId }) => ({ shareId }) }
     )
 );
 
-export const inviteCreationFailure = createAction(
-    'invite::create::failure',
-    withRequestFailure((error: unknown) =>
+export const inviteBatchCreateFailure = createAction(
+    'invite::batch::create::failure',
+    withRequestFailure((error: unknown, count: number) =>
         withNotification({
             type: 'error',
-            text: c('Error').t`Cannot send invitation to this address at the moment`,
+            text: c('Error').ngettext(
+                msgid`Cannot send invitation at the moment`,
+                `Cannot send invitations at the moment`,
+                count
+            ),
             error,
         })({ payload: {}, error })
     )
@@ -216,6 +227,30 @@ export const newUserInviteRemoveFailure = createAction(
         withNotification({
             type: 'error',
             text: c('Error').t`Failed removing the invite.`,
+            error,
+        })({ payload: {} })
+    )
+);
+
+export const inviteRecommendationsIntent = createAction(
+    'invite::recommendations::intent',
+    (payload: InviteRecommendationsIntent, requestId: string) =>
+        withRequest({ type: 'start', id: inviteRecommendationsRequest(requestId) })({ payload })
+);
+
+export const inviteRecommendationsSuccess = createAction(
+    'invite::recommendations::success',
+    withRequestSuccess((payload: InviteRecommendationsSuccess) => ({ payload }), {
+        data: (payload) => payload,
+    })
+);
+
+export const inviteRecommendationsFailure = createAction(
+    'invite::recommendations::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Could not load recommendations at the moment.`,
             error,
         })({ payload: {} })
     )

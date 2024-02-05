@@ -83,7 +83,7 @@ const openSettings: PassCoreContextValue['openSettings'] = (page) => {
 };
 
 const createOnboardingAck =
-    (endpoint: ClientEndpoint): PassCoreContextValue['onOnboardingAck'] =>
+    (endpoint: ClientEndpoint): PassCoreContextValue['onboardingAcknowledge'] =>
     (message) => {
         void sendMessage(
             resolveMessageFactory(endpoint)({
@@ -92,6 +92,18 @@ const createOnboardingAck =
             })
         );
     };
+
+const createOnboardingCheck =
+    (endpoint: ClientEndpoint): PassCoreContextValue['onboardingCheck'] =>
+    (message) =>
+        sendMessage(
+            resolveMessageFactory(endpoint)({
+                type: WorkerMessageType.ONBOARDING_CHECK,
+                payload: { message },
+            })
+        )
+            .then((res) => res.type === 'success' && res.enabled)
+            .catch(() => false);
 
 /* CryptoProxy is only initalized in the worker execution
  * context. Send a pageMessage (as of now the importer is
@@ -144,7 +156,8 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
             getRatingURL={getWebStoreUrl}
             onForceUpdate={onForceUpdate}
             onLink={createLinkHandler(endpoint)}
-            onOnboardingAck={createOnboardingAck(endpoint)}
+            onboardingAcknowledge={createOnboardingAck(endpoint)}
+            onboardingCheck={createOnboardingCheck(endpoint)}
             onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
             openSettings={openSettings}
             prepareImport={prepareImport}
