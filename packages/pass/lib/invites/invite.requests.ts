@@ -1,15 +1,20 @@
+import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
-    InviteCreateIntent,
+    InviteNewUserDTO,
+    InviteRecommendationsIntent,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
+    InviteUserDTO,
     NewUserInvitePromoteIntent,
     NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
+import { prop } from '@proton/pass/utils/fp/lens';
+import chunk from '@proton/utils/chunk';
 
 import { getPublicKeysForEmail } from '../auth/address';
 
@@ -49,17 +54,48 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
     };
 };
 
-export const createInvite = async ({
-    email,
-    invitedPublicKey,
-    role,
-    shareId,
-}: InviteCreateIntent & { invitedPublicKey: string }) =>
-    api({
-        url: `pass/v1/share/${shareId}/invite`,
-        method: 'post',
-        data: await PassCrypto.createVaultInvite({ shareId, email, role, invitedPublicKey }),
-    });
+/** Returns the list of emails which could not be invited successfully  */
+export const createUserInvites = async (shareId: string, users: InviteUserDTO[]): Promise<string[]> =>
+    (
+        await Promise.all(
+            chunk(users, MAX_BATCH_PER_REQUEST).map(async (batch) =>
+                api({
+                    url: `pass/v1/share/${shareId}/invite/batch`,
+                    method: 'post',
+                    data: {
+                        Invites: await Promise.all(
+                            batch.map(({ email, role, publicKey }) =>
+                                PassCrypto.createVaultInvite({ shareId, email, role, invitedPublicKey: publicKey })
+                            )
+                        ),
+                    },
+                })
+                    .then<string[]>(() => [])
+                    .catch(() => batch.map(prop('email')))
+            )
+        )
+    ).flat();
+
+export const createNewUserInvites = async (shareId: string, newUsers: InviteNewUserDTO[]) =>
+    (
+        await Promise.all(
+            chunk(newUsers, MAX_BATCH_PER_REQUEST).map(async (batch) =>
+                api({
+                    url: `pass/v1/share/${shareId}/invite/new_user/batch`,
+                    method: 'post',
+                    data: {
+                        NewUserInvites: await Promise.all(
+                            batch.map(({ email, role }) =>
+                                PassCrypto.createNewUserVaultInvite({ email, role, shareId })
+                            )
+                        ),
+                    },
+                })
+                    .then<string[]>(() => [])
+                    .catch(() => batch.map(prop('email')))
+            )
+        )
+    ).flat();
 
 export const promoteInvite = async ({
     invitedPublicKey,
@@ -72,21 +108,23 @@ export const promoteInvite = async ({
         data: await PassCrypto.promoteInvite({ shareId, invitedPublicKey }),
     });
 
-export const createNewUserInvite = async ({ email, role, shareId }: InviteCreateIntent) =>
+export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
     api({
-        url: `pass/v1/share/${shareId}/invite/new_user`,
+        url: `pass/v1/share/${shareId}/invite/${inviteId}/reminder`,
         method: 'post',
-        data: await PassCrypto.createNewUserVaultInvite({ email, role, shareId }),
     });
 
-export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
-    api({ url: `pass/v1/share/${shareId}/invite/${inviteId}/reminder`, method: 'post' });
-
 export const removeInvite = async ({ shareId, inviteId }: InviteRemoveIntent) =>
-    api({ url: `pass/v1/share/${shareId}/invite/${inviteId}`, method: 'delete' });
+    api({
+        url: `pass/v1/share/${shareId}/invite/${inviteId}`,
+        method: 'delete',
+    });
 
 export const removeNewUserInvite = async ({ shareId, newUserInviteId }: NewUserInviteRemoveIntent) =>
-    api({ url: `pass/v1/share/${shareId}/invite/new_user/${newUserInviteId}`, method: 'delete' });
+    api({
+        url: `pass/v1/share/${shareId}/invite/new_user/${newUserInviteId}`,
+        method: 'delete',
+    });
 
 export const acceptInvite = async ({ inviteToken, inviterEmail, invitedAddressId, inviteKeys }: InviteAcceptIntent) => {
     return (
@@ -107,3 +145,21 @@ export const rejectInvite = async ({ inviteToken }: InviteRejectIntent) =>
         url: `pass/v1/invite/${inviteToken}`,
         method: 'delete',
     });
+
+export const getInviteRecommendations = async (
+    { shareId, pageSize, since, startsWith }: InviteRecommendationsIntent,
+    signal?: AbortSignal
+) => {
+    return (
+        await api({
+            url: `pass/v1/share/${shareId}/invite/recommended_emails`,
+            params: {
+                PlanPageSize: pageSize,
+                StartsWith: startsWith?.toLowerCase(),
+                ...(since ? { PlanSince: since } : {}),
+            },
+            method: 'get',
+            signal: signal,
+        })
+    ).Recommendation!;
+};

@@ -11,8 +11,12 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { OnboardingButton } from '@proton/pass/components/Onboarding/Menu/OnboardingButton';
+import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { AccountPath } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -21,7 +25,9 @@ import {
     selectPlanDisplayName,
     selectUser,
 } from '@proton/pass/store/selectors';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
@@ -30,18 +36,22 @@ import { SettingsDropdown } from '../Settings/SettingsDropdown';
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
+    const onboarding = useOnboarding();
 
     const authService = useAuthService();
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
     const { filters, matchTrash } = useNavigation();
+    const navigateToOrganization = useNavigateToAccount(AccountPath.USERS);
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
+
+    const b2bAdmin = user && isAdmin(user) && passPlan === UserPassPlan.BUSINESS;
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
@@ -76,8 +86,20 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         onClick={onLock}
                         label={c('Action').t`Lock ${PASS_APP_NAME}`}
                         icon="lock"
-                        labelClassname="mx-3"
-                        className="flex-noshrink"
+                        parentClassName="mx-3"
+                        className="rounded"
+                    />
+                )}
+
+                {onboarding.enabled && <OnboardingButton />}
+
+                {b2bAdmin && (
+                    <DropdownMenuButton
+                        onClick={navigateToOrganization}
+                        label={c('Action').t`Admin panel`}
+                        icon="users"
+                        parentClassName="mx-3"
+                        className="rounded"
                     />
                 )}
 

@@ -7,7 +7,7 @@ import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpC
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { I18nService } from '@proton/pass/lib/i18n/service';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
-import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import type { ClientEndpoint, Maybe, MaybeNull, MaybePromise, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -40,8 +40,10 @@ export type PassCoreContextValue = {
     onLink: (url: string, options?: { replace?: boolean }) => void;
     /** Processes a telemetry event */
     onTelemetry: (event: TelemetryEvent) => void;
-    /** Defines side-effect when user acknowledges a message. */
-    onOnboardingAck?: (type: OnboardingMessage) => void;
+    /** Acknowledge an onboarding message*/
+    onboardingAcknowledge?: (type: OnboardingMessage) => MaybePromise<void | boolean>;
+    /** Check if an onboarding message should show */
+    onboardingCheck?: (type: OnboardingMessage) => MaybePromise<boolean>;
     /* Will get called when user tries to update a client manually */
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */

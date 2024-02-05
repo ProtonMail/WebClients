@@ -39,7 +39,10 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
     const [limitModalOpen, setLimitModalOpen] = useState(false);
 
-    const members = useMemo<ShareMemberType[]>(() => (vault.members ?? []).sort(sortOn('email', 'ASC')), [vault]);
+    const members = useMemo<ShareMemberType[]>(
+        () => (vault.members ?? []).slice().sort(sortOn('email', 'ASC')),
+        [vault]
+    );
     const invites = useMemo<InviteListItem[]>(
         () =>
             [

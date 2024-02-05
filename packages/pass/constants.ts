@@ -1,7 +1,7 @@
 export const VAULT_CONTENT_FORMAT_VERSION = 1;
 export const LABEL_CONTENT_FORMAT_VERSION = 1;
 export const ITEM_CONTENT_FORMAT_VERSION = 1;
-export const MAX_BATCH_ITEMS_PER_REQUEST = 100;
+export const MAX_BATCH_PER_REQUEST = 100;
 export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
 export const ALIAS_DETAILS_MAX_AGE = 30;
 
@@ -32,7 +32,10 @@ export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
 export const PASS_UPGRADE_PATH = 'pass/signup';
-export const PASS_ACCOUNT_PATH = 'pass/account-password';
+export enum AccountPath {
+    ACCOUNT_PASSWORD = 'pass/account-password',
+    USERS = 'pass/users-addresses',
+}
 
 export const PASS_BF_MONTHLY_PRICE = 199;
 export const PASS_REGULAR_MONTHLY_PRICE = 399;
