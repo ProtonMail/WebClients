@@ -39,3 +39,11 @@ export const getAliasDetails = async (shareId: string, itemId: string): Promise<
         mailboxes: result.Alias!.Mailboxes.map(({ Email, ID }): AliasMailbox => ({ id: ID, email: Email })),
     };
 };
+
+export const getAliasCount = async (): Promise<number> =>
+    (
+        await api({
+            url: `pass/v1/user/alias/count`,
+            method: 'get',
+        })
+    )?.AliasCount?.Total ?? 0;
