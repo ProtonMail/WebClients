@@ -13,13 +13,13 @@ export interface FormHandle {
     element: HTMLElement;
     fields: Map<HTMLInputElement, FieldHandle>;
     tracker?: FormTracker;
-    detachField: (field: HTMLInputElement) => void;
-    getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
-    reconciliate: (type: FormType, fields: DetectedField[]) => void;
-    shouldRemove: () => boolean;
     attach: () => void;
     detach: () => void;
+    detachField: (field: HTMLInputElement) => void;
+    getFields: (predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    getFieldsFor: (type: FieldType, predicate?: (handle: FieldHandle) => boolean) => FieldHandle[];
+    reconciliate: (type: FormType, fields: DetectedField[]) => void;
+    shouldRemove: () => boolean;
 }
 
 export interface FieldHandle {
@@ -57,8 +57,11 @@ export type FormTrackerFieldConfig = {
     action?: DropdownAction;
 };
 
+export type FormTrackerState = { isSubmitting: boolean };
+
 export interface FormTracker {
     detach: () => void;
     reconciliate: () => void;
     submit: () => void;
+    getState: () => FormTrackerState;
 }

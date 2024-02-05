@@ -51,71 +51,66 @@ export const createFormManager = (options: FormManagerOptions) => {
      * in SPA apps. Once a form is detected, it will be tracked until
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
-    const garbagecollect = withContext(({ service }) => {
+    const garbagecollect = () => {
         ctx.trackedForms.forEach((form) => {
             if (form.shouldRemove()) {
                 form.tracker?.submit();
                 detachTrackedForm(form.element);
             }
         });
+    };
 
-        void service.autosave.reconciliate();
-    });
-
-    /* Detection :
-     * - runs in `requestAnimationFrame` to defer costly DOM operations
-     * - if a stale form has been detected: unsubscribe
-     * - on each detected form: recycle/create form handle and reconciliate its fields
-     * Returns a boolean flag indicating wether or not the detection was ran */
+    /**
+     * Run form detection asynchronously in an idle callback to prevent UI blocking.
+     * - Trigger garbage collection on each detection run to ensure accurate autosave &
+     *   autofill reconciliation against the current page state.
+     * - Recycle/create form handles and reconcile their fields for each detected form.
+     * - Reconcile autosave on each detection run.
+     * - Returns a boolean flag indicating whether the detection was executed.
+     */
     const runDetection = debounce(
-        withContext<(reason: string) => Promise<boolean>>(async ({ destroy, service }, reason: string) => {
-            garbagecollect();
+        withContext<(reason: string) => Promise<boolean>>(
+            async ({ destroy, service: { detector, autofill, autosave } }, reason: string) => {
+                garbagecollect();
+                if (await detector.shouldRunDetection()) {
+                    ctx.detectionRequest = requestIdleCallback(async () => {
+                        ctx.busy = true;
 
-            if (await service.detector.shouldRunDetection()) {
-                ctx.detectionRequest = requestIdleCallback(async () => {
-                    ctx.busy = true;
+                        if (ctx.active) {
+                            logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
 
-                    if (ctx.active) {
-                        logger.info(`[FormTracker::Detector] Running detection for "${reason}"`);
+                            try {
+                                const forms = detector.runDetection({
+                                    onBottleneck: () => destroy({ reason: 'bottleneck' }),
+                                });
 
-                        try {
-                            const forms = service.detector.runDetection({
-                                onBottleneck: () => {
-                                    /*
-                                        void sendMessage(
-                                            contentScriptMessage({
-                                                type: WorkerMessageType.SENTRY_CS_EVENT,
-                                                payload: { message: 'DetectorBottleneck', data },
-                                            })
-                                        );
-                                    */
-                                    destroy({ reason: 'detector bottleneck' });
-                                },
-                            });
+                                forms.forEach((options) => {
+                                    const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
+                                    ctx.trackedForms.set(options.form, formHandle);
+                                    formHandle.reconciliate(options.formType, options.fields);
+                                    formHandle.attach();
+                                });
 
-                            forms.forEach((options) => {
-                                const formHandle = ctx.trackedForms.get(options.form) ?? createFormHandles(options);
-                                ctx.trackedForms.set(options.form, formHandle);
-                                formHandle.reconciliate(options.formType, options.fields);
-                                formHandle.attach();
-                            });
+                                /* Prompt for 2FA autofill before autosave */
+                                const didPrompt = await autofill.reconciliate();
+                                await (!didPrompt && autosave.reconciliate());
 
-                            const didPrompt = await service.autofill.reconciliate();
-                            await (!didPrompt && service.autosave.reconciliate());
-                            options.onDetection(getTrackedForms());
-                            ctx.busy = false;
-                        } catch (err) {
-                            logger.warn(`[FormTracker::Detector] ${err}`);
+                                options.onDetection(getTrackedForms());
+                                ctx.busy = false;
+                            } catch (err) {
+                                logger.warn(`[FormTracker::Detector] ${err}`);
+                            }
                         }
-                    }
-                });
+                    });
 
-                return true;
-            } else clearDetectionCache();
+                    return true;
+                } else clearDetectionCache();
 
-            ctx.busy = false;
-            return false;
-        }),
+                ctx.busy = false;
+                void autosave.reconciliate();
+                return false;
+            }
+        ),
         250
     );
 
