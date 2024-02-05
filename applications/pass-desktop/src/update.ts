@@ -1,6 +1,8 @@
 import assert from 'assert';
+import { randomBytes } from 'crypto';
 import { type MessageBoxOptions, type Session, app, autoUpdater, dialog } from 'electron';
 import logger from 'electron-log/main';
+import Store from 'electron-store';
 import isURL from 'is-url';
 import os from 'os';
 
@@ -8,6 +10,17 @@ import { type FeatureFlagsResponse, PassFeature } from '@proton/pass/types/api/f
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
+
+type StoreUpdateProperties = {
+    'update.distribution': number;
+};
+
+type RemoteManifestResponse = {
+    releases: {
+        version: string;
+        rollout: number;
+    }[];
+};
 
 export enum SourceType {
     StaticStorage = 1,
@@ -28,6 +41,15 @@ export type UpdateOptions = {
     /** Prompts to apply the update immediately after download. Defaults to `false`. */
     readonly notifyUser?: boolean;
 };
+
+const calculateUpdateDistribution = () => randomBytes(4).readUint32LE() / Math.pow(2, 32);
+
+const store = new Store<StoreUpdateProperties>({
+    accessPropertiesByDotNotation: false,
+    defaults: {
+        'update.distribution': calculateUpdateDistribution(),
+    },
+});
 
 const pkg = require('../package.json');
 const userAgent = `${pkg.name}/${pkg.version} (${os.platform()}: ${os.arch()})`;
@@ -58,21 +80,43 @@ const validateInput = (opts: UpdateOptions) => {
 };
 
 const checkForUpdates = async (opts: ReturnType<typeof validateInput>) => {
-    // don't attempt to update during development
-    // if (!app.isPackaged) {
-    //     logger.log(`[Update] Aborting, app in development mode`);
-    //     return;
-    // }
+    // don't attempt to update if rollout % not satisfied
+    const remoteManifestUrl = `https://proton.me/download/PassDesktop/version.json`;
+    const remoteManifest = await opts.session
+        .fetch(remoteManifestUrl)
+        .then((r) => r.json())
+        .then((r: RemoteManifestResponse) => r)
+        .catch(noop);
 
-    // don't attempt to update if PassEnableDesktopAutoUpdate
+    const localDistributionPct = store.get('update.distribution') || 0;
+    const remoteDistributionPct = remoteManifest?.releases?.at(0)?.rollout || 0;
+    if (remoteDistributionPct < localDistributionPct) {
+        logger.log(
+            `[Update] Rollout distribution short-circuit triggered, r=${remoteDistributionPct}, l=${localDistributionPct}`
+        );
+        return;
+    }
+
+    // don't attempt to update if PassEnableDesktopAutoUpdate disabled
+    const featureFlagsUrl = `${config.API_URL}/feature/v2/frontend`;
     const featureFlags = await opts.session
-        .fetch(`${config.API_URL}/feature/v2/frontend`)
+        .fetch(featureFlagsUrl)
         .then((r) => r.json())
         .then((r: FeatureFlagsResponse) => r.toggles)
         .catch(noop);
 
-    if (featureFlags?.some((f) => f.name === PassFeature.PassEnableDesktopAutoUpdate)) autoUpdater.checkForUpdates();
-    else logger.log('[Update] FF short-circuit triggered');
+    if (!featureFlags?.some((f) => f.name === PassFeature.PassEnableDesktopAutoUpdate)) {
+        logger.log('[Update] Feature flag short-circuit triggered');
+        return;
+    }
+
+    // don't attempt to update during development
+    if (!app.isPackaged) {
+        logger.log(`[Update] Unpacked app short-circuit triggered`);
+        return;
+    }
+
+    autoUpdater.checkForUpdates();
 };
 
 const initUpdater = (opts: ReturnType<typeof validateInput>) => {
@@ -111,6 +155,11 @@ const initUpdater = (opts: ReturnType<typeof validateInput>) => {
 
     autoUpdater.on('update-available', () => {
         logger.log('[Update] Update available; downloading...');
+    });
+
+    autoUpdater.on('update-downloaded', () => {
+        logger.log('[Update] Update downloaded.');
+        store.set('update.distribution', calculateUpdateDistribution());
     });
 
     autoUpdater.on('update-not-available', () => {
