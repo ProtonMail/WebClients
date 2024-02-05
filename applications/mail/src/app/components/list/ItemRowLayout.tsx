@@ -43,7 +43,6 @@ interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     isDelightMailListEnabled?: boolean;
     hideUnreadButton?: boolean;
-    isHovered?: boolean;
     showAttachmentThumbnails?: boolean;
 }
 
@@ -62,7 +61,6 @@ const ItemRowLayout = ({
     attachmentsMetadata = [],
     showAttachmentThumbnails,
     hideUnreadButton,
-    isHovered,
     isDelightMailListEnabled,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
@@ -176,17 +174,15 @@ const ItemRowLayout = ({
                     <span className="m-auto" />
 
                     <span className="flex flex-nowrap items-center shrink-0 justify-end">
-                        {isHovered ? (
-                            <ItemHoverButtons
-                                element={element}
-                                labelID={labelID}
-                                elementID={elementID}
-                                onBack={onBack}
-                                hasStar={false}
-                                size="small"
-                                isDelightMailListEnabled={isDelightMailListEnabled}
-                            />
-                        ) : null}
+                        <ItemHoverButtons
+                            element={element}
+                            labelID={labelID}
+                            elementID={elementID}
+                            onBack={onBack}
+                            hasStar={false}
+                            size="small"
+                            isDelightMailListEnabled={isDelightMailListEnabled}
+                        />
                         <span
                             className={clsx(
                                 'item-senddate-row flex flex-nowrap items-center gap-3',
@@ -320,17 +316,15 @@ const ItemRowLayout = ({
                     className="ml-4 flex w-custom flex-nowrap items-center justify-end"
                     style={{ '--w-custom': '13em' }}
                 >
-                    {isHovered ? (
-                        <ItemHoverButtons
-                            element={element}
-                            labelID={labelID}
-                            elementID={elementID}
-                            onBack={onBack}
-                            hasStar={false}
-                            size={isCompactView ? 'small' : 'medium'}
-                            isDelightMailListEnabled={isDelightMailListEnabled}
-                        />
-                    ) : null}
+                    <ItemHoverButtons
+                        element={element}
+                        labelID={labelID}
+                        elementID={elementID}
+                        onBack={onBack}
+                        hasStar={false}
+                        size={isCompactView ? 'small' : 'medium'}
+                        isDelightMailListEnabled={isDelightMailListEnabled}
+                    />
                     <span
                         className={clsx(
                             'item-senddate-row ml-2 flex flex-1 flex-nowrap justify-end items-center',
