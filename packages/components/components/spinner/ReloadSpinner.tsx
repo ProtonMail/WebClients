@@ -20,7 +20,7 @@ const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Pr
         <Icon
             onClick={handleClick}
             name="arrow-rotate-right"
-            className={clsx([className, refreshing && 'location-refresh-rotate'])}
+            className={clsx([className, refreshing && 'location-refresh-rotate keep-motion'])}
             {...rest}
         />
     );
