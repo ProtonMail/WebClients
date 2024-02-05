@@ -8,3 +8,4 @@ export { default as NotificationButton } from './NotificationButton';
 export * from './NotificationButton';
 export * from './notificationsContext';
 export * from './interfaces';
+export * from './constants';

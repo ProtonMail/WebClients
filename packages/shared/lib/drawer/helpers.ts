@@ -142,6 +142,10 @@ export const getDisplaySettingsInDrawer = (app: APP_NAMES) => {
     return app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR || app === APPS.PROTONDRIVE;
 };
 
+export const getDisplaySecurityCenterInDrawer = (app: APP_NAMES) => {
+    return app === APPS.PROTONMAIL;
+};
+
 export const closeDrawerFromChildApp = (parentApp: APP_NAMES, currentApp: APP_NAMES, closeDefinitely?: boolean) => {
     if (!getIsIframedDrawerApp(currentApp)) {
         throw new Error('Cannot close non-iframed app');
@@ -167,5 +171,7 @@ export const getDisplayDrawerApp = (currentApp: APP_NAMES, toOpenApp: DrawerApp)
         return getDisplayContactsInDrawer(currentApp);
     } else if (toOpenApp === DRAWER_NATIVE_APPS.QUICK_SETTINGS) {
         return getDisplaySettingsInDrawer(currentApp);
+    } else if (toOpenApp === DRAWER_NATIVE_APPS.SECURITY_CENTER) {
+        return getDisplaySecurityCenterInDrawer(currentApp);
     }
 };
