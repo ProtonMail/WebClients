@@ -8,11 +8,14 @@ import {
     rotatePasswordlessOrganizationKeys,
 } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../components';
-import { useErrorHandler, useEventManager, useGetPublicKeysForInbox, useNotifications } from '../../hooks';
+import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../hooks';
+import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import AuthModal from '../password/AuthModal';
 import AdministratorList from './AdministratorList';
 
@@ -25,7 +28,9 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     const [config, setConfig] = useState<any>();
     const [loading, withLoading] = useLoading();
     const [loadingInit, withLoadingInit] = useLoading(true);
-    const getPublicKeysForInbox = useGetPublicKeysForInbox();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
+    const api = useApi();
+    const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
@@ -35,7 +40,7 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
     useEffect(() => {
         const run = async () => {
             setResult(null);
-            const result = await dispatch(getKeyRotationPayload({ getPublicKeysForInbox }));
+            const result = await dispatch(getKeyRotationPayload({ verifyOutboundPublicKeys, api: silentApi }));
             setResult(result);
         };
         withLoadingInit(run()).catch(errorHandler);
@@ -54,6 +59,8 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
         }
         return c('passwordless').t`Change organization key`;
     })();
+
+    const confirmText = c('passwordless').t`Are you sure you want to change your organization key?`;
 
     return (
         <>
@@ -75,16 +82,29 @@ export const ChangeOrganizationKeysPasswordlessModal = ({ onClose, mode, ...rest
             <ModalTwo open {...rest} onClose={onClose}>
                 <ModalTwoHeader title={title} {...rest} />
                 <ModalTwoContent>
-                    <AdministratorList
-                        loading={loadingInit}
-                        members={result?.memberKeyPayloads}
-                        expandByDefault={false}
-                    >
-                        <div>
-                            {c('passwordless').t`Are you sure you want to change your organization key?`}{' '}
-                            {c('passwordless').t`All administrators will get access to the key.`}
-                        </div>
-                    </AdministratorList>
+                    {(() => {
+                        if (loadingInit) {
+                            return (
+                                <div className="text-center">
+                                    <CircleLoader />
+                                </div>
+                            );
+                        }
+
+                        if (!result?.memberKeyPayloads.length) {
+                            return <div>{confirmText}</div>;
+                        }
+
+                        return (
+                            <div>
+                                <div className="mb-4">
+                                    {confirmText} {c('passwordless').t`All administrators will get access to the key.`}
+                                </div>
+
+                                <AdministratorList members={result?.memberKeyPayloads} expandByDefault={false} />
+                            </div>
+                        );
+                    })()}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
