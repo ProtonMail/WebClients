@@ -411,7 +411,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                     {hasVpnOrPassB2BPlan ? (
                         <>
                             {hasSetupOrganizationWithKeys && (
-                                <SetupOrgSpotlight>
+                                <SetupOrgSpotlight app={app}>
                                     <Button color="norm" disabled={disableAddUserButton} onClick={handleAddUser}>
                                         {c('Action').t`Add user`}
                                     </Button>

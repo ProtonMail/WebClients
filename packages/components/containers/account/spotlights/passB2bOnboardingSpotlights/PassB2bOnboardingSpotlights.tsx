@@ -3,19 +3,24 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Spotlight, useAccountSpotlights } from '@proton/components';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import spotlightAddUsers from './spotlight-add-users.svg';
 import spotlightVault from './spotlight-vault.svg';
 
 interface SetupOrgSpotlightProps {
     children: ReactNode;
+    app: APP_NAMES;
 }
 
-export const SetupOrgSpotlight = ({ children }: SetupOrgSpotlightProps) => {
+export const SetupOrgSpotlight = ({ children, app }: SetupOrgSpotlightProps) => {
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
     } = useAccountSpotlights();
+
+    if (app !== APPS.PROTONPASS) {
+        return children;
+    }
 
     return (
         <Spotlight
@@ -47,12 +52,17 @@ export const SetupOrgSpotlight = ({ children }: SetupOrgSpotlightProps) => {
 
 interface StartUsingPassSpotlightProps {
     children: ReactNode;
+    app: APP_NAMES;
 }
 
-export const StartUsingPassSpotlight = ({ children }: StartUsingPassSpotlightProps) => {
+export const StartUsingPassSpotlight = ({ children, app }: StartUsingPassSpotlightProps) => {
     const {
         passOnboardingSpotlights: { startUsingPassSpotlight },
     } = useAccountSpotlights();
+
+    if (app !== APPS.PROTONPASS) {
+        return children;
+    }
 
     return (
         <Spotlight
