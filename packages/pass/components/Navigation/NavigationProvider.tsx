@@ -11,6 +11,7 @@ import {
     encodeFilters,
     getItemRoute,
     getLocalPath,
+    getOnboardingRoute,
     getTrashRoute,
 } from './routing';
 
@@ -30,6 +31,8 @@ export type ItemSelectOptions<LocationState = any> = NavigateOptions<LocationSta
 export type NavigationContextValue = {
     /** Parsed search parameter filters. */
     filters: ItemFilters;
+    /** Flag indicating wether we are currently on the onboarding route */
+    matchOnboarding: boolean;
     /** Flag indicating wether we are currently on a settings route */
     matchSettings: boolean;
     /** Flag indicating wether we are currently on a trash route */
@@ -60,6 +63,8 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const filters = decodeFiltersFromSearch(location.search);
     const matchSettings = useRouteMatch(getLocalPath('settings')) !== null;
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
+    const matchOnboarding = useRouteMatch(getOnboardingRoute()) !== null;
+
     const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
 
     const navigate = (pathname: string, options: NavigateOptions = { mode: 'push' }) => {
@@ -111,6 +116,7 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigation = useMemo<NavigationContextValue>(
         () => ({
             filters,
+            matchOnboarding,
             matchSettings,
             matchTrash,
             selectedItem,
@@ -120,7 +126,13 @@ export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
             preserveSearch: (path) => path + history.location.search,
             getCurrentLocation: () => history.createHref(history.location),
         }),
-        [location.search /* indirectly matches filter changes */, selectedItem, matchSettings, matchTrash]
+        [
+            location.search /* indirectly matches filter changes */,
+            matchOnboarding,
+            matchSettings,
+            matchTrash,
+            selectedItem,
+        ]
     );
 
     return <NavigationContext.Provider value={navigation}>{children}</NavigationContext.Provider>;

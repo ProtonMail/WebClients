@@ -17,7 +17,7 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
-import { UpsellRef } from '@proton/pass/constants';
+import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -91,7 +91,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
     const tabs = useMemo(getSettingsTabs, []);
-    const navigateToAccount = useNavigateToAccount();
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
 
     const pathnameToIndex = (pathname: string) => {
         const idx = tabs.findIndex((tab) => tab.pathname === pathname);

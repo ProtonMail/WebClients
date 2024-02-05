@@ -1,16 +1,14 @@
 import type { Unpack } from '@proton/pass/types';
 
-type Predicate<T extends any[] = any[]> = (...a: T) => boolean;
-type TypePredicate<A, B extends A> = (a: A) => a is B;
+export type Predicate<T extends any[] = any[]> = (...a: T) => boolean;
+export type TypePredicate<A, B extends A> = (a: A) => a is B;
 
-type PredicateCombinator<P extends Predicate<any>, T extends P[], R = Unpack<T>> = R extends TypePredicate<
-    infer A,
-    infer B
->
-    ? (a: A) => a is B
-    : R extends (a: infer A) => boolean
-      ? (a: A) => boolean
-      : never;
+export type PredicateCombinator<P extends Predicate<any>, T extends P[], R = Unpack<T>> =
+    R extends TypePredicate<infer A, infer B>
+        ? (a: A) => a is B
+        : R extends (a: infer A) => boolean
+          ? (a: A) => boolean
+          : never;
 
 export const or = <P extends Predicate<any>, T extends P[]>(...guards: T) =>
     ((arg: any) => guards.some((guard) => guard(arg))) as PredicateCombinator<P, T>;

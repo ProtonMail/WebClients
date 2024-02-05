@@ -20,7 +20,7 @@ import { onboarding } from '../../../lib/onboarding';
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
 export const Header: FC<Props> = ({ hamburger }) => {
-    const { filters, navigate, matchSettings } = useNavigation();
+    const { filters, navigate, matchSettings, matchOnboarding } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
@@ -63,9 +63,9 @@ export const Header: FC<Props> = ({ hamburger }) => {
                     return (
                         <div className="flex items-center gap-x-2 w-full">
                             {hamburger}
-                            <SearchBar initial={filters.search} />
+                            <SearchBar initial={filters.search} disabled={matchOnboarding} />
                             <ItemQuickActions onCreate={onCreate} />
-                            <Spotlight />
+                            {!matchOnboarding && <Spotlight />}
                         </div>
                     );
                 })()}

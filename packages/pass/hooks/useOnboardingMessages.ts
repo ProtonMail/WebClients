@@ -153,6 +153,14 @@ export const useOnboardingMessages = () => {
                         ),
                 },
             },
+            [OnboardingMessage.B2B_ONBOARDING]: {
+                id: 'b2b',
+                title: c('Title').t`Get Started`,
+                message: '',
+                className: 'ui-teal hidden',
+                icon: ShieldIcon,
+                onClose: () => acknowledge(OnboardingMessage.B2B_ONBOARDING),
+            },
         }),
         [user]
     );

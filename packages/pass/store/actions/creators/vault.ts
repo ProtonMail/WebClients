@@ -17,7 +17,7 @@ import withRequest, {
     withRequestProgress,
     withRequestSuccess,
 } from '@proton/pass/store/actions/with-request';
-import type { BatchItemRevisions, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { BatchItemRevisions, ItemMoveDTO, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -170,13 +170,13 @@ export const vaultMoveAllItemsFailure = createAction(
 );
 
 export const vaultTransferOwnerIntent = createAction(
-    'share::ownership::transfer::intent',
+    'vault::ownership::transfer::intent',
     (payload: VaultTransferOwnerIntent) =>
         withRequest({ type: 'start', id: vaultTransferOwnerRequest(payload.userShareId) })({ payload })
 );
 
 export const vaultTransferOwnershipSuccess = createAction(
-    'share::ownership::transfer::success',
+    'vault::ownership::transfer::success',
     withRequestSuccess((shareId: string, userShareId: string) =>
         pipe(
             withCache,
@@ -189,7 +189,7 @@ export const vaultTransferOwnershipSuccess = createAction(
 );
 
 export const vaultTransferOwnershipFailure = createAction(
-    'share::ownership::transfer::failure',
+    'vault::ownership::transfer::failure',
     withRequestFailure((error: unknown) =>
         withNotification({
             type: 'error',
@@ -197,4 +197,9 @@ export const vaultTransferOwnershipFailure = createAction(
             error,
         })({ payload: {} })
     )
+);
+
+export const sharedVaultCreated = createAction(
+    'vault::shared::created',
+    (payload: { share: Share<ShareType.Vault>; move?: ItemMoveDTO }) => withCache({ payload })
 );

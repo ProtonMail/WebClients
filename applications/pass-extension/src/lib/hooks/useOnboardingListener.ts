@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -10,8 +11,10 @@ import { selectCreatedItemsCount } from '@proton/pass/store/selectors';
 import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import noop from '@proton/utils/noop';
 
 export const useOnboardingListener = () => {
+    const { onboardingCheck } = usePassCore();
     const { setOnboardingMessage, setPendingShareAccess } = useSpotlight();
     const { context: extensionContext } = useExtensionConnect();
     const createdItemsCount = useSelector(selectCreatedItemsCount);
@@ -46,14 +49,10 @@ export const useOnboardingListener = () => {
     }, [extensionContext]);
 
     useEffect(() => {
-        void sendMessage.onSuccess(
-            popupMessage({
-                type: WorkerMessageType.ONBOARDING_CHECK,
-                payload: { message: OnboardingMessage.USER_RATING },
-            }),
-            async (res) => {
-                if (res) setOnboardingMessage(definitions[OnboardingMessage.USER_RATING]);
-            }
-        );
+        const check = async () => (await onboardingCheck?.(OnboardingMessage.USER_RATING)) ?? false;
+
+        check()
+            .then((enabled) => enabled && setOnboardingMessage(definitions[OnboardingMessage.USER_RATING]))
+            .catch(noop);
     }, [createdItemsCount]);
 };

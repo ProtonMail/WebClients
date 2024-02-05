@@ -7,6 +7,7 @@ import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { Import } from '@proton/pass/components/Settings/Import';
+import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { type Unpack } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -63,8 +64,8 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
 };
 
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
-    const navigateToAccount = useNavigateToAccount();
     const { config, openSettings } = usePassCore();
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const tabs = useMemo(getSettingsTabs, []);

@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
+.onboarding-icon {
+	background-image: linear-gradient(to bottom right, rgb(236 170 255 / 0.09), rgb(106 72 246 / 0.09));
+	inline-size: rem(82) !important;
+	block-size: rem(82);
+
+	img {
+		inline-size: rem(40);
+		block-size: auto;
+	}
+}

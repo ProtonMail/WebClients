@@ -14,6 +14,7 @@ import { Portal } from '@proton/components/components/portal';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
@@ -25,6 +26,8 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
@@ -97,7 +100,8 @@ export const App = () => (
                     getDomainImage={getDomainImageFactory(sw)}
                     i18n={i18n}
                     onLink={onLink}
-                    onOnboardingAck={onboarding.acknowledge}
+                    onboardingAcknowledge={onboarding.acknowledge}
+                    onboardingCheck={pipe(onboarding.checkMessage, prop('enabled'))}
                     onTelemetry={telemetry.push}
                     openSettings={openSettings}
                     prepareImport={prepareImport}
@@ -108,30 +112,34 @@ export const App = () => (
                         <ErrorBoundary component={<StandardErrorPage big />}>
                             <NotificationsProvider>
                                 <ModalsProvider>
-                                    <ClientProvider>
-                                        <ClientContext.Consumer>
-                                            {({ state: { loggedIn } }) => (
-                                                <Router history={history}>
-                                                    <NavigationProvider>
-                                                        <AuthServiceProvider>
-                                                            <StoreProvider>
-                                                                <Localized>
-                                                                    <Route
-                                                                        path="*"
-                                                                        render={() => (loggedIn ? <Main /> : <Lobby />)}
-                                                                    />
-                                                                </Localized>
-                                                                <Portal>
-                                                                    <ModalsChildren />
-                                                                    <NotificationsChildren />
-                                                                </Portal>
-                                                            </StoreProvider>
-                                                        </AuthServiceProvider>
-                                                    </NavigationProvider>
-                                                </Router>
-                                            )}
-                                        </ClientContext.Consumer>
-                                    </ClientProvider>
+                                    <PassExtensionLink>
+                                        <ClientProvider>
+                                            <ClientContext.Consumer>
+                                                {({ state: { loggedIn } }) => (
+                                                    <Router history={history}>
+                                                        <NavigationProvider>
+                                                            <AuthServiceProvider>
+                                                                <StoreProvider>
+                                                                    <Localized>
+                                                                        <Route
+                                                                            path="*"
+                                                                            render={() =>
+                                                                                loggedIn ? <Main /> : <Lobby />
+                                                                            }
+                                                                        />
+                                                                    </Localized>
+                                                                    <Portal>
+                                                                        <ModalsChildren />
+                                                                        <NotificationsChildren />
+                                                                    </Portal>
+                                                                </StoreProvider>
+                                                            </AuthServiceProvider>
+                                                        </NavigationProvider>
+                                                    </Router>
+                                                )}
+                                            </ClientContext.Consumer>
+                                        </ClientProvider>
+                                    </PassExtensionLink>
                                 </ModalsProvider>
                             </NotificationsProvider>
                         </ErrorBoundary>

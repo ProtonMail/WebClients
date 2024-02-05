@@ -19,6 +19,7 @@ import events from './events/events.saga';
 import itemsImport from './import/import.saga';
 import inviteAccept from './invites/invite-accept.saga';
 import inviteCreate from './invites/invite-create.saga';
+import inviteRecommendations from './invites/invite-recommendations.saga';
 import inviteReject from './invites/invite-reject.saga';
 import inviteRemove from './invites/invite-remove.saga';
 import inviteResend from './invites/invite-resend.saga';
@@ -63,6 +64,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             inviteAccept,
             inviteCreate,
             inviteReject,
+            inviteRecommendations,
             inviteRemove,
             inviteResend,
             itemAutofilled,

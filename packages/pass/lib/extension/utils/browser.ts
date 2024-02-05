@@ -1,5 +1,5 @@
 import { PASS_CHROME_URL, PASS_FIREFOX_URL } from '@proton/pass/constants';
-import { type Maybe } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import type { Browser } from '@proton/pass/types/browser';
 import { isBrave, isChrome, isEdge, isFirefox } from '@proton/shared/lib/helpers/browser';
 import { Clients } from '@proton/shared/lib/pass/constants';
@@ -16,9 +16,10 @@ export const getWebStoreUrl = (): string => ({ chrome: PASS_CHROME_URL, firefox:
 
 export type SupportedExtensionClient = Clients.Chrome | Clients.Brave | Clients.Edge | Clients.Firefox;
 
-export const getExtensionSupportedBrowser = (): Maybe<SupportedExtensionClient> => {
+export const getExtensionSupportedBrowser = (): MaybeNull<SupportedExtensionClient> => {
     if (isChrome()) return Clients.Chrome;
     if (isBrave()) return Clients.Brave;
     if (isEdge()) return Clients.Edge;
     if (isFirefox()) return Clients.Firefox;
+    return null;
 };

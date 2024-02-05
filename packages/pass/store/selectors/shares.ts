@@ -4,7 +4,8 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
+import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
@@ -90,4 +91,15 @@ export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
         selectItems,
         (share, itemsByShareId): MaybeNull<number> =>
             share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length : null
+    );
+
+export const selectVaultSharedWithEmails = (shareId: string) =>
+    createSelector(
+        selectShare<ShareType.Vault>(shareId),
+        (vault): Set<string> =>
+            new Set(
+                (vault?.members?.map(prop('email')) ?? [])
+                    .concat(vault?.invites?.map(prop('invitedEmail')) ?? [])
+                    .concat(vault?.newUserInvites?.map(prop('invitedEmail')) ?? [])
+            )
     );

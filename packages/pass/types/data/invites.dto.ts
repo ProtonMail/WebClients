@@ -1,21 +1,16 @@
-import type { ItemRevision, SelectedItem } from '@proton/pass/types/data/items';
-import type { Share, ShareRole, ShareType } from '@proton/pass/types/data/shares';
-
-import type { KeyRotationKeyPair } from '../api';
+import type { KeyRotationKeyPair } from '@proton/pass/types/api';
+import type { ShareRole } from '@proton/pass/types/data/shares';
+import type { MaybeNull } from '@proton/pass/types/utils';
 
 export type NewUserInvitePromoteIntent = { newUserInviteId: string; shareId: string };
 export type NewUserInviteRemoveIntent = { newUserInviteId: string; shareId: string };
 
-export type InviteCreateIntent = { shareId: string; email: string; role: ShareRole };
-export type InviteCreateSuccess =
-    | {
-          share: Share<ShareType.Vault>;
-          shareId: string;
-          withVaultCreation: true;
-          item?: SelectedItem;
-          movedItem?: ItemRevision;
-      }
-    | { shareId: string; withVaultCreation: false };
+export type InviteUserDTO = { email: string; publicKey: string; role: ShareRole };
+export type InviteNewUserDTO = Omit<InviteUserDTO, 'publicKey'>;
+export type InviteMemberDTO = InviteUserDTO | InviteNewUserDTO;
+
+export type InviteBatchCreateIntent = { shareId: string; users: InviteUserDTO[]; newUsers: InviteNewUserDTO[] };
+export type InviteBatchCreateSuccess = { shareId: string };
 
 export type InviteResendIntent = { shareId: string; inviteId: string };
 export type InviteRemoveIntent = { shareId: string; inviteId: string };
@@ -26,4 +21,23 @@ export type InviteAcceptIntent = {
     inviteKeys: KeyRotationKeyPair[];
     inviterEmail: string;
     inviteToken: string;
+};
+
+export type InviteRecommendationsIntent = {
+    pageSize: number;
+    shareId: string;
+    since: MaybeNull<string>;
+    startsWith: string;
+};
+
+export type InviteRecommendationsSuccess = {
+    emails: string[];
+    more: boolean;
+    next: MaybeNull<string>;
+    since: MaybeNull<string>;
+    /** organization response should be null for free users */
+    organization: MaybeNull<{
+        emails: string[];
+        name: string;
+    }>;
 };
