@@ -24,14 +24,8 @@ export type FormEntryBase = {
 
 export type FormEntryData = FormEntryBase &
     (
-        | {
-              partial: true;
-              data: { username: string; password: undefined };
-          }
-        | {
-              partial: false;
-              data: { username: string; password: string };
-          }
+        | { partial: true; data: { username?: string; password?: string } }
+        | { partial: false; data: { username: string; password: string } }
     );
 
 export type NewFormEntry = Pick<FormEntryData, 'data' | 'action' | 'type'>;
