@@ -4,9 +4,9 @@ import Href from '@proton/atoms/Href/Href';
 import { ThemeColor } from '@proton/colors/types';
 import { SidebarConfig } from '@proton/components';
 import { ADDRESS_TYPE, APPS, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { getIsExternalAccount } from '@proton/shared/lib/keys';
 
 export const getHasPmMeAddress = (addresses?: Address[]) => {
     return !!addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -18,7 +18,7 @@ export const getShowPmMeSection = (user: UserModel, addresses: Address[] | undef
     }
 
     const { hasPaidMail, canPay } = user;
-    const isExternalUser = getHasOnlyExternalAddresses(addresses);
+    const isExternalUser = getIsExternalAccount(user);
     const isPMAddressActive = getHasPmMeAddress(addresses);
     const hasNoOriginalAddresses = !addresses.some((address) => address.Type === ADDRESS_TYPE.TYPE_ORIGINAL);
     return !isExternalUser && canPay && !hasNoOriginalAddresses && !(isPMAddressActive && hasPaidMail);

@@ -71,6 +71,7 @@ export interface User {
         'has-temporary-password': boolean;
         'test-account': boolean;
         'no-login': boolean;
+        'no-proton-address': boolean;
         'recovery-attempt': boolean;
         sso: boolean;
     };
