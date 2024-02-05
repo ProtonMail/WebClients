@@ -21,6 +21,7 @@ import { truthy } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
+import noop from '@proton/utils/noop';
 
 type DropdownFieldRef = { current: MaybeNull<FieldHandle> };
 
@@ -103,19 +104,21 @@ export const createDropdown = (): InjectedDropdown => {
      * page load with a positive ifion : ensure the iframe is
      * in a ready state in order to send out the dropdown action */
     const open = async ({ field, action, autofocused }: DropdownOpenOptions): Promise<void> => {
-        await waitUntil(() => iframe.state.ready, 50);
-        fieldRef.current = field;
+        await waitUntil(() => iframe.state.ready, 50)
+            .then(async () => {
+                fieldRef.current = field;
+                const payload = await getPayloadForAction(action);
 
-        const payload = await getPayloadForAction(action);
+                /* If the opening action is coming from a focus event for an autofill action and the we
+                 * have no login items that match the current domain, avoid auto-opening  the dropdown */
+                if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
 
-        /* If the opening action is coming from a focus event for an autofill action and the we
-         * have no login items that match the current domain, avoid auto-opening  the dropdown */
-        if (autofocused && payload.action === DropdownAction.AUTOFILL && payload.items.length === 0) return;
+                iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
+                iframe.open(action, getScrollParent(field.element));
 
-        iframe.sendPortMessage({ type: IFrameMessageType.DROPDOWN_ACTION, payload });
-        const scrollParent = getScrollParent(field.element);
-        iframe.open(action, scrollParent);
-        updatePosition();
+                updatePosition();
+            })
+            .catch(noop);
     };
 
     const sync = async () => {
