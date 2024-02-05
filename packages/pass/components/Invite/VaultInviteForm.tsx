@@ -1,4 +1,4 @@
-import { type ForwardRefRenderFunction, type MutableRefObject, forwardRef, useMemo, useState } from 'react';
+import { type ForwardRefRenderFunction, type MutableRefObject, forwardRef, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { type FormikContextType } from 'formik';
@@ -71,6 +71,8 @@ const ForwardedVaultInviteForm: ForwardRefRenderFunction<HTMLInputElement, Props
 
         void form.setFieldValue('members', update);
     };
+
+    useEffect(() => setAutocomplete(''), [form.values.step]);
 
     const getVaultHeader = (customizable: boolean = false) => (
         <div
