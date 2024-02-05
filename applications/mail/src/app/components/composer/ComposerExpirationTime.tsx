@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
-import { getExpiresOnMessage, getMessageExpirationDate } from '../../helpers/message/messageExpirationTime';
+import { getExpiresOnMessage } from '../../helpers/message/messageExpirationTime';
 import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
@@ -13,8 +13,7 @@ interface Props {
 }
 
 const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
-    const isExpiringDraft = !!message.draftFlags?.expiresIn;
-    const expirationDate = getMessageExpirationDate(message);
+    const expirationDate = message.draftFlags?.expiresIn;
 
     if (!expirationDate) {
         return null;
@@ -26,7 +25,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
         <div
             className={clsx([
                 'rounded border pr-1 pb-1 md:pl-2 md:pr-1 md:py-1 flex items-center gap-2 mb-2',
-                isExpiringDraft ? 'bg-info border-info' : 'bg-warning border-warning',
+                expirationDate ? 'bg-info border-info' : 'bg-warning border-warning',
             ])}
             data-testid="expiration-banner"
         >
@@ -36,7 +35,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
                 <Button
                     size="small"
                     shape="outline"
-                    color={isExpiringDraft ? 'info' : 'warning'}
+                    color={expirationDate ? 'info' : 'warning'}
                     fullWidth
                     className="rounded-sm"
                     onClick={onEditExpiration}
