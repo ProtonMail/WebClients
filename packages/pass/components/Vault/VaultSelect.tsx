@@ -30,9 +30,9 @@ export enum VaultSelectMode {
 }
 
 export type VaultSelectProps = Omit<ModalProps, 'onSubmit'> & {
-    downgradeMessage: string;
+    downgradeMessage?: string;
     mode: MaybeNull<VaultSelectMode>;
-    shareId: string;
+    shareId?: string;
     title?: string;
     onSubmit: (shareId: string) => void;
 };
@@ -84,7 +84,7 @@ export const VaultSelect: FC<VaultSelectProps> = ({ downgradeMessage, mode, shar
                 }
             >
                 {title && <div className="mb-2 text-bold text-xl">{title}</div>}
-                {didDowngrade && <Card>{downgradeMessage}</Card>}
+                {didDowngrade && downgradeMessage && <Card>{downgradeMessage}</Card>}
 
                 <RadioButtonGroup name="vault-select" className="flex-column" value={shareId} onChange={onSubmit}>
                     {sortedVaults.map((vault) => (
