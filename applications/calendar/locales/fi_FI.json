@@ -213,6 +213,9 @@
       "Discard": [
         "Hylkää"
       ],
+      "Dismiss": [
+        "Sulje"
+      ],
       "Don't know your password?": [
         "Etkö tiedä salasanaasi?"
       ],
@@ -402,6 +405,9 @@
       "No, thanks": [
         "Ei kiitos"
       ],
+      "Not now": [
+        "Ei nyt"
+      ],
       "Ok": [
         "OK"
       ],
@@ -482,6 +488,9 @@
       ],
       "Save": [
         "Tallenna"
+      ],
+      "Save and copy alias": [
+        "Tallenna ja kopioi alias"
       ],
       "Search": [
         "Hae"
@@ -2162,6 +2171,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Lisää tehokkuutta ja seuraa aikaasi värikoodaamalla tapahtumia kategorian tai energiatasosi mukaan. Hanki tämä ja paljon muuta maksullisella paketilla."
       ],
@@ -2171,11 +2183,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja poistetaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Suunniteltu käyttäjille, jotka haluavat parantaa tiliensä suojausta."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Hanki ${ PLAN_NAMES[PLANS.BUNDLE] } ja saat rajattomasti aliaksia ja 500 Gt tallennustilaa."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
@@ -2183,17 +2201,23 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail -logo ja plus-merkki"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Aseta tiedoillesi palautusmenetelmä, jottet menetä niitä."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Aseta palautusmenetelmä, jottet menetä pääsyä tilillesi."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Tämä voi kestää muutamia minuutteja. Voit käyttää Calendaria odottaessasi normaalisti."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Päivitä tilisi ottaaksesi käyttöön ${ PROTON_SENTINEL_NAME }, huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, johon kuuluu 24/7 asiantuntijatuki."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
@@ -2203,6 +2227,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Tilisi ja tietojesi palautusmenetelmät on määritetty ja 2FA on käytössä."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Tilisi ja tietojesi palautusmenetelmät on määritetty."
       ]
     },
     "description": {
@@ -2395,8 +2425,26 @@
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
       ],
+      "Alias is not valid": [
+        "Virheellinen alias"
+      ],
+      "Alias is required": [
+        "Alias vaaditaan"
+      ],
+      "Alias options could not be resolved": [
+        "Aliasvaihtoehtoja ei voitu selvittää"
+      ],
+      "Aliases could not be loaded": [
+        "Aliaksia ei voitu ladata"
+      ],
       "Already a member of this calendar": [
         "On jo tämän kalenterin jäsen"
+      ],
+      "An error occurred while loading alias options": [
+        "Alias-asetusten lataamisessa tapahtui virhe"
+      ],
+      "An error occurred while saving alias": [
+        "Aliaksen tallentamisessa tapahtui virhe"
       ],
       "Answer failed to be sent": [
         "Vastauksen lähetys epäonnistui"
@@ -2433,6 +2481,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Sisältöhakua ei voida ottaa käyttöön. Käynnistä sovellus uudelleen tai tyhjennä sen tiedot."
+      ],
+      "Could not open created vault": [
+        "Luotua holvia ei voitu avata"
+      ],
+      "Could not open updated vault": [
+        "Muuttunutta holvia ei voitu avata"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Salauksen purkuvirhe: Tapahtuman salatun sisällön purku epäonnistui."
@@ -2487,6 +2541,9 @@
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
       ],
+      "Forward address is required": [
+        "Väitysosoite vaaditaan"
+      ],
       "Image upload failed": [
         "Kuvan lataus epäonnistui"
       ],
@@ -2526,6 +2583,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Tapahtumia on mahdollista siirtää vain välillä ${ minDateString } – ${ maxDateString }"
       ],
+      "Item content cannot exceed 40KB": [
+        "Kohteen sisältö ei saa ylittää 40 kt"
+      ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
       ],
@@ -2541,6 +2601,9 @@
       ],
       "Missing signature": [
         "Allekirjoitus puuttuu"
+      ],
+      "Name is required": [
+        "Nimi on pakollinen"
       ],
       "Name required": [
         "Nimi vaaditaan"
@@ -3298,6 +3361,9 @@
       ],
       "Search": [
         "Haku"
+      ],
+      "Security Center": [
+        "Turvakeskus"
       ]
     },
     "Hint": {
@@ -3904,6 +3970,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Tuo viestit, kalenterit ja yhteystiedot muista palveluista ${ BRAND_NAME }iin."
       ],
+      "Important note": [
+        "Tärkeä muistiinpano"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
       ],
@@ -4124,6 +4193,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
       ],
+      "The vault your alias will be stored in.": [
+        "Holvi, johon aliaksesi tallennetaan."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Osoite on poistettu käytöstä. Jotta siihen voidaan lähettää viestejä, on sen omistajan otettava se ensin käyttöön."
       ],
@@ -4168,6 +4240,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Warning": [
+        "Varoitus"
       ],
       "We'll notify you when the import is done.": [
         "Ilmoitamme sinulle kun tuonti on valmis."
@@ -4446,6 +4521,9 @@
       "Add image URL": [
         "Lisää kuvan URL"
       ],
+      "Add title": [
+        "Lisää otsikko"
+      ],
       "Add to group": [
         "Lisää ryhmään"
       ],
@@ -4581,6 +4659,9 @@
       "Folder location": [
         "Kansion sijainti"
       ],
+      "Forwards to": [
+        "Ohjaa osoitteeseen"
+      ],
       "Frequency": [
         "Tiheys"
       ],
@@ -4655,6 +4736,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "Note": [
+        "Muistiinpano"
       ],
       "Notification": [
         "Ilmoitus"
@@ -4747,6 +4831,9 @@
       "Time zone": [
         "Aikavyöhyke"
       ],
+      "Title": [
+        "Nimi"
+      ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
       ],
@@ -4770,6 +4857,9 @@
       ],
       "Wonderful": [
         "Erinomainen"
+      ],
+      "Your alias": [
+        "Sinun aliaksesi"
       ],
       "Your calendar URL": [
         "Kalenterisi URL-osoite"
@@ -5251,6 +5341,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
+      ],
       "Contact group created": [
         "Yhteystietoryhmä luotiin"
       ],
@@ -5723,6 +5819,57 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Lataa tapahtuma uudelleen"
+      ]
+    },
+    "Security Center": {
+      "All aliases": [
+        "Kaikki aliakset"
+      ],
+      "Create alias": [
+        "Luo alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "esim. Amazon, eBay, Etsy"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
+      ],
+      "Get an alias": [
+        "Hanki alias"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliakset"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email-aliaksien avulla voit rekisteröityä verkossa jakamatta sähköpostiosoitettasi. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Uusi alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Avaa ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Suojaa verkkoidentiteettisi"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Kun sinua pyydetään antamaan sähköpostiosoitteesi, anna sen sijaan tämä alias. Lisää sille nimi ja muistiinpano, jotta voit seurata, missä käytät sitä."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Näytä lokitiedot"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Huippuluokan tekoälyyn perustuva tietoturvaratkaisumme, joka on suunniteltu käyttäjille, jotka kaipaavat tehostettua suojaa tileilleen. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel on **käytössä** ja suojaa tiliäsi."
       ]
     },
     "Select files": {
@@ -6283,6 +6430,12 @@
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
+      "Alias copied to clipboard": [
+        "Alias kopioitiin leikepöydälle"
+      ],
+      "Alias saved and copied": [
+        "Alias tallennettiin ja kopioitiin"
+      ],
       "All events deleted": [
         "Ketjun kaikki tapahtumat poistettiin"
       ],
@@ -6533,6 +6686,12 @@
         "${ emailsCount } sähköpostiosoite",
         "${ emailsCount } sähköpostiosoitetta"
       ],
+      "Account recovery": [
+        "Tilin palautus"
+      ],
+      "Account security": [
+        "Tilin suojaus"
+      ],
       "Add another notification to remind you of this event": [
         "Lisää uusi ilmoitus muistuttamaan tapahtumasta"
       ],
@@ -6627,6 +6786,9 @@
       "Customize your mail import": [
         "Mukauta viestien tuontia"
       ],
+      "Data recovery": [
+        "Tietojen palautus"
+      ],
       "Day theme": [
         "Päiväteema"
       ],
@@ -6671,6 +6833,9 @@
       "Email settings": [
         "Osoitteen asetukset"
       ],
+      "Enable 2FA": [
+        "Ota 2FA käyttöön"
+      ],
       "Encrypted event": [
         "Salattu tapahtuma"
       ],
@@ -6691,6 +6856,9 @@
       ],
       "Feedback": [
         "Palaute"
+      ],
+      "Get advanced protection": [
+        "Hanki edistynyt suojaus"
       ],
       "Groups": [
         "Ryhmät"
@@ -6728,6 +6896,9 @@
       ],
       "Minicalendar": [
         "Pienoiskalenteri"
+      ],
+      "Need more aliases?": [
+        "Tarvitsetko lisää aliaksia?"
       ],
       "Night theme": [
         "Yöteema"
@@ -6782,6 +6953,9 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
+      ],
+      "Security center": [
+        "Turvakeskus"
       ],
       "Select a day in the month": [
         "Valitse kuukauden päivä"
@@ -6893,6 +7067,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Olet kutsunut eri osallistujia samoilla sähköpostiosoitteilla"
+      ],
+      "Your account is protected": [
+        "Tilisi on suojattu"
       ],
       "Your calendar link": [
         "Linkki kalenteriisi"
@@ -7046,8 +7223,23 @@
       "Contacts could not be merged": [
         "Yhteystietoja ei voitu yhdistää"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Erääntymisaika ei ole muodossa KK/VV"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jos et muista salasanaasi, avaimesi uudelleenaktivointi on mahdotonta. Voimme auttaa hälytysilmoituksen kuittauksessa, mutta samalla menetät pääsyn kaikkeen kyseisellä avaimella salattuun tietoon."
+      ],
+      "Invalid alias prefix": [
+        "Virheellinen aliaksen etuliite"
+      ],
+      "Missing alias prefix": [
+        "Aliaksen etuliite puuttuu"
+      ],
+      "Missing alias suffix": [
+        "Aliaksen jälkiliite puuttuu"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
@@ -7057,6 +7249,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Joissakin yhdistettävissä yhteystiedoissa havaittiin virheitä. Tarkista ne yksitellen"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Yhteystieto on vioittunut, eikä sitä voida näyttää."
@@ -7084,6 +7279,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."
+      ],
+      "You must select at least one mailbox": [
+        "Sinun on valittava valita ainakin yksi postilaatikko"
       ],
       "You will lose any customization you made so far.": [
         "Menetät kaikki aiemmin tekemäsi mukautukset."

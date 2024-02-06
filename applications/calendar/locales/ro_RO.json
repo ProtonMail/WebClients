@@ -216,6 +216,9 @@
       "Discard": [
         "Renunțare"
       ],
+      "Dismiss": [
+        "Renunțare"
+      ],
       "Don't know your password?": [
         "Nu vă cunoașteți parola?"
       ],
@@ -223,6 +226,9 @@
         "Gata"
       ],
       "Download": [
+        "Descărcare"
+      ],
+      "Download now": [
         "Descărcare"
       ],
       "Edit": [
@@ -321,6 +327,9 @@
       "Import from Outlook": [
         "Importare din Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualizare importantă disponibilă. Pentru a continua să utilizați aplicația trebuie s-o actualizați. ${ downloadUpdate }"
+      ],
       "Join calendar": [
         "Alăturare la calendar"
       ],
@@ -398,6 +407,9 @@
       ],
       "No, thanks": [
         "Nu, mulțumesc"
+      ],
+      "Not now": [
+        "Nu acum"
       ],
       "Ok": [
         "OK"
@@ -2194,9 +2206,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail și semnul plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
@@ -2410,6 +2419,9 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
+      "Alias options could not be resolved": [
+        "Opțiunile pentru alias nu au putu fi rezolvate."
+      ],
       "Already a member of this calendar": [
         "Este deja membru al acestui calendar."
       ],
@@ -2448,6 +2460,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
+      ],
+      "Could not open created vault": [
+        "Nu s-a putut deschide seiful creat."
+      ],
+      "Could not open updated vault": [
+        "Nu s-a putut deschide seiful actualizat."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Eroare decriptare: decriptarea conținutului acestui eveniment a eșuat."
@@ -2543,6 +2561,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Evenimentele pot fi mutate doar între ${ minDateString } - ${ maxDateString }."
       ],
+      "Item content cannot exceed 40KB": [
+        "Conținutul articolului nu poate depăși 40 KiB."
+      ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
       ],
@@ -2571,6 +2592,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Nicio cheie externă preluată pentru utilizator nu este validă pentru trimitere."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
@@ -4644,6 +4668,9 @@
       "Folder location": [
         "Amplasare folder"
       ],
+      "Forwards to": [
+        "Redirecționare către"
+      ],
       "Frequency": [
         "Frecvența"
       ],
@@ -4718,6 +4745,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Note": [
+        "Notă"
       ],
       "Notification": [
         "Notificare"
@@ -4810,6 +4840,9 @@
       ],
       "Time zone": [
         "Fus orar"
+      ],
+      "Title": [
+        "Titlu"
       ],
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
@@ -5327,6 +5360,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a fost dezactivat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a fost activat"
+      ],
       "Contact group created": [
         "Grup de contacte creat"
       ],
@@ -5653,6 +5692,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } a marcat această cheie ca fiind depășită. Această cheie poate fi folosită doar pentru verificarea semnăturii."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Cheia externă este preluată automat de la keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Cheia externă este preluată automat via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Cheia este folosită pentru a cripta mesaje pentru acest contact."
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
       ]
@@ -5818,6 +5866,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Reîncărcare eveniment"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Deschidere ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Încercați ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6331,6 +6390,47 @@
         "Spațiu actual:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Spațiul de stocare ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } - ${ percentage }% ocupat"
+      ],
+      "contact your administrator": [
+        "contactați-vă administratorul"
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } este aproape plin."
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } este plin."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este ocupat ${ percentage }%. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Spațiu de stocare plin"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL calendar"
@@ -6615,6 +6715,12 @@
         "${ emailsCount } adrese de e-mail",
         "${ emailsCount } de adrese de e-mail"
       ],
+      "Account recovery": [
+        "Recuperare cont"
+      ],
+      "Account security": [
+        "Securitate cont"
+      ],
       "Add another notification to remind you of this event": [
         "Adăugare altă notificare pentru reamintirea acestui eveniment"
       ],
@@ -6709,6 +6815,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Data recovery": [
+        "Recuperare date"
       ],
       "Day theme": [
         "Temă zi"
@@ -7135,8 +7244,23 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data de expirare nu este în format LL/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
+      ],
+      "Invalid alias prefix": [
+        "Prefix alias nevalid."
+      ],
+      "Missing alias prefix": [
+        "Lipsește prefixul aliasului."
+      ],
+      "Missing alias suffix": [
+        "Lipsește sufixul aliasului."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
@@ -7146,6 +7270,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Datele de contact sunt corupte și nu pot fi afișate."
@@ -7173,6 +7300,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
+      ],
+      "You must select at least one mailbox": [
+        "Trebuie să selectați cel puțin o adresă de e-mail."
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."

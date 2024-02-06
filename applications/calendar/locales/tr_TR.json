@@ -213,6 +213,9 @@
       "Discard": [
         "Sil"
       ],
+      "Dismiss": [
+        "Yok say"
+      ],
       "Don't know your password?": [
         "Parolanızı bilmiyor musunuz?"
       ],
@@ -221,6 +224,9 @@
       ],
       "Download": [
         "İndir"
+      ],
+      "Download now": [
+        "Şimdi indir"
       ],
       "Edit": [
         "Düzenle"
@@ -318,6 +324,9 @@
       "Import from Outlook": [
         "Outlook üzerinden içe aktar"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Önemli bir güncelleme yayınlanmış. Uygulamayı kullanmayı sürdürmek için son sürüme güncelleyin. ${ downloadUpdate }"
+      ],
       "Join calendar": [
         "Takvime katıl"
       ],
@@ -395,6 +404,9 @@
       ],
       "No, thanks": [
         "Hayır, teşekkürler"
+      ],
+      "Not now": [
+        "Şimdi değil"
       ],
       "Ok": [
         "Tamam"
@@ -2177,9 +2189,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logosu ve bir artı işareti"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
       ],
@@ -2389,6 +2398,9 @@
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
+      "Alias options could not be resolved": [
+        "Takma ad seçenekleri çözümlenemedi"
+      ],
       "Already a member of this calendar": [
         "Zaten bu takvimin üyesi"
       ],
@@ -2427,6 +2439,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
+      ],
+      "Could not open created vault": [
+        "Oluşturulan kasa açılamadı"
+      ],
+      "Could not open updated vault": [
+        "Güncellenen kasa açılamadı"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Şifre çözme sorunu: Bu etkinliğin içeriğinin şifresi çözülemedi."
@@ -2520,6 +2538,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler taşınabilir"
       ],
+      "Item content cannot exceed 40KB": [
+        "Öge içeriği 40KB boyutundan büyük olamaz"
+      ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
@@ -2547,6 +2568,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "İçe aktarılabilecek bir e-posta bulunamadı. Bu hesabın bir Gelen kutusu yok"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Kullanıcı için alınan hiçbir dış anahtar göndermek için geçerli değil"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
@@ -4572,6 +4596,9 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "Forwards to": [
+        "Şuraya iletiyor"
+      ],
       "Frequency": [
         "Sıklık"
       ],
@@ -4646,6 +4673,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "Note": [
+        "Not"
       ],
       "Notification": [
         "Bildirim"
@@ -4737,6 +4767,9 @@
       ],
       "Time zone": [
         "Saat dilimi"
+      ],
+      "Title": [
+        "Başlık"
       ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
@@ -5242,6 +5275,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } özelliği kapatıldı"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } özelliği açıldı"
+      ],
       "Contact group created": [
         "Kişi grubu eklendi"
       ],
@@ -5543,6 +5582,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } kullanıcısı bu anahtarı eskimiş olarak işaretlemiş. Bu anahtar yalnızca imza doğrulaması için kullanılabilir."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Dış anahtar otomatik olarak keys.openpgp.org üzerinden alındı."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Dış anahtar otomatik olarak WKD üzerinden alındı."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Bu anahtar, bu kişiye gönderilen iletileri şifrelemek için kullanılır"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Bu anahtara \"güvenmemeniz\" önerilir."
       ]
@@ -5705,6 +5753,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Etkinliği yeniden yükle"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email takma adları"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını aç"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını deneyin"
       ]
     },
     "Select files": {
@@ -6200,6 +6259,47 @@
         "Geçerli depolama alanınız:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } depolama alanı"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } %${ percentage } dolu"
+      ],
+      "contact your administrator": [
+        "yöneticiniz ile görüşün"
+      ],
+      "upgrade for more storage": [
+        "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Kullandığınız ${ appStorage } dolmak üzere"
+      ],
+      "Your ${ appStorage } is full": [
+        "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } %${ percentage } oranında dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Kullandığınız ${ storage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Depolama alanınız dolu"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Takvim adresi"
@@ -6474,6 +6574,12 @@
         "${ emailsCount } e-posta adresi",
         "${ emailsCount } e-posta adresi"
       ],
+      "Account recovery": [
+        "Hesap kurtarma"
+      ],
+      "Account security": [
+        "Hesap güvenliği"
+      ],
       "Add another notification to remind you of this event": [
         "Bu etkinliği hatırlatacak başka bir bildirim ekleyin"
       ],
@@ -6567,6 +6673,9 @@
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
+      ],
+      "Data recovery": [
+        "Veri kurtarma"
       ],
       "Day theme": [
         "Gündüz teması"
@@ -6987,8 +7096,23 @@
       "Contacts could not be merged": [
         "Kişiler birleştirilemedi"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Geçerlilik süresi AA/YY biçiminde değil"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Parolanızı hatırlamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+      ],
+      "Invalid alias prefix": [
+        "Takma ad ön eki geçersiz"
+      ],
+      "Missing alias prefix": [
+        "Takma ad ön eki eksik"
+      ],
+      "Missing alias suffix": [
+        "Takma ad son eki eksik"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
@@ -6998,6 +7122,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Takma ad ön ekiniz 40 karakterden uzun olamaz"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."
@@ -7025,6 +7152,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "E-posta sunucusunu doğrulayamadık. Sunucuya güveniyorsanız, bu doğrulamayı atlayabilirsiniz."
+      ],
+      "You must select at least one mailbox": [
+        "En az bir e-posta kutusu seçmelisiniz"
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."
