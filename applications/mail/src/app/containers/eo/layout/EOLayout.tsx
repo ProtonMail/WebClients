@@ -9,6 +9,7 @@ import {
     DriveLogo,
     Logo,
     MailLogo,
+    PassLogo,
     PublicTopBanners,
     VpnLogo,
     getAppVersion,
@@ -20,6 +21,7 @@ import {
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
+    PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
@@ -66,31 +68,38 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <div className="mx-auto mt-8">
                     <Href
                         href={getStaticURL('/mail')}
-                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
                         title={MAIL_APP_NAME}
                     >
                         <MailLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/calendar')}
-                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
                         title={CALENDAR_APP_NAME}
                     >
                         <CalendarLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/drive')}
-                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
                         title={DRIVE_APP_NAME}
                     >
                         <DriveLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href="https://protonvpn.com"
-                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
                         title={VPN_APP_NAME}
                     >
                         <VpnLogo variant="glyph-only" size={size} />
+                    </Href>
+                    <Href
+                        href={getStaticURL('/pass')}
+                        className="inline-block m-0 md:mx-2 w-1/5 sm:w-auto"
+                        title={PASS_APP_NAME}
+                    >
+                        <PassLogo variant="glyph-only" size={size} />
                     </Href>
                 </div>
             </div>
