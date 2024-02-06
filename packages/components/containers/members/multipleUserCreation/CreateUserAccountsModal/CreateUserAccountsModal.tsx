@@ -130,7 +130,7 @@ const CreateUserAccountsModal = ({
 
     const abortControllerRef = useRef<AbortController>();
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
 
     const [step, setStep] = useState<STEPS>(STEPS.SELECT_USERS);
 
@@ -210,129 +210,135 @@ const CreateUserAccountsModal = ({
     };
 
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
-        const selectedUsers = usersToImport
-            .filter((user) => selectedUserIds.includes(user.id))
-            .map((user) => {
-                if (hasVpnB2bPlan) {
-                    return {
-                        ...user,
-                        vpnAccess: true,
-                    };
-                }
+        const run = async () => {
+            const selectedUsers = usersToImport
+                .filter((user) => selectedUserIds.includes(user.id))
+                .map((user) => {
+                    if (hasVpnB2bPlan) {
+                        return {
+                            ...user,
+                            vpnAccess: true,
+                        };
+                    }
 
-                return user;
+                    return user;
+                });
+
+            const organization = await getOrganization();
+            const organizationKey = await getOrganizationKey();
+            const addresses = await getAddresses();
+            const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
+            const error = validateAddUser({
+                privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
+                organization,
+                organizationKeyInfo,
+                verifiedDomains,
+                disableStorageValidation,
+                disableDomainValidation,
+                disableAddressValidation,
             });
+            if (error) {
+                return createNotification({ type: 'error', text: error });
+            }
 
-        const organization = await getOrganization();
-        const organizationKey = await getOrganizationKey();
-        const addresses = await getAddresses();
-        const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey, addresses);
-        const error = validateAddUser({
-            privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
-            organization,
-            organizationKeyInfo,
-            verifiedDomains,
-            disableStorageValidation,
-            disableDomainValidation,
-            disableAddressValidation,
-        });
-        if (error) {
-            return createNotification({ type: 'error', text: error });
-        }
-
-        if (!skipCapacityValidation) {
-            try {
-                validateOrganizationCapacity(selectedUsers, organization);
-            } catch (error: any) {
-                if (error instanceof OrganizationCapacityError) {
-                    setOrganizationCapacityError(error);
-                    setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
-                    return;
+            if (!skipCapacityValidation) {
+                try {
+                    validateOrganizationCapacity(selectedUsers, organization);
+                } catch (error: any) {
+                    if (error instanceof OrganizationCapacityError) {
+                        setOrganizationCapacityError(error);
+                        setStep(STEPS.ORGANIZATION_VALIDATION_ERROR);
+                        return;
+                    }
                 }
             }
-        }
 
-        abortControllerRef.current = new AbortController();
-        setImportUsersStep();
+            abortControllerRef.current = new AbortController();
+            setImportUsersStep();
 
-        const localSuccessfullyCreatedUsers: UserTemplate[] = [];
-        const localFailedUsers: UserTemplate[] = [];
-        const localInvalidAddresses: string[] = [];
-        const localUnavailableAddresses: string[] = [];
-        const localOrphanedAddresses: string[] = [];
+            const localSuccessfullyCreatedUsers: UserTemplate[] = [];
+            const localFailedUsers: UserTemplate[] = [];
+            const localInvalidAddresses: string[] = [];
+            const localUnavailableAddresses: string[] = [];
+            const localOrphanedAddresses: string[] = [];
 
-        const { signal } = abortControllerRef.current;
+            const { signal } = abortControllerRef.current;
 
-        const syncState = () => {
-            setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
+            const syncState = () => {
+                setSuccessfullyCreatedUsers(localSuccessfullyCreatedUsers);
 
-            setFailedUsers(localFailedUsers);
-            setInvalidAddresses(localInvalidAddresses);
-            setUnavailableAddresses(localUnavailableAddresses);
-            setOrphanedAddresses(localOrphanedAddresses);
-        };
+                setFailedUsers(localFailedUsers);
+                setInvalidAddresses(localInvalidAddresses);
+                setUnavailableAddresses(localUnavailableAddresses);
+                setOrphanedAddresses(localOrphanedAddresses);
+            };
 
-        for (let i = 0; i < selectedUsers.length; i++) {
-            if (signal.aborted) {
+            for (let i = 0; i < selectedUsers.length; i++) {
+                if (signal.aborted) {
+                    return;
+                }
+
+                const user = selectedUsers[i];
+                try {
+                    await createUser({
+                        user,
+                        api: getSilentApiWithAbort(api, signal),
+                        getAddresses,
+                        organizationKey: organizationKey?.privateKey,
+                        keyTransparencyVerify,
+                    });
+
+                    localSuccessfullyCreatedUsers.push(user);
+                } catch (error: any) {
+                    if (getIsOfflineError(error)) {
+                        abortControllerRef.current.abort();
+
+                        const unattemptedUsers = selectedUsers.slice(i);
+                        localFailedUsers.push(...unattemptedUsers);
+                        syncState();
+                        setStep(STEPS.DONE_WITH_ERRORS);
+                    } else if (error.cancel) {
+                        /**
+                         * Handle auth prompt cancel
+                         */
+                        abortControllerRef.current.abort();
+                        setStep(STEPS.SELECT_USERS);
+                    } else if (error instanceof InvalidAddressesError) {
+                        localInvalidAddresses.push(...error.invalidAddresses);
+                        localOrphanedAddresses.push(...error.orphanedAddresses);
+                    } else if (error instanceof UnavailableAddressesError) {
+                        localUnavailableAddresses.push(...error.unavailableAddresses);
+                        localOrphanedAddresses.push(...error.orphanedAddresses);
+                    } else {
+                        localFailedUsers.push(user);
+                        localOrphanedAddresses.push(...user.emailAddresses);
+                    }
+                }
+
+                setCurrentProgress((currentProgress) => currentProgress + 1);
+            }
+
+            const userKeys = await getUserKeys();
+            await keyTransparencyCommit(userKeys);
+
+            syncState();
+            start();
+            await call();
+
+            if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
+                setStep(STEPS.DONE_WITH_ERRORS);
                 return;
             }
 
-            const user = selectedUsers[i];
-            try {
-                await createUser({
-                    user,
-                    api: getSilentApiWithAbort(api, signal),
-                    getAddresses,
-                    organizationKey: organizationKey?.privateKey,
-                    keyTransparencyVerify,
-                });
+            onClose?.();
+            createNotification({
+                type: 'success',
+                text: getCreatedText(localSuccessfullyCreatedUsers.length),
+            });
+        };
 
-                localSuccessfullyCreatedUsers.push(user);
-            } catch (error: any) {
-                if (getIsOfflineError(error)) {
-                    abortControllerRef.current.abort();
-
-                    const unattemptedUsers = selectedUsers.slice(i);
-                    localFailedUsers.push(...unattemptedUsers);
-                    syncState();
-                    setStep(STEPS.DONE_WITH_ERRORS);
-                } else if (error.cancel) {
-                    /**
-                     * Handle auth prompt cancel
-                     */
-                    abortControllerRef.current.abort();
-                    setStep(STEPS.SELECT_USERS);
-                } else if (error instanceof InvalidAddressesError) {
-                    localInvalidAddresses.push(...error.invalidAddresses);
-                    localOrphanedAddresses.push(...error.orphanedAddresses);
-                } else if (error instanceof UnavailableAddressesError) {
-                    localUnavailableAddresses.push(...error.unavailableAddresses);
-                    localOrphanedAddresses.push(...error.orphanedAddresses);
-                } else {
-                    localFailedUsers.push(user);
-                    localOrphanedAddresses.push(...user.emailAddresses);
-                }
-            }
-
-            setCurrentProgress((currentProgress) => currentProgress + 1);
-        }
-
-        const userKeys = await getUserKeys();
-        await keyTransparencyCommit(userKeys);
-
-        syncState();
-        await call();
-
-        if (localFailedUsers.length || localInvalidAddresses.length || localUnavailableAddresses.length) {
-            setStep(STEPS.DONE_WITH_ERRORS);
-            return;
-        }
-
-        createNotification({
-            type: 'success',
-            text: getCreatedText(localSuccessfullyCreatedUsers.length),
-        });
-        onClose?.();
+        stop();
+        await run().finally(start);
     };
 
     if (organizationCapacityError && step === STEPS.ORGANIZATION_VALIDATION_ERROR) {
