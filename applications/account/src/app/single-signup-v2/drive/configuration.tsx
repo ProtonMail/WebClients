@@ -141,5 +141,6 @@ export const getDriveConfiguration = ({
             </>
         ),
         CustomStep,
+        cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
     };
 };

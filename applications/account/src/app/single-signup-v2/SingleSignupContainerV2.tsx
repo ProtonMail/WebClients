@@ -591,7 +591,7 @@ const SingleSignupContainerV2 = ({
                             return getPlanCardSubscriptionData({
                                 planIDs,
                                 plansMap,
-                                cycles: signupConfiguration.cycles || [CYCLE.MONTHLY, CYCLE.YEARLY],
+                                cycles: signupConfiguration.cycles,
                                 api: silentApi,
                                 coupon: couponToFetch,
                                 currency,
@@ -740,11 +740,16 @@ const SingleSignupContainerV2 = ({
                 return model.planParameters?.planIDs;
             })();
 
+            let cycle = signupParameters.cycle || model.subscriptionData.cycle;
+            if (!signupConfiguration.cycles.includes(cycle)) {
+                cycle = signupConfiguration.defaults.cycle;
+            }
+
             const { subscriptionData, upsell } = await getUserInfo({
                 audience,
                 api: silentApi,
                 options: {
-                    cycle: signupParameters.cycle || model.subscriptionData.cycle,
+                    cycle,
                     currency: model.subscriptionData.currency,
                     planIDs,
                     coupon: signupParameters.coupon,
@@ -1196,7 +1201,7 @@ const SingleSignupContainerV2 = ({
                                     const result = await handleCreateUser({
                                         cache,
                                         api: silentApi,
-                                        mode: toApp !== APPS.PROTONPASS ? 'cro' : undefined,
+                                        mode: toApp === APPS.PROTONPASS ? 'ov' : 'cro',
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,

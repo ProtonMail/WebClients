@@ -98,7 +98,7 @@ const Step1 = ({
         product: app,
         benefits,
         signupTypes,
-        cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+        cycles,
         planCards,
         audience,
         audiences,
