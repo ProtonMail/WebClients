@@ -69,7 +69,10 @@ export const InviteRecommendations: FC<Props> = (props) => {
                         className="flex-auto text-semibold"
                         pill
                     >
-                        {c('Action').t`Recent`}
+                        {
+                            // translator: this is a label to show recent emails
+                            c('Label').t`Recent`
+                        }
                     </Button>
                     <Button
                         onClick={() => setView(organization.name)}
