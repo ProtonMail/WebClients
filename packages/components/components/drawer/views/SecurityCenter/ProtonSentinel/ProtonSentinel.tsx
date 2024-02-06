@@ -24,6 +24,7 @@ const learnMoreLink = (
         color="norm"
         key="learn-more"
         href={getKnowledgeBaseUrl('/proton-sentinel')}
+        target="_blank"
     >{c('Link').t`Learn more`}</ButtonLike>
 );
 
