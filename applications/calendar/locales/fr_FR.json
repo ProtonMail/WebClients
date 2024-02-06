@@ -213,6 +213,9 @@
       "Discard": [
         "Abandonner"
       ],
+      "Dismiss": [
+        "Annuler"
+      ],
       "Don't know your password?": [
         "Vous ne connaissez pas votre mot de passe ?"
       ],
@@ -401,6 +404,9 @@
       ],
       "No, thanks": [
         "Non merci"
+      ],
+      "Not now": [
+        "Plus tard"
       ],
       "Ok": [
         "OK"
@@ -2183,9 +2189,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail et un signe plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
       ],
@@ -2395,6 +2398,9 @@
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
+      "Alias options could not be resolved": [
+        "Les options d'alias n'ont pas pu être obtenues."
+      ],
       "Already a member of this calendar": [
         "Vous êtes déjà membre de ce calendrier."
       ],
@@ -2433,6 +2439,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
+      ],
+      "Could not open created vault": [
+        "Le coffre-fort créé n'a pas pu être ouvert."
+      ],
+      "Could not open updated vault": [
+        "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le contenu de cet événement n'a pas pu être déchiffré."
@@ -2525,6 +2537,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Seuls les événements situés entre ${ minDateString } et ${ maxDateString } peuvent être déplacés."
+      ],
+      "Item content cannot exceed 40KB": [
+        "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -4581,6 +4596,9 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
+      "Forwards to": [
+        "Transfert vers"
+      ],
       "Frequency": [
         "Fréquence"
       ],
@@ -4655,6 +4673,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "Note": [
+        "Note"
       ],
       "Notification": [
         "Notification"
@@ -4746,6 +4767,9 @@
       ],
       "Time zone": [
         "Fuseau horaire"
+      ],
+      "Title": [
+        "Titre"
       ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
@@ -5251,6 +5275,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a été désactivé."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a été activé."
+      ],
       "Contact group created": [
         "Le groupe de contacts a été créé."
       ],
@@ -5723,6 +5753,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Recharger l'événement"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Alias « hide-my-email »"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Ouvrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Essayez ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6229,7 +6270,7 @@
         "contacter votre administrateur"
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."
@@ -6533,6 +6574,12 @@
         "${ emailsCount } adresse e-mail",
         "${ emailsCount } adresses e-mail"
       ],
+      "Account recovery": [
+        "Récupération du compte"
+      ],
+      "Account security": [
+        "Sécurité du compte"
+      ],
       "Add another notification to remind you of this event": [
         "Ajoutez une autre notification pour vous rappeler cet événement."
       ],
@@ -6626,6 +6673,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Data recovery": [
+        "Récupération de données"
       ],
       "Day theme": [
         "Thème jour"
@@ -7046,8 +7096,23 @@
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La date d'expiration n'est pas au format MM/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
+      ],
+      "Invalid alias prefix": [
+        "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Missing alias prefix": [
+        "Le préfixe de l'alias est manquant."
+      ],
+      "Missing alias suffix": [
+        "Le suffixe de l'alias est manquant."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
@@ -7057,6 +7122,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Le préfixe de l'alias ne peut pas dépasser 40 caractères."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les données du contact sont corrompues et ne peuvent pas être affichées."
@@ -7084,6 +7152,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
+      ],
+      "You must select at least one mailbox": [
+        "Vous devez sélectionner au moins une messagerie."
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
