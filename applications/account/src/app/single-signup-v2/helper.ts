@@ -644,9 +644,6 @@ export const getPlanCardSubscriptionData = async ({
             cycles
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
-                    if (!coupon && (planIDs[PLANS.PASS_BUSINESS] || planIDs[PLANS.PASS_PRO])) {
-                        coupon = COUPON_CODES.PASS_B2B_INTRO;
-                    }
                     // If there's no coupon we can optimistically calculate the price. Also always exclude Enterprise (price never shown).
                     if (!coupon || planIDs[PLANS.ENTERPRISE]) {
                         return {
