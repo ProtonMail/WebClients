@@ -1,10 +1,11 @@
-.pass-onboarding-menu--button {
+.pass-onboarding-button {
 	--gradient-start: 100% 800%;
 	--gradient-end: 20% 280%;
 
-	> button {
-		color: var(--interaction-norm-contrast) !important;
+	& &--gradient {
+		color: var(--text-norm) !important;
 		border-radius: var(--border-radius-md);
+		padding: 1px;
 		background: radial-gradient(
 				var(--gradient-start) at var(--gradient-end),
 				#ffd580 0%,
@@ -19,15 +20,33 @@
 				#704cff 100%
 			),
 			linear-gradient(267.92deg, rgb(246 197 146 / 0.7) 9.8%, rgb(167 121 255 / 0.7) 91.9%), #30284a;
-		transition: background 0.3s ease-in-out;
 
 		&:hover {
 			--gradient-start: 100% 600%;
 			--gradient-end: 20% 350%;
 		}
+
+		> button {
+			border-radius: var(--border-radius-md);
+			color: var(--text-norm) !important;
+			background: rgb(0 0 0 / 0.5);
+		}
+
+		svg {
+			color: var(--text-norm) !important;
+		}
 	}
 
-	svg {
+	& &--active {
 		color: var(--interaction-norm-contrast) !important;
+
+		> button {
+			color: var(--interaction-norm-contrast) !important;
+			background: rgb(0 0 0 / 0);
+		}
+
+		svg {
+			color: var(--interaction-norm-contrast) !important;
+		}
 	}
 }
