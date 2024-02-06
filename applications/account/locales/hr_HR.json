@@ -106,9 +106,6 @@
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
-      "Change organization keys": [
-        "Promijeni organizacijske ključeve"
-      ],
       "Change other email subscriptions": [
         "Promijeni druge pretplate e-pošte"
       ],
@@ -562,9 +559,6 @@
       "Reset keys": [
         "Ponovno postavljanje ključeva"
       ],
-      "Reset organization keys": [
-        "Poništi organizacijske ključeve"
-      ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
       ],
@@ -573,9 +567,6 @@
       ],
       "Restore": [
         "Vrati"
-      ],
-      "Restore administrator privileges": [
-        "Vraćanje administratorskih ovlasti"
       ],
       "Resubscribe": [
         "Ponovna pretplata"
@@ -2602,9 +2593,6 @@
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
       ],
-      "Organization key is not decrypted.": [
-        "Organizacijski ključ nije dešifriran."
-      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -2619,9 +2607,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Pristup odbijen, administratorske ovlasti su ograničene."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
@@ -2680,9 +2665,6 @@
       "The organization key must be activated first": [
         "Prvo se mora aktivirati organizacijski ključ"
       ],
-      "The organization key must be activated first.": [
-        "Prvo se mora aktivirati organizacijski ključ."
-      ],
       "The sending key is not valid": [
         "Ključ slanja nije važeći"
       ],
@@ -2733,9 +2715,6 @@
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
-      ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Izgubili ste pristup ključevima organizacije. Bez obnove nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati privatnim korisničkim računima."
       ],
       "You have no invoices.": [
         "Nemate faktura."
@@ -3589,6 +3568,9 @@
     "Import instructions": {
       "Go to ${ boldAccountSecurity }.": [
         "Idi na ${ boldAccountSecurity }"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Odaberite ${ boldExportCSV }."
       ]
     },
     "Import instructions emphasis": {
@@ -3718,6 +3700,9 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
+      ],
+      "10 email addresses": [
+        "10 adrese e-pošte"
       ],
       "30-day money-back guarantee": [
         "Povrat novca do 30 dana"
@@ -4140,12 +4125,6 @@
       ],
       "Optional": [
         "Neobavezno"
-      ],
-      "Organization keys activated": [
-        "Aktivirani su ključevi organizacije"
-      ],
-      "Organization keys restored": [
-        "Vraćeni su ključevi organizacije"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
@@ -5960,6 +5939,11 @@
         "${ n } mape",
         "${ n } mapa"
       ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
       "${ n } label": [
         "${ n } oznaka",
         "${ n } oznake",
@@ -7033,6 +7017,11 @@
         "${ n } kalendara po korisniku",
         "${ n } kalendara po korisniku"
       ],
+      "${ n } high-speed VPN connection": [
+        "${ n } VPN veza visoke brzine",
+        "${ n } VPN veze visoke brzine",
+        "${ n } VPN veza visoke brzine"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN veza",
         "${ n } VPN veze",
@@ -7052,6 +7041,11 @@
         "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
         "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
         "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendar",
+        "${ UsedCalendars } kalendara",
+        "${ UsedCalendars } kalendara"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } od ${ MaxDomains } prilagođena domena",
@@ -7287,9 +7281,6 @@
       "CSV field": [
         "CSV polje"
       ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
       "Edit": [
         "Uredi"
       ],
@@ -7480,9 +7471,6 @@
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
-      "Change organization keys": [
-        "Promijeni organizacijske ključeve"
-      ],
       "Change organization name": [
         "Promijeni naziv organizacije"
       ],
@@ -7557,9 +7545,6 @@
       ],
       "Delete logs": [
         "Izbriši zapise"
-      ],
-      "Delete user": [
-        "Izbriši korisnika"
       ],
       "Delete user?": [
         "Izbriši korisnika?"
@@ -7771,9 +7756,6 @@
       "Password": [
         "Lozinka"
       ],
-      "Password and keys": [
-        "Lozinka i ključevi"
-      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -7827,9 +7809,6 @@
       ],
       "Request new code": [
         "Zatraži novi kôd"
-      ],
-      "Reset organization keys": [
-        "Poništi organizacijske ključeve"
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
@@ -8304,9 +8283,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Otkrili smo problem s vašim DNS postavkama. Pobrinite se da se vaši zapisi podudaraju s uputama u nastavku. Ako se problem nastavi, morat ćemo isključiti potpisivanje DKIM-a."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
       ],
       "You will lose any customization you made so far.": [
         "Izgubiti će te sve prilagodbe koje ste do sada napravili."

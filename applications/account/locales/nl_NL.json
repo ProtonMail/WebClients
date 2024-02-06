@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
       ],
-      "Change organization keys": [
-        "Organisatiesleutels wijzigen"
-      ],
       "Change other email subscriptions": [
         "Andere e-mailabonnementen wijzigen"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Make admin": [
+        "Tot beheerder benoemen"
+      ],
       "Manage communication preferences": [
         "Beheer communicatievoorkeuren"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Reset sleutels"
       ],
-      "Reset organization keys": [
-        "Organisatiesleutels resetten"
-      ],
       "Reset password": [
         "Wachtwoord resetten"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Herstel"
-      ],
-      "Restore administrator privileges": [
-        "Herstel beheerdersbevoegdheden"
       ],
       "Resubscribe": [
         "Opnieuw aanmelden"
@@ -3064,9 +3058,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Het lijkt erop dat de contactenlijst die u importeert enkele groepen bevat. Bekijk hoe deze groepen moeten worden geïmporteerd."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-logo en een plus-teken"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ],
@@ -3644,6 +3635,9 @@
       ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
       ]
     },
     "Error": {
@@ -3860,9 +3854,6 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
-      "Organization key is not decrypted.": [
-        "Organisatiesleutel is niet gedecodeerd."
-      ],
       "Password is required": [
         "Wachtwoord is vereist"
       ],
@@ -3883,9 +3874,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
@@ -4015,9 +4003,6 @@
       "The organization key must be activated first": [
         "De organisatiesleutel moet eerst geactiveerd worden"
       ],
-      "The organization key must be activated first.": [
-        "De organisatiesleutel moet eerst geactiveerd worden."
-      ],
       "The sending key is not valid": [
         "De verzend-sleutel is ongeldig"
       ],
@@ -4090,9 +4075,6 @@
       "You already added this holidays calendar": [
         "U hebt deze feestdagenkalender al toegevoegd"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "U heeft uw toegang tot de organisatie sleutels verloren. Zonder herstel kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-private gebruikers accounts."
-      ],
       "You have no invoices.": [
         "U heeft geen facturen."
       ],
@@ -4107,12 +4089,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "U moet uw organisatiesleutels activeren. Zonder activatie kunt u geen niet-privégebruikers maken of benaderen."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "U moet alle gebruikers loskoppelen voordat u nieuwe organisatiesleutels genereert"
       ],
       "You must set a name": [
         "U moet een naam instellen"
@@ -5708,17 +5684,6 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -6202,9 +6167,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
@@ -6802,12 +6764,6 @@
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
-      "Organization keys activated": [
-        "Organisatiesleutels geactiveerd"
-      ],
-      "Organization keys restored": [
-        "Organisatiesleutels hersteld"
-      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -7225,9 +7181,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Ze zullen worden verwijderd uit uw organisatie"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Ze zullen een gratis maand ${ planName } ontvangen."
@@ -7859,6 +7812,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9997,7 +9961,7 @@
         "Aangepaste velden"
       ],
       "Custom snooze time": [
-        "Aangepaste sluimertijd"
+        "Aangepaste snoozetijd"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -10227,6 +10191,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10320,17 +10295,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12365,6 +12329,28 @@
         "Uw huidige opslag:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } behouden"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } opslag"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
+      ],
+      "Get more storage": [
+        "Krijg meer opslag"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Upgrade uw abonnement om uw account zonder onderbrekingen te blijven gebruiken."
+      ],
+      "Your storage is full": [
+        "Uw opslagruimte is vol"
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Agenda-URL"
@@ -12840,9 +12826,6 @@
       "CSV field": [
         "CSV-veld"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
       "Edit": [
         "Bewerken"
       ],
@@ -13105,9 +13088,6 @@
       "Change mailbox password": [
         "Mailbox-wachtwoord wijzigen"
       ],
-      "Change organization keys": [
-        "Organisatiesleutels wijzigen"
-      ],
       "Change organization name": [
         "Organisatienaam wijzigen"
       ],
@@ -13263,9 +13243,6 @@
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
       ],
-      "Delete user": [
-        "Gebruiker verwijderen"
-      ],
       "Delete user?": [
         "Gebruiker verwijderen?"
       ],
@@ -13292,6 +13269,9 @@
       ],
       "Downgrade account": [
         "Account downgraden"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Downgrade naar ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
@@ -13559,9 +13539,6 @@
       "Password": [
         "Wachtwoord"
       ],
-      "Password and keys": [
-        "Wachtwoord en sleutels"
-      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -13630,9 +13607,6 @@
       ],
       "Request sent": [
         "Verzoek verzonden"
-      ],
-      "Reset organization keys": [
-        "Organisatiesleutels resetten"
       ],
       "Reset password": [
         "Wachtwoord resetten"
@@ -13781,6 +13755,9 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "This field cannot be empty": [
+        "Dit veld mag niet leeg zijn"
       ],
       "Time zone": [
         "Tijdzone"
@@ -14424,9 +14401,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "We hebben een probleem met uw DNS-configuratie ontdekt. Zorg ervoor dat uw records overeenkomen met de instructies hieronder. Als het probleem zich blijft voordoen, moeten we het ondertekenen met DKIM stopzetten."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "U moet ${ activateLink } organisatiesleutels voordat u een e-mailadres toevoegt aan een niet-privé lid."
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
