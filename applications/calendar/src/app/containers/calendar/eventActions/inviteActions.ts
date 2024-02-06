@@ -196,7 +196,7 @@ export const getAddedAttendeesPublicKeysMap = ({
     }, {});
 };
 
-export const getUpdatedSaveInviteActions = ({
+export const getCorrectedSaveInviteActions = ({
     inviteActions,
     newVevent,
     oldVevent,

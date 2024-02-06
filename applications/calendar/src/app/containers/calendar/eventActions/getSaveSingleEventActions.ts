@@ -2,7 +2,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
-import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -99,7 +99,7 @@ const getSaveSingleEventActions = async ({
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
-        const updatedVeventComponent = getUpdatedInviteVevent(
+        const updatedVeventComponent = getInviteVeventWithUpdatedParstats(
             veventComponentWithUpdatedDtstamp,
             oldVeventComponent,
             method
@@ -190,7 +190,7 @@ const getSaveSingleEventActions = async ({
         const isSendType = [SEND_INVITATION, SEND_UPDATE].includes(inviteType);
         const method = isSendType ? ICAL_METHOD.REQUEST : undefined;
         const veventComponentWithUpdatedDtstamp = withUpdatedDtstamp(newVeventComponent, oldVeventComponent);
-        let updatedVeventComponent = getUpdatedInviteVevent(
+        let updatedVeventComponent = getInviteVeventWithUpdatedParstats(
             veventComponentWithUpdatedDtstamp,
             oldVeventComponent,
             method
