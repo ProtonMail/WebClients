@@ -16,7 +16,7 @@ const UnAuthenticated = ({ children, theme: maybeTheme }: { children: ReactNode;
         if (maybeTheme !== undefined) {
             theme.setTheme(maybeTheme);
         }
-    }, []);
+    }, [maybeTheme]);
 
     return <>{children}</>;
 };

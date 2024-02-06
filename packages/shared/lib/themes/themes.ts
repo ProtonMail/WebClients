@@ -18,6 +18,8 @@ import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
 import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 // @ts-ignore
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
+// @ts-ignore
+import storefrontTheme from '@proton/colors/themes/dist/storefront.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
 import { isElectronApp } from '../helpers/desktop';
@@ -32,6 +34,7 @@ export enum ThemeTypes {
     Classic = 6,
     ContrastDark = 7,
     Pass = 8,
+    Storefront = 9,
 }
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
@@ -135,6 +138,17 @@ export const PROTON_THEMES_MAP = {
             weak: '#6c6b70',
         },
         theme: passTheme.toString(),
+    },
+    [ThemeTypes.Storefront]: {
+        label: 'Storefront',
+        identifier: ThemeTypes.Storefront,
+        thumbColors: {
+            prominent: '#16141C',
+            standard: '#2A2833',
+            primary: '#6D4AFF',
+            weak: '#6c6b70',
+        },
+        theme: storefrontTheme.toString(),
     },
 } as const;
 
@@ -315,7 +329,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
-    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.ContrastDark) {
+    if (themeType >= ThemeTypes.Duotone && themeType <= ThemeTypes.Storefront) {
         return themeType;
     }
 };

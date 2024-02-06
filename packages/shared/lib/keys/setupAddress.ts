@@ -294,6 +294,10 @@ export const getIsSSOVPNOnlyAccount = (user: tsUser | undefined) => {
     return user && user.Flags.sso && !user.Keys.length;
 };
 
+export const getIsPublicUserWithoutProtonAddress = (user: tsUser | undefined) => {
+    return user && user.Flags['no-proton-address'] && !user.Private;
+};
+
 export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
     if (!user) {
         return false;
@@ -312,7 +316,7 @@ export const getIsExternalAccount = (user: tsUser) => {
     if (!user) {
         return false;
     }
-    return user.Type === UserType.EXTERNAL;
+    return user.Type === UserType.EXTERNAL || user.Flags['no-proton-address'];
 };
 
 export const getRequiresPasswordSetup = (user: tsUser, setupVPN: boolean) => {

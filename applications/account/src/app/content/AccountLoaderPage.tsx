@@ -4,27 +4,30 @@ import ElectronDraggeableHeaderWrapper from '@proton/components/components/elect
 import { TextLoader } from '@proton/components/components/loader';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
+import protonSpinnerNegative from '@proton/styles/assets/img/loading-spinners/proton-spinner-negative.svg';
+import protonSpinnerPositive from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
     text?: string;
     loaderClassName?: string;
+    className?: string;
+    isDarkBg?: boolean;
 }
 
-const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
+const AccountLoaderPage = ({ text, loaderClassName = '', className, isDarkBg = false }: Props) => {
     const appName = getAppName(APPS.PROTONACCOUNT);
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
     return (
-        <div className="h-full">
+        <div className={clsx('h-full', className)}>
             <ElectronDraggeableHeaderWrapper />
             <div className={clsx(['absolute inset-center text-center'])}>
                 <div>
                     <img
                         className={clsx(['w-custom', loaderClassName])}
                         style={{ '--w-custom': '10em' }}
-                        src={protonSpinner}
+                        src={isDarkBg ? protonSpinnerNegative : protonSpinnerPositive}
                         aria-hidden="true"
                         alt=""
                     />

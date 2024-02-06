@@ -2,7 +2,12 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasVpnB2BPlan, getHasVpnOrPassB2BPlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasMemberCapablePlan,
+    getHasVpnB2BPlan,
+    getHasVpnOrPassB2BPlan,
+    hasFamily,
+} from '@proton/shared/lib/helpers/subscription';
 import { Organization, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -24,6 +29,7 @@ export const getOrganizationAppRoutes = ({
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
 
@@ -52,7 +58,7 @@ export const getOrganizationAppRoutes = ({
                 text: hasVpnOrPassB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
-                available: hasOrganizationKey || hasOrganization,
+                available: hasMemberCapablePlan && (hasOrganizationKey || hasOrganization),
                 subsections: [
                     {
                         id: 'members',
@@ -93,7 +99,7 @@ export const getOrganizationAppRoutes = ({
                     {
                         text: c('Title').t`Organization key`,
                         id: 'password-keys',
-                        available: hasOrganizationKey,
+                        available: hasMemberCapablePlan && hasOrganizationKey,
                     },
                 ],
             },

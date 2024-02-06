@@ -32,9 +32,12 @@ import {
     getCustomFields,
     getDevices,
     getHideMyEmailAliases,
+    getItems,
     getLoginsAndNotes,
     getPassAppFeature,
     getProtonPassFeature,
+    getRequire2FA,
+    getSSOIntegration,
     getVaults,
 } from './pass';
 import {
@@ -178,6 +181,30 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getSentinel(),
             getSupport('priority'),
         ],
+    };
+};
+
+export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
+    const title = plan?.Title || '';
+    return {
+        plan: PLANS.PASS_BUSINESS,
+        title,
+        label: '',
+        description: '',
+        cta: getCTA(title),
+        features: [getSSOIntegration(), getRequire2FA(), getSentinel(true)],
+    };
+};
+
+export const getPassEssentialsPlan = (plan?: Plan): ShortPlan => {
+    const title = plan?.Title || '';
+    return {
+        plan: PLANS.PASS_PRO,
+        title,
+        label: '',
+        description: '',
+        cta: getCTA(title),
+        features: [getLoginsAndNotes(), getHideMyEmailAliases('unlimited'), get2FAAuthenticator(true), getItems()],
     };
 };
 

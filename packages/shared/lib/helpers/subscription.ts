@@ -1,6 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 
 import {
     ADDON_NAMES,
@@ -16,7 +17,17 @@ import {
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import { Audience, External, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionPlan } from '../interfaces';
+import {
+    Audience,
+    External,
+    Organization,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Pricing,
+    Subscription,
+    SubscriptionPlan,
+} from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -231,6 +242,17 @@ export const isTrialExpired = (subscription: Subscription | undefined) => {
 export const willTrialExpire = (subscription: Subscription | undefined) => {
     const now = new Date();
     return isBefore(fromUnixTime(subscription?.PeriodEnd || 0), addWeeks(now, 1));
+};
+
+export const getHasMemberCapablePlan = (
+    organization: Organization | undefined,
+    subscription: Subscription | undefined
+) => {
+    const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
+    return (
+        (organization?.MaxMembers || 0) > 1 ||
+        Object.keys(supportedAddons).some((key) => key.startsWith(MEMBER_ADDON_PREFIX))
+    );
 };
 
 export const hasBlackFridayDiscount = (subscription: Subscription | undefined) => {
@@ -510,7 +532,7 @@ export const getTotalFromPricing = (pricing: AggregatedPricing, cycle: CYCLE): T
 
     return {
         discount,
-        discountPercentage: Math.round((discount / totalNoDiscount) * 100),
+        discountPercentage: discount > 0 ? Math.round((discount / totalNoDiscount) * 100) : 0,
         total,
         totalPerMonth,
         totalNoDiscountPerMonth: totalNoDiscount / cycle,

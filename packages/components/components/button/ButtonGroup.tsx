@@ -25,6 +25,7 @@ export interface Props extends ComponentPropsWithoutRef<'div'> {
     shape?: Shape;
     size?: Size;
     separators?: boolean;
+    pill?: boolean;
     removeBackgroundColorOnGroup?: Boolean;
 }
 
@@ -36,6 +37,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
             color = 'weak',
             shape = 'outline',
             size = 'medium',
+            pill = false,
             removeBackgroundColorOnGroup = false,
             className = '',
             ...rest
@@ -53,7 +55,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
                     // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={clonedChild.key || index}>
                         {clonedChild}
-                        {separators && <Vr aria-hidden="true" />}
+                        {separators && !pill && <Vr aria-hidden="true" />}
                     </Fragment>
                 );
             });
@@ -63,6 +65,7 @@ const ButtonGroup = forwardRef<HTMLDivElement, Props>(
                     'button-group',
                     `button-group-${shape}-${color}`,
                     `button-group-${size}`,
+                    pill && 'button-group-pill',
                     removeBackgroundColorOnGroup && 'button-group--no-bg-color',
                     className
                 )}

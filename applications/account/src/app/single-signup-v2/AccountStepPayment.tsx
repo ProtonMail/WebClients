@@ -7,9 +7,10 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
+import { PayPalButton, PlanCustomization, StyledPayPalButton } from '@proton/components/containers';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
+import useHandler from '@proton/components/hooks/useHandler';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { CardPayment, PAYMENT_METHOD_TYPES, PaypalPayment, TokenPayment } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
@@ -17,6 +18,7 @@ import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -56,6 +58,7 @@ interface Props {
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     takeNullCreditCard?: boolean;
+    handleOptimistic: (optimistic: Partial<OptimisticOptions>) => Promise<void>;
 }
 
 const AccountStepPayment = ({
@@ -64,6 +67,7 @@ const AccountStepPayment = ({
     accountStepPaymentRef,
     api: normalApi,
     defaultMethod,
+    handleOptimistic,
     onPay,
     onValidate,
     model,
@@ -72,7 +76,6 @@ const AccountStepPayment = ({
     loadingPaymentDetails,
     loadingSignup,
     withLoadingSignup,
-    isDarkBg = false,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -167,10 +170,12 @@ const AccountStepPayment = ({
 
     const summaryPlan = getSummaryPlan({ plan: options.plan, vpnServersCountData, freePlan: model.freePlan });
 
+    const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const currentCheckout = getCheckout({
-        planIDs: options.planIDs,
+        // If there is a coupon code, ignore the optimistc results from options since they don't contain the correct discount.
+        planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
         plansMap: model.plansMap,
-        checkResult: options.checkResult,
+        checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
 
     const isAuthenticated = !!model.session?.UID;
@@ -232,6 +237,15 @@ const AccountStepPayment = ({
         withLoadingSignup(run()).catch(noop);
     };
 
+    const debouncedHandlePlanIDs = useHandler(
+        (planIDs) => {
+            handleOptimistic({ planIDs });
+        },
+        { debounce: 200 }
+    );
+
+    const isB2BPlan = getIsB2BAudienceFromPlan(options.plan.Name);
+
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">
@@ -254,6 +268,22 @@ const AccountStepPayment = ({
                     }}
                     method="post"
                 >
+                    {isB2BPlan && (
+                        <PlanCustomization
+                            mode="signup"
+                            loading={false}
+                            currency={subscriptionData.currency}
+                            cycle={subscriptionData.cycle}
+                            plansMap={model.plansMap}
+                            planIDs={subscriptionData.planIDs}
+                            onChangePlanIDs={debouncedHandlePlanIDs}
+                            below={
+                                <div className="mt-6 mb-6">
+                                    <hr />
+                                </div>
+                            }
+                        />
+                    )}
                     {options.checkResult.AmountDue ? (
                         <PaymentWrapper
                             {...paymentFacade}
@@ -285,11 +315,13 @@ const AccountStepPayment = ({
                                         currency={paymentFacade.currency}
                                         loading={loadingSignup}
                                         onClick={() => process(paymentFacade.paypal)}
+                                        pill
                                     />
                                     <PayPalButton
                                         id="paypal-credit"
                                         shape="ghost"
                                         color="norm"
+                                        pill
                                         paypal={paymentFacade.paypalCredit}
                                         disabled={loadingSignup}
                                         amount={paymentFacade.amount}
@@ -316,7 +348,8 @@ const AccountStepPayment = ({
                                     size="large"
                                     loading={loadingSignup}
                                     color="norm"
-                                    fullWidth
+                                    pill
+                                    className="block mx-auto"
                                     onClick={() => {
                                         measurePaySubmit('pay_btc');
                                         if (onValidate() && validatePayment()) {
@@ -338,8 +371,9 @@ const AccountStepPayment = ({
                                     size="large"
                                     loading={loadingSignup}
                                     color="norm"
-                                    fullWidth
+                                    pill
                                     data-testid="pay"
+                                    className="block mx-auto"
                                 >
                                     {cta}
                                 </Button>
@@ -372,10 +406,9 @@ const AccountStepPayment = ({
                 const showAmountDue = proration !== 0 || credits !== 0;
 
                 return (
-                    <RightSummary gradient={isDarkBg} className="mx-auto md:mx-0 rounded-xl">
+                    <RightSummary variant="border" className="mx-auto md:mx-0 rounded-xl">
                         <RightPlanSummary
                             cycle={options.cycle}
-                            className={isDarkBg ? 'border-primary' : undefined}
                             title={summaryPlan.title}
                             price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}
                             regularPrice={getSimplePriceString(
@@ -386,6 +419,8 @@ const AccountStepPayment = ({
                             logo={summaryPlan.logo}
                             discount={currentCheckout.discountPercent}
                             features={summaryPlan.features}
+                            checkout={currentCheckout}
+                            mode={isB2BPlan ? 'addons' : undefined}
                         >
                             <div className="flex flex-column gap-2">
                                 {(() => {

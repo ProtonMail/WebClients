@@ -9,7 +9,11 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import {
+    getIsPublicUserWithoutProtonAddress,
+    getIsSSOVPNOnlyAccount,
+    getRequiresAddressSetup,
+} from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, SettingsLink } from '../../components';
@@ -17,6 +21,9 @@ import { AppLink, SettingsLink } from '../../components';
 export const apps = (user?: UserModel) => {
     if (getIsSSOVPNOnlyAccount(user)) {
         return [APPS.PROTONVPN_SETTINGS];
+    }
+    if (getIsPublicUserWithoutProtonAddress(user)) {
+        return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE];
     }
     if (isElectronApp) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];

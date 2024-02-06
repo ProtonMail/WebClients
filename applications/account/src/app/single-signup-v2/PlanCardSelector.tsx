@@ -20,22 +20,23 @@ import {
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
 import {
+    Audience,
     Currency,
     FreePlanDefault,
     Plan,
     PlanIDs,
     PlansMap,
     Subscription,
-   SubscriptionPlan, VPNServersCountData,
+    SubscriptionPlan,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import ArrowImage from './ArrowImage';
 import BundlePlanSubSection from './BundlePlanSubSection';
-import Guarantee from './Guarantee';
 import SaveLabel from './SaveLabel';
-import { getHasAnyPlusPlan } from './helper';
+import { SubscriptionDataCycleMapping, getHasAnyPlusPlan, getSubscriptionMapping } from './helper';
 
 import './PlanCardSelector.scss';
 
@@ -53,6 +54,7 @@ export interface PlanCard {
     subsection: ReactNode;
     type: 'best' | 'standard';
     guarantee: boolean;
+    interactive?: false;
 }
 
 const getLimitedTimeOfferText = () => {
@@ -63,11 +65,30 @@ const getRecommendedText = () => {
     return c('pass_signup_2023: Header').t`Recommended`;
 };
 
+const getLetsTalk = () => {
+    return c('pass_signup_2023: Header').t`Let's talk`;
+};
+
 const getPerMonth = () => {
     return c('pass_signup_2023: Info').t`per month`;
 };
 
-export const getBilledText = (cycle: CYCLE): string | null => {
+export const getBilledText = ({ audience, cycle }: { audience?: Audience; cycle: CYCLE }): string | null => {
+    if (audience === Audience.B2B) {
+        switch (cycle) {
+            case CYCLE.MONTHLY:
+                return c('pass_signup_2023: Info').t`/month /user`;
+            case CYCLE.YEARLY:
+                return c('pass_signup_2023: Info').t`/month /user, billed annually`;
+            case CYCLE.TWO_YEARS:
+                return c('pass_signup_2023: Info').t`/month /user, billed biennially`;
+            case CYCLE.FIFTEEN:
+            case CYCLE.THIRTY:
+                return c('pass_signup_2023: Info').t`/month /user`;
+            default:
+                return null;
+        }
+    }
     switch (cycle) {
         case CYCLE.MONTHLY:
             return c('pass_signup_2023: Info').t`per month, billed every month`;
@@ -86,42 +107,56 @@ export const getBilledText = (cycle: CYCLE): string | null => {
 
 const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY, PLANS.FAMILY];
 
-const PlanCardView = ({
-    above,
-    cycle,
-    currency,
-    text,
-    billedText,
-    headerText,
-    highlightPrice,
-    totals,
-    subsection,
-    selected,
-    onSelect,
-    onSelectedClick,
-    upsell,
-    cta,
+const PlanCardViewSlot = ({
     hasMaxWidth,
-    info,
+    highlightPrice,
+    selected,
+    headerText,
+    text,
+    subsection,
+    cta,
+    upsell,
+    id,
+    discount,
+    price,
+    billedText,
+    dark,
+    onSelect,
 }: {
     hasMaxWidth?: boolean;
-    above?: ReactNode;
-    cycle: CYCLE;
-    currency: Currency;
-    text: string;
-    billedText: string | null;
-    headerText: ReactNode;
-    highlightPrice: boolean;
-    totals: { discount: number; standardMonthlyPrice: number; monthlyPrice: number };
-    subsection: ReactNode;
-    selected: boolean;
-    info?: 'guarantee' | 'cancel';
-    onSelect?: () => void;
-    onSelectedClick?: () => void;
-    upsell?: ReactNode;
+    highlightPrice?: boolean;
+    selected?: boolean;
+    headerText?: ReactNode;
+    text?: ReactNode;
+    subsection?: ReactNode;
     cta?: ReactNode;
+    upsell?: ReactNode;
+    id: string;
+    discount?: ReactNode | null;
+    price: ReactNode;
+    billedText: ReactNode;
+    dark?: boolean;
+    onSelect?: () => void;
 }) => {
-    const halfBorderWidth = 1;
+    const wrapper = (children: ReactNode) => {
+        const className = clsx(
+            'card-plan rounded-4xl border relative w-full h-full flex justify-center align-items-start'
+        );
+
+        if (onSelect) {
+            return (
+                <button type="button" className={className} onClick={onSelect} aria-pressed={selected}>
+                    {children}
+                </button>
+            );
+        }
+
+        return (
+            <div className={className} aria-pressed={selected}>
+                {children}
+            </div>
+        );
+    };
 
     return (
         <div
@@ -132,118 +167,85 @@ const PlanCardView = ({
             )}
             style={hasMaxWidth ? { '--max-w-custom': '24em' } : undefined}
         >
-            {above}
-            <button
-                type="button"
-                className={clsx(
-                    'card-plan rounded-4xl border relative w-full',
-                    selected && 'border-primary border-2',
-                    !onSelect && 'cursor-default'
-                )}
-                onClick={!selected ? onSelect : onSelectedClick}
-                aria-pressed={selected}
-                style={{
-                    ...(selected
-                        ? {
-                              top: `-${halfBorderWidth}px`,
-                              /* Prevent layout shift due to border width increasing*/
-                          }
-                        : {}),
-                }}
-            >
-                {headerText && (
-                    <div
-                        className={clsx(
-                            'text-center card-plan-highlight text-sm text-semibold py-1 px-4 rounded-full absolute',
-                            selected ? 'card-plan-highlight--selected color-invert' : 'color-primary'
-                        )}
-                    >
-                        {headerText}
-                    </div>
-                )}
-                <div className="py-6 px-4">
-                    <div className="flex items-center flex-column">
-                        <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-1">
-                            <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${cycle}-text`}>
-                                {text}
-                            </strong>
+            {wrapper(
+                <>
+                    {headerText && (
+                        <div
+                            className={clsx(
+                                'text-center card-plan-highlight text-sm text-semibold py-1 px-4 rounded absolute',
+                                selected && 'card-plan-highlight--selected'
+                            )}
+                        >
+                            {headerText}
                         </div>
+                    )}
+                    <div className="p-6 w-full">
+                        <div className="flex items-center flex-column w-full">
+                            <div className="w-full flex *:min-size-auto flex-row flex-nowrap gap-1">
+                                <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${id}-text`}>
+                                    {text}
+                                </strong>
+                            </div>
 
-                        <div className="mt-4 mb-6 text-center w-full">
-                            <div
-                                id={`${cycle}-price`}
-                                className={clsx(
-                                    totals.discount > 0 ? '' : 'items-baseline',
-                                    'flex gap-1 items-center justify-center'
-                                )}
-                            >
-                                <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
-                                    {getSimplePriceString(currency, totals.monthlyPrice, '')}
-                                </span>
+                            <div className="mt-4 mb-6 text-center w-full">
                                 <div
+                                    id={`${id}-price`}
                                     className={clsx(
-                                        totals.discount > 0 && 'flex flex-column justify-center',
-                                        'text-left'
+                                        !discount && 'items-baseline',
+                                        'flex gap-2 items-center justify-center'
                                     )}
                                 >
-                                    {totals.discount > 0 && (
-                                        <>
-                                            <span>
-                                                <SaveLabel percent={totals.discount} />
-                                            </span>
-                                            <span className="text-strike text-sm color-weak">
-                                                {getSimplePriceString(currency, totals.standardMonthlyPrice, '')}
-                                            </span>
-                                        </>
-                                    )}
+                                    <span className={clsx(highlightPrice && !dark && 'color-primary', 'text-bold h1')}>
+                                        {price}
+                                    </span>
+                                    <div className={clsx(!!discount && 'flex flex-column justify-center', 'text-left')}>
+                                        {discount}
+                                    </div>
+                                </div>
+
+                                <div className="text-sm">
+                                    <div className="color-weak" id={`${id}-billed`}>
+                                        {billedText}
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="text-sm">
-                                <div className="color-weak" id={`${cycle}-billed`}>
-                                    {billedText}
-                                </div>
-                            </div>
+                            {subsection}
+
+                            {cta && <div className="mt-4">{cta}</div>}
                         </div>
-
-                        {(() => {
-                            if (info === 'guarantee') {
-                                return (
-                                    <div>
-                                        <div className="text-sm mb-6 text-center" id={`${cycle}-guarantee`}>
-                                            <Guarantee />
-                                        </div>
-                                    </div>
-                                );
-                            }
-                            if (info === 'cancel') {
-                                return (
-                                    <div>
-                                        <div className="text-sm mb-6 text-center" id={`${cycle}-cancel`}>
-                                            <span className="color-success">{c('Info').t`Cancel anytime`}</span>
-                                        </div>
-                                    </div>
-                                );
-                            }
-                        })()}
-
-                        {subsection}
-
-                        {cta && <div className="mt-4">{cta}</div>}
                     </div>
-                </div>
-            </button>
-            {selected && upsell && <div className="mt-2">{upsell}</div>}
-            {
-                !selected && (
-                    <div style={{ height: `${halfBorderWidth * 2}px` }} />
-                ) /* Prevent layout shift due to border width increasing*/
-            }
+                    {selected && upsell && <div className="mt-2">{upsell}</div>}
+                </>
+            )}
         </div>
     );
 };
 
+const getDiscount = ({
+    discountPercent,
+    standardMonthlyPrice,
+    currency,
+}: {
+    discountPercent: number;
+    standardMonthlyPrice: number;
+    currency: Currency;
+}) => {
+    return discountPercent > 0 ? (
+        <>
+            <span>
+                <SaveLabel percent={discountPercent} />
+            </span>
+            <span className="text-strike text-sm color-weak">
+                {getSimplePriceString(currency, standardMonthlyPrice, '')}
+            </span>
+        </>
+    ) : null;
+};
+
 export const PlanCardSelector = ({
+    subscriptionDataCycleMapping,
+    audience,
     cycle,
     plansMap,
     onSelect,
@@ -251,12 +253,16 @@ export const PlanCardSelector = ({
     plan,
     onSelectedClick,
     planCards,
+    dark,
 }: {
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
+    audience?: Audience;
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
     plan: PLANS | ADDON_NAMES;
     planCards: PlanCard[];
+    dark?: boolean;
     onSelect: (planIDs: PlanIDs, plan: PLANS, upsellFrom?: PLANS) => void;
     onSelectedClick?: () => void;
 }) => {
@@ -267,10 +273,10 @@ export const PlanCardSelector = ({
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
 
-                const totals = getTotalFromPricing(pricing, cycle);
-
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
-                const billedText = isFreePlan ? c('pass_signup_2023: Info').t`Free forever` : getBilledText(cycle);
+                const billedText = isFreePlan
+                    ? c('pass_signup_2023: Info').t`Free forever`
+                    : getBilledText({ audience, cycle });
                 const selected = isFreePlan && !plan ? true : plan === planCard.plan;
 
                 if (!planFromCard) {
@@ -279,11 +285,53 @@ export const PlanCardSelector = ({
 
                 const offer = getPlanOffer(planFromCard);
                 const highlight = planCard.type === 'best' || offer.valid;
+                const hasMaxWidth = planCards.length > 2;
+
+                if (planCard.interactive === false) {
+                    return (
+                        <PlanCardViewSlot
+                            hasMaxWidth={hasMaxWidth}
+                            id={planCard.plan}
+                            price={getLetsTalk()}
+                            billedText={c('pass_signup_2023: Info').t`Get in touch with our sales team`}
+                            text={planFromCard.Title}
+                            key={planCard.plan}
+                            dark={dark}
+                            subsection={planCard.subsection}
+                        />
+                    );
+                }
+
+                const totals = getTotalFromPricing(pricing, cycle);
+                const priceToDisplay = {
+                    discountPercentage: totals.discountPercentage,
+                    standardMonthlyPrice: totals.totalNoDiscountPerMonth,
+                    monthlyPrice: totals.totalPerMonth,
+                };
+
+                const cycleMapping = getSubscriptionMapping({
+                    subscriptionDataCycleMapping,
+                    planIDs,
+                    planName: planCard.plan,
+                })?.[cycle];
+
+                if (cycleMapping) {
+                    const checkout = getCheckout({
+                        planIDs,
+                        plansMap,
+                        checkResult: cycleMapping.checkResult,
+                    });
+                    priceToDisplay.standardMonthlyPrice = checkout.withoutDiscountPerMonth;
+                    priceToDisplay.monthlyPrice = checkout.withDiscountPerMonth;
+                    priceToDisplay.discountPercentage = checkout.discountPercent;
+                }
 
                 return (
-                    <PlanCardView
-                        hasMaxWidth={planCards.length > 2}
-                        cycle={cycle}
+                    <PlanCardViewSlot
+                        hasMaxWidth={hasMaxWidth}
+                        highlightPrice={highlight}
+                        selected={selected}
+                        id={planCard.plan}
                         headerText={(() => {
                             if (offer.valid) {
                                 return getLimitedTimeOfferText();
@@ -292,22 +340,23 @@ export const PlanCardSelector = ({
                                 return getRecommendedText();
                             }
                         })()}
-                        onSelect={() => {
-                            onSelect(planIDs, planCard.plan);
-                        }}
-                        info={isFreePlan ? undefined : totals.totalPerMonth === 0 ? 'cancel' : 'guarantee'}
-                        onSelectedClick={onSelectedClick}
-                        highlightPrice={highlight}
-                        selected={selected}
+                        onSelect={
+                            !selected
+                                ? () => {
+                                      onSelect(planIDs, planCard.plan);
+                                  }
+                                : onSelectedClick
+                        }
+                        price={getSimplePriceString(currency, priceToDisplay.monthlyPrice, '')}
+                        discount={getDiscount({
+                            discountPercent: priceToDisplay.discountPercentage,
+                            standardMonthlyPrice: priceToDisplay.standardMonthlyPrice,
+                            currency,
+                        })}
                         text={planFromCard.Title}
                         billedText={billedText}
                         key={planCard.plan}
-                        currency={currency}
-                        totals={{
-                            discount: totals.discountPercentage,
-                            standardMonthlyPrice: totals.totalNoDiscountPerMonth,
-                            monthlyPrice: totals.totalPerMonth,
-                        }}
+                        dark={dark}
                         subsection={planCard.subsection}
                     />
                 );
@@ -317,6 +366,7 @@ export const PlanCardSelector = ({
 };
 
 export const UpsellCardSelector = ({
+    audience,
     checkout,
     relativePrice,
     currentPlan,
@@ -331,6 +381,7 @@ export const UpsellCardSelector = ({
     onKeep,
     vpnServersCountData,
 }: {
+    audience?: Audience;
     checkout: SubscriptionCheckoutData;
     relativePrice: string | undefined;
     plan: Plan | undefined;
@@ -348,14 +399,6 @@ export const UpsellCardSelector = ({
     if (!currentPlan) {
         return null;
     }
-
-    const above = (hidden: boolean) => (
-        <div className={clsx('text-center', hidden && 'visibility-hidden')}>
-            <div className="color-weak text-semibold text-sm mb-4">
-                {hidden ? '-' : c('pass_signup_2023: Info').t`You currently have`}
-            </div>
-        </div>
-    );
 
     const hasUpsell = !!plan && plan.Name !== PLANS.FREE;
     const hasCurrentPlan = currentPlan;
@@ -400,27 +443,32 @@ export const UpsellCardSelector = ({
                     });
                     const billedText = subscription?.CouponCode
                         ? getPerMonth()
-                        : getBilledText(subscription?.Cycle || cycle);
+                        : getBilledText({ cycle: subscription?.Cycle || cycle, audience });
 
                     const shortPlan = currentPlan
                         ? getShortPlan(currentPlan.Name as any, plansMap, { vpnServers: vpnServersCountData, freePlan })
                         : undefined;
 
+                    const totals = {
+                        discountPercent: currentCheckout.discountPercent,
+                        standardMonthlyPrice: currentCheckout.withoutDiscountPerMonth,
+                        monthlyPrice: currentCheckout.withDiscountPerMonth,
+                    };
+
                     return (
-                        <PlanCardView
-                            above={above(false)}
-                            cycle={cycle}
-                            headerText={undefined}
+                        <PlanCardViewSlot
+                            id={currentPlan.Name}
+                            headerText={c('pass_signup_2023: Info').t`Current plan`}
                             highlightPrice={false}
                             selected={false}
                             text={currentPlan.Title || ''}
                             billedText={billedText}
-                            currency={currency}
-                            totals={{
-                                discount: currentCheckout.discountPercent,
-                                standardMonthlyPrice: currentCheckout.withoutDiscountPerMonth,
-                                monthlyPrice: currentCheckout.withDiscountPerMonth,
-                            }}
+                            price={getSimplePriceString(currency, totals.monthlyPrice, '')}
+                            discount={getDiscount({
+                                discountPercent: totals.discountPercent,
+                                standardMonthlyPrice: totals.standardMonthlyPrice,
+                                currency,
+                            })}
                             subsection={
                                 shortPlan && (
                                     <>
@@ -450,7 +498,7 @@ export const UpsellCardSelector = ({
                     }
 
                     return (
-                        <div>
+                        <div className="">
                             <div
                                 className="mx-6 mt-14 hidden lg:flex flex-column gap-4 w-custom"
                                 style={{ '--w-custom': '5rem' }}
@@ -472,24 +520,27 @@ export const UpsellCardSelector = ({
                         return null;
                     }
 
-                    const billedText = coupon ? getPerMonth() : getBilledText(cycle);
+                    const billedText = coupon ? getPerMonth() : getBilledText({ cycle, audience });
+                    const totals = {
+                        discountPercent: checkout.discountPercent,
+                        monthlyPrice: checkout.withDiscountPerMonth,
+                        standardMonthlyPrice: checkout.withoutDiscountPerMonth,
+                    };
 
                     return (
-                        <PlanCardView
-                            above={above(true)}
-                            cycle={cycle}
+                        <PlanCardViewSlot
+                            id={plan.Name}
                             headerText={getRecommendedText()}
-                            info="guarantee"
                             highlightPrice={true}
                             selected={true}
                             text={plan.Title || ''}
                             billedText={billedText}
-                            currency={currency}
-                            totals={{
-                                discount: checkout.discountPercent,
-                                monthlyPrice: checkout.withDiscountPerMonth,
-                                standardMonthlyPrice: checkout.withoutDiscountPerMonth,
-                            }}
+                            price={getSimplePriceString(currency, totals.monthlyPrice, '')}
+                            discount={getDiscount({
+                                discountPercent: totals.discountPercent,
+                                standardMonthlyPrice: totals.standardMonthlyPrice,
+                                currency,
+                            })}
                             subsection={
                                 <>
                                     {bundlePlans.includes(plan.Name as any) && (

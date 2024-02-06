@@ -41,6 +41,20 @@ export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
+export const getSSOIntegration = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`SSO integration (coming soon)`,
+        included: true,
+    };
+};
+
+export const getRequire2FA = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Require 2FA for organization`,
+        included: true,
+    };
+};
+
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
         text: getLoginsAndNotesText(),
@@ -123,6 +137,10 @@ export const getCustomFields = (included: boolean = false): PlanCardFeatureDefin
         included,
         icon: 'pen-square',
     };
+};
+
+export const getUnlimitedVaultSharingText = () => {
+    return c('new_plans: feature').t`Unlimited shared vaults with access permissions`;
 };
 
 export const getVaultSharingText = (n: number) => {

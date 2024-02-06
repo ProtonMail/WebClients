@@ -1,3 +1,5 @@
+import { Location } from 'history';
+
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
 import {
     ADDON_NAMES,
@@ -9,12 +11,14 @@ import {
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
-import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';
 
 import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
@@ -113,6 +117,24 @@ export const getSignupSearchParams = (
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
+export const getThemeFromLocation = (location: Location, searchParams: URLSearchParams) => {
+    if (location.pathname === SSO_PATHS.PASS_SIGNUP) {
+        return { themeType: ThemeTypes.Storefront, className: 'signup-v2-account-gradient' };
+    }
+    if (location.pathname === SSO_PATHS.PASS_SIGNUP_B2B) {
+        return {
+            themeType: ThemeTypes.Storefront,
+            className: 'ui-prominent signup-v2-account-gradient',
+            isDarkBg: true,
+        };
+    }
+    const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
+    const hasVisionary = searchParams.get('plan')?.toLowerCase() === PLANS.NEW_VISIONARY;
+    if (location.pathname.includes('signup') && (hasBFCoupon || hasVisionary)) {
+        return { themeType: ThemeTypes.Carbon, className: '' };
+    }
+    return null;
+};
 export const getPlanIDsFromParams = (
     plans: Plan[],
     signupParameters: {
@@ -126,7 +148,10 @@ export const getPlanIDsFromParams = (
     const freePlanIDs = {};
     const defaultResponse = {
         planIDs: defaults.plan === PLANS.FREE ? freePlanIDs : { [defaults.plan]: 1 },
-        plan: FREE_PLAN,
+        plan:
+            defaults.plan === FREE_PLAN.Name
+                ? FREE_PLAN
+                : plans.find((plan) => plan.Name === defaults.plan) || FREE_PLAN,
         defined: false,
     };
 
