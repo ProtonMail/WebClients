@@ -16,7 +16,7 @@ import {
     SHARED_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
-import { hasFamily } from '@proton/shared/lib/helpers/subscription';
+import { getHasMemberCapablePlan, hasFamily } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
@@ -63,8 +63,10 @@ const OrganizationSection = ({ app, organization }: Props) => {
         return <Loader />;
     }
 
+    const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
+
     // Upsell
-    if (organization.MaxMembers === 1) {
+    if (!hasMemberCapablePlan) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph>
@@ -117,7 +119,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 </SettingsParagraph>
                 <PrimaryButton
                     onClick={async () => {
-                        if (organization?.MaxMembers === 1) {
+                        if (!hasMemberCapablePlan) {
                             return createNotification({
                                 type: 'error',
                                 text: c('Error')
@@ -148,7 +150,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                 <PrimaryButton
                     loading={loading}
                     onClick={async () => {
-                        if (organization?.MaxMembers === 1) {
+                        if (!hasMemberCapablePlan) {
                             return createNotification({
                                 type: 'error',
                                 text: c('Error')

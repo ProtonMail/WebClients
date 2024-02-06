@@ -11,32 +11,20 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
-import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getHasVpnOrPassB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
+import { getIsExternalAccount, getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
 import { recoveryIds } from './recoveryIds';
 
-const getShowEasySwitchSection = (app: APP_NAMES, addresses: Address[] | undefined, isSSOUser: boolean | undefined) => {
-    if (addresses === undefined) {
-        return false;
-    }
-
-    const isExternal = getHasOnlyExternalAddresses(addresses);
-
-    return !isExternal && app !== APPS.PROTONPASS && !isSSOUser;
-};
-
 export const getAccountAppRoutes = ({
     app,
     user,
     subscription,
-    addresses,
     isDataRecoveryAvailable,
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
@@ -79,6 +67,8 @@ export const getAccountAppRoutes = ({
     const cancellablePlan = hasCancellablePlan(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const hasSplitStorage = isStorageSplitEnabled && getHasStorageSplit(user);
+
+    const showEasySwitchSection = !getIsExternalAccount(user) && app !== APPS.PROTONPASS && !isSSOUser;
 
     return <const>{
         available: true,
@@ -309,7 +299,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
-                available: getShowEasySwitchSection(app, addresses, isSSOUser),
+                available: showEasySwitchSection,
                 description: isGmailSyncEnabled
                     ? c('Settings description')
                           .t`Complete the transition to privacy with our secure importing and forwarding tools.`

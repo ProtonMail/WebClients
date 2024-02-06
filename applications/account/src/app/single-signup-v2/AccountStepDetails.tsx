@@ -39,6 +39,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { usePublicTheme } from '../containers/PublicThemeProvider';
 import { AccountData, SignupType } from '../signup/interfaces';
 import { runAfterScroll } from './helper';
 import type { BaseMeasure, SignupModelV2 } from './interface';
@@ -240,6 +241,7 @@ const AccountStepDetails = ({
     const inputValuesRef = useRef({ email: false, username: false });
     const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
+    const theme = usePublicTheme();
 
     const domain = maybeDomain || domains?.[0];
 
@@ -565,7 +567,7 @@ const AccountStepDetails = ({
                             onChallengeError();
                         }}
                     >
-                        <div className={inputsWrapper}>
+                        <div className={clsx(inputsWrapper, theme.dark && 'ui-prominent', 'bg-transparent')}>
                             {signupType === SignupType.Email && (
                                 <InputFieldTwo
                                     ref={emailRef}
