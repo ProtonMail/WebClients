@@ -60,7 +60,6 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     SamlAuthenticationSection,
-    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -92,8 +91,7 @@ const MainContainer: FunctionComponent = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const ssoVpnSettingFeature = useFlag('SSOVpnSettings');
-    const routes = getRoutes({ user, subscription, organization, ssoVpnSettingFeature });
+    const routes = getRoutes({ user, subscription, organization });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
