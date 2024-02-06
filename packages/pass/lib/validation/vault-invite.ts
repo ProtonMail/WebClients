@@ -37,18 +37,20 @@ export const validateShareInviteValues = (emailFieldRef: RefObject<HTMLInputElem
 
         errors.members = emails.errors;
 
-        /** Validate the trailing input value : this value lives
-         * outside of the formik state values - as such adapt the
-         * validation logic accordingly */
-        const trailing = emailFieldRef.current?.value?.trim() ?? '';
-        const validTrailingEmail = validateEmailAddress(trailing);
+        /** Validate the trailing input value only when it is not
+         * focused : this value lives outside of the formik state
+         * values - as such adapt the validation logic accordingly */
+        if (emailFieldRef.current !== document.activeElement) {
+            const trailing = emailFieldRef.current?.value?.trim() ?? '';
+            const validTrailingEmail = validateEmailAddress(trailing);
 
-        if (emails.errors.length === 0 && !validTrailingEmail) {
-            emails.pass = false;
-            errors.members.push(InviteEmailsError.EMPTY);
-        } else if (trailing && !validTrailingEmail) {
-            emails.pass = false;
-            errors.members.push(InviteEmailsError.INVALID);
+            if (emails.errors.length === 0 && !validTrailingEmail) {
+                emails.pass = false;
+                errors.members.push(InviteEmailsError.EMPTY);
+            } else if (trailing && !validTrailingEmail) {
+                emails.pass = false;
+                errors.members.push(InviteEmailsError.INVALID);
+            }
         }
 
         if (emails.pass) delete errors.members;
