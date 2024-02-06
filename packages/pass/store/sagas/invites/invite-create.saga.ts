@@ -1,6 +1,7 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { c } from 'ttag';
 
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import { createNewUserInvites, createUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import { moveItem } from '@proton/pass/lib/items/item.requests';
@@ -11,17 +12,20 @@ import {
     inviteBatchCreateSuccess,
     sharedVaultCreated,
 } from '@proton/pass/store/actions';
-import { selectItemByShareIdAndId, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
+import { selectItemByShareIdAndId, selectPassPlan, selectVaultSharedWithEmails } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemMoveDTO, ItemRevision, Maybe, Share, ShareType } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
 import { partition } from '@proton/pass/utils/array/partition';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 function* createInviteWorker(
     { onNotification }: RootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof inviteBatchCreateIntent>
 ) {
     const count = payload.members.length;
+    const plan: UserPassPlan = yield select(selectPassPlan);
 
     try {
         const shareId: string = !payload.withVaultCreation
@@ -88,8 +92,19 @@ function* createInviteWorker(
         }
 
         yield put(inviteBatchCreateSuccess(request.id, { shareId }, members.length - failed.length));
-    } catch (err) {
-        yield put(inviteBatchCreateFailure(request.id, err, count));
+    } catch (error: unknown) {
+        /** Fine-tune the error message when a B2B user
+         * reaches the 100 members per vault hard-limit */
+        if (plan === UserPassPlan.BUSINESS && error instanceof Error && 'data' in error) {
+            const apiError = error as any;
+            const { code } = getApiError(apiError);
+
+            if (code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) {
+                apiError.data.Error = c('Warning').t`Please contact us for investigating the issue`;
+            }
+        }
+
+        yield put(inviteBatchCreateFailure(request.id, error, count));
     }
 }
 

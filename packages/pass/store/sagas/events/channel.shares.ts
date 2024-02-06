@@ -23,10 +23,9 @@ import { getShareChannelForks } from './channel.share';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
-/* We're only interested in new shares in this effect :
- * deleted shares will be handled by the share's EventChannel
- * error handling. see `channel.share.ts` code `300004`
- * FIXME: handle ItemShares */
+/** We're only interested in new shares in this effect : Deleted shares will
+ * be handled by the share's EventChannel error handling. see `channel.share.ts`
+ * code `PassErrorCode.DISABLED_SHARE`. FIXME: handle ItemShares */
 function* onSharesEvent(
     event: EventManagerEvent<SharesGetResponse>,
     { api }: EventChannel<any>,
