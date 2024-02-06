@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from 'react';
 
-import { Breakpoints } from '@proton/components/hooks';
+import type { Breakpoints } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
