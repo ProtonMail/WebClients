@@ -1,9 +1,9 @@
-import type { Item, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
+import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
 export type ItemMatchFunc<T extends ItemType = ItemType, Options extends any = any> = (
-    item: Item<T>
+    item: ItemRevision<T>
 ) => (searchTerm: string, options?: Options) => boolean;
 
 export type SelectItemsOptions = {
