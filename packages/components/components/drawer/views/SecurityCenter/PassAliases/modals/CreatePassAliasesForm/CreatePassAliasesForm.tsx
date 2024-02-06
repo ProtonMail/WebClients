@@ -150,7 +150,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                 <h1 className="text-center text-bold">{c('Security Center').t`Create alias`}</h1>
                 <p className="text-center color-weak">
                     {c('Security Center')
-                        .t`When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.`}
+                        .t`When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.`}
                 </p>
                 {loadingData && (
                     <div className="flex items-center min-h-custom" style={{ '--min-h-custom': '25em' }}>
@@ -259,7 +259,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
             <ModalTwoFooter>
                 <Button type="button" onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button type="submit" color="norm" loading={loadingSubmit} onClick={handleSubmit}>{c('Action')
-                    .t`Save and copy alias`}</Button>
+                    .t`Create and copy alias`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
