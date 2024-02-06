@@ -232,6 +232,9 @@
       "Discard": [
         "მოცილება"
       ],
+      "Dismiss": [
+        "მოცილება"
+      ],
       "Don't know your password?": [
         "არ იცით თქვენი პაროლი?"
       ],
@@ -252,6 +255,9 @@
       ],
       "Download apps": [
         "გადმოწერეთ აპები"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
       ],
       "Drive Locked": [
         "საცავი ჩაკეტილია"
@@ -400,6 +406,9 @@
       "Mark for deletion": [
         "მონიშნეთ წასაშლელად"
       ],
+      "Maximize": [
+        "გაშლა"
+      ],
       "Maximize transfers": [
         "გადაწერების ამოკეცვა"
       ],
@@ -408,6 +417,9 @@
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
+      ],
+      "Minimize": [
+        "ჩაკეცვა"
       ],
       "Minimize transfers": [
         "გადაწერების ჩაკეცვა"
@@ -438,6 +450,9 @@
       ],
       "Next month": [
         "შემდეგი თვე"
+      ],
+      "Not now": [
+        "არა ახლა"
       ],
       "Ok": [
         "დიახ"
@@ -1953,9 +1968,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-ის ლოგო და მიმატების ნიშანი"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
@@ -2100,6 +2112,9 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
+      "Alias options could not be resolved": [
+        "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
       "Authentication canceled.": [
         "ავთენტიკაცია გაუქმებულია."
       ],
@@ -2126,6 +2141,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
+      ],
+      "Could not open created vault": [
+        "შექმნილი საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not open updated vault": [
+        "განახლებული საცავის გახსნა შეუძლებელია"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
@@ -2197,6 +2218,9 @@
       ],
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
+      ],
+      "Item content cannot exceed 40KB": [
+        "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
@@ -3282,6 +3306,14 @@
         "ნაპოვნია ${ groupCounts } ჯგუფი",
         "ნაპოვნია ${ groupCounts } ჯგუფი"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } დაშიფრული ფაილი",
+        "${ nbFile } დაშიფრული ფაილი"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } დაშიფრული ფაილი...",
+        "${ nbFile } დაშიფრული ფაილი..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } შეჩერებულია",
         "${ pausedCount } შეჩერებულია"
@@ -3354,6 +3386,9 @@
       "All (${ totalFoldersCount } label)": [
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
+      ],
+      "All encrypted files": [
+        "ყველა დაშიფრული ფაილი"
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -3547,11 +3582,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "მიერთების პრობლემის გამო გადმოწერა შეჩერდა; ის თვითონ გაგრძელდება"
       ],
+      "Download ready": [
+        "გადმოწერა მზადაა"
+      ],
       "Downloaded": [
         "გადმოწერილია"
       ],
       "Downloading": [
         "გადმოწერა"
+      ],
+      "Downloading all encrypted files": [
+        "ყველა დაშიფრული ფაილის გადმოწერა"
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
@@ -3710,6 +3751,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "ამასობაში დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "მიმდინარეობს ${ esProgress }-ე ჩანაწერის ინდექსირება (${ totalProgressToShow }-დან)"
@@ -3989,11 +4033,24 @@
       "Restoring Photos... Please keep the tab open": [
         "ფოტოების აღდგენა.. ნუ დახურავთ ამ ჩანართს"
       ],
+      "Retry now": [
+        "თავიდან ცდა ახლავე"
+      ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
       ],
       "Search Enabled": [
         "ძებნა ჩართულია"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "დაცულად გადმოწერილია ${ nbFile } ფაილი",
+        "დაცულად გადმოწერილია ${ nbFile } ფაილი"
+      ],
+      "Securely downloaded all encrypted files": [
+        "დაცულად გადმოწერილია ყველა დაშიფრული ფაილი"
+      ],
+      "Securely downloaded all files": [
+        "დაცულად გადმოწერილია ყველა ფაილი"
       ],
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
@@ -4037,6 +4094,9 @@
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "დარეგისტრირდით საკუთარი ${ DRIVE_APP_NAME }-ის ანგარიშისთვის და დაიცავით თქვენი მონაცემები გამჭოლი დაშიფვრით და გააზიარეთ ის დაცულად."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ხელმოწერა ვერ დადასტურდება ქსელის შეცდომის გამო, გთხოვთ, სცადეთ მოგვიანებით."
       ],
@@ -4060,6 +4120,9 @@
       ],
       "Something went wrong, please try again later.": [
         "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
+      ],
+      "Something went wrong...": [
+        "რაღაც არასწორად წავიდა..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
@@ -4099,6 +4162,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "ფაილი წაშლილი, გადატანილი ან წვდომებმოხნილია. მოსაძებნად მის მფლობელს დაუკავშირდით."
+      ],
+      "This item already exists in your library": [
+        "ეს ელემენტი თქვენს ბიბლიოთეკაში უკვე არსებობს"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "ბმული მიდის ვებგვერდამდე, რომელმაც შეიძლება მოიპაროს თქვენი ისეთი ინფორმაცია, როგორიცაა პაროლები და საკრედიტო ბარათის დეტალები."
@@ -4345,6 +4411,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "მონაცემების შემოტანა ${ importedEmailAddressStrong }-დან ${ BRAND_NAME }-ის თქვენს ანგარიშზე მზადაა დასაწყებად."
       ],
+      "Your download is in progress": [
+        "მიმდინარეობს გადმოწერა"
+      ],
       "Your email will only be used for this one-time verification.": [
         "თქვენი ელფოსტა, მხოლოდ, ერთხელ შესამოწმებლად იქნება გამოყენებული."
       ],
@@ -4581,6 +4650,12 @@
       "Download anyway": [
         "მაინც გადმოწერა"
       ],
+      "Downloading": [
+        "გადმოწერა"
+      ],
+      "Downloading ${ percentageValue }": [
+        "გადმოწერა ${ percentageValue }"
+      ],
       "Duplicate found": [
         "ნაპოვნია დუბლიკატი"
       ],
@@ -4640,6 +4715,9 @@
       ],
       "Folder name": [
         "საქაღალდის სახელი"
+      ],
+      "Forwards to": [
+        "გადაგზავნა"
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
@@ -4727,6 +4805,9 @@
       ],
       "New password": [
         "ახალი პაროლი"
+      ],
+      "Note": [
+        "შენიშვნა"
       ],
       "Notification": [
         "შეტყობინება"
@@ -4829,6 +4910,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "თქვენს ჩაკეტილ დისკზე ყველა ფაილი სამუდამოდ წაიშლება."
+      ],
+      "Title": [
+        "სათაური"
       ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
@@ -5010,6 +5094,194 @@
       ],
       "Plain text": [
         "უბრალო ტექსტი"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP აუდიო/ვიდეო კონტეინერი"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 აუდიო/ვიდეო კონტეინერი"
+      ],
+      "7-zip archive": [
+        "7-Zip არქივი"
+      ],
+      "AAC audio": [
+        "AAC აუდიო"
+      ],
+      "AbiWord document": [
+        "AbiWord დოკუმენტი"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe-ის გადატანადი დოკუმენტის ფორმატი (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle ელწიგნის ფორმატი"
+      ],
+      "Android Package": [
+        "Android-ის პაკეტი"
+      ],
+      "Animated Portable Network Graphics": [
+        "ანიმირებული გადატანადი ქსელური გრაფიკა"
+      ],
+      "Apple Installer Package": [
+        "Apple-ის დაყენების პაკეტი"
+      ],
+      "Archive document": [
+        "არქივის დოკუმენტი"
+      ],
+      "Audio file": [
+        "აუდიო ფაილი"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 გამოსახულების ფაილის ფორმატი (AVIF)"
+      ],
+      "AVI video": [
+        "AVI ვიდეო"
+      ],
+      "Binary data": [
+        "ბინარული მონაცემები"
+      ],
+      "Bourne shell script": [
+        "Bash სკრიპტი"
+      ],
+      "BZip archive": [
+        "BZip არქივი"
+      ],
+      "BZip2 archive": [
+        "BZip2 არქივი"
+      ],
+      "C-Shell script": [
+        "C-Shell სკრიპტი"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "კასკადური სტილის ცხრილები (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "მძიმით გამოყოფილი მნიშვნელობები (.CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "ელექტრონული პუბლიკაცია (EPUB)"
+      ],
+      "Flash Video": [
+        "Flash ვიდეო"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "გრაფიკის მიმოცვლის ფორმატი (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "Gzip-ით შეკუმშული არქივი"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "ჰიპერტექსტის აწყობის ენა (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "ჰიპერტექსტის პრეპროცესორი (პერსონალური გვერდი)"
+      ],
+      "iCalendar format": [
+        "iCalendar-ის ფორმატი"
+      ],
+      "Icon format": [
+        "ხატულის ფორმატი"
+      ],
+      "Image": [
+        "გამოსახულება"
+      ],
+      "Java Archive (JAR)": [
+        "Java არქივი (JAR)"
+      ],
+      "JPEG images": [
+        "JPEG გამოსახულებები"
+      ],
+      "MP3 audio": [
+        "MP3 აუდიო"
+      ],
+      "MPEG transport stream": [
+        "MPEG ტრანსპორტის ნაკადი"
+      ],
+      "MPEG Video": [
+        "MPEG ვიდეო"
+      ],
+      "MS Embedded OpenType fonts": [
+        "MS ჩაშენებული OpenType ფონტები"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "მუსიკალური ინსტრუმენტების ციფრული ინტერფეისი (MIDI)"
+      ],
+      "OGG audio": [
+        "OGG აუდიო"
+      ],
+      "OGG video": [
+        "OGG ვიდეო"
+      ],
+      "OpenDocument presentation document": [
+        "OpenDocument პრეზენტაციის დოკუმენტი"
+      ],
+      "OpenDocument spreadsheet document": [
+        "OpenDocument ელცხრილის დოკუმენტი"
+      ],
+      "OpenDocument text document": [
+        "OpenDocument ტექსტური დოკუმენტი"
+      ],
+      "OpenType font": [
+        "OpenType ფონტი"
+      ],
+      "Opus audio": [
+        "Opus აუდიო"
+      ],
+      "Portable Network Graphics": [
+        "გადატანადი ქსელური გრაფიკა"
+      ],
+      "RAR archive": [
+        "RAR არქივი"
+      ],
+      "Rich Text Format (RTF)": [
+        "მდიდარი ტექსტის ფორმატი (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "მასშტაბირებადი ვექტორული გრაფიკა (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "პატარა ვების ფორმატი (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "ჭდის მქონე გამოსახულების ფაილის ფორმატი (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "ლენტის არქივი (TAR)"
+      ],
+      "Text": [
+        "ტექსტი"
+      ],
+      "TrueType Font": [
+        "TrueType ფონტი"
+      ],
+      "Unknown file": [
+        "უცნობი ფაილი"
+      ],
+      "Video file": [
+        "ვიდეოფაილი"
+      ],
+      "Waveform Audio Format": [
+        "WAV (Waveform Audio Format)"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "ვების ღია ფონტის ფორმატი (WOFF)"
+      ],
+      "WEBM audio": [
+        "WEBM აუდიო"
+      ],
+      "WEBM video": [
+        "WEBM ვიდეო"
+      ],
+      "WEBP image": [
+        "WEBP გამოსახულება"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows/OS/2 ბიტური რუკის გრაფიკა (BMP)"
+      ],
+      "ZIP archive": [
+        "ZIP არქივი"
       ]
     },
     "Modal title": {
@@ -5229,6 +5501,12 @@
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
         "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } გაითიშა"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } ჩაირთო"
+      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -5443,6 +5721,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress }-მა ეს გასაღები მოძველებულად მონიშნა. გასაღები, მხოლოდ, ხელმოწერის შესამოწმებლადღა გამოდგება."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "გარე გასაღებების გამოთხოვა ავტომატურად ხდება საიტიდან keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "გარე გასაღები ავტომატურადაა გამოთხოვილი WKD-ის გავლით."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "ეს გასაღები ამ კონტაქტისთვის შეტყობინებების დასაშიფრად გამოიყენება"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "გირჩევთ, ეს გასაღები \"არასანდოდ\" გამოაცხადოთ."
       ]
@@ -5583,6 +5870,14 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Security Center": {
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გახსნა"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "სცადეთ ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6017,6 +6312,53 @@
         "თქვენი მიმდინარე საცავი:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } საცავი"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } სავსეა ${ percentage }%"
+      ],
+      "contact your administrator": [
+        "დაუკავშირდით ადმინისტრატორს"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "თქვენი ${ appStorage }, თითქმის, სავსეა"
+      ],
+      "Your ${ appStorage } is full": [
+        "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "თქვენი ${ storage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } ერთნაირია.",
@@ -6208,6 +6550,12 @@
         "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა",
         "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა"
       ],
+      "Account recovery": [
+        "ანგარიშის აღდგენა"
+      ],
+      "Account security": [
+        "ანგარიშის უსაფრთხოება"
+      ],
       "Active": [
         "აქტიური"
       ],
@@ -6295,6 +6643,9 @@
       ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
+      ],
+      "Data recovery": [
+        "მონაცემების აღდგენა"
       ],
       "Date": [
         "თარიღი"
@@ -6787,8 +7138,23 @@
       "Contacts could not be merged": [
         "კონტაქტების შერწყმის შეცდომა"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "თუ პაროლი დაგავიწყდათ, თქვენი გასაღების ხელახალი აქტივაცია შეუძლებელია. ჩვენ შეგვიძლია, დაგეხმაროთ გაფრთხილების ბანერის მოხსნით, მაგრამ ამ პროცესში მოცემული გასაღებით დაშიფრულ მონაცემებთან წვდომსას სამუდამოდ დაკარგავთ."
+      ],
+      "Invalid alias prefix": [
+        "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Missing alias prefix": [
+        "აკლია ფსევდონიმის პრეფიქსი"
+      ],
+      "Missing alias suffix": [
+        "აკლია ფსევდონიმის სუფიქსი"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
@@ -6798,6 +7164,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "ზოგიერთ შესარწყმელ კონტაქტში დაფიქსირებულია შეცდომები. გთხოვთ, ცალ-ცალკე განიხილოთ ისინი"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "კონტაქტის მონაცემები დაზიანებულია და ნაჩვენები ვერ იქნება."
@@ -6825,6 +7194,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "ელფოსტის სერვერი ვერ შევამოწმეთ. თუ ენდობით მას, შემოწმება შეგიძლიათ, გამოტოვოთ."
+      ],
+      "You must select at least one mailbox": [
+        "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"
       ],
       "You will lose any customization you made so far.": [
         "დაკარგავთ ყველაფერს, რაც თქვენზე მოირგეთ."

@@ -232,6 +232,9 @@
       "Discard": [
         "Elvetés"
       ],
+      "Dismiss": [
+        "Elvetés"
+      ],
       "Don't know your password?": [
         "Nem tudja a jelszavát?"
       ],
@@ -435,6 +438,9 @@
       ],
       "Next month": [
         "Következő hónap"
+      ],
+      "Not now": [
+        "Most nem"
       ],
       "Ok": [
         "OK"
@@ -1894,9 +1900,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail logó és egy plusz jel"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
       ],
@@ -2010,6 +2013,9 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
+      "Alias options could not be resolved": [
+        "Az e-mail álnév adatainak betöltése nem sikerült"
+      ],
       "Authentication canceled.": [
         "Hitelesítés megszakítva."
       ],
@@ -2033,6 +2039,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
+      ],
+      "Could not open created vault": [
+        "A létrehozott tároló megnyitása nem sikerült"
+      ],
+      "Could not open updated vault": [
+        "A frissített tároló megnyitása nem sikerült"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
@@ -2104,6 +2116,9 @@
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Az elem tartalma nem lehet több 40KB-nál"
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
@@ -3904,6 +3919,9 @@
       "Something went wrong, please try again later.": [
         "Hiba történt. Kérjük, próbálkozzon később."
       ],
+      "Something went wrong...": [
+        "Hiba történt..."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
@@ -4454,6 +4472,9 @@
       "Folder name": [
         "Mappa neve"
       ],
+      "Forwards to": [
+        "Továbbít:"
+      ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
@@ -4540,6 +4561,9 @@
       ],
       "New password": [
         "Új jelszó"
+      ],
+      "Note": [
+        "Megjegyzés"
       ],
       "Notification": [
         "Értesítés"
@@ -4642,6 +4666,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Ez véglegesen törli a zárolt tárhelyen található összes fájlját."
+      ],
+      "Title": [
+        "Cím"
       ],
       "To: ${ toEmail }": [
         "Címzett: ${ toEmail }"
@@ -4820,6 +4847,11 @@
       ],
       "Plain text": [
         "Egyszerű szöveg"
+      ]
+    },
+    "Mimetype": {
+      "iCalendar format": [
+        "iCalendar formátum"
       ]
     },
     "Modal title": {
@@ -5023,6 +5055,12 @@
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } hivatkozás a fájlra törlésre került",
         "${ numberOfItems } hivatkozás a fájlra törlésre került"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } letiltva"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
       ],
       "All items will soon be permanently deleted from trash": [
         "Minden elem hamarosan törlésre fog kerülni a Lomtárban"
@@ -5362,6 +5400,14 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } megnyitása"
       ]
     },
     "Select files": {
@@ -5768,6 +5814,14 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tárhely"
+      ],
+      "Your storage is full": [
+        "A tárhelye megtelt"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
@@ -5955,6 +6009,12 @@
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
         "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
       ],
+      "Account recovery": [
+        "Fiók helyreállítás"
+      ],
+      "Account security": [
+        "Fiókbiztonság"
+      ],
       "Active": [
         "Aktív"
       ],
@@ -6042,6 +6102,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Data recovery": [
+        "Adat helyreállítás"
       ],
       "Date": [
         "Dátum"
@@ -6537,6 +6600,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adat elérésének lehetőségét."
       ],
+      "Invalid alias prefix": [
+        "Érvénytelen e-mail álnév előtag"
+      ],
+      "Missing alias prefix": [
+        "Hiányzó e-mail álnév előtag"
+      ],
+      "Missing alias suffix": [
+        "Hiányzó e-mail álnév végződés"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Csak alfanumerikus karakterek, pontok, kötőjelek és aláhúzás használható"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
@@ -6545,6 +6620,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Az e-mail előtag nem lehet hosszabb mint 40 karakter"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "A névjegy adatai sérültek és nem jeleníthetők meg."
@@ -6572,6 +6650,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nem sikerült ellenőrzni a mail-szervert. Ha megbízik benne, átugorhatja ezt az ellenőrzést."
+      ],
+      "You must select at least one mailbox": [
+        "Legalább egy e-mail fiókot ki kell választania"
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."
