@@ -213,6 +213,9 @@
       "Discard": [
         "Forkast"
       ],
+      "Dismiss": [
+        "Avvis"
+      ],
       "Don't know your password?": [
         "Vet ikke passordet ditt?"
       ],
@@ -402,6 +405,9 @@
       "No, thanks": [
         "Nei, takk"
       ],
+      "Not now": [
+        "Ikke nå"
+      ],
       "Ok": [
         "OK"
       ],
@@ -482,6 +488,9 @@
       ],
       "Save": [
         "Lagre"
+      ],
+      "Save and copy alias": [
+        "Lagre og kopier alias"
       ],
       "Search": [
         "Søk"
@@ -2162,6 +2171,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA legger til et ekstra sikkerhetslag, og forhindrer uautorisert tilgang."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Øk effektiviteten og spor tiden din ved å fargekode hendelser etter kategori eller energinivå. Få dette og mye mer med en betalt plan."
       ],
@@ -2171,11 +2183,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Designet for brukere som ønsker økt beskyttelse for kontoene sine."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, vennligst del den opp i mindre filer. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Få ubegrensede aliaser og 500 GB lagringsplass med ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
@@ -2183,17 +2201,23 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo og et plusstegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved å sende e-postmeldinger eller invitasjoner til alle samtidig, en premiumfunksjon blant mange andre. Oppgrader i dag."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Angi en datagjenopprettingsmetode for å forhindre tap av data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Angi en gjenopprettingsmetode for å forhindre at du mister tilgang til kontoen din."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke kalenderen som vanlig."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Oppgrader kontoen din for å aktivere ${ PROTON_SENTINEL_NAME }, vår banebrytende AI-drevne sikkerhetsløsning med dedikert 24/7 ekspertstøtte."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
@@ -2203,6 +2227,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan merke for sletting kontaktene du ikke vil at hverken skal slås sammen eller beholdes. Sletting vil bare finne sted etter at fletteknappen er klikket."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Konto- og datagjenopprettingsmetodene dine er angitt, og 2FA er aktivert."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Dine konto- og datagjenopprettingsmetoder er angitt."
       ]
     },
     "description": {
@@ -2395,8 +2425,26 @@
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
+      "Alias is not valid": [
+        "Alias er ikke gyldig"
+      ],
+      "Alias is required": [
+        "Alias kreves"
+      ],
+      "Alias options could not be resolved": [
+        "Aliasalternativene kunne ikke løses"
+      ],
+      "Aliases could not be loaded": [
+        "Aliaser kan ikke lastes inn"
+      ],
       "Already a member of this calendar": [
         "Allerede medlem av denne kalenderen"
+      ],
+      "An error occurred while loading alias options": [
+        "Det oppstod en feil under lasting av aliasalternativer"
+      ],
+      "An error occurred while saving alias": [
+        "En feil oppstod under lagring av alias"
       ],
       "Answer failed to be sent": [
         "Svar kunne ikke sendes"
@@ -2433,6 +2481,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åpne opprettet hvelv"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åpne oppdatert hvelv"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfeil: dekryptering av innholdet i denne hendelsen mislyktes."
@@ -2487,6 +2541,9 @@
       "Folder name cannot be empty.": [
         "Mappenavn kan ikke være tomt."
       ],
+      "Forward address is required": [
+        "Videresendingsadresse kreves"
+      ],
       "Image upload failed": [
         "Bildeopplasting mislyktes"
       ],
@@ -2526,6 +2583,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Det er kun mulig å flytte hendelser mellom ${ minDateString } - ${ maxDateString }"
       ],
+      "Item content cannot exceed 40KB": [
+        "Elementinnhold kan ikke overskride 40KB"
+      ],
       "Label name cannot be empty.": [
         "Etikettnavn kan ikke være tomt."
       ],
@@ -2541,6 +2601,9 @@
       ],
       "Missing signature": [
         "Mangler signatur"
+      ],
+      "Name is required": [
+        "Navn kreves"
       ],
       "Name required": [
         "Navn kreves"
@@ -3298,6 +3361,9 @@
       ],
       "Search": [
         "Søk"
+      ],
+      "Security Center": [
+        "Sikkerhetssenter"
       ]
     },
     "Hint": {
@@ -3904,6 +3970,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Viktig merknad"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
       ],
@@ -4124,6 +4193,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
+      "The vault your alias will be stored in.": [
+        "Hvelvet som aliaset ditt vil bli lagret i."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
       ],
@@ -4168,6 +4240,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
+      ],
+      "Warning": [
+        "Advarsel"
       ],
       "We'll notify you when the import is done.": [
         "Vi varsler deg når importen er ferdig."
@@ -4446,6 +4521,9 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
+      "Add title": [
+        "Legg til tittel"
+      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -4581,6 +4659,9 @@
       "Folder location": [
         "Mappeplassering"
       ],
+      "Forwards to": [
+        "Videresendes til"
+      ],
       "Frequency": [
         "Frekvens"
       ],
@@ -4655,6 +4736,9 @@
       ],
       "New password": [
         "Nytt passord"
+      ],
+      "Note": [
+        "Notat"
       ],
       "Notification": [
         "Varsel"
@@ -4747,6 +4831,9 @@
       "Time zone": [
         "Tidssone"
       ],
+      "Title": [
+        "Tittel"
+      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -4770,6 +4857,9 @@
       ],
       "Wonderful": [
         "Fantastisk"
+      ],
+      "Your alias": [
+        "Ditt alias"
       ],
       "Your calendar URL": [
         "Nettadressen til kalenderen"
@@ -5251,6 +5341,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } er deaktivert"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } er aktivert"
+      ],
       "Contact group created": [
         "Kontaktgruppe opprettet"
       ],
@@ -5723,6 +5819,57 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Last inn hendelse på nytt"
+      ]
+    },
+    "Security Center": {
+      "All aliases": [
+        "Alle aliaser"
+      ],
+      "Create alias": [
+        "Opprett alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "f.eks. Amazon, eBay, Etsy"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generer aliaser på farten, og administrer enkelt aliaser og passord."
+      ],
+      "Get an alias": [
+        "Få et alias"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email aliaser"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email aliaser tillater å registrere deg for ting på nettet uten å dele e-postadressen din. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nytt alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Åpne ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Beskytt din identitet på nettet"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prøv ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Legg til et navn og et notat for å holde oversikt over hvor du bruker det."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Se logger"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Vår banebrytende AI-drevne sikkerhetsløsning designet for brukere som ønsker økt beskyttelse for kontoene sine. ${ learnMoreLink }."
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel er **aktiv** og beskytter kontoen din."
       ]
     },
     "Select files": {
@@ -6283,6 +6430,12 @@
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
+      "Alias copied to clipboard": [
+        "Alias kopiert til utklippstavlen"
+      ],
+      "Alias saved and copied": [
+        "Alias lagret og kopiert"
+      ],
       "All events deleted": [
         "Alle hendelser slettet"
       ],
@@ -6533,6 +6686,12 @@
         "${ emailsCount } e-postadresse",
         "${ emailsCount } e-postadresser"
       ],
+      "Account recovery": [
+        "Kontogjenoppretting"
+      ],
+      "Account security": [
+        "Kontosikkerhet"
+      ],
       "Add another notification to remind you of this event": [
         "Legg til en ny varsling for å minne deg om denne hendelsen"
       ],
@@ -6627,6 +6786,9 @@
       "Customize your mail import": [
         "Tilpass e-postimporten din"
       ],
+      "Data recovery": [
+        "Datagjenoppretting"
+      ],
       "Day theme": [
         "Dag-tema"
       ],
@@ -6671,6 +6833,9 @@
       "Email settings": [
         "Epost-innstillinger"
       ],
+      "Enable 2FA": [
+        "Aktiver 2FA"
+      ],
       "Encrypted event": [
         "Kryptert hendelse"
       ],
@@ -6691,6 +6856,9 @@
       ],
       "Feedback": [
         "Tilbakemelding"
+      ],
+      "Get advanced protection": [
+        "Få avansert beskyttelse"
       ],
       "Groups": [
         "Grupper"
@@ -6728,6 +6896,9 @@
       ],
       "Minicalendar": [
         "Minikalender"
+      ],
+      "Need more aliases?": [
+        "Trenger du flere aliaser?"
       ],
       "Night theme": [
         "Natt-tema"
@@ -6782,6 +6953,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Security center": [
+        "Sikkerhetssenter"
       ],
       "Select a day in the month": [
         "Velg en dag i måneden"
@@ -6893,6 +7067,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Du har invitert deltakere med tilsvarende e-poster"
+      ],
+      "Your account is protected": [
+        "Kontoen din er beskyttet"
       ],
       "Your calendar link": [
         "Din kalenderkobling"
@@ -7046,8 +7223,23 @@
       "Contacts could not be merged": [
         "Kontakene kunne ikke slås sammen"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Utløpsdato er ikke i formatet MM/ÅÅ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke husker passordet ditt, er det umulig å aktivere nøkkelen på nytt. Vi kan hjelpe deg med å avvise varselbanneret, men i prosessen vil du permanent miste tilgangen til alle dataene som er kryptert med den nøkkelen."
+      ],
+      "Invalid alias prefix": [
+        "Ugyldig aliasprefiks"
+      ],
+      "Missing alias prefix": [
+        "Mangler aliasprefiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler aliasprefiks"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende kryptert, vennligst ikke send noe sensitiv informasjon."
@@ -7057,6 +7249,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Vennligst gjennomgå dem individuelt."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Aliasprefikset kan ikke være lenger enn 40 tegn."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."
@@ -7084,6 +7279,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
+      ],
+      "You must select at least one mailbox": [
+        "Du må velge minst en postboks"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
