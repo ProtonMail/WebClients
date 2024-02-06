@@ -1,7 +1,7 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, ShareType } from '@proton/pass/types';
+import { ContentFormatVersion, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
@@ -81,7 +81,7 @@ export const createRandomShareResponses = async (
         {
             AddressID: vault.AddressID,
             Content: vault.Content,
-            ContentFormatVersion: CONTENT_FORMAT_VERSION,
+            ContentFormatVersion: ContentFormatVersion.Share,
             ContentKeyRotation: 1,
             CreateTime: 0,
             ExpireTime: 0,
@@ -126,7 +126,7 @@ export const createRandomShare = <T extends ShareType>(targetType: T): TypedOpen
                 targetType,
                 content: randomContents(),
                 contentKeyRotation: 1,
-                contentFormatVersion: CONTENT_FORMAT_VERSION,
+                contentFormatVersion: ContentFormatVersion.Share,
             } as TypedOpenedShare<T>;
         }
         case ShareType.Item: {
