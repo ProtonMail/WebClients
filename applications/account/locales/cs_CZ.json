@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
-      "Change organization keys": [
-        "Změnit klíče organizace"
-      ],
       "Change other email subscriptions": [
         "Změnit ostatní e-mailové předplatné"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Načítání ověření"
       ],
+      "Make admin": [
+        "Nastavit správcem"
+      ],
       "Manage communication preferences": [
         "Spravovat nastavení komunikace"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Klíče pro obnovení"
       ],
-      "Reset organization keys": [
-        "Obnovit klíče organizace"
-      ],
       "Reset password": [
         "Resetovat heslo"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Obnovit"
-      ],
-      "Restore administrator privileges": [
-        "Obnovit oprávnění správce"
       ],
       "Resubscribe": [
         "Obnovit odběr"
@@ -3099,9 +3093,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail a znaménko plus"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
@@ -3919,6 +3910,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Žádný externí klíč získaný pro uživatele není platný pro odeslání"
+      ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
       ],
@@ -3930,9 +3924,6 @@
       ],
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
-      ],
-      "Organization key is not decrypted.": [
-        "Klíč organizace není dešifrován."
       ],
       "Password is required": [
         "Heslo je povinná položka"
@@ -3954,9 +3945,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Provádět platby není momentálně dostupné, zkuste to prosím později"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Přístup odepřen, oprávnění správce byla omezena."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
@@ -4087,9 +4075,6 @@
       "The organization key must be activated first": [
         "Nejprve musí být aktivován klíč organizace"
       ],
-      "The organization key must be activated first.": [
-        "Nejprve musí být aktivován klíč organizace."
-      ],
       "The sending key is not valid": [
         "Klíč pro odesílání je neplatný"
       ],
@@ -4165,9 +4150,6 @@
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Přišli jste o přístup ke klíčům organizace. Bez jejich obnovení nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
-      ],
       "You have no invoices.": [
         "Nemáte žádné faktury."
       ],
@@ -4182,12 +4164,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nesoukromé uživatele ani k nim přistupovat."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
@@ -5824,17 +5800,6 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -6378,9 +6343,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Vytvořte nový účet a sdílejte s uživatelem e-mailovou adresu a heslo."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvořte a spravujte podúčty a přiřaďte jim e-mailové adresy na vlastní doméně."
@@ -7024,12 +6986,6 @@
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
       ],
-      "Organization keys activated": [
-        "Klíče organizace byly aktivovány"
-      ],
-      "Organization keys restored": [
-        "Klíče organizace byly obnoveny"
-      ],
       "Organization size": [
         "Velikost organizace"
       ],
@@ -7473,9 +7429,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tyto přihlašovací údaje nelze použít k přihlášení do našich oficiálních aplikací ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Budou odebráni z vaší organizace"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Obdrží měsíc služby ${ planName } zdarma."
@@ -8124,6 +8077,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9275,9 +9239,6 @@
       ],
       "Show sender images": [
         "Zobrazit obrázky odesílatele"
-      ],
-      "Show unread count in application icon": [
-        "Zobrazit počet nepřečtených položek v ikoně aplikace"
       ],
       "Show unread count in Favicon": [
         "Zobrazit počet nepřečtených v ikoně Favicon"
@@ -10603,6 +10564,17 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -10696,17 +10668,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12890,11 +12851,50 @@
       "${ app } storage": [
         "${ app } úložiště"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% zaplněno"
+      ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** z ${ humanMaxSpace }"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"
+      ],
+      "contact your administrator": [
+        "kontaktujte svého správce"
+      ],
       "Get more storage": [
         "Získat více úložného prostoru"
+      ],
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Vaše ${ appStorage } je téměř plné"
+      ],
+      "Your ${ appStorage } is full": [
+        "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání emailů uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Vaše ${ storage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání e-mailů, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Vaše úložiště je plné"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ upgrade }."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
@@ -13401,9 +13401,6 @@
       "CSV field": [
         "CSV položka"
       ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
       "Edit": [
         "Upravit"
       ],
@@ -13690,9 +13687,6 @@
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
-      "Change organization keys": [
-        "Změnit klíče organizace"
-      ],
       "Change organization name": [
         "Změnit název organizace"
       ],
@@ -13852,9 +13846,6 @@
         "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
         "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
-      "Delete user": [
-        "Smazat uživatele"
-      ],
       "Delete user?": [
         "Smazat uživatele?"
       ],
@@ -13881,6 +13872,9 @@
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Snížit na ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
@@ -14158,9 +14152,6 @@
       "Password": [
         "Heslo"
       ],
-      "Password and keys": [
-        "Heslo a klíče"
-      ],
       "Password reset settings": [
         "Nastavení resetování hesla"
       ],
@@ -14232,9 +14223,6 @@
       ],
       "Request sent": [
         "Požadavek odeslán"
-      ],
-      "Reset organization keys": [
-        "Obnovit klíče organizace"
       ],
       "Reset password": [
         "Resetovat heslo"
@@ -14665,9 +14653,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Zprávy ve složce Odeslané nebo Koncepty se budou nadále zobrazovat v těchto složkách, i když požádáte o jejich přesun."
       ],
-      "See number of unread messages in the application icon": [
-        "Zobrazení počtu nepřečtených zpráv v ikoně aplikace"
-      ],
       "See number of unread messages in the tab icon": [
         "Zobrazení počtu nepřečtených zpráv v ikoně záložky"
       ],
@@ -15097,9 +15082,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Zjistili jsme problém konfigurace DNS. Prosím ujistěte se, že se Vaše záznamy shodují s níže uvedenými instrukcemi. Jestliže problém přetrvává, budeme muset vypnout DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } klíče organize předtím, než přidáte e-mailovou adresu veřejnému členovi."
       ],
       "You will lose any customization you made so far.": [
         "Přijdete o změny, které jste doposud provedli."

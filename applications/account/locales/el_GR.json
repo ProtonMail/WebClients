@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Αλλαγή κωδικού γραμματοκιβωτίου"
       ],
-      "Change organization keys": [
-        "Αλλαγή κλειδιών οργανισμού"
-      ],
       "Change other email subscriptions": [
         "Αλλαγή άλλων συνδρομών email"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Αναμονή για επαλήθευση"
       ],
+      "Make admin": [
+        "Ορισμός ως διαχειριστή"
+      ],
       "Manage communication preferences": [
         "Διαχείριση προτιμήσεων επικοινωνίας"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Επαναφορά κλειδιών"
       ],
-      "Reset organization keys": [
-        "Επαναφορά κλειδιών οργανισμού"
-      ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Επαναφορά"
-      ],
-      "Restore administrator privileges": [
-        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Resubscribe": [
         "Επανεγγραφή"
@@ -817,6 +811,9 @@
       ],
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
+      ],
+      "Select a calendar to export": [
+        "Επιλέξτε ένα ημερολόγιο για εξαγωγή"
       ],
       "Select calendar view": [
         "Επιλέξτε προβολή ημερολογίου"
@@ -3073,9 +3070,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Λογότυπο ProtonMail και σύμβολο συν"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ],
@@ -3887,6 +3881,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Κανένα εξωτερικό κλειδί που ανακτάται για το χρήστη δεν είναι έγκυρο για την αποστολή"
+      ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
       ],
@@ -3898,9 +3895,6 @@
       ],
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
-      ],
-      "Organization key is not decrypted.": [
-        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
       ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
@@ -3922,9 +3916,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Οι πληρωμές δεν είναι διαθέσιμες προς το παρόν, παρακαλώ δοκιμάστε ξανά αργότερα"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
@@ -4054,9 +4045,6 @@
       "The organization key must be activated first": [
         "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
       ],
-      "The organization key must be activated first.": [
-        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
-      ],
       "The sending key is not valid": [
         "Το κλειδί αποστολής δεν είναι έγκυρο"
       ],
@@ -4132,9 +4120,6 @@
       "You already added this holidays calendar": [
         "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Έχετε χάσει την πρόσβαση στα κλειδιά της επιχείρησης σας. Χωρίς επαναφορά, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
-      ],
       "You have no invoices.": [
         "Δεν έχετε τιμολόγια."
       ],
@@ -4149,12 +4134,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Πρέπει να ενεργοποιήσετε τα κλειδιά του οργανισμού σας. Χωρίς ενεργοποίηση δε θα μπορείτε να δημιουργήσετε ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς χρήστες."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Πρέπει να ιδιωτικοποιήσετε όλους τους λογαριασμούς χρηστών πριν δημιουργήσετε νέα κλειδιά οργανισμού"
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
@@ -5753,17 +5732,6 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -6266,9 +6234,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τις ετικέτες που θα θέλατε να εισάγετε."
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Δημιουργήστε έναν νέο λογαριασμό και κοινοποιείστε στον χρήστη τη διεύθυνση και τον κωδικό."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
       ],
@@ -6293,6 +6258,9 @@
       ],
       "Credits earned": [
         "Κερδισμένες πιστώσεις"
+      ],
+      "Current plan": [
+        "Τρέχον πλάνο"
       ],
       "Custom": [
         "Προσαρμοσμένο"
@@ -6373,6 +6341,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
+      ],
+      "Downgrade": [
+        "Υποβαθμίστε"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
@@ -6898,12 +6869,6 @@
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
       ],
-      "Organization keys activated": [
-        "Τα κλειδιά οργανισμού ενεργοποιήθηκαν"
-      ],
-      "Organization keys restored": [
-        "Τα κλειδιά του οργανισμού έχουν αποκατασταθεί"
-      ],
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
@@ -6940,6 +6905,9 @@
       ],
       "per month": [
         "ανά μήνα"
+      ],
+      "per month, billed at ${ price }": [
+        "ανά μήνα, χρεώνεται σε τιμή ${ price }"
       ],
       "per month, billed every 12 months": [
         "ανά μήνα, χρεώνεται κάθε 12 μήνες"
@@ -7330,9 +7298,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Θα καταργηθούν από τον οργανισμό σας"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Θα λάβουν έναν δωρεάν μήνα ${ planName }."
@@ -7759,6 +7724,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Χρησιμοποιείτε περισσότερο χώρο αποθήκευσης από αυτόν που περιλαμβάνεται σε ένα πλάνο ${ downgradedPlanName }. Παρακαλούμε διαγράψτε ή αφαιρέστε δεδομένα για να υποβαθμίσετε."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }."
       ],
@@ -7973,6 +7941,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9112,9 +9091,6 @@
       ],
       "Show sender images": [
         "Προβολή εικόνων αποστολέα"
-      ],
-      "Show unread count in application icon": [
-        "Προβολή του αριθμού των μην αναγνωσμένων στο εικονίδιο εφαρμογής"
       ],
       "Show unread count in Favicon": [
         "Προβολή του αριθμού των μην αναγνωσμένων στο Favicon"
@@ -10377,6 +10353,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10470,17 +10457,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12579,6 +12555,71 @@
         "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Διατήρηση ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } αποθηκευτικού χώρου"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% γεμάτος"
+      ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** από ${ humanMaxSpace }"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Με την υποβάθμιση θα χάσετε τα παρακάτω προνόμια. Θέλετε σίγουρα να προχωρήσετε;"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Εξετάστε το ενδεχόμενο να αναβαθμίσετε το πλάνο σας για να συνεχίσετε να χρησιμοποιείτε τον λογαριασμό σας χωρίς διακοπές."
+      ],
+      "contact your administrator": [
+        "επικοινωνήστε με το διαχειριστή σας"
+      ],
+      "Get more storage": [
+        "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Αναβαθμίστε το πλάνο σας για να συνεχίσετε να χρησιμοποιείτε τον λογαριασμό σας χωρίς διακοπές."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσες ημέρες στο **${ currentPlanName }** πλάνο σας."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ο ${ appStorage } είναι σχεδόν γεμάτος"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ο ${ appStorage } είναι γεμάτος"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ο ${ storage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL Ημερολογίου"
@@ -13054,9 +13095,6 @@
       "CSV field": [
         "CSV πεδίο"
       ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -13174,6 +13212,12 @@
       ],
       "4. Select a server to connect to": [
         "4. Επιλέξτε διακομιστή σύνδεσης"
+      ],
+      "A filter name is required": [
+        "Απαιτείται όνομα φίλτρου"
+      ],
+      "A filter with this name already exists": [
+        "Υπάρχει ήδη ένα φίλτρο με αυτό το όνομα"
       ],
       "Accessibility": [
         "Προσβασιμότητα"
@@ -13321,9 +13365,6 @@
       ],
       "Change mailbox password": [
         "Αλλαγή κωδικού θυρίδας"
-      ],
-      "Change organization keys": [
-        "Αλλαγή κλειδιών οργανισμού"
       ],
       "Change organization name": [
         "Αλλαγή ονόματος οργανισμού"
@@ -13480,9 +13521,6 @@
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρες)"
       ],
-      "Delete user": [
-        "Διαγραφή χρήστη"
-      ],
       "Delete user?": [
         "Διαγραφή χρήστη;"
       ],
@@ -13509,6 +13547,9 @@
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
@@ -13600,6 +13641,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Αποτυχία δημιουργίας ${ failedUsers.length }\nλογαριασμού χρήστη.",
         "Αποτυχία δημιουργίας ${ failedUsers.length } λογαριασμών χρηστών."
+      ],
+      "Filter name cannot contain only spaces": [
+        "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
       "Filters": [
         "Φίλτρα"
@@ -13779,9 +13823,6 @@
       "Password": [
         "Κωδικός"
       ],
-      "Password and keys": [
-        "Κωδικός πρόσβασης και κλειδιά"
-      ],
       "Password reset settings": [
         "Ρυθμίσεις επαναφοράς κωδικού πρόσβασης"
       ],
@@ -13853,9 +13894,6 @@
       ],
       "Request sent": [
         "Το Αίτημα εστάλη"
-      ],
-      "Reset organization keys": [
-        "Επαναφορά κλειδιών οργανισμού"
       ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
@@ -14008,6 +14046,12 @@
       "Theme": [
         "Θέμα"
       ],
+      "This field cannot be empty": [
+        "Αυτό το πεδίο δεν μπορεί να είναι κενό"
+      ],
+      "This field cannot contain only spaces": [
+        "Αυτό το πεδίο δεν μπορεί να περιέχει μόνο κενά διαστήματα"
+      ],
       "Time zone": [
         "Ζωνη ωρας"
       ],
@@ -14097,6 +14141,9 @@
       ],
       "Your SMTP token": [
         "Το διακριτικό SMTP σας"
+      ],
+      "Your storage": [
+        "Ο αποθηκευτικός σας χώρος"
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
@@ -14274,9 +14321,6 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Τα μηνύματα στον φάκελο Απεσταλμένα ή Πρόχειρα θα συνεχίσουν να εμφανίζονται σε αυτόν τον φάκελο, ακόμη και αν τα μετακινήσετε σε άλλο φάκελο."
-      ],
-      "See number of unread messages in the application icon": [
-        "Δείτε τον αριθμό των μην αναγνωσμένων μηνυμάτων στο εικονίδιο εφαρμογής"
       ],
       "See number of unread messages in the tab icon": [
         "Δείτε τον αριθμό των μην αναγνωσμένων μηνυμάτων στο εικονίδιο καρτέλας"
@@ -14666,9 +14710,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί, θα πρέπει να αλλάξουμε την αποσύνδεση DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Πρέπει να ${ activateLink } κλειδιά οργανισμού πριν προσθέσετε μια διεύθυνση email σε μη ιδιωτικό μέλος."
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
