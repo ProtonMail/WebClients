@@ -39,10 +39,18 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with context`, () => {
+    it(`should accept errors with Drive context`, () => {
         const value = new Error('blah');
         (value as any).context = { something: true };
-        const expected = { name: 'Error', message: 'blah', context: { something: true } };
+        (value as any).isEnrichedError = true;
+
+        const expected = {
+            name: 'Error',
+            message: 'blah',
+
+            context: { something: true },
+            isEnrichedError: true,
+        };
 
         const result = getSafeValue(value);
 
@@ -50,7 +58,7 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with nested errors in context`, () => {
+    it(`should accept errors with nested errors in Drive context`, () => {
         const value = new Error('blah');
         (value as any).context = { e: new Error('oh no') };
         const expected = {
