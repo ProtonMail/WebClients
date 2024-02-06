@@ -8,6 +8,7 @@ import { APP, CERT_PROTON_ME, WINDOW_SIZES } from "./constants";
 import { areAllWindowsClosedOrHidden, isHostAllowed, isMac, isWindows } from "./helpers";
 import { logURL } from "./logs";
 import { setApplicationMenu } from "./menu";
+import { createContextMenu } from "./menuContext";
 import { getSessionID } from "./url";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
@@ -68,6 +69,10 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     setApplicationMenu(app.isPackaged);
     handleBeforeHandle(window);
     window.loadURL(url);
+
+    window.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, window).popup();
+    });
 
     window.webContents.session.setCertificateVerifyProc((request, callback) => {
         if (isHostAllowed(request.hostname, app.isPackaged)) {
