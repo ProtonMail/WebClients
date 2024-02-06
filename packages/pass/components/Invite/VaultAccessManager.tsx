@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, Prompt } from '@proton/components/components';
+import { Alert, Icon, Prompt } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -32,12 +32,16 @@ type InviteListItem =
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
+
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const plan = useSelector(selectPassPlan);
+    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
+
+    const [limitModalOpen, setLimitModalOpen] = useState(false);
+
     const loading = useShareAccessOptionsPolling(shareId);
     const canManage = isShareManageable(vault);
-    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
-    const [limitModalOpen, setLimitModalOpen] = useState(false);
+    const b2b = plan === UserPassPlan.BUSINESS;
 
     const members = useMemo<ShareMemberType[]>(
         () => (vault.members ?? []).slice().sort(sortOn('email', 'ASC')),
@@ -182,21 +186,27 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                             {c('Action').t`OK`}
                         </Button>
                     }
-                    className="text-center"
+                    className="text-left"
                     onClose={() => setLimitModalOpen(false)}
                     open={limitModalOpen}
                     title={c('Title').t`Member limit`}
+                    enableCloseWhenClickOutside
                 >
-                    <p>
-                        {
+                    <Alert className="mb-4 text-sm" type="error">
+                        {b2b ? (
+                            <>
+                                {c('Error').t`Cannot send invitations at the moment`}{' '}
+                                {c('Warning').t`Please contact us for investigating the issue`}
+                            </>
+                        ) : (
                             // translator: full message is "Vaults can’t contain more than 10 users.""
                             c('Success').ngettext(
                                 msgid`Vaults can’t contain more than ${vault.targetMaxMembers} user.`,
                                 `Vaults can’t contain more than ${vault.targetMaxMembers} users.`,
                                 vault.targetMaxMembers
                             )
-                        }
-                    </p>
+                        )}
+                    </Alert>
                 </Prompt>
             </Panel>
         </SidebarModal>

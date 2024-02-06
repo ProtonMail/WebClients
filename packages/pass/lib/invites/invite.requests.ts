@@ -1,5 +1,7 @@
 import { MAX_BATCH_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
+import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
@@ -14,9 +16,8 @@ import type {
     NewUserInviteRemoveIntent,
 } from '@proton/pass/types/data/invites.dto';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import chunk from '@proton/utils/chunk';
-
-import { getPublicKeysForEmail } from '../auth/address';
 
 export type InviteData = { invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] };
 
@@ -54,6 +55,14 @@ export const loadInvites = async (shareId: string): Promise<InviteData> => {
     };
 };
 
+const limitExceededCatch =
+    <T>(catchFn: () => T) =>
+    (error: unknown) => {
+        const { code } = getApiError(error);
+        if (code === PassErrorCode.RESOURCE_LIMIT_EXCEEDED) throw error;
+        else return catchFn();
+    };
+
 /** Returns the list of emails which could not be invited successfully  */
 export const createUserInvites = async (shareId: string, users: InviteUserDTO[]): Promise<string[]> =>
     (
@@ -71,7 +80,7 @@ export const createUserInvites = async (shareId: string, users: InviteUserDTO[])
                     },
                 })
                     .then<string[]>(() => [])
-                    .catch(() => batch.map(prop('email')))
+                    .catch(limitExceededCatch(() => batch.map(prop('email'))))
             )
         )
     ).flat();
@@ -92,7 +101,7 @@ export const createNewUserInvites = async (shareId: string, newUsers: InviteNewU
                     },
                 })
                     .then<string[]>(() => [])
-                    .catch(() => batch.map(prop('email')))
+                    .catch(limitExceededCatch(() => batch.map(prop('email'))))
             )
         )
     ).flat();
