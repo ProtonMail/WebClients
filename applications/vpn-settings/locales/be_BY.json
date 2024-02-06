@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Актываваць"
+      ],
       "activate": [
         "актываваць"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Change keys": [
+        "Змяніць ключы"
       ],
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
@@ -287,6 +293,9 @@
       "Loading verification": [
         "Загружаецца праверка"
       ],
+      "Make admin": [
+        "Можа адміністраваць"
+      ],
       "Mark as default": [
         "Пазначыць як прадвызначаны"
       ],
@@ -328,6 +337,9 @@
       ],
       "Previous": [
         "Папярэдні"
+      ],
+      "Recover data": [
+        "Аднавіць даныя"
       ],
       "Refer a friend": [
         "Запрасіць сябра"
@@ -376,9 +388,6 @@
       ],
       "Restore": [
         "Аднавіць"
-      ],
-      "Restore administrator privileges": [
-        "Аднавіць правы адміністратара"
       ],
       "Retry": [
         "Паўтарыць"
@@ -1869,9 +1878,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Лагатып Proton Mail і знак плюс"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ]
@@ -2049,8 +2055,8 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
-      "Organization key is not decrypted.": [
-        "Ключ арганізацыі не расшыфраваны."
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
@@ -2069,9 +2075,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Плацяжы ў цяперашні час недаступны. Паспрабуйце яшчэ раз пазней"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "У доступе адмоўлена, правы адміністратара абмежаваны."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
@@ -2136,9 +2139,6 @@
       "The organization key must be activated first": [
         "Спачатку неабходна актываваць ключ арганізацыі"
       ],
-      "The organization key must be activated first.": [
-        "Спачатку неабходна актываваць ключ арганізацыі."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Гэта поле перавышае максімальную колькасць сімвалаў (максімум: ${ maximumLength })."
       ],
@@ -2147,6 +2147,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "Try again later": [
         "Паспрабуйце яшчэ раз пазней"
@@ -2170,7 +2173,7 @@
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым метадам аднаўлення."
+        "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "You have no invoices.": [
         "У вас няма рахункаў."
@@ -2180,12 +2183,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Вы павінны актываваць ключы вашай арганізацыі. Без іх актывацыі ў вас не будзе магчымасці ствараць або атрымліваць доступ да непрыватных карыстальнікаў."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новых ключоў арганізацыі"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш уліковы запіс або арганізацыя мае пратэрмінаваны рахунак. Аплаціце ўсе неаплачаныя рахункі."
@@ -2929,7 +2926,7 @@
         "актыўна"
       ],
       "add a recovery method": [
-        "дадайце метад аднаўлення"
+        "дадайце спосаб аднаўлення"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
@@ -2996,6 +2993,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Вы сапраўды хочаце адхіліць змены?"
+      ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
@@ -3080,9 +3080,6 @@
       ],
       "Country code": [
         "Код краіны"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Стварыць новы ўліковы запіс і абагуліць адрас электроннай пошты, а таксама пароль з карыстальнікам."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
@@ -3441,12 +3438,6 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
-      "Organization keys activated": [
-        "Ключы арганізацыі актываваны"
-      ],
-      "Organization keys restored": [
-        "Ключы арганізацыі адноўлены"
-      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -3575,6 +3566,9 @@
       ],
       "Save ${ percentage }": [
         "Эканомія ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Захавайце ваш пароль у надзейным месцы."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Захавайце ваш пароль у надзейным месцы. Націсніце на значок, каб праверыць правільнасць уводу пароля."
@@ -3714,9 +3708,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Гэтыя ўліковыя даныя не могуць быць выкарыстаны для ўваходу ў нашы афіцыйныя праграмы ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They will be removed from your organization": [
-        "Яны будуць выдалены з вашай арганізацыі"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
       ],
@@ -3787,7 +3778,7 @@
         "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
+        "Для працягу, выберыце спосаб аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To proceed, we must verify the request.": [
         "Для працягу, неабходна праверыць запыт."
@@ -3829,7 +3820,7 @@
         "Рэжым двух пароляў прадугледжвае выкарыстанне асобных пароляў для ўваходу і расшыфроўкі паштовай скрыні. Гэта дае магчымасць забяспечыць дадатковы ўзровень абароны ў некаторых сітуацыях. Разам з тым для большасці карыстальнікаў мы рэкамендуем выкарыстоўваць рэжым аднаго пароля. Для пераключэння ў рэжым двух пароляў спачатку задайце пароль для ўваходу, а потым пароль для паштовай скрыні."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "На жаль, для гэтага ўліковага запісу адсутнічаюць метады аднаўлення."
+        "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальны ідэнтыфікатар згенерыраваны вашым пастаўшчыком пасведчанняў. Звычайна ён уяўляе сабой URL-адрас, які ўключае назву вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/XXXXX)."
@@ -3976,7 +3967,7 @@
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы для існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+        "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
@@ -4264,6 +4255,9 @@
       ],
       "Addresses": [
         "Адрасы"
+      ],
+      "Administrators": [
+        "Адміністратары"
       ],
       "Allow recovery by email": [
         "Дазволіць аднаўленне доступу па электроннай пошце"
@@ -5974,6 +5968,74 @@
         "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
       ]
     },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Усе адміністратары атрымаюць доступ да гэтага ключа."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Вы сапраўды хочаце змяніць ваш ключ арганізацыі?"
+      ],
+      "Change organization key": [
+        "Змяніць ключ арганізацыі"
+      ],
+      "Organization key activated": [
+        "Ключы арганізацыі актываваныя"
+      ],
+      "Organization key does not exist.": [
+        "Ключы арганізацыі не існуе."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
+      ],
+      "Organization key restored": [
+        "Ключ арганізацыі адноўлены"
+      ],
+      "Organization key updated": [
+        "Ключ арганізацыі абноўлены"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "У доступе адмоўлена, правы адміністратара абмежаваны."
+      ],
+      "Reset organization key": [
+        "Скінуць ключ арганізацыі"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Наступныя адміністратары атрымаюць доступ да ключа арганізацыі."
+      ],
+      "The organization key must be activated first.": [
+        "Спачатку неабходна актываваць ключ арганізацыі."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Гэта правядзе да адпраўкі самага новага ключа арганізацыі адміністратару, які пакуль не мае доступу да яго."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Вам неабходна актываваць ключы арганізацыі, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Актывуйце ключы арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Мы не можам праверыць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Мы праверылі аўтэнтыфікацыю гэтага адпраўніка і запрашэнне."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Вас прызначылі адміністратарам арганізацыі **${ organizationName }**"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Вам патрэбны доступ да ключоў арганізацыі, каб выканаць гэту аперацыю."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банкаўская картка"
@@ -6174,6 +6236,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } адміністратару ў вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі."
+      ],
       "Changing organization keys": [
         "Змена ключоў арганізацыі"
       ],
@@ -6428,7 +6496,7 @@
         "Запытаць скіданне пароля"
       ],
       "Use recovery method": [
-        "Скарыстайцеся метадам аднаўлення"
+        "Скарыстайцеся спосабам аднаўлення"
       ]
     },
     "session_recovery:initiation:info": {
@@ -6436,7 +6504,7 @@
         "У мэтах бяспекі, вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Калі ў вас наладжаны **метад аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
+        "Калі ў вас наладжаны **спосаб аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
       ],
       "We will contact you again when the password reset is available.": [
         "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."
@@ -6811,13 +6879,13 @@
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
+        "Мы дададзім крэдыты за той час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе."
+        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваша ${ appStorage } амаль запоўнена"
@@ -6856,7 +6924,7 @@
         "Вы згубіце доступ да наступных функцый: высакахуткаснага VPN; абарону 10 прылад; трансляцый на высокай хуткасці; блакіроўку рэкламы і шкодных праграм; прыярытэтную падтрымку."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць уваходаў і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
+        "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
       ]
     },
     "Subscription": {
@@ -7042,6 +7110,9 @@
       "Address added": [
         "Адрас дададзены"
       ],
+      "Administrator privileges restored": [
+        "Прывілеі адміністратара адноўлены"
+      ],
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
       ],
@@ -7221,9 +7292,6 @@
       "Country": [
         "Краіна"
       ],
-      "Display name": [
-        "Бачнае імя"
-      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -7363,17 +7431,20 @@
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
       ],
-      "Change organization keys": [
-        "Змяніць ключы арганізацыі"
-      ],
       "Change organization name": [
         "Змяніць назву арганізацыі"
+      ],
+      "Change organization password": [
+        "Змяніць пароль арганізацыі"
       ],
       "Change password": [
         "Змяніць пароль"
       ],
       "Change role": [
         "Змяніць ролю"
+      ],
+      "Confirm": [
+        "Пацвердзіць"
       ],
       "Confirm address": [
         "Пацвердзіць адрас"
@@ -7452,9 +7523,6 @@
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)"
-      ],
-      "Delete user": [
-        "Выдаліць карыстальніка"
       ],
       "Delete user?": [
         "Выдаліць карыстальніка?"
@@ -7592,7 +7660,7 @@
         "Начная тэма"
       ],
       "No recovery method": [
-        "Адсутнічае метад аднаўлення"
+        "Адсутнічае спосаб аднаўлення"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -7665,9 +7733,6 @@
       ],
       "Request sent": [
         "Запыт адпраўлены"
-      ],
-      "Reset organization keys": [
-        "Скінуць ключы арганізацыі"
       ],
       "Reset password": [
         "Скінуць пароль"
@@ -8103,8 +8168,8 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, мы знаходзімся па-за межамі сеткі ў гэты момант. Запоўніце форму ніжэй з апісаннем вашай праблемы і мы абавязкова разгледзім яе пасля таго, як станем зноў даступнымі."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Вы павінны ${ activateLink } ключы арганізацыі перад дабаўленнем адраса электроннай пошты для непрыватнага ўдзельніка."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Вы павінны ${ activateLink } ключ арганізацыі перад даданнем адраса электроннай пошты для непрыватнага ўдзельніка."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд міне ${ textDate }. ${ action }"

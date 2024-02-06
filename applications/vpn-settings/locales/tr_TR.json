@@ -287,6 +287,9 @@
       "Loading verification": [
         "Doğrulama yükleniyor"
       ],
+      "Make admin": [
+        "Yönetici yap"
+      ],
       "Mark as default": [
         "Varsayılan olarak işaretle"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Önceki"
+      ],
+      "Recover data": [
+        "Verileri kurtar"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Geri yükle"
-      ],
-      "Restore administrator privileges": [
-        "Yönetici yetkilerini geri yükle"
       ],
       "Retry": [
         "Yeniden dene"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logosu ve bir artı işareti"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ]
@@ -1863,6 +1863,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Masaüstü uygulamasına erişim kısıtlı"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasının beta sürümü, şu anda ücretli ${ MAIL_APP_NAME } tarifesi kullanıcılarına sunuluyor. Erişmek için tarifenizi yükseltin."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
@@ -2030,9 +2033,6 @@
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
       ],
-      "Organization key is not decrypted.": [
-        "Kuruluş anahtarının şifresi çözülmedi."
-      ],
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
@@ -2050,9 +2050,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Ödemeler şu anda kullanılamıyor. Lütfen daha sonra yeniden deneyin"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "İzin verilmedi, yönetici yetkileri kısıtlandı."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Lütfen adresleri eklemeden önce özel bir etki alanı yapılandırın."
@@ -2117,9 +2114,6 @@
       "The organization key must be activated first": [
         "Önce kuruluş anahtarı kullanıma alınmalıdır"
       ],
-      "The organization key must be activated first.": [
-        "Önce kuruluş anahtarı kullanıma alınmalıdır."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -2161,12 +2155,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Kuruluş anahtarlarınızı kullanıma almalısınız. Bunları kullanıma almadan korunan kullanıcılar ekleyemez veya bu kullanıcılara erişemezsiniz."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları kişiselleştirmelisiniz"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
@@ -3022,9 +3010,6 @@
       "Country code": [
         "Ülke kodu"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Yeni bir hesap ekleyin ve e-posta adresi ile parolasını kullanıcı ile paylaşın."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
       ],
@@ -3043,6 +3028,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Current plan": [
+        "Geçerli tarife"
       ],
       "Custom email domains": [
         "Özel e-posta etki alanları"
@@ -3095,6 +3083,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
+      ],
+      "Downgrade": [
+        "Tarifeyi düşür"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
@@ -3372,12 +3363,6 @@
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
-      "Organization keys activated": [
-        "Kuruluş anahtarları kullanıma alındı"
-      ],
-      "Organization keys restored": [
-        "Kuruluş anahtarları geri yüklendi"
-      ],
       "Organization size": [
         "Kuruluş boyutu"
       ],
@@ -3395,6 +3380,9 @@
       ],
       "per month": [
         "aylık"
+      ],
+      "per month, billed at ${ price }": [
+        "aylık ${ price } olarak faturalanır"
       ],
       "per month, billed every 12 months": [
         "aylık, 12 ayda bir faturalanır"
@@ -3499,6 +3487,9 @@
       ],
       "Save ${ percentage }": [
         "${ percentage } indirim"
+      ],
+      "Save your password somewhere safe.": [
+        "Parolanızı güvenli bir yerde saklayın."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Parolanızı güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için simgeye tıklayın."
@@ -3629,9 +3620,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Bunlar kuruluşunuzdan kaldırılacak"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -3916,6 +3904,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } hesabıyla oturum açtınız."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
@@ -5503,8 +5494,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır. Yöneticiler kuruluşlarındaki kullanıcılara farklı depolama alanları atayabilir"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı kullanıcılar ile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
@@ -6574,6 +6571,88 @@
         "Geçerli depolama alanınız:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } tarifesinde kal"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } tarafından oluşturulan verilerin depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "${ totalStorageSize } boyutuna kadar Drive depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "${ totalStorageSize } boyutuna kadar Mail depolama alanı"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } depolama alanı"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } %${ percentage } dolu"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Tarifenizi düşürdüğünüzde aşağıdaki ek faydaları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
+      ],
+      "contact your administrator": [
+        "yöneticiniz ile görüşün"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "upgrade for more storage": [
+        "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Kullandığınız ${ appStorage } dolmak üzere"
+      ],
+      "Your ${ appStorage } is full": [
+        "Kullandığını ${ appStorage } dolu"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } %${ percentage } oranında dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Kullandığınız ${ storage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Kullandığınız ${ storage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Depolama alanınız dolu"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "${ gb } depolama alanına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Ek depolama alanına, e-posta adreslerine, takma adlara, takvimlere ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "En yüksek VPN hızına, 10 aygıt korumasına, yüksek hızlı yayın akışı izlemeye, reklam engelleyiciye, kötü amaçlı yazılım korumasına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
@@ -6910,9 +6989,6 @@
       "Country": [
         "Ülke"
       ],
-      "Display name": [
-        "Görüntülenecek ad"
-      ],
       "Email": [
         "E-posta"
       ],
@@ -7052,11 +7128,11 @@
       "Change mailbox password": [
         "Posta kutusu parolasını değiştir"
       ],
-      "Change organization keys": [
-        "Kuruluş anahtarlarını değiştir"
-      ],
       "Change organization name": [
         "Kuruluş adını değiştir"
+      ],
+      "Change organization password": [
+        "Kuruluş parolasını değiştir"
       ],
       "Change password": [
         "Parolayı değiştir"
@@ -7138,9 +7214,6 @@
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
         "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
       ],
-      "Delete user": [
-        "Kullanıcıyı sil"
-      ],
       "Delete user?": [
         "Kullanıcı silinsin mi?"
       ],
@@ -7155,6 +7228,9 @@
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "${ downgradedPlanName } tarifesine düşürülsün mü?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
@@ -7345,9 +7421,6 @@
       ],
       "Request sent": [
         "İstek gönderildi"
-      ],
-      "Reset organization keys": [
-        "Kuruluş anahtarlarını sıfırla"
       ],
       "Reset password": [
         "Parolayı sıfırla"
@@ -7764,9 +7837,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Ne yazık ki, şu anca çevrim içi değiliz. Lütfen sorununuzu aktarmak için aşağıdaki formu doldurun. Yeniden çevrim içi olduğumuzda inceleyip size geri döneceğiz."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Korunmayan bir üyeye bir e-posta adresi eklemeden önce kuruluş anahtarlarına ${ activateLink } işlemini yapmanız gerekir."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"

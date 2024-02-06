@@ -281,6 +281,9 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Make admin": [
+        "Estableix com a administrador"
+      ],
       "Mark as default": [
         "Marca per defecte"
       ],
@@ -322,6 +325,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Recover data": [
+        "Recuperar dades"
       ],
       "Refer a friend": [
         "Recomana a un amic"
@@ -370,9 +376,6 @@
       ],
       "Restore": [
         "Restaura"
-      ],
-      "Restore administrator privileges": [
-        "Restaurar els privilegis d'administrador"
       ],
       "Retry": [
         "Reintenta"
@@ -1820,9 +1823,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail i un signe més"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ]
@@ -1980,9 +1980,6 @@
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
-      "Organization key is not decrypted.": [
-        "La clau d'organització no está desxifrada."
-      ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
       ],
@@ -2000,9 +1997,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
@@ -2058,9 +2052,6 @@
       "The organization key must be activated first": [
         "Cal activar primer la clau de l'organització"
       ],
-      "The organization key must be activated first.": [
-        "S'ha d'activar primer la clau d'organització."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
@@ -2099,12 +2090,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Heu d'activar les claus de la vostra organització. Sense activació, no podreu crear ni accedir a usuaris no privats."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Heu de privatitzar tots els usuaris abans de generar claus d'organització noves"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
@@ -2915,9 +2900,6 @@
       "Country code": [
         "Codi de país"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Creeu un compte i compartiu l'adreça de correu electrònic i la contrasenya amb l'usuari."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
       ],
@@ -2932,6 +2914,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crèdit per la part no utilitzada de la vostra subscripció del pla anterior"
+      ],
+      "Current plan": [
+        "Pla actual"
       ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
@@ -2965,6 +2950,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
+      ],
+      "Downgrade": [
+        "Passa a un pla inferior"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
@@ -3212,12 +3200,6 @@
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
       ],
-      "Organization keys activated": [
-        "S'han activat les claus de l'organització"
-      ],
-      "Organization keys restored": [
-        "S'han restaurat les claus de l'organització"
-      ],
       "Organization size": [
         "Mida de l'organització"
       ],
@@ -3333,6 +3315,9 @@
       ],
       "Save ${ percentage }": [
         "Deseu ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Guardeu la vostra contrasenya a un lloc segur."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Deseu les vostres contrasenyes en un lloc segur. Feu clic a la icona per confirmar que heu escrit la contrasenya correctament."
@@ -3454,9 +3439,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Aquestes configuracions es proporcionen per treballar amb routers WireGuard i clients oficials."
-      ],
-      "They will be removed from your organization": [
-        "S'esborraran de la vostra organització."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -3601,6 +3583,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificació obrirà una pestanya nova. Desactiveu els bloquejadors de finestres emergents. No se us farà cap càrrec. Qualsevol quantitat utilitzada per verificar la targeta serà retornada immediatament."
+      ],
+      "Verify domain": [
+        "Verifica el domini"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifiqueu la vostra identitat amb una contrasenya d'un sol ús i de durada limitada generada per una aplicació d'autenticació."
@@ -3955,6 +3940,12 @@
       "Allow recovery by phone": [
         "Permet la recuperació per telèfon"
       ],
+      "Allowed domain": [
+        "Domini permès"
+      ],
+      "Allowed Domain": [
+        "Domini permès"
+      ],
       "Amount": [
         "Quantitat"
       ],
@@ -4113,6 +4104,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Issuer ID": [
+        "ID del emissor"
       ],
       "Keep me signed in": [
         "Mantén la sessió iniciada"
@@ -6278,6 +6272,22 @@
         "El vostre emmagatzematge actual:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Segueix amb ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } d'emmagatzematge"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
+      ],
+      "Your storage is full": [
+        "L'emmagatzematge és ple."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Facturació cada 2 anys"
@@ -6610,9 +6620,6 @@
       "Country": [
         "País"
       ],
-      "Display name": [
-        "Nom a mostrar"
-      ],
       "Email": [
         "Corrreu electrònic"
       ],
@@ -6752,11 +6759,11 @@
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
       ],
-      "Change organization keys": [
-        "Canviar claus de l'organització"
-      ],
       "Change organization name": [
         "Canviar nom de l'organització"
+      ],
+      "Change organization password": [
+        "Canviar la contrasenya de l'organització"
       ],
       "Change password": [
         "Canvia la contrasenya"
@@ -6832,9 +6839,6 @@
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dia)",
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dies)"
       ],
-      "Delete user": [
-        "Eliminar usuari"
-      ],
       "Delete user?": [
         "Voleu eliminar l'usuari?"
       ],
@@ -6849,6 +6853,9 @@
       ],
       "Downgrade account": [
         "Passa a un pla inferior"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Passar a ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
@@ -7025,9 +7032,6 @@
       "Request sent": [
         "S'ha enviat la sol·licitud."
       ],
-      "Reset organization keys": [
-        "Restablir les claus d'organització"
-      ],
       "Reset password": [
         "Restableix la contrasenya"
       ],
@@ -7081,6 +7085,9 @@
       ],
       "Signed in to member account": [
         "S'ha iniciat la sessió al compte de membre"
+      ],
+      "Single Sign-On": [
+        "Inici de sessió únic"
       ],
       "Status": [
         "Estat"
@@ -7208,6 +7215,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
+      ],
+      "Feature in early access": [
+        "Característica en accés anticipat"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
@@ -7391,9 +7401,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Heu de ${ activateLink } claus d'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
