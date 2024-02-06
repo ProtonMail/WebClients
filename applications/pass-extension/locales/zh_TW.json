@@ -437,9 +437,6 @@
       "Cannot create alias (${ error }).": [
         "無法創建別名 (${ error })。"
       ],
-      "Cannot send invitation to this address at the moment": [
-        "目前無法將邀請發送至此位址"
-      ],
       "Could not leave vault.": [
         "無法離開保管庫。"
       ],
@@ -464,7 +461,7 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "刪除保管庫${ payload.content.name }失敗"
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
+      "Detected ${ errors.length } corrupted csv row": [
         "刪除${ errors.length }錯誤的CSV項目"
       ],
       "Editing item failed": [
@@ -624,7 +621,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "位元組"
       ],
       "GB": [
@@ -641,19 +638,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "位元組"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "GB"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "千位元組"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "MB"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "TB"
       ]
     },
@@ -667,10 +664,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
       ],
-      "${ memberCount } members": [
+      "${ memberCount } member": [
         "${ memberCount } 位成員"
       ],
-      "${ n } items": [
+      "${ n } item": [
         "${ n } 項目"
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
@@ -679,10 +676,10 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }將會於註冊時建議密碼"
       ],
-      "${ revisionNumber } times": [
+      "${ revisionNumber } time": [
         "${ revisionNumber }次數"
       ],
-      "${ trialDaysLeft } days left": [
+      "${ trialDaysLeft } day left": [
         "剩下${ trialDaysLeft }天"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
@@ -699,6 +696,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
+      ],
+      "All items successfully moved": [
+        "全部項目已成功移動"
       ],
       "All trashed items permanently deleted": [
         "全數垃圾項目永久刪除"
@@ -796,7 +796,7 @@
       "Import in progress:": [
         "匯入進行中:"
       ],
-      "Imported ${ payload.total } items": [
+      "Imported ${ payload.total } item": [
         "匯入${ payload.total }項目"
       ],
       "Imported on ${ date }": [
@@ -826,6 +826,9 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
       ],
+      "item": [
+        "項目"
+      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "項目${ payload.item.data.metadata.name }以新增"
       ],
@@ -850,9 +853,6 @@
       "Item successfully unpinned": [
         "項目成功取消標記"
       ],
-      "items": [
-        "項目"
-      ],
       "Leaving vault...": [
         "離開保管庫..."
       ],
@@ -873,6 +873,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
+      ],
+      "Moving items": [
+        "正在移動檔案"
       ],
       "Never": [
         "永不"
@@ -970,7 +973,7 @@
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
       ],
-      "The following ${ result.ignored.length } items could not be imported:": [
+      "The following ${ result.ignored.length } item could not be imported:": [
         "以下${ result.ignored.length }項目無法匯入:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
@@ -1053,12 +1056,6 @@
       ]
     },
     "Label": {
-      "${ config.options.length } characters": [
-        "${ config.options.length }個字元"
-      ],
-      "${ config.options.wordCount } words": [
-        "${ config.options.wordCount }個字"
-      ],
       "1 hour": [
         "1 小時"
       ],
@@ -1475,11 +1472,6 @@
         "歡迎使用 ${ brandNameJSX }"
       ]
     },
-    "Message": {
-      "${ count } items": [
-        "${ count } 個項目"
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "歡迎來到 ${ appName }"
@@ -1595,7 +1587,7 @@
       ]
     },
     "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
       ]
     },
@@ -1775,7 +1767,7 @@
       "Invalid alias prefix": [
         "別名前綴無效"
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
         "最長上限為${ maxLength }字元"
       ],
       "Missing alias prefix": [
@@ -1804,9 +1796,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP加密匯出需要驗證短語"
-      ],
-      "Please enter a valid email address": [
-        "請輸入一個有效的電子郵件位址"
       ],
       "Please verify your email address in order to use email aliases": [
         "請驗證您的電子郵件位址以啟用電子郵件別名"
