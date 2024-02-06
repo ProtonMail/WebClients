@@ -18,7 +18,7 @@ export const selectOnboardingState = createSelector(
     (vaults, sharedVaults, lastImport): OnboardingStatus => ({
         vaultCreated: vaults.length > 1,
         vaultImported: lastImport !== null,
-        vaultShared: sharedVaults.length > 1,
+        vaultShared: sharedVaults.length > 0,
     })
 );
 
