@@ -62,6 +62,73 @@ type UsedAndNewMethods = {
     newMethods: AvailablePaymentMethod[];
 };
 
+const useInhouseToChargebeeSwitch = ({
+    selectedMethod,
+    availableMethods,
+    isMethodTypeEnabled,
+    selectMethod,
+}: {
+    selectedMethod: AvailablePaymentMethod | undefined;
+    availableMethods: UsedAndNewMethods;
+    isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
+    selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
+}) => {
+    // An effect of switches between Chargebee and inhouse in case if inhouse or Chargebee is not available.
+    useEffect(() => {
+        // Kill switch for chargebee card. If the kill switch was activated, we need to make sure that the selected
+        // method is not chargebee card. If it is, we need to select the default card method.
+        {
+            const chargebeeCardSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+            const chargebeeCardNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+
+            const switchToInhouse = chargebeeCardSelected && chargebeeCardNotAvailable;
+            if (switchToInhouse) {
+                selectMethod(PAYMENT_METHOD_TYPES.CARD);
+            }
+        }
+
+        // Reverse switch for the card method. This doesn't cover the scope of a kill-switch per-se, but still acts
+        // in a similar manner. The use case is, for example, Pass Signup page where user can switch between B2C and
+        // B2B on the same page. If user selects B2B, then the in-house card method should will be selected. When user
+        // switches back to B2C, the chargebee card method should be selected.
+        {
+            const cardSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CARD;
+            const cardNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CARD);
+            // Additional check to make sure that the chargebee card method is available.
+            const chargebeeCardAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+
+            const switchToChargebee = cardSelected && cardNotAvailable && chargebeeCardAvailable;
+            if (switchToChargebee) {
+                selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+            }
+        }
+
+        // Kill switch for chargebee paypal. The same same as above.
+        {
+            const chargebeePaypalSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+            const chargebeePaypalNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+
+            const switchToInhouse = chargebeePaypalSelected && chargebeePaypalNotAvailable;
+            if (switchToInhouse) {
+                selectMethod(PAYMENT_METHOD_TYPES.PAYPAL);
+            }
+        }
+
+        // reverse switch for the paypal method. The same as above.
+        {
+            const paypalSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL;
+            const paypalNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.PAYPAL);
+            // Additional check to make sure that the chargebee paypal method is available.
+            const chargebeePaypalAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+
+            const switchToChargebee = paypalSelected && paypalNotAvailable && chargebeePaypalAvailable;
+            if (switchToChargebee) {
+                selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+            }
+        }
+    }, [selectedMethod, availableMethods]);
+};
+
 export const useMethods = (
     {
         paymentMethodStatusExtended,
@@ -256,32 +323,18 @@ export const useMethods = (
         return paymentMethodsRef.current.isMethodTypeEnabled(methodType);
     };
 
+    useInhouseToChargebeeSwitch({
+        selectedMethod,
+        availableMethods,
+        isMethodTypeEnabled,
+        selectMethod,
+    });
+
     const savedInternalSelectedMethod = getSavedInternalMethodByID(selectedMethod?.value);
     const savedExternalSelectedMethod = getSavedExternalMethodByID(selectedMethod?.value);
 
     const isNewPaypal =
         selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL && !isExistingPaymentMethod(selectedMethod?.value);
-
-    // Kill switch for chargebee card. If the kill switch was activated, we need to make sure that the selected
-    // method is not chargebee card. If it is, we need to select the default card method.
-    useEffect(() => {
-        const chargebeeCardSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
-        const chargebeeCardNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
-
-        if (chargebeeCardSelected && chargebeeCardNotAvailable) {
-            selectMethod(PAYMENT_METHOD_TYPES.CARD);
-        }
-    }, [selectedMethod, availableMethods]);
-
-    // Kill switch for chargebee paypal. The same same as above.
-    useEffect(() => {
-        const chargebeePaypalSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-        const chargebeePaypalNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
-
-        if (chargebeePaypalSelected && chargebeePaypalNotAvailable) {
-            selectMethod(PAYMENT_METHOD_TYPES.PAYPAL);
-        }
-    }, [selectedMethod, availableMethods]);
 
     return {
         selectedMethod,
