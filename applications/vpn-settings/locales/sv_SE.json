@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
+      "Activate": [
+        "Aktivera"
+      ],
       "activate": [
         "aktivera"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Avsluta prenumeration"
+      ],
+      "Change keys": [
+        "Ändra nycklar"
       ],
       "Change mailbox password": [
         "Ändra lösenord för brevlådan"
@@ -287,6 +293,9 @@
       "Loading verification": [
         "Laddar verifiering"
       ],
+      "Make admin": [
+        "Gör till admin"
+      ],
       "Mark as default": [
         "Markera som standard"
       ],
@@ -328,6 +337,9 @@
       ],
       "Previous": [
         "Föregående"
+      ],
+      "Recover data": [
+        "Återställ data"
       ],
       "Refer a friend": [
         "Hänvisa en vän"
@@ -376,9 +388,6 @@
       ],
       "Restore": [
         "Återställ"
-      ],
-      "Restore administrator privileges": [
-        "Återställ administratörsrättigheter"
       ],
       "Retry": [
         "Försök igen"
@@ -1853,9 +1862,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-logga och ett plustecken"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ]
@@ -2030,8 +2036,8 @@
       "Organization key is not decrypted": [
         "Organisationsnyckel är inte dekrypterad"
       ],
-      "Organization key is not decrypted.": [
-        "Organisationsnyckel är inte dekrypterad."
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnyckeln måste aktiveras för att skapa icke-privata användare"
       ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
@@ -2050,9 +2056,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalningar är för närvarande inte tillgängliga, försök igen senare"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Åtkomst nekad, administratörsrättigheter har begränsats."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Konfigurera en anpassad domän innan du lägger till adresser."
@@ -2117,9 +2120,6 @@
       "The organization key must be activated first": [
         "Organisationsnyckeln måste aktiveras först"
       ],
-      "The organization key must be activated first.": [
-        "Organisationens nyckel måste aktiveras först."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
@@ -2128,6 +2128,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Detta fält kräver minst ${ minimumLength } tecken."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "För att skapa icke-privata användarkonton och komma åt deras konton måste du återställa dina administratörsrättigheter."
       ],
       "Try again later": [
         "Försök igen senare"
@@ -2161,12 +2164,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du måste aktivera dina organisationsnycklar. Utan aktivering kommer du inte att kunna skapa eller komma åt icke-privata användare."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Du måste privatisera alla användare innan du genererar nya organisationsnycklar"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
@@ -2933,6 +2930,9 @@
       "Are you sure you want to discard your changes?": [
         "Är du säker på att du vill ignorera dina ändringar?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Är du säker på att du vill ge administrativa rättigheter till denna användare?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
@@ -3013,9 +3013,6 @@
       ],
       "Country code": [
         "Landskod"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Skapa ett nytt konto och dela e-postadressen och lösenordet med användaren."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Skapa och hantera underkonton och tilldela dem e-postadresser på din anpassade domän."
@@ -3367,12 +3364,6 @@
       "Or select a particular server:": [
         "Eller välj en specifik server:"
       ],
-      "Organization keys activated": [
-        "Organisationsnycklar aktiverade"
-      ],
-      "Organization keys restored": [
-        "Organisationsnycklar återställda"
-      ],
       "Organization size": [
         "Organisationens storlek"
       ],
@@ -3500,6 +3491,9 @@
       ],
       "Save ${ percentage }": [
         "Spara ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Spara ditt lösenord på någon säker plats."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Spara ditt lösenord på ett säkert ställe. Klicka på ikonen för att bekräfta att du har skrivit in ditt lösenord korrekt."
@@ -3630,9 +3624,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Dessa inloggningsuppgifter kan inte användas för att logga in på våra officiella ${ VPN_APP_NAME }-appar. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "De kommer att tas bort från din organisation"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
@@ -4162,6 +4153,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Administrators": [
+        "Administratörer"
       ],
       "Allow recovery by email": [
         "Tillåt återställning via e-post"
@@ -5737,6 +5731,20 @@
         "Ditt paket inkluderar maximalt ${ humanReadableAvailableSpace } mer lagringsutrymme."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Gå till ditt valv för att hantera dina lösenord, alias och mer."
+      ],
+      "Set up your organization": [
+        "Ställ in din organisation"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Börja lägga till användare för att ge dem åtkomst till ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Börja använda ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Behåll detta paket"
@@ -5835,6 +5843,77 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alla ${ BRAND_NAME } Plus-tjänster.${ br }En enkel prenumeration."
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Alla administratörer kommer få åtkomst till nyckeln."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Är du säker på att du vill ändra din organisationsnyckel?"
+      ],
+      "Change organization key": [
+        "Ändra organisationsnyckel"
+      ],
+      "Organization key activated": [
+        "Organisationsnyckel aktiverad"
+      ],
+      "Organization key does not exist.": [
+        "Organisationsnyckel finns inte."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisationsnyckel måste aktiveras för att ge administratörsrättigheter"
+      ],
+      "Organization key restored": [
+        "Organisationsnyckel återställd"
+      ],
+      "Organization key updated": [
+        "Organisationsnyckel uppdaterad"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Åtkomst nekad, administratörsrättigheter har begränsats."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privata användare kan befordras till admin när de har loggat in för första gången"
+      ],
+      "Reset organization key": [
+        "Återställ organisationsnyckel"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Följande administratörer kommer få åtkomst till organisationsnyckeln."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnyckeln måste aktiveras först."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Detta kommer skicka den senaste organisationsnyckeln till administratörer som för närvarande inte har åtkomst till den."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "För att skapa icke-privata användarkonton och komma åt deras konton måste du aktivera din organisationsnyckel."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "För att aktivera administratörsrättigheter på ditt konto, aktivera organisationsnyckeln."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Använd en dataåterställningsmetod eller återställ organisationsnyckeln för att återställa administratörsrättigheter."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Använd en dataåterställningsmetod, kontakta en annan administratör eller återställ organisationsnyckeln för att återställa administratörsrättigheter."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Vi kunde inte verifiera säkerheten för denna avsändares adressnyckel. Ibland uppstår en fördröjning i uppdateringen av avsändarens information. Försök igen senare. Om du inte litar på giltigheten av denna inbjudan eller avsändare, kontakta ${ BRAND_NAME } kundsupport."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Vi har verifierat äktheten av denna avsändare och inbjudan."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Du har blivit administratör för organisationen **${ organizationName }** av"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du måste privatisera alla användare innan du genererar en ny organisationsnyckel"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du behöver åtkomst till organisationsnyckeln för att utföra denna operation."
       ]
     },
     "Payment method option": {
@@ -6033,6 +6112,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administratör i din organisation behöver åtkomst till organisationsnyckeln.",
+        "${ n } administratörer i din organisation behöver åtkomst till organisationsnyckeln."
+      ],
       "Changing organization keys": [
         "Ändrar organisationsnycklar"
       ],
@@ -6835,6 +6918,9 @@
       "Address added": [
         "Adress tillagd"
       ],
+      "Administrator privileges restored": [
+        "Administratörsrättigheter återställda"
+      ],
       "Bug reported": [
         "Fel rapporterat"
       ],
@@ -7014,9 +7100,6 @@
       "Country": [
         "Land"
       ],
-      "Display name": [
-        "Visningsnamn"
-      ],
       "Email": [
         "E-post"
       ],
@@ -7156,17 +7239,20 @@
       "Change mailbox password": [
         "Ändra lösenord för brevlådan"
       ],
-      "Change organization keys": [
-        "Ändra organisationsnycklar"
-      ],
       "Change organization name": [
         "Ändra organisationsnamn"
+      ],
+      "Change organization password": [
+        "Ändra organisationens lösenord"
       ],
       "Change password": [
         "Ändra lösenord"
       ],
       "Change role": [
         "Ändra roll"
+      ],
+      "Confirm": [
+        "Bekräfta"
       ],
       "Confirm address": [
         "Bekräfta adress"
@@ -7241,9 +7327,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dag)",
         "Ta bort servern (du kommer fortfarande att kunna återställa den i ${ days } dagar)"
-      ],
-      "Delete user": [
-        "Ta bort användare"
       ],
       "Delete user?": [
         "Ta bort användare?"
@@ -7452,9 +7535,6 @@
       ],
       "Request sent": [
         "Begäran skickad"
-      ],
-      "Reset organization keys": [
-        "Återställ organisationsnycklar"
       ],
       "Reset password": [
         "Återställ lösenord"
@@ -7889,8 +7969,8 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Tyvärr är vi inte online just nu. Fyll i formuläret nedan för att beskriva ditt problem så undersöker vi det och hör av oss när vi är online igen."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du måste ${ activateLink } organisationsnycklar innan du lägger till en e-postadress till en icke-privat medlem."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Du måste ${ activateLink } organisationsnyckeln innan du lägger till en e-postadress till en icke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
