@@ -6,9 +6,9 @@ import type { PaymentMethodStatus } from '@proton/components/payments/core';
 import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
-import type {
+import {
+    Audience,
     Currency,
-    CycleMapping,
     FreePlanDefault,
     HumanVerificationMethodType,
     Plan,
@@ -17,7 +17,6 @@ import type {
     SubscriptionPlan,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import type {
     InviteData,
@@ -30,6 +29,7 @@ import type {
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getSignupSearchParams } from '../signup/searchParams';
 import { PlanCard } from './PlanCardSelector';
+import { SubscriptionDataCycleMapping } from './helper';
 import { TelemetryMeasurementData } from './measure';
 
 export type BaseMeasure<T> = (data: T) => Promise<void>;
@@ -52,18 +52,13 @@ export const enum Steps {
     SetupOrg,
 }
 
-export interface SubscriptionDataCycleMapping {
-    planIDs: PlanIDs;
-    mapping: CycleMapping<SubscriptionData>;
-}
-
 export interface SignupModelV2 {
     freePlan: FreePlanDefault;
     session: SessionData | undefined;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     subscriptionData: SubscriptionData;
-    subscriptionDataCycleMapping: SubscriptionDataCycleMapping[];
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;
@@ -125,19 +120,13 @@ export enum SignupMode {
     MailReferral = 'mailReferral',
 }
 
-export interface SignupTheme {
-    type?: ThemeTypes;
-    background?: 'bf';
-    intent: APP_NAMES | undefined;
-}
-
 export interface SignupDefaults {
     plan: PLANS;
     cycle: CYCLE;
 }
 
 export interface SignupCustomStepProps {
-    theme: SignupTheme;
+    audience?: Audience;
     logo: ReactNode;
     onSetup: (cache: { type: 'signup'; payload: SignupActionDoneResponse } | UserCacheResult) => Promise<void>;
     model: SignupModelV2;
@@ -158,7 +147,9 @@ export interface SignupConfiguration {
     };
     features: { key: Key; left: ReactNode; text: ReactNode }[];
     benefits: ReactNode;
-    planCards: PlanCard[];
+    planCards: { [Audience.B2C]: PlanCard[]; [Audience.B2B]: PlanCard[] };
+    audience: Audience.B2C | Audience.B2B;
+    audiences?: { value: Audience; pathname: string; title: string; defaultPlan: PLANS }[];
     generateMnemonic: boolean;
     defaults: SignupDefaults;
     product: APP_NAMES;

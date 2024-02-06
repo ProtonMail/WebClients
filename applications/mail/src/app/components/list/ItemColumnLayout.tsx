@@ -2,7 +2,7 @@ import { ReactNode, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Breakpoints } from '@proton/components/hooks';
+import type { Breakpoints } from '@proton/components/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { MAX_CHARS_API } from '@proton/account';
 import { Button } from '@proton/atoms';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useLoading } from '@proton/hooks';
@@ -157,6 +158,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                         disableChange={loading}
                         value={model.name}
                         onValue={handleChange('name')}
+                        maxLength={MAX_CHARS_API.ORG_NAME}
                     />
                 ),
                 async onSubmit() {
