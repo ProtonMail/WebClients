@@ -325,6 +325,9 @@
       "Discard": [
         "Abandonner"
       ],
+      "Dismiss": [
+        "Annuler"
+      ],
       "Don't know your password?": [
         "Vous ne connaissez pas votre mot de passe ?"
       ],
@@ -716,6 +719,9 @@
       "No, I won't attend": [
         "Non, je ne participerai pas"
       ],
+      "Not now": [
+        "Plus tard"
+      ],
       "Not saved": [
         "Non enregistré"
       ],
@@ -1048,10 +1054,6 @@
       ],
       "Trust": [
         "Faire confiance"
-      ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -3053,9 +3055,6 @@
       "No labels": [
         "Aucun label"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail et un signe plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
       ],
@@ -3279,6 +3278,9 @@
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
+      "Alias options could not be resolved": [
+        "Les options d'alias n'ont pas pu être obtenues."
+      ],
       "Attachments are limited to 25 MB": [
         "La taille des pièces jointes est limitée à 25 Mo."
       ],
@@ -3324,6 +3326,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
+      ],
+      "Could not open created vault": [
+        "Le coffre-fort créé n'a pas pu être ouvert."
+      ],
+      "Could not open updated vault": [
+        "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement : le contenu chiffré de ce message n'a pas pu être déchiffré."
@@ -3407,6 +3415,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Item content cannot exceed 40KB": [
+        "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -5080,10 +5091,10 @@
       "Are you sure you want to discard your import?": [
         "Voulez-vous vraiment abandonner votre importation ?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
+      "Are you sure you want to move all messages in this location to archive?": [
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Archives ?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
+      "Are you sure you want to move all messages in this location to trash?": [
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement dans le dossier Corbeille ?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
@@ -6729,6 +6740,9 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
+      "Forwards to": [
+        "Transfert vers"
+      ],
       "Frequency": [
         "Fréquence"
       ],
@@ -6843,6 +6857,9 @@
       "No label found": [
         "Aucun label n'a été trouvé."
       ],
+      "Note": [
+        "Note"
+      ],
       "Notification": [
         "Notification"
       ],
@@ -6953,6 +6970,9 @@
       ],
       "Time": [
         "Heure"
+      ],
+      "Title": [
+        "Titre"
       ],
       "To:": [
         "À :"
@@ -7621,6 +7641,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a été créé."
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a été désactivé."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a été activé."
+      ],
       "Block removed": [
         "Le blocage a été retiré."
       ],
@@ -8066,6 +8092,17 @@
       ],
       "No unread messages found": [
         "Aucun message non lu n'a été trouvé."
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Alias « hide-my-email »"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Ouvrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Essayez ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8692,13 +8729,13 @@
         "contacter votre administrateur"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changer d'abonnement pour en obtenir davantage."
+        "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace en supprimant des fichiers ou changer d'abonnement pour obtenir davantage d'espace de stockage."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour en obtenir davantage."
+        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."
@@ -9120,6 +9157,12 @@
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
       ],
+      "Account recovery": [
+        "Récupération du compte"
+      ],
+      "Account security": [
+        "Sécurité du compte"
+      ],
       "Action all conversations": [
         "Appliquer à toutes les conversations"
       ],
@@ -9238,6 +9281,9 @@
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
       ],
+      "Data recovery": [
+        "Récupération de données"
+      ],
       "Day theme": [
         "Thème jour"
       ],
@@ -9337,7 +9383,7 @@
         "Votre avis"
       ],
       "Filter name cannot contain only spaces": [
-        "Le nom de ce champ ne doit pas contenir uniquement des espaces."
+        "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
       "Filter on...": [
         "Filtrer"
@@ -9454,10 +9500,10 @@
       "Move all messages": [
         "Déplacer tous les messages"
       ],
-      "Move all messages to Archive": [
+      "Move all messages to archive": [
         "Déplacer tous les messages dans le dossier Archives"
       ],
-      "Move all messages to Trash": [
+      "Move all messages to trash": [
         "Déplacer tous les messages dans le dossier Corbeille"
       ],
       "Move to": [
@@ -9650,7 +9696,7 @@
         "Ce champ ne doit pas être vide."
       ],
       "This field cannot contain only spaces": [
-        "Ce champ ne doit contenir uniquement des espaces."
+        "Ce champ ne doit pas contenir uniquement des espaces."
       ],
       "To": [
         "À"
@@ -9854,8 +9900,23 @@
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La date d'expiration n'est pas au format MM/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
+      ],
+      "Invalid alias prefix": [
+        "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Missing alias prefix": [
+        "Le préfixe de l'alias est manquant."
+      ],
+      "Missing alias suffix": [
+        "Le suffixe de l'alias est manquant."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
@@ -9865,6 +9926,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Le préfixe de l'alias ne peut pas dépasser 40 caractères."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "La signature de la pièce jointe n'a pas pu être vérifiée.\nVous pouvez quand même télécharger cette pièce jointe, mais elle pourrait avoir été altérée.",
@@ -9896,6 +9960,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
+      ],
+      "You must select at least one mailbox": [
+        "Vous devez sélectionner au moins une messagerie."
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."

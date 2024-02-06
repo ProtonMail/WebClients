@@ -325,6 +325,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Don't know your password?": [
         "Não sabe sua senha?"
       ],
@@ -510,6 +513,9 @@
       ],
       "Import from Outlook": [
         "Importar do Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Atualização importante disponível. Para continuar a usar o aplicativo, atualize para a versão mais recente. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Pela manhã"
@@ -712,6 +718,9 @@
       ],
       "No, I won't attend": [
         "Não, não vou participar"
+      ],
+      "Not now": [
+        "Agora não"
       ],
       "Not saved": [
         "Não salvo"
@@ -1045,10 +1054,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -3050,9 +3055,6 @@
       "No labels": [
         "Nenhum marcador"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logotipo do Proton Mail e um sinal de mais"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
       ],
@@ -3276,6 +3278,9 @@
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
       ],
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
+      ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
       ],
@@ -3321,6 +3326,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "A pesquisa de conteúdo não pode ser ativada. Reinicie o aplicativo ou limpe os dados."
+      ],
+      "Could not open created vault": [
+        "Não foi possível abrir o cofre criado"
+      ],
+      "Could not open updated vault": [
+        "Não foi possível abrir o cofre atualizado"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erro ao descriptografar: não foi possível a decodificar o conteúdo criptografado desta mensagem."
@@ -3405,11 +3416,17 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40KB"
+      ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
       ],
       "Last name is too long": [
         "Sobrenome é muito longo"
+      ],
+      "Maximum expiration time reached.": [
+        "Tempo máximo de expiração atingido."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Número máximo de anexos (${ attachmentsCountLimit }) excedido"
@@ -3444,6 +3461,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Nenhuma chave externa recuperada para o usuário é válida para envio"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -5070,12 +5090,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
-      ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Tem certeza que deseja mover todas as mensagens desse local para o Arquivo?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Tem certeza que deseja mover todas as mensagens desse local para à lixeira?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } conversa?",
@@ -6720,6 +6734,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Forwards to": [
+        "Encaminhar para"
+      ],
       "Frequency": [
         "Frequência"
       ],
@@ -6834,6 +6851,9 @@
       "No label found": [
         "Nenhum marcador encontrado"
       ],
+      "Note": [
+        "Nota"
+      ],
       "Notification": [
         "Notificação"
       ],
@@ -6944,6 +6964,9 @@
       ],
       "Time": [
         "Hora"
+      ],
+      "Title": [
+        "Título"
       ],
       "To:": [
         "Para:"
@@ -7612,6 +7635,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME }foi desativado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME }foi ativado"
+      ],
       "Block removed": [
         "Bloqueio removido"
       ],
@@ -7793,6 +7822,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } marcou esta chave como obsoleta. Esta chave só pode ser usada para verificação de assinatura."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Chave externa obtida automaticamente em keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Chave externa obtida automaticamente via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Esta chave é usada para criptografar mensagens para este contato"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Recomendamos que você \"desconfie\" dessa chave."
@@ -8048,6 +8086,17 @@
       ],
       "No unread messages found": [
         "Nenhuma mensagem não lida encontrada"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Aliases do hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Abrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Experimente o ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8602,6 +8651,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
       ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Agora você pode executar ações em todos os e-mails em uma única pasta de uma só vez."
+      ],
       "Schedule send": [
         "Envio agendado"
       ],
@@ -8664,8 +8716,17 @@
       "${ app } storage": [
         "armazenamento de ${ app }"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% cheio"
+      ],
       "contact your administrator": [
         "contate seu administrador"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Para enviar ou receber e-mails, libere espaço ou atualize para obter mais armazenamento."
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -8676,8 +8737,26 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Seu ${ storage } está cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Seu ${ storage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Seu armazenamento está ${ percentage }% cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
+      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Seu armazenamento está cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
       ]
     },
     "Success": {
@@ -9072,6 +9151,12 @@
       "A filter with this name already exists": [
         "Um filtro com esse nome já existe"
       ],
+      "Account recovery": [
+        "Recuperação de conta"
+      ],
+      "Account security": [
+        "Segurança da conta"
+      ],
       "Action all conversations": [
         "Ação em todas as conversas"
       ],
@@ -9189,6 +9274,9 @@
       ],
       "Customize your mail import": [
         "Personalize sua importação de e-mail"
+      ],
+      "Data recovery": [
+        "Recuperação de dados"
       ],
       "Day theme": [
         "Tema diurno"
@@ -9406,12 +9494,6 @@
       "Move all messages": [
         "Mover todas as mensagens"
       ],
-      "Move all messages to Archive": [
-        "Mover todas as mensagens para o Arquivo"
-      ],
-      "Move all messages to Trash": [
-        "Mover todas as mensagens para a lixeira"
-      ],
       "Move to": [
         "Mover para"
       ],
@@ -9600,6 +9682,9 @@
       ],
       "This field cannot be empty": [
         "Este campo não pode ficar vazio"
+      ],
+      "This field cannot contain only spaces": [
+        "Este campo não pode conter apenas espaços"
       ],
       "To": [
         "Para"
@@ -9803,8 +9888,23 @@
       "Contacts could not be merged": [
         "Não foi possível mesclar os contatos."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "A data de expiração não está no formato MM/AA"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se você não se lembra de sua senha, é impossível reativar sua chave. Nós podemos ajudá-lo a descartar o banner de alerta, mas no processo você perderá o acesso permanente a todos os dados criptografados com essa chave."
+      ],
+      "Invalid alias prefix": [
+        "O prefixo de alias não é valido."
+      ],
+      "Missing alias prefix": [
+        "Faltando prefixo de alias"
+      ],
+      "Missing alias suffix": [
+        "Faltando sufixo de alias"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
@@ -9814,6 +9914,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "O prefixo do alias não pode ter mais de 40 caracteres"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Não foi possível verificar a assinatura do anexo.\nVocê ainda pode baixar este anexo, mas ele pode ter sido adulterado.",
@@ -9845,6 +9948,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Não conseguimos verificar o servidor de e-mail. Se você confia no mesmo, você pode pular essa verificação."
+      ],
+      "You must select at least one mailbox": [
+        "Você deve selecionar pelo menos uma caixa de correio"
       ],
       "You will lose any customization you made so far.": [
         "Você perderá qualquer personalização que tenha feito até agora."
