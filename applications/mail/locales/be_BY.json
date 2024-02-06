@@ -331,6 +331,9 @@
       "Discard": [
         "Адхіліць"
       ],
+      "Dismiss": [
+        "Закрыць"
+      ],
       "Don't know your password?": [
         "Не ведаеце свой пароль?"
       ],
@@ -724,6 +727,9 @@
       "No, I won't attend": [
         "Не, я не хачу далучацца"
       ],
+      "Not now": [
+        "Не зараз"
+      ],
       "Not saved": [
         "Не захавана"
       ],
@@ -1056,12 +1062,6 @@
       ],
       "Trust": [
         "Давяраць"
-      ],
-      "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -3049,6 +3049,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } у наладах."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Аўтаматычна ачышчае паведамленні, якія старэйшыя за 30 дзён са сметніцы і спама. Атрымлівайце асалоду ад гэтай і іншых пераваг пасля паляпшэння."
       ],
@@ -3063,6 +3066,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя часткі, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
@@ -3085,11 +3091,14 @@
       "No labels": [
         "Няма метак"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Лагатып Proton Mail і знак плюс"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Задаць спосаб аднаўлення, каб прадухіліць страту даных."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
@@ -3109,6 +3118,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць папак, метак і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Палепшыць свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }. Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту са спецыялізаванай падтрымкай 24/7."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
       ],
@@ -3123,6 +3135,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Спосаб аднаўлення вашага ўліковага запісу зададзены."
       ]
     },
     "description": {
@@ -3313,6 +3331,24 @@
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
       ],
+      "Alias is not valid": [
+        "Несапраўдны псеўданім"
+      ],
+      "Alias is required": [
+        "Патрабуецца псеўданім"
+      ],
+      "Alias options could not be resolved": [
+        "Не атрымалася вызначыць параметры псеўданіма"
+      ],
+      "Aliases could not be loaded": [
+        "Немагчыма загрузіць псеўданімы"
+      ],
+      "An error occurred while loading alias options": [
+        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
+      ],
+      "An error occurred while saving alias": [
+        "Падчас захавання псеўданіма адбылася памылка"
+      ],
       "Attachments are limited to 25 MB": [
         "Максімальны памер далучэнняў складае 25 МБ"
       ],
@@ -3360,6 +3396,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
+      ],
+      "Could not open created vault": [
+        "Немагчыма адкрыць створанае сховішча"
+      ],
+      "Could not open updated vault": [
+        "Немагчыма адкрыць абноўленае сховішча"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтага паведамлення."
@@ -3424,6 +3466,9 @@
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
+      "Forward address is required": [
+        "Патрабуецца адрас перасылкі"
+      ],
       "Image upload failed": [
         "Не ўдалося запампаваць відарыс"
       ],
@@ -3447,6 +3492,9 @@
       ],
       "Invalid verification code": [
         "Памылковы праверачны код"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Змесціва элемента не можа перавышаць 40 КБ"
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
@@ -3477,6 +3525,9 @@
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ],
       "Network error: Please check your connection and try again.": [
         "Памылка сеткі: праверце сваё падключэнне да сеткі і паспрабуйце яшчэ раз."
@@ -5260,11 +5311,11 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў Архіў?"
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Вы сапраўды хочаце перамясціць усе паведамленні з гэтага месца ў архіў?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Вы сапраўды хочаце перамясціць усе паведамленні ў Сметніцу?"
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Вы сапраўды хочаце перамясціць усе паведамленні ў сметніцу?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } размову?",
@@ -5613,6 +5664,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
+      ],
+      "Important note": [
+        "Важная заўвага"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
@@ -6294,6 +6348,9 @@
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
+      ],
+      "Warning": [
+        "Папярэджанне"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Прыносім прабачэнні. Магчыма, гэта была памылка з нашага боку. Ці можаце вы пацвердзіць, што хочаце пазначыць гэты ліст як надзейны?"
@@ -6979,6 +7036,9 @@
       "Folder location": [
         "Размяшчэнне папкі"
       ],
+      "Forwards to": [
+        "Пераслаць на"
+      ],
       "Frequency": [
         "Перыядычнасць"
       ],
@@ -7093,6 +7153,9 @@
       "No label found": [
         "Метка не знойдзена"
       ],
+      "Note": [
+        "Нататка"
+      ],
       "Notification": [
         "Апавяшчэнне"
       ],
@@ -7203,6 +7266,9 @@
       ],
       "Time": [
         "Час"
+      ],
+      "Title": [
+        "Назва"
       ],
       "To:": [
         "Каму:"
@@ -7895,6 +7961,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } створаны"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } было адключана"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } было ўключана"
+      ],
       "Block removed": [
         "Блакіраванне знята"
       ],
@@ -8348,6 +8420,17 @@
       ],
       "No unread messages found": [
         "Непрачытаныя паведамленні не знойдзены"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Псеўданімаў Hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Адкрыць ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Паспрабуйце ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -9516,6 +9599,12 @@
       "A filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
       ],
+      "Account recovery": [
+        "Аднаўленне ўліковага запісу"
+      ],
+      "Account security": [
+        "бяспеку ўліковага запісу"
+      ],
       "Action all conversations": [
         "Прымяніць да ўсіх размоў"
       ],
@@ -9635,6 +9724,9 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
+      ],
+      "Data recovery": [
+        "Аднаўленне даных"
       ],
       "Day theme": [
         "Дзённая тэма"
@@ -9864,10 +9956,10 @@
       "Move all messages": [
         "Перамясціць усе паведамленні"
       ],
-      "Move all messages to Archive": [
-        "Перамясціць усе паведамленні ў Архіў"
+      "Move all messages to archive": [
+        "Перамясціць усе паведамленні ў архіў"
       ],
-      "Move all messages to Trash": [
+      "Move all messages to trash": [
         "Перамясціць усе паведамленні ў сметніцу"
       ],
       "Move to": [
@@ -10274,8 +10366,23 @@
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам ігнараваць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
+      ],
+      "Invalid alias prefix": [
+        "Памылковы прэфікс псеўданіма"
+      ],
+      "Missing alias prefix": [
+        "Прапушчаны прэфікс псеўданіма"
+      ],
+      "Missing alias suffix": [
+        "Памылковы суфікс псеўданіма"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
@@ -10285,6 +10392,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Прэфікс псеўданіма не можа быць даўжэй за 40 сімвалаў"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не ўдалося праверыць подпіс далучэння.\nВы ўсё роўна можаце спампаваць яго, але яно можа быць падробленым.",
@@ -10318,6 +10428,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+      ],
+      "You must select at least one mailbox": [
+        "Вы павінны выбраць прынамсі адну паштовую скрыню"
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

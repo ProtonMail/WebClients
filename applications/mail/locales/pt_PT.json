@@ -325,6 +325,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Don't know your password?": [
         "Não sabe a sua palavra-passe?"
       ],
@@ -1039,10 +1042,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar na chave",
-        "Confiar nas chaves"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -2998,9 +2997,6 @@
       "No labels": [
         "Sem etiquetas"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logótipo do Proton Mail e um sinal de mais"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Poupe tempo enviando e-mails ou convites a todos de uma só vez, uma funcionalidade premium entre muitas outras. Actualize hoje mesmo."
       ],
@@ -3189,6 +3185,9 @@
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
+      "Alias options could not be resolved": [
+        "Não foi possível resolver as opções de alias."
+      ],
       "Attachments are limited to 25 MB": [
         "Os anexos estão limitados a 25 MB"
       ],
@@ -3227,6 +3226,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "A pesquisa de conteúdo não pode ser ativada neste navegador. Saia do modo de navegação privada ou utilize outro navegador."
+      ],
+      "Could not open created vault": [
+        "Não foi possível abrir o cofre criado"
+      ],
+      "Could not open updated vault": [
+        "Não foi possível abrir o cofre actualizado"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erro de desencriptação: o conteúdo encriptado desta mensagem não pôde ser desencriptado."
@@ -3310,6 +3315,9 @@
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
+      ],
+      "Item content cannot exceed 40KB": [
+        "O conteúdo do item não pode exceder 40 KB."
       ],
       "Label name cannot be empty.": [
         "O nome da etiqueta não pode estar vazio."
@@ -4918,12 +4926,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "Tem certeza de que deseja descartar a importação?"
-      ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Tem a certeza que deseja mover todas as mensagens deste local para o Arquivo?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Tem a certeza que deseja mover todas as mensagens deste local para o Lixo?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
@@ -6536,6 +6538,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Forwards to": [
+        "Encaminha para"
+      ],
       "Frequency": [
         "Frequência"
       ],
@@ -6647,6 +6652,9 @@
       "No label found": [
         "Nenhuma etiqueta encontrada"
       ],
+      "Note": [
+        "Nota"
+      ],
       "Notification": [
         "Notificação"
       ],
@@ -6757,6 +6765,9 @@
       ],
       "Time": [
         "Tempo"
+      ],
+      "Title": [
+        "Título"
       ],
       "To:": [
         "Para:"
@@ -7409,6 +7420,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } criado"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } foi desativado"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } foi ativado"
+      ],
       "Block removed": [
         "Bloqueio removido"
       ],
@@ -7815,6 +7832,17 @@
       ],
       "No unread messages found": [
         "Não foram encontradas mensagens não lidas."
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Pseudónimos hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Abrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Experimente o ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8383,6 +8411,14 @@
         "O seu armazenamento actual:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } de armazenamento"
+      ],
+      "Your storage is full": [
+        "O seu armazenamento está cheio"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } conversa eliminada",
@@ -8769,6 +8805,12 @@
       "(active)": [
         "(ativo)"
       ],
+      "Account recovery": [
+        "Recuperação de conta"
+      ],
+      "Account security": [
+        "Segurança da conta"
+      ],
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"
       ],
@@ -8880,6 +8922,9 @@
       ],
       "Customize your mail import": [
         "Personalize a sua importação de e-mail"
+      ],
+      "Data recovery": [
+        "Recuperação de dados"
       ],
       "Day theme": [
         "Tema diurno"
@@ -9070,12 +9115,6 @@
       "More selections": [
         "Mais seleções"
       ],
-      "Move all messages to Archive": [
-        "Mover todas as mensagens para o Arquivo"
-      ],
-      "Move all messages to Trash": [
-        "Mover todas as mensagens para o Lixo"
-      ],
       "Move to": [
         "Mover para"
       ],
@@ -9261,6 +9300,9 @@
       ],
       "Subject missing": [
         "O assunto está em falta"
+      ],
+      "This field cannot be empty": [
+        "Este campo não pode estar vazio."
       ],
       "To": [
         "Para"
@@ -9464,6 +9506,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se não se lembra da palavra-passe, é impossível reativar a chave. Podemos ajudar a descartar o alerta, mas no processo perderá permanentemente o acesso a todos os dados encriptados com esta chave."
       ],
+      "Invalid alias prefix": [
+        "Prefixo de alias inválido"
+      ],
+      "Missing alias prefix": [
+        "Prefixo de alias em falta"
+      ],
+      "Missing alias suffix": [
+        "Sufixo de alias em falta"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Só são permitidos caracteres alfanuméricos, pontos, hífenes e sublinhados"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta a ponta. Não envie nenhuma informação sensível."
       ],
@@ -9472,6 +9526,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contactos a unir mostram erros. Reveja-os individualmente."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "O prefixo do alias não pode ter mais de 40 caracteres"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Erro de verificação da assinatura do anexo.\nAinda pode transferi-lo, mas pode ter sido adulterado.",
@@ -9504,11 +9561,19 @@
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Não é possível verificar o servidor de e-mail. Se confia nele, pode saltar esta verificação."
       ],
+      "You must select at least one mailbox": [
+        "É necessário selecionar pelo menos uma caixa de correio"
+      ],
       "You will lose any customization you made so far.": [
         "Perderá qualquer personalização feita até agora."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "O seu teste gratuito termina em ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Sat, ${ formatTime }": [
+        "Sáb, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

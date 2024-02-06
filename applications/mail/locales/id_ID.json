@@ -100,7 +100,7 @@
       "As Scheduled": [
         "Sebagaimana Terjadwal"
       ],
-      "At most ${ maxContacts } contacts are allowed per contact group": [
+      "At most ${ maxContacts } contact is allowed per contact group": [
         "Hanya ${ maxContacts } kontak yang dapat disisipkan dalam satu grup kontak"
       ],
       "Attach screenshot(s)": [
@@ -283,11 +283,11 @@
       "Delete": [
         "Hapus"
       ],
-      "Delete ${ selectedCount } contact groups": [
-        "Hapus ${ selectedCount } grup kontak"
-      ],
-      "Delete ${ selectedCount } contacts": [
+      "Delete ${ selectedCount } contact": [
         "Hapus ${ selectedCount } kontak"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Hapus ${ selectedCount } grup kontak"
       ],
       "Delete all": [
         "Hapus semua"
@@ -321,6 +321,9 @@
       ],
       "Discard": [
         "Buang"
+      ],
+      "Dismiss": [
+        "Abaikan"
       ],
       "Don't know your password?": [
         "Tidak tahu kata sandi Anda?"
@@ -520,7 +523,7 @@
       "Insert": [
         "Sisipkan"
       ],
-      "Insert ${ totalChecked } contacts": [
+      "Insert ${ totalChecked } contact": [
         "Sisipkan ${ totalChecked } kontak"
       ],
       "Insert contact": [
@@ -711,6 +714,9 @@
       ],
       "No, I won't attend": [
         "Tidak, saya tidak akan hadir"
+      ],
+      "Not now": [
+        "Tidak sekarang"
       ],
       "Not saved": [
         "Belum disimpan"
@@ -1045,9 +1051,6 @@
       "Trust": [
         "Percayai"
       ],
-      "Trust keys": [
-        "Percayai kunci"
-      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -1217,13 +1220,13 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domains": [
+      "${ domains } custom domain": [
         "${ domains } domain khusus"
       ],
-      "${ ips } servers": [
+      "${ ips } server": [
         "${ ips } server"
       ],
-      "${ users } users": [
+      "${ users } user": [
         "${ users } pengguna"
       ]
     },
@@ -1379,7 +1382,7 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
@@ -1760,7 +1763,7 @@
       ]
     },
     "Checkout row": {
-      "${ users } users": [
+      "${ users } user": [
         "${ users } pengguna"
       ]
     },
@@ -2935,13 +2938,13 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } times": [
+      "${ count } time": [
         "${ count } kali"
       ],
       "Daily": [
         "Harian"
       ],
-      "Every ${ interval } days": [
+      "Every ${ interval } day": [
         "Setiap ${ interval } hari"
       ],
       "until ${ dateString }": [
@@ -2952,7 +2955,7 @@
       "Daily, ${ timesString }": [
         "Harian, ${ timesString }"
       ],
-      "Every ${ interval } days, ${ timesString }": [
+      "Every ${ interval } day, ${ timesString }": [
         "Setiap ${ interval } hari, ${ timesString }"
       ]
     },
@@ -2960,7 +2963,7 @@
       "Daily, ${ untilString }": [
         "Harian, ${ untilString }"
       ],
-      "Every ${ interval } days, ${ untilString }": [
+      "Every ${ interval } day, ${ untilString }": [
         "Setiap ${ interval } hari, ${ untilString }"
       ]
     },
@@ -3025,7 +3028,7 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } others won't be delivered and will be permanently deleted.": [
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Email baru dari ${ senderEmailAddress } dan ${ otherSendersCount } pengirim lainnya tidak akan disampaikan kepada Anda dan akan dihapus secara permanen."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
@@ -3036,9 +3039,6 @@
       ],
       "No labels": [
         "Tidak ada label"
-      ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail dan tanda plus"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
@@ -3158,7 +3158,7 @@
       "Event starting now": [
         "Acara dimulai sekarang"
       ],
-      "Event starts in ${ minutesUntilEvent } minutes": [
+      "Event starts in ${ minutesUntilEvent } minute": [
         "Acara akan dimulai dalam ${ minutesUntilEvent } menit"
       ],
       "Event starts tomorrow": [
@@ -3262,6 +3262,9 @@
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
+      "Alias options could not be resolved": [
+        "Opsi alias tidak dapat diuraikan"
+      ],
       "Attachments are limited to 25 MB": [
         "Lampiran terbatas hingga 25 MB"
       ],
@@ -3280,7 +3283,7 @@
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
       ],
-      "Choose a date within the next ${ n } days.": [
+      "Choose a date within the next ${ n } day.": [
         "Pilih tanggal yang berada dalam rentang ${ n } hari ke depan."
       ],
       "Condition incomplete": [
@@ -3307,13 +3310,19 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
       ],
+      "Could not open created vault": [
+        "Brankas yang dibuat tidak dapat dibuka"
+      ],
+      "Could not open updated vault": [
+        "Brankas yang diperbarui tidak dapat dibuka"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars": [
+      "Deselect at least ${ calendarsToFixCount } calendar": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars or": [
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan atau"
       ],
       "Domain not available, try again later": [
@@ -3388,6 +3397,9 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
+      "Item content cannot exceed 40KB": [
+        "Konten item tidak boleh melebihi 40KB"
+      ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
       ],
@@ -3400,7 +3412,7 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Jumlah lampiran maksimum (${ attachmentsCountLimit }) terlampaui"
       ],
-      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
       ],
       "Message needs to be sent first": [
@@ -3439,6 +3451,12 @@
       "Not a valid number": [
         "Nomor telepon tidak valid"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Grup tidak memiliki kontak: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Kata sandi diperlukan"
       ],
@@ -3448,7 +3466,7 @@
       "Please activate your search again": [
         "Silakan aktifkan kembali pencarian konten Anda"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
       "Please provide either a first name, a last name or a display name": [
@@ -3475,7 +3493,7 @@
       "re-activate the previous key": [
         "mengaktifkan kembali kunci terdahulu"
       ],
-      "Removed duplicate recipients: ${ recipents }": [
+      "Removed duplicate recipient: ${ recipents }": [
         "Penerima duplikat dihapus: ${ recipents }"
       ],
       "Request timed out": [
@@ -3499,17 +3517,8 @@
       "Some contacts could not be deleted": [
         "Sebagian kontak tidak dapat dihapus"
       ],
-      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
-        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
-      ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
-      ],
-      "Some groups have no contacts: ${ noContactGroupList } ": [
-        "Grup tidak memiliki kontak: ${ noContactGroupList } "
-      ],
-      "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
-        "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Sebagian nama folder Anda tidak dapat digunakan. Mohon ubah nama-nama ini dengan menyesuaikan parameter impor Anda."
@@ -3534,6 +3543,9 @@
       ],
       "status page": [
         "halaman status"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Lampiran tidak dapat didekripsi.\nJika Anda memiliki kunci pribadi terkait, Anda akan tetap bisa mendekripsi\nberkas dengan program seperti GnuPG."
       ],
       "The email addresses do not match": [
         "Alamat surel tidak cocok"
@@ -3616,10 +3628,10 @@
       "Wrong mailbox password": [
         "Kata sandi kotak surat salah"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipients": [
+      "You can't send a mail to more than ${ maxContacts } recipient": [
         "Anda tidak dapat mengirim surel ke lebih dari ${ maxContacts } penerima"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Anda tidak dapat membuka lebih dari ${ maxActiveComposer } jendela komposer dalam satu waktu"
       ],
       "You did not provide a file.": [
@@ -3651,7 +3663,7 @@
       ]
     },
     "Error adding participants to a calendar event": {
-      "At most ${ maxAttendees } participants are allowed per invitation": [
+      "At most ${ maxAttendees } participant is allowed per invitation": [
         "Hanya ${ maxAttendees } peserta yang dapat diundang per undangannya"
       ]
     },
@@ -3688,7 +3700,7 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
         "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -4080,7 +4092,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "byte"
       ],
       "GB": [
@@ -4097,19 +4109,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "Megabyte"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "Terabyte"
       ]
     },
@@ -4458,7 +4470,7 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } saran ditemukan. Gunakan keyboard Anda untuk beralih antar pilihan yang ada."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
@@ -4477,7 +4489,7 @@
       ]
     },
     "ICS widget label for event details": {
-      "${ totalAttendees } participants": [
+      "${ totalAttendees } participant": [
         "${ totalAttendees } peserta"
       ],
       "Organizer:": [
@@ -4485,14 +4497,14 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } acara telah dienkripsi dan ditambahkan ke kalender Anda"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Terdapat kesalahan pada saat mengenkripsi dan menambahkan acara Anda. Tidak ada acara yang dapat diimpor."
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "Terjadi kesalahan pada saat mengimpor dan menambahkan acara Anda. ${ totalImported } acara dari total ${ totalToImport } acara berhasil diimpor."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Terdapat kesalahan pada saat mengimpor dan menambahkan acara Anda. Tidak ada acara yang berhasil diimpor."
@@ -4525,10 +4537,10 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat surel ${ BRAND_NAME } Anda."
       ],
-      "This file contains event invitations:": [
+      "This file contains an event invitation:": [
         "Berkas ini mengandung undangan acara:"
       ],
-      "This file contains invitation responses:": [
+      "This file contains an invitation response:": [
         "Berkas ini mengandung balasan undangan:"
       ],
       "This file contains some data that we cannot import:": [
@@ -4536,7 +4548,7 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontak dienkripsi dan ditambahkan ke daftar kontak"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
@@ -4561,7 +4573,7 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contacts": [
+      "${ totalContacts } contact": [
         "${ totalContacts } kontak"
       ]
     },
@@ -4727,7 +4739,7 @@
         "Arahkan kursor Anda ke kalender yang hendak Anda impor dan buka menu dropdown."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
-        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS."
+        "Pilih ${ boldExport } untuk mengekspor kalender sebagai berkas ICS."
       ]
     },
     "Import provider": {
@@ -4742,7 +4754,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEventsDiscarded } acara dari total ${ totalEvents } acara tidak akan diimpor. Klik untuk keterangan lebih lanjut."
       ],
       "No contact can be imported. Click for details": [
@@ -4756,7 +4768,7 @@
       ]
     },
     "Info": {
-      "${ addressCount } email addresses": [
+      "${ addressCount } email address": [
         "${ addressCount } alamat surel"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -4765,64 +4777,64 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
-      "${ calendarsToBeCreatedCount } new calendars": [
+      "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
-      "${ calendarsToBeMergedCount } merged calendars": [
+      "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } kalender yang tergabung"
       ],
-      "${ contactCount } contacts contain multiple email addresses.": [
+      "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kontak mengandung lebih dari satu alamat surel."
       ],
-      "${ contactEmailsLength } Members": [
+      "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
       ],
-      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } anggota)"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } mengandung lebih dari satu alamat surel."
       ],
-      "${ contactsCount } contacts found": [
+      "${ contactsCount } contact found": [
         "${ contactsCount } kontak ditemukan"
       ],
-      "${ contactsLength } contacts": [
+      "${ contactsLength } contact": [
         "${ contactsLength } kontak"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } dari ${ totalProgress }"
       ],
-      "${ elementsCount } conversations will be labelled as:": [
+      "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } percakapan akan dilabeli sebagai:"
       ],
-      "${ elementsCount } conversations will be marked as read.": [
+      "${ elementsCount } conversation will be marked as read.": [
         "${ elementsCount } percakapan akan ditandai sebagai telah dibaca."
       ],
-      "${ elementsCount } conversations will be marked as unread.": [
+      "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } percakapan akan ditandai sebagai belum dibaca."
       ],
-      "${ elementsCount } conversations will be moved": [
+      "${ elementsCount } conversation will be moved": [
         "${ elementsCount } percakapan akan dipindahkan"
       ],
-      "${ elementsCount } conversations will be unlabelled from:": [
+      "${ elementsCount } conversation will be unlabelled from:": [
         "${ elementsCount } percakapan tidak akan dilabeli sebagai:"
       ],
-      "${ elementsCount } messages will be labelled as:": [
+      "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } pesan akan dilabeli sebagai:"
       ],
-      "${ elementsCount } messages will be marked as read.": [
+      "${ elementsCount } message will be marked as read.": [
         "${ elementsCount } pesan akan ditandai sebagai telah dibaca."
       ],
-      "${ elementsCount } messages will be marked as unread.": [
+      "${ elementsCount } message will be marked as unread.": [
         "${ elementsCount } pesan akan ditandai sebagai belum dibaca."
       ],
-      "${ elementsCount } messages will be moved": [
+      "${ elementsCount } message will be moved": [
         "${ elementsCount } pesan akan dipindahkan"
       ],
-      "${ elementsCount } messages will be unlabelled from:": [
+      "${ elementsCount } message will be unlabelled from:": [
         "${ elementsCount } pesan tidak akan lagi dilabeli sebagai:"
       ],
-      "${ embeddedAttachmentsCount } embedded images": [
+      "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } gambar yang tersemat"
       ],
       "${ fileName }: full-size image": [
@@ -4831,70 +4843,70 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pratinjau resolusi rendah"
       ],
-      "${ groupCounts } groups found": [
+      "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } juga dapat digunakan untuk melindungi bisnis Anda."
       ],
-      "${ messagesNotAuthorizedToMove } messages could not be moved.": [
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
       ],
-      "${ n } unread conversations": [
+      "${ n } unread conversation": [
         "${ n } percakapan yang belum dibaca"
       ],
-      "${ numberOfImageTrackers } email trackers blocked": [
+      "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } pelacak surel diblokir"
       ],
-      "${ numberOfImageTrackers } trackers blocked": [
+      "${ numberOfImageTrackers } tracker blocked": [
         "${ numberOfImageTrackers } pelacak diblokir"
       ],
-      "${ numberOfUTMTrackers } links cleaned": [
+      "${ numberOfUTMTrackers } link cleaned": [
         "${ numberOfUTMTrackers } tautan dibersihkan"
       ],
-      "${ NumMessages } messages in conversation": [
+      "${ NumMessages } message in conversation": [
         "${ NumMessages } pesan dalam percakapan"
       ],
-      "${ numOccurrences } occurrences found": [
+      "${ numOccurrences } occurrence found": [
         "${ numOccurrences } kecocokan ditemukan"
       ],
-      "${ numOccurrences } occurrences found in the mail content": [
+      "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } kecocokan ditemukan di dalam konten surat"
       ],
-      "${ providerFoldersNumLocalized } folders found": [
+      "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
       ],
-      "${ providerFoldersNumLocalized } labels found in Gmail": [
+      "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } label ditemukan di Gmail"
       ],
-      "${ pureAttachmentsCount } files attached": [
+      "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } berkas terlampir"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
-      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
-      "${ selectedFoldersCountLocalized } folders selected": [
+      "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
-      "${ selectedFoldersCountLocalized } labels selected": [
+      "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ total } conversations": [
+      "${ total } conversation": [
         "${ total } percakapan"
       ],
-      "${ total } messages": [
+      "${ total } message": [
         "${ total } pesan"
       ],
-      "${ unreadCount } scheduled messages": [
+      "${ unreadCount } scheduled message": [
         "${ unreadCount } pesan terjadwal"
       ],
-      "${ updated } contacts updated successfully.": [
+      "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
-      "(${ memberCount } members)": [
+      "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
       "(Filter if ALL of the following conditions are met)": [
@@ -4906,7 +4918,7 @@
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
       ],
-      "**${ elementsFoundCount }** results found in ${ labelName }": [
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
         "**${ elementsFoundCount }** hasil ditemukan pada ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
@@ -4933,10 +4945,10 @@
       "Align right": [
         "Rata kanan"
       ],
-      "All (${ totalFoldersCount } folders)": [
+      "All (${ totalFoldersCount } folder)": [
         "Semua (${ totalFoldersCount } folder)"
       ],
-      "All (${ totalFoldersCount } labels)": [
+      "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
@@ -4990,19 +5002,19 @@
       "Are you sure you want to discard your import?": [
         "Apakah Anda yakin ingin mengabaikan pengimporan Anda?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Apakah Anda yakin untuk memindahkan seluruh pesan pada lokasi ini ke Arsip?"
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Apakah Anda yakin untuk memindahkan seluruh pesan yang terdapat pada lokasi ini ke arsip?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Apakah Anda yakin untuk memindahkan seluruh pesan yang terdapat pada lokasi ini ke sampah?"
       ],
-      "Are you sure you want to permanently delete ${ count } conversations?": [
+      "Are you sure you want to permanently delete ${ count } conversation?": [
         "Apakah Anda yakin untuk menghapus ${ count } percakapan secara permanen?"
       ],
-      "Are you sure you want to permanently delete ${ count } drafts?": [
+      "Are you sure you want to permanently delete ${ count } draft?": [
         "Apakah Anda yakin untuk menghapus ${ count } draf secara permanen?"
       ],
-      "Are you sure you want to permanently delete ${ count } messages?": [
+      "Are you sure you want to permanently delete ${ count } message?": [
         "Apakah Anda yakin untuk menghapus ${ count } pesan secara permanen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
@@ -5089,7 +5101,7 @@
       "Country code": [
         "Kode negara"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendars": [
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
@@ -5134,7 +5146,7 @@
       "Disable message content search": [
         "Nonaktifkan pencarian konten pesan"
       ],
-      "Do you want to download these attachments anyway?": [
+      "Do you want to download this attachment anyway?": [
         "Apakah Anda tetap ingin mengunduh lampiran ini?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
@@ -5197,7 +5209,7 @@
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Email yang berlabel ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
       ],
-      "embedded images": [
+      "embedded image": [
         "gambar yang tersemat"
       ],
       "Encrypt message": [
@@ -5218,7 +5230,7 @@
       "Enter your own password (as organization admin).": [
         "Masukkan kata sandi Anda (selaku admin organisasi)."
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
         "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
       ],
       "Estimated time remaining: Less than a minute": [
@@ -5233,13 +5245,13 @@
       "Expires in ${ formattedDate }": [
         "Akan kedaluwarsa pada ${ formattedDate }"
       ],
-      "Expires in ${ minutesDiff } minutes": [
+      "Expires in ${ minutesDiff } minute": [
         "Akan kedaluwarsa dalam ${ minutesDiff } menit"
       ],
-      "Expires in less than ${ hoursDiff } hours": [
+      "Expires in less than ${ hoursDiff } hour": [
         "Akan kedaluwarsa dalam kurang dari ${ hoursDiff }"
       ],
-      "files attached": [
+      "file attached": [
         "berkas terlampir"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
@@ -5260,7 +5272,7 @@
       "From": [
         "Dari"
       ],
-      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Memiliki ${ numAttachments } lampiran (${ numAttachmentsSize })"
       ],
       "here": [
@@ -5293,7 +5305,7 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Seluruh gambar telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Impor ${ calendarCount } dari ${ totalCalendarsCount } kalender"
       ],
       "Import from": [
@@ -5533,7 +5545,7 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
       ],
-      "Please select which email address or addresses to add to ${ groupCount } groups.": [
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Silakan pilih alamat surel mana saja yang akan ditambahkan ke ${ groupCount } grup."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
@@ -5749,7 +5761,7 @@
       "The sender has requested a read receipt.": [
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
       ],
-      "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang kontak agar Anda dapat mengirim pesan ke ${ contactAddresses } atau menyunting kontak yang bersangkutan."
       ],
       "Themes can give your inbox a new look.": [
@@ -5757,12 +5769,6 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Ada kesalahan pada tanda tangan yang dipakai untuk memverifikasi rincian kontak, yang mungkin disebabkan oleh atur ulang kata sandi."
-      ],
-      "These conversations will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Percakapan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
-      ],
-      "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Mereka tidak akan dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan alias hide-my-email."
@@ -5784,6 +5790,9 @@
       ],
       "This conversation contains trashed messages.": [
         "Percakapan ini berisi pesan yang telah dibuang."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Percakapan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Surel ini tidak memenuhi syarat autentikasi domainnya. Surel ini mungkin telah dipalsukan atau tidak diteruskan dengan benar."
@@ -5820,6 +5829,9 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "Pesan ini akan dihapus secara otomatis pada ${ value }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
@@ -6067,16 +6079,16 @@
       "You have ${ unread } in your inbox.": [
         "Anda memiliki ${ unread } pada kotak masuk Anda."
       ],
-      "You have **${ count } conversations** stored in this folder": [
+      "You have **${ count } conversation** stored in this folder": [
         "Anda memiliki **${ count } percakapan** di folder ini"
       ],
-      "You have **${ count } conversations** tagged with this label": [
+      "You have **${ count } conversation** tagged with this label": [
         "Anda memiliki **${ count } percakapan** yang ditandai dengan label ini"
       ],
-      "You have **${ count } messages** stored in this folder": [
+      "You have **${ count } message** stored in this folder": [
         "Anda memiliki **${ count } pesan** di folder ini"
       ],
-      "You have **${ count } messages** tagged with this label": [
+      "You have **${ count } message** tagged with this label": [
         "Anda memiliki **${ count } pesan** yang ditandai dengan label ini"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
@@ -6088,28 +6100,28 @@
       "You have reached the maximum number of 5 replies.": [
         "Anda telah mencapai jumlah pesan balasan maksimum (5 pesan) yang dapat dikirim."
       ],
-      "You selected **${ count } conversations** from this folder": [
+      "You selected **${ count } conversation** from this folder": [
         "Anda memilih **${ count } percakapan** dari folder ini"
       ],
-      "You selected **${ count } conversations** with this label": [
+      "You selected **${ count } conversation** with this label": [
         "Anda memilih **${ count } percakapan** berlabel ini"
       ],
-      "You selected **${ count } messages** from this folder": [
+      "You selected **${ count } message** from this folder": [
         "Anda memilih **${ count } pesan** dari folder ini"
       ],
-      "You selected **${ count } messages** with this label": [
+      "You selected **${ count } message** with this label": [
         "Anda memilih **${ count } pesan** berlabel ini"
       ],
-      "You selected **${ elementsCount } conversations** in ${ location }": [
+      "You selected **${ elementsCount } conversation** in ${ location }": [
         "Anda memilih **${ elementsCount } percakapan** pada ${ location }."
       ],
-      "You selected **${ elementsCount } conversations**.": [
+      "You selected **${ elementsCount } conversation**.": [
         "Anda memilih **${ elementsCount } percakapan**."
       ],
-      "You selected **${ elementsCount } messages** in ${ location }": [
+      "You selected **${ elementsCount } message** in ${ location }": [
         "Anda memilih **${ elementsCount } pesan** pada ${ location }."
       ],
-      "You selected **${ elementsCount } messages**.": [
+      "You selected **${ elementsCount } message**.": [
         "Anda memilih **${ elementsCount } pesan**,"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
@@ -6151,7 +6163,7 @@
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
       ],
-      "Your message will expire in ${ numberOfDays } days.": [
+      "Your message will expire in ${ numberOfDays } day.": [
         "Pesan Anda akan kedaluwarsa dalam ${ numberOfDays } hari."
       ],
       "Your message will expire today.": [
@@ -6165,7 +6177,7 @@
       ]
     },
     "info": {
-      "${ filteredList.length } commands found.": [
+      "${ filteredList.length } command found.": [
         "${ filteredList.length } perintah ditemukan."
       ],
       "Optional": [
@@ -6181,10 +6193,10 @@
       ]
     },
     "Info: partial": {
-      "${ selectedFoldersCount } folders selected": [
+      "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } folder dipilih"
       ],
-      "${ selectedFoldersCount } labels selected": [
+      "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label dipilih"
       ]
     },
@@ -6215,10 +6227,10 @@
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Dengan mengeklik \"Percayai Kunci\", ini akan membuat kontak baru dan menghubungkannya kunci publik ini dengan pengirim. Surel dari alamat ini akan diverifikasi kriptografi secara otomatis."
       ],
-      "Do you want to trust the primary public keys with the following fingerprints?": [
+      "Do you want to trust the primary public key with the following fingerprint?": [
         "Apakah Anda ingin memercayai kunci publik utama dengan sidik jari berikut?"
       ],
-      "You have enabled Address Verification with Trusted Keys for these email addresses,\nbut no active encryption keys have been trusted.\nYou must trust keys valid for sending in order to send a message to these email addresses.": [
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Anda telah mengaktifkan Verifikasi Alamat dengan Kunci Terpercaya untuk alamat surel ini,\nnamun Anda belum memercayai kunci enkripsi aktif manapun.\nAnda harus memercayai kunci yang valid untuk dapat mengirim pesan ke alamat surel ini."
       ]
     },
@@ -6604,6 +6616,9 @@
       "Folder location": [
         "Lokasi folder"
       ],
+      "Forwards to": [
+        "Teruskan ke"
+      ],
       "Frequency": [
         "Frekuensi"
       ],
@@ -6718,6 +6733,9 @@
       "No label found": [
         "Tidak ada label yang ditemukan"
       ],
+      "Note": [
+        "Catatan"
+      ],
       "Notification": [
         "Pemberitahuan"
       ],
@@ -6828,6 +6846,9 @@
       ],
       "Time": [
         "Waktu"
+      ],
+      "Title": [
+        "Judul"
       ],
       "To:": [
         "Kepada:"
@@ -7124,7 +7145,7 @@
       "Almost there": [
         "Hampir selesai"
       ],
-      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "Jumlah kalender yang dibuat: ${ createdCalendarCount } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -7144,16 +7165,16 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "Impor semua pesan dari ${ itemsToImportCount } folder dan berikan label sebagai"
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
         "Impor semua pesan dari ${ itemsToImportCount } label dan berikan label sebagai"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } folder dan berikan label sebagai"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Impor semua pesan dari ${ selectedItemsToImportCount } dari ${ itemsToImportCount } label dan berikan label sebagai"
       ]
     },
@@ -7241,7 +7262,7 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } months ${ onDayString }": [
+      "Every ${ interval } month ${ onDayString }": [
         "Setiap ${ interval } bulan ${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
@@ -7249,7 +7270,7 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Setiap ${ interval } bulan ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
@@ -7257,7 +7278,7 @@
       ]
     },
     "Monthly recurring event, frequency (until)": {
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Setiap ${ interval } bulan ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
@@ -7391,10 +7412,10 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendars": [
+      "${ n } calendar": [
         "${ n } kalender"
       ],
-      "${ n } calendars per user": [
+      "${ n } calendar per user": [
         "${ n } kalender per pengguna"
       ],
       "Auto-delete spam and trashed messages": [
@@ -7465,7 +7486,7 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
       ],
-      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
@@ -7476,13 +7497,19 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Create up to ${ n } calendars": [
+      "Create up to ${ n } calendar": [
         "Buat hingga ${ n } kalender"
       ]
     },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } dibuat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } telah dinonaktifkan"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } telah diaktifkan"
       ],
       "Block removed": [
         "Blokir dicabut"
@@ -7788,13 +7815,13 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } dari ${ countContacts } kontak berhasil diekspor."
       ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length } dari ${ totalBeDeleted } kontak berhasil dihapus."
       ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } dari ${ totalBeMerged } kontak berhasil digabung."
       ],
       "No contacts exported.": [
@@ -7927,6 +7954,17 @@
         "Tidak ada pesan yang belum dibaca yang ditemukan"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Alias hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Buka ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Coba ${ PASS_APP_NAME }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Unggah"
@@ -7951,7 +7989,7 @@
       "Do you want to send the email anyway?": [
         "Apakah Anda tetap ingin mengirim surel ini?"
       ],
-      "We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:": [
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
         "Kami telah mendeteksi adanya kesalahan. Surel Anda tidak akan dapat terkirim ke alamat yang Anda tuju atas alasan-alasan berikut:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
@@ -7962,13 +8000,13 @@
       "Do you want to send the email anyway?": [
         "Apakah Anda tetap ingin mengirim surel ini?"
       ],
-      "If you decide to send the message anyway, the following recipients will receive the email without expiration:": [
+      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
         "Apabila Anda memutuskan untuk tetap mengirim surel ini, para penerima berikut akan menerima surel yang bersangkutan tanpa terikat waktu kedaluwarsa:"
       ],
-      "The following addresses are not valid: ${ invalidAddresses }": [
+      "The following address is not valid: ${ invalidAddresses }": [
         "Alamat berikut tidak valid: ${ invalidAddresses }"
       ],
-      "We have detected some warnings. The following email addresses may not receive emails:": [
+      "We have detected some warnings. The following email address may not receive emails:": [
         "Kami mendeteksi beberapa ketidakwajaran pada alamat surel yang hendak Anda tuju. Alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
       ]
     },
@@ -8008,13 +8046,13 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access"
       ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipients": [
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
         "Dikirim oleh ${ MAIL_APP_NAME } dengan teknologi enkripsi zero-access kepada penerima yang terverifikasi"
       ],
       "Sent by you with end-to-end encryption": [
         "Dikirim oleh Anda dengan enkripsi end-to-end"
       ],
-      "Sent by you with end-to-end encryption to verified recipients": [
+      "Sent by you with end-to-end encryption to verified recipient": [
         "Dikirim oleh Anda dengan enkripsi end-to-end kepada penerima terverifikasi"
       ],
       "Stored with zero-access encryption": [
@@ -8038,19 +8076,10 @@
       ]
     },
     "session_recovery:available:info": {
-      " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        "Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
-      ],
-      "${ timeRemaining.inDays } days": [
+      "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } hari"
       ],
-      "${ timeRemaining.inHours } hours": [
+      "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } jam"
       ],
       "Password reset request approved (${ user.Email }).": [
@@ -8059,10 +8088,10 @@
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
-      "This permission expires in ${ timeRemaining.inDays } days": [
+      "This permission expires in ${ timeRemaining.inDays } day": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
       ],
-      "This permission expires in ${ timeRemaining.inHours } hours": [
+      "This permission expires in ${ timeRemaining.inHours } hour": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
       ],
       "This permission expires soon": [
@@ -8074,8 +8103,17 @@
       "You can now change your password for the account ${ boldEmail }.": [
         "Anda kini dapat mengubah kata sandi Anda untuk akun ${ boldEmail }"
       ],
-      "You have ${ timeRemaining.inDays } days to reset your password.": [
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
       ]
     },
     "session_recovery:available:link": {
@@ -8135,13 +8173,13 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hours": [
+      "${ gracePeriodHoursRemaining } more hour": [
         "${ gracePeriodHoursRemaining } jam lagi"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Pengaturan ulang kata sandi telah diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
@@ -8170,7 +8208,7 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hours": [
+      "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } jam"
       ],
       "${ passwordReset } is now available.": [
@@ -8263,21 +8301,21 @@
       ]
     },
     "specialoffer: Countdown unit": {
-      "${ days } days": [
+      "${ days } day": [
         "${ days } hari"
       ],
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours } jam"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes } menit"
       ],
-      "${ seconds } seconds": [
+      "${ seconds } second": [
         "${ seconds } detik"
       ]
     },
     "specialoffer: Deal": {
-      "${ n } months FREE": [
+      "${ n } month FREE": [
         "${ n } bulan GRATIS"
       ]
     },
@@ -8339,7 +8377,7 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } months": [
+      "${ n } month": [
         "${ n } bulan"
       ],
       "/ month": [
@@ -8565,70 +8603,70 @@
       ]
     },
     "Success": {
-      "${ count } conversations deleted": [
+      "${ count } conversation deleted": [
         "Percakapan dihapus\n\n${ count } percakapan dihapus"
       ],
-      "${ count } drafts deleted": [
+      "${ count } draft deleted": [
         "${ count } draf dihapus"
       ],
-      "${ count } messages deleted": [
+      "${ count } message deleted": [
         "Pesan dihapus\n\n${ count } pesan dihapus"
       ],
-      "${ countMergeableContacts } contacts look identical.": [
+      "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontak terlihat identik."
       ],
-      "${ elementsCount } conversations added to ${ labelName }.": [
+      "${ elementsCount } conversation added to ${ labelName }.": [
         "${ elementsCount } percakapan ditambahkan ke ${ labelName }."
       ],
-      "${ elementsCount } conversations marked as read.": [
+      "${ elementsCount } conversation marked as read.": [
         "${ elementsCount } percakapan ditandai telah dibaca."
       ],
-      "${ elementsCount } conversations marked as Starred.": [
+      "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } percakapan ditandai dengan Bintang."
       ],
-      "${ elementsCount } conversations marked as unread.": [
+      "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } percakapan ditandai belum dibaca."
       ],
-      "${ elementsCount } conversations moved to ${ folderName } and senders added to your not spam list.": [
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } percakapan dipindahkan ke ${ folderName } dan para pengirimnya ditambahkan ke daftar bukan spam Anda."
       ],
-      "${ elementsCount } conversations moved to ${ folderName }.": [
+      "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } percakapan dipindahkan ke ${ folderName }."
       ],
-      "${ elementsCount } conversations moved to spam and senders added to your spam list.": [
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "${ elementsCount } percakapan dipindahkan ke spam dan para pengirimnya ditambahkan ke daftar spam Anda."
       ],
-      "${ elementsCount } conversations removed from ${ labelName }.": [
+      "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } percakapan dihapus dari ${ labelName }."
       ],
-      "${ elementsCount } conversations snoozed": [
+      "${ elementsCount } conversation snoozed": [
         "${ elementsCount } percakapan ditunda"
       ],
-      "${ elementsCount } conversations unsnoozed": [
+      "${ elementsCount } conversation unsnoozed": [
         "${ elementsCount } percakapan dibuka kembali"
       ],
-      "${ elementsCount } messages added to ${ labelName }.": [
+      "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } pesan ditambahkan ke ${ labelName }."
       ],
-      "${ elementsCount } messages marked as read.": [
+      "${ elementsCount } message marked as read.": [
         "${ elementsCount } pesan ditandai telah dibaca."
       ],
-      "${ elementsCount } messages marked as Starred.": [
+      "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } pesan ditandai dengan Bintang."
       ],
-      "${ elementsCount } messages marked as unread.": [
+      "${ elementsCount } message marked as unread.": [
         "${ elementsCount } ditandai belum dibaca."
       ],
-      "${ elementsCount } messages moved to ${ folderName } and senders added to your not spam list.": [
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
         "${ elementsCount } pesan dipindahkan ke ${ folderName } dan para pengirimnya ditambahkan ke daftar bukan spam Anda."
       ],
-      "${ elementsCount } messages moved to ${ folderName }.": [
+      "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } pesan dipindahkan ke ${ folderName }."
       ],
-      "${ elementsCount } messages moved to spam and senders added to your spam list.": [
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
         "${ elementsCount } pesan dipindahkan ke spam dan para pengirimnya ditambahkan ke daftar spam Anda."
       ],
-      "${ elementsCount } messages removed from ${ labelName }.": [
+      "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } pesan dihapus dari ${ labelName }."
       ],
       "Address copied to clipboard": [
@@ -8646,7 +8684,10 @@
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
-      "Contact groups deleted": [
+      "Contact deleted": [
+        "Kontak dihapus"
+      ],
+      "Contact group deleted": [
         "Grup kontak dihapus"
       ],
       "Contact saved": [
@@ -8751,10 +8792,10 @@
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Pesan yang berasal dari ${ sendersList } akan dipindahkan ke ${ folder }"
       ],
-      "Move ${ selectionCount } conversations": [
+      "Move ${ selectionCount } conversation": [
         "Pindahkan ${ selectionCount } percakapan"
       ],
-      "Move ${ selectionCount } messages": [
+      "Move ${ selectionCount } message": [
         "Pindahkan ${ selectionCount } pesan"
       ],
       "Password copied to clipboard": [
@@ -8890,24 +8931,24 @@
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours } jam"
       ],
-      "${ hoursInt }.5 hours": [
+      "${ hoursInt }.5 hour": [
         "${ hoursInt }.5 jam"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes } menit"
       ]
     },
     "Title": {
-      "${ emailsCount } email addresses": [
+      "${ emailsCount } email address": [
         "${ emailsCount } alamat email"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
       ],
-      "${ unreads } unread messages": [
+      "${ unreads } unread message": [
         "${ unreads } pesan yang belum dibaca"
       ],
       "(active)": [
@@ -8918,6 +8959,12 @@
       ],
       "A filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
+      ],
+      "Account recovery": [
+        "Pemulihan akun"
+      ],
+      "Account security": [
+        "Keamanan akun"
       ],
       "Action all conversations": [
         "Terapkan pada seluruh percakapan"
@@ -8931,7 +8978,7 @@
       "Add filter": [
         "Tambah filter"
       ],
-      "Add to ${ groupCount } groups": [
+      "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
       ],
       "Add to ${ groupName }": [
@@ -9036,25 +9083,28 @@
       "Customize your mail import": [
         "Sesuaikan proses impor surel"
       ],
+      "Data recovery": [
+        "Pemulihan data"
+      ],
       "Day theme": [
         "Tema siang"
       ],
       "Decryption error": [
         "Kesalahan dekripsi"
       ],
-      "Delete ${ count } contact groups": [
-        "Hapus ${ count } grup kontak"
-      ],
-      "Delete ${ count } contacts": [
+      "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
       ],
-      "Delete ${ count } conversations": [
+      "Delete ${ count } contact group": [
+        "Hapus ${ count } grup kontak"
+      ],
+      "Delete ${ count } conversation": [
         "Hapus ${ count } percakapan"
       ],
-      "Delete ${ count } drafts": [
+      "Delete ${ count } draft": [
         "Hapus ${ count } draf"
       ],
-      "Delete ${ count } messages": [
+      "Delete ${ count } message": [
         "Hapus ${ count } pesan"
       ],
       "Delete ${ value }": [
@@ -9153,7 +9203,7 @@
       "Image": [
         "Gambar"
       ],
-      "Import as simple events?": [
+      "Import as simple event?": [
         "Impor sebagai acara sederhana?"
       ],
       "Import contacts": [
@@ -9246,11 +9296,11 @@
       "Move all messages": [
         "Pindahkan seluruh pesan"
       ],
-      "Move all messages to Archive": [
-        "Pindahkan seluruh pesan ke Arsip"
+      "Move all messages to archive": [
+        "Pindahkan seluruh pesan ke arsip"
       ],
-      "Move all messages to Trash": [
-        "Pindahkan seluruh pesan ke Sampah"
+      "Move all messages to trash": [
+        "Pindahkan seluruh pesan ke sampah"
       ],
       "Move to": [
         "Pindahkan ke"
@@ -9450,7 +9500,7 @@
       "Trash": [
         "Sampah"
       ],
-      "Trust new keys?": [
+      "Trust new key?": [
         "Percaya kunci baru?"
       ],
       "Trust pinned keys?": [
@@ -9480,7 +9530,7 @@
       "Warning: suspected fake website": [
         "Peringatan: situs web ini terindikasi palsu"
       ],
-      "We protected you from ${ trackersCount } trackers": [
+      "We protected you from ${ trackersCount } tracker": [
         "Kami melindungi Anda dari ${ trackersCount } pelacak"
       ],
       "Welcome": [
@@ -9604,10 +9654,10 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } characters": [
+      "Password must contain at least ${ length } character": [
         "Kata sandi harus mengandung minimal ${ length } karakter"
       ],
-      "Try a shorter username (${ n } characters max)": [
+      "Try a shorter username (${ n } character max)": [
         "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     },
@@ -9626,7 +9676,7 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
       ],
-      "Are you sure you want to permanently delete ${ count } contacts?": [
+      "Are you sure you want to permanently delete ${ count } contact?": [
         "Yakin ingin mengapus ${ count } kontak secara permanen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
@@ -9641,8 +9691,23 @@
       "Contacts could not be merged": [
         "Kontak tidak dapat digabung"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Tanggal Kedaluwarsa bukan dalam format BB/TT"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
+      ],
+      "Invalid alias prefix": [
+        "Awalan alias tidak valid"
+      ],
+      "Missing alias prefix": [
+        "Awalan alias hilang"
+      ],
+      "Missing alias suffix": [
+        "Akhiran alias hilang"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
@@ -9650,11 +9715,14 @@
       "Skip verification?": [
         "Lewati verifikasi?"
       ],
-      "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
-        "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
-      ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Awalan alias tidak boleh melebihi 40 karakter"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Data kontak telah rusak dan tidak dapat dimunculkan."
@@ -9683,6 +9751,9 @@
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Kami tidak dapat memverifikasi server surel yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
+      "You must select at least one mailbox": [
+        "Anda harus memilih setidaknya satu kotak surat"
+      ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."
       ],
@@ -9702,40 +9773,40 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } weeks on ${ multipleDaysString }": [
+      "Every ${ interval } week on ${ multipleDaysString }": [
         "Setiap ${ interval } minggu pada hari ${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on all days": [
+      "Every ${ interval } week on all days": [
         "Setiap ${ interval } minggu pada seluruh hari"
       ],
-      "Every ${ interval } weeks on Friday": [
+      "Every ${ interval } week on Friday": [
         "Setiap ${ interval } minggu pada hari Jumat"
       ],
-      "Every ${ interval } weeks on Monday": [
+      "Every ${ interval } week on Monday": [
         "Setiap ${ interval } minggu pada hari Senin"
       ],
-      "Every ${ interval } weeks on Monday, ${ timesString }": [
+      "Every ${ interval } week on Monday, ${ timesString }": [
         "Setiap ${ interval } minggu pada hari Senin, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Saturday": [
+      "Every ${ interval } week on Saturday": [
         "Setiap ${ interval } minggu pada hari Sabtu"
       ],
-      "Every ${ interval } weeks on Sunday": [
+      "Every ${ interval } week on Sunday": [
         "Setiap ${ interval } minggu pada hari Minggu"
       ],
-      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+      "Every ${ interval } week on Sunday, ${ timesString }": [
         "Setiap ${ interval } minggu pada hari Minggu, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Thursday": [
+      "Every ${ interval } week on Thursday": [
         "Setiap ${ interval } minggu pada hari Kamis"
       ],
-      "Every ${ interval } weeks on Tuesday": [
+      "Every ${ interval } week on Tuesday": [
         "Setiap ${ interval } minggu pada hari Selasa"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
         "Setiap ${ interval } minggu pada hari Selasa, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Wednesday": [
+      "Every ${ interval } week on Wednesday": [
         "Setiap ${ interval } minggu pada hari Rabu"
       ],
       "Weekly on ${ multipleDaysString }": [
@@ -9767,22 +9838,22 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ timesString }"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
+      "Every ${ interval } week on all days, ${ timesString }": [
         "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
+      "Every ${ interval } week on Friday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Jumat, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+      "Every ${ interval } week on Saturday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Sabtu, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+      "Every ${ interval } week on Thursday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Kamis, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Rabu, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
@@ -9814,31 +9885,31 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
       ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
+      "Every ${ interval } week on all days, ${ untilString }": [
         "Setiap ${ interval } pekan pada seluruh hari, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
+      "Every ${ interval } week on Friday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Jumat, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
+      "Every ${ interval } week on Monday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Senin, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+      "Every ${ interval } week on Saturday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Sabtu, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+      "Every ${ interval } week on Sunday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Minggu, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+      "Every ${ interval } week on Thursday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Kamis, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Selasa, ${ untilString }"
       ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Rabu, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
@@ -9893,7 +9964,7 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
+      "Every ${ interval } year": [
         "Setiap ${ interval } tahun"
       ],
       "Yearly": [
@@ -9901,7 +9972,7 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
-      "Every ${ interval } years, ${ timesString }": [
+      "Every ${ interval } year, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
@@ -9909,7 +9980,7 @@
       ]
     },
     "Yearly recurring event, frequency (until)": {
-      "Every ${ interval } years, ${ untilString }": [
+      "Every ${ interval } year, ${ untilString }": [
         "Setiap ${ interval } tahun, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [

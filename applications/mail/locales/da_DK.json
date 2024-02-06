@@ -325,6 +325,9 @@
       "Discard": [
         "Kassér"
       ],
+      "Dismiss": [
+        "Afvis"
+      ],
       "Don't know your password?": [
         "Kan du ikke din adgangskode?"
       ],
@@ -336,6 +339,9 @@
       ],
       "Download ${ attachmentName }": [
         "Download ${ attachmentName }"
+      ],
+      "Download now": [
+        "Download nu"
       ],
       "Downloading": [
         "Downloader"
@@ -507,6 +513,9 @@
       ],
       "Import from Outlook": [
         "Importér fra Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Vigtig opdatering tilgængelig. For fortsat at kunne bruge appen, bedes du opdatere til den nyeste version. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Om morgenen"
@@ -709,6 +718,9 @@
       ],
       "No, I won't attend": [
         "Nej, jeg deltager ikke"
+      ],
+      "Not now": [
+        "Ikke nu"
       ],
       "Not saved": [
         "Ikke gemt"
@@ -1042,10 +1054,6 @@
       ],
       "Trust": [
         "Hav tillid til"
-      ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -3047,9 +3055,6 @@
       "No labels": [
         "Ingen etiketter"
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
@@ -3273,6 +3278,9 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias options could not be resolved": [
+        "Alias-indstillinger kunne ikke hentes"
+      ],
       "Attachments are limited to 25 MB": [
         "Vedhæftninger er begrænset til 25 MB"
       ],
@@ -3318,6 +3326,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åbne den opdaterede boks"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
@@ -3402,11 +3416,17 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
+      "Item content cannot exceed 40KB": [
+        "Element-indhold må ikke overstige 40 kB"
+      ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
       "Last name is too long": [
         "Efternavn er for langt"
+      ],
+      "Maximum expiration time reached.": [
+        "Maksimal udløbstid nået."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
@@ -3441,6 +3461,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -5067,12 +5090,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
-      ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Er du sikker på, at du vil slette ${ count } samtale permanent?",
@@ -6717,6 +6734,9 @@
       "Folder location": [
         "Mappeplacering"
       ],
+      "Forwards to": [
+        "Videresender til"
+      ],
       "Frequency": [
         "Frekvens"
       ],
@@ -6831,6 +6851,9 @@
       "No label found": [
         "Ingen etikette fundet"
       ],
+      "Note": [
+        "Note"
+      ],
       "Notification": [
         "Notifikation"
       ],
@@ -6941,6 +6964,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "Title": [
+        "Titel"
       ],
       "To:": [
         "Til:"
@@ -7609,6 +7635,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } oprettet"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet deaktiveret"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
+      ],
       "Block removed": [
         "Blokering fjernet"
       ],
@@ -7790,6 +7822,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ekstern nøgle hentes automatisk fra keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ekstern nøgle hentes automatisk via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
@@ -8045,6 +8086,17 @@
       ],
       "No unread messages found": [
         "Ingen ulæste beskeder fundet"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasser"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Åbn ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prøv ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8590,11 +8642,17 @@
       "Email tracking protection": [
         "Beskyttelse mod sporing af e-mail"
       ],
+      "Faster email management": [
+        "Hurtigere håndtering af e-mails"
+      ],
       "Get up to ${ credits } in credits.": [
         "Få op til ${ credits } i kreditter."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter venner til ${ BRAND_NAME }"
+      ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Nu kan du behandle alle e-mails i en enkelt mappe på én gang."
       ],
       "Schedule send": [
         "Planlæg afsendelse"
@@ -8652,6 +8710,53 @@
       ],
       "Your current storage:": [
         "Din aktuelle lagerplads:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagerplads"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fuldt"
+      ],
+      "contact your administrator": [
+        "kontakt din administrator"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dit ${ appStorage } er næsten fuldt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Dit ${ appStorage } er fuldt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Dit lager er fuldt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
       ]
     },
     "Success": {
@@ -9040,6 +9145,18 @@
       "(active)": [
         "(aktiv)"
       ],
+      "A filter name is required": [
+        "Filternavn er påkrævet"
+      ],
+      "A filter with this name already exists": [
+        "Der findes allerede et filter med dette navn"
+      ],
+      "Account recovery": [
+        "Kontogendannelse"
+      ],
+      "Account security": [
+        "Kontosikkerhed"
+      ],
       "Action all conversations": [
         "Anvend på alle samtaler"
       ],
@@ -9158,6 +9275,9 @@
       "Customize your mail import": [
         "Tilpas din mail-import"
       ],
+      "Data recovery": [
+        "Datagendannelse"
+      ],
       "Day theme": [
         "Dagstema"
       ],
@@ -9255,6 +9375,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternavn kan ikke kun indeholde mellemrum"
       ],
       "Filter on...": [
         "Filtrer efter..."
@@ -9370,12 +9493,6 @@
       ],
       "Move all messages": [
         "Flyt alle beskeder"
-      ],
-      "Move all messages to Archive": [
-        "Flyt alle beskeder til arkiv"
-      ],
-      "Move all messages to Trash": [
-        "Flyt alle beskeder til papirkurv"
       ],
       "Move to": [
         "Flyt til"
@@ -9562,6 +9679,12 @@
       ],
       "Subject missing": [
         "Emne mangler"
+      ],
+      "This field cannot be empty": [
+        "Dette felt må ikke være tomt"
+      ],
+      "This field cannot contain only spaces": [
+        "Dette felt kan ikke kun indeholde mellemrum"
       ],
       "To": [
         "Til"
@@ -9765,8 +9888,23 @@
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
+      ],
+      "Invalid alias prefix": [
+        "Ugyldigt alias-præfiks"
+      ],
+      "Missing alias prefix": [
+        "Mangler alias-præfiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler alias-suffiks"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
@@ -9776,6 +9914,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Alias-præfikset må højest være 40 tegn langt."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Vedhæftningens signatur kunne ikke verificeres.\nDu kan stadig downloade denne vedhæftning, men den kan være blevet manipuleret med.",
@@ -9807,6 +9948,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
+      ],
+      "You must select at least one mailbox": [
+        "Du skal vælge mindst en postkasse"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
