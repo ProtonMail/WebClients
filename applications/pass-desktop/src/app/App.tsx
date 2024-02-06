@@ -7,7 +7,6 @@ import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
 import { Lobby } from 'proton-pass-web/app/Views/Lobby';
 import { Main } from 'proton-pass-web/app/Views/Main';
-import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
@@ -48,6 +47,7 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { PASS_CONFIG } from '../lib/core';
+import { i18n } from '../lib/i18n';
 
 import './app.scss';
 
