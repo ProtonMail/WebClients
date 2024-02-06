@@ -198,6 +198,7 @@ export const getESEvent = async (
         Permissions: Event.Permissions,
         IsOrganizer: Event.IsOrganizer,
         IsProtonProtonInvite: Event.IsProtonProtonInvite,
+        IsPersonalSingleEdit: Event.IsPersonalSingleEdit,
         Author: Event.Author,
         StartTime: Event.StartTime,
         StartTimezone: Event.StartTimezone,
