@@ -287,6 +287,9 @@
       "Loading verification": [
         "Načítavanie overenia"
       ],
+      "Make admin": [
+        "Urobiť správcom"
+      ],
       "Mark as default": [
         "Označiť ako predvolené"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Predchádzajúci"
+      ],
+      "Recover data": [
+        "Obnoviť dáta"
       ],
       "Refer a friend": [
         "Odporučiť priateľa"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Obnoviť"
-      ],
-      "Restore administrator privileges": [
-        "Obnoviť oprávnenia správcu"
       ],
       "Retry": [
         "Opakovať"
@@ -1869,9 +1872,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo a znamienko plus"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
       ]
@@ -2046,9 +2046,6 @@
       "Organization key is not decrypted": [
         "Kľúč organizácie nie je dešifrovaný"
       ],
-      "Organization key is not decrypted.": [
-        "Kľúč organizácee nieje dešifrovaný."
-      ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
       ],
@@ -2066,9 +2063,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Platby sú momentálne nedostupné, skúste to prosím neskôr"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
@@ -2124,9 +2118,6 @@
       "The organization key must be activated first": [
         "Najprv musí byť aktivovaný kľúč organizácie"
       ],
-      "The organization key must be activated first.": [
-        "Najprv musí byť aktivovaný kľúč organizácie."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
@@ -2168,12 +2159,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Musíte aktivovať kľúče organizácie. Bez aktivácie nebudete môcť vytvárať alebo pristupovať k nesúkromným používateľom."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Skôr než vytvoríte nové kľúče pre organizáciu, musíte privatizovať všetkých užívateľov"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
@@ -3046,9 +3031,6 @@
       "Country code": [
         "Kód krajiny"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Vytvorte si nový účet a zdieľajte emailovú adresu a heslo s používateľom."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
       ],
@@ -3388,12 +3370,6 @@
       "Or select a particular server:": [
         "Alebo vyberte konkrétny server:"
       ],
-      "Organization keys activated": [
-        "Kľúče organizácie boli aktivované"
-      ],
-      "Organization keys restored": [
-        "Kľúče organizácie boli obnovené"
-      ],
       "Organization size": [
         "Veľkosť organizácie"
       ],
@@ -3519,6 +3495,9 @@
       ],
       "Save ${ percentage }": [
         "Ušetríte ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Heslo uložte na bezpečnom mieste."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Uložte si heslo na bezpečné miesto. Kliknutím na ikonu potvrďte, že ste heslo zadali správne."
@@ -3654,9 +3633,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tieto prihlasovacie údaje nie je možné použiť na prihlásenie do našich oficiálnych aplikácií ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Budú z vašej organizácie odstránené."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet bol zablokovaný kvôli možnému porušeniu pravidiel."
@@ -6659,6 +6635,22 @@
         "Vaše aktuálne úložisko:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Ponechať ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } uložisko"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Znížením predplatného prídete o nasledujúce benefity. Naozaj chcete pokračovať?"
+      ],
+      "Your storage is full": [
+        "Vaše úložisko je plné"
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Účtované každé 2 roky"
@@ -7015,9 +7007,6 @@
       "Country": [
         "Krajina"
       ],
-      "Display name": [
-        "Zobrazované meno"
-      ],
       "Email": [
         "Email"
       ],
@@ -7157,11 +7146,11 @@
       "Change mailbox password": [
         "Zmeniť heslo k poštovej schránke"
       ],
-      "Change organization keys": [
-        "Zmeniť kľúče organizácie"
-      ],
       "Change organization name": [
         "Zmeniť názov organizácie"
+      ],
+      "Change organization password": [
+        "Zmeniť heslo organizácie"
       ],
       "Change password": [
         "Zmeniť heslo"
@@ -7247,9 +7236,6 @@
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } dní)",
         "Vymazať server (budete ho stále môcť obnoviť o ${ days } dní)"
       ],
-      "Delete user": [
-        "Vymazať užívateľa"
-      ],
       "Delete user?": [
         "Vymazať používateľa?"
       ],
@@ -7264,6 +7250,9 @@
       ],
       "Downgrade account": [
         "Znížiť úroveň účtu"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Prejsť na nižší plán ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
@@ -7450,9 +7439,6 @@
       ],
       "Request sent": [
         "Požiadavka odoslaná"
-      ],
-      "Reset organization keys": [
-        "Obnoviť kľúče organizácie"
       ],
       "Reset password": [
         "Resetovať heslo"
@@ -7852,9 +7838,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužiaľ nie sme momentálne dostupní. Ak chcete popísať svoj problém, vyplňte nižšie uvedený formulár. Budeme sa ním zaoberať a kontaktovať vás, až budeme opäť online."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } kľúče organizácie predtým, ako pridáte emailovú adresu verejnému členovi."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
