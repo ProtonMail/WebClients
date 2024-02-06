@@ -195,7 +195,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                             alt={c('Info').t`The vault your alias will be stored in.`}
                                             title={c('Info').t`The vault your alias will be stored in.`}
                                         />
-                                        <span className="m-0 ml-2 text-ellipsis" title={vaultName}>
+                                        <span className="m-0 ml-1 text-ellipsis" title={vaultName}>
                                             {vaultName}
                                         </span>
                                     </span>
