@@ -1,7 +1,8 @@
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import { buildVcalAttendee } from '@proton/shared/lib/calendar/vcalConverter';
 
 import { INVITE_ACTION_TYPES } from '../../../../interfaces/Invite';
-import { getRecurringWarningText } from './editRecurringConfirmationTexts';
+import { getRecurringWarningText, getTexts } from './editRecurringConfirmationTexts';
 
 describe('getRecurringWarningText()', () => {
     test('Attendee gets no warning when answering a simple recurring series', () => {
@@ -185,6 +186,199 @@ describe('getRecurringWarningText()', () => {
                     canEditOnlyPersonalPart: false,
                 })
             ).toEqual('Previous modifications on this series will be lost.');
+        });
+    });
+});
+
+describe('getTexts()', () => {
+    describe('when there is more than one edit type option', () => {
+        test('Organizer gets asked which event to update when more than one edit type option', () => {
+            const types = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
+            const inviteActions = {
+                type: INVITE_ACTION_TYPES.SEND_INVITATION,
+            };
+            expect(getTexts(types, inviteActions)).toEqual({
+                title: 'Update recurring event',
+                confirm: 'Update',
+                cancel: 'Cancel',
+                alertText: 'Which event would you like to update?',
+            });
+        });
+    });
+
+    describe('when only "edit this" is offered', () => {
+        const types = [RECURRING_TYPES.SINGLE];
+
+        test('Organizer gets asked to confirm editing "this event"', () => {
+            const inviteActions = {
+                type: INVITE_ACTION_TYPES.SEND_INVITATION,
+            };
+            expect(getTexts(types, inviteActions)).toEqual({
+                title: 'Update recurring event',
+                confirm: 'Update',
+                cancel: 'Cancel',
+                alertText: 'Would you like to update this event?',
+            });
+        });
+
+        test('Attendee gets asked to confirm answering "this event"', () => {
+            const inviteActions = {
+                type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+            };
+            expect(getTexts(types, inviteActions)).toEqual({
+                title: 'Update recurring event',
+                confirm: 'Update',
+                cancel: 'Cancel',
+                alertText:
+                    'This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?',
+            });
+        });
+    });
+
+    describe('when only "edit all" is offered', () => {
+        const types = [RECURRING_TYPES.ALL];
+
+        describe('when the organizer is only adding or removing participants', () => {
+            test('Organizer gets informed about new invitations for added attendees', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_INVITATION,
+                    addedAttendees: [buildVcalAttendee('test@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Add participants',
+                    confirm: 'Add',
+                    cancel: 'Cancel',
+                    alertText: 'An invitation will be sent to added participants for all the events in this series.',
+                });
+            });
+
+            test('Organizer gets informed about cancellations for removed attendees', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_INVITATION,
+                    removedAttendees: [buildVcalAttendee('test@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Remove participants',
+                    confirm: 'Remove',
+                    cancel: 'Cancel',
+                    alertText:
+                        'A cancellation email will be sent to removed participants for all the events in this series.',
+                });
+            });
+
+            test('Organizer gets informed about changes for added and removed attendees', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_INVITATION,
+                    addedAttendees: [buildVcalAttendee('test@pm.me')],
+                    removedAttendees: [buildVcalAttendee('test2@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText: 'Added and removed participants will be notified about all the events in this series.',
+                });
+            });
+        });
+
+        describe('when the organizer is making changes to event details and maybe adding or removing participants', () => {
+            test('when no participants are modified', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Update recurring event',
+                    confirm: 'Update',
+                    cancel: 'Cancel',
+                    alertText:
+                        'You will update all the events in this series. An invitation will be sent to the event participants.',
+                });
+            });
+
+            test('when participants are added', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                    addedAttendees: [buildVcalAttendee('test@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText:
+                        'You will update all the events in this series. Existent and added participants will be notified.',
+                });
+            });
+
+            test('when participants are removed', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                    removedAttendees: [buildVcalAttendee('test@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText:
+                        'You will update all the events in this series. Existent and removed participants will be notified.',
+                });
+            });
+
+            test('when all participants are removed', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                    removedAttendees: [buildVcalAttendee('test@pm.me')],
+                    hasRemovedAllAttendees: true,
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText: 'You will update all the events in this series. Removed participants will be notified.',
+                });
+            });
+
+            test('when participants are added and removed', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                    addedAttendees: [buildVcalAttendee('test@pm.me')],
+                    removedAttendees: [buildVcalAttendee('test2@pm.me')],
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText:
+                        'You will update all the events in this series. Existent, added and removed participants will be notified.',
+                });
+            });
+
+            test('when new participants are added and all the existing ones are removed', () => {
+                const inviteActions = {
+                    type: INVITE_ACTION_TYPES.SEND_UPDATE,
+                    addedAttendees: [buildVcalAttendee('test@pm.me')],
+                    removedAttendees: [buildVcalAttendee('test2@pm.me')],
+                    hasRemovedAllAttendees: true,
+                };
+                expect(getTexts(types, inviteActions)).toEqual({
+                    title: 'Save changes',
+                    confirm: 'Save',
+                    cancel: 'Cancel',
+                    alertText:
+                        'You will update all the events in this series. Added and removed participants will be notified.',
+                });
+            });
+        });
+
+        test('Attendee gets asked to confirm answering "all events"', () => {
+            const inviteActions = {
+                type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+            };
+            expect(getTexts(types, inviteActions)).toEqual({
+                title: 'Update recurring event',
+                confirm: 'Update',
+                cancel: 'Cancel',
+                alertText: 'Would you like to change your answer for all the events in this series?',
+            });
         });
     });
 });
