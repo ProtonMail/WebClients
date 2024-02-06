@@ -3,31 +3,13 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
-import {
-    activatePasswordlessKey,
-    checkMemberAddressAvailability,
-    createMemberAddress,
-    createMember as createMemberConfig,
-    privatizeMember,
-    updateName,
-    updateQuota,
-    updateRole,
-    updateRolePasswordless,
-    updateVPN,
-} from '@proton/shared/lib/api/members';
+import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';
 import {
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
     updatePasswordlessOrganizationKeys,
 } from '@proton/shared/lib/api/organization';
-import {
-    DEFAULT_ENCRYPTION_CONFIG,
-    ENCRYPTION_CONFIGS,
-    ENCRYPTION_TYPES,
-    MEMBER_PRIVATE,
-    MEMBER_ROLE,
-    VPN_CONNECTIONS,
-} from '@proton/shared/lib/constants';
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type {
@@ -35,8 +17,6 @@ import type {
     Api,
     CachedOrganizationKey,
     EnhancedMember,
-    KeyTransparencyCommit,
-    KeyTransparencyVerify,
     Member,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
@@ -54,18 +34,16 @@ import {
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
     getVerifiedPublicKeys,
-    setupMemberKeys,
     splitKeys,
 } from '@proton/shared/lib/keys';
 import { decryptKeyPacket } from '@proton/shared/lib/keys/keypacket';
-import { srpVerify } from '@proton/shared/lib/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { type OrganizationKeyState, organizationKeyThunk } from '../';
 import { addressKeysThunk } from '../addressKeys';
 import { addressesThunk } from '../addresses';
 import { getMemberAddresses, membersThunk } from '../members';
 import { userKeysThunk } from '../userKeys';
+import { type OrganizationKeyState, organizationKeyThunk } from './index';
 
 export const getPrivateAdminError = () => {
     return c('passwordless').t`Private users can be promoted to admin when they've signed in for the first time`;
@@ -596,162 +574,6 @@ export const rotatePasswordlessOrganizationKeys = ({
             AdminActivations: publicAdminActivations,
             AdminInvitations: privateAdminInvitations,
         });
-    };
-};
-
-export const setAdminRole = ({
-    member,
-    payload,
-    api,
-}: {
-    member: Member;
-    payload: MemberKeyPayload | null;
-    api: Api;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const organizationKey = await dispatch(organizationKeyThunk());
-
-        if (!getIsPasswordless(organizationKey?.Key)) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-            return;
-        }
-
-        if (!payload) {
-            throw new Error('Missing payload');
-        }
-
-        await dispatch(setAdminRoles({ memberKeyPayloads: [payload], api }));
-    };
-};
-
-interface CreateMemberPayload {
-    name: string;
-    address: { Local: string; Domain: string };
-    private: boolean;
-    storage: number;
-    vpn?: boolean;
-    password: string;
-    role: MEMBER_ROLE | null;
-}
-
-export const editMember = ({
-    member,
-    memberDiff,
-    memberKeyPacketPayload,
-    api,
-}: {
-    member: Member;
-    memberDiff: Partial<CreateMemberPayload>;
-    memberKeyPacketPayload: MemberKeyPayload | null;
-    api: Api;
-}): ThunkAction<Promise<boolean>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        if (memberDiff.name !== undefined) {
-            await api(updateName(member.ID, memberDiff.name));
-        }
-        if (memberDiff.storage !== undefined) {
-            await api(updateQuota(member.ID, memberDiff.storage));
-        }
-        if (memberDiff.vpn !== undefined) {
-            await api(updateVPN(member.ID, memberDiff.vpn ? VPN_CONNECTIONS : 0));
-        }
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            await dispatch(setAdminRole({ member, payload: memberKeyPacketPayload, api }));
-        }
-        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
-            await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
-        }
-        if (memberDiff.private) {
-            await api(privatizeMember(member.ID));
-        }
-        return Object.values(memberDiff).some((value) => value !== undefined);
-    };
-};
-
-export const createMember = ({
-    member: model,
-    keyTransparencyVerify,
-    keyTransparencyCommit,
-    verifyOutboundPublicKeys,
-    api,
-}: {
-    member: CreateMemberPayload;
-    keyTransparencyVerify: KeyTransparencyVerify;
-    keyTransparencyCommit: KeyTransparencyCommit;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    api: Api;
-}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        const userKeys = await dispatch(userKeysThunk());
-        const ownerAddresses = await dispatch(addressesThunk());
-        const organizationKey = await dispatch(organizationKeyThunk());
-
-        if (!model.private) {
-            if (!organizationKey?.privateKey) {
-                throw new Error(c('Error').t`Organization key must be activated to create non-private users`);
-            }
-        }
-
-        if (model.private) {
-            if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-                if (getIsPasswordless(organizationKey?.Key)) {
-                    throw new Error(getPrivateAdminError());
-                }
-            }
-        }
-
-        await api(checkMemberAddressAvailability(model.address));
-
-        const { Member } = await srpVerify<{ Member: Member }>({
-            api,
-            credentials: { password: model.password },
-            config: createMemberConfig({
-                Name: model.name || model.address.Local,
-                Private: +model.private,
-                MaxSpace: +model.storage,
-                MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
-            }),
-        });
-
-        const { Address: memberAddress } = await api<{ Address: Address }>(
-            createMemberAddress(Member.ID, model.address)
-        );
-        const memberAddresses = [memberAddress];
-        let memberWithKeys: Member | undefined;
-
-        if (!model.private && organizationKey?.privateKey) {
-            const result = await setupMemberKeys({
-                api,
-                ownerAddresses,
-                member: Member,
-                memberAddresses,
-                organizationKey: organizationKey.privateKey,
-                encryptionConfig: ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
-                password: model.password,
-                keyTransparencyVerify,
-            });
-            memberWithKeys = result.Member;
-            await keyTransparencyCommit(userKeys);
-        }
-
-        if (model.role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
-            if (getIsPasswordless(organizationKey?.Key)) {
-                if (!model.private && memberWithKeys) {
-                    const memberKeyPayload = await getMemberKeyPayload({
-                        organizationKey,
-                        member: memberWithKeys,
-                        memberAddresses,
-                        verifyOutboundPublicKeys,
-                        api,
-                    });
-                    await dispatch(setAdminRoles({ api, memberKeyPayloads: [memberKeyPayload] }));
-                } else {
-                    // Ignore, can't set non-private users admins on creation
-                }
-            } else {
-                await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
-            }
-        }
     };
 };
 

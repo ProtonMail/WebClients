@@ -3,6 +3,7 @@ import { MutableRefObject, useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
+import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
@@ -70,7 +71,6 @@ import SubUserDeleteModal from '../SubUserDeleteModal';
 import SubUserEditModal from '../SubUserEditModal';
 import UserInviteOrEditModal from '../UserInviteOrEditModal';
 import UserRemoveModal from '../UserRemoveModal';
-import { getDomainError } from '../validateAddUser';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
