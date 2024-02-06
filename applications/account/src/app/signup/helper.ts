@@ -1,7 +1,7 @@
 import { Location } from 'history';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, COUPON_CODES, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { Api, Currency, Cycle, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -13,17 +13,24 @@ export const getSubscriptionPrices = async (
     planIDs: PlanIDs,
     currency: Currency,
     cycle: Cycle,
-    couponCode?: string
+    maybeCoupon?: string
 ) => {
     if (!hasPlanIDs(planIDs)) {
         return getFreeCheckResult(currency, cycle);
     }
+
+    let coupon = maybeCoupon;
+
+    if (!coupon && [PLANS.PASS_BUSINESS, PLANS.PASS_PRO].some((plan) => planIDs?.[plan])) {
+        coupon = COUPON_CODES.PASS_B2B_INTRO;
+    }
+
     return api<SubscriptionCheckResponse>(
         checkSubscription({
             Plans: planIDs,
             Currency: currency,
             Cycle: cycle,
-            CouponCode: couponCode,
+            CouponCode: coupon,
         })
     );
 };
