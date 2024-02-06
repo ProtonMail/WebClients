@@ -232,6 +232,9 @@
       "Discard": [
         "Abandonner"
       ],
+      "Dismiss": [
+        "Annuler"
+      ],
       "Don't know your password?": [
         "Vous ne connaissez pas votre mot de passe ?"
       ],
@@ -447,6 +450,9 @@
       ],
       "Next month": [
         "Mois suivant"
+      ],
+      "Not now": [
+        "Plus tard"
       ],
       "Ok": [
         "OK"
@@ -1962,9 +1968,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail et un signe plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
       ],
@@ -2109,6 +2112,9 @@
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
+      "Alias options could not be resolved": [
+        "Les options d'alias n'ont pas pu être obtenues."
+      ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
       ],
@@ -2135,6 +2141,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
+      ],
+      "Could not open created vault": [
+        "Le coffre-fort créé n'a pas pu être ouvert."
+      ],
+      "Could not open updated vault": [
+        "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -2206,6 +2218,9 @@
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
+      ],
+      "Item content cannot exceed 40KB": [
+        "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -4028,14 +4043,14 @@
         "Recherche activée"
       ],
       "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } fichier a été téléchargé en toute sécurité",
+        "${ nbFile } fichier a été téléchargé de manière sécurisée",
         "${ nbFile } fichiers ont été téléchargés en toute sécurité"
       ],
       "Securely downloaded all encrypted files": [
-        "Tous les fichiers chiffrés ont été téléchargés en toute sécurité."
+        "Tous les fichiers chiffrés ont été téléchargés de manière sécurisée."
       ],
       "Securely downloaded all files": [
-        "Tous les fichiers ont été téléchargés en toute sécurité."
+        "Tous les fichiers ont été téléchargés de manière sécurisée."
       ],
       "Select a folder to move to.": [
         "Sélectionnez un dossier de destination."
@@ -4701,6 +4716,9 @@
       "Folder name": [
         "Nom du dossier"
       ],
+      "Forwards to": [
+        "Transfert vers"
+      ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
@@ -4787,6 +4805,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "Note": [
+        "Note"
       ],
       "Notification": [
         "Notification"
@@ -4889,6 +4910,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
+      ],
+      "Title": [
+        "Titre"
       ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
@@ -5477,6 +5501,12 @@
         "${ numberOfItems } lien vers votre élément a été supprimé.",
         "${ numberOfItems } liens vers vos éléments ont été supprimés."
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a été désactivé."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a été activé."
+      ],
       "All items will soon be permanently deleted from trash": [
         "Tous les éléments seront bientôt supprimés définitivement du dossier Corbeille."
       ],
@@ -5840,6 +5870,17 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Message officiel de ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Alias « hide-my-email »"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Ouvrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Essayez ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6285,13 +6326,13 @@
         "contacter votre administrateur"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pour continuer à importer ou synchroniser vos fichiers, libérez de l'espace ou changer d'abonnement pour en obtenir davantage."
+        "Pour continuer à importer ou synchroniser vos fichiers, veuillez libérer de l'espace en supprimant des fichiers ou changer d'abonnement pour obtenir davantage d'espace de stockage."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour en obtenir davantage."
+        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."
@@ -6512,6 +6553,12 @@
         "${ numberOfFailedTransfer.total } chargement n'a pas abouti.",
         "${ numberOfFailedTransfer.total } chargements n'ont pas abouti."
       ],
+      "Account recovery": [
+        "Récupération du compte"
+      ],
+      "Account security": [
+        "Sécurité du compte"
+      ],
       "Active": [
         "Actifs"
       ],
@@ -6599,6 +6646,9 @@
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
+      ],
+      "Data recovery": [
+        "Récupération de données"
       ],
       "Date": [
         "Date"
@@ -7091,8 +7141,23 @@
       "Contacts could not be merged": [
         "Les contacts n'ont pas pu être fusionnés."
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La date d'expiration n'est pas au format MM/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez alors définitivement l'accès à toutes les données chiffrées avec cette clé."
+      ],
+      "Invalid alias prefix": [
+        "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Missing alias prefix": [
+        "Le préfixe de l'alias est manquant."
+      ],
+      "Missing alias suffix": [
+        "Le suffixe de l'alias est manquant."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Les rapports ne sont pas chiffrés de bout en bout, nous vous invitons à ne pas envoyer d'informations sensibles."
@@ -7102,6 +7167,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Certains contacts à fusionner affichent des erreurs. Nous vous invitons à les examiner individuellement."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Le préfixe de l'alias ne peut pas dépasser 40 caractères."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les données du contact sont corrompues et ne peuvent pas être affichées."
@@ -7129,6 +7197,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Le serveur de messagerie n'a pas pu être vérifié. Si vous lui faites confiance, vous pouvez ignorer cette vérification."
+      ],
+      "You must select at least one mailbox": [
+        "Vous devez sélectionner au moins une messagerie."
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."

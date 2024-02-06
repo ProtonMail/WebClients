@@ -492,9 +492,6 @@
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dihasilkan (${ error })."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "Tidak dapat mengirimkan undangan dan alamat untuk saat ini"
-      ],
       "Could not confirm this invite at the moment": [
         "Undangan ini tidak dapat dikonfirmasi untuk saat ini"
       ],
@@ -525,7 +522,7 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Gagal menghapus brankas \"${ payload.content.name }\""
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
+      "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } baris CSV yang rusak terdeteksi"
       ],
       "Editing item failed": [
@@ -712,7 +709,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "byte"
       ],
       "GB": [
@@ -729,19 +726,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "Megabyte"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "Terabyte"
       ]
     },
@@ -755,10 +752,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
-      "${ memberCount } members": [
+      "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
-      "${ n } items": [
+      "${ n } item": [
         "${ n } item"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
@@ -776,10 +773,10 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } akan menyarankan pembuatan kata sandi yang kuat pada formulir pendaftaran."
       ],
-      "${ revisionNumber } times": [
+      "${ revisionNumber } time": [
         "${ revisionNumber } kali"
       ],
-      "${ trialDaysLeft } days left": [
+      "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } hari tersisa"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -929,7 +926,7 @@
       "Import the CSV file below.": [
         "Impor CSV pada kolom di bawah ini."
       ],
-      "Imported ${ payload.total } items": [
+      "Imported ${ payload.total } item": [
         "${ payload.total } item diimpor"
       ],
       "Imported on ${ date }": [
@@ -959,6 +956,9 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
       ],
+      "item": [
+        "item"
+      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
       ],
@@ -982,9 +982,6 @@
       ],
       "Item successfully unpinned": [
         "Sematan item berhasil dilepas"
-      ],
-      "items": [
-        "item"
       ],
       "Leaving vault...": [
         "Mengeluarkan dari brankas..."
@@ -1151,7 +1148,7 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Dropdown isi otomatis akan terbuka setiap kali Anda mengeklik atau mengarahkan kursor Anda pada kolom entri masuk."
       ],
-      "The following ${ result.ignored.length } items could not be imported:": [
+      "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
@@ -1161,7 +1158,7 @@
         "Pengguna ini belum menjawab undangan Anda."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor ini akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
+        "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas ekspor yang dihasilkan akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus berkas ekspor ini setelah tidak lagi digunakan."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
@@ -1229,7 +1226,7 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
-      "You have ${ daysRemaining } days left to try these and other premium features.": [
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
         "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
@@ -1264,12 +1261,6 @@
       ]
     },
     "Label": {
-      "${ config.options.length } characters": [
-        "${ config.options.length } karakter"
-      ],
-      "${ config.options.wordCount } words": [
-        "${ config.options.wordCount } word"
-      ],
       "1 hour": [
         "1 jam"
       ],
@@ -1601,7 +1592,7 @@
         "Pengaturan"
       ],
       "Show website favicons": [
-        "Tampilkan ikon favorit situs web"
+        "Tampilkan favicon situs web"
       ],
       "Special characters (!&*)": [
         "Karakter khusus (!&*)"
@@ -1696,9 +1687,6 @@
       ]
     },
     "Message": {
-      "${ count } items": [
-        "${ count } item"
-      ],
       "You selected ${ semiboldText } in this vault": [
         "Anda memilih ${ semiboldText } pada brankas ini"
       ]
@@ -1821,7 +1809,7 @@
       ]
     },
     "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Brankas tidak dapat berisi lebih dari ${ vault.targetMaxMembers } pengguna."
       ]
     },
@@ -2013,7 +2001,7 @@
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
@@ -2042,9 +2030,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
-      ],
-      "Please enter a valid email address": [
-        "Silakan masukkan alamat email yang valid"
       ],
       "Please verify your email address in order to use email aliases": [
         "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"

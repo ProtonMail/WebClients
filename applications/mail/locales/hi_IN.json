@@ -312,6 +312,9 @@
       "Discard": [
         "रद्द करें"
       ],
+      "Dismiss": [
+        "रद्द करें"
+      ],
       "Don't know your password?": [
         "क्या आप अपना पासवर्ड नहीं जानते?"
       ],
@@ -682,6 +685,9 @@
       "No, I won't attend": [
         "नहीं, हम भाग नहीं लेंगे"
       ],
+      "Not now": [
+        "अभी नहीं"
+      ],
       "Not saved": [
         "सहेजा नहीं गया"
       ],
@@ -1005,10 +1011,6 @@
       ],
       "Trust": [
         "भरोसा करें"
-      ],
-      "Trust key": [
-        "ट्रस्ट कुंजी",
-        "ट्रस्ट कुंजी"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -2950,9 +2952,6 @@
       "No labels": [
         "कोई परचीयां नहीं"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail लोगो और एक प्लस साइन"
-      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "अपने प्लान को अपग्रेड करके कस्टम संदेश शेड्यूल और कई दूसरे फायदे पाएं।"
       ],
@@ -3114,6 +3113,9 @@
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
+      "Alias options could not be resolved": [
+        "नकलीनाम ऑप्शन रिज़ॉल्व ना हो सके"
+      ],
       "Attachments are limited to 25 MB": [
         "अनुलग्नक 25 एमबी तक सीमित हैं"
       ],
@@ -3152,6 +3154,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "इस ब्राउज़र में सामग्री खोज सक्षम नहीं की जा सकती है। कृपया निजी ब्राउज़िंग मोड छोड़ें या किसी अन्य ब्राउज़र का उपयोग करें।"
+      ],
+      "Could not open created vault": [
+        "बनाए गए तिजोरी को खोल नहीं पा रहे"
+      ],
+      "Could not open updated vault": [
+        "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "डिक्रिप्शन त्रुटि: इस संदेश की एन्क्रिप्टेड सामग्री का डिक्रिप्शन विफल रहा।"
@@ -4021,6 +4029,9 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ],
+      "Theme font": [
+        "थीम फ़ॉन्ट"
       ]
     },
     "Font Size Default": {
@@ -4633,9 +4644,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "क्या आप वाकई अपना आयात छोड़ना चाहते हैं?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "पक्का इन सारे संदेशों को कचरे में डालना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "क्या आप वाकई ${ count } वार्तालाप को स्थायी रूप से हटाना चाहते हैं?",
@@ -6137,6 +6145,9 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
+      "Forwards to": [
+        "इधर फॉरवर्ड होगा"
+      ],
       "Frequency": [
         "आवृत्ति"
       ],
@@ -6248,6 +6259,9 @@
       "No label found": [
         "कोई लेबल नहीं मिला"
       ],
+      "Note": [
+        "नोट"
+      ],
       "Notification": [
         "सूचना"
       ],
@@ -6349,6 +6363,9 @@
       ],
       "Time": [
         "समय"
+      ],
+      "Title": [
+        "टाइटल"
       ],
       "To:": [
         "को:"
@@ -7356,6 +7373,14 @@
         "कोई अपठित संदेश नहीं मिले"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } खोलें"
+      ]
+    },
     "Select files": {
       "Upload": [
         "अपलोड करें"
@@ -7811,6 +7836,14 @@
         "आपका वर्तमान संग्रहण:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } स्टोरेज"
+      ],
+      "Your storage is full": [
+        "आपका स्टोरेज भरा है"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } बातचीत हटाई गई",
@@ -8183,6 +8216,12 @@
       "(active)": [
         "(सक्रिय)"
       ],
+      "Account recovery": [
+        "खाता पुनर्प्राप्ति"
+      ],
+      "Account security": [
+        "खाते की सुरक्षा"
+      ],
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"
       ],
@@ -8291,6 +8330,9 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
+      ],
+      "Data recovery": [
+        "डेटा पुनर्प्राप्ति"
       ],
       "Decryption error": [
         "डीक्रिप्शन त्रुटि"
@@ -8477,9 +8519,6 @@
       ],
       "More selections": [
         "अधिक चयन"
-      ],
-      "Move all messages to Trash": [
-        "सभी संदेशों को ट्रैश में ले जाएं"
       ],
       "Move to": [
         "ले जाएँ"
@@ -8872,6 +8911,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
+      ],
+      "You must select at least one mailbox": [
+        "आपको कम से कम एक मेलबॉक्स चुनना होगा"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"

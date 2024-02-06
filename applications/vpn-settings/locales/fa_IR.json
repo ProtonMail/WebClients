@@ -212,6 +212,9 @@
       "Previous": [
         "پیشین"
       ],
+      "Recover data": [
+        "بازیابی داده‌"
+      ],
       "Refer a friend": [
         "معرفی به یک دوست"
       ],
@@ -253,9 +256,6 @@
       ],
       "Reset password": [
         "بازنشانی گذرواژه"
-      ],
-      "Restore administrator privileges": [
-        "بازیابی امتیازات مدیر"
       ],
       "Retry": [
         "تلاش دوباره"
@@ -1570,9 +1570,6 @@
       "Organization key is not decrypted": [
         "کلید سازمان رمزگشایی نشده است"
       ],
-      "Organization key is not decrypted.": [
-        "کلید سازمان رمزگشایی نشده است."
-      ],
       "Passwords do not match": [
         "گذرواژه‌ها مطابقت ندارند"
       ],
@@ -1587,9 +1584,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "در حال حاضر امکان پرداخت فراهم نیست، لطفا بعدا دوباره امتحان کنید"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "دسترسی رد شد، امتیازات مدیر محدود شده است."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "لطفا قبل از افزودن کاربران به سازمان خود، یک دامنه سفارشی را پیکربندی کنید."
@@ -1639,9 +1633,6 @@
       "The organization key must be activated first": [
         "کلید سازمان باید ابتدا فعال شود"
       ],
-      "The organization key must be activated first.": [
-        "کلید سازمان باید ابتدا فعال شود."
-      ],
       "This field is required": [
         "این قسمت الزامی است"
       ],
@@ -1674,9 +1665,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "شما از همه کاربران در طرح خود استفاده کرده‌اید. لطفا برای افزودن کاربر جدید طرح خود را ارتقا دهید."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "شما باید پیش از تولید کلیدهای سازمانی نو، همه کاربران را به حالت خصوصی دربیاورید"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "حساب یا سازمان شما دارای یک صورت‌ حساب به تعویق افتاده است. لطفا تمام صورت‌ حساب‌های پرداخت نشده را پرداخت کنید."
@@ -2002,9 +1990,6 @@
       "Copied to clipboard": [
         "به حافظه موقت روگرفت شد"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "حسابی جدید ایجاد کنید و آدرس های ایمیل و رمزعبور را با کاربر به اشتراک بگذارید."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "حساب کاربری‌های فرعی ایجاد و مدیریت کنید و به آنها در دامنه سفارشی خود رایانشانی اختصاص دهید."
       ],
@@ -2194,12 +2179,6 @@
       "Or select a particular server:": [
         "یا سروری خاص را انتخاب کنید:"
       ],
-      "Organization keys activated": [
-        "کلیدهای سازمان فعال شدند"
-      ],
-      "Organization keys restored": [
-        "کلیدهای سازمان بازیابی شدند"
-      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "دیگر مدیرانی در سازمان شما وجود دارند، شما مسئول انتقال گذرواژه جدید به آنها هستید."
       ],
@@ -2247,6 +2226,9 @@
       ],
       "Revoke certificate ${ name }": [
         "لغو کردن گواهی ${ name }"
+      ],
+      "Save your password somewhere safe.": [
+        "گذرواژه خود را در جایی امن ذخیره کنید."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "از گذرواژهٔ خود را در مکانی امن نگهداری کنید. روی نماد کلیک نمایید تا تأیید کنید که گذرواژه خود را به‌درستی وارد کرده‌اید."
@@ -3771,6 +3753,11 @@
         "به دلیل تغییر گذرواژه، امتیازات مدیر سازمان شما محدود شده است. اقدامات زیر دیگر مجاز نیستند:"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "لغو بازنشانی رمزعبور"
+      ]
+    },
     "session_recovery:available:error": {
       "Please generate keys before you try to change your password": [
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
@@ -3784,6 +3771,31 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } ساعت",
         "${ timeRemaining.inHours } ساعت"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "لغو بازنشانی رمزعبور"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "بازنشانی رمز عبور لغو شد"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "بازنشانی رمزعبور لغو شود؟"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "لغو بازنشانی رمزعبور"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "درخواست بازنشانی رمزعبور ثبت شد"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -3848,6 +3860,22 @@
       ],
       "Your current storage:": [
         "فضای ذخیره‌سازی کنونی شما:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } را نگه دار"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } فضای ذخیره سازی"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "با تنزیل درجه منافع زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
+      ],
+      "Your storage is full": [
+        "فضای ذخیره سازی شما پر شده است"
       ]
     },
     "Subscription attribute": {
@@ -4068,9 +4096,6 @@
       "Country": [
         "کشور"
       ],
-      "Display name": [
-        "نام نمایشی"
-      ],
       "Email addresses": [
         "رایانشانی‌ها"
       ],
@@ -4165,11 +4190,11 @@
       "Change mailbox password": [
         "تغییر گذرواژه نامه‌دان"
       ],
-      "Change organization keys": [
-        "تغییر کلیدهای سازمان"
-      ],
       "Change organization name": [
         "تغییر نام سازمان"
+      ],
+      "Change organization password": [
+        "تغییر گذرواژه سازمان"
       ],
       "Change password": [
         "تغییر گذرواژه"
@@ -4222,9 +4247,6 @@
       "Delete account": [
         "حذف حساب کاربری"
       ],
-      "Delete user": [
-        "حذف کاربر"
-      ],
       "Device connected!": [
         "دستگاه متصل شد!"
       ],
@@ -4236,6 +4258,9 @@
       ],
       "Downgrade account": [
         "تنزیل درجه حساب کاربری"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "تنزل به ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "دانلود ${ VPN_APP_NAME }"
@@ -4365,9 +4390,6 @@
       ],
       "Request new code": [
         "درخواست کد جدید"
-      ],
-      "Reset organization keys": [
-        "بازنشانی کلیدهای سازمان"
       ],
       "Reset password": [
         "بازنشانی گذرواژه"
@@ -4572,9 +4594,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "متاسفانه درحال حاضر آنلاین نیستیم. اطفا فرم ذیل را برای توضیح مشل خود پر کنید، ما آنرا بررسی کردن و هنگامی که آنلاین شدیم با شما تماس خواهیم گرفت."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "قبل از افزودن رایانشانی به یک عضو غیر خصوصی، باید کلیدهای سازمان را ${ activateLink } کنید."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "دورهٔ آزمایشی رایگان شما در ${ textDate } به پایان می‌رسد. ${ action }"

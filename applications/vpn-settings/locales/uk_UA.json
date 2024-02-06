@@ -77,6 +77,9 @@
       "Close this banner": [
         "Закрити цей банер"
       ],
+      "Configure SAML": [
+        "Налаштувати SAML"
+      ],
       "Confirm": [
         "Підтвердити"
       ],
@@ -257,6 +260,9 @@
       "Hide plan features": [
         "Приховати функції плану"
       ],
+      "Import new SAML metadata": [
+        "Імпортувати нові метадані SAML"
+      ],
       "Increase": [
         "Збільшити"
       ],
@@ -277,6 +283,9 @@
       ],
       "Loading verification": [
         "Завантаження підтвердження"
+      ],
+      "Make admin": [
+        "Зробити адміністратором"
       ],
       "Mark as default": [
         "Позначити типовим"
@@ -320,6 +329,9 @@
       "Previous": [
         "Попередній"
       ],
+      "Recover data": [
+        "Відновити дані"
+      ],
       "Refer a friend": [
         "Запросити друга"
       ],
@@ -334,6 +346,9 @@
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
+      ],
+      "Remove domain": [
+        "Вилучити домен"
       ],
       "Remove gift code": [
         "Вилучити подарунковий код"
@@ -365,9 +380,6 @@
       "Restore": [
         "Відновити"
       ],
-      "Restore administrator privileges": [
-        "Відновити права адміністратора"
-      ],
       "Retry": [
         "Повторити спробу"
       ],
@@ -386,11 +398,17 @@
       "Save address": [
         "Зберегти адресу"
       ],
+      "Save SAML configuration": [
+        "Зберегти конфігурацію SAML"
+      ],
       "Search": [
         "Пошук"
       ],
       "Search countries": [
         "Пошук країн"
+      ],
+      "See DNS TXT record": [
+        "Подивитися запис DNS TXT"
       ],
       "See how": [
         "Подивитись як"
@@ -400,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
+      ],
+      "Select file": [
+        "Вибрати файл"
       ],
       "Send code": [
         "Надіслати код"
@@ -1730,11 +1751,13 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail та знак плюс"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Доступ до програми для комп'ютера обмежено"
       ]
     },
     "Downgrade account reason": {
@@ -1880,9 +1903,6 @@
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
-      "Organization key is not decrypted.": [
-        "Ключ організації не розшифровано."
-      ],
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
@@ -1900,9 +1920,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Зараз неможливо виконати оплату. Спробуйте знову пізніше"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Доступ заборонено. Права адміністратора було обмежено."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
@@ -1924,6 +1941,12 @@
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Для керування декількома користувачами, перейдіть на тарифний план для бізнесу."
+      ],
+      "Please upload an xml file": [
+        "Вивантажте файл у форматі xml"
+      ],
+      "Please upload only 1 file": [
+        "Вивантажуйте лише 1 файл"
       ],
       "Process aborted": [
         "Процес перервано"
@@ -1958,9 +1981,6 @@
       "The organization key must be activated first": [
         "Спочатку необхідно активувати ключ організації"
       ],
-      "The organization key must be activated first.": [
-        "Спочатку необхідно активувати ключ організації."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "У цьому полі перевищено обмеження ${ maximumLength } символів."
       ],
@@ -1975,6 +1995,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
+      ],
+      "Unable to upload file": [
+        "Не вдається вивантажити файл"
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -1999,12 +2022,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Щоб створити неприватних користувачів і отримати доступ до їхніх облікових записів, вам потрібно активувати ключі організації."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
@@ -2595,6 +2612,11 @@
         "Ім'я користувача"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Додайте цей запис на панелі керування реєстратора доменних імен свого домену"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Е-пошта"
@@ -2730,6 +2752,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Розширте рівень захисту свого облікового запису. Необхідно проходити двоетапну перевірку щоразу під час входу в систему."
       ],
+      "Add domain": [
+        "Додати домен"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Додати сервер (${ availableAddedCount } доступний)",
         "Додати сервер (${ availableAddedCount } доступних)",
@@ -2793,6 +2818,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Ви впевнені, що хочете забрати права адміністратора у цього користувача?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Ви дійсно хочете вилучити домен ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Попросіть адміністратора вашої організації налаштувати мережеві шлюзи."
       ],
@@ -2841,8 +2869,17 @@
       "Cancel anytime": [
         "Скасувати будь-коли"
       ],
+      "Can’t access your recovery email?": [
+        "Не можете отримати доступ до резервної е-пошти?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Не можете отримати доступ до номера телефону для відновлення?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Налаштуйте автентифікацію SAML для своєї організації через провайдера особистих даних (IdP). У такий спосіб ви активуєте SAML для всієї організації."
       ],
       "Continue with ${ freeName }": [
         "Продовжити з ${ freeName }"
@@ -2850,14 +2887,17 @@
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера особистих даних"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера особистих даних"
+      ],
       "Copy the suggested password to clipboard": [
         "Скопіюйте запропонований пароль до буфера обміну"
       ],
       "Country code": [
         "Код країни"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Створіть новий обліковий запис і поділіться адресою е-пошти й паролем з цим користувачем."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
@@ -2904,17 +2944,32 @@
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Запис DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його забудете, то не зможете керувати своєю організацією."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ЗАПАМ'ЯТАЙТЕ цей пароль. Якщо ви його втратите, то не зможете увійти або розшифрувати свої повідомлення."
       ],
+      "Domain ownership failed verification.": [
+        "Не вдалося засвідчити володіння доменом."
+      ],
+      "Domain ownership not verified.": [
+        "Володіння доменом не засвідчено."
+      ],
+      "Domain ownership verified.": [
+        "Володіння доменом засвідчено."
+      ],
       "Done": [
         "Виконано"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
+      ],
+      "Don’t know your recovery phrase?": [
+        "Не знаєте своєї фрази відновлення?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
@@ -2945,6 +3000,9 @@
       ],
       "Emailing preference saved": [
         "Налаштування електронної пошти збережено"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL-адреса кінцевої точки, отримана від вашого провайдера особистих даних (наприклад, https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Посильте безпеку вашої мережі"
@@ -2988,6 +3046,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
       ],
+      "Enter your recovery phrase to change your password now.": [
+        "Введіть фразу відновлення, щоб змінити пароль."
+      ],
       "Expired": [
         "Протерміновано"
       ],
@@ -3012,8 +3073,14 @@
       "Get ${ upsellPlanName }": [
         "Отримати ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
+        "Перейдіть до свого провайдера особистих даних, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
+      ],
       "here": [
         "тут"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Відкритий ключ провайдера особистих даних для підпису твердження автентифікації. У провайдера особистих даних має бути місце для завантаження копії хешу сертифіката. Просто вставте хеш сертифіката в текстове поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
@@ -3183,12 +3250,6 @@
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
       ],
-      "Organization keys activated": [
-        "Ключі організації активовано"
-      ],
-      "Organization keys restored": [
-        "Ключі організації відновлено"
-      ],
       "Organization size": [
         "Розмір організації"
       ],
@@ -3303,8 +3364,14 @@
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
       ],
+      "SAML configuration saved": [
+        "Конфігурацію SAML збережено"
+      ],
       "Save ${ percentage }": [
         "Заощадьте ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Збережіть свій пароль у надійному місці."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Збережіть пароль у надійному місці. Клацніть на піктограму, щоб підтвердити правильність його введення."
@@ -3350,6 +3417,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Деякі з ваших доступних серверів можна використовувати лише в певних країнах через нещодавнє видалення"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Вкажіть домен, якому дозволено автентифікацію з SAML SSO."
       ],
       "Step ${ step }": [
         "Крок ${ step }",
@@ -3441,9 +3511,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They will be removed from your organization": [
-        "Їх буде вилучено з вашої організації"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
       ],
@@ -3458,6 +3525,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
+      ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Перевірка може тривати до однієї години. Тим часом ви можете перейти до наступних кроків."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
@@ -3486,6 +3556,9 @@
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Щоб дозволити домену ${ boldDomainName } використовувати SAML SSO, ви повинні засвідчити володіння ним, додавши зазначений запис DNS TXT до вашого домену на панелі керування вашого провайдера DNS."
+      ],
       "To cancel your subscription, please reach out to us.": [
         "Щоб скасувати передплату, зв'яжіться з нами."
       ],
@@ -3506,6 +3579,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
+      ],
+      "To proceed, we must verify the request.": [
+        "Щоб продовжити, ми повинні перевірити запит."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
@@ -3546,6 +3622,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для цього облікового запису не збережено спосіб відновлення."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Унікальний ідентифікатор, згенерований вашим провайдером особистих даних, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Незбережені зміни"
       ],
@@ -3584,6 +3663,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Під час перевірки відкриється нова вкладка. Будь ласка, вимкніть всі блокувальники вмісту. З вас не стягуватиметься плата. Невелика сума, що зніметься з вашої картки під час перевірки, негайно повернеться."
+      ],
+      "Verify domain": [
+        "Засвідчити домен"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Підтверджуйте свій вхід у систему за допомогою тимчасових одноразових кодів, отриманих із програми авторизації"
@@ -3651,6 +3733,9 @@
       "Welcome": [
         "Вітаємо"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Ми надішлемо код скидання на ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
       ],
@@ -3659,6 +3744,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Ми змінюємо ваш поточний тарифний план на кращий, з більшими можливостями за таку саму ціну. Поки наші системи оновлюються, ви не зможете його змінити. Ми надішлемо вам повідомлення одразу після завершення."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Увімкнувши SAML для ${ appName } у свого провайдера особистих даних, ви можете отримати запит на використання URL-адреси для зворотного виклику (ACS) та ID видавця. Просто скопіюйте і вставте наведені нижче дані в поля вашого провайдера особистих даних."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Коли ви налаштовуєте двоетапну перевірку, ми надаємо коди відновлення, які ви можете використовувати для входу в систему, якщо втратите доступ до програми автентифікації."
@@ -3963,11 +4051,20 @@
       "Allow recovery by phone": [
         "Дозволити відновлення за телефоном"
       ],
+      "Allowed domain": [
+        "Дозволений домен"
+      ],
+      "Allowed Domain": [
+        "Дозволений домен"
+      ],
       "Amount": [
         "Всього"
       ],
       "Amount due": [
         "До сплати"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL-адреса служби підтвердження клієнтів (ACS)"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -4092,6 +4189,9 @@
       "Do you have any suggestions for our team?": [
         "У вас є пропозиції для нашої команди?"
       ],
+      "e.g. example.com": [
+        "наприклад, example.com"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -4122,6 +4222,9 @@
       "Interval": [
         "Інтервал"
       ],
+      "Issuer ID": [
+        "ID видавця"
+      ],
       "Keep me signed in": [
         "Не виходити"
       ],
@@ -4139,6 +4242,15 @@
       ],
       "Main": [
         "Головна"
+      ],
+      "Metadata file for ${ appName }": [
+        "Файл метаданих для ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL-адреса метаданих для ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Спосіб імпортування метаданих"
       ],
       "Moderate NAT": [
         "Помірна NAT"
@@ -4233,6 +4345,9 @@
       "Proration": [
         "Розподілення"
       ],
+      "Public certificate (X.509)": [
+        "Відкритий сертифікат (X.509)"
+      ],
       "Recovery email address": [
         "Електронна пошта для відновлення"
       ],
@@ -4241,6 +4356,9 @@
       ],
       "Recovery phrase": [
         "Фраза відновлення"
+      ],
+      "Reply (ACS) URL": [
+        "URL-адреса відповіді (ACS)"
       ],
       "Require 2FA for administrators": [
         "Вимагати 2FA для адміністраторів"
@@ -4256,6 +4374,12 @@
       ],
       "Select your plan": [
         "Оберіть тарифний план"
+      ],
+      "Single sign-on entity ID": [
+        "Entity ID єдиного входу (SSO)"
+      ],
+      "Single sign-on URL": [
+        "URL-адреса єдиного входу (SSO)"
       ],
       "Start date": [
         "Дата початку"
@@ -4283,6 +4407,9 @@
       ],
       "Username": [
         "Ім'я користувача"
+      ],
+      "Value": [
+        "Значення"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -5564,6 +5691,15 @@
       "Confirm": [
         "Підтвердити"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "наприклад, https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "наприклад, https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "наприклад, https://idp.example.com/XXXXX"
+      ],
       "Email address": [
         "Адреса е-пошти"
       ],
@@ -5793,6 +5929,11 @@
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введіть поточний пароль, щоб скасувати скидання пароля. Ніякі інші зміни не набудуть чинності."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -6120,6 +6261,22 @@
       ],
       "Your current storage:": [
         "Ваше поточне сховище:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Залишити ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } сховища"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
+      ],
+      "Your storage is full": [
+        "Ваше сховище заповнене"
       ]
     },
     "Subscription": {
@@ -6478,9 +6635,6 @@
       "Country": [
         "Країна"
       ],
-      "Display name": [
-        "Ім'я"
-      ],
       "Email": [
         "Е-пошта"
       ],
@@ -6620,11 +6774,11 @@
       "Change mailbox password": [
         "Змінити пароль поштової скриньки"
       ],
-      "Change organization keys": [
-        "Змінити ключі організації"
-      ],
       "Change organization name": [
         "Змінити назву організації"
+      ],
+      "Change organization password": [
+        "Змінити пароль організації"
       ],
       "Change password": [
         "Змінити пароль"
@@ -6710,9 +6864,6 @@
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)"
       ],
-      "Delete user": [
-        "Видалити користувача"
-      ],
       "Delete user?": [
         "Видалити користувача?"
       ],
@@ -6727,6 +6878,9 @@
       ],
       "Downgrade account": [
         "Понизити тарифний план"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Понизити до ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
@@ -6769,6 +6923,12 @@
       ],
       "Email subscriptions": [
         "Підписки електронної пошти"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Введіть кінцеві точки у вашого провайдера особистих даних"
+      ],
+      "Enter SAML metadata": [
+        "Введіть метадані SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до програми бета-тестування ${ app }"
@@ -6896,6 +7056,9 @@
       "Recovery": [
         "Відновлення"
       ],
+      "Remove domain": [
+        "Вилучити домен"
+      ],
       "Remove user?": [
         "Вилучити користувача?"
       ],
@@ -6911,9 +7074,6 @@
       "Request sent": [
         "Запит надіслано"
       ],
-      "Reset organization keys": [
-        "Скинути ключі організації"
-      ],
       "Reset password": [
         "Скинути пароль"
       ],
@@ -6925,6 +7085,9 @@
       ],
       "Revoke certificate": [
         "Відкликати сертифікат"
+      ],
+      "SAML authentication": [
+        "Автентифікація SAML"
       ],
       "Select a plan": [
         "Оберіть тарифний план"
@@ -6970,6 +7133,9 @@
       ],
       "Signed in to member account": [
         "Виконано вхід до облікового запису учасника"
+      ],
+      "Single Sign-On": [
+        "Єдиний вхід (SSO)"
       ],
       "Status": [
         "Стан"
@@ -7104,11 +7270,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скопіюйте і вставте цю URL-адресу в поле ACS (Assertion Consumer Service) вашого провайдера особистих даних"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скопіюйте і вставте цю URL-адресу в поле Entity ID вашого провайдера особистих даних"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL-адреса кінцевої точки провайдера особистих даних (наприклад, https://idp.example.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Відкритий ключ провайдера особистих даних для підпису твердження автентифікації. Отримайте хеш сертифіката у вашого провайдера особистих даних."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Якщо ви придбали подарунковий код або отримали його від нашої служби підтримки, ви можете ввести його тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Учасники, які не використовують двоетапну перевірку, отримають електронного листа з проханням увімкнути її якнайшвидше."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Вкажіть домен, якому дозволено автентифікацію з SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новий цикл передплати розпочинається з ${ formattedTime }"
@@ -7118,6 +7299,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Вибрана тема буде активною, коли у вашій системі встановлено \"світлий режим\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Зазвичай – це URL-адреса, що містить ім'я провайдера особистих даних"
       ],
       "Verified email address": [
         "Підтверджена адреса електронної пошти"
@@ -7286,9 +7470,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "На жаль, зараз ми не в мережі. Будь ласка, заповніть форму внизу, щоб описати вашу проблему. Ми розглянемо її та зв'яжемося з вами, коли будемо знову в мережі."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Ви повинні ${ activateLink } ключі організації перед додаванням електронної адреси для неприватного учасника."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Час безплатної пробної версії завершиться ${ textDate }. ${ action }"

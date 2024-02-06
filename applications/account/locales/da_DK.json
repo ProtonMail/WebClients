@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
-      "Change organization keys": [
-        "Skift organisationsnøgler"
-      ],
       "Change other email subscriptions": [
         "Skift andre e-mail-abonnementer"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Indlæser verifikation"
       ],
+      "Make admin": [
+        "Gør til admin"
+      ],
       "Manage communication preferences": [
         "Administrer kommunikationspræferencer"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Nulstil nøgler"
       ],
-      "Reset organization keys": [
-        "Nulstil organisationsnøgler"
-      ],
       "Reset password": [
         "Nulstil adgangskode"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Gendan"
-      ],
-      "Restore administrator privileges": [
-        "Gendan administratorprivilegier"
       ],
       "Resubscribe": [
         "Forny abonnement"
@@ -3073,9 +3067,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ],
@@ -3887,6 +3878,9 @@
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
+      ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
       ],
@@ -3898,9 +3892,6 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
-      ],
-      "Organization key is not decrypted.": [
-        "Organisationsnøgle er ikke dekrypteret."
       ],
       "Password is required": [
         "Adgangskode er påkrævet."
@@ -3922,9 +3913,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betaling er pt. ikke mulig, forsøg igen senere"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Sæt et brugerdomæne op, før du tilføjer adresser."
@@ -4054,9 +4042,6 @@
       "The organization key must be activated first": [
         "Organisationsnøglen skal først aktiveres"
       ],
-      "The organization key must be activated first.": [
-        "Organisationsnøglen skal først aktiveres."
-      ],
       "The sending key is not valid": [
         "Afsendelsesnøgle er ikke gyldig"
       ],
@@ -4132,9 +4117,6 @@
       "You already added this holidays calendar": [
         "Du har allerede tilføjet denne helligdagskalender"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du har mistet adgangen til dine organisationsnøgler. Uden gendannelse kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
-      ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
@@ -4149,12 +4131,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
       ],
       "You must set a name": [
         "Du skal angive et navn"
@@ -5753,17 +5729,6 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -6265,9 +6230,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
@@ -6898,12 +6860,6 @@
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
       ],
-      "Organization keys activated": [
-        "Organisationsnøgler aktiveret"
-      ],
-      "Organization keys restored": [
-        "Organisationsnøgler gendannet"
-      ],
       "Organization size": [
         "Organisationsstørrelse"
       ],
@@ -7327,9 +7283,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "De vil blive fjernet fra din organisation"
       ],
       "They'll receive a free month of ${ planName }.": [
         "De vil modtage en gratis måned af ${ planName }."
@@ -7970,6 +7923,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9109,9 +9073,6 @@
       ],
       "Show sender images": [
         "Vis afsenderbilleder"
-      ],
-      "Show unread count in application icon": [
-        "Vis ulæst antal mails på applikationsikonet"
       ],
       "Show unread count in Favicon": [
         "Vis antallet af ulæste i favicon"
@@ -10374,6 +10335,17 @@
         "Brugeradministration"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -10467,17 +10439,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12576,6 +12537,61 @@
         "Din aktuelle lagerplads:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Behold ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagerplads"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fuldt"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Ved at nedgradere mister du følgende fordele. Er du sikker på, at du vil fortsætte?"
+      ],
+      "contact your administrator": [
+        "kontakt din administrator"
+      ],
+      "Get more storage": [
+        "Få mere lagerplads"
+      ],
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Opgrader din plan for at fortsætte med at bruge din konto uden afbrydelser."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dit ${ appStorage } er næsten fuldt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Dit ${ appStorage } er fuldt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Dit lager er fuldt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Kalender-URL"
@@ -13051,9 +13067,6 @@
       "CSV field": [
         "CSV-felt"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
       "Edit": [
         "Redigér"
       ],
@@ -13174,6 +13187,12 @@
       ],
       "4. Select a server to connect to": [
         "4. Vælg en server at oprette forbindelse til"
+      ],
+      "A filter name is required": [
+        "Filternavn er påkrævet"
+      ],
+      "A filter with this name already exists": [
+        "Der findes allerede et filter med dette navn"
       ],
       "Accessibility": [
         "Tilgængelighed"
@@ -13321,9 +13340,6 @@
       ],
       "Change mailbox password": [
         "Skift postkasseadgangskode"
-      ],
-      "Change organization keys": [
-        "Skift organisationsnøgler"
       ],
       "Change organization name": [
         "Skift organisationsnavn"
@@ -13480,9 +13496,6 @@
         "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dag)",
         "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dage)"
       ],
-      "Delete user": [
-        "Slet bruger"
-      ],
       "Delete user?": [
         "Slet bruger?"
       ],
@@ -13509,6 +13522,9 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Nedgrader til ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
@@ -13600,6 +13616,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Kunne ikke oprette ${ failedUsers.length } brugerkonto.",
         "Kunne ikke oprette ${ failedUsers.length } brugerkonti."
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternavn kan ikke kun indeholde mellemrum"
       ],
       "Filters": [
         "Filtre"
@@ -13779,9 +13798,6 @@
       "Password": [
         "Adgangskode"
       ],
-      "Password and keys": [
-        "Adgangskode og nøgler"
-      ],
       "Password reset settings": [
         "Indstillinger for nulstilling af adgangskode"
       ],
@@ -13850,9 +13866,6 @@
       ],
       "Request sent": [
         "Anmodning sendt"
-      ],
-      "Reset organization keys": [
-        "Nulstil organisationsnøgler"
       ],
       "Reset password": [
         "Nulstil adgangskode"
@@ -14004,6 +14017,12 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This field cannot be empty": [
+        "Dette felt må ikke være tomt"
+      ],
+      "This field cannot contain only spaces": [
+        "Dette felt kan ikke kun indeholde mellemrum"
       ],
       "Time zone": [
         "Tidszone"
@@ -14271,9 +14290,6 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
-      ],
-      "See number of unread messages in the application icon": [
-        "Se antallet af ulæste beskeder i app-ikonet"
       ],
       "See number of unread messages in the tab icon": [
         "Se antallet af ulæste beskeder i fane-ikonet"
@@ -14663,9 +14679,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du skal ${ activateLink } organisationsnøgler før du tilføjer en e-mailadresse til et ikke-privat medlem."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."

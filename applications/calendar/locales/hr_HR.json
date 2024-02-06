@@ -171,6 +171,9 @@
       "Discard": [
         "Odbaci"
       ],
+      "Dismiss": [
+        "Odbaci"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -329,6 +332,9 @@
       ],
       "No, thanks": [
         "Ne, hvala"
+      ],
+      "Not now": [
+        "Ne sada"
       ],
       "Ok": [
         "U redu"
@@ -2657,6 +2663,9 @@
     "Import instructions": {
       "Go to ${ boldAccountSecurity }.": [
         "Idi na ${ boldAccountSecurity }"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Odaberite ${ boldExportCSV }."
       ]
     },
     "Import instructions emphasis": {
@@ -3397,6 +3406,9 @@
       "New password": [
         "Nova lozinka"
       ],
+      "Note": [
+        "Bilješka"
+      ],
       "Notification": [
         "Obavijest"
       ],
@@ -3485,6 +3497,9 @@
       ],
       "Time zone": [
         "Vremenska zona"
+      ],
+      "Title": [
+        "Naslov"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -3820,6 +3835,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } je onemogućen."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } je omogućen."
+      ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
       ],
@@ -4215,6 +4236,11 @@
     "protonbadge": {
       "Official": [
         "Službeno"
+      ]
+    },
+    "Security Center": {
+      "Open ${ PASS_APP_NAME }": [
+        "Otvori ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -4663,6 +4689,12 @@
         "${ emailsCount } adrese e-pošte",
         "${ emailsCount } adrese e-pošte"
       ],
+      "Account recovery": [
+        "Oporavak računa"
+      ],
+      "Account security": [
+        "Sigurnost računa"
+      ],
       "Add another notification to remind you of this event": [
         "Dodajte još obavijesti da vas podsjete na ovaj događaj"
       ],
@@ -4736,6 +4768,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Data recovery": [
+        "Povrat podataka"
       ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } kontakt",
@@ -5024,6 +5059,11 @@
         "Lozinka mora sadržavati najmanje ${ length } znak",
         "Lozinka mora sadržavati najmanje ${ length } znaka",
         "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Otvori u novoj kartici"
       ]
     },
     "Warning": {
