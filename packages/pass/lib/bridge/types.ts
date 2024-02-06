@@ -29,6 +29,9 @@ export interface PassBridge {
         /** Retrieves and decrypts all alias items for a given shareId and retrieves
          * the alias details for the underlying items. */
         getAllByShareId: (shareId: string) => Promise<PassBridgeAliasItem[]>;
+        /** Retrieves alias count for the current user. Helps to deal with the case
+         * where user has more than 1 vault containing aliases */
+        getAliasCount: () => Promise<number>;
     };
 }
 
