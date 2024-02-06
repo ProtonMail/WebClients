@@ -41,7 +41,7 @@ import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { getEquivalentAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
+import { getAttendeesDiff, getEquivalentAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
 import { getOriginalEvent, getRecurrenceEvents } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
@@ -401,13 +401,22 @@ const getSaveEventActions = async ({
     );
     await handleEquivalentAttendees(newEditEventData.veventComponent, updatedSaveInviteActions);
     const hasAttendees = getHasAttendees(newEditEventData.veventComponent);
+    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(
+        newEditEventData.veventComponent,
+        originalEditEventData.veventComponent
+    );
+    const hasAttendeesUpdates =
+        !!(addedAttendees && addedAttendees.length > 0) ||
+        !!(removedAttendees && removedAttendees.length > 0) ||
+        hasModifiedRSVPStatus;
 
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
         originalEditEventData,
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
-            (canEditOnlyPersonalPart && !isSingleEdit),
+            (canEditOnlyPersonalPart && !isSingleEdit) ||
+            hasAttendeesUpdates,
         canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
         // if we have to notify participants or the event has participants and we did no modification of event details
         cannotDeleteThisAndFuture: isSendInviteType || hasAttendees,
@@ -439,7 +448,6 @@ const getSaveEventActions = async ({
         newEditEventData,
         oldEditEventData,
         originalEditEventData,
-        addresses,
         getAddressKeys,
         getCalendarKeys,
         inviteActions: updatedInviteActions,

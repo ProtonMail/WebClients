@@ -1,7 +1,7 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail, getEquivalentAttendees, withPartstat } from '@proton/shared/lib/calendar/attendees';
-import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_RSVP, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
     createInviteIcs,
     generateEmailBody,
@@ -9,7 +9,7 @@ import {
     generateVtimezonesComponents,
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { getAttendeePartstat, getHasAttendees, getRSVPStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
@@ -56,22 +56,50 @@ type CreateInvitesReturn =
     | CancelEventInviteIcsAndPmCancelVevent
     | (EventInviteIcsAndPmVevent & CancelEventInviteIcsAndPmCancelVevent);
 
-const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+export const getRSVPStatusDiff = (newVevent: VcalVeventComponent, oldVevent?: VcalVeventComponent) => {
+    const newEventAttendees = newVevent.attendee;
+    const oldEventAttendees = oldVevent?.attendee;
+
+    if (newEventAttendees?.length && oldEventAttendees?.length) {
+        const oldEventRSVPMap: Map<string, ICAL_ATTENDEE_RSVP> = new Map();
+
+        oldEventAttendees?.forEach((attendee) => {
+            const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
+            const eventRSVP = getRSVPStatus(attendee);
+            if (eventRSVP) {
+                oldEventRSVPMap.set(canonicalizedEmail, eventRSVP);
+            }
+        });
+
+        return newEventAttendees.some((attendee) => {
+            const canonicalizedEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
+            const attendeeInNewEventRSVP = getRSVPStatus(attendee);
+
+            const oldEventAttendeeRSVP = oldEventRSVPMap.get(canonicalizedEmail);
+            return !!oldEventAttendeeRSVP && attendeeInNewEventRSVP !== oldEventAttendeeRSVP;
+        });
+    }
+    return false;
+};
+
+export const getAttendeesDiff = (newVevent: VcalVeventComponent, oldVevent?: VcalVeventComponent) => {
     const normalizedNewEmails = (newVevent.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
-    const normalizedOldEmails = (oldVevent.attendee || []).map((attendee) =>
+    const normalizedOldEmails = (oldVevent?.attendee || []).map((attendee) =>
         canonicalizeEmailByGuess(getAttendeeEmail(attendee))
     );
     const addedAttendees = newVevent.attendee?.filter((attendee) => {
         const normalizedNewEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedOldEmails.includes(normalizedNewEmail);
     });
-    const removedAttendees = oldVevent.attendee?.filter((attendee) => {
+    const removedAttendees = oldVevent?.attendee?.filter((attendee) => {
         const normalizedOldEmail = canonicalizeEmailByGuess(getAttendeeEmail(attendee));
         return !normalizedNewEmails.includes(normalizedOldEmail);
     });
-    return { addedAttendees, removedAttendees };
+    const hasModifiedRSVPStatus = getRSVPStatusDiff(newVevent, oldVevent);
+
+    return { addedAttendees, removedAttendees, hasModifiedRSVPStatus };
 };
 
 export const getEquivalentAttendeesSend = (vevent: VcalVeventComponent, inviteActions: InviteActions) => {
