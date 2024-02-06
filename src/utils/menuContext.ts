@@ -69,6 +69,21 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
         template.push({ label: "Speech", submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }] });
     }
 
+    if (props.mediaType === "image") {
+        template.push({ type: "separator" });
+        template.push({
+            label: "Save image as…",
+            click: () => BrowserWindow.getFocusedWindow().webContents.downloadURL(props.srcURL),
+        });
+        template.push({
+            label: "Copy image",
+            click: () => {
+                BrowserWindow.getFocusedWindow().webContents.copyImageAt(props.x, props.y);
+            },
+        });
+        template.push({ type: "separator" });
+    }
+
     return template;
 };
 
