@@ -287,6 +287,9 @@
       "Loading verification": [
         "Überprüfung wird geladen"
       ],
+      "Make admin": [
+        "Zum Administrator ändern"
+      ],
       "Mark as default": [
         "Als Standard festlegen"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Zurück"
+      ],
+      "Recover data": [
+        "Daten wiederherstellen"
       ],
       "Refer a friend": [
         "Wirb einen Freund"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Wiederherstellen"
-      ],
-      "Restore administrator privileges": [
-        "Administrationsprivilegien wiederherstellen"
       ],
       "Retry": [
         "Erneut versuchen"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-Logo und ein Pluszeichen"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
       ]
@@ -2033,9 +2033,6 @@
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
-      "Organization key is not decrypted.": [
-        "Organisationsschlüssel wird nicht entschlüsselt."
-      ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
@@ -2053,9 +2050,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
@@ -2120,9 +2114,6 @@
       "The organization key must be activated first": [
         "Der Organisationsschlüssel muss zunächst aktiviert werden"
       ],
-      "The organization key must be activated first.": [
-        "Der Organisationsschlüssel muss zuerst aktiviert werden."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -2164,12 +2155,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du musst deine Organisationsschlüssel aktivieren. Ohne Aktivierung kannst du keine nicht-privaten Benutzer erstellen oder auf diese zugreifen."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
@@ -3025,9 +3010,6 @@
       "Country code": [
         "Ländercode"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Erstelle ein neues Konto und teile dem Benutzer die E-Mail-Adresse und das Passwort mit."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
       ],
@@ -3381,12 +3363,6 @@
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
       ],
-      "Organization keys activated": [
-        "Organisationsschlüssel aktiviert"
-      ],
-      "Organization keys restored": [
-        "Organisationsschlüssel wiederhergestellt"
-      ],
       "Organization size": [
         "Organisationsgröße"
       ],
@@ -3404,6 +3380,9 @@
       ],
       "per month": [
         "pro Monat"
+      ],
+      "per month, billed at ${ price }": [
+        "pro Monat, abgerechnet zu ${ price }"
       ],
       "per month, billed every 12 months": [
         "pro Monat, Abrechnung alle 12 Monate"
@@ -3508,6 +3487,9 @@
       ],
       "Save ${ percentage }": [
         "Spare ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Bewahre dein Passwort an einem sicheren Ort auf."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Speichere dein Passwort an einem sicheren Ort. Klicke auf das Symbol, um zu bestätigen, dass du dein Passwort korrekt eingegeben hast."
@@ -3638,9 +3620,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Diese Anmeldedaten können nicht zur Anmeldung in unseren offiziellen ${ VPN_APP_NAME }-Apps verwendet werden. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Sie werden aus deiner Organisation entfernt"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
@@ -6630,6 +6609,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Dir verbleibt noch **${ daysRemaining }** Tag bei deinem **${ currentPlanName }**-Abonnement.",
+        "Dir verbleiben noch **${ daysRemaining }** Tage bei deinem **${ currentPlanName }**-Abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Dein ${ appStorage }-Speicherplatz ist fast voll."
       ],
@@ -7006,9 +6989,6 @@
       "Country": [
         "Land"
       ],
-      "Display name": [
-        "Anzeigename"
-      ],
       "Email": [
         "E‐Mail‐Adresse"
       ],
@@ -7148,11 +7128,11 @@
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
-      "Change organization keys": [
-        "Organisationsschlüssel ändern"
-      ],
       "Change organization name": [
         "Namen der Organisation ändern"
+      ],
+      "Change organization password": [
+        "Passwort der Organisation ändern"
       ],
       "Change password": [
         "Passwort ändern"
@@ -7233,9 +7213,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
         "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
-      ],
-      "Delete user": [
-        "Benutzer löschen"
       ],
       "Delete user?": [
         "Benutzer löschen?"
@@ -7444,9 +7421,6 @@
       ],
       "Request sent": [
         "Anfrage gesendet"
-      ],
-      "Reset organization keys": [
-        "Schlüssel der Organisation zurücksetzen"
       ],
       "Reset password": [
         "Passwort zurücksetzen"
@@ -7863,9 +7837,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Leider sind wir derzeit nicht verfügbar. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder verfügbar sind."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du musst Organisationsschlüssel ${ activateLink }, bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen kannst."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"

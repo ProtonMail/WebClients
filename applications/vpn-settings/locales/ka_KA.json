@@ -287,6 +287,9 @@
       "Loading verification": [
         "შემოწმების ჩატვირთვა"
       ],
+      "Make admin": [
+        "ადმინობის მინიჭება"
+      ],
       "Mark as default": [
         "ნაგულისხმევად მონიშვნა"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "წინა"
+      ],
+      "Recover data": [
+        "მონაცემების აღდგენა"
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "აღდგენა"
-      ],
-      "Restore administrator privileges": [
-        "ადმინისტრატორის პრივილეგიების აღდგენა"
       ],
       "Retry": [
         "თავიდან"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-ის ლოგო და მიმატების ნიშანი"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ]
@@ -1863,6 +1863,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "კომპიუტერის აპთან წვდომა შეზღუდულია"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპის ბეტა ვერსია ხელმისაწვდომია ყველასთვის, ვისაც ${ MAIL_APP_NAME }-ის ფასიანი სატარიფო გეგმა აქვს. ასწიეთ ტარიფი დღეს, წვდომის მისაღებად."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
@@ -2030,9 +2033,6 @@
       "Organization key is not decrypted": [
         "ორგანიზაციის გასაღები გაშიფრული არაა"
       ],
-      "Organization key is not decrypted.": [
-        "ორგანიზაციის გასაღები გაშიფრული არაა."
-      ],
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
       ],
@@ -2050,9 +2050,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "გადახდები ამჟამად ხელმიუწვდომელია. მოგვიანებით სცადეთ"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
       ],
       "Please configure a custom domain before adding addresses.": [
         "მისამართების დამატებმდე თქვენი დომენის მორგება აუცილებელია."
@@ -2117,9 +2114,6 @@
       "The organization key must be activated first": [
         "ჯერ ორგანიზაცია უნდა გაააქტიუროთ"
       ],
-      "The organization key must be activated first.": [
-        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ველი ${ maximumLength } დაშვებულ სიმბოლოს აჭარბებს."
       ],
@@ -2161,12 +2155,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "თქვენი ორგანიზაციის გასაღებების გააქტიურება აუცილებელია. მათი გააქტიურების გარეშე არაკონფიდენციალური მომხმარებლების შექმნა ან მათზე წვდომა შეუძლებელი იქნება."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "ორგანიზაციის ახალი გასაღებების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
@@ -3022,9 +3010,6 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "ახალი ანგარიშის შექმნა და ელფოსტის მისამართისა და პაროლის მომხმარებლისთვის გაზიარება."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "შექმენით და მართეთ ქვეანგეარიშები და მიანიჭეთ მათ ელფოსტის მისამართები თქვენი პირადი დომენით."
       ],
@@ -3043,6 +3028,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
+      ],
+      "Current plan": [
+        "მიმდინარე ტარიფი"
       ],
       "Custom email domains": [
         "ელფოსტის თქვენი დომენები"
@@ -3095,6 +3083,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
+      ],
+      "Downgrade": [
+        "ტარიფის ჩამოწევა"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "გეგმის ჩამოწევა შეწყვეტს შეერთებას ფასიან ${ VPN_APP_NAME } სერვერებთან."
@@ -3372,12 +3363,6 @@
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
       ],
-      "Organization keys activated": [
-        "ორგანიზაციის გასაღებები გააქტიურდა"
-      ],
-      "Organization keys restored": [
-        "ორგანიზაციის გასაღებები აღდგენილია"
-      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -3395,6 +3380,9 @@
       ],
       "per month": [
         "თვეში"
+      ],
+      "per month, billed at ${ price }": [
+        "${ price } თვეში"
       ],
       "per month, billed every 12 months": [
         "ყოველთვე, გადაიხდით 12 თვეში ერთხელ"
@@ -3499,6 +3487,9 @@
       ],
       "Save ${ percentage }": [
         "დაზოგეთ ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "შეინახეთ თქვენი პაროლი უსაფრთხო ადგილას."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "პაროლი საიმედო ადგილას შეინახეთ. დააწკაპუნეთ ხატულას, თუ პაროლი სწორად აკრიფეთ."
@@ -3629,9 +3620,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "ეს ავტორიზაციის დეტალები არ შეიძლება, გამოყენებული იქნეს ჩვენს ოფიციალურ ${ VPN_APP_NAME }-ის აპებზე შესასვლელად. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "ისინი წაიშლება თქვენი ორგანიზაციიდან"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
@@ -3916,6 +3904,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "შესული ბრძანდებით ანგარიშში ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "იყენებთ უფრო მეტ საცავს, ვიდრე ${ downgradedPlanName } ტარიფი შეიცავს. წაშალეთ მონაცემები იმისთვის, რომ ტარიფის ჩამოწევა შეძლოთ."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
@@ -5503,8 +5494,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield-ი იცავს თქვენს მოწყობილობას და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }-სა და ${ PASS_APP_NAME }-ს შორის"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "საცავი გაზიარებულია ${ MAIL_APP_NAME }-ს, ${ CALENDAR_APP_NAME }-სა და ${ DRIVE_APP_NAME }-ს შორის. ადმინისტრატორებს თავის ორგანიზაციებში მომხმარებლებზე მიმაგრებული საცავის ზომის კონტროლი შეუძლიათ"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "საცავის სივრცე გაზიარებულია მომხმარებლებისთვის ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }-სა და ${ PASS_APP_NAME }-ს შორის"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "BitTorrent-ის მსგავსი ფაილების გასაზიარებელი პროტოკოლების მხარდაჭერა"
@@ -6574,6 +6571,88 @@
         "თქვენი მიმდინარე საცავი:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName }-ის დატოვება"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "საცავი მონაცემებისთვის, რომლებსაც აგენერირებენ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }. ${ CALENDAR_SHORT_APP_NAME }. ${ CONTACTS_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "${ totalStorageSize }-მდე Drive-ის საცავი"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "${ totalStorageSize }-მდე ელფოსტის საცავი"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } საცავი"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } სავსეა ${ percentage }%"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "სატარიფო გეგმის ჩამოწევით თქვენ შემდეგ უპირატესობებს დაკარგავთ. დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
+      "contact your administrator": [
+        "დაუკავშირდით ადმინისტრატორს"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "ყველა ${ BRAND_NAME }-ის სერვისისთვის"
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "ჩვენ დავამატებთ კრედიტებს დარჩენილი დროისთვის თქვენს ${ BRAND_NAME }-ის ანგარიშს."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ.",
+        "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "თქვენი ${ appStorage }, თითქმის, სავსეა"
+      ],
+      "Your ${ appStorage } is full": [
+        "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "თქვენი ${ storage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "დაკარგავთ წვდომას ${ gb }-მდე საცავთან და პრიორიტეტულ მხარდაჭერასთან."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "დაკარგავთ წვდომას დამატებით საცავთან, ელფოსტის მისამართებთან, ფსევდონიმებთან, კალენდრებთან და პრიორიტეტულ მხარდაჭერასთან."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "დაკარგავთ წვდომას უსწრაფეს VPN-თან, დაცვას 10 მოწყობილობამდე, სწრაფ სტრიმინგთან, რეკლამებისა და მავნე პროგრამებისგან დაცვას. ასევე, პრიორიტეტულ მხარდაჭერას."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "დაკარგავთ წვდომას შეუზღუდავ შესვლის დეტალებთან და შენიშვნებთან, შეუზღუდავ hide-my-email-ის ფსევდონიმებთან, 20 საცავთან და პრიორიტეტულ ხარდაჭერასთან."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
@@ -6910,9 +6989,6 @@
       "Country": [
         "ქვეყანა"
       ],
-      "Display name": [
-        "საჩვენებელი სახელი"
-      ],
       "Email": [
         "ელფოსტა"
       ],
@@ -7052,11 +7128,11 @@
       "Change mailbox password": [
         "საფოსტო ყუთის პაროლის შეცვლა"
       ],
-      "Change organization keys": [
-        "ორგანიზაციის გასაღებების ჩასწორება"
-      ],
       "Change organization name": [
         "ორგანიზაციის სახელის ჩასწორება"
+      ],
+      "Change organization password": [
+        "ორგანიზაციის პაროლის შეცვლა"
       ],
       "Change password": [
         "პაროლის შეცვლა"
@@ -7138,9 +7214,6 @@
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)",
         "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)"
       ],
-      "Delete user": [
-        "მომხმარებლის წაშლა"
-      ],
       "Delete user?": [
         "წავშალო მომხმარებელი?"
       ],
@@ -7155,6 +7228,9 @@
       ],
       "Downgrade account": [
         "ანგარიშის ტარიფის ჩამოწევა"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }-ის გადმოწერა"
@@ -7345,9 +7421,6 @@
       ],
       "Request sent": [
         "მოთხოვნა გაიგზავნა"
-      ],
-      "Reset organization keys": [
-        "ორგანიზაციის გასაღებების ნაგულისხმევ მნიშვნელობებზე დაყენება"
       ],
       "Reset password": [
         "პაროლის თავიდან დაყენება"
@@ -7764,9 +7837,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "სამწუხაროდ, ამჟამად, ონლაინ არ ვართ. შეავსეთ ქვედა ფორმა, აღწერეთ თქვენი პრობლემა და ჩვენ მალევე დაგიკავშირდებით."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "არაკონფიდენციალური წევრისთვის ელფოსტის მისამართის დამატებამდე საჭიროა ორგანიზაციის გასაღებების ${ activateLink }."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"

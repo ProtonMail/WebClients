@@ -284,6 +284,9 @@
       "Loading verification": [
         "Verificatie laden"
       ],
+      "Make admin": [
+        "Tot beheerder benoemen"
+      ],
       "Mark as default": [
         "Markeren als standaard"
       ],
@@ -325,6 +328,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Recover data": [
+        "Gegevens herstellen"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
@@ -373,9 +379,6 @@
       ],
       "Restore": [
         "Herstel"
-      ],
-      "Restore administrator privileges": [
-        "Herstel beheerdersbevoegdheden"
       ],
       "Retry": [
         "Opnieuw proberen"
@@ -1835,9 +1838,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-logo en een plus-teken"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
       ]
@@ -1889,6 +1889,9 @@
       ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
       ]
     },
     "Error": {
@@ -1985,9 +1988,6 @@
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
-      "Organization key is not decrypted.": [
-        "Organisatiesleutel is niet gedecodeerd."
-      ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
@@ -2005,9 +2005,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalingen zijn op dit moment niet beschikbaar, probeer het later nog eens"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configureer eerst een eigen domein voordat u adressen toevoegt."
@@ -2066,9 +2063,6 @@
       "The organization key must be activated first": [
         "De organisatiesleutel moet eerst geactiveerd worden"
       ],
-      "The organization key must be activated first.": [
-        "De organisatiesleutel moet eerst geactiveerd worden."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
       ],
@@ -2107,12 +2101,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "U moet uw organisatiesleutels activeren. Zonder activatie kunt u geen niet-privégebruikers maken of benaderen."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "U moet alle gebruikers loskoppelen voordat u nieuwe organisatiesleutels genereert"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
@@ -2945,9 +2933,6 @@
       "Country code": [
         "Landcode"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
       ],
@@ -3265,12 +3250,6 @@
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
       ],
-      "Organization keys activated": [
-        "Organisatiesleutels geactiveerd"
-      ],
-      "Organization keys restored": [
-        "Organisatiesleutels hersteld"
-      ],
       "Organization size": [
         "Grootte van de organisatie"
       ],
@@ -3389,6 +3368,9 @@
       ],
       "Save ${ percentage }": [
         "Bespaar ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Bewaar uw wachtwoord ergens veilig."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Bewaar uw wachtwoord op een veilige plaats. Klik op het pictogram om te controleren of u het wachtwoord correct hebt ingevoerd."
@@ -3516,9 +3498,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Ze zullen worden verwijderd uit uw organisatie"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -4819,7 +4798,7 @@
         "Aangepaste velden"
       ],
       "Custom snooze time": [
-        "Aangepaste sluimertijd"
+        "Aangepaste snoozetijd"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -6348,6 +6327,22 @@
         "Uw huidige opslag:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } behouden"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } opslag"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
+      ],
+      "Your storage is full": [
+        "Uw opslagruimte is vol"
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
@@ -6684,9 +6679,6 @@
       "Country": [
         "Land"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -6826,11 +6818,11 @@
       "Change mailbox password": [
         "Mailbox-wachtwoord wijzigen"
       ],
-      "Change organization keys": [
-        "Organisatiesleutels wijzigen"
-      ],
       "Change organization name": [
         "Organisatienaam wijzigen"
+      ],
+      "Change organization password": [
+        "Organisatiewachtwoord wijzigen"
       ],
       "Change password": [
         "Wachtwoord wijzigen"
@@ -6912,9 +6904,6 @@
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
         "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
       ],
-      "Delete user": [
-        "Gebruiker verwijderen"
-      ],
       "Delete user?": [
         "Gebruiker verwijderen?"
       ],
@@ -6929,6 +6918,9 @@
       ],
       "Downgrade account": [
         "Account downgraden"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Downgrade naar ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } downloaden"
@@ -7110,9 +7102,6 @@
       ],
       "Request sent": [
         "Verzoek verzonden"
-      ],
-      "Reset organization keys": [
-        "Organisatiesleutels resetten"
       ],
       "Reset password": [
         "Wachtwoord resetten"
@@ -7492,9 +7481,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Helaas zijn wij op dit moment niet online. Beschrijf uw probleem in onderstaand formulier en we kijken ernaar en nemen contact met u op zodra we weer online zijn."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "U moet ${ activateLink } organisatiesleutels voordat u een e-mailadres toevoegt aan een niet-privé lid."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"

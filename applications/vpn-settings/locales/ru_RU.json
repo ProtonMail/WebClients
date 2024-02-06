@@ -284,6 +284,9 @@
       "Loading verification": [
         "Загружается проверка"
       ],
+      "Make admin": [
+        "Сделать администратором"
+      ],
       "Mark as default": [
         "Установить по умолчанию"
       ],
@@ -325,6 +328,9 @@
       ],
       "Previous": [
         "Предыдущий"
+      ],
+      "Recover data": [
+        "Восстановить данные"
       ],
       "Refer a friend": [
         "Порекомендуйте другу"
@@ -373,9 +379,6 @@
       ],
       "Restore": [
         "Восстановить"
-      ],
-      "Restore administrator privileges": [
-        "Восстановить права администратора"
       ],
       "Retry": [
         "Повторить"
@@ -1855,9 +1858,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail и знак «плюс»"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ]
@@ -2032,9 +2032,6 @@
       "Organization key is not decrypted": [
         "Ключ организации не расшифрован"
       ],
-      "Organization key is not decrypted.": [
-        "Ключ организации не расшифрован."
-      ],
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
@@ -2052,9 +2049,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Платежи в настоящее время недоступны, пожалуйста, повторите попытку позже"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Отказано в доступе, права администратора ограничены."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Пожалуйста, настройте свой домен перед добавлением пользователей в вашу организацию."
@@ -2116,9 +2110,6 @@
       "The organization key must be activated first": [
         "Сначала должен быть активирован ключ организации"
       ],
-      "The organization key must be activated first.": [
-        "Сначала должен быть активирован ключ организации."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Длина этого поля превысила максимальные ${ maximumLength } символов."
       ],
@@ -2160,12 +2151,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Вы должны активировать ключи вашей организации. Без активации вы не сможете создавать неприватных пользователей или получать к ним доступ."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Вы должны приватизировать всех пользователей перед генерированием новых ключей организации"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
@@ -3044,9 +3029,6 @@
       "Country code": [
         "Код страны"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Создайте новый аккаунт и сообщите пользователю адрес электронной почты и пароль."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
       ],
@@ -3067,6 +3049,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
+      ],
+      "Current plan": [
+        "Текущий тариф"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
@@ -3121,6 +3106,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
+      ],
+      "Downgrade": [
+        "Перейти на более дешёвую версию"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
@@ -3392,12 +3380,6 @@
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
       ],
-      "Organization keys activated": [
-        "Ключи организации активированы"
-      ],
-      "Organization keys restored": [
-        "Ключи организации восстановлены"
-      ],
       "Organization size": [
         "Размер организации"
       ],
@@ -3523,6 +3505,9 @@
       ],
       "Save ${ percentage }": [
         "Сэкономьте ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Сохраните ваш пароль в безопасном месте."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
@@ -3661,9 +3646,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Эти учетные данные не могут быть использованы для входа в наши официальные ${ VPN_APP_NAME } приложения ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Они будут удалены из вашей организации"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -6580,6 +6562,22 @@
         "Текущее хранилище:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Сохранить ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } хранилища"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "При переходе на более дешевую версию вы потеряете следующие преимущества. Вы уверены, что хотите продолжить?"
+      ],
+      "Your storage is full": [
+        "Ваше хранилище заполнено"
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Оплата каждые 2 года"
@@ -6942,9 +6940,6 @@
       "Country": [
         "Страна"
       ],
-      "Display name": [
-        "Отображаемое имя"
-      ],
       "Email": [
         "Электронная почта"
       ],
@@ -7081,11 +7076,11 @@
       "Change mailbox password": [
         "Изменить пароль почтового ящика"
       ],
-      "Change organization keys": [
-        "Изменение ключей организации"
-      ],
       "Change organization name": [
         "Изменение названия организации"
+      ],
+      "Change organization password": [
+        "Изменение пароля организации"
       ],
       "Change password": [
         "Изменить пароль"
@@ -7171,9 +7166,6 @@
         "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
         "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)"
       ],
-      "Delete user": [
-        "Удалить пользователя"
-      ],
       "Delete user?": [
         "Удалить пользователя?"
       ],
@@ -7188,6 +7180,9 @@
       ],
       "Downgrade account": [
         "Перейти на более дешевую версию аккаунта"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
@@ -7377,9 +7372,6 @@
       ],
       "Request sent": [
         "Запрос отправлен"
-      ],
-      "Reset organization keys": [
-        "Сбросить ключи организации"
       ],
       "Reset password": [
         "Сбросить пароль"
@@ -7576,6 +7568,9 @@
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Члены, не использующие 2ФА, получат письмо с просьбой включить её незамедлительно."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Укажите домен, которому разрешена аутентификация с помощью SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новый цикл подписки начинается ${ formattedTime }"
@@ -7782,9 +7777,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда будем онлайн."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Вы должны ${ activateLink } ключи организации перед добавлением адреса электронной почты неконфиденциальному члену."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бесплатный пробный период заканчивается ${ textDate }. ${ action }"

@@ -287,6 +287,9 @@
       "Loading verification": [
         "Laster verifisering"
       ],
+      "Make admin": [
+        "Gjør til administrator"
+      ],
       "Mark as default": [
         "Angi som standard"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Recover data": [
+        "Gjenopprett data"
       ],
       "Refer a friend": [
         "Verv en venn"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Gjenopprett"
-      ],
-      "Restore administrator privileges": [
-        "Gjenopprett administratorrettigheter"
       ],
       "Retry": [
         "Prøv på nytt"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo og et plusstegn"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
       ]
@@ -2033,9 +2033,6 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key is not decrypted.": [
-        "Organisasjonsnøkkel er ikke dekryptert."
-      ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
       ],
@@ -2053,9 +2050,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalinger er for øyeblikket ikke tilgjengelige, vennligst prøv igjen senere."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Vennligst konfigurer et egendefinert domene før du legger til adresser."
@@ -2120,9 +2114,6 @@
       "The organization key must be activated first": [
         "Organisasjonsnøkkelen må aktiveres først"
       ],
-      "The organization key must be activated first.": [
-        "Organisasjonsnøkkelen må aktiveres først."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
       ],
@@ -2164,12 +2155,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Vennligst oppgrader planen din for å legge til en ny bruker."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du må aktivere organisasjonsnøklene dine. Du vil ikke være i stand til å opprette eller få tilgang til ikke-private brukere uten aktivering."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Du må privatisere alle brukere før genererering av nye organisasjonsnøkler"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisasjon har en forfalt faktura. Vennligst betal alle ubetalte fakturaer."
@@ -3025,9 +3010,6 @@
       "Country code": [
         "Landskode"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Opprett en ny konto og del e-postadressen og passordet med brukeren."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
       ],
@@ -3381,12 +3363,6 @@
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
-      "Organization keys activated": [
-        "Organisasjonsnøkler aktivert"
-      ],
-      "Organization keys restored": [
-        "Organisasjonsnøkler gjenopprettet"
-      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -3514,6 +3490,9 @@
       ],
       "Save ${ percentage }": [
         "Spar ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Lagre passordet ditt på et trygt sted."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Lagre passordet ditt på et trygt sted. Klikk på ikonet for å bekrefte at du har skrevet inn passordet ditt korrekt."
@@ -3644,9 +3623,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Denne påloggingsinformasjonen kan ikke brukes til å logge på våre offisielle ${ VPN_APP_NAME }-apper. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "De blir fjernet fra organisasjonen din"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne kontoen er suspendert på grunn av et potensielt brudd på retningslinjene."
@@ -7040,9 +7016,6 @@
       "Country": [
         "Land"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
       "Email": [
         "E-post"
       ],
@@ -7179,11 +7152,11 @@
       "Change mailbox password": [
         "Endre postbokspassord"
       ],
-      "Change organization keys": [
-        "Endre organisasjonsnøkler"
-      ],
       "Change organization name": [
         "Endre organisasjonsnavn"
+      ],
+      "Change organization password": [
+        "Endre organisasjonspassord"
       ],
       "Change password": [
         "Endre passord"
@@ -7264,9 +7237,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dager)."
-      ],
-      "Delete user": [
-        "Slett bruker"
       ],
       "Delete user?": [
         "Slett bruker?"
@@ -7475,9 +7445,6 @@
       ],
       "Request sent": [
         "Forespørsel sendt"
-      ],
-      "Reset organization keys": [
-        "Tilbakestill organisasjonsnøkler"
       ],
       "Reset password": [
         "Tilbakestill passord"
@@ -7917,9 +7884,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du må ${ activateLink } organisasjonsnøkler før du kan legge til en e-postadresse til et ikke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. ${ action }"

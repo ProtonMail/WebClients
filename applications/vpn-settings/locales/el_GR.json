@@ -287,6 +287,9 @@
       "Loading verification": [
         "Αναμονή για επαλήθευση"
       ],
+      "Make admin": [
+        "Ορισμός ως διαχειριστή"
+      ],
       "Mark as default": [
         "Ορισμός ως προεπιλογή"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Προηγούμενο"
+      ],
+      "Recover data": [
+        "Ανάκτηση δεδομένων"
       ],
       "Refer a friend": [
         "Συστήστε ένα φίλο"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Επαναφορά"
-      ],
-      "Restore administrator privileges": [
-        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Λογότυπο ProtonMail και σύμβολο συν"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ]
@@ -2030,9 +2030,6 @@
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
-      "Organization key is not decrypted.": [
-        "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο."
-      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
@@ -2050,9 +2047,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Οι πληρωμές δεν είναι διαθέσιμες προς το παρόν, παρακαλώ δοκιμάστε ξανά αργότερα"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Παρακαλούμε διαμορφώσετε έναν προσαρμοσμένο τομέα πριν προσθέσετε διευθύνσεις"
@@ -2117,9 +2111,6 @@
       "The organization key must be activated first": [
         "Πρέπει να ενεργοποιηθεί πρώτα το κλειδί οργανισμού"
       ],
-      "The organization key must be activated first.": [
-        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
@@ -2161,12 +2152,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Πρέπει να ενεργοποιήσετε τα κλειδιά του οργανισμού σας. Χωρίς ενεργοποίηση δε θα μπορείτε να δημιουργήσετε ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς χρήστες."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Πρέπει να ιδιωτικοποιήσετε όλους τους λογαριασμούς χρηστών πριν δημιουργήσετε νέα κλειδιά οργανισμού"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
@@ -3022,9 +3007,6 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Δημιουργήστε έναν νέο λογαριασμό και κοινοποιείστε στον χρήστη τη διεύθυνση και τον κωδικό."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Δημιουργήστε και διαχειριστείτε τους δευτερεύοντες λογαριασμούς και αντιστοιχίστε τις διευθύνσεις ηλεκτρονικού ταχυδρομείου στον προσαρμοσμένο τομέα σας."
       ],
@@ -3043,6 +3025,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
+      ],
+      "Current plan": [
+        "Τρέχον πλάνο"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -3095,6 +3080,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
+      ],
+      "Downgrade": [
+        "Υποβαθμίστε"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Η υποβάθμιση θα τερματίσει τυχόν συνδέσεις σε διακομιστές ${ VPN_APP_NAME } επί πληρωμή."
@@ -3372,12 +3360,6 @@
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
       ],
-      "Organization keys activated": [
-        "Τα κλειδιά οργανισμού ενεργοποιήθηκαν"
-      ],
-      "Organization keys restored": [
-        "Τα κλειδιά του οργανισμού έχουν αποκατασταθεί"
-      ],
       "Organization size": [
         "Μέγεθος οργανισμού"
       ],
@@ -3395,6 +3377,9 @@
       ],
       "per month": [
         "ανά μήνα"
+      ],
+      "per month, billed at ${ price }": [
+        "ανά μήνα, χρεώνεται σε τιμή ${ price }"
       ],
       "per month, billed every 12 months": [
         "ανά μήνα, χρεώνεται κάθε 12 μήνες"
@@ -3499,6 +3484,9 @@
       ],
       "Save ${ percentage }": [
         "Εξοικονομήστε ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Αποθηκεύστε τον κωδικό πρόσβασής σας σε ασφαλές μέρος."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
@@ -3629,9 +3617,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Αυτά τα διαπιστευτήρια δεν μπορούν να χρησιμοποιηθούν για σύνδεση στις επίσημες ${ VPN_APP_NAME } εφαρμογές μας. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Θα καταργηθούν από τον οργανισμό σας"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -3916,6 +3901,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Χρησιμοποιείτε περισσότερο χώρο αποθήκευσης από αυτόν που περιλαμβάνεται σε ένα πλάνο ${ downgradedPlanName }. Παρακαλούμε διαγράψτε ή αφαιρέστε δεδομένα για να υποβαθμίσετε."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
@@ -6574,6 +6562,59 @@
         "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Διατήρηση ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } αποθηκευτικού χώρου"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% γεμάτος"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Με την υποβάθμιση θα χάσετε τα παρακάτω προνόμια. Θέλετε σίγουρα να προχωρήσετε;"
+      ],
+      "contact your administrator": [
+        "επικοινωνήστε με το διαχειριστή σας"
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσες ημέρες στο **${ currentPlanName }** πλάνο σας."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ο ${ appStorage } είναι σχεδόν γεμάτος"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ο ${ appStorage } είναι γεμάτος"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ο ${ storage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Χρέωση κάθε 2 χρόνια"
@@ -6910,9 +6951,6 @@
       "Country": [
         "Χώρα"
       ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -7049,11 +7087,11 @@
       "Change mailbox password": [
         "Αλλαγή κωδικού θυρίδας"
       ],
-      "Change organization keys": [
-        "Αλλαγή κλειδιών οργανισμού"
-      ],
       "Change organization name": [
         "Αλλαγή ονόματος οργανισμού"
+      ],
+      "Change organization password": [
+        "Αλλαγή κωδικού πρόσβασης οργανισμού"
       ],
       "Change password": [
         "Αλλαγή κωδικού πρόσβασης"
@@ -7135,9 +7173,6 @@
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
         "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρες)"
       ],
-      "Delete user": [
-        "Διαγραφή χρήστη"
-      ],
       "Delete user?": [
         "Διαγραφή χρήστη;"
       ],
@@ -7152,6 +7187,9 @@
       ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Υποβάθμιση σε ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
@@ -7342,9 +7380,6 @@
       ],
       "Request sent": [
         "Το Αίτημα εστάλη"
-      ],
-      "Reset organization keys": [
-        "Επαναφορά κλειδιών οργανισμού"
       ],
       "Reset password": [
         "Επαναφορά κωδικού πρόσβασης"
@@ -7761,9 +7796,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Πρέπει να ${ activateLink } κλειδιά οργανισμού πριν προσθέσετε μια διεύθυνση email σε μη ιδιωτικό μέλος."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"
