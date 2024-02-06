@@ -298,10 +298,6 @@ const SingleSignupContainerV2 = ({
             };
         }
 
-        if (toApp === APPS.PROTONPASS && audience === Audience.B2B && !result.coupon) {
-            result.coupon = COUPON_CODES.PASS_B2B_INTRO;
-        }
-
         return {
             ...result,
             localID: Number.isInteger(localID) ? localID : undefined,
@@ -588,6 +584,9 @@ const SingleSignupContainerV2 = ({
                             // Assumes the coupon is only valid for the specified audience.
                             if (audienceToFetch !== audience) {
                                 couponToFetch = undefined;
+                            }
+                            if (toApp === APPS.PROTONPASS && !couponToFetch && audienceToFetch === Audience.B2B) {
+                                couponToFetch = COUPON_CODES.PASS_B2B_INTRO;
                             }
                             return getPlanCardSubscriptionData({
                                 planIDs,
