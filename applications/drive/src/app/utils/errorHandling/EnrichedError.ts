@@ -2,8 +2,18 @@ import type { CaptureContext } from '@sentry/types';
 
 import { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-export const isEnrichedError = (err: any): err is EnrichedError => {
-    return err.name === 'EnrichedError';
+export const isEnrichedError = (err: unknown): err is EnrichedError => {
+    return (
+        err instanceof EnrichedError ||
+        (!!err &&
+            typeof err === 'object' &&
+            'name' in err &&
+            typeof err.name === 'string' &&
+            'message' in err &&
+            typeof err.message === 'string' &&
+            'isEnrichedError' in err &&
+            err.isEnrichedError === true)
+    );
 };
 
 /**
@@ -18,11 +28,18 @@ export const isEnrichedError = (err: any): err is EnrichedError => {
  * - `extra`, which can be structured data
  */
 export class EnrichedError extends Error {
+    isEnrichedError: boolean = true;
+
     context?: CaptureContext;
 
     constructor(message: string, context?: CaptureContext) {
         super(message);
-        this.name = 'EnrichedError';
+
+        // It is important that the name is "Error", as we want it
+        // to be compatible with existing handlers, and mitigate
+        // the chances of the actual name showing in the UI
+        this.name = 'Error';
+
         this.context = context;
     }
 }
@@ -33,7 +50,7 @@ export class EnrichedError extends Error {
 export const convertSafeError = (obj: SafeErrorObject) => {
     let error;
 
-    if (obj.name === 'EnrichedError') {
+    if (isEnrichedError(obj)) {
         error = new EnrichedError(obj.message, obj.context);
     } else {
         error = new Error(obj.message);
