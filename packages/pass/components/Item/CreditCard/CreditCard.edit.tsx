@@ -30,50 +30,45 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, rev
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
 
-    const {
-        metadata: { name, note, itemUuid },
-        content,
-    } = useDeobfuscatedItem(item);
-
-    const initialValues: CreditCardItemFormValues = {
-        ...content,
-        expirationDate: formatExpirationDateMMYY(content.expirationDate),
-        shareId,
-        name,
-        note,
-    };
+    const { metadata, content, ...uneditable } = useDeobfuscatedItem(item);
 
     const form = useFormik<CreditCardItemFormValues>({
-        initialValues,
-        initialErrors: validateCreditCardForm(initialValues),
+        initialValues: {
+            ...content,
+            expirationDate: formatExpirationDateMMYY(content.expirationDate),
+            name: metadata.name,
+            note: metadata.note,
+            shareId,
+        },
         onSubmit: ({ name, note, ...creditCardValues }) => {
             onSubmit({
-                type: 'creditCard',
-                shareId,
-                itemId,
-                lastRevision,
-                metadata: { name, note: obfuscate(note), itemUuid },
+                ...uneditable,
                 content: {
                     ...creditCardValues,
-                    expirationDate: creditCardValues.expirationDate,
                     cardType: CardType.Unspecified,
+                    expirationDate: creditCardValues.expirationDate,
                     number: obfuscate(creditCardValues.number),
-                    verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
+                    verificationNumber: obfuscate(creditCardValues.verificationNumber),
                 },
                 extraData: {},
                 extraFields: [],
+                itemId,
+                lastRevision,
+                metadata: { ...metadata, name, note: obfuscate(note) },
+                shareId,
             });
         },
         validate: validateCreditCardForm,
         validateOnChange: true,
+        validateOnMount: true,
     });
 
     useItemDraft<CreditCardItemFormValues>(form, {
         mode: 'edit',
-        shareId: form.values.shareId,
         itemId,
         revision: lastRevision,
+        shareId: form.values.shareId,
     });
 
     return (
