@@ -74,9 +74,9 @@ const ProtonSentinel = () => {
                     <div className="shrink-0 flex">
                         <img src={ProtonSentinelLogo} alt="" />
                     </div>
-                    <h2 className="flex-1 text-rg">
+                    <h3 className="flex-1 text-rg">
                         <label htmlFor="proton-sentinel-toggle">{PROTON_SENTINEL_NAME}</label>
-                    </h2>
+                    </h3>
                     <Toggle
                         id="proton-sentinel-toggle"
                         loading={loadingSentinel}
