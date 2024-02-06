@@ -264,16 +264,6 @@ const SubscriptionCycleSelector = ({
 
     const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
 
-    if (cycles.length === 1) {
-        const cycle = cycles[0];
-
-        return (
-            <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
-                <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
-            </div>
-        );
-    }
-
     if (mode === 'select') {
         return (
             <div className={fadedClasses}>
