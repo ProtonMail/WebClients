@@ -200,7 +200,6 @@ const YourStorageSection = ({ app }: Props) => {
                         <PromotionBanner
                             mode="banner"
                             rounded
-                            className="pr-2"
                             contentCentered={false}
                             icon={<img width="40" src={icon} alt="" className="shrink-0" />}
                             description={description}
