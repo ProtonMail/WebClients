@@ -235,6 +235,9 @@
       "Discard": [
         "Renunțare"
       ],
+      "Dismiss": [
+        "Renunțare"
+      ],
       "Don't know your password?": [
         "Nu vă cunoașteți parola?"
       ],
@@ -255,6 +258,9 @@
       ],
       "Download apps": [
         "Descărcare aplicație"
+      ],
+      "Download logs": [
+        "Jurnal descărcare"
       ],
       "Drive Locked": [
         "Unitate blocată"
@@ -403,6 +409,9 @@
       "Mark for deletion": [
         "Marcare pentru ștergere"
       ],
+      "Maximize": [
+        "Maximizare"
+      ],
       "Maximize transfers": [
         "Maximizare transferuri"
       ],
@@ -411,6 +420,9 @@
       ],
       "Merge contacts": [
         "Îmbinare contacte"
+      ],
+      "Minimize": [
+        "Minimizare"
       ],
       "Minimize transfers": [
         "Micșorare transferuri"
@@ -441,6 +453,9 @@
       ],
       "Next month": [
         "Luna viitoare"
+      ],
+      "Not now": [
+        "Nu acum"
       ],
       "Ok": [
         "OK"
@@ -1962,9 +1977,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail și semnul plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
@@ -2109,6 +2121,9 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
+      "Alias options could not be resolved": [
+        "Opțiunile pentru alias nu au putu fi rezolvate."
+      ],
       "Authentication canceled.": [
         "Autentificare anulată."
       ],
@@ -2135,6 +2150,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
+      ],
+      "Could not open created vault": [
+        "Nu s-a putut deschide seiful creat."
+      ],
+      "Could not open updated vault": [
+        "Nu s-a putut deschide seiful actualizat."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
@@ -2208,6 +2229,9 @@
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Conținutul articolului nu poate depăși 40 KiB."
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
@@ -3426,6 +3450,9 @@
         "Toate (${ totalFoldersCount } etichete)",
         "Toate (${ totalFoldersCount } de etichete)"
       ],
+      "All encrypted files": [
+        "Toate fișierele criptate"
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -3630,6 +3657,9 @@
       "Downloading": [
         "Se descarcă"
       ],
+      "Downloading all encrypted files": [
+        "Se descarcă toate fișierele criptate"
+      ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
       ],
@@ -3789,6 +3819,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Între timp, creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S-au indexat ${ esProgress } articole din ${ totalProgressToShow }"
@@ -4070,6 +4103,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Se restaurează fotografiile... Păstrați fila navigatorului deschisă."
       ],
+      "Retry now": [
+        "Reîncercare"
+      ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
@@ -4080,6 +4116,12 @@
         "S-a descărcat în siguranță ${ nbFile } fișier.",
         "S-au descărcat în siguranță ${ nbFile } fișiere.",
         "S-au descărcat în siguranță ${ nbFile } de fișiere."
+      ],
+      "Securely downloaded all encrypted files": [
+        "Toate fișierele criptate au fost descărcate securizat."
+      ],
+      "Securely downloaded all files": [
+        "S-au descărcat în siguranță toate fișierele."
       ],
       "Select a folder to move to.": [
         "Selectați folderul sursă."
@@ -4123,6 +4165,9 @@
       "Shared link not found": [
         "Legătură partajată negăsită"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
       ],
@@ -4146,6 +4191,9 @@
       ],
       "Something went wrong, please try again later.": [
         "A apărut o problemă. Reîncercați mai târziu."
+      ],
+      "Something went wrong...": [
+        "Ceva nu a funcționat corect..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
@@ -4436,6 +4484,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Descărcarea este în desfășurare."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
@@ -4677,6 +4728,12 @@
       "Download anyway": [
         "Descărcare așa"
       ],
+      "Downloading": [
+        "Se descarcă"
+      ],
+      "Downloading ${ percentageValue }": [
+        "Se descarcă ${ percentageValue }"
+      ],
       "Duplicate found": [
         "S-a găsit o dublură."
       ],
@@ -4736,6 +4793,9 @@
       ],
       "Folder name": [
         "Nume folder"
+      ],
+      "Forwards to": [
+        "Redirecționare către"
       ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
@@ -4823,6 +4883,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "Note": [
+        "Notă"
       ],
       "Notification": [
         "Notificare"
@@ -4925,6 +4988,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Acest lucru va șterge definitiv toate fișierele de pe unitatea blocată."
+      ],
+      "Title": [
+        "Titlu"
       ],
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
@@ -5111,6 +5177,194 @@
       ],
       "Plain text": [
         "Text simplu"
+      ]
+    },
+    "Mimetype": {
+      "3GPP audio/video container": [
+        "Container audio/video 3GPP"
+      ],
+      "3GPP2 audio/video container": [
+        "Container audio/video 3GPP2"
+      ],
+      "7-zip archive": [
+        "Arhivă 7z"
+      ],
+      "AAC audio": [
+        "Audio AAC"
+      ],
+      "AbiWord document": [
+        "ABW (Document AbiWord)"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "PDF (Format document portabil Adobe)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Format eBook Amazon Kindle"
+      ],
+      "Android Package": [
+        "Pachet de instalare Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "APNG (Grafică de rețea portabilă animată)"
+      ],
+      "Apple Installer Package": [
+        "Pachet de instalare Apple"
+      ],
+      "Archive document": [
+        "Document arhivat"
+      ],
+      "Audio file": [
+        "Fișier audio"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AVIF (Format de fișier imagine AV1)"
+      ],
+      "AVI video": [
+        "Video AVI"
+      ],
+      "Binary data": [
+        "Date binare"
+      ],
+      "Bourne shell script": [
+        "Script Bourne shell"
+      ],
+      "BZip archive": [
+        "Arhivă BZip"
+      ],
+      "BZip2 archive": [
+        "Arhivă BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "CSS (Cascading Style Sheets)"
+      ],
+      "Comma-separated values (CSV)": [
+        "CSV (Valori separate prin virgulă)"
+      ],
+      "Electronic publication (EPUB)": [
+        "EPUB (Publicare electronică)"
+      ],
+      "Flash Video": [
+        "Video Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "GIF (Format de schimb grafic)"
+      ],
+      "GZip Compressed Archive": [
+        "Arhivă GZip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HTML (Limbaj de marcare HyperText)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Preprocesor hipertext (Pagina de start personală)"
+      ],
+      "iCalendar format": [
+        "Format iCalendar"
+      ],
+      "Icon format": [
+        "Format pictogramă (ICO)"
+      ],
+      "Image": [
+        "Imagine"
+      ],
+      "Java Archive (JAR)": [
+        "JAR (Arhivă Java)"
+      ],
+      "JPEG images": [
+        "JPEG (Imagine)"
+      ],
+      "MP3 audio": [
+        "Audio mp3"
+      ],
+      "MPEG transport stream": [
+        "MPEG-TS (Flux transport MPEG)"
+      ],
+      "MPEG Video": [
+        "Video MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "Fonturi OpenType MS incluse"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Interfață digitală instrument muzical (MIDI)"
+      ],
+      "OGG audio": [
+        "Audio OGG"
+      ],
+      "OGG video": [
+        "Video OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Document de prezentare OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Document foaie de calcul OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Document text OpenDocument"
+      ],
+      "OpenType font": [
+        "Font OpenType"
+      ],
+      "Opus audio": [
+        "Audio Opus"
+      ],
+      "Portable Network Graphics": [
+        "PNG (Portable Network Graphics)"
+      ],
+      "RAR archive": [
+        "Arhivă RAR"
+      ],
+      "Rich Text Format (RTF)": [
+        "RTF (Format text îmbogățit)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "SVG (Grafică vectorială scalabilă)"
+      ],
+      "Small web format (SWF)": [
+        "SWF (Format mic web)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "TIFF (Format fișier imagine etichetat)"
+      ],
+      "Tape Archive (TAR)": [
+        "Arhivă TAR"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "TrueType Font": [
+        "Font TrueType"
+      ],
+      "Unknown file": [
+        "Fișier necunoscut"
+      ],
+      "Video file": [
+        "Fișier video"
+      ],
+      "Waveform Audio Format": [
+        "WAV (Format audio cu formă de undă)"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "WOFF (Web Open Font Format)"
+      ],
+      "WEBM audio": [
+        "Audio WEBM"
+      ],
+      "WEBM video": [
+        "Video WEBM"
+      ],
+      "WEBP image": [
+        "Imagine WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Grafică Windows OS/2 Bitmap"
+      ],
+      "ZIP archive": [
+        "Arhivă ZIP"
       ]
     },
     "Modal title": {
@@ -5345,6 +5599,12 @@
         "S-au șters ${ numberOfItems } legături către element.",
         "S-au șters ${ numberOfItems } de legături către element."
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a fost dezactivat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a fost activat"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Toate articolele vor fi eliminate permanent din «Gunoi»."
       ],
@@ -5564,6 +5824,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } a marcat această cheie ca fiind depășită. Această cheie poate fi folosită doar pentru verificarea semnăturii."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Cheia externă este preluată automat de la keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Cheia externă este preluată automat via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Cheia este folosită pentru a cripta mesaje pentru acest contact."
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
       ]
@@ -5707,6 +5976,17 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Deschidere ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Încercați ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6158,6 +6438,53 @@
         "Spațiu actual:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Spațiul de stocare ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } - ${ percentage }% ocupat"
+      ],
+      "contact your administrator": [
+        "contactați-vă administratorul"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } este aproape plin."
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } este plin."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este ocupat ${ percentage }%. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Spațiu de stocare plin"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "Un contact arată identic.",
@@ -6363,6 +6690,12 @@
         "Au eșuat ${ numberOfFailedTransfer.total } încărcări.",
         "Au eșuat ${ numberOfFailedTransfer.total } de încărcări."
       ],
+      "Account recovery": [
+        "Recuperare cont"
+      ],
+      "Account security": [
+        "Securitate cont"
+      ],
       "Active": [
         "Activ"
       ],
@@ -6451,6 +6784,9 @@
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
+      ],
+      "Data recovery": [
+        "Recuperare date"
       ],
       "Date": [
         "Data"
@@ -6951,8 +7287,23 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data de expirare nu este în format LL/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
+      ],
+      "Invalid alias prefix": [
+        "Prefix alias nevalid."
+      ],
+      "Missing alias prefix": [
+        "Lipsește prefixul aliasului."
+      ],
+      "Missing alias suffix": [
+        "Lipsește sufixul aliasului."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
@@ -6962,6 +7313,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Datele de contact sunt corupte și nu pot fi afișate."
@@ -6989,6 +7343,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
+      ],
+      "You must select at least one mailbox": [
+        "Trebuie să selectați cel puțin o adresă de e-mail."
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."

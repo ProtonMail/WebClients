@@ -238,6 +238,9 @@
       "Discard": [
         "Odrzuć"
       ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
       "Don't know your password?": [
         "Nie pamiętasz hasła?"
       ],
@@ -454,6 +457,9 @@
       "Next month": [
         "Następny miesiąc"
       ],
+      "Not now": [
+        "Nie teraz"
+      ],
       "Ok": [
         "Ok"
       ],
@@ -567,6 +573,9 @@
       ],
       "Save": [
         "Zapisz"
+      ],
+      "Save and copy alias": [
+        "Zapisz i skopiuj alias"
       ],
       "Search": [
         "Szukaj"
@@ -1968,17 +1977,23 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Uzyskaj nieograniczoną liczby aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail i znak plusa"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Zaoszczędź czas, wysyłając wiadomości lub zaproszenia do wszystkich naraz. To jedna z wielu funkcji premium. Ulepsz konto."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Ustaw metodę odzyskiwania danych, aby uniknąć utraty danych."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Ustaw metodę odzyskiwania, aby uniknąć utraty dostępu do konta."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
@@ -1991,6 +2006,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Metody odzyskiwania konta i danych oraz uwierzytelnianie dwustopniowe są włączone."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Metody odzyskiwania konta i danych są włączone."
       ]
     },
     "description": {
@@ -2121,6 +2142,24 @@
       "Address primary private key not found": [
         "Główny klucz prywatny adresu nie został znaleziony"
       ],
+      "Alias is not valid": [
+        "Alias nie jest ważny"
+      ],
+      "Alias is required": [
+        "Alias jest wymagany"
+      ],
+      "Alias options could not be resolved": [
+        "Nie można załadować opcji aliasu"
+      ],
+      "Aliases could not be loaded": [
+        "Aliasy nie mogły zostać załadowane"
+      ],
+      "An error occurred while loading alias options": [
+        "Wystąpił błąd podczas ładowania opcji aliasu"
+      ],
+      "An error occurred while saving alias": [
+        "Wystąpił błąd podczas zapisywania aliasu"
+      ],
       "Authentication canceled.": [
         "Uwierzytelnianie zostało anulowane."
       ],
@@ -2147,6 +2186,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Wyszukiwanie zawartości nie może zostać włączone. Uruchom ponownie aplikację lub wyczyść zapytanie."
+      ],
+      "Could not open created vault": [
+        "Nie można otworzyć utworzonego sejfu"
+      ],
+      "Could not open updated vault": [
+        "Nie można otworzyć zaktualizowanego sejfu"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
@@ -2199,6 +2244,9 @@
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
       ],
+      "Forward address is required": [
+        "Adres przekierowania jest wymagany"
+      ],
       "Image upload failed": [
         "Przesłanie zdjęcia nie powiodło się"
       ],
@@ -2223,6 +2271,9 @@
       "Invalid verification code": [
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
+      "Item content cannot exceed 40KB": [
+        "Rozmiar elementu nie może przekraczać 40kb"
+      ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
       ],
@@ -2240,6 +2291,9 @@
       ],
       "Missing signature": [
         "Brak podpisu"
+      ],
+      "Name is required": [
+        "Nazwa jest wymagana"
       ],
       "No calendars found to import": [
         "Brak kalendarzy do zaimportowania"
@@ -2955,6 +3009,9 @@
     "Header": {
       "Contacts": [
         "Kontakty"
+      ],
+      "Security Center": [
+        "Centrum zabezpieczeń"
       ]
     },
     "Hint": {
@@ -3864,6 +3921,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Uwaga"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
       ],
@@ -4269,6 +4329,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
       ],
+      "The vault your alias will be stored in.": [
+        "Sejf, w którym zostanie zapisany alias."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Masz pliki, które muszą zostać przesłane. Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych operacji."
       ],
@@ -4424,6 +4487,9 @@
       ],
       "Want to sync files faster?": [
         "Chcesz szybciej synchronizować pliki?"
+      ],
+      "Warning": [
+        "Ostrzeżenie"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Przestrzeń dyskowa została podwojona!"
@@ -4668,6 +4734,9 @@
       "Add image URL": [
         "Dodaj adres URL zdjęcia"
       ],
+      "Add title": [
+        "Dodaj tytuł"
+      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
@@ -4851,6 +4920,9 @@
       "Folder name": [
         "Nazwa folderu"
       ],
+      "Forwards to": [
+        "Przekaż do"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -4937,6 +5009,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "Note": [
+        "Notatka"
       ],
       "Notification": [
         "Powiadomienie"
@@ -5040,6 +5115,9 @@
       "This will permanently delete all files in your locked drive.": [
         "Spowoduje to trwałe usunięcie wszystkich plików w zablokowanym dysku."
       ],
+      "Title": [
+        "Tytuł"
+      ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
       ],
@@ -5075,6 +5153,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Tak, chcę trwale usunąć stare pliki"
+      ],
+      "Your alias": [
+        "Twój alias"
       ],
       "Your password (admin)": [
         "Twoje hasło (administratora)"
@@ -5724,6 +5805,12 @@
         "${ numberOfItems } linków do elementów zostały usunięte",
         "${ numberOfItems } linków do elementów zostały usunięte"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } został wyłączony"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } został włączony"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Wszystkie elementy w Koszu wkrótce zostaną trwale usunięte"
       ],
@@ -6103,6 +6190,42 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficjalna wiadomość od ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "All aliases": [
+        "Wszystkie aliasy"
+      ],
+      "Create alias": [
+        "Utwórz alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "np. Amazon, eBay, Etsy"
+      ],
+      "Get an alias": [
+        "Uzyskaj alias"
+      ],
+      "Hide-my-email aliases": [
+        "Aliasy hide-my-email"
+      ],
+      "New alias": [
+        "Nowy alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Otwórz ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Wypróbuj ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Pokaż logi"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Proton Sentinel jest **włączony** i chroni Twoje konto."
       ]
     },
     "Select files": {
@@ -6572,14 +6695,44 @@
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "Przestrzeń dyskowa ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% pełna"
+      ],
       "contact your administrator": [
         "skontaktuj się z administratorem"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
       ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Zwolnij część miejsca lub ulepsz konto, aby uzyskać większą przestrzeń dyskową."
+      ],
       "upgrade for more storage": [
         "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } jest prawie pełna"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } jest pełna"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Przestrzeń dyskowa jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
       ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
@@ -6603,6 +6756,12 @@
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
+      ],
+      "Alias copied to clipboard": [
+        "Alias został skopiowany do schowka"
+      ],
+      "Alias saved and copied": [
+        "Alias został zapisany i skopiowany"
       ],
       "Bug reported": [
         "Błąd został zgłoszony"
@@ -6807,6 +6966,12 @@
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się",
         "Przesyłanie ${ numberOfFailedTransfer.total } plików nie powiodło się"
       ],
+      "Account recovery": [
+        "Odzyskiwanie konta"
+      ],
+      "Account security": [
+        "Bezpieczeństwo konta"
+      ],
       "Active": [
         "Aktywne"
       ],
@@ -6897,6 +7062,9 @@
       "Customize your mail import": [
         "Dostosuj proces importowania poczty"
       ],
+      "Data recovery": [
+        "Odzyskiwanie danych"
+      ],
       "Date": [
         "Data"
       ],
@@ -6969,6 +7137,9 @@
       "Empty trash": [
         "Opróżnij Kosz"
       ],
+      "Enable 2FA": [
+        "Włącz uwierzytelnianie dwustopniowe"
+      ],
       "Enable drive search": [
         "Włącz wyszukiwanie zawartości dysku"
       ],
@@ -6998,6 +7169,9 @@
         "Znaleziono ${ searchView.numberOfResults } wyniki",
         "Znaleziono ${ searchView.numberOfResults } wyników",
         "Znaleziono ${ searchView.numberOfResults } wyników"
+      ],
+      "Get advanced protection": [
+        "Uzyskaj zaawansowaną ochronę"
       ],
       "Groups": [
         "Grupy"
@@ -7058,6 +7232,9 @@
       ],
       "Name": [
         "Nazwa"
+      ],
+      "Need more aliases?": [
+        "Potrzebujesz więcej aliasów?"
       ],
       "Night theme": [
         "Ciemny motyw"
@@ -7136,6 +7313,9 @@
       ],
       "Searching…": [
         "Wyszukiwanie…"
+      ],
+      "Security center": [
+        "Centrum zabezpieczeń"
       ],
       "Select action to take on contact group": [
         "Wybierz akcję dla grupy kontaktów"
@@ -7259,6 +7439,9 @@
       ],
       "Your 500 MB bonus": [
         "Twój bonus 500 MB"
+      ],
+      "Your account is protected": [
+        "Konto jest chronione"
       ],
       "Your changes are not synced yet": [
         "Zmiany nie zostały zsynchronizowane"
@@ -7404,8 +7587,23 @@
       "Contacts could not be merged": [
         "Kontakty nie mogły zostać scalone"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data wygaśnięcia nie jest w formacie MM/RR"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Nie możesz reaktywować ponownie klucza, jeśli nie pamiętasz hasła. Jeśli odrzucisz to powiadomienie, stracisz dostęp do wszystkich danych zaszyfrowanych za pomocą tego klucza."
+      ],
+      "Invalid alias prefix": [
+        "Przedrostek aliasu jest nieprawidłowy"
+      ],
+      "Missing alias prefix": [
+        "Brak przedrostka aliasu"
+      ],
+      "Missing alias suffix": [
+        "Brak przyrostka aliasu"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
@@ -7415,6 +7613,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Niektóre kontakty przeznaczone do scalenia wyświetlają błędy. Sprawdź je indywidualnie"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Przedrostek aliasu nie może być dłuższy niż 40 znaków"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Dane kontaktu są uszkodzone i nie mogą zostać wyświetlone."
@@ -7442,6 +7643,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nie możemy zweryfikować serwera pocztowego. Jeśli ufasz mu, możesz pominąć weryfikację."
+      ],
+      "You must select at least one mailbox": [
+        "Wybierz, co najmniej jedną skrzynkę pocztową"
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."

@@ -238,6 +238,9 @@
       "Discard": [
         "Сбросить"
       ],
+      "Dismiss": [
+        "Отклонить"
+      ],
       "Don't know your password?": [
         "Не знаете свой пароль?"
       ],
@@ -441,6 +444,9 @@
       ],
       "Next month": [
         "Следующий месяц"
+      ],
+      "Not now": [
+        "Не сейчас"
       ],
       "Ok": [
         "OK"
@@ -1958,9 +1964,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail и знак «плюс»"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
       ],
@@ -2099,6 +2102,9 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias options could not be resolved": [
+        "Параметры псевдонима не могут быть определены"
+      ],
       "Authentication canceled.": [
         "Аутентификация отменена."
       ],
@@ -2122,6 +2128,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
+      ],
+      "Could not open created vault": [
+        "Не могу открыть созданное хранилище"
+      ],
+      "Could not open updated vault": [
+        "Не могу открыть обновлённое хранилище"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
@@ -2197,6 +2209,9 @@
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Содержимое элемента не может превышать 40 Кбайт"
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
@@ -4163,6 +4178,9 @@
       "Something went wrong, please try again later.": [
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
+      "Something went wrong...": [
+        "Что-то пошло не так..."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
@@ -4680,6 +4698,9 @@
       "Download anyway": [
         "Все равно скачать"
       ],
+      "Downloading ${ percentageValue }": [
+        "Загрузка ${ percentageValue }"
+      ],
       "Duplicate found": [
         "Найден дубликат"
       ],
@@ -4739,6 +4760,9 @@
       ],
       "Folder name": [
         "Имя папки"
+      ],
+      "Forwards to": [
+        "Переслать"
       ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
@@ -4826,6 +4850,9 @@
       ],
       "New password": [
         "Новый пароль"
+      ],
+      "Note": [
+        "Заметка"
       ],
       "Notification": [
         "Уведомление"
@@ -4928,6 +4955,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Это окончательно удалит все ваши файлы в вашем закрытом хранилище."
+      ],
+      "Title": [
+        "Заголовок"
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
@@ -5116,6 +5146,11 @@
       ],
       "Plain text": [
         "Простой текст"
+      ]
+    },
+    "Mimetype": {
+      "iCalendar format": [
+        "Формат iCalendar"
       ]
     },
     "Modal title": {
@@ -5358,6 +5393,12 @@
         "${ numberOfItems } ссылки на ваши элементы были удалены",
         "${ numberOfItems } ссылок на ваши элементы были удалены",
         "${ numberOfItems } ссылок на ваши элементы были удалены"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } был отключен"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } был включен"
       ],
       "All items will soon be permanently deleted from trash": [
         "Все элементы скоро будут окончательно удалены из корзины"
@@ -5720,6 +5761,17 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Официальное письмо от ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Открыть ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Попробуйте ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6105,6 +6157,14 @@
         "Текущее хранилище:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } хранилища"
+      ],
+      "Your storage is full": [
+        "Ваше хранилище заполнено"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } контакт выглядит одинаково.",
@@ -6324,6 +6384,12 @@
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок",
         "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
       ],
+      "Account recovery": [
+        "Восстановление аккаунта"
+      ],
+      "Account security": [
+        "Безопасность учётной записи"
+      ],
       "Active": [
         "Активно"
       ],
@@ -6413,6 +6479,9 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
+      ],
+      "Data recovery": [
+        "Восстановление данных"
       ],
       "Date": [
         "Дата"
@@ -6918,8 +6987,23 @@
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Срок действия не в формате ММ/ГГ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."
+      ],
+      "Invalid alias prefix": [
+        "Недопустимый префикс псевдонима"
+      ],
+      "Missing alias prefix": [
+        "Отсутствует префикс псевдонима"
+      ],
+      "Missing alias suffix": [
+        "Отсутствует суффикс псевдонима"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -6929,6 +7013,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некоторые из планируемых к объединению контактов отображают ошибки. Пожалуйста, рассмотрите каждый из них по отдельности"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Префикс псевдонима не может быть длиннее 40 символов"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Данные контакта повреждены и не могут быть отображены."
@@ -6956,6 +7043,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Не удалось проверить почтовый сервер. Если вы доверяете ему, эту проверку можно пропустить."
+      ],
+      "You must select at least one mailbox": [
+        "Вы должны выбрать хотя бы один почтовый ящик"
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."

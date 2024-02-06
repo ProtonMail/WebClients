@@ -232,6 +232,9 @@
       "Discard": [
         "Descarta"
       ],
+      "Dismiss": [
+        "Descarta"
+      ],
       "Don't know your password?": [
         "No sabeu la vostra contrasenya?"
       ],
@@ -252,6 +255,9 @@
       ],
       "Download apps": [
         "Descarrega les aplicacions"
+      ],
+      "Download logs": [
+        "Descarrega els registres"
       ],
       "Drive Locked": [
         "Unitat bloquejada"
@@ -444,6 +450,9 @@
       ],
       "Next month": [
         "Mes següent"
+      ],
+      "Not now": [
+        "Ara no"
       ],
       "Ok": [
         "D'acord"
@@ -1959,9 +1968,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail i un signe més"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora (una característica prèmium entre moltes altres). Milloreu avui."
       ],
@@ -2106,6 +2112,9 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
+      "Alias options could not be resolved": [
+        "Les opcions d'àlies no s'han pogut resoldre."
+      ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
       ],
@@ -2132,6 +2141,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No es pot habilitar la cerca de contingut. Reinicieu l'aplicació o netegeu les dades."
+      ],
+      "Could not open created vault": [
+        "No s'ha pogut obrir la caixa forta creada"
+      ],
+      "Could not open updated vault": [
+        "No s'ha pogut obrir la caixa forta actualitzada"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
@@ -2203,6 +2218,9 @@
       ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
+      ],
+      "Item content cannot exceed 40KB": [
+        "El contingut de l'element no pot excedir 40 Kb."
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
@@ -3288,6 +3306,10 @@
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } fitxer xifrat",
+        "${ nbFile } fitxers xifrats"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pausa",
         "${ pausedCount } en pausa"
@@ -3356,6 +3378,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tot (${ totalFoldersCount } etiqueta)",
         "Tot (${ totalFoldersCount } etiquetes)"
+      ],
+      "All encrypted files": [
+        "Tots els fitxers xifrats"
       ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
@@ -4051,6 +4076,9 @@
       "Signature issue": [
         "Problema de signatura"
       ],
+      "Skipped": [
+        "Omès"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "No s'han pogut descarregar alguns fitxers. Intenteu tornar a descarregar-los."
       ],
@@ -4062,6 +4090,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament. Intenteu-ho de nou més tard."
+      ],
+      "Something went wrong...": [
+        "S'ha produït un error..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
@@ -4583,6 +4614,9 @@
       "Download anyway": [
         "Baixa igualment"
       ],
+      "Downloading ${ percentageValue }": [
+        "S'està descarregant ${ percentageValue } "
+      ],
       "Duplicate found": [
         "S'ha trobat un duplicat"
       ],
@@ -4642,6 +4676,9 @@
       ],
       "Folder name": [
         "Nom de carpeta"
+      ],
+      "Forwards to": [
+        "Reenvia a"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -4729,6 +4766,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Notification": [
         "Notificació"
@@ -4831,6 +4871,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Això eliminarà de manera permanent tots els fitxers de la vostra unitat bloquejada."
+      ],
+      "Title": [
+        "Títol"
       ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
@@ -5015,11 +5058,53 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "Arxiu 7-zip"
+      ],
+      "AAC audio": [
+        "Àudio AAC"
+      ],
+      "AbiWord document": [
+        "Document AbiWord"
+      ],
+      "Amazon Kindle eBook format": [
+        "Format eBook Kindle Amazon"
+      ],
+      "Android Package": [
+        "Paquet Android"
+      ],
+      "Apple Installer Package": [
+        "Paquet d'instal·lació Apple"
+      ],
+      "Audio file": [
+        "Fitxer d’àudio"
+      ],
+      "AVI video": [
+        "Vídeo AVI"
+      ],
       "Binary data": [
         "Dades binàries"
       ],
+      "Bourne shell script": [
+        "Script Bourne shell"
+      ],
+      "BZip archive": [
+        "Arxiu BZip"
+      ],
+      "BZip2 archive": [
+        "Arxiu BZip2"
+      ],
+      "C-Shell script": [
+        "Script C-Shell"
+      ],
       "Flash Video": [
         "Video Flash"
+      ],
+      "GZip Compressed Archive": [
+        "Arxiu comprimit GZip"
+      ],
+      "iCalendar format": [
+        "Format iCalendar"
       ],
       "Icon format": [
         "Format d'icona (ICO)"
@@ -5027,14 +5112,65 @@
       "Image": [
         "Imatge"
       ],
+      "Java Archive (JAR)": [
+        "Arxiu Java (JAR)"
+      ],
       "JPEG images": [
         "Imatges JPEG"
+      ],
+      "MP3 audio": [
+        "Àudio MP3"
+      ],
+      "MPEG Video": [
+        "Vídeo MPEG"
+      ],
+      "OGG audio": [
+        "Àudio OGG"
+      ],
+      "OGG video": [
+        "Vídeo OGG"
+      ],
+      "OpenDocument text document": [
+        "Document de text OpenDocument"
+      ],
+      "OpenType font": [
+        "Tipus de lletra OpenType"
+      ],
+      "Opus audio": [
+        "Àudio Opus"
       ],
       "RAR archive": [
         "Arxiu RAR"
       ],
+      "Rich Text Format (RTF)": [
+        "Format de text enriquit (RTF)"
+      ],
+      "Small web format (SWF)": [
+        "Format petit de web (SWF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Arxiu Tape (TAR)"
+      ],
       "Text": [
         "Text"
+      ],
+      "TrueType Font": [
+        "Tipus de lletra TrueType"
+      ],
+      "Unknown file": [
+        "Fitxer desconegut"
+      ],
+      "Video file": [
+        "Fitxer de vídeo"
+      ],
+      "WEBM audio": [
+        "Àudio WEBM"
+      ],
+      "WEBM video": [
+        "Vídeo WEBM"
+      ],
+      "WEBP image": [
+        "Imatge WEBP"
       ],
       "ZIP archive": [
         "Arxiu ZIP"
@@ -5256,6 +5392,12 @@
       "${ numberOfItems } link to your item was deleted": [
         "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
         "S'han eliminat ${ numberOfItems } enllaços al vostre element"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha desactivat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } s'ha habilitat"
       ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
@@ -5608,6 +5750,17 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Missatge oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Àlies hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Obrir ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Proveu ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6042,6 +6195,14 @@
         "El vostre emmagatzematge actual:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } d'emmagatzematge"
+      ],
+      "Your storage is full": [
+        "L'emmagatzematge és ple."
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacte sembla idèntic.",
@@ -6233,6 +6394,12 @@
         "${ numberOfFailedTransfer.total } pujada fallida",
         "${ numberOfFailedTransfer.total } pujades fallides"
       ],
+      "Account recovery": [
+        "Recuperació de compte"
+      ],
+      "Account security": [
+        "Seguretat del compte"
+      ],
       "Active": [
         "Actiu"
       ],
@@ -6320,6 +6487,9 @@
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
+      ],
+      "Data recovery": [
+        "Recuperació de dades"
       ],
       "Date": [
         "Data"
@@ -6815,6 +6985,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recordeu la vostra contrasenya és impossible reactivar la vostra clau. Us podem ajudar a desactivar l'alerta però en el procés perdreu permanentment l'accés a totes les dades xifrades amb aquesta clau."
       ],
+      "Invalid alias prefix": [
+        "El prefix de l'àlies no és vàlid"
+      ],
+      "Missing alias prefix": [
+        "Falta el prefix de l'àlies"
+      ],
+      "Missing alias suffix": [
+        "Falta el sufix de l'àlies"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
       ],
@@ -6823,6 +7005,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "El prefix de l'àlies no pot tenir més de 40 caràcters"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les dades de contacte estan corrompudes i no es poden mostrar."
@@ -6850,6 +7035,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No s'ha pogut verificar el servidor de correu. Si hi confieu, podeu ometre aquesta verificació."
+      ],
+      "You must select at least one mailbox": [
+        "Heu de seleccionar almenys una bústia de correu"
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."
