@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
-      "Change organization keys": [
-        "Organisationsschlüssel ändern"
-      ],
       "Change other email subscriptions": [
         "Andere E-Mail-Abonnements ändern"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Überprüfung wird geladen"
       ],
+      "Make admin": [
+        "Zum Administrator ändern"
+      ],
       "Manage communication preferences": [
         "Kommunikationseinstellungen verwalten"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Schlüssel zurücksetzen"
       ],
-      "Reset organization keys": [
-        "Schlüssel der Organisation zurücksetzen"
-      ],
       "Reset password": [
         "Passwort zurücksetzen"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Wiederherstellen"
-      ],
-      "Restore administrator privileges": [
-        "Administrationsprivilegien wiederherstellen"
       ],
       "Resubscribe": [
         "Erneut abonnieren"
@@ -3076,9 +3070,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-Logo und ein Pluszeichen"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
       ],
@@ -3908,9 +3899,6 @@
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
-      "Organization key is not decrypted.": [
-        "Organisationsschlüssel wird nicht entschlüsselt."
-      ],
       "Password is required": [
         "Passwort ist erforderlich"
       ],
@@ -3931,9 +3919,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Bitte richte eine eigene Domain ein, bevor du Adressen hinzufügst."
@@ -4063,9 +4048,6 @@
       "The organization key must be activated first": [
         "Der Organisationsschlüssel muss zunächst aktiviert werden"
       ],
-      "The organization key must be activated first.": [
-        "Der Organisationsschlüssel muss zuerst aktiviert werden."
-      ],
       "The sending key is not valid": [
         "Der Sendeschlüssel ist ungültig"
       ],
@@ -4141,9 +4123,6 @@
       "You already added this holidays calendar": [
         "Du hast diesen Feiertagskalender bereits hinzugefügt."
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du hast den Zugriff auf deine Organisationsschlüssel verloren. Ohne deren Wiederherstellung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
-      ],
       "You have no invoices.": [
         "Keine Rechnungen vorhanden."
       ],
@@ -4158,12 +4137,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du musst deine Organisationsschlüssel aktivieren. Ohne Aktivierung kannst du keine nicht-privaten Benutzer erstellen oder auf diese zugreifen."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
@@ -5762,17 +5735,6 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -6274,9 +6236,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Erstelle ein neues Konto und teile dem Benutzer die E-Mail-Adresse und das Passwort mit."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
@@ -6913,12 +6872,6 @@
       "Or select a particular server:": [
         "Oder wähle einen bestimmten Server aus:"
       ],
-      "Organization keys activated": [
-        "Organisationsschlüssel aktiviert"
-      ],
-      "Organization keys restored": [
-        "Organisationsschlüssel wiederhergestellt"
-      ],
       "Organization size": [
         "Organisationsgröße"
       ],
@@ -6955,6 +6908,9 @@
       ],
       "per month": [
         "pro Monat"
+      ],
+      "per month, billed at ${ price }": [
+        "pro Monat, abgerechnet zu ${ price }"
       ],
       "per month, billed every 12 months": [
         "pro Monat, Abrechnung alle 12 Monate"
@@ -7345,9 +7301,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Diese Anmeldedaten können nicht zur Anmeldung in unseren offiziellen ${ VPN_APP_NAME }-Apps verwendet werden. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Sie werden aus deiner Organisation entfernt"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Sie erhalten einen kostenlosen Monat ${ planName }."
@@ -7991,6 +7944,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9130,9 +9094,6 @@
       ],
       "Show sender images": [
         "Bilder der Absender anzeigen"
-      ],
-      "Show unread count in application icon": [
-        "Anzahl der ungelesenen E-Mails im Anwendungssymbol anzeigen"
       ],
       "Show unread count in Favicon": [
         "Zähler für ungelesene Nachrichten im Website-Symbol anzeigen"
@@ -10395,6 +10356,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10488,17 +10460,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12644,6 +12605,9 @@
       "Get more storage": [
         "Mehr Speicherplatz erhalten"
       ],
+      "Try out ${ app } to its full potential": [
+        "Probiere ${ app } in vollem Umfang aus"
+      ],
       "upgrade for more storage": [
         "upgrade für zusätzlichen Speicherplatz."
       ],
@@ -12655,6 +12619,10 @@
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Dir verbleibt noch **${ daysRemaining }** Tag bei deinem **${ currentPlanName }**-Abonnement.",
+        "Dir verbleiben noch **${ daysRemaining }** Tage bei deinem **${ currentPlanName }**-Abonnement."
       ],
       "Your ${ appStorage } is almost full": [
         "Dein ${ appStorage }-Speicherplatz ist fast voll."
@@ -13171,9 +13139,6 @@
       "CSV field": [
         "CSV-Feld"
       ],
-      "Display name": [
-        "Anzeigename"
-      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -13448,9 +13413,6 @@
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
-      "Change organization keys": [
-        "Organisationsschlüssel ändern"
-      ],
       "Change organization name": [
         "Namen der Organisation ändern"
       ],
@@ -13605,9 +13567,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Lösche den Server (Du kannst ihn innerhalb des nächsten ${ days } Tages wiederherstellen)",
         "Lösche den Server (Du kannst ihn innerhalb der nächsten ${ days } Tage wiederherstellen)"
-      ],
-      "Delete user": [
-        "Benutzer löschen"
       ],
       "Delete user?": [
         "Benutzer löschen?"
@@ -13911,9 +13870,6 @@
       "Password": [
         "Passwort"
       ],
-      "Password and keys": [
-        "Passwort und Schlüssel"
-      ],
       "Password reset settings": [
         "Einstellungen zum Zurücksetzen des Passworts"
       ],
@@ -13985,9 +13941,6 @@
       ],
       "Request sent": [
         "Anfrage gesendet"
-      ],
-      "Reset organization keys": [
-        "Schlüssel der Organisation zurücksetzen"
       ],
       "Reset password": [
         "Passwort zurücksetzen"
@@ -14416,9 +14369,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Nachrichten in den Ordnern „Gesendet“ oder „Entwürfe“ werden weiterhin in diesem Ordner angezeigt, auch wenn du diese in einen anderen Ordner verschiebst."
       ],
-      "See number of unread messages in the application icon": [
-        "Die Anzahl der ungelesenen Nachrichten wird im Anwendungssymbol angezeigt"
-      ],
       "See number of unread messages in the tab icon": [
         "Anzahl ungelesener Nachrichten im Tab-Symbol anzeigen"
       ],
@@ -14807,9 +14757,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Es wurde ein Problem mit deiner DNS-Konfiguration festgestellt. Bitte stelle sicher, dass deine Einträge mit den untenstehenden Anweisungen übereinstimmen. Wenn das Problem weiterhin besteht, wird die DKIM-Signatur abgeschaltet."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du musst Organisationsschlüssel ${ activateLink }, bevor du einem nicht-privaten Mitglied eine E-Mail-Adresse zuordnen kannst."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."

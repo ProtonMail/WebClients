@@ -165,7 +165,7 @@
         "Hylkää"
       ],
       "Dismiss": [
-        "Hylkää"
+        "Sulje"
       ],
       "Do not show on this website": [
         "Älä näytä tällä verkkosivustolla"
@@ -329,6 +329,9 @@
       "Remove access": [
         "Mitätöi käyttöoikeus"
       ],
+      "Remove member": [
+        "Poista jäsen"
+      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -491,9 +494,6 @@
       ],
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
       ],
       "Could not confirm this invite at the moment": [
         "Kutsun vahvistus ei nyt onnistunut"
@@ -1965,6 +1965,9 @@
       "Use my email": [
         "Käytä sähköpostiosoitettani"
       ],
+      "Vault": [
+        "Holvi"
+      ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
       ],
@@ -2062,9 +2065,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
-      ],
-      "Please enter a valid email address": [
-        "Syötä kelvollinen sähköpostiosoite"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"

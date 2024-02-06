@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Змінити пароль поштової скриньки"
       ],
-      "Change organization keys": [
-        "Змінити ключі організації"
-      ],
       "Change other email subscriptions": [
         "Змінити інші підписки е-поштою"
       ],
@@ -584,6 +581,9 @@
       "Loading verification": [
         "Завантаження підтвердження"
       ],
+      "Make admin": [
+        "Зробити адміністратором"
+      ],
       "Manage communication preferences": [
         "Керування комунікаційними налаштуваннями"
       ],
@@ -740,9 +740,6 @@
       "Reset keys": [
         "Скинути ключі"
       ],
-      "Reset organization keys": [
-        "Скинути ключі організації"
-      ],
       "Reset password": [
         "Скинути пароль"
       ],
@@ -751,9 +748,6 @@
       ],
       "Restore": [
         "Відновити"
-      ],
-      "Restore administrator privileges": [
-        "Відновити права адміністратора"
       ],
       "Resubscribe": [
         "Підписатись повторно"
@@ -2933,9 +2927,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Схоже, що список контактів, який ви імпортуєте, містить групи. Перегляньте, як ці групи повинні бути імпортовані."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail та знак плюс"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ],
@@ -2970,6 +2961,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Ми виявили такі поля в завантаженому вами файлі CSV. Перевірте, які ви хочете імпортувати."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Доступ до програми для комп'ютера обмежено"
       ]
     },
     "Disable account": {
@@ -3551,9 +3547,6 @@
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
       ],
-      "Organization key is not decrypted.": [
-        "Ключ організації не розшифровано."
-      ],
       "Password is required": [
         "Пароль обов'язковий"
       ],
@@ -3574,9 +3567,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Зараз неможливо виконати оплату. Спробуйте знову пізніше"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Доступ заборонено. Права адміністратора було обмежено."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Налаштуйте власний домен, перш ніж додавати користувачів до вашої організації."
@@ -3707,9 +3697,6 @@
       "The organization key must be activated first": [
         "Спочатку необхідно активувати ключ організації"
       ],
-      "The organization key must be activated first.": [
-        "Спочатку необхідно активувати ключ організації."
-      ],
       "The sending key is not valid": [
         "Ключ надсилання недійсний"
       ],
@@ -3782,9 +3769,6 @@
       "You already added this holidays calendar": [
         "Ви вже додали цей календар свят"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Ви втратили доступ до ваших ключів організації. Без відновлення ви не зможете створювати нових користувачів, додавати адреси наявним користувачам або мати доступ до неприватних облікових записів."
-      ],
       "You have no invoices.": [
         "У вас немає рахунків."
       ],
@@ -3799,12 +3783,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Щоб створити неприватних користувачів і отримати доступ до їхніх облікових записів, вам потрібно активувати ключі організації."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
       "You must set a name": [
         "Ви повинні вказати назву"
@@ -5414,14 +5392,6 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -5915,6 +5885,12 @@
       "Cancel anytime": [
         "Скасувати будь-коли"
       ],
+      "Can’t access your recovery email?": [
+        "Не можете отримати доступ до резервної е-пошти?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Не можете отримати доступ до номера телефону для відновлення?"
+      ],
       "Center": [
         "По центру"
       ],
@@ -5953,9 +5929,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також мітки, які ви бажаєте імпортувати."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Створіть новий обліковий запис і поділіться адресою е-пошти й паролем з цим користувачем."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
@@ -6062,6 +6035,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Готово! Ми надіслали код на ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "Не знаєте своєї фрази відновлення?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічого не відбувається? Перевірте, чи не увімкнено блокування спливних вікон."
       ],
@@ -6166,6 +6142,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Введіть фразу відновлення, щоб змінити пароль."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Запрошення на події та запити на відповідь надсилатимуться цією мовою."
@@ -6571,12 +6550,6 @@
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
-      ],
-      "Organization keys activated": [
-        "Ключі організації активовано"
-      ],
-      "Organization keys restored": [
-        "Ключі організації відновлено"
       ],
       "Organization size": [
         "Розмір організації"
@@ -7001,9 +6974,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They will be removed from your organization": [
-        "Їх буде вилучено з вашої організації"
-      ],
       "They'll receive a free month of ${ planName }.": [
         "Вони отримають безплатно один місяць ${ planName }."
       ],
@@ -7126,6 +7096,9 @@
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
+      ],
+      "To proceed, we must verify the request.": [
+        "Щоб продовжити, ми повинні перевірити запит."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера."
@@ -7345,6 +7318,9 @@
       ],
       "Welcome": [
         "Вітаємо"
+      ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "Ми надішлемо код скидання на ${ boldValue }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
@@ -7642,6 +7618,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
       ]
     },
     "Info - folder colouring feature": {
@@ -10009,6 +9993,17 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -10099,17 +10094,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11489,6 +11473,11 @@
         "Скасувати скидання пароля"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введіть поточний пароль, щоб скасувати скидання пароля. Ніякі інші зміни не набудуть чинності."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Скидання пароля скасовано"
@@ -11939,6 +11928,28 @@
       ],
       "Your current storage:": [
         "Ваше поточне сховище:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Залишити ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } сховища"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Перейшовши на тарифний план нижчого рівня, ви втратите вказані переваги. Ви дійсно хочете продовжити?"
+      ],
+      "Get more storage": [
+        "Збільшити сховище"
+      ],
+      "Upgrade your plan to continue to use your account without interruptions.": [
+        "Оновіть тарифний план, щоб користуватися обліковим записом без перебоїв."
+      ],
+      "Your storage is full": [
+        "Ваше сховище заповнене"
       ]
     },
     "Subscribe to calendar modal": {
@@ -12436,9 +12447,6 @@
       "CSV field": [
         "Поле CSV"
       ],
-      "Display name": [
-        "Ім'я"
-      ],
       "Edit": [
         "Змінити"
       ],
@@ -12713,9 +12721,6 @@
       "Change mailbox password": [
         "Змінити пароль поштової скриньки"
       ],
-      "Change organization keys": [
-        "Змінити ключі організації"
-      ],
       "Change organization name": [
         "Змінити назву організації"
       ],
@@ -12872,9 +12877,6 @@
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)",
         "Видалити сервер (ви все ще зможете відновити його протягом ${ days } днів)"
       ],
-      "Delete user": [
-        "Видалити користувача"
-      ],
       "Delete user?": [
         "Видалити користувача?"
       ],
@@ -12901,6 +12903,9 @@
       ],
       "Downgrade account": [
         "Понизити тарифний план"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Понизити до ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
@@ -13169,9 +13174,6 @@
       "Password": [
         "Пароль"
       ],
-      "Password and keys": [
-        "Пароль та ключі"
-      ],
       "Pay invoice": [
         "Сплатити рахунок"
       ],
@@ -13237,9 +13239,6 @@
       ],
       "Request sent": [
         "Запит надіслано"
-      ],
-      "Reset organization keys": [
-        "Скинути ключі організації"
       ],
       "Reset password": [
         "Скинути пароль"
@@ -13387,6 +13386,9 @@
       ],
       "Theme": [
         "Тема"
+      ],
+      "This field cannot be empty": [
+        "Необхідно заповнити це поле"
       ],
       "Time zone": [
         "Часовий пояс"
@@ -14015,9 +14017,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Ми виявили проблему з вашою конфігурацією DNS. Переконайтеся, що ваші записи відповідають інструкціям нижче. Якщо проблема не зникне, нам доведеться вимкнути підписання DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Ви повинні ${ activateLink } ключі організації перед додаванням електронної адреси для неприватного учасника."
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."

@@ -50,6 +50,9 @@
       "activate": [
         "attiva"
       ],
+      "Activate": [
+        "Attiva"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
       ],
@@ -158,11 +161,11 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "Change keys": [
+        "Cambia chiavi"
+      ],
       "Change mailbox password": [
         "Cambia la password della casella di posta"
-      ],
-      "Change organization keys": [
-        "Cambia le chiavi dell'organizzazione"
       ],
       "Change other email subscriptions": [
         "Cambia altre iscrizioni email"
@@ -590,6 +593,9 @@
       "Loading verification": [
         "Caricamento della verifica in corso"
       ],
+      "Make admin": [
+        "Rendi amministratore"
+      ],
       "Manage communication preferences": [
         "Gestisci le preferenze di comunicazione"
       ],
@@ -746,9 +752,6 @@
       "Reset keys": [
         "Reimposta chiavi"
       ],
-      "Reset organization keys": [
-        "Reimposta le chiavi dell'organizzazione"
-      ],
       "Reset password": [
         "Reimposta la password"
       ],
@@ -757,9 +760,6 @@
       ],
       "Restore": [
         "Ripristina"
-      ],
-      "Restore administrator privileges": [
-        "Ripristina i privilegi da amministratore"
       ],
       "Resubscribe": [
         "Iscriviti di nuovo"
@@ -3076,9 +3076,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail e un segno più"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
       ],
@@ -3128,7 +3125,7 @@
         "L'accesso all'app desktop è limitato"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Esegui l'upgrade per ottenere l'accesso."
+        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Effettua l'upgrade per ottenere l'accesso."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
@@ -3908,8 +3905,8 @@
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
-      "Organization key is not decrypted.": [
-        "La chiave dell'organizzazione non è decriptata."
+      "Organization key must be activated to create non-private users": [
+        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
       ],
       "Password is required": [
         "Password necessaria"
@@ -3931,9 +3928,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "I pagamenti non sono attualmente disponibili, per favore riprova più tardi"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
@@ -4063,9 +4057,6 @@
       "The organization key must be activated first": [
         "La chiave dell'organizzazione deve essere prima attivata"
       ],
-      "The organization key must be activated first.": [
-        "La chiave dell'organizzazione deve essere prima attivata."
-      ],
       "The sending key is not valid": [
         "La chiave di invio non è valida"
       ],
@@ -4092,6 +4083,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser attuale."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Per creare degli account utente non privati e accedere ai loro account, dovrai ripristinare i tuoi privilegi di amministratore."
       ],
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
@@ -4141,9 +4135,6 @@
       "You already added this holidays calendar": [
         "Hai già aggiunto questo calendario dei giorni festivi"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Hai perso l'accesso alle tue chiavi dell'organizzazione. Senza ripristino non sarai in grado di creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere ad account utente non privati."
-      ],
       "You have no invoices.": [
         "Non hai fatture."
       ],
@@ -4158,12 +4149,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Per creare utenti non privati e accedere ai loro account, dovrai attivare le chiavi della tua organizzazione."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Si devono privatizzare tutti gli account prima di generare nuove chiavi dell'organizzazione"
       ],
       "You must set a name": [
         "È necessario impostare un nome"
@@ -5762,17 +5747,6 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
@@ -6139,6 +6113,9 @@
       "Are you sure you want to discard your import?": [
         "Sei sicuro di voler annullare la tua importazione?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Sei sicuro di voler concedere i privilegi di amministratore a questo utente?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Sei sicuro di voler cancellare definitivamente tutti i tuoi log?"
       ],
@@ -6274,9 +6251,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Crea un nuovo account e condividi l'indirizzo email e la password con l'utente."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
@@ -6913,12 +6887,6 @@
       "Or select a particular server:": [
         "O seleziona un server specifico:"
       ],
-      "Organization keys activated": [
-        "Chiavi dell'organizzazione attivate"
-      ],
-      "Organization keys restored": [
-        "Chiavi dell'organizzazione ripristinate"
-      ],
       "Organization size": [
         "Dimensione dell'organizzazione"
       ],
@@ -6960,7 +6928,7 @@
         "al mese"
       ],
       "per month, billed at ${ price }": [
-        "al mese, fatturato a ${ price }"
+        "al mese, addebitato a ${ price }"
       ],
       "per month, billed every 12 months": [
         "al mese con fatturazione ogni 12 mesi"
@@ -7351,9 +7319,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Queste credenziali non possono essere usate per accedere alle nostre app ${ VPN_APP_NAME } ufficiali. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Verranno rimossi dalla tua organizzazione"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Riceveranno un mese gratuito di ${ planName }."
@@ -7999,6 +7964,17 @@
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Se abilitata, le sottocartelle prendono il colore della cartella principale."
@@ -8458,6 +8434,9 @@
       ],
       "Addresses": [
         "Indirizzi"
+      ],
+      "Administrators": [
+        "Amministratori"
       ],
       "ALL": [
         "TUTTI"
@@ -9136,9 +9115,6 @@
       ],
       "Show sender images": [
         "Mostra l'immagine dei mittenti"
-      ],
-      "Show unread count in application icon": [
-        "Mostra il conteggio dei messaggi non letti nell'icona dell'applicazione"
       ],
       "Show unread count in Favicon": [
         "Mostra il conteggio della posta non letta nella Favicon"
@@ -9950,6 +9926,9 @@
       "Back to inbox": [
         "Torna alla posta in arrivo"
       ],
+      "Back to vaults": [
+        "Torna alle casseforti"
+      ],
       "Block": [
         "Blocca"
       ],
@@ -9958,6 +9937,9 @@
       ],
       "Inbox": [
         "Posta in arrivo"
+      ],
+      "Pass vaults": [
+        "Casseforti di Pass"
       ],
       "Spam": [
         "Spam"
@@ -10404,6 +10386,17 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10497,17 +10490,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11296,6 +11278,20 @@
         "Tu"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Vai alla tua cassaforte per gestire password, alias e molto altro."
+      ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Inizia ad aggiungere utenti per concedere loro l'accesso a ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Inizia a utilizzare ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Scopri le caratteristiche di ${ appName }"
@@ -11571,6 +11567,80 @@
       ],
       "Secure your account": [
         "Proteggi il tuo account"
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Tutti gli amministratori avranno accesso alla chiave."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Sei sicuro di voler cambiare la chiave della tua organizzazione?"
+      ],
+      "Change organization key": [
+        "Cambia la chiave dell'organizzazione"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Gli utenti non privati possono essere promossi ad amministratore quando dispongono delle chiavi di configurazione"
+      ],
+      "Organization key activated": [
+        "Chiave dell'organizzazione attivata"
+      ],
+      "Organization key does not exist.": [
+        "Chiave dell'organizzazione non esistente."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La chiave dell'organizzazione deve essere attivata per poter concedere i privilegi di amministratore"
+      ],
+      "Organization key restored": [
+        "Chiave dell'organizzazione ripristinata"
+      ],
+      "Organization key updated": [
+        "Chiave dell'organizzazione aggiornata"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
+      ],
+      "Reset organization key": [
+        "Reimposta la chiave dell'organizzazione"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "I seguenti amministratori avranno accesso alla chiave dell'organizzazione."
+      ],
+      "The organization key must be activated first.": [
+        "La chiave dell'organizzazione deve essere prima attivata."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Questo invierà la chiave dell'organizzazione più recente agli amministratori che attualmente non ne hanno accesso."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Per creare degli account utente non privati e accedere ai loro account, dovrai attivare la chiave della tua organizzazione."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Per abilitare i diritti di amministratore sul tuo account, attiva la chiave dell'organizzazione."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Utilizza un metodo di recupero dei dati o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Utilizza un metodo di recupero dei dati, contatta un altro amministratore o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Non siamo riusciti a verificare la sicurezza della chiave dell'indirizzo di questo mittente. A volte potrebbe verificarsi un ritardo nell'aggiornamento delle informazioni del mittente. Riprova più tardi. Se non sei sicuro della validità di questo invito o del mittente, contatta l'assistenza clienti di ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Abbiamo verificato l'autenticità di questo mittente e dell'invito."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Sei stato reso amministratore dell'organizzazione **${ organizationName }** da"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Devi rendere privati tutti gli utenti prima di poter generare una nuova chiave dell’organizzazione"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
     "Payment method option": {
@@ -11897,6 +11967,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } amministratore della tua organizzazione ha bisogno di accedere alla chiave dell'organizzazione.",
+        "${ n } amministratori della tua organizzazione ha bisogno di accedere alla chiave dell'organizzazione."
+      ],
       "Changing organization keys": [
         "Cambiamento delle chiavi dell'organizzazione in corso"
       ],
@@ -12669,7 +12743,7 @@
         "Valuta la possibilità di effettuare l'upgrade del tuo piano per continuare a utilizzare il tuo account senza interruzioni."
       ],
       "contact your administrator": [
-        "contattare il tuo amministratore"
+        "contatta il tuo amministratore"
       ],
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
@@ -12913,6 +12987,9 @@
       ],
       "Address updated": [
         "Indirizzo aggiornato"
+      ],
+      "Administrator privileges restored": [
+        "Privilegi di amministratore ripristinati"
       ],
       "Auto-reply disabled": [
         "Risposta automatica disabilitata"
@@ -13211,9 +13288,6 @@
       "CSV field": [
         "Campo CSV"
       ],
-      "Display name": [
-        "Nome visualizzato"
-      ],
       "Edit": [
         "Modifica"
       ],
@@ -13488,9 +13562,6 @@
       "Change mailbox password": [
         "Cambia la password della casella di posta"
       ],
-      "Change organization keys": [
-        "Cambia le chiavi dell'organizzazione"
-      ],
       "Change organization name": [
         "Cambia nome organizzazione"
       ],
@@ -13514,6 +13585,9 @@
       ],
       "Composing": [
         "Composizione"
+      ],
+      "Confirm": [
+        "Conferma"
       ],
       "Confirm address": [
         "Conferma l'indirizzo"
@@ -13645,9 +13719,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorno)",
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorni)"
-      ],
-      "Delete user": [
-        "Eliminazione utente"
       ],
       "Delete user?": [
         "Eliminare utente?"
@@ -13939,6 +14010,9 @@
       "Organization filters": [
         "Filtri organizzazione"
       ],
+      "Organization key": [
+        "Chiave dell'organizzazione"
+      ],
       "Organization name": [
         "Nome dell'organizzazione"
       ],
@@ -13950,9 +14024,6 @@
       ],
       "Password": [
         "Password"
-      ],
-      "Password and keys": [
-        "Password e chiavi"
       ],
       "Password reset settings": [
         "Impostazioni per la reimpostazione della password"
@@ -14025,9 +14096,6 @@
       ],
       "Request sent": [
         "Richiesta inviata"
-      ],
-      "Reset organization keys": [
-        "Reimposta le chiavi dell'organizzazione"
       ],
       "Reset password": [
         "Reimposta la password"
@@ -14456,9 +14524,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "I messaggi nelle cartelle Inviata e Bozze continueranno a comparire in quelle cartelle, anche se li sposti in un'altra cartella."
       ],
-      "See number of unread messages in the application icon": [
-        "Visualizza il numero di messaggi non letti nell'icona dell'applicazione"
-      ],
       "See number of unread messages in the tab icon": [
         "Visualizza il numero di messaggi non letti nell'icona della scheda"
       ],
@@ -14856,8 +14921,8 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Abbiamo rilevato un problema con la tua configurazione DNS. Assicurati che i tuoi record corrispondano alle istruzioni qui sotto. Se il problema persiste, dovremo cambiare la firma della DKIM."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "È necessario ${ activateLink } le chiavi dell'organizzazione prima di aggiungere un indirizzo email a un membro non privato."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Devi ${ activateLink } la chiave dell'organizzazione prima di poter aggiungere un indirizzo email a un membro non privato."
       ],
       "You will lose any customization you made so far.": [
         "Perderai ogni personalizzazione che hai fatto finora."

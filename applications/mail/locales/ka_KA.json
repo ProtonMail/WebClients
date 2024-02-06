@@ -325,6 +325,9 @@
       "Discard": [
         "მოცილება"
       ],
+      "Dismiss": [
+        "მოცილება"
+      ],
       "Don't know your password?": [
         "არ იცით თქვენი პაროლი?"
       ],
@@ -336,6 +339,9 @@
       ],
       "Download ${ attachmentName }": [
         "${ attachmentName }-ის გადმოწერა"
+      ],
+      "Download now": [
+        "ახლა გადმოწერა"
       ],
       "Downloading": [
         "გადმოწერა"
@@ -507,6 +513,9 @@
       ],
       "Import from Outlook": [
         "Outlook-დან შემოტანა"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "ხელმისაწვდომია მნიშვნელოვაი განახლება. ამ აპის გამოყენების გასაგრძელებლად განახლდით უკანასკნელ ვერსიამდე. ${ downloadUpdate }"
       ],
       "In the morning": [
         "დილით"
@@ -709,6 +718,9 @@
       ],
       "No, I won't attend": [
         "არ დავესწრები"
+      ],
+      "Not now": [
+        "არა ახლა"
       ],
       "Not saved": [
         "არაა შენახული"
@@ -1042,10 +1054,6 @@
       ],
       "Trust": [
         "ნდობა"
-      ],
-      "Trust key": [
-        "ნდობის გასაღები",
-        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -3047,9 +3055,6 @@
       "No labels": [
         "ჭდეების გარეშე"
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-ის ლოგო და მიმატების ნიშანი"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
@@ -3273,6 +3278,9 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
+      "Alias options could not be resolved": [
+        "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
       "Attachments are limited to 25 MB": [
         "მიმაგრებული ფაილების მაქსიმალური ზომა 25 მბ-ა"
       ],
@@ -3318,6 +3326,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
+      ],
+      "Could not open created vault": [
+        "შექმნილი საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not open updated vault": [
+        "განახლებული საცავის გახსნა შეუძლებელია"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "გაშიფვრის შეცდომა: შეტყობინების დაშიფრული ნაწილის გაშიფვრის შეცდომა."
@@ -3402,11 +3416,17 @@
       "Invalid verification code": [
         "შემოწმების არასწორი კოდი"
       ],
+      "Item content cannot exceed 40KB": [
+        "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
+      ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
       "Last name is too long": [
         "გვარი ძალიან გრძელია."
+      ],
+      "Maximum expiration time reached.": [
+        "მიღწეულია მაქსიმალური ვადა."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "მიმაგრებული ფაილების მაქსიმალური რაოდენობაა (${ attachmentsCountLimit })"
@@ -3441,6 +3461,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "შემოსატანი ელფოსტების გარეშე - ანგარიშს საფოსტო ყუთი არ გააჩნია"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "მომხმარებლისთვის მიღებული არც ერთი გარე გასაღები გასაგზავნად არ გამოდგება"
       ],
       "No valid address found": [
         "სწორი მისამართები ნაპოვნი არაა"
@@ -5067,12 +5090,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
-      ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "მართლა გნებავთ ამ მდებარეობიდან ყველა შეტყობინების არქივში გადატანა?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "დარწმუნებული ხართ, რომ გსურთ ამ მდებარეობის ყველა შეტყობინების გადატანა ნაგავში?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ${ count } საუბარი?",
@@ -6717,6 +6734,9 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
+      "Forwards to": [
+        "გადაგზავნა"
+      ],
       "Frequency": [
         "სიხშირე"
       ],
@@ -6831,6 +6851,9 @@
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
       ],
+      "Note": [
+        "შენიშვნა"
+      ],
       "Notification": [
         "შეტყობინება"
       ],
@@ -6941,6 +6964,9 @@
       ],
       "Time": [
         "დრო"
+      ],
+      "Title": [
+        "სათაური"
       ],
       "To:": [
         "ვის:"
@@ -7609,6 +7635,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } შეიქმნა"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } გაითიშა"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } ჩაირთო"
+      ],
       "Block removed": [
         "განბლოკილი"
       ],
@@ -7790,6 +7822,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress }-მა ეს გასაღები მოძველებულად მონიშნა. გასაღები, მხოლოდ, ხელმოწერის შესამოწმებლადღა გამოდგება."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "გარე გასაღებების გამოთხოვა ავტომატურად ხდება საიტიდან keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "გარე გასაღები ავტომატურადაა გამოთხოვილი WKD-ის გავლით."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "ეს გასაღები ამ კონტაქტისთვის შეტყობინებების დასაშიფრად გამოიყენება"
       ],
       "We recommend that you \"untrust\" this key.": [
         "გირჩევთ, ეს გასაღები \"არასანდოდ\" გამოაცხადოთ."
@@ -8045,6 +8086,14 @@
       ],
       "No unread messages found": [
         "წაუკითხავი შეტყობინებები ნაპოვნი არაა"
+      ]
+    },
+    "Security Center": {
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გახსნა"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "სცადეთ ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8590,11 +8639,17 @@
       "Email tracking protection": [
         "ელფოსტის ტრეკერებისგან დაცვა"
       ],
+      "Faster email management": [
+        "უფრო სწრაფი ელფოსტის მართვა"
+      ],
       "Get up to ${ credits } in credits.": [
         "მიღეთ ${ credits }-მდე კრედიტი."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "მოიწვიეთ მეგობრები ${ BRAND_NAME }-ში"
+      ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "ახლა შეგიძლიათ გადაატაროთ ქმედება ყველა ელფოსტაზე ერთ საქაღალდეში ერთი გავლით."
       ],
       "Schedule send": [
         "გაგზავნის დაგეგმვა"
@@ -8652,6 +8707,53 @@
       ],
       "Your current storage:": [
         "თქვენი მიმდინარე საცავი:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } საცავი"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } სავსეა ${ percentage }%"
+      ],
+      "contact your administrator": [
+        "დაუკავშირდით ადმინისტრატორს"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "ფაილების ატვირთვის და სინქრონიზაციის გასაგრძელებლად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა, მეტი საცავის მისაღებად."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "ელფოსტის გასაგზავნად ან მისაღებად გაათავისუფლეთ ადგილი ან ასწიეთ სატარიფო გეგმა მეტი საცავის მისაღებად."
+      ],
+      "upgrade for more storage": [
+        "აწიეთ ტარიფი მეტი საცავისთვის"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "თქვენი ${ appStorage }, თითქმის, სავსეა"
+      ],
+      "Your ${ appStorage } is full": [
+        "თქვენი ${ appStorage } სავსეა"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } ${ percentage }%-ითაა სავსე. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "თქვენი ${ storage } სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "თქვენი ${ storage } სავსეა. ფაილების ასატვირთად ან სინქრონიზაციისთვის გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი ${ percentage }%-ითაა სავსე. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "თქვენი საცავი სავსეა. ელფოსტების მისაღებად/გასაგზავნად გაათავისუფლეთ ადგილი, ან ${ upgrade }."
       ]
     },
     "Success": {
@@ -9040,6 +9142,18 @@
       "(active)": [
         "(აქტიური)"
       ],
+      "A filter name is required": [
+        "ფილტრის სახელი აუცილებელია"
+      ],
+      "A filter with this name already exists": [
+        "ამ სახელის მქონე ფილტრი უკვე არსებობს"
+      ],
+      "Account recovery": [
+        "ანგარიშის აღდგენა"
+      ],
+      "Account security": [
+        "ანგარიშის უსაფრთხოება"
+      ],
       "Action all conversations": [
         "გადატარება ყველა საუბარზე"
       ],
@@ -9158,6 +9272,9 @@
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
       ],
+      "Data recovery": [
+        "მონაცემების აღდგენა"
+      ],
       "Day theme": [
         "დღის თემა"
       ],
@@ -9255,6 +9372,9 @@
       ],
       "Feedback": [
         "უკუკავშირი"
+      ],
+      "Filter name cannot contain only spaces": [
+        "ველის სახელი არ შეიძლება, მხოლოდ, გამოტოვებებს შეიცავდეს"
       ],
       "Filter on...": [
         "ფილტრი ჩართულია..."
@@ -9370,12 +9490,6 @@
       ],
       "Move all messages": [
         "ყველა შეტყობინების გადატანა"
-      ],
-      "Move all messages to Archive": [
-        "ყველა შეტყობინების არქივში გადატანა"
-      ],
-      "Move all messages to Trash": [
-        "ყველა შეტყობინების გადატანა ნაგვის ყუთში"
       ],
       "Move to": [
         "გადატანა"
@@ -9562,6 +9676,12 @@
       ],
       "Subject missing": [
         "საგნის გარეშე"
+      ],
+      "This field cannot be empty": [
+        "ეს ველი ცარიელი ვერ იქნება"
+      ],
+      "This field cannot contain only spaces": [
+        "ეს ველი არ შეიძლება, გამოტოვებებს შეიცავდეს"
       ],
       "To": [
         "ვის"
@@ -9765,8 +9885,23 @@
       "Contacts could not be merged": [
         "კონტაქტების შერწყმის შეცდომა"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "ვადის ამოწურვის თარიღი თთ/წწ ფორმატში არაა"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "თუ პაროლი დაგავიწყდათ, თქვენი გასაღების ხელახალი აქტივაცია შეუძლებელია. ჩვენ შეგვიძლია, დაგეხმაროთ გაფრთხილების ბანერის მოხსნით, მაგრამ ამ პროცესში მოცემული გასაღებით დაშიფრულ მონაცემებთან წვდომსას სამუდამოდ დაკარგავთ."
+      ],
+      "Invalid alias prefix": [
+        "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Missing alias prefix": [
+        "აკლია ფსევდონიმის პრეფიქსი"
+      ],
+      "Missing alias suffix": [
+        "აკლია ფსევდონიმის სუფიქსი"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
@@ -9776,6 +9911,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "ზოგიერთ შესარწყმელ კონტაქტში დაფიქსირებულია შეცდომები. გთხოვთ, ცალ-ცალკე განიხილოთ ისინი"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "მიმაგრებული ფაილის ხელმოწერის შემოწმების შეცდომა.\nთქვენ შეგიძლიათ, მაინც გადმოწეროთ ის, მაგრამ დიდი შანსია, ის უკვე შეცვლილი იყოს.",
@@ -9807,6 +9945,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "ელფოსტის სერვერი ვერ შევამოწმეთ. თუ ენდობით მას, შემოწმება შეგიძლიათ, გამოტოვოთ."
+      ],
+      "You must select at least one mailbox": [
+        "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"
       ],
       "You will lose any customization you made so far.": [
         "დაკარგავთ ყველაფერს, რაც თქვენზე მოირგეთ."

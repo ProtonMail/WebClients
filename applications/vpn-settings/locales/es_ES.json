@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Activar"
+      ],
       "activate": [
         "activar"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Cancelar tu suscripción"
+      ],
+      "Change keys": [
+        "Cambiar las claves"
       ],
       "Change mailbox password": [
         "Cambiar contraseña del buzón"
@@ -287,6 +293,9 @@
       "Loading verification": [
         "Cargando verificación"
       ],
+      "Make admin": [
+        "Dar permisos para administrar"
+      ],
       "Mark as default": [
         "Marcar como por defecto"
       ],
@@ -328,6 +337,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Recover data": [
+        "Recuperar datos"
       ],
       "Refer a friend": [
         "Recomendar a un amigo"
@@ -376,9 +388,6 @@
       ],
       "Restore": [
         "Restaurar"
-      ],
-      "Restore administrator privileges": [
-        "Restaurar privilegios de administrador"
       ],
       "Retry": [
         "Reintentar"
@@ -1853,9 +1862,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail y un signo más"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
       ]
@@ -2033,9 +2039,6 @@
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
       ],
-      "Organization key is not decrypted.": [
-        "La clave de organización no está descifrada."
-      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
       ],
@@ -2053,9 +2056,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Los pagos no están disponibles actualmente. Inténtalo de nuevo más tarde."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Permiso denegado. Los privilegios de administrador se han limitado."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizado antes de añadir direcciones."
@@ -2120,9 +2120,6 @@
       "The organization key must be activated first": [
         "Tienes que activar primero la clave de la organización."
       ],
-      "The organization key must be activated first.": [
-        "La clave de la organización debe activarse primero."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
       ],
@@ -2164,12 +2161,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Debes activar las claves de tu organización. Sin la activación no podrás crear o acceder a usuarios no privados."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Debes privatizar a todos los usuarios antes de generar nuevas claves de organización"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tu cuenta u organización tiene una factura vencida. Tienes que pagar todas las facturas impagadas."
@@ -3025,9 +3016,6 @@
       "Country code": [
         "Código de país"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Crea una nueva cuenta y comparte la dirección de correo electrónico y la contraseña con el usuario."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea y administra subcuentas y asígnales direcciones de correo electrónico en tu dominio personalizado."
       ],
@@ -3381,12 +3369,6 @@
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
       ],
-      "Organization keys activated": [
-        "Claves de la organización activadas"
-      ],
-      "Organization keys restored": [
-        "Claves de la organización restauradas"
-      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -3511,6 +3493,9 @@
       ],
       "Save ${ percentage }": [
         "Ahorra un ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Guarda tu contraseña en un lugar seguro."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarda tu contraseña en un lugar seguro. Haz clic en el icono para confirmar que has escrito correctamente tu contraseña."
@@ -3641,9 +3626,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Estas credenciales no pueden utilizarse para iniciar sesión en nuestras aplicaciones oficiales de ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Se borrarán de tu organización."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -4176,6 +4158,9 @@
       ],
       "Addresses": [
         "Direcciones"
+      ],
+      "Administrators": [
+        "Administradores"
       ],
       "Allow recovery by email": [
         "Permitir recuperación por correo electrónico"
@@ -5836,6 +5821,29 @@
         "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
       ]
     },
+    "passwordless": {
+      "Change organization key": [
+        "Cambiar la clave de la organización"
+      ],
+      "Organization key activated": [
+        "La clave de la organización ha sido activada."
+      ],
+      "Organization key does not exist.": [
+        "La clave de la organización no existe."
+      ],
+      "Organization key restored": [
+        "La clave de la organización ha sido restaurada."
+      ],
+      "Organization key updated": [
+        "La clave de la organización ha sido actualizada."
+      ],
+      "Reset organization key": [
+        "Restablecer la clave de la organización"
+      ],
+      "The organization key must be activated first.": [
+        "La clave de la organización debe activarse primero."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Tarjeta de crédito/débito"
@@ -7013,9 +7021,6 @@
       "Country": [
         "País"
       ],
-      "Display name": [
-        "Nombre a mostrar"
-      ],
       "Email": [
         "Correo"
       ],
@@ -7155,17 +7160,20 @@
       "Change mailbox password": [
         "Cambiar contraseña del buzón"
       ],
-      "Change organization keys": [
-        "Cambiar claves de la organización"
-      ],
       "Change organization name": [
         "Cambiar nombre de la organización"
+      ],
+      "Change organization password": [
+        "Cambiar contraseña de la organización"
       ],
       "Change password": [
         "Cambiar contraseña"
       ],
       "Change role": [
         "Cambiar rol"
+      ],
+      "Confirm": [
+        "Confirmar"
       ],
       "Confirm address": [
         "Confirmar dirección"
@@ -7240,9 +7248,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Eliminar el servidor (aún podrás recuperarlo durante ${ days } día)",
         "Eliminar el servidor (aún podrás recuperarlo durante ${ days } días)"
-      ],
-      "Delete user": [
-        "Eliminar usuario"
       ],
       "Delete user?": [
         "¿Eliminar usuario?"
@@ -7451,9 +7456,6 @@
       ],
       "Request sent": [
         "Solicitud enviada"
-      ],
-      "Reset organization keys": [
-        "Restablecer las claves de la organización"
       ],
       "Reset password": [
         "Restablecer contraseña"
@@ -7870,9 +7872,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Debes ${ activateLink } las claves de la organización antes de añadir una dirección de correo electrónico a un miembro no privado."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Tu periodo de prueba gratuito acaba el ${ textDate }. ${ action }"

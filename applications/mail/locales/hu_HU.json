@@ -325,6 +325,9 @@
       "Discard": [
         "Elvetés"
       ],
+      "Dismiss": [
+        "Elvetés"
+      ],
       "Don't know your password?": [
         "Nem tudja a jelszavát?"
       ],
@@ -701,6 +704,9 @@
       "No, I won't attend": [
         "Nem, nem megyek"
       ],
+      "Not now": [
+        "Most nem"
+      ],
       "Not saved": [
         "Nincs mentve"
       ],
@@ -1030,10 +1036,6 @@
       ],
       "Trust": [
         "Megbízható"
-      ],
-      "Trust key": [
-        "Megbízható kulcs",
-        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -2976,9 +2978,6 @@
       "No labels": [
         "Nincsenek címkék"
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail logó és egy plusz jel"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
       ],
@@ -3166,6 +3165,9 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
+      "Alias options could not be resolved": [
+        "Az e-mail álnév adatainak betöltése nem sikerült"
+      ],
       "Attachments are limited to 25 MB": [
         "Mellékletek maximális mérete 25 MB"
       ],
@@ -3204,6 +3206,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
+      ],
+      "Could not open created vault": [
+        "A létrehozott tároló megnyitása nem sikerült"
+      ],
+      "Could not open updated vault": [
+        "A frissített tároló megnyitása nem sikerült"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Visszafejtési hiba: Az üzenet titkosított tartalmának visszafejtése sikertelen."
@@ -3287,6 +3295,9 @@
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Az elem tartalma nem lehet több 40KB-nál"
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
@@ -4884,12 +4895,6 @@
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Biztosan áthelyezi az összes üzenetet ebben az Archívumba?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?",
         "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?"
@@ -6465,6 +6470,9 @@
       "Folder location": [
         "Mappa helye"
       ],
+      "Forwards to": [
+        "Továbbít:"
+      ],
       "Frequency": [
         "Gyakoriság"
       ],
@@ -6576,6 +6584,9 @@
       "No label found": [
         "Nem található címke"
       ],
+      "Note": [
+        "Megjegyzés"
+      ],
       "Notification": [
         "Értesítés"
       ],
@@ -6686,6 +6697,9 @@
       ],
       "Time": [
         "Időpont"
+      ],
+      "Title": [
+        "Cím"
       ],
       "To:": [
         "Címzett:"
@@ -7328,6 +7342,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } létrehozva"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } letiltva"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
+      ],
       "Block removed": [
         "Tiltás megszüntetve"
       ],
@@ -7734,6 +7754,14 @@
       ],
       "No unread messages found": [
         "Nincs olvasatlan üzenet"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } megnyitása"
       ]
     },
     "Select files": {
@@ -8296,6 +8324,14 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tárhely"
+      ],
+      "Your storage is full": [
+        "A tárhelye megtelt"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } beszélgetés törölve",
@@ -8674,6 +8710,12 @@
       "(active)": [
         "(aktív)"
       ],
+      "Account recovery": [
+        "Fiók helyreállítás"
+      ],
+      "Account security": [
+        "Fiókbiztonság"
+      ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
       ],
@@ -8785,6 +8827,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Data recovery": [
+        "Adat helyreállítás"
       ],
       "Day theme": [
         "Nappali téma"
@@ -8975,12 +9020,6 @@
       "More selections": [
         "További kijelölési lehetőségek"
       ],
-      "Move all messages to Archive": [
-        "Áthelyezi az összes üzenetet az Archívumba"
-      ],
-      "Move all messages to Trash": [
-        "Áthelyezi az összes üzenetet a lomtárba"
-      ],
       "Move to": [
         "Mozgatás ide"
       ],
@@ -9157,6 +9196,9 @@
       ],
       "Subject missing": [
         "Tárgy hiányzik"
+      ],
+      "This field cannot be empty": [
+        "Ez a mező nem lehet üres"
       ],
       "To": [
         "Címzett"
@@ -9360,6 +9402,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adat elérésének lehetőségét."
       ],
+      "Invalid alias prefix": [
+        "Érvénytelen e-mail álnév előtag"
+      ],
+      "Missing alias prefix": [
+        "Hiányzó e-mail álnév előtag"
+      ],
+      "Missing alias suffix": [
+        "Hiányzó e-mail álnév végződés"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Csak alfanumerikus karakterek, pontok, kötőjelek és aláhúzás használható"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
@@ -9368,6 +9422,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Az e-mail előtag nem lehet hosszabb mint 40 karakter"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "A melléklet aláírásának ellenőrzése nem sikerült.\nLetöltheti a mellékletet, de elképzelhető, hogy megváltoztatták a tartalmát.",
@@ -9399,6 +9456,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nem sikerült ellenőrzni a mail-szervert. Ha megbízik benne, átugorhatja ezt az ellenőrzést."
+      ],
+      "You must select at least one mailbox": [
+        "Legalább egy e-mail fiókot ki kell választania"
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."

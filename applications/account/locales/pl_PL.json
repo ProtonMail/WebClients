@@ -50,6 +50,9 @@
       "activate": [
         "aktywować"
       ],
+      "Activate": [
+        "Aktywuj"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktywuj adres ${ user.Name }@pm.me"
       ],
@@ -158,11 +161,11 @@
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
+      "Change keys": [
+        "Zmień klucze"
+      ],
       "Change mailbox password": [
         "Zmień hasło skrzynki pocztowej"
-      ],
-      "Change organization keys": [
-        "Zmień klucze organizacji"
       ],
       "Change other email subscriptions": [
         "Zmień ustawienia innych list mailingowych"
@@ -590,6 +593,9 @@
       "Loading verification": [
         "Ładowanie weryfikacji"
       ],
+      "Make admin": [
+        "Administrator"
+      ],
       "Manage communication preferences": [
         "Zarządzaj listami mailingowymi"
       ],
@@ -746,9 +752,6 @@
       "Reset keys": [
         "Resetuj klucze"
       ],
-      "Reset organization keys": [
-        "Resetuj klucze organizacji"
-      ],
       "Reset password": [
         "Resetowanie hasła"
       ],
@@ -757,9 +760,6 @@
       ],
       "Restore": [
         "Przywróć"
-      ],
-      "Restore administrator privileges": [
-        "Przywróć uprawnienia administratora"
       ],
       "Resubscribe": [
         "Subskrybuj ponownie"
@@ -3096,9 +3096,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail i znak plusa"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
@@ -3146,6 +3143,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Dostęp do aplikacji desktopowej jest ograniczony"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników płatnych planów ${ MAIL_APP_NAME }. Ulepsz konto, aby uzyskać do niej dostęp."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
@@ -3931,9 +3931,6 @@
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
       ],
-      "Organization key is not decrypted.": [
-        "Klucz organizacji nie został odszyfrowany."
-      ],
       "Password is required": [
         "Hasło jest wymagane"
       ],
@@ -3954,9 +3951,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Płatności nie są obecnie dostępne, spróbuj ponownie później"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Ustaw niestandardową domenę przed dodaniem adresów."
@@ -4090,9 +4084,6 @@
       "The organization key must be activated first": [
         "Najpierw musisz aktywować klucz organizacji"
       ],
-      "The organization key must be activated first.": [
-        "Najpierw musisz aktywować klucz organizacji."
-      ],
       "The sending key is not valid": [
         "Klucz przeznaczony do wysyłania wiadomości nie jest prawidłowy"
       ],
@@ -4168,9 +4159,6 @@
       "You already added this holidays calendar": [
         "Posiadasz już kalendarz świąt"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Utraciłeś dostęp do kluczy organizacji. Bez ich odzyskania nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
-      ],
       "You have no invoices.": [
         "Nie masz faktur."
       ],
@@ -4185,12 +4173,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Musisz aktywować klucze organizacji. Nie możesz utworzyć lub uzyskać dostępu do służbowych użytkowników bez aktywacji kluczy."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Wszyscy użytkownicy muszą posiadać konta prywatne, zanim będziesz mógł wygenerować nowe klucze organizacji"
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
@@ -5827,17 +5809,6 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
@@ -6250,6 +6221,9 @@
       "Are you sure you want to discard your import?": [
         "Czy na pewno chcesz odrzucić swój import?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Czy na pewno chcesz przyznać uprawnienia administratora temu użytkownikowi?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Czy na pewno chcesz trwale usunąć wszystkie logi?"
       ],
@@ -6387,9 +6361,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz etykiety, które chcesz zaimportować."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Utwórz nowe konto i udostępnij użytkownikowi adres e-mail oraz hasło."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
@@ -7033,12 +7004,6 @@
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
-      "Organization keys activated": [
-        "Klucze organizacji zostały aktywowane"
-      ],
-      "Organization keys restored": [
-        "Klucze organizacji zostały przywrócone"
-      ],
       "Organization size": [
         "Rozmiar ogranizacji"
       ],
@@ -7077,6 +7042,9 @@
       ],
       "per month": [
         "miesięcznie"
+      ],
+      "per month, billed at ${ price }": [
+        "miesięcznie, płatne ${ price }"
       ],
       "per month, billed every 12 months": [
         "miesięcznie, płatne co 12 miesięcy"
@@ -7479,9 +7447,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Te poświadczenia nie mogą być używane do logowania się do naszych oficjalnych aplikacji ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Spowoduje to usunięcie użytkownika z organizacji"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Znajomy otrzymuje darmowy miesiąc planu ${ planName }."
@@ -8138,6 +8103,17 @@
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -8609,6 +8585,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Administrators": [
+        "Administratorzy"
       ],
       "ALL": [
         "WSZYSTKIE"
@@ -9287,9 +9266,6 @@
       ],
       "Show sender images": [
         "Pokaż zdjęcie nadawcy"
-      ],
-      "Show unread count in application icon": [
-        "Pokaż liczbę nieprzeczytanych w ikonie aplikacji"
       ],
       "Show unread count in Favicon": [
         "Pokaż liczbę nieprzeczytanych w ikonie strony"
@@ -10120,6 +10096,9 @@
       "Back to inbox": [
         "Powrót do poczty"
       ],
+      "Back to vaults": [
+        "Powrót do sejfów"
+      ],
       "Block": [
         "Zablokowane"
       ],
@@ -10128,6 +10107,9 @@
       ],
       "Inbox": [
         "Poczta"
+      ],
+      "Pass vaults": [
+        "Sejfy"
       ],
       "Spam": [
         "Spam"
@@ -10473,10 +10455,10 @@
         "Priorytetowe wsparcie i czat"
       ],
       "Protect ${ n } device at a time": [
-        "Chroń ${ n } urządzenie jednocześnie",
-        "Chroń ${ n } urządzenia jednocześnie",
-        "Chroń ${ n } urządzeń jednocześnie",
-        "Chroń ${ n } urządzeń jednocześnie"
+        "Ochrona ${ n } urządzenia jednocześnie",
+        "Ochrona ${ n } urządzeń jednocześnie",
+        "Ochrona ${ n } urządzeń jednocześnie",
+        "Ochrona ${ n } urządzenia jednocześnie"
       ],
       "Router support": [
         "Wsparcie routerów"
@@ -10612,6 +10594,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10707,17 +10700,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -10733,7 +10715,7 @@
         "Płacąc, akceptujesz ${ termsAndConditions }."
       ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Tworząc konto ${ BRAND_NAME }, akceptujesz nasz ${ terms }"
+        "Tworząc konto ${ BRAND_NAME }, akceptujesz ${ terms }"
       ],
       "Payment details": [
         "Szczegóły płatności"
@@ -11500,6 +11482,14 @@
         "Ty"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Skonfiguruj organizację"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Zacznij korzystać z ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Sprawdź funkcje ${ appName }"
@@ -11663,6 +11653,9 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Rozumiem, że jeśli stracę dane odzyskiwania, mogę trwale utracić dostęp do konta."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
         "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
       ],
@@ -11772,6 +11765,32 @@
       ],
       "Secure your account": [
         "Zabezpiecz konto"
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Wszyscy administratorzy uzyskają dostęp do klucza."
+      ],
+      "Change organization key": [
+        "Zmień klucz organizacji"
+      ],
+      "Organization key does not exist.": [
+        "Klucz organizacji nie istnieje."
+      ],
+      "Organization key restored": [
+        "Klucz organizacji został przywrócony"
+      ],
+      "Organization key updated": [
+        "Klucz organizacji został zaktualizowany"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
+      ],
+      "Reset organization key": [
+        "Resetuj klucze organizacji"
+      ],
+      "The organization key must be activated first.": [
+        "Najpierw musisz aktywować klucz organizacji."
       ]
     },
     "Payment method option": {
@@ -12891,13 +12910,19 @@
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
       ],
       "Up to ${ totalStorageSize } Drive storage": [
-        "Do ${ totalStorageSize } przestrzeni dyskowej"
+        "Do ${ totalStorageSize } przestrzeni dyskowej Proton Drive"
       ],
       "Up to ${ totalStorageSize } Mail storage": [
-        "Do ${ totalStorageSize } przestrzeni dyskowej"
+        "Do ${ totalStorageSize } przestrzeni dyskowej Proton Mail"
       ]
     },
     "storage_split: info": {
+      "${ app } storage": [
+        "Przestrzeń dyskowa ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% pełna"
+      ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** z ${ humanMaxSpace }"
       ],
@@ -12936,6 +12961,27 @@
         "Pozostały **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
         "Pozostało **${ daysRemaining }** dni korzystania z planu **${ currentPlanName }**.",
         "Pozostało **${ daysRemaining }** dnia korzystania z planu **${ currentPlanName }**."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } jest prawie pełna"
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } jest pełna"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Przestrzeń dyskowa jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
       ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
@@ -13457,9 +13503,6 @@
       "CSV field": [
         "Pole CSV"
       ],
-      "Display name": [
-        "Nazwa wyświetlana"
-      ],
       "Edit": [
         "Edytuj"
       ],
@@ -13746,9 +13789,6 @@
       "Change mailbox password": [
         "Zmień hasło skrzynki pocztowej"
       ],
-      "Change organization keys": [
-        "Zmień klucze organizacji"
-      ],
       "Change organization name": [
         "Zmień nazwę organizacji"
       ],
@@ -13772,6 +13812,9 @@
       ],
       "Composing": [
         "Edytor"
+      ],
+      "Confirm": [
+        "Potwierdź"
       ],
       "Confirm address": [
         "Potwierdź adres"
@@ -13907,9 +13950,6 @@
         "Usuń serwer (możliwy do odzyskania przez ${ days } dni)",
         "Usuń serwer (możliwy do odzyskania przez ${ days } dni)",
         "Usuń serwer (możliwy do odzyskania przez ${ days } dni)"
-      ],
-      "Delete user": [
-        "Usuń użytkownika"
       ],
       "Delete user?": [
         "Usunąć użytkownika?"
@@ -14205,6 +14245,9 @@
       "Organization filters": [
         "Filtry organizacji"
       ],
+      "Organization key": [
+        "Klucz organizacji"
+      ],
       "Organization name": [
         "Nazwa organizacji"
       ],
@@ -14216,9 +14259,6 @@
       ],
       "Password": [
         "Hasło"
-      ],
-      "Password and keys": [
-        "Hasło i klucze"
       ],
       "Password reset settings": [
         "Ustawienia resetowania hasła"
@@ -14291,9 +14331,6 @@
       ],
       "Request sent": [
         "Żądanie zostało wysłane"
-      ],
-      "Reset organization keys": [
-        "Resetuj klucze organizacji"
       ],
       "Reset password": [
         "Resetowanie hasła"
@@ -14724,9 +14761,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Wiadomości w folderze Wysłane lub Szkice będą nadal wyświetlane w tym folderze, nawet jeśli przeniesiesz je do innego folderu."
       ],
-      "See number of unread messages in the application icon": [
-        "Pokaż liczbę nieprzeczytanych wiadomości w ikonie aplikacji"
-      ],
       "See number of unread messages in the tab icon": [
         "Pokaż liczbę nieprzeczytanych wiadomości w ikonie karty"
       ],
@@ -15133,9 +15167,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musisz ${ activateLink } klucze organizacji przed dodaniem adresu e-mail do służbowego użytkownika."
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."

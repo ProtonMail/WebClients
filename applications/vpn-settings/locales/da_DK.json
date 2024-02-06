@@ -287,6 +287,9 @@
       "Loading verification": [
         "Indlæser verifikation"
       ],
+      "Make admin": [
+        "Gør til admin"
+      ],
       "Mark as default": [
         "Markér som standard"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Forrige"
+      ],
+      "Recover data": [
+        "Gendan data"
       ],
       "Refer a friend": [
         "Henvis en ven"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Gendan"
-      ],
-      "Restore administrator privileges": [
-        "Gendan administratorprivilegier"
       ],
       "Retry": [
         "Prøv igen"
@@ -1853,9 +1856,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ]
@@ -2030,9 +2030,6 @@
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
       ],
-      "Organization key is not decrypted.": [
-        "Organisationsnøgle er ikke dekrypteret."
-      ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
@@ -2050,9 +2047,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betaling er pt. ikke mulig, forsøg igen senere"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Sæt et brugerdomæne op, før du tilføjer adresser."
@@ -2117,9 +2111,6 @@
       "The organization key must be activated first": [
         "Organisationsnøglen skal først aktiveres"
       ],
-      "The organization key must be activated first.": [
-        "Organisationsnøglen skal først aktiveres."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -2161,12 +2152,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
@@ -3022,9 +3007,6 @@
       "Country code": [
         "Landekode"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
       ],
@@ -3372,12 +3354,6 @@
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
       ],
-      "Organization keys activated": [
-        "Organisationsnøgler aktiveret"
-      ],
-      "Organization keys restored": [
-        "Organisationsnøgler gendannet"
-      ],
       "Organization size": [
         "Organisationsstørrelse"
       ],
@@ -3499,6 +3475,9 @@
       ],
       "Save ${ percentage }": [
         "Spar ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Gem din adgangskode et sikkert sted."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
@@ -3629,9 +3608,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "De vil blive fjernet fra din organisation"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -6565,6 +6541,55 @@
         "Din aktuelle lagerplads:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Behold ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagerplads"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fuldt"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Ved at nedgradere mister du følgende fordele. Er du sikker på, at du vil fortsætte?"
+      ],
+      "contact your administrator": [
+        "kontakt din administrator"
+      ],
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dit ${ appStorage } er næsten fuldt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Dit ${ appStorage } er fuldt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Dit lager er fuldt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
@@ -6901,9 +6926,6 @@
       "Country": [
         "Land"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -7043,11 +7065,11 @@
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
-      "Change organization keys": [
-        "Skift organisationsnøgler"
-      ],
       "Change organization name": [
         "Skift organisationsnavn"
+      ],
+      "Change organization password": [
+        "Skift organisationsadgangskode"
       ],
       "Change password": [
         "Skift adgangskode"
@@ -7129,9 +7151,6 @@
         "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dag)",
         "Slet serveren (du har stadig mulighed for at gendanne den inden for ${ days } dage)"
       ],
-      "Delete user": [
-        "Slet bruger"
-      ],
       "Delete user?": [
         "Slet bruger?"
       ],
@@ -7146,6 +7165,9 @@
       ],
       "Downgrade account": [
         "Nedgradér konto"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Nedgrader til ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
@@ -7333,9 +7355,6 @@
       ],
       "Request sent": [
         "Anmodning sendt"
-      ],
-      "Reset organization keys": [
-        "Nulstil organisationsnøgler"
       ],
       "Reset password": [
         "Nulstil adgangskode"
@@ -7740,9 +7759,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Vi er desværre ikke online i øjeblikket. Udfyld venligst formularen nedenfor for at beskrive dit problem. Så vil vi se på det og vende tilbage, når vi er tilbage online."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du skal ${ activateLink } organisationsnøgler før du tilføjer en e-mailadresse til et ikke-privat medlem."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"

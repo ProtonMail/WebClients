@@ -272,6 +272,9 @@
       "Previous": [
         "पिछला"
       ],
+      "Recover data": [
+        "डाटा रिकवर करें"
+      ],
       "Refer a friend": [
         "दोस्त को रैफर करें"
       ],
@@ -316,9 +319,6 @@
       ],
       "Restore": [
         "रिस्टोर करें"
-      ],
-      "Restore administrator privileges": [
-        "व्यवस्थापक विशेषाधिकार बहाल करें"
       ],
       "Retry": [
         "वापस कोशिश करें"
@@ -1639,11 +1639,6 @@
         "अतिदेय चालान"
       ]
     },
-    "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail लोगो और एक प्लस साइन"
-      ]
-    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "बग या गुणवत्ता समस्या"
@@ -1772,9 +1767,6 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
       ],
-      "Organization key is not decrypted.": [
-        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
-      ],
       "Passwords do not match": [
         "पासवर्ड्स समान नहीं हैं"
       ],
@@ -1792,9 +1784,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "भुगतान वर्तमान में उपलब्ध नहीं हैं, कृपया बाद में पुनः प्रयास करें"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
@@ -1847,9 +1836,6 @@
       "The organization key must be activated first": [
         "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
       ],
-      "The organization key must be activated first.": [
-        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "ये फील्ड ${ maximumLength } अक्षर की सीमा पार करता है।"
       ],
@@ -1885,9 +1871,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन का इनवॉइस बकाया है. कृपया सभी बकाया चालानों का भुगतान करें।"
@@ -2250,6 +2233,9 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ],
+      "Theme font": [
+        "थीम फ़ॉन्ट"
       ]
     },
     "Font size option": {
@@ -2548,9 +2534,6 @@
       "Country code": [
         "देश कोड"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "एक नया खाता बनाएं और यूज़र के साथ ईमेल पता और पासवर्ड शेयर करें।"
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
       ],
@@ -2791,12 +2774,6 @@
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
-      "Organization keys activated": [
-        "संगठन कुंजियाँ सक्रिय की गईं"
-      ],
-      "Organization keys restored": [
-        "संगठन की कुंजी बहाल"
-      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "आपके संगठन में अन्य व्यवस्थापक मौजूद हैं, आप उनके लिए नया पासवर्ड संचार करने के लिए जिम्मेदार हैं।"
       ],
@@ -2894,6 +2871,9 @@
       ],
       "Save ${ percentage }": [
         "${ percentage } की छूट"
+      ],
+      "Save your password somewhere safe.": [
+        "अपना पासवर्ड कहीं सुरक्षित रखें।"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "अपना पासवर्ड कहीं सुरक्षित रखें। यह पुष्टि करने के लिए कि आपने अपना पासवर्ड सही टाइप किया है, आइकन पर क्लिक करें।"
@@ -4902,6 +4882,11 @@
         "पासवर्ड रिसेट करें"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } द्वारा साझा किया गया"
+      ]
+    },
     "Signup label": {
       "Confirm password": [
         "पासवर्ड की पुष्टि करें"
@@ -5117,6 +5102,22 @@
       ],
       "Your current storage:": [
         "आपका वर्तमान संग्रहण:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } रखे"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } स्टोरेज"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "डाउनग्रेड करने से आप निम्नलिखित लाभों को खो देंगे। क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
+      ],
+      "Your storage is full": [
+        "आपका स्टोरेज भरा है"
       ]
     },
     "Subscription attribute": {
@@ -5415,9 +5416,6 @@
       "Country": [
         "देश"
       ],
-      "Display name": [
-        "प्रदर्शित होने वाला नाम"
-      ],
       "Email": [
         "ईमेल"
       ],
@@ -5533,11 +5531,11 @@
       "Change mailbox password": [
         "मेलबॉक्स पासवर्ड बदलें"
       ],
-      "Change organization keys": [
-        "संगठन की चाबियाँ बदलें"
-      ],
       "Change organization name": [
         "संगठन का नाम बदलें"
+      ],
+      "Change organization password": [
+        "संगठन पासवर्ड बदलें"
       ],
       "Change password": [
         "पासवर्ड परिवर्तित करें"
@@ -5596,9 +5594,6 @@
       ],
       "Delete account": [
         "खाता हटा दो"
-      ],
-      "Delete user": [
-        "उपयोगकर्ता को हटाएँ"
       ],
       "Device connected!": [
         "डिवाइस जुड़ गया।"
@@ -5756,9 +5751,6 @@
       ],
       "Request new code": [
         "नए कोड का अनुरोध करें"
-      ],
-      "Reset organization keys": [
-        "संगठन कुंजी रीसेट करें"
       ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
@@ -6025,9 +6017,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "दुर्भाग्य से, हम इस समय ऑनलाइन नहीं हैं। अपनी समस्या का वर्णन करने के लिए कृपया नीचे दिया गया फ़ॉर्म भरें, और जब हम वापस ऑनलाइन होंगे तो हम इस पर गौर करेंगे और संपर्क में रहेंगे।"
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "गैर-निजी सदस्य को ईमेल पता जोड़ने से पहले आपको ${ activateLink } संगठन कुंजियाँ होनी चाहिए।"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"

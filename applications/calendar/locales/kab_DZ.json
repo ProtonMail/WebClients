@@ -200,6 +200,9 @@
       "Discard": [
         "Sefsex"
       ],
+      "Dismiss": [
+        "Zgel"
+      ],
       "Done": [
         "Immed"
       ],
@@ -370,6 +373,9 @@
       ],
       "No, thanks": [
         "Uhu, tanemmirt"
+      ],
+      "Not now": [
+        "Mačči tura"
       ],
       "OK": [
         "Ih"
@@ -2160,6 +2166,9 @@
       "Address primary private key not found": [
         "Tasarut tamaẓlayt tagejdant n tansa ulac-itt"
       ],
+      "Alias options could not be resolved": [
+        "Tixtiṛiyin n alias ggummant ad ṣegment"
+      ],
       "Answer failed to be sent": [
         "Ur teddi ara tririt"
       ],
@@ -2189,6 +2198,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Anadi n ugbur ur yezmir ara ad yettwarmad deg yiminig-a. Ttxil ffeɣ seg uskar n tunigin tusligin neɣ seqdec iminig-nniḍen."
+      ],
+      "Could not open created vault": [
+        "Yugi ad yeldi usenduq yettwarnan"
+      ],
+      "Could not open updated vault": [
+        "Yugi ad yeldi usenduq yettwaleqqmen"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Tuccḍa di tukksa n uwgelhen: tukksa n uwgelhen n tedyanin-agi tecceḍ."
@@ -2258,6 +2273,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Asenkez n yiznan yezmer kan ad yili gar ${ minDateString } de ${ maxDateString }"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Agbur n uferdis ur yezmir ara ad iɛeddi 40KAṬ"
       ],
       "Label name cannot be empty.": [
         "Isem n tebzimt ur ilaq ara ad yili d ilem."
@@ -3949,6 +3967,9 @@
       "Folder location": [
         "Ideg n ukaram"
       ],
+      "Forwards to": [
+        "Welleh ɣer"
+      ],
       "Frequency": [
         "Asnagar"
       ],
@@ -4023,6 +4044,9 @@
       ],
       "New password": [
         "Awal uffir amaynut"
+      ],
+      "Note": [
+        "Tamawt"
       ],
       "Notification": [
         "Ilɣa"
@@ -4114,6 +4138,9 @@
       ],
       "Time zone": [
         "Izḍi usrig"
+      ],
+      "Title": [
+        "Azwel"
       ],
       "To: ${ toEmail }": [
         "I: ${ toEmail }"
@@ -4557,6 +4584,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } yensa"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } yettwarmed"
+      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
@@ -4969,6 +5002,17 @@
         "Sali tikkelt niḍen tadyant"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email aliases"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Ldi ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Ɛreḍ ${ PASS_APP_NAME }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Ali"
@@ -4999,12 +5043,32 @@
         "${ timeRemaining.inHours } n yisragen"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Sefsex awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Asefsex n uwennez n wawal uffir"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Sefsex awennez n wawal uffir?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Got it": [
         "Gziɣ-t"
       ],
       "Learn more": [
         "Issin ugar"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Isra awennez n wawal uffir"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5208,6 +5272,14 @@
       ],
       "Your current storage:": [
         "Aklas-ik amiran:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } n uḥraz"
+      ],
+      "Your storage is full": [
+        "Aḥraz-ik yeččuṛ"
       ]
     },
     "Subscribe to calendar modal": {
@@ -5462,6 +5534,12 @@
         "${ emailsCount } tansa n yimayl",
         "${ emailsCount } n tansiwin imayl"
       ],
+      "Account recovery": [
+        "Tiririt n umiḍan"
+      ],
+      "Account security": [
+        "Taɣellist n umiḍan"
+      ],
       "Add another notification to remind you of this event": [
         "Rnu alɣu-nniḍen i wakken ad ak·akem-d-yesmekti s uneḍru-a"
       ],
@@ -5552,6 +5630,9 @@
       ],
       "Customize your mail import": [
         "Sagen tektert n imayl inek•inem"
+      ],
+      "Data recovery": [
+        "Tiririt n yisefka"
       ],
       "Day theme": [
         "Asentel n wass"
@@ -5947,6 +6028,15 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ma yella ur tecfiḍ ara ɣef wawal uffir inek•m, tzemreḍ ad talseḍ asermed n tsarut-inek•m. Nezmer ad k•m-nɛiwen akken ad tzeggeleḍ taḥacit n ulɣu maca deg ukala ad tesṛuḥeḍ akk isefka ittuwglehnen s tsarut-agi."
       ],
+      "Invalid alias prefix": [
+        "Adat n alias d arameɣtu"
+      ],
+      "Missing alias prefix": [
+        "Ixuṣṣ adat n alias"
+      ],
+      "Missing alias suffix": [
+        "Ixuṣṣ adfir n alias"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Tuzna n ibugen ur tettwagelhen ara seg yixef ar yixef, ur d-ttazen ara talɣut tamaẓlayt."
       ],
@@ -5976,6 +6066,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ur nezmir ara ad nsenqed aqeddac n yimayl. Ma yella tumneḍ-t, tzemreḍ ad tzegleḍ asenqed-a."
+      ],
+      "You must select at least one mailbox": [
+        "Isefk ad tferneḍ ma drus yiwet n tnaka n urmas"
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."

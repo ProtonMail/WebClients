@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
       ],
-      "Change organization keys": [
-        "Canviar claus de l'organització"
-      ],
       "Change other email subscriptions": [
         "Canviar altres subscripcions de correu electrònic"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Make admin": [
+        "Estableix com a administrador"
+      ],
       "Manage communication preferences": [
         "Gestiona les preferències de comunicació"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Restablir les claus"
       ],
-      "Reset organization keys": [
-        "Restablir les claus d'organització"
-      ],
       "Reset password": [
         "Restableix la contrasenya"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Restaura"
-      ],
-      "Restore administrator privileges": [
-        "Restaurar els privilegis d'administrador"
       ],
       "Resubscribe": [
         "Tornar-se a subscriure"
@@ -3043,9 +3037,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail i un signe més"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ],
@@ -3803,9 +3794,6 @@
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
       ],
-      "Organization key is not decrypted.": [
-        "La clau d'organització no está desxifrada."
-      ],
       "Password is required": [
         "La contrasenya és obligatòria"
       ],
@@ -3826,9 +3814,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Els pagaments actualment no estan disponibles, proveu-ho més tard"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Configureu un domini personalitzat abans d'afegir usuaris a la seva organització."
@@ -3955,9 +3940,6 @@
       "The organization key must be activated first": [
         "Cal activar primer la clau de l'organització"
       ],
-      "The organization key must be activated first.": [
-        "S'ha d'activar primer la clau d'organització."
-      ],
       "The sending key is not valid": [
         "La clau enviada no es vàlida"
       ],
@@ -4033,9 +4015,6 @@
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Heu perdut l'accés a les vostres claus d'organització. Sense restauració no podreu crear usuaris nous, afegir adreces a usuaris ja existents, o accedir a comptes d'usuaris no privats."
-      ],
       "You have no invoices.": [
         "No teniu cap factura."
       ],
@@ -4050,12 +4029,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Heu d'activar les claus de la vostra organització. Sense activació, no podreu crear ni accedir a usuaris no privats."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Heu de privatitzar tots els usuaris abans de generar claus d'organització noves"
       ],
       "You must set a name": [
         "Heu d'establir un nom"
@@ -5648,17 +5621,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6124,9 +6086,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que vulgueu importar."
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Creeu un compte i compartiu l'adreça de correu electrònic i la contrasenya amb l'usuari."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crear i gestionar subcomptes i assignar-los adreces de correu en el vostre domini personalitzat."
       ],
@@ -6147,6 +6106,9 @@
       ],
       "Credits earned": [
         "S'han obtingut crèdits"
+      ],
+      "Current plan": [
+        "Pla actual"
       ],
       "Custom": [
         "Personalitzat"
@@ -6211,6 +6173,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "No veieu res? Recordeu desactivar els bloquejadors de finestres emergents."
+      ],
+      "Downgrade": [
+        "Passa a un pla inferior"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
@@ -6697,12 +6662,6 @@
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
       ],
-      "Organization keys activated": [
-        "S'han activat les claus de l'organització"
-      ],
-      "Organization keys restored": [
-        "S'han restaurat les claus de l'organització"
-      ],
       "Organization size": [
         "Mida de l'organització"
       ],
@@ -7117,9 +7076,6 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Aquestes configuracions es proporcionen per treballar amb routers WireGuard i clients oficials."
-      ],
-      "They will be removed from your organization": [
-        "S'esborraran de la vostra organització."
       ],
       "They'll receive a free month of ${ planName }.": [
         "Se'ls oferirà un mes gratuït de ${ planName }."
@@ -7737,6 +7693,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10112,6 +10079,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10205,17 +10183,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10980,6 +10947,9 @@
       ],
       "Create another account instead": [
         "Creeu un altre compte en lloc"
+      ],
+      "Download PDF ${ size }": [
+        "Descarrega PDF ${ size }"
       ],
       "Keep this plan": [
         "Mantén aquest pla"
@@ -12252,6 +12222,25 @@
         "El vostre emmagatzematge actual:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Segueix amb ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } d'emmagatzematge"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
+      ],
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
+      ],
+      "Your storage is full": [
+        "L'emmagatzematge és ple."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendari"
@@ -12723,9 +12712,6 @@
       "CSV field": [
         "Camp CSV"
       ],
-      "Display name": [
-        "Nom a mostrar"
-      ],
       "Edit": [
         "Edita"
       ],
@@ -12994,9 +12980,6 @@
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
       ],
-      "Change organization keys": [
-        "Canviar claus de l'organització"
-      ],
       "Change organization name": [
         "Canviar nom de l'organització"
       ],
@@ -13146,9 +13129,6 @@
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dia)",
         "Elimina el servidor (encara podreu recuperar-lo durant ${ days } dies)"
       ],
-      "Delete user": [
-        "Eliminar usuari"
-      ],
       "Delete user?": [
         "Voleu eliminar l'usuari?"
       ],
@@ -13175,6 +13155,9 @@
       ],
       "Downgrade account": [
         "Passa a un pla inferior"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Passar a ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
@@ -13436,9 +13419,6 @@
       "Password": [
         "Contrasenya"
       ],
-      "Password and keys": [
-        "Contrasenya i claus"
-      ],
       "Password reset settings": [
         "Preferències de restabliment de contrasenya"
       ],
@@ -13510,9 +13490,6 @@
       ],
       "Request sent": [
         "S'ha enviat la sol·licitud."
-      ],
-      "Reset organization keys": [
-        "Restablir les claus d'organització"
       ],
       "Reset password": [
         "Restableix la contrasenya"
@@ -13658,6 +13635,9 @@
       "Theme": [
         "Tema"
       ],
+      "This field cannot be empty": [
+        "Aquest camp no pot estar buit"
+      ],
       "Time zone": [
         "Zona horària"
       ],
@@ -13747,6 +13727,9 @@
       ],
       "Your SMTP token": [
         "El vostre testimoni SMTP"
+      ],
+      "Your storage": [
+        "El vostre emmagatzematge"
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
@@ -13906,6 +13889,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Habitar els registres avançats enregistra l'adreça IP per a cada esdeveniment al registre de seguretat."
+      ],
+      "Feature in early access": [
+        "Característica en accés anticipat"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail classifica automàticament alguns correus electrònics com ara Social o Promocions. Podeu seleccionar on importar aquests correus electrònics."
@@ -14292,9 +14278,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Heu de ${ activateLink } claus d'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."

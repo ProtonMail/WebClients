@@ -50,6 +50,9 @@
       "activate": [
         "актываваць"
       ],
+      "Activate": [
+        "Актываваць"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
       ],
@@ -158,11 +161,11 @@
       "Cancel subscription": [
         "Скасаваць падпіску"
       ],
+      "Change keys": [
+        "Змяніць ключы"
+      ],
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
-      ],
-      "Change organization keys": [
-        "Змяніць ключы арганізацыі"
       ],
       "Change other email subscriptions": [
         "Змяніць іншыя падпіскі электроннай пошты"
@@ -590,6 +593,9 @@
       "Loading verification": [
         "Загружаецца праверка"
       ],
+      "Make admin": [
+        "Можа адміністраваць"
+      ],
       "Manage communication preferences": [
         "Кіраванне параметрамі зносін"
       ],
@@ -746,9 +752,6 @@
       "Reset keys": [
         "Скінуць ключы"
       ],
-      "Reset organization keys": [
-        "Скінуць ключы арганізацыі"
-      ],
       "Reset password": [
         "Скінуць пароль"
       ],
@@ -757,9 +760,6 @@
       ],
       "Restore": [
         "Аднавіць"
-      ],
-      "Restore administrator privileges": [
-        "Аднавіць правы адміністратара"
       ],
       "Resubscribe": [
         "Аднавіць падпіску"
@@ -3102,9 +3102,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Лагатып Proton Mail і знак плюс"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ],
@@ -3940,8 +3937,8 @@
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
-      "Organization key is not decrypted.": [
-        "Ключ арганізацыі не расшыфраваны."
+      "Organization key must be activated to create non-private users": [
+        "Ключ арганізацыі павінен быць актываваны, каб ствараць непрыватных карыстальнікаў"
       ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
@@ -3963,9 +3960,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Плацяжы ў цяперашні час недаступны. Паспрабуйце яшчэ раз пазней"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "У доступе адмоўлена, правы адміністратара абмежаваны."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Перад дадаваннем адрасоў неабходна сканфігурыраваць карыстальніцкі дамен."
@@ -4099,9 +4093,6 @@
       "The organization key must be activated first": [
         "Спачатку неабходна актываваць ключ арганізацыі"
       ],
-      "The organization key must be activated first.": [
-        "Спачатку неабходна актываваць ключ арганізацыі."
-      ],
       "The sending key is not valid": [
         "Несапраўдны ключ адпраўкі"
       ],
@@ -4128,6 +4119,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "Trusted keys are not valid for sending": [
         "Давераныя ключы несапраўдныя для адпраўкі"
@@ -4169,16 +4163,13 @@
         "Мы прыпынілі падпісанне DKIM па прычыне праблем з канфігурацыяй вашага DNS. Прытрымлівайцеся інструкцый ніжэй, каб узнавіць падпісанне."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым метадам аднаўлення."
+        "Няправільная фраза аднаўлення. Паспрабуйце яшчэ раз або скарыстайцеся іншым спосабам аднаўлення."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Няправільны праверачны код. Пераканайцеся, што вы правільна скапіявалі код і паспрабуйце яшчэ раз. Змяненні ўступяць у сілу на працягу 24 гадзін."
       ],
       "You already added this holidays calendar": [
         "Вы ўжо дадавалі гэтыя святы ў каляндар"
-      ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вы страцілі доступ да ключоў вашай арганізацыі. Без аднаўлення вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "You have no invoices.": [
         "У вас няма рахункаў."
@@ -4194,12 +4185,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Вы павінны актываваць ключы вашай арганізацыі. Без іх актывацыі ў вас не будзе магчымасці ствараць або атрымліваць доступ да непрыватных карыстальнікаў."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новых ключоў арганізацыі"
       ],
       "You must set a name": [
         "Вы павінны задаць назву"
@@ -5836,17 +5821,6 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
@@ -6080,10 +6054,10 @@
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
       ],
       "account recovery and data recovery method": [
-        "аднаўленне ўліковага запісу і метад аднаўлення даных"
+        "аднаўленне ўліковага запісу і спосаб аднаўлення даных"
       ],
       "account recovery method": [
-        "метад аднаўлення ўліковага запісу"
+        "спосаб аднаўлення ўліковага запісу"
       ],
       "Account size": [
         "Памер уліковага запісу"
@@ -6092,7 +6066,7 @@
         "Уліковы запіс паспяхова абноўлены"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Актывуйце прынамсі адзін метад аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
+        "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
       "active": [
         "актыўна"
@@ -6104,7 +6078,7 @@
         "Дадаць адрас электроннай пошты для аднаўлення доступу"
       ],
       "add a recovery method": [
-        "дадайце метад аднаўлення"
+        "дадайце спосаб аднаўлення"
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
@@ -6259,6 +6233,9 @@
       "Are you sure you want to discard your import?": [
         "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Вы сапраўды хочаце даць гэтаму карыстальніку прывілеі адміністратара?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Вы сапраўды хочаце незваротна выдаліць усе вашы журналы?"
       ],
@@ -6396,9 +6373,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя меткі, якія вы хочаце імпартаваць."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Стварыць новы ўліковы запіс і абагуліць адрас электроннай пошты, а таксама пароль з карыстальнікам."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
@@ -6743,7 +6717,7 @@
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Калі вы нядаўна скінулі пароль, то вы можаце скарыстацца метадам аднаўлення даных, каб разблакіраваць свае даныя"
+        "Калі вы нядаўна скінулі пароль, то вы можаце скарыстацца спосабам аднаўлення даных, каб разблакіраваць свае даныя"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Калі вы хочаце аб'яднаць гэты ўліковы запіс з іншым, то НЕ выдаляйце яго."
@@ -6962,7 +6936,7 @@
         "Адсутнічаюць ключы ўліковага запісу"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Не зададзены метад аднаўлення вашага ўліковага запісу, таму вы можаце страціць доступ да яго"
+        "Не зададзены спосаб аднаўлення вашага ўліковага запісу, таму вы можаце страціць доступ да яго"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
@@ -6974,7 +6948,7 @@
         "Крэдытная картка не патрабуецца"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Не зададзены метад аднаўлення вашых даных і гэта азначае, што вы можаце страціць доступ да іх"
+        "Не зададзены спосаб аднаўлення вашых даных і гэта азначае, што вы можаце страціць доступ да іх"
       ],
       "No folder selected": [
         "Папка не выбрана"
@@ -7045,12 +7019,6 @@
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
-      "Organization keys activated": [
-        "Ключы арганізацыі актываваны"
-      ],
-      "Organization keys restored": [
-        "Ключы арганізацыі адноўлены"
-      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -7064,7 +7032,7 @@
         "Састарэлы файл аднаўлення; абнавіце яго для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Састарэлыя метады аднаўлення; абнавіце іх для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
+        "Састарэлыя спосабы аднаўлення; абнавіце іх для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "Састарэлая фраза аднаўлення; абнавіце яе для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
@@ -7495,9 +7463,6 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Гэтыя ўліковыя даныя не могуць быць выкарыстаны для ўваходу ў нашы афіцыйныя праграмы ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "They will be removed from your organization": [
-        "Яны будуць выдалены з вашай арганізацыі"
-      ],
       "They'll receive a free month of ${ planName }.": [
         "У іх будзе адзін бясплатны месяц на тарыфным плане ${ planName }."
       ],
@@ -7607,10 +7572,10 @@
         "Для пастаяннага ўдасканалення нашых сэрвісаў, мы час ад часу збіраем даныя для назірання за належным функцыянаваннем нашых праграм. Гэта інфармацыя ніколі не абагульваецца з іншымі сэрвісамі."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "Выберыце метад аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
+        "Выберыце спосаб аднаўлення для расшыфроўкі і прагляду вашых заблакіраваных даных пасля скідання пароля."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "Для пастаяннага доступу да вашага ўліковага запісу, задайце метад аднаўлення ўліковага запісу"
+        "Для пастаяннага доступу да вашага ўліковага запісу, задайце спосаб аднаўлення ўліковага запісу"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME } захоўвае старыя версіі вашых файлаў, калі вы і іншыя ўдзельнікі сумеснай працы ўносіце змены. Гэта гарантуе, што вы не страціце важныя даныя. Выберыце, як доўга ${ BRAND_NAME } павінен захоўваць папярэднюю версію."
@@ -7625,7 +7590,7 @@
         "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
+        "Для працягу, выберыце спосаб аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
       ],
       "To proceed, we must verify the request.": [
         "Для працягу, неабходна праверыць запыт."
@@ -7679,7 +7644,7 @@
         "Немагчыма праверыць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "На жаль, для гэтага ўліковага запісу адсутнічаюць метады аднаўлення."
+        "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Пакуль вы не выйдзеце са свайго ўліковага запісу або не зменіце свой пароль, ваш сеанс будзе актыўным. Сеансы спыняюцца праз 60 дзён бяздзейнасці."
@@ -7892,7 +7857,7 @@
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы для існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+        "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
@@ -7991,7 +7956,7 @@
         "Гэта дзеянне немагчыма адрабіць."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
+        "Вы не задалі спосаб для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Вам даступны ${ availableCount } вылучаны сервер.",
@@ -8087,7 +8052,7 @@
         "Ваш уліковы запіс паспяхова абноўлены."
       ],
       "Your account recovery method is set": [
-        "Метад аднаўлення вашага ўліковага запісу зададзены"
+        "Спосаб аднаўлення вашага ўліковага запісу зададзены"
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
@@ -8099,7 +8064,7 @@
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
-        "Метад аднаўлення вашых даных зададзены"
+        "Спосабы аднаўлення вашых даных зададзены"
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
@@ -8154,6 +8119,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8627,6 +8603,9 @@
       ],
       "Addresses": [
         "Адрасы"
+      ],
+      "Administrators": [
+        "Адміністратары"
       ],
       "ALL": [
         "УСЕ"
@@ -9306,9 +9285,6 @@
       "Show sender images": [
         "Паказваць відарысы адпраўніка"
       ],
-      "Show unread count in application icon": [
-        "Паказваць колькасць непрачытаных у значку праграмы"
-      ],
       "Show unread count in Favicon": [
         "Паказваць колькасць непрачытаных у піктаграме сайта"
       ],
@@ -9744,7 +9720,7 @@
         "Што гэта?"
       ],
       "Why set recovery methods?": [
-        "Навошта задаваць метад аднаўлення?"
+        "Навошта задаваць спосаб аднаўлення?"
       ]
     },
     "Loading info": {
@@ -10630,6 +10606,17 @@
         "Кіраванне камандамі"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -10723,17 +10710,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11795,6 +11771,74 @@
         "Абараніце свой уліковы запіс"
       ]
     },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Усе адміністратары атрымаюць доступ да гэтага ключа."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Вы сапраўды хочаце змяніць ваш ключ арганізацыі?"
+      ],
+      "Change organization key": [
+        "Змяніць ключ арганізацыі"
+      ],
+      "Organization key activated": [
+        "Ключы арганізацыі актываваныя"
+      ],
+      "Organization key does not exist.": [
+        "Ключы арганізацыі не існуе."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
+      ],
+      "Organization key restored": [
+        "Ключ арганізацыі адноўлены"
+      ],
+      "Organization key updated": [
+        "Ключ арганізацыі абноўлены"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "У доступе адмоўлена, правы адміністратара абмежаваны."
+      ],
+      "Reset organization key": [
+        "Скінуць ключ арганізацыі"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Наступныя адміністратары атрымаюць доступ да ключа арганізацыі."
+      ],
+      "The organization key must be activated first.": [
+        "Спачатку неабходна актываваць ключ арганізацыі."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Гэта правядзе да адпраўкі самага новага ключа арганізацыі адміністратару, які пакуль не мае доступу да яго."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Вам неабходна актываваць ключы арганізацыі, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Актывуйце ключы арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Мы не можам праверыць, ці з'яўляецца бяспечным адрасны ключ гэтага адпраўніка. Здараецца так, што ўзнікае затрымка пры абнаўленні звестак адпраўніка. Паспрабуйце яшчэ раз пазней. Калі вы сумняваецеся ў сапраўднасці гэтага запрашэння або адпраўніка, звярніцеся ў службу падтрымкі кліентаў ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Мы праверылі аўтэнтыфікацыю гэтага адпраўніка і запрашэнне."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Вас прызначылі адміністратарам арганізацыі **${ organizationName }**"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Вам патрэбны доступ да ключоў арганізацыі, каб выканаць гэту аперацыю."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банкаўская картка"
@@ -12123,6 +12167,12 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } адміністратару ў вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі.",
+        "${ n } адміністратарам у вашай арганізацыі патрэбны доступ да ключа арганізацыі."
+      ],
       "Changing organization keys": [
         "Змена ключоў арганізацыі"
       ],
@@ -12333,7 +12383,7 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "Пераканайцеся, што ў вас ёсць доступ да метаду аднаўлення."
+        "Пераканайцеся, што ў вас ёсць доступ да спосабу аднаўлення."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
         "У вас больш не будзе магчымасці запытваць скіданне пароля з наладаў вашага ўліковага запісу."
@@ -12414,7 +12464,7 @@
         "Запытаць скіданне пароля"
       ],
       "Use recovery method": [
-        "Скарыстайцеся метадам аднаўлення"
+        "Скарыстайцеся спосабам аднаўлення"
       ]
     },
     "session_recovery:initiation:info": {
@@ -12422,7 +12472,7 @@
         "У мэтах бяспекі, вам давядзецца чакаць **72 гадзіны** перад тым, як вы зможаце змяніць свой пароль."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Калі ў вас наладжаны **метад аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
+        "Калі ў вас наладжаны **спосаб аднаўлення** паспрабуйце скарыстацца спачатку ім. Гэта дазволіць адразу змяніць ваш пароль."
       ],
       "We will contact you again when the password reset is available.": [
         "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."
@@ -12462,7 +12512,7 @@
     },
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
-        "У вас павінен быць наладжаны метад аднаўлення, каб забараніць скіданне пароля."
+        "У вас павінен быць наладжаны спосаб аднаўлення, каб забараніць скіданне пароля."
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
         "Вы можаце запытаць скіданне пароля з налад вашага ўліковага запісу ў вэб-праграме, каб палепшыць бяспеку вашага ўліковага запісу і абараніць свае даныя."
@@ -12956,13 +13006,13 @@
         "Палепшыце свой тарыфны план, каб павялічыць сховішча."
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
-        "Мы дададзім крэдыты за час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
+        "Мы дададзім крэдыты за той час, які застаўся на вашым уліковым запісе ${ BRAND_NAME }."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе.",
-        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }** на вашым уліковым запісе."
+        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "Ваша ${ appStorage } амаль запоўнена"
@@ -13001,7 +13051,7 @@
         "Вы згубіце доступ да наступных функцый: высакахуткаснага VPN; абарону 10 прылад; трансляцый на высокай хуткасці; блакіроўку рэкламы і шкодных праграм; прыярытэтную падтрымку."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
-        "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць уваходаў і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
+        "Вы згубіце доступ да наступных функцый: неабмежаваную колькасць запісаў уваходу і нататак; неабмежаваную колькасць псеўданімаў hide-my-email; 20 сховішчаў; прыярытэтную падтрымку."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13207,6 +13257,9 @@
       ],
       "Address updated": [
         "Адрас абноўлены"
+      ],
+      "Administrator privileges restored": [
+        "Прывілеі адміністратара адноўлены"
       ],
       "Auto-reply disabled": [
         "Аўтаматычны адказ адключаны"
@@ -13505,9 +13558,6 @@
       "CSV field": [
         "Поле CSV"
       ],
-      "Display name": [
-        "Бачнае імя"
-      ],
       "Edit": [
         "Рэдагаваць"
       ],
@@ -13794,9 +13844,6 @@
       "Change mailbox password": [
         "Змяніць пароль паштовай скрыні"
       ],
-      "Change organization keys": [
-        "Змяніць ключы арганізацыі"
-      ],
       "Change organization name": [
         "Змяніць назву арганізацыі"
       ],
@@ -13820,6 +13867,9 @@
       ],
       "Composing": [
         "Напісанне"
+      ],
+      "Confirm": [
+        "Пацвердзіць"
       ],
       "Confirm address": [
         "Пацвердзіць адрас"
@@ -13955,9 +14005,6 @@
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
         "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)"
-      ],
-      "Delete user": [
-        "Выдаліць карыстальніка"
       ],
       "Delete user?": [
         "Выдаліць карыстальніка?"
@@ -14239,7 +14286,7 @@
         "Начная тэма"
       ],
       "No recovery method": [
-        "Адсутнічае метад аднаўлення"
+        "Адсутнічае спосаб аднаўлення"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -14253,6 +14300,9 @@
       "Organization filters": [
         "Фільтры арганізацыі"
       ],
+      "Organization key": [
+        "Ключ арганізацыі"
+      ],
       "Organization name": [
         "Назва арганізацыі"
       ],
@@ -14264,9 +14314,6 @@
       ],
       "Password": [
         "Пароль"
-      ],
-      "Password and keys": [
-        "Паролі і ключы"
       ],
       "Password reset settings": [
         "Налады скідання пароля"
@@ -14340,9 +14387,6 @@
       "Request sent": [
         "Запыт адпраўлены"
       ],
-      "Reset organization keys": [
-        "Скінуць ключы арганізацыі"
-      ],
       "Reset password": [
         "Скінуць пароль"
       ],
@@ -14404,7 +14448,7 @@
         "Задаць пароль арганізацыі"
       ],
       "Set up a recovery method": [
-        "Наладзіць метад аднаўлення"
+        "Наладзіць спосаб аднаўлення"
       ],
       "Set up forwarding": [
         "Наладзіць перасылку"
@@ -14771,9 +14815,6 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Паведамленні ў папках Адпраўленыя або Чарнавікі і далей будуць з'яўляцца ў гэтай папцы, нават калі вы перамясціце іх у іншую папку."
-      ],
-      "See number of unread messages in the application icon": [
-        "Паказваць колькасць непрачытаных паведамленняў у значку праграмы"
       ],
       "See number of unread messages in the tab icon": [
         "Праглядайце колькасць непрачытаных паведамленняў у закладцы значка"
@@ -15182,8 +15223,8 @@
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Мы выявілі праблему з канфігурацыяй вашага DNS. Пераканайцеся, што вашы запісы адпавядаюць інструкцыям ніжэй. Калі праблема застанецца, то нам давядзецца адключыць падпісанне DKIM."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Вы павінны ${ activateLink } ключы арганізацыі перад дабаўленнем адраса электроннай пошты для непрыватнага ўдзельніка."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Вы павінны ${ activateLink } ключ арганізацыі перад даданнем адраса электроннай пошты для непрыватнага ўдзельніка."
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

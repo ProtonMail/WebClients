@@ -232,6 +232,9 @@
       "Discard": [
         "Kassér"
       ],
+      "Dismiss": [
+        "Afvis"
+      ],
       "Don't know your password?": [
         "Kan du ikke din adgangskode?"
       ],
@@ -252,6 +255,9 @@
       ],
       "Download apps": [
         "Download apps"
+      ],
+      "Download logs": [
+        "Download-logfiler"
       ],
       "Drive Locked": [
         "Drev låst"
@@ -400,6 +406,9 @@
       "Mark for deletion": [
         "Markér til sletning"
       ],
+      "Maximize": [
+        "Maksimér"
+      ],
       "Maximize transfers": [
         "Maksimér overførsler"
       ],
@@ -408,6 +417,9 @@
       ],
       "Merge contacts": [
         "Flet kontakter"
+      ],
+      "Minimize": [
+        "Minimér"
       ],
       "Minimize transfers": [
         "Minimer overførsler"
@@ -438,6 +450,9 @@
       ],
       "Next month": [
         "Næste måned"
+      ],
+      "Not now": [
+        "Ikke nu"
       ],
       "Ok": [
         "Ok"
@@ -1953,9 +1968,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
@@ -2100,6 +2112,9 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias options could not be resolved": [
+        "Alias-indstillinger kunne ikke hentes"
+      ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
       ],
@@ -2126,6 +2141,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åbne den opdaterede boks"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
@@ -2197,6 +2218,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Element-indhold må ikke overstige 40 kB"
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
@@ -3282,6 +3306,14 @@
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } krypteret fil",
+        "${ nbFile } krypterede filer"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } krypteret fil...",
+        "${ nbFile } krypterede filer..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } sat på pause",
         "${ pausedCount } sat på pause"
@@ -3354,6 +3386,9 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } etiket)",
         "Alle (${ totalFoldersCount } etiketter)"
+      ],
+      "All encrypted files": [
+        "Alle krypterede filer"
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
@@ -3547,11 +3582,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Overførslen er pauset på grund af forbindelsesproblemer - den vil fortsætte automatisk"
       ],
+      "Download ready": [
+        "Download klar"
+      ],
       "Downloaded": [
         "Downloadet"
       ],
       "Downloading": [
         "Downloader"
+      ],
+      "Downloading all encrypted files": [
+        "Downloader alle krypterede filer"
       ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
@@ -3710,6 +3751,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "I mellemtiden kan du tilmelde dig din egen ${ DRIVE_APP_NAME }-konto og beskytte dine data med end-to-end-kryptering og dele dem sikkert."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer ${ esProgress } elementer out of ${ totalProgressToShow }"
@@ -3989,11 +4033,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Genopretter fotos... Hold fanen åben."
       ],
+      "Retry now": [
+        "Forsøg igen nu"
+      ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
       ],
       "Search Enabled": [
         "Søgning aktiveret"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } fil downloadet sikkert",
+        "${ nbFile } filer downloadet sikkert"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Downloadede alle krypterede filer sikkert"
+      ],
+      "Securely downloaded all files": [
+        "Downloadede alle filer sikkert"
       ],
       "Select a folder to move to.": [
         "Vælg en mappe at flytte til."
@@ -4037,6 +4094,9 @@
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Opret din egen ${ DRIVE_APP_NAME }-konto, og beskyt dine data med end-to-end-kryptering, og del dem sikkert."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres grundet en netværksfejl, prøv venligst igen senere."
       ],
@@ -4060,6 +4120,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Noget gik galt. Prøv igen senere."
+      ],
+      "Something went wrong...": [
+        "Noget gik galt..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
@@ -4099,6 +4162,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denne fil er blevet slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
+      ],
+      "This item already exists in your library": [
+        "Dette element findes allerede i dit bibliotek"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
@@ -4345,6 +4411,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your download is in progress": [
+        "Din download er i gang"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
@@ -4581,6 +4650,12 @@
       "Download anyway": [
         "Download alligevel"
       ],
+      "Downloading": [
+        "Downloader"
+      ],
+      "Downloading ${ percentageValue }": [
+        "Henter ${ percentageValue }"
+      ],
       "Duplicate found": [
         "Dublet fundet"
       ],
@@ -4640,6 +4715,9 @@
       ],
       "Folder name": [
         "Mappenavn"
+      ],
+      "Forwards to": [
+        "Videresender til"
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
@@ -4727,6 +4805,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "Note": [
+        "Note"
       ],
       "Notification": [
         "Notifikation"
@@ -4829,6 +4910,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Dette vil slette alle filer på dit låste drev permanent."
+      ],
+      "Title": [
+        "Titel"
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
@@ -5010,6 +5094,26 @@
       ],
       "Plain text": [
         "Simpel tekst"
+      ]
+    },
+    "Mimetype": {
+      "Audio file": [
+        "Lydfil"
+      ],
+      "iCalendar format": [
+        "iCalendar-format"
+      ],
+      "Icon format": [
+        "Ikonformat"
+      ],
+      "Image": [
+        "Billede"
+      ],
+      "Unknown file": [
+        "Ukendt fil"
+      ],
+      "Video file": [
+        "Videofil"
       ]
     },
     "Modal title": {
@@ -5229,6 +5333,12 @@
         "${ numberOfItems } link til dit element blev slettet",
         "${ numberOfItems } links til dine elementer blev slettet"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet deaktiveret"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
       ],
@@ -5443,6 +5553,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ekstern nøgle hentes automatisk fra keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ekstern nøgle hentes automatisk via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt."
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
       ]
@@ -5583,6 +5702,17 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasser"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Åbn ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prøv ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6017,6 +6147,53 @@
         "Din aktuelle lagerplads:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagerplads"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fuldt"
+      ],
+      "contact your administrator": [
+        "kontakt din administrator"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Hvis du vil fortsætte med at uploade og synkronisere filer, skal du frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "For at sende eller modtage e-mails, frigøre plads eller opgradere til mere lagerplads."
+      ],
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dit ${ appStorage } er næsten fuldt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Dit ${ appStorage } er fuldt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Dit lager er fuldt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } kontakt ser identisk ud.",
@@ -6208,6 +6385,12 @@
         "${ numberOfFailedTransfer.total } fejlende overførsel",
         "${ numberOfFailedTransfer.total } fejlende overførsler"
       ],
+      "Account recovery": [
+        "Kontogendannelse"
+      ],
+      "Account security": [
+        "Kontosikkerhed"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -6295,6 +6478,9 @@
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
+      ],
+      "Data recovery": [
+        "Datagendannelse"
       ],
       "Date": [
         "Dato"
@@ -6787,8 +6973,23 @@
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
+      ],
+      "Invalid alias prefix": [
+        "Ugyldigt alias-præfiks"
+      ],
+      "Missing alias prefix": [
+        "Mangler alias-præfiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler alias-suffiks"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
@@ -6798,6 +6999,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Alias-præfikset må højest være 40 tegn langt."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdata er beskadiget og kan ikke vises."
@@ -6825,6 +7029,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
+      ],
+      "You must select at least one mailbox": [
+        "Du skal vælge mindst en postkasse"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."

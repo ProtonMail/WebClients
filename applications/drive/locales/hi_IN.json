@@ -222,6 +222,9 @@
       "Discard": [
         "रद्द करें"
       ],
+      "Dismiss": [
+        "रद्द करें"
+      ],
       "Don't know your password?": [
         "क्या आप अपना पासवर्ड नहीं जानते?"
       ],
@@ -239,6 +242,12 @@
       ],
       "Download anyway": [
         "फिर भी डाउनलोड करें"
+      ],
+      "Download apps": [
+        "ऐप्स डाउनलोड करें"
+      ],
+      "Download logs": [
+        "लॉग डाउनलोड करें"
       ],
       "Drive Locked": [
         "ड्राइव लॉक"
@@ -378,6 +387,9 @@
       "Mark for deletion": [
         "'मिटाना है' का मार्क लगाएं"
       ],
+      "Maximize": [
+        "बड़ा करें"
+      ],
       "Maximize transfers": [
         "स्थानान्तरण को अधिकतम करें"
       ],
@@ -386,6 +398,9 @@
       ],
       "Merge contacts": [
         "संपर्क मर्ज करें"
+      ],
+      "Minimize": [
+        "छोटा करें"
       ],
       "Minimize transfers": [
         "स्थानान्तरण कम से कम करें"
@@ -416,6 +431,9 @@
       ],
       "Next month": [
         "अगले महीने"
+      ],
+      "Not now": [
+        "अभी नहीं"
       ],
       "Ok": [
         "ठीक है"
@@ -1880,9 +1898,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail लोगो और एक प्लस साइन"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
       ],
@@ -1982,6 +1997,9 @@
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
+      "Alias options could not be resolved": [
+        "नकलीनाम ऑप्शन रिज़ॉल्व ना हो सके"
+      ],
       "Authentication canceled.": [
         "प्रमाणीकरण रद्द किया गया।"
       ],
@@ -2005,6 +2023,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "इस ब्राउज़र में सामग्री खोज सक्षम नहीं की जा सकती है। कृपया निजी ब्राउज़िंग मोड छोड़ें या किसी अन्य ब्राउज़र का उपयोग करें।"
+      ],
+      "Could not open created vault": [
+        "बनाए गए तिजोरी को खोल नहीं पा रहे"
+      ],
+      "Could not open updated vault": [
+        "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
@@ -2658,6 +2682,9 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ],
+      "Theme font": [
+        "थीम फ़ॉन्ट"
       ]
     },
     "Font size option": {
@@ -3313,6 +3340,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "कनेक्शन समस्या के कारण डाउनलोड रुका हुआ है; यह स्वचालित रूप से फिर से शुरू हो जाएगा"
       ],
+      "Download ready": [
+        "डाउनलोड तैयार है"
+      ],
       "Downloaded": [
         "डाउनलोड किया"
       ],
@@ -3436,6 +3466,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "यदि आपके पास इनमें से कोई एक है, तो अनब्लॉक प्रक्रिया शुरू करने के लिए ${ BRAND_NAME } खाता सेटिंग पर जारी रहें।"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
@@ -3668,6 +3701,9 @@
       "Preview for this file type is not supported": [
         "इस तरह के फाइल के लिए प्रीव्यू सपोर्ट नहीं है"
       ],
+      "Previous versions are kept for ${ retentionLabel }": [
+        "पिछले संस्करण ${ retentionLabel } के लिए रखे जाते हैं।"
+      ],
       "Previous versions are not saved": [
         "पिछले संस्करण सेव नहीं होते"
       ],
@@ -3701,8 +3737,17 @@
       "Restore": [
         "पहले जैसा करें"
       ],
+      "Restore is in progress. This can take a few seconds.": [
+        "पुनः स्थापना प्रक्रिया जारी है। यह कुछ ही क्षण में हो सकता है।"
+      ],
+      "Restore Photos": [
+        "तस्वीरें पुनः स्थापित करें"
+      ],
       "Restored files ${ formattedDate }": [
         "फाइलें वापिस लाए गए ${ formattedDate }"
+      ],
+      "Retry now": [
+        "पुन:प्रयास करें"
       ],
       "Search cannot be enabled in this browser": [
         "खोज इस ब्राउज़र में सक्षम नहीं कर सकते"
@@ -3751,6 +3796,9 @@
       ],
       "Signature issue": [
         "हस्ताक्षर समस्या"
+      ],
+      "Skipped": [
+        "छोड़ा गया"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "कुछ फ़ाइलें डाउनलोड होने में विफल रहीं | फ़ाइलों को फिर से डाउनलोड करने का प्रयास करें।"
@@ -3819,6 +3867,12 @@
         "ये लिंक को मिटा देगा और जिस भी व्यक्ति के पास ये लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।",
         "ये लिंकों को मिटा देगा और जिस भी व्यक्ति के पास इनमें से कोई लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।"
       ],
+      "This will replace the existing file with the folder": [
+        "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
+      ],
+      "This will replace the existing folder with the file": [
+        "यह मौजूदा फ़ोल्डर को फ़ाइल के साथ बदल देगा।"
+      ],
       "This will upload a new version of the file": [
         "ये फाइल का एक नया संस्करण अपलोड करेगा"
       ],
@@ -3866,6 +3920,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "फाइल नाम, तारीख, या प्रकार खोज के देखे।"
+      ],
+      "Unknown date": [
+        "अज्ञात तारीख"
       ],
       "Unknown error": [
         "अनजान गलती"
@@ -3929,6 +3986,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "जब आप टू-फैक्टर ऑथेंटिकेशन सेट करते हैं, तो हम रिकवरी कोड प्रदान करते हैं जिनका उपयोग आप अपने ऑथेंटिकेटर ऐप का एक्सेस खो देने पर साइन इन करने के लिए कर सकते हैं।"
+      ],
+      "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
+        "${ formattedRevisionDate } संस्करण से पुनः स्थापित किया जाएगा। अन्य सभी संस्करण अब भी सुरक्षित रहेंगे।"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे या वैकल्पिक सत्यापन विधि का उपयोग करना चाहेंगे?"
@@ -4010,6 +4070,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "आपकी योजना 7 दिनों तक 10 संस्करणों के लिए सीमित है।"
       ],
       "Your previous password": [
         "आपका पिछला पासवर्ड"
@@ -4221,6 +4284,12 @@
       "Download anyway": [
         "फिर भी डाउनलोड करें"
       ],
+      "Downloading": [
+        "डाउनलोड हो रहा है"
+      ],
+      "Downloading ${ percentageValue }": [
+        "डाउनलोड कर रहें ${ percentageValue }"
+      ],
       "Duplicate found": [
         "डुप्लीकेट मिला"
       ],
@@ -4280,6 +4349,9 @@
       ],
       "Folder name": [
         "फोल्डर नाम"
+      ],
+      "Forwards to": [
+        "इधर फॉरवर्ड होगा"
       ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
@@ -4368,6 +4440,9 @@
       "New password": [
         "नया पासवर्ड"
       ],
+      "Note": [
+        "नोट"
+      ],
       "Notification": [
         "सूचना"
       ],
@@ -4434,6 +4509,9 @@
       "Set recovery method": [
         "रिकवरी तरीका सेट करें"
       ],
+      "Show indexing progress of Encrypted Search": [
+        "एन्क्रिप्टेड खोज के सूचीकरण की प्रगति दिखाएं"
+      ],
       "Sign emails": [
         "ईमेल पे हस्ताक्षर करें"
       ],
@@ -4463,6 +4541,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "ये आपके लॉक की गई ड्राइव से सभी फाइलों को हमेशा के लिए मिटा देगा।"
+      ],
+      "Title": [
+        "टाइटल"
       ],
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
@@ -4496,6 +4577,9 @@
       ],
       "Wonderful": [
         "आश्चर्यजनक"
+      ],
+      "Yes, I want to permanently delete my old files": [
+        "हाँ, मुझे अपनी पुरानी फाइलें स्थायी रूप से हटानी है।"
       ],
       "Your password (admin)": [
         "आपका पासवर्ड (व्यवस्थापक)"
@@ -4635,6 +4719,83 @@
       ],
       "Plain text": [
         "प्लेन टेक्स्ट"
+      ]
+    },
+    "Mimetype": {
+      "7-zip archive": [
+        "७ज़िप संग्रहण"
+      ],
+      "AAC audio": [
+        "एएसी ऑडियो"
+      ],
+      "Audio file": [
+        "ऑडियो फाइल"
+      ],
+      "AVI video": [
+        "एवीआई वीडियो"
+      ],
+      "Binary data": [
+        "बाइनरी डेटा"
+      ],
+      "BZip archive": [
+        "बीज़िप संग्रहण"
+      ],
+      "BZip2 archive": [
+        "बीज़िप२ संग्रहण"
+      ],
+      "C-Shell script": [
+        "सी-शेल स्क्रिप्ट"
+      ],
+      "iCalendar format": [
+        "iCalendar फॉर्मेट"
+      ],
+      "Image": [
+        "तस्वीर"
+      ],
+      "JPEG images": [
+        "जेपीईजी छवियां"
+      ],
+      "MP3 audio": [
+        "एमपी3 ऑडियो"
+      ],
+      "MPEG Video": [
+        "एमपीईजी वीडियो"
+      ],
+      "OGG audio": [
+        "ओजीजी ऑडियो"
+      ],
+      "OGG video": [
+        "ओजीजी वीडियो"
+      ],
+      "OpenType font": [
+        "ओपन टाइप फ़ॉन्ट"
+      ],
+      "Opus audio": [
+        "ओपस ऑडियो"
+      ],
+      "RAR archive": [
+        "आरएआर संग्रहण"
+      ],
+      "TrueType Font": [
+        "ट्रू टाइप फ़ॉन्ट"
+      ],
+      "Unknown file": [
+        "अज्ञात फ़ाइल"
+      ],
+      "Video file": [
+        "वीडियो फाइल"
+      ],
+      "WEBM audio": [
+        "वेबएम ऑडियो"
+      ],
+      "WEBM video": [
+        "वेबएम वीडियो"
+      ],
+      "WEBP image": [
+        "वेबपी छवि"
+      ],
+      "ZIP archive": [
+        "ज़िप संग्रहण"
       ]
     },
     "Modal title": {
@@ -5185,6 +5346,14 @@
         "आधिकारिक ईमेल ${ BRAND_NAME } से"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } खोलें"
+      ]
+    },
     "Select files": {
       "Upload": [
         "अपलोड करें"
@@ -5487,6 +5656,14 @@
         "आपका वर्तमान संग्रहण:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } स्टोरेज"
+      ],
+      "Your storage is full": [
+        "आपका स्टोरेज भरा है"
+      ]
+    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } संपर्क एक जैसा है।",
@@ -5671,6 +5848,12 @@
         "${ numberOfFailedTransfer.total } असफल अपलोड",
         "${ numberOfFailedTransfer.total } असफल अपलोड"
       ],
+      "Account recovery": [
+        "खाता पुनर्प्राप्ति"
+      ],
+      "Account security": [
+        "खाते की सुरक्षा"
+      ],
       "Active": [
         "सक्रिय"
       ],
@@ -5755,6 +5938,9 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
+      ],
+      "Data recovery": [
+        "डेटा पुनर्प्राप्ति"
       ],
       "Date": [
         "दिनांक"
@@ -6264,6 +6450,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
+      ],
+      "You must select at least one mailbox": [
+        "आपको कम से कम एक मेलबॉक्स चुनना होगा"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"

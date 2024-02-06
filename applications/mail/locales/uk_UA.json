@@ -325,6 +325,9 @@
       "Discard": [
         "Відхилити"
       ],
+      "Dismiss": [
+        "Відхилити"
+      ],
       "Don't know your password?": [
         "Не знаєте свій пароль?"
       ],
@@ -700,6 +703,9 @@
       "No, I won't attend": [
         "Не підтверджую присутність"
       ],
+      "Not now": [
+        "Не зараз"
+      ],
       "Not saved": [
         "Не збережено"
       ],
@@ -1026,12 +1032,6 @@
       ],
       "Trust": [
         "Довіряти"
-      ],
-      "Trust key": [
-        "Довіряти ключу",
-        "Довіряти ключам",
-        "Довіряти ключам",
-        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -2979,9 +2979,6 @@
       "No labels": [
         "Немає міток"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail та знак плюс"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
@@ -3166,6 +3163,9 @@
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
+      "Alias options could not be resolved": [
+        "Не вдалося розв'язати параметри псевдоніма"
+      ],
       "Attachments are limited to 25 MB": [
         "Розмір вкладень обмежується 25 МБ"
       ],
@@ -3204,6 +3204,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
+      ],
+      "Could not open created vault": [
+        "Не вдалося відкрити створене сховище"
+      ],
+      "Could not open updated vault": [
+        "Не вдалося відкрити оновлене сховище"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
@@ -3291,6 +3297,9 @@
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Вміст елемента не може перевищувати 40 Кб"
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
@@ -4999,12 +5008,6 @@
       "Are you sure you want to discard your import?": [
         "Ви дійсно хочете відхилити імпортування?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Ви справді хочете перемістити всі повідомлення з цього розташування до архіву?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Ви справді хочете перемістити всі повідомлення з цього розташування до смітника?"
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Ви дійсно хочете остаточно видалити ${ count } розмову?",
         "Ви дійсно хочете остаточно видалити ${ count } розмови?",
@@ -6631,6 +6634,9 @@
       "Folder location": [
         "Розташування теки"
       ],
+      "Forwards to": [
+        "Пересилається на"
+      ],
       "Frequency": [
         "Частота"
       ],
@@ -6742,6 +6748,9 @@
       "No label found": [
         "Мітку не знайдено"
       ],
+      "Note": [
+        "Нотатка"
+      ],
       "Notification": [
         "Сповіщення"
       ],
@@ -6852,6 +6861,9 @@
       ],
       "Time": [
         "Час"
+      ],
+      "Title": [
+        "Назва"
       ],
       "To:": [
         "Кому:"
@@ -7504,6 +7516,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } створено"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } вимкнено"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } увімкнено"
+      ],
       "Block removed": [
         "Блокування вилучено"
       ],
@@ -7923,6 +7941,17 @@
         "Непрочитаних повідомлень не знайдено"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Псевдоніми Hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Відкрити ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Спробуйте ${ PASS_APP_NAME }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Вивантажити"
@@ -8072,6 +8101,11 @@
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Введіть поточний пароль, щоб скасувати скидання пароля. Ніякі інші зміни не набудуть чинності."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -8428,6 +8462,14 @@
       ],
       "Your current storage:": [
         "Ваше поточне сховище:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } сховища"
+      ],
+      "Your storage is full": [
+        "Ваше сховище заповнене"
       ]
     },
     "Success": {
@@ -8872,6 +8914,12 @@
       "(active)": [
         "(активно)"
       ],
+      "Account recovery": [
+        "Відновлення облікового запису"
+      ],
+      "Account security": [
+        "Безпека облікового запису"
+      ],
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
@@ -8985,6 +9033,9 @@
       ],
       "Customize your mail import": [
         "Налаштуйте імпорт своєї пошти"
+      ],
+      "Data recovery": [
+        "Відновлення даних"
       ],
       "Day theme": [
         "Світла тема"
@@ -9193,12 +9244,6 @@
       "More selections": [
         "Інші варіанти вибору"
       ],
-      "Move all messages to Archive": [
-        "Перемістити всі повідомлення до архіву"
-      ],
-      "Move all messages to Trash": [
-        "Перемістити всі повідомлення до смітника"
-      ],
       "Move to": [
         "Перемістити"
       ],
@@ -9375,6 +9420,9 @@
       ],
       "Subject missing": [
         "Немає теми"
+      ],
+      "This field cannot be empty": [
+        "Необхідно заповнити це поле"
       ],
       "To": [
         "Кому"
@@ -9588,6 +9636,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Неможливо повторно активувати ваш ключ, якщо ви не пам'ятаєте свій пароль. Ми можемо допомогти вам відхилити банер з попередженням, але при цьому ви остаточно втратите доступ до всіх даних, що були зашифровані з використанням цього ключа."
       ],
+      "Invalid alias prefix": [
+        "Недійсний префікс псевдоніма"
+      ],
+      "Missing alias prefix": [
+        "Відсутній префікс псевдоніма"
+      ],
+      "Missing alias suffix": [
+        "Відсутній суфікс псевдоніма"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Дозволено лише буквено-цифрові символи, крапки, дефіси та підкреслення"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
@@ -9596,6 +9656,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Префікс псевдоніма не може бути довшим ніж 40 символів"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не вдалося перевірити підпис вкладення.\nВи все одно можете завантажити це вкладення, але воно може бути підробленим.",
@@ -9629,6 +9692,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Ми не змогли перевірити поштовий сервер. Якщо ви йому довіряєте, можете пропустити цю перевірку."
+      ],
+      "You must select at least one mailbox": [
+        "Виберіть принаймні одну поштову скриньку"
       ],
       "You will lose any customization you made so far.": [
         "Ви втратите будь-які попередні налаштування."

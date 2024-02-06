@@ -273,6 +273,9 @@
       "Discard": [
         "Odbaci"
       ],
+      "Dismiss": [
+        "Odbaci"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -590,6 +593,9 @@
       "No, I won't attend": [
         "Neću prisustvovati"
       ],
+      "Not now": [
+        "Ne sada"
+      ],
       "Not saved": [
         "Nije spremljeno"
       ],
@@ -844,11 +850,6 @@
       ],
       "Trust": [
         "Vjeruj"
-      ],
-      "Trust key": [
-        "Ključ povjerenja",
-        "Ključevi povjerenja",
-        "Ključevi povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -3529,6 +3530,9 @@
     "Import instructions": {
       "Go to ${ boldAccountSecurity }.": [
         "Idi na ${ boldAccountSecurity }"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Odaberite ${ boldExportCSV }."
       ]
     },
     "Import instructions emphasis": {
@@ -4807,6 +4811,9 @@
       "No label found": [
         "Nema pronađene oznake"
       ],
+      "Note": [
+        "Bilješka"
+      ],
       "Notification": [
         "Obavijest"
       ],
@@ -4908,6 +4915,9 @@
       ],
       "Time": [
         "Vrijeme"
+      ],
+      "Title": [
+        "Naslov"
       ],
       "To:": [
         "Za:"
@@ -5378,6 +5388,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } stvoren"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } je onemogućen."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } je omogućen."
+      ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
       ],
@@ -5689,6 +5705,11 @@
       ],
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "Security Center": {
+      "Open ${ PASS_APP_NAME }": [
+        "Otvori ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6323,6 +6344,12 @@
       "(active)": [
         "(aktivno)"
       ],
+      "Account recovery": [
+        "Oporavak računa"
+      ],
+      "Account security": [
+        "Sigurnost računa"
+      ],
       "Add contact group name": [
         "Dodaj naziv grupi kontakata"
       ],
@@ -6408,6 +6435,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Data recovery": [
+        "Povrat podataka"
       ],
       "Decryption error": [
         "Pogreška pri dešifriranju"

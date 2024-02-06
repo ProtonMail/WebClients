@@ -263,6 +263,9 @@
       "Previous": [
         "Prethodno"
       ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
       "Refer a friend": [
         "Uputi prijatelja"
       ],
@@ -307,9 +310,6 @@
       ],
       "Restore": [
         "Vrati"
-      ],
-      "Restore administrator privileges": [
-        "Vraćanje administratorskih ovlasti"
       ],
       "Retry": [
         "Pokušaj ponovno"
@@ -1578,9 +1578,6 @@
       "Organization key is not decrypted": [
         "Organizacijski ključ nije dešifriran"
       ],
-      "Organization key is not decrypted.": [
-        "Organizacijski ključ nije dešifriran."
-      ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
       ],
@@ -1595,9 +1592,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plaćanje trenutno nije dostupno, pokušajte ponovo kasnije"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Pristup odbijen, administratorske ovlasti su ograničene."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Konfigurirajte prilagođenu domenu prije dodavanja korisnika u vašu organizaciju."
@@ -1625,9 +1619,6 @@
       ],
       "The organization key must be activated first": [
         "Prvo se mora aktivirati organizacijski ključ"
-      ],
-      "The organization key must be activated first.": [
-        "Prvo se mora aktivirati organizacijski ključ."
       ],
       "This field is required": [
         "Ovo polje je obavezno"
@@ -2181,12 +2172,6 @@
       "Optional": [
         "Neobavezno"
       ],
-      "Organization keys activated": [
-        "Aktivirani su ključevi organizacije"
-      ],
-      "Organization keys restored": [
-        "Vraćeni su ključevi organizacije"
-      ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "U organizaciji postoje drugi administratori, odgovorni ste ih obavijestiti o novoj lozinki."
       ],
@@ -2222,6 +2207,9 @@
       ],
       "Restore": [
         "Vrati"
+      ],
+      "Save your password somewhere safe.": [
+        "Spremite vašu lozinku negdje sigurno."
       ],
       "Scan QR code instead": [
         "Skenirajte QR kôd"
@@ -2936,6 +2924,11 @@
         "${ n } mape",
         "${ n } mapa"
       ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
       "${ n } label": [
         "${ n } oznaka",
         "${ n } oznake",
@@ -3540,6 +3533,11 @@
         "${ n } kalendara po korisniku",
         "${ n } kalendara po korisniku"
       ],
+      "${ n } high-speed VPN connection": [
+        "${ n } VPN veza visoke brzine",
+        "${ n } VPN veze visoke brzine",
+        "${ n } VPN veza visoke brzine"
+      ],
       "${ n } VPN connection": [
         "${ n } VPN veza",
         "${ n } VPN veze",
@@ -3559,6 +3557,11 @@
         "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
         "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
         "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendar",
+        "${ UsedCalendars } kalendara",
+        "${ UsedCalendars } kalendara"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } od ${ MaxDomains } prilagođena domena",
@@ -3730,9 +3733,6 @@
       "Country": [
         "Država"
       ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
       "Email": [
         "E-pošta"
       ],
@@ -3827,11 +3827,11 @@
       "Change mailbox password": [
         "Promijeni lozinku sandučića e-pošte"
       ],
-      "Change organization keys": [
-        "Promijeni organizacijske ključeve"
-      ],
       "Change organization name": [
         "Promijeni naziv organizacije"
+      ],
+      "Change organization password": [
+        "Promijeni organizacijsku lozinku"
       ],
       "Change password": [
         "Promjena lozinke"
@@ -3874,9 +3874,6 @@
       ],
       "Delete account": [
         "Ukloni račun"
-      ],
-      "Delete user": [
-        "Izbriši korisnika"
       ],
       "Delete user?": [
         "Izbriši korisnika?"
@@ -4036,9 +4033,6 @@
       ],
       "Request new code": [
         "Zatraži novi kôd"
-      ],
-      "Reset organization keys": [
-        "Poništi organizacijske ključeve"
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
@@ -4271,9 +4265,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Izvještaji nisu end-to-end šifrirani. Molimo da ne šaljete nikakve osjetljive podatke."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Morate ${ activateLink } ključeve organizacije prije dodavanja adrese e-pošte ne privatnom članu."
       ]
     }
   }

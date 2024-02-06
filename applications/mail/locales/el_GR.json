@@ -325,6 +325,9 @@
       "Discard": [
         "Απόρριψη"
       ],
+      "Dismiss": [
+        "Παράβλεψη"
+      ],
       "Don't know your password?": [
         "Δε γνωρίζετε τον κωδικό πρόσβασης σας;"
       ],
@@ -336,6 +339,9 @@
       ],
       "Download ${ attachmentName }": [
         "Κατεβάστε ${ attachmentName }"
+      ],
+      "Download now": [
+        "Λήψη"
       ],
       "Downloading": [
         "Γίνεται Λήψη"
@@ -507,6 +513,9 @@
       ],
       "Import from Outlook": [
         "Εισαγωγή από Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Μια σημαντική ενημέρωση είναι διαθέσιμη. Για να συνεχίσετε να χρησιμοποιείτε την εφαρμογή, παρακαλούμε ενημερώστε στην πιο πρόσφατη έκδοση. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Το πρωί"
@@ -709,6 +718,9 @@
       ],
       "No, I won't attend": [
         "Οχί, δεν θα παρευρεθώ"
+      ],
+      "Not now": [
+        "Όχι τώρα"
       ],
       "Not saved": [
         "Μη αποθηκευμένο"
@@ -1042,10 +1054,6 @@
       ],
       "Trust": [
         "Αξιόπιστο"
-      ],
-      "Trust key": [
-        "Εμπιστοσύνη στο κλειδί",
-        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -3047,9 +3055,6 @@
       "No labels": [
         "Καμία ετικέτα"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Λογότυπο ProtonMail και σύμβολο συν"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Εξοικονομήστε χρόνο στέλνοντας μηνύματα ηλεκτρονικού ταχυδρομείου ή προσκλήσεις σε όλους ταυτόχρονα, ένα premium χαρακτηριστικό μεταξύ πολλών άλλων. Αναβαθμίστε σήμερα."
       ],
@@ -3273,6 +3278,9 @@
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
+      "Alias options could not be resolved": [
+        "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
+      ],
       "Attachments are limited to 25 MB": [
         "Τα συνημμένα περιορίζονται στα 25 MB"
       ],
@@ -3318,6 +3326,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Δεν είναι δυνατή η ενεργοποίηση της αναζήτησης περιεχομένου. Επανεκκινήστε την εφαρμογή ή διαγράψτε δεδομένα."
+      ],
+      "Could not open created vault": [
+        "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
+      ],
+      "Could not open updated vault": [
+        "Δεν ήταν δυνατό το άνοιγμα της ενημερωμένης κρύπτης"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Σφάλμα αποκρυπτογράφησης: η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου αυτού του μηνύματος απέτυχε."
@@ -3402,11 +3416,17 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
+      "Item content cannot exceed 40KB": [
+        "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
+      ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
       "Last name is too long": [
         "Το επώνυμο είναι πολύ μεγάλο"
+      ],
+      "Maximum expiration time reached.": [
+        "Επιτεύχθηκε μέγιστος χρόνος λήξης."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ attachmentsCountLimit })"
@@ -3441,6 +3461,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Κανένα εξωτερικό κλειδί που ανακτάται για το χρήστη δεν είναι έγκυρο για την αποστολή"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -5067,12 +5090,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
-      ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Θέλετε σίγουρα να μετακινήσετε όλα τα μηνύματα αυτής της τοποθεσίας στα Αρχειοθετημένα;"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Θέλετε σίγουρα να μετακινήσετε στα Διαγραμμένα όλα τα μηνύματα αυτής της τοποθεσίας;"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } συνομιλία;",
@@ -6717,6 +6734,9 @@
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
+      "Forwards to": [
+        "Προώθηση σε"
+      ],
       "Frequency": [
         "Συχνότητα"
       ],
@@ -6831,6 +6851,9 @@
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
       ],
+      "Note": [
+        "Σημείωση"
+      ],
       "Notification": [
         "Ειδοποίηση"
       ],
@@ -6941,6 +6964,9 @@
       ],
       "Time": [
         "Ώρα"
+      ],
+      "Title": [
+        "Τίτλος"
       ],
       "To:": [
         "Προς:"
@@ -7609,6 +7635,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } έχει απενεργοποιηθεί"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } έχει ενεργοποιηθεί"
+      ],
       "Block removed": [
         "Η φραγή αφαιρέθηκε"
       ],
@@ -7790,6 +7822,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } έχει επισημάνει αυτό το κλειδί ως παρωχημένο. Αυτό το κλειδί μπορεί να χρησιμοποιηθεί μόνο για επαλήθευση υπογραφής."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Εξωτερικό κλειδί που λήφθηκε αυτόματα από το keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Εξωτερικό κλειδί που λαμβάνεται αυτόματα μέσω WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Αυτό το κλειδί χρησιμοποιείται για την κρυπτογράφηση μηνυμάτων σε αυτήν την επαφή"
       ],
       "We recommend that you \"untrust\" this key.": [
         "Συνιστάται να \"μην εμπιστεύεστε\" αυτό το κλειδί."
@@ -8045,6 +8086,17 @@
       ],
       "No unread messages found": [
         "Δεν βρέθηκαν μη διαβασμένα μηνύματα"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email ψευδώνυμα"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Άνοιγμα ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Δοκιμάστε το ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8590,11 +8642,17 @@
       "Email tracking protection": [
         "Προστασία ιχνηλασίας μηνυμάτων"
       ],
+      "Faster email management": [
+        "Ταχύτερη διαχείριση email"
+      ],
       "Get up to ${ credits } in credits.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Προσκαλέστε φίλους στο ${ BRAND_NAME }"
+      ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Τώρα μπορείτε να αναλάβετε δράση σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου σε έναν μόνο φάκελο με μία κίνηση."
       ],
       "Schedule send": [
         "Προγραμματισμός αποστολής"
@@ -8652,6 +8710,53 @@
       ],
       "Your current storage:": [
         "Ο τρέχων χώρος αποθήκευσης:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } αποθηκευτικού χώρου"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% γεμάτος"
+      ],
+      "contact your administrator": [
+        "επικοινωνήστε με το διαχειριστή σας"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Για να συνεχίσετε τη μεταφόρτωση και το συγχρονισμό αρχείων, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
+      ],
+      "upgrade for more storage": [
+        "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Ο ${ appStorage } είναι σχεδόν γεμάτος"
+      ],
+      "Your ${ appStorage } is full": [
+        "Ο ${ appStorage } είναι γεμάτος"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Ο ${ storage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Ο ${ storage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
       ]
     },
     "Success": {
@@ -9040,6 +9145,18 @@
       "(active)": [
         "(ενεργό)"
       ],
+      "A filter name is required": [
+        "Απαιτείται όνομα φίλτρου"
+      ],
+      "A filter with this name already exists": [
+        "Υπάρχει ήδη ένα φίλτρο με αυτό το όνομα"
+      ],
+      "Account recovery": [
+        "Ανάκτηση λογαριασμού"
+      ],
+      "Account security": [
+        "Διασφάλιση λογαριασμού"
+      ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"
       ],
@@ -9158,6 +9275,9 @@
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"
       ],
+      "Data recovery": [
+        "Ανάκτηση δεδομένων"
+      ],
       "Day theme": [
         "Ανοιχτό θέμα"
       ],
@@ -9255,6 +9375,9 @@
       ],
       "Feedback": [
         "Σχόλια"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
       "Filter on...": [
         "Φιλτράρισμα σε..."
@@ -9370,12 +9493,6 @@
       ],
       "Move all messages": [
         "Μετακίνηση όλων των μηνυμάτων"
-      ],
-      "Move all messages to Archive": [
-        "Μετακίνηση όλων των μηνυμάτων στα Αρχειοθετημένα"
-      ],
-      "Move all messages to Trash": [
-        "Μετακίνηση όλων των μηνυμάτων στα Διαγραμμένα"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -9562,6 +9679,12 @@
       ],
       "Subject missing": [
         "Λείπει το θέμα"
+      ],
+      "This field cannot be empty": [
+        "Αυτό το πεδίο δεν μπορεί να είναι κενό"
+      ],
+      "This field cannot contain only spaces": [
+        "Αυτό το πεδίο δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
       "To": [
         "Προς"
@@ -9765,8 +9888,23 @@
       "Contacts could not be merged": [
         "Δεν ήταν δυνατή η συγχώνευση των επαφών"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Η ημερομηνία λήξης δεν έχει τη μορφή ΜΜ/ΕΕ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
+      ],
+      "Invalid alias prefix": [
+        "Μην έγκυρο πρόθεμα ψευδωνύμου"
+      ],
+      "Missing alias prefix": [
+        "Λείπει το πρόθεμα ψευδωνύμου"
+      ],
+      "Missing alias suffix": [
+        "Λείπει το επίθημα ψευδωνύμου"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
@@ -9776,6 +9914,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Η επαλήθευση της υπογραφής του συνημμένου απέτυχε.\nΜπορείτε ακόμα να κατεβάσετε αυτό το συνημμένο αλλά μπορεί να έχει παραβιαστεί.",
@@ -9807,6 +9948,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Δεν ήταν δυνατή η επαλήθευση του διακομιστή αλληλογραφίας. Εάν το εμπιστεύεστε, μπορείτε να παραλείψετε αυτήν την επαλήθευση."
+      ],
+      "You must select at least one mailbox": [
+        "Πρέπει να επιλέξετε τουλάχιστον ένα γραμματοκιβώτιο"
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."

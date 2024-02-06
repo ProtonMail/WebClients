@@ -245,6 +245,9 @@
       "Loading verification": [
         "Ellenőrzés folyamatban"
       ],
+      "Make admin": [
+        "Átállítás adminisztrátornak"
+      ],
       "Mark as default": [
         "Megjelölés alapértelmezettként"
       ],
@@ -286,6 +289,9 @@
       ],
       "Previous": [
         "Előző"
+      ],
+      "Recover data": [
+        "Adatok helyreállítása"
       ],
       "Refer a friend": [
         "Ajánlja egy barátjának"
@@ -331,9 +337,6 @@
       ],
       "Restore": [
         "Helyreállítás"
-      ],
-      "Restore administrator privileges": [
-        "Adminisztrátori jogok visszaállítása"
       ],
       "Retry": [
         "Újra"
@@ -1653,9 +1656,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail logó és egy plusz jel"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ]
@@ -1791,9 +1791,6 @@
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
-      "Organization key is not decrypted.": [
-        "A szervezeti kulcs nincs visszafejtve."
-      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
@@ -1811,9 +1808,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Fizetés jelenleg nem lehetséges, kérjük, próbálja meg később"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
@@ -1869,9 +1863,6 @@
       "The organization key must be activated first": [
         "Először a szervezeti kulcs aktiválása szükséges"
       ],
-      "The organization key must be activated first.": [
-        "Először a szervezeti kulcs aktiválása szükséges."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "A mező tartalma hosszabb a megengedett maximum ${ maximumLength } karakternél."
       ],
@@ -1910,9 +1901,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló felhasználót elhasználta. Több felhasználó létrehozásához váltson nagyobb csomagra."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Az összes felhasználót privátra kell állítani mielőtt új szervezeti kulcsokat generálna"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Az ön fiókja vagy a szervezet késedelmes számlát tartalmaz. Kérjük, egyenlítse ki valamennyi számláját."
@@ -2548,9 +2536,6 @@
       "Country code": [
         "Országkód"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Hozzon létre egy új fiókot és juttassa el az e-mail címet és a jelszót a felhasználóhoz."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
       ],
@@ -2809,12 +2794,6 @@
       "Or select a particular server:": [
         "Vagy válasszon ki egy adott szervert:"
       ],
-      "Organization keys activated": [
-        "Szervezeti kulcsok aktiválva"
-      ],
-      "Organization keys restored": [
-        "Szervezeti kulcsok visszaállítva"
-      ],
       "Organization size": [
         "Szervezet mérete"
       ],
@@ -2915,6 +2894,9 @@
       ],
       "Revoke certificate ${ name }": [
         "${ name } tanúsítvány visszavonása"
+      ],
+      "Save your password somewhere safe.": [
+        "Tárolja a jelszavát biztonságos helyen."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "A jelszavát tárolja biztonságos helyen. A ikonra kattintva ellenőrizze, hogy helyesen írta be a jelszót."
@@ -5357,6 +5339,22 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Maradjon ${ currentPlanName }"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tárhely"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
+      ],
+      "Your storage is full": [
+        "A tárhelye megtelt"
+      ]
+    },
     "Subscription": {
       "Billed monthly": [
         "Havonta számlázva"
@@ -5629,9 +5627,6 @@
       "Country": [
         "Ország"
       ],
-      "Display name": [
-        "Megjelenített név"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -5762,11 +5757,11 @@
       "Change mailbox password": [
         "E-mail titkosítási jelszó megváltoztatása"
       ],
-      "Change organization keys": [
-        "Szervezeti kulcsok megváltoztatása"
-      ],
       "Change organization name": [
         "Szervezet nevének megváltoztatása"
+      ],
+      "Change organization password": [
+        "Szervezeti jelszó megváltoztatása"
       ],
       "Change password": [
         "Jelszó megváltoztatása"
@@ -5833,9 +5828,6 @@
         "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)",
         "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)"
       ],
-      "Delete user": [
-        "Felhasználó törlése"
-      ],
       "Delete user?": [
         "Felhasználó törlése?"
       ],
@@ -5850,6 +5842,9 @@
       ],
       "Downgrade account": [
         "Váltás kisebb csomagra"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
@@ -6007,9 +6002,6 @@
       ],
       "Request sent": [
         "Kérés elküldve"
-      ],
-      "Reset organization keys": [
-        "Szervezeti kulcsok visszaállítása"
       ],
       "Reset password": [
         "Jelszó visszaállítása"
@@ -6320,9 +6312,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Mielőtt nem-privát tagnak adna hozzá e-mail címet, ${ activateLink } kell a szervezeti kulcsokat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"

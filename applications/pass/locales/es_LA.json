@@ -17,6 +17,9 @@
       "Add new item": [
         "Añadir elemento nuevo"
       ],
+      "Admin panel": [
+        "Panel de administración"
+      ],
       "Advanced": [
         "Avanzado"
       ],
@@ -104,6 +107,9 @@
       "Create login": [
         "Crear inicio de sesión"
       ],
+      "Create new items": [
+        "Crear elementos"
+      ],
       "Create note": [
         "Crear nota"
       ],
@@ -176,6 +182,9 @@
       "Get mobile apps": [
         "Descargar apps móviles"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Help us improve": [
         "Ayúdenos a mejorar"
       ],
@@ -190,6 +199,9 @@
       ],
       "Importing": [
         "Importando"
+      ],
+      "Install extension": [
+        "Instalar la extensión"
       ],
       "Invite others": [
         "Invitar a otros"
@@ -260,6 +272,9 @@
       "Pin item": [
         "Anclar elemento"
       ],
+      "Recent": [
+        "Reciente"
+      ],
       "Refresh the page": [
         "Refrescar la página"
       ],
@@ -274,6 +289,9 @@
       ],
       "Remove access": [
         "Borrar el acceso"
+      ],
+      "Remove member": [
+        "Quitar este miembro"
       ],
       "Request a feature": [
         "Solicitar una característica"
@@ -301,6 +319,9 @@
       ],
       "Send us a message": [
         "Envíenos un mensaje"
+      ],
+      "Set access level": [
+        "Configurar nivel de acceso"
       ],
       "Share": [
         "Compartir"
@@ -412,14 +433,18 @@
       "Auto-lock could not be disabled": [
         "No se pudo desactivar el bloqueo automático"
       ],
-      "Cannot send invitation to this address at the moment": [
-        "No se puede enviar una invitación a esta dirección por el momento."
+      "Cannot send invitation at the moment": [
+        "No se puede enviar la invitación por el momento",
+        "No se pueden enviar las invitaciones por el momento"
       ],
       "Could not confirm this invite at the moment": [
         "No se pudo confirmar esta invitación por el momento"
       ],
       "Could not leave vault.": [
         "No se pudo dejar la bóveda."
+      ],
+      "Could not load recommendations at the moment.": [
+        "No se pudieron cargar las recomendaciones por el momento."
       ],
       "Could not open created vault": [
         "No se pudo abrir la bóveda creada"
@@ -667,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } invitaciones enviadas con éxito"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
@@ -726,6 +754,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Bloqueo automático desactivado con éxito"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Traiga sus contraseñas existentes a ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -787,6 +818,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Las contraseñas generadas se guardarán durante un día."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Aproveche Pass al máximo creando una bóveda para cada equipo o proyecto."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenga alias ilimitados, disfrute funciones exclusivas y apóyenos al suscribirse a Pass Plus."
       ],
@@ -806,11 +840,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, conceda los permisos necesarios de la extensión"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instale ${ PASS_APP_NAME } para ${ browser.title } para completar automáticamente sus inicios de sesión."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Instale ${ PASS_APP_NAME } para ${ browser.title } para completar automáticamente sus inicios de sesión. "
+      ],
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
       "Invitation sent": [
         "Invitación enviada"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Invite a personas específicas y establezca los permisos correctos."
       ],
       "Invite successfully removed": [
         "Invitación borrada"
@@ -950,6 +993,9 @@
       ],
       "Select destination vault": [
         "Seleccione la bóveda de destino"
+      ],
+      "Select vault to share": [
+        "Seleccione la bóveda para compartir"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Seleccione dónde quiere guardar sus bóvedas importadas."
@@ -1284,6 +1330,15 @@
       "Logins": [
         "Inicios de sesión"
       ],
+      "Make all admins": [
+        "Promover a todos como administradores"
+      ],
+      "Make all editors": [
+        "Promover a todos como editores"
+      ],
+      "Make all viewers": [
+        "Promover a todos como lectores"
+      ],
       "Members": [
         "Miembros"
       ],
@@ -1612,6 +1667,9 @@
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
+      "Create a vault": [
+        "Crear una bóveda"
+      ],
       "Create PIN code": [
         "Crear código PIN"
       ],
@@ -1630,6 +1688,9 @@
       "Enter your PIN": [
         "Ingrese su código PIN"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Grant permissions": [
         "Conceder permisos"
       ],
@@ -1639,6 +1700,12 @@
       "Import to vault(s)": [
         "Importar a las bóvedas"
       ],
+      "Import your data": [
+        "Importe sus datos"
+      ],
+      "Install extension": [
+        "Instalar la extensión"
+      ],
       "Leave vault ?": [
         "¿Dejar la bóveda?"
       ],
@@ -1647,6 +1714,9 @@
       ],
       "Member limit": [
         "Límite de miembros"
+      ],
+      "Members": [
+        "Miembros"
       ],
       "Move all items ?": [
         "¿Mover todos los elementos?"
@@ -1666,6 +1736,9 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Review and share": [
+        "Revisar y compartir"
+      ],
       "Secure your data": [
         "Asegure sus datos"
       ],
@@ -1675,8 +1748,14 @@
       "Settings": [
         "Ajustes"
       ],
+      "Share vaults with your team": [
+        "Comparta bóvedas con su equipo"
+      ],
       "Share with": [
         "Compartir con"
+      ],
+      "Suggestions": [
+        "Sugerencias"
       ],
       "Transfer ownership": [
         "Transferir la propiedad"
@@ -1686,6 +1765,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "Vault": [
+        "Bóveda"
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"
@@ -1736,11 +1818,20 @@
       "An error occured while exporting your data": [
         "Se produjo un error al exportar sus datos"
       ],
+      "At least one email address is required": [
+        "Al menos se requiere una dirección de correo electrónico"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se pudo crear la bóveda \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "No se pudieron enviar las invitaciones a las siguientes direcciones:"
+      ],
+      "Duplicate email addresses.": [
+        "Direcciones de correo duplicadas."
       ],
       "Empty note": [
         "Nota vacía"
@@ -1750,6 +1841,9 @@
       ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"
+      ],
+      "Invalid email addresses.": [
+        "Direcciones de correo inválidas."
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
@@ -1773,6 +1867,9 @@
       "No password manager selected": [
         "Ningún gestor de contraseñas seleccionado"
       ],
+      "No results": [
+        "Sin resultados"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
       ],
@@ -1781,9 +1878,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
-      ],
-      "Please enter a valid email address": [
-        "Ingrese una dirección de correo válida"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique su dirección de correo para poder usar alias de correo."

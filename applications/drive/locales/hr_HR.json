@@ -198,6 +198,9 @@
       "Discard": [
         "Odbaci"
       ],
+      "Dismiss": [
+        "Odbaci"
+      ],
       "Done": [
         "Gotovo"
       ],
@@ -362,6 +365,9 @@
       ],
       "Next month": [
         "Sljedeći mjesec"
+      ],
+      "Not now": [
+        "Ne sada"
       ],
       "Ok": [
         "U redu"
@@ -2395,6 +2401,9 @@
     "Import instructions": {
       "Go to ${ boldAccountSecurity }.": [
         "Idi na ${ boldAccountSecurity }"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "Odaberite ${ boldExportCSV }."
       ]
     },
     "Import instructions emphasis": {
@@ -2783,6 +2792,9 @@
       "Something went wrong, please try again later.": [
         "Nešto je pošlo po zlu. Pokušajte ponovno."
       ],
+      "Something went wrong...": [
+        "Nešto je pošlo po zlu..."
+      ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
       ],
@@ -3161,6 +3173,9 @@
       "New password": [
         "Nova lozinka"
       ],
+      "Note": [
+        "Bilješka"
+      ],
       "Notification": [
         "Obavijest"
       ],
@@ -3241,6 +3256,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "Title": [
+        "Naslov"
       ],
       "To: ${ toEmail }": [
         "Za: ${ toEmail }"
@@ -3393,6 +3411,12 @@
     "Notification": {
       "\"${ name }\" moved to trash": [
         "\"${ name }\" premješten u Otpad"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } je onemogućen."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } je omogućen."
       ],
       "All items will soon be permanently deleted from trash": [
         "Sve stavke će uskoro biti trajno izbrisane iz otpada"
@@ -3601,6 +3625,11 @@
     "protonbadge": {
       "Official": [
         "Službeno"
+      ]
+    },
+    "Security Center": {
+      "Open ${ PASS_APP_NAME }": [
+        "Otvori ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -3959,6 +3988,12 @@
         "${ emailsCount } adrese e-pošte",
         "${ emailsCount } adrese e-pošte"
       ],
+      "Account recovery": [
+        "Oporavak računa"
+      ],
+      "Account security": [
+        "Sigurnost računa"
+      ],
       "Active": [
         "Aktivno"
       ],
@@ -4023,6 +4058,9 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Data recovery": [
+        "Povrat podataka"
       ],
       "Date": [
         "Datum"

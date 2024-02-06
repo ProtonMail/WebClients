@@ -213,6 +213,9 @@
       "Discard": [
         "Verwijderen"
       ],
+      "Dismiss": [
+        "Negeren"
+      ],
       "Don't know your password?": [
         "Wachtwoord vergeten?"
       ],
@@ -395,6 +398,9 @@
       ],
       "No, thanks": [
         "Nee, bedankt"
+      ],
+      "Not now": [
+        "Niet nu"
       ],
       "Ok": [
         "Ok"
@@ -2168,9 +2174,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail-logo en een plus-teken"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
       ],
@@ -2324,6 +2327,9 @@
       ],
       "6 users": [
         "6 gebruikers"
+      ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
       ]
     },
     "Error": {
@@ -2357,6 +2363,9 @@
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
+      ],
+      "Alias options could not be resolved": [
+        "Alias-opties konden niet worden opgevraagd"
       ],
       "Already a member of this calendar": [
         "Al lid van deze agenda"
@@ -2393,6 +2402,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
+      ],
+      "Could not open created vault": [
+        "Kon aangemaakte kluis niet openen"
+      ],
+      "Could not open updated vault": [
+        "Kon bijgewerkte kluis niet openen"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Decoderingsfout: Inhoud van deze afspraak decoderen is mislukt."
@@ -2485,6 +2500,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Het is enkel mogelijk om afspraken te verplaatsen tussen ${ minDateString } - ${ maxDateString }"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Item mag niet groter zijn dan 40KB"
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
@@ -4535,6 +4553,9 @@
       "Folder location": [
         "Map locatie"
       ],
+      "Forwards to": [
+        "Stuurt door na"
+      ],
       "Frequency": [
         "Frequentie"
       ],
@@ -4609,6 +4630,9 @@
       ],
       "New password": [
         "Nieuw wachtwoord"
+      ],
+      "Note": [
+        "Notitie"
       ],
       "Notification": [
         "Notificatie"
@@ -4700,6 +4724,9 @@
       ],
       "Time zone": [
         "Tijdzone"
+      ],
+      "Title": [
+        "Titel"
       ],
       "To: ${ toEmail }": [
         "Naar: ${ toEmail }"
@@ -5126,7 +5153,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Custom snooze time": [
-        "Aangepaste sluimertijd"
+        "Aangepaste snoozetijd"
       ],
       "End-to-end encryption": [
         "End-to-end versleuteling"
@@ -5202,6 +5229,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } is uitgezet"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } is aangezet"
+      ],
       "Contact group created": [
         "Contactgroep aangemaakt"
       ],
@@ -5659,6 +5692,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Afspraak herladen"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email-aliassen"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Open ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Probeer ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6141,6 +6185,14 @@
         "Uw huidige opslag:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } opslag"
+      ],
+      "Your storage is full": [
+        "Uw opslagruimte is vol"
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Agenda-URL"
@@ -6415,6 +6467,12 @@
         "${ emailsCount } e-mailadres",
         "${ emailsCount } e-mailadressen"
       ],
+      "Account recovery": [
+        "Accountherstel"
+      ],
+      "Account security": [
+        "Accountbeveiliging"
+      ],
       "Add another notification to remind you of this event": [
         "Voeg nog een melding toe om je te herinneren aan deze afspraak"
       ],
@@ -6508,6 +6566,9 @@
       ],
       "Customize your mail import": [
         "Uw e-mailimport aanpassen"
+      ],
+      "Data recovery": [
+        "Dataherstel"
       ],
       "Day theme": [
         "Dag thema"
@@ -6931,6 +6992,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Als u uw wachtwoord niet meer weet, is het onmogelijk om uw sleutel opnieuw te activeren. We kunnen u helpen om de waarschuwingsbanner te verwijderen, maar in het proces zult u permanent toegang verliezen tot alle gegevens die versleuteld zijn met die sleutel."
       ],
+      "Invalid alias prefix": [
+        "Ongeldig aliasvoorvoegsel"
+      ],
+      "Missing alias prefix": [
+        "Ontbrekend aliasvoorvoegsel"
+      ],
+      "Missing alias suffix": [
+        "Ontbrekend alias-achtervoegsel"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
@@ -6939,6 +7012,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Het aliasvoorvoegsel mag niet langer zijn dan 40 tekens"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
@@ -6966,6 +7042,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "We konden de mailserver niet verifiëren. Als u het vertrouwt dan kan u deze verificatie overslaan."
+      ],
+      "You must select at least one mailbox": [
+        "U moet ten minste één mailbox selecteren"
       ],
       "You will lose any customization you made so far.": [
         "U verliest elke aanpassing die u tot nu toe hebt gemaakt."
