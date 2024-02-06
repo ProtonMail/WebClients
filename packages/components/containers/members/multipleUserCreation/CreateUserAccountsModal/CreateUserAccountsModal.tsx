@@ -406,7 +406,7 @@ const CreateUserAccountsModal = ({
 
                                 return (
                                     <tr key={id} onClick={() => handleCheckboxChange(id)}>
-                                        <TableCell key="displayName" className="align-top">
+                                        <TableCell className="align-top">
                                             <Checkbox id={checkboxId} checked={isItemSelected} readOnly />
                                         </TableCell>
                                         <TableCell key="displayName" className="align-top">
@@ -414,7 +414,7 @@ const CreateUserAccountsModal = ({
                                                 <Marks chunks={displayName.chunks}>{displayName.text}</Marks>
                                             </div>
                                         </TableCell>
-                                        <TableCell key="emailAddresses" className="align-top">
+                                        <TableCell className="align-top">
                                             <ul className="unstyled m-0">
                                                 {emailAddresses.map(({ chunks, text }) => (
                                                     <li key={text} className="text-ellipsis" title={text}>
@@ -425,23 +425,14 @@ const CreateUserAccountsModal = ({
                                         </TableCell>
                                         {expectedCsvConfig.includeStorage && (
                                             <TableCell
-                                                key="totalStorage"
                                                 className="text-right text-no-wrap align-top"
                                                 title={humanReadableStorage}
                                             >
                                                 {humanReadableStorage}
                                             </TableCell>
                                         )}
-                                        {
-                                            <TableCell key="password" className="align-top">
-                                                {password}
-                                            </TableCell>
-                                        }
-                                        {
-                                            <TableCell key="role" className="align-top">
-                                                {c('Info').t`Member`}
-                                            </TableCell>
-                                        }
+                                        <TableCell className="align-top">{password}</TableCell>
+                                        <TableCell className="align-top">{c('Info').t`Member`}</TableCell>
                                     </tr>
                                 );
                             })}
