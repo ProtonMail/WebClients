@@ -30,8 +30,8 @@ import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import unique from '@proton/utils/unique';
 
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
@@ -161,10 +161,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const cycle = signupParameters.cycle || defaults.cycle;
             const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const planParameters = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
+            const { plan, planIDs } = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
-                plans: unique([planParameters.plan.Name as PLANS, PLANS.VPN]),
+                planIDs: [planIDs, !planIDs[PLANS.VPN] ? { [PLANS.VPN]: 1 } : undefined].filter(isTruthy),
                 cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 api: silentApi,
                 currency,
@@ -184,7 +184,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             paymentMethodStatus.Bitcoin = false;
 
             const subscriptionData =
-                subscriptionDataCycleMapping[planParameters.plan.Name as PLANS]?.[cycle] ||
+                subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
                 subscriptionDataCycleMapping[PLANS.VPN]?.[CYCLE.TWO_YEARS];
 
             setModelDiff({

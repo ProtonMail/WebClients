@@ -625,7 +625,7 @@ export const runAfterScroll = (el: Element, done: () => void) => {
 
 export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMapping<SubscriptionData> }>;
 export const getPlanCardSubscriptionData = async ({
-    plans,
+    planIDs,
     plansMap,
     api,
     coupon,
@@ -633,22 +633,22 @@ export const getPlanCardSubscriptionData = async ({
     cycles,
 }: {
     cycles: CYCLE[];
-    plans: PLANS[];
+    planIDs: PlanIDs[];
     plansMap: PlansMap;
     api: Api;
     coupon?: string;
     currency: Currency;
 }): Promise<SubscriptionDataCycleMapping> => {
     const result = await Promise.all(
-        plans.flatMap((plan) =>
+        planIDs.flatMap((planIDs) =>
             cycles
-                .map((cycle) => [plan, cycle] as const)
-                .map(async ([plan, cycle]): Promise<SubscriptionData> => {
-                    const planIDs = plan === PLANS.FREE ? {} : { [plan]: 1 };
-                    if (!coupon && (plan === PLANS.PASS_BUSINESS || plan === PLANS.PASS_PRO)) {
+                .map((cycle) => [planIDs, cycle] as const)
+                .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
+                    if (!coupon && (planIDs[PLANS.PASS_BUSINESS] || planIDs[PLANS.PASS_PRO])) {
                         coupon = COUPON_CODES.PASS_B2B_INTRO;
                     }
-                    if (!coupon || plan === PLANS.ENTERPRISE) {
+                    // If there's no coupon we can optimistically calculate the price. Also always exclude Enterprise (price never shown).
+                    if (!coupon || planIDs[PLANS.ENTERPRISE]) {
                         return {
                             planIDs,
                             currency,
