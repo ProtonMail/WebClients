@@ -1196,7 +1196,7 @@ const SingleSignupContainerV2 = ({
                                     const result = await handleCreateUser({
                                         cache,
                                         api: silentApi,
-                                        mode: toApp !== APPS.PROTONPASS ? 'cro' : undefined,
+                                        mode: toApp === APPS.PROTONPASS ? 'ov' : 'cro',
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,
