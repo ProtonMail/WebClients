@@ -3,6 +3,7 @@
 -   Support bulk invitations
 -   Support invite email suggestions
 -   B2B support with custom onboarding
+-   Allow searching items by alias email
 
 ### Version 1.12.0
 
