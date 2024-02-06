@@ -18,6 +18,8 @@ export const isRefreshError = (err: any): err is RefreshError => {
 export const getRefreshError = () =>
     new RefreshError(c('Error').t`${DRIVE_APP_NAME} has updated. Please refresh the page.`);
 
+const REFRESH_MESSAGE = 'Please refresh the page.';
+
 /**
  * This error denotes to the user they should refresh their page.
  * This should be chained to `import()`, `new Worker()` or `serviceWorker.register`.
@@ -28,8 +30,10 @@ export const getRefreshError = () =>
  * constructor directly and rebuild it on the main thread for localization.
  */
 export class RefreshError extends Error {
+    sentryMessage: string = REFRESH_MESSAGE;
+
     constructor(message?: string) {
-        super(message || 'Please refresh');
+        super(message || REFRESH_MESSAGE);
         this.name = 'RefreshError';
     }
 }

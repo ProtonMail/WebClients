@@ -22,6 +22,7 @@ export type SafeErrorObject = {
     // Used by Drive errors
     isEnrichedError?: boolean;
     context?: SafeObject;
+    sentryMessage?: string;
 };
 
 /**
@@ -96,5 +97,6 @@ export function getSafeErrorObject(error: Error): SafeErrorObject {
         // Used by Drive errors to provide additional data to Sentry
         isEnrichedError: (error as any).isEnrichedError,
         context: getSafeObject((error as any).context),
+        sentryMessage: (error as any).sentryMessage,
     };
 }

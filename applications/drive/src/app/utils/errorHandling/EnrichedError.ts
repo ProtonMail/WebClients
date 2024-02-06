@@ -32,7 +32,14 @@ export class EnrichedError extends Error {
 
     context?: CaptureContext;
 
-    constructor(message: string, context?: CaptureContext) {
+    /**
+     * An optional message to be used for Sentry instead of the `message` property.
+     *
+     * Useful in case of localized messages, to pass the original message.
+     */
+    sentryMessage?: string;
+
+    constructor(message: string, context?: CaptureContext, sentryMessage?: string) {
         super(message);
 
         // It is important that the name is "Error", as we want it
@@ -41,6 +48,7 @@ export class EnrichedError extends Error {
         this.name = 'Error';
 
         this.context = context;
+        this.sentryMessage = sentryMessage;
     }
 }
 
@@ -57,6 +65,11 @@ export const convertSafeError = (obj: SafeErrorObject) => {
     }
     error.name = obj.name;
     error.stack = obj.stack;
+
+    // Sentry message may be present on other error types
+    if (obj.sentryMessage) {
+        (error as any).sentryMessage = obj.sentryMessage;
+    }
 
     return error;
 };
