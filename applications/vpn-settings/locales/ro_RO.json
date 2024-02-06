@@ -287,6 +287,9 @@
       "Loading verification": [
         "În curs de verificare"
       ],
+      "Make admin": [
+        "Stabilire administrator"
+      ],
       "Mark as default": [
         "Setare ca implicită"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Anteriorul"
+      ],
+      "Recover data": [
+        "Recuperare date"
       ],
       "Refer a friend": [
         "Recomandați pe cineva"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Restaurare"
-      ],
-      "Restore administrator privileges": [
-        "Restaurare privilegii administrator"
       ],
       "Retry": [
         "Reîncercare"
@@ -1861,9 +1864,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail și semnul plus"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ]
@@ -1871,6 +1871,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Accesul la aplicația pentru desktop este limitat"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Versiunea beta a aplicației ${ MAIL_APP_NAME } pentru desktop este disponibilă în prezent pentru oricine are un plan cu plată ${ MAIL_APP_NAME }. Achiziționați un cont cu plată pentru a avea acces."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
@@ -2038,9 +2041,6 @@
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
       ],
-      "Organization key is not decrypted.": [
-        "Cheia organizației nu este decriptată."
-      ],
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
@@ -2058,9 +2058,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Plățile nu sunt disponibile acum, reîncercați mai târziu."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Permisiune refuzată, drepturile de administrator au fost restricționate."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configurația un domeniu personal înainte de a adăuga adrese."
@@ -2125,9 +2122,6 @@
       "The organization key must be activated first": [
         "Cheia organizației trebuie mai întâi activată."
       ],
-      "The organization key must be activated first.": [
-        "Cheia organizației trebuie mai întâi activată."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -2169,12 +2163,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Trebuie să activați cheile de organizare. Fără activare, nu veți putea crea sau accesa utilizatori non-privați."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Trebuie să faceți privați toți utilizatorii înainte de a genera noi chei pentru organizație."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
@@ -3050,9 +3038,6 @@
       "Country code": [
         "Cod țară"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Creați un cont nou și partajați adresa de e-mail și parola cu utilizatorul."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
       ],
@@ -3072,6 +3057,9 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Credit pentru porțiunea neutilizată din abonamentul planului anterior"
+      ],
+      "Current plan": [
+        "Plan actual"
       ],
       "Custom email domains": [
         "Domenii personale e-mail"
@@ -3125,6 +3113,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nu vedeți nimic? Verificați dacă aveți oprite modulele de blocare a ferestrelor flotante."
+      ],
+      "Downgrade": [
+        "Retrogradare"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
@@ -3402,12 +3393,6 @@
       "Or select a particular server:": [
         "Sau selectați un server anume:"
       ],
-      "Organization keys activated": [
-        "Chei organizație activate"
-      ],
-      "Organization keys restored": [
-        "Chei organizație restaurate"
-      ],
       "Organization size": [
         "Mărime organizație"
       ],
@@ -3428,6 +3413,9 @@
       ],
       "per month": [
         "pe lună"
+      ],
+      "per month, billed at ${ price }": [
+        "pe lună, facturat cu ${ price }"
       ],
       "per month, billed every 12 months": [
         "pe lună, facturat la fiecare 12 de luni"
@@ -3534,6 +3522,9 @@
       ],
       "Save ${ percentage }": [
         "Salvați ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Salvați parola într-un loc sigur."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Păstrați-vă parola într-un loc sigur. Faceți clic pe pictogramă pentru a confirma că ați scris parola corect."
@@ -3668,9 +3659,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Vor fi eliminate din organizație."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -3957,6 +3945,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Este conectat contul ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Utilizați mai mult spațiu de stocare decât este inclus într-un plan ${ downgradedPlanName }. Ștergeți din date pentru a putea retrograda contul."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
@@ -5574,8 +5565,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield special conceput să vă protejeze dispozitivul și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Spațiul de stocare este partajat între aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și${ PASS_APP_NAME }."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Spațiul de stocare este partajat între utilizatori în aplicațiile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } și${ PASS_APP_NAME }."
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
@@ -6691,6 +6688,89 @@
         "Spațiu actual:"
       ]
     },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "Păstrare ${ currentPlanName }"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Spațiu de stocare pentru date generate de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, și ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Până la ${ totalStorageSize } spațiu în Drive"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Până la ${ totalStorageSize } spațiu în Mail"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Spațiul de stocare ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } - ${ percentage }% ocupat"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Prin retrogradare veți pierde următoarele beneficii. Sigur doriți să continuați?"
+      ],
+      "contact your administrator": [
+        "contactați-vă administratorul"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Pentru toate serviciile ${ BRAND_NAME }"
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } este aproape plin."
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } este plin."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este ocupat ${ percentage }%. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Spațiu de stocare plin"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Veți pierde accesul la spațiul de ${ gb } și la asistența prioritară."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Veți pierde accesul la spațiul de stocare, adrese de e-mail, aliasuri și calendare suplimentare, precum și la asistență prioritară."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Veți pierde accesul la viteza maximă prin VPN, la protecția pentru 10 dispozitive, vizionare în flux de mare viteză, blocarea de reclame și protecția malware, precum și la asistența prioritară."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Veți pierde accesul la autentificări și note nelimitate, aliasuri hide-my-email nelimitate, 20 de seifuri, precum și la asistența prioritară."
+      ]
+    },
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
@@ -7040,9 +7120,6 @@
       "Country": [
         "Țara"
       ],
-      "Display name": [
-        "Nume afișat"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -7182,11 +7259,11 @@
       "Change mailbox password": [
         "Schimbare parolă mesaje"
       ],
-      "Change organization keys": [
-        "Schimbare chei organizație"
-      ],
       "Change organization name": [
         "Schimbare nume organizație"
+      ],
+      "Change organization password": [
+        "Schimbare parolă organizație"
       ],
       "Change password": [
         "Schimbare parolă"
@@ -7270,9 +7347,6 @@
         "Ștergere server (veți putea să-l recuperați timp de ${ days } zile).",
         "Ștergere server (veți putea să-l recuperați timp de ${ days } de zile)."
       ],
-      "Delete user": [
-        "Ștergere utilizator"
-      ],
       "Delete user?": [
         "Ștergere utilizator?"
       ],
@@ -7287,6 +7361,9 @@
       ],
       "Downgrade account": [
         "Retrogradare cont"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Retrogradare la ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
@@ -7478,9 +7555,6 @@
       ],
       "Request sent": [
         "Solicitare trimisă"
-      ],
-      "Reset organization keys": [
-        "Resetare chei organizație"
       ],
       "Reset password": [
         "Resetare parolă"
@@ -7929,9 +8003,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Trebuie să ${ activateLink } chei organizație înainte de a adăuga o adresă de e-mail unui membru non-privat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
