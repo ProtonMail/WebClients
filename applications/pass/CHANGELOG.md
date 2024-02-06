@@ -1,3 +1,9 @@
+### Version 1.13.0
+
+-   Support bulk invitations
+-   Support invite email suggestions
+-   B2B support with custom onboarding
+
 ### Version 1.12.0
 
 -   Add bulk item actions from items list

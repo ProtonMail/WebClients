@@ -1,3 +1,9 @@
+### Version 1.13.0
+
+-   Support bulk invitations
+-   Support invite email suggestions
+-   Improve and fix autosave triggers
+
 ### Version 1.12.0
 
 -   Add bulk item actions from items list
