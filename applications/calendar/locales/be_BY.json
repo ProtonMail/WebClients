@@ -219,6 +219,9 @@
       "Discard": [
         "Адхіліць"
       ],
+      "Dismiss": [
+        "Закрыць"
+      ],
       "Don't know your password?": [
         "Не ведаеце свой пароль?"
       ],
@@ -407,6 +410,9 @@
       ],
       "No, thanks": [
         "Не, дзякуй"
+      ],
+      "Not now": [
+        "Не зараз"
       ],
       "Ok": [
         "Добра"
@@ -2196,6 +2202,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Павялічце эфектыўнасць і сачыце за сваім часам кадзіруючы колерам падзеі пры дапамозе катэгорый або сваім энергетычным узроўнем. Атрымайце гэту і многія іншыя функцыі з платным тарыфным планам."
       ],
@@ -2211,23 +2220,32 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя часткі, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Лагатып Proton Mail і знак плюс"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Задаць спосаб аднаўлення, каб прадухіліць страту даных."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца Proton Calendar."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Палепшыць свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }. Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту са спецыялізаванай падтрымкай 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -2237,6 +2255,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Спосаб аднаўлення вашага ўліковага запісу зададзены."
       ]
     },
     "description": {
@@ -2437,8 +2461,26 @@
       "Address primary private key not found": [
         "Асноўны прыватны ключ адраса не знойдзены"
       ],
+      "Alias is not valid": [
+        "Несапраўдны псеўданім"
+      ],
+      "Alias is required": [
+        "Патрабуецца псеўданім"
+      ],
+      "Alias options could not be resolved": [
+        "Не атрымалася вызначыць параметры псеўданіма"
+      ],
+      "Aliases could not be loaded": [
+        "Немагчыма загрузіць псеўданімы"
+      ],
       "Already a member of this calendar": [
         "Ужо з'яўляецца ўдзельнікам гэтага календара"
+      ],
+      "An error occurred while loading alias options": [
+        "Падчас загрузкі параметраў псеўданіма адбылася памылка"
+      ],
+      "An error occurred while saving alias": [
+        "Падчас захавання псеўданіма адбылася памылка"
       ],
       "Answer failed to be sent": [
         "Не ўдалося адправіць адказ"
@@ -2475,6 +2517,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
+      ],
+      "Could not open created vault": [
+        "Немагчыма адкрыць створанае сховішча"
+      ],
+      "Could not open updated vault": [
+        "Немагчыма адкрыць абноўленае сховішча"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Памылка расшыфроўкі: Не ўдалося расшыфраваць змесціва гэтай падзеі."
@@ -2533,6 +2581,9 @@
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
+      "Forward address is required": [
+        "Патрабуецца адрас перасылкі"
+      ],
       "Image upload failed": [
         "Не ўдалося запампаваць відарыс"
       ],
@@ -2572,6 +2623,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Перамяшчаць падзеі можна толькі ў інтэрвале паміж ${ minDateString } і ${ maxDateString }"
       ],
+      "Item content cannot exceed 40KB": [
+        "Змесціва элемента не можа перавышаць 40 КБ"
+      ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
       ],
@@ -2589,6 +2643,9 @@
       ],
       "Missing signature": [
         "Адсутнічае подпіс"
+      ],
+      "Name is required": [
+        "Патрабуецца назва"
       ],
       "Name required": [
         "Патрабуецца назва"
@@ -4040,6 +4097,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Важная заўвага"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
       ],
@@ -4307,6 +4367,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце свой тарыфны план зараз, каб атрымаць прэміяльныя функцыі, прадукты, а таксама палепшыць сховішча па спецыяльнай цане"
       ],
+      "Warning": [
+        "Папярэджанне"
+      ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
       ],
@@ -4510,7 +4573,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "Гэта звязана з тым, што ваш пароль быў нядаўна скінуты без выкарыстання метаду аднаўлення."
+        "Гэта звязана з тым, што ваш пароль быў нядаўна скінуты без выкарыстання спосабу аднаўлення."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -4725,6 +4788,9 @@
       "Folder location": [
         "Размяшчэнне папкі"
       ],
+      "Forwards to": [
+        "Пераслаць на"
+      ],
       "Frequency": [
         "Перыядычнасць"
       ],
@@ -4799,6 +4865,9 @@
       ],
       "New password": [
         "Новы пароль"
+      ],
+      "Note": [
+        "Нататка"
       ],
       "Notification": [
         "Апавяшчэнне"
@@ -4892,6 +4961,9 @@
       ],
       "Time zone": [
         "Часавы пояс"
+      ],
+      "Title": [
+        "Назва"
       ],
       "To: ${ toEmail }": [
         "Каму: ${ toEmail }"
@@ -5013,7 +5085,7 @@
     },
     "Link; reset calendar keys modal": {
       "What's a recovery method?": [
-        "Што ўяўляе сабой метад аднаўлення?"
+        "Што ўяўляе сабой спосаб аднаўлення?"
       ]
     },
     "Loading info": {
@@ -5421,6 +5493,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } было адключана"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } было ўключана"
+      ],
       "Contact group created": [
         "Група кантактаў створана"
       ],
@@ -5949,6 +6027,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Перазагрузіць падзею"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Псеўданімаў Hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Адкрыць ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Паспрабуйце ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6815,6 +6904,12 @@
         "${ emailsCount } адрасоў электроннай пошты",
         "${ emailsCount } адрасоў электроннай пошты"
       ],
+      "Account recovery": [
+        "Аднаўленне ўліковага запісу"
+      ],
+      "Account security": [
+        "бяспеку ўліковага запісу"
+      ],
       "Add another notification to remind you of this event": [
         "Дадаць іншае апавяшчэнне, каб нагадаць вам пра гэту падзею"
       ],
@@ -6910,6 +7005,9 @@
       ],
       "Customize your mail import": [
         "Наладжванне імпартавання вашай пошты"
+      ],
+      "Data recovery": [
+        "Аднаўленне даных"
       ],
       "Day theme": [
         "Дзённая тэма"
@@ -7342,8 +7440,23 @@
       "Contacts could not be merged": [
         "Не атрымалася аб'яднаць кантакты"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам ігнараваць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."
+      ],
+      "Invalid alias prefix": [
+        "Памылковы прэфікс псеўданіма"
+      ],
+      "Missing alias prefix": [
+        "Прапушчаны прэфікс псеўданіма"
+      ],
+      "Missing alias suffix": [
+        "Памылковы суфікс псеўданіма"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
@@ -7353,6 +7466,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некаторыя аб'яднаныя кантакты маюць памылкі. Праверце іх асобна"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Прэфікс псеўданіма не можа быць даўжэй за 40 сімвалаў"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Кантактныя даныя пашкоджаны і не могуць быць адлюстраваны."
@@ -7380,6 +7496,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Мы не змаглі праверыць паштовы сервер. Калі вы давяраеце яму, то можаце прапусціць гэту праверку."
+      ],
+      "You must select at least one mailbox": [
+        "Вы павінны выбраць прынамсі адну паштовую скрыню"
       ],
       "You will lose any customization you made so far.": [
         "Вы страціце любыя наладжванні, якія былі зроблены да гэтага."

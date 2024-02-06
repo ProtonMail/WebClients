@@ -213,6 +213,9 @@
       "Discard": [
         "Kassér"
       ],
+      "Dismiss": [
+        "Afvis"
+      ],
       "Don't know your password?": [
         "Kan du ikke din adgangskode?"
       ],
@@ -221,6 +224,9 @@
       ],
       "Download": [
         "Download"
+      ],
+      "Download now": [
+        "Download nu"
       ],
       "Edit": [
         "Redigér"
@@ -318,6 +324,9 @@
       "Import from Outlook": [
         "Importér fra Outlook"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Vigtig opdatering tilgængelig. For fortsat at kunne bruge appen, bedes du opdatere til den nyeste version. ${ downloadUpdate }"
+      ],
       "Join calendar": [
         "Tilmeld kalender"
       ],
@@ -395,6 +404,9 @@
       ],
       "No, thanks": [
         "Nej tak"
+      ],
+      "Not now": [
+        "Ikke nu"
       ],
       "Ok": [
         "Ok"
@@ -2177,9 +2189,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
@@ -2389,6 +2398,9 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias options could not be resolved": [
+        "Alias-indstillinger kunne ikke hentes"
+      ],
       "Already a member of this calendar": [
         "Allerede et medlem af denne kalender"
       ],
@@ -2427,6 +2439,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åbne den opdaterede boks"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
@@ -2520,6 +2538,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Det er kun muligt at flytte begivenheder mellem ${ minDateString } - ${ maxDateString }"
       ],
+      "Item content cannot exceed 40KB": [
+        "Element-indhold må ikke overstige 40 kB"
+      ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
@@ -2547,6 +2568,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Ingen e-mails fundet til import - kontoen har ikke en indbakke"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Ingen ekstern nøgle hentet for brugeren er gyldig til afsendelse"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
@@ -4572,6 +4596,9 @@
       "Folder location": [
         "Mappeplacering"
       ],
+      "Forwards to": [
+        "Videresender til"
+      ],
       "Frequency": [
         "Frekvens"
       ],
@@ -4646,6 +4673,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "Note": [
+        "Note"
       ],
       "Notification": [
         "Notifikation"
@@ -4737,6 +4767,9 @@
       ],
       "Time zone": [
         "Tidszone"
+      ],
+      "Title": [
+        "Titel"
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
@@ -5242,6 +5275,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet deaktiveret"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } er blevet aktiveret"
+      ],
       "Contact group created": [
         "Kontaktgruppe oprettet"
       ],
@@ -5543,6 +5582,15 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
       ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Ekstern nøgle hentes automatisk fra keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Ekstern nøgle hentes automatisk via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Denne nøgle bruges til at kryptere beskeder til denne kontakt."
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
       ]
@@ -5705,6 +5753,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Genindlæs begivenhed"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasser"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Åbn ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Prøv ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6200,6 +6259,47 @@
         "Din aktuelle lagerplads:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } lagerplads"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage } % fuldt"
+      ],
+      "contact your administrator": [
+        "kontakt din administrator"
+      ],
+      "upgrade for more storage": [
+        "opgrader for at få mere lagerplads"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Dit ${ appStorage } er næsten fuldt"
+      ],
+      "Your ${ appStorage } is full": [
+        "Dit ${ appStorage } er fuldt"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Dit lager er fuldt"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Kalender-URL"
@@ -6474,6 +6574,12 @@
         "${ emailsCount } e-mailadresse",
         "${ emailsCount } e-mailadresser"
       ],
+      "Account recovery": [
+        "Kontogendannelse"
+      ],
+      "Account security": [
+        "Kontosikkerhed"
+      ],
       "Add another notification to remind you of this event": [
         "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
       ],
@@ -6567,6 +6673,9 @@
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
+      ],
+      "Data recovery": [
+        "Datagendannelse"
       ],
       "Day theme": [
         "Dagstema"
@@ -6987,8 +7096,23 @@
       "Contacts could not be merged": [
         "Kontakter kunne ikke flettes"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Udløbsdatoen er ikke i formatet MM/ÅÅ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
+      ],
+      "Invalid alias prefix": [
+        "Ugyldigt alias-præfiks"
+      ],
+      "Missing alias prefix": [
+        "Mangler alias-præfiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler alias-suffiks"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
@@ -6998,6 +7122,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Alias-præfikset må højest være 40 tegn langt."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdata er beskadiget og kan ikke vises."
@@ -7025,6 +7152,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Vi kunne ikke verificere mailserveren. Hvis du stoler på den, kan du springe denne verifikation over."
+      ],
+      "You must select at least one mailbox": [
+        "Du skal vælge mindst en postkasse"
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
