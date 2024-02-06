@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
 import PassAliasesUpsellModal from '@proton/components/components/upsell/modal/types/PassAliasesUpsellModal';
-import { ErrorBoundary, GenericError, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { ErrorBoundary, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -117,9 +118,14 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e) => (
                 <>
-                    <GenericError />
-                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR && (
-                        <p className="text-center self-stretch">{c('Error').t`Aliases could not be loaded`}</p>
+                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR ? (
+                        <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
+                            <div className="text-weak text-sm">
+                                {c('Error message').t`Please refresh the page or try again later.`}
+                            </div>
+                        </GenericErrorDisplay>
+                    ) : (
+                        <GenericErrorDisplay />
                     )}
                 </>
             )}
