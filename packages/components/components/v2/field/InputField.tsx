@@ -223,7 +223,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             >
                 {keepAssistiveText ? (
                     <div>
-                        <span className="block field-two-assist--kept">{assistiveText}</span>
+                        <span className="flex field-two-assist--kept">{assistiveText}</span>
                         <span className="block">{errorElement || warningElement}</span>
                     </div>
                 ) : (
