@@ -3,7 +3,7 @@
 /**
  * Returns `true` if the passed parameter is an `Error`.
  */
-const isError = (e: unknown): e is Error =>
+export const isError = (e: unknown): e is Error =>
     e instanceof Error ||
     (!!e &&
         typeof e === 'object' &&
