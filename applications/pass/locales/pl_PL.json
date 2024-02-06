@@ -17,6 +17,9 @@
       "Add new item": [
         "Dodaj nowy element"
       ],
+      "Admin panel": [
+        "Panel administratora"
+      ],
       "Advanced": [
         "Zaawansowane"
       ],
@@ -104,6 +107,9 @@
       "Create login": [
         "Utwórz dane logowania"
       ],
+      "Create new items": [
+        "Utwórz nowe elementy"
+      ],
       "Create note": [
         "Utwórz notatkę"
       ],
@@ -176,6 +182,9 @@
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
       ],
@@ -190,6 +199,9 @@
       ],
       "Importing": [
         "Importowanie"
+      ],
+      "Install extension": [
+        "Zainstaluj rozszerzenie"
       ],
       "Invite others": [
         "Zaproś użytkowników"
@@ -260,6 +272,9 @@
       "Pin item": [
         "Przypnij element"
       ],
+      "Recent": [
+        "Ostatnie"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -274,6 +289,9 @@
       ],
       "Remove access": [
         "Usuń dostęp"
+      ],
+      "Remove member": [
+        "Usuń użytkownika"
       ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
@@ -301,6 +319,9 @@
       ],
       "Send us a message": [
         "Wyślij nam wiadomość"
+      ],
+      "Set access level": [
+        "Ustaw uprawnienia"
       ],
       "Share": [
         "Udostępnij"
@@ -412,14 +433,20 @@
       "Auto-lock could not be disabled": [
         "Automatyczna blokada nie mogła zostać wyłączona"
       ],
-      "Cannot send invitation to this address at the moment": [
-        "Nie można obecnie wysłać zaproszenia na ten adres"
+      "Cannot send invitation at the moment": [
+        "Nie można wysłać zaproszenia",
+        "Nie można wysłać zaproszeń",
+        "Nie można wysłać zaproszeń",
+        "Nie można wysłać zaproszeń"
       ],
       "Could not confirm this invite at the moment": [
         "Zaproszenie nie może zostać potwierdzone"
       ],
       "Could not leave vault.": [
         "Nie można opuścić sejfu."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Nie można załadować zaleceń."
       ],
       "Could not open created vault": [
         "Nie można otworzyć utworzonego sejfu"
@@ -747,6 +774,9 @@
       "Auto-lock successfully disabled": [
         "Automatyczna blokada została wyłączona"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Przenieś obecne hasła do ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Wbudowana aplikacja uwierzytelniająca"
       ],
@@ -974,6 +1004,9 @@
       ],
       "Select destination vault": [
         "Wybierz docelowy sejf"
+      ],
+      "Select vault to share": [
+        "Wybierz sejf do udostępnienia"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
@@ -1316,6 +1349,15 @@
       "Logins": [
         "Dane logowania"
       ],
+      "Make all admins": [
+        "Ustaw uprawnienie administratora wszystkim"
+      ],
+      "Make all editors": [
+        "Ustaw uprawnienie edycji wszystkim"
+      ],
+      "Make all viewers": [
+        "Ustaw uprawnienie odczytu wszystkim"
+      ],
       "Members": [
         "Użytkownicy"
       ],
@@ -1645,6 +1687,9 @@
       "Confirm PIN code": [
         "Potwierdź kod PIN"
       ],
+      "Create a vault": [
+        "Utwórz sejf"
+      ],
       "Create PIN code": [
         "Utwórz kod PIN"
       ],
@@ -1663,6 +1708,9 @@
       "Enter your PIN": [
         "Wpisz kod PIN"
       ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
       "Grant permissions": [
         "Przyznaj uprawnienia"
       ],
@@ -1672,6 +1720,12 @@
       "Import to vault(s)": [
         "Importuj do sejfów"
       ],
+      "Import your data": [
+        "Importuj dane"
+      ],
+      "Install extension": [
+        "Zainstaluj rozszerzenie"
+      ],
       "Leave vault ?": [
         "Opuścić sejf?"
       ],
@@ -1680,6 +1734,9 @@
       ],
       "Member limit": [
         "Limit użytkowników"
+      ],
+      "Members": [
+        "Użytkownicy"
       ],
       "Move all items ?": [
         "Przenieść wszystkie elementy?"
@@ -1699,6 +1756,9 @@
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
       ],
+      "Review and share": [
+        "Przejrzyj i udostępnij"
+      ],
       "Secure your data": [
         "Zabezpiecz swoje dane"
       ],
@@ -1708,8 +1768,14 @@
       "Settings": [
         "Ustawienia"
       ],
+      "Share vaults with your team": [
+        "Udostępnij sejfy swojemu zespołowi"
+      ],
       "Share with": [
         "Udostępnij"
+      ],
+      "Suggestions": [
+        "Sugestie"
       ],
       "Transfer ownership": [
         "Zmień właściciela"
@@ -1719,6 +1785,9 @@
       ],
       "Update available": [
         "Dostępna jest aktualizacja"
+      ],
+      "Vault": [
+        "Sejf"
       ],
       "Vault shared with you": [
         "Udostępniony sejf"
@@ -1775,6 +1844,12 @@
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses :": [
+        "Nie można wysłać zaproszeń na następujące adresy:"
+      ],
+      "Duplicate email addresses.": [
+        "Adresy e-mail są zduplikowane."
+      ],
       "Empty note": [
         "Notatka jest pusta"
       ],
@@ -1783,6 +1858,9 @@
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
+      ],
+      "Invalid email addresses.": [
+        "Adres e-mail jest nieprawidłowy."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",
@@ -1808,6 +1886,9 @@
       "No password manager selected": [
         "Nie wybrano menadżera haseł"
       ],
+      "No results": [
+        "Nie znaleziono żadnych wyników"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
@@ -1816,9 +1897,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
-      ],
-      "Please enter a valid email address": [
-        "Wpisz prawidłowy adres e-mail"
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"

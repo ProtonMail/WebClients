@@ -176,6 +176,9 @@
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
       "Help us improve": [
         "Дапамажыце нам палепшыць наш сэрвіс"
       ],
@@ -190,6 +193,9 @@
       ],
       "Importing": [
         "Імпартаванне"
+      ],
+      "Install extension": [
+        "Усталяваць пашырэнне"
       ],
       "Invite others": [
         "Запрасіць іншых"
@@ -411,9 +417,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Не атрымалася адключыць аўтаблакіроўку"
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "У дадзены момант немагчыма адправіць запрашэнне на гэты адрас"
       ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
@@ -827,6 +830,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME }, дайце неабходныя дазволы пашырэнню"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Усталюйце ${ PASS_APP_NAME } для ${ browser.title }, каб хутка аўтазапаўняць вашы запісы ўваходу. "
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -1819,9 +1825,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
-      ],
-      "Please enter a valid email address": [
-        "Увядзіце сапраўдны адрас электроннай пошты"
       ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
