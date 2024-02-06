@@ -110,8 +110,8 @@ describe('PassAliases', () => {
                 'Hide-my-email aliases let you sign up for things online without sharing your email address.'
             )
         ).toBeInTheDocument();
-        // Button should be "New alias"
-        expect(screen.getByText('Get an alias')).toBeInTheDocument();
+
+        expect(screen.getByText('Create an alias')).toBeInTheDocument();
     });
 
     it('opens the create alias modal when the "Get an alias" button is clicked', async () => {
@@ -130,8 +130,7 @@ describe('PassAliases', () => {
 
         render(<PassAliases />);
 
-        // Click the "Get an alias" button
-        await userEvent.click(screen.getByText('Get an alias'));
+        await userEvent.click(screen.getByText('Create an alias'));
 
         // Assert that the create alias modal is opened
         expect(screen.getByTestId('pass-aliases:create')).toBeInTheDocument();
