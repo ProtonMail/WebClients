@@ -2,6 +2,7 @@ import { ChangeEvent, JSX, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import {
     Checkbox,
@@ -43,7 +44,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import removeIndex from '@proton/utils/removeIndex';
 
-import validateAddUser from '../../validateAddUser';
 import { CsvConfig } from '../csv';
 import InvalidAddressesError from '../errors/InvalidAddressesError';
 import UnavailableAddressesError from '../errors/UnavailableAddressesError';
