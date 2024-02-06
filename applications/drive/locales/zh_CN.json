@@ -193,11 +193,11 @@
       "Delete": [
         "删除"
       ],
-      "Delete ${ selectedCount } contact groups": [
-        "删除 ${ selectedCount } 个联系人组"
-      ],
-      "Delete ${ selectedCount } contacts": [
+      "Delete ${ selectedCount } contact": [
         "删除 ${ selectedCount } 个联系人"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "删除 ${ selectedCount } 个联系人组"
       ],
       "Delete contact": [
         "删除联系人"
@@ -222,6 +222,9 @@
       ],
       "Discard": [
         "放弃"
+      ],
+      "Dismiss": [
+        "忽略"
       ],
       "Don't know your password?": [
         "忘记密码？"
@@ -426,6 +429,9 @@
       ],
       "Next month": [
         "下个月"
+      ],
+      "Not now": [
+        "以后再说"
       ],
       "Ok": [
         "确定"
@@ -743,13 +749,13 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domains": [
+      "${ domains } custom domain": [
         "${ domains } 个自定义域"
       ],
-      "${ ips } servers": [
+      "${ ips } server": [
         "${ ips } 个服务器"
       ],
-      "${ users } users": [
+      "${ users } user": [
         "${ users } 位用户"
       ]
     },
@@ -928,7 +934,7 @@
       ]
     },
     "Checkout row": {
-      "${ users } users": [
+      "${ users } user": [
         "${ users } 位用户"
       ]
     },
@@ -1901,9 +1907,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail 图标与一个加号"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
       ],
@@ -2039,10 +2042,16 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars": [
+      "Could not open created vault": [
+        "无法打开创建的保管库"
+      ],
+      "Could not open updated vault": [
+        "无法打开已更新的保管库"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
         "至少取消选择 ${ calendarsToFixCount } 个日历"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars or": [
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
         "至少取消选择 ${ calendarsToFixCount } 个日历或"
       ],
       "Device name does not match": [
@@ -2108,13 +2117,16 @@
       "Invalid verification code": [
         "验证码无效"
       ],
+      "Item content cannot exceed 40KB": [
+        "项目内容不能超过 40KB"
+      ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
       ],
       "Last name is too long": [
         "姓氏太长。"
       ],
-      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
@@ -2138,6 +2150,12 @@
       "Not a valid number": [
         "无效号码"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "某个/些群组没有联系人：${ noContactGroupList } "
+      ],
       "Password is required": [
         "密码必须填写"
       ],
@@ -2150,7 +2168,7 @@
       "Please activate your search again": [
         "请重新开启全文搜索"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
       "Please provide either a first name, a last name or a display name": [
@@ -2183,17 +2201,11 @@
       "Some contacts could not be deleted": [
         "无法删除部分联系人"
       ],
-      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
-        "部分联系人没有邮箱地址：${ noEmailsContactNamesList }"
-      ],
       "Some files were ignored because they are not supported in Photos": [
         "某些文件被忽略，因为照片中不支持它们"
       ],
       "Some groups could not be deleted": [
         "无法删除部分群组"
-      ],
-      "Some groups have no contacts: ${ noContactGroupList } ": [
-        "某个/些群组没有联系人：${ noContactGroupList } "
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "部分文件夹名称不可用，请自定导入内容并予以更改。"
@@ -2314,7 +2326,7 @@
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
         "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -2703,7 +2715,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "B"
       ],
       "GB": [
@@ -2720,19 +2732,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "字节"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "GB"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "KB"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "MB"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "TB"
       ]
     },
@@ -2789,7 +2801,7 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 建议，使用键盘导航。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
@@ -2808,14 +2820,14 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密并添加日程时出错。未能导入任何日程。"
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "加密并添加日程时出错。未能导入任何日程。"
@@ -2848,10 +2860,10 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 ${ BRAND_NAME } 邮箱地址邀请您。"
       ],
-      "This file contains event invitations:": [
+      "This file contains an event invitation:": [
         "此文件包含活动邀请："
       ],
-      "This file contains invitation responses:": [
+      "This file contains an invitation response:": [
         "此文件包含邀请回复："
       ],
       "This file contains some data that we cannot import:": [
@@ -2859,7 +2871,7 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
@@ -2884,7 +2896,7 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contacts": [
+      "${ totalContacts } contact": [
         "${ totalContacts } 名联系人"
       ]
     },
@@ -3057,7 +3069,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
       ],
       "No contact can be imported. Click for details": [
@@ -3080,7 +3092,7 @@
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
         "${ activeUploadsCount } 项正在上传 (${ uploadProgress }%)"
       ],
-      "${ addressCount } email addresses": [
+      "${ addressCount } email address": [
         "${ addressCount } 个邮箱地址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -3089,28 +3101,28 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
-      "${ calendarsToBeCreatedCount } new calendars": [
+      "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
-      "${ calendarsToBeMergedCount } merged calendars": [
+      "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } 项已取消"
       ],
-      "${ contactCount } contacts contain multiple email addresses.": [
+      "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
-      "${ contactEmailsLength } Members": [
+      "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 有多个邮箱地址。"
       ],
-      "${ contactsCount } contacts found": [
+      "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
       ],
-      "${ contactsLength } contacts": [
+      "${ contactsLength } contact": [
         "${ contactsLength } 位联系人"
       ],
       "${ doneCount } finished": [
@@ -3137,43 +3149,43 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
       ],
-      "${ groupCounts } groups found": [
+      "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
       ],
       "${ pausedCount } paused": [
         "${ pausedCount } 项已暂停"
       ],
-      "${ providerFoldersNumLocalized } folders found": [
+      "${ providerFoldersNumLocalized } folder found": [
         "已找到 ${ providerFoldersNumLocalized } 个文件夹"
       ],
-      "${ providerFoldersNumLocalized } labels found in Gmail": [
+      "${ providerFoldersNumLocalized } label found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
-      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
       ],
       "${ selectedCount } selected": [
         "已选择 ${ selectedCount }"
       ],
-      "${ selectedFoldersCountLocalized } folders selected": [
+      "${ selectedFoldersCountLocalized } folder selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
-      "${ selectedFoldersCountLocalized } labels selected": [
+      "${ selectedFoldersCountLocalized } label selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ updated } contacts updated successfully.": [
+      "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已存在于该路径。"
       ],
-      "(${ memberCount } members)": [
+      "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
       "A number will be added to the filename": [
@@ -3191,10 +3203,10 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "已对此地址开启密钥验证，向对方发送邮件前需要先信任其公钥。"
       ],
-      "All (${ totalFoldersCount } folders)": [
+      "All (${ totalFoldersCount } folder)": [
         "全部（${ totalFoldersCount } 个文件夹）"
       ],
-      "All (${ totalFoldersCount } labels)": [
+      "All (${ totalFoldersCount } label)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
       "All your changes will be lost.": [
@@ -3308,7 +3320,7 @@
       "Country code": [
         "国家/地区代码"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendars": [
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
         "创建 ${ calendarsToBeCreatedCount } 份新日历"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
@@ -3347,7 +3359,7 @@
       "Decrypting files": [
         "正在解密文件"
       ],
-      "Delete locked drives": [
+      "Delete locked drive": [
         "删除锁定的网盘"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
@@ -3437,7 +3449,7 @@
       "Enter your own password (as organization admin).": [
         "请输入你的密码（作为组织管理员）。"
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
         "预计剩余时间：${ estimatedMinutes } 分钟"
       ],
       "Estimated time remaining: Less than a minute": [
@@ -3524,7 +3536,7 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "如果您有其中之一，请继续进行 ${ BRAND_NAME } 账户设置以开始解锁过程。"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
       "Import from": [
@@ -3689,7 +3701,7 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters are allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "最多只能允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
       ],
       "Only the people with the link and the password can access this file.": [
@@ -3731,7 +3743,7 @@
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
-      "Please select which email address or addresses to add to ${ groupCount } groups.": [
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
         "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
@@ -3878,6 +3890,9 @@
       "Something went wrong, please try again later.": [
         "出错了，请稍后再试。"
       ],
+      "Something went wrong...": [
+        "出了些问题..."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
@@ -3932,7 +3947,7 @@
       "This month": [
         "这个月"
       ],
-      "This will delete the links and remove access to your files or folders for anyone with the links.": [
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "这将删除链接并移除任何拥有该链接的人对您文件（夹）的访问权限。"
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
@@ -4112,7 +4127,7 @@
       "You cannot undo this action.": [
         "您无法撤销此操作。"
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
         "您还剩 ${ expiresInDays } 天来领取 500 MB 欢迎奖金，并且 "
       ],
       "You will lose all unsaved changes.": [
@@ -4184,10 +4199,10 @@
       ]
     },
     "Info: partial": {
-      "${ selectedFoldersCount } folders selected": [
+      "${ selectedFoldersCount } folder selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
       ],
-      "${ selectedFoldersCount } labels selected": [
+      "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ]
     },
@@ -4244,10 +4259,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
-      "${ nbDay } days": [
+      "${ nbDay } day": [
         "${ nbDay } 天"
       ],
-      "${ nbYear } years": [
+      "${ nbYear } year": [
         "${ nbYear } 年"
       ],
       "(Expired)": [
@@ -4355,7 +4370,7 @@
       "Delete": [
         "删除"
       ],
-      "Delete drives?": [
+      "Delete drive?": [
         "删除网盘?"
       ],
       "Delete recovery-related information.": [
@@ -4375,6 +4390,9 @@
       ],
       "Download anyway": [
         "仍要下载"
+      ],
+      "Downloading ${ percentageValue }": [
+        "正在下载 ${ percentageValue }"
       ],
       "Duplicate found": [
         "发现重复"
@@ -4435,6 +4453,9 @@
       ],
       "Folder name": [
         "文件夹名称"
+      ],
+      "Forwards to": [
+        "转发至"
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
@@ -4522,6 +4543,9 @@
       ],
       "New password": [
         "新密码"
+      ],
+      "Note": [
+        "笔记"
       ],
       "Notification": [
         "通知"
@@ -4624,6 +4648,9 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "这将永久删除您的锁定网盘中的所有文件。"
+      ],
+      "Title": [
+        "标题"
       ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
@@ -4748,7 +4775,7 @@
       "Almost there": [
         "即将准备就绪"
       ],
-      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4768,16 +4795,16 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
         "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
@@ -4797,6 +4824,11 @@
       ],
       "Plain text": [
         "纯文本"
+      ]
+    },
+    "Mimetype": {
+      "iCalendar format": [
+        "iCalendar 格式"
       ]
     },
     "Modal title": {
@@ -4836,10 +4868,10 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendars": [
+      "${ n } calendar": [
         "${ n } 个日历"
       ],
-      "${ n } calendars per user": [
+      "${ n } calendar per user": [
         "每位用户 ${ n } 个日历"
       ],
       "Auto-delete spam and trashed messages": [
@@ -4907,12 +4939,12 @@
       ]
     },
     "new_plans: tooltip": {
-      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
       ]
     },
     "new_plans: Upsell attribute": {
-      "Create up to ${ n } calendars": [
+      "Create up to ${ n } calendar": [
         "创建最多 ${ n } 个日历"
       ]
     },
@@ -4959,38 +4991,44 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName } 重命名成功"
       ],
-      "${ count } items failed to be decrypted": [
+      "${ count } item failed to be decrypted": [
         "${ count } 个项目解密失败"
       ],
-      "${ numberOfItems } items deleted permanently from trash": [
+      "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 个项目已从回收站永久删除"
       ],
-      "${ numberOfItems } items failed to be deleted permanently from trash": [
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" 个项目从回收站永久删除失败"
       ],
-      "${ numberOfItems } items failed to be moved": [
+      "${ numberOfItems } item failed to be moved": [
         "${ numberOfItems } 个项目移动失败"
       ],
-      "${ numberOfItems } items failed to be moved to trash": [
+      "${ numberOfItems } item failed to be moved to trash": [
         "${ numberOfItems } 个项目移到回收站失败"
       ],
-      "${ numberOfItems } items failed to be restored from trash": [
+      "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems }\" 个项目从回收站还原失败"
       ],
-      "${ numberOfItems } items moved to trash": [
+      "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 个项目已移动到回收站"
       ],
-      "${ numberOfItems } items restored from trash": [
+      "${ numberOfItems } item restored from trash": [
         "从回收站还原了${ numberOfItems } 个项目"
       ],
-      "${ numberOfItems } items successfully moved": [
+      "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 个项目移动成功"
       ],
-      "${ numberOfItems } links to your items failed to be deleted": [
+      "${ numberOfItems } link to your item failed to be deleted": [
         "${ numberOfItems } 个共享链接删除失败"
       ],
-      "${ numberOfItems } links to your items were deleted": [
+      "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } 个共享链接已删除"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } 已停用"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } 已启用"
       ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
@@ -5031,7 +5069,7 @@
       "Failed to upload files: ${ err }": [
         "上传文件失败：${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } others are already uploading": [
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "文件或文件夹“${ filename }”以及其他 ${ count } 项正在上传中"
       ],
       "File or folder \"${ filename }\" is already uploading": [
@@ -5043,10 +5081,10 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
-      "Move ${ n } files": [
+      "Move ${ n } file": [
         "移动 ${ n } 个文件"
       ],
-      "Move ${ n } items": [
+      "Move ${ n } item": [
         "移动 ${ n } 个项目"
       ],
       "Not enough space to upload ${ formattedTotal }": [
@@ -5121,7 +5159,7 @@
       "Set a recovery method": [
         "设置恢复方法"
       ],
-      "Simply complete the following in the next ${ expiresInDays } days:": [
+      "Simply complete the following in the next ${ expiresInDays } day:": [
         "只需在接下来的 ${ expiresInDays } 天内完成以下任务："
       ],
       "Upload a file": [
@@ -5272,13 +5310,13 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length }/${ countContacts } 名联系人已成功导出。"
       ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
       ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "共 ${ totalBeMerged } 名联系人，成功合并 ${ model.submitted.length } 名联系人。"
       ],
       "No contacts exported.": [
@@ -5331,6 +5369,17 @@
         "${ BRAND_NAME } 官方邮件"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "个hide-my-email别名"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "打开 ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "体验 ${ PASS_APP_NAME }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "上传"
@@ -5358,19 +5407,19 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } days": [
+      "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } 天"
       ],
-      "${ timeRemaining.inHours } hours": [
+      "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } 小时"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
       ],
-      "This permission expires in ${ timeRemaining.inDays } days": [
+      "This permission expires in ${ timeRemaining.inDays } day": [
         "此权限将在 ${ timeRemaining.inDays } 天后过期"
       ],
-      "This permission expires in ${ timeRemaining.inHours } hours": [
+      "This permission expires in ${ timeRemaining.inHours } hour": [
         "此权限将在 ${ timeRemaining.inHours } 小时后过期"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
@@ -5434,13 +5483,13 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hours": [
+      "${ gracePeriodHoursRemaining } more hour": [
         "还有${ gracePeriodHoursRemaining } 小时"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "如果您没有要求重置密码，请立刻取消此请求。"
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
@@ -5469,7 +5518,7 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hours": [
+      "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } 小时"
       ],
       "${ passwordReset } is now available.": [
@@ -5520,21 +5569,21 @@
       ]
     },
     "specialoffer: Countdown unit": {
-      "${ days } days": [
+      "${ days } day": [
         "${ days } 天"
       ],
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours } 小时"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes } 分钟"
       ],
-      "${ seconds } seconds": [
+      "${ seconds } second": [
         "${ seconds } 秒"
       ]
     },
     "specialoffer: Deal": {
-      "${ n } months FREE": [
+      "${ n } month FREE": [
         "免费 ${ n } 个月"
       ]
     },
@@ -5593,7 +5642,7 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } months": [
+      "${ n } month": [
         "${ n } 月"
       ],
       "/ month": [
@@ -5722,8 +5771,16 @@
         "您当前的存储空间："
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } 存储空间"
+      ],
+      "Your storage is full": [
+        "你的存储空间满了"
+      ]
+    },
     "Success": {
-      "${ countMergeableContacts } contacts look identical.": [
+      "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 位联系人信息似乎完全相同。"
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
@@ -5741,14 +5798,17 @@
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
-      "Contact groups deleted": [
+      "Contact deleted": [
+        "已删除联系人"
+      ],
+      "Contact group deleted": [
         "联系人群组已删除"
       ],
       "Contact saved": [
         "联系人已保存"
       ],
       "Contacts deleted": [
-        "已删除联系人"
+        "联系人已删除"
       ],
       "Email address copied to clipboard": [
         "邮箱地址已复制到剪贴板"
@@ -5870,13 +5930,13 @@
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours } 小时"
       ],
-      "${ hoursInt }.5 hours": [
+      "${ hoursInt }.5 hour": [
         "${ hoursInt }.5 小时"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes } 分钟"
       ]
     },
@@ -5884,17 +5944,23 @@
       "# of downloads": [
         "下载数"
       ],
-      "${ emailsCount } email addresses": [
+      "${ emailsCount } email address": [
         "${ emailsCount } 个邮箱地址"
       ],
-      "${ numberOfFailedTransfer.total } failed downloads": [
+      "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 个失败的下载"
       ],
-      "${ numberOfFailedTransfer.total } failed transfers": [
+      "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } 传输失败"
       ],
-      "${ numberOfFailedTransfer.total } failed uploads": [
+      "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } 个失败的上传"
+      ],
+      "Account recovery": [
+        "账户恢复"
+      ],
+      "Account security": [
+        "账户安全"
       ],
       "Active": [
         "进行中"
@@ -5902,7 +5968,7 @@
       "Add contact group name": [
         "添加联系人群组名称"
       ],
-      "Add to ${ groupCount } groups": [
+      "Add to ${ groupCount } group": [
         "添加到 ${ groupCount } 个群组"
       ],
       "Add to ${ groupName }": [
@@ -5983,17 +6049,20 @@
       "Customize your mail import": [
         "自定义您的邮件导入"
       ],
+      "Data recovery": [
+        "数据恢复"
+      ],
       "Date": [
         "日期"
       ],
       "Day theme": [
         "日间模式"
       ],
-      "Delete ${ count } contact groups": [
-        "删除 ${ count } 个联系人组"
-      ],
-      "Delete ${ count } contacts": [
+      "Delete ${ count } contact": [
         "删除 ${ count } 联系人"
+      ],
+      "Delete ${ count } contact group": [
+        "删除 ${ count } 个联系人组"
       ],
       "Delete ${ value }": [
         "删除 ${ value }"
@@ -6073,7 +6142,7 @@
       "Folder details": [
         "文件夹详细信息"
       ],
-      "Found ${ searchView.numberOfResults } results": [
+      "Found ${ searchView.numberOfResults } result": [
         "找到${ searchView.numberOfResults }条结果"
       ],
       "Groups": [
@@ -6085,7 +6154,7 @@
       "Human verification": [
         "身份验证"
       ],
-      "Import as simple events?": [
+      "Import as simple event?": [
         "导入为简单活动？"
       ],
       "Import contacts": [
@@ -6421,15 +6490,15 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } characters": [
+      "Password must contain at least ${ length } character": [
         "密码必须至少包含 ${ length } 个字符"
       ],
-      "Try a shorter username (${ n } characters max)": [
+      "Try a shorter username (${ n } character max)": [
         "请缩短用户名（最长 ${ n } 个字符）"
       ]
     },
     "Validation Error": {
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "名称不能超过 ${ MAX_NAME_LENGTH } 个字符"
       ],
       "Name must not be empty": [
@@ -6451,7 +6520,7 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
       ],
-      "Are you sure you want to permanently delete ${ count } contacts?": [
+      "Are you sure you want to permanently delete ${ count } contact?": [
         "您确定要永久删除 ${ count } 联系人吗？"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
@@ -6469,6 +6538,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
+      "Invalid alias prefix": [
+        "无效的别名前缀"
+      ],
+      "Missing alias prefix": [
+        "缺少别名前缀"
+      ],
+      "Missing alias suffix": [
+        "缺少别名后缀"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "仅允许使用字母数字字符、点、连字符和下划线"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息。"
       ],
@@ -6477,6 +6558,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合并的联系人无法显示，请单独查看。"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "别名前缀不可超过40个字符"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "联系人数据损坏，无法显示。"
@@ -6504,6 +6588,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "邮件服务器验证失败，如果您信任该服务器，可以跳过此项验证。"
+      ],
+      "You must select at least one mailbox": [
+        "您必须选择至少一个邮箱"
       ],
       "You will lose any customization you made so far.": [
         "当前的导入设置将无法恢复。"

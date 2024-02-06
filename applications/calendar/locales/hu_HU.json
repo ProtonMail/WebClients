@@ -213,6 +213,9 @@
       "Discard": [
         "Elvetés"
       ],
+      "Dismiss": [
+        "Elvetés"
+      ],
       "Don't know your password?": [
         "Nem tudja a jelszavát?"
       ],
@@ -392,6 +395,9 @@
       ],
       "No, thanks": [
         "Köszönöm, nem"
+      ],
+      "Not now": [
+        "Most nem"
       ],
       "Ok": [
         "OK"
@@ -2115,9 +2121,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek egyesítése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail logó és egy plusz jel"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
       ],
@@ -2299,6 +2302,9 @@
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
+      "Alias options could not be resolved": [
+        "Az e-mail álnév adatainak betöltése nem sikerült"
+      ],
       "Already a member of this calendar": [
         "Már tagja ennek a naptárnak"
       ],
@@ -2334,6 +2340,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
+      ],
+      "Could not open created vault": [
+        "A létrehozott tároló megnyitása nem sikerült"
+      ],
+      "Could not open updated vault": [
+        "A frissített tároló megnyitása nem sikerült"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Hiba: Az esemény tartalmának visszafejtése sikertelen."
@@ -2426,6 +2438,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Az esemény csak a következő két dátum között mozgatható:  ${ minDateString } - ${ maxDateString }"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Az elem tartalma nem lehet több 40KB-nál"
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
@@ -4445,6 +4460,9 @@
       "Folder location": [
         "Mappa helye"
       ],
+      "Forwards to": [
+        "Továbbít:"
+      ],
       "Frequency": [
         "Gyakoriság"
       ],
@@ -4519,6 +4537,9 @@
       ],
       "New password": [
         "Új jelszó"
+      ],
+      "Note": [
+        "Megjegyzés"
       ],
       "Notification": [
         "Értesítés"
@@ -4610,6 +4631,9 @@
       ],
       "Time zone": [
         "Időzóna"
+      ],
+      "Title": [
+        "Cím"
       ],
       "To: ${ toEmail }": [
         "Címzett: ${ toEmail }"
@@ -5097,6 +5121,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } letiltva"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } engedélyezésre került"
+      ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
       ],
@@ -5548,6 +5578,14 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Esemény újratöltése"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email álnevek"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } megnyitása"
       ]
     },
     "Select files": {
@@ -6009,6 +6047,14 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } tárhely"
+      ],
+      "Your storage is full": [
+        "A tárhelye megtelt"
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "Naptár URL"
@@ -6283,6 +6329,12 @@
         "${ emailsCount } e-mail cím",
         "${ emailsCount } e-mail cím"
       ],
+      "Account recovery": [
+        "Fiók helyreállítás"
+      ],
+      "Account security": [
+        "Fiókbiztonság"
+      ],
       "Add another notification to remind you of this event": [
         "További emlékeztető hozzáadása az eseményhez"
       ],
@@ -6373,6 +6425,9 @@
       ],
       "Customize your mail import": [
         "Az e-mail importálás testreszabása"
+      ],
+      "Data recovery": [
+        "Adat helyreállítás"
       ],
       "Day theme": [
         "Nappali téma"
@@ -6796,6 +6851,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adat elérésének lehetőségét."
       ],
+      "Invalid alias prefix": [
+        "Érvénytelen e-mail álnév előtag"
+      ],
+      "Missing alias prefix": [
+        "Hiányzó e-mail álnév előtag"
+      ],
+      "Missing alias suffix": [
+        "Hiányzó e-mail álnév végződés"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Csak alfanumerikus karakterek, pontok, kötőjelek és aláhúzás használható"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
       ],
@@ -6804,6 +6871,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Némelyik névjegy egyesítése hibát jelez. Vizsgálja meg ezeket"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Az e-mail előtag nem lehet hosszabb mint 40 karakter"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "A névjegy adatai sérültek és nem jeleníthetők meg."
@@ -6831,6 +6901,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nem sikerült ellenőrzni a mail-szervert. Ha megbízik benne, átugorhatja ezt az ellenőrzést."
+      ],
+      "You must select at least one mailbox": [
+        "Legalább egy e-mail fiókot ki kell választania"
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."

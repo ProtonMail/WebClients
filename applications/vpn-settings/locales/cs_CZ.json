@@ -287,6 +287,9 @@
       "Loading verification": [
         "Načítání ověření"
       ],
+      "Make admin": [
+        "Nastavit správcem"
+      ],
       "Mark as default": [
         "Označit jako výchozí"
       ],
@@ -328,6 +331,9 @@
       ],
       "Previous": [
         "Předchozí"
+      ],
+      "Recover data": [
+        "Obnovit data"
       ],
       "Refer a friend": [
         "Doporučit přátelům"
@@ -376,9 +382,6 @@
       ],
       "Restore": [
         "Obnovit"
-      ],
-      "Restore administrator privileges": [
-        "Obnovit oprávnění správce"
       ],
       "Retry": [
         "Opakovat"
@@ -1869,9 +1872,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail a znaménko plus"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ]
@@ -2046,9 +2046,6 @@
       "Organization key is not decrypted": [
         "Klíč organizace není dešifrován"
       ],
-      "Organization key is not decrypted.": [
-        "Klíč organizace není dešifrován."
-      ],
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
@@ -2066,9 +2063,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Provádět platby není momentálně dostupné, zkuste to prosím později"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Přístup odepřen, oprávnění správce byla omezena."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Před přidáním uživatelů do Vaši organizace si prosím nastavte vlastní doménu."
@@ -2130,9 +2124,6 @@
       "The organization key must be activated first": [
         "Nejprve musí být aktivován klíč organizace"
       ],
-      "The organization key must be activated first.": [
-        "Nejprve musí být aktivován klíč organizace."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole přesahuje maximální délku ${ maximumLength } znaků."
       ],
@@ -2174,12 +2165,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nesoukromé uživatele ani k nim přistupovat."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
@@ -3060,9 +3045,6 @@
       "Country code": [
         "Kód země"
       ],
-      "Create a new account and share the email address and password with the user.": [
-        "Vytvořte nový účet a sdílejte s uživatelem e-mailovou adresu a heslo."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvořte a spravujte podúčty a přiřaďte jim e-mailové adresy na vlastní doméně."
       ],
@@ -3408,12 +3390,6 @@
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
       ],
-      "Organization keys activated": [
-        "Klíče organizace byly aktivovány"
-      ],
-      "Organization keys restored": [
-        "Klíče organizace byly obnoveny"
-      ],
       "Organization size": [
         "Velikost organizace"
       ],
@@ -3543,6 +3519,9 @@
       "Save ${ percentage }": [
         "Ušetřete ${ percentage }"
       ],
+      "Save your password somewhere safe.": [
+        "Heslo uložte na bezpečném místě."
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Uložte si heslo na bezpečné místo. Kliknutím na ikonu potvrďte, že jste heslo zadali správně."
       ],
@@ -3587,6 +3566,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Některé z vašich dostupných serverů lze kvůli nedávnému odstranění používat pouze v určitých zemích."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Určete doménu, která se smí ověřovat pomocí SAML SSO."
       ],
       "Step ${ step }": [
         "Krok ${ step }",
@@ -3677,9 +3659,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Tyto přihlašovací údaje nelze použít k přihlášení do našich oficiálních aplikací ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Budou odebráni z vaší organizace"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -6724,6 +6703,45 @@
       "${ app } storage": [
         "${ app } úložiště"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% zaplněno"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Snížením úrovně přijdete o následující výhody. Jste si jisti, že chcete pokračovat?"
+      ],
+      "contact your administrator": [
+        "kontaktujte svého správce"
+      ],
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Vaše ${ appStorage } je téměř plné"
+      ],
+      "Your ${ appStorage } is full": [
+        "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání emailů uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Vaše ${ storage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání e-mailů, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Vaše úložiště je plné"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ upgrade }."
+      ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
       ]
@@ -7090,9 +7108,6 @@
       "Country": [
         "Stát"
       ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -7232,11 +7247,11 @@
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
-      "Change organization keys": [
-        "Změnit klíče organizace"
-      ],
       "Change organization name": [
         "Změnit název organizace"
+      ],
+      "Change organization password": [
+        "Změnit heslo organizace"
       ],
       "Change password": [
         "Změnit heslo"
@@ -7322,9 +7337,6 @@
         "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
         "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
-      "Delete user": [
-        "Smazat uživatele"
-      ],
       "Delete user?": [
         "Smazat uživatele?"
       ],
@@ -7339,6 +7351,9 @@
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Snížit na ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
@@ -7528,9 +7543,6 @@
       ],
       "Request sent": [
         "Požadavek odeslán"
-      ],
-      "Reset organization keys": [
-        "Obnovit klíče organizace"
       ],
       "Reset password": [
         "Resetovat heslo"
@@ -7973,9 +7985,6 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Bohužel nejsme momentálně dostupní. Chcete-li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } klíče organize předtím, než přidáte e-mailovou adresu veřejnému členovi."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"

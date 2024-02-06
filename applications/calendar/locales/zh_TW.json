@@ -69,7 +69,7 @@
       "Apply": [
         "套用"
       ],
-      "At most ${ maxContacts } contacts are allowed per contact group": [
+      "At most ${ maxContacts } contact is allowed per contact group": [
         "每個聯絡人群組至多允許 ${ maxContacts } 個聯絡人"
       ],
       "Attach screenshot(s)": [
@@ -192,11 +192,11 @@
       "Delete": [
         "刪除"
       ],
-      "Delete ${ selectedCount } contact groups": [
-        "刪除 ${ selectedCount } 個聯絡人群組"
-      ],
-      "Delete ${ selectedCount } contacts": [
+      "Delete ${ selectedCount } contact": [
         "刪除 ${ selectedCount } 個聯絡人"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "刪除 ${ selectedCount } 個聯絡人群組"
       ],
       "Delete contact": [
         "刪除聯絡人"
@@ -210,6 +210,9 @@
       "Discard": [
         "放棄"
       ],
+      "Dismiss": [
+        "忽略"
+      ],
       "Don't know your password?": [
         "不知您的密碼?"
       ],
@@ -218,6 +221,9 @@
       ],
       "Download": [
         "下載"
+      ],
+      "Download now": [
+        "现在下载"
       ],
       "Edit": [
         "編輯"
@@ -315,6 +321,9 @@
       "Import from Outlook": [
         "從 Outlook 匯入"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "重大更新可供下載。如要繼續使用應用程式，請更新至最新版本。 ${ downloadUpdate }"
+      ],
       "Join calendar": [
         "加入日曆"
       ],
@@ -392,6 +401,9 @@
       ],
       "No, thanks": [
         "不用了，謝謝"
+      ],
+      "Not now": [
+        "現在不要"
       ],
       "Ok": [
         "確定"
@@ -665,13 +677,13 @@
       ]
     },
     "Addon": {
-      "${ domains } custom domains": [
+      "${ domains } custom domain": [
         "${ domains } 個自訂網域"
       ],
-      "${ ips } servers": [
+      "${ ips } server": [
         "${ ips } 台伺服器"
       ],
-      "${ users } users": [
+      "${ users } user": [
         "${ users } 個使用者"
       ]
     },
@@ -809,7 +821,7 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
       ],
-      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
@@ -990,10 +1002,10 @@
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "無法將此行事曆與更多 ${ BRAND_NAME } 使用者分享"
       ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
         "您已達到此行事曆的 ${ MAX_CALENDAR_MEMBERS } 個成員的上限。\n要與更多 ${ BRAND_NAME } 帳號分享此行事曆，請移除一些成員。"
       ],
-      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "您已創建達到此行事曆最多的 ${ MAX_LINKS_PER_CALENDAR } 個連結。\n要為此行事曆創建新連結，請刪除既有的。"
       ]
     },
@@ -1094,7 +1106,7 @@
       ]
     },
     "Checkout row": {
-      "${ users } users": [
+      "${ users } user": [
         "${ users } 個使用者"
       ]
     },
@@ -2056,18 +2068,18 @@
       "On date…": [
         "在這日期…"
       ],
-      "times": [
+      "time": [
         "次"
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } times": [
+      "${ count } time": [
         "總共 ${ count } 次"
       ],
       "Daily": [
         "每天"
       ],
-      "Every ${ interval } days": [
+      "Every ${ interval } day": [
         "每 ${ interval } 天"
       ],
       "until ${ dateString }": [
@@ -2078,7 +2090,7 @@
       "Daily, ${ timesString }": [
         "每天，${ timesString }"
       ],
-      "Every ${ interval } days, ${ timesString }": [
+      "Every ${ interval } day, ${ timesString }": [
         "每 ${ interval } 天，${ timesString }"
       ]
     },
@@ -2086,7 +2098,7 @@
       "Daily, ${ untilString }": [
         "每天，${ untilString }"
       ],
-      "Every ${ interval } days, ${ untilString }": [
+      "Every ${ interval } day, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
       ]
     },
@@ -2153,9 +2165,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
-      ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail 標誌與加號"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
@@ -2324,8 +2333,23 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME }無法連接外部帳號"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "某些聯絡人不具備有效的電郵位址 ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "部份聯絡人無電子郵件位址：${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "某些群組包含無效的電郵: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "部份群組內沒有任何聯絡人：${ list }"
       ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
@@ -2338,6 +2362,9 @@
       ],
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
+      ],
+      "Alias options could not be resolved": [
+        "別名選項無法解析處理"
       ],
       "Already a member of this calendar": [
         "已經是行事曆的成員了"
@@ -2378,13 +2405,19 @@
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
       ],
+      "Could not open created vault": [
+        "無法開啟被新增的保管庫"
+      ],
+      "Could not open updated vault": [
+        "無法開啟已更新的保管庫"
+      ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失敗：此事件內容解密失敗。"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars": [
+      "Deselect at least ${ calendarsToFixCount } calendar": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendars or": [
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
       ],
       "Domain not available, try again later": [
@@ -2465,13 +2498,16 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "僅可在 ${ minDateString } - ${ maxDateString } 之間移動事件"
       ],
+      "Item content cannot exceed 40KB": [
+        "項目無法超越40KB"
+      ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
       ],
       "Last name is too long": [
         "姓氏太長"
       ],
-      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
       ],
       "Missing key packet": [
@@ -2492,6 +2528,9 @@
       "No emails found to import - the account does not have an inbox": [
         "沒有找到電子郵件可以匯入 - 該帳號沒有收件匣"
       ],
+      "No external key retrieved for user is valid for sending": [
+        "使用者沒有提取到任何用於寄送的有效外部金鑰"
+      ],
       "No valid address found": [
         "未能找到有效位址"
       ],
@@ -2503,6 +2542,12 @@
       ],
       "Number of occurrences cannot be empty": [
         "重複次數不能為空"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Password is required": [
         "密碼為必填"
@@ -2516,7 +2561,7 @@
       "Please create an address first.": [
         "請先創建一個位址。"
       ],
-      "Please fix the highlighted conflicts to proceed.": [
+      "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
       "Please provide either a first name, a last name or a display name": [
@@ -2537,7 +2582,7 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
       ],
-      "Removed duplicate recipients: ${ joinedRecipients }": [
+      "Removed duplicate recipient: ${ joinedRecipients }": [
         "已移除重複的收件者：${ joinedRecipients }"
       ],
       "Request timed out": [
@@ -2555,26 +2600,8 @@
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
       ],
-      "Some contacts don't have a valid email address: ${ list }": [
-        "某些聯絡人不具備有效的電郵位址 ${ list }"
-      ],
-      "Some contacts have no email addresses: ${ list }": [
-        "部份聯絡人無電子郵件位址：${ list }"
-      ],
-      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
-        "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
-      ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
-      ],
-      "Some groups have invalid emails: ${ list }": [
-        "某些群組包含無效的電郵: ${ list }"
-      ],
-      "Some groups have no contacts: ${ list }": [
-        "部份群組內沒有任何聯絡人：${ list }"
-      ],
-      "Some groups have no contacts: ${ noContactGroupList } ": [
-        "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
@@ -2666,7 +2693,7 @@
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipients": [
+      "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You have reached the contacts limit for your account": [
@@ -2708,7 +2735,7 @@
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
         "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS } 則事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -2917,7 +2944,7 @@
       ]
     },
     "Event form": {
-      "${ numberOfAttendees } participants": [
+      "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } 個參與者"
       ]
     },
@@ -2925,7 +2952,7 @@
       "All day": [
         "全天"
       ],
-      "All day, lasts ${ plusDaysToEnd } days": [
+      "All day, lasts ${ plusDaysToEnd } day": [
         "全天，持續${ plusDaysToEnd }天"
       ]
     },
@@ -3142,7 +3169,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "位元組"
       ],
       "GB": [
@@ -3159,19 +3186,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "位元組"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "GB"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "千位元組"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "MB"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "TB"
       ]
     },
@@ -3234,7 +3261,7 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
@@ -3253,14 +3280,14 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
         "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
-      ],
-      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
-        "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
@@ -3293,10 +3320,10 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件位址向您發出邀請。"
       ],
-      "This file contains event invitations:": [
+      "This file contains an event invitation:": [
         "此檔案包含事件邀請："
       ],
-      "This file contains invitation responses:": [
+      "This file contains an invitation response:": [
         "此檔案包含邀請回覆："
       ],
       "This file contains some data that we cannot import:": [
@@ -3304,7 +3331,7 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
@@ -3329,7 +3356,7 @@
       ]
     },
     "Import contact groups info": {
-      "${ totalContacts } contacts": [
+      "${ totalContacts } contact": [
         "${ totalContacts } 位聯絡人"
       ]
     },
@@ -3502,7 +3529,7 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEvents } 個行程之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
       ],
       "No contact can be imported. Click for details": [
@@ -3516,7 +3543,7 @@
       ]
     },
     "Info": {
-      "${ addressCount } email addresses": [
+      "${ addressCount } email address": [
         "${ addressCount } 個電郵位址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
@@ -3525,55 +3552,55 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
-      "${ calendarsToBeCreatedCount } new calendars": [
+      "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
-      "${ calendarsToBeMergedCount } merged calendars": [
+      "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
-      "${ contactCount } contacts contain multiple email addresses.": [
+      "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } 個聯絡人包含多個電子郵件位址。"
       ],
-      "${ contactEmailsLength } Members": [
+      "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成員"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 聯絡名片包含多組電郵位址。"
       ],
-      "${ contactsCount } contacts found": [
+      "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位聯絡人"
       ],
-      "${ contactsLength } contacts": [
+      "${ contactsLength } contact": [
         "${ contactsLength } 位聯絡人"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } 與 ${ lastItem }"
       ],
-      "${ groupCounts } groups found": [
+      "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ providerFoldersNumLocalized } folders found": [
+      "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
       ],
-      "${ providerFoldersNumLocalized } labels found in Gmail": [
+      "${ providerFoldersNumLocalized } label found in Gmail": [
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
-      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
-      "${ selectedFoldersCountLocalized } folders selected": [
+      "${ selectedFoldersCountLocalized } folder selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
-      "${ selectedFoldersCountLocalized } labels selected": [
+      "${ selectedFoldersCountLocalized } label selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
-      "${ updated } contacts updated successfully.": [
+      "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
-      "(${ memberCount } members)": [
+      "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3600,10 +3627,10 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
-      "All (${ totalFoldersCount } folders)": [
+      "All (${ totalFoldersCount } folder)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
       ],
-      "All (${ totalFoldersCount } labels)": [
+      "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
@@ -3681,7 +3708,7 @@
       "Country code": [
         "國家代碼"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendars": [
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
         "創建 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
@@ -3756,7 +3783,7 @@
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
         "預計尚餘時間：${ estimatedMinutes } 分鐘"
       ],
       "Estimated time remaining: Less than a minute": [
@@ -3789,7 +3816,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
@@ -3930,7 +3957,7 @@
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
       ],
-      "Please select which email address or addresses to add to ${ groupCount } groups.": [
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
         "請選取一或多組電郵位址以加入至 ${ groupCount } 個群組。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
@@ -4240,10 +4267,10 @@
       ]
     },
     "Info: partial": {
-      "${ selectedFoldersCount } folders selected": [
+      "${ selectedFoldersCount } folder selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
       ],
-      "${ selectedFoldersCount } labels selected": [
+      "${ selectedFoldersCount } label selected": [
         "已選取 ${ selectedFoldersCount } 個標籤"
       ]
     },
@@ -4281,7 +4308,7 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ maxAttendees } participants are allowed per invitation": [
+      "At most ${ maxAttendees } participant is allowed per invitation": [
         "您最多可以一次邀請 ${ maxAttendees } 位參與者"
       ],
       "Creating invites in a shared calendar is not allowed": [
@@ -4474,6 +4501,9 @@
       "Folder location": [
         "資料夾位置"
       ],
+      "Forwards to": [
+        "轉寄至"
+      ],
       "Frequency": [
         "頻率"
       ],
@@ -4549,6 +4579,9 @@
       "New password": [
         "新密碼"
       ],
+      "Note": [
+        "備註"
+      ],
       "Notification": [
         "通知"
       ],
@@ -4570,11 +4603,11 @@
       "Organizer": [
         "召集人"
       ],
+      "participant": [
+        "位參與者"
+      ],
       "Participants": [
         "參與者"
-      ],
-      "participants": [
-        "位參與者"
       ],
       "Password": [
         "密碼"
@@ -4638,6 +4671,9 @@
       ],
       "Time zone": [
         "時區"
+      ],
+      "Title": [
+        "標題"
       ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
@@ -4766,7 +4802,7 @@
       "Almost there": [
         "快完成了"
       ],
-      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
         "已創建的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
@@ -4786,16 +4822,16 @@
       ]
     },
     "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
         "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
         "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
         "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
       ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
@@ -4891,7 +4927,7 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } months ${ onDayString }": [
+      "Every ${ interval } month ${ onDayString }": [
         "每 ${ interval } 個月的${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
@@ -4899,7 +4935,7 @@
       ]
     },
     "Monthly recurring event, frequency (times)": {
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "每 ${ interval } 個月的${ onDayString }，${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
@@ -4907,7 +4943,7 @@
       ]
     },
     "Monthly recurring event, frequency (until)": {
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "每 ${ interval } 個月的${ onDayString }，${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
@@ -5041,10 +5077,10 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } calendars": [
+      "${ n } calendar": [
         "${ n } 個行事曆"
       ],
-      "${ n } calendars per user": [
+      "${ n } calendar per user": [
         "${ n } 個行事曆分配給每位使用者"
       ],
       "Auto-delete spam and trashed messages": [
@@ -5115,7 +5151,7 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
       ],
-      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
@@ -5126,11 +5162,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "Create up to ${ n } calendars": [
+      "Create up to ${ n } calendar": [
         "創建多達 ${ n } 個行事曆"
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } 已停用。"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } 已啟用。"
+      ],
       "Contact group created": [
         "聯絡人群組已創建"
       ],
@@ -5153,7 +5195,7 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Members added": [
+      "Member added": [
         "成員已新增"
       ]
     },
@@ -5187,69 +5229,69 @@
       "at time of event": [
         "屆時"
       ],
-      "days before": [
+      "day before": [
         "天前"
       ],
-      "hours before": [
+      "hour before": [
         "小時前"
       ],
-      "minutes before": [
+      "minute before": [
         "分鐘前"
       ],
       "on the same day": [
         "同日"
       ],
-      "weeks before": [
+      "week before": [
         "週前"
       ]
     },
     "Notifications": {
-      "${ value } days after": [
+      "${ value } day after": [
         "${ value } 天後"
       ],
-      "${ value } days after at ${ time }": [
+      "${ value } day after at ${ time }": [
         "${ value } 天後，於 ${ time }"
       ],
-      "${ value } days before": [
+      "${ value } day before": [
         "${ value } 天前"
       ],
-      "${ value } days before at ${ time }": [
+      "${ value } day before at ${ time }": [
         "${ value } 天前，即是 ${ time }"
       ],
-      "${ value } hours after": [
+      "${ value } hour after": [
         "${ value } 小時後"
       ],
-      "${ value } hours after at ${ time }": [
+      "${ value } hour after at ${ time }": [
         "${ value } 小時後，即是 ${ time }"
       ],
-      "${ value } hours before": [
+      "${ value } hour before": [
         "${ value } 小時前"
       ],
-      "${ value } hours before at ${ time }": [
+      "${ value } hour before at ${ time }": [
         "${ value } 小時前，即是 ${ time }"
       ],
-      "${ value } minutes after": [
+      "${ value } minute after": [
         "${ value } 分鐘後"
       ],
-      "${ value } minutes after at ${ time }": [
+      "${ value } minute after at ${ time }": [
         "${ value } 分鐘後，即是 ${ time }"
       ],
-      "${ value } minutes before": [
+      "${ value } minute before": [
         "${ value } 分鐘前"
       ],
-      "${ value } minutes before at ${ time }": [
+      "${ value } minute before at ${ time }": [
         "${ value } 分鐘前，即是 ${ time }"
       ],
-      "${ value } weeks after": [
+      "${ value } week after": [
         "${ value } 週後"
       ],
-      "${ value } weeks after at ${ time }": [
+      "${ value } week after at ${ time }": [
         "${ value } 週後，即是 ${ time }"
       ],
-      "${ value } weeks before": [
+      "${ value } week before": [
         "${ value } 週前"
       ],
-      "${ value } weeks before at ${ time }": [
+      "${ value } week before at ${ time }": [
         "${ value } 週前，即是 ${ time }"
       ],
       "At time of event": [
@@ -5332,7 +5374,7 @@
       "Custom": [
         "自訂"
       ],
-      "Days": [
+      "Day": [
         "天"
       ],
       "Does not repeat": [
@@ -5353,7 +5395,7 @@
       "Ignore group": [
         "忽略群組"
       ],
-      "Months": [
+      "Month": [
         "月"
       ],
       "No parent folder": [
@@ -5365,10 +5407,10 @@
       "This event": [
         "目前事件"
       ],
-      "Weeks": [
+      "Week": [
         "週"
       ],
-      "Years": [
+      "Year": [
         "年"
       ]
     },
@@ -5406,6 +5448,9 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } 已被標記為時效已過。此金鑰僅可用於特徵驗證。"
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "此金鑰是用於加密通訊錄"
       ],
       "We recommend that you \"untrust\" this key.": [
         "我們建議您「取消信任」此金鑰。"
@@ -5504,13 +5549,13 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
       ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ model.deleted.length }/${ totalBeDeleted } 位聯絡人已成功刪除。"
       ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length }/${ totalBeMerged } 位聯絡人已成功合併。"
       ],
       "No contacts exported.": [
@@ -5568,6 +5613,17 @@
         "重新載入事件"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email 別名"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "開啟 ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "嘗試${ PASS_APP_NAME }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "上載"
@@ -5598,19 +5654,10 @@
       ]
     },
     "session_recovery:available:info": {
-      " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 你有${ timeRemaining.inHours }小時重設密碼。"
-      ],
-      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
-      ],
-      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
-      ],
-      "${ timeRemaining.inDays } days": [
+      "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays }天"
       ],
-      "${ timeRemaining.inHours } hours": [
+      "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours }小時"
       ],
       "Password reset request approved (${ user.Email }).": [
@@ -5619,10 +5666,10 @@
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
       ],
-      "This permission expires in ${ timeRemaining.inDays } days": [
+      "This permission expires in ${ timeRemaining.inDays } day": [
         "此權限將在${ timeRemaining.inDays }天後過期"
       ],
-      "This permission expires in ${ timeRemaining.inHours } hours": [
+      "This permission expires in ${ timeRemaining.inHours } hour": [
         "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
       "This permission expires soon": [
@@ -5634,8 +5681,17 @@
       "You can now change your password for the account ${ boldEmail }.": [
         "現在您可以變更此帳號 ${ boldEmail } 的密碼。"
       ],
-      "You have ${ timeRemaining.inDays } days to reset your password.": [
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
         "你有${ timeRemaining.inDays }天重設密碼。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 你有${ timeRemaining.inHours }小時重設密碼。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -5695,13 +5751,13 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hours": [
+      "${ gracePeriodHoursRemaining } more hour": [
         "還剩下${ gracePeriodHoursRemaining }小時"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "若您沒有需求重設密碼，請立刻取消需求。"
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "已需求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
@@ -5730,7 +5786,7 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hours": [
+      "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining }小時"
       ],
       "${ passwordReset } is now available.": [
@@ -5767,7 +5823,7 @@
       ]
     },
     "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
         "您已超出每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 個成員的限額"
       ]
     },
@@ -5829,21 +5885,21 @@
       ]
     },
     "specialoffer: Countdown unit": {
-      "${ days } days": [
+      "${ days } day": [
         "${ days } 天"
       ],
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours } 小時"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes } 分鐘"
       ],
-      "${ seconds } seconds": [
+      "${ seconds } second": [
         "${ seconds } 秒"
       ]
     },
     "specialoffer: Deal": {
-      "${ n } months FREE": [
+      "${ n } month FREE": [
         "免費使用 ${ n } 個月"
       ]
     },
@@ -5905,7 +5961,7 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } months": [
+      "${ n } month": [
         "${ n }個月"
       ],
       "/ month": [
@@ -6040,6 +6096,47 @@
         "您目前的儲存空間："
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } 儲存空間"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage }${ percentage }% 滿"
+      ],
+      "contact your administrator": [
+        "與您的管理員聯絡"
+      ],
+      "upgrade for more storage": [
+        "升級以增加儲存"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "您的 ${ appStorage } 快滿了"
+      ],
+      "Your ${ appStorage } is full": [
+        "您的${ appStorage }已滿"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "您的${ storage }已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "您的${ storage }已${ percentage }滿%。要上載或同步檔案，釋放空間或${ upgrade }。"
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "您的${ storage }已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "您的${ storage }已滿。要上載或同步檔案，釋放空間或${ upgrade }。"
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "您的儲存已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
+      ],
+      "Your storage is full": [
+        "您的儲存空間已滿"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
+      ]
+    },
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "行事曆 URL"
@@ -6054,7 +6151,7 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contacts look identical.": [
+      "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
@@ -6111,14 +6208,17 @@
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
-      "Contact groups deleted": [
+      "Contact deleted": [
+        "已刪除聯絡人"
+      ],
+      "Contact group deleted": [
         "聯絡人群組已刪除"
       ],
       "Contact saved": [
         "聯絡人已儲存"
       ],
       "Contacts deleted": [
-        "已刪除聯絡人"
+        "聯絡人已刪除"
       ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
@@ -6282,13 +6382,13 @@
       ]
     },
     "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hours": [
+      "${ hours } hour": [
         "${ hours }小時"
       ],
-      "${ hoursInt }.5 hours": [
+      "${ hoursInt }.5 hour": [
         "${ hoursInt }.5小時"
       ],
-      "${ minutes } minutes": [
+      "${ minutes } minute": [
         "${ minutes }分鐘"
       ]
     },
@@ -6298,8 +6398,14 @@
       ]
     },
     "Title": {
-      "${ emailsCount } email addresses": [
+      "${ emailsCount } email address": [
         "${ emailsCount }電子郵件位址"
+      ],
+      "Account recovery": [
+        "帳號救援"
+      ],
+      "Account security": [
+        "帳號安全性"
       ],
       "Add another notification to remind you of this event": [
         "加入另一個通知以提醒您此事件"
@@ -6322,7 +6428,7 @@
       "Add some color to your day": [
         "為您的日子增添顏色"
       ],
-      "Add to ${ groupCount } groups": [
+      "Add to ${ groupCount } group": [
         "加入至 ${ groupCount } 個群組"
       ],
       "Add to ${ groupName }": [
@@ -6394,14 +6500,17 @@
       "Customize your mail import": [
         "自訂您的郵件匯入"
       ],
+      "Data recovery": [
+        "資料救援"
+      ],
       "Day theme": [
         "日間布景主題"
       ],
-      "Delete ${ count } contact groups": [
-        "刪除 ${ count } 個聯絡人群組"
-      ],
-      "Delete ${ count } contacts": [
+      "Delete ${ count } contact": [
         "刪除 ${ count } 位聯絡人"
+      ],
+      "Delete ${ count } contact group": [
+        "刪除 ${ count } 個聯絡人群組"
       ],
       "Delete ${ value }": [
         "刪除 ${ value }"
@@ -6466,7 +6575,7 @@
       "Human verification": [
         "真人身分驗證"
       ],
-      "Import as simple events?": [
+      "Import as simple event?": [
         "要匯入為簡單事件嗎？"
       ],
       "Import contacts": [
@@ -6762,10 +6871,10 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } characters": [
+      "Password must contain at least ${ length } character": [
         "密碼至少必須包含 ${ length } 個字元"
       ],
-      "Try a shorter username (${ n } characters max)": [
+      "Try a shorter username (${ n } character max)": [
         "請輸入一個更短的使用者名稱 (${ n } characters max)"
       ]
     },
@@ -6792,7 +6901,7 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
       ],
-      "Are you sure you want to permanently delete ${ count } contacts?": [
+      "Are you sure you want to permanently delete ${ count } contact?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
@@ -6810,6 +6919,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
       ],
+      "Invalid alias prefix": [
+        "別名前綴無效"
+      ],
+      "Missing alias prefix": [
+        "缺少別名前綴"
+      ],
+      "Missing alias suffix": [
+        "缺少別名後綴"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "僅允許英文字母、數字、點號、連字號和底線"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
@@ -6818,6 +6939,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "部分需合併的聯絡人顯示錯誤。請逐一查看"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "別名不能超過40個字元"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "此聯絡人資料已毀損，無法顯示。"
@@ -6846,6 +6970,9 @@
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
       ],
+      "You must select at least one mailbox": [
+        "你必須至少選擇一個收件匣"
+      ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設定將會遺失。"
       ],
@@ -6862,40 +6989,40 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } weeks on ${ multipleDaysString }": [
+      "Every ${ interval } week on ${ multipleDaysString }": [
         "每 ${ interval } 個星期的${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on all days": [
+      "Every ${ interval } week on all days": [
         "每${ interval }個星期，整週"
       ],
-      "Every ${ interval } weeks on Friday": [
+      "Every ${ interval } week on Friday": [
         "每 ${ interval } 個星期的週五"
       ],
-      "Every ${ interval } weeks on Monday": [
+      "Every ${ interval } week on Monday": [
         "每${ interval }個星期的週一"
       ],
-      "Every ${ interval } weeks on Monday, ${ timesString }": [
+      "Every ${ interval } week on Monday, ${ timesString }": [
         "每 ${ interval } 個星期的週一，${ timesString }"
       ],
-      "Every ${ interval } weeks on Saturday": [
+      "Every ${ interval } week on Saturday": [
         "每 ${ interval } 個星期的週六"
       ],
-      "Every ${ interval } weeks on Sunday": [
+      "Every ${ interval } week on Sunday": [
         "每${ interval }個星期的週日"
       ],
-      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+      "Every ${ interval } week on Sunday, ${ timesString }": [
         "每 ${ interval } 個星期的週日，${ timesString }"
       ],
-      "Every ${ interval } weeks on Thursday": [
+      "Every ${ interval } week on Thursday": [
         "每 ${ interval } 個星期的週四"
       ],
-      "Every ${ interval } weeks on Tuesday": [
+      "Every ${ interval } week on Tuesday": [
         "每 ${ interval } 個星期的週二"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
         "每 ${ interval } 個星期的週二，${ timesString }"
       ],
-      "Every ${ interval } weeks on Wednesday": [
+      "Every ${ interval } week on Wednesday": [
         "每 ${ interval } 個星期的週三"
       ],
       "Weekly on ${ multipleDaysString }": [
@@ -6927,22 +7054,22 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "每 ${ interval } 個星期的${ multipleDaysString }，${ timesString }"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
+      "Every ${ interval } week on all days, ${ timesString }": [
         "每 ${ interval } 個星期，整周，${ timesString }"
       ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
+      "Every ${ interval } week on Friday, ${ timesString }": [
         "每 ${ interval } 個星期的週五，${ timesString }"
       ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+      "Every ${ interval } week on Saturday, ${ timesString }": [
         "每 ${ interval } 個星期的週六，${ timesString }"
       ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+      "Every ${ interval } week on Thursday, ${ timesString }": [
         "每 ${ interval } 個星期的週四，${ timesString }"
       ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
         "每 ${ interval } 個星期的週三，${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
@@ -6974,31 +7101,31 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
       ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
+      "Every ${ interval } week on all days, ${ untilString }": [
         "每 ${ interval } 個星期，整週，${ untilString }"
       ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
+      "Every ${ interval } week on Friday, ${ untilString }": [
         "每 ${ interval } 個星期的週五，${ untilString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
+      "Every ${ interval } week on Monday, ${ untilString }": [
         "每 ${ interval } 個星期的週一，${ untilString }"
       ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+      "Every ${ interval } week on Saturday, ${ untilString }": [
         "每 ${ interval } 個星期的週六，${ untilString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+      "Every ${ interval } week on Sunday, ${ untilString }": [
         "每 ${ interval } 個星期的週日，${ untilString }"
       ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+      "Every ${ interval } week on Thursday, ${ untilString }": [
         "每 ${ interval } 個星期的週四，${ untilString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
         "每 ${ interval } 個星期的週二，${ untilString }"
       ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
         "每 ${ interval } 個星期的週三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
@@ -7053,7 +7180,7 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } years": [
+      "Every ${ interval } year": [
         "每 ${ interval } 年"
       ],
       "Yearly": [
@@ -7061,7 +7188,7 @@
       ]
     },
     "Yearly recurring event, frequency (times)": {
-      "Every ${ interval } years, ${ timesString }": [
+      "Every ${ interval } year, ${ timesString }": [
         "每${ interval }年，${ timesString }"
       ],
       "Yearly, ${ timesString }": [
@@ -7069,7 +7196,7 @@
       ]
     },
     "Yearly recurring event, frequency (until)": {
-      "Every ${ interval } years, ${ untilString }": [
+      "Every ${ interval } year, ${ untilString }": [
         "每${ interval }年，${ untilString }"
       ],
       "Yearly, ${ untilString }": [

@@ -308,6 +308,9 @@
       "Pin item": [
         "Fäst objekt"
       ],
+      "Recent": [
+        "Senaste"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Ta bort åtkomst"
+      ],
+      "Remove member": [
+        "Ta bort medlem"
       ],
       "Request a feature": [
         "Begär en funktion"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Skicka oss ett meddelande"
+      ],
+      "Set access level": [
+        "Ställ in åtkomstnivå"
       ],
       "Share": [
         "Dela"
@@ -492,14 +501,18 @@
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "Kan inte skicka inbjudan till denna adress just nu"
+      "Cannot send invitation at the moment": [
+        "Kan inte skicka inbjudan just nu",
+        "Kan inte skicka inbjudningar just nu"
       ],
       "Could not confirm this invite at the moment": [
         "Kunde inte bekräfta denna inbjudan just nu"
       ],
       "Could not leave vault.": [
         "Kunde inte lämna valv."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunde inte ladda rekommendationer just nu."
       ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
@@ -758,6 +771,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } inbjudningar skickat"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1500,6 +1516,15 @@
       "Logins": [
         "Inloggningar"
       ],
+      "Make all admins": [
+        "Gör alla till administratörer"
+      ],
+      "Make all editors": [
+        "Gör alla till redaktörer"
+      ],
+      "Make all viewers": [
+        "Gör alla till visare"
+      ],
       "Members": [
         "Medlemmar"
       ],
@@ -1875,6 +1900,9 @@
       "Fill & copy password": [
         "Fyll i och kopiera lösenord"
       ],
+      "Get Started": [
+        "Kom igång"
+      ],
       "Get the mobile apps": [
         "Skaffa mobilapparna"
       ],
@@ -1902,6 +1930,9 @@
       "Member limit": [
         "Medlemsgräns"
       ],
+      "Members": [
+        "Medlemmar"
+      ],
       "Move all items ?": [
         "Flytta alla objekt?"
       ],
@@ -1926,6 +1957,9 @@
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
       ],
+      "Review and share": [
+        "Granska och dela"
+      ],
       "Secure your data": [
         "Säkra dina data"
       ],
@@ -1934,6 +1968,9 @@
       ],
       "Share with": [
         "Dela med"
+      ],
+      "Suggestions": [
+        "Förslag"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Byta till ${ PASS_APP_NAME }?"
@@ -1958,6 +1995,9 @@
       ],
       "Use my email": [
         "Använd min e-post"
+      ],
+      "Vault": [
+        "Valv"
       ],
       "Vault shared with you": [
         "Valv delade med dig"
@@ -2011,11 +2051,20 @@
       "An error occured while exporting your data": [
         "Ett fel uppstod när din data skulle exporteras"
       ],
+      "At least one email address is required": [
+        "Minst en e-postadress är obligatoriskt"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan inte hämta brevlådor för detta alias just nu"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunde inte skapa valv “${ vaultName }“"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunde inte skicka inbjudningar till följande adresser:"
+      ],
+      "Duplicate email addresses.": [
+        "Dubbletter av e-postadresser."
       ],
       "Empty note": [
         "Tom anteckning"
@@ -2025,6 +2074,9 @@
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
+      ],
+      "Invalid email addresses.": [
+        "Ogiltiga e-postadresser."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximal längd är ${ maxLength } tecken",
@@ -2048,6 +2100,9 @@
       "No password manager selected": [
         "Ingen lösenordshanterare vald"
       ],
+      "No results": [
+        "Inga resultat"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Endast alfanumeriska tecken, punkter, bindestreck och understreck är tillåtna"
       ],
@@ -2056,9 +2111,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypterad exportfil kräver lösenfras"
-      ],
-      "Please enter a valid email address": [
-        "Ange en giltig e-postadress"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiera din e-postadress för att kunna använda e-postalias"

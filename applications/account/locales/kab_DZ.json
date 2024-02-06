@@ -152,9 +152,6 @@
       "Change mailbox password": [
         "Snifel awal uffir n tnaka n yimayl"
       ],
-      "Change organization keys": [
-        "Snifel tisura n tuddsa"
-      ],
       "Change other email subscriptions": [
         "Beddel ijerriden-nniḍen s yimayl"
       ],
@@ -692,9 +689,6 @@
       "Reset keys": [
         "Ales awennez n tsura"
       ],
-      "Reset organization keys": [
-        "Sbadu tisura n tuddsa"
-      ],
       "Reset password": [
         "Awennez n wawal uffir"
       ],
@@ -703,9 +697,6 @@
       ],
       "Restore": [
         "Err-d"
-      ],
-      "Restore administrator privileges": [
-        "Err-d izerfan n unedbal"
       ],
       "Resubscribe": [
         "Ales ajerred"
@@ -3168,9 +3159,6 @@
       "Organization key is not decrypted": [
         "Tasarut n tuddsa ur s-yekkis ara uwgelhen"
       ],
-      "Organization key is not decrypted.": [
-        "Tasarut n tuddsa ur tettwazmek ara."
-      ],
       "Password is required": [
         "Awal uffir yettwasra"
       ],
@@ -3191,9 +3179,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Lexlaṣ ulac akka tura, ɛreḍ tikelt-nniḍen ticki"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Anekcum yegdel, tisirag n unebdal sεan tilisa."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Sbadu taɣult tudmawant send ad ternuḍ iseqdacen ar tuddsa-ik."
@@ -3298,9 +3283,6 @@
       "The organization key must be activated first": [
         "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed"
       ],
-      "The organization key must be activated first.": [
-        "Ilaq deg tazwara tasarut n tuddsa ad tettwarmed."
-      ],
       "The sending key is not valid": [
         "Tasarut n tuzna ur d tameɣtut"
       ],
@@ -3364,9 +3346,6 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Yir tangalt n usenqed. Ttxil-k, nɣel tangalt n usenqed akken iwata sakin ɛreḍ tikelt-nniḍen. Ayagi yezmer ad yeṭṭef alamma d 24 n isragen akken ibeddilen ad ddun."
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Iruḥ-ak unekcum ar tsura n tuddsa-inek. S war tiririt, ur tettizmireḍ ara ad ternuḍ iseqdacen imaynuten, ad ternuḍ tansiwin i yiseqdacen yellan, neɣ ad tkecmeḍ ar umiḍan ur yellin ara d uslig."
-      ],
       "You have no invoices.": [
         "Ur tesɛiḍ ara tafaturt."
       ],
@@ -3375,9 +3354,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tesqedceḍ meṛṛa iseqdsacen yellan di tikci-ik. Beddel tikci akken ad ternuḍ aseqdac amaynut."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Yessefk ad terreḍ akk iseqdacen d usligen send asirew n tsura timaynutin i tuddsa"
       ],
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
@@ -4617,11 +4593,6 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
@@ -5398,12 +5369,6 @@
       "Optional": [
         "Afrayan"
       ],
-      "Organization keys activated": [
-        "Tisura n tuddsa remdent"
-      ],
-      "Organization keys restored": [
-        "Tisura n tuddsa uɣalent-d"
-      ],
       "Organization size": [
         "Teɣzi n tkebbanit"
       ],
@@ -5998,6 +5963,11 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
+      ]
+    },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -8051,20 +8021,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Popular": [
-        "Mucaɛ"
-      ]
-    },
     "new_plans: Info": {
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "I ukemmel n useqdec n ${ MAIL_APP_NAME }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
+      ]
+    },
+    "new_plans: info": {
+      "Most popular": [
+        "Ittwassen aṭas"
+      ],
+      "Popular": [
+        "Mucaɛ"
       ]
     },
     "new_plans: Label": {
@@ -8970,6 +8940,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Sefsex awennez n wawal uffir"
+      ],
       "Reset password": [
         "Ales awennez n wawal uffir"
       ]
@@ -8989,12 +8962,35 @@
         "${ timeRemaining.inHours } n yisragen"
       ]
     },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Sefsex awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Asefsex n uwennez n wawal uffir"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Sefsex awennez n wawal uffir?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Sefsex awennez n wawal uffir"
+      ],
       "Got it": [
         "Gziɣ-t"
       ],
       "Learn more": [
         "Issin ugar"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Isra awennez n wawal uffir"
       ]
     },
     "session_recovery:initiation:action": {
@@ -9281,6 +9277,17 @@
       ],
       "Your current storage:": [
         "Aklas-ik amiran:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } n uḥraz"
+      ],
+      "Get more storage": [
+        "Awi ugar n uḥraz"
+      ],
+      "Your storage is full": [
+        "Aḥraz-ik yeččuṛ"
       ]
     },
     "Subscribe to calendar modal": {
@@ -9667,9 +9674,6 @@
       "CSV field": [
         "Urti CSV"
       ],
-      "Display name": [
-        "Isem ara d-yettwaskanen"
-      ],
       "Edit": [
         "Ẓreg"
       ],
@@ -9915,9 +9919,6 @@
       "Change mailbox password": [
         "Snifel awal uffir n tnaka n yimayl"
       ],
-      "Change organization keys": [
-        "Snifel tisura n tuddsa"
-      ],
       "Change organization name": [
         "Beddel isem n tuddsa"
       ],
@@ -10057,9 +10058,6 @@
       "Delete logs": [
         "Kkes iɣmisen"
       ],
-      "Delete user": [
-        "Kkes aseqdac"
-      ],
       "Delete user?": [
         "Kkes aseqdac?"
       ],
@@ -10083,6 +10081,9 @@
       ],
       "Downgrade account": [
         "Sider aswir n umiḍan"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Sader aswir ɣer ${ downgradedPlanName }?"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Sader ${ VPN_APP_NAME }"
@@ -10332,9 +10333,6 @@
       "Password": [
         "Awal ufir"
       ],
-      "Password and keys": [
-        "Awal uffir akked tsura"
-      ],
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
@@ -10400,9 +10398,6 @@
       ],
       "Request sent": [
         "Tettwaceyyeɛ tsutert"
-      ],
-      "Reset organization keys": [
-        "Sbadu tisura n tuddsa"
       ],
       "Reset password": [
         "Awennez n wawal uffir"
@@ -10535,6 +10530,9 @@
       ],
       "Theme": [
         "Asentel"
+      ],
+      "This field cannot be empty": [
+        "Urti-a ur ilaq ad yili d ilem"
       ],
       "Time zone": [
         "Tamnaḍt tasragant"
@@ -11032,9 +11030,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nufa-d ugur d twila-inek·inem DNS. Ttxil-k·m wali ma yella iseklas-inek·inem mṣadan d yiwellihen ddaw. Ma yella mazal yezga wugur, ilaq ad nsen azmul DKIM."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Yessefk ${ activateLink } n tsarut n tuddsa send timerna n tansa n yimayl ɣer uɛeggal ur nelli d uslig."
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."
