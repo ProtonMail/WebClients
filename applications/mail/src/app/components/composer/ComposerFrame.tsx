@@ -1,7 +1,7 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
-import { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 

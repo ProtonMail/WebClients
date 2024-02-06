@@ -1,5 +1,5 @@
 import * as useActiveBreakpointModule from '@proton/components/hooks/useActiveBreakpoint';
-import { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 
 export const mockDefaultBreakpoints: Breakpoints = {
     activeBreakpoint: 'large',
