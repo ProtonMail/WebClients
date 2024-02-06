@@ -54,6 +54,7 @@ import {
     getHasRecurrenceId,
     getIsAlarmComponent,
     getIsVeventCancelled,
+    getPmSharedEventID,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import {
     getIsEventCancelled,
@@ -228,8 +229,6 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid,
     const [[event, ...otherEvents] = [], [parentEvent, ...otherParentEvents] = []] = await Promise.all(promises);
     if (!parentEvent) {
         return { event, otherEvents };
-    }
-    if (event) {
     }
     /**
      * If recurrenceID is passed, but the single edit is not found, there are two possibilities:
@@ -456,9 +455,21 @@ const updateEventApi = async ({
         if (!getHasSharedKeyPacket(data) || !getHasSharedEventContent(data)) {
             throw new Error('Missing shared data');
         }
-        const Events: CreateCalendarEventSyncData[] = [
-            { Event: { Permissions: 1, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 },
-        ];
+        const veventSharedEventID = getPmSharedEventID(vevent);
+        const Events: (CreateCalendarEventSyncData | CreateLinkedCalendarEventsSyncData)[] = !!veventSharedEventID
+            ? [
+                  {
+                      Overwrite: overwrite ? 1 : 0,
+                      Event: {
+                          Permissions: 1,
+                          IsOrganizer: 0,
+                          SharedEventID: veventSharedEventID,
+                          UID: vevent.uid.value,
+                          ...omit(data, ['SharedEventContent', 'AttendeesEventContent']),
+                      },
+                  },
+              ]
+            : [{ Event: { Permissions: 1, IsOrganizer: 0, ...data }, Overwrite: overwrite ? 1 : 0 }];
         const {
             Responses: [
                 {
