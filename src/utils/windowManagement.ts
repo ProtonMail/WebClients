@@ -1,11 +1,11 @@
-import crypto from "crypto";
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import log from "electron-log/main";
 import { getWindowState } from "../store/windowsStore";
 import { handleBeforeHandle } from "./beforeUnload";
 import { getConfig } from "./config";
-import { APP, CERT_PROTON_ME, WINDOW_SIZES } from "./constants";
-import { areAllWindowsClosedOrHidden, isHostAllowed, isMac, isWindows } from "./helpers";
+import { APP, WINDOW_SIZES } from "./constants";
+import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
+import { checkKeys } from "./keyPinning";
 import { logURL } from "./logs";
 import { setApplicationMenu } from "./menu";
 import { createContextMenu } from "./menuContext";
@@ -75,28 +75,8 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     });
 
     window.webContents.session.setCertificateVerifyProc((request, callback) => {
-        if (isHostAllowed(request.hostname, app.isPackaged)) {
-            // We dont do any verification for dev
-            if (!app.isPackaged) {
-                callback(0);
-                return;
-            }
-
-            const pk = crypto.createPublicKey(request.validatedCertificate.data);
-            const hash = crypto
-                .createHash("sha256")
-                .update(pk.export({ type: "spki", format: "der" }))
-                .digest("base64");
-
-            if (CERT_PROTON_ME.includes(hash)) {
-                callback(0);
-                return;
-            }
-
-            callback(-2);
-        } else {
-            callback(-3);
-        }
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
     });
 
     if (visible) {
