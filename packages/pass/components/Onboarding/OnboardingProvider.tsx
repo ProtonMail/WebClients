@@ -46,7 +46,7 @@ export const OnboardingProvider: FC<PropsWithChildren> = ({ children }) => {
         (async () => (await onboardingCheck?.(OnboardingMessage.B2B_ONBOARDING)) ?? false)()
             .then((res) => setEnabled(res))
             .catch(noop);
-    }, [complete, disabled]);
+    }, []);
 
     const context = useMemo<OnboardingContextValue>(() => {
         const steps = Object.values(state).concat(extension.supportedBrowser ? [extension.installed] : []);
