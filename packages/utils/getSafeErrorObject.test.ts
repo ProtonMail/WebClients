@@ -43,6 +43,7 @@ describe('getSafeErrorObject', () => {
         const value = new Error('blah');
         (value as any).context = { something: true };
         (value as any).isEnrichedError = true;
+        (value as any).sentryMessage = 'oh no';
 
         const expected = {
             name: 'Error',
@@ -50,6 +51,7 @@ describe('getSafeErrorObject', () => {
 
             context: { something: true },
             isEnrichedError: true,
+            sentryMessage: 'oh no',
         };
 
         const result = getSafeValue(value);
