@@ -21,7 +21,6 @@ import { modelToVeventComponent } from '../../../components/eventModal/eventForm
 import { getCanEditSharedEventData } from '../../../helpers/event';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
-    INVITE_ACTION_TYPES,
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -41,7 +40,7 @@ import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { getAttendeesDiff, getEquivalentAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
+import { getAttendeesDiff, getCorrectedSaveInviteActions, getEquivalentAttendeesSend } from './inviteActions';
 import { getOriginalEvent, getRecurrenceEvents } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
@@ -83,7 +82,7 @@ const getSaveSingleEventActionsHelper = async ({
         newEditEventData.veventComponent,
         oldEditEventData.veventComponent
     );
-    const updatedInviteActions = getUpdatedSaveInviteActions({
+    const updatedInviteActions = getCorrectedSaveInviteActions({
         inviteActions,
         newVevent: newVeventWithSequence,
         oldVevent: oldEditEventData.veventComponent,
@@ -244,7 +243,7 @@ const getSaveEventActions = async ({
             ...withVeventRruleWkst(omit(newVeventComponent, ['exdate']), wkst),
             sequence: { value: 0 },
         };
-        const updatedInviteActions = getUpdatedSaveInviteActions({
+        const updatedInviteActions = getCorrectedSaveInviteActions({
             inviteActions: inviteActionsWithSelfAddress,
             newVevent: newVeventWithSequence,
         });
@@ -390,16 +389,6 @@ const getSaveEventActions = async ({
     const hasModifiedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;
     // check if the rrule has been explicitly modified. Modifications due to WKST change are ignored here
     const hasModifiedRrule = tmpData.hasTouchedRrule && !isRruleEqual;
-    const updatedSaveInviteActions = getUpdatedSaveInviteActions({
-        inviteActions: inviteActionsWithSelfAddress,
-        newVevent: newEditEventData.veventComponent,
-        oldVevent: originalEditEventData.veventComponent,
-        hasModifiedDateTimes,
-    });
-    const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
-        updatedSaveInviteActions.type
-    );
-    await handleEquivalentAttendees(newEditEventData.veventComponent, updatedSaveInviteActions);
     const hasAttendees = getHasAttendees(newEditEventData.veventComponent);
     const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(
         newEditEventData.veventComponent,
@@ -419,11 +408,11 @@ const getSaveEventActions = async ({
             hasAttendeesUpdates,
         canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
         // if we have to notify participants or the event has participants and we did no modification of event details
-        cannotDeleteThisAndFuture: isSendInviteType || hasAttendees,
+        cannotDeleteThisAndFuture: hasAttendees || hasAttendeesUpdates,
         hasModifiedRrule,
         hasModifiedCalendar,
         isBreakingChange,
-        inviteActions: updatedSaveInviteActions,
+        inviteActions: inviteActionsWithSelfAddress,
         onSaveConfirmation,
         recurrence: actualEventRecurrence,
         singleEdits,
@@ -452,6 +441,7 @@ const getSaveEventActions = async ({
         getCalendarKeys,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
+        hasModifiedDateTimes,
         canEditOnlyPersonalPart,
         isOrganizer,
         isAttendee,
