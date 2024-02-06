@@ -1,4 +1,4 @@
-import { getAliasDetails, getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
+import { getAliasCount, getAliasDetails, getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
@@ -80,6 +80,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                     aliasDetails: { aliasEmail, mailboxes: [mailbox] },
                 };
             },
+            getAliasCount,
             getAliasOptions,
             getAllByShareId: async (shareId) => {
                 const aliases = (await Promise.all(
