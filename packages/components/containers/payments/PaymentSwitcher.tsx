@@ -31,21 +31,23 @@ export const useChargebeeFeature = () => {
         return localStorage.getItem('chargebeeEnabled') === 'true';
     };
 
-    useEffect(() => {
-        (window as any).testChargebee = () => {
-            console.log(
-                'Chargebee test localStorage',
-                localStorage.getItem('chargebeeEnabled'),
-                'just variable',
-                chargebeeEnabled
-            );
-        };
-    }, []);
+    const forceInHouseInDev = (): boolean => {
+        const isProd = isProduction(window.location.host);
+        if (isProd) {
+            return false;
+        }
+
+        return localStorage.getItem('inhouseForced') === 'true';
+    };
 
     useEffect(() => {
         async function isChargebeeEnabled() {
             if (forceEnableChargebeeInDev()) {
                 return ChargebeeEnabled.CHARGEBEE_FORCED;
+            }
+
+            if (forceInHouseInDev()) {
+                return ChargebeeEnabled.INHOUSE_FORCED;
             }
 
             // user logged in
