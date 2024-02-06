@@ -20,6 +20,11 @@
 			}
 		}
 
+		&-hint {
+			font-size: em(12);
+			display: flex;
+		}
+
 		&-input-container .textarea {
 			display: flex;
 			min-block-size: 0;

@@ -87,7 +87,7 @@ const PassAliases = () => {
                         color="norm"
                         fullWidth
                     >
-                        {!hasAliases ? c('Security Center').t`Get an alias` : c('Security Center').t`New alias`}
+                        {!hasAliases ? c('Security Center').t`Create an alias` : c('Security Center').t`New alias`}
                     </Button>
                 </div>
             </DrawerAppSection>
