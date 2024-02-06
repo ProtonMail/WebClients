@@ -55,22 +55,17 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
-
-    const {
-        metadata: { name, note, itemUuid },
-        content: { username, password, urls, totpUri, passkeys },
-        extraFields,
-    } = useDeobfuscatedItem(item);
+    const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
 
     const initialValues: EditLoginItemFormValues = {
-        name,
-        username,
-        password,
-        note,
+        name: metadata.name,
+        username: content.username,
+        password: content.password,
+        note: metadata.note,
         shareId,
-        totpUri: getSecretOrUri(totpUri),
+        totpUri: getSecretOrUri(content.totpUri),
         url: '',
-        urls: urls.map(createNewUrl),
+        urls: content.urls.map(createNewUrl),
         withAlias: false,
         aliasPrefix: '',
         aliasSuffix: undefined,
@@ -80,9 +75,9 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
     const form = useFormik<EditLoginItemFormValues>({
         initialValues,
-        initialErrors: validateLoginForm(initialValues),
         onSubmit: ({ name, username, password, totpUri, url, urls, note, extraFields, ...values }) => {
             const mutationTime = getEpoch();
+
             const withAlias =
                 'withAlias' in values &&
                 values.withAlias &&
@@ -100,16 +95,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
                 dispatch(
                     itemCreationIntent({
-                        type: 'alias',
-                        optimisticId: aliasOptimisticId,
-                        shareId,
-                        createTime: mutationTime - 1 /* alias will be created before login in saga */,
-                        metadata: {
-                            name: `Alias for ${name}`,
-                            note: obfuscate(''),
-                            itemUuid: aliasOptimisticId,
-                        },
                         content: {},
+                        createTime: mutationTime - 1 /* alias will be created before login in saga */,
                         extraData: {
                             mailboxes: values.mailboxes,
                             prefix: values.aliasPrefix!,
@@ -117,22 +104,22 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                             aliasEmail: username,
                         },
                         extraFields: [],
+                        metadata: { name: `Alias for ${name}`, note: obfuscate(''), itemUuid: aliasOptimisticId },
+                        optimisticId: aliasOptimisticId,
+                        shareId,
+                        type: 'alias',
                     })
                 );
             }
 
             onSubmit({
-                type: 'login',
-                itemId,
-                shareId,
-                lastRevision,
-                metadata: { name, note: obfuscate(note), itemUuid },
+                ...uneditable,
                 content: {
+                    ...content,
                     username: obfuscate(username),
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
-                    passkeys,
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
@@ -149,10 +136,15 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                             : field
                     )
                 ),
+                itemId,
+                lastRevision,
+                metadata: { ...metadata, name, note: obfuscate(note) },
+                shareId,
             });
         },
         validate: validateLoginForm,
         validateOnChange: true,
+        validateOnMount: true,
     });
 
     const showQuickAddUrl =
