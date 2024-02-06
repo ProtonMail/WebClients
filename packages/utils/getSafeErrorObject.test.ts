@@ -1,4 +1,4 @@
-import { getSafeArray, getSafeErrorObject, getSafeObject, getSafeValue } from './getSafeErrorObject';
+import { getSafeArray, getSafeErrorObject, getSafeObject, getSafeValue, isError } from './getSafeErrorObject';
 
 describe('getSafeValue', () => {
     const error = new Error('blah');
@@ -105,5 +105,14 @@ describe('getSafeArray', () => {
         it(`should accept '${testCase.name}'`, () => {
             expect(getSafeArray(testCase.value)).toStrictEqual(testCase.expected);
         });
+    });
+});
+
+describe('isError', () => {
+    it('should return true for Error', () => {
+        expect(isError(new Error('oh no'))).toBe(true);
+    });
+    it('should return true for Error-like', () => {
+        expect(isError({ name: 'Error', message: 'oh no' })).toBe(true);
     });
 });
