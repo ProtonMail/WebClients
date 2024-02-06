@@ -19,32 +19,30 @@ const FORM_ID = 'edit-note';
 
 export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ vault: { shareId }, revision, onSubmit, onCancel }) => {
     const { data: item, itemId, revision: lastRevision } = revision;
-    const { metadata, extraFields } = item;
-    const { name, itemUuid } = metadata;
+    const { metadata, ...uneditable } = item;
     const note = useDeobfuscatedValue(metadata.note);
 
     const form = useFormik<NoteFormValues>({
-        initialValues: { name, note, shareId },
+        initialValues: { name: metadata.name, note, shareId },
         onSubmit: ({ name, note }) => {
             onSubmit({
-                type: 'note',
+                ...uneditable,
                 itemId,
-                shareId,
                 lastRevision,
-                metadata: { note: obfuscate(note), name, itemUuid },
-                content: {},
-                extraFields,
+                metadata: { ...metadata, name, note: obfuscate(note) },
+                shareId,
             });
         },
         validate: validateNoteForm,
         validateOnChange: true,
+        validateOnMount: true,
     });
 
     useItemDraft<NoteFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
-        shareId: form.values.shareId,
         revision: lastRevision,
+        shareId: form.values.shareId,
     });
 
     return (
