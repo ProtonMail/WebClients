@@ -3,6 +3,7 @@
 -   Support bulk invitations
 -   Support invite email suggestions
 -   Improve and fix autosave triggers
+-   Allow searching items by alias email
 
 ### Version 1.12.0
 
