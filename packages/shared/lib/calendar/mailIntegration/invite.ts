@@ -596,7 +596,7 @@ export const getHasUpdatedInviteData = ({
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
 };
 
-export const getUpdatedInviteVevent = (
+export const getInviteVeventWithUpdatedParstats = (
     newVevent: VcalVeventComponent,
     oldVevent: VcalVeventComponent,
     method?: ICAL_METHOD
