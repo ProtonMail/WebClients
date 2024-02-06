@@ -74,7 +74,7 @@ const FormFieldWrapper = ({
 const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
     const { formValues, setFormValues, blurred, setBlurred, hasErrors, errors, submitted, setSubmitted } =
         useCreateModalForm();
-    const { submitNewAlias, getAliasOptions, passAliasesVaultName: vaultName } = usePassAliasesContext();
+    const { submitNewAlias, getAliasOptions } = usePassAliasesContext();
     const { createNotification } = useNotifications();
     const [mailboxes, setMailboxes] = useState<AliasOptions['mailboxes']>([]);
     const [aliasSuffix, setAliasSuffix] = useState<string>();
@@ -172,7 +172,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                 label={c('Label').t`Title`}
                                 value={formValues.name}
                                 className="text-bold rounded-none"
-                                placeholder={c('Label').t`Add title`}
+                                placeholder={c('Label').t`e.g., Amazon, eBay, Etsy`}
                                 autoFocus
                                 unstyled
                                 onBlur={() => setBlurred({ ...blurred, name: true })}
@@ -186,20 +186,6 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                     });
                                 }}
                                 error={getFieldError('name')}
-                                keepAssistiveText
-                                assistiveText={
-                                    <span className="inline-flex flex-nowrap items-center max-w-full">
-                                        <Icon
-                                            name="brand-proton-pass"
-                                            className="shrink-0"
-                                            alt={c('Info').t`The vault your alias will be stored in.`}
-                                            title={c('Info').t`The vault your alias will be stored in.`}
-                                        />
-                                        <span className="m-0 ml-1 text-ellipsis" title={vaultName}>
-                                            {vaultName}
-                                        </span>
-                                    </span>
-                                }
                             />
                         </FormFieldWrapper>
 
@@ -245,7 +231,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                     autoGrow
                                     unstyled
                                     className="rounded-none p-0 resize-none"
-                                    placeholder={c('Security Center').t`e.g., Amazon, eBay, Etsy`}
+                                    placeholder={c('Security Center').t`Used on amazon for shopping, etc.`}
                                     onBlur={() => setBlurred({ ...blurred, note: true })}
                                     onValue={(note: string) => {
                                         setFormValues({ ...formValues, note });
