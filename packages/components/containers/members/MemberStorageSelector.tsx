@@ -218,6 +218,7 @@ const MemberStorageSelector = ({
                                     {segments.map(({ label, size, tooltip, value: [share, color] }) => (
                                         <div className="mb-4 flex items-center" key={tooltip}>
                                             <Tooltip
+                                                openDelay={0}
                                                 title={
                                                     <>
                                                         {tooltip}
