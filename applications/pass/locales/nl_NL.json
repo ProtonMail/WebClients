@@ -155,6 +155,9 @@
       "Get mobile apps": [
         "Download mobiele apps"
       ],
+      "Get Started": [
+        "Aan de slag"
+      ],
       "Help us improve": [
         "Help ons verbeteren"
       ],
@@ -376,9 +379,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Auto-vergrendeken kon niet uitgeschakeld worden"
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "Kan op dit moment geen uitnodiging sturen naar dit adres"
       ],
       "Could not confirm this invite at the moment": [
         "Kon de uitnodiging niet bevestigen op dit moment"
@@ -769,6 +769,12 @@
       "Item successfully moved": [
         "Item succesvol verplaatst"
       ],
+      "Item successfully pinned": [
+        "Item succesvol vastgezet"
+      ],
+      "Item successfully unpinned": [
+        "Item succesvol losgemaakt"
+      ],
       "Leaving vault...": [
         "Kluis verlaten..."
       ],
@@ -987,6 +993,9 @@
       ],
       "15 minutes": [
         "15 minuten"
+      ],
+      "2FA secret key (TOTP)": [
+        "2FA geheime sleutel (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
@@ -1623,9 +1632,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
-      ],
-      "Please enter a valid email address": [
-        "Voer een geldig e-mailadres in"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"

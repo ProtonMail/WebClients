@@ -155,6 +155,9 @@
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
       ],
+      "Get Started": [
+        "Comença"
+      ],
       "Help us improve": [
         "Ajudeu-nos a millorar"
       ],
@@ -236,6 +239,9 @@
       "Pass for iOS": [
         "Pass per a iOS"
       ],
+      "Pin item": [
+        "Ancora l'element"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -311,6 +317,9 @@
       "Transfer ownership": [
         "Transfereix la propietat"
       ],
+      "Unpin item": [
+        "Desancora l'element"
+      ],
       "Update vault": [
         "Actualitza la caixa forta"
       ],
@@ -371,9 +380,6 @@
       "Auto-lock could not be disabled": [
         "No s'ha pogut desactivar el bloqueig automàtic"
       ],
-      "Cannot send invitation to this address at the moment": [
-        "No es pot enviar la invitació a aquesta adreça en aquest moment."
-      ],
       "Could not leave vault.": [
         "No s'ha pogut deixar la cassa forta."
       ],
@@ -428,6 +434,9 @@
       ],
       "Failed to edit user's access.": [
         "No s'ha pogut Editar l'accés de l'usuari."
+      ],
+      "Failed to pin item": [
+        "No s'ha pogut ancorar l'element."
       ],
       "Failed to remove user's access.": [
         "No s'ha pogut esborrar l'accés de l'usuari."
@@ -744,6 +753,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
+      ],
+      "Moving items": [
+        "S'estan movent elements"
       ],
       "Never": [
         "Mai"
@@ -1252,6 +1264,9 @@
       "Vault": [
         "Caixa forta"
       ],
+      "Vault ID": [
+        "ID de la caixa forta"
+      ],
       "Vaults": [
         "Caixes fortes"
       ],
@@ -1572,9 +1587,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
-      ],
-      "Please enter a valid email address": [
-        "Introduïu una adreça de correu electrònic vàlida."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
