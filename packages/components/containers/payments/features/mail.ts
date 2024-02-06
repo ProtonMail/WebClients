@@ -279,6 +279,15 @@ const getAutoReply = (included: boolean, audience?: Audience): PlanCardFeatureDe
     };
 };
 
+const getAutoForwarding = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Automatic email forwarding`,
+        tooltip: c('new_plans: tooltip')
+            .t`Automatically forward emails sent to your ${MAIL_APP_NAME} account to any other email address.`,
+        included,
+    };
+};
+
 const getCatchAll = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Catch-all`,
@@ -531,6 +540,22 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getAutoReply(true),
                 [PLANS.MAIL_PRO]: getAutoReply(true, Audience.B2B),
                 [PLANS.BUNDLE_PRO]: getAutoReply(true, Audience.B2B),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'auto-forwarding',
+            plans: {
+                [PLANS.FREE]: getAutoForwarding(false),
+                [PLANS.BUNDLE]: getAutoForwarding(true),
+                [PLANS.MAIL]: getAutoForwarding(true),
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.PASS_PLUS]: null,
+                [PLANS.FAMILY]: getAutoForwarding(true),
+                [PLANS.MAIL_PRO]: getAutoForwarding(true),
+                [PLANS.BUNDLE_PRO]: getAutoForwarding(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
