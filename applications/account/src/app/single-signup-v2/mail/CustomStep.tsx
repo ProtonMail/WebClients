@@ -19,7 +19,7 @@ enum Step {
     Explore,
 }
 
-const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
+const CustomStep = ({ model, onSetup, logo }: SignupCustomStepProps) => {
     const [step, setStep] = useState(Step.Congratulations);
     const createFlow = useFlowRef();
 
@@ -38,103 +38,98 @@ const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
     const planName = plan?.Title;
 
     return (
-        <Layout theme={theme} logo={logo} hasDecoration={false}>
-            <main>
-                {step === Step.Congratulations && (
-                    <CongratulationsStep
-                        padding={false}
-                        defaultName={
-                            accountData.username ||
-                            (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
-                            ''
-                        }
-                        planName={planName}
-                        onSubmit={async ({ displayName }) => {
-                            const validateFlow = createFlow();
-                            try {
-                                if (!cache || cache.type !== 'signup') {
-                                    throw new Error('Missing cache');
-                                }
-                                const signupActionResponse = await handleDisplayName({
-                                    displayName,
-                                    cache,
-                                });
-
-                                if (validateFlow()) {
-                                    cacheRef.current = signupActionResponse.cache;
-                                    setStep(Step.SaveRecovery);
-                                }
-                            } catch (error) {
-                                handleError(error);
-                            } finally {
-                                createFlow.reset();
+        <Layout logo={logo} hasDecoration={false}>
+            {step === Step.Congratulations && (
+                <CongratulationsStep
+                    defaultName={
+                        accountData.username ||
+                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        ''
+                    }
+                    planName={planName}
+                    onSubmit={async ({ displayName }) => {
+                        const validateFlow = createFlow();
+                        try {
+                            if (!cache || cache.type !== 'signup') {
+                                throw new Error('Missing cache');
                             }
-                        }}
-                    />
-                )}
-                {step === Step.SaveRecovery && (
-                    <RecoveryStep
-                        padding={false}
-                        onBack={() => setStep(Step.Congratulations)}
-                        defaultCountry={defaultCountry}
-                        defaultEmail={
-                            (verificationModel?.method === 'email' && verificationModel?.value) ||
-                            (accountData?.signupType === SignupType.Email && accountData.email) ||
-                            ''
-                        }
-                        defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
-                        onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
-                            const validateFlow = createFlow();
-                            try {
-                                if (!cache || cache.type !== 'signup') {
-                                    throw new Error('Missing cache');
-                                }
-                                const signupActionResponse = await handleSaveRecovery({
-                                    cache,
-                                    recoveryEmail,
-                                    recoveryPhone,
-                                });
+                            const signupActionResponse = await handleDisplayName({
+                                displayName,
+                                cache,
+                            });
 
-                                if (validateFlow()) {
-                                    cacheRef.current = signupActionResponse.cache;
-                                    if (signupActionResponse.to === SignupSteps.Done) {
-                                        await onSetup({ type: 'signup', payload: signupActionResponse });
-                                    } else {
-                                        setStep(Step.Explore);
-                                    }
-                                }
-                            } catch (error) {
-                                handleError(error);
-                            } finally {
-                                createFlow.reset();
+                            if (validateFlow()) {
+                                cacheRef.current = signupActionResponse.cache;
+                                setStep(Step.SaveRecovery);
                             }
-                        }}
-                    />
-                )}
-                {step === Step.Explore && (
-                    <ExploreStep
-                        padding={false}
-                        onExplore={async (app) => {
-                            try {
-                                if (!cache || cache.type !== 'signup') {
-                                    throw new Error('Missing cache');
-                                }
-                                const validateFlow = createFlow();
-                                const signupActionResponse = handleDone({
-                                    cache,
-                                    appIntent: { app, ref: 'product-switch' },
-                                });
+                        } catch (error) {
+                            handleError(error);
+                        } finally {
+                            createFlow.reset();
+                        }
+                    }}
+                />
+            )}
+            {step === Step.SaveRecovery && (
+                <RecoveryStep
+                    onBack={() => setStep(Step.Congratulations)}
+                    defaultCountry={defaultCountry}
+                    defaultEmail={
+                        (verificationModel?.method === 'email' && verificationModel?.value) ||
+                        (accountData?.signupType === SignupType.Email && accountData.email) ||
+                        ''
+                    }
+                    defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
+                    onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
+                        const validateFlow = createFlow();
+                        try {
+                            if (!cache || cache.type !== 'signup') {
+                                throw new Error('Missing cache');
+                            }
+                            const signupActionResponse = await handleSaveRecovery({
+                                cache,
+                                recoveryEmail,
+                                recoveryPhone,
+                            });
 
-                                if (validateFlow()) {
+                            if (validateFlow()) {
+                                cacheRef.current = signupActionResponse.cache;
+                                if (signupActionResponse.to === SignupSteps.Done) {
                                     await onSetup({ type: 'signup', payload: signupActionResponse });
+                                } else {
+                                    setStep(Step.Explore);
                                 }
-                            } catch (error) {
-                                handleError(error);
                             }
-                        }}
-                    />
-                )}
-            </main>
+                        } catch (error) {
+                            handleError(error);
+                        } finally {
+                            createFlow.reset();
+                        }
+                    }}
+                />
+            )}
+            {step === Step.Explore && (
+                <ExploreStep
+                    onExplore={async (app) => {
+                        try {
+                            if (!cache || cache.type !== 'signup') {
+                                throw new Error('Missing cache');
+                            }
+                            const validateFlow = createFlow();
+                            const signupActionResponse = handleDone({
+                                cache,
+                                appIntent: { app, ref: 'product-switch' },
+                            });
+
+                            if (validateFlow()) {
+                                await onSetup({ type: 'signup', payload: signupActionResponse });
+                            }
+                        } catch (error) {
+                            handleError(error);
+                        }
+                    }}
+                />
+            )}
         </Layout>
     );
 };

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,10 +18,10 @@ interface Props {
     defaultName?: string;
     planName?: string;
     onSubmit: ({ displayName }: { displayName: string }) => Promise<void>;
-    padding?: boolean;
+    description?: ReactNode;
 }
 
-const CongratulationsStep = ({ padding, defaultName = '', planName: maybePlanName, onSubmit }: Props) => {
+const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubmit, description }: Props) => {
     const { APP_NAME } = useConfig();
     const [displayName, setDisplayName] = useState(defaultName);
     const [loading, withLoading] = useLoading();
@@ -36,7 +36,7 @@ const CongratulationsStep = ({ padding, defaultName = '', planName: maybePlanNam
     }, []);
 
     return (
-        <Main padding={padding}>
+        <Main>
             <Header title={c('Title').t`Set a display name`} />
             <Content>
                 {planName ? (
@@ -44,8 +44,9 @@ const CongratulationsStep = ({ padding, defaultName = '', planName: maybePlanNam
                         .jt`Your ${planName} subscription is now active.`}</Text>
                 ) : null}
                 <Text>
-                    {c('new_plans: signup')
-                        .t`To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.`}
+                    {description ||
+                        c('new_plans: signup')
+                            .t`To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.`}
                 </Text>
                 <form
                     name="accountForm"
@@ -71,7 +72,7 @@ const CongratulationsStep = ({ padding, defaultName = '', planName: maybePlanNam
                         onValue={setDisplayName}
                     />
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
-                        {c('Action').t`Next`}
+                        {c('pass_signup_2023: Action').t`Continue`}
                     </Button>
                 </form>
             </Content>

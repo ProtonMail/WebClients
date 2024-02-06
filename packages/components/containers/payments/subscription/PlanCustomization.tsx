@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { Currency, Cycle, Organization, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
@@ -16,6 +18,7 @@ interface Props {
     showUsersTooltip?: boolean;
     className?: string;
     currentSubscription?: Subscription;
+    below?: ReactNode;
 }
 
 const PlanCustomization = ({
@@ -28,6 +31,7 @@ const PlanCustomization = ({
     loading,
     organization,
     forceHideDescriptions,
+    below,
     ...rest
 }: Props) => {
     const [currentPlanName] =
@@ -55,19 +59,22 @@ const PlanCustomization = ({
     return (
         <>
             {currentPlan && hasPlanCustomiser && (
-                <ProtonPlanCustomizer
-                    mode={mode}
-                    loading={loading}
-                    cycle={cycle}
-                    currency={currency}
-                    planIDs={planIDs}
-                    plansMap={plansMap}
-                    currentPlan={currentPlan}
-                    organization={organization}
-                    onChangePlanIDs={onChangePlanIDs}
-                    forceHideDescriptions={forceHideDescriptions}
-                    {...rest}
-                />
+                <>
+                    <ProtonPlanCustomizer
+                        mode={mode}
+                        loading={loading}
+                        cycle={cycle}
+                        currency={currency}
+                        planIDs={planIDs}
+                        plansMap={plansMap}
+                        currentPlan={currentPlan}
+                        organization={organization}
+                        onChangePlanIDs={onChangePlanIDs}
+                        forceHideDescriptions={forceHideDescriptions}
+                        {...rest}
+                    />
+                    {below}
+                </>
             )}
         </>
     );

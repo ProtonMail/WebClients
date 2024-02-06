@@ -1,6 +1,6 @@
 import { Ref, memo } from 'react';
 
-import { Breakpoints } from '@proton/components/hooks';
+import type { Breakpoints } from '@proton/components/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 

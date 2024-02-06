@@ -157,7 +157,7 @@ export const Variants = () => {
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
                             <TableCell key={color}>
-                                <ButtonGroup shape={shape} color={color}>
+                                <ButtonGroup shape={shape} color={color} pill>
                                     {buttons.map(({ text }, i) => {
                                         return (
                                             <Button

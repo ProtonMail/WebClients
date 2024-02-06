@@ -1,0 +1,60 @@
+.ui-prominent {
+    --primary: #8A6EFF;
+
+    --signal-danger: #f5385a;
+
+    --signal-warning: #ff9900;
+
+    --signal-success: #1ea885;
+
+    --signal-info: #239ece;
+
+    --interaction-norm: #6D4AFF;
+
+    --interaction-weak: #4A426C;
+
+    --text-norm: white;
+    --text-weak: #A8A2C0;
+    --text-hint: #756C98;
+    --text-disabled: #635B86;
+    --text-invert: #342D54;
+
+    --field-norm: #756C98;
+    --field-hover: #A8A2C0;
+    --field-disabled: #5C537F;
+
+    --focus-outline: #6d4aff;
+    --focus-ring: rgb(109 74 255 / 0.3);
+
+    --border-norm: #4A426C;
+    --border-weak: #3F3760;
+
+    --background-norm: #1D1738;
+    --background-weak: #2A2348;
+    --background-strong: #3F3760;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(74 54 143 / 0.3);
+    --interaction-default-active: rgb(74 57 143 / 0.5);
+
+    --shadow-primary-color: 109 74 255;
+    --shadow-norm-opacity: 0.32;
+    --shadow-raised-opacity: 0.35;
+    --shadow-lifted-opacity: 0.4;
+
+    --backdrop-norm: rgb(0 0 0 / 0.48);
+
+    /* Optional colors */
+
+    --optional-scrollbar-thumb-color: #413085;
+    --optional-scrollbar-thumb-hover-color: #4a398f;
+
+    --optional-link-norm: #9880FF;
+    --optional-link-hover: #A898ED;
+    --optional-link-active: #BBABFF;
+
+    --optional-logo-text-proton-color: white;
+    --optional-logo-text-product-color: white;
+
+    --optional-promotion-text-color: white;
+}
