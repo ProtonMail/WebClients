@@ -176,6 +176,9 @@
       "Get mobile apps": [
         "모바일 앱 다운로드"
       ],
+      "Get Started": [
+        "시작하기"
+      ],
       "Help us improve": [
         "저희를 도와주세요"
       ],
@@ -412,9 +415,6 @@
       "Auto-lock could not be disabled": [
         "자동 잠금을 비활성화 할 수 없습니다."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "현재 이 주소로 초대 전송을 할 수 없습니다."
-      ],
       "Could not confirm this invite at the moment": [
         "현재 초대를 수락할 수 없습니다."
       ],
@@ -445,7 +445,7 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
+      "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } 손상된 csv 행 감지됨"
       ],
       "Editing item failed": [
@@ -617,7 +617,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "바이트"
       ],
       "GB": [
@@ -634,19 +634,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "바이트"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "기가바이트"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "킬로바이트"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "메가바이트"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "테라바이트"
       ]
     },
@@ -660,10 +660,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
-      "${ memberCount } members": [
+      "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
-      "${ n } items": [
+      "${ n } item": [
         "${ n }개 항목"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
@@ -672,7 +672,7 @@
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
       ],
-      "${ revisionNumber } times": [
+      "${ revisionNumber } time": [
         "${ revisionNumber } 번"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -786,7 +786,7 @@
       "Import the CSV file below.": [
         "아래에 CSV 파일을 불어오십시오."
       ],
-      "Imported ${ payload.total } items": [
+      "Imported ${ payload.total } item": [
         "${ payload.total }개 항목을 불러왔습니다"
       ],
       "Imported on ${ date }": [
@@ -816,6 +816,9 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
       ],
+      "item": [
+        "항목"
+      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "항목 \"${ payload.item.data.metadata.name }\" 이(가) 생성되었습니다."
       ],
@@ -839,9 +842,6 @@
       ],
       "Item successfully unpinned": [
         "항목을 성공적으로 고정 해제했습니다."
-      ],
-      "items": [
-        "항목"
       ],
       "Leaving vault...": [
         "금고 나가는 중..."
@@ -987,7 +987,7 @@
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
-      "The following ${ result.ignored.length } items could not be imported:": [
+      "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
@@ -1050,7 +1050,7 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
-      "You have ${ daysRemaining } days left to try these and other premium features.": [
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
         "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
@@ -1079,12 +1079,6 @@
       ]
     },
     "Label": {
-      "${ config.options.length } characters": [
-        "${ config.options.length }글자"
-      ],
-      "${ config.options.wordCount } words": [
-        "${ config.options.wordCount }단어"
-      ],
       "1 hour": [
         "1시간"
       ],
@@ -1463,9 +1457,6 @@
       ]
     },
     "Message": {
-      "${ count } items": [
-        "${ count }개 항목"
-      ],
       "You selected ${ semiboldText } in this vault": [
         "이 금고애서 ${ semiboldText }개 선택했습니다."
       ]
@@ -1583,7 +1574,7 @@
       ]
     },
     "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ]
     },
@@ -1733,7 +1724,7 @@
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."
       ],
       "Missing alias prefix": [
@@ -1762,9 +1753,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
-      ],
-      "Please enter a valid email address": [
-        "유효한 이메일 주소를 입력하세요"
       ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."

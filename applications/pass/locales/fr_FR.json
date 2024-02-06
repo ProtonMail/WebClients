@@ -176,6 +176,9 @@
       "Get mobile apps": [
         "Télécharger les applications mobiles"
       ],
+      "Get Started": [
+        "Commencer"
+      ],
       "Help us improve": [
         "Aidez-nous à nous améliorer"
       ],
@@ -190,6 +193,9 @@
       ],
       "Importing": [
         "Importer"
+      ],
+      "Install extension": [
+        "Installer l'extension"
       ],
       "Invite others": [
         "Inviter d'autres personnes"
@@ -411,9 +417,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Le verrouillage automatique n’a pu être désactivé."
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "Vous ne pouvez pas envoyer d'invitation à cette adresse pour le moment."
       ],
       "Could not confirm this invite at the moment": [
         "Cette invitation n'a pu être confirmée pour le moment."
@@ -805,6 +808,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pour utiliser ${ PASS_APP_NAME } dans les meilleures conditions, accordez les autorisations nécessaires à l'extension."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installez ${ PASS_APP_NAME } pour ${ browser.title } pour remplir automatiquement vos identifiants."
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -1781,9 +1787,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
-      ],
-      "Please enter a valid email address": [
-        "Saisissez une adresse e-mail valide."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vérifiez votre adresse e-mail pour utiliser les alias d'adresse e-mail."
