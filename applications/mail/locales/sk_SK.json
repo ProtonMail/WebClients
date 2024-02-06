@@ -331,6 +331,9 @@
       "Discard": [
         "Zahodiť"
       ],
+      "Dismiss": [
+        "Odmietnuť"
+      ],
       "Don't know your password?": [
         "Neviete svoje heslo?"
       ],
@@ -718,6 +721,9 @@
       "No, I won't attend": [
         "Nie, nebudem sa zúčastňovať"
       ],
+      "Not now": [
+        "Teraz nie"
+      ],
       "Not saved": [
         "Neuložené"
       ],
@@ -1050,12 +1056,6 @@
       ],
       "Trust": [
         "Dôverovať"
-      ],
-      "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodný kľúč",
-        "Dôverovať kľúčom",
-        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -3079,9 +3079,6 @@
       "No labels": [
         "Žiadne štítky"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo a znamienko plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním emailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
@@ -3307,6 +3304,9 @@
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
       ],
+      "Alias options could not be resolved": [
+        "Možnosti aliasu sa nepodarilo vyriešiť"
+      ],
       "Attachments are limited to 25 MB": [
         "Prílohy sú obmedzené na 25 MB"
       ],
@@ -3354,6 +3354,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Vyhľadávanie obsahu nie je možné povoliť. Reštartujte aplikáciu alebo vymažte údaje."
+      ],
+      "Could not open created vault": [
+        "Nepodarilo sa otvoriť vytvorený trezor"
+      ],
+      "Could not open updated vault": [
+        "Nepodarilo sa otvoriť aktualizovaný trezor"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrovania: Dešifrovanie obsahu tejto správy zlyhalo."
@@ -3441,6 +3447,9 @@
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Obsah položky nesmie presiahnuť 40KB"
       ],
       "Label name cannot be empty.": [
         "Názov štítku nesmie byť prázdny."
@@ -5239,12 +5248,6 @@
       "Are you sure you want to discard your import?": [
         "Naozaj chcete zahodiť váš import?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Naozaj chcete presunúť všetky správy z tohto umiestnenia do Archívu?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Naozaj chcete presunúť všetky správy z tohto umiestnenia do Koša?"
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Naozaj chcete natrvalo vymazať ${ count } konverzáciu?",
         "Naozaj chcete natrvalo vymazať ${ count } konverzácie?",
@@ -6955,6 +6958,9 @@
       "Folder location": [
         "Umiestnenie priečinka"
       ],
+      "Forwards to": [
+        "Preposielať na"
+      ],
       "Frequency": [
         "Frekvencia"
       ],
@@ -7069,6 +7075,9 @@
       "No label found": [
         "Nebol nájdený žiadny štítok"
       ],
+      "Note": [
+        "Poznámka"
+      ],
       "Notification": [
         "Notifikácia"
       ],
@@ -7179,6 +7188,9 @@
       ],
       "Time": [
         "Čas"
+      ],
+      "Title": [
+        "Názov"
       ],
       "To:": [
         "Komu:"
@@ -7871,6 +7883,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } bol vytvorený"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } bol zakázaný"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } bol povolený"
+      ],
       "Block removed": [
         "Blokovať odstránené"
       ],
@@ -8312,6 +8330,17 @@
       ],
       "No unread messages found": [
         "Neboli nájdené žiadne neprečítané správy"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email aliasy"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Otvoriť ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Vyskúšať ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8967,6 +8996,14 @@
         "Vaše aktuálne úložisko:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } uložisko"
+      ],
+      "Your storage is full": [
+        "Vaše úložisko je plné"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } konverzácia bola odstránená",
@@ -9421,6 +9458,12 @@
       "(active)": [
         "(aktívny)"
       ],
+      "Account recovery": [
+        "Obnovenie účtu"
+      ],
+      "Account security": [
+        "Zabezpečenie účtu"
+      ],
       "Add contact group name": [
         "Pridať názov skupiny kontaktov"
       ],
@@ -9534,6 +9577,9 @@
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"
+      ],
+      "Data recovery": [
+        "Obnovenie údajov"
       ],
       "Day theme": [
         "Denný motív"
@@ -9760,12 +9806,6 @@
       "Move all messages": [
         "Presunúť všetky správy"
       ],
-      "Move all messages to Archive": [
-        "Presunúť všetky správy do Archívu"
-      ],
-      "Move all messages to Trash": [
-        "Presun všetkých správ do Koša"
-      ],
       "Move to": [
         "Presunúť do"
       ],
@@ -9951,6 +9991,9 @@
       ],
       "Subject missing": [
         "Chýba predmet"
+      ],
+      "This field cannot be empty": [
+        "Toto pole nemôže byť prázdne"
       ],
       "To": [
         "Pre"
@@ -10164,8 +10207,23 @@
       "Contacts could not be merged": [
         "Kontakty nebolo možné zlúčiť"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Koniec platnosti nie je vo formáte MM/RR"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ak si nepamätáte heslo, nie je možné znova aktivovať váš kľúč. Môžeme zrušiť výstražnú správu, ale tým trvalo stratíte prístup ku všetkým dátam šifrovaným týmto kľúčom."
+      ],
+      "Invalid alias prefix": [
+        "Neplatná predpona aliasu"
+      ],
+      "Missing alias prefix": [
+        "Chýbajúca predpona aliasu"
+      ],
+      "Missing alias suffix": [
+        "Chýbajúca prípona aliasu"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
@@ -10175,6 +10233,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Niektoré kontakty vykazujú chybu pri spojení. Prosím, skontrolujte ich individuálne"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Predpona aliasu nemôže byť dlhšia ako 40 znakov"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Overenie podpisu prílohy zlyhalo.\nTúto prílohu si stále môžete stiahnuť, ale môže byť sfalšovaná.",
@@ -10208,6 +10269,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nepodarilo sa overiť emailový server. Ak mu dôverujete, môžete toto overenie preskočiť."
+      ],
+      "You must select at least one mailbox": [
+        "Musíte vybrať aspoň jednu poštovú schránku"
       ],
       "You will lose any customization you made so far.": [
         "Prídete o zmeny, ktoré ste doteraz vykonali."
