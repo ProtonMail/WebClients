@@ -211,6 +211,13 @@ const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
     ];
 };
 
+const ORG_SIZE_ADDONS = [
+    ADDON_NAMES.MEMBER_VPN_BUSINESS,
+    ADDON_NAMES.MEMBER_VPN_PRO,
+    ADDON_NAMES.MEMBER_PASS_BUSINESS,
+    ADDON_NAMES.MEMBER_PASS_PRO,
+];
+
 const AccountSizeCustomiser = ({
     addon,
     maxUsers,
@@ -226,9 +233,10 @@ const AccountSizeCustomiser = ({
     showDescription?: boolean;
     showTooltip?: boolean;
 }) => {
+    const mode = ORG_SIZE_ADDONS.some((name) => addon.Name === name) ? 'org-size' : 'users';
     return (
         <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
-            {showDescription && (
+            {showDescription && mode === 'users' && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Account size`}</h2>
                     <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
@@ -240,8 +248,8 @@ const AccountSizeCustomiser = ({
                     className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
-                    {c('Info').t`Users`}
-                    {showTooltip && (
+                    {mode === 'org-size' ? c('Info').t`Organization size` : c('Info').t`Users`}
+                    {showTooltip && mode === 'users' && (
                         <Info
                             buttonClass="ml-2"
                             title={c('Info')
