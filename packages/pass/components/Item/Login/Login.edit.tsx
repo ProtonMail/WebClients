@@ -58,7 +58,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
 
     const {
         metadata: { name, note, itemUuid },
-        content: { username, password, urls, totpUri },
+        content: { username, password, urls, totpUri, passkeys },
         extraFields,
     } = useDeobfuscatedItem(item);
 
@@ -132,6 +132,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
+                    passkeys,
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
