@@ -85,7 +85,6 @@ export const Autosave: FC<Props> = ({ settings, submission, visible, onClose }) 
                     ? partialMerge(submission.autosave.data.item.data, {
                           metadata: { name },
                           content: {
-                              passkeys: [],
                               password: obfuscate(password),
                               username: obfuscate(username),
                               urls: Array.from(
