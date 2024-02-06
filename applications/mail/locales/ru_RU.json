@@ -331,6 +331,9 @@
       "Discard": [
         "Сбросить"
       ],
+      "Dismiss": [
+        "Отклонить"
+      ],
       "Don't know your password?": [
         "Не знаете свой пароль?"
       ],
@@ -550,6 +553,9 @@
       "label emails as": [
         "отметить ярлыком электронные письма как"
       ],
+      "Later this week": [
+        "Позже на этой неделе"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -708,6 +714,9 @@
       ],
       "No, I won't attend": [
         "Нет, я не участвую"
+      ],
+      "Not now": [
+        "Не сейчас"
       ],
       "Not saved": [
         "Не сохранено"
@@ -1035,12 +1044,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -3054,9 +3057,6 @@
       "No labels": [
         "Нет ярлыков"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Логотип ProtonMail и знак «плюс»"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
       ],
@@ -3271,6 +3271,9 @@
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
       ],
+      "Alias options could not be resolved": [
+        "Параметры псевдонима не могут быть определены"
+      ],
       "Attachments are limited to 25 MB": [
         "Вложения ограничены 25 МБ"
       ],
@@ -3315,6 +3318,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
+      ],
+      "Could not open created vault": [
+        "Не могу открыть созданное хранилище"
+      ],
+      "Could not open updated vault": [
+        "Не могу открыть обновлённое хранилище"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ошибка расшифровки: не удалось расшифровать зашифрованное содержимое сообщения."
@@ -3402,6 +3411,9 @@
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Содержимое элемента не может превышать 40 Кбайт"
       ],
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
@@ -5176,12 +5188,6 @@
       "Are you sure you want to discard your import?": [
         "Вы уверены, что хотите сбросить импорт?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "Вы уверены, что хотите переместить все сообщения из этого места в Архив?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Вы уверены, что хотите переместить все сообщения отсюда в Корзину?"
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Вы уверены, что хотите безвозвратно удалить ${ count } цепочку писем?",
         "Вы уверены, что хотите безвозвратно удалить эти ${ count } цепочки писем?",
@@ -6856,6 +6862,9 @@
       "Folder location": [
         "Размещение папки"
       ],
+      "Forwards to": [
+        "Переслать"
+      ],
       "Frequency": [
         "Частота"
       ],
@@ -6967,6 +6976,9 @@
       "No label found": [
         "Ярлыки не найдены"
       ],
+      "Note": [
+        "Заметка"
+      ],
       "Notification": [
         "Уведомление"
       ],
@@ -7077,6 +7089,9 @@
       ],
       "Time": [
         "Время"
+      ],
+      "Title": [
+        "Заголовок"
       ],
       "To:": [
         "Кому:"
@@ -7757,6 +7772,12 @@
       "${ Filter.Name } created": [
         "Фильтр ${ Filter.Name } создан"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } был отключен"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } был включен"
+      ],
       "Block removed": [
         "Блокировка удалена"
       ],
@@ -8180,6 +8201,17 @@
       ],
       "No unread messages found": [
         "Не найдено непрочитанных сообщений"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Псевдонимы hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Открыть ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Попробуйте ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8733,6 +8765,14 @@
         "Текущее хранилище:"
       ]
     },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } хранилища"
+      ],
+      "Your storage is full": [
+        "Ваше хранилище заполнено"
+      ]
+    },
     "Success": {
       "${ count } conversation deleted": [
         "${ count } цепочка писем удалена",
@@ -9175,6 +9215,12 @@
       "(active)": [
         "(активна)"
       ],
+      "Account recovery": [
+        "Восстановление аккаунта"
+      ],
+      "Account security": [
+        "Безопасность учётной записи"
+      ],
       "Action all conversations": [
         "Действие со всеми цепочками писем"
       ],
@@ -9294,6 +9340,9 @@
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
+      ],
+      "Data recovery": [
+        "Восстановление данных"
       ],
       "Day theme": [
         "Дневная тема"
@@ -9520,12 +9569,6 @@
       "Move all messages": [
         "Переместить все сообщения"
       ],
-      "Move all messages to Archive": [
-        "Переместить все сообщения в Архив"
-      ],
-      "Move all messages to Trash": [
-        "Переместить все сообщения в корзину"
-      ],
       "Move to": [
         "Переместить в"
       ],
@@ -9703,6 +9746,9 @@
       "Subject missing": [
         "Тема отсутствует"
       ],
+      "This field cannot be empty": [
+        "Это поле не может быть пустым"
+      ],
       "To": [
         "Кому"
       ],
@@ -9732,6 +9778,9 @@
       ],
       "Verification error": [
         "Ошибка подтверждения"
+      ],
+      "Want to snooze any time?": [
+        "Хотите отложить в любое время?"
       ],
       "Warning": [
         "Предупреждение"
@@ -9909,8 +9958,23 @@
       "Contacts could not be merged": [
         "Контакты не могут быть объединены"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Срок действия не в формате ММ/ГГ"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Если вы не помните свой пароль, повторно активировать ключ невозможно. Мы можем помочь вам отключить предупреждение, но тогда вы навсегда потеряете доступ ко всем данным, зашифрованным с помощью этого ключа."
+      ],
+      "Invalid alias prefix": [
+        "Недопустимый префикс псевдонима"
+      ],
+      "Missing alias prefix": [
+        "Отсутствует префикс псевдонима"
+      ],
+      "Missing alias suffix": [
+        "Отсутствует суффикс псевдонима"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Только буквы, цифры, точки, дефисы и подчеркивания разрешены"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
@@ -9920,6 +9984,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Некоторые из планируемых к объединению контактов отображают ошибки. Пожалуйста, рассмотрите каждый из них по отдельности"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Префикс псевдонима не может быть длиннее 40 символов"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Не удалось проверить подпись вложения.\nВы можете скачать это вложение, но оно могло быть изменено.",
@@ -9953,6 +10020,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Не удалось проверить почтовый сервер. Если вы доверяете ему, эту проверку можно пропустить."
+      ],
+      "You must select at least one mailbox": [
+        "Вы должны выбрать хотя бы один почтовый ящик"
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до этого настройки."

@@ -325,6 +325,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Dismiss": [
+        "Descartar"
+      ],
       "Don't know your password?": [
         "¿No sabe su contraseña?"
       ],
@@ -716,6 +719,9 @@
       "No, I won't attend": [
         "No, no asistiré"
       ],
+      "Not now": [
+        "Ahora no"
+      ],
       "Not saved": [
         "No guardado"
       ],
@@ -862,6 +868,9 @@
       ],
       "Save": [
         "Guardar"
+      ],
+      "Save and copy alias": [
+        "Guardar y copiar alias"
       ],
       "Saving${ ellipsis }": [
         "Guardando${ ellipsis }"
@@ -1040,6 +1049,9 @@
       "Toggle Contact app": [
         "Alternar app de Contactos"
       ],
+      "Toggle security center app": [
+        "Alternar app de Centro de seguridad"
+      ],
       "Toggle settings": [
         "Alternar ajustes"
       ],
@@ -1048,10 +1060,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -3019,6 +3027,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } en los ajustes."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA añade una capa de seguridad adicional, evitando acceso no autorizado."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Elimine automáticamente los mensajes de más de 30 días de la papelera y spam. Disfrute de este y otros beneficios al actualizar su plan."
       ],
@@ -3028,11 +3039,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Diseñado para usuarios que buscan una mayor protección para sus cuentas."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obtenga alias ilimitados y 500 GB de almacenamiento con ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
@@ -3053,11 +3070,14 @@
       "No labels": [
         "Sin etiquetas"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo de Proton Mail y un signo más"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorre tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualice hoy mismo."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Establezca un método de recuperación para evitar pérdida de datos."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Establezca un método de recuperación para evitar pérdida de acceso a su cuenta."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar sus contactos desde Google o Outlook, ${ easySwitchLink }."
@@ -3077,6 +3097,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Desbloquee carpetas y etiquetas ilimitadas y más funciones premium cuando actualiza su plan."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Mejore su cuenta para activar ${ PROTON_SENTINEL_NAME }, nuestra solución de seguridad de vanguardia basada en IA con soporte experto dedicado las 24 horas, los 7 días de la semana."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
@@ -3091,6 +3114,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Se establecieron los métodos de recuperación de datos y cuenta y 2FA está activado."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Se establecieron los métodos de recuperación de datos y cuenta."
       ]
     },
     "description": {
@@ -3279,6 +3308,24 @@
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
+      "Alias is not valid": [
+        "Alias inválido"
+      ],
+      "Alias is required": [
+        "Se requiere el alias"
+      ],
+      "Alias options could not be resolved": [
+        "No se pudieron resolver las opciones de alias"
+      ],
+      "Aliases could not be loaded": [
+        "No se pudo cargar el alias"
+      ],
+      "An error occurred while loading alias options": [
+        "Ocurrió un error al cargar las opciones del alias"
+      ],
+      "An error occurred while saving alias": [
+        "Ocurrió un error al guardar el alias"
+      ],
       "Attachments are limited to 25 MB": [
         "Los adjuntos están limitados a 25 MB"
       ],
@@ -3324,6 +3371,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "No se puede activar la búsqueda de contenido. Reinicie la app o borre los datos."
+      ],
+      "Could not open created vault": [
+        "No se pudo abrir la bóveda creada"
+      ],
+      "Could not open updated vault": [
+        "No se pudo abrir la bóveda actualizada"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error de descifrado: no se pudo descifrar el contenido cifrado de este mensaje."
@@ -3384,6 +3437,9 @@
       "Folder name cannot be empty.": [
         "El nombre de la carpeta no puede estar vacío."
       ],
+      "Forward address is required": [
+        "Se requiere la dirección de reenvío"
+      ],
       "Image upload failed": [
         "Error al cargar la imagen"
       ],
@@ -3407,6 +3463,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación inválido"
+      ],
+      "Item content cannot exceed 40KB": [
+        "El contenido del elemento no puede exceder de 40 KB"
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
@@ -3435,6 +3494,9 @@
       ],
       "Missing signature": [
         "Falta la firma"
+      ],
+      "Name is required": [
+        "Se requiere el nombre"
       ],
       "Network error: Please check your connection and try again.": [
         "Error de red: compruebe su conexión e inténtelo de nuevo."
@@ -4491,6 +4553,9 @@
       ],
       "Search": [
         "Búsqueda"
+      ],
+      "Security Center": [
+        "Centro de Seguridad"
       ]
     },
     "Hint": {
@@ -5080,11 +5145,11 @@
       "Are you sure you want to discard your import?": [
         "¿Está seguro de que quiere descartar su importación?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
-        "¿Está seguro de que quiere mover todos los mensajes de esta ubicación al Archivo?"
+      "Are you sure you want to move all messages in this location to archive?": [
+        "¿En verdad desea mover todos los mensajes de esta ubicación al Archivo?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "¿Está seguro que quiere mover todos los mensajes de esta ubicación a la papelera?"
+      "Are you sure you want to move all messages in this location to trash?": [
+        "¿En verdad desea mover todos los mensajes de esta ubicación a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "¿Está seguro de que quiere eliminar permanentemente ${ count } conversación?",
@@ -5409,6 +5474,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importe sus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
+      ],
+      "Important note": [
+        "Nota importante"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando sus datos de ${ fromEmail } a ${ toEmail }."
@@ -5853,6 +5921,9 @@
       "The sender has requested a read receipt.": [
         "El remitente ha solicitado un acuse de recibo."
       ],
+      "The vault your alias will be stored in.": [
+        "La bóveda donde se guardará su alias."
+      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Error al verificar ${ contactNames }: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
         "Error al verificar ${ contactNames }: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
@@ -6080,6 +6151,9 @@
       ],
       "Version ${ appVersion }": [
         "Versión ${ appVersion }"
+      ],
+      "Warning": [
+        "Advertencia"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Lo sentimos. Esto podría haber sido un error de nuestra parte. ¿Podría confirmar que quiere marcar este correo electrónico como uno legítimo?"
@@ -6558,6 +6632,9 @@
       "Add image URL": [
         "Añadir URL de imagen"
       ],
+      "Add title": [
+        "Añadir un nombre"
+      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -6732,6 +6809,9 @@
       "Folder location": [
         "Ubicación de la carpeta"
       ],
+      "Forwards to": [
+        "Reenvía a"
+      ],
       "Frequency": [
         "Frecuencia"
       ],
@@ -6846,6 +6926,9 @@
       "No label found": [
         "Ninguna etiqueta encontrada"
       ],
+      "Note": [
+        "Nota"
+      ],
       "Notification": [
         "Notificación"
       ],
@@ -6957,6 +7040,9 @@
       "Time": [
         "Hora"
       ],
+      "Title": [
+        "Título"
+      ],
       "To:": [
         "Para:"
       ],
@@ -6989,6 +7075,9 @@
       ],
       "Wonderful": [
         "Excelente"
+      ],
+      "Your alias": [
+        "Su alias"
       ],
       "Your password (admin)": [
         "Su contraseña (admin)"
@@ -7624,6 +7713,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } creado"
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido desactivado."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } ha sido activado."
+      ],
       "Block removed": [
         "Bloqueo borrado"
       ],
@@ -8069,6 +8164,57 @@
       ],
       "No unread messages found": [
         "No se encontraron mensajes sin leer"
+      ]
+    },
+    "Security Center": {
+      "All aliases": [
+        "Todos los alias"
+      ],
+      "Create alias": [
+        "Crear un alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "p. ej., Amazon, eBay, Mercado Libre"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Genere alias rápidamente, y administre fácilmente sus alias y contraseñas."
+      ],
+      "Get an alias": [
+        "Obtener un alias"
+      ],
+      "Hide-my-email aliases": [
+        "Alias de hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Los alias de hide-my-email le permiten registrarse en sitios sin compartir su dirección de correo electrónico. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nuevo alias"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Abrir ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Proteja su identidad en línea"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Pruebe ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Cuando se le pregunte por su dirección de correo, brinde este alias en su lugar. Añada un nombre y una nota para monitorear donde lo use."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Ver registros"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Nuestra solución de seguridad de vanguardia basada en IA diseñada para usuarios que buscan protección avanzada en sus cuentas. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel está **activo** y salvaguarda su cuenta."
       ]
     },
     "Select files": {
@@ -8611,6 +8757,9 @@
       "Change setting": [
         "Cambiar ajuste"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Cree alias de hide-my-email y manténgalos monitoreados aquí."
+      ],
       "Email tracking protection": [
         "Protección de rastreo de correo"
       ],
@@ -8825,6 +8974,12 @@
       ],
       "Address verification disabled": [
         "Verificación de dirección desactivada"
+      ],
+      "Alias copied to clipboard": [
+        "Alias copiado al portapapeles"
+      ],
+      "Alias saved and copied": [
+        "Alias guardado y copiado"
       ],
       "Bug reported": [
         "Error reportado"
@@ -9123,6 +9278,12 @@
       "A filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
+      "Account recovery": [
+        "Recuperación de cuenta"
+      ],
+      "Account security": [
+        "Seguridad de la cuenta"
+      ],
       "Action all conversations": [
         "Acción en todas las conversaciones"
       ],
@@ -9241,6 +9402,9 @@
       "Customize your mail import": [
         "Personalice la importación del correo"
       ],
+      "Data recovery": [
+        "Recuperación de datos"
+      ],
       "Day theme": [
         "Tema de día"
       ],
@@ -9321,6 +9485,9 @@
       "Email settings": [
         "Ajustes del correo"
       ],
+      "Enable 2FA": [
+        "Activar 2FA"
+      ],
       "Enable message content search": [
         "Activar la búsqueda de contenido de mensajes"
       ],
@@ -9350,6 +9517,9 @@
       ],
       "Forward": [
         "Reenviar"
+      ],
+      "Get advanced protection": [
+        "Obtener protección avanzada"
       ],
       "Groups": [
         "Grupos"
@@ -9457,10 +9627,10 @@
       "Move all messages": [
         "Mover todos los mensajes"
       ],
-      "Move all messages to Archive": [
+      "Move all messages to archive": [
         "Mover todos los mensajes al Archivo"
       ],
-      "Move all messages to Trash": [
+      "Move all messages to trash": [
         "Mover todos los mensajes a la papelera"
       ],
       "Move to": [
@@ -9483,6 +9653,9 @@
       ],
       "Moving a snoozed message": [
         "Moviendo un mensaje en pausa"
+      ],
+      "Need more aliases?": [
+        "¿Necesita más alias?"
       ],
       "New message": [
         "Mensaje nuevo"
@@ -9567,6 +9740,9 @@
       ],
       "Schedule send": [
         "Programar envío"
+      ],
+      "Security center": [
+        "Centro de seguridad"
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -9707,6 +9883,9 @@
       ],
       "What's new": [
         "Novedades"
+      ],
+      "Your account is protected": [
+        "Su cuenta está protegida"
       ],
       "Your changes are not synced yet": [
         "Sus cambios aún no se han sincronizado"
@@ -9857,8 +10036,23 @@
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "La fecha de expiración no está en formato MM/AA"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerda su contraseña, es imposible volver a activar su clave. Podemos ayudarle a descartar la alerta pero en el proceso perderá permanentemente el acceso a todos los datos cifrados con esa clave."
+      ],
+      "Invalid alias prefix": [
+        "Prefijo de alias inválido"
+      ],
+      "Missing alias prefix": [
+        "Falta el prefijo de alias"
+      ],
+      "Missing alias suffix": [
+        "Falta el sufijo de alias"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los reportes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
@@ -9868,6 +10062,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Algunos de los contactos a combinar tienen errores. Revíselos individualmente."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "El prefijo del alias no puede tener más de 40 caracteres."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Error en la verificación de la firma del archivo adjunto.\nTodavía puede descargar este archivo adjunto, pero puede haber sido manipulado.",
@@ -9899,6 +10096,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "No pudimos verificar el servidor de correo. Si confía en él, puede omitir esta verificación."
+      ],
+      "You must select at least one mailbox": [
+        "Debe seleccionar al menos un buzón"
       ],
       "You will lose any customization you made so far.": [
         "Perderá cualquier personalización que haya hecho hasta ahora."
