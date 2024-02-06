@@ -38,6 +38,21 @@
       "Back": [
         "Tilbage"
       ],
+      "Bulk delete items from trash": [
+        "Slet elementer i papirkurven i massevis"
+      ],
+      "Bulk move items to another vault": [
+        "Flyt elementer til en anden boks i massevis"
+      ],
+      "Bulk move items to trash": [
+        "Flyt elementer til papirkurven i massevis"
+      ],
+      "Bulk restore items from trash": [
+        "Gendan elementer fra papirkurven i massevis"
+      ],
+      "Bulk select items": [
+        "Vælg elementer i massevis"
+      ],
       "Cancel": [
         "Annullér"
       ],
@@ -140,6 +155,9 @@
       "Delete vault": [
         "Slet boks"
       ],
+      "Deselect": [
+        "Fravælg"
+      ],
       "Disable autosave on this website": [
         "Deaktivér autogem på dette websted"
       ],
@@ -157,6 +175,9 @@
       ],
       "Done": [
         "Udført"
+      ],
+      "Download this CSV template": [
+        "Download denne CSV-skabelon"
       ],
       "Edit": [
         "Redigér"
@@ -470,9 +491,6 @@
       ],
       "Cannot create alias (${ error }).": [
         "Kan ikke oprette alias (${ error })."
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "Kan ikke sende invitation til denne adresse i øjeblikket"
       ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekræfte denne invitation i øjeblikket"
@@ -790,6 +808,9 @@
       "Admin": [
         "Admin"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
       ],
@@ -883,6 +904,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Eksporten er krypteret med PGP og kræver en stærk adgangssætning."
       ],
+      "Fill in the CSV with your data": [
+        "Udfyld CSV-filen med dine data"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Følg disse trin for at importere dine data med en generisk CSV:"
+      ],
       "For easy access to your passwords and more.": [
         "For nem adgang til dine adgangskoder og mere."
       ],
@@ -906,6 +933,9 @@
       ],
       "Import in progress:": [
         "Import i gang:"
+      ],
+      "Import the CSV file below.": [
+        "Importér CSV-filen nedenfor."
       ],
       "Imported ${ payload.total } item": [
         "Importerede ${ payload.total } element",
@@ -1085,6 +1115,9 @@
       ],
       "Selected items successfully moved to trash": [
         "De valgte elementer blev flyttet til papirkurven"
+      ],
+      "Selected items successfully restored from trash": [
+        "Valgte elementer gendannet fra papirkurven"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -1404,6 +1437,9 @@
       "General": [
         "Generelt"
       ],
+      "Generic CSV": [
+        "Generisk CSV"
+      ],
       "Grant": [
         "Tildel"
       ],
@@ -1677,6 +1713,9 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elementer"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Du valgte ${ semiboldText } i denne boks"
       ]
     },
     "Onboarding": {
@@ -1869,6 +1908,9 @@
       "Move all items ?": [
         "Flyt alle elementer ?"
       ],
+      "No items selected": [
+        "Ingen elementer valgt"
+      ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
       ],
@@ -2017,9 +2059,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
-      ],
-      "Please enter a valid email address": [
-        "Angiv venligst en gyldig e-mailadresse"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."

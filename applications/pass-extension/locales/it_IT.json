@@ -308,6 +308,9 @@
       "Pin item": [
         "Fissa l'elemento"
       ],
+      "Recent": [
+        "Recenti"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Rimuovi accesso"
+      ],
+      "Remove member": [
+        "Rimuovi questo membro"
       ],
       "Request a feature": [
         "Richiedi una funzionalità"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Inviaci un messaggio"
+      ],
+      "Set access level": [
+        "Imposta il livello di accesso"
       ],
       "Share": [
         "Condividi"
@@ -492,14 +501,18 @@
       "Cannot create alias (${ error }).": [
         "Impossibile creare l'alias (${ error })."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "Al momento non è possibile inviare un invito a questo indirizzo"
+      "Cannot send invitation at the moment": [
+        "Impossibile spedire l'invito al momento",
+        "Impossibile spedire gli inviti al momento"
       ],
       "Could not confirm this invite at the moment": [
         "Impossibile confermare questo invito al momento"
       ],
       "Could not leave vault.": [
         "Impossibile abbandonare la cassaforte."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Impossibile caricare i consigli al momento."
       ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
@@ -761,6 +774,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "L'aggiornamento \"${ payload.item.data.metadata.name }\" è stato rimosso"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } inviti spediti con successo"
       ],
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -1506,6 +1522,15 @@
       "Logins": [
         "Login"
       ],
+      "Make all admins": [
+        "Rendi tutti amministratori"
+      ],
+      "Make all editors": [
+        "Rendi tutti editor"
+      ],
+      "Make all viewers": [
+        "Rendi tutti visualizzatori"
+      ],
       "Members": [
         "Membri"
       ],
@@ -1881,6 +1906,9 @@
       "Fill & copy password": [
         "Compila e copia la password"
       ],
+      "Get Started": [
+        "Inizia ora"
+      ],
       "Get the mobile apps": [
         "Ottieni le app mobili"
       ],
@@ -1908,6 +1936,9 @@
       "Member limit": [
         "Limite di membri"
       ],
+      "Members": [
+        "Membri"
+      ],
       "Move all items ?": [
         "Spostare tutti gli elementi?"
       ],
@@ -1932,6 +1963,9 @@
       "Pinned (${ items.length })": [
         "Fissati (${ items.length })"
       ],
+      "Review and share": [
+        "Controlla e condividi"
+      ],
       "Secure your data": [
         "Proteggi i tuoi dati"
       ],
@@ -1940,6 +1974,9 @@
       ],
       "Share with": [
         "Condividi con"
+      ],
+      "Suggestions": [
+        "Suggerimenti"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Passare a ${ PASS_APP_NAME }?"
@@ -1964,6 +2001,9 @@
       ],
       "Use my email": [
         "Usa la mia email"
+      ],
+      "Vault": [
+        "Cassaforte"
       ],
       "Vault shared with you": [
         "Cassaforte condivisa con te"
@@ -2017,11 +2057,20 @@
       "An error occured while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
       ],
+      "At least one email address is required": [
+        "È richiesto almeno un indirizzo email"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Al momento non è possibile recuperare le caselle di posta per questo alias"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Impossibile creare la cassaforte \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Impossibile spedire gli inviti ai seguenti indirizzi:"
+      ],
+      "Duplicate email addresses.": [
+        "Indirizzi email duplicati."
       ],
       "Empty note": [
         "Nota vuota"
@@ -2031,6 +2080,9 @@
       ],
       "Invalid alias prefix": [
         "Prefisso alias non valido"
+      ],
+      "Invalid email addresses.": [
+        "Indirizzi email non validi."
       ],
       "Maximum length is ${ maxLength } character": [
         "La lunghezza massima è ${ maxLength } carattere",
@@ -2054,6 +2106,9 @@
       "No password manager selected": [
         "Nessun gestore di password selezionato"
       ],
+      "No results": [
+        "Nessun risultato"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sono consentiti solo caratteri alfanumerici, punti, trattini e trattini bassi"
       ],
@@ -2062,9 +2117,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "L'esportazione del file crittografato mediante PGP richiede una passphrase"
-      ],
-      "Please enter a valid email address": [
-        "Inserisci un indirizzo email valido"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifica il tuo indirizzo email per poter utilizzare gli alias email"
