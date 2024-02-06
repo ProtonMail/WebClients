@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Icon } from '@proton/components/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
 
 import { BenefitItem } from '../Benefits';
 import swissFlag from '../flag.svg';
@@ -9,9 +10,20 @@ import swissFlag from '../flag.svg';
 export const getBenefits = (appName: string) => {
     return c('pass_signup_2023: Info').t`${appName} benefits`;
 };
-export const getJoinString = () => {
+
+export const getJoinB2BString = () => {
+    return c('pass_signup_2023: Info').t`Join over 50 000 organizations that trust ${BRAND_NAME}`;
+};
+export const getJoinString = (audience?: Audience) => {
+    if (audience === Audience.B2B) {
+        return getJoinB2BString();
+    }
     return c('pass_signup_2023: Info')
         .t`Join over 100 million people who have chosen ${BRAND_NAME} to stay safe online`;
+};
+
+export const getBasedString = () => {
+    return c('pass_signup_2023: Info').t`Based in Switzerland, GDPR compliant`;
 };
 
 export const getGenericBenefits = (): BenefitItem[] => {

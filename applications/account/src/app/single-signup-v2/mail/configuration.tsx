@@ -20,7 +20,7 @@ import {
     MAIL_SHORT_APP_NAME,
     PLANS,
 } from '@proton/shared/lib/constants';
-import { FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
@@ -89,6 +89,7 @@ export const getMailConfiguration = ({
     freePlan,
     mode,
     plan,
+    audience,
     isLargeViewport,
     vpnServersCountData,
     planParameters,
@@ -96,6 +97,7 @@ export const getMailConfiguration = ({
     plansMap,
 }: {
     freePlan: FreePlanDefault;
+    audience: Audience.B2B | Audience.B2C;
     mode: SignupMode;
     plan: Plan | undefined;
     hideFreePlan: boolean;
@@ -180,10 +182,11 @@ export const getMailConfiguration = ({
 
     return {
         logo,
+        audience,
         title,
         features,
         benefits,
-        planCards,
+        planCards: { [Audience.B2C]: planCards, [Audience.B2B]: [] },
         signupTypes: [SignupType.Username],
         onboarding: {
             user: false,

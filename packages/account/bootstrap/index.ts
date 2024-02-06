@@ -43,7 +43,11 @@ import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { Api, Environment, ProtonConfig, User, UserSettings } from '@proton/shared/lib/interfaces';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import {
+    getIsPublicUserWithoutProtonAddress,
+    getIsSSOVPNOnlyAccount,
+    getRequiresAddressSetup,
+} from '@proton/shared/lib/keys';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
@@ -338,6 +342,14 @@ export const maybeRedirect = async ({
 
     if (getIsSSOVPNOnlyAccount(user) && ![APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS].includes(appName as any)) {
         appLink({ to: '/vpn', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
+        await new Promise(noop);
+    }
+
+    if (
+        getIsPublicUserWithoutProtonAddress(user) &&
+        ![APPS.PROTONACCOUNT, APPS.PROTONPASS, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].includes(appName as any)
+    ) {
+        appLink({ to: '/pass', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
         await new Promise(noop);
     }
 };

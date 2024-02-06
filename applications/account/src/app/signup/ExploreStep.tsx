@@ -17,10 +17,9 @@ import { getSignupApplication } from './helper';
 
 interface Props {
     onExplore: (app: APP_NAMES) => Promise<void>;
-    padding?: boolean;
 }
 
-const ExploreStep = ({ padding, onExplore }: Props) => {
+const ExploreStep = ({ onExplore }: Props) => {
     const { APP_NAME } = useConfig();
     const [type, setType] = useState<APP_NAMES | undefined>(undefined);
     const [loading, withLoading] = useLoading();
@@ -33,7 +32,7 @@ const ExploreStep = ({ padding, onExplore }: Props) => {
     }, []);
 
     return (
-        <Main padding={padding}>
+        <Main>
             <Header title={c('new_plans: title').t`Start exploring the ${BRAND_NAME} universe`} />
             <Content>
                 <ul className="unstyled m-0 divide-y">

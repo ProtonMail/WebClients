@@ -57,10 +57,9 @@ interface Props {
     defaultCountry?: string;
     defaultPhone?: string;
     defaultEmail?: string;
-    padding?: boolean;
 }
 
-const RecoveryStep = ({ padding, defaultPhone, defaultEmail, defaultCountry, onSubmit, onBack }: Props) => {
+const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, onBack }: Props) => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const [loading, withLoading] = useLoading();
@@ -116,7 +115,7 @@ const RecoveryStep = ({ padding, defaultPhone, defaultEmail, defaultCountry, onS
         });
     };
     return (
-        <Main padding={padding}>
+        <Main>
             <Header title={c('Title').t`Set up a recovery method`} onBack={onBack} />
             <Content>
                 {renderConfirmModal && (

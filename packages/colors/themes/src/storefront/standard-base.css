@@ -1,0 +1,67 @@
+:root,
+.ui-standard {
+    --primary: #6d4aff;
+
+    --signal-danger: #dc3251;
+
+    --signal-warning: #ff9900;
+
+    --signal-success: #1ea885;
+
+    --signal-info: #239ece;
+
+    --interaction-norm: #6d4aff;
+
+    --interaction-weak: #DED7F7;
+
+    --text-norm: #0F004D;
+    --text-weak: #776E94;
+    --text-hint: #8C86A6;
+    --text-disabled: #B9B5C8;
+    --text-invert: white;
+
+    --field-norm: #B1A8D5;
+    --field-hover: #867CB0;
+    --field-disabled: #C2B9E5;
+
+    --focus-outline: #6d4aff;
+    --focus-ring: rgb(109 74 255 / 0.2);
+
+    --border-norm: #C2B9E5;
+    --border-weak: #DFDAF4;
+
+    --background-norm: white;
+    --background-weak: #EEEBFA;
+    --background-strong: #DED7F7;
+    --background-invert: #0F004D;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(191 181 233 / 0.2);
+    --interaction-default-active: rgb(191 181 233 / 0.35);
+
+    --shadow-primary-color: 109 74 255;
+    --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(15 0 77 / 0.32);
+
+    /* Optional colors */
+
+    --optional-scrollbar-thumb-color: #d1cfcd;
+    --optional-scrollbar-thumb-hover-color: #c2bfbc;
+
+    /* Reset because prominent part overrides those colors */
+    --optional-link-norm: initial;
+    --optional-link-hover: initial;
+    --optional-link-active: initial;
+    --optional-mini-calendar-today-color: initial;
+    --optional-logo-text-proton-color: initial;
+    --optional-logo-text-product-color: initial;
+
+    --optional-promotion-text-color: #15006F;
+	--optional-promotion-text-weak: #50409b;
+	--optional-promotion-interaction-hover: rgb(109 74 255 / 0.08);
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
+}
