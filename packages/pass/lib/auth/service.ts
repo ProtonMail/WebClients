@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import type { CreateNotificationOptions } from '@proton/components/containers';
-import { SESSION_LOCK_CODE } from '@proton/pass/lib/api/utils';
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
+import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
@@ -17,7 +18,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { type RefreshSessionData } from '../api/refresh';
 import {
     type ConsumeForkPayload,
     type RequestForkOptions,
@@ -263,7 +263,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                      * code. At this point we can login the user without requiring to unlock.
                      * FIXME: BE should reply a custom error code. */
                     const { code, status } = getApiError(error);
-                    if (code === SESSION_LOCK_CODE && status === 400) {
+                    if (code === PassErrorCode.SESSION_LOCKED && status === 400) {
                         config.onNotification?.({
                             key: NotificationKey.SESSION_LOCK,
                             text: c('Error').t`Your PIN code was removed by another ${PASS_APP_NAME} client`,

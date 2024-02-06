@@ -4,11 +4,10 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import { LockedSessionError } from './errors';
+import { LockedSessionError, PassErrorCode } from './errors';
 import { createApi } from './factory';
 import * as refresh from './refresh';
 import { TEST_SERVER_TIME, mockAPIResponse } from './testing';
-import { SESSION_LOCK_CODE } from './utils';
 
 const { APP_VERSION_BAD } = API_CUSTOM_ERROR_CODES;
 
@@ -174,7 +173,16 @@ describe('API factory', () => {
 
     describe('Locked session', () => {
         test('should handle locked session', async () => {
-            fetchMock.mockResolvedValueOnce(mockAPIResponse({ Code: SESSION_LOCK_CODE, Error: 'Locked' }, 422));
+            fetchMock.mockResolvedValueOnce(
+                mockAPIResponse(
+                    {
+                        Code: PassErrorCode.SESSION_LOCKED,
+                        Error: 'Locked',
+                    },
+                    422
+                )
+            );
+
             await expect(api({ url: 'some/protected/endpoint' })).rejects.toThrow(LockedSessionError());
             expect(listener).toHaveBeenCalledTimes(1);
             expect(listener).toHaveBeenCalledWith({ status: 'locked', type: 'session' });
@@ -182,7 +190,16 @@ describe('API factory', () => {
         });
 
         test('all subsequent calls should fail early', async () => {
-            fetchMock.mockResolvedValueOnce(mockAPIResponse({ Code: SESSION_LOCK_CODE, Error: 'Locked' }, 422));
+            fetchMock.mockResolvedValueOnce(
+                mockAPIResponse(
+                    {
+                        Code: PassErrorCode.SESSION_LOCKED,
+                        Error: 'Locked',
+                    },
+                    422
+                )
+            );
+
             await expect(api({ url: 'some/protected/endpoint' })).rejects.toThrow(LockedSessionError());
             await expect(api({ url: 'some/other/endpoint' })).rejects.toThrow(LockedSessionError());
             await expect(api({ url: 'some/other/endpoint' })).rejects.toThrow(LockedSessionError());

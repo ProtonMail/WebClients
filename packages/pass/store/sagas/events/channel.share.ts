@@ -2,6 +2,7 @@
 import type { Action } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
+import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
@@ -84,7 +85,7 @@ const onShareEventError = (shareId: string) =>
         const { code } = getApiError(error);
 
         /* share was deleted or user lost access */
-        if (code === 300004) {
+        if (code === PassErrorCode.DISABLED_SHARE) {
             logger.info(`[ServerEvents::Share::${logId(shareId)}] share disabled`);
             channel.close();
 
