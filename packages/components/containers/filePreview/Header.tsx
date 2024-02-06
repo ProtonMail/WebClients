@@ -69,7 +69,7 @@ const Header = ({
         <div className="flex justify-space-between items-center p-7 relative">
             <div className="file-preview-filename flex items-center flex-nowrap" data-testid="preview:file-name">
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
-                <FileNameDisplay text={name} data-testid="file-preview:file-name" />
+                <FileNameDisplay text={name} className="user-select" data-testid="file-preview:file-name" />
                 {signatureStatus}
             </div>
             {date && (
