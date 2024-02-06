@@ -3,9 +3,9 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
+import { getDomainAdressError } from '@proton/account/members/validateAddUser';
 import { Button, Href } from '@proton/atoms';
 import { GenericError } from '@proton/components/containers';
-import { getDomainAdressError } from '@proton/components/containers/members/validateAddUser';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Domain, Organization } from '@proton/shared/lib/interfaces';
-import { OrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
+import type { Domain, Organization } from '@proton/shared/lib/interfaces';
+import { type OrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
 export const getDomainError = () => {
     return c('Error').t`Please configure a custom domain before adding users to your organization.`;

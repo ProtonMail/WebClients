@@ -8,16 +8,15 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { APP_NAMES, GIGA, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
+import { Domain, Organization } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -38,7 +37,6 @@ import {
     useFormErrors,
 } from '../../components';
 import {
-    useAddresses,
     useApi,
     useErrorHandler,
     useEventManager,
@@ -53,7 +51,6 @@ import MemberStorageSelector, { getStorageRange, getTotalStorage } from './Membe
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
-import validateAddUser from './validateAddUser';
 
 enum Step {
     SINGLE,
@@ -99,7 +96,6 @@ const SubUserCreateModal = ({
     const silentApi = getSilentApi(normalApi);
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
-    const [addresses] = useAddresses();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
     const errorHandler = useErrorHandler();
@@ -156,6 +152,12 @@ const SubUserCreateModal = ({
                     address: getNormalizedAddress(),
                     role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
                 },
+                verifiedDomains,
+                validationOptions: {
+                    disableStorageValidation,
+                    disableDomainValidation,
+                    disableAddressValidation,
+                },
                 keyTransparencyCommit,
                 keyTransparencyVerify,
                 verifyOutboundPublicKeys,
@@ -163,30 +165,7 @@ const SubUserCreateModal = ({
         );
     };
 
-    const validate = (organizationKey: CachedOrganizationKey | undefined) => {
-        const error = validateAddUser({
-            privateUser: model.private,
-            organization,
-            organizationKeyInfo: getOrganizationKeyInfo(organization, organizationKey, addresses),
-            verifiedDomains,
-            disableStorageValidation,
-            disableDomainValidation,
-            disableAddressValidation,
-        });
-        if (error) {
-            return error;
-        }
-        const normalizedAddress = getNormalizedAddress();
-        if (!validateEmailAddress(`${normalizedAddress.Local}@${normalizedAddress.Domain}`)) {
-            return c('Error').t`Email address is invalid`;
-        }
-    };
-
     const handleSubmit = async () => {
-        const error = validate(organizationKey);
-        if (error) {
-            return createNotification({ type: 'error', text: error });
-        }
         await save();
         await call();
         onClose?.();

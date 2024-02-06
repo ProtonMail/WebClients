@@ -16,6 +16,8 @@ export * from './organizationKey';
 export * from './organizationKey/listener';
 export * from './organizationKey/actions';
 export * from './members';
+export * from './members/actions';
+export * from './members/validateAddUser';
 export * from './members/useMemberAddresses';
 export * from './plans';
 export * from './domains';
