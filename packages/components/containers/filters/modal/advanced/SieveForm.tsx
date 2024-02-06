@@ -18,7 +18,7 @@ const SieveForm = ({ model, userSettings, onChange }: Props) => {
     const currentTheme = useTheme();
     const { dark } = currentTheme.information;
 
-    const theme = useMemo(() => (dark ? 'base16-dark' : ''), [userSettings.Theme]);
+    const theme = useMemo(() => (dark ? 'base16-dark' : ''), [dark]);
 
     return (
         <Suspense fallback={<Loader size="large" />}>
