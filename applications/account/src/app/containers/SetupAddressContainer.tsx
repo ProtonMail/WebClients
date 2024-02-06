@@ -12,7 +12,6 @@ import {
     useApi,
     useAuthentication,
     useErrorHandler,
-    useFlag,
     useGetUser,
     useModalState,
     useTheme,
@@ -137,8 +136,6 @@ const SetupAddressContainer = () => {
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
-    const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
-
     const handleBack = () => {
         const from = fromRef.current;
         if (from.type === 'switch') {
@@ -147,11 +144,7 @@ const SetupAddressContainer = () => {
         }
         let url = '';
         const localID = authentication.getLocalID();
-        if (
-            from.app === APPS.PROTONVPN_SETTINGS ||
-            (from.app === APPS.PROTONPASS && !isPassWebAppLinkEnabled) ||
-            from.type === 'settings'
-        ) {
+        if (from.app === APPS.PROTONVPN_SETTINGS || from.type === 'settings') {
             url = getAppHref(
                 `/${getSlugFromApp(from.app)}${stripSlugFromPathname(from.path)}`,
                 APPS.PROTONACCOUNT,

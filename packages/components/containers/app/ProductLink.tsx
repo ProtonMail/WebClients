@@ -1,7 +1,5 @@
 import { ReactNode } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
-
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -45,7 +43,6 @@ interface ProductLinkProps {
 
 const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, children }: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
-    const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
 
     if (user && app && getRequiresAddressSetup(appToLinkTo, user)) {
         const params = new URLSearchParams();
@@ -84,7 +81,7 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
         );
     }
 
-    if (appToLinkTo === APPS.PROTONVPN_SETTINGS || (appToLinkTo === APPS.PROTONPASS && !isPassWebAppLinkEnabled)) {
+    if (appToLinkTo === APPS.PROTONVPN_SETTINGS) {
         return (
             <SettingsLink
                 path="/"
