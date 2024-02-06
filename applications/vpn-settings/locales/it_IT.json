@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Negozio di ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Attiva"
+      ],
       "activate": [
         "attiva"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Change keys": [
+        "Cambia chiavi"
       ],
       "Change mailbox password": [
         "Cambia la password della casella di posta"
@@ -287,6 +293,9 @@
       "Loading verification": [
         "Caricamento della verifica in corso"
       ],
+      "Make admin": [
+        "Rendi amministratore"
+      ],
       "Mark as default": [
         "Segna come predefinito"
       ],
@@ -328,6 +337,9 @@
       ],
       "Previous": [
         "Precedente"
+      ],
+      "Recover data": [
+        "Recupera dati"
       ],
       "Refer a friend": [
         "Invita un amico"
@@ -376,9 +388,6 @@
       ],
       "Restore": [
         "Ripristina"
-      ],
-      "Restore administrator privileges": [
-        "Ripristina i privilegi da amministratore"
       ],
       "Retry": [
         "Riprova"
@@ -1853,9 +1862,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail e un segno più"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diversi aspetti della tua vita con più indirizzi email e sblocca più funzioni premium quando effettui l'upgrade."
       ]
@@ -1865,7 +1871,7 @@
         "L'accesso all'app desktop è limitato"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
-        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Esegui l'upgrade per ottenere l'accesso."
+        "La versione beta dell'app desktop ${ MAIL_APP_NAME } è attualmente disponibile per chiunque abbia un piano ${ MAIL_APP_NAME } a pagamento. Effettua l'upgrade per ottenere l'accesso."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
@@ -2033,8 +2039,8 @@
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
-      "Organization key is not decrypted.": [
-        "La chiave dell'organizzazione non è decriptata."
+      "Organization key must be activated to create non-private users": [
+        "La chiave dell'organizzazione deve essere attivata per creare utenti non privati"
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
@@ -2053,9 +2059,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "I pagamenti non sono attualmente disponibili, per favore riprova più tardi"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Configura un dominio personalizzato prima di aggiungere indirizzi."
@@ -2120,9 +2123,6 @@
       "The organization key must be activated first": [
         "La chiave dell'organizzazione deve essere prima attivata"
       ],
-      "The organization key must be activated first.": [
-        "La chiave dell'organizzazione deve essere prima attivata."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
@@ -2131,6 +2131,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Per creare degli account utente non privati e accedere ai loro account, dovrai ripristinare i tuoi privilegi di amministratore."
       ],
       "Try again later": [
         "Riprova più tardi"
@@ -2164,12 +2167,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Per creare utenti non privati e accedere ai loro account, dovrai attivare le chiavi della tua organizzazione."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Si devono privatizzare tutti gli account prima di generare nuove chiavi dell'organizzazione"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Il tuo account o la tua organizzazione ha una fattura scaduta. Paga tutte le fatture non pagate."
@@ -2941,6 +2938,9 @@
       "Are you sure you want to discard your changes?": [
         "Sei sicuro di voler annullare le tue modifiche?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Sei sicuro di voler concedere i privilegi di amministratore a questo utente?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sei sicuro di voler rimuovere i privilegi amministrativi a questo utente?"
       ],
@@ -3024,9 +3024,6 @@
       ],
       "Country code": [
         "Codice nazione"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Crea un nuovo account e condividi l'indirizzo email e la password con l'utente."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
@@ -3381,12 +3378,6 @@
       "Or select a particular server:": [
         "O seleziona un server specifico:"
       ],
-      "Organization keys activated": [
-        "Chiavi dell'organizzazione attivate"
-      ],
-      "Organization keys restored": [
-        "Chiavi dell'organizzazione ripristinate"
-      ],
       "Organization size": [
         "Dimensione dell'organizzazione"
       ],
@@ -3409,7 +3400,7 @@
         "al mese"
       ],
       "per month, billed at ${ price }": [
-        "al mese, fatturato a ${ price }"
+        "al mese, addebitato a ${ price }"
       ],
       "per month, billed every 12 months": [
         "al mese con fatturazione ogni 12 mesi"
@@ -3514,6 +3505,9 @@
       ],
       "Save ${ percentage }": [
         "Risparmia il ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Salva la password in un posto sicuro."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Salva la password in un posto sicuro. Fai clic sull'icona per confermare di aver digitato correttamente la password."
@@ -3644,9 +3638,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Queste credenziali non possono essere usate per accedere alle nostre app ${ VPN_APP_NAME } ufficiali. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Verranno rimossi dalla tua organizzazione"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -4179,6 +4170,9 @@
       ],
       "Addresses": [
         "Indirizzi"
+      ],
+      "Administrators": [
+        "Amministratori"
       ],
       "Allow recovery by email": [
         "Consenti il recupero via email"
@@ -5766,6 +5760,20 @@
         "Il tuo piano include un massimo di ${ humanReadableAvailableSpace } spazio di archiviazione in più."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Vai alla tua cassaforte per gestire password, alias e molto altro."
+      ],
+      "Set up your organization": [
+        "Configura la tua organizzazione"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Inizia ad aggiungere utenti per concedere loro l'accesso a ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Inizia a utilizzare ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Mantieni questo piano"
@@ -5864,6 +5872,80 @@
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tutti i servizi Plus di ${ BRAND_NAME }.${ br }Un semplice abbonamento."
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Tutti gli amministratori avranno accesso alla chiave."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Sei sicuro di voler cambiare la chiave della tua organizzazione?"
+      ],
+      "Change organization key": [
+        "Cambia la chiave dell'organizzazione"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Gli utenti non privati possono essere promossi ad amministratore quando dispongono delle chiavi di configurazione"
+      ],
+      "Organization key activated": [
+        "Chiave dell'organizzazione attivata"
+      ],
+      "Organization key does not exist.": [
+        "Chiave dell'organizzazione non esistente."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La chiave dell'organizzazione deve essere attivata per poter concedere i privilegi di amministratore"
+      ],
+      "Organization key restored": [
+        "Chiave dell'organizzazione ripristinata"
+      ],
+      "Organization key updated": [
+        "Chiave dell'organizzazione aggiornata"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Autorizzazione negata, i privilegi di amministratore sono stati limitati."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Gli utenti privati possono essere promossi ad amministratore quando effettuano l'accesso per la prima volta"
+      ],
+      "Reset organization key": [
+        "Reimposta la chiave dell'organizzazione"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "I seguenti amministratori avranno accesso alla chiave dell'organizzazione."
+      ],
+      "The organization key must be activated first.": [
+        "La chiave dell'organizzazione deve essere prima attivata."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Questo invierà la chiave dell'organizzazione più recente agli amministratori che attualmente non ne hanno accesso."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Per creare degli account utente non privati e accedere ai loro account, dovrai attivare la chiave della tua organizzazione."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Per abilitare i diritti di amministratore sul tuo account, attiva la chiave dell'organizzazione."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Utilizza un metodo di recupero dei dati o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Utilizza un metodo di recupero dei dati, contatta un altro amministratore o reimposta la chiave dell'organizzazione per ripristinare i privilegi di amministratore."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Non siamo riusciti a verificare la sicurezza della chiave dell'indirizzo di questo mittente. A volte potrebbe verificarsi un ritardo nell'aggiornamento delle informazioni del mittente. Riprova più tardi. Se non sei sicuro della validità di questo invito o del mittente, contatta l'assistenza clienti di ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Abbiamo verificato l'autenticità di questo mittente e dell'invito."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Sei stato reso amministratore dell'organizzazione **${ organizationName }** da"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Devi rendere privati tutti gli utenti prima di poter generare una nuova chiave dell’organizzazione"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Devi avere accesso alla chiave dell'organizzazione per eseguire questa operazione."
       ]
     },
     "Payment method option": {
@@ -6062,6 +6144,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } amministratore della tua organizzazione ha bisogno di accedere alla chiave dell'organizzazione.",
+        "${ n } amministratori della tua organizzazione ha bisogno di accedere alla chiave dell'organizzazione."
+      ],
       "Changing organization keys": [
         "Cambiamento delle chiavi dell'organizzazione in corso"
       ],
@@ -6652,7 +6738,7 @@
         "Se effettui il downgrade perderai i seguenti vantaggi. Sei sicuro di voler procedere?"
       ],
       "contact your administrator": [
-        "contattare il tuo amministratore"
+        "contatta il tuo amministratore"
       ],
       "For all ${ BRAND_NAME } services": [
         "Per tutti i servizi ${ BRAND_NAME }"
@@ -6864,6 +6950,9 @@
       "Address added": [
         "Indirizzo aggiunto"
       ],
+      "Administrator privileges restored": [
+        "Privilegi di amministratore ripristinati"
+      ],
       "Bug reported": [
         "Bug segnalato"
       ],
@@ -7043,9 +7132,6 @@
       "Country": [
         "Paese"
       ],
-      "Display name": [
-        "Nome visualizzato"
-      ],
       "Email": [
         "Email"
       ],
@@ -7185,17 +7271,20 @@
       "Change mailbox password": [
         "Cambia la password della casella di posta"
       ],
-      "Change organization keys": [
-        "Cambia le chiavi dell'organizzazione"
-      ],
       "Change organization name": [
         "Cambia nome organizzazione"
+      ],
+      "Change organization password": [
+        "Cambia la password dell'organizzazione"
       ],
       "Change password": [
         "Modifica la password"
       ],
       "Change role": [
         "Modifica privilegi"
+      ],
+      "Confirm": [
+        "Conferma"
       ],
       "Confirm address": [
         "Conferma l'indirizzo"
@@ -7270,9 +7359,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorno)",
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorni)"
-      ],
-      "Delete user": [
-        "Eliminazione utente"
       ],
       "Delete user?": [
         "Eliminare utente?"
@@ -7481,9 +7567,6 @@
       ],
       "Request sent": [
         "Richiesta inviata"
-      ],
-      "Reset organization keys": [
-        "Reimposta le chiavi dell'organizzazione"
       ],
       "Reset password": [
         "Reimposta la password"
@@ -7909,8 +7992,8 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sfortunatamente, al momento non sei online. Per favore completa il modulo sotto per descrivere il problema, lo esamineremo e ti contatteremo quando quando saremo di nuovo online."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "È necessario ${ activateLink } le chiavi dell'organizzazione prima di aggiungere un indirizzo email a un membro non privato."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Devi ${ activateLink } la chiave dell'organizzazione prima di poter aggiungere un indirizzo email a un membro non privato."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La tua prova gratuita termina il ${ textDate }. ${ action }"

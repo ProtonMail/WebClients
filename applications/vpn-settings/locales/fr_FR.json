@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Activer"
+      ],
       "activate": [
         "activer"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
+      ],
+      "Change keys": [
+        "Changer les clés"
       ],
       "Change mailbox password": [
         "Changer le mot de passe de messagerie"
@@ -287,6 +293,9 @@
       "Loading verification": [
         "Vérification du transfert"
       ],
+      "Make admin": [
+        "Définir comme administrateur"
+      ],
       "Mark as default": [
         "Définir par défaut"
       ],
@@ -328,6 +337,9 @@
       ],
       "Previous": [
         "Précédent"
+      ],
+      "Recover data": [
+        "Récupérer les données"
       ],
       "Refer a friend": [
         "Parrainer un ami"
@@ -376,9 +388,6 @@
       ],
       "Restore": [
         "Restaurer"
-      ],
-      "Restore administrator privileges": [
-        "Restaurer les droits administrateur"
       ],
       "Retry": [
         "Réessayer"
@@ -1853,9 +1862,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "Logo Proton Mail et un signe plus"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
       ]
@@ -2033,8 +2039,8 @@
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
       ],
-      "Organization key is not decrypted.": [
-        "La clé de l'organisation n'est pas déchiffrée."
+      "Organization key must be activated to create non-private users": [
+        "La clé de l'organisation oit être activée pour créer des utilisateurs non privés."
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
@@ -2053,9 +2059,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Les paiements ne sont actuellement pas disponibles, nous vous invitons à réessayer plus tard."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "L'autorisation est refusée, les droits administrateur ont été restreints."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Veuillez configurer un domaine personnalisé avant d'ajouter des adresses."
@@ -2120,9 +2123,6 @@
       "The organization key must be activated first": [
         "La clé de l'organisation doit d'abord être activée."
       ],
-      "The organization key must be activated first.": [
-        "La clé de l'organisation doit d'abord être activée."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
       ],
@@ -2131,6 +2131,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez restaurer vos droits administrateur."
       ],
       "Try again later": [
         "Veuillez réessayer plus tard."
@@ -2164,12 +2167,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Pour créer des utilisateurs non privés et accéder à leurs comptes, vous devez activer vos clés d'organisation."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Vous devez rendre tous les utilisateurs privés avant de générer de nouvelles clés d'organisation."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
@@ -2941,6 +2938,9 @@
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Êtes-vous sûr de vouloir accorder les privilèges administrateur à cet utilisateur ?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
       ],
@@ -3024,9 +3024,6 @@
       ],
       "Country code": [
         "Indicatif du pays"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Créez un nouveau compte et partagez l'adresse e-mail et le mot de passe avec l'utilisateur."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses e-mail sur votre domaine personnalisé."
@@ -3381,12 +3378,6 @@
       "Or select a particular server:": [
         "Ou sélectionnez un serveur spécifique :"
       ],
-      "Organization keys activated": [
-        "Les clés de l'organisation sont activées."
-      ],
-      "Organization keys restored": [
-        "Les clés de l'organisation ont été restaurées."
-      ],
       "Organization size": [
         "Taille de l’organisation"
       ],
@@ -3511,6 +3502,9 @@
       ],
       "Save ${ percentage }": [
         "Économisez ${ percentage }"
+      ],
+      "Save your password somewhere safe.": [
+        "Enregistrez votre mot de passe en lieu sûr."
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Enregistrez votre mot de passe en lieu sûr. Cliquez sur l'icône pour confirmer que vous avez correctement tapé votre mot de passe."
@@ -3641,9 +3635,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ces identifiants ne peuvent pas être utilisés pour se connecter aux applications ${ VPN_APP_NAME } officielles. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Ils seront retirés de votre organisation."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -4176,6 +4167,9 @@
       ],
       "Addresses": [
         "Adresses"
+      ],
+      "Administrators": [
+        "Administrateurs"
       ],
       "Allow recovery by email": [
         "Autoriser la récupération par e-mail"
@@ -5836,6 +5830,77 @@
         "Tous les services premium de ${ BRAND_NAME }.${ br }Un seul abonnement."
       ]
     },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Tous les administrateurs auront accés à la clé."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Êtes-vous sûr de vouloir modifier la clé de l'organisation ?"
+      ],
+      "Change organization key": [
+        "Changer la clé de l’organisation"
+      ],
+      "Organization key activated": [
+        "La clé de l'organisation a été activée."
+      ],
+      "Organization key does not exist.": [
+        "La clé de l'organisation n'existe pas."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "La clé de l'organisation doit être activée pour accorder des droits administrateur."
+      ],
+      "Organization key restored": [
+        "La clé de l'organisation a été restaurée."
+      ],
+      "Organization key updated": [
+        "La clé de l'organisation a été mise à jour."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "L'autorisation est refusée. Les droits administrateur ont été restreints."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Les utilisateurs privés peuvent être promus administrateurs lorsqu'ils se connectent pour la première fois."
+      ],
+      "Reset organization key": [
+        "Réinitialiser la clé de l'organisation"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Les administrateurs suivants auront accès à la clé de l'organisation."
+      ],
+      "The organization key must be activated first.": [
+        "La clé de l'organisation doit d'abord être activée."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Cela enverra la dernière clé de l’organisation aux administrateurs qui n'ont actuellement pas accès à celle-ci."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Pour créer des comptes utilisateur non privés et accéder à leurs comptes, vous devez activer votre clé de l’organisation."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Pour activer les droits administrateur de votre compte, activez la clé de l'organisation."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Utilisez une méthode de récupération de données ou réinitialisez la clé de l’organisation pour restaurer les droits administrateur."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Utilisez une méthode de récupération de données, contactez un autre administrateur ou réinitialisez la clé de l’organisation pour restaurer les droits administrateur."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nous n'avons pas pu vérifier la sécurité de la clé d'adresse de cet expéditeur. Parfois, la mise à jour des informations de l'expéditeur peut prendre plus de temps. Réessayez plus tard. Si vous ne faites pas confiance à la validité de cette invitation ou de l'expéditeur, contactez le service client ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Nous avons vérifié l'authenticité de cet expéditeur et cette invitation."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Vous avez été nommé administrateur de l'organisation **${ organizationName }** par"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Vous devez rendre tous les utilisateurs privés avant de créer une nouvelle clé d'organisation."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Vous devez accéder à la clé de l'organisation pour réaliser cette opération."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Carte de paiement"
@@ -6032,6 +6097,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrateur de votre organisation a besoin d'accéder à la clé de l'organisation.",
+        "${ n } administrateurs de votre organisation ont besoin d'accéder à la clé de l'organisation."
+      ],
       "Changing organization keys": [
         "Changement des clés de l'organisation"
       ],
@@ -6628,7 +6697,7 @@
         "Pour tous les services ${ BRAND_NAME }"
       ],
       "upgrade for more storage": [
-        "changer d'abonnement pour obtenir plus d'espace de stockage"
+        "changer d'abonnement pour augmenter votre espace de stockage"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
@@ -6834,6 +6903,9 @@
       "Address added": [
         "L'adresse a été ajoutée."
       ],
+      "Administrator privileges restored": [
+        "Les droits administrateur ont été restaurés."
+      ],
       "Bug reported": [
         "Le bug a été signalé."
       ],
@@ -7013,9 +7085,6 @@
       "Country": [
         "Pays"
       ],
-      "Display name": [
-        "Nom d'affichage"
-      ],
       "Email": [
         "E-mail"
       ],
@@ -7155,17 +7224,20 @@
       "Change mailbox password": [
         "Changer le mot de passe de messagerie"
       ],
-      "Change organization keys": [
-        "Changer les clés de l'organisation"
-      ],
       "Change organization name": [
         "Changer le nom de l'organisation"
+      ],
+      "Change organization password": [
+        "Changer le mot de passe de l'organisation"
       ],
       "Change password": [
         "Changer le mot de passe"
       ],
       "Change role": [
         "Modifier le rôle"
+      ],
+      "Confirm": [
+        "Confirmer"
       ],
       "Confirm address": [
         "Confirmer l'adresse"
@@ -7240,9 +7312,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Supprimer le serveur (vous pourrez le récupérer pendant ${ days } jour).",
         "Supprimer le serveur (vous pourrez le récupérer pendant ${ days } jours)."
-      ],
-      "Delete user": [
-        "Supprimer l'utilisateur"
       ],
       "Delete user?": [
         "Supprimer l'utilisateur ?"
@@ -7451,9 +7520,6 @@
       ],
       "Request sent": [
         "La demande a été envoyée."
-      ],
-      "Reset organization keys": [
-        "Réinitialiser les clés de l'organisation"
       ],
       "Reset password": [
         "Réinitialiser le mot de passe"
@@ -7871,8 +7937,8 @@
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."
       ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Vous devez ${ activateLink } les clés d'organisation avant d'ajouter une adresse e-mail à un membre non privé."
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Vous devez ${ activateLink } la clé de l’organisation avant d’ajouter une adresse e-mail à un membre non privé."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Votre essai gratuit se termine le ${ textDate }. ${ action }"

@@ -206,6 +206,9 @@
       "Discard": [
         "रद्द करें"
       ],
+      "Dismiss": [
+        "रद्द करें"
+      ],
       "Don't know your password?": [
         "क्या आप अपना पासवर्ड नहीं जानते?"
       ],
@@ -380,6 +383,9 @@
       "No, thanks": [
         "नहीं, शुक्रिया"
       ],
+      "Not now": [
+        "अभी नहीं"
+      ],
       "Ok": [
         "ठीक है"
       ],
@@ -391,6 +397,9 @@
       ],
       "Open settings": [
         "सेटिंग खोलें"
+      ],
+      "Pause indexing": [
+        "सूचीकरण को रोकें"
       ],
       "Preview contact": [
         "संपर्क प्रिव्यू करें"
@@ -451,6 +460,9 @@
       ],
       "Reset to default": [
         "डिफ़ॉल्ट पर रीसेट करें"
+      ],
+      "Resume indexing": [
+        "सूचीकरण फिर से शुरू करें"
       ],
       "Save": [
         "सेव करें"
@@ -2098,8 +2110,8 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को मर्ज किया जा रहा है... इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail लोगो और एक प्लस साइन"
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "यह कुछ क्षण ले सकता है। इस बीच आप कैलेंडर का उपयोग सामान्य रूप से जारी रख सकते हैं।"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "संपर्कों के बीच विलय प्राथमिकता को रैंक करने के लिए ड्रैग एंड ड्रॉप का उपयोग करें। उन संपर्कों को अनचेक करें जिन्हें आप मर्ज नहीं करना चाहते हैं।"
@@ -2265,6 +2277,9 @@
       "Address primary private key not found": [
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
+      "Alias options could not be resolved": [
+        "नकलीनाम ऑप्शन रिज़ॉल्व ना हो सके"
+      ],
       "Already a member of this calendar": [
         "पहले से ही इस कैलेंडर के सदस्य हैं"
       ],
@@ -2300,6 +2315,12 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "इस ब्राउज़र में सामग्री खोज सक्षम नहीं की जा सकती है। कृपया निजी ब्राउज़िंग मोड छोड़ें या किसी अन्य ब्राउज़र का उपयोग करें।"
+      ],
+      "Could not open created vault": [
+        "बनाए गए तिजोरी को खोल नहीं पा रहे"
+      ],
+      "Could not open updated vault": [
+        "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "डिक्रिप्शन त्रुटि: इस घटना की सामग्री का डिक्रिप्शन विफल रहा।"
@@ -2342,6 +2363,9 @@
       "Event not found": [
         "इवेंट नहीं मिला"
       ],
+      "Failed to get event": [
+        "कार्यक्रम प्राप्त करने में विफलता हुई।"
+      ],
       "Failed to get original occurrence in series": [
         "सीरीज़ से असली घटना लाने में असफल"
       ],
@@ -2359,6 +2383,9 @@
       ],
       "Incorrect username": [
         "गलत यूज़रनेम"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता।"
       ],
       "Interval cannot be empty": [
         "अंतराल खाली नहीं हो सकता"
@@ -3017,6 +3044,9 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ],
+      "Theme font": [
+        "थीम फ़ॉन्ट"
       ]
     },
     "Font size option": {
@@ -3456,6 +3486,9 @@
         "सभी (${ totalFoldersCount } लेबल)",
         "सभी (${ totalFoldersCount } लेबल)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "सभी प्रतिभागियों को एक रद्दीकरण ईमेल मिलेगा। आप कौन सा कार्यक्रम हटाना चाहेंगे?"
+      ],
       "An invitation will be sent to added participants.": [
         "जोड़े गए प्रतिभागियों को आमंत्रण भेजा जाएगा।"
       ],
@@ -3558,6 +3591,9 @@
       ],
       "Discard changes?": [
         "परिवर्तन निरस्त करे?"
+      ],
+      "Display events for calendar ${ Name }": [
+        "${ Name } के लिए कार्यक्रम प्रदर्शित करें।"
       ],
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
@@ -4285,6 +4321,9 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
+      "Forwards to": [
+        "इधर फॉरवर्ड होगा"
+      ],
       "Frequency": [
         "आवृत्ति"
       ],
@@ -4359,6 +4398,9 @@
       ],
       "New password": [
         "नया पासवर्ड"
+      ],
+      "Note": [
+        "नोट"
       ],
       "Notification": [
         "सूचना"
@@ -4444,6 +4486,9 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
+      ],
+      "Title": [
+        "टाइटल"
       ],
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
@@ -5263,6 +5308,9 @@
       "Image URL": [
         "छवि यूआरएल"
       ],
+      "Indexing...": [
+        "सूचीकरण हो रहा है..."
+      ],
       "Last name": [
         "अंतिम नाम"
       ],
@@ -5280,6 +5328,9 @@
       ],
       "Please select a country": [
         "एक देश चुनें"
+      ],
+      "Search events": [
+        "कार्यक्रम खोजें"
       ],
       "Search for group name": [
         "समूह का नाम खोजें"
@@ -5372,12 +5423,23 @@
         "इवेंट लोड करें"
       ]
     },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Hide-my-email नकलीनाम"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } खोलें"
+      ]
+    },
     "Select files": {
       "Upload": [
         "अपलोड करें"
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "अपनी वर्तनी जांचें या सूची से एक देश का चयन करें।"
+      ],
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ]
@@ -5491,6 +5553,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } यूज़र के साथ शेयर करें"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } द्वारा साझा किया गया"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -5716,6 +5783,14 @@
       ],
       "Your current storage:": [
         "आपका वर्तमान संग्रहण:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } स्टोरेज"
+      ],
+      "Your storage is full": [
+        "आपका स्टोरेज भरा है"
       ]
     },
     "Subscribe to calendar modal": {
@@ -5989,6 +6064,12 @@
         "${ emailsCount } ईमेल पता",
         "${ emailsCount } ईमेल पते"
       ],
+      "Account recovery": [
+        "खाता पुनर्प्राप्ति"
+      ],
+      "Account security": [
+        "खाते की सुरक्षा"
+      ],
       "Add another notification to remind you of this event": [
         "आपको इस घटना की याद दिलाने के लिए एक और सूचना जोड़ें"
       ],
@@ -6006,6 +6087,9 @@
       ],
       "Add participants": [
         "प्रतिभागियों को जोड़ें"
+      ],
+      "Add some color to your day": [
+        "अपने दिन में कुछ रंग भर दें।"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } समूह में जोड़ें",
@@ -6076,6 +6160,9 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
+      ],
+      "Data recovery": [
+        "डेटा पुनर्प्राप्ति"
       ],
       "Delete ${ count } contact": [
         "${ count } संपर्क हटाएं",
@@ -6317,6 +6404,9 @@
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
       ],
+      "We're setting up Calendar search": [
+        "हम कैलेंडर खोज को व्यवस्थित कर रहे हैं।"
+      ],
       "We've locked some calendars to protect your data": [
         "आपका डाटा सुरक्षित रखने के लिए हमने आपके कुछ कैलेंडर लॉक कर दिए"
       ],
@@ -6507,6 +6597,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
+      ],
+      "You must select at least one mailbox": [
+        "आपको कम से कम एक मेलबॉक्स चुनना होगा"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"

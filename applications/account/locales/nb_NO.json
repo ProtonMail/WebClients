@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Endre postbokspassord"
       ],
-      "Change organization keys": [
-        "Endre organisasjonsnøkler"
-      ],
       "Change other email subscriptions": [
         "Endre andre e-postabonnementer"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Laster verifisering"
       ],
+      "Make admin": [
+        "Gjør til administrator"
+      ],
       "Manage communication preferences": [
         "Administrere kommunikasjonsinnstillinger"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Nullstill nøkler"
       ],
-      "Reset organization keys": [
-        "Tilbakestill organisasjonsnøkler"
-      ],
       "Reset password": [
         "Tilbakestill passord"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Gjenopprett"
-      ],
-      "Restore administrator privileges": [
-        "Gjenopprett administratorrettigheter"
       ],
       "Resubscribe": [
         "Abonner på nytt"
@@ -3076,9 +3070,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail logo og et plusstegn"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
       ],
@@ -3908,9 +3899,6 @@
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
-      "Organization key is not decrypted.": [
-        "Organisasjonsnøkkel er ikke dekryptert."
-      ],
       "Password is required": [
         "Passord kreves"
       ],
@@ -3931,9 +3919,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Betalinger er for øyeblikket ikke tilgjengelige, vennligst prøv igjen senere."
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Tillatelse nektet, administratorrettigheter er begrenset."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Vennligst konfigurer et egendefinert domene før du legger til adresser."
@@ -4063,9 +4048,6 @@
       "The organization key must be activated first": [
         "Organisasjonsnøkkelen må aktiveres først"
       ],
-      "The organization key must be activated first.": [
-        "Organisasjonsnøkkelen må aktiveres først."
-      ],
       "The sending key is not valid": [
         "Avsendernøkkelen er ikke gyldig"
       ],
@@ -4141,9 +4123,6 @@
       "You already added this holidays calendar": [
         "Du har allerede lagt til denne helligdagskalenderen"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du har mistet tilgang til organisasjonsnøklene dine. Uten å gjenopprette vil du ikke kunne opprette nye brukere, legge til adresser til eksisterende brukere, eller få tilgang til ikke-private brukerkontoer."
-      ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
       ],
@@ -4158,12 +4137,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brukt alle brukerne i planen din. Vennligst oppgrader planen din for å legge til en ny bruker."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Du må aktivere organisasjonsnøklene dine. Du vil ikke være i stand til å opprette eller få tilgang til ikke-private brukere uten aktivering."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Du må privatisere alle brukere før genererering av nye organisasjonsnøkler"
       ],
       "You must set a name": [
         "Du må angi et navn"
@@ -5762,17 +5735,6 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
@@ -6274,9 +6236,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Opprett en ny konto og del e-postadressen og passordet med brukeren."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
@@ -6913,12 +6872,6 @@
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
-      "Organization keys activated": [
-        "Organisasjonsnøkler aktivert"
-      ],
-      "Organization keys restored": [
-        "Organisasjonsnøkler gjenopprettet"
-      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -7351,9 +7304,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Denne påloggingsinformasjonen kan ikke brukes til å logge på våre offisielle ${ VPN_APP_NAME }-apper. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "De blir fjernet fra organisasjonen din"
       ],
       "They'll receive a free month of ${ planName }.": [
         "De vil motta en gratis måned med ${ planName }."
@@ -7997,6 +7947,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9136,9 +9097,6 @@
       ],
       "Show sender images": [
         "Vis avsenderbilder"
-      ],
-      "Show unread count in application icon": [
-        "Vis antall ulest i applikasjonsikonet"
       ],
       "Show unread count in Favicon": [
         "Vis ulest antall i favorittikon"
@@ -10404,6 +10362,17 @@
         "Teamledelse"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ MAIL_APP_NAME } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
@@ -10497,17 +10466,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ MAIL_APP_NAME } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13208,9 +13166,6 @@
       "CSV field": [
         "CSV-felt"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
       "Edit": [
         "Rediger"
       ],
@@ -13482,9 +13437,6 @@
       "Change mailbox password": [
         "Endre postbokspassord"
       ],
-      "Change organization keys": [
-        "Endre organisasjonsnøkler"
-      ],
       "Change organization name": [
         "Endre organisasjonsnavn"
       ],
@@ -13639,9 +13591,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dag).",
         "Slett tjeneren (du vil fremdeles være i stand til å gjenopprette den for ${ days } dager)."
-      ],
-      "Delete user": [
-        "Slett bruker"
       ],
       "Delete user?": [
         "Slett bruker?"
@@ -13945,9 +13894,6 @@
       "Password": [
         "Passord"
       ],
-      "Password and keys": [
-        "Passord og nøkler"
-      ],
       "Password reset settings": [
         "Innstillinger for tilbakestilling av passord"
       ],
@@ -14019,9 +13965,6 @@
       ],
       "Request sent": [
         "Forespørsel sendt"
-      ],
-      "Reset organization keys": [
-        "Tilbakestill organisasjonsnøkler"
       ],
       "Reset password": [
         "Tilbakestill passord"
@@ -14450,9 +14393,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Meldinger i Sendt- eller Utkast-mappe vil fortsette å vises i den mappen, selv om du flytter dem til en annen mappe."
       ],
-      "See number of unread messages in the application icon": [
-        "Se antall uleste meldinger i applikasjonsikonet"
-      ],
       "See number of unread messages in the tab icon": [
         "Se antall uleste meldinger i faneikonet"
       ],
@@ -14864,9 +14804,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Du må ${ activateLink } organisasjonsnøkler før du kan legge til en e-postadresse til et ikke-privat medlem."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
