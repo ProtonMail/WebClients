@@ -16,10 +16,9 @@ interface Arguments {
     user: UserModel;
     subscription?: Subscription;
     organization?: Organization;
-    ssoVpnSettingFeature: boolean;
 }
 
-export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeature }: Arguments) => {
+export const getRoutes = ({ user, subscription, organization }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -238,8 +237,7 @@ export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeatu
             text: c('Title').t`Single Sign-On`,
             to: '/single-sign-on',
             icon: 'key',
-            available:
-                ssoVpnSettingFeature && hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
+            available: hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
             subsections: [
                 {
                     text: c('Title').t`SAML authentication`,
