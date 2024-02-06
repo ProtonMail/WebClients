@@ -24,8 +24,14 @@ import TryProtonPass from './modals/TryProtonPass/TryProtonPass';
 const PassAliases = () => {
     const createAliasModal = useModalStateObject();
     const tryProtonPassModal = useModalStateObject();
-    const { hasAliases, hasUsedProtonPassApp, loading, passAliasesItems, passAliasesUpsellModal } =
-        usePassAliasesContext();
+    const {
+        hasAliasesInVault: hasAliases,
+        hasUsedProtonPassApp,
+        loading,
+        passAliasesItems,
+        passAliasesUpsellModal,
+        hasReachedAliasesLimit,
+    } = usePassAliasesContext();
     const authentication = useAuthentication();
 
     const passAliasesURL = useMemo(() => {
@@ -69,7 +75,17 @@ const PassAliases = () => {
                             target="_blank"
                         >{c('Security Center').t`All aliases`}</ButtonLike>
                     )}
-                    <Button onClick={() => createAliasModal.openModal(true)} color="norm" fullWidth>
+                    <Button
+                        onClick={() => {
+                            if (hasReachedAliasesLimit) {
+                                passAliasesUpsellModal.openModal(true);
+                            } else {
+                                createAliasModal.openModal(true);
+                            }
+                        }}
+                        color="norm"
+                        fullWidth
+                    >
                         {!hasAliases ? c('Security Center').t`Get an alias` : c('Security Center').t`New alias`}
                     </Button>
                 </div>
