@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
+import { ContentFormatVersion, ItemState, PassEncryptionTag, ShareRole, ShareType } from '@proton/pass/types';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
@@ -150,7 +150,7 @@ describe('PassCrypto', () => {
             const vault = await PassCrypto.createVault(content);
 
             expect(vault.AddressID).toEqual(address.ID);
-            expect(vault.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+            expect(vault.ContentFormatVersion).toEqual(ContentFormatVersion.Share);
 
             const vaultKey = await processes.openVaultKey({
                 userKeys: [userKey],
@@ -194,7 +194,7 @@ describe('PassCrypto', () => {
             const encryptedShare: ShareGetResponse = {
                 AddressID: vault.AddressID,
                 Content: vault.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Share,
                 ContentKeyRotation: 42,
                 CreateTime: 0,
                 ExpireTime: 0,
@@ -226,7 +226,7 @@ describe('PassCrypto', () => {
             );
 
             expect(decryptedContent).toStrictEqual(contentUpdate);
-            expect(vaultUpdate.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+            expect(vaultUpdate.ContentFormatVersion).toEqual(ContentFormatVersion.Share);
             expect(vaultUpdate.KeyRotation).toEqual(42);
         });
     });
@@ -255,7 +255,7 @@ describe('PassCrypto', () => {
             const encryptedShare: ShareGetResponse = {
                 AddressID: vault.AddressID,
                 Content: vault.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Share,
                 ContentKeyRotation: 1,
                 CreateTime: 0,
                 ExpireTime: 0,
@@ -316,7 +316,7 @@ describe('PassCrypto', () => {
             const encryptedShare: ShareGetResponse = {
                 AddressID: vault.AddressID,
                 Content: vault.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Share,
                 ContentKeyRotation: 2,
                 CreateTime: 0,
                 ExpireTime: 0,
@@ -356,7 +356,7 @@ describe('PassCrypto', () => {
             const encryptedShare: ShareGetResponse = {
                 AddressID: vault.AddressID,
                 Content: vault.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Share,
                 ContentKeyRotation: 2,
                 CreateTime: 0,
                 ExpireTime: 0,
@@ -395,7 +395,7 @@ describe('PassCrypto', () => {
             const encryptedShare: ShareGetResponse = {
                 AddressID: vault.AddressID,
                 Content: vault.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Share,
                 ContentKeyRotation: 1,
                 CreateTime: 0,
                 ExpireTime: 0,
@@ -465,7 +465,7 @@ describe('PassCrypto', () => {
 
             const encryptedItem: ItemRevisionContentsResponse = {
                 Content: 'base64encoded',
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: 'base64encoded',
@@ -497,7 +497,7 @@ describe('PassCrypto', () => {
             const item = await processes.createItem({ content: itemContent, vaultKey });
             const encryptedItem: ItemRevisionContentsResponse = {
                 Content: item.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: item.ItemKey,
@@ -534,12 +534,12 @@ describe('PassCrypto', () => {
 
             const { Item } = await PassCrypto.moveItem({ content, destinationShareId: targetShare.ShareID });
 
-            expect(Item.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+            expect(Item.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
             expect(Item.KeyRotation).toEqual(targetVaultKey.KeyRotation);
 
             const encryptedItem: ItemRevisionContentsResponse = {
                 Content: Item.Content,
-                ContentFormatVersion: CONTENT_FORMAT_VERSION,
+                ContentFormatVersion: ContentFormatVersion.Item,
                 CreateTime: 0,
                 ItemID: `itemId-${Math.random()}`,
                 ItemKey: Item.ItemKey,
