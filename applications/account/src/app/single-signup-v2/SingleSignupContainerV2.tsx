@@ -583,14 +583,14 @@ const SingleSignupContainerV2 = ({
                 (async () => {
                     const [b2b, b2c] = await Promise.all(
                         ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
-                            const plans = planCards[audienceToFetch].map(({ plan }) => plan);
+                            const planIDs = planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
                             let couponToFetch = coupon;
                             // Assumes the coupon is only valid for the specified audience.
                             if (audienceToFetch !== audience) {
                                 couponToFetch = undefined;
                             }
                             return getPlanCardSubscriptionData({
-                                plans,
+                                planIDs,
                                 plansMap,
                                 cycles: signupConfiguration.cycles || [CYCLE.MONTHLY, CYCLE.YEARLY],
                                 api: silentApi,
