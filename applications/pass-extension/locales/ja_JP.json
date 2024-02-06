@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "iOS 版 Pass"
       ],
+      "Pin item": [
+        "アイテムの固定"
+      ],
       "Refresh the page": [
         "ページを更新"
       ],
@@ -362,6 +365,9 @@
       "Try again": [
         "再試行"
       ],
+      "Unpin item": [
+        "アイテムの固定解除"
+      ],
       "Update": [
         "更新"
       ],
@@ -436,6 +442,9 @@
       "Authentication error": [
         "認証エラー"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "認証に失敗しました。エクスポートを続行するには、あなたの${ BRAND_NAME }パスワードを確認してください。"
+      ],
       "Auto-lock could not be activated": [
         "自動ロックを有効に出来ませんでした"
       ],
@@ -444,9 +453,6 @@
       ],
       "Cannot create alias (${ error }).": [
         "エイリアスを作成できません (${ error })。"
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "現在、このアドレスに招待を送信することができません。"
       ],
       "Could not confirm this invite at the moment": [
         "現時点ではこの招待を確認できませんでした"
@@ -478,7 +484,7 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
+      "Detected ${ errors.length } corrupted csv row": [
         "このCSVは${ errors.length } 行の破損を検知しました"
       ],
       "Editing item failed": [
@@ -633,6 +639,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PINコードが違います。もう一度やり直してください。"
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "あなたのPIN コードは他のクライアント${ PASS_APP_NAME }にって削除されました"
       ]
     },
     "Error message": {
@@ -644,7 +653,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "バイト"
       ],
       "GB": [
@@ -661,19 +670,19 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "バイト"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "ギガバイト"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "キロバイト"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "メガバイト"
       ],
-      "Terabytes": [
+      "Terabyte": [
         "テラバイト"
       ]
     },
@@ -687,10 +696,10 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
       ],
-      "${ memberCount } members": [
+      "${ memberCount } member": [
         "${ memberCount }人のメンバー"
       ],
-      "${ n } items": [
+      "${ n } item": [
         "${ n } アイテム"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
@@ -708,10 +717,10 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } は、サインアップ フォームに強力なパスワードを作成することを提案します。"
       ],
-      "${ revisionNumber } times": [
+      "${ revisionNumber } time": [
         "${ revisionNumber } 回"
       ],
-      "${ trialDaysLeft } days left": [
+      "${ trialDaysLeft } day left": [
         "残り ${ trialDaysLeft } 日"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
@@ -846,7 +855,7 @@
       "Import in progress:": [
         "インポートが進行中:"
       ],
-      "Imported ${ payload.total } items": [
+      "Imported ${ payload.total } item": [
         "${ payload.total } 件のアイテムをインポートしました"
       ],
       "Imported on ${ date }": [
@@ -876,6 +885,9 @@
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
       ],
+      "item": [
+        "アイテム"
+      ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "アイテム「${ payload.item.data.metadata.name }」が作成されました"
       ],
@@ -894,8 +906,11 @@
       "Item successfully moved": [
         "アイテムの移動に成功"
       ],
-      "items": [
-        "アイテム"
+      "Item successfully pinned": [
+        "アイテムの固定に成功しました"
+      ],
+      "Item successfully unpinned": [
+        "アイテムの固定解除に成功しました"
       ],
       "Leaving vault...": [
         "保管庫を退出しています..."
@@ -956,6 +971,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
+      ],
+      "Pinning item...": [
+        "アイテムを固定中..."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "現在のロックの登録を解除するには、PINコードを確認してください。\n${ PASS_APP_NAME } はロックされなくなります。"
@@ -1032,7 +1050,7 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "フィールドをクリックするかフィールドにフォーカスすると、自動入力ドロップダウンが自動的に開きます。"
       ],
-      "The following ${ result.ignored.length } items could not be imported:": [
+      "The following ${ result.ignored.length } item could not be imported:": [
         "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
@@ -1061,6 +1079,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "設定にアクセスするには、PINでロックを解除してください。"
+      ],
+      "Unpinning item...": [
+        "アイテムの固定解除中..."
       ],
       "Update login": [
         "ログインを更新"
@@ -1107,7 +1128,7 @@
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
       ],
-      "You have ${ daysRemaining } days left to try these and other premium features.": [
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
         "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
@@ -1142,12 +1163,6 @@
       ]
     },
     "Label": {
-      "${ config.options.length } characters": [
-        "${ config.options.length } 文字"
-      ],
-      "${ config.options.wordCount } words": [
-        "${ config.options.wordCount } 単語"
-      ],
       "1 hour": [
         "1 時間"
       ],
@@ -1177,6 +1192,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "アカウント"
       ],
       "Alias": [
         "エイリアス"
@@ -1567,11 +1585,6 @@
         "${ brandNameJSX } へようこそ"
       ]
     },
-    "Message": {
-      "${ count } items": [
-        "${ count } 件のアイテム"
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } へようこそ"
@@ -1637,6 +1650,9 @@
       "Full Name": [
         "氏名"
       ],
+      "MM/YY": [
+        "MM/YY (月/年)"
+      ],
       "Other": [
         "その他"
       ],
@@ -1687,7 +1703,7 @@
       ]
     },
     "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Vault には ${ vault.targetMaxMembers } を超えるユーザーを含めることはできません。"
       ]
     },
@@ -1870,7 +1886,7 @@
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
         "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
@@ -1899,9 +1915,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"
-      ],
-      "Please enter a valid email address": [
-        "有効なメールアドレスを入力してください。"
       ],
       "Please verify your email address in order to use email aliases": [
         "メールアドレスを使用するためにメールアドレスの認証を行ってください"
@@ -1971,6 +1984,9 @@
       ],
       "Your session could not be resumed.": [
         "セッションを再開できませんでした。"
+      ],
+      "Your session is inactive.": [
+        "非アクティブなセッションです"
       ],
       "Your session was locked.": [
         "セッションがロックされました。"

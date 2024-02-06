@@ -308,6 +308,9 @@
       "Pin item": [
         "Przypnij element"
       ],
+      "Recent": [
+        "Ostatnie"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Usuń dostęp"
+      ],
+      "Remove member": [
+        "Usuń użytkownika"
       ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Wyślij nam wiadomość"
+      ],
+      "Set access level": [
+        "Ustaw uprawnienia"
       ],
       "Share": [
         "Udostępnij"
@@ -492,14 +501,20 @@
       "Cannot create alias (${ error }).": [
         "Nie można utworzyć aliasu (${ error })."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "Nie można obecnie wysłać zaproszenia na ten adres"
+      "Cannot send invitation at the moment": [
+        "Nie można wysłać zaproszenia",
+        "Nie można wysłać zaproszeń",
+        "Nie można wysłać zaproszeń",
+        "Nie można wysłać zaproszeń"
       ],
       "Could not confirm this invite at the moment": [
         "Zaproszenie nie może zostać potwierdzone"
       ],
       "Could not leave vault.": [
         "Nie można opuścić sejfu."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Nie można załadować zaleceń."
       ],
       "Could not open created vault": [
         "Nie można otworzyć utworzonego sejfu"
@@ -1540,6 +1555,15 @@
       "Logins": [
         "Dane logowania"
       ],
+      "Make all admins": [
+        "Ustaw uprawnienie administratora wszystkim"
+      ],
+      "Make all editors": [
+        "Ustaw uprawnienie edycji wszystkim"
+      ],
+      "Make all viewers": [
+        "Ustaw uprawnienie odczytu wszystkim"
+      ],
       "Members": [
         "Użytkownicy"
       ],
@@ -1916,6 +1940,9 @@
       "Fill & copy password": [
         "Uzupełnij i kopiuj hasło"
       ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
       "Get the mobile apps": [
         "Pobierz aplikacje mobilne"
       ],
@@ -1943,6 +1970,9 @@
       "Member limit": [
         "Limit użytkowników"
       ],
+      "Members": [
+        "Użytkownicy"
+      ],
       "Move all items ?": [
         "Przenieść wszystkie elementy?"
       ],
@@ -1967,6 +1997,9 @@
       "Pinned (${ items.length })": [
         "Przypięte (${ items.length })"
       ],
+      "Review and share": [
+        "Przejrzyj i udostępnij"
+      ],
       "Secure your data": [
         "Zabezpiecz swoje dane"
       ],
@@ -1975,6 +2008,9 @@
       ],
       "Share with": [
         "Udostępnij"
+      ],
+      "Suggestions": [
+        "Sugestie"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Przechodzisz na ${ PASS_APP_NAME }?"
@@ -1999,6 +2035,9 @@
       ],
       "Use my email": [
         "Użyj mojego adresu"
+      ],
+      "Vault": [
+        "Sejf"
       ],
       "Vault shared with you": [
         "Udostępniony sejf"
@@ -2058,6 +2097,12 @@
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
       ],
+      "Could not send invitations to the following addresses :": [
+        "Nie można wysłać zaproszeń na następujące adresy:"
+      ],
+      "Duplicate email addresses.": [
+        "Adresy e-mail są zduplikowane."
+      ],
       "Empty note": [
         "Notatka jest pusta"
       ],
@@ -2066,6 +2111,9 @@
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
+      ],
+      "Invalid email addresses.": [
+        "Adres e-mail jest nieprawidłowy."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",
@@ -2091,6 +2139,9 @@
       "No password manager selected": [
         "Nie wybrano menadżera haseł"
       ],
+      "No results": [
+        "Nie znaleziono żadnych wyników"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
       ],
@@ -2099,9 +2150,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
-      ],
-      "Please enter a valid email address": [
-        "Wpisz prawidłowy adres e-mail"
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"

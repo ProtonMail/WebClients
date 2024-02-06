@@ -308,6 +308,9 @@
       "Pin item": [
         "Anclar elemento"
       ],
+      "Recent": [
+        "Reciente"
+      ],
       "Refresh the page": [
         "Refrescar la página"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Borrar el acceso"
+      ],
+      "Remove member": [
+        "Quitar este miembro"
       ],
       "Request a feature": [
         "Solicitar una característica"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Envíenos un mensaje"
+      ],
+      "Set access level": [
+        "Configurar nivel de acceso"
       ],
       "Share": [
         "Compartir"
@@ -492,14 +501,18 @@
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
-      "Cannot send invitation to this address at the moment": [
-        "No se puede enviar una invitación a esta dirección por el momento."
+      "Cannot send invitation at the moment": [
+        "No se puede enviar la invitación por el momento",
+        "No se pueden enviar las invitaciones por el momento"
       ],
       "Could not confirm this invite at the moment": [
         "No se pudo confirmar esta invitación por el momento"
       ],
       "Could not leave vault.": [
         "No se pudo dejar la bóveda."
+      ],
+      "Could not load recommendations at the moment.": [
+        "No se pudieron cargar las recomendaciones por el momento."
       ],
       "Could not open created vault": [
         "No se pudo abrir la bóveda creada"
@@ -761,6 +774,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } invitaciones enviadas con éxito"
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -1506,6 +1522,15 @@
       "Logins": [
         "Inicios de sesión"
       ],
+      "Make all admins": [
+        "Promover a todos como administradores"
+      ],
+      "Make all editors": [
+        "Promover a todos como editores"
+      ],
+      "Make all viewers": [
+        "Promover a todos como lectores"
+      ],
       "Members": [
         "Miembros"
       ],
@@ -1881,6 +1906,9 @@
       "Fill & copy password": [
         "Completar y copiar la contraseña"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Get the mobile apps": [
         "Obtenga las apps móviles"
       ],
@@ -1908,6 +1936,9 @@
       "Member limit": [
         "Límite de miembros"
       ],
+      "Members": [
+        "Miembros"
+      ],
       "Move all items ?": [
         "¿Mover todos los elementos?"
       ],
@@ -1932,6 +1963,9 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Review and share": [
+        "Revisar y compartir"
+      ],
       "Secure your data": [
         "Asegure sus datos"
       ],
@@ -1940,6 +1974,9 @@
       ],
       "Share with": [
         "Compartir con"
+      ],
+      "Suggestions": [
+        "Sugerencias"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "¿Cambiar a ${ PASS_APP_NAME }?"
@@ -1964,6 +2001,9 @@
       ],
       "Use my email": [
         "Usar mi correo"
+      ],
+      "Vault": [
+        "Bóveda"
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"
@@ -2017,11 +2057,20 @@
       "An error occured while exporting your data": [
         "Se produjo un error al exportar sus datos"
       ],
+      "At least one email address is required": [
+        "Al menos se requiere una dirección de correo electrónico"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se pudo crear la bóveda \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "No se pudieron enviar las invitaciones a las siguientes direcciones:"
+      ],
+      "Duplicate email addresses.": [
+        "Direcciones de correo duplicadas."
       ],
       "Empty note": [
         "Nota vacía"
@@ -2031,6 +2080,9 @@
       ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"
+      ],
+      "Invalid email addresses.": [
+        "Direcciones de correo inválidas."
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
@@ -2054,6 +2106,9 @@
       "No password manager selected": [
         "Ningún gestor de contraseñas seleccionado"
       ],
+      "No results": [
+        "Sin resultados"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
       ],
@@ -2062,9 +2117,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
-      ],
-      "Please enter a valid email address": [
-        "Ingrese una dirección de correo válida"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique su dirección de correo para poder usar alias de correo."
