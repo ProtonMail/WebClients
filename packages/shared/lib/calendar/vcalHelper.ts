@@ -25,6 +25,7 @@ import {
 } from '../interfaces/calendar';
 import {
     ICAL_ATTENDEE_ROLE,
+    ICAL_ATTENDEE_RSVP,
     ICAL_ATTENDEE_STATUS,
     ICAL_EVENT_STATUS,
     ICAL_METHOD,
@@ -248,4 +249,12 @@ export const getPmSharedEventID = (veventComponent: VcalVeventComponent) => {
 
 export const getPmSharedSessionKey = (veventComponent: VcalVeventComponent) => {
     return veventComponent['x-pm-session-key']?.value;
+};
+
+export const getRSVPStatus = (attendee: Partial<VcalAttendeeProperty> = {}) => {
+    const rsvp = attendee.parameters?.rsvp;
+    if (Object.values(ICAL_ATTENDEE_RSVP).some((icalRsvp) => icalRsvp === rsvp)) {
+        return rsvp as ICAL_ATTENDEE_RSVP;
+    }
+    return ICAL_ATTENDEE_RSVP.TRUE;
 };
