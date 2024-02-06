@@ -73,7 +73,7 @@ export const B2BOnboarding: FC = () => {
                   ]
                 : []),
         ],
-        []
+        [vaultCreated, vaultImported, vaultShared, installed]
     );
 
     return (
