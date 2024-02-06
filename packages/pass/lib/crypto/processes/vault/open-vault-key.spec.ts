@@ -1,15 +1,15 @@
-import { PassEncryptionTag } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import lastItem from '@proton/utils/lastItem';
-
-import { decryptData } from '../../utils/crypto-helpers';
+import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import {
     createRandomKey,
     randomAddress,
     randomContents,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '@proton/pass/lib/crypto/utils/testing';
+import { PassEncryptionTag } from '@proton/pass/types';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import lastItem from '@proton/utils/lastItem';
+
 import { createVault } from './create-vault';
 import { openVaultKey } from './open-vault-key';
 
