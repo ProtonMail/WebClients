@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
-
 import { Button } from '@proton/atoms/index';
 import { Alert, BasicModal, Prompt } from '@proton/components/index';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
@@ -51,7 +49,7 @@ const EditRecurringConfirmModal = ({
 }: Props) => {
     const [type, setType] = useState(types[0]);
 
-    const { title, confirm, alertText } = getTexts(types, inviteActions);
+    const { title, confirm, cancel, alertText } = getTexts(types, inviteActions);
     const hasPreviousSingleEdits =
         (type === RECURRING_TYPES.ALL && hasSingleEdits) || (type === RECURRING_TYPES.FUTURE && hasSingleEditsAfter);
     const hasPreviousSingleDeletes =
@@ -96,7 +94,7 @@ const EditRecurringConfirmModal = ({
                 <Button color="norm" onClick={handleSubmit}>
                     {confirm}
                 </Button>,
-                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+                <Button onClick={onClose}>{cancel}</Button>,
             ]}
             onSubmit={handleSubmit}
             onClose={onClose}
