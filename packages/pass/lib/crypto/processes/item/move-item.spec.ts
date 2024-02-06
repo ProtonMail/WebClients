@@ -1,10 +1,10 @@
+import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
+import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoItemError } from '../../utils/errors';
-import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { moveItem } from './move-item';
 
 describe('moveItem crypto process', () => {
@@ -22,7 +22,7 @@ describe('moveItem crypto process', () => {
 
         const movedItem = await moveItem({ content, destinationVaultKey, destinationShareId });
 
-        expect(movedItem.Item.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+        expect(movedItem.Item.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
         expect(movedItem.Item.KeyRotation).toEqual(destinationVaultKey.rotation);
 
         const newItemKey = await decryptData(

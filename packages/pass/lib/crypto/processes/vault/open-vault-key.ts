@@ -1,10 +1,9 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { ShareKeyResponse, VaultKey } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-
-import { getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoVaultError } from '../../utils/errors';
 
 type OpenVaultKeyProcessParams = {
     shareKey: ShareKeyResponse;

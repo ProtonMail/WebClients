@@ -12,7 +12,10 @@ export enum PassSignatureContext {
     VaultInviteNewUser = 'pass.invite.vault.new-user',
 }
 
-export const CONTENT_FORMAT_VERSION = 1;
+export enum ContentFormatVersion {
+    Share = 1,
+    Item = 2,
+}
 
 /* type aliases */
 export type Rotation = number;

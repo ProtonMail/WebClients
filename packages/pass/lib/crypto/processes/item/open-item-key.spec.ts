@@ -1,9 +1,9 @@
+import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { TEST_USER_KEY_ID } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKeyResponse, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { encryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { TEST_USER_KEY_ID } from '../../utils/testing';
 import { openItemKey } from './open-item-key';
 
 describe('openItemKey crypto process', () => {

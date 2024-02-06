@@ -1,9 +1,9 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { decryptData, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { decryptData, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoVaultError } from '../../utils/errors';
 import {
     createRandomKey,
     randomAddress,
@@ -43,7 +43,7 @@ describe('createVault crypto process', () => {
         expect(decryptedContent).toStrictEqual(content);
 
         expect(vault.AddressID).toEqual(address.ID);
-        expect(vault.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+        expect(vault.ContentFormatVersion).toEqual(ContentFormatVersion.Share);
     });
 
     test('should throw when provided with empty content', async () => {

@@ -1,11 +1,10 @@
 import { CryptoProxy } from '@proton/crypto';
+import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultCreateRequest } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-
-import { encryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoVaultError } from '../../utils/errors';
 
 type CreateVaultProcessParams = {
     content: Uint8Array;
@@ -35,7 +34,7 @@ export const createVault = async ({
 
     return {
         AddressID: addressId,
-        ContentFormatVersion: CONTENT_FORMAT_VERSION,
+        ContentFormatVersion: ContentFormatVersion.Share,
         Content: uint8ArrayToBase64String(encryptedVaultContent),
         EncryptedVaultKey: uint8ArrayToBase64String(encryptedVaultKey.message),
     };

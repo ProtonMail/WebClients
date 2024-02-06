@@ -61,6 +61,7 @@ describe('ItemContentTransformer', () => {
                         password: itemPassword,
                         urls: [],
                         totpUri: '',
+                        passkeys: [],
                     },
                 },
             },

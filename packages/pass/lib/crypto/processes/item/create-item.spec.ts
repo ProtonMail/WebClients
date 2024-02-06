@@ -1,10 +1,10 @@
+import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
+import { TEST_USER_KEY_ID, randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoItemError } from '../../utils/errors';
-import { TEST_USER_KEY_ID, randomContents } from '../../utils/testing';
 import { createItem } from './create-item';
 
 describe('createItem crypto process', () => {
@@ -33,7 +33,7 @@ describe('createItem crypto process', () => {
             PassEncryptionTag.ItemContent
         );
 
-        expect(item.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+        expect(item.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
         expect(item.KeyRotation).toEqual(1);
         expect(decryptedContent).toStrictEqual(content);
     });

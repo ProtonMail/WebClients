@@ -1,13 +1,13 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
-import { PassSignatureContext } from '@proton/pass/types';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-
 import {
     createRandomKey,
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '@proton/pass/lib/crypto/utils/testing';
+import { PassSignatureContext } from '@proton/pass/types';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+
 import { createNewUserSignature, createNewUserSignatureBody } from './create-new-user-signature';
 
 describe('create new user invite signature', () => {
