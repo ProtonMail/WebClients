@@ -176,6 +176,9 @@
       "Get mobile apps": [
         "Få mobilapper"
       ],
+      "Get Started": [
+        "Kom i gang"
+      ],
       "Help us improve": [
         "Hjelp oss å bli bedre"
       ],
@@ -190,6 +193,9 @@
       ],
       "Importing": [
         "Importerer"
+      ],
+      "Install extension": [
+        "Installer utvidelse"
       ],
       "Invite others": [
         "Inviter andre"
@@ -411,9 +417,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Autolås kunne ikke deaktiveres"
-      ],
-      "Cannot send invitation to this address at the moment": [
-        "Kan ikke sende invitasjon til denne adressen for øyeblikket."
       ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
@@ -805,6 +808,9 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, vennligst gi de nødvendige utvidelsestillatelsene."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine. "
       ],
       "Internet connection lost": [
         "Mistet internettilkobling"
@@ -1781,9 +1787,6 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
-      ],
-      "Please enter a valid email address": [
-        "Vennligst oppgi en gyldig e-postadresse"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."

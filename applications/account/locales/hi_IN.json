@@ -152,9 +152,6 @@
       "Change mailbox password": [
         "मेलबॉक्स पासवर्ड बदलें"
       ],
-      "Change organization keys": [
-        "संगठन की चाबियाँ बदलें"
-      ],
       "Change other email subscriptions": [
         "अन्य ईमेल सदस्यताएँ बदलें"
       ],
@@ -680,9 +677,6 @@
       "Reset keys": [
         "कुंजी रीसेट करें"
       ],
-      "Reset organization keys": [
-        "संगठन कुंजी रीसेट करें"
-      ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
       ],
@@ -691,9 +685,6 @@
       ],
       "Restore": [
         "रिस्टोर करें"
-      ],
-      "Restore administrator privileges": [
-        "व्यवस्थापक विशेषाधिकार बहाल करें"
       ],
       "Resubscribe": [
         "फिर से सब्सक्राइब करें"
@@ -2801,9 +2792,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail लोगो और एक प्लस साइन"
-      ],
       "Track the status and activity of your referrals.": [
         "अपने रेफरल के स्थिति ट्रैक करें।"
       ],
@@ -3253,6 +3241,9 @@
       "Incorrect username": [
         "गलत यूज़रनेम"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता।"
+      ],
       "Invalid ${ name } code": [
         "अमान्य ${ name } कोड"
       ],
@@ -3332,9 +3323,6 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
       ],
-      "Organization key is not decrypted.": [
-        "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है।"
-      ],
       "Password is required": [
         "पासवर्ड चाहिए"
       ],
@@ -3355,9 +3343,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "भुगतान वर्तमान में उपलब्ध नहीं हैं, कृपया बाद में पुनः प्रयास करें"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "अपने संगठन में उपयोगकर्ताओं को जोड़ने से पहले कृपया एक कस्टम डोमेन कॉन्फ़िगर करें।"
@@ -3481,9 +3466,6 @@
       "The organization key must be activated first": [
         "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
       ],
-      "The organization key must be activated first.": [
-        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
-      ],
       "The sending key is not valid": [
         "भेजने की कुंजी मान्य नहीं है"
       ],
@@ -3553,9 +3535,6 @@
       "You already added this holidays calendar": [
         "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "आपने अपनी संगठन कुंजियों तक पहुंच खो दी है। पुनर्स्थापना के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
-      ],
       "You have no invoices.": [
         "आपका कोई चालान नहीं है।"
       ],
@@ -3567,9 +3546,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
@@ -4381,6 +4357,9 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ],
+      "Theme font": [
+        "थीम फ़ॉन्ट"
       ]
     },
     "Font Size Default": {
@@ -4952,14 +4931,6 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -5371,9 +5342,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा, और वे लेबल जिन्हें आप आयात करना चाहते हैं।"
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "एक नया खाता बनाएं और यूज़र के साथ ईमेल पता और पासवर्ड शेयर करें।"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "उप-खाते बनाएं और प्रबंधित करें और उन्हें अपने कस्टम डोमेन पर ईमेल पते असाइन करें।"
@@ -5872,12 +5840,6 @@
       ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
-      ],
-      "Organization keys activated": [
-        "संगठन कुंजियाँ सक्रिय की गईं"
-      ],
-      "Organization keys restored": [
-        "संगठन की कुंजी बहाल"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "आपके संगठन में अन्य व्यवस्थापक मौजूद हैं, आप उनके लिए नया पासवर्ड संचार करने के लिए जिम्मेदार हैं।"
@@ -6727,6 +6689,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "आपके फ़ोन नंबर का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "आपकी योजना 7 दिनों तक 10 संस्करणों के लिए सीमित है।"
+      ],
       "Your recovery phrase": [
         "आपका पुनर्प्राप्ति वाक्यांश"
       ],
@@ -6735,6 +6700,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8851,6 +8824,17 @@
         "टीम संभालना"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -8920,17 +8904,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
       ]
     },
     "new_plans: Label": {
@@ -9937,6 +9910,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "अपनी वर्तनी जांचें या सूची से एक देश का चयन करें।"
+      ],
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ]
@@ -10118,6 +10094,11 @@
     "Shared calendar label input placeholder": {
       "Add label": [
         "लेबल जोड़ें"
+      ]
+    },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } द्वारा साझा किया गया"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -10374,6 +10355,22 @@
       ],
       "Your current storage:": [
         "आपका वर्तमान संग्रहण:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } रखे"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "${ app } स्टोरेज"
+      ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "डाउनग्रेड करने से आप निम्नलिखित लाभों को खो देंगे। क्या आप सुनिश्चित रूप से आगे बढ़ना चाहते हैं?"
+      ],
+      "Your storage is full": [
+        "आपका स्टोरेज भरा है"
       ]
     },
     "Subscribe to calendar modal": {
@@ -10801,9 +10798,6 @@
       "CSV field": [
         "CSV फ़ील्ड"
       ],
-      "Display name": [
-        "प्रदर्शित होने वाला नाम"
-      ],
       "Edit": [
         "बदलाव करें"
       ],
@@ -11021,9 +11015,6 @@
       "Change mailbox password": [
         "मेलबॉक्स पासवर्ड बदलें"
       ],
-      "Change organization keys": [
-        "संगठन की चाबियाँ बदलें"
-      ],
       "Change organization name": [
         "संगठन का नाम बदलें"
       ],
@@ -11147,9 +11138,6 @@
       ],
       "Delete logs": [
         "लॉग हटाएं"
-      ],
-      "Delete user": [
-        "उपयोगकर्ता को हटाएँ"
       ],
       "Delete version history?": [
         "संस्करण इतिहास मिटाएं?"
@@ -11396,9 +11384,6 @@
       "Password": [
         "पासवर्ड"
       ],
-      "Password and keys": [
-        "पासवर्ड और कुंजी"
-      ],
       "Pay invoice": [
         "रसीद का भुगतान करो"
       ],
@@ -11458,9 +11443,6 @@
       ],
       "Request new code": [
         "नए कोड का अनुरोध करें"
-      ],
-      "Reset organization keys": [
-        "संगठन कुंजी रीसेट करें"
       ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
@@ -12100,9 +12082,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "गैर-निजी सदस्य को ईमेल पता जोड़ने से पहले आपको ${ activateLink } संगठन कुंजियाँ होनी चाहिए।"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"

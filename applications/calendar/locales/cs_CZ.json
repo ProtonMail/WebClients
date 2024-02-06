@@ -219,6 +219,9 @@
       "Discard": [
         "Zahodit"
       ],
+      "Dismiss": [
+        "Skrýt"
+      ],
       "Don't know your password?": [
         "Neznáte své heslo?"
       ],
@@ -404,6 +407,9 @@
       ],
       "No, thanks": [
         "Ne, děkuji"
+      ],
+      "Not now": [
+        "Nyní ne"
       ],
       "Ok": [
         "Ok"
@@ -2193,6 +2199,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Zvyšte efektivitu a rozvrhněte svůj čas pomocí barevného označení událostí podle kategorií nebo podle úrovně energie. Toto a mnohem více získáte s placeným tarifem."
       ],
@@ -2202,11 +2211,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mazání kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Určeno pro uživatele, kteří hledají zvýšenou ochranu svých účtů."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Při importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Získejte neomezený počet aliasů a 500 GB úložiště s ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
@@ -2214,17 +2229,23 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail a znaménko plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Šetřete čas odesláním e-mailů nebo pozvánek všem najednou, což je mimo jiné prémiová funkce. Navyšte tarif ještě dnes."
+      ],
+      "Set a data recovery method to prevent data loss.": [
+        "Nastavte metodu obnovy dat, abyste zabránili jejich ztrátě."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Nastavte metodu obnovení, abyste zabránili ztrátě přístupu k účtu."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Může to trvat několik minut. Mezitím můžete Kalendář používat jak potřebujete."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Aktualizujte svůj účet a aktivujte ${ PROTON_SENTINEL_NAME }, naše špičkové bezpečnostní řešení s umělou inteligencí a specializovanou odbornou podporou 24 hodin denně, 7 dní v týdnu."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
@@ -2234,6 +2255,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Jsou nastaveny metody obnovy účtu a dat a je povolena funkce 2FA."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Váš účet a metody obnovy dat jsou nastaveny."
       ]
     },
     "description": {
@@ -2434,8 +2461,26 @@
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
+      "Alias is not valid": [
+        "Alias není platný"
+      ],
+      "Alias is required": [
+        "Alias je povinný"
+      ],
+      "Alias options could not be resolved": [
+        "Možnosti aliasu nelze vyřešit"
+      ],
+      "Aliases could not be loaded": [
+        "Aliasy se nepodařilo načíst"
+      ],
       "Already a member of this calendar": [
         "Jste již členem tohoto kalendáře"
+      ],
+      "An error occurred while loading alias options": [
+        "Při načítání možností aliasů došlo k chybě"
+      ],
+      "An error occurred while saving alias": [
+        "Při ukládání aliasu došlo k chybě"
       ],
       "Answer failed to be sent": [
         "Odpověď se nepodařilo odeslat"
@@ -2472,6 +2517,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
+      ],
+      "Could not open created vault": [
+        "Nelze otevřít vytvořený trezor"
+      ],
+      "Could not open updated vault": [
+        "Nelze aktualizovat vytvořený trezor"
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
@@ -2530,6 +2581,9 @@
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
       ],
+      "Forward address is required": [
+        "Adresa předání je povinná"
+      ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
       ],
@@ -2569,6 +2623,9 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Lze přesunout události pouze mezi ${ minDateString } - ${ maxDateString }"
       ],
+      "Item content cannot exceed 40KB": [
+        "Obsah položky nemůže přesáhnout 40KB"
+      ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
@@ -2587,6 +2644,9 @@
       "Missing signature": [
         "Chybí podpis"
       ],
+      "Name is required": [
+        "Název je povinný"
+      ],
       "Name required": [
         "Název je povinný"
       ],
@@ -2598,6 +2658,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nebyly nalezeny žádné e-maily k importu - účet nemá složku Doručená pošta"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Žádný externí klíč získaný pro uživatele není platný pro odeslání"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
@@ -4034,6 +4097,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Důležitá poznámka"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
@@ -4256,6 +4322,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
+      "The vault your alias will be stored in.": [
+        "Trezor, do kterého bude váš alias uložen."
+      ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
       ],
@@ -4300,6 +4369,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Warning": [
+        "Varování"
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -4719,6 +4791,9 @@
       "Folder location": [
         "Umístění složky"
       ],
+      "Forwards to": [
+        "Přeposílá na"
+      ],
       "Frequency": [
         "Frekvence"
       ],
@@ -4793,6 +4868,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "Note": [
+        "Poznámka"
       ],
       "Notification": [
         "Oznámení"
@@ -4886,6 +4964,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "Title": [
+        "Název"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -5415,6 +5496,12 @@
       ]
     },
     "Notification": {
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } byl deaktivován"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } byl povolen"
+      ],
       "Contact group created": [
         "Skupina kontaktů byla vytvořena"
       ],
@@ -5934,6 +6021,17 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Znovu načíst událost"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Aliasů hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Otevřít ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Vyzkoušejte ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -6468,6 +6566,42 @@
     "storage_split: info": {
       "${ app } storage": [
         "${ app } úložiště"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% zaplněno"
+      ],
+      "contact your administrator": [
+        "kontaktujte svého správce"
+      ],
+      "upgrade for more storage": [
+        "navýšit tarif pro více prostoru"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Vaše ${ appStorage } je téměř plné"
+      ],
+      "Your ${ appStorage } is full": [
+        "Vaše ${ appStorage } je plné"
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání emailů uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je z ${ percentage }% zaplněno. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "Vaše ${ storage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ upgrade }"
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "Vaše ${ storage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání e-mailů, uvolněte místo nebo ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Vaše úložiště je plné"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ upgrade }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -6495,6 +6629,9 @@
       ],
       "Address copied to clipboard": [
         "Adresa byla zkopírována do schránky"
+      ],
+      "Alias copied to clipboard": [
+        "Alias byl zkopírován do schránky"
       ],
       "All events deleted": [
         "Všechny události byly vymazány"
@@ -6764,6 +6901,12 @@
         "${ emailsCount } e-mailových adres",
         "${ emailsCount } e-mailových adres"
       ],
+      "Account recovery": [
+        "Obnovení účtu"
+      ],
+      "Account security": [
+        "Zabezpečení účtu"
+      ],
       "Add another notification to remind you of this event": [
         "Přidat další upozornění pro připomenutí této události"
       ],
@@ -6860,6 +7003,9 @@
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"
       ],
+      "Data recovery": [
+        "Obnovení dat"
+      ],
       "Day theme": [
         "Denní motiv"
       ],
@@ -6908,6 +7054,9 @@
       "Email settings": [
         "Nastavení e-mailu"
       ],
+      "Enable 2FA": [
+        "Povolit 2FA"
+      ],
       "Encrypted event": [
         "Šifrovaná událost"
       ],
@@ -6928,6 +7077,9 @@
       ],
       "Feedback": [
         "Zpětná vazba"
+      ],
+      "Get advanced protection": [
+        "Získat pokročilou ochranu"
       ],
       "Groups": [
         "Skupiny"
@@ -6967,6 +7119,9 @@
       ],
       "Minicalendar": [
         "Minikalendář"
+      ],
+      "Need more aliases?": [
+        "Potřebujete více aliasů?"
       ],
       "Night theme": [
         "Noční motiv"
@@ -7021,6 +7176,9 @@
       ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Security center": [
+        "Bezpečnostní centrum"
       ],
       "Select a day in the month": [
         "Vyberte den v měsíci"
@@ -7132,6 +7290,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Pozvali jste účastníky se stejnými e-maily"
+      ],
+      "Your account is protected": [
+        "Váš účet je chráněn"
       ],
       "Your calendar link": [
         "URL adresa kalendáře"
@@ -7291,8 +7452,23 @@
       "Contacts could not be merged": [
         "Kontakty nebylo možné sloučit"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Datum konce platnosti není ve formátu MM/RR"
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem datům šifrovaným tímto klíčem."
+      ],
+      "Invalid alias prefix": [
+        "Nesprávná předpona aliasu"
+      ],
+      "Missing alias prefix": [
+        "Chybějící předpona aliasu"
+      ],
+      "Missing alias suffix": [
+        "Chybějící přípona aliasu"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
@@ -7302,6 +7478,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Některé kontakty vykazují chybu při spojení. Prosím, zkontrolujte je individuálně"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Předpona aliasu nesmí být delší než 40 znaků"
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktní údaje jsou poškozeny a nelze je zobrazit."
@@ -7329,6 +7508,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nepodařilo se nám ověřit e-mailový server. Pokud mu důvěřujete, můžete toto ověření přeskočit."
+      ],
+      "You must select at least one mailbox": [
+        "Musíte vybrat nejméně jednu e-mailovou schránku"
       ],
       "You will lose any customization you made so far.": [
         "Přijdete o změny, které jste doposud provedli."
