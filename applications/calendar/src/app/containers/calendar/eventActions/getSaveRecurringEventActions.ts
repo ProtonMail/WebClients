@@ -337,6 +337,7 @@ const getSaveRecurringEventActions = async ({
             getCreateSyncOperation({
                 veventComponent: newRecurrenceVeventWithSequence,
                 hasDefaultNotifications,
+                isPersonalSingleEdit: !isSendInviteType,
             });
 
         return {

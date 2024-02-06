@@ -39,6 +39,7 @@ export interface CreateEventActionOperation {
         hasDefaultNotifications: boolean;
         isCancellingSingleOccurrence?: boolean;
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+        isPersonalSingleEdit?: boolean;
         color?: string;
     };
 }
@@ -51,6 +52,7 @@ export interface UpdateEventActionOperation {
         hasDefaultNotifications: boolean;
         isAttendee: boolean;
         isBreakingChange?: boolean;
+        isPersonalSingleEdit?: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
@@ -88,6 +90,7 @@ export const getIsCreateSyncOperation = (
 export const getCreateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
+    isPersonalSingleEdit?: boolean;
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): CreateEventActionOperation => ({
     type: SyncOperationTypes.CREATE,
@@ -103,6 +106,7 @@ export const getUpdateSyncOperation = (data: {
     calendarEvent: CalendarEvent;
     hasDefaultNotifications: boolean;
     isAttendee: boolean;
+    isPersonalSingleEdit?: boolean;
     isBreakingChange?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
@@ -195,7 +199,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
             };
 
             if (getIsCreateSyncOperation(operation)) {
-                const { hasDefaultNotifications, addedAttendeesPublicKeysMap } = operation.data;
+                const { hasDefaultNotifications, addedAttendeesPublicKeysMap, isPersonalSingleEdit } = operation.data;
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
@@ -206,8 +210,12 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     ...(await getCreationKeys({ newAddressKeys, newCalendarKeys })),
                 });
 
+                const isPersonalSingleEditData =
+                    isPersonalSingleEdit === undefined ? {} : { IsPersonalSingleEdit: isPersonalSingleEdit };
+
                 const dataComplete = {
                     ...permissionData,
+                    ...isPersonalSingleEditData,
                     ...data,
                 };
 
@@ -227,6 +235,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     hasDefaultNotifications,
                     isAttendee,
                     isBreakingChange,
+                    isPersonalSingleEdit,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
                     cancelledOccurrenceVevent,
@@ -261,11 +270,14 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
                 const isBreakingChangeData = { IsBreakingChange: booleanToNumber(isBreakingChange || false) };
+                const isPersonalSingleEditData =
+                    isPersonalSingleEdit === undefined ? {} : { IsPersonalSingleEdit: isPersonalSingleEdit };
 
                 const dataComplete = {
                     ...permissionData,
                     ...isOrganizerData,
                     ...isBreakingChangeData,
+                    ...isPersonalSingleEditData,
                     ...data,
                 };
 
