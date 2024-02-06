@@ -161,9 +161,6 @@
       "Change mailbox password": [
         "Vaihda postilaatikon salasana"
       ],
-      "Change organization keys": [
-        "Muuta organisaation avaimia"
-      ],
       "Change other email subscriptions": [
         "Muuta muita sähköpostitilauksia"
       ],
@@ -590,6 +587,9 @@
       "Loading verification": [
         "Ladataan vahvistusta"
       ],
+      "Make admin": [
+        "Määritä ylläpitäjäksi"
+      ],
       "Manage communication preferences": [
         "Hallitse viestintäasetuksia"
       ],
@@ -746,9 +746,6 @@
       "Reset keys": [
         "Tyhjennä avaimet"
       ],
-      "Reset organization keys": [
-        "Tyhjennä organisaation avaimet"
-      ],
       "Reset password": [
         "Nollaa salasana"
       ],
@@ -757,9 +754,6 @@
       ],
       "Restore": [
         "Palauta"
-      ],
-      "Restore administrator privileges": [
-        "Palauta ylläpito-oikeudet"
       ],
       "Resubscribe": [
         "Tilaa uudelleen"
@@ -3076,9 +3070,6 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Proton Mail -logo ja plus-merkki"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
@@ -3126,6 +3117,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Pääsy työpöytäsovellukseen on rajoitettu"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "${ MAIL_APP_NAME } -työpöytäsovelluksen betaversio on tällä hetkellä niiden, joilla on maksullinen ${ MAIL_APP_NAME } -tilaus, saatavilla. Päivitä tilauksesi tänään ja pääset käyttämään sitä."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Päivitä tilauksesi tänään tai tarkista tilanne uudelleen vuoden 2024 alussa."
@@ -3905,9 +3899,6 @@
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
       ],
-      "Organization key is not decrypted.": [
-        "Organisaation avaimen salausta ei ole purettu."
-      ],
       "Password is required": [
         "Salasana vaaditaan"
       ],
@@ -3928,9 +3919,6 @@
       ],
       "Payments are currently not available, please try again later": [
         "Maksut eivät ole tällä hetkellä käytettävissä. Yritä myöhemmin uudelleen"
-      ],
-      "Permission denied, administrator privileges have been restricted.": [
-        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
       ],
       "Please configure a custom domain before adding addresses.": [
         "Määritä oma verkkotunnus ennen kuin lisäät osoitteita."
@@ -4060,9 +4048,6 @@
       "The organization key must be activated first": [
         "Organisaation avain on ensin aktivoitava"
       ],
-      "The organization key must be activated first.": [
-        "Organisaation avain on ensin aktivoitava."
-      ],
       "The sending key is not valid": [
         "Lähetysavain ei kelpaa"
       ],
@@ -4138,9 +4123,6 @@
       "You already added this holidays calendar": [
         "Olet jo lisännyt nämä yleiset vapaapäivät"
       ],
-      "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Olet menettänyt pääsyn organisaatiosi avaimiin. Ilman palautusta et voi luoda uusia käyttäjiä, lisätä osoitteita nykyisille käyttäjille tai käyttää ei-yksityisiä käyttäjätilejä."
-      ],
       "You have no invoices.": [
         "Sinulla ei ole laskuja."
       ],
@@ -4155,12 +4137,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäjäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Sinun on aktivoitava organisaation avaimet. Ilman aktivointia et voi luoda tai käyttää ei-yksityisiä käyttäjiä."
-      ],
-      "You must privatize all users before generating new organization keys": [
-        "Sinun on yksityistettävä kaikki käyttäjät ennen uusien organisaation avaimien luontia"
       ],
       "You must set a name": [
         "Nimi on asetettava"
@@ -4879,7 +4855,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Poista kaksivaiheinen todennus suojausavaimella käytöstä ennen TOTP:n käytöstä poistoa"
+        "Poista kaksivaiheinen todennus suojausavaimella käytöstä ennen TOTP:n käytöstäpoistoa"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen todennuslaitteellasi tunnistauduttaessa. Yritä uudelleen."
@@ -5759,17 +5735,6 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
@@ -6271,9 +6236,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
-      ],
-      "Create a new account and share the email address and password with the user.": [
-        "Luo uusi tili ja jaa sen sähköpostiosoite ja salasana käyttäjälle."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
@@ -6910,12 +6872,6 @@
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
       ],
-      "Organization keys activated": [
-        "Organisaation avaimet aktivoitiin"
-      ],
-      "Organization keys restored": [
-        "Organisaation avaimet palautettiin"
-      ],
       "Organization size": [
         "Organisaation koko"
       ],
@@ -7345,9 +7301,6 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Näillä kirjautumistiedoilla ei ole mahdollista kirjautua virallisiin ${ VPN_APP_NAME } -sovelluksiin. ${ learnMore }"
-      ],
-      "They will be removed from your organization": [
-        "Heidät poistetaan organisaatiostasi"
       ],
       "They'll receive a free month of ${ planName }.": [
         "He saavat ilmaisen ${ planName }-kuukauden."
@@ -7991,6 +7944,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9130,9 +9094,6 @@
       ],
       "Show sender images": [
         "Näytä lähettäjien kuvat"
-      ],
-      "Show unread count in application icon": [
-        "Näytä lukemattomien viestien määrä sovelluksen kuvakkeessa"
       ],
       "Show unread count in Favicon": [
         "Näytä lukemattomien viestien määrä faviconissa"
@@ -10395,6 +10356,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10488,17 +10460,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12609,6 +12570,9 @@
       ]
     },
     "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Sovellusten ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME } tuottamien tietojen tallennustila."
+      ],
       "Up to ${ totalStorageSize } Drive storage": [
         "${ totalStorageSize } Drive-tallennustilaa"
       ],
@@ -12653,6 +12617,9 @@
       "Upgrade your plan to increase your storage.": [
         "Kasvata tallennustilaasi päivittämällä tilauksesi."
       ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Hyvitämme jäljellä olevan ajan krediitteinä ${ BRAND_NAME }-tilillesi."
+      ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
         "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
@@ -12683,6 +12650,18 @@
       ],
       "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
         "Tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Menetät oikeuden ${ gb } tallennustilaan ja ensisijaiseen tukeen."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Menetät oikeuden käyttää enemmän tallennustilaa, sähköpostiosoitteita, peitenimiä, kalentereita sekä ensisijaista tukea."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "Menetät pääsyn korkeimpaan VPN-nopeuteen, suojaukseen 10 laitteelle, nopeaan suoratoistoon, mainosestoon ja haittaohjelmasuojaukseen, sekä ensisijaiseen tukeen."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Menetät oikeuden käyttää rajattomasti kirjautumistunnuksia ja muistiinpanoja, rajattomasti hide-my-email-aliaksia, 20 holvia sekä ensisijaista tukea."
       ]
     },
     "Subscribe to calendar modal": {
@@ -13160,9 +13139,6 @@
       "CSV field": [
         "CSV-kenttä"
       ],
-      "Display name": [
-        "Näyttönimi"
-      ],
       "Edit": [
         "Muokkaa"
       ],
@@ -13437,9 +13413,6 @@
       "Change mailbox password": [
         "Vaihda postilaatikon salasana"
       ],
-      "Change organization keys": [
-        "Muuta organisaation avaimia"
-      ],
       "Change organization name": [
         "Muuta organisaation nimeä"
       ],
@@ -13594,9 +13567,6 @@
       "Delete the server (you will still be able to recover it for ${ days } day)": [
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)",
         "Poista palvelin (voit vielä palauttaa sen ${ days } kuluessa)"
-      ],
-      "Delete user": [
-        "Poista käyttäjä"
       ],
       "Delete user?": [
         "Poistetaanko käyttäjä?"
@@ -13900,9 +13870,6 @@
       "Password": [
         "Salasana"
       ],
-      "Password and keys": [
-        "Salasana ja avaimet"
-      ],
       "Password reset settings": [
         "Salasanan nollauksen asetukset"
       ],
@@ -13974,9 +13941,6 @@
       ],
       "Request sent": [
         "Pyyntö lähetetty"
-      ],
-      "Reset organization keys": [
-        "Tyhjennä organisaation avaimet"
       ],
       "Reset password": [
         "Nollaa salasana"
@@ -14405,9 +14369,6 @@
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Lähetetyt- ja Luonnokset-kansioiden viestit näytetään niissä edelleen, vaikka ne siirrettäisiin eri kansioihin."
       ],
-      "See number of unread messages in the application icon": [
-        "Näytä lukemattomien viestien määrä sovelluskuvakkeessa"
-      ],
       "See number of unread messages in the tab icon": [
         "Näytä lukemattomien viestien määrä välilehden kuvakkeessa"
       ],
@@ -14744,10 +14705,10 @@
         "Haluatko varmasti poistaa tämän osoitteen?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "Jos poistat sähköpostiosoitteen, et voi enää vastaanottaa päivittäisiä sähköposti-ilmoituksia."
+        "Jos poistat tämän osoitteen, et voi enää vastaanottaa päivittäisiä sähköposti-ilmoituksia."
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "Jos poistat sähköpostiosoitteen, et voi enää palauttaa tiliäsi tai vastaanottaa päivittäisiä sähköposti-ilmoituksia."
+        "Jos poistat tämän osoitteen, et voi enää palauttaa tiliäsi tai vastaanottaa päivittäisiä sähköposti-ilmoituksia."
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
         "Jos poistat sähköpostiosoitteen, et voi enää palauttaa tiliäsi."
@@ -14756,7 +14717,7 @@
         "Jos poistat puhelinnumeron, et voi enää palauttaa tiliäsi."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Lokikirjauksen käytöstä poiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"
+        "Lokikirjauksen käytöstäpoiston yhteydessä tyhjennetään myös kaikki vanhat lokitiedot. Haluatko varmasti poistaa sen käytöstä?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
         "Jos poistat osoitteen käytöstä, et voi enää käyttää sitä viestien lähetykseen ja vastaanottoon, ja kaikki siihen liitetyt ${ BRAND_NAME }-tuotteet poistetaan käytöstä. Haluatko varmasti poistaa osoitteen käytöstä?"
@@ -14796,9 +14757,6 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
-      ],
-      "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Sinun on ${ activateLink } organisaation avaimet ennen kuin lisäät sähköpostiosoitteen ei-yksityiseksi jäseneksi."
       ],
       "You will lose any customization you made so far.": [
         "Menetät kaikki aiemmin tekemäsi mukautukset."
