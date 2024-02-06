@@ -37,6 +37,7 @@ const LetsTalkSubSection = ({ vpnServersCountData }: { vpnServersCountData: VPNS
                 fullWidth
                 pill
                 href={getStaticURL('/business/contact/pass?int=trial')}
+                target="_blank"
             >
                 {c('pass_signup_2023: Action').t`Request trial`}
             </ButtonLike>
