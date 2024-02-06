@@ -47,7 +47,7 @@ export const handleCreateUser = async ({
 }: {
     cache: SignupCacheResult;
     api: Api;
-    mode?: 'cro';
+    mode?: 'cro' | 'ov';
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { signupType, username, email, password, payload },
@@ -162,12 +162,18 @@ export const handleCreateUser = async ({
                             Type: clientType,
                             Email: email,
                             Payload: payload,
-                            ...(mode === 'cro' && paymentToken
-                                ? {
-                                      Token: paymentToken,
-                                      TokenType: 'payment',
-                                  }
-                                : getTokenPayment(paymentToken)),
+                            ...(() => {
+                                if (mode === 'cro' && paymentToken) {
+                                    return {
+                                        Token: paymentToken,
+                                        TokenType: 'payment',
+                                    };
+                                }
+                                if (mode === 'ov') {
+                                    return undefined;
+                                }
+                                return getTokenPayment(paymentToken);
+                            })(),
                         },
                         productParam
                     )
