@@ -62,7 +62,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                 <div className="flex-1">
                     <Label htmlFor="delete-recovery-storage" className="block">
                         {c('Label').jt`Delete recovery-related information.`}{' '}
-                        <Href href={getKnowledgeBaseUrl('/trusted-device/recovery/')}>{c('Link').t`What’s this?`}</Href>
+                        <Href href={getKnowledgeBaseUrl('/device-data-recovery')}>{c('Link').t`What’s this?`}</Href>
                     </Label>
                 </div>
             </div>
