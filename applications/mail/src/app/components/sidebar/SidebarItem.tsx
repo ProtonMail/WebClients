@@ -90,7 +90,7 @@ const SidebarItem = ({
     const [refreshing, withRefreshing] = useLoading(false);
 
     const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
@@ -217,7 +217,6 @@ const SidebarItem = ({
             </Tooltip>
             {moveScheduledModal}
             {moveSnoozedModal}
-            {moveAllModal}
             {moveToSpamModal}
             {selectAllMoveModal}
             {applyLabelsToAllModal}

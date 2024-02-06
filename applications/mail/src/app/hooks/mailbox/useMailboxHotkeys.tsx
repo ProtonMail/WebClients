@@ -95,7 +95,7 @@ export const useMailboxHotkeys = (
     const elementRef = useRef<HTMLDivElement>(null);
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
     const star = useStar();
     const { markAs, selectAllMarkModal } = useMarkAs();
@@ -488,7 +488,6 @@ export const useMailboxHotkeys = (
         moveSnoozedModal,
         deleteAllModal,
         deleteSelectionModal,
-        moveAllModal,
         moveToSpamModal,
         selectAllMoveModal,
         selectAllMarkModal,

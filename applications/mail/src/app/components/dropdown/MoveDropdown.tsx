@@ -93,7 +93,7 @@ const MoveDropdown = ({
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
@@ -318,7 +318,6 @@ const MoveDropdown = ({
             </div>
             {moveScheduledModal}
             {moveSnoozedModal}
-            {moveAllModal}
             {moveToSpamModal}
             {selectAllMoveModal}
             {renderLabelModal && (

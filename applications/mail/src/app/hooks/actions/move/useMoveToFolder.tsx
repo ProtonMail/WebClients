@@ -23,7 +23,7 @@ export interface MoveParams {
 }
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
-    const { moveSelectionToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, moveAllModal } =
+    const { moveSelectionToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal } =
         useMoveSelectionToFolder(setContainFocus);
     const { moveAllToFolder, selectAllMoveModal } = useMoveAllToFolder(setContainFocus);
 
@@ -75,5 +75,5 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         [moveAllToFolder, moveSelectionToFolder]
     );
 
-    return { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal };
+    return { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal };
 };

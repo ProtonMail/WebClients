@@ -335,7 +335,6 @@ const MailboxContainer = ({
         moveDropdownToggleRef,
         moveScheduledModal,
         moveSnoozedModal,
-        moveAllModal,
         moveToSpamModal,
         deleteSelectionModal: deleteSelectionShortcutModal,
         deleteAllModal: deleteAllShortcutModal,
@@ -652,7 +651,6 @@ const MailboxContainer = ({
             {deleteAllShortcutModal}
             {moveScheduledModal}
             {moveSnoozedModal}
-            {moveAllModal}
             {moveToSpamModal}
             {selectAllMoveModal}
             {selectAllMarkModal}
