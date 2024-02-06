@@ -16,6 +16,7 @@ const FIELDS_TO_KEEP = [
     'Permissions',
     'IsOrganizer',
     'IsProtonProtonInvite',
+    'IsPersonalSingleEdit',
     'Color',
 ] as const;
 

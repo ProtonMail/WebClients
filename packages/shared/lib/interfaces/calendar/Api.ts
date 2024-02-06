@@ -123,6 +123,7 @@ export type CalendarCreateEventBlobData = RequireSome<
 interface CalendarCreateOrUpdateEventMetaData {
     Permissions: number;
     IsOrganizer?: 0 | 1;
+    IsPersonalSingleEdit?: boolean;
     RemovedAttendeeAddresses?: string[];
     AddedProtonAttendees?: {
         Email: string;

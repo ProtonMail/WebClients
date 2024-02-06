@@ -64,6 +64,7 @@ export interface CalendarEventSharedData {
     Permissions: number;
     IsOrganizer: 1 | 0;
     IsProtonProtonInvite: 1 | 0;
+    IsPersonalSingleEdit: boolean;
     Author: string;
     Color: Nullable<string> | undefined;
 }
