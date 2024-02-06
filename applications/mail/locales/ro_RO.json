@@ -328,6 +328,9 @@
       "Discard": [
         "Renunțare"
       ],
+      "Dismiss": [
+        "Renunțare"
+      ],
       "Don't know your password?": [
         "Nu vă cunoașteți parola?"
       ],
@@ -339,6 +342,9 @@
       ],
       "Download ${ attachmentName }": [
         "Descărcare atașament ${ attachmentName }"
+      ],
+      "Download now": [
+        "Descărcare"
       ],
       "Downloading": [
         "Se descarcă"
@@ -510,6 +516,9 @@
       ],
       "Import from Outlook": [
         "Importare din Outlook"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "Actualizare importantă disponibilă. Pentru a continua să utilizați aplicația trebuie s-o actualizați. ${ downloadUpdate }"
       ],
       "In the morning": [
         "Dimineața"
@@ -713,6 +722,9 @@
       ],
       "No, I won't attend": [
         "Nu, nu voi participa"
+      ],
+      "Not now": [
+        "Nu acum"
       ],
       "Not saved": [
         "Nesalvat"
@@ -1046,11 +1058,6 @@
       ],
       "Trust": [
         "Aprobare"
-      ],
-      "Trust key": [
-        "Cheie de încredere",
-        "Chei de încredere",
-        "Chei de încredere"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -3063,9 +3070,6 @@
       "No labels": [
         "Nu sunt etichete."
       ],
-      "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail și semnul plus"
-      ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
@@ -3290,6 +3294,9 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
+      "Alias options could not be resolved": [
+        "Opțiunile pentru alias nu au putu fi rezolvate."
+      ],
       "Attachments are limited to 25 MB": [
         "Atașamentele sunt limitate la 25 MiB."
       ],
@@ -3336,6 +3343,12 @@
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
         "Căutarea în conținut nu poate fi activată. Reporniți aplicația sau ștergeți datele."
+      ],
+      "Could not open created vault": [
+        "Nu s-a putut deschide seiful creat."
+      ],
+      "Could not open updated vault": [
+        "Nu s-a putut deschide seiful actualizat."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
@@ -3422,11 +3435,17 @@
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
+      "Item content cannot exceed 40KB": [
+        "Conținutul articolului nu poate depăși 40 KiB."
+      ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
       ],
       "Last name is too long": [
         "Numele este prea lung."
+      ],
+      "Maximum expiration time reached.": [
+        "S-a atins timpul maxim de expirare."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Numărul maxim de atașamente (${ attachmentsCountLimit }) a fost depășit."
@@ -3462,6 +3481,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nu s-au găsit mesaje de importat - contul nu are căsuță poștală."
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Nicio cheie externă preluată pentru utilizator nu este validă pentru trimitere."
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
@@ -5158,11 +5180,11 @@
       "Are you sure you want to discard your import?": [
         "Sigur doriți să anulați importarea?"
       ],
-      "Are you sure you want to move all messages in this location to Archive?": [
+      "Are you sure you want to move all messages in this location to archive?": [
         "Sunteți sigur că doriți să mutați toate mesajele de aici în «Arhivă»?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        "Sunteți sigur că doriți să mutați toate mesajele de aici în «Gunoi»?"
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Sigur doriți să mutați toate mesajele de aici în «Gunoi»?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Sigur doriți să ștergeți definitiv această conversație?",
@@ -6842,6 +6864,9 @@
       "Folder location": [
         "Amplasare folder"
       ],
+      "Forwards to": [
+        "Redirecționare către"
+      ],
       "Frequency": [
         "Frecvența"
       ],
@@ -6956,6 +6981,9 @@
       "No label found": [
         "Nu există etichete"
       ],
+      "Note": [
+        "Notă"
+      ],
       "Notification": [
         "Notificare"
       ],
@@ -7066,6 +7094,9 @@
       ],
       "Time": [
         "Ora"
+      ],
+      "Title": [
+        "Titlu"
       ],
       "To:": [
         "Către:"
@@ -7746,6 +7777,12 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } a fost creat."
       ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } a fost dezactivat"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } a fost activat"
+      ],
       "Block removed": [
         "Blocare eliminată."
       ],
@@ -7927,6 +7964,15 @@
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } a marcat această cheie ca fiind depășită. Această cheie poate fi folosită doar pentru verificarea semnăturii."
+      ],
+      "External key automatically fetched from keys.openpgp.org.": [
+        "Cheia externă este preluată automat de la keys.openpgp.org."
+      ],
+      "External key automatically fetched via WKD.": [
+        "Cheia externă este preluată automat via WKD."
+      ],
+      "This key is used to encrypt messages to this contact": [
+        "Cheia este folosită pentru a cripta mesaje pentru acest contact."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Vă recomandăm să „nu aprobați” această cheie."
@@ -8186,6 +8232,17 @@
       ],
       "No unread messages found": [
         "Nu au fost găsite mesaje necitite"
+      ]
+    },
+    "Security Center": {
+      "Hide-my-email aliases": [
+        "Aliasuri hide-my-email"
+      ],
+      "Open ${ PASS_APP_NAME }": [
+        "Deschidere ${ PASS_APP_NAME }"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Încercați ${ PASS_APP_NAME }"
       ]
     },
     "Select files": {
@@ -8754,11 +8811,17 @@
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
+      "Faster email management": [
+        "Gestionare mesaje mai rapidă"
+      ],
       "Get up to ${ credits } in credits.": [
         "Obțineți până la ${ credits } de credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
+      ],
+      "Now you can take action on all emails in a single folder in one go.": [
+        "Acum puteți acționa asupra tuturor mesajelor dintr-un folder deodată."
       ],
       "Schedule send": [
         "Trimitere programată"
@@ -8816,6 +8879,53 @@
       ],
       "Your current storage:": [
         "Spațiu actual:"
+      ]
+    },
+    "storage_split: info": {
+      "${ app } storage": [
+        "Spațiul de stocare ${ app }"
+      ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } - ${ percentage }% ocupat"
+      ],
+      "contact your administrator": [
+        "contactați-vă administratorul"
+      ],
+      "To continue uploading and syncing files, free up space or upgrade for more storage.": [
+        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+      ],
+      "To send or receive emails, free up space or upgrade for more storage.": [
+        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+      ],
+      "upgrade for more storage": [
+        "treceți la alt tip de plan pentru mai mult spațiu"
+      ],
+      "Your ${ appStorage } is almost full": [
+        "${ appStorage } este aproape plin."
+      ],
+      "Your ${ appStorage } is full": [
+        "${ appStorage } este plin."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "${ storage } este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este ocupat ${ percentage }%. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
+        "${ storage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
+        "${ storage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
+      ],
+      "Your storage is full": [
+        "Spațiu de stocare plin"
+      ],
+      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
+        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
       ]
     },
     "Success": {
@@ -9238,6 +9348,18 @@
       "(active)": [
         "(activă)"
       ],
+      "A filter name is required": [
+        "Este necesar un nume de filtru."
+      ],
+      "A filter with this name already exists": [
+        "Un filtru cu același nume există deja"
+      ],
+      "Account recovery": [
+        "Recuperare cont"
+      ],
+      "Account security": [
+        "Securitate cont"
+      ],
       "Action all conversations": [
         "Aplicare la toate conversațiile"
       ],
@@ -9357,6 +9479,9 @@
       "Customize your mail import": [
         "Personalizare importare mesaje"
       ],
+      "Data recovery": [
+        "Recuperare date"
+      ],
       "Day theme": [
         "Temă zi"
       ],
@@ -9459,6 +9584,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Numele filtrului nu poate conține doar spații"
       ],
       "Filter on...": [
         "Filtrare după..."
@@ -9576,10 +9704,10 @@
       "Move all messages": [
         "Mutare toate mesajele"
       ],
-      "Move all messages to Archive": [
-        "Mutare toate mesajele în arhivă"
+      "Move all messages to archive": [
+        "Mutare toate mesajele în «Arhivă»"
       ],
-      "Move all messages to Trash": [
+      "Move all messages to trash": [
         "Mutare toate mesajele în «Gunoi»"
       ],
       "Move to": [
@@ -9767,6 +9895,12 @@
       ],
       "Subject missing": [
         "Subiect lipsă"
+      ],
+      "This field cannot be empty": [
+        "Acest câmp nu poate fi gol."
+      ],
+      "This field cannot contain only spaces": [
+        "Acest câmp nu poate conține doar spații."
       ],
       "To": [
         "Către"
@@ -9975,8 +10109,23 @@
       "Contacts could not be merged": [
         "Contactele nu au putut fi îmbinate"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Data de expirare nu este în format LL/AA."
+      ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
+      ],
+      "Invalid alias prefix": [
+        "Prefix alias nevalid."
+      ],
+      "Missing alias prefix": [
+        "Lipsește prefixul aliasului."
+      ],
+      "Missing alias suffix": [
+        "Lipsește sufixul aliasului."
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
@@ -9986,6 +10135,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "Verificarea semnăturii atașamentului a eșuat.\nÎncă puteți descărca acest atașament, dar este posibil să fi fost modificat.",
@@ -10018,6 +10170,9 @@
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Nu s-a putut verifica serverul de e-mail. Dacă aveți încredere în el, puteți ignora verificarea."
+      ],
+      "You must select at least one mailbox": [
+        "Trebuie să selectați cel puțin o adresă de e-mail."
       ],
       "You will lose any customization you made so far.": [
         "Veți pierde orice modificare făcută până acum."
