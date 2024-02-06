@@ -207,5 +207,6 @@ export const getMailConfiguration = ({
             </>
         ),
         CustomStep,
+        cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
     };
 };
