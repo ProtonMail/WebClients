@@ -2112,8 +2112,8 @@
         "Cada dia, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } dia fins ${ untilString }",
-        "Cada ${ interval } dies fins ${ untilString }"
+        "Cada ${ interval } dia, ${ untilString }",
+        "Cada ${ interval } dies, ${ untilString }"
       ]
     },
     "Day": {
@@ -3808,10 +3808,10 @@
         "Personalitzat diàriament"
       ],
       "Custom monthly": [
-        "Personalització del mes"
+        "Mensual (personalitzat)"
       ],
       "Custom weekly": [
-        "Personalització de la setmana"
+        "Setmanal (personalitzat)"
       ],
       "Custom yearly": [
         "Personalització de l'any"
@@ -5028,13 +5028,13 @@
         "Cada ${ interval } mesos, el ${ onDayString } a les ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Cada mes el ${ onDayString }, ${ timesString }"
+        "Cada mes el ${ onDayString } a les ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes, el ${ onDayString } fins ${ untilString }",
-        "Cada ${ interval } mesos, el ${ onDayString } fins ${ untilString }"
+        "Cada ${ interval } mes, el ${ onDayString }, ${ untilString }",
+        "Cada ${ interval } mesos, el ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Cada mes el ${ onDayString }, ${ untilString }"
@@ -7192,8 +7192,8 @@
         "Cada ${ interval } setmanes, el ${ multipleDaysString } a les ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } setmana, cada dia a les ${ timesString }",
-        "Cada ${ interval } setmanes, cada dia a les ${ timesString }"
+        "Cada ${ interval } setmana, tots els dies a les ${ timesString }",
+        "Cada ${ interval } setmanes, tots els dies a les ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Cada ${ interval } setmana, el divendres a les ${ timesString }",
@@ -7241,40 +7241,40 @@
     },
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } setmana, el ${ multipleDaysString } fins ${ untilString }",
-        "Cada ${ interval } setmanes, el ${ multipleDaysString } fins ${ untilString }"
+        "Cada ${ interval } setmana, el ${ multipleDaysString }, ${ untilString }",
+        "Cada ${ interval } setmanes, el ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } setmana, cada dia fins ${ untilString }",
-        "Cada ${ interval } setmanes, cada dia fins ${ untilString }"
+        "Cada ${ interval } setmana, tots els dies, ${ untilString }",
+        "Cada ${ interval } setmanes, tots els dies, ${ untilString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } setmana, el divendres fins ${ untilString }",
-        "Cada ${ interval } setmanes, el divendres fins ${ untilString }"
+        "Cada ${ interval } setmana, el divendres, ${ untilString }",
+        "Cada ${ interval } setmanes, el divendres, ${ untilString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dilluns fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dilluns fins ${ untilString }"
+        "Cada ${ interval } setmana, el dilluns, ${ untilString }",
+        "Cada ${ interval } setmanes, el dilluns, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dissabte fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dissabte fins ${ untilString }"
+        "Cada ${ interval } setmana, el dissabte, ${ untilString }",
+        "Cada ${ interval } setmanes, el dissabte, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } setmana, el diumenge fins ${ untilString }",
-        "Cada ${ interval } setmanes, el diumenge fins ${ untilString }"
+        "Cada ${ interval } setmana, el diumenge, ${ untilString }",
+        "Cada ${ interval } setmanes, el diumenge, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } setmanes, el dijous fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
+        "Cada ${ interval } setmana, el dijous, ${ untilString }",
+        "Cada ${ interval } setmanes, el dijous, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dimarts fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dimarts fins ${ untilString }"
+        "Cada ${ interval } setmana, el dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes, el dimarts, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dimecres fins ${ untilString }"
+        "Cada ${ interval } setmana, el dimecres, ${ untilString }",
+        "Cada ${ interval } setmanes, el dimecres, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Cada setmana el ${ multipleDaysString }, ${ untilString }"
