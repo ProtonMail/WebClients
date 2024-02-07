@@ -9,6 +9,7 @@ export interface OrganizationKey {
     SignatureAddress?: string | null;
     AccessToOrgKey?: MEMBER_ORG_KEY_STATE;
     EncryptionAddressID?: string;
+    Passwordless?: boolean;
 }
 
 export type PasswordlessOrganizationKey = OrganizationKey &
