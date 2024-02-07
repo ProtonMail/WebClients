@@ -94,14 +94,7 @@ import {
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import {
-    Currency,
-    Cycle,
-    CycleMapping,
-    Plan,
-    VPNServersCountData,
-    isTaxInclusive,
-} from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -648,6 +641,7 @@ const Step1 = ({
     const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
+        checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
@@ -1769,7 +1763,7 @@ const Step1 = ({
                                                     </span>
                                                 </div>
 
-                                                {isTaxInclusive(options.checkResult) && (
+                                                {paymentFacade.showInclusiveTax && (
                                                     <InclusiveVatText
                                                         tax={options.checkResult?.Taxes?.[0]}
                                                         currency={options.currency}

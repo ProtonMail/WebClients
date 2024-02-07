@@ -67,7 +67,6 @@ import {
     Renew,
     SubscriptionCheckResponse,
     SubscriptionModel,
-    isTaxInclusive,
 } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -545,6 +544,7 @@ const SubscriptionContainer = ({
     };
 
     const paymentFacade = usePaymentFacade({
+        checkResult,
         amount,
         currency,
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
@@ -1045,7 +1045,7 @@ const SubscriptionContainer = ({
                                                 chargebeePaypal={paymentFacade.chargebeePaypal}
                                                 iframeHandles={paymentFacade.iframeHandles}
                                             />
-                                            {isTaxInclusive(checkResult) && (
+                                            {paymentFacade.showInclusiveTax && (
                                                 <InclusiveVatText
                                                     tax={checkResult?.Taxes?.[0]}
                                                     currency={currency}
@@ -1196,7 +1196,7 @@ const SubscriptionContainer = ({
                                             chargebeePaypal={paymentFacade.chargebeePaypal}
                                             iframeHandles={paymentFacade.iframeHandles}
                                         />
-                                        {isTaxInclusive(checkResult) && (
+                                        {paymentFacade.showInclusiveTax && (
                                             <InclusiveVatText
                                                 tax={checkResult?.Taxes?.[0]}
                                                 currency={currency}
