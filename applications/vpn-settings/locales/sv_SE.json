@@ -762,12 +762,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Säker surfning och premium VPN-funktioner."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
       ],
@@ -2796,9 +2790,6 @@
         "${ number } server",
         "${ number } servrar"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } borttaget. Paketerbjudande är inte tillgängligt på ett 1-månadspaket."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -2983,9 +2974,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
-      ],
-      "Cancel anytime": [
-        "Avbryt när som helst"
       ],
       "Can’t access your recovery email?": [
         "Kan du inte komma åt din e-post för återställning?"
@@ -4944,6 +4932,9 @@
       "Autofill credit cards (coming soon)": [
         "Autofyll kreditkort (kommer snart)"
       ],
+      "Automatic email forwarding": [
+        "Automatisk vidarebefordran av e-post"
+      ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
       ],
@@ -5081,6 +5072,9 @@
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
       ],
+      "Require 2FA for organization": [
+        "Kräver 2FA för organisation"
+      ],
       "Router support": [
         "Router-stöd"
       ],
@@ -5114,6 +5108,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integration (kommer snart)"
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
@@ -5156,6 +5153,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Obegränsat antal delade valv med åtkomstbehörigheter"
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
@@ -5361,6 +5361,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Låter dig ställa in automatiska svar (autosvar) för dina inkommande meddelanden"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Vidarebefordra automatiskt e-post som skickats till ditt ${ MAIL_APP_NAME }-konto till valfri annan e-postadress."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massutskick av reklam eller programmatisk e-post stöds för närvarande inte. Vi rekommenderar att du använder en dedikerad e-postleverantör för detta ändamål."
@@ -5756,21 +5759,10 @@
         "Uppgradera mitt paket"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "End-to-end-krypterat"
-      ],
-      "Open source": [
-        "Öppen källkod"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Skyddad av schweiziska integritetslagar"
-      ],
-      "Swiss based": [
-        "Baserat i Schweiz"
-      ]
-    },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Låt oss prata"
+      ],
       "Limited time offer": [
         "Tidsbegränsat erbjudande"
       ],
@@ -5779,14 +5771,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Förmåner med ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per månad"
       ],
+      "/month /user": [
+        "/månad/användare"
+      ],
+      "/month /user, billed annually": [
+        "/månad/användare, faktureras årligen"
+      ],
+      "/month /user, billed biennially": [
+        "/månad/användare, faktureras vartannat år"
+      ],
       "Creating your account": [
         "Skapar ditt konto"
+      ],
+      "Current plan": [
+        "Nuvarande paket"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
@@ -5800,14 +5801,11 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "Get in touch with our sales team": [
+        "Ta kontakt med vårt säljteam"
+      ],
       "Includes:": [
         "Inkluderar:"
-      ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Bli en del av över 100 miljoner människor som har valt ${ BRAND_NAME } för att hålla sig säkra online"
-      ],
-      "Open-source and audited": [
-        "Öppen källkod och granskad"
       ],
       "per month": [
         "per månad"
@@ -5824,20 +5822,11 @@
       "Preparing your Recovery Kit": [
         "Förbereder ditt återställningskit"
       ],
-      "Protected by Swiss privacy laws": [
-        "Skyddad av schweiziska integritetslagar"
-      ],
       "Updating your account": [
         "Uppdaterar ditt konto"
       ],
       "Verifying your payment": [
         "Verifierar din betalning"
-      ],
-      "Works on all devices": [
-        "Fungerar på alla enheter"
-      ],
-      "You currently have": [
-        "Du har för närvarande"
       ]
     },
     "pass_signup_2023: Title": {

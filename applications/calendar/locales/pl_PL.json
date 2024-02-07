@@ -2199,6 +2199,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "Uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa, zapobiegając nieautoryzowanemu dostępowi."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Zwiększ wydajność i kontroluj swój czas, oznaczając wydarzenia kolorami. Ulepsz do płatnego planu, aby uzyskać dostęp do tej funkcji."
       ],
@@ -2208,6 +2211,9 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa usuwanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Zaprojektowany dla użytkowników poszukujących zwiększonej ochrony swoich kont."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
@@ -2215,7 +2221,7 @@
         "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Uzyskaj nieograniczoną liczby aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
+        "Uzyskaj nieograniczoną liczbę aliasów i 500 GB przestrzeni dyskowej w planie ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
@@ -2237,6 +2243,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Uaktualnij swoje konto, aby aktywować ${ PROTON_SENTINEL_NAME }, nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -6042,11 +6051,17 @@
       "e.g., Amazon, eBay, Etsy": [
         "np. Amazon, eBay, Etsy"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generuj aliasy na bieżąco, i łatwo zarządzaj swoimi aliasami i hasłami."
+      ],
       "Get an alias": [
         "Uzyskaj alias"
       ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Aliasy hide-my-email pozwalają rejestrować się w Internecie bez udostępniania swojego adresu e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nowy alias"
@@ -6054,8 +6069,14 @@
       "Open ${ PASS_APP_NAME }": [
         "Otwórz ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Chroń swoją tożsamość w sieci"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Wypróbuj ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Gdy zostaniesz poproszony o podanie adresu e-mail, zamiast tego podaj alias. Dodaj nazwę i notatkę, aby śledzić, gdzie go używasz."
       ]
     },
     "Security Center - Action": {
@@ -6064,6 +6085,9 @@
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji, przeznaczone dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
       ]
@@ -7210,6 +7234,9 @@
       ],
       "Reshare your calendars": [
         "Udostępnij ponownie kalendarze"
+      ],
+      "Save": [
+        "Zapisz"
       ],
       "Save changes": [
         "Zapisz zmiany"

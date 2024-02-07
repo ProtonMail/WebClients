@@ -762,12 +762,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Navigazione sicura e funzionalità VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Siamo spiacenti, questa offerta non è disponibile con il suo piano attuale."
       ],
@@ -2804,9 +2798,6 @@
         "${ number } server",
         "${ number } server"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } rimosso. Pacchetto offerta non disponibile su un piano di 1 mese."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
@@ -2991,9 +2982,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Uscendo ora, le modifiche potrebbero non essere salvate"
-      ],
-      "Cancel anytime": [
-        "Annulla in qualsiasi momento"
       ],
       "Can’t access your recovery email?": [
         "Non riesci ad accedere alla tua email di recupero?"
@@ -4970,6 +4958,9 @@
       "Autofill credit cards (coming soon)": [
         "Compilazione automatica carte di credito (prossimamente)"
       ],
+      "Automatic email forwarding": [
+        "Inoltro automatico delle email"
+      ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
       ],
@@ -5391,6 +5382,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Ti permette di impostare risposte automatiche per i messaggi in arrivo"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Inoltra automaticamente le email inviate al tuo account ${ MAIL_APP_NAME } a qualsiasi altro indirizzo email."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'invio massiccio di email promozionali o programmatiche non è attualmente supportato. Consigliamo di utilizzare un fornitore di servizi email dedicato per questo caso d'uso."
       ],
@@ -5785,20 +5779,6 @@
         "Migliora il mio piano"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Con crittografia end-to-end"
-      ],
-      "Open source": [
-        "Open source"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Ti protegge la legislazione svizzera sulla privacy"
-      ],
-      "Swiss based": [
-        "Sede in Svizzera"
-      ]
-    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Offerta a tempo limitato"
@@ -5808,9 +5788,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Vantaggi di ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mese"
       ],
@@ -5832,12 +5809,6 @@
       "Includes:": [
         "Include:"
       ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Unisciti ad oltre 100 milioni di persone che hanno scelto ${ BRAND_NAME } per stare al sicuro online"
-      ],
-      "Open-source and audited": [
-        "Codice open source ed esaminabile"
-      ],
       "per month": [
         "al mese"
       ],
@@ -5853,20 +5824,11 @@
       "Preparing your Recovery Kit": [
         "Preparazione del tuo kit di recupero"
       ],
-      "Protected by Swiss privacy laws": [
-        "Ti protegge la legislazione svizzera sulla privacy"
-      ],
       "Updating your account": [
         "Aggiornamento del tuo account"
       ],
       "Verifying your payment": [
         "Verifica del tuo pagamento"
-      ],
-      "Works on all devices": [
-        "Funziona su tutti i dispositivi"
-      ],
-      "You currently have": [
-        "Al momento hai"
       ]
     },
     "pass_signup_2023: Title": {

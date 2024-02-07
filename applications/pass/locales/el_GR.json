@@ -17,6 +17,9 @@
       "Add new item": [
         "Προσθήκη νέου αντικείμενου"
       ],
+      "Admin panel": [
+        "Πίνακας διαχείρισης"
+      ],
       "Advanced": [
         "Για προχωρημένους"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Δημιουργία σύνδεσης"
+      ],
+      "Create new items": [
+        "Δημιουργία νέων στοιχείων"
       ],
       "Create note": [
         "Δημιουργία σημείωσης"
@@ -194,6 +200,9 @@
       "Importing": [
         "Εισαγωγή"
       ],
+      "Install extension": [
+        "Εγκατάσταση επέκτασης"
+      ],
       "Invite others": [
         "Πρόσκληση άλλων"
       ],
@@ -263,6 +272,9 @@
       "Pin item": [
         "Καρφίτσωμα στοιχείου"
       ],
+      "Recent": [
+        "Πρόσφατα"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -277,6 +289,9 @@
       ],
       "Remove access": [
         "Αφαίρεση πρόσβασης"
+      ],
+      "Remove member": [
+        "Αφαίρεση μέλους"
       ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
@@ -304,6 +319,9 @@
       ],
       "Send us a message": [
         "Στείλτε μας ένα μήνυμα"
+      ],
+      "Set access level": [
+        "Ορισμός επιπέδου πρόσβασης"
       ],
       "Share": [
         "Κοινοποίηση"
@@ -420,6 +438,9 @@
       ],
       "Could not leave vault.": [
         "Δεν ήταν δυνατή η αποχώρηση από την κρύπτη."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Δεν ήταν δυνατή η φόρτωση συστάσεων αυτή τη στιγμή."
       ],
       "Could not open created vault": [
         "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
@@ -1284,6 +1305,15 @@
       "Logins": [
         "Συνδέσεις"
       ],
+      "Make all admins": [
+        "Κάντε τους όλους διαχειριστές"
+      ],
+      "Make all editors": [
+        "Κάντε τους όλους συντάκτες"
+      ],
+      "Make all viewers": [
+        "Κάντε τους όλους θεατές"
+      ],
       "Members": [
         "Μέλη"
       ],
@@ -1612,6 +1642,9 @@
       "Confirm PIN code": [
         "Επιβεβαιώστε τον κωδικό PIN"
       ],
+      "Create a vault": [
+        "Δημιουργία κρύπτης"
+      ],
       "Create PIN code": [
         "Δημιουργία κωδικού PIN"
       ],
@@ -1630,6 +1663,9 @@
       "Enter your PIN": [
         "Εισαγάγετε το PIN σας"
       ],
+      "Get Started": [
+        "Ξεκινήστε"
+      ],
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
       ],
@@ -1639,6 +1675,12 @@
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
       ],
+      "Import your data": [
+        "Εισαγωγή των δεδομένων σας"
+      ],
+      "Install extension": [
+        "Εγκατάσταση επέκτασης"
+      ],
       "Leave vault ?": [
         "Αποχώρηση από την κρύπτη;"
       ],
@@ -1647,6 +1689,9 @@
       ],
       "Member limit": [
         "Όριο μελών"
+      ],
+      "Members": [
+        "Μέλη"
       ],
       "Move all items ?": [
         "Μετακίνηση όλων των στοιχείων ;"
@@ -1666,6 +1711,9 @@
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
       ],
+      "Review and share": [
+        "Επανεξέταση και κοινή χρήση"
+      ],
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
       ],
@@ -1675,8 +1723,14 @@
       "Settings": [
         "Ρυθμίσεις"
       ],
+      "Share vaults with your team": [
+        "Κοινή χρήση κρυπτών με την ομάδα σας"
+      ],
       "Share with": [
         "Κοινοποίηση με"
+      ],
+      "Suggestions": [
+        "Προτάσεις"
       ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
@@ -1686,6 +1740,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "Vault": [
+        "Κρύπτη"
       ],
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
@@ -1736,11 +1793,20 @@
       "An error occured while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
       ],
+      "At least one email address is required": [
+        "Απαιτείται τουλάχιστον μία διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Δεν ήταν δυνατή η δημιουργία κρύπτης \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Δεν ήταν δυνατή η αποστολή προσκλήσεων στις ακόλουθες διευθύνσεις:"
+      ],
+      "Duplicate email addresses.": [
+        "Διπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "Empty note": [
         "Κενή σημείωση"
@@ -1750,6 +1816,9 @@
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
+      ],
+      "Invalid email addresses.": [
+        "Μη έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "Maximum length is ${ maxLength } character": [
         "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
@@ -1772,6 +1841,9 @@
       ],
       "No password manager selected": [
         "Δεν έχει επιλεγεί διαχειριστής κωδικών πρόσβασης"
+      ],
+      "No results": [
+        "Δεν υπάρχουν αποτελέσματα"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Επιτρέπονται μόνο αλφαριθμητικοί χαρακτήρες, τελείες, παύλες και παύλες υπογράμμισης"

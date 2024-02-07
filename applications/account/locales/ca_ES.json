@@ -1371,12 +1371,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Característiques de navegació segura i VPN prèmium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Aquesta oferta no està disponible amb el pla actual."
       ],
@@ -2959,8 +2953,8 @@
         "Cada dia, ${ untilString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } dia fins ${ untilString }",
-        "Cada ${ interval } dies fins ${ untilString }"
+        "Cada ${ interval } dia, ${ untilString }",
+        "Cada ${ interval } dies, ${ untilString }"
       ]
     },
     "Day": {
@@ -5691,9 +5685,6 @@
         "${ numberOfNonPrivateKeys } fitxer carregat no és una clau privada vàlida. Verifiqueu-ho i torneu-ho a provar.",
         "${ numberOfNonPrivateKeys } fitxers carregats no són claus privades vàlides. Verifiqueu-ho i torneu-ho a provar."
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "S'ha esborrat el pla ${ plan }. L'oferta de paquet no està disponible per a un pla d'un mes."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
@@ -6120,10 +6111,10 @@
         "Dominis de correu personalitzats"
       ],
       "Custom monthly": [
-        "Personalització del mes"
+        "Mensual (personalitzat)"
       ],
       "Custom weekly": [
-        "Personalització de la setmana"
+        "Setmanal (personalitzat)"
       ],
       "Custom yearly": [
         "Personalització de l'any"
@@ -9487,13 +9478,13 @@
         "Cada ${ interval } mesos, el ${ onDayString } a les ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Cada mes el ${ onDayString }, ${ timesString }"
+        "Cada mes el ${ onDayString } a les ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes, el ${ onDayString } fins ${ untilString }",
-        "Cada ${ interval } mesos, el ${ onDayString } fins ${ untilString }"
+        "Cada ${ interval } mes, el ${ onDayString }, ${ untilString }",
+        "Cada ${ interval } mesos, el ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Cada mes el ${ onDayString }, ${ untilString }"
@@ -10079,17 +10070,6 @@
         "Gestió d'equips"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba amb ${ last4 }."
@@ -10183,6 +10163,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11148,9 +11139,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Ja teniu accés a les característiques prèmium de ${ appName } — no necessiteu tornar a comprar."
-      ],
-      "You currently have": [
-        "Actualment teniu"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Se us ha convidat a unir-vos a ${ PASS_APP_NAME }."
@@ -14388,8 +14376,8 @@
         "Cada ${ interval } setmanes, el ${ multipleDaysString } a les ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } setmana, cada dia a les ${ timesString }",
-        "Cada ${ interval } setmanes, cada dia a les ${ timesString }"
+        "Cada ${ interval } setmana, tots els dies a les ${ timesString }",
+        "Cada ${ interval } setmanes, tots els dies a les ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
         "Cada ${ interval } setmana, el divendres a les ${ timesString }",
@@ -14437,40 +14425,40 @@
     },
     "Weekly recurring event, frequency (until)": {
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } setmana, el ${ multipleDaysString } fins ${ untilString }",
-        "Cada ${ interval } setmanes, el ${ multipleDaysString } fins ${ untilString }"
+        "Cada ${ interval } setmana, el ${ multipleDaysString }, ${ untilString }",
+        "Cada ${ interval } setmanes, el ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } setmana, cada dia fins ${ untilString }",
-        "Cada ${ interval } setmanes, cada dia fins ${ untilString }"
+        "Cada ${ interval } setmana, tots els dies, ${ untilString }",
+        "Cada ${ interval } setmanes, tots els dies, ${ untilString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } setmana, el divendres fins ${ untilString }",
-        "Cada ${ interval } setmanes, el divendres fins ${ untilString }"
+        "Cada ${ interval } setmana, el divendres, ${ untilString }",
+        "Cada ${ interval } setmanes, el divendres, ${ untilString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dilluns fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dilluns fins ${ untilString }"
+        "Cada ${ interval } setmana, el dilluns, ${ untilString }",
+        "Cada ${ interval } setmanes, el dilluns, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dissabte fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dissabte fins ${ untilString }"
+        "Cada ${ interval } setmana, el dissabte, ${ untilString }",
+        "Cada ${ interval } setmanes, el dissabte, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } setmana, el diumenge fins ${ untilString }",
-        "Cada ${ interval } setmanes, el diumenge fins ${ untilString }"
+        "Cada ${ interval } setmana, el diumenge, ${ untilString }",
+        "Cada ${ interval } setmanes, el diumenge, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } setmanes, el dijous fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
+        "Cada ${ interval } setmana, el dijous, ${ untilString }",
+        "Cada ${ interval } setmanes, el dijous, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dimarts fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dimarts fins ${ untilString }"
+        "Cada ${ interval } setmana, el dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes, el dimarts, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
-        "Cada ${ interval } setmanes, el dimecres fins ${ untilString }"
+        "Cada ${ interval } setmana, el dimecres, ${ untilString }",
+        "Cada ${ interval } setmanes, el dimecres, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Cada setmana el ${ multipleDaysString }, ${ untilString }"
