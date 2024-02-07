@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Unlock } from '@proton/pass/components/Lock/Unlock';
 import { clientBusy, clientErrored, clientLocked, clientStale } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
@@ -22,6 +23,8 @@ type Props = {
 };
 
 export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError }) => {
+    const { openSettings, endpoint } = usePassCore();
+
     const [timeoutError, setTimeoutError] = useState(false);
     const stale = clientStale(status);
     const busy = clientBusy(status);
@@ -120,6 +123,20 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                     </Button>
                 )}
             </div>
+
+            {endpoint === 'popup' && !locked && (
+                <div className="absolute bottom-0 right-0 mb-2 mr-2">
+                    <Button
+                        color="weak"
+                        shape="underline"
+                        size="small"
+                        className="text-sm color-weak"
+                        onClick={() => openSettings?.('logs')}
+                    >
+                        {c('Action').t`View app logs`}
+                    </Button>
+                </div>
+            )}
         </div>
     );
 };
