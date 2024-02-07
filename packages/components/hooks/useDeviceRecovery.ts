@@ -4,7 +4,6 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 
-import { useFlag } from '../../components/containers/unleash';
 import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';
 import useConfig from './useConfig';
@@ -21,9 +20,8 @@ export const useIsDeviceRecoveryEnabled = () => {
 };
 
 export const useIsDeviceRecoveryAvailable = () => {
-    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const [recoveryFileAvailable, loading] = useIsRecoveryFileAvailable();
-    return [recoveryFileAvailable && hasTrustedDeviceRecovery, loading];
+    return [recoveryFileAvailable, loading];
 };
 
 export const useDeviceRecovery = () => {
