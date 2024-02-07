@@ -439,6 +439,9 @@
         "Nie można wysłać zaproszeń",
         "Nie można wysłać zaproszeń"
       ],
+      "Cannot send invitations at the moment": [
+        "Nie można wysłać zaproszeń"
+      ],
       "Could not confirm this invite at the moment": [
         "Zaproszenie nie może zostać potwierdzone"
       ],
@@ -837,6 +840,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Wygenerowane hasła będą przechowywane przez 1 dzień."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Wykorzystaj w pełni Pass, tworząc sejf dla każdego zespołu lub projektu."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Ulepsz plan do wersji Pass Plus, aby uzyskać nieograniczoną liczbę aliasów, dodatkowe funkcje i wesprzeć nas."
       ],
@@ -858,11 +864,17 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Przyznaj niezbędne uprawnienia dla rozszerzenia ${ PASS_APP_NAME }, aby uzyskać najlepsze wrażenia z jego korzystania"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Zainstaluj ${ PASS_APP_NAME } dla ${ browser.title }, aby szybko automatycznie uzupełniać swoje dane logowania."
+      ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
       "Invitation sent": [
         "Zaproszenie zostało wysłane"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Zaproś wybrane osoby i ustaw odpowiednie uprawnienia."
       ],
       "Invite successfully removed": [
         "Zaproszenie zostało usunięte"
@@ -1838,6 +1850,9 @@
       "An error occured while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
       ],
+      "At least one email address is required": [
+        "Wymagany jest co najmniej jeden adres e-mail"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
       ],
@@ -1860,7 +1875,7 @@
         "Przedrostek aliasu jest nieprawidłowy"
       ],
       "Invalid email addresses.": [
-        "Adres e-mail jest nieprawidłowy."
+        "Adresy e-mail są nieprawidłowe."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",
