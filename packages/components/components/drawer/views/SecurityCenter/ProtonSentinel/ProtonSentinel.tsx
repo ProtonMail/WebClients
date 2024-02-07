@@ -8,6 +8,7 @@ import { useFlag } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
+import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -16,6 +17,7 @@ import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-sentinel-shield.svg';
 
 import { DrawerAppSection } from '../../shared';
+import { sendSecurityCenterReport } from '../securityCenterTelemetry';
 import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 
 const ProtonSentinel = () => {
@@ -44,9 +46,21 @@ const ProtonSentinel = () => {
             setLoadingSentinel(true);
             if (newHighSecurityState) {
                 await api(enableHighSecurity());
+                void sendSecurityCenterReport(api, {
+                    event: TelemetrySecurityCenterEvents.proton_sentinel_toggle,
+                    dimensions: {
+                        action: 'enable',
+                    },
+                });
                 createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been enabled` });
             } else {
                 await api(disableHighSecurity());
+                void sendSecurityCenterReport(api, {
+                    event: TelemetrySecurityCenterEvents.proton_sentinel_toggle,
+                    dimensions: {
+                        action: 'disable',
+                    },
+                });
                 createNotification({ text: c('Notification').t`${PROTON_SENTINEL_NAME} has been disabled` });
             }
             await call();

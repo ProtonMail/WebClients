@@ -17,6 +17,7 @@ interface Props {
     isDismissible?: boolean;
     className?: string;
     onDismiss?: () => void;
+    onClick?: () => void;
 }
 
 const AccountSecurityCard = ({
@@ -28,6 +29,7 @@ const AccountSecurityCard = ({
     path,
     className,
     onDismiss,
+    onClick,
 }: Props) => {
     // Translator: "Warning" and "Important note" are alternatives for some icons (for blind users)
     const iconAltText = critical ? c('Info').t`Warning` : c('Info').t`Important note`;
@@ -40,6 +42,7 @@ const AccountSecurityCard = ({
                     className
                 )}
                 path={path}
+                onClick={onClick}
             >
                 <span className="flex flex-nowrap items-start">
                     <span className="ratio-square rounded flex security-card-icon-container relative">
