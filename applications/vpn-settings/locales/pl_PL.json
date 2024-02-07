@@ -768,12 +768,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Bezpieczne przeglądanie i funkcje VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Przepraszamy, ta oferta nie jest dostępna w ramach bieżącego planu."
       ],
@@ -2832,9 +2826,6 @@
         "${ number } serwerów",
         "${ number } serwerów"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "Plan ${ plan } został usunięty. Pakiet oferty nie jest dostępny w planie miesięcznym."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -3035,9 +3026,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
-      ],
-      "Cancel anytime": [
-        "Anuluj w dowolnym momencie"
       ],
       "Can’t access your recovery email?": [
         "Nie masz dostępu do adresu pomocniczego?"
@@ -5067,6 +5055,9 @@
       "Autofill credit cards (coming soon)": [
         "Autouzupełnianie kart płatniczych (wkrótce)"
       ],
+      "Automatic email forwarding": [
+        "Automatyczne przekierowanie"
+      ],
       "Available on all platforms": [
         "Dostępny na wszystkie platformy"
       ],
@@ -5872,21 +5863,10 @@
         "Ulepsz plan"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Szyfrowany end-to-end"
-      ],
-      "Open source": [
-        "Otwarty kod źródłowy"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
-      ],
-      "Swiss based": [
-        "Ulokowany w Szwajcarii"
-      ]
-    },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Porozmawiajmy"
+      ],
       "Limited time offer": [
         "Oferta ograniczona czasowo"
       ],
@@ -5895,14 +5875,23 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Bonusy ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } miesięcznie"
       ],
+      "/month /user": [
+        "/ użytkownika miesięcznie"
+      ],
+      "/month /user, billed annually": [
+        "/ użytkownika miesięcznie, płatne rocznie"
+      ],
+      "/month /user, billed biennially": [
+        "/ użytkownika miesięcznie, płatne co 2 lata"
+      ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "Current plan": [
+        "Obecny plan"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
@@ -5919,12 +5908,6 @@
       "Includes:": [
         "Zawiera:"
       ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
-      ],
-      "Open-source and audited": [
-        "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
-      ],
       "per month": [
         "miesięcznie"
       ],
@@ -5940,20 +5923,11 @@
       "Preparing your Recovery Kit": [
         "Przygotowywanie zestawu odzyskiwania"
       ],
-      "Protected by Swiss privacy laws": [
-        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
-      ],
       "Updating your account": [
         "Aktualizowanie konta"
       ],
       "Verifying your payment": [
         "Weryfikowanie płatności"
-      ],
-      "Works on all devices": [
-        "Działa na wszystkich urządzeniach"
-      ],
-      "You currently have": [
-        "Obecnie masz"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5964,6 +5938,9 @@
     "passwordless": {
       "All administrators will get access to the key.": [
         "Wszyscy administratorzy uzyskają dostęp do klucza."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Czy na pewno chcesz zmienić klucz organizacji?"
       ],
       "Change organization key": [
         "Zmień klucz organizacji"
@@ -5981,7 +5958,7 @@
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
       "Reset organization key": [
-        "Resetuj klucze organizacji"
+        "Resetuj klucz organizacji"
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
@@ -7054,6 +7031,9 @@
       ],
       "Address added": [
         "Adres został dodany"
+      ],
+      "Administrator privileges restored": [
+        "Uprawnienia administratora zostały przywrócone"
       ],
       "Bug reported": [
         "Błąd został zgłoszony"
