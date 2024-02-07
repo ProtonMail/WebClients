@@ -43,11 +43,12 @@ const CheckListItem = ({
             disabled={disabled}
             onClick={() => onClick?.()}
             className={clsx(
-                'flex flex-nowrap items-center text-left checkList-item border-none',
+                'flex flex-nowrap w-full items-center text-left checkList-item border-none',
                 onClick !== undefined && !disabled ? 'cursor-pointer' : 'cursor-default',
                 smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 w-full' : 'px-4 py-3 rounded-lg gap-3',
                 disabled && 'opacity-50'
             )}
+            type="button"
             style={{
                 ...style,
                 color: smallVariant ? 'var(--text-norm)' : 'var(--optional-promotion-text-color)',
