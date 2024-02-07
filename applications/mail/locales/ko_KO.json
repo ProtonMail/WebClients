@@ -1051,6 +1051,9 @@
       "Trust": [
         "신뢰"
       ],
+      "Trust key": [
+        "키 신뢰하기"
+      ],
       "Trust public key": [
         "공개 키 신뢰하기"
       ],
@@ -3262,8 +3265,20 @@
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
+      "Alias is not valid": [
+        "유효하지 않은 별칭"
+      ],
+      "Alias is required": [
+        "별칭이 필요합니다."
+      ],
       "Alias options could not be resolved": [
         "별명 옵션을 해결할 수 없습니다."
+      ],
+      "Aliases could not be loaded": [
+        "별명을 불러올 수 없습니다."
+      ],
+      "An error occurred while saving alias": [
+        "별명 저장 중 오류가 발생했습니다."
       ],
       "Attachments are limited to 25 MB": [
         "첨부 파일은 최대 25 MB로 제한되어 있습니다"
@@ -3426,6 +3441,9 @@
       ],
       "Missing signature": [
         "서명 없음"
+      ],
+      "Name is required": [
+        "이름이 필요합니다"
       ],
       "Network error: Please check your connection and try again.": [
         "네트워크 오류: 연결 상태를 확인한 후 다시 시도해 주세요."
@@ -4467,6 +4485,9 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Security Center": [
+        "보안 센터"
       ]
     },
     "Hint": {
@@ -5002,6 +5023,12 @@
       "Are you sure you want to discard your import?": [
         "정말로 불러오기를 취소하시겠어요?"
       ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "이 위치의 모든 메시지를 보관함으로 이동하시겠습니까?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "이 위치의 모든 메시지를 휴지통으로 이동하시겠습니까?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "${ count } 개 대화를 영구적으로 삭제하시겠습니까?"
       ],
@@ -5313,6 +5340,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
+      ],
+      "Important note": [
+        "중요 사항"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
@@ -5980,6 +6010,9 @@
       "Version ${ appVersion }": [
         "버전 ${ appVersion }"
       ],
+      "Warning": [
+        "경고"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "사과드립니다. 저희 측에서 실수했습니다. 이 이메일을 합법적인 것으로 표시하고 싶은지 확인하시겠습니까?"
       ],
@@ -6436,6 +6469,9 @@
       "Add image URL": [
         "이미지 URL 추가"
       ],
+      "Add title": [
+        "제목 추가"
+      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -6615,9 +6651,6 @@
       ],
       "Frequency": [
         "빈도"
-      ],
-      "From (senders in message print header)": [
-        "보낸 사람: (메시지 프린트 헤더 속의 보낸 사람)"
       ],
       "From:": [
         "보낸 사람:"
@@ -6876,6 +6909,9 @@
       ],
       "Wonderful": [
         "최고"
+      ],
+      "Your alias": [
+        "내 별칭"
       ],
       "Your password (admin)": [
         "사용자의 비밀번호 (관리자)"
@@ -7949,14 +7985,31 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "모든 별칭"
+      ],
+      "Create alias": [
+        "별칭 만들기"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "예: Amazon, eBay, Etsy"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
+      ],
+      "New alias": [
+        "새 별칭"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 열기"
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "로그 보기"
       ]
     },
     "Select files": {
@@ -8669,6 +8722,9 @@
       "Address verification disabled": [
         "주소 인증 비활성화됨"
       ],
+      "Alias copied to clipboard": [
+        "별칭이 클립보드에 복사됨"
+      ],
       "Bug reported": [
         "버그 신고됨"
       ],
@@ -9155,6 +9211,9 @@
       "Email settings": [
         "이메일 설정"
       ],
+      "Enable 2FA": [
+        "2FA 활성화"
+      ],
       "Enable message content search": [
         "메시지 컨텐츠 검색 활성화"
       ],
@@ -9311,6 +9370,9 @@
       "Moving a snoozed message": [
         "방해 금지 메시지 이동"
       ],
+      "Need more aliases?": [
+        "별칭이 더 필요하신가요?"
+      ],
       "New message": [
         "새 메시지"
       ],
@@ -9394,6 +9456,9 @@
       ],
       "Schedule send": [
         "스케줄 발송"
+      ],
+      "Security center": [
+        "보안 센터"
       ],
       "Select a theme": [
         "테마를 선택하세요"

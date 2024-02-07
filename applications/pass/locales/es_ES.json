@@ -17,6 +17,9 @@
       "Add new item": [
         "Añadir un elemento"
       ],
+      "Admin panel": [
+        "Panel de administración"
+      ],
       "Advanced": [
         "Avanzado"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Crear inicio de sesión"
+      ],
+      "Create new items": [
+        "Crear elementos"
       ],
       "Create note": [
         "Crear nota"
@@ -266,6 +272,9 @@
       "Pin item": [
         "Anclar elemento"
       ],
+      "Recent": [
+        "Recientes"
+      ],
       "Refresh the page": [
         "Actualizar la página"
       ],
@@ -280,6 +289,9 @@
       ],
       "Remove access": [
         "Eliminar el acceso"
+      ],
+      "Remove member": [
+        "Quitar este miembro"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -307,6 +319,9 @@
       ],
       "Send us a message": [
         "Envíanos un mensaje"
+      ],
+      "Set access level": [
+        "Configurar el nivel de acceso"
       ],
       "Share": [
         "Compartir"
@@ -809,6 +824,9 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, concede los permisos necesarios de la extensión."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instala ${ PASS_APP_NAME } para ${ browser.title } para rellenar automaticamente tus inicios de sesión."
+      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "Instala ${ PASS_APP_NAME } para ${ browser.title } para rellenar automaticamente tus inicios de sesión."
       ],
@@ -956,6 +974,9 @@
       ],
       "Select destination vault": [
         "Selecciona la caja fuerte de destino"
+      ],
+      "Select vault to share": [
+        "Seleccione la caja fuerte para compartir"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecciona dónde quieres guardar tus cajas fuertes importadas."
@@ -1290,6 +1311,15 @@
       "Logins": [
         "Inicios de sesión"
       ],
+      "Make all admins": [
+        "Promover a todos como administradores"
+      ],
+      "Make all editors": [
+        "Promover a todos como editores"
+      ],
+      "Make all viewers": [
+        "Promover a todos como lectores"
+      ],
       "Members": [
         "Miembros"
       ],
@@ -1618,6 +1648,9 @@
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
+      "Create a vault": [
+        "Crear una caja fuerte"
+      ],
       "Create PIN code": [
         "Crear un código PIN"
       ],
@@ -1636,6 +1669,9 @@
       "Enter your PIN": [
         "Introduce tu código PIN"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Grant permissions": [
         "Conceder permisos"
       ],
@@ -1645,6 +1681,12 @@
       "Import to vault(s)": [
         "Importar a las cajas fuertes"
       ],
+      "Import your data": [
+        "Importa tus datos"
+      ],
+      "Install extension": [
+        "Instalar la extensión"
+      ],
       "Leave vault ?": [
         "¿Dejar la caja fuerte?"
       ],
@@ -1653,6 +1695,9 @@
       ],
       "Member limit": [
         "Límite de miembros"
+      ],
+      "Members": [
+        "Miembros"
       ],
       "Move all items ?": [
         "¿Mover todos los elementos?"
@@ -1672,6 +1717,9 @@
       "Pinned (${ items.length })": [
         "Anclados (${ items.length })"
       ],
+      "Review and share": [
+        "Revisar y compartir"
+      ],
       "Secure your data": [
         "Asegura tus datos"
       ],
@@ -1684,6 +1732,9 @@
       "Share with": [
         "Compartir con"
       ],
+      "Suggestions": [
+        "Sugerencias"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -1692,6 +1743,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "Vault": [
+        "Caja fuerte"
       ],
       "Vault shared with you": [
         "caja fuerte compartida contigo"
@@ -1778,6 +1832,9 @@
       ],
       "No password manager selected": [
         "No has seleccionado ningún gestor de contraseñas."
+      ],
+      "No results": [
+        "Sin resultados"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos."

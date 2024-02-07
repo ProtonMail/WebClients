@@ -1392,12 +1392,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Navigazione sicura e funzionalità VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Scusa, questa offerta non è disponibile con il tuo piano attuale."
       ],
@@ -5820,9 +5814,6 @@
         "${ numberOfNonPrivateKeys } file caricato non è una chiave privata valida. Verifica e riprova.",
         "${ numberOfNonPrivateKeys } file caricati non sono chiavi private valide. Si prega di verificare e riprovare."
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } rimosso. Pacchetto offerta non disponibile su un piano di 1 mese."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
@@ -10121,6 +10112,9 @@
       "Autofill credit cards (coming soon)": [
         "Compilazione automatica carte di credito (prossimamente)"
       ],
+      "Automatic email forwarding": [
+        "Inoltro automatico delle email"
+      ],
       "Available on all platforms": [
         "Disponibile su tutte le piattaforme"
       ],
@@ -10386,17 +10380,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10490,6 +10473,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10589,6 +10583,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Ti permette di impostare risposte automatiche per i messaggi in arrivo"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Inoltra automaticamente le email inviate al tuo account ${ MAIL_APP_NAME } a qualsiasi altro indirizzo email."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'invio massiccio di email promozionali o programmatiche non è attualmente supportato. Consigliamo di utilizzare un fornitore di servizi email dedicato per questo caso d'uso."
@@ -11538,9 +11535,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Hai già accesso alle funzionalità premium di ${ appName }: non è necessario effettuare nuovamente l'acquisto."
-      ],
-      "You currently have": [
-        "Al momento hai"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Sei stato invitato a unirti a ${ PASS_APP_NAME }"

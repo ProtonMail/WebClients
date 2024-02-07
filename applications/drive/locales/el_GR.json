@@ -568,6 +568,9 @@
       "Save": [
         "Αποθήκευση"
       ],
+      "Save and copy alias": [
+        "Αποθήκευση και αντιγραφή ψευδωνύμου"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -1950,17 +1953,26 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "Το 2FA προσθέτει ένα επιπλέον επίπεδο ασφαλείας, αποτρέποντας τη μη εξουσιοδοτημένη πρόσβαση."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται διαγραφή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Σχεδιασμένο για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
@@ -1971,8 +1983,17 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Εξοικονομήστε χρόνο στέλνοντας μηνύματα ηλεκτρονικού ταχυδρομείου ή προσκλήσεις σε όλους ταυτόχρονα, ένα premium χαρακτηριστικό μεταξύ πολλών άλλων. Αναβαθμίστε σήμερα."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Ορίστε μια μέθοδο ανάκτησης δεδομένων για να αποτρέψετε την απώλεια δεδομένων."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Ορίστε μια μέθοδο ανάκτησης, για να αποτρέψετε την απώλεια πρόσβασης στον λογαριασμό σας."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Αναβαθμίστε τον λογαριασμό σας για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }, την πρωτοποριακή λύση ασφάλειας που βασίζεται στην τεχνητή νοημοσύνη με αποκλειστική 24/7 εξειδικευμένη υποστήριξη."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
@@ -1982,6 +2003,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί και το 2FA είναι ενεργοποιημένο."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
       ]
     },
     "description": {
@@ -2112,8 +2139,23 @@
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
+      "Alias is not valid": [
+        "Το ψευδώνυμο δεν είναι έγκυρο"
+      ],
+      "Alias is required": [
+        "Απαιτείται ψευδώνυμο"
+      ],
       "Alias options could not be resolved": [
         "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
+      ],
+      "Aliases could not be loaded": [
+        "Τα ψευδώνυμα δεν μπορούν να φορτωθούν"
+      ],
+      "An error occurred while loading alias options": [
+        "Παρουσιάστηκε σφάλμα κατά τη φόρτωση επιλογών ψευδωνύμου"
+      ],
+      "An error occurred while saving alias": [
+        "Παρουσιάστηκε σφάλμα κατά την αποθήκευση του ψευδώνυμου."
       ],
       "Authentication canceled.": [
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
@@ -2195,6 +2237,9 @@
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
+      "Forward address is required": [
+        "Απαιτείται η διεύθυνση προώθησης"
+      ],
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
       ],
@@ -2237,6 +2282,9 @@
       ],
       "Missing signature": [
         "Λείπει η υπογραφή"
+      ],
+      "Name is required": [
+        "Απαιτείται όνομα"
       ],
       "No calendars found to import": [
         "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
@@ -2928,6 +2976,9 @@
     "Header": {
       "Contacts": [
         "Επαφές"
+      ],
+      "Security Center": [
+        "Κέντρο Ασφαλείας"
       ]
     },
     "Hint": {
@@ -3387,6 +3438,9 @@
         "Όλες (${ totalFoldersCount } ετικέτα)",
         "Όλες (${ totalFoldersCount } ετικέτες)"
       ],
+      "All encrypted files": [
+        "Όλα τα κρυπτογραφημένα αρχεία"
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
       ],
@@ -3588,6 +3642,9 @@
       "Downloading": [
         "Λήψη"
       ],
+      "Downloading all encrypted files": [
+        "Λήψη όλων των κρυπτογραφημένων αρχείων"
+      ],
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
@@ -3743,8 +3800,14 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Σημαντική σημείωση"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Εν τω μεταξύ, εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Δεικτοδότηση στοιχείων: ${ esProgress } από ${ totalProgressToShow }"
@@ -4033,6 +4096,16 @@
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } αρχείο λήφθηκε με ασφάλεια",
+        "${ nbFile } αρχεία λήφθηκαν με ασφάλεια"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Ασφαλής λήψη όλων των κρυπτογραφημένων αρχείων"
+      ],
+      "Securely downloaded all files": [
+        "Όλα τα αρχεία λήφθηκαν με ασφάλεια"
+      ],
       "Select a folder to move to.": [
         "Επιλέξτε ένα φάκελο στον οποίο θέλετε να μετακινήσετε τα δεδομένα."
       ],
@@ -4074,6 +4147,9 @@
       ],
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δε βρέθηκε"
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Εγγραφείτε για τον δικό σας λογαριασμό ${ DRIVE_APP_NAME } και προστατέψτε τα δεδομένα σας με κρυπτογράφηση από άκρο σε άκρο και μοιραστείτε τα με ασφάλεια."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Η υπογραφή δεν μπορεί να επικυρωθεί λόγω σφάλματος δικτύου, δοκιμάστε ξανά αργότερα."
@@ -4126,6 +4202,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την κρυπτογράφηση από άκρο σε άκρο. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την κρυπτογράφηση από άκρο σε άκρο."
       ],
+      "The vault your alias will be stored in.": [
+        "Η κρύπτη στην οποία θα αποθηκευτεί το ψευδώνυμό σας."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Υπάρχουν ακόμη αρχεία που χρειάζονται μεταφορά. Το κλείσιμο του διαχειριστή μεταφορών θα τερματίσει όλες τις εργασίες."
       ],
@@ -4140,6 +4219,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Αυτό το αρχείο ενδέχεται να έχει διαγραφεί, μετακινηθεί ή να μην είναι διαθέσιμο. Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του αρχείου."
+      ],
+      "This item already exists in your library": [
+        "Αυτό το στοιχείο υπάρχει ήδη στη βιβλιοθήκη σας"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
@@ -4277,6 +4359,9 @@
       "Want to sync files faster?": [
         "Θέλετε να συγχρονίσετε αρχεία πιο γρήγορα;"
       ],
+      "Warning": [
+        "Προειδοποίηση"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Συγχαρητήρια, μόλις διπλασιάσατε τον δωρεάν αποθηκευτικό χώρο σας!"
       ],
@@ -4385,6 +4470,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο ${ BRAND_NAME }."
+      ],
+      "Your download is in progress": [
+        "Η λήψη σας βρίσκεται σε εξέλιξη"
       ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -4506,6 +4594,9 @@
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
+      ],
+      "Add title": [
+        "Προσθέστε τίτλο"
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
@@ -4922,6 +5013,9 @@
       "Yes, I want to permanently delete my old files": [
         "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
       ],
+      "Your alias": [
+        "Το ψευδώνυμο σας"
+      ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ]
@@ -5075,8 +5169,14 @@
       "3GPP2 audio/video container": [
         "Κοντέινερ ήχου/βίντεο 3GPP2"
       ],
+      "7-zip archive": [
+        "Αρχείο 7-zip"
+      ],
       "AAC audio": [
         "Ήχος AAC"
+      ],
+      "AbiWord document": [
+        "Έγγραφο AbiWord"
       ],
       "Adobe Portable Document Format (PDF)": [
         "Adobe Portable Document Format (PDF)"
@@ -5087,6 +5187,9 @@
       "Apple Installer Package": [
         "Πακέτο Apple Installer"
       ],
+      "Archive document": [
+        "Αρχειοθετημένο έγγραφο"
+      ],
       "Audio file": [
         "Αρχείο ήχου"
       ],
@@ -5096,8 +5199,29 @@
       "Binary data": [
         "Binary data"
       ],
+      "BZip archive": [
+        "Αρχείο BZip"
+      ],
+      "BZip2 archive": [
+        "Αρχείο BZip2"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Cascading Style Sheets (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Comma-separated values (CSV)"
+      ],
       "Flash Video": [
         "Βίντεο Flash"
+      ],
+      "GZip Compressed Archive": [
+        "Συμπιεσμένο Αρχείο GZip"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "HyperText Markup Language (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Προεπεξεργαστής υπερκειμένου (Προσωπική Αρχική Σελίδα)"
       ],
       "iCalendar format": [
         "μορφή iCalendar"
@@ -5105,8 +5229,23 @@
       "Image": [
         "Εικόνα"
       ],
+      "Java Archive (JAR)": [
+        "Αρχείο Java (JAR)"
+      ],
+      "JPEG images": [
+        "Εικόνες JPEG"
+      ],
+      "MP3 audio": [
+        "Ήχος MP3"
+      ],
       "MPEG Video": [
         "Βίντεο MPEG"
+      ],
+      "OGG audio": [
+        "Ήχος OGG"
+      ],
+      "OGG video": [
+        "Βίντεο OGG"
       ],
       "OpenDocument spreadsheet document": [
         "Έγγραφο υπολογιστικού φύλλου OpenDocument"
@@ -5114,11 +5253,29 @@
       "OpenDocument text document": [
         "Έγγραφο κειμένου OpenDocument"
       ],
+      "OpenType font": [
+        "Γραμματοσειρά OpenType"
+      ],
+      "Opus audio": [
+        "Ήχος Opus"
+      ],
+      "RAR archive": [
+        "Αρχείο RAR"
+      ],
       "Rich Text Format (RTF)": [
         "Rich Text Format (RTF)"
       ],
       "Small web format (SWF)": [
         "Small web format (SWF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Αρχείο Tape (TAR)"
+      ],
+      "Text": [
+        "Κείμενο"
+      ],
+      "TrueType Font": [
+        "Γραμματοσειρά TrueType"
       ],
       "Unknown file": [
         "Άγνωστο αρχείο"
@@ -5131,6 +5288,12 @@
       ],
       "WEBM video": [
         "Βίντεο WEBM"
+      ],
+      "WEBP image": [
+        "Εικόνα WEBP"
+      ],
+      "ZIP archive": [
+        "Αρχείο ZIP"
       ]
     },
     "Modal title": {
@@ -5722,14 +5885,54 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Όλα τα ψευδώνυμα"
+      ],
+      "Create alias": [
+        "Δημιουργία ψευδώνυμου"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "π.χ., Amazon, eBay, Etsy"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Δημιουργήστε ψευδώνυμα εν κινήσει και διαχειριστείτε εύκολα τα ψευδώνυμα και τους κωδικούς πρόσβασής σας."
+      ],
+      "Get an alias": [
+        "Λήψη ψευδωνύμου"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Τα ψευδώνυμα Hide-my-email σάς επιτρέπουν να εγγράφεστε για πράγματα στο διαδίκτυο χωρίς να μοιράζεστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Νέο ψευδώνυμο"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Άνοιγμα ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Προστατέψτε την ηλεκτρονική σας ταυτότητα"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Δοκιμάστε το ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Προσθέστε ένα όνομα και μια σημείωση για να παρακολουθείτε πού τα χρησιμοποιείτε."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Προβολή αρχείων καταγραφής"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Η πρωτοποριακή μας λύση ασφάλειας με γνώμονα την τεχνητή νοημοσύνη, σχεδιασμένη για χρήστες που αναζητούν αυξημένη προστασία για τους λογαριασμούς τους. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Το Sentinel είναι **ενεργό** και προστατεύει τον λογαριασμό σας."
       ]
     },
     "Select files": {
@@ -6223,6 +6426,12 @@
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
+      "Alias copied to clipboard": [
+        "Το ψευδώνυμο αντιγράφηκε στο πρόχειρο"
+      ],
+      "Alias saved and copied": [
+        "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
+      ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
@@ -6567,6 +6776,9 @@
       "Empty trash": [
         "Εκκαθάριση Διαγραμμένων"
       ],
+      "Enable 2FA": [
+        "Ενεργοποίηση 2FA"
+      ],
       "Enable drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
       ],
@@ -6594,6 +6806,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
         "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
+      ],
+      "Get advanced protection": [
+        "Αποκτήστε προηγμένη προστασία"
       ],
       "Groups": [
         "Ομάδες"
@@ -6652,6 +6867,9 @@
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Need more aliases?": [
+        "Χρειάζεστε περισσότερα ψευδώνυμα;"
       ],
       "Night theme": [
         "Σκούρο θέμα"
@@ -6730,6 +6948,9 @@
       ],
       "Searching…": [
         "Γίνεται αναζήτηση…"
+      ],
+      "Security center": [
+        "Κέντρο ασφαλείας"
       ],
       "Select action to take on contact group": [
         "Επιλέξτε ενέργεια για την ομάδα επαφών"
@@ -6853,6 +7074,9 @@
       ],
       "Your 500 MB bonus": [
         "Το 500 MB μπόνους σας"
+      ],
+      "Your account is protected": [
+        "Ο λογαριασμός σας προστατεύεται"
       ],
       "Your changes are not synced yet": [
         "Οι αλλαγές σας δεν έχουν συγχρονιστεί ακόμα"

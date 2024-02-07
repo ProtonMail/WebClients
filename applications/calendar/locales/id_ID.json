@@ -2377,6 +2377,12 @@
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
+      "Alias is not valid": [
+        "Alias tidak valid"
+      ],
+      "Alias is required": [
+        "Alias tidak valid"
+      ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
       ],
@@ -2532,6 +2538,9 @@
       ],
       "Missing signature": [
         "Tanda tangan hilang"
+      ],
+      "Name is required": [
+        "Nama harus diisi"
       ],
       "Name required": [
         "Nama dibutuhkan"
@@ -3275,6 +3284,9 @@
       ],
       "Search": [
         "Pencarian"
+      ],
+      "Security Center": [
+        "Pusat Keamanan"
       ]
     },
     "Hint": {
@@ -3851,6 +3863,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Catatan penting"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
@@ -4114,6 +4129,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Warning": [
+        "Peringatan"
       ],
       "We'll notify you when the import is done.": [
         "Kami akan memberitahukan Anda apabila proses impor telah selesai."
@@ -4388,6 +4406,9 @@
       ],
       "Add image URL": [
         "Tambah URL gambar"
+      ],
+      "Add title": [
+        "Tambah judul"
       ],
       "Add to group": [
         "Tambah ke grup"
@@ -4721,6 +4742,9 @@
       ],
       "Wonderful": [
         "Luar Biasa"
+      ],
+      "Your alias": [
+        "Alias Anda"
       ],
       "Your calendar URL": [
         "URL kalender Anda"
@@ -5643,14 +5667,31 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Semua alias"
+      ],
+      "Create alias": [
+        "Buat alias"
+      ],
+      "Get an alias": [
+        "Dapatkan alias"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
+      ],
+      "New alias": [
+        "Alias ​​baru"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Buka ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Tampilkan catatan"
       ]
     },
     "Select files": {
@@ -6577,6 +6618,9 @@
       "Email settings": [
         "Pengaturan surel"
       ],
+      "Enable 2FA": [
+        "Aktifkan 2FA"
+      ],
       "Encrypted event": [
         "Acara terenkripsi"
       ],
@@ -6634,6 +6678,9 @@
       "Minicalendar": [
         "Kalender mini"
       ],
+      "Need more aliases?": [
+        "Perlu lebih banyak alias?"
+      ],
       "Night theme": [
         "Tema malam"
       ],
@@ -6687,6 +6734,9 @@
       ],
       "Save changes": [
         "Simpan perubahan"
+      ],
+      "Security center": [
+        "Pusat keamanan"
       ],
       "Select a day in the month": [
         "Pilih hari dalam bulan"

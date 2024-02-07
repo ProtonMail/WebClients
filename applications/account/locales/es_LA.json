@@ -1392,12 +1392,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Todos los servicios premium de ${ BRAND_NAME } en una sola y sencilla suscripción."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Navegación segura y funciones VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con su plan actual."
       ],
@@ -5820,9 +5814,6 @@
         "${ numberOfNonPrivateKeys } archivo cargado es una clave privada inválida. Verifique e intente de nuevo.",
         "${ numberOfNonPrivateKeys } archivos cargados son claves privadas inválidas. Verifique e intente de nuevo."
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } fue borrado. La oferta de paquete no está disponible en el plan de 1 mes."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -10115,6 +10106,9 @@
       "Autofill credit cards (coming soon)": [
         "Completado automático de tarjetas de crédito (próximamente)"
       ],
+      "Automatic email forwarding": [
+        "Reenvío de correo automático"
+      ],
       "Available on all platforms": [
         "Disponible en todas las plataformas"
       ],
@@ -10252,6 +10246,9 @@
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
       ],
+      "Require 2FA for organization": [
+        "Requerir 2FA para organización"
+      ],
       "Router support": [
         "Soporte para enrutadores"
       ],
@@ -10285,6 +10282,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integración SSO (próximamente)"
       ],
       "Start protecting your organization": [
         "Comience a proteger su organización"
@@ -10327,6 +10327,9 @@
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Bóvedas compartidas e ilimitadas con permisos de acceso"
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda/volumen ilimitado"
@@ -10378,17 +10381,6 @@
       ],
       "Team management": [
         "Gestión de equipos"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Su prueba termina el ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10486,6 +10478,17 @@
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Su prueba termina el ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -10514,6 +10517,9 @@
       ],
       "terms and conditions": [
         "términos y condiciones"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "El nombre de la organización será visible para sus usuarios mientras estén conectados."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Para comenzar, elija un nombre para mostrar. Esto es lo que la gente verá cuando envíe un correo electrónico, los invite a un evento o comparta un archivo."
@@ -10580,6 +10586,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Le permite responder automáticamente (autorrespuestas) a los mensajes que recibe"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Reenvía correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
@@ -11293,6 +11302,9 @@
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Solicitar una prueba gratuita"
+      ],
       "Start using ${ appName }": [
         "Comenzar a usar ${ appName }"
       ],
@@ -11326,6 +11338,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Continuar con su cuenta de ${ BRAND_NAME }"
+      ],
+      "Let's talk": [
+        "Hablemos"
       ],
       "Limited time offer": [
         "Oferta por tiempo limitado"
@@ -11362,8 +11377,23 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mes"
       ],
+      "/month /user": [
+        "/mes /usuario"
+      ],
+      "/month /user, billed annually": [
+        "/mes /usuario, facturación anual"
+      ],
+      "/month /user, billed biennially": [
+        "/mes /usuario, facturación bienal"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Protección avanzada que va más allá del estándar industrial"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos los servicios premium de ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Con sede en Suiza y conforme al RGPD"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puede obtener ${ discount } de descuento al mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
@@ -11382,6 +11412,9 @@
       ],
       "Creating your account": [
         "Creando su cuenta"
+      ],
+      "Current plan": [
+        "Plan actual"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubra ${ PASS_APP_NAME },${ br }nuestro nuevo gestor cifrado de contraseñas."
@@ -11404,6 +11437,15 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Ingrese un nombre a mostrar para **${ username }**. Esto es lo que verán sus usuarios cuando cambie sus permisos o comparta información con ellos."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Protección esencial y colaboración segura para usuarios ilimitados"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Todo en el plan ${ planTitle } además de..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
       ],
@@ -11416,11 +11458,20 @@
       "Free forever": [
         "Gratis para siempre"
       ],
+      "From the team that knows encryption": [
+        "Del equipo que conoce de cifrado"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenga ${ appName } para ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Obtenga ${ appName } para ${ browserName } próximamente"
+      ],
+      "Get in touch with our sales team": [
+        "Póngase en contacto con nuestro equipo de ventas"
+      ],
+      "Get the security and features your business needs": [
+        "Obtenga la seguridad y funciones que necesita su negocio"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Los alias hide-my-email protegen su correo electrónico de las filtraciones de datos."
@@ -11449,11 +11500,20 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Únase a más de 100 millones de personas que han elegido ${ BRAND_NAME } para su seguridad en línea"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Únase a más de 500 000 organizaciones que confían en ${ BRAND_NAME }"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "¡Oferta de tiempo limitado: obtenga ${ title } por ${ price } por usuario mensualmente!"
+      ],
       "One easy subscription.": [
         "Una suscripción sin complicaciones."
+      ],
+      "Open source and audited": [
+        "De código abierto y auditado"
       ],
       "Open-source and audited": [
         "Código abierto y auditoría"
@@ -11479,11 +11539,17 @@
       "Save your recovery kit to continue": [
         "Guarde su kit de recuperación para continuar"
       ],
+      "Setting up your organization": [
+        "Configurando su organización"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sesión en ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "¡Oferta especial de lanzamiento: obtenga ${ title } por ${ price } para siempre!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Soluciones a la medida para organizaciones más grandes con necesidades personalizadas."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "La oferta que ha seleccionado no se encuentra disponible para los suscriptores de ${ currentPlanTitle }."
@@ -11508,9 +11574,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Dispone de acceso a las funciones premium de ${ appName }, no es necesaria ninguna compra adicional."
-      ],
-      "You currently have": [
-        "Actualmente tiene"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Recibió una invitación para unirse a ${ PASS_APP_NAME }"
@@ -11537,6 +11600,14 @@
       ],
       "Secure your account": [
         "Proteja su cuenta"
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Para empresas"
+      ],
+      "For invididuals": [
+        "Para individuales"
       ]
     },
     "passwordless": {
@@ -12420,6 +12491,9 @@
       ],
       "Email address": [
         "Dirección de correo"
+      ],
+      "Organization name": [
+        "Nombre de la organización"
       ],
       "Password": [
         "Contraseña"

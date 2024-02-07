@@ -17,6 +17,9 @@
       "Add new item": [
         "Legg til nytt element"
       ],
+      "Admin panel": [
+        "Administrasjonspanel"
+      ],
       "Advanced": [
         "Avansert"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Opprett pålogging"
+      ],
+      "Create new items": [
+        "Opprett nye elementer"
       ],
       "Create note": [
         "Opprett notat"
@@ -266,6 +272,9 @@
       "Pin item": [
         "Fest element"
       ],
+      "Recent": [
+        "Nylig"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -280,6 +289,9 @@
       ],
       "Remove access": [
         "Fjern tilgang"
+      ],
+      "Remove member": [
+        "Fjern medlem"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -307,6 +319,9 @@
       ],
       "Send us a message": [
         "Send oss en melding"
+      ],
+      "Set access level": [
+        "Sett tilgangsnivå"
       ],
       "Share": [
         "Del"
@@ -418,11 +433,18 @@
       "Auto-lock could not be disabled": [
         "Autolås kunne ikke deaktiveres"
       ],
+      "Cannot send invitation at the moment": [
+        "Kan ikke sende invitasjon for øyeblikket",
+        "Kan ikke sende invitasjoner for øyeblikket"
+      ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
       ],
       "Could not leave vault.": [
         "Kunne ikke forlate hvelvet."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunne ikke laste inn anbefalinger for øyeblikket."
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
@@ -670,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } invitasjoner sendt"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -729,6 +754,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Autolås deaktivert"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Ta med eksisterende passord til ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Innebygget 2FA-autentisering"
@@ -790,6 +818,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Genererte passord vil bli lagret i en periode på én dag."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Få mest mulig ut av Pass ved å opprette et hvelv for hvert team eller prosjekt."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få ubegrensede aliaser, nyt eksklusive funksjoner og støtt oss ved å abonnere på Pass Plus."
       ],
@@ -809,6 +840,9 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, vennligst gi de nødvendige utvidelsestillatelsene."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine."
+      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine. "
       ],
@@ -817,6 +851,9 @@
       ],
       "Invitation sent": [
         "Invitasjon sendt"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Inviter bestemte personer og angi de riktige tillatelsene."
       ],
       "Invite successfully removed": [
         "Invitasjon fjernet"
@@ -956,6 +993,9 @@
       ],
       "Select destination vault": [
         "Velg destinasjonshvelv"
+      ],
+      "Select vault to share": [
+        "Velg hvelv å dele"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Velg hvor du ønsker det/de importerte hvelvet(ene) skal lagres."
@@ -1290,6 +1330,15 @@
       "Logins": [
         "Pålogginger"
       ],
+      "Make all admins": [
+        "Gjør alle administratorer"
+      ],
+      "Make all editors": [
+        "Gjør alle redaktører"
+      ],
+      "Make all viewers": [
+        "Gjør alle seere"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -1618,6 +1667,9 @@
       "Confirm PIN code": [
         "Bekreft PIN-kode"
       ],
+      "Create a vault": [
+        "Opprett et hvelv"
+      ],
       "Create PIN code": [
         "Opprett PIN-kode"
       ],
@@ -1636,6 +1688,9 @@
       "Enter your PIN": [
         "Skriv inn PIN-koden din"
       ],
+      "Get Started": [
+        "Kom i gang"
+      ],
       "Grant permissions": [
         "Gi tillatelser"
       ],
@@ -1645,6 +1700,12 @@
       "Import to vault(s)": [
         "Importer til hvelv"
       ],
+      "Import your data": [
+        "Importer dine data"
+      ],
+      "Install extension": [
+        "Installer utvidelse"
+      ],
       "Leave vault ?": [
         "Forlate hvelvet?"
       ],
@@ -1653,6 +1714,9 @@
       ],
       "Member limit": [
         "Medlemsgrense"
+      ],
+      "Members": [
+        "Medlemmer"
       ],
       "Move all items ?": [
         "Flytte alle elementer?"
@@ -1672,6 +1736,9 @@
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
       ],
+      "Review and share": [
+        "Se over og del"
+      ],
       "Secure your data": [
         "Sikre dataene dine"
       ],
@@ -1681,8 +1748,14 @@
       "Settings": [
         "Innstillinger"
       ],
+      "Share vaults with your team": [
+        "Del hvelv med teamet ditt"
+      ],
       "Share with": [
         "Del med"
+      ],
+      "Suggestions": [
+        "Forslag"
       ],
       "Transfer ownership": [
         "Overfør eierskap"
@@ -1692,6 +1765,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "Vault": [
+        "Hvelv"
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
@@ -1742,11 +1818,20 @@
       "An error occured while exporting your data": [
         "Det oppstod en feil under eksport av dataene dine"
       ],
+      "At least one email address is required": [
+        "Minst én e-postadresse kreves"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postbokser for dette aliaset akkurat nå."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke opprette hvelv \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunne ikke sende invitasjoner til følgende adresser:"
+      ],
+      "Duplicate email addresses.": [
+        "Dupliserte e-postadresser."
       ],
       "Empty note": [
         "Tomt notat"
@@ -1756,6 +1841,9 @@
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"
+      ],
+      "Invalid email addresses.": [
+        "Ugyldige e-postadresser"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",
@@ -1778,6 +1866,9 @@
       ],
       "No password manager selected": [
         "Ingen passordbehandler valgt"
+      ],
+      "No results": [
+        "Ingen resultater"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."

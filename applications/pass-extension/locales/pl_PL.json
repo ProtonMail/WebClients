@@ -507,6 +507,9 @@
         "Nie można wysłać zaproszeń",
         "Nie można wysłać zaproszeń"
       ],
+      "Cannot send invitations at the moment": [
+        "Nie można wysłać zaproszeń"
+      ],
       "Could not confirm this invite at the moment": [
         "Zaproszenie nie może zostać potwierdzone"
       ],
@@ -2091,6 +2094,9 @@
       "An error occured while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
       ],
+      "At least one email address is required": [
+        "Wymagany jest co najmniej jeden adres e-mail"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
       ],
@@ -2113,7 +2119,7 @@
         "Przedrostek aliasu jest nieprawidłowy"
       ],
       "Invalid email addresses.": [
-        "Adres e-mail jest nieprawidłowy."
+        "Adresy e-mail są nieprawidłowe."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksymalna długość to ${ maxLength } znak",

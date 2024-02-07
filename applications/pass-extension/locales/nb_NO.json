@@ -308,6 +308,9 @@
       "Pin item": [
         "Fest element"
       ],
+      "Recent": [
+        "Nylig"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Fjern tilgang"
+      ],
+      "Remove member": [
+        "Fjern medlem"
       ],
       "Request a feature": [
         "Be om en funksjon"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Send oss en melding"
+      ],
+      "Set access level": [
+        "Sett tilgangsnivå"
       ],
       "Share": [
         "Del"
@@ -492,11 +501,18 @@
       "Cannot create alias (${ error }).": [
         "Kan ikke opprette alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kan ikke sende invitasjon for øyeblikket",
+        "Kan ikke sende invitasjoner for øyeblikket"
+      ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
       ],
       "Could not leave vault.": [
         "Kunne ikke forlate hvelvet."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunne ikke laste inn anbefalinger for øyeblikket."
       ],
       "Could not open created vault": [
         "Kunne ikke åpne opprettet hvelv"
@@ -758,6 +774,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } invitasjoner sendt"
       ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
@@ -1503,6 +1522,15 @@
       "Logins": [
         "Pålogginger"
       ],
+      "Make all admins": [
+        "Gjør alle administratorer"
+      ],
+      "Make all editors": [
+        "Gjør alle redaktører"
+      ],
+      "Make all viewers": [
+        "Gjør alle seere"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -1878,6 +1906,9 @@
       "Fill & copy password": [
         "Fyll ut & kopier passord"
       ],
+      "Get Started": [
+        "Kom i gang"
+      ],
       "Get the mobile apps": [
         "Få mobilappene"
       ],
@@ -1905,6 +1936,9 @@
       "Member limit": [
         "Medlemsgrense"
       ],
+      "Members": [
+        "Medlemmer"
+      ],
       "Move all items ?": [
         "Flytte alle elementer?"
       ],
@@ -1929,6 +1963,9 @@
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
       ],
+      "Review and share": [
+        "Se over og del"
+      ],
       "Secure your data": [
         "Sikre dataene dine"
       ],
@@ -1937,6 +1974,9 @@
       ],
       "Share with": [
         "Del med"
+      ],
+      "Suggestions": [
+        "Forslag"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Bytte til ${ PASS_APP_NAME }?"
@@ -1961,6 +2001,9 @@
       ],
       "Use my email": [
         "Bruk min e-post"
+      ],
+      "Vault": [
+        "Hvelv"
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
@@ -2014,11 +2057,20 @@
       "An error occured while exporting your data": [
         "Det oppstod en feil under eksport av dataene dine"
       ],
+      "At least one email address is required": [
+        "Minst én e-postadresse kreves"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postbokser for dette aliaset akkurat nå."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke opprette hvelv \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunne ikke sende invitasjoner til følgende adresser:"
+      ],
+      "Duplicate email addresses.": [
+        "Dupliserte e-postadresser."
       ],
       "Empty note": [
         "Tomt notat"
@@ -2028,6 +2080,9 @@
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"
+      ],
+      "Invalid email addresses.": [
+        "Ugyldige e-postadresser"
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal lengde er ${ maxLength } tegn",
@@ -2050,6 +2105,9 @@
       ],
       "No password manager selected": [
         "Ingen passordbehandler valgt"
+      ],
+      "No results": [
+        "Ingen resultater"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
