@@ -218,6 +218,10 @@ export const getShortcuts = () => {
                     keys: 'L',
                 },
                 {
+                    name: c('Keyboard shortcut name').t`Filter`,
+                    keys: 'F',
+                },
+                {
                     name: c('Keyboard shortcut name').t`Move to...`,
                     keys: 'M',
                 },
