@@ -1398,12 +1398,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Bezpieczne przeglądanie i funkcje VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Oferta nie jest dostępna w obecnym planie."
       ],
@@ -5894,9 +5888,6 @@
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "Plan ${ plan } został usunięty. Pakiet oferty nie jest dostępny w planie miesięcznym."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -10319,6 +10310,9 @@
       "Autofill credit cards (coming soon)": [
         "Autouzupełnianie kart płatniczych (wkrótce)"
       ],
+      "Automatic email forwarding": [
+        "Automatyczne przekierowanie"
+      ],
       "Available on all platforms": [
         "Dostępny na wszystkie platformy"
       ],
@@ -10594,17 +10588,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10700,6 +10683,17 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -10728,6 +10722,9 @@
       ],
       "terms and conditions": [
         "regulamin"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Nazwa organizacji będzie widoczna dla użytkowników po zalogowaniu."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Aby rozpocząć, wybierz nazwę wyświetlaną. To właśnie tę nazwę będą widzieć użytkownicy, gdy wyślesz do nich wiadomość, zaprosisz na wydarzenie lub udostępnisz plik."
@@ -11555,6 +11552,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Kontynuuj z kontem ${ BRAND_NAME }"
       ],
+      "Let's talk": [
+        "Porozmawiajmy"
+      ],
       "Limited time offer": [
         "Oferta ograniczona czasowo"
       ],
@@ -11590,6 +11590,15 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } miesięcznie"
       ],
+      "/month /user": [
+        "/ użytkownika miesięcznie"
+      ],
+      "/month /user, billed annually": [
+        "/ użytkownika miesięcznie, płatne rocznie"
+      ],
+      "/month /user, billed biennially": [
+        "/ użytkownika miesięcznie, płatne co 2 lata"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium."
       ],
@@ -11610,6 +11619,9 @@
       ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "Current plan": [
+        "Obecny plan"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Poznaj ${ PASS_APP_NAME },${ br }czyli nasz nowy szyfrowany menedżer haseł"
@@ -11677,6 +11689,9 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Dołącz do ponad 50 000 organizacji, które zaufały usługom ${ BRAND_NAME }"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Uruchamianie ${ PASS_APP_NAME }"
       ],
@@ -11707,6 +11722,9 @@
       "Save your recovery kit to continue": [
         "Zapisz zestaw odzyskiwania, aby kontynuować"
       ],
+      "Setting up your organization": [
+        "Konfiguracja organizacji"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logowanie do ${ PASS_APP_NAME }"
       ],
@@ -11736,9 +11754,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Masz już dostęp do funkcji premium ${ appName }. Nie musisz nic robić."
-      ],
-      "You currently have": [
-        "Obecnie masz"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Masz zaproszenie do ${ PASS_APP_NAME }"
@@ -11771,6 +11786,9 @@
       "All administrators will get access to the key.": [
         "Wszyscy administratorzy uzyskają dostęp do klucza."
       ],
+      "Are you sure you want to change your organization key?": [
+        "Czy na pewno chcesz zmienić klucz organizacji?"
+      ],
       "Change organization key": [
         "Zmień klucz organizacji"
       ],
@@ -11787,7 +11805,7 @@
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
       "Reset organization key": [
-        "Resetuj klucze organizacji"
+        "Resetuj klucz organizacji"
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
@@ -12629,6 +12647,9 @@
       "Email address": [
         "Adres e-mail"
       ],
+      "Organization name": [
+        "Nazwa organizacji"
+      ],
       "Password": [
         "Hasło"
       ],
@@ -13205,6 +13226,9 @@
       ],
       "Address updated": [
         "Adres został zaktualizowany"
+      ],
+      "Administrator privileges restored": [
+        "Uprawnienia administratora zostały przywrócone"
       ],
       "Auto-reply disabled": [
         "Autoresponder został wyłączony"

@@ -1383,12 +1383,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "브라우징을 보호하고 프리미엄 VPN 기능을 누리세요."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
       ],
@@ -5764,9 +5758,6 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 업로드된 파일은 유효한 개인 키가 아닙니다. 확인하고 다시 시도해주세요."
-      ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } 제거되었습니다. 1개월 요금제에는 묶음 상품이 제공되지 않습니다."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
@@ -10240,17 +10231,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10344,6 +10324,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -11365,9 +11356,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "프리미엄 ${ appName } 기능을 이미 사용하고 있습니다. - 다시 구매할 필요가 없습니다."
-      ],
-      "You currently have": [
-        "현재 플랜:"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 가입에 초대되었습니다"
