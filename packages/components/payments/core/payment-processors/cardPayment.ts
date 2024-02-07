@@ -8,7 +8,7 @@ import {
     ChargeablePaymentParameters,
     ChargeablePaymentToken,
     NonChargeablePaymentToken,
-    TokenPaymentMethod,
+    V5PaymentToken,
     WrappedCardPayment,
 } from '../interface';
 import { InvalidDataError, PaymentProcessor } from './paymentProcessor';
@@ -22,9 +22,6 @@ export class InvalidCardDataError extends InvalidDataError {
     constructor(message?: string) {
         super(message);
         this.name = 'InvalidCardDataError';
-
-        // Flag to ignore this error and not send it to Sentry
-        (this as any).ignore = true;
     }
 }
 
@@ -58,16 +55,17 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
          * card to the account, but not use it right away for subscription or top-up.
          */
         private verifyOnly: boolean,
-        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 card: getDefaultCard(),
                 cardSubmitted: false,
             },
-            amountAndCurrency,
-            onTokenIsChargeable
+            amountAndCurrency
         );
+
+        this.onTokenIsChargeable = onTokenIsChargeable;
     }
 
     async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
@@ -106,9 +104,9 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
 
         // Otherwise, actually call the payment verificator. It will typically open a modal and/or a new tab
         // where user needs to confirm the payment.
-        const token: TokenPaymentMethod = await this.verifyPayment({
+        const token: V5PaymentToken = await this.verifyPayment({
             Payment: this.getPaymentParameters().Payment,
-            Token: this.fetchedPaymentToken.Payment.Details.Token,
+            Token: this.fetchedPaymentToken.PaymentToken,
             ApprovalURL: this.fetchedPaymentToken.approvalURL,
             ReturnHost: this.fetchedPaymentToken.returnHost,
             addCardMode: this.verifyOnly,
@@ -143,7 +141,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         return false;
     }
 
-    private tokenCreated(token?: TokenPaymentMethod): ChargeablePaymentParameters {
+    private tokenCreated(token?: V5PaymentToken): ChargeablePaymentParameters {
         const result: ChargeablePaymentParameters = {
             type: PAYMENT_METHOD_TYPES.CARD,
             chargeable: true,
@@ -151,7 +149,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
             ...token,
         };
 
-        this.onTokenIsChargeable?.(result);
+        void this.onTokenIsChargeable?.(result);
 
         return result;
     }

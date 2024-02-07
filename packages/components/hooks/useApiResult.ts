@@ -14,7 +14,8 @@ interface Result<R, U extends any[]> {
 
 const useApiResult = <R, F extends QueryFunction = QueryFunction>(
     fn: QueryFunction,
-    dependencies?: any[]
+    dependencies?: any[],
+    throwOnError = true
 ): Result<R, Parameters<F>> => {
     const request = useApi();
     const { loading, result, error, run } = useAsync(true);
@@ -41,7 +42,7 @@ const useApiResult = <R, F extends QueryFunction = QueryFunction>(
         }
     }, [...hookDependencies]);
 
-    if (error) {
+    if (error && throwOnError) {
         // Throw in render to allow the error boundary to catch it
         throw error;
     }

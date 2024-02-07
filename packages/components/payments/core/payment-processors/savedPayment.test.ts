@@ -1,7 +1,7 @@
 import { MOCK_TOKEN_RESPONSE, addTokensResponse, apiMock } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
-import { AmountAndCurrency, Autopay, SavedPaymentMethod, TokenPaymentMethod } from '../interface';
+import { AmountAndCurrency, Autopay, SavedPaymentMethodInternal, V5PaymentToken } from '../interface';
 import { SavedPaymentProcessor } from './savedPayment';
 
 describe('SavedPaymentProcessor', () => {
@@ -12,7 +12,7 @@ describe('SavedPaymentProcessor', () => {
         Currency: 'USD',
     };
     const onTokenIsChargeable = jest.fn().mockResolvedValue(null);
-    const savedMethod: SavedPaymentMethod = {
+    const savedMethod: SavedPaymentMethodInternal = {
         ID: '123',
         Type: PAYMENT_METHOD_TYPES.CARD,
         Order: 500,
@@ -49,7 +49,8 @@ describe('SavedPaymentProcessor', () => {
         expect(result).toEqual({
             Amount: 1000,
             Currency: 'USD',
-            Payment: { Details: { Token: 'token123' }, Type: 'token' },
+            PaymentToken: 'token123',
+            v: 5,
             chargeable: true,
             type: 'card',
         });
@@ -86,12 +87,8 @@ describe('SavedPaymentProcessor', () => {
                 type: PAYMENT_METHOD_TYPES.CARD,
                 chargeable: true,
                 ...savedPaymentProcessor.amountAndCurrency,
-                Payment: {
-                    Details: {
-                        Token: 'token123',
-                    },
-                    Type: 'token',
-                },
+                PaymentToken: 'token123',
+                v: 5,
             })
         );
         expect(onTokenIsChargeable).toHaveBeenCalledWith(result);
@@ -105,13 +102,9 @@ describe('SavedPaymentProcessor', () => {
             ReturnHost: 'https://proton.me',
         } as any);
 
-        const returnToken: TokenPaymentMethod = {
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: 'token123',
-                },
-            },
+        const returnToken: V5PaymentToken = {
+            PaymentToken: 'token123',
+            v: 5,
         };
         mockVerifyPayment.mockResolvedValue(returnToken);
 
@@ -129,12 +122,8 @@ describe('SavedPaymentProcessor', () => {
                 type: PAYMENT_METHOD_TYPES.CARD,
                 chargeable: true,
                 ...savedPaymentProcessor.amountAndCurrency,
-                Payment: {
-                    Details: {
-                        Token: 'token123',
-                    },
-                    Type: 'token',
-                },
+                PaymentToken: 'token123',
+                v: 5,
             })
         );
         expect(onTokenIsChargeable).toHaveBeenCalledWith(result);

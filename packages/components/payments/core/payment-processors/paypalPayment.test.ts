@@ -44,11 +44,8 @@ describe('PaypalPaymentProcessor', () => {
                 Currency: 'USD',
                 chargeable: true,
                 type: PAYMENT_METHOD_TYPES.PAYPAL,
-                Payment: expect.objectContaining({
-                    Details: {
-                        Token: MOCK_TOKEN_RESPONSE.Token,
-                    },
-                }),
+                PaymentToken: MOCK_TOKEN_RESPONSE.Token,
+                v: 5,
             }),
         });
 
@@ -58,11 +55,7 @@ describe('PaypalPaymentProcessor', () => {
                 Currency: 'USD',
                 chargeable: true,
                 type: PAYMENT_METHOD_TYPES.PAYPAL,
-                Payment: expect.objectContaining({
-                    Details: {
-                        Token: MOCK_TOKEN_RESPONSE.Token,
-                    },
-                }),
+                PaymentToken: MOCK_TOKEN_RESPONSE.Token,
             })
         );
     });
@@ -100,12 +93,8 @@ describe('PaypalPaymentProcessor', () => {
             type: PAYMENT_METHOD_TYPES.PAYPAL,
             ...paymentProcessor.amountAndCurrency,
             chargeable: true,
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: MOCK_TOKEN_RESPONSE.Token,
-                },
-            },
+            PaymentToken: MOCK_TOKEN_RESPONSE.Token,
+            v: 5,
         };
 
         await paymentProcessor.fetchPaymentToken();

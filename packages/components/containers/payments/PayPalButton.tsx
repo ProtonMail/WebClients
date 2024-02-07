@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import { PaymentMethodFlows } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { Currency } from '@proton/shared/lib/interfaces';
-
-import { PaymentMethodFlows } from '../paymentMethods/interface';
 
 export type PayPalButtonProps = ButtonProps & {
     amount: number;

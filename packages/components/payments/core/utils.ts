@@ -1,18 +1,29 @@
 import { PAYMENT_METHOD_TYPES } from './constants';
-import { TokenPayment, TokenPaymentMethod } from './interface';
+import { TokenPaymentMethod, V5PaymentToken } from './interface';
 
-/**
- * Prepare parameters to be sent to API
- */
-export const toTokenPaymentMethod = (Token: string): TokenPaymentMethod => {
-    const Payment: TokenPayment = {
-        Type: PAYMENT_METHOD_TYPES.TOKEN,
-        Details: {
-            Token,
-        },
-    };
-
+export const toV5PaymentToken = (PaymentToken: string): V5PaymentToken => {
     return {
-        Payment,
+        PaymentToken,
+        v: 5,
     };
 };
+
+export function sanitizeV5PaymentToken(data: V5PaymentToken): V5PaymentToken {
+    const sanitizedData: V5PaymentToken = {
+        v: 5,
+        PaymentToken: data.PaymentToken,
+    };
+
+    return sanitizedData;
+}
+
+export function v5PaymentTokenToLegacyPaymentToken(data: V5PaymentToken): TokenPaymentMethod {
+    return {
+        Payment: {
+            Type: PAYMENT_METHOD_TYPES.TOKEN,
+            Details: {
+                Token: data.PaymentToken,
+            },
+        },
+    };
+}
