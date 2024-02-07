@@ -91,7 +91,7 @@ const SubUserCreateModal = ({
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const dispatch = useDispatch();
@@ -166,7 +166,8 @@ const SubUserCreateModal = ({
     };
 
     const handleSubmit = async () => {
-        await save();
+        stop();
+        await save().finally(start);
         await call();
         onClose?.();
         createNotification({ text: c('Success').t`User created` });
