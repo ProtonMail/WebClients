@@ -355,6 +355,7 @@ export class UploadWorker {
                 verificationToken: block.verificationToken,
             })),
             thumbnailBlocks: encryptedThumbnailBlocks?.map((thumbnailBlock) => ({
+                index: thumbnailBlock.index,
                 size: thumbnailBlock.encryptedData.byteLength,
                 hash: thumbnailBlock.hash,
                 type: thumbnailBlock.thumbnailType,
