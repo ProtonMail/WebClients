@@ -58,7 +58,7 @@ const WarningIcon = ({ className }: { className?: string }) => {
 };
 
 export interface Props {
-    onChange: (key: keyof CardModel, value: string) => void;
+    setCardProperty: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
@@ -91,7 +91,7 @@ const useAdvancer = (
 const CreditCard = ({
     card,
     errors,
-    onChange,
+    setCardProperty: onChange,
     loading = false,
     fieldsStatus,
     bigger = false,

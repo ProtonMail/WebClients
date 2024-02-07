@@ -26,6 +26,7 @@ import {
     PlansMap,
     Pricing,
     Subscription,
+    SubscriptionModel,
     SubscriptionPlan,
 } from '../interfaces';
 import { hasBit } from './bitset';
@@ -223,7 +224,7 @@ export const getBaseAmount = (
         }, 0);
 };
 
-export const getPlanIDs = (subscription: Subscription | undefined | null): PlanIDs => {
+export const getPlanIDs = (subscription: Subscription | FreeSubscription | undefined | null): PlanIDs => {
     return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
         acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
@@ -231,7 +232,11 @@ export const getPlanIDs = (subscription: Subscription | undefined | null): PlanI
 };
 
 export const isTrial = (subscription: Subscription | undefined) => {
-    return subscription?.CouponCode === COUPON_CODES.REFERRAL;
+    const isTrialV4 =
+        subscription?.CouponCode === COUPON_CODES.REFERRAL ||
+        subscription?.CouponCode === COUPON_CODES.MEMBER_DOWNGRADE_TRIAL;
+    const isTrialV5 = !!subscription?.IsTrial;
+    return isTrialV4 || isTrialV5;
 };
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {
@@ -294,7 +299,8 @@ export const getIsCustomCycle = (subscription?: Subscription) => {
 };
 
 export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;
-
+export function getNormalCycleFromCustomCycle(cycle: undefined): undefined;
+export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE | undefined;
 export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE | undefined {
     if (!cycle) {
         return undefined;
@@ -305,6 +311,25 @@ export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE |
     if (cycle === CYCLE.THIRTY) {
         return CYCLE.TWO_YEARS;
     }
+    return cycle;
+}
+
+export function getLongerCycle(cycle: CYCLE): CYCLE;
+export function getLongerCycle(cycle: CYCLE | undefined): CYCLE | undefined {
+    if (!cycle) {
+        return undefined;
+    }
+    if (cycle === CYCLE.MONTHLY) {
+        return CYCLE.YEARLY;
+    }
+    if (cycle === CYCLE.YEARLY) {
+        return CYCLE.TWO_YEARS;
+    }
+
+    if (cycle === CYCLE.FIFTEEN || cycle === CYCLE.THIRTY) {
+        return CYCLE.TWO_YEARS;
+    }
+
     return cycle;
 }
 
@@ -604,3 +629,12 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
     return hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription);
 };
+
+export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscription): boolean {
+    return (
+        subscription?.Cycle === CYCLE.TWO_YEARS ||
+        subscription?.Cycle === CYCLE.THIRTY ||
+        subscription?.UpcomingSubscription?.Cycle === CYCLE.TWO_YEARS ||
+        subscription?.UpcomingSubscription?.Cycle === CYCLE.THIRTY
+    );
+}

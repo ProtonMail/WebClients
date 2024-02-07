@@ -65,8 +65,9 @@ const App = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
+                const loader = <LoaderPage />;
                 if (!state.MainContainer || !state.store) {
-                    return <LoaderPage />;
+                    return loader;
                 }
                 return (
                     <ProtonStoreProvider store={state.store}>
@@ -86,6 +87,7 @@ const App = () => {
                                                             hasReadableMemberKeyActivation
                                                             hasMemberKeyMigration
                                                             hasPrivateMemberKeyGeneration
+                                                            loader={loader}
                                                         >
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>

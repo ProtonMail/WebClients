@@ -30,6 +30,12 @@ export enum SessionRecoveryReason {
     AUTHENTICATION = 2,
 }
 
+export enum ChargebeeEnabled {
+    INHOUSE_FORCED = 0,
+    CHARGEBEE_ALLOWED = 1,
+    CHARGEBEE_FORCED = 2,
+}
+
 export interface User {
     ID: string;
     Name: string;
@@ -82,6 +88,7 @@ export interface User {
         Reason: SessionRecoveryReason | null;
         UID: string;
     } | null;
+    ChargebeeUser?: ChargebeeEnabled;
 }
 
 export interface UserModel extends User {

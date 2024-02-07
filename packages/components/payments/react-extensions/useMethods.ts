@@ -1,17 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Api } from '@proton/shared/lib/interfaces';
+import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { Api, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import {
     AvailablePaymentMethod,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
-    PaymentMethodStatus,
+    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentMethods,
+    PaymentsApi,
+    PlainPaymentMethodType,
     SavedPaymentMethod,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
     initializePaymentMethods,
     isExistingPaymentMethod,
+    isSavedPaymentMethodExternal,
+    isSavedPaymentMethodInternal,
 } from '../core';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
@@ -20,9 +27,12 @@ export interface Props {
     amount: number;
     coupon?: string | null;
     flow: PaymentMethodFlows;
-    paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethodStatusExtended?: PaymentMethodStatusExtended;
     paymentMethods?: SavedPaymentMethod[];
     onMethodChanged?: OnMethodChangedHandler;
+    chargebeeEnabled: ChargebeeEnabled;
+    paymentsApi: PaymentsApi;
+    selectedPlanName: PLANS | ADDON_NAMES | undefined;
 }
 
 interface Dependencies {
@@ -37,13 +47,14 @@ export type MethodsHook = {
     allMethods: AvailablePaymentMethod[];
     lastUsedMethod: AvailablePaymentMethod | undefined;
     selectedMethod: AvailablePaymentMethod | undefined;
-    savedSelectedMethod: SavedPaymentMethod | undefined;
+    savedInternalSelectedMethod: SavedPaymentMethodInternal | undefined;
+    savedExternalSelectedMethod: SavedPaymentMethodExternal | undefined;
     selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
     getSavedMethodByID: (id: string | undefined) => SavedPaymentMethod | undefined;
-
-    status: PaymentMethodStatus | undefined;
+    status: PaymentMethodStatusExtended | undefined;
     savedMethods: SavedPaymentMethod[] | undefined;
     isNewPaypal: boolean;
+    isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
 };
 
 type UsedAndNewMethods = {
@@ -51,8 +62,85 @@ type UsedAndNewMethods = {
     newMethods: AvailablePaymentMethod[];
 };
 
+const useInhouseToChargebeeSwitch = ({
+    selectedMethod,
+    availableMethods,
+    isMethodTypeEnabled,
+    selectMethod,
+}: {
+    selectedMethod: AvailablePaymentMethod | undefined;
+    availableMethods: UsedAndNewMethods;
+    isMethodTypeEnabled: (methodType: PlainPaymentMethodType) => boolean;
+    selectMethod: (id?: string) => AvailablePaymentMethod | undefined;
+}) => {
+    // An effect of switches between Chargebee and inhouse in case if inhouse or Chargebee is not available.
+    useEffect(() => {
+        // Kill switch for chargebee card. If the kill switch was activated, we need to make sure that the selected
+        // method is not chargebee card. If it is, we need to select the default card method.
+        {
+            const chargebeeCardSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+            const chargebeeCardNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+
+            const switchToInhouse = chargebeeCardSelected && chargebeeCardNotAvailable;
+            if (switchToInhouse) {
+                selectMethod(PAYMENT_METHOD_TYPES.CARD);
+            }
+        }
+
+        // Reverse switch for the card method. This doesn't cover the scope of a kill-switch per-se, but still acts
+        // in a similar manner. The use case is, for example, Pass Signup page where user can switch between B2C and
+        // B2B on the same page. If user selects B2B, then the in-house card method should will be selected. When user
+        // switches back to B2C, the chargebee card method should be selected.
+        {
+            const cardSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CARD;
+            const cardNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CARD);
+            // Additional check to make sure that the chargebee card method is available.
+            const chargebeeCardAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+
+            const switchToChargebee = cardSelected && cardNotAvailable && chargebeeCardAvailable;
+            if (switchToChargebee) {
+                selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+            }
+        }
+
+        // Kill switch for chargebee paypal. The same same as above.
+        {
+            const chargebeePaypalSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
+            const chargebeePaypalNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+
+            const switchToInhouse = chargebeePaypalSelected && chargebeePaypalNotAvailable;
+            if (switchToInhouse) {
+                selectMethod(PAYMENT_METHOD_TYPES.PAYPAL);
+            }
+        }
+
+        // reverse switch for the paypal method. The same as above.
+        {
+            const paypalSelected = selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL;
+            const paypalNotAvailable = !isMethodTypeEnabled(PAYMENT_METHOD_TYPES.PAYPAL);
+            // Additional check to make sure that the chargebee paypal method is available.
+            const chargebeePaypalAvailable = isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+
+            const switchToChargebee = paypalSelected && paypalNotAvailable && chargebeePaypalAvailable;
+            if (switchToChargebee) {
+                selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
+            }
+        }
+    }, [selectedMethod, availableMethods]);
+};
+
 export const useMethods = (
-    { paymentMethodStatus, paymentMethods, amount, coupon, flow, onMethodChanged }: Props,
+    {
+        paymentMethodStatusExtended,
+        paymentMethods,
+        amount,
+        coupon,
+        flow,
+        onMethodChanged,
+        chargebeeEnabled,
+        paymentsApi,
+        selectedPlanName,
+    }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
@@ -60,6 +148,8 @@ export const useMethods = (
         pendingAmount?: number;
         pendingCoupon?: string | null;
         pendingFlow?: PaymentMethodFlows;
+        pendingChargebee?: ChargebeeEnabled;
+        pendingSelectedPlanName?: PLANS | ADDON_NAMES;
     }>();
 
     const [loading, setLoading] = useState(true);
@@ -69,7 +159,7 @@ export const useMethods = (
     });
     const [selectedMethod, setSelectedMethod] = useState<AvailablePaymentMethod | undefined>();
 
-    const [status, setStatus] = useState<PaymentMethodStatus | undefined>();
+    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>();
     const [savedMethods, setSavedMethods] = useState<SavedPaymentMethod[] | undefined>();
 
     const getComputedMethods = (availableMethodsParam?: UsedAndNewMethods) => {
@@ -100,12 +190,15 @@ export const useMethods = (
         async function run() {
             paymentMethodsRef.current = await initializePaymentMethods(
                 api,
-                paymentMethodStatus,
+                paymentMethodStatusExtended,
                 paymentMethods,
                 isAuthenticated,
                 amount,
                 coupon ?? '',
-                flow
+                flow,
+                chargebeeEnabled,
+                paymentsApi,
+                selectedPlanName
             );
 
             // Initialization might take some time, so we need to check if there is any pending data
@@ -114,7 +207,8 @@ export const useMethods = (
             // Same goes for coupon and flow.
             if (pendingDataRef.current) {
                 // Getting the saved values and clearing the pending right away, because this is a one-time thing
-                const { pendingAmount, pendingCoupon, pendingFlow } = pendingDataRef.current;
+                const { pendingAmount, pendingCoupon, pendingFlow, pendingChargebee, pendingSelectedPlanName } =
+                    pendingDataRef.current;
                 pendingDataRef.current = undefined;
 
                 // Updating the coupon
@@ -129,9 +223,17 @@ export const useMethods = (
                 if (pendingFlow) {
                     paymentMethodsRef.current.flow = pendingFlow;
                 }
+
+                if (pendingChargebee !== undefined) {
+                    paymentMethodsRef.current.chargebeeEnabled = pendingChargebee;
+                }
+
+                if (pendingSelectedPlanName) {
+                    paymentMethodsRef.current.selectedPlanName = pendingSelectedPlanName;
+                }
             }
 
-            setStatus(paymentMethodsRef.current.paymentMethodStatus);
+            setStatus(paymentMethodsRef.current.statusExtended);
             setSavedMethods(paymentMethodsRef.current.paymentMethods);
 
             const methods = updateMethods();
@@ -150,6 +252,8 @@ export const useMethods = (
                 pendingAmount: amount,
                 pendingCoupon: coupon,
                 pendingFlow: flow,
+                pendingChargebee: chargebeeEnabled,
+                pendingSelectedPlanName: selectedPlanName,
             };
             return;
         }
@@ -157,9 +261,11 @@ export const useMethods = (
         paymentMethodsRef.current.amount = amount;
         paymentMethodsRef.current.coupon = coupon ?? '';
         paymentMethodsRef.current.flow = flow;
+        paymentMethodsRef.current.chargebeeEnabled = chargebeeEnabled;
+        paymentMethodsRef.current.selectedPlanName = selectedPlanName;
 
         updateMethods();
-    }, [amount, coupon, flow]);
+    }, [amount, coupon, flow, chargebeeEnabled, selectedPlanName]);
 
     const { usedMethods, newMethods, allMethods, lastUsedMethod } = getComputedMethods();
 
@@ -169,6 +275,28 @@ export const useMethods = (
         }
 
         return paymentMethodsRef.current.getSavedMethodById(paymentMethodID);
+    };
+
+    const getSavedInternalMethodByID = (
+        paymentMethodID: string | undefined
+    ): SavedPaymentMethodInternal | undefined => {
+        const method = getSavedMethodByID(paymentMethodID);
+        if (isSavedPaymentMethodInternal(method)) {
+            return method;
+        }
+
+        return;
+    };
+
+    const getSavedExternalMethodByID = (
+        paymentMethodID: string | undefined
+    ): SavedPaymentMethodExternal | undefined => {
+        const method = getSavedMethodByID(paymentMethodID);
+        if (isSavedPaymentMethodExternal(method)) {
+            return method;
+        }
+
+        return;
     };
 
     const selectMethod = (id?: PaymentMethodType) => {
@@ -187,14 +315,31 @@ export const useMethods = (
         }
     };
 
-    const savedSelectedMethod = getSavedMethodByID(selectedMethod?.value);
+    const isMethodTypeEnabled = (methodType: PlainPaymentMethodType) => {
+        if (!paymentMethodsRef.current) {
+            return false;
+        }
+
+        return paymentMethodsRef.current.isMethodTypeEnabled(methodType);
+    };
+
+    useInhouseToChargebeeSwitch({
+        selectedMethod,
+        availableMethods,
+        isMethodTypeEnabled,
+        selectMethod,
+    });
+
+    const savedInternalSelectedMethod = getSavedInternalMethodByID(selectedMethod?.value);
+    const savedExternalSelectedMethod = getSavedExternalMethodByID(selectedMethod?.value);
 
     const isNewPaypal =
         selectedMethod?.type === PAYMENT_METHOD_TYPES.PAYPAL && !isExistingPaymentMethod(selectedMethod?.value);
 
     return {
         selectedMethod,
-        savedSelectedMethod,
+        savedInternalSelectedMethod,
+        savedExternalSelectedMethod,
         selectMethod,
         loading,
         usedMethods,
@@ -202,9 +347,9 @@ export const useMethods = (
         allMethods,
         lastUsedMethod,
         getSavedMethodByID,
-
         status,
         savedMethods,
         isNewPaypal,
+        isMethodTypeEnabled,
     };
 };

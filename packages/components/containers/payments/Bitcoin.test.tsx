@@ -1,6 +1,6 @@
 import { act, render, waitFor } from '@testing-library/react';
 
-import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
@@ -44,7 +44,7 @@ afterEach(() => {
     jest.useRealTimers();
 });
 
-const createTokenUrl = createToken({} as any).url;
+const createTokenUrl = createTokenV4({} as any).url;
 const defaultTokenResponse = {
     Token: 'token-123',
     Data: {
@@ -117,7 +117,7 @@ it('should show loading during the initial fetching', async () => {
 });
 
 it('should check the token every 10 seconds', async () => {
-    addApiMock(getTokenStatus('token-123').url, () => {
+    addApiMock(getTokenStatusV4('token-123').url, () => {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING };
     });
 
@@ -137,7 +137,7 @@ it('should check the token every 10 seconds', async () => {
         await flushPromises();
     });
 
-    addApiMock(getTokenStatus('token-123').url, function second() {
+    addApiMock(getTokenStatusV4('token-123').url, function second() {
         return { Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE };
     });
 

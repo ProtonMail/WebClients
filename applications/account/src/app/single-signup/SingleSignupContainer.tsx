@@ -10,13 +10,14 @@ import {
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import useFlag from '@proton/components/containers/unleash/useFlag';
-import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
@@ -74,6 +75,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const ktActivation = useKTActivation();
     const unauthApi = useApi();
     const silentApi = getSilentApi(unauthApi);
+    const { paymentsApi } = usePaymentsApi(silentApi);
     const { APP_NAME } = useConfig();
     const [error, setError] = useState<any>();
     const handleError = useErrorHandler();
@@ -143,9 +145,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, Plans, freePlan] = await Promise.all([
+            const [{ Domains: domains }, paymentMethodStatusExtended, Plans, freePlan] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
+                paymentsApi.statusExtendedAutomatic(),
                 silentApi<{ Plans: Plan[] }>(
                     queryPlans(
                         signupParameters.currency
@@ -166,9 +168,10 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 plansMap,
                 planIDs: [planIDs, !planIDs[PLANS.VPN] ? { [PLANS.VPN]: 1 } : undefined].filter(isTruthy),
                 cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
-                api: silentApi,
+                paymentsApi,
                 currency,
                 coupon: signupParameters.coupon,
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             });
 
             void measure({
@@ -177,11 +180,11 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             });
             void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
-                dimensions: getPaymentMethodsAvailable(paymentMethodStatus),
+                dimensions: getPaymentMethodsAvailable(paymentMethodStatusExtended.VendorStates),
             });
 
             // Disable bitcoin in this signup because it doesn't handle signed in state
-            paymentMethodStatus.Bitcoin = false;
+            paymentMethodStatusExtended.VendorStates.Bitcoin = false;
 
             const subscriptionData =
                 subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
@@ -192,7 +195,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 plans: Plans,
                 freePlan,
                 plansMap,
-                paymentMethodStatus,
+                paymentMethodStatusExtended,
                 subscriptionData,
                 subscriptionDataCycleMapping,
             });

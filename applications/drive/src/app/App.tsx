@@ -74,8 +74,9 @@ const App = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
+                const loader = <LoaderPage />;
                 if (!state.MainContainer || !state.store || !state.initialUser || !state.initialDriveUserSettings) {
-                    return <LoaderPage />;
+                    return loader;
                 }
                 return (
                     <ProtonStoreProvider store={state.store}>
@@ -91,6 +92,7 @@ const App = () => {
                                                         hasMemberKeyMigration
                                                         hasPrivateMemberKeyGeneration
                                                         noModals
+                                                        loader={loader}
                                                     >
                                                         <UserSettingsProvider
                                                             initialUser={state.initialUser}

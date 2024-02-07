@@ -18,11 +18,17 @@ interface ClientMethodsHook extends MethodsHook {
 }
 
 const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL) {
+    if (
+        paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
+        paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+    ) {
         return 'brand-paypal';
     }
 
-    if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD) {
+    if (
+        paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ||
+        paymentMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+    ) {
         switch (paymentMethod.Details.Brand.toLowerCase()) {
             case 'american express':
                 return 'brand-amex';
@@ -41,11 +47,13 @@ const getIcon = (paymentMethod: SavedPaymentMethod): IconName | undefined => {
 const getMethod = (paymentMethod: SavedPaymentMethod): string => {
     switch (paymentMethod.Type) {
         case PAYMENT_METHOD_TYPES.CARD:
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_CARD:
             const brand = paymentMethod.Details.Brand;
             const last4 = paymentMethod.Details.Last4;
             // translator: example would be: "Mastercard" ending in "7777"
             return c('new_plans: info').t`${brand} ending in ${last4}`;
         case PAYMENT_METHOD_TYPES.PAYPAL:
+        case PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
         default:
             return '';
@@ -87,6 +95,18 @@ export function convertMethod(
         return {
             icon: 'money-bills' as const,
             text: c('Label').t`Cash`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+        return {
+            icon: 'credit-card' as const,
+            text: c('Payment method option').t`Credit/debit card`,
+            ...method,
+        };
+    } else if (method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+        return {
+            icon: 'brand-paypal' as const,
+            text: c('Payment method option').t`PayPal`,
             ...method,
         };
     }

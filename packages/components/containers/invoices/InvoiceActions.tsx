@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { queryPaymentMethodStatus } from '@proton/shared/lib/api/payments';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';
-import { useApi, useModals, useNotifications } from '../../hooks';
+import { useModals, useNotifications } from '../../hooks';
 import PayInvoiceModal from './PayInvoiceModal';
 import { Invoice } from './interface';
 
@@ -20,7 +20,7 @@ interface Props {
 const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
-    const api = useApi();
+    const { paymentsApi } = usePaymentsApi();
     const [downloadLoading, withDownloadLoading] = useLoading();
     const [viewLoading, withViewLoading] = useLoading();
 
@@ -29,8 +29,8 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
             text: c('Action').t`Pay`,
             'data-testid': 'payInvoice',
             async onClick() {
-                const { Card, Paypal } = await api(queryPaymentMethodStatus());
-                const canPay = Card || Paypal;
+                const status = await paymentsApi.statusExtendedAutomatic();
+                const canPay = status.VendorStates.Card || status.VendorStates.Paypal;
 
                 if (!canPay) {
                     createNotification({

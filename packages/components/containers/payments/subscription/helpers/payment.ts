@@ -12,7 +12,7 @@ import {
 
 export const getCurrency = (
     user: UserModel | undefined,
-    subscription: Subscription | undefined,
+    subscription: Subscription | FreeSubscription | undefined,
     plans: Plan[] | undefined
 ) => {
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;

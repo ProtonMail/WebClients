@@ -9,14 +9,14 @@ import {
     ChargeablePaymentParameters,
     ExistingPaymentMethod,
     PaymentVerificator,
-    SavedPaymentMethod,
+    SavedPaymentMethodInternal,
 } from '../core';
 import { SavedPaymentProcessor } from '../core/payment-processors/savedPayment';
 import { PaymentProcessorHook } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
-    savedMethod?: SavedPaymentMethod;
+    savedMethod?: SavedPaymentMethodInternal;
     onChargeable: (data: ChargeablePaymentParameters, paymentMethodId: ExistingPaymentMethod) => Promise<unknown>;
 }
 

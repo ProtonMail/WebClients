@@ -26,6 +26,8 @@ const getType = (type: INVOICE_TYPE) => {
             return c('Invoice type display as badge').t`Modification`;
         case INVOICE_TYPE.ADDITION:
             return c('Invoice type display as badge').t`Addition`;
+        case INVOICE_TYPE.CURRENCY_CONVERSION:
+            return c('Invoice type display as badge').t`Currency conversion`;
         default:
             return '';
     }

@@ -7,12 +7,12 @@ import {
     SavedCardDetails,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
-import { createToken, queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import { createTokenV4, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import lastItem from '@proton/utils/lastItem';
 
 import { addApiMock, addApiResolver } from '../api';
 
-const tokensUrl = createToken({} as any).url;
+const tokensUrl = createTokenV4({} as any).url;
 
 export const MOCK_TOKEN_RESPONSE = {
     Token: 'token123',
@@ -58,7 +58,8 @@ export const MOCK_PAYMENT_STATUS: PaymentMethodStatus = {
 };
 
 export function mockPaymentStatus(status = MOCK_PAYMENT_STATUS) {
-    addApiMock(queryPaymentMethodStatus().url, () => status);
+    addApiMock(`payments/v4/status`, () => status);
+    addApiMock(`payments/v5/status`, () => status);
 }
 
 export const PAYMENT_METHODS_MOCK: {

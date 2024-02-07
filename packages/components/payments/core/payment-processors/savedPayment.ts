@@ -7,8 +7,8 @@ import {
     ChargeablePaymentParameters,
     ChargeablePaymentToken,
     NonChargeablePaymentToken,
-    SavedPaymentMethod,
-    TokenPaymentMethod,
+    SavedPaymentMethodInternal,
+    V5PaymentToken,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
 
@@ -26,8 +26,8 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
-        savedMethod: SavedPaymentMethod,
-        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        savedMethod: SavedPaymentMethodInternal,
+        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
@@ -36,8 +36,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
                     type: savedMethod.Type,
                 },
             },
-            amountAndCurrency,
-            onTokenIsChargeable
+            amountAndCurrency
         );
     }
 
@@ -69,8 +68,8 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        const token: TokenPaymentMethod = await this.verifyPayment({
-            Token: this.fetchedPaymentToken.Payment.Details.Token,
+        const token: V5PaymentToken = await this.verifyPayment({
+            Token: this.fetchedPaymentToken.PaymentToken,
             ApprovalURL: this.fetchedPaymentToken.approvalURL,
             ReturnHost: this.fetchedPaymentToken.returnHost,
         });
@@ -78,7 +77,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         return this.tokenCreated(token);
     }
 
-    updateSavedMethod(savedMethod: SavedPaymentMethod) {
+    updateSavedMethod(savedMethod: SavedPaymentMethodInternal) {
         this.state.method = {
             paymentMethodId: savedMethod.ID,
             type: savedMethod.Type,
@@ -89,7 +88,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         this.fetchedPaymentToken = null;
     }
 
-    private tokenCreated(token?: TokenPaymentMethod): ChargeablePaymentParameters {
+    private tokenCreated(token?: V5PaymentToken): ChargeablePaymentParameters {
         const result: ChargeablePaymentParameters = {
             type: PAYMENT_METHOD_TYPES.CARD,
             chargeable: true,
@@ -97,7 +96,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
             ...token,
         };
 
-        this.onTokenIsChargeable?.(result);
+        void this.onTokenIsChargeable?.(result);
 
         return result;
     }

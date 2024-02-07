@@ -23,6 +23,10 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     DesktopAppUpsellModal = 'DesktopAppUpsellModal',
+    Chargebee = 'Chargebee',
+    ChargebeeSignups = 'ChargebeeSignups',
+    ChargebeeMigration = 'ChargebeeMigration',
+    ChargebeeFreeToPaid = 'ChargebeeFreeToPaid',
 }
 
 enum CalendarFeatureFlag {}

@@ -1,7 +1,23 @@
+import { useEffect, useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { FormModal, Loader } from '@proton/components/components';
+import { useModals, useNotifications } from '@proton/components/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { PAYMENT_METHOD_TYPES, PaymentVerificator, TokenPaymentMethod } from '../../core';
-import { ensureTokenChargeable } from '../ensureTokenChargeable';
+import { getChargebeeErrorMessage } from '../../chargebee/ChargebeeIframe';
+import {
+    ChargebeePaypalModalHandles,
+    PAYMENT_METHOD_TYPES,
+    PaymentVerificator,
+    PaymentVerificatorV5,
+    PaymentVerificatorV5Params,
+    V5PaymentToken,
+    ensureTokenChargeableV5,
+    toV5PaymentToken,
+} from '../../core';
+import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
 /**
@@ -24,14 +40,13 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
         Token,
         ApprovalURL,
         ReturnHost,
-    }: Parameters<PaymentVerificator>[0]): Promise<TokenPaymentMethod> {
-        return new Promise<TokenPaymentMethod>((resolve, reject) => {
+    }: Parameters<PaymentVerificator>[0]): Promise<V5PaymentToken> {
+        return new Promise<V5PaymentToken>((resolve, reject) => {
             createModal(
                 <PaymentVerificationModal
                     isAddCard={addCardMode}
                     payment={Payment}
-                    token={Token}
-                    onSubmit={resolve}
+                    onSubmit={() => resolve(toV5PaymentToken(Token))}
                     onClose={reject}
                     onProcess={() => {
                         const abort = new AbortController();
@@ -58,7 +73,7 @@ export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => voi
  */
 export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator => {
     return async function verify({ Token, ApprovalURL, ReturnHost }) {
-        const tokenPaymentMethod = await new Promise<TokenPaymentMethod>((resolve, reject) => {
+        const paymentToken = await new Promise<V5PaymentToken>((resolve, reject) => {
             const onProcess = () => {
                 const abort = new AbortController();
                 return {
@@ -74,8 +89,7 @@ export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void
             };
             createModal(
                 <PaymentVerificationModal
-                    token={Token}
-                    onSubmit={resolve}
+                    onSubmit={() => resolve(toV5PaymentToken(Token))}
                     onClose={reject}
                     type={PAYMENT_METHOD_TYPES.PAYPAL}
                     onProcess={onProcess}
@@ -84,6 +98,107 @@ export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void
             );
         });
 
-        return tokenPaymentMethod;
+        return paymentToken;
     };
 };
+
+export const useChargebeeCardVerifyPayment = (api: Api): PaymentVerificatorV5 => {
+    const { createModal } = useModals();
+    const { createNotification } = useNotifications();
+
+    async function verifyChargebee({
+        token,
+        events,
+        addCardMode,
+    }: PaymentVerificatorV5Params): Promise<V5PaymentToken> {
+        const tokenPaymentMethod = await new Promise<V5PaymentToken>((resolve, reject) => {
+            const abort = new AbortController();
+            const dependencies = {
+                api,
+                signal: abort.signal,
+            };
+
+            const run = () => ensureTokenChargeableV5(token, events, dependencies, defaultTranslations);
+
+            if (token.authorized) {
+                run()
+                    .then(() => resolve(token))
+                    .catch((error) => {
+                        if (error && error.message && !error.config) {
+                            createNotification({ text: error.message, type: 'error' });
+                        }
+                    });
+                return;
+            }
+
+            createModal(
+                <PaymentVerificationModal
+                    isAddCard={addCardMode}
+                    onSubmit={() => resolve(token)}
+                    onClose={reject}
+                    onProcess={() => ({
+                        promise: run(),
+                        abort,
+                    })}
+                />
+            );
+        });
+
+        return tokenPaymentMethod;
+    }
+
+    return verifyChargebee;
+};
+
+export const ChargebeePaypalValidationModal = (props: any) => {
+    const [hasClose, setHasClose] = useState(false);
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setHasClose(true);
+        }, 10000);
+        return () => clearTimeout(timeout);
+    }, []);
+
+    return (
+        <FormModal footer={null} hasClose={hasClose} {...props}>
+            <p className="text-center">{c('Info').t`You will soon be redirected to PayPal to verify your payment.`}</p>
+            <Loader />
+            <p className="text-center mb-4">{c('Info').t`Don’t see anything? Remember to turn off pop-up blockers.`}</p>
+        </FormModal>
+    );
+};
+
+export function useChargebeePaypalHandles(): ChargebeePaypalModalHandles {
+    const { createModal, removeModal } = useModals();
+    const { createNotification } = useNotifications();
+    const modalIdRef = useRef<string | null>(null);
+
+    const hideModal: ChargebeePaypalModalHandles['hideModal'] = (error?: any) => {
+        console.log('hideModal', error);
+
+        if (!modalIdRef.current) {
+            return;
+        }
+
+        removeModal(modalIdRef.current);
+        modalIdRef.current = null;
+
+        if (error) {
+            createNotification({ text: getChargebeeErrorMessage(error), type: 'error' });
+        }
+    };
+
+    const showModal: ChargebeePaypalModalHandles['showModal'] = () => {
+        if (modalIdRef.current) {
+            hideModal();
+        }
+
+        const id = createModal(<ChargebeePaypalValidationModal onClose={() => hideModal()} />);
+        modalIdRef.current = id;
+    };
+
+    return {
+        showModal,
+        hideModal,
+    };
+}

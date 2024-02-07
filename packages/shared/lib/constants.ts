@@ -348,6 +348,7 @@ export enum INVOICE_TYPE {
     REFUND = 7,
     MODIFICATION = 8,
     ADDITION = 9,
+    CURRENCY_CONVERSION = 10,
 }
 
 export enum INVOICE_STATE {
@@ -722,12 +723,17 @@ export enum PLAN_SERVICES {
 // You don't need more, use `user.isPaid`
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
+    Plans: undefined,
+    Currency: undefined,
+    CouponCode: undefined,
+    Cycle: undefined,
+    UpcomingSubscription: undefined,
 };
 
 export type FreeSubscription = typeof FREE_SUBSCRIPTION;
 
 export function isFreeSubscription(obj: any): obj is FreeSubscription {
-    return !!obj && obj.isFreeSubscription && Object.keys(obj).length === 1;
+    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }
 
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
@@ -801,6 +807,7 @@ export enum COUPON_CODES {
     END_OF_YEAR_2023 = 'EOY2023',
     EOY_2023_1M_INTRO = 'EOY1MINTRO',
     PASS_B2B_INTRO = 'PASS2024B2BINTRO',
+    MEMBER_DOWNGRADE_TRIAL = 'MEMBER_DOWNGRADE_TRIAL',
 }
 
 export const GIFT_CODE_LENGTH = 16;

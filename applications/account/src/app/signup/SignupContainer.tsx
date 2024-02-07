@@ -7,15 +7,17 @@ import { Step, Stepper } from '@proton/atoms/Stepper';
 import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
-import { PaymentMethodStatus } from '@proton/components/payments/core';
+import { BillingAddress } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -151,6 +153,7 @@ const SignupContainer = ({
             ...config,
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
+    const { getPaymentsApi } = usePaymentsApi();
     const [loading, withLoading] = useLoading();
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
@@ -218,11 +221,14 @@ const SignupContainer = ({
             });
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const cycle = signupParameters.cycle || DEFAULT_CYCLE;
+            const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
+
             const { planIDs, checkResult } = await getSubscriptionPrices(
-                api,
+                getPaymentsApi(api),
                 planParameters.planIDs,
                 currency,
                 cycle,
+                billingAddress,
                 signupParameters.coupon
             )
                 .then((checkResult) => {
@@ -242,6 +248,7 @@ const SignupContainer = ({
                         planIDs: undefined,
                     };
                 });
+
             return {
                 cycle: checkResult.Cycle,
                 minimumCycle: signupParameters.minimumCycle,
@@ -249,6 +256,7 @@ const SignupContainer = ({
                 checkResult,
                 planIDs: planIDs || {},
                 skipUpsell: planParameters.defined,
+                billingAddress,
             };
         };
 
@@ -259,9 +267,8 @@ const SignupContainer = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans, freePlan] = await Promise.all([
+            const [{ Domains: domains }, referralData, Plans, freePlan] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
                 referrer
                     ? await silentApi(checkReferrer(referrer))
                           .then(() => ({
@@ -293,7 +300,6 @@ const SignupContainer = ({
                 plans: Plans,
                 freePlan,
                 plansMap: toMap(model.plans, 'Name') as PlansMap,
-                paymentMethodStatus,
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
@@ -344,10 +350,11 @@ const SignupContainer = ({
 
     const handleChangeCurrency = async (currency: Currency) => {
         const checkResult = await getSubscriptionPrices(
-            silentApi,
+            getPaymentsApi(silentApi),
             model.subscriptionData.planIDs,
             currency,
             model.subscriptionData.cycle,
+            model.subscriptionData.billingAddress,
             model.subscriptionData.checkResult.Coupon?.Code
         );
         setModelDiff({
@@ -361,10 +368,11 @@ const SignupContainer = ({
 
     const handleChangeCycle = async (cycle: Cycle) => {
         const checkResult = await getSubscriptionPrices(
-            silentApi,
+            getPaymentsApi(silentApi),
             model.subscriptionData.planIDs,
             model.subscriptionData.currency,
             cycle,
+            model.subscriptionData.billingAddress,
             model.subscriptionData.checkResult.Coupon?.Code
         );
         setModelDiff({
@@ -378,16 +386,36 @@ const SignupContainer = ({
 
     const handleChangePlanIDs = async (planIDs: PlanIDs) => {
         const checkResult = await getSubscriptionPrices(
-            silentApi,
+            getPaymentsApi(silentApi),
             planIDs,
             model.subscriptionData.currency,
             model.subscriptionData.cycle,
+            model.subscriptionData.billingAddress,
             model.subscriptionData.checkResult.Coupon?.Code
         );
         setModelDiff({
             subscriptionData: {
                 ...model.subscriptionData,
                 planIDs,
+                checkResult,
+            },
+        });
+    };
+
+    const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
+        const checkResult = await getSubscriptionPrices(
+            getPaymentsApi(silentApi),
+            model.subscriptionData.planIDs,
+            model.subscriptionData.currency,
+            model.subscriptionData.cycle,
+            billingAddress,
+            model.subscriptionData.checkResult.Coupon?.Code
+        );
+
+        setModelDiff({
+            subscriptionData: {
+                ...model.subscriptionData,
+                billingAddress,
                 checkResult,
             },
         });
@@ -760,10 +788,11 @@ const SignupContainer = ({
                         try {
                             const validateFlow = createFlow();
                             const checkResult = await getSubscriptionPrices(
-                                silentApi,
+                                getPaymentsApi(silentApi),
                                 planIDs,
                                 model.subscriptionData.currency,
                                 model.subscriptionData.cycle,
+                                model.subscriptionData.billingAddress,
                                 model.subscriptionData.checkResult.Coupon?.Code
                             );
                             if (!checkResult) {
@@ -789,11 +818,10 @@ const SignupContainer = ({
                     }}
                 />
             )}
-            {step === Payment && model.paymentMethodStatus && (
+            {step === Payment && (
                 <PaymentStep
                     api={normalApi}
                     onBack={handleBackStep}
-                    paymentMethodStatus={model.paymentMethodStatus}
                     plans={model.plans}
                     plan={plan}
                     planName={planName}
@@ -801,12 +829,14 @@ const SignupContainer = ({
                     onChangeCurrency={handleChangeCurrency}
                     onChangeCycle={handleChangeCycle}
                     onChangePlanIDs={handleChangePlanIDs}
+                    onChangeBillingAddress={handleChangeBillingAddress}
                     onPay={async (payment, type) => {
                         try {
                             if (!cache) {
                                 throw new Error('Missing cache');
                             }
-                            const subscriptionData = {
+
+                            const subscriptionData: SubscriptionData = {
                                 ...model.subscriptionData,
                                 payment,
                                 type,
@@ -854,7 +884,10 @@ const SignupContainer = ({
                             metrics.stopBatchingProcess();
 
                             const validateFlow = createFlow();
-                            const signupActionResponse = await handleSetupUser({ cache, api: silentApi });
+                            const signupActionResponse = await handleSetupUser({
+                                cache,
+                                api: silentApi,
+                            });
 
                             /**
                              * Batch process can now resume since the auth cookie will have been set

@@ -1,9 +1,5 @@
-import {
-    AmountAndCurrency,
-    ChargeablePaymentParameters,
-    ChargeablePaymentToken,
-    NonChargeablePaymentToken,
-} from '../interface';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { AmountAndCurrency, ChargeablePaymentParameters, ChargeablePaymentToken } from '../interface';
 
 type UpdateHandler<T> = (stateDiff: Partial<T>) => void;
 
@@ -11,6 +7,9 @@ export class InvalidDataError extends Error {
     constructor(message?: string) {
         super(message);
         this.name = 'InvalidDataError';
+
+        // Flag to ignore this error and not send it to Sentry
+        (this as any).ignore = true;
     }
 }
 
@@ -27,8 +26,10 @@ export abstract class PaymentProcessor<T = any> {
 
     constructor(
         protected state: T,
-        public amountAndCurrency: AmountAndCurrency,
-        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        public amountAndCurrency: AmountAndCurrency
+        // public onTokenIsChargeable?: (
+        //     data: ChargeablePaymentParameters | ChargeableV5PaymentParameters
+        // ) => Promise<unknown>
     ) {}
 
     /**
@@ -38,7 +39,7 @@ export abstract class PaymentProcessor<T = any> {
      * and requires user confirmation. Sometimes the token is even `null`, for example, if the Amount is 0.
      * That might be the case, for example, when user has enough credits to make subscription.
      */
-    abstract fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null>;
+    abstract fetchPaymentToken(): Promise<unknown>;
 
     /**
      * An important detail is that this method returns {@link ChargeablePaymentParameters} instead of
@@ -47,7 +48,7 @@ export abstract class PaymentProcessor<T = any> {
      * credits.
      * This method is supposed to be called after `fetchPaymentToken`.
      */
-    abstract verifyPaymentToken(): Promise<ChargeablePaymentParameters>;
+    abstract verifyPaymentToken(): Promise<unknown>;
 
     updateState(state: Partial<T>) {
         this.state = { ...this.state, ...state };

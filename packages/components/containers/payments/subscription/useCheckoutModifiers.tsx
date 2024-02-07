@@ -2,7 +2,12 @@ import { useMemo } from 'react';
 
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
-import { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import {
+    PlansMap,
+    SubscriptionCheckResponse,
+    SubscriptionMode,
+    SubscriptionModel,
+} from '@proton/shared/lib/interfaces';
 
 import { Model } from './SubscriptionContainer';
 
@@ -49,6 +54,14 @@ export const useCheckoutModifiers = (
             checkResult.Proration !== 0 && (checkResult.UnusedCredit === 0 || checkResult.UnusedCredit === undefined)
         );
     }, [subscription, model, checkResult]);
+
+    if (checkResult?.SubscriptionMode !== undefined) {
+        return {
+            isProration: checkResult.SubscriptionMode === SubscriptionMode.Regular,
+            isScheduledSubscription: checkResult.SubscriptionMode === SubscriptionMode.Upcoming,
+            isCustomBilling: checkResult.SubscriptionMode === SubscriptionMode.CustomBillings,
+        };
+    }
 
     const isCustomBilling = checkResult ? checkResult.UnusedCredit !== 0 : false;
 

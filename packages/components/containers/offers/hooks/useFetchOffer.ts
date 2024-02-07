@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { useApi } from '../../../hooks';
 import { fetchDealPrices } from '../helpers/dealPrices';
 import { Offer, OfferConfig } from '../interface';
 
@@ -15,7 +15,7 @@ interface Props {
 }
 
 function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [Offer | undefined, boolean] {
-    const api = useApi();
+    const { paymentsApi } = usePaymentsApi();
     const [loading, withLoading] = useLoading();
     const [state, setState] = useState<Partial<{ offer: Offer; offerConfig: OfferConfig }>>();
 
@@ -30,7 +30,7 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props): [O
                     setState(undefined);
                 }
 
-                const result = await fetchDealPrices(api, offerConfig, currency);
+                const result = await fetchDealPrices(paymentsApi, offerConfig, currency);
 
                 // We make an offer based on offerConfig + fetched results above
                 const offer: Offer = {

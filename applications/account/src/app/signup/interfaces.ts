@@ -2,8 +2,8 @@ import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, SavedPaymentMethod } from '@proton/components/payments/core';
-import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/payments/core/interface';
+import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import { BillingAddress, TokenPaymentWithPaymentsVersion } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { APPS, APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -77,8 +77,9 @@ export interface SubscriptionData {
     skipUpsell?: boolean;
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
-    payment?: CardPayment | TokenPayment | PaypalPayment;
+    payment?: TokenPaymentWithPaymentsVersion;
     type?: 'cc' | 'pp' | 'btc';
+    billingAddress: BillingAddress;
 }
 
 export interface ReferralData {
@@ -99,7 +100,6 @@ export interface SignupModel {
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;
-    paymentMethodStatus: PaymentMethodStatus;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;

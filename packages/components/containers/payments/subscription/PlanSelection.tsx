@@ -3,9 +3,17 @@ import { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import {
+    ADDON_NAMES,
+    APPS,
+    CYCLE,
+    FreeSubscription,
+    PLANS,
+    PLAN_TYPES,
+    isFreeSubscription,
+} from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { getIpPricePerMonth } from '@proton/shared/lib/helpers/subscription';
+import { getIpPricePerMonth, hasMaximumCycle } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -15,7 +23,7 @@ import {
     Plan,
     PlanIDs,
     PlansMap,
-    Subscription,
+    SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -96,7 +104,7 @@ interface Props {
     onChangeAudience: (newAudience: Audience) => void;
     selectedProductPlans: SelectedProductPlans;
     onChangeSelectedProductPlans: (newPlans: SelectedProductPlans) => void;
-    subscription?: Subscription;
+    subscription?: SubscriptionModel | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
 }
@@ -174,23 +182,48 @@ const PlanSelection = ({
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
-
+    const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
+
+    const alreadyHasMaxCycle = hasMaximumCycle(subscription);
+
+    function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
+        if (isShortPlanLike(plan)) {
+            return true;
+        }
+
+        const isCurrentPlan = currentPlan?.ID === plan.ID;
+        const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
+        return !shouldNotRenderCurrentPlan;
+    }
+
+    function excludingTheOnlyFreePlan(
+        plan: Plan | ShortPlanLike,
+        _: number,
+        allPlans: (Plan | ShortPlanLike)[]
+    ): boolean {
+        return !(plan === FREE_PLAN && allPlans.length === 1);
+    }
 
     const B2CPlans = [
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-    ].filter(isTruthy);
+    ]
+        .filter(isTruthy)
+        .filter(excludingCurrentPlanWithMaxCycle)
+        .filter(excludingTheOnlyFreePlan);
 
-    const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]].filter(isTruthy);
+    const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]
+        .filter(isTruthy)
+        .filter(excludingCurrentPlanWithMaxCycle)
+        .filter(excludingTheOnlyFreePlan);
 
-    const vpnB2BPlans = [
-        plansMap[PLANS.VPN_PRO],
-        plansMap[PLANS.VPN_BUSINESS],
-        getVPNEnterprisePlan(vpnServers),
-    ].filter(isTruthy);
+    const vpnB2BPlans = [plansMap[PLANS.VPN_PRO], plansMap[PLANS.VPN_BUSINESS], getVPNEnterprisePlan(vpnServers)]
+        .filter(isTruthy)
+        .filter(excludingCurrentPlanWithMaxCycle)
+        .filter(excludingTheOnlyFreePlan);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
@@ -210,7 +243,10 @@ const PlanSelection = ({
             getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) ||
                 plansMap[PLANS.MAIL_PRO],
             plansMap[PLANS.BUNDLE_PRO],
-        ].filter(isTruthy);
+        ]
+            .filter(isTruthy)
+            .filter(excludingCurrentPlanWithMaxCycle)
+            .filter(excludingTheOnlyFreePlan);
     }
 
     const isSignupMode = mode === 'signup';
@@ -226,6 +262,10 @@ const PlanSelection = ({
     const renderPlanCard = (plan: Plan, audience: Audience) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
+        const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
+        if (shouldNotRenderCurrentPlan) {
+            return null;
+        }
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
 
@@ -332,7 +372,7 @@ const PlanSelection = ({
     };
 
     const tabs: Tab[] = [
-        {
+        B2BPlans.length > 0 && {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
                 <div
@@ -345,7 +385,7 @@ const PlanSelection = ({
             ),
             audience: Audience.B2C,
         },
-        {
+        FamilyPlans.length > 0 && {
             title: c('Tab subscription modal').t`For families`,
             content: (
                 <div
@@ -357,7 +397,7 @@ const PlanSelection = ({
             ),
             audience: Audience.FAMILY,
         },
-        {
+        B2BPlans.length > 0 && {
             title: c('Tab subscription modal').t`For businesses`,
             content: (
                 <div
@@ -390,17 +430,19 @@ const PlanSelection = ({
         <div className="flex justify-space-between flex-column md:flex-row">
             <div className="hidden lg:inline-block visibility-hidden">{currencyItem}</div>
             <div className="flex justify-center md:justify-start w-full lg:w-auto">
-                <CycleSelector
-                    mode="buttons"
-                    cycle={cycle}
-                    onSelect={onChangeCycle}
-                    disabled={loading}
-                    options={[
-                        { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
-                        { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
-                        { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
-                    ]}
-                />
+                {renderCycleSelector && (
+                    <CycleSelector
+                        mode="buttons"
+                        cycle={cycle}
+                        onSelect={onChangeCycle}
+                        disabled={loading}
+                        options={[
+                            { text: c('Billing cycle option').t`1 month`, value: CYCLE.MONTHLY },
+                            { text: c('Billing cycle option').t`12 months`, value: CYCLE.YEARLY },
+                            { text: c('Billing cycle option').t`24 months`, value: CYCLE.TWO_YEARS },
+                        ]}
+                    />
+                )}
             </div>
             <div className="flex mx-auto lg:mx-0 mt-4 lg:mt-0">{currencyItem}</div>
         </div>

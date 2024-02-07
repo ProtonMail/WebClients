@@ -1,23 +1,36 @@
 import { useMemo, useRef } from 'react';
 
-import { buyCredit, payInvoice, subscribe } from '@proton/shared/lib/api/payments';
+import { PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { Api, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
+import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { Api, ChargebeeEnabled, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 
 import {
     AmountAndCurrency,
+    BillingAddress,
     ChargeablePaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    ChargebeeKillSwitch,
+    ChargebeePaypalModalHandles,
+    ForceEnableChargebee,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
-    PaymentMethodStatus,
+    PaymentMethodStatusExtended,
     PaymentMethodType,
     PaymentVerificator,
+    PaymentVerificatorV5,
+    PlainPaymentMethodType,
     SavedPaymentMethod,
     isExistingPaymentMethod,
 } from '../core';
 import { useCard } from './useCard';
+import { useChargebeeCard } from './useChargebeeCard';
+import { useChargebeePaypal } from './useChargebeePaypal';
 import { OnMethodChangedHandler, useMethods } from './useMethods';
+import { usePaymentsApi } from './usePaymentsApi';
 import { usePaypal } from './usePaypal';
+import { useSavedChargebeeMethod } from './useSavedChargebeeMethod';
 import { useSavedMethod } from './useSavedMethod';
 
 export interface OperationsSubscriptionData {
@@ -25,6 +38,7 @@ export interface OperationsSubscriptionData {
     Cycle: Cycle;
     Codes?: string[];
     product: ProductParam;
+    taxBillingAddress: BillingAddress;
 }
 
 export interface OperationsInvoiceData {
@@ -43,38 +57,71 @@ export interface OperationsData {
 export interface Operations {
     buyCredit: () => Promise<unknown>;
     payInvoice: () => Promise<unknown>;
-    subscribe: () => Promise<unknown>;
+    subscribe: (operationsDataParam?: OperationsSubscriptionData) => Promise<unknown>;
+    savePaymentMethod: () => Promise<unknown>;
 }
 
-function getOperations(api: Api, params: ChargeablePaymentParameters, operationsData: OperationsData): Operations {
+function getOperations(
+    api: Api,
+    params: ChargeablePaymentParameters,
+    operationsData: OperationsData,
+    paymentsVersion: PaymentsVersion,
+    afterOperation?: () => void
+): Operations {
+    const wrappedAfterOperation = <T>(result: T) => {
+        afterOperation?.();
+        return result;
+    };
+
     return {
         buyCredit: async () => {
-            return api(buyCredit(params));
+            return api(buyCredit(params)).then(wrappedAfterOperation);
         },
         payInvoice: async () => {
             if (!operationsData?.invoice) {
                 throw new Error('The operations data for invoice must be provided in the facade');
             }
 
-            return api(payInvoice(operationsData.invoice.invoiceId, params));
+            return api(payInvoice(operationsData.invoice.invoiceId, params)).then(wrappedAfterOperation);
         },
-        subscribe: async () => {
-            if (!operationsData?.subscription) {
+        subscribe: async (operationsDataParam?: OperationsSubscriptionData) => {
+            if (!operationsData?.subscription && !operationsDataParam) {
                 throw new Error('The operations data for subscription must be provided in the facade');
             }
 
-            const { product, ...data } = operationsData.subscription;
+            const { product, taxBillingAddress, ...data } = (operationsData.subscription ??
+                operationsDataParam) as OperationsSubscriptionData;
 
-            return api({
-                ...subscribe(
+            const BillingAddress: BillingAddress = {
+                State: taxBillingAddress.State,
+                CountryCode: taxBillingAddress.CountryCode,
+            };
+
+            return api(
+                subscribe(
                     {
+                        PaymentToken: params.PaymentToken,
+                        BillingAddress,
                         ...params,
                         ...data,
                     },
-                    product
-                ),
-                timeout: 60000 * 2,
-            });
+                    product,
+                    paymentsVersion
+                )
+            ).then(wrappedAfterOperation);
+        },
+        savePaymentMethod: async () => {
+            const PaymentToken = params.PaymentToken;
+            if (!PaymentToken) {
+                throw new Error('Could not save payment method without a payment token');
+            }
+
+            return api(
+                setPaymentMethodV5({
+                    PaymentToken,
+                    v: 5,
+                })
+            );
         },
     };
 }
@@ -124,7 +171,11 @@ export const usePaymentFacade = (
         flow,
         onMethodChanged,
         paymentMethods,
-        paymentMethodStatus,
+        paymentMethodStatusExtended,
+        chargebeeEnabled,
+        chargebeeKillSwitch,
+        forceEnableChargebee,
+        selectedPlanName,
     }: {
         amount: number;
         currency: Currency;
@@ -133,25 +184,39 @@ export const usePaymentFacade = (
             data: {
                 chargeablePaymentParameters: ChargeablePaymentParameters;
                 source: PaymentMethodType;
+                sourceType: PlainPaymentMethodType;
                 context: OperationsData;
+                paymentsVersion: PaymentsVersion;
             }
         ) => Promise<unknown>;
         coupon?: string;
         flow: PaymentMethodFlows;
         onMethodChanged?: OnMethodChangedHandler;
         paymentMethods?: SavedPaymentMethod[];
-        paymentMethodStatus?: PaymentMethodStatus;
+        paymentMethodStatusExtended?: PaymentMethodStatusExtended;
+        chargebeeEnabled: ChargebeeEnabled;
+        chargebeeKillSwitch: ChargebeeKillSwitch;
+        forceEnableChargebee: ForceEnableChargebee;
+        selectedPlanName: PLANS | ADDON_NAMES | undefined;
     },
     {
         api,
         isAuthenticated,
         verifyPayment,
         verifyPaymentPaypal,
+        verifyPaymentChargebeeCard,
+        chargebeeHandles,
+        chargebeeEvents,
+        chargebeePaypalModalHandles,
     }: {
         api: Api;
         isAuthenticated: boolean;
         verifyPayment: PaymentVerificator;
         verifyPaymentPaypal: PaymentVerificator;
+        verifyPaymentChargebeeCard: PaymentVerificatorV5;
+        chargebeeHandles: ChargebeeIframeHandles;
+        chargebeeEvents: ChargebeeIframeEvents;
+        chargebeePaypalModalHandles?: ChargebeePaypalModalHandles;
     }
 ) => {
     const amountAndCurrency: AmountAndCurrency = useMemo(
@@ -163,6 +228,7 @@ export const usePaymentFacade = (
     );
 
     const paymentContext = usePaymentContext();
+    const { paymentsApi } = usePaymentsApi(api);
 
     const methods = useMethods(
         {
@@ -171,7 +237,10 @@ export const usePaymentFacade = (
             flow,
             onMethodChanged,
             paymentMethods,
-            paymentMethodStatus,
+            paymentMethodStatusExtended,
+            chargebeeEnabled,
+            paymentsApi,
+            selectedPlanName,
         },
         {
             api,
@@ -182,13 +251,18 @@ export const usePaymentFacade = (
     const savedMethod = useSavedMethod(
         {
             amountAndCurrency,
-            savedMethod: methods.savedSelectedMethod,
+            savedMethod: methods.savedInternalSelectedMethod,
             onChargeable: (params, paymentMethodId) =>
-                onChargeable(getOperations(api, params, paymentContext.getOperationsData()), {
-                    chargeablePaymentParameters: params,
-                    source: paymentMethodId,
-                    context: paymentContext.getOperationsData(),
-                }),
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: paymentMethodId,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v4',
+                    }
+                ),
         },
         {
             api,
@@ -196,15 +270,45 @@ export const usePaymentFacade = (
         }
     );
 
+    const savedChargebeeMethod = useSavedChargebeeMethod(
+        {
+            amountAndCurrency,
+            savedMethod: methods.savedExternalSelectedMethod,
+            onChargeable: (params, paymentMethodId) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: paymentMethodId,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v5',
+                    }
+                ),
+        },
+        {
+            api,
+            verifyPayment: verifyPaymentChargebeeCard,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+        }
+    );
+
     const card = useCard(
         {
             amountAndCurrency,
             onChargeable: (params) =>
-                onChargeable(getOperations(api, params, paymentContext.getOperationsData()), {
-                    chargeablePaymentParameters: params,
-                    source: PAYMENT_METHOD_TYPES.CARD,
-                    context: paymentContext.getOperationsData(),
-                }),
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.CARD,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v4',
+                    }
+                ),
+            verifyOnly: flow === 'add-card',
         },
         {
             api,
@@ -218,11 +322,16 @@ export const usePaymentFacade = (
             amountAndCurrency,
             isCredit: false,
             onChargeable: (params) =>
-                onChargeable(getOperations(api, params, paymentContext.getOperationsData()), {
-                    chargeablePaymentParameters: params,
-                    source: PAYMENT_METHOD_TYPES.PAYPAL,
-                    context: paymentContext.getOperationsData(),
-                }),
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.PAYPAL,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v4',
+                    }
+                ),
             ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
@@ -236,11 +345,16 @@ export const usePaymentFacade = (
             amountAndCurrency,
             isCredit: true,
             onChargeable: (params) =>
-                onChargeable(getOperations(api, params, paymentContext.getOperationsData()), {
-                    chargeablePaymentParameters: params,
-                    source: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
-                    context: paymentContext.getOperationsData(),
-                }),
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v4', chargebeeKillSwitch),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.PAYPAL_CREDIT,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v4',
+                    }
+                ),
             ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
@@ -249,24 +363,91 @@ export const usePaymentFacade = (
         }
     );
 
-    const paymentMethodType: PaymentMethodType | undefined = methods.selectedMethod?.value;
+    const chargebeeCard = useChargebeeCard(
+        {
+            amountAndCurrency,
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v5',
+                    }
+                ),
+            verifyOnly: flow === 'add-card',
+        },
+        {
+            api,
+            verifyPayment: verifyPaymentChargebeeCard,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            chargebeeKillSwitch,
+        }
+    );
+
+    const chargebeePaypal = useChargebeePaypal(
+        {
+            amountAndCurrency,
+            isCredit: false,
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData(), 'v5', forceEnableChargebee),
+                    {
+                        chargeablePaymentParameters: params,
+                        source: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+                        sourceType: params.type,
+                        context: paymentContext.getOperationsData(),
+                        paymentsVersion: 'v5',
+                    }
+                ),
+        },
+        {
+            api,
+            verifyPayment: verifyPaymentChargebeeCard,
+            handles: chargebeeHandles,
+            events: chargebeeEvents,
+            chargebeePaypalModalHandles,
+            chargebeeKillSwitch,
+        }
+    );
+
+    const paymentMethodValue: PaymentMethodType | undefined = methods.selectedMethod?.value;
+    const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
     const selectedProcessor = useMemo(() => {
-        if (isExistingPaymentMethod(paymentMethodType)) {
-            return savedMethod;
+        if (isExistingPaymentMethod(paymentMethodValue)) {
+            if (paymentMethodType === PAYMENT_METHOD_TYPES.CARD || paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
+                return savedMethod;
+            } else if (
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
+                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            ) {
+                return savedChargebeeMethod;
+            }
         }
 
-        if (paymentMethodType === PAYMENT_METHOD_TYPES.CARD) {
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CARD) {
             return card;
         }
 
-        if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
             return paypal;
         }
 
-        if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
             return paypalCredit;
         }
-    }, [paymentMethodType, card, savedMethod, paypal, paypalCredit]);
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+            return chargebeeCard;
+        }
+
+        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+            return chargebeePaypal;
+        }
+    }, [paymentMethodValue, paymentMethodType, card, savedMethod, paypal, paypalCredit, savedChargebeeMethod]);
 
     return {
         methods,
@@ -274,6 +455,8 @@ export const usePaymentFacade = (
         card,
         paypal,
         paypalCredit,
+        chargebeeCard,
+        chargebeePaypal,
         selectedProcessor,
         flow,
         amount,

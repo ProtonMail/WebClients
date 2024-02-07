@@ -3,7 +3,8 @@ import { FormEvent, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Price, useConfig } from '@proton/components';
+import { Icon } from '@proton/components/components/icon';
+import { Price } from '@proton/components/components/price';
 import {
     Alert3ds,
     CurrencySelector,
@@ -13,18 +14,27 @@ import {
     SubscriptionCycleSelector,
     getRenewalNoticeText,
 } from '@proton/components/containers/payments';
+import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import {
-    CardPayment,
+    OnBillingAddressChange,
+    WrappedTaxCountrySelector,
+} from '@proton/components/containers/payments/TaxCountrySelector';
+import { useConfig } from '@proton/components/hooks';
+import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import {
     PAYMENT_METHOD_TYPES,
-    PaymentMethodStatus,
-    PaypalPayment,
     TokenPayment,
+    TokenPaymentWithPaymentsVersion,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -43,13 +53,13 @@ export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
     onBack?: () => void;
-    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined, type: 'cc' | 'pp') => Promise<void>;
+    onPay: (payment: TokenPaymentWithPaymentsVersion, type: 'cc' | 'pp') => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
+    onChangeBillingAddress: OnBillingAddressChange;
     plan: Plan | undefined;
     planName: string | undefined;
-    paymentMethodStatus: PaymentMethodStatus | undefined;
 }
 
 const PaymentStep = ({
@@ -58,6 +68,7 @@ const PaymentStep = ({
     onChangeCycle,
     onChangeCurrency,
     onChangePlanIDs,
+    onChangeBillingAddress,
     plan,
     plans,
     planName: planNameString,
@@ -69,18 +80,36 @@ const PaymentStep = ({
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const hasGuarantee = plan?.Name === PLANS.VPN;
 
+    const chargebeeContext = useChargebeeContext();
+
     const paymentFacade = usePaymentFacade({
+        checkResult: subscriptionData.checkResult,
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
-        onChargeable: (_, { chargeablePaymentParameters, source }) => {
+        selectedPlanName: plan?.Name,
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion }) => {
             return withLoading(async () => {
-                let type: 'cc' | 'pp';
-                if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
-                    type = 'pp';
+                let paymentType: 'cc' | 'pp';
+                if (
+                    sourceType === PAYMENT_METHOD_TYPES.PAYPAL ||
+                    sourceType === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT ||
+                    sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+                ) {
+                    paymentType = 'pp';
                 } else {
-                    type = 'cc';
+                    paymentType = 'cc';
                 }
-                await onPay(chargeablePaymentParameters.Payment, type);
+
+                const legacyTokenPayment: TokenPayment | undefined = isV5PaymentToken(chargeablePaymentParameters)
+                    ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
+                    : undefined;
+
+                const withVersion: TokenPaymentWithPaymentsVersion = {
+                    ...legacyTokenPayment,
+                    paymentsVersion,
+                };
+
+                await onPay(withVersion, paymentType);
             });
         },
         flow: 'signup',
@@ -130,6 +159,8 @@ const PaymentStep = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
 
                     captureMessage('Payments: failed to handle classic signup', {
@@ -139,6 +170,11 @@ const PaymentStep = ({
                 }
             }
         });
+
+    const isPaypal = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL;
+    const isCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD;
+    const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    const isChargebeePaypal = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
 
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
@@ -178,6 +214,12 @@ const PaymentStep = ({
                     <div className="text-sm color-weak">
                         {getRenewalNoticeText({ renewCycle: subscriptionData.cycle })}
                     </div>
+                    {paymentFacade.showTaxCountry && (
+                        <WrappedTaxCountrySelector
+                            statusExtended={paymentFacade.statusExtended}
+                            onBillingAddressChange={onChangeBillingAddress}
+                        />
+                    )}
                     <PlanCustomization
                         mode="signup"
                         loading={false}
@@ -221,7 +263,7 @@ const PaymentStep = ({
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                         )}
-                        {paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                        {isPaypal && (
                             <StyledPayPalButton
                                 paypal={paymentFacade.paypal}
                                 flow="signup"
@@ -230,13 +272,21 @@ const PaymentStep = ({
                                 loading={loading}
                                 type="submit"
                             />
-                        ) : (
+                        )}
+                        {(isCard || isChargebeeCard) && (
                             <>
                                 <Button type="submit" size="large" loading={loading} color="norm" fullWidth>
                                     {subscriptionData.checkResult.AmountDue > 0
                                         ? c('Action').jt`Pay ${price} now`
                                         : c('Action').t`Confirm`}
                                 </Button>
+                                {paymentFacade.showInclusiveTax && (
+                                    <InclusiveVatText
+                                        tax={subscriptionData.checkResult?.Taxes?.[0]}
+                                        currency={subscriptionData.currency}
+                                        className="text-sm text-center color-weak mt-1"
+                                    />
+                                )}
                                 <Alert3ds />
                                 <div className="flex flex-nowrap color-weak mb-2 text-sm mx-7">
                                     <span className="shrink-0 mr-2">
@@ -245,6 +295,21 @@ const PaymentStep = ({
                                     <span className="flex-1">{c('Info')
                                         .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                                 </div>
+                            </>
+                        )}
+                        {isChargebeePaypal && (
+                            <>
+                                <ChargebeePaypalWrapper
+                                    chargebeePaypal={paymentFacade.chargebeePaypal}
+                                    iframeHandles={paymentFacade.iframeHandles}
+                                />
+                                {paymentFacade.showInclusiveTax && (
+                                    <InclusiveVatText
+                                        tax={subscriptionData.checkResult?.Taxes?.[0]}
+                                        currency={subscriptionData.currency}
+                                        className="text-sm text-center color-weak mt-1"
+                                    />
+                                )}
                             </>
                         )}
                     </form>
