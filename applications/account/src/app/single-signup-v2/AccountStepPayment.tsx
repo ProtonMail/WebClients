@@ -152,6 +152,7 @@ const AccountStepPayment = ({
         paymentMethods: model.session?.paymentMethods,
         paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         api: normalApi,
+        chargebeeEnabled: model.session?.user.ChargebeeUser,
         onChargeable: (_, { chargeablePaymentParameters, paymentsVersion }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
