@@ -19,7 +19,6 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
-    TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     DesktopAppUpsellModal = 'DesktopAppUpsellModal',

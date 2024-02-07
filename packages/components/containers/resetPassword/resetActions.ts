@@ -56,16 +56,7 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const {
-        username,
-        token,
-        resetResponse,
-        persistent,
-        appName,
-        ktActivation,
-        hasTrustedDeviceRecovery,
-        resetSelfAudit,
-    } = cache;
+    const { username, token, resetResponse, persistent, appName, ktActivation, resetSelfAudit } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -125,7 +116,7 @@ export const handleNewPassword = async ({
     }
 
     let trusted = false;
-    if (hasTrustedDeviceRecovery && keyPassword) {
+    if (keyPassword) {
         const addresses = await getAllAddresses(api);
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api,
@@ -373,7 +364,6 @@ export const handleRequestRecoveryMethods = async ({
     username,
     persistent,
     api,
-    hasTrustedDeviceRecovery,
     ktActivation,
     resetSelfAudit,
 }: {
@@ -382,7 +372,6 @@ export const handleRequestRecoveryMethods = async ({
     username: string;
     persistent: boolean;
     api: Api;
-    hasTrustedDeviceRecovery: boolean;
     ktActivation: KeyTransparencyActivation;
     resetSelfAudit: ResetSelfAudit;
 }): Promise<ResetActionResponse> => {
@@ -402,7 +391,6 @@ export const handleRequestRecoveryMethods = async ({
                     method: 'email',
                     Methods,
                     type: Type,
-                    hasTrustedDeviceRecovery,
                     ktActivation,
                     resetSelfAudit,
                 },
@@ -425,7 +413,6 @@ export const handleRequestRecoveryMethods = async ({
                 persistent,
                 Methods,
                 type: Type,
-                hasTrustedDeviceRecovery,
                 ktActivation,
                 resetSelfAudit,
             },
