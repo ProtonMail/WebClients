@@ -1,5 +1,6 @@
 import type { Reducer } from 'redux';
 
+import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
 import {
     passwordDelete,
     passwordHistoryClear,
@@ -7,7 +8,7 @@ import {
     passwordSave,
 } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
-import { UNIX_DAY } from '@proton/pass/utils/time/constants';
+import { UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export type PasswordHistoryEntry = {
@@ -27,7 +28,7 @@ const reducer: Reducer<PasswordHistoryState> = (state = [], action) => {
     if (passwordHistoryClear.match(action)) return [];
 
     if (passwordHistoryGarbageCollect.match(action)) {
-        const limit = getEpoch() - UNIX_DAY;
+        const limit = getEpoch() - UNIX_WEEK * MAX_PASSWORD_HISTORY_RETENTION_WEEKS;
         return state.filter(({ createTime }) => createTime > limit);
     }
 
