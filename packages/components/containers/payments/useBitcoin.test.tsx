@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { AmountAndCurrency, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
-import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { addApiMock, addApiResolver, apiMock, flushPromises } from '@proton/testing/index';
 
@@ -147,7 +147,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createToken({} as any).url, () => ({
+        addApiMock(createTokenV4({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -185,7 +185,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createToken({} as any).url, () => ({
+        addApiMock(createTokenV4({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -197,7 +197,7 @@ describe('', () => {
             },
         }));
 
-        addApiMock(getTokenStatus('Token-12345').url, () => ({
+        addApiMock(getTokenStatusV4('Token-12345').url, () => ({
             Code: 1000,
             Status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
         }));
@@ -244,7 +244,7 @@ describe('', () => {
             Currency: 'EUR',
         };
 
-        addApiMock(createToken({} as any).url, () => ({
+        addApiMock(createTokenV4({} as any).url, () => ({
             Code: 1000,
             Token: 'Token-12345',
             Status: 0,
@@ -258,7 +258,7 @@ describe('', () => {
 
         let resolvers: ReturnType<typeof addApiResolver>;
         const updateResolvers = () => {
-            resolvers = addApiResolver(getTokenStatus('Token-12345').url);
+            resolvers = addApiResolver(getTokenStatusV4('Token-12345').url);
         };
         updateResolvers();
 

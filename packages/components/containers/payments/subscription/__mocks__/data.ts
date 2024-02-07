@@ -547,8 +547,7 @@ export const subscription = {
     ],
 } as Subscription;
 
-// TODO: merge with subcription
-export const subscriptionB = {
+export const subscriptionBundle = {
     ID: 'PpErwjEKmPzaSJq7niHgapRGcJXdHg9xiDvVZd98OF1hXojWlmbuKMpxSZihUh-I9agIbYHw3bkZJ44KixWQNg==',
     InvoiceID: '8jJIlDHXg2jQYePRCBicfTKDbJwecy529KlYGdoqPGnAQ2ALW1RkH4dWFQ1vDIp9UryQ6ezSRiw0vEKmaTiX2g==',
     Cycle: 12,

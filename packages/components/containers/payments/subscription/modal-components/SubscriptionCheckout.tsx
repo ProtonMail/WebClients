@@ -2,6 +2,7 @@ import { ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import { APPS, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
 import {
     AddonDescription,
@@ -37,6 +38,7 @@ import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getRenewalNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
+import { OnBillingAddressChange, WrappedTaxCountrySelector } from '../../TaxCountrySelector';
 import { getTotalBillingText } from '../../helper';
 import { CheckoutModifiers } from '../useCheckoutModifiers';
 import CheckoutRow from './CheckoutRow';
@@ -144,6 +146,9 @@ interface BaseProps {
     enableDetailedAddons?: boolean;
     showPlanDescription?: boolean;
     subscription?: Subscription;
+    showTaxCountry?: boolean;
+    statusExtended?: PaymentMethodStatusExtended;
+    onBillingAddressChange?: OnBillingAddressChange;
 }
 
 type Props = BaseProps & CheckoutModifiers;
@@ -169,6 +174,9 @@ const SubscriptionCheckout = ({
     isScheduledSubscription,
     isProration,
     isCustomBilling,
+    showTaxCountry,
+    statusExtended,
+    onBillingAddressChange,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -350,6 +358,12 @@ const SubscriptionCheckout = ({
                     <div className="mb-4">
                         <hr />
                     </div>
+                    {showTaxCountry && (
+                        <WrappedTaxCountrySelector
+                            statusExtended={statusExtended}
+                            onBillingAddressChange={onBillingAddressChange}
+                        />
+                    )}
                     <CheckoutRow
                         title={c('Title').t`Amount due`}
                         amount={amountDue}

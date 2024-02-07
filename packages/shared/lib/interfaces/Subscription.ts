@@ -105,6 +105,10 @@ export interface Subscription {
     Plans: SubscriptionPlan[];
     External: External;
     UpcomingSubscription?: Subscription | null;
+    /**
+     * That's a V5 property. It's not available for V4.
+     */
+    IsTrial?: boolean;
 }
 
 export interface SubscriptionModel extends Subscription {
@@ -133,6 +137,29 @@ export interface Additions {
     [ADDON_NAMES.MEMBER_ENTERPRISE]?: number;
 }
 
+export interface Tax {
+    Name: string;
+    /**
+     * Tax rate in percent. For example, value can be 8.5 for 8.5%.
+     */
+    Rate: number;
+    /**
+     * Tax amount in cents. It must be an integer.
+     */
+    Amount: number;
+}
+
+export enum TaxInclusive {
+    EXCLUSIVE = 0,
+    INCLUSIVE = 1,
+}
+
+export enum SubscriptionMode {
+    Regular = 0,
+    CustomBillings = 1,
+    Upcoming = 2,
+}
+
 export interface SubscriptionCheckResponse {
     Amount: number;
     AmountDue: number;
@@ -149,6 +176,13 @@ export interface SubscriptionCheckResponse {
     Gift?: number;
     Additions: null | Additions;
     PeriodEnd: number;
+    Taxes?: Tax[];
+    TaxInclusive?: TaxInclusive;
+    SubscriptionMode?: SubscriptionMode;
+}
+
+export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
+    return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
 
 export enum Audience {

@@ -3,7 +3,13 @@ import { render, screen, within } from '@testing-library/react';
 import { COUPON_CODES } from '@proton/shared/lib/constants';
 import { Subscription } from '@proton/shared/lib/interfaces';
 
-import { familyUpsell, subscription, trialMailPlusUpsell, unlimitedUpsell } from '../__mocks__/data';
+import {
+    familyUpsell,
+    subscription,
+    subscriptionBundle,
+    trialMailPlusUpsell,
+    unlimitedUpsell,
+} from '../__mocks__/data';
 import { Upsell } from '../helpers';
 import UpsellPanels from './UpsellPanels';
 
@@ -71,5 +77,36 @@ describe('UpsellPanel', () => {
         );
 
         screen.getByText('Your trial ends June 20, 2024');
+    });
+
+    it.each([
+        {
+            subscription,
+            trialPlanName: 'Proton Mail',
+        },
+        {
+            subscription: subscriptionBundle,
+            trialPlanName: 'Proton Unlimited',
+        },
+    ])('should display trial info for the correct plan - $trialPlanName', ({ subscription, trialPlanName }) => {
+        render(
+            <UpsellPanels
+                subscription={
+                    {
+                        ...subscription,
+                        CouponCode: COUPON_CODES.REFERRAL,
+                        PeriodEnd: 1718870501,
+                    } as Subscription
+                }
+                upsells={[{ ...trialMailPlusUpsell, onUpgrade: jest.fn() } as unknown as Upsell]}
+            />
+        );
+
+        const expectedText = new RegExp(
+            `To continue to use ${trialPlanName} with premium features, choose your subscription and payment options.`,
+            'i'
+        );
+
+        expect(screen.getByText(expectedText)).toBeInTheDocument();
     });
 });

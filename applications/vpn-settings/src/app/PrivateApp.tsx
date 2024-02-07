@@ -53,15 +53,16 @@ const PrivateApp = ({ store, locales }: Props) => {
         return <StandardLoadErrorPage errorMessage={state.error.message} />;
     }
 
+    const loader = <LoaderPage />;
     if (!state.MainContainer) {
-        return <LoaderPage />;
+        return loader;
     }
 
     return (
         <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ErrorBoundary big component={<StandardErrorPage big />}>
-                    <StandardPrivateApp>
+                    <StandardPrivateApp loader={loader}>
                         <AccountSpotlightsProvider>
                             <state.MainContainer />
                         </AccountSpotlightsProvider>
