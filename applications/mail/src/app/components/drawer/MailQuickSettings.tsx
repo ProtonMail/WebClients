@@ -316,8 +316,13 @@ const MailQuickSettings = () => {
                 {(dbExists || esEnabled || isElectronApp) && (
                     <>
                         <Tooltip
-                            title={c('Info')
-                                .t`Clears browser data related to message content search including downloaded messages`}
+                            title={
+                                isElectronApp
+                                    ? c('Info')
+                                          .t`Removes all data associated with this app, including downloaded messages`
+                                    : c('Info')
+                                          .t`Clears browser data related to message content search including downloaded messages`
+                            }
                         >
                             <QuickSettingsButton
                                 onClick={() => setClearBrowserDataModalOpen(true)}
