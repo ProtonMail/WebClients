@@ -99,13 +99,14 @@ export type ThumbnailEncryptedBlock = {
 
 export type FileRequestBlock = {
     index: number;
-    signature: string;
     size: number;
     hash: Uint8Array;
+    signature: string;
     verificationToken: Uint8Array;
 };
 
 export type ThumbnailRequestBlock = {
+    index: number;
     size: number;
     hash: Uint8Array;
     type: ThumbnailType;
