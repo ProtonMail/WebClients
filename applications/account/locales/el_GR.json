@@ -1386,12 +1386,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Ασφαλής περιήγηση και premium χαρακτηριστικά VPN."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
       ],
@@ -3117,6 +3111,9 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently available to anyone with a paid ${ MAIL_APP_NAME } plan. Upgrade today to get access.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } είναι προς το παρόν διαθέσιμη σε οποιονδήποτε έχει ${ MAIL_APP_NAME } πλάνο επί πληρωμή,. Αναβαθμίστε σήμερα για να αποκτήσετε πρόσβαση."
       ],
       "Upgrade today or check again in early 2024 for access.": [
         "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
@@ -5804,9 +5801,6 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά.",
         "${ numberOfNonPrivateKeys } ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
-      ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } καταργήθηκε. Η προσφορά πακέτου δεν είναι διαθέσιμη σε πρόγραμμα 1 μηνός."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -10353,17 +10347,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10457,6 +10440,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10684,8 +10678,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Το ειδικά σχεδιασμένο NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, και ${ PASS_APP_NAME }"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Ο χώρος αποθήκευσης είναι κοινόχρηστος στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }. Οι διαχειριστές μπορούν να εκχωρήσουν διαφορετικές ποσότητες χώρου αποθήκευσης σε χρήστες στον οργανισμό τους"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των χρηστών στα ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, και ${ PASS_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Υποστήριξη για πρωτόκολλα κοινής χρήσης αρχείων όπως το BitTorrent"
@@ -11461,9 +11461,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Έχετε ήδη πρόσβαση σε premium λειτουργίες του ${ appName } — δε χρειάζεται να αγοράσετε ξανά."
-      ],
-      "You currently have": [
-        "Προς το παρόν έχετε"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Έχετε προσκληθεί να εγγραφείτε στο ${ PASS_APP_NAME }"
@@ -12560,6 +12557,17 @@
         "Διατήρηση ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Ο αποθηκευτικός χώρος δεδομένον παράγεται από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, και ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Έως και ${ totalStorageSize } Drive αποθηκευτικού χώρου"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Έως και ${ totalStorageSize } Mail αποθηκευτικού χώρου"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } αποθηκευτικού χώρου"
@@ -12579,14 +12587,23 @@
       "contact your administrator": [
         "επικοινωνήστε με το διαχειριστή σας"
       ],
+      "For all ${ BRAND_NAME } services": [
+        "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
+      ],
       "Get more storage": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης"
+      ],
+      "Try out ${ app } to its full potential": [
+        "Δοκιμάστε το ${ app } στο μέγιστο των δυνατοτήτων του"
       ],
       "upgrade for more storage": [
         "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Αναβαθμίστε το πλάνο σας για να συνεχίσετε να χρησιμοποιείτε τον λογαριασμό σας χωρίς διακοπές."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Αναβαθμίστε το πλάνο σας για να αυξήσετε τον αποθηκευτικό σας χώρο."
       ],
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
@@ -12618,6 +12635,15 @@
       ],
       "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
         "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "Θα χάσετε την πρόσβαση σε ${ gb } χώρου αποθήκευσης και υποστήριξη προτεραιότητας."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Θα χάσετε την πρόσβαση σε πρόσθετο χώρο αποθήκευσης, διευθύνσεις ηλεκτρονικού ταχυδρομείου, ψευδώνυμα, ημερολόγια, καθώς και υποστήριξη προτεραιότητας."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Θα χάσετε την πρόσβαση σε απεριόριστες συνδέσεις και σημειώσεις, απεριόριστα ψευδώνυμα hide-my-email, 20 κρύπτες, καθώς και υποστήριξη προτεραιότητας."
       ]
     },
     "Subscribe to calendar modal": {

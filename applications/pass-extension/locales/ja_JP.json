@@ -278,6 +278,9 @@
       "Pin item": [
         "アイテムの固定"
       ],
+      "Recent": [
+        "最近"
+      ],
       "Refresh the page": [
         "ページを更新"
       ],
@@ -298,6 +301,9 @@
       ],
       "Remove access": [
         "アクセス権の削除"
+      ],
+      "Remove member": [
+        "メンバーを削除する"
       ],
       "Request a feature": [
         "機能を提案"
@@ -325,6 +331,9 @@
       ],
       "Send us a message": [
         "メッセージを送る"
+      ],
+      "Set access level": [
+        "アクセスレベルの設定"
       ],
       "Share": [
         "共有"
@@ -695,6 +704,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } へ正常に招待状が送られました"
       ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -1379,6 +1391,15 @@
       "Logins": [
         "ログイン"
       ],
+      "Make all admins": [
+        "全ての管理者を対象に"
+      ],
+      "Make all editors": [
+        "全ての編集者を対象に"
+      ],
+      "Make all viewers": [
+        "全ての閲覧者を対象に"
+      ],
       "Members": [
         "メンバー"
       ],
@@ -1744,6 +1765,9 @@
       "Fill & copy password": [
         "パスワードを入力してコピー"
       ],
+      "Get Started": [
+        "利用開始"
+      ],
       "Get the mobile apps": [
         "モバイルアプリを入手する"
       ],
@@ -1771,6 +1795,9 @@
       "Member limit": [
         "メンバー上限"
       ],
+      "Members": [
+        "メンバー"
+      ],
       "Move all items ?": [
         "すべてのアイテムを移動しますか?"
       ],
@@ -1789,6 +1816,9 @@
       "Pin the extension": [
         "拡張機能をピン留めする"
       ],
+      "Review and share": [
+        "レビューして共有"
+      ],
       "Secure your data": [
         "データの保護"
       ],
@@ -1797,6 +1827,9 @@
       ],
       "Share with": [
         "と共有する"
+      ],
+      "Suggestions": [
+        "候補"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } に切り替えますか?"
@@ -1821,6 +1854,9 @@
       ],
       "Use my email": [
         "私のメールアドレスを使用してください"
+      ],
+      "Vault": [
+        "保管庫"
       ],
       "Vault shared with you": [
         "あなたと共有しているフォルダー"
@@ -1874,17 +1910,29 @@
       "An error occured while exporting your data": [
         "データのエクスポート中にエラーが発生しました"
       ],
+      "At least one email address is required": [
+        "少なくとも1つのメールアドレスが必要です"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "現在、このエイリアスのメールボックスを取得できません。"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "保管庫「${ vaultName }」を作成できませんでした"
       ],
+      "Could not send invitations to the following addresses :": [
+        ":のアドレスに招待を送信できませんでした"
+      ],
+      "Duplicate email addresses.": [
+        "メールアドレスが重複しています"
+      ],
       "Empty note": [
         "空のメモ"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"
+      ],
+      "Invalid email addresses.": [
+        "無効なメールアドレスです"
       ],
       "Maximum length is ${ maxLength } character": [
         "最大長は ${ maxLength } 文字です"
@@ -1906,6 +1954,9 @@
       ],
       "No password manager selected": [
         "パスワードマネージャーが選択されていない"
+      ],
+      "No results": [
+        "結果なし"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "英数字、ドット、ハイフン、アンダースコアのみが使用できます"

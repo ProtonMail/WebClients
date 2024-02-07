@@ -762,12 +762,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Tous les services premium de ${ BRAND_NAME } avec un seul abonnement."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Navigation sécurisée et fonctionnalités premium du VPN."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Cette offre n'est pas disponible avec votre abonnement actuel."
       ],
@@ -2804,9 +2798,6 @@
         "${ number } serveur",
         "${ number } serveurs"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "L'abonnement ${ plan } a été retiré. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
@@ -2991,9 +2982,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
-      ],
-      "Cancel anytime": [
-        "Annulez quand vous le voulez"
       ],
       "Can’t access your recovery email?": [
         "Vous ne pouvez plus accéder à votre adresse e-mail de récupération ?"
@@ -4964,6 +4952,9 @@
       "Autofill credit cards (coming soon)": [
         "Remplissage automatique pour les cartes de paiement (prochainement)"
       ],
+      "Automatic email forwarding": [
+        "Transfert automatique des messages"
+      ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
       ],
@@ -5176,6 +5167,9 @@
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Nombre illimité de coffres-forts partagés avec droits d'accès"
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
@@ -5730,6 +5724,17 @@
         "Votre abonnement comprend un maximum de ${ humanReadableAvailableSpace } d'espace de stockage en plus."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configurez votre organisation"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Commencez par ajouter des utilisateurs et donner leur accès à ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Commencer à utiliser ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Conserver cet abonnement"
@@ -5741,21 +5746,10 @@
         "Changer d'abonnement"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Chiffré de bout en bout"
-      ],
-      "Open source": [
-        "Open source"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Protégé par les lois suisses en matière de données personnelles"
-      ],
-      "Swiss based": [
-        "Basé en Suisse"
-      ]
-    },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Parlons-nous"
+      ],
       "Limited time offer": [
         "Offre à durée limitée"
       ],
@@ -5764,14 +5758,14 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Les avantages de ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } par mois"
       ],
       "Creating your account": [
         "Création de votre compte"
+      ],
+      "Current plan": [
+        "Abonnement actuel"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
@@ -5788,12 +5782,6 @@
       "Includes:": [
         "Comprend :"
       ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
-      ],
-      "Open-source and audited": [
-        "Open source et audité"
-      ],
       "per month": [
         "par mois"
       ],
@@ -5809,20 +5797,11 @@
       "Preparing your Recovery Kit": [
         "Préparation de votre kit de récupération"
       ],
-      "Protected by Swiss privacy laws": [
-        "Protégé par les lois suisses en matière de données personnelles"
-      ],
       "Updating your account": [
         "Mise à jour de votre compte"
       ],
       "Verifying your payment": [
         "Vérification de votre paiement"
-      ],
-      "Works on all devices": [
-        "Fonctionne sur tous les appareils"
-      ],
-      "You currently have": [
-        "Votre abonnement actuel"
       ]
     },
     "pass_signup_2023: Title": {
