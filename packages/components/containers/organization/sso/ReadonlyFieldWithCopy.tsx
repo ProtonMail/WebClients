@@ -19,7 +19,7 @@ const ReadonlyFieldWithCopy = ({ value, inputContainerClassName, ...rest }: Prop
         <InputFieldTwo
             value={value}
             readOnly
-            inputContainerClassName={clsx('bg-weak rounded w-full', inputContainerClassName)}
+            inputContainerClassName={clsx('rounded w-full', inputContainerClassName)}
             unstyled
             suffix={<Copy size="small" shape="ghost" color="weak" value={`${value}`} onCopy={onCopy} />}
             {...rest}

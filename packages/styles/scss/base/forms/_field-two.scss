@@ -68,6 +68,10 @@
 		cursor: default;
 	}
 
+	&--readonly .input {
+		border-color: var(--background-weak);
+	}
+
 	&--disabled-only-field {
 		.select,
 		.input.disabled {
@@ -147,6 +151,11 @@
 
 		@include media('print') {
 			font-size: 10pt;
+		}
+
+		&[readonly] {
+			border-color: var(--background-weak);
+			background-color: var(--background-weak);
 		}
 
 		.is-drawer-app & {
