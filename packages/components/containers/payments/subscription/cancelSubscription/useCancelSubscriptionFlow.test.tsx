@@ -87,7 +87,7 @@ it('should return subscription kept if user closes the feedback modal', async ()
 
     // Render the modal components returned by the hook
     const { getByTestId, rerender } = render(result.current.cancelSubscriptionModals, {
-        wrapper: componentWrapper,
+        wrapper: componentWrapper as any,
     });
     getByTestId('cancelSubscription').click();
     await wait(0);
@@ -110,7 +110,7 @@ it('should send the API request for subscription cancellation and return the res
     const cancelSubscriptionPromise = result.current.cancelSubscription();
 
     const { getByTestId, rerender, container, getByText } = render(result.current.cancelSubscriptionModals, {
-        wrapper: componentWrapper,
+        wrapper: componentWrapper as any,
     });
     getByTestId('cancelSubscription').click();
     await wait(0);
