@@ -283,6 +283,28 @@ async function renderCreditCardForm() {
         return errors;
     }
 
+    type ThreeDsAdditionalData = {
+        billingAddress: {
+            countryCode: string;
+            zip?: string;
+        };
+    };
+
+    function getAdditionalData({ countryCode, zip }: ThreeDsAdditionalData['billingAddress']): ThreeDsAdditionalData {
+        const additionalData: ThreeDsAdditionalData = {
+            billingAddress: {
+                countryCode,
+            },
+        };
+
+        const countiesWithZip = ['US'];
+        if (countiesWithZip.includes(countryCode)) {
+            additionalData.billingAddress.zip = zip;
+        }
+
+        return additionalData;
+    }
+
     function handleSubmit({ paymentIntent, zip, countryCode, correlationId }: ChargebeeSubmitEvent): void {
         const messageBus = getMessageBus();
 
@@ -292,12 +314,7 @@ async function renderCreditCardForm() {
             return;
         }
 
-        const additionalData = {
-            billingAddress: {
-                countryCode,
-                zip,
-            },
-        };
+        const additionalData = getAdditionalData({ countryCode, zip });
 
         cardComponent
             .authorizeWith3ds(paymentIntent, additionalData, {
