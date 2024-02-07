@@ -198,6 +198,7 @@ const Step1 = ({
         const newCurrency = optimistic.currency || options.currency;
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
+        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
 
         const optimisticCheckResult = getOptimisticCheckResult({
             plansMap: model.plansMap,
@@ -227,7 +228,7 @@ const Step1 = ({
                 newPlanIDs,
                 newCurrency,
                 newCycle,
-                model.subscriptionData.billingAddress,
+                newBillingAddress,
                 couponCode
             );
 
@@ -243,6 +244,7 @@ const Step1 = ({
                     cycle: newCycle,
                     planIDs: newPlanIDs,
                     checkResult,
+                    billingAddress: newBillingAddress,
                 },
                 optimistic: {
                     ...old.optimistic,
