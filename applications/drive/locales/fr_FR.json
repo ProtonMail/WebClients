@@ -568,6 +568,9 @@
       "Save": [
         "Enregistrer"
       ],
+      "Save and copy alias": [
+        "Enregistrer et copier l'alias"
+      ],
       "Search": [
         "Rechercher"
       ],
@@ -1974,6 +1977,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Mettez à niveau votre compte pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe pilotée par IA avec un support d'experts dédié 24h/24 et 7j/7."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
@@ -1982,6 +1988,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Vos méthodes de récupération de compte et de données sont définies."
       ]
     },
     "description": {
@@ -2112,8 +2121,23 @@
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
       ],
+      "Alias is not valid": [
+        "L'alias n'est pas valide."
+      ],
+      "Alias is required": [
+        "L'alias est nécessaire."
+      ],
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
+      ],
+      "Aliases could not be loaded": [
+        "Les alias n'ont pas pu être chargés."
+      ],
+      "An error occurred while loading alias options": [
+        "Une erreur s’est produite lors du chargement des options d'alias."
+      ],
+      "An error occurred while saving alias": [
+        "Une erreur est survenue lors de la sauvegarde de l'alias."
       ],
       "Authentication canceled.": [
         "L'authentification a été annulée."
@@ -2195,6 +2219,9 @@
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
       ],
+      "Forward address is required": [
+        "L'adresse de transfert est nécessaire."
+      ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
       ],
@@ -2237,6 +2264,9 @@
       ],
       "Missing signature": [
         "Il manque la signature."
+      ],
+      "Name is required": [
+        "Le nom est nécessaire."
       ],
       "No calendars found to import": [
         "Aucun calendrier n'a été trouvé pour l'importation."
@@ -2928,6 +2958,9 @@
     "Header": {
       "Contacts": [
         "Contacts"
+      ],
+      "Security Center": [
+        "Centre de sécurité"
       ]
     },
     "Hint": {
@@ -3749,6 +3782,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Remarque importante"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
@@ -4148,6 +4184,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
+      "The vault your alias will be stored in.": [
+        "Il s'agit du coffre-fort dans lequel votre alias sera stocké."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Certains fichiers doivent encore être transférés. Si vous fermez le gestionnaire de transfert, toutes les opérations seront arrêtées."
       ],
@@ -4301,6 +4340,9 @@
       ],
       "Want to sync files faster?": [
         "Vous voulez synchroniser vos fichiers plus rapidement ?"
+      ],
+      "Warning": [
+        "Avertissement"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bien joué, vous venez de doubler votre espace de stockage gratuit !"
@@ -4534,6 +4576,9 @@
       ],
       "Add image URL": [
         "Ajouter l'URL de l'image"
+      ],
+      "Add title": [
+        "Ajoutee un titre"
       ],
       "Add to group": [
         "Ajouter au groupe"
@@ -4949,6 +4994,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
+      ],
+      "Your alias": [
+        "Votre alias"
       ],
       "Your password (admin)": [
         "Votre mot de passe (admin)"
@@ -5873,14 +5921,45 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tous les alias"
+      ],
+      "Create alias": [
+        "Créer un alias"
+      ],
+      "Get an alias": [
+        "Obtenir un alias"
+      ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
+      ],
+      "New alias": [
+        "Nouvel alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Ouvrir ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Protégez votre identité en ligne"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Essayez ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Ajoutez un nom et une note pour suivre l'endroit où vous l'utilisez."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Afficher les journaux"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Notre solution de sécurité de pointe pilotée par IA est conçue pour les utilisateurs qui recherchent une protection renforcée pour leurs comptes. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel est **actif** et protège votre compte."
       ]
     },
     "Select files": {
@@ -6374,6 +6453,12 @@
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
+      "Alias copied to clipboard": [
+        "L'alias a été copié dans le presse-papiers."
+      ],
+      "Alias saved and copied": [
+        "L'alias a été copié et enregistré."
+      ],
       "Bug reported": [
         "Le bug a été signalé."
       ],
@@ -6718,6 +6803,9 @@
       "Empty trash": [
         "Vider le dossier Corbeille"
       ],
+      "Enable 2FA": [
+        "Activer l'authentification 2FA"
+      ],
       "Enable drive search": [
         "Activer la recherche dans Drive"
       ],
@@ -6745,6 +6833,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } résultat trouvé",
         "${ searchView.numberOfResults } résultats trouvés"
+      ],
+      "Get advanced protection": [
+        "Obtenir une protection avancée"
       ],
       "Groups": [
         "Groupes"
@@ -6803,6 +6894,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Need more aliases?": [
+        "Besoin de plus d'alias ?"
       ],
       "Night theme": [
         "Thème nuit"
@@ -6881,6 +6975,9 @@
       ],
       "Searching…": [
         "Recherche…"
+      ],
+      "Security center": [
+        "Centre de sécurité"
       ],
       "Select action to take on contact group": [
         "Sélectionnez l'action que vous voulez effectuer sur le groupe de contacts."
@@ -7004,6 +7101,9 @@
       ],
       "Your 500 MB bonus": [
         "Votre bonus de 500 Mo"
+      ],
+      "Your account is protected": [
+        "Votre compte est protégé."
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
