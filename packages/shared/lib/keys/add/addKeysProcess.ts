@@ -121,7 +121,7 @@ export const addUserKeysProcess = async ({
         }
     }
 
-    if (getIsPasswordless(organizationKey?.Key)) {
+    if (getIsPasswordless(organizationKey?.Key) && organizationKey?.privateKey) {
         const result = await reencryptOrganizationToken({
             Token: organizationKey.Key.Token,
             encryptionKey: privateKey,
