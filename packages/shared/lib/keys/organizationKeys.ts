@@ -319,7 +319,7 @@ export const generateMemberAddressKey = async ({
 };
 
 export const getIsPasswordless = (orgKey?: OrganizationKey): orgKey is PasswordlessOrganizationKey => {
-    return !!orgKey && !!orgKey.Signature && !!orgKey.Token && !!orgKey.PrivateKey;
+    return !!orgKey && (orgKey.Passwordless || (!!orgKey.Signature && !!orgKey.Token && !!orgKey.PrivateKey));
 };
 
 export const reencryptOrganizationToken = async ({
