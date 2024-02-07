@@ -1383,12 +1383,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Penjelajahan aman dan fitur VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
       ],
@@ -5770,9 +5764,6 @@
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Silakan verifikasi keabsahan kunci dan coba lagi."
-      ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "Paket ${ plan } dihapus. Penawaran terbundel tidak tersedia dengan paket berdurasi 1 bulan."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
@@ -10249,17 +10240,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10353,6 +10333,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11353,9 +11344,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Anda telah memiliki akses ke seluruh fitur premium ${ appName } — Anda tidak perlu membeli paket apapun lagi."
-      ],
-      "You currently have": [
-        "Anda saat ini memiliki"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Anda telah diundang untuk bergabung ke ${ PASS_APP_NAME }"
