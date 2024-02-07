@@ -54,13 +54,13 @@ const PromotionBanner = ({
         >
             <div
                 className={clsx(
-                    'inline-flex mx-auto flex-nowrap items-center ',
+                    'inline-flex mx-auto flex-nowrap items-center flex-column md:flex-row gap-2',
                     (() => {
                         if (contentCentered) {
                             return 'm-0.5 px-2';
                         }
                         if (mode === 'banner') {
-                            return 'm-3 pl-4 w-full';
+                            return 'm-3 px-4 w-full';
                         }
                         if (mode === 'row') {
                             return 'm-2 pl-4 w-full';
@@ -76,11 +76,11 @@ const PromotionBanner = ({
                     />
                 ) : (
                     <>
-                        {icon && <div className="shrink-0 mr-2">{icon}</div>}
+                        {icon && <div className="shrink-0">{icon}</div>}
                         {description && (
-                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>{description}</div>
+                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1', mode === 'banner' && !contentCentered && 'text-center md:text-left')}>{description}</div>
                         )}
-                        {cta && <div className="shrink-0 ml-2 max-w-1/2 text-right">{cta}</div>}
+                        {cta && <div className="shrink-0 w-full md:w-auto md:max-w-1/3 text-right">{cta}</div>}
                     </>
                 )}
             </div>
