@@ -357,11 +357,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         organization={organization}
                         verifiedDomains={verifiedDomains}
                         app={app}
-                        onSuccess={() => {
-                            if (hasPassB2BPlan) {
-                                setupOrgSpotlight.close();
-                            }
-                        }}
+                        onSuccess={setupOrgSpotlight.close}
                         useEmail={useEmail}
                         optionalName={hasVpnOrPassB2BPlan}
                         allowStorageConfiguration={allowStorageConfiguration}
