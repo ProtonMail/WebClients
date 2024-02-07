@@ -964,7 +964,7 @@ const Step1 = ({
             isB2bPlan={isB2bPlan}
         >
             <div className="flex items-center flex-column">
-                <div className="signup-v1-header mb-4 text-center">
+                <div className="signup-v1-header mb-4 mt-4 md:mt-0 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {(() => {
                             if (isB2bPlan) {
