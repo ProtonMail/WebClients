@@ -23,7 +23,6 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     DesktopAppUpsellModal = 'DesktopAppUpsellModal',
-    OrganizationPasswordlessKey = 'OrganizationPasswordlessKey',
 }
 
 enum CalendarFeatureFlag {}
