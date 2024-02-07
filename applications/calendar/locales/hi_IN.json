@@ -1035,6 +1035,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "समय सीमा बदलें"
+      ],
       "Change time range to": [
         "समय रेंज को इसमे बदलें"
       ]
@@ -2092,6 +2095,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "अपनी दक्षता को बढ़ावा देने और अपने समय को ट्रैक करने के लिए कार्यक्रम को विभाग या अपने ऊर्जा स्तर के अनुसार रंग-कोड करें। एक पेड योजना के साथ यह सब और बहुत कुछ मिलेगा।"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "संपर्कों को डिक्रिप्ट किया जा रहा है… इसमें कुछ मिनट लग सकते हैं। जब प्रक्रिया पूरी हो जाती है, तो आप निर्यात किए गए अपने सभी संपर्कों के साथ फ़ाइल डाउनलोड करने में सक्षम होंगे।"
       ],
@@ -2813,6 +2819,14 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "रेटिंग चाहिए"
+      ]
+    },
+    "esCalendar": {
+      "No result": [
+        "कोई परिणाम नहीं।"
+      ],
+      "Results": [
+        "परिणाम"
       ]
     },
     "Event canceled status badge": {
@@ -3675,6 +3689,9 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
       ],
+      "Indexing events: ${ current }/${ total }": [
+        "कार्यक्रमों का सूचीकरण: ${ current }/${ total }"
+      ],
       "Indexing paused": [
         "अनुक्रमण रोका गया"
       ],
@@ -4466,6 +4483,9 @@
       "Reveal password": [
         "पासवर्ड प्रकट"
       ],
+      "Secondary": [
+        "द्वितीयक"
+      ],
       "Secondary time zone": [
         "दूसरा समय क्षेत्र"
       ],
@@ -4706,6 +4726,9 @@
       ],
       "Edit calendar": [
         "कैलेंडर बदलाव करें"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "किसी भी देश की आधिकारिक सार्वजनिक छुट्टियों का कैलेंडर प्राप्त करें।"
       ],
       "How to import calendars from another service": [
         "किसी अन्य सेवा से कैलेंडर कैसे आयात करें"
@@ -4984,6 +5007,9 @@
       ]
     },
     "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "छुट्टियों का कैलेंडर जोड़ने में विफल हुए।"
+      ],
       "Calendar added": [
         "कैलेंडर जोड़ा गया"
       ],
@@ -5173,6 +5199,9 @@
       ],
       "All events": [
         "सारे इवेंट"
+      ],
+      "Auto": [
+        "स्वचालित"
       ],
       "Automatic (${ value })": [
         "स्वचालित (${ value })"
@@ -5761,6 +5790,15 @@
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "अपने कैलेंडर में अपने देश की सार्वजनिक छुट्टियों को जोड़ें।"
+      ],
+      "Color-coding is here!": [
+        "रंग कोडिंग यहाँ है!"
+      ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "हमारी नई खोज सुविधा के साथ आसानी से वह कार्यक्रम खोजें जिसे आप खोज रहे हैं।"
+      ],
       "Get up to ${ credits } in credits.": [
         "${ credits } तक क्रेडिट लें।"
       ],
@@ -6535,6 +6573,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "कार्यक्रम पे जाए।"
+      ],
       "Open in a new tab": [
         "नए टैब में खोलें"
       ]

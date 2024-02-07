@@ -568,6 +568,9 @@
       "Save": [
         "შენახვა"
       ],
+      "Save and copy alias": [
+        "შენახვა და ფსევდონიმის კოპირება"
+      ],
       "Search": [
         "ძებნა"
       ],
@@ -1950,6 +1953,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -1971,6 +1977,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "დააყენეთ მონაცემების აღდგენის მეთოდი, მისი დაკარგვის თავიდან ასაცილებლად."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშსზე წვდომის დაკარგვა."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -1982,6 +1994,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "წასაშლელად შეგიძლიათ, მონიშნოთ ის კონტაქტები, რომელთა შერწყმა და შენარჩუნება არ გსურთ. წაშლა მოხდება, მხოლოდ, შერწყმის ღილაკზე დაწკაპუნების შემდეგ"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია, 2FA კი - ჩართული."
+      ],
+      "Your account and data recovery methods are set.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთდები დაყეენბულია."
       ]
     },
     "description": {
@@ -2112,8 +2130,23 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
+      "Alias is not valid": [
+        "ფსევდონიმი არასწორია"
+      ],
+      "Alias is required": [
+        "ფსევდონიმი აუცილებელია"
+      ],
       "Alias options could not be resolved": [
         "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
+      "Aliases could not be loaded": [
+        "ფსევდონიმების ჩატვირთვა შეუძლებელია"
+      ],
+      "An error occurred while loading alias options": [
+        "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
+      ],
+      "An error occurred while saving alias": [
+        "შეცდომა ფსევდონიმის შენახვისას"
       ],
       "Authentication canceled.": [
         "ავთენტიკაცია გაუქმებულია."
@@ -2195,6 +2228,9 @@
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
+      "Forward address is required": [
+        "გადამისამართების მისამართი აუცილებელია"
+      ],
       "Image upload failed": [
         "გამოსახულების ატვირთვის შეცდომა"
       ],
@@ -2237,6 +2273,9 @@
       ],
       "Missing signature": [
         "ხელმოწერა აკლია"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "No calendars found to import": [
         "შემოსატანი კალენდრები ვერ ვიპოვე"
@@ -2928,6 +2967,9 @@
     "Header": {
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Security Center": [
+        "უსაფრთხოების ცენტრი"
       ]
     },
     "Hint": {
@@ -3749,6 +3791,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
       ],
+      "Important note": [
+        "მნიშვნელოვანი შენიშვნა"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
       ],
@@ -4148,6 +4193,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
+      "The vault your alias will be stored in.": [
+        "საცავი, რომელშიც თქვენი ფსევდონიმი იქნება შენახული."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
       ],
@@ -4301,6 +4349,9 @@
       ],
       "Want to sync files faster?": [
         "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
+      ],
+      "Warning": [
+        "გაფრთხილება"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "ეს გზა სწორია. თქვენ ახლახანს გაიორმაგეთ უფასო საცავი!"
@@ -4534,6 +4585,9 @@
       ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
+      ],
+      "Add title": [
+        "სათაურის დამატება"
       ],
       "Add to group": [
         "ჯგუფში ჩამატება"
@@ -4949,6 +5003,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "დიახ, მე მინდა ჩემი ფაილების სამუდამოდ წაშლა"
+      ],
+      "Your alias": [
+        "თქვენი ფსევდონიმი"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -5873,11 +5930,42 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "ყველა ფსევდონიმი"
+      ],
+      "Create alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "მაგ Amazon, eBay, Etsy"
+      ],
+      "Get an alias": [
+        "ფსევდონიმის მიღება"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "New alias": [
+        "ახალი ფსევდონიმი"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გახსნა"
       ],
+      "Protect your online identity": [
+        "დაცავით თქვენი იდენტობა ინტერნეტში"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "სცადეთ ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "ჟურნალის ნახვა"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
       ]
     },
     "Select files": {
@@ -6371,6 +6459,12 @@
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Alias copied to clipboard": [
+        "ფსევდონიმი კოპირებულია ბუფერში"
+      ],
+      "Alias saved and copied": [
+        "ფსევდონიმი შენახული და კოპირებულია"
+      ],
       "Bug reported": [
         "შეცდომა გადაგზავნილია"
       ],
@@ -6715,6 +6809,9 @@
       "Empty trash": [
         "ნაგვის გასუფთავება"
       ],
+      "Enable 2FA": [
+        "2FA-ის ჩართვა"
+      ],
       "Enable drive search": [
         "Drive-ზე ძებნის ჩართვა"
       ],
@@ -6742,6 +6839,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი",
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი"
+      ],
+      "Get advanced protection": [
+        "დამატებითი უსაფრთხოების მიღება"
       ],
       "Groups": [
         "ჯგუფები"
@@ -6800,6 +6900,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Need more aliases?": [
+        "მეტი ფსევდონიმი გჭირდებათ?"
       ],
       "Night theme": [
         "ღამის თემა"
@@ -6878,6 +6981,9 @@
       ],
       "Searching…": [
         "ძებნა…"
+      ],
+      "Security center": [
+        "უსაფრთხოების ცენტრი"
       ],
       "Select action to take on contact group": [
         "აირჩიეთ კონტაქტების ჯგუფზე განსახორციელებელი ქმედება"
@@ -7001,6 +7107,9 @@
       ],
       "Your 500 MB bonus": [
         "თქვენი 500 მბ ბონუსი"
+      ],
+      "Your account is protected": [
+        "თქვენი ანგარიში დაცულია"
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"

@@ -1392,12 +1392,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Säker surfning och premium VPN-funktioner."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
       ],
@@ -5813,9 +5807,6 @@
         "${ numberOfNonPrivateKeys } uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen.",
         "${ numberOfNonPrivateKeys } uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } borttaget. Paketerbjudande är inte tillgängligt på ett 1-månadspaket."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
       ],
@@ -10106,6 +10097,9 @@
       "Autofill credit cards (coming soon)": [
         "Autofyll kreditkort (kommer snart)"
       ],
+      "Automatic email forwarding": [
+        "Automatisk vidarebefordran av e-post"
+      ],
       "Available on all platforms": [
         "Tillgängligt på alla plattformar"
       ],
@@ -10243,6 +10237,9 @@
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
       ],
+      "Require 2FA for organization": [
+        "Kräver 2FA för organisation"
+      ],
       "Router support": [
         "Router-stöd"
       ],
@@ -10276,6 +10273,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integration (kommer snart)"
       ],
       "Start protecting your organization": [
         "Börja skydda din organisation"
@@ -10318,6 +10318,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Obegränsat antal delade valv med åtkomstbehörigheter"
       ],
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
@@ -10369,17 +10372,6 @@
       ],
       "Team management": [
         "Teamhantering"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10477,6 +10469,17 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -10505,6 +10508,9 @@
       ],
       "terms and conditions": [
         "användarvillkor"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Organisationsnamnet kommer vara synligt för dina användare när de är inloggade."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "För att komma igång, välj ett visningsnamn. Det här är vad andra kommer att se när du skickar ett e-postmeddelande, bjuder in dem till en händelse eller delar en fil."
@@ -10571,6 +10577,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Låter dig ställa in automatiska svar (autosvar) för dina inkommande meddelanden"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Vidarebefordra automatiskt e-post som skickats till ditt ${ MAIL_APP_NAME }-konto till valfri annan e-postadress."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massutskick av reklam eller programmatisk e-post stöds för närvarande inte. Vi rekommenderar att du använder en dedikerad e-postleverantör för detta ändamål."
@@ -11305,6 +11314,9 @@
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Begär provperiod"
+      ],
       "Start using ${ appName }": [
         "Börja använda ${ appName }"
       ],
@@ -11338,6 +11350,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsätt med ditt ${ BRAND_NAME }-konto"
+      ],
+      "Let's talk": [
+        "Låt oss prata"
       ],
       "Limited time offer": [
         "Tidsbegränsat erbjudande"
@@ -11374,6 +11389,15 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per månad"
       ],
+      "/month /user": [
+        "/månad/användare"
+      ],
+      "/month /user, billed annually": [
+        "/månad/användare, faktureras årligen"
+      ],
+      "/month /user, billed biennially": [
+        "/månad/användare, faktureras vartannat år"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Alla premiumtjänster för ${ BRAND_NAME }."
       ],
@@ -11394,6 +11418,9 @@
       ],
       "Creating your account": [
         "Skapar ditt konto"
+      ],
+      "Current plan": [
+        "Nuvarande paket"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Upptäck ${ PASS_APP_NAME },${ br }vår nya krypterade lösenordshanterare"
@@ -11416,6 +11443,15 @@
       "End-to-end encryption": [
         "End-to-end-kryptering"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Ange ett visningsnamn för **${ username }**. Detta är vad dina användare kommer se när du ändrar deras behörigheter eller delar data med dem."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Grundläggande skydd och säkert samarbete för obegränsat antal användare"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Allt från ${ planTitle }, plus …"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
       ],
@@ -11428,11 +11464,20 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "From the team that knows encryption": [
+        "Från teamet som kan kryptering"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Skaffa ${ appName } för ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Skaffa ${ appName } för ${ browserName } snart"
+      ],
+      "Get in touch with our sales team": [
+        "Ta kontakt med vårt säljteam"
+      ],
+      "Get the security and features your business needs": [
+        "Skaffa den säkerhet och de funktioner som ditt företag behöver"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-alias skyddar din e-post från dataintrång"
@@ -11467,6 +11512,9 @@
       "One easy subscription.": [
         "En enkel prenumeration."
       ],
+      "Open source and audited": [
+        "Öppen källkod och granskad"
+      ],
       "Open-source and audited": [
         "Öppen källkod och granskad"
       ],
@@ -11491,11 +11539,17 @@
       "Save your recovery kit to continue": [
         "Spara ditt återställningskit för att fortsätta"
       ],
+      "Setting up your organization": [
+        "Ställer in din organisation"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Loggar in på ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Speciallanseringserbjudande: Få ${ title } för ${ price } för alltid!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Skräddarsydda lösningar för större organisationer med anpassade behov."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Erbjudandet du valde är inte tillgängligt för ${ currentPlanTitle }-prenumeranter."
@@ -11520,9 +11574,6 @@
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
         "Du har redan åtkomst till premiumfunktioner för ${ appName } – du behöver inte köpa igen."
-      ],
-      "You currently have": [
-        "Du har för närvarande"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "Du har blivit inbjuden att gå med i ${ PASS_APP_NAME }"
@@ -11549,6 +11600,11 @@
       ],
       "Secure your account": [
         "Säkra ditt konto"
+      ]
+    },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "För företag"
       ]
     },
     "passwordless": {
@@ -12429,6 +12485,9 @@
       ],
       "Email address": [
         "E-postadress"
+      ],
+      "Organization name": [
+        "Organisationsnamn"
       ],
       "Password": [
         "Lösenord"
