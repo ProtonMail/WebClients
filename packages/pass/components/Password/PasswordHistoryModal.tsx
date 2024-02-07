@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import type { ModalProps } from '@proton/components/components';
@@ -9,6 +9,7 @@ import { Icon } from '@proton/components/components';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
 import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
@@ -59,8 +60,16 @@ export const PasswordHistoryModal: FC<ModalProps> = (props) => {
                         {empty && <h6 className="text-rg text-semibold mb-1">{c('Label').t`No history`}</h6>}
                         <div className="text-sm">
                             {empty
-                                ? c('Info').t`Generated passwords will be stored for a period of one day.`
-                                : c('Info').t`Passwords older than 1 day are automatically deleted from history.`}
+                                ? c('Info').ngettext(
+                                      msgid`Generated passwords will be stored for a period of ${MAX_PASSWORD_HISTORY_RETENTION_WEEKS} week.`,
+                                      `Generated passwords will be stored for a period of ${MAX_PASSWORD_HISTORY_RETENTION_WEEKS} weeks.`,
+                                      MAX_PASSWORD_HISTORY_RETENTION_WEEKS
+                                  )
+                                : c('Info').ngettext(
+                                      msgid`Passwords older than ${MAX_PASSWORD_HISTORY_RETENTION_WEEKS} week are automatically deleted from history.`,
+                                      `Passwords older than ${MAX_PASSWORD_HISTORY_RETENTION_WEEKS} weeks are automatically deleted from history.`,
+                                      MAX_PASSWORD_HISTORY_RETENTION_WEEKS
+                                  )}
                         </div>
                     </div>
                 </div>
