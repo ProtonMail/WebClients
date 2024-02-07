@@ -272,6 +272,9 @@
       "Pin item": [
         "Kiinnitä kohde"
       ],
+      "Recent": [
+        "Viimeisimmät"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -316,6 +319,9 @@
       ],
       "Send us a message": [
         "Lähetä meille viesti"
+      ],
+      "Set access level": [
+        "Aseta käyttöoikeustaso"
       ],
       "Share": [
         "Jaa"
@@ -427,11 +433,18 @@
       "Auto-lock could not be disabled": [
         "Automaattilukitusta ei voitu poistaa käytöstä"
       ],
+      "Cannot send invitation at the moment": [
+        "Kutsua ei voi lähettää juuri nyt",
+        "Kutsuja ei voi lähettää juuri nyt"
+      ],
       "Could not confirm this invite at the moment": [
         "Kutsun vahvistus ei nyt onnistunut"
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Suosituksia ei voi ladata juuri nyt."
       ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
@@ -679,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } kutsun lähetys onnistui"
+      ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
@@ -738,6 +754,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Tuo olemassa olevat salasanasi palveluun ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Sisäänrakennettu 2FA-todentaja"
@@ -799,6 +818,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Luotuja salasanoja säilytetään yhden päivän ajan."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Ota kaikki hyöty irti Passista luomalla kullekin tiimille tai projektille oma holvi."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Hanki rajattomasti aliaksia, nauti ainutlaatuisista ominaisuuksista ja tuet toimintaamme tilaamalla Pass Plus."
       ],
@@ -818,6 +840,9 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Sadaksesi parhaan ${ PASS_APP_NAME }in käyttökokemuksen, myönnä laajennuksen tarvitsemat käyttöoikeudet."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Asenna ${ PASS_APP_NAME } selaimeen ${ browser.title } kirjautumistietojesi nopeaa automaattitäyttöä varten."
+      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "Asenna ${ PASS_APP_NAME } selaimeen ${ browser.title } kirjautumistietojesi nopeaa automaattitäyttöä varten."
       ],
@@ -826,6 +851,9 @@
       ],
       "Invitation sent": [
         "Kutsu on lähetetty"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Kutsu tiettyjä henkilöitä ja aseta oikeat käyttöoikeudet."
       ],
       "Invite successfully removed": [
         "Kutsu poistettiin"
@@ -965,6 +993,9 @@
       ],
       "Select destination vault": [
         "Valitse kohdeholvi"
+      ],
+      "Select vault to share": [
+        "Valitse jaettava holvi"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Valitse tuotavien holvien tallennuskohde."
@@ -1298,6 +1329,15 @@
       ],
       "Logins": [
         "Kirjautumistiedot"
+      ],
+      "Make all admins": [
+        "Tee kaikista ylläpitäjiä"
+      ],
+      "Make all editors": [
+        "Tee kaikista muokkaajia"
+      ],
+      "Make all viewers": [
+        "Tee kaikista katselijoita"
       ],
       "Members": [
         "Jäsenet"
@@ -1648,6 +1688,9 @@
       "Enter your PIN": [
         "Syötä PIN-koodi"
       ],
+      "Get Started": [
+        "Aloita"
+      ],
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
       ],
@@ -1656,6 +1699,9 @@
       ],
       "Import to vault(s)": [
         "Tuo holviin/holveihin"
+      ],
+      "Import your data": [
+        "Tuo tietosi"
       ],
       "Install extension": [
         "Asenna laajennus"
@@ -1668,6 +1714,9 @@
       ],
       "Member limit": [
         "Jäsenrajoitus"
+      ],
+      "Members": [
+        "Jäsentä"
       ],
       "Move all items ?": [
         "Siirretäänkö kaikki kohteet?"
@@ -1687,6 +1736,9 @@
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
       ],
+      "Review and share": [
+        "Tarkista ja jaa"
+      ],
       "Secure your data": [
         "Suojaa tietosi"
       ],
@@ -1696,8 +1748,14 @@
       "Settings": [
         "Asetukset"
       ],
+      "Share vaults with your team": [
+        "Jaa holvisi tiimisi kanssa"
+      ],
       "Share with": [
         "Jaa henkilölle"
+      ],
+      "Suggestions": [
+        "Ehdotukset"
       ],
       "Transfer ownership": [
         "Siirrä omistajuus"
@@ -1760,11 +1818,20 @@
       "An error occured while exporting your data": [
         "Tietojasi vietäessä tapahtui virhe"
       ],
+      "At least one email address is required": [
+        "Ainakin yksi sähköpostiosoite vaaditaan"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Holvia \"${ vaultName }\" ei voitu luoda"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kutsujen lähetys seuraaviin osoitteisiin ei onnistunut:"
+      ],
+      "Duplicate email addresses.": [
+        "Sähköpostiosoitteet on jo olemassa."
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
@@ -1774,6 +1841,9 @@
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
+      ],
+      "Invalid email addresses.": [
+        "Virheelliset sähköpostiosoitteet."
       ],
       "Maximum length is ${ maxLength } character": [
         "Enimmäispituus on ${ maxLength } merkki",
@@ -1796,6 +1866,9 @@
       ],
       "No password manager selected": [
         "Salasanahallintaa ei ole valittu"
+      ],
+      "No results": [
+        "Ei tuloksia"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."

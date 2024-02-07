@@ -17,6 +17,9 @@
       "Add new item": [
         "ახალი ელემენტის დამატება"
       ],
+      "Admin panel": [
+        "ადმინისტრატორის პანელი"
+      ],
       "Advanced": [
         "დამატებით"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
+      ],
+      "Create new items": [
+        "ახალი ელემენტების შექმნა"
       ],
       "Create note": [
         "შექმენით ჩანაწერი"
@@ -194,6 +200,9 @@
       "Importing": [
         "შემოტანა"
       ],
+      "Install extension": [
+        "გაფართოების დაყენება"
+      ],
       "Invite others": [
         "სხვების მოწვევა"
       ],
@@ -263,6 +272,9 @@
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
+      "Recent": [
+        "უახლესი"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -277,6 +289,9 @@
       ],
       "Remove access": [
         "წვდომის გაუქმება"
+      ],
+      "Remove member": [
+        "წევრის წაშლა"
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
@@ -304,6 +319,9 @@
       ],
       "Send us a message": [
         "მოგვწერეთ"
+      ],
+      "Set access level": [
+        "წვდომის დონის დაყენება"
       ],
       "Share": [
         "გაზიარება"
@@ -415,11 +433,18 @@
       "Auto-lock could not be disabled": [
         "ავტომატური დაბლოკვის გამორთვა შეუძლებელია"
       ],
+      "Cannot send invitation at the moment": [
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
       "Could not confirm this invite at the moment": [
         "ამჯამად ამ მოსაწვევის დადასტურება შეუძლებელია"
       ],
       "Could not leave vault.": [
         "საცავის დატოვების შეცდომა."
+      ],
+      "Could not load recommendations at the moment.": [
+        "ამჟამად რეკომენდაციების ჩატვირთვა შეუძლებელია."
       ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
@@ -667,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
       ],
+      "${ count } invites successfully sent": [
+        "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
+      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -726,6 +754,9 @@
       ],
       "Auto-lock successfully disabled": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "შემოიტანეთ თქვენი არსებული პაროლები ${ BRAND_NAME }-ში."
       ],
       "Built in 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
@@ -811,6 +842,9 @@
       ],
       "Invitation sent": [
         "მოსაწვევი გაგზავნილია"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "მოიწვიეთ სპეციფიკური ხალხი და დააყენეთ სწორი წვდომები."
       ],
       "Invite successfully removed": [
         "მოსაწვევი წარმატებით წაიშალა"
@@ -950,6 +984,9 @@
       ],
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
+      ],
+      "Select vault to share": [
+        "აირჩიეთ გასაზიარებელი საცავი"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
@@ -1284,6 +1321,15 @@
       "Logins": [
         "შესვლები"
       ],
+      "Make all admins": [
+        "ყველას მონიშვნა ადმინისტრატორად"
+      ],
+      "Make all editors": [
+        "ყველას მონიშვნა რედაქტორად"
+      ],
+      "Make all viewers": [
+        "ყველას მონიშვნა დამთვარელიერებლად"
+      ],
       "Members": [
         "წევრები"
       ],
@@ -1612,6 +1658,9 @@
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
+      "Create a vault": [
+        "საცავის შექმნა"
+      ],
       "Create PIN code": [
         "PIN-კოდის შექმნა"
       ],
@@ -1630,6 +1679,9 @@
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
       ],
+      "Get Started": [
+        "დაიწყეთ"
+      ],
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
@@ -1639,6 +1691,12 @@
       "Import to vault(s)": [
         "საცავ(ებ)-ში შემოტანა"
       ],
+      "Import your data": [
+        "შემოიტანეთ თქვენი მონაცემები"
+      ],
+      "Install extension": [
+        "გაფართოების დაყენება"
+      ],
       "Leave vault ?": [
         "გავიდე საცავიდან?"
       ],
@@ -1647,6 +1705,9 @@
       ],
       "Member limit": [
         "წევრების ზღვარი"
+      ],
+      "Members": [
+        "წევრები"
       ],
       "Move all items ?": [
         "გადავიტანო ყველა ელემენტი?"
@@ -1666,6 +1727,9 @@
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
       ],
+      "Review and share": [
+        "მიმოხილვა და გაზიარება"
+      ],
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
       ],
@@ -1675,8 +1739,14 @@
       "Settings": [
         "მორგება"
       ],
+      "Share vaults with your team": [
+        "საცავების გაზიარება თქვენს გუნდთან"
+      ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Suggestions": [
+        "შეთავაზებები"
       ],
       "Transfer ownership": [
         "მფლობელობის გადაცემა"
@@ -1686,6 +1756,9 @@
       ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
+      ],
+      "Vault": [
+        "საცავი"
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
@@ -1736,11 +1809,20 @@
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
+      "At least one email address is required": [
+        "აუცილებელია სულ ცოტა ერთი ელფოსტის მისამართი"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე :"
+      ],
+      "Duplicate email addresses.": [
+        "დუბლირებული ელფოსტის მისამართები."
       ],
       "Empty note": [
         "ცარიელი შენიშვნა"
@@ -1750,6 +1832,9 @@
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Invalid email addresses.": [
+        "არასწორი ელფოსტის მისამართები."
       ],
       "Maximum length is ${ maxLength } character": [
         "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
@@ -1772,6 +1857,9 @@
       ],
       "No password manager selected": [
         "პაროლების მმართველი არჩეული არაა"
+      ],
+      "No results": [
+        "შედეგების გარეშე"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
