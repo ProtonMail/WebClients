@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
+import { useRerender } from '@proton/pass/hooks/useRerender';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
@@ -23,7 +24,9 @@ export const DropdownPinUnlock: FC<{
     const [value, setValue] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<MaybeNull<string>>(null);
-    const [renderKey, setRenderKey] = useState(0);
+
+    /* Re-render the PIN input with correct input focus */
+    const [key, rerender] = useRerender('pin-input');
 
     const onSubmit = async (value: string) => {
         try {
@@ -34,8 +37,7 @@ export const DropdownPinUnlock: FC<{
                     if (!res.ok) {
                         setValue('');
                         setError(res.error);
-                        /* Trick to re-render the PIN input with correct input focus */
-                        setRenderKey(renderKey + 1);
+                        rerender();
                     } else {
                         onUnlock?.();
                     }
@@ -64,13 +66,7 @@ export const DropdownPinUnlock: FC<{
                 </div>
             </div>
 
-            <PinCodeInput
-                key={`pin-input-${renderKey}`}
-                loading={loading}
-                value={value}
-                onValue={setValue}
-                autoFocus={visible}
-            />
+            <PinCodeInput key={key} loading={loading} value={value} onValue={setValue} autoFocus={visible} />
             {error && <div className="text-center text-sm color-danger mt-3">{error}</div>}
         </div>
     );
