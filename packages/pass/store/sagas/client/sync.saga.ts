@@ -10,7 +10,6 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
-import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -28,8 +27,8 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
     try {
         yield wait(1500);
 
-        yield put(withRevalidate(getUserAccessIntent(userAccessRequest(user.ID))));
-        yield put(withRevalidate(getUserFeaturesIntent(userFeaturesRequest(user.ID))));
+        yield put(withRevalidate(getUserAccessIntent(user.ID)));
+        yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
     } catch (e: unknown) {
