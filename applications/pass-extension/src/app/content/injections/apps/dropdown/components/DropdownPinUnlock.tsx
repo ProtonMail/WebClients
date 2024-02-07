@@ -23,6 +23,7 @@ export const DropdownPinUnlock: FC<{
     const [value, setValue] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<MaybeNull<string>>(null);
+    const [renderKey, setRenderKey] = useState(0);
 
     const onSubmit = async (value: string) => {
         try {
@@ -30,8 +31,14 @@ export const DropdownPinUnlock: FC<{
             await sendMessage.onSuccess(
                 contentScriptMessage({ type: WorkerMessageType.AUTH_UNLOCK, payload: { pin: value } }),
                 ensureMounted((res) => {
-                    if (!res.ok) setError(res.error);
-                    else onUnlock?.();
+                    if (!res.ok) {
+                        setValue('');
+                        setError(res.error);
+                        /* Trick to re-render the PIN input with correct input focus */
+                        setRenderKey(renderKey + 1);
+                    } else {
+                        onUnlock?.();
+                    }
                 })
             );
         } catch {
@@ -57,7 +64,13 @@ export const DropdownPinUnlock: FC<{
                 </div>
             </div>
 
-            <PinCodeInput loading={loading} value={value} onValue={setValue} autoFocus={visible} />
+            <PinCodeInput
+                key={`pin-input-${renderKey}`}
+                loading={loading}
+                value={value}
+                onValue={setValue}
+                autoFocus={visible}
+            />
             {error && <div className="text-center text-sm color-danger mt-3">{error}</div>}
         </div>
     );
