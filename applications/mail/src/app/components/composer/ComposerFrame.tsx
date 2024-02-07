@@ -144,7 +144,7 @@ const ComposerFrame = ({
                 handleStartDragging={handleStartDragging}
                 minimizeButtonRef={minimizeButtonRef}
             />
-            <ErrorBoundary>
+            <ErrorBoundary initiative="composer">
                 <Composer
                     ref={composerRef}
                     composerFrameRef={composerFrameRef}
