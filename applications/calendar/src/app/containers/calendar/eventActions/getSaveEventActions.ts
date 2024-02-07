@@ -38,10 +38,11 @@ import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
 import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
+import { getOldDataHasVeventComponent } from './getSaveEventActionsHelpers';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
-import { getAttendeesDiff, getCorrectedSaveInviteActions, getEquivalentAttendeesSend } from './inviteActions';
-import { getOriginalEvent, getRecurrenceEvents } from './recurringHelper';
+import { getCorrectedSaveInviteActions, getEquivalentAttendeesSend } from './inviteActions';
+import { getCurrentVevent, getOriginalEvent, getRecurrenceEvents } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
 const getSaveSingleEventActionsHelper = async ({
@@ -390,14 +391,28 @@ const getSaveEventActions = async ({
     // check if the rrule has been explicitly modified. Modifications due to WKST change are ignored here
     const hasModifiedRrule = tmpData.hasTouchedRrule && !isRruleEqual;
     const hasAttendees = getHasAttendees(newEditEventData.veventComponent);
-    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(
-        newEditEventData.veventComponent,
-        originalEditEventData.veventComponent
-    );
+
+    if (!getOldDataHasVeventComponent(originalEditEventData)) {
+        throw new Error('Original component missing');
+    }
+    if (!getOldDataHasVeventComponent(oldEditEventData)) {
+        throw Error('Old component missing');
+    }
+    const currentVevent = isSingleEdit
+        ? oldEditEventData.veventComponent
+        : getCurrentVevent(originalEditEventData.veventComponent, actualEventRecurrence);
+    const correctedInviteActions = getCorrectedSaveInviteActions({
+        inviteActions: inviteActionsWithSelfAddress,
+        newVevent: newEditEventData.veventComponent,
+        oldVevent: currentVevent,
+        hasModifiedDateTimes,
+        hasModifiedRrule,
+    });
+    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = correctedInviteActions;
     const hasAttendeesUpdates =
         !!(addedAttendees && addedAttendees.length > 0) ||
         !!(removedAttendees && removedAttendees.length > 0) ||
-        hasModifiedRSVPStatus;
+        !!hasModifiedRSVPStatus;
 
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
         originalEditEventData,
@@ -412,7 +427,7 @@ const getSaveEventActions = async ({
         hasModifiedRrule,
         hasModifiedCalendar,
         isBreakingChange,
-        inviteActions: inviteActionsWithSelfAddress,
+        inviteActions: correctedInviteActions,
         onSaveConfirmation,
         recurrence: actualEventRecurrence,
         singleEdits,
@@ -433,6 +448,7 @@ const getSaveEventActions = async ({
         type: saveType,
         recurrences,
         recurrence: actualEventRecurrence,
+        isSingleEdit,
         updateAllPossibilities,
         newEditEventData,
         oldEditEventData,

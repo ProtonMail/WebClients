@@ -91,7 +91,7 @@ const CreateEventModal = ({
 
     // new events have no uid yet
     const inviteActions = {
-        // the type will be more properly assessed in getSaveEventActions
+        // the type will be more properly assessed in getSaveEventActions by getCorrectedSaveEventActions
         type: model.isAttendee ? INVITE_ACTION_TYPES.NONE : INVITE_ACTION_TYPES.SEND_INVITATION,
         selfAddress,
     };

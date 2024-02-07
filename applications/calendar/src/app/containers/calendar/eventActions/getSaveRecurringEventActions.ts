@@ -9,7 +9,7 @@ import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegra
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
+import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import unary from '@proton/utils/unary';
@@ -51,10 +51,11 @@ import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSeque
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;
     recurrences: CalendarEvent[];
-    originalEditEventData: EventOldData;
-    oldEditEventData: EventOldData;
+    originalEditEventData: RequireSome<EventOldData, 'veventComponent'>;
+    oldEditEventData: RequireSome<EventOldData, 'veventComponent'>;
     newEditEventData: EventNewData;
     recurrence: CalendarEventRecurring;
+    isSingleEdit: boolean;
     updateAllPossibilities: UpdateAllPossibilities;
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
@@ -91,6 +92,7 @@ const getSaveRecurringEventActions = async ({
         veventComponent: newVeventComponent,
     },
     recurrence,
+    isSingleEdit,
     updateAllPossibilities,
     getAddressKeys,
     getCalendarKeys,
@@ -116,14 +118,6 @@ const getSaveRecurringEventActions = async ({
 }> => {
     const { eventData: oldEvent, veventComponent: oldVeventComponent } = oldEditEventData;
     const { type: inviteType, partstat: invitePartstat } = inviteActions;
-    const isSingleEdit = oldEvent.ID !== originalEvent.ID;
-
-    if (!originalVeventComponent) {
-        throw new Error('Original component missing');
-    }
-    if (!oldVeventComponent) {
-        throw Error('Old component missing');
-    }
 
     if (type === RECURRING_TYPES.SINGLE) {
         // we need to add the sequence to the old event as well, otherwise the API will complain
@@ -243,6 +237,9 @@ const getSaveRecurringEventActions = async ({
                 hasDefaultNotifications,
                 isAttendee,
                 addedAttendeesPublicKeysMap,
+                // we only need to specify isPersonalSingleEdit when we need to change its value
+                // here that is in case the existing single edit was a personal one, but we're now propagating the change to attendees
+                isPersonalSingleEdit: isSendInviteType && oldEvent.IsPersonalSingleEdit ? false : undefined,
             });
 
             return {
@@ -490,7 +487,7 @@ const getSaveRecurringEventActions = async ({
                 inviteActions: cleanInviteActions,
                 sendPreferencesMap,
             } = await sendIcs({
-                inviteActions,
+                inviteActions: updatedInviteActions,
                 vevent: updatedVeventComponent,
                 cancelVevent: originalVeventComponent,
             });
