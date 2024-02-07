@@ -42,6 +42,7 @@ export interface OptimisticOptions {
     currency: Currency;
     plan: Plan;
     planIDs: PlanIDs;
+    billingAddress: BillingAddress;
     checkResult: RequiredCheckResponse;
 }
 
