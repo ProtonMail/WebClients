@@ -308,6 +308,9 @@
       "Pin item": [
         "Sematkan item"
       ],
+      "Recent": [
+        "Terkini"
+      ],
       "Refresh the page": [
         "Muat ulang halaman"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Hapus akses"
+      ],
+      "Remove member": [
+        "Hapus anggota"
       ],
       "Request a feature": [
         "Minta fitur"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Kirim pesan kepada kami"
+      ],
+      "Set access level": [
+        "Tentukan tingkat akses"
       ],
       "Share": [
         "Bagikan"
@@ -497,6 +506,9 @@
       ],
       "Could not leave vault.": [
         "Brankas tidak dapat ditinggalkan."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Rekomendasi untuk saat ini tidak dapat dimuat."
       ],
       "Could not open created vault": [
         "Brankas yang dibuat tidak dapat dibuka"
@@ -751,6 +763,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } undangan berhasil dikirim"
       ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
@@ -1089,7 +1104,7 @@
         "Memulihkan semua item yang dibuang..."
       ],
       "Save login": [
-        "Simpan entri masuk"
+        "Tambah entri masuk"
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -1480,6 +1495,15 @@
       "Logins": [
         "Entri masuk"
       ],
+      "Make all admins": [
+        "Jadikan seluruh anggota sebagai admin"
+      ],
+      "Make all editors": [
+        "Jadikan seluruh anggota sebagai penyunting"
+      ],
+      "Make all viewers": [
+        "Jadikan seluruh anggota sebagai pengamat"
+      ],
       "Members": [
         "Anggota"
       ],
@@ -1850,6 +1874,9 @@
       "Fill & copy password": [
         "Isi & salin kata sandi"
       ],
+      "Get Started": [
+        "Mulai"
+      ],
       "Get the mobile apps": [
         "Dapatkan aplikasi mobile kami"
       ],
@@ -1877,6 +1904,9 @@
       "Member limit": [
         "Batas anggota"
       ],
+      "Members": [
+        "Anggota"
+      ],
       "Move all items ?": [
         "Pindahkan semua item?"
       ],
@@ -1901,6 +1931,9 @@
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
+      "Review and share": [
+        "Kaji dan bagikan"
+      ],
       "Secure your data": [
         "Amankan data Anda"
       ],
@@ -1909,6 +1942,9 @@
       ],
       "Share with": [
         "Bagikan dengan"
+      ],
+      "Suggestions": [
+        "Saran"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Beralih ke ${ PASS_APP_NAME }?"
@@ -1933,6 +1969,9 @@
       ],
       "Use my email": [
         "Gunakan email saya"
+      ],
+      "Vault": [
+        "Brankas"
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
@@ -1986,11 +2025,20 @@
       "An error occured while exporting your data": [
         "Terdapat kesalahan pada saat mengekspor data Anda"
       ],
+      "At least one email address is required": [
+        "Setidaknya satu alamat email dibutuhkan"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Berkas \"${ vaultName }\" tidak dapat dibuat"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Undangan tidak dapat dikirimkan ke alamat berikut :"
+      ],
+      "Duplicate email addresses.": [
+        "Terdapat alamat email duplikat."
       ],
       "Empty note": [
         "Catatan kosong"
@@ -2000,6 +2048,9 @@
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
+      ],
+      "Invalid email addresses.": [
+        "Terdapat alamat email yang tidak valid."
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"
@@ -2021,6 +2072,9 @@
       ],
       "No password manager selected": [
         "Tidak ada pengelola kata sandi yang dipilih"
+      ],
+      "No results": [
+        "Tidak ada hasil yang ditemukan"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"

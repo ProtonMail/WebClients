@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Účet"
+      ],
       "Account settings": [
         "Nastavenia účtu"
       ],
@@ -34,6 +37,21 @@
       ],
       "Back": [
         "Späť"
+      ],
+      "Bulk delete items from trash": [
+        "Hromadné odstránenie položiek z koša"
+      ],
+      "Bulk move items to another vault": [
+        "Hromadné presunutie položiek do iného trezoru"
+      ],
+      "Bulk move items to trash": [
+        "Hromadné presunutie položiek do koša"
+      ],
+      "Bulk restore items from trash": [
+        "Hromadné obnovenie položiek z koša"
+      ],
+      "Bulk select items": [
+        "Hromadný výber položiek"
       ],
       "Cancel": [
         "Zrušiť"
@@ -137,6 +155,9 @@
       "Delete vault": [
         "Odstrániť trezor"
       ],
+      "Deselect": [
+        "Odznačiť"
+      ],
       "Disable autosave on this website": [
         "Zakázať automatické ukladanie na tejto webovej stránke"
       ],
@@ -155,6 +176,9 @@
       "Done": [
         "Hotovo"
       ],
+      "Download this CSV template": [
+        "Stiahnuť si túto CSV šablónu"
+      ],
       "Edit": [
         "Upraviť"
       ],
@@ -163,6 +187,9 @@
       ],
       "Export": [
         "Exportovať"
+      ],
+      "Feedback & Help": [
+        "Spätná väzba a Pomoc"
       ],
       "Fill password": [
         "Vyplniť heslo"
@@ -190,6 +217,9 @@
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Ako môžem exportovať svoje údaje z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Ako používať ${ PASS_APP_NAME }"
       ],
       "Import": [
         "Importovať"
@@ -278,6 +308,9 @@
       "Pin item": [
         "Pripnúť položku"
       ],
+      "Recent": [
+        "Nedávne"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -298,6 +331,9 @@
       ],
       "Remove access": [
         "Odstrániť prístup"
+      ],
+      "Remove member": [
+        "Odstániť člena"
       ],
       "Request a feature": [
         "Požiadavka na funkciu"
@@ -326,6 +362,9 @@
       "Send us a message": [
         "Pošlite nám správu"
       ],
+      "Set access level": [
+        "Nastavte úroveň prístupu"
+      ],
       "Share": [
         "Zdieľať"
       ],
@@ -338,6 +377,9 @@
       "Show": [
         "Zobraziť"
       ],
+      "Show advanced options": [
+        "Zobraziť pokročilé možnosti"
+      ],
       "Sign back in": [
         "Prihláste sa späť"
       ],
@@ -345,7 +387,7 @@
         "Prihlásiť sa"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Prihlásiť sa na ${ BRAND_NAME }"
+        "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -459,11 +501,20 @@
       "Cannot create alias (${ error }).": [
         "Nie je možné vytvoriť alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Momentálne nie je možné odoslať pozvánku",
+        "Momentálne nie je možné odoslať pozvánky",
+        "Momentálne nie je možné odoslať pozvánky",
+        "Momentálne nie je možné odoslať pozvánky"
+      ],
       "Could not confirm this invite at the moment": [
         "V súčasnosti nie je možné túto pozvánku potvrdiť"
       ],
       "Could not leave vault.": [
         "Trezor sa nepodarilo opustiť."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Momentálne sa nepodarilo načítať odporúčania."
       ],
       "Could not open created vault": [
         "Nepodarilo sa otvoriť vytvorený trezor"
@@ -516,17 +567,29 @@
       "Failed resending invite.": [
         "Opätovné zaslanie pozvánky zlyhalo."
       ],
+      "Failed to delete selected items": [
+        "Nepodarilo sa odstrániť vybrané položky"
+      ],
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
       ],
+      "Failed to move items": [
+        "Nepodarilo sa presunúť položky"
+      ],
+      "Failed to move items to trash": [
+        "Nepodarilo sa presunúť položky do koša"
+      ],
       "Failed to pin item": [
         "Pripnutie položky zlyhalo"
       ],
       "Failed to remove user's access.": [
         "Odstránenie prístupu používateľa zlyhalo."
+      ],
+      "Failed to restore items from trash": [
+        "Nepodarilo sa obnoviť položky z koša"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodarilo sa preniesť vlastníctvo trezora."
@@ -728,6 +791,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } pozvánok úspešne odoslaných"
+      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členovia",
@@ -785,11 +851,17 @@
       "Admin": [
         "Správca"
       ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
+      ],
+      "All items successfully moved": [
+        "Všetky položky úspešne presunuté"
       ],
       "All trashed items permanently deleted": [
         "Všetky položky v koši natrvalo vymazané"
@@ -875,6 +947,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Export je šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
+      "Fill in the CSV with your data": [
+        "Vyplňte CSV súbor svojimi údajmi"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Pre importovanie údajov pomocou všeobecného CSV súboru, postupujte nasledovne:"
+      ],
       "For easy access to your passwords and more.": [
         "Pre jednoduchý prístup k vašim heslám a ďalším údajom."
       ],
@@ -898,6 +976,9 @@
       ],
       "Import in progress:": [
         "Prebieha import:"
+      ],
+      "Import the CSV file below.": [
+        "Importovať CSV súbor nižšie."
       ],
       "Imported ${ payload.total } item": [
         "Importovaná ${ payload.total } položka",
@@ -986,6 +1067,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving items": [
+        "Presúvanie položiek"
+      ],
+      "Moving items to trash": [
+        "Presúvanie položiek do koša"
+      ],
       "Never": [
         "Nikdy"
       ],
@@ -1015,6 +1102,9 @@
       ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
+      ],
+      "Permanently deleting selected items": [
+        "Trvalé odstránenie vybraných položiek"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Pripnite ${ PASS_APP_NAME } do svojho panela nástrojov"
@@ -1052,6 +1142,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
       ],
+      "Restoring items from trash": [
+        "Obnovenie položiek z koša"
+      ],
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
       ],
@@ -1063,6 +1156,15 @@
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vyberte si, kde chcete uložiť vaše importované trezory."
+      ],
+      "Selected items permanently deleted": [
+        "Vybrané položky natrvalo odstránené"
+      ],
+      "Selected items successfully moved to trash": [
+        "Vybrané položky úspešne presunuté do koša"
+      ],
+      "Selected items successfully restored from trash": [
+        "Vybrané položky úspešne obnovené z koša"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
@@ -1267,6 +1369,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "Účet"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1387,6 +1492,9 @@
       "General": [
         "Všeobecné"
       ],
+      "Generic CSV": [
+        "Všeobecné CSV"
+      ],
       "Grant": [
         "Povoliť"
       ],
@@ -1449,6 +1557,15 @@
       ],
       "Logins": [
         "Prihlásenia"
+      ],
+      "Make all admins": [
+        "Urobiť všetkých správcami"
+      ],
+      "Make all editors": [
+        "Urobiť všetkých editormi."
+      ],
+      "Make all viewers": [
+        "Urobiť všetkých čitateľmi."
       ],
       "Members": [
         "Členovia"
@@ -1662,6 +1779,9 @@
         "${ count } položky",
         "${ count } položiek",
         "${ count } položiek"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Vybrali ste ${ semiboldText } v tomto trezore"
       ]
     },
     "Onboarding": {
@@ -1826,6 +1946,9 @@
       "Fill & copy password": [
         "Vyplniť a kopírovať heslo"
       ],
+      "Get Started": [
+        "Začíname"
+      ],
       "Get the mobile apps": [
         "Získajte mobilné aplikácie"
       ],
@@ -1853,8 +1976,14 @@
       "Member limit": [
         "Limit počtu členov"
       ],
+      "Members": [
+        "Členovia"
+      ],
       "Move all items ?": [
         "Presunúť všetky položky ?"
+      ],
+      "No items selected": [
+        "Žiadne vybrané položky"
       ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
@@ -1874,6 +2003,9 @@
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
       ],
+      "Review and share": [
+        "Skontrolovať a zdieľať"
+      ],
       "Secure your data": [
         "Zabezpečte svoje údaje"
       ],
@@ -1882,6 +2014,9 @@
       ],
       "Share with": [
         "Zdieľať s"
+      ],
+      "Suggestions": [
+        "Návrhy"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Prechádzate na ${ PASS_APP_NAME }?"
@@ -1906,6 +2041,9 @@
       ],
       "Use my email": [
         "Použiť môj email"
+      ],
+      "Vault": [
+        "Trezor"
       ],
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
@@ -1959,11 +2097,20 @@
       "An error occured while exporting your data": [
         "Pri exporte údajov sa vyskytla chyba"
       ],
+      "At least one email address is required": [
+        "Vyžaduje sa aspoň jedna emailová adresa"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Momentálne nie je možné načítať poštové schránky pre tento alias"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nepodarilo sa vytvoriť trezor \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Nepodarilo sa odoslať pozvánky na nasledujúce adresy:"
+      ],
+      "Duplicate email addresses.": [
+        "Duplicitné emailové adresy."
       ],
       "Empty note": [
         "Prázdna poznámka"
@@ -1973,6 +2120,9 @@
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"
+      ],
+      "Invalid email addresses.": [
+        "Neplatné emailové adresy."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maximálna dĺžka je ${ maxLength } znak",
@@ -1997,6 +2147,9 @@
       ],
       "No password manager selected": [
         "Nie je vybraný žiadny správca hesiel"
+      ],
+      "No results": [
+        "Žiadne výsledky"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Povolené sú len alfanumerické znaky, bodky, pomlčky a podčiarkovníky"

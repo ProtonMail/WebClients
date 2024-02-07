@@ -308,6 +308,9 @@
       "Pin item": [
         "Épingler l'élément"
       ],
+      "Recent": [
+        "Récents"
+      ],
       "Refresh the page": [
         "Actualiser la page"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Retirer l’accès"
+      ],
+      "Remove member": [
+        "Retirer le membre"
       ],
       "Request a feature": [
         "Demander une fonctionnalité"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Envoyez-nous un message"
+      ],
+      "Set access level": [
+        "Définir le niveau d'accès"
       ],
       "Share": [
         "Partager"
@@ -492,11 +501,21 @@
       "Cannot create alias (${ error }).": [
         "Impossible de créer l'alias (${ error })"
       ],
+      "Cannot send invitation at the moment": [
+        "L'envoi de l'invitation est impossible pour le moment.",
+        "L'envoi des invitations est impossible pour le moment."
+      ],
+      "Cannot send invitations at the moment": [
+        "L'envoi des invitations est impossible pour le moment."
+      ],
       "Could not confirm this invite at the moment": [
         "Cette invitation n'a pu être confirmée pour le moment."
       ],
       "Could not leave vault.": [
         "Impossible de quitter le coffre-fort."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Les recommandations n'ont pas pu être chargées pour le moment."
       ],
       "Could not open created vault": [
         "Le coffre-fort créé n'a pas pu être ouvert."
@@ -758,6 +777,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } invitations ont été envoyées."
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -1878,6 +1900,9 @@
       "Fill & copy password": [
         "Remplir et copier le mot de passe"
       ],
+      "Get Started": [
+        "Commencer"
+      ],
       "Get the mobile apps": [
         "Téléchargez les applications mobiles"
       ],
@@ -1905,6 +1930,9 @@
       "Member limit": [
         "Limite du nombre de membres"
       ],
+      "Members": [
+        "Membres"
+      ],
       "Move all items ?": [
         "Déplacer tous les éléments ?"
       ],
@@ -1929,6 +1957,9 @@
       "Pinned (${ items.length })": [
         "Épinglés (${ items.length }"
       ],
+      "Review and share": [
+        "Vérifier et partager"
+      ],
       "Secure your data": [
         "Sécurisez vos données"
       ],
@@ -1937,6 +1968,9 @@
       ],
       "Share with": [
         "Partager avec"
+      ],
+      "Suggestions": [
+        "Suggestions"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Vous changez pour ${ PASS_APP_NAME } ?"
@@ -1961,6 +1995,9 @@
       ],
       "Use my email": [
         "Utiliser mon e-mail"
+      ],
+      "Vault": [
+        "Coffre-fort"
       ],
       "Vault shared with you": [
         "Coffre-fort partagé avec vous"
@@ -2014,11 +2051,17 @@
       "An error occured while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
       ],
+      "At least one email address is required": [
+        "Indiquez au moins une adresse e-mail."
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Impossible de créer le coffre-fort « ${ vaultName } »"
+      ],
+      "Duplicate email addresses.": [
+        "Adresses e-mail en double"
       ],
       "Empty note": [
         "Note vide"
@@ -2051,6 +2094,9 @@
       "No password manager selected": [
         "Aucun gestionnaire de mot de passe n'est sélectionné."
       ],
+      "No results": [
+        "Aucun résultat"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Seuls les caractères alphanumériques, les points et les tirets (dont le tiret bas/underscore) sont autorisés."
       ],
@@ -2059,6 +2105,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
+      ],
+      "Please contact us for investigating the issue": [
+        "Veuillez nous contacter afin que nous puissions examiner le problème."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vérifiez votre adresse e-mail pour utiliser les alias d'adresse e-mail."
