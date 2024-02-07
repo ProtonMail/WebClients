@@ -220,6 +220,7 @@ const DataRecoverySection = () => {
                                     <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
                                         <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
                                         <Info
+                                            url={getKnowledgeBaseUrl('/device-data-recovery')}
                                             title={c('Info')
                                                 .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
                                         />
