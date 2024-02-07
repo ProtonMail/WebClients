@@ -348,6 +348,7 @@ export enum INVOICE_TYPE {
     REFUND = 7,
     MODIFICATION = 8,
     ADDITION = 9,
+    CURRENCY_CONVERSION = 10,
 }
 
 export enum INVOICE_STATE {
