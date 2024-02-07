@@ -3,6 +3,7 @@ import { FunctionComponent, useState } from 'react';
 import FlagProvider from '@unleash/proxy-client-react';
 
 import {
+    AccountSpotlightsProvider,
     ErrorBoundary,
     EventManagerProvider,
     LoaderPage,
@@ -61,7 +62,9 @@ const PrivateApp = ({ store, locales }: Props) => {
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ErrorBoundary big component={<StandardErrorPage big />}>
                     <StandardPrivateApp>
-                        <state.MainContainer />
+                        <AccountSpotlightsProvider>
+                            <state.MainContainer />
+                        </AccountSpotlightsProvider>
                     </StandardPrivateApp>
                 </ErrorBoundary>
             </EventManagerProvider>
