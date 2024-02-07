@@ -575,16 +575,17 @@ export const getHasUpdatedInviteData = ({
     newVevent,
     oldVevent,
     hasModifiedDateTimes,
+    hasModifiedRrule,
 }: {
     newVevent: VcalVeventComponent;
     oldVevent?: VcalVeventComponent;
     hasModifiedDateTimes?: boolean;
+    hasModifiedRrule?: boolean;
 }) => {
     if (!oldVevent) {
         return false;
     }
-    const hasUpdatedDateTimes =
-        hasModifiedDateTimes !== undefined ? hasModifiedDateTimes : getHasModifiedDateTimes(newVevent, oldVevent);
+    const hasUpdatedDateTimes = hasModifiedDateTimes ?? getHasModifiedDateTimes(newVevent, oldVevent);
 
     const keys: VcalComponentKeys[] = ['summary', 'description', 'location'];
     const hasUpdatedTitleDescriptionOrLocation = keys.some(
@@ -592,7 +593,7 @@ export const getHasUpdatedInviteData = ({
             getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
             getSupportedStringValue(oldVevent[key] as VcalStringProperty)
     );
-    const hasUpdatedRrule = !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
+    const hasUpdatedRrule = hasModifiedRrule ?? !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
 };
 
