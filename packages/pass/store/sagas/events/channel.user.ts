@@ -4,8 +4,7 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { getUserAccessIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
-import { userAccessRequest } from '@proton/pass/store/actions/requests';
+import { getUserAccessIntent, getUserFeaturesIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
@@ -31,6 +30,7 @@ function* onUserEvent(
     if ('error' in event) throw event.error;
 
     const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
+    const userId = getAuthStore().getUserID()!;
 
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) yield put(userEvent(event));
@@ -52,8 +52,7 @@ function* onUserEvent(
 
     /* if the subscription/invoice changes, refetch the user Plan */
     if (event.Subscription || event.Invoices) {
-        const getPlanAction = withRevalidate(getUserAccessIntent(userAccessRequest(getAuthStore().getUserID()!)));
-        yield put(getPlanAction);
+        yield put(withRevalidate(getUserAccessIntent(userId)));
     }
 
     /* if we get the user model from the event, check if
@@ -77,6 +76,11 @@ function* onUserEvent(
             yield put(syncIntent(SyncType.FULL)); /* trigger a full data sync */
         }
     }
+
+    /* Synchronize user access and user feature flags whenever polling for
+     * core user events. These actions are throttled via `maxAge` metadata */
+    yield put(getUserAccessIntent(userId));
+    yield put(getUserFeaturesIntent(userId));
 }
 
 export const createUserChannel = (api: Api, eventID: string) =>
