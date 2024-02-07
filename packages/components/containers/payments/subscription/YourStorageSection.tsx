@@ -200,7 +200,6 @@ const YourStorageSection = ({ app }: Props) => {
                         <PromotionBanner
                             mode="banner"
                             rounded
-                            className="pr-2"
                             contentCentered={false}
                             icon={<img width="40" src={icon} alt="" className="shrink-0" />}
                             description={description}
@@ -220,6 +219,7 @@ const YourStorageSection = ({ app }: Props) => {
                                     color="norm"
                                     shape="ghost"
                                     className="text-bold"
+                                    fullWidth
                                 >
                                     {c('storage_split: info').t`Get more storage`}
                                 </ButtonLike>
