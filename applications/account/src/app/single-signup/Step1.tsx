@@ -427,6 +427,7 @@ const Step1 = ({
         plan: model.optimistic.plan || selectedPlan,
         planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
+        billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
     };
 
     const handleUpdate = (step: StepId) => {
@@ -583,24 +584,8 @@ const Step1 = ({
             });
     };
 
-    const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
-        const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
-            options.planIDs,
-            options.currency,
-            options.cycle,
-            billingAddress,
-            couponCode || options.checkResult.Coupon?.Code
-        );
-
-        setModel((old) => ({
-            ...old,
-            subscriptionData: {
-                ...model.subscriptionData,
-                billingAddress,
-                checkResult,
-            },
-        }));
+    const handleChangeBillingAddress = (billingAddress: BillingAddress) => {
+        void handleOptimistic({ billingAddress });
     };
 
     const handleCompletion = async (subscriptionData: SubscriptionData) => {
