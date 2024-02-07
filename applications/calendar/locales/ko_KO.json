@@ -2377,11 +2377,23 @@
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
+      "Alias is not valid": [
+        "유효하지 않은 별칭"
+      ],
+      "Alias is required": [
+        "별칭이 필요합니다."
+      ],
       "Alias options could not be resolved": [
         "별명 옵션을 해결할 수 없습니다."
       ],
+      "Aliases could not be loaded": [
+        "별명을 불러올 수 없습니다."
+      ],
       "Already a member of this calendar": [
         "이미 이 캘린더의 구성원입니다"
+      ],
+      "An error occurred while saving alias": [
+        "별명 저장 중 오류가 발생했습니다."
       ],
       "Answer failed to be sent": [
         "대답 전송 실패"
@@ -2532,6 +2544,9 @@
       ],
       "Missing signature": [
         "서명 없음"
+      ],
+      "Name is required": [
+        "이름이 필요합니다"
       ],
       "Name required": [
         "이름이 필요합니다"
@@ -3275,6 +3290,9 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Security Center": [
+        "보안 센터"
       ]
     },
     "Hint": {
@@ -3851,6 +3869,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
       ],
+      "Important note": [
+        "중요 사항"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
       ],
@@ -4114,6 +4135,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Warning": [
+        "경고"
       ],
       "We'll notify you when the import is done.": [
         "처리가 완료되면 알려드리겠습니다."
@@ -4388,6 +4412,9 @@
       ],
       "Add image URL": [
         "이미지 URL 추가"
+      ],
+      "Add title": [
+        "제목 추가"
       ],
       "Add to group": [
         "그룹에 추가"
@@ -4721,6 +4748,9 @@
       ],
       "Wonderful": [
         "최고"
+      ],
+      "Your alias": [
+        "내 별칭"
       ],
       "Your calendar URL": [
         "내 캘린더 URL"
@@ -5643,14 +5673,31 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "모든 별칭"
+      ],
+      "Create alias": [
+        "별칭 만들기"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "예: Amazon, eBay, Etsy"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
+      ],
+      "New alias": [
+        "새 별칭"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 열기"
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "로그 보기"
       ]
     },
     "Select files": {
@@ -6192,6 +6239,9 @@
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
+      "Alias copied to clipboard": [
+        "별칭이 클립보드에 복사됨"
+      ],
       "All events deleted": [
         "모든 이벤트 삭제됨"
       ],
@@ -6577,6 +6627,9 @@
       "Email settings": [
         "이메일 설정"
       ],
+      "Enable 2FA": [
+        "2FA 활성화"
+      ],
       "Encrypted event": [
         "암호화된 이벤트"
       ],
@@ -6634,6 +6687,9 @@
       "Minicalendar": [
         "간편 캘린더"
       ],
+      "Need more aliases?": [
+        "별칭이 더 필요하신가요?"
+      ],
       "Night theme": [
         "야간 테마"
       ],
@@ -6687,6 +6743,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Security center": [
+        "보안 센터"
       ],
       "Select a day in the month": [
         "이 달의 일자 선택"
