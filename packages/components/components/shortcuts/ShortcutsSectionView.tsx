@@ -18,12 +18,12 @@ const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
             {shortcuts.length > 0 && (
                 <ul className="unstyled mt-4">
                     {shortcuts.map(({ name, keys }) => (
-                        <li key={name} className="flex items-center justify-space-between mb-2">
-                            <span>{name}</span>
+                        <li key={name} className="flex items-center md:flex-nowrap justify-space-between mb-2">
+                            <span className="mr-1">{name}</span>
                             {typeof keys === 'string' ? (
-                                <Kbd shortcut={keys} />
+                                <Kbd shortcut={keys} className="shrink-0" />
                             ) : (
-                                <span>
+                                <span className="shrink-0">
                                     {keys.map((k: string, i: number) => (
                                         <Kbd key={`${name} - ${k}`} shortcut={k} className={clsx([i > 0 && 'ml-2'])}>
                                             {k}
