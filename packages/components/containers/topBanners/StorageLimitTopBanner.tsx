@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import useFlag from '@proton/components/containers/unleash/useFlag';
@@ -26,6 +28,24 @@ import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
 
+const getStr = (percentage: number, storage: ReactNode, cta: ReactNode) => {
+    if (percentage >= 100) {
+        // Translator: Your Drive storage is full. To upload or sync files, free up space or upgrade for more storage.
+        return c('storage_split: info').jt`Your ${storage} is full. ${cta}.`;
+    }
+    // Translator: Your Drive storage is 99% full. To upload or sync files, free up space or upgrade for more storage.
+    return c('storage_split: info').jt`Your ${storage} is ${percentage}% full. ${cta}.`;
+};
+
+const getStrFull = (percentage: number, storage: ReactNode, cta: ReactNode) => {
+    if (percentage >= 100) {
+        // Translator: Your storage is full. To upload or sync files, free up space or upgrade for more storage.
+        return c('storage_split: info').jt`Your storage is full. ${cta}.`;
+    }
+    // Translator: Your storage is 99% full. To upload or sync files, free up space or upgrade for more storage.
+    return c('storage_split: info').jt`Your storage is ${percentage}% full. ${cta}.`;
+};
+
 interface Props {
     app: APP_NAMES;
 }
@@ -37,58 +57,47 @@ const getStorageFull = ({
     mode,
     upsellRef,
     plan,
+    app,
 }: {
     user: UserModel;
     subscription: Subscription | undefined;
     percentage: number;
-    mode: 'mail' | 'drive';
+    mode: 'mail' | 'drive' | 'both';
+    app?: APP_NAMES;
     upsellRef: string | undefined;
     plan: PLANS;
-}) => {
+}): ReactNode => {
     const upgrade = user.canPay ? (
         <SettingsLink
             key="storage-link"
             className="color-inherit"
             path={addUpsellPath(getUpgradePath({ user, plan, subscription }), upsellRef)}
         >
-            {c('storage_split: info').t`upgrade for more storage`}
+            {
+                // Translator: To upload or sync files, free up space or upgrade for more storage
+                c('storage_split: info').t`upgrade for more storage`
+            }
         </SettingsLink>
     ) : (
+        // Translator: To upload or sync files, contact your administrator
         c('storage_split: info').t`contact your administrator`
     );
 
+    const driveCta = c('storage_split: info').jt`To upload or sync files, free up space or ${upgrade}`;
+    const mailCta = c('storage_split: info').jt`To send or receive emails, free up space or ${upgrade}`;
+
     if (mode === 'drive') {
-        const storage = getAppStorage(DRIVE_SHORT_APP_NAME);
-        if (percentage >= 100) {
-            // Translator: Your Drive storage is full. To upload or sync files, free up space or upgrade for more storage.
-            return c('storage_split: info')
-                .jt`Your ${storage} is full. To upload or sync files, free up space or ${upgrade}.`;
-        }
-        // Translator: Your Drive storage is 99% full. To upload or sync files, free up space or upgrade for more storage.
-        return c('storage_split: info')
-            .jt`Your ${storage} is ${percentage}% full. To upload or sync files, free up space or ${upgrade}.`;
+        return getStr(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
     }
-
     if (mode === 'mail') {
-        const storage = getAppStorage(MAIL_SHORT_APP_NAME);
-        if (percentage >= 100) {
-            // Translator: Your Mail storage is full. To send or receive emails, free up space or upgrade for more storage.
-            return c('storage_split: info')
-                .jt`Your ${storage} is full. To send or receive emails, free up space or ${upgrade}`;
+        return getStr(percentage, getAppStorage(MAIL_SHORT_APP_NAME), mailCta);
+    }
+    if (mode === 'both') {
+        if (app === APPS.PROTONDRIVE) {
+            return getStrFull(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), driveCta);
         }
-        // Translator: Your Mail storage is 99% full. To send or receive emails, free up space or upgrade for more storage.
-        return c('storage_split: info')
-            .jt`Your ${storage} is ${percentage}% full. To send or receive emails, free up space or ${upgrade}.`;
+        return getStrFull(percentage, getAppStorage(DRIVE_SHORT_APP_NAME), mailCta);
     }
-
-    if (percentage >= 100) {
-        // Translator: Your storage is full. To send or receive emails, free up space or upgrade for more storage.
-        return c('storage_split: info')
-            .jt`Your storage is full. To send or receive emails, free up space or ${upgrade}.`;
-    }
-    // Translator: Your storage is X% full. To send or receive emails, free up space or upgrade for more storage.
-    return c('storage_split: info')
-        .jt`Your storage is ${percentage}% full. To send or receive emails, free up space or ${upgrade}.`;
 };
 
 const SplitStorageLimitTopBanner = ({
@@ -119,7 +128,8 @@ const SplitStorageLimitTopBanner = ({
                     user,
                     subscription,
                     percentage: app === APPS.PROTONDRIVE ? details.drive.displayed : details.base.displayed,
-                    mode: app === APPS.PROTONDRIVE ? 'drive' : 'mail',
+                    mode: 'both',
+                    app,
                     upsellRef,
                 })}
             </TopBanner>
