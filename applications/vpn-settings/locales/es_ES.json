@@ -762,12 +762,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Navegación segura y funciones VPN premium."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con tu plan actual."
       ],
@@ -2798,9 +2792,6 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } ha sido borrado. La oferta de paquete no está disponible en el plan de 1 mes."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -2982,9 +2973,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados."
-      ],
-      "Cancel anytime": [
-        "Cancela en cualquier momento"
       ],
       "Can’t access your recovery email?": [
         "¿No puedes acceder a tu correo de recuperación?"
@@ -5721,6 +5709,11 @@
         "Tu plan incluye un máximo de ${ humanReadableAvailableSpace } de almacenamiento disponible adicional."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configura tu organización"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Mantener este plan"
@@ -5732,20 +5725,6 @@
         "Mejorar mi plan"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Cifrado de extremo a extremo"
-      ],
-      "Open source": [
-        "Código abierto"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Bajo la protección de las leyes de privacidad suizas"
-      ],
-      "Swiss based": [
-        "Con sede en Suiza"
-      ]
-    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Oferta por tiempo limitado"
@@ -5755,9 +5734,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Ventajas de ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+${ relativePrice } por mes"
       ],
@@ -5779,12 +5755,6 @@
       "Includes:": [
         "Incluye:"
       ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Únete a más de 100 millones de personas que han elegido ${ BRAND_NAME } para tu seguridad en línea"
-      ],
-      "Open-source and audited": [
-        "Código abierto y auditoría"
-      ],
       "per month": [
         "por mes"
       ],
@@ -5800,20 +5770,11 @@
       "Preparing your Recovery Kit": [
         "Preparando tu kit de recuperación"
       ],
-      "Protected by Swiss privacy laws": [
-        "Bajo la protección de las leyes de privacidad suizas"
-      ],
       "Updating your account": [
         "Actualizando tu cuenta"
       ],
       "Verifying your payment": [
         "Verificando tu pago"
-      ],
-      "Works on all devices": [
-        "Funciona en todos los dispositivos"
-      ],
-      "You currently have": [
-        "Actualmente tienes"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5837,11 +5798,20 @@
       "Organization key updated": [
         "La clave de la organización ha sido actualizada."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Los usuarios privados podrán ser administradores una vez que entran a su cuenta por primera vez"
+      ],
       "Reset organization key": [
         "Restablecer la clave de la organización"
       ],
       "The organization key must be activated first.": [
         "La clave de la organización debe activarse primero."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Activa la clave de la organización para habilitar los derechos de administración en tu cuenta."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Te has convertido en administrador de la organización **${ organizationName }** por"
       ]
     },
     "Payment method option": {
@@ -6040,6 +6010,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrador en tu organización necesita acceso a la clave de la organización.",
+        "${ n } administradores en su organización necesitan acceso a la clave de la organización."
+      ],
       "Changing organization keys": [
         "Cambiar las claves de la organización"
       ],

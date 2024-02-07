@@ -2665,9 +2665,6 @@
         "${ number } серверів",
         "${ number } серверів"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "Тарифний план ${ plan } вилучено. Пакетна пропозиція не доступна для 1-місячного тарифного плану."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
@@ -2865,9 +2862,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
-      ],
-      "Cancel anytime": [
-        "Скасувати будь-коли"
       ],
       "Can’t access your recovery email?": [
         "Не можете отримати доступ до резервної е-пошти?"
@@ -5584,20 +5578,6 @@
         "Покращити тарифний план"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Наскрізно зашифровано"
-      ],
-      "Open source": [
-        "Відкритий програмний код"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Захищено швейцарськими законами про приватність"
-      ],
-      "Swiss based": [
-        "Розташовано у Швейцарії"
-      ]
-    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Обмежена пропозиція"
@@ -5607,9 +5587,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "Переваги ${ appName }"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } на місяць"
       ],
@@ -5621,12 +5598,6 @@
       ],
       "Free forever": [
         "Безплатно назавжди"
-      ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб бути в безпеці онлайн"
-      ],
-      "Open-source and audited": [
-        "З відкритим кодом та незалежним аудитом"
       ],
       "per month": [
         "на місяць"
@@ -5643,20 +5614,11 @@
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
       ],
-      "Protected by Swiss privacy laws": [
-        "Захищено швейцарським законодавством про приватність"
-      ],
       "Updating your account": [
         "Оновлення облікового запису"
       ],
       "Verifying your payment": [
         "Триває перевірка платежу"
-      ],
-      "Works on all devices": [
-        "Працює на всіх пристроях"
-      ],
-      "You currently have": [
-        "Наразі у вас є"
       ]
     },
     "pass_signup_2023: Title": {
