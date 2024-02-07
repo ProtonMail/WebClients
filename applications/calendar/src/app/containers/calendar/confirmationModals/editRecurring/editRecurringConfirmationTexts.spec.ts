@@ -192,6 +192,19 @@ describe('getRecurringWarningText()', () => {
 
 describe('getTexts()', () => {
     describe('when there is more than one edit type option', () => {
+        test('User gets asked which event to update when more than one edit type option', () => {
+            const types = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
+            const inviteActions = {
+                type: INVITE_ACTION_TYPES.NONE,
+            };
+            expect(getTexts(types, inviteActions)).toEqual({
+                title: 'Update recurring event',
+                confirm: 'Update',
+                cancel: 'Cancel',
+                alertText: 'Which event would you like to update?',
+            });
+        });
+
         test('Organizer gets asked which event to update when more than one edit type option', () => {
             const types = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
             const inviteActions = {
@@ -201,7 +214,7 @@ describe('getTexts()', () => {
                 title: 'Update recurring event',
                 confirm: 'Update',
                 cancel: 'Cancel',
-                alertText: 'Which event would you like to update?',
+                alertText: 'An invitation will be sent to all participants. Which event would you like to update?',
             });
         });
     });

@@ -210,9 +210,9 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     ...(await getCreationKeys({ newAddressKeys, newCalendarKeys })),
                 });
 
-                const isPersonalSingleEditData =
-                    isPersonalSingleEdit === undefined ? {} : { IsPersonalSingleEdit: isPersonalSingleEdit };
-
+                const isPersonalSingleEditData = {
+                    IsPersonalSingleEdit: isPersonalSingleEdit ?? false,
+                };
                 const dataComplete = {
                     ...permissionData,
                     ...isPersonalSingleEditData,
@@ -244,6 +244,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     CalendarID: oldCalendarID,
                     AddressID: oldAddressID,
                     SharedEventID: oldSharedEventID,
+                    IsPersonalSingleEdit: oldIsPersonalSingleEdit,
                 } = calendarEvent;
 
                 const isSwitchCalendar = oldCalendarID !== calendarID;
@@ -270,8 +271,9 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
                 const isBreakingChangeData = { IsBreakingChange: booleanToNumber(isBreakingChange || false) };
-                const isPersonalSingleEditData =
-                    isPersonalSingleEdit === undefined ? {} : { IsPersonalSingleEdit: isPersonalSingleEdit };
+                const isPersonalSingleEditData = {
+                    IsPersonalSingleEdit: isPersonalSingleEdit ?? oldIsPersonalSingleEdit,
+                };
 
                 const dataComplete = {
                     ...permissionData,

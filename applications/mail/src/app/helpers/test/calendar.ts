@@ -38,6 +38,7 @@ export const generateApiCalendarEvent = async ({
     calendarID,
     isOrganizer = true,
     isProtonProtonInvite = false,
+    isPersonalSingleEdit = false,
 }: {
     eventComponent: VcalVeventComponent;
     author: string;
@@ -48,6 +49,7 @@ export const generateApiCalendarEvent = async ({
     calendarID: string;
     isOrganizer?: boolean;
     isProtonProtonInvite?: boolean;
+    isPersonalSingleEdit?: boolean;
 }): Promise<CalendarEvent> => {
     const {
         SharedEventContent = [],
@@ -78,6 +80,7 @@ export const generateApiCalendarEvent = async ({
         Permissions: 1,
         IsOrganizer: booleanToNumber(isOrganizer),
         IsProtonProtonInvite: isProtonProtonInvite ? 1 : 0,
+        IsPersonalSingleEdit: isPersonalSingleEdit,
         Author: author,
         StartTime: getUnixTime(propertyToUTCDate(dtstart)),
         StartTimezone: getPropertyTzid(dtstart) || 'UTC',
