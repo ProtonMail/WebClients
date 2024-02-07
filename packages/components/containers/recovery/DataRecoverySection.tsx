@@ -10,7 +10,6 @@ import { MNEMONIC_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import { Icon, Info, Toggle, useModalState } from '../../components';
-import { useFlag } from '../../containers/unleash';
 import {
     useApi,
     useAuthentication,
@@ -43,8 +42,6 @@ const DataRecoverySection = () => {
     const api = useApi();
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
-
-    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
 
     const getUser = useGetUser();
     const getUserKeys = useGetUserKeys();
@@ -128,7 +125,7 @@ const DataRecoverySection = () => {
             {renderVoidRecoveryFilesModal && (
                 <VoidRecoveryFilesModal
                     onVoid={() => handleChangeDeviceRecoveryToggle(false)}
-                    trustedDeviceRecovery={Boolean(hasTrustedDeviceRecovery && userSettings.DeviceRecovery)}
+                    deviceRecoveryEnabled={Boolean(userSettings.DeviceRecovery)}
                     {...voidRecoveryFilesModal}
                 />
             )}
@@ -214,40 +211,38 @@ const DataRecoverySection = () => {
 
                 {isRecoveryFileAvailable && (
                     <>
-                        {hasTrustedDeviceRecovery && (
-                            <SettingsLayout>
-                                <SettingsLayoutLeft>
-                                    <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
-                                        <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
-                                        <Info
-                                            url={getKnowledgeBaseUrl('/device-data-recovery')}
-                                            title={c('Info')
-                                                .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
-                                        />
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">
+                                    <span className="mr-2">{c('label').t`Trusted device recovery`}</span>
+                                    <Info
+                                        url={getKnowledgeBaseUrl('/device-data-recovery')}
+                                        title={c('Info')
+                                            .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
+                                    />
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight isToggleContainer>
+                                <div className="flex items-start">
+                                    <Toggle
+                                        className="mr-2"
+                                        loading={loadingDeviceRecovery}
+                                        checked={!!userSettings.DeviceRecovery}
+                                        id="deviceRecoveryToggle"
+                                        onChange={({ target: { checked } }) =>
+                                            withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
+                                        }
+                                    />
+                                    <label
+                                        htmlFor="deviceRecoveryToggle"
+                                        className="flex-1 mt-0.5"
+                                        data-testid="account:recovery:trustedDevice"
+                                    >
+                                        {c('Label').t`Allow recovery using a trusted device`}
                                     </label>
-                                </SettingsLayoutLeft>
-                                <SettingsLayoutRight isToggleContainer>
-                                    <div className="flex items-start">
-                                        <Toggle
-                                            className="mr-2"
-                                            loading={loadingDeviceRecovery}
-                                            checked={!!userSettings.DeviceRecovery}
-                                            id="deviceRecoveryToggle"
-                                            onChange={({ target: { checked } }) =>
-                                                withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
-                                            }
-                                        />
-                                        <label
-                                            htmlFor="deviceRecoveryToggle"
-                                            className="flex-1 mt-0.5"
-                                            data-testid="account:recovery:trustedDevice"
-                                        >
-                                            {c('Label').t`Allow recovery using a trusted device`}
-                                        </label>
-                                    </div>
-                                </SettingsLayoutRight>
-                            </SettingsLayout>
-                        )}
+                                </div>
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <span className="pt-0 mb-2 md:mb-0 text-semibold">
