@@ -869,6 +869,9 @@
       "Save": [
         "შენახვა"
       ],
+      "Save and copy alias": [
+        "შენახვა და ფსევდონიმის კოპირება"
+      ],
       "Saving${ ellipsis }": [
         "შენახვა${ ellipsis }"
       ],
@@ -1046,6 +1049,9 @@
       "Toggle Contact app": [
         "კონტაქტების აპის გადართვა"
       ],
+      "Toggle security center app": [
+        "უსაფრთხოების ცენტრის აპის გადართვა"
+      ],
       "Toggle settings": [
         "პარამეტრების გადართვა"
       ],
@@ -1054,6 +1060,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -3021,6 +3031,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } პარამეტრებში."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "შეტყობინებების სპამიდან და ნაგვის ყუთიდან 30 დღეში ავტომატური წაშლა. ისიამოვნეთ ამ და სხვა ფასიანი თვისებებით, როცა პაკეტს ასწევთ."
       ],
@@ -3058,6 +3071,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "დააყენეთ მონაცემების აღდგენის მეთოდი, მისი დაკარგვის თავიდან ასაცილებლად."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშსზე წვდომის დაკარგვა."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
       ],
@@ -3090,6 +3109,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "წასაშლელად შეგიძლიათ, მონიშნოთ ის კონტაქტები, რომელთა შერწყმა და შენარჩუნება არ გსურთ. წაშლა მოხდება, მხოლოდ, შერწყმის ღილაკზე დაწკაპუნების შემდეგ"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთოდები დაყენებულია, 2FA კი - ჩართული."
+      ],
+      "Your account and data recovery methods are set.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენის მეთდები დაყეენბულია."
       ]
     },
     "description": {
@@ -3278,8 +3303,23 @@
       "Address primary private key not found": [
         "მისამართის ძირითადი პირადი გასაღები ნაპოვნი არაა"
       ],
+      "Alias is not valid": [
+        "ფსევდონიმი არასწორია"
+      ],
+      "Alias is required": [
+        "ფსევდონიმი აუცილებელია"
+      ],
       "Alias options could not be resolved": [
         "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
+      "Aliases could not be loaded": [
+        "ფსევდონიმების ჩატვირთვა შეუძლებელია"
+      ],
+      "An error occurred while loading alias options": [
+        "შეცდომა ფსევდონიმის პარამეტრების ჩატვირთვისას"
+      ],
+      "An error occurred while saving alias": [
+        "შეცდომა ფსევდონიმის შენახვისას"
       ],
       "Attachments are limited to 25 MB": [
         "მიმაგრებული ფაილების მაქსიმალური ზომა 25 მბ-ა"
@@ -3392,6 +3432,9 @@
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
+      "Forward address is required": [
+        "გადამისამართების მისამართი აუცილებელია"
+      ],
       "Image upload failed": [
         "გამოსახულების ატვირთვის შეცდომა"
       ],
@@ -3446,6 +3489,9 @@
       ],
       "Missing signature": [
         "ხელმოწერა აკლია"
+      ],
+      "Name is required": [
+        "სახელი აუცილებელია"
       ],
       "Network error: Please check your connection and try again.": [
         "ქსელის შეცდომა: შეამოწმეთ თქვენი შეერთება და თავიდან სცადეთ."
@@ -4502,6 +4548,9 @@
       ],
       "Search": [
         "ძებნა"
+      ],
+      "Security Center": [
+        "უსაფრთხოების ცენტრი"
       ]
     },
     "Hint": {
@@ -5091,6 +5140,12 @@
       "Are you sure you want to discard your import?": [
         "გნებავთ თქვენი შემოტანის გაუქმება?"
       ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "მართლა გნებავთ ამ მდებარეობიდან ყველა შეტყობინების არქივში გადატანა?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "დარწმუნებული ხართ, რომ გსურთ ამ მდებარეობის ყველა შეტყობინების გადატანა ნაგავში?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ${ count } საუბარი?",
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ${ count } საუბარი?"
@@ -5414,6 +5469,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
+      ],
+      "Important note": [
+        "მნიშვნელოვანი შენიშვნა"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
@@ -5858,6 +5916,9 @@
       "The sender has requested a read receipt.": [
         "გამომგზავნმა მოითხოვა წაკითხვის ანგარიშის გადაგზავნა."
       ],
+      "The vault your alias will be stored in.": [
+        "საცავი, რომელშიც თქვენი ფსევდონიმი იქნება შენახული."
+      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება.",
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება."
@@ -6085,6 +6146,9 @@
       ],
       "Version ${ appVersion }": [
         "ვერსია ${ appVersion }"
+      ],
+      "Warning": [
+        "გაფრთხილება"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "ბოდიშს გიხდით. შესაძლოა, ეს ჩვენი მხრიდან შეცდომა იყო. გთხოვთ, დაადასტუროთ, რომ გსურთ ამ ელფოსტის მონიშვნა ლეგიტიმურად?"
@@ -6560,6 +6624,9 @@
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
       ],
+      "Add title": [
+        "სათაურის დამატება"
+      ],
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
@@ -6739,9 +6806,6 @@
       ],
       "Frequency": [
         "სიხშირე"
-      ],
-      "From (senders in message print header)": [
-        "ვისგან (გამგზავნები შეტყობობინების ბეჭდვის თავსართში)"
       ],
       "From:": [
         "გამომგზავნი:"
@@ -7000,6 +7064,9 @@
       ],
       "Wonderful": [
         "შესანიშნავია"
+      ],
+      "Your alias": [
+        "თქვენი ფსევდონიმი"
       ],
       "Your password (admin)": [
         "თქვენი პაროლი (admin)"
@@ -8089,11 +8156,42 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "ყველა ფსევდონიმი"
+      ],
+      "Create alias": [
+        "ფსევდონიმის შექმნა"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "მაგ Amazon, eBay, Etsy"
+      ],
+      "Get an alias": [
+        "ფსევდონიმის მიღება"
+      ],
+      "Hide-my-email aliases": [
+        "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "New alias": [
+        "ახალი ფსევდონიმი"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გახსნა"
       ],
+      "Protect your online identity": [
+        "დაცავით თქვენი იდენტობა ინტერნეტში"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "სცადეთ ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "ჟურნალის ნახვა"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
       ]
     },
     "Select files": {
@@ -8636,6 +8734,9 @@
       "Change setting": [
         "პარამეტრის შეცვლა"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "შექმენით Hide-my-email-ის ფსევდონიმები და აკონტროლეთ ისინი აქედან."
+      ],
       "Email tracking protection": [
         "ელფოსტის ტრეკერებისგან დაცვა"
       ],
@@ -8850,6 +8951,12 @@
       ],
       "Address verification disabled": [
         "მისამართის შემოწმება გამორთულია"
+      ],
+      "Alias copied to clipboard": [
+        "ფსევდონიმი კოპირებულია ბუფერში"
+      ],
+      "Alias saved and copied": [
+        "ფსევდონიმი შენახული და კოპირებულია"
       ],
       "Bug reported": [
         "შეცდომა გადაგზავნილია"
@@ -9355,6 +9462,9 @@
       "Email settings": [
         "ელფოსტის მორგება"
       ],
+      "Enable 2FA": [
+        "2FA-ის ჩართვა"
+      ],
       "Enable message content search": [
         "შეტყობინების შიგთავსში ძებნის ჩართვა"
       ],
@@ -9384,6 +9494,9 @@
       ],
       "Forward": [
         "გადაგზავნა"
+      ],
+      "Get advanced protection": [
+        "დამატებითი უსაფრთხოების მიღება"
       ],
       "Groups": [
         "ჯგუფები"
@@ -9491,6 +9604,12 @@
       "Move all messages": [
         "ყველა შეტყობინების გადატანა"
       ],
+      "Move all messages to archive": [
+        "ყველა შეტყობინების არქივში გადატანა"
+      ],
+      "Move all messages to trash": [
+        "ყველა შეტყობინების გადატანა ნაგვის ყუთში"
+      ],
       "Move to": [
         "გადატანა"
       ],
@@ -9511,6 +9630,9 @@
       ],
       "Moving a snoozed message": [
         "დროებით დადუმებული შეტყობინების გადატანა"
+      ],
+      "Need more aliases?": [
+        "მეტი ფსევდონიმი გჭირდებათ?"
       ],
       "New message": [
         "ახალი შეტყობინება"
@@ -9595,6 +9717,9 @@
       ],
       "Schedule send": [
         "დაგეგმილი გაგზავნა"
+      ],
+      "Security center": [
+        "უსაფრთხოების ცენტრი"
       ],
       "Select a theme": [
         "აირჩიეთ თემა"
@@ -9735,6 +9860,9 @@
       ],
       "What's new": [
         "სიახლეები"
+      ],
+      "Your account is protected": [
+        "თქვენი ანგარიში დაცულია"
       ],
       "Your changes are not synced yet": [
         "თქვენი ცვლილებები ჯერ სინქრონიზებული არაა"
