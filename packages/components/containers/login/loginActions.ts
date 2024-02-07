@@ -79,7 +79,7 @@ const finalizeLogin = async ({
     loginPassword: string;
     keyPassword?: string;
 }): Promise<AuthActionResponse> => {
-    const { authResponse, authVersion, api, persistent, appName, hasTrustedDeviceRecovery, preAuthKTVerifier } = cache;
+    const { authResponse, authVersion, api, persistent, appName, preAuthKTVerifier } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -124,7 +124,7 @@ const finalizeLogin = async ({
     }
 
     let trusted = false;
-    if (hasTrustedDeviceRecovery && keyPassword) {
+    if (keyPassword) {
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api,
             user,
@@ -451,7 +451,6 @@ export const handleNextLogin = async ({
     persistent,
     api,
     ignoreUnlock,
-    hasTrustedDeviceRecovery,
     appName,
     toApp,
     setupVPN,
@@ -464,7 +463,6 @@ export const handleNextLogin = async ({
     persistent: boolean;
     api: Api;
     ignoreUnlock: boolean;
-    hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
     toApp: APP_NAMES | undefined;
     setupVPN: boolean;
@@ -482,7 +480,6 @@ export const handleNextLogin = async ({
         persistent,
         loginPassword: password,
         ignoreUnlock,
-        hasTrustedDeviceRecovery,
         setupVPN,
         preAuthKTVerifier: createPreAuthKTVerifier(ktActivation, api),
         keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation, api),
