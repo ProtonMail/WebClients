@@ -877,6 +877,9 @@
       "Save": [
         "Захаваць"
       ],
+      "Save and copy alias": [
+        "Захаваць і скапіяваць псеўданім"
+      ],
       "Saving${ ellipsis }": [
         "Захаванне ${ ellipsis }"
       ],
@@ -1054,6 +1057,9 @@
       "Toggle Contact app": [
         "Пераключыць на праграму Кантакты"
       ],
+      "Toggle security center app": [
+        "Пераключыць праграму цэнтра бяспекі"
+      ],
       "Toggle settings": [
         "Пераключэнне наладаў"
       ],
@@ -1062,6 +1068,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -3061,6 +3073,9 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выдаленне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Распрацаваны для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
@@ -4614,6 +4629,9 @@
       ],
       "Search": [
         "Пошук"
+      ],
+      "Security Center": [
+        "Цэнтр бяспекі"
       ]
     },
     "Hint": {
@@ -6115,6 +6133,9 @@
       "The sender has requested a read receipt.": [
         "Адпраўнік запытаў апавяшчэнне пра прачытанне."
       ],
+      "The vault your alias will be stored in.": [
+        "Сховішча, у якім будзе захоўвацца ваш псеўданім."
+      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Не ўдалося праверыць ${ contactNames }: кантакт падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакт, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць яго.",
         "Не ўдалося праверыць ${ contactNames }: кантакты падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакты, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць іх.",
@@ -6862,6 +6883,9 @@
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
+      "Add title": [
+        "Дадаць загаловак"
+      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -7041,9 +7065,6 @@
       ],
       "Frequency": [
         "Перыядычнасць"
-      ],
-      "From (senders in message print header)": [
-        "Ад (адпраўнікі ў загалоўку паведамлення)"
       ],
       "From:": [
         "Ад:"
@@ -7302,6 +7323,9 @@
       ],
       "Wonderful": [
         "Цудоўна"
+      ],
+      "Your alias": [
+        "Ваш псеўданім"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -8423,14 +8447,54 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Усе псеўданімы"
+      ],
+      "Create alias": [
+        "Стварыць псеўданім"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "напрыклад, Amazon, eBay, Etsy"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Генерыруйце імгненныя псеўданімы і без намаганняў кіруйце імі разам з паролямі."
+      ],
+      "Get an alias": [
+        "Атрымаць псеўданім"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Псеўданімы Hide-my-email дазваляюць вам рэгістравацца для атрымання пэўнай паслугі без абагулення свайго адраса электроннай пошты. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Новы псеўданім"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Адкрыць ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Абарона вашага сеткавага пасведчання"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Замест свайго сапраўднага паштовага адраса паведаміце ім гэты псеўданім. Дадайце назву і нататку, каб разумець дзе яго неабходна выкарыстоўваць."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Паглядзець журнал"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel у цяперашні час **актыўны** і ахоўвае ваш уліковы запіс."
       ]
     },
     "Select files": {
@@ -9019,6 +9083,9 @@
       "Change setting": [
         "Змяніць налады"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Стварыць псеўданімы hide-my-email і адсочваць іх тут."
+      ],
       "Email tracking protection": [
         "Абарона ад праграм сачэння электроннай пошты"
       ],
@@ -9277,6 +9344,12 @@
       ],
       "Address verification disabled": [
         "Праверка адраса адключана"
+      ],
+      "Alias copied to clipboard": [
+        "Псеўданім скапіяваны ў буфер абмену"
+      ],
+      "Alias saved and copied": [
+        "Псеўданімы захаваны і скапіяваны"
       ],
       "Bug reported": [
         "Справаздача пра памылку адпраўлена"
@@ -9818,6 +9891,9 @@
       "Email settings": [
         "Налады электроннай пошты"
       ],
+      "Enable 2FA": [
+        "Уключыць 2ФА"
+      ],
       "Enable message content search": [
         "Уключыць пошук змесціва паведамлення"
       ],
@@ -9847,6 +9923,9 @@
       ],
       "Forward": [
         "Пераслаць"
+      ],
+      "Get advanced protection": [
+        "Атрыманне дадатковай абароны"
       ],
       "Groups": [
         "Групы"
@@ -9983,6 +10062,9 @@
       "Moving a snoozed message": [
         "Перамяшчэнне адкладзенага паведамлення"
       ],
+      "Need more aliases?": [
+        "Неабходна больш псеўданімаў?"
+      ],
       "New message": [
         "Новае паведамленне"
       ],
@@ -10066,6 +10148,9 @@
       ],
       "Schedule send": [
         "Запланаваць адпраўку"
+      ],
+      "Security center": [
+        "Цэнтр бяспекі"
       ],
       "Select a theme": [
         "Выберыце тэму"
@@ -10210,6 +10295,9 @@
       ],
       "What's new": [
         "Што новага"
+      ],
+      "Your account is protected": [
+        "Ваш уліковы запіс абаронены"
       ],
       "Your changes are not synced yet": [
         "Пакуль вашы змены не сінхранізаваны"

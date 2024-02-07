@@ -1051,6 +1051,9 @@
       "Trust": [
         "Percayai"
       ],
+      "Trust key": [
+        "Percayai kunci"
+      ],
       "Trust public key": [
         "Percayai kunci publik"
       ],
@@ -3262,6 +3265,12 @@
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
+      "Alias is not valid": [
+        "Alias tidak valid"
+      ],
+      "Alias is required": [
+        "Alias tidak valid"
+      ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
       ],
@@ -3426,6 +3435,9 @@
       ],
       "Missing signature": [
         "Tanda tangan hilang"
+      ],
+      "Name is required": [
+        "Nama harus diisi"
       ],
       "Network error: Please check your connection and try again.": [
         "Kesalahan jaringan: Mohon periksa koneksi internet Anda dan coba lagi."
@@ -4467,6 +4479,9 @@
       ],
       "Search": [
         "Pencarian"
+      ],
+      "Security Center": [
+        "Pusat Keamanan"
       ]
     },
     "Hint": {
@@ -5320,6 +5335,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Catatan penting"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
@@ -5986,6 +6004,9 @@
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
       ],
+      "Warning": [
+        "Peringatan"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Mohon maaf, namun sepertinya terjadi suatu kesalahan pada sistem kami. Dapatkah Anda mengonfirmasi bahwa Anda memang benar ingin menandai surel ini sebagai surel yang sah?"
       ],
@@ -6442,6 +6463,9 @@
       "Add image URL": [
         "Tambah URL gambar"
       ],
+      "Add title": [
+        "Tambah judul"
+      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -6621,9 +6645,6 @@
       ],
       "Frequency": [
         "Frekuensi"
-      ],
-      "From (senders in message print header)": [
-        "Dari (pengirim pada header pesan)"
       ],
       "From:": [
         "Dari:"
@@ -6882,6 +6903,9 @@
       ],
       "Wonderful": [
         "Luar Biasa"
+      ],
+      "Your alias": [
+        "Alias Anda"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -7955,14 +7979,31 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Semua alias"
+      ],
+      "Create alias": [
+        "Buat alias"
+      ],
+      "Get an alias": [
+        "Dapatkan alias"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
+      ],
+      "New alias": [
+        "Alias ​​baru"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Buka ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Tampilkan catatan"
       ]
     },
     "Select files": {
@@ -9161,6 +9202,9 @@
       "Email settings": [
         "Pengaturan surel"
       ],
+      "Enable 2FA": [
+        "Aktifkan 2FA"
+      ],
       "Enable message content search": [
         "Aktifkan pencarian konten pesan"
       ],
@@ -9323,6 +9367,9 @@
       "Moving a snoozed message": [
         "Pindah pesan tertunda"
       ],
+      "Need more aliases?": [
+        "Perlu lebih banyak alias?"
+      ],
       "New message": [
         "Pesan baru"
       ],
@@ -9406,6 +9453,9 @@
       ],
       "Schedule send": [
         "Jadwalkan pengiriman"
+      ],
+      "Security center": [
+        "Pusat keamanan"
       ],
       "Select a theme": [
         "Pilih tema"
