@@ -4,14 +4,22 @@ import { c } from 'ttag';
 
 import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
     TotalPricing,
     allCycles,
+    getPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    Currency,
+    PlanIDs,
+    PlansMap,
+    SubscriptionCheckResponse,
+    SubscriptionModel,
+} from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { EllipsisLoader, Option, Price, Radio, SelectTwo } from '../../../components';
@@ -29,6 +37,7 @@ export interface Props {
     planIDs: PlanIDs;
     disabled?: boolean;
     faded?: boolean;
+    subscription?: SubscriptionModel;
 }
 
 type TotalPricings = {
@@ -226,8 +235,21 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plansMap,
     faded,
+    subscription,
 }: Props) => {
-    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
+    const currentPlanIds = getPlanIDs(subscription);
+    const upcomingPlanIds = getPlanIDs(subscription?.UpcomingSubscription);
+    const isTheSamePlan = isDeepEqual(currentPlanIds, planIDs) || isDeepEqual(upcomingPlanIds, planIDs);
+
+    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => {
+        const isHigherThanCurrentSubscription = cycle > (subscription?.Cycle ?? 0);
+        const isHigherThanUpcoming = cycle > (subscription?.UpcomingSubscription?.Cycle ?? 0);
+
+        const isEligibleForSelection =
+            (isHigherThanCurrentSubscription && isHigherThanUpcoming && isTheSamePlan) || !isTheSamePlan;
+
+        return cycle >= minimumCycle && isEligibleForSelection;
+    });
 
     const cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
 
@@ -241,16 +263,6 @@ const SubscriptionCycleSelector = ({
     }, {} as any);
 
     const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
-
-    if (cycles.length === 1) {
-        const cycle = cycles[0];
-
-        return (
-            <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
-                <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
-            </div>
-        );
-    }
 
     if (mode === 'select') {
         return (

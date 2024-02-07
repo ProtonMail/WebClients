@@ -4,7 +4,7 @@ import { MAX_CHARS_API } from '@proton/account';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
-import { isTokenPayment } from '@proton/components/payments/core';
+import { V5PaymentToken, isTokenPayment } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -12,7 +12,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
 import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { setPaymentMethod, subscribe } from '@proton/shared/lib/api/payments';
+import { setPaymentMethodV4, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -345,12 +345,14 @@ export const handleSubscribeUser = async (
     if (!hasPlanIDs(subscriptionData.planIDs)) {
         return;
     }
+
     await api(
         subscribe(
             {
                 Plans: subscriptionData.planIDs,
                 Currency: subscriptionData.currency,
                 Cycle: subscriptionData.cycle,
+                BillingAddress: subscriptionData.billingAddress,
                 ...(referralData
                     ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
                     : {
@@ -361,11 +363,22 @@ export const handleSubscribeUser = async (
                               : undefined),
                       }),
             },
-            productParam
+            productParam,
+            subscriptionData.payment?.paymentsVersion ?? 'v4'
         )
     );
+
     if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
-        await api(setPaymentMethod(subscriptionData.payment));
+        if (subscriptionData.payment?.paymentsVersion === 'v5') {
+            const v5PaymentToken: V5PaymentToken = {
+                PaymentToken: subscriptionData.payment.Details.Token,
+                v: 5,
+            };
+
+            await api(setPaymentMethodV5({ ...subscriptionData.payment, ...v5PaymentToken }));
+        } else {
+            await api(setPaymentMethodV4(subscriptionData.payment));
+        }
     }
 };
 

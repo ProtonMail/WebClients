@@ -1,0 +1,246 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/base/custom-properties';
+@import '~@proton/styles/scss/base/typo';
+@import '~@proton/styles/scss/utilities/spacing';
+
+body {
+	font-family:
+		Inter,
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		Oxygen-Sans,
+		Ubuntu,
+		Cantarell,
+		'Helvetica Neue',
+		sans-serif;
+	overflow: hidden;
+	font-weight: normal;
+}
+
+$card-number-base-width: 180;
+$card-expiry-base-width: 50;
+$card-cvc-base-width: 40;
+
+.cb-input-element {
+	position: relative;
+
+	$base-height: 16;
+	$additional-height: 8;
+
+	block-size: rem($base-height + $additional-height);
+
+	iframe {
+		position: relative;
+		inset-block-start: rem(-1 + calc($additional-height / 2));
+	}
+
+	.icon-error {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-end: rem(8);
+		transform: translateY(-50%);
+		color: var(--signal-danger);
+	}
+}
+
+.card-input--one-line {
+	display: flex;
+	min-inline-size: rem(($card-number-base-width + $card-expiry-base-width + $card-cvc-base-width) * 1.25);
+	block-size: rem(34);
+	border: 1px solid var(--field-norm);
+	border-radius: var(--border-radius-md);
+	align-items: center;
+	padding-block: 0;
+
+	&:focus-within,
+	&.focus {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+}
+
+.card-input--one-line #card-number {
+	flex: 1 0 rem($card-number-base-width);
+	padding-inline: rem(12);
+	margin-inline-end: rem(12);
+	border-inline-end: 1px solid var(--border-norm);
+}
+
+.card-input--one-line #card-expiry {
+	flex: 0 0 rem($card-expiry-base-width);
+	padding-inline-end: rem(12);
+	margin-inline-end: rem(12);
+	border-inline-end: 1px solid var(--border-norm);
+}
+
+.card-input--one-line #card-cvc {
+	flex: 0 0 rem($card-cvc-base-width);
+	padding-inline-end: rem(4);
+}
+
+.card-input--two-line {
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid var(--field-norm);
+	border-radius: var(--border-radius-md);
+}
+
+.card-input--two-line #card-number {
+	flex: 1 1 100%;
+	padding-block: rem(5);
+	padding-inline: rem(12);
+	border-start-start-radius: var(--border-radius-md);
+	border-start-end-radius: var(--border-radius-md);
+
+	&.focus {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	&.invalid {
+		border: 1px solid var(--field-norm);
+		margin: -1px;
+		z-index: map.get($z-indexes, 'up');
+		border-color: var(--signal-danger);
+	}
+}
+
+.card-input--two-line #card-expiry {
+	flex: 1 0 rem($card-expiry-base-width);
+	padding-block: rem(5);
+	padding-inline: rem(12);
+	border-block-start: 1px solid var(--field-norm);
+	border-inline-end: 1px solid var(--field-norm);
+	border-end-start-radius: var(--border-radius-md);
+
+	&.focus {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	&.invalid {
+		border: 1px solid var(--field-norm);
+		margin-inline-start: -1px;
+		margin-block-end: -1px;
+		border-color: var(--signal-danger);
+	}
+}
+
+.card-input--two-line #card-cvc {
+	// that's not a typo. In two line mode, we need to make the CVC field the same width as the expiry field
+	flex: 1 0 rem($card-expiry-base-width);
+	padding-block: rem(5);
+	padding-inline: rem(12);
+	border-block-start: 1px solid var(--field-norm);
+	border-end-end-radius: var(--border-radius-md);
+
+	&.focus {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	&.invalid {
+		border: 1px solid var(--field-norm);
+		margin-inline: -1px;
+		margin-block-end: -1px;
+		border-color: var(--signal-danger);
+	}
+}
+
+// ----------
+
+input {
+	font: inherit;
+}
+
+.cb-input-label {
+	margin-block-end: rem(4);
+	font-weight: 600;
+}
+
+$input-inner-size: 34;
+$input-border-size: 1;
+
+.cb-input-element-container {
+	block-size: rem($input-inner-size + 2 * $input-border-size);
+	padding-block: 0;
+	padding-inline: rem(16);
+	border: #{$input-border-size}px solid var(--field-norm);
+	border-radius: var(--border-radius-md);
+	box-sizing: border-box;
+	padding-block-start: rem(6);
+
+	// &:has(.cb-input-element.focus) // doesn't work in Firefox, so we are using JS instead
+	&:focus-within,
+	&.focus {
+		border-color: var(--focus-outline);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+		box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+	}
+
+	.cb-input-element {
+		inline-size: 100%;
+	}
+}
+
+.cb-assist {
+	position: absolute;
+	margin-block-start: 0.25rem;
+	font-size: 0.75rem;
+	color: var(--signal-danger);
+	font-weight: 600;
+}
+
+.cb-assist:empty::before {
+	content: ' ';
+	white-space: pre;
+}
+
+.horizontal {
+	display: flex;
+	gap: rem(16);
+}
+
+.placeholder,
+::placeholder {
+	color: var(--field-placeholder-color);
+	font-style: normal;
+	opacity: 1; // For Firefox -_-v
+}
+
+:root,
+.ui-standard {
+	--field-norm: #adaba8;
+	--border-norm: #d1cfcd;
+	--focus-outline: #6d4aff;
+	--focus-ring: rgb(109 74 255 / 0.2);
+	--text-hint: #8f8d8a;
+	--signal-danger: #dc3251;
+}
+
+.icon-16p {
+	display: inline-block;
+	vertical-align: middle;
+	fill: currentcolor;
+	inline-size: rem(16);
+	block-size: rem(16);
+}
+
+/* purgecss start ignore */
+.paypal-checkout-sandbox {
+	display: none !important;
+}
+
+/* purgecss end ignore */

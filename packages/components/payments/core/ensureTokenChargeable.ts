@@ -1,10 +1,11 @@
-import { getTokenStatus } from '@proton/shared/lib/api/payments';
+import { getTokenStatusV4, getTokenStatusV5 } from '@proton/shared/lib/api/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 
+import { ChargebeeIframeEvents, RemoveEventListener } from '../core';
 import { PAYMENT_TOKEN_STATUS } from './constants';
-import { PaymentTokenResult } from './interface';
+import { ChargebeeFetchedPaymentToken, PaymentTokenResult } from './interface';
 
 const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =
     PAYMENT_TOKEN_STATUS;
@@ -46,7 +47,7 @@ const pull = async ({
         throw new Error(translations.paymentProcessCanceledError);
     }
 
-    const { Status } = await api({ ...getTokenStatus(Token), signal });
+    const { Status } = await api({ ...getTokenStatusV4(Token), signal });
 
     if (Status === STATUS_FAILED) {
         throw new Error(translations.paymentProcessFailedError);
@@ -110,7 +111,7 @@ export const ensureTokenChargeable = (
             if (tab && tab.closed) {
                 try {
                     reset();
-                    const { Status } = await api({ ...getTokenStatus(Token), signal });
+                    const { Status } = await api({ ...getTokenStatusV4(Token), signal });
                     if (Status === STATUS_CHARGEABLE) {
                         return resolve();
                     }
@@ -152,5 +153,127 @@ export const ensureTokenChargeable = (
         window.addEventListener('message', onMessage, false);
         listen = true;
         listenTab();
+    });
+};
+
+export function waitFor3ds(events: ChargebeeIframeEvents, tab: Window | null) {
+    const removeEventListeners: RemoveEventListener[] = [];
+    const threeDsChallengeSuccess = new Promise((resolve, reject) => {
+        const listenerSuccess = events.onThreeDsSuccess((data) => {
+            resolve(data);
+        });
+
+        // We don't provide any error data to the caller to avoid double-handling of the error event.
+        // The error message coming from the iframe must be handled in a centralized way.
+        const listenerError = events.onThreeDsFailure(() =>
+            reject({
+                threeDsFailure: true,
+            })
+        );
+
+        const listenerSavedSuccess = events.onCardVeririfcationSuccess((data) => {
+            resolve(data.authorizedPaymentIntent);
+        });
+
+        const listenerSavedError = events.onCardVeririfcationFailure(() =>
+            reject({
+                threeDsFailure: true,
+            })
+        );
+
+        removeEventListeners.push(listenerSuccess);
+        removeEventListeners.push(listenerError);
+        removeEventListeners.push(listenerSavedSuccess);
+        removeEventListeners.push(listenerSavedError);
+
+        const interval = setInterval(() => {
+            if (tab?.closed) {
+                reject();
+                clearInterval(interval);
+            }
+        }, 1000);
+    });
+
+    return threeDsChallengeSuccess.finally(() => {
+        removeEventListeners.forEach((removeEventListener) => removeEventListener());
+    });
+}
+
+export const ensureTokenChargeableV5 = async (
+    token: ChargebeeFetchedPaymentToken,
+    events: ChargebeeIframeEvents,
+    {
+        api,
+        signal,
+    }: {
+        api: Api;
+        signal: AbortSignal;
+    },
+    translations: EnsureTokenChargeableTranslations,
+    delayListening = DELAY_LISTENING
+) => {
+    let tab: Window | null = null;
+    if (!token.authorized) {
+        tab = window.open(token.approvalUrl);
+    }
+    const noNeedToAuthorize = token.authorized;
+
+    return new Promise<void>(async (resolve, reject) => {
+        let pollingActive = true;
+
+        const closeTab = () => {
+            tab?.close?.();
+        };
+
+        const reset = () => {
+            pollingActive = false;
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            signal?.removeEventListener('abort', abort);
+        };
+
+        const abort = () => {
+            reset();
+            closeTab();
+            reject(new Error(translations.processAbortedError));
+        };
+
+        const listenTab = async (): Promise<void> => {
+            if (!pollingActive) {
+                return;
+            }
+
+            // tab && tab.closed means that there was approvalURl and now the tab is closed
+            // Another case if !tab && token.authorized means that there was no approvalUrl and the token is already
+            // authorized. For v5, we still to make sure that the token is chargeable.
+            if ((tab && tab.closed) || noNeedToAuthorize) {
+                try {
+                    const { Status } = await api({ ...getTokenStatusV5(token.PaymentToken), signal });
+                    if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
+                        return resolve();
+                    }
+
+                    throw new Error(translations.tabClosedError);
+                } catch (error: any) {
+                    return reject({ ...error, tryAgain: true });
+                }
+            }
+
+            await wait(delayListening);
+            return listenTab();
+        };
+
+        waitFor3ds(events, tab)
+            .catch((error) => {
+                if (error?.threeDsFailure) {
+                    reject();
+                }
+            })
+            .finally(() => {
+                closeTab();
+            });
+
+        signal?.addEventListener('abort', abort);
+
+        listenTab().catch(reject);
     });
 };
