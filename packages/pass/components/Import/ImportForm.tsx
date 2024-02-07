@@ -133,7 +133,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                     className={clsx('border-none', busy && 'pointer-events-none')}
                                     iconName="file-lines"
                                     clear={c('Action').t`Delete`}
-                                    onClear={() => form.setFieldValue('file', undefined)}
+                                    onClear={() => form.setFieldValue('file', null)}
                                 />
                             ) : (
                                 <FileInput

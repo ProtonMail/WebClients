@@ -67,7 +67,7 @@ const validateImportForm = ({ provider, file, passphrase }: ImportFormValues): F
     const errors: FormikErrors<ImportFormValues> = {};
 
     if (provider === null) errors.provider = c('Warning').t`No password manager selected`;
-    if (file === null) errors.file = '';
+    if (!file) errors.file = '';
 
     if (file && provider === ImportProvider.PROTONPASS) {
         const fileExtension = extractFileExtension(file.name);
