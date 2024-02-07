@@ -2,16 +2,9 @@ import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
 import { clientReady } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
-import {
-    getUserAccessIntent,
-    getUserFeaturesIntent,
-    stateHydrate,
-    wakeupIntent,
-    wakeupSuccess,
-} from '@proton/pass/store/actions';
+import { getUserAccessIntent, stateHydrate, wakeupIntent, wakeupSuccess } from '@proton/pass/store/actions';
 import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
 import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
-import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import type { WithReceiverAction } from '@proton/pass/store/actions/with-receiver';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectPopupStateTabIds } from '@proton/pass/store/selectors';
@@ -32,8 +25,7 @@ function* wakeupWorker(
 
     if (loggedIn && userId && clientReady(status)) {
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
-        yield put(maybeRevalidate(getUserAccessIntent(userAccessRequest(userId))));
-        yield put(getUserFeaturesIntent(userFeaturesRequest(userId)));
+        yield put(maybeRevalidate(getUserAccessIntent(userId)));
 
         /* garbage collect any stale popup tab
          * state on each popup wakeup call */

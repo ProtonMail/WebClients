@@ -13,11 +13,13 @@ import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
     draftsGarbageCollect,
+    getUserAccessIntent,
     passwordHistoryGarbageCollect,
     startEventPolling,
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
+import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { AppStatus, OnboardingMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -58,9 +60,10 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
-                    if (res.ok) {
-                        const state = store.getState();
+                    const userID = authStore.getUserID()!;
+                    const state = store.getState();
 
+                    if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
 
                         telemetry.start().catch(noop);
@@ -68,6 +71,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
+                        store.dispatch(withRevalidate(getUserAccessIntent(userID)));
+
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
 
                         if (
@@ -78,7 +83,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         }
                     } else {
                         client.current.setStatus(AppStatus.ERROR);
-                        if (res.clearCache) void deletePassDB(authStore.getUserID()!);
+                        if (res.clearCache) void deletePassDB(userID);
                     }
                 },
 
