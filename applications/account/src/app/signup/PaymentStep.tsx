@@ -39,7 +39,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, Currency, Cycle, Plan, PlansMap, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import Content from '../public/Content';
@@ -83,6 +83,7 @@ const PaymentStep = ({
     const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
+        checkResult: subscriptionData.checkResult,
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
         selectedPlanName: plan?.Name,
@@ -279,7 +280,7 @@ const PaymentStep = ({
                                         ? c('Action').jt`Pay ${price} now`
                                         : c('Action').t`Confirm`}
                                 </Button>
-                                {isTaxInclusive(subscriptionData.checkResult) && (
+                                {paymentFacade.showInclusiveTax && (
                                     <InclusiveVatText
                                         tax={subscriptionData.checkResult?.Taxes?.[0]}
                                         currency={subscriptionData.currency}
@@ -302,7 +303,7 @@ const PaymentStep = ({
                                     chargebeePaypal={paymentFacade.chargebeePaypal}
                                     iframeHandles={paymentFacade.iframeHandles}
                                 />
-                                {isTaxInclusive(subscriptionData.checkResult) && (
+                                {paymentFacade.showInclusiveTax && (
                                     <InclusiveVatText
                                         tax={subscriptionData.checkResult?.Taxes?.[0]}
                                         currency={subscriptionData.currency}
