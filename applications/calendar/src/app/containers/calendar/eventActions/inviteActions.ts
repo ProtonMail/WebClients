@@ -201,11 +201,13 @@ export const getCorrectedSaveInviteActions = ({
     newVevent,
     oldVevent,
     hasModifiedDateTimes,
+    hasModifiedRrule,
 }: {
     inviteActions: InviteActions;
     newVevent: VcalVeventComponent;
     oldVevent?: VcalVeventComponent;
     hasModifiedDateTimes?: boolean;
+    hasModifiedRrule?: boolean;
 }) => {
     const { type } = inviteActions;
     const hasNewAttendees = getHasAttendees(newVevent);
@@ -231,8 +233,13 @@ export const getCorrectedSaveInviteActions = ({
             type: NONE,
         };
     }
-    const hasInviteDataModification = getHasUpdatedInviteData({ newVevent, oldVevent, hasModifiedDateTimes });
-    const { addedAttendees, removedAttendees } = getAttendeesDiff(newVevent, oldVevent);
+    const hasInviteDataModification = getHasUpdatedInviteData({
+        newVevent,
+        oldVevent,
+        hasModifiedDateTimes,
+        hasModifiedRrule,
+    });
+    const { addedAttendees, removedAttendees, hasModifiedRSVPStatus } = getAttendeesDiff(newVevent, oldVevent);
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
     const hasRemovedAllAttendees = hasRemovedAttendees && removedAttendees?.length === oldVevent.attendee?.length;
@@ -243,6 +250,7 @@ export const getCorrectedSaveInviteActions = ({
             addedAttendees,
             removedAttendees,
             hasRemovedAllAttendees,
+            hasModifiedRSVPStatus,
         };
     }
     if (!hasAddedAttendees && !hasRemovedAttendees) {
