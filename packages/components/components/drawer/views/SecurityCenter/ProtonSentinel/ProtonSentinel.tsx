@@ -17,17 +17,6 @@ import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-s
 import { DrawerAppSection } from '../../shared';
 import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 
-const learnMoreLink = (
-    <ButtonLike
-        as="a"
-        shape="underline"
-        color="norm"
-        key="learn-more"
-        href={getKnowledgeBaseUrl('/proton-sentinel')}
-        target="_blank"
-    >{c('Link').t`Learn more`}</ButtonLike>
-);
-
 const ProtonSentinel = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -66,6 +55,17 @@ const ProtonSentinel = () => {
             setLoadingSentinel(false);
         }
     };
+
+    const learnMoreLink = (
+        <ButtonLike
+            as="a"
+            shape="underline"
+            color="norm"
+            key="learn-more"
+            href={getKnowledgeBaseUrl('/proton-sentinel')}
+            target="_blank"
+        >{c('Link').t`Learn more`}</ButtonLike>
+    );
 
     return (
         <>
