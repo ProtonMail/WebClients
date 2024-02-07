@@ -17,6 +17,9 @@
       "Add new item": [
         "Tambahkan item baru"
       ],
+      "Admin panel": [
+        "Panel admin"
+      ],
       "Advanced": [
         "Opsi lanjutan"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Buat entri masuk"
+      ],
+      "Create new items": [
+        "Buat item baru"
       ],
       "Create note": [
         "Buat catatan"
@@ -266,6 +272,9 @@
       "Pin item": [
         "Sematkan item"
       ],
+      "Recent": [
+        "Terkini"
+      ],
       "Refresh the page": [
         "Muat ulang halaman"
       ],
@@ -280,6 +289,9 @@
       ],
       "Remove access": [
         "Hapus akses"
+      ],
+      "Remove member": [
+        "Hapus anggota"
       ],
       "Request a feature": [
         "Minta fitur"
@@ -307,6 +319,9 @@
       ],
       "Send us a message": [
         "Kirim pesan kepada kami"
+      ],
+      "Set access level": [
+        "Tentukan tingkat akses"
       ],
       "Share": [
         "Bagikan"
@@ -423,6 +438,9 @@
       ],
       "Could not leave vault.": [
         "Brankas tidak dapat ditinggalkan."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Rekomendasi untuk saat ini tidak dapat dimuat."
       ],
       "Could not open created vault": [
         "Brankas yang dibuat tidak dapat dibuka"
@@ -663,6 +681,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } undangan berhasil dikirim"
+      ],
       "${ memberCount } member": [
         "${ memberCount } anggota"
       ],
@@ -719,6 +740,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Bawa kata sandi Anda ke ${ BRAND_NAME }."
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -780,6 +804,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Kata sandi yang dihasilkan akan disimpan dalam kurun waktu satu hari."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Dapatkan pengalaman Pass yang maksimal dengan membuat brankas khusus bagi masing-masing tim atau proyek."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
       ],
@@ -798,6 +825,9 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Untuk mendapatkan pengalaman terbaik menggunakan ${ PASS_APP_NAME }, mohon berikan izin yang diperlukan pada ekstensi ini."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Pasang ${ PASS_APP_NAME } untuk ${ browser.title } agar rincian masuk Anda dapat terisi secara cepat dan otomatis."
+      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "Pasang ${ PASS_APP_NAME } untuk ${ browser.title } agar rincian masuk Anda dapat terisi secara cepat dan otomatis. "
       ],
@@ -806,6 +836,9 @@
       ],
       "Invitation sent": [
         "Undangan dikirim"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Undang orang-orang yang Anda kehendaki dan tentukan izin akses yang sesuai bagi mereka."
       ],
       "Invite successfully removed": [
         "Undangan berhasil dihapus"
@@ -944,6 +977,9 @@
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
+      ],
+      "Select vault to share": [
+        "Pilih brankas untuk dibagikan"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Tentukan di mana brankas yang Anda impor akan tersimpan."
@@ -1268,6 +1304,15 @@
       "Logins": [
         "Entri masuk"
       ],
+      "Make all admins": [
+        "Jadikan seluruh anggota sebagai admin"
+      ],
+      "Make all editors": [
+        "Jadikan seluruh anggota sebagai penyunting"
+      ],
+      "Make all viewers": [
+        "Jadikan seluruh anggota sebagai pengamat"
+      ],
       "Members": [
         "Anggota"
       ],
@@ -1591,6 +1636,9 @@
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
       ],
+      "Create a vault": [
+        "Buat brankas"
+      ],
       "Create PIN code": [
         "Buat kode PIN"
       ],
@@ -1609,6 +1657,9 @@
       "Enter your PIN": [
         "Masukkan PIN Anda"
       ],
+      "Get Started": [
+        "Mulai"
+      ],
       "Grant permissions": [
         "Berikan izin"
       ],
@@ -1618,6 +1669,12 @@
       "Import to vault(s)": [
         "Impor ke brankas"
       ],
+      "Import your data": [
+        "Impor data Anda"
+      ],
+      "Install extension": [
+        "Pasang ekstensi"
+      ],
       "Leave vault ?": [
         "Tinggalkan brankas?"
       ],
@@ -1626,6 +1683,9 @@
       ],
       "Member limit": [
         "Batas anggota"
+      ],
+      "Members": [
+        "Anggota"
       ],
       "Move all items ?": [
         "Pindahkan semua item?"
@@ -1645,6 +1705,9 @@
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
       ],
+      "Review and share": [
+        "Kaji dan bagikan"
+      ],
       "Secure your data": [
         "Amankan data Anda"
       ],
@@ -1654,8 +1717,14 @@
       "Settings": [
         "Pengaturan"
       ],
+      "Share vaults with your team": [
+        "Bagikan brankas dengan tim Anda"
+      ],
       "Share with": [
         "Bagikan dengan"
+      ],
+      "Suggestions": [
+        "Saran"
       ],
       "Transfer ownership": [
         "Transfer kepemilikan"
@@ -1665,6 +1734,9 @@
       ],
       "Update available": [
         "Pembaruan tersedia"
+      ],
+      "Vault": [
+        "Brankas"
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
@@ -1715,11 +1787,20 @@
       "An error occured while exporting your data": [
         "Terdapat kesalahan pada saat mengekspor data Anda"
       ],
+      "At least one email address is required": [
+        "Setidaknya satu alamat email dibutuhkan"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Berkas \"${ vaultName }\" tidak dapat dibuat"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Undangan tidak dapat dikirimkan ke alamat berikut :"
+      ],
+      "Duplicate email addresses.": [
+        "Terdapat alamat email duplikat."
       ],
       "Empty note": [
         "Catatan kosong"
@@ -1729,6 +1810,9 @@
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
+      ],
+      "Invalid email addresses.": [
+        "Terdapat alamat email yang tidak valid."
       ],
       "Maximum length is ${ maxLength } character": [
         "Panjang maksimum adalah ${ maxLength } karakter"
@@ -1750,6 +1834,9 @@
       ],
       "No password manager selected": [
         "Tidak ada pengelola kata sandi yang dipilih"
+      ],
+      "No results": [
+        "Tidak ada hasil yang ditemukan"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kolom ini hanya dapat diisi dengan karakter alfanumerik, titik, tanda hubung, dan garis bawah"
