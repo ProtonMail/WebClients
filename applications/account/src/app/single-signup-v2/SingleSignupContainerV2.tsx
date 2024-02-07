@@ -511,6 +511,7 @@ const SingleSignupContainerV2 = ({
             })();
 
             let silentApi = getSilentApi(unauthApi);
+            const silentUnAuthApi = silentApi;
             let resumedSession: ResumedSessionResult | undefined;
 
             if (maybeSession?.persisted.UID) {
@@ -592,7 +593,7 @@ const SingleSignupContainerV2 = ({
                                 planIDs,
                                 plansMap,
                                 cycles: signupConfiguration.cycles,
-                                api: silentApi,
+                                api: silentUnAuthApi,
                                 coupon: couponToFetch,
                                 currency,
                             });
