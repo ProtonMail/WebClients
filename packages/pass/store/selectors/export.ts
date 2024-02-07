@@ -1,20 +1,13 @@
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
+import type { ExportData, ExportedVault } from '@proton/pass/lib/export/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
-import { selectShareOrThrow } from '@proton/pass/store/selectors/shares';
+import { selectShare } from '@proton/pass/store/selectors/shares';
 import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
-import type { ShareType, VaultShareContent } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 
 type ExportOptions = { config: PassConfig; encrypted: boolean };
-
-type ExportedVault = [
-    string,
-    VaultShareContent & {
-        items: ExportedItem[];
-    },
-];
 
 export const selectExportData =
     ({ config, encrypted }: ExportOptions) =>
@@ -23,10 +16,10 @@ export const selectExportData =
         const user = selectUser(state);
 
         const vaults = Object.fromEntries(
-            Object.entries(itemsByShareId).reduce<ExportedVault[]>((shares, [shareId, itemsById]) => {
-                const share = selectShareOrThrow<ShareType.Vault>(shareId)(state);
+            Object.entries(itemsByShareId).reduce<[string, ExportedVault][]>((shares, [shareId, itemsById]) => {
+                const share = selectShare<ShareType.Vault>(shareId)(state);
 
-                if (share.owner) {
+                if (share && share.owner) {
                     shares.push([
                         shareId,
                         {
@@ -45,6 +38,7 @@ export const selectExportData =
                         },
                     ]);
                 }
+
                 return shares;
             }, [])
         );
