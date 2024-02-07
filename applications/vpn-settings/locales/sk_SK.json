@@ -762,12 +762,6 @@
       ]
     },
     "bf2023: info": {
-      "All premium ${ BRAND_NAME } services. One easy subscription.": [
-        "Všetky prémiové služby ${ BRAND_NAME }. Jedno jednoduché predplatné."
-      ],
-      "Secure browsing and premium VPN features.": [
-        "Bezpečné prehliadanie a prémiové funkcie VPN."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
       ],
@@ -2815,9 +2809,6 @@
         "${ number } serverov",
         "${ number } serverov"
       ],
-      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } bol odstránený. Ponuka balíka nie je k dispozícii pri 1-mesačnom pláne."
-      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -3001,6 +2992,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Pred zahájením odosielania a prijímania emailov z vašich nových adries je potrebné pre ne vytvoriť šifrovacie kľúče."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Účtované za cenu ${ price }"
       ],
@@ -3012,9 +3006,6 @@
       ],
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
-      ],
-      "Cancel anytime": [
-        "Môžete zrušiť kedykoľvek"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
@@ -5745,20 +5736,6 @@
         "Upgradovať môj plán"
       ]
     },
-    "pass_signup_2023: Feature": {
-      "End-to-end encrypted": [
-        "Šifrované End-to-end"
-      ],
-      "Open source": [
-        "Open source"
-      ],
-      "Protected by Swiss privacy laws": [
-        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
-      ],
-      "Swiss based": [
-        "So sídlom vo Švajčiarsku"
-      ]
-    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Časovo obmedzená ponuka"
@@ -5768,9 +5745,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ appName } benefits": [
-        "${ appName } výhody"
-      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } mesačne"
       ],
@@ -5792,12 +5766,6 @@
       "Includes:": [
         "Obsahuje:"
       ],
-      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Pridajte sa k viac ako 100 miliónom ľudí, ktorí si zvolili ${ BRAND_NAME }, aby zostali v bezpečí online"
-      ],
-      "Open-source and audited": [
-        "Open-source a auditovaný"
-      ],
       "per month": [
         "mesačne"
       ],
@@ -5813,20 +5781,11 @@
       "Preparing your Recovery Kit": [
         "Príprava sady na obnovenie"
       ],
-      "Protected by Swiss privacy laws": [
-        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
-      ],
       "Updating your account": [
         "Aktualizácia vášho účtu"
       ],
       "Verifying your payment": [
         "Overujeme vašu platbu"
-      ],
-      "Works on all devices": [
-        "Funguje na všetkých zariadeniach"
-      ],
-      "You currently have": [
-        "Aktuálne máte"
       ]
     },
     "pass_signup_2023: Title": {
