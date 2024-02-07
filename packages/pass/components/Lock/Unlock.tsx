@@ -12,14 +12,20 @@ type Props = {
 
 export const Unlock: FC<Props> = ({ onLoading }) => {
     const [value, setValue] = useState('');
+    const [renderKey, setRenderKey] = useState(0);
 
     const unlock = useActionRequest({
         action: sessionUnlockIntent,
         initialRequestId: sessionUnlockRequest(),
+        onFailure: () => {
+            setValue('');
+            /* Trick to re-render the PIN input with correct input focus after submitting invalid PIN */
+            setRenderKey(renderKey + 1);
+        },
     });
 
     useEffect(() => onLoading?.(unlock.loading), [unlock.loading]);
     useSessionLockPinSubmitEffect(value, { onSubmit: (pin) => unlock.dispatch({ pin }) });
 
-    return <PinCodeInput loading={unlock.loading} value={value} onValue={setValue} />;
+    return <PinCodeInput key={`pin-input-${renderKey}`} loading={unlock.loading} value={value} onValue={setValue} />;
 };
