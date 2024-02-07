@@ -452,6 +452,7 @@ const Step1 = ({
         const newPlanIDs = optimistic.planIDs || options.planIDs;
         const newCycle = optimistic.cycle || options.cycle;
         const newPlan = getPlanFromPlanIDs(model.plansMap, newPlanIDs) || FREE_PLAN;
+        const newBillingAddress = optimistic.billingAddress || options.billingAddress;
 
         // Try a pre-saved check first. If it's not available, then use the default optimistic one.
         // With the regular cycles, it should be available.
@@ -487,7 +488,7 @@ const Step1 = ({
                 newPlanIDs,
                 newCurrency,
                 newCycle,
-                model.subscriptionData.billingAddress,
+                newBillingAddress,
                 coupon
             );
 
