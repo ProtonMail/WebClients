@@ -2103,6 +2103,12 @@
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
+      "Alias is not valid": [
+        "Alias tidak valid"
+      ],
+      "Alias is required": [
+        "Alias tidak valid"
+      ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
       ],
@@ -2225,6 +2231,9 @@
       ],
       "Missing signature": [
         "Tanda tangan hilang"
+      ],
+      "Name is required": [
+        "Nama harus diisi"
       ],
       "No calendars found to import": [
         "Tidak ada kalender yang dapat diimpor"
@@ -2904,6 +2913,9 @@
     "Header": {
       "Contacts": [
         "Kontak"
+      ],
+      "Security Center": [
+        "Pusat Keamanan"
       ]
     },
     "Hint": {
@@ -3672,6 +3684,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Catatan penting"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
       ],
@@ -4218,6 +4233,9 @@
       "Want to sync files faster?": [
         "Ingin menyinkronkan berkas secara lebih cepat?"
       ],
+      "Warning": [
+        "Peringatan"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Selamat, Anda telah menggandakan kuota penyimpanan gratis Anda!"
       ],
@@ -4445,6 +4463,9 @@
       ],
       "Add image URL": [
         "Tambah URL gambar"
+      ],
+      "Add title": [
+        "Tambah judul"
       ],
       "Add to group": [
         "Tambah ke grup"
@@ -4859,6 +4880,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Ya, saya ingin menghapus berkas lama saya secara permanen"
+      ],
+      "Your alias": [
+        "Alias Anda"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -5812,14 +5836,31 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Semua alias"
+      ],
+      "Create alias": [
+        "Buat alias"
+      ],
+      "Get an alias": [
+        "Dapatkan alias"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
+      ],
+      "New alias": [
+        "Alias ​​baru"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Buka ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Tampilkan catatan"
       ]
     },
     "Select files": {
@@ -6623,6 +6664,9 @@
       "Empty trash": [
         "Kosongkan sampah"
       ],
+      "Enable 2FA": [
+        "Aktifkan 2FA"
+      ],
       "Enable drive search": [
         "Aktifkan pencarian drive"
       ],
@@ -6707,6 +6751,9 @@
       "Name": [
         "Nama"
       ],
+      "Need more aliases?": [
+        "Perlu lebih banyak alias?"
+      ],
       "Night theme": [
         "Tema malam"
       ],
@@ -6784,6 +6831,9 @@
       ],
       "Searching…": [
         "Mencari…"
+      ],
+      "Security center": [
+        "Pusat keamanan"
       ],
       "Select action to take on contact group": [
         "Pilih tindakan untuk diterapkan pada grup kontak"
