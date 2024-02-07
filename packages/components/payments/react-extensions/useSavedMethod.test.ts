@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { addTokensResponse, apiMock } from '@proton/testing';
 
-import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethodPaypal, SavedPaymentMethod } from '../core';
+import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethodPaypal, SavedPaymentMethodInternal } from '../core';
 import { useSavedMethod } from './useSavedMethod';
 
 const onChargeableMock = jest.fn();
@@ -12,7 +12,7 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-const savedMethod: SavedPaymentMethod = {
+const savedMethod: SavedPaymentMethodInternal = {
     Order: 500,
     ID: '1',
     Type: PAYMENT_METHOD_TYPES.CARD,
@@ -139,12 +139,8 @@ it('should fetch token', async () => {
     expect(token).toEqual({
         Amount: 1000,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: true,
         type: 'card',
     });
@@ -153,12 +149,8 @@ it('should fetch token', async () => {
 it('should process token', async () => {
     addTokensResponse().pending();
     verifyPaymentMock.mockResolvedValue({
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
     });
 
     const { result } = renderHook(() =>
@@ -190,12 +182,8 @@ it('should process token', async () => {
     expect(token).toEqual({
         Amount: 1000,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: true,
         type: 'card',
     });
@@ -266,7 +254,7 @@ it('should update the saved method', async () => {
             ),
         {
             initialProps: {
-                savedMethod: savedMethod as SavedPaymentMethod,
+                savedMethod: savedMethod as SavedPaymentMethodInternal,
             },
         }
     );
@@ -286,7 +274,7 @@ it('should update the saved method', async () => {
     };
 
     rerender({
-        savedMethod: newSavedMethod,
+        savedMethod: newSavedMethod as SavedPaymentMethodInternal,
     });
 
     expect((result.current.paymentProcessor as any).state.method.paymentMethodId).toEqual(newSavedMethod.ID);

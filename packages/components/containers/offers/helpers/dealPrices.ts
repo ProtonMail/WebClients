@@ -1,35 +1,29 @@
-import { checkSubscription } from '@proton/shared/lib/api/payments';
+import { PaymentsApi } from '@proton/components/payments/core';
 import { CYCLE } from '@proton/shared/lib/constants';
-import { Api, Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import { DealWithPrices, OfferConfig } from '../interface';
 
-export const fetchDealPrices = async (api: Api, offerConfig: OfferConfig, currency: Currency) =>
+export const fetchDealPrices = async (paymentsApi: PaymentsApi, offerConfig: OfferConfig, currency: Currency) =>
     Promise.all(
         offerConfig.deals.map(({ planIDs, cycle, couponCode }) => {
             return Promise.all([
-                api<SubscriptionCheckResponse>(
-                    checkSubscription({
-                        Plans: planIDs,
-                        CouponCode: couponCode,
-                        Currency: currency,
-                        Cycle: cycle,
-                    })
-                ),
-                api<SubscriptionCheckResponse>(
-                    checkSubscription({
-                        Plans: planIDs,
-                        Currency: currency,
-                        Cycle: cycle,
-                    })
-                ),
-                api<SubscriptionCheckResponse>(
-                    checkSubscription({
-                        Plans: planIDs,
-                        Currency: currency,
-                        Cycle: CYCLE.MONTHLY,
-                    })
-                ),
+                paymentsApi.checkWithAutomaticVersion({
+                    Plans: planIDs,
+                    CouponCode: couponCode,
+                    Currency: currency,
+                    Cycle: cycle,
+                }),
+                paymentsApi.checkWithAutomaticVersion({
+                    Plans: planIDs,
+                    Currency: currency,
+                    Cycle: cycle,
+                }),
+                paymentsApi.checkWithAutomaticVersion({
+                    Plans: planIDs,
+                    Currency: currency,
+                    Cycle: CYCLE.MONTHLY,
+                }),
             ]);
         })
     );

@@ -1,15 +1,23 @@
-import { ChargeablePaymentParameters, PaymentProcessor } from '../core';
+import { PaymentProcessor } from '../core';
 
 export interface PaymentProcessorHook {
     fetchPaymentToken: () => Promise<unknown>;
     fetchingToken: boolean;
-    verifyPaymentToken: () => Promise<ChargeablePaymentParameters>;
+    verifyPaymentToken: () => Promise<unknown>;
     verifyingToken: boolean;
     paymentProcessor?: PaymentProcessor;
-    processPaymentToken: () => Promise<ChargeablePaymentParameters>;
+    processPaymentToken: () => Promise<unknown>;
     processingToken: boolean;
     meta: {
-        type: 'paypal' | 'paypal-credit' | 'card' | 'saved';
+        type:
+            | 'paypal'
+            | 'paypal-credit'
+            | 'card'
+            | 'saved'
+            | 'chargebee-card'
+            | 'chargebee-paypal'
+            | 'chargebee-paypal-credit'
+            | 'saved-chargebee';
         data?: any;
     };
 }

@@ -7,17 +7,21 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
+import { BillingAddress, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import { subscribe as apiSubscribe, checkSubscription, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { subscribe as apiSubscribe, deleteSubscription, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
+    CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     PASS_APP_NAME,
@@ -30,13 +34,20 @@ import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { getPlanFromCheckout, hasPlanIDs, supportAddons, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import {
+    getPlanFromCheckout,
+    getPlanFromPlanIDs,
+    hasPlanIDs,
+    supportAddons,
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getLongerCycle,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasMigrationDiscount,
@@ -62,6 +73,7 @@ import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import debounce from '@proton/utils/debounce';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { Icon, Tooltip } from '../../../components';
 import {
@@ -75,10 +87,12 @@ import {
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
+import InclusiveVatText from '../InclusiveVatText';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import { ValidatedBitcoinToken, isValidatedBitcoinToken } from '../useBitcoin';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
@@ -111,6 +125,7 @@ export interface Model {
     coupon?: string | null;
     gift?: string;
     initialCheckComplete: boolean;
+    taxBillingAddress: BillingAddress;
 }
 
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
@@ -209,8 +224,10 @@ const SubscriptionContainer = ({
 
     const topRef = useRef<HTMLDivElement>(null);
     const api = useApi();
+    const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
     const { call } = useEventManager();
+    const pollEventsMultipleTimes = usePollEvents();
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
@@ -228,6 +245,7 @@ const SubscriptionContainer = ({
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
+    const chargebeeContext = useChargebeeContext();
 
     const [audience, setAudience] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
@@ -268,19 +286,31 @@ const SubscriptionContainer = ({
         })();
 
         const cycle = (() => {
+            if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
+                return CYCLE.TWO_YEARS;
+            }
+
             if (maybeCycle) {
                 return maybeCycle;
             }
 
-            if (disablePlanSelection) {
-                return subscription.Cycle || DEFAULT_CYCLE;
+            if (isFreeSubscription(subscription)) {
+                return DEFAULT_CYCLE;
             }
 
             /**
              * Users that are on the 15 or 30-month cycle should not default to that,
-             * e.g. when clicking "explore other plans"
+             * e.g. when clicking "explore other plans".
+             * The condition also includes the cycle of upcoming subscription. The upcoming cycle must be
+             * longer than the current cycle, according to the backend logic. That's why it takes precedence and the
+             * frontend also consdirers it to be longer.
              * */
-            return getNormalCycleFromCustomCycle(subscription.Cycle) || DEFAULT_CYCLE;
+            const cycle =
+                getNormalCycleFromCustomCycle(subscription.UpcomingSubscription?.Cycle) ??
+                getNormalCycleFromCustomCycle(subscription?.Cycle) ??
+                DEFAULT_CYCLE;
+
+            return getLongerCycle(cycle);
         })();
 
         const currency = (() => {
@@ -291,14 +321,17 @@ const SubscriptionContainer = ({
             return getCurrency(user, subscription, plans);
         })();
 
-        return {
+        const model: Model = {
             step,
             cycle,
             currency,
             coupon,
             planIDs,
             initialCheckComplete: false,
+            taxBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
         };
+
+        return model;
     });
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
@@ -414,8 +447,8 @@ const SubscriptionContainer = ({
 
     const processSubscription = async (operationsOrValidToken: Operations | ValidatedBitcoinToken) => {
         if (isValidatedBitcoinToken(operationsOrValidToken)) {
-            await api({
-                ...apiSubscribe(
+            await api(
+                apiSubscribe(
                     {
                         Plans: model.planIDs,
                         Codes: getCodes(model),
@@ -423,13 +456,20 @@ const SubscriptionContainer = ({
                         Currency: currency,
                         Amount: amount,
                         Payment: operationsOrValidToken.Payment,
+                        BillingAddress: model.taxBillingAddress,
                     },
-                    app
-                ),
-                timeout: 60000 * 2,
-            });
+                    app,
+                    'v4'
+                )
+            );
         } else {
-            await operationsOrValidToken.subscribe();
+            await operationsOrValidToken.subscribe({
+                Plans: model.planIDs,
+                Cycle: model.cycle,
+                Codes: getCodes(model),
+                product: app,
+                taxBillingAddress: model.taxBillingAddress,
+            });
         }
     };
 
@@ -504,14 +544,28 @@ const SubscriptionContainer = ({
     };
 
     const paymentFacade = usePaymentFacade({
+        checkResult,
         amount,
         currency,
-        onChargeable: (operations, { context }) => {
-            if (!context.subscription) {
-                throw new Error('Missing subscription context');
+        selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
+        onChargeable: (operations, { sourceType }) => {
+            const context: OperationsSubscriptionData = {
+                Plans: model.planIDs,
+                Cycle: model.cycle,
+                product: app,
+                Codes: getCodes(model),
+                taxBillingAddress: model.taxBillingAddress,
+            };
+
+            const promise = withLoading(handleSubscribe(operations, context));
+            if (
+                sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
+                sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+            ) {
+                promise.then(() => pollEventsMultipleTimes()).catch(noop);
             }
 
-            return withLoading(handleSubscribe(operations, context.subscription));
+            return promise;
         },
         flow: 'subscription',
     });
@@ -522,6 +576,7 @@ const SubscriptionContainer = ({
         awaitingBitcoinPayment;
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
+        const isInitialCheck = !newModel.initialCheckComplete;
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
@@ -537,22 +592,34 @@ const SubscriptionContainer = ({
             return true;
         }
 
+        const dontQueryCheck =
+            copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION ||
+            (copyNewModel.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && isInitialCheck);
+        if (dontQueryCheck) {
+            setModel(copyNewModel);
+            return true;
+        }
+
         try {
             abortControllerRef.current?.abort();
             abortControllerRef.current = new AbortController();
 
-            const result = await api<SubscriptionCheckResponse>({
-                ...checkSubscription({
+            const checkResult = await paymentsApi.checkWithAutomaticVersion(
+                {
                     Plans: newModel.planIDs,
                     Currency: newModel.currency,
                     Cycle: newModel.cycle,
                     Codes: getCodes(newModel),
-                }),
-                signal: abortControllerRef.current.signal,
-            });
+                    BillingAddress: {
+                        CountryCode: newModel.taxBillingAddress.CountryCode,
+                        State: newModel.taxBillingAddress.State,
+                    },
+                },
+                abortControllerRef.current.signal
+            );
 
-            const { Gift = 0 } = result;
-            const { Code = '' } = result.Coupon || {}; // Coupon can equal null
+            const { Gift = 0 } = checkResult;
+            const { Code = '' } = checkResult.Coupon || {}; // Coupon can equal null
 
             if (wantToApplyNewGiftCode && newModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
                 createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
@@ -568,9 +635,9 @@ const SubscriptionContainer = ({
                 delete copyNewModel.gift;
             }
 
-            setCheckResult(result);
+            setCheckResult(checkResult);
             setModel(copyNewModel);
-            onCheck?.({ model, newModel, type: 'success', result });
+            onCheck?.({ model, newModel, type: 'success', result: checkResult });
         } catch (error: any) {
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
@@ -616,6 +683,7 @@ const SubscriptionContainer = ({
                     Codes: getCodes(model),
                     Cycle: model.cycle,
                     product: app,
+                    taxBillingAddress: model.taxBillingAddress,
                 });
                 await processor.processPaymentToken();
             } catch (e) {
@@ -633,6 +701,8 @@ const SubscriptionContainer = ({
                         processorType: paymentFacade.selectedProcessor?.meta.type,
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
+                        paymentsVersion: getPaymentsVersion(),
+                        chargebeeEnabled: chargebeeContext.enableChargebee,
                     };
                     captureMessage('Payments: failed to handle subscription', {
                         level: 'error',
@@ -668,6 +738,10 @@ const SubscriptionContainer = ({
             return;
         }
         void withLoadingCheck(check({ ...model, currency }));
+    };
+
+    const handleBillingAddressChange = (billingAddress: BillingAddress) => {
+        void withLoadingCheck(check({ ...model, taxBillingAddress: billingAddress }));
     };
 
     const backStep =
@@ -821,6 +895,7 @@ const SubscriptionContainer = ({
                                 planIDs={model.planIDs}
                                 subscription={subscription}
                                 onChangeCurrency={handleChangeCurrency}
+                                statusExtended={paymentFacade.statusExtended}
                                 {...checkoutModifiers}
                             />
                         </div>
@@ -849,7 +924,7 @@ const SubscriptionContainer = ({
                                                         const result = getCheckout({
                                                             planIDs: model.planIDs,
                                                             plansMap,
-                                                            checkResult,
+                                                            checkResult: checkResult,
                                                         });
                                                         return (
                                                             <SubscriptionItemView
@@ -913,6 +988,7 @@ const SubscriptionContainer = ({
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
                                                     minimumCycle={minimumCycle}
+                                                    subscription={subscription}
                                                 />
                                             </div>
                                         </>
@@ -930,6 +1006,7 @@ const SubscriptionContainer = ({
                                                 Plans: model.planIDs,
                                                 Cycle: model.cycle,
                                                 product: app,
+                                                taxBillingAddress: model.taxBillingAddress,
                                             });
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
@@ -954,17 +1031,28 @@ const SubscriptionContainer = ({
                                 <SubscriptionCheckout
                                     freePlan={freePlan}
                                     submit={
-                                        <SubscriptionSubmitButton
-                                            currency={model.currency}
-                                            onDone={onSubscribed}
-                                            paypal={paymentFacade.paypal}
-                                            step={model.step}
-                                            loading={loading || bitcoinLoading}
-                                            paymentMethodValue={paymentFacade.selectedMethodValue}
-                                            checkResult={checkResult}
-                                            className="w-full"
-                                            disabled={isFreeUserWithFreePlanSelected}
-                                        />
+                                        <>
+                                            <SubscriptionSubmitButton
+                                                currency={model.currency}
+                                                onDone={onSubscribed}
+                                                paypal={paymentFacade.paypal}
+                                                step={model.step}
+                                                loading={loading || bitcoinLoading}
+                                                paymentMethodValue={paymentFacade.selectedMethodValue}
+                                                checkResult={checkResult}
+                                                className="w-full"
+                                                disabled={isFreeUserWithFreePlanSelected}
+                                                chargebeePaypal={paymentFacade.chargebeePaypal}
+                                                iframeHandles={paymentFacade.iframeHandles}
+                                            />
+                                            {paymentFacade.showInclusiveTax && (
+                                                <InclusiveVatText
+                                                    tax={checkResult?.Taxes?.[0]}
+                                                    currency={currency}
+                                                    className="text-sm color-weak text-center mt-1"
+                                                />
+                                            )}
+                                        </>
                                     }
                                     plansMap={plansMap}
                                     checkResult={checkResult}
@@ -1000,6 +1088,9 @@ const SubscriptionContainer = ({
                                     }
                                     onChangeCurrency={handleChangeCurrency}
                                     nextSubscriptionStart={subscription.PeriodEnd}
+                                    showTaxCountry={paymentFacade.showTaxCountry}
+                                    onBillingAddressChange={handleBillingAddressChange}
+                                    statusExtended={paymentFacade.statusExtended}
                                     {...checkoutModifiers}
                                 />
                             </div>
@@ -1048,6 +1139,7 @@ const SubscriptionContainer = ({
                                             disabled={loadingCheck}
                                             faded={blockCycleSelector}
                                             minimumCycle={minimumCycle}
+                                            subscription={subscription}
                                         />
                                     </div>
                                 </>
@@ -1065,6 +1157,7 @@ const SubscriptionContainer = ({
                                             Plans: model.planIDs,
                                             Cycle: model.cycle,
                                             product: app,
+                                            taxBillingAddress: model.taxBillingAddress,
                                         });
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
@@ -1089,17 +1182,28 @@ const SubscriptionContainer = ({
                             <SubscriptionCheckout
                                 freePlan={freePlan}
                                 submit={
-                                    <SubscriptionSubmitButton
-                                        currency={model.currency}
-                                        onDone={onSubscribed}
-                                        paypal={paymentFacade.paypal}
-                                        step={model.step}
-                                        loading={loading || bitcoinLoading}
-                                        paymentMethodValue={paymentFacade.selectedMethodValue}
-                                        checkResult={checkResult}
-                                        className="w-full"
-                                        disabled={isFreeUserWithFreePlanSelected}
-                                    />
+                                    <>
+                                        <SubscriptionSubmitButton
+                                            currency={model.currency}
+                                            onDone={onSubscribed}
+                                            paypal={paymentFacade.paypal}
+                                            step={model.step}
+                                            loading={loading || bitcoinLoading}
+                                            paymentMethodValue={paymentFacade.selectedMethodValue}
+                                            checkResult={checkResult}
+                                            className="w-full"
+                                            disabled={isFreeUserWithFreePlanSelected}
+                                            chargebeePaypal={paymentFacade.chargebeePaypal}
+                                            iframeHandles={paymentFacade.iframeHandles}
+                                        />
+                                        {paymentFacade.showInclusiveTax && (
+                                            <InclusiveVatText
+                                                tax={checkResult?.Taxes?.[0]}
+                                                currency={currency}
+                                                className="text-sm color-weak text-center mt-1"
+                                            />
+                                        )}
+                                    </>
                                 }
                                 subscription={subscription}
                                 plansMap={plansMap}
@@ -1138,6 +1242,9 @@ const SubscriptionContainer = ({
                                 showDiscount={false}
                                 enableDetailedAddons={true}
                                 showPlanDescription={false}
+                                showTaxCountry={paymentFacade.showTaxCountry}
+                                statusExtended={paymentFacade.statusExtended}
+                                onBillingAddressChange={handleBillingAddressChange}
                                 {...checkoutModifiers}
                             />
                         </div>

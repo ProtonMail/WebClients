@@ -3,10 +3,12 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
+import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
+import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
-import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
+import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
@@ -16,7 +18,7 @@ import { PaymentTokenResult } from '../../payments/core/interface';
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';
 
-const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
+const PayPalV4Modal = ({ onClose, ...rest }: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
@@ -29,7 +31,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     useEffect(() => {
         const run = async () => {
             const result = await api<PaymentTokenResult>(
-                createToken({
+                createTokenV4({
                     Amount: PAYMENT_AUTHORIZATION_AMOUNT,
                     Currency: PAYMENT_AUTHORIZATION_CURRENCY,
                     Payment: {
@@ -56,7 +58,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
                 signal: abortRef.current.signal,
             });
             await api(
-                setPaymentMethod({
+                setPaymentMethodV4({
                     Type: PAYMENT_METHOD_TYPES.TOKEN,
                     Details: {
                         Token: data.Token,
@@ -116,4 +118,55 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     );
 };
 
-export default PayPalModal;
+export default PayPalV4Modal;
+
+export const PayPalV5Modal = ({ onClose, ...rest }: ModalProps) => {
+    const pollEventsMultipleTimes = usePollEvents();
+    const { createNotification } = useNotifications();
+
+    const paymentFacade = usePaymentFacade({
+        amount: PAYMENT_AUTHORIZATION_AMOUNT,
+        currency: PAYMENT_AUTHORIZATION_CURRENCY,
+        flow: 'add-paypal',
+        onChargeable: async ({ savePaymentMethod }) => {
+            try {
+                await savePaymentMethod();
+
+                void pollEventsMultipleTimes();
+                onClose?.();
+                createNotification({ text: c('Success').t`Payment method added` });
+            } catch (error: any) {
+                if (error && error.message && !error.config) {
+                    createNotification({ text: error.message, type: 'error' });
+                }
+            }
+        },
+    });
+
+    return (
+        <Prompt
+            data-testid="addPPalModalTitle"
+            title={c('Title').t`Add PayPal payment method`}
+            onClose={onClose}
+            buttons={[
+                <ChargebeePaypalWrapper
+                    chargebeePaypal={paymentFacade.chargebeePaypal}
+                    iframeHandles={paymentFacade.iframeHandles}
+                />,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
+            <>
+                <div className="mb-4">
+                    {c('Info')
+                        .t`This will enable PayPal to be used to pay for your ${BRAND_NAME} subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.`}
+                </div>
+                <div>
+                    {c('Info')
+                        .t`You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.`}
+                </div>
+            </>
+        </Prompt>
+    );
+};

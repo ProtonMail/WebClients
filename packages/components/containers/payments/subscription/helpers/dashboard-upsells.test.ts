@@ -10,6 +10,7 @@ import {
     passPlusUpsell,
     plans,
     subscription,
+    subscriptionBundle,
     trialMailPlusUpsell,
     unlimitedUpsell,
     vpnBusinessUpsell,
@@ -78,7 +79,7 @@ describe('resolveUpsellsToDisplay', () => {
     });
 
     describe('Free Trial', () => {
-        it('should return MailPlus + Unlimited (recommended) upsells', () => {
+        it('should return MailPlus + Unlimited (recommended) upsells if user has Mail Plus trial', () => {
             const upsells = resolveUpsellsToDisplay({
                 ...base,
                 subscription: {
@@ -113,6 +114,36 @@ describe('resolveUpsellsToDisplay', () => {
             upsells[1].onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(2);
             expect(mockedOpenSubscriptionModal).toHaveBeenLastCalledWith({
+                cycle: CYCLE.TWO_YEARS,
+                disablePlanSelection: true,
+                plan: PLANS.BUNDLE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                metrics: {
+                    source: 'upsells',
+                },
+            });
+        });
+
+        it('should return Unlimited (recommended) upsell if user has Unlimited trial', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                subscription: {
+                    ...subscriptionBundle,
+                    CouponCode: COUPON_CODES.MEMBER_DOWNGRADE_TRIAL,
+                    PeriodEnd: 1718870501,
+                } as Subscription,
+            });
+
+            const unlimitedUpsellWithoutAction = {
+                ...unlimitedUpsell,
+                title: 'Proton Unlimited Trial',
+            };
+
+            expect(upsells).toMatchObject([unlimitedUpsellWithoutAction]);
+
+            upsells[0].onUpgrade();
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
+            expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
                 cycle: CYCLE.TWO_YEARS,
                 disablePlanSelection: true,
                 plan: PLANS.BUNDLE,

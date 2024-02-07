@@ -23,6 +23,7 @@ import {
     getIsB2BAudienceFromSubscription,
     getPrimaryPlan,
     getVPNDedicatedIPs,
+    hasMaximumCycle,
     hasPassPlus,
     hasVPN,
     hasVPNPassBundle,
@@ -33,7 +34,7 @@ import {
     Address,
     Currency,
     Organization,
-    Subscription,
+    SubscriptionModel,
     UserModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
@@ -125,7 +126,7 @@ const ActionButtons = ({
     openSubscriptionModal,
 }: {
     user: UserModel;
-    subscription?: Subscription;
+    subscription?: SubscriptionModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }) => {
     /**
@@ -158,7 +159,7 @@ const ActionButtons = ({
         <>
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
-                user.isPaid && user.canPay ? (
+                user.isPaid && user.canPay && !hasMaximumCycle(subscription) ? (
                     <Button
                         onClick={handleEditPayment}
                         className="mb-2"
@@ -198,7 +199,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     currency: Currency;
-    subscription?: Subscription;
+    subscription?: SubscriptionModel;
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];
