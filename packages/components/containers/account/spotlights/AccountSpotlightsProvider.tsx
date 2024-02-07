@@ -20,17 +20,17 @@ type AccountSpotlightsContextFunctions = {
 
 const AccountSpotlightsContext = createContext<AccountSpotlightsContextFunctions | null>(null);
 
-type SpotlightStep = 'SetupOrg' | 'UsePass' | undefined;
+type SpotlightStep = 'SetupOrg' | 'UsePass' | 'Done';
 
 const usePassOnBoardingSpotlights = () => {
     const [subscription] = useSubscription();
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
 
     const { feature, update, loading } = useFeature<SpotlightStep>(FeatureCode.PassOnboardingSpotlights);
-    const [step, setStep] = useState<SpotlightStep>(undefined);
+    const [step, setStep] = useState<SpotlightStep>();
 
     useEffect(() => {
-        if (loading || feature?.Value === undefined) {
+        if (loading || !feature?.Value) {
             return;
         }
 
@@ -42,17 +42,25 @@ const usePassOnBoardingSpotlights = () => {
         setStep(nextStep);
     };
 
+    const getIsOpen = (currentStep: SpotlightStep) => {
+        return hasPassB2BPlan && step === currentStep;
+    };
+
     return {
         setupOrgSpotlight: {
-            isOpen: hasPassB2BPlan && step === 'SetupOrg',
+            isOpen: getIsOpen('SetupOrg'),
             close: () => {
-                gotToStep('UsePass');
+                if (getIsOpen('SetupOrg')) {
+                    gotToStep('UsePass');
+                }
             },
         },
         startUsingPassSpotlight: {
-            isOpen: hasPassB2BPlan && step === 'UsePass',
+            isOpen: getIsOpen('UsePass'),
             close: () => {
-                gotToStep(undefined);
+                if (getIsOpen('UsePass')) {
+                    gotToStep('Done');
+                }
             },
         },
     };
