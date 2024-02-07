@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Api, Currency } from '@proton/shared/lib/interfaces';
+import { Api, ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
@@ -70,6 +70,10 @@ type PaymentFacadeProps = {
      */
     api?: Api;
     /**
+     * Optional override for the chargebeeEnabled flag. Can be helpful for auth/unauth flows.
+     */
+    chargebeeEnabled?: ChargebeeEnabled;
+    /**
      * The selected plan will impact the displayed payment methods.
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
@@ -94,6 +98,7 @@ export const usePaymentFacade = ({
     paymentMethodStatusExtended,
     api: apiOverride,
     selectedPlanName,
+    chargebeeEnabled: chargebeeEnabledOverride,
 }: PaymentFacadeProps) => {
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -105,7 +110,9 @@ export const usePaymentFacade = ({
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
 
-    const chargebeeEnabled = useChargebeeEnabledCache();
+    const chargebeeEnabledCache = useChargebeeEnabledCache();
+    const chargebeeEnabled = chargebeeEnabledOverride ?? chargebeeEnabledCache;
+
     const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
     useChargebeeUserStatusTracker();
 
