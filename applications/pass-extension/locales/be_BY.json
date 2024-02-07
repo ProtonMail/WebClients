@@ -308,6 +308,9 @@
       "Pin item": [
         "Замацаваць элемент"
       ],
+      "Recent": [
+        "Нядаўнія"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Выдаліць доступ"
+      ],
+      "Remove member": [
+        "Выдаліць удзельніка"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "Напішыце нам"
+      ],
+      "Set access level": [
+        "Задаць узровень доступу"
       ],
       "Share": [
         "Абагуліць"
@@ -492,11 +501,20 @@
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданім (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "У цяперашні час немагчыма адправіць запрашэнне",
+        "У цяперашні час немагчыма адправіць запрашэнні",
+        "У цяперашні час немагчыма адправіць запрашэнні",
+        "У цяперашні час немагчыма адправіць запрашэнні"
+      ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
       ],
       "Could not leave vault.": [
         "Не атрымалася выйсці са сховішча."
+      ],
+      "Could not load recommendations at the moment.": [
+        "У цяперашні час немагчыма загрузіць рэкамендацыі."
       ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
@@ -772,6 +790,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } запрашэння(ў) паспяхова адпраўлена"
       ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
@@ -1537,6 +1558,15 @@
       "Logins": [
         "Запісы ўваходу"
       ],
+      "Make all admins": [
+        "Даць усім правы адміністратара"
+      ],
+      "Make all editors": [
+        "Даць усім правы рэдагавання"
+      ],
+      "Make all viewers": [
+        "Даць усім правы прагляду"
+      ],
       "Members": [
         "Удзельнікі"
       ],
@@ -1916,6 +1946,9 @@
       "Fill & copy password": [
         "Запаўненне і капіяванне пароля"
       ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
       "Get the mobile apps": [
         "Атрымайце мабільныя праграмы"
       ],
@@ -1943,6 +1976,9 @@
       "Member limit": [
         "Абмежаванне ўдзельніка"
       ],
+      "Members": [
+        "Удзельнікі"
+      ],
       "Move all items ?": [
         "Перамясціць усе элементы?"
       ],
@@ -1967,6 +2003,9 @@
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
       ],
+      "Review and share": [
+        "Прагляд і абагульненне"
+      ],
       "Secure your data": [
         "Бяспека вашых даных"
       ],
@@ -1975,6 +2014,9 @@
       ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "Suggestions": [
+        "Прапановы"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Пераключыцца на ${ PASS_APP_NAME }?"
@@ -1999,6 +2041,9 @@
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
+      ],
+      "Vault": [
+        "Сховішча"
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
@@ -2052,11 +2097,20 @@
       "An error occured while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
       ],
+      "At least one email address is required": [
+        "Патрабуецца прынамсі адзін адрас электроннай пошты"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Немагчыма адправіць запрашэнні на наступныя адрасы:"
+      ],
+      "Duplicate email addresses.": [
+        "Дубліраваныя адрасы электроннай пошты."
       ],
       "Empty note": [
         "Пустая нататка"
@@ -2066,6 +2120,9 @@
       ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
+      ],
+      "Invalid email addresses.": [
+        "Памылковыя адрасы электроннай пошты."
       ],
       "Maximum length is ${ maxLength } character": [
         "Максімальная даўжыня ${ maxLength } сімвал",
@@ -2090,6 +2147,9 @@
       ],
       "No password manager selected": [
         "Не выбраны менеджар пароляў"
+      ],
+      "No results": [
+        "Няма вынікаў"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
