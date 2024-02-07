@@ -28,6 +28,7 @@ export type LocalStoreData = {
     /** flag indicating if we should force lock on next resume */
     forceLock: boolean;
     lastReload: number;
+    logs: string;
     onboarding: string;
     ps: string;
     salt: string;

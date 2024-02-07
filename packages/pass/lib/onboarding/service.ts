@@ -1,4 +1,4 @@
-import type { Storage } from '@proton/pass/types';
+import type { AnyStorage } from '@proton/pass/types';
 import { type Maybe, type OnboardingAcknowledgment, OnboardingMessage, type OnboardingState } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -8,7 +8,7 @@ export type OnboardingStorageData = { onboarding: string };
 
 export type OnboardingServiceOptions = {
     /** defines where onboarding data will be stored */
-    storage: Storage<OnboardingStorageData>;
+    storage: AnyStorage<OnboardingStorageData>;
     /** defines which onboarding rule this service supports  */
     rules: OnboardingRule[];
 };
