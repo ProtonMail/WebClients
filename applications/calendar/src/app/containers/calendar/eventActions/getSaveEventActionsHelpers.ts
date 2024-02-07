@@ -5,9 +5,13 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
-import { INVITE_ACTION_TYPES, InviteActions, OnSendPrefsErrors } from '../../../interfaces/Invite';
-import { SyncEventActionOperations, getCreateSyncOperation } from '../getSyncMultipleEventsPayload';
-import { getCorrectedSaveInviteActions } from './inviteActions';
+import { INVITE_ACTION_TYPES, InviteActions, OnSendPrefsErrors, SendIcs } from '../../../interfaces/Invite';
+import {
+    SyncEventActionOperations,
+    getCreateSyncOperation,
+    getUpdateSyncOperation,
+} from '../getSyncMultipleEventsPayload';
+import { getAddedAttendeesPublicKeysMap, getCorrectedSaveInviteActions } from './inviteActions';
 
 /**
  * Helper that saves in the DB an intermediate event without attendees, taking into account send preferences errors
@@ -116,4 +120,78 @@ export const getCorrectedSendInviteData = async ({
     const correctedVevent = getInviteVeventWithUpdatedParstats(newVevent, oldVevent, method);
 
     return { vevent: correctedVevent, inviteActions: correctedSaveInviteActions, isSendInviteType };
+};
+
+/**
+ * Helper that produces the update sync operation needed when the organizer
+ * creates a single edit for an invitation series.
+ */
+export const getUpdateInviteOperationWithIntermediateEvent = async ({
+    inviteActions,
+    vevent,
+    oldVevent,
+    hasDefaultNotifications,
+    calendarID,
+    addressID,
+    memberID,
+    getCalendarKeys,
+    sendIcs,
+    onSendPrefsErrors,
+    handleSyncActions,
+}: {
+    inviteActions: InviteActions;
+    vevent: VcalVeventComponent;
+    oldVevent: VcalVeventComponent;
+    hasDefaultNotifications: boolean;
+    calendarID: string;
+    addressID: string;
+    memberID: string;
+    getCalendarKeys: GetCalendarKeys;
+    sendIcs: SendIcs;
+    onSendPrefsErrors: OnSendPrefsErrors;
+    handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
+}) => {
+    const {
+        intermediateEvent,
+        vevent: intermediateVevent,
+        inviteActions: intermediateInviteActions,
+    } = await createIntermediateEvent({
+        inviteActions,
+        vevent,
+        hasDefaultNotifications,
+        calendarID,
+        addressID,
+        memberID,
+        getCalendarKeys,
+        onSendPrefsErrors,
+        handleSyncActions,
+    });
+    const {
+        veventComponent: finalVevent,
+        inviteActions: finalInviteActions,
+        sendPreferencesMap,
+    } = await sendIcs(
+        {
+            inviteActions: intermediateInviteActions,
+            vevent: intermediateVevent,
+            cancelVevent: oldVevent,
+            noCheckSendPrefs: true,
+        },
+        // we pass the calendarID here as we want to call the event manager in case the operation fails
+        calendarID
+    );
+
+    const addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+        veventComponent: finalVevent,
+        inviteActions: finalInviteActions,
+        sendPreferencesMap,
+    });
+
+    return getUpdateSyncOperation({
+        veventComponent: finalVevent,
+        calendarEvent: intermediateEvent,
+        hasDefaultNotifications,
+        isAttendee: false,
+        addedAttendeesPublicKeysMap,
+    });
 };

@@ -39,7 +39,10 @@ import updateAllRecurrence from '../recurrence/updateAllRecurrence';
 import updateSingleRecurrence from '../recurrence/updateSingleRecurrence';
 import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
-import { createIntermediateEvent, getCorrectedSendInviteData } from './getSaveEventActionsHelpers';
+import {
+    getCorrectedSendInviteData,
+    getUpdateInviteOperationWithIntermediateEvent,
+} from './getSaveEventActionsHelpers';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
@@ -199,6 +202,7 @@ const getSaveRecurringEventActions = async ({
                 inviteActions,
                 hasModifiedDateTimes,
                 onEquivalentAttendees,
+                isCreatingSingleEdit: oldEvent.IsPersonalSingleEdit,
             });
 
             const sharedSessionKey = await getBase64SharedSessionKey({
@@ -269,6 +273,11 @@ const getSaveRecurringEventActions = async ({
             oldRecurrenceVeventComponentWithSequence
         );
 
+        const hasStartChanged = getHasStartChanged(
+            newRecurrenceVeventWithSequence,
+            oldRecurrenceVeventComponentWithSequence
+        );
+
         const {
             vevent: correctedVevent,
             inviteActions: correctedInviteActions,
@@ -282,56 +291,22 @@ const getSaveRecurringEventActions = async ({
             isCreatingSingleEdit: true,
         });
 
-        let updateOperationWithAttendees;
+        const updateOperationWithAttendees = isSendInviteType
+            ? await getUpdateInviteOperationWithIntermediateEvent({
+                  inviteActions: correctedInviteActions,
+                  vevent: correctedVevent,
+                  oldVevent: oldRecurrenceVeventComponentWithSequence,
+                  hasDefaultNotifications,
+                  calendarID: newCalendarID,
+                  addressID: newAddressID,
+                  memberID: newMemberID,
+                  getCalendarKeys,
+                  sendIcs,
+                  onSendPrefsErrors,
+                  handleSyncActions,
+              })
+            : undefined;
 
-        if (isSendInviteType) {
-            const {
-                intermediateEvent,
-                vevent: intermediateVevent,
-                inviteActions: intermediateInviteActions,
-            } = await createIntermediateEvent({
-                inviteActions: correctedInviteActions,
-                vevent: correctedVevent,
-                hasDefaultNotifications,
-                calendarID: newCalendarID,
-                addressID: newAddressID,
-                memberID: newMemberID,
-                getCalendarKeys,
-                onSendPrefsErrors,
-                handleSyncActions,
-            });
-            const {
-                veventComponent: finalVevent,
-                inviteActions: finalInviteActions,
-                sendPreferencesMap,
-            } = await sendIcs(
-                {
-                    inviteActions: intermediateInviteActions,
-                    vevent: intermediateVevent,
-                    cancelVevent: oldVeventComponent,
-                    noCheckSendPrefs: true,
-                },
-                // we pass the calendarID here as we want to call the event manager in case the operation fails
-                newCalendarID
-            );
-
-            const addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
-                veventComponent: finalVevent,
-                inviteActions: finalInviteActions,
-                sendPreferencesMap,
-            });
-            updateOperationWithAttendees = getUpdateSyncOperation({
-                veventComponent: finalVevent,
-                calendarEvent: intermediateEvent,
-                hasDefaultNotifications,
-                isAttendee,
-                addedAttendeesPublicKeysMap,
-            });
-        }
-        const hasStartChanged = getHasStartChanged(
-            newRecurrenceVeventWithSequence,
-            oldRecurrenceVeventComponentWithSequence
-        );
         const createOrUpdateOperation =
             updateOperationWithAttendees ||
             getCreateSyncOperation({
