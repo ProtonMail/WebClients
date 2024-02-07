@@ -11,7 +11,7 @@ import {
 } from '@proton/pass/lib/onboarding/rules';
 import type { OnboardingStorageData } from '@proton/pass/lib/onboarding/service';
 import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
-import type { Storage, TabId } from '@proton/pass/types';
+import type { ExtensionStorage, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -21,7 +21,7 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
-export const createOnboardingService = (storage: Storage<OnboardingStorageData>) => {
+export const createOnboardingService = (storage: ExtensionStorage<OnboardingStorageData>) => {
     const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
         storage,
         rules: [
