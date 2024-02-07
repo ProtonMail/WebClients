@@ -178,6 +178,7 @@ const Step1 = ({
         plan: model.optimistic.plan || selectedPlan,
         planIDs: model.optimistic.planIDs || model.subscriptionData.planIDs,
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
+        billingAddress: model.optimistic.billingAddress || model.subscriptionData.billingAddress,
     };
 
     const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
@@ -285,23 +286,7 @@ const Step1 = ({
     };
 
     const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
-        const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
-            options.planIDs,
-            options.currency,
-            options.cycle,
-            billingAddress,
-            model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon
-        );
-
-        setModel((old) => ({
-            ...old,
-            subscriptionData: {
-                ...model.subscriptionData,
-                billingAddress,
-                checkResult,
-            },
-        }));
+        return handleOptimistic({ billingAddress });
     };
 
     useImperativeHandle(step1Ref, () => ({
