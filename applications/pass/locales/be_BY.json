@@ -17,6 +17,9 @@
       "Add new item": [
         "Дадаць новы элемент"
       ],
+      "Admin panel": [
+        "Панэль адміністратара"
+      ],
       "Advanced": [
         "Дадаткова"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Стварыць запіс уваходу"
+      ],
+      "Create new items": [
+        "Стварыць новыя элементы"
       ],
       "Create note": [
         "Стварыць нататку"
@@ -266,6 +272,9 @@
       "Pin item": [
         "Замацаваць элемент"
       ],
+      "Recent": [
+        "Нядаўнія"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -280,6 +289,9 @@
       ],
       "Remove access": [
         "Выдаліць доступ"
+      ],
+      "Remove member": [
+        "Выдаліць удзельніка"
       ],
       "Request a feature": [
         "Запытаць функцыю"
@@ -307,6 +319,9 @@
       ],
       "Send us a message": [
         "Напішыце нам"
+      ],
+      "Set access level": [
+        "Задаць узровень доступу"
       ],
       "Share": [
         "Абагуліць"
@@ -418,11 +433,20 @@
       "Auto-lock could not be disabled": [
         "Не атрымалася адключыць аўтаблакіроўку"
       ],
+      "Cannot send invitation at the moment": [
+        "У цяперашні час немагчыма адправіць запрашэнне",
+        "У цяперашні час немагчыма адправіць запрашэнні",
+        "У цяперашні час немагчыма адправіць запрашэнні",
+        "У цяперашні час немагчыма адправіць запрашэнні"
+      ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
       ],
       "Could not leave vault.": [
         "Не атрымалася выйсці са сховішча."
+      ],
+      "Could not load recommendations at the moment.": [
+        "У цяперашні час немагчыма загрузіць рэкамендацыі."
       ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
@@ -684,6 +708,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } запрашэння(ў) паспяхова адпраўлена"
+      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -750,6 +777,9 @@
       "Auto-lock successfully disabled": [
         "Аўтаблакіроўка паспяхова адключана"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Перанясіце свае існуючыя паролі ў ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Убудаваны аўтэнтыфікатар 2ФА"
       ],
@@ -810,6 +840,9 @@
       "Generated passwords will be stored for a period of one day.": [
         "Згенерыраваныя паролі будуць захоўвацца на працягу аднаго дня."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Атрымайце максімум пераваг ад Pass, стварыўшы сховішча для кожнай каманды або праекта."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў, атрымлівайце асалоду ад эксклюзіўных функцый і падтрымлівайце нас падпісаўшыся на Pass Plus."
       ],
@@ -831,6 +864,9 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME }, дайце неабходныя дазволы пашырэнню"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Усталюйце ${ PASS_APP_NAME } для ${ browser.title }, каб хутка аўтазапаўняць вашы запісы ўваходу."
+      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
         "Усталюйце ${ PASS_APP_NAME } для ${ browser.title }, каб хутка аўтазапаўняць вашы запісы ўваходу. "
       ],
@@ -839,6 +875,9 @@
       ],
       "Invitation sent": [
         "Запрашэнне адпраўлена"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Запрасіце пэўных людзей і задайце правы доступу."
       ],
       "Invite successfully removed": [
         "Запрашэнне паспяхова выдалена"
@@ -980,6 +1019,9 @@
       ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
+      ],
+      "Select vault to share": [
+        "Выберыце сховішча для абагулення"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
@@ -1322,6 +1364,15 @@
       "Logins": [
         "Запісы ўваходу"
       ],
+      "Make all admins": [
+        "Даць усім правы адміністратара"
+      ],
+      "Make all editors": [
+        "Даць усім правы рэдагавання"
+      ],
+      "Make all viewers": [
+        "Даць усім правы прагляду"
+      ],
       "Members": [
         "Удзельнікі"
       ],
@@ -1654,6 +1705,9 @@
       "Confirm PIN code": [
         "Пацвердзіць PIN-код"
       ],
+      "Create a vault": [
+        "Стварыць сховішча"
+      ],
       "Create PIN code": [
         "Стварыць PIN-код"
       ],
@@ -1672,6 +1726,9 @@
       "Enter your PIN": [
         "Увядзіце свой PIN"
       ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
       "Grant permissions": [
         "Даць дазволы"
       ],
@@ -1681,6 +1738,12 @@
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
       ],
+      "Import your data": [
+        "Імпартаванне вашых даных"
+      ],
+      "Install extension": [
+        "Усталяваць пашырэнне"
+      ],
       "Leave vault ?": [
         "Выйсці са сховішча?"
       ],
@@ -1689,6 +1752,9 @@
       ],
       "Member limit": [
         "Абмежаванне ўдзельніка"
+      ],
+      "Members": [
+        "Удзельнікі"
       ],
       "Move all items ?": [
         "Перамясціць усе элементы?"
@@ -1708,6 +1774,9 @@
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
       ],
+      "Review and share": [
+        "Прагляд і абагульненне"
+      ],
       "Secure your data": [
         "Бяспека вашых даных"
       ],
@@ -1717,8 +1786,14 @@
       "Settings": [
         "Налады"
       ],
+      "Share vaults with your team": [
+        "Абагуленне сховішчаў з вашай камандай"
+      ],
       "Share with": [
         "Абагуліць з"
+      ],
+      "Suggestions": [
+        "Прапановы"
       ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
@@ -1728,6 +1803,9 @@
       ],
       "Update available": [
         "Даступна абнаўленне"
+      ],
+      "Vault": [
+        "Сховішча"
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
@@ -1778,11 +1856,20 @@
       "An error occured while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
       ],
+      "At least one email address is required": [
+        "Патрабуецца прынамсі адзін адрас электроннай пошты"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Немагчыма адправіць запрашэнні на наступныя адрасы:"
+      ],
+      "Duplicate email addresses.": [
+        "Дубліраваныя адрасы электроннай пошты."
       ],
       "Empty note": [
         "Пустая нататка"
@@ -1792,6 +1879,9 @@
       ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
+      ],
+      "Invalid email addresses.": [
+        "Памылковыя адрасы электроннай пошты."
       ],
       "Maximum length is ${ maxLength } character": [
         "Максімальная даўжыня ${ maxLength } сімвал",
@@ -1816,6 +1906,9 @@
       ],
       "No password manager selected": [
         "Не выбраны менеджар пароляў"
+      ],
+      "No results": [
+        "Няма вынікаў"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
