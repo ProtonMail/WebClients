@@ -122,6 +122,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                     return (
                                         <TableRow
                                             key={domain.ID}
+                                            data-testid="domain-row"
                                             labels={[
                                                 c('Header for addresses table').t`Domain`,
                                                 c('Header for addresses table').t`Status`,
