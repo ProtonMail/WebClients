@@ -4,6 +4,8 @@
 -   Support invite email suggestions
 -   Improve and fix autosave triggers
 -   Allow searching items by alias email
+-   Fix import button not disabled when file removed
+-   Improve user access/features polling
 
 ### Version 1.12.0
 
