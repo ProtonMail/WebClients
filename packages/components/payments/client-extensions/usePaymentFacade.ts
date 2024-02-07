@@ -2,14 +2,16 @@ import { useEffect, useRef } from 'react';
 
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import { Api, ChargebeeEnabled, Currency } from '@proton/shared/lib/interfaces';
+import { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
+import { Api, ChargebeeEnabled, Currency, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
-import { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../core';
 import {
     ChargeablePaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
@@ -77,6 +79,7 @@ type PaymentFacadeProps = {
      * The selected plan will impact the displayed payment methods.
      */
     selectedPlanName?: PLANS | ADDON_NAMES;
+    checkResult?: RequiredCheckResponse;
 };
 
 /**
@@ -99,6 +102,7 @@ export const usePaymentFacade = ({
     api: apiOverride,
     selectedPlanName,
     chargebeeEnabled: chargebeeEnabledOverride,
+    checkResult,
 }: PaymentFacadeProps) => {
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
@@ -223,7 +227,7 @@ export const usePaymentFacade = ({
     }, [hook.methods.selectedMethod?.type, amount, currency]);
 
     const taxCountryLoading = methods.loading;
-    const getShowTaxCountry = () => {
+    const getShowTaxCountry = (): boolean => {
         if (taxCountryLoading) {
             return false;
         }
@@ -238,11 +242,13 @@ export const usePaymentFacade = ({
         const flowsWithTaxCountry: PaymentMethodFlows[] = ['signup', 'signup-pass', 'signup-vpn', 'subscription'];
 
         const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
-        const isSavedAllowedMethod = savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
+        const isSavedAllowedMethod = !!savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
 
         const showTaxCountry = (isNewAllowedMethod || isSavedAllowedMethod) && flowsWithTaxCountry.includes(flow);
         return showTaxCountry;
     };
+
+    const showInclusiveTax = getShowTaxCountry() && isTaxInclusive(checkResult);
 
     const helpers = {
         selectedMethodValue: methods.selectedMethod?.value,
@@ -250,6 +256,7 @@ export const usePaymentFacade = ({
         showTaxCountry: getShowTaxCountry(),
         taxCountryLoading,
         statusExtended: methods.status,
+        showInclusiveTax,
     };
 
     return {

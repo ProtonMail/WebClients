@@ -145,6 +145,7 @@ const AccountStepPayment = ({
     const flow: PaymentMethodFlows = 'signup-pass';
 
     const paymentFacade = usePaymentFacade({
+        checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,
         selectedPlanName: options.plan?.Name,
@@ -527,7 +528,7 @@ const AccountStepPayment = ({
                                             bold: false,
                                         },
                                         !showAmountDue &&
-                                            isTaxInclusive(options.checkResult) && {
+                                            paymentFacade.showInclusiveTax && {
                                                 id: 'vat',
                                                 left: taxInclusiveText,
                                             },
