@@ -22,7 +22,7 @@ import NotificationsTestProvider from '../notifications';
 import { config, tick } from '../render';
 
 interface RenderResult extends OriginalRenderResult {
-    rerender: (ui: React.ReactElement) => Promise<void>;
+    rerender: (ui: ReactNode) => Promise<void>;
     history: MemoryHistory;
 }
 
@@ -101,7 +101,7 @@ export const EORender = async (
     );
     await tick(); // Should not be necessary, would be better not to use it, but fails without
 
-    const rerender = async (ui: ReactElement) => {
+    const rerender = async (ui: ReactNode) => {
         result.rerender(
             <Wrapper>
                 <EOTestProvider routePath={routePath} history={history}>
