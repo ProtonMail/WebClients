@@ -308,6 +308,9 @@
       "Pin item": [
         "Kiinnitä kohde"
       ],
+      "Recent": [
+        "Viimeisimmät"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -358,6 +361,9 @@
       ],
       "Send us a message": [
         "Lähetä meille viesti"
+      ],
+      "Set access level": [
+        "Aseta käyttöoikeustaso"
       ],
       "Share": [
         "Jaa"
@@ -495,11 +501,18 @@
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kutsua ei voi lähettää juuri nyt",
+        "Kutsuja ei voi lähettää juuri nyt"
+      ],
       "Could not confirm this invite at the moment": [
         "Kutsun vahvistus ei nyt onnistunut"
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Suosituksia ei voi ladata juuri nyt."
       ],
       "Could not open created vault": [
         "Luotua holvia ei voitu avata"
@@ -761,6 +774,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
+      ],
+      "${ count } invites successfully sent": [
+        "${ count } kutsun lähetys onnistui"
       ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
@@ -1506,6 +1522,15 @@
       "Logins": [
         "Kirjautumistiedot"
       ],
+      "Make all admins": [
+        "Tee kaikista ylläpitäjiä"
+      ],
+      "Make all editors": [
+        "Tee kaikista muokkaajia"
+      ],
+      "Make all viewers": [
+        "Tee kaikista katselijoita"
+      ],
       "Members": [
         "Jäsenet"
       ],
@@ -1881,6 +1906,9 @@
       "Fill & copy password": [
         "Täytä ja kopioi salasana"
       ],
+      "Get Started": [
+        "Aloita"
+      ],
       "Get the mobile apps": [
         "Hanki mobiilisovellukset"
       ],
@@ -1908,6 +1936,9 @@
       "Member limit": [
         "Jäsenrajoitus"
       ],
+      "Members": [
+        "Jäsentä"
+      ],
       "Move all items ?": [
         "Siirretäänkö kaikki kohteet?"
       ],
@@ -1932,6 +1963,9 @@
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
       ],
+      "Review and share": [
+        "Tarkista ja jaa"
+      ],
       "Secure your data": [
         "Suojaa tietosi"
       ],
@@ -1940,6 +1974,9 @@
       ],
       "Share with": [
         "Jaa henkilölle"
+      ],
+      "Suggestions": [
+        "Ehdotukset"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
@@ -2020,11 +2057,20 @@
       "An error occured while exporting your data": [
         "Tietojasi vietäessä tapahtui virhe"
       ],
+      "At least one email address is required": [
+        "Ainakin yksi sähköpostiosoite vaaditaan"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Holvia \"${ vaultName }\" ei voitu luoda"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kutsujen lähetys seuraaviin osoitteisiin ei onnistunut:"
+      ],
+      "Duplicate email addresses.": [
+        "Sähköpostiosoitteet on jo olemassa."
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
@@ -2034,6 +2080,9 @@
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
+      ],
+      "Invalid email addresses.": [
+        "Virheelliset sähköpostiosoitteet."
       ],
       "Maximum length is ${ maxLength } character": [
         "Enimmäispituus on ${ maxLength } merkki",
@@ -2056,6 +2105,9 @@
       ],
       "No password manager selected": [
         "Salasanahallintaa ei ole valittu"
+      ],
+      "No results": [
+        "Ei tuloksia"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
