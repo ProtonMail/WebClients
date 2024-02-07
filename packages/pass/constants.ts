@@ -7,6 +7,7 @@ export const ALIAS_DETAILS_MAX_AGE = 30;
 
 export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;
+export const MAX_PASSWORD_HISTORY_RETENTION_WEEKS = 2;
 
 export const SESSION_RESUME_RETRY_TIMEOUT = 15; /* seconds */
 export const SESSION_RESUME_MAX_RETRIES = 7;
