@@ -308,6 +308,9 @@
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
+      "Recent": [
+        "უახლესი"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "წვდომის გაუქმება"
+      ],
+      "Remove member": [
+        "წევრის წაშლა"
       ],
       "Request a feature": [
         "თვისების მოთხოვნა"
@@ -355,6 +361,9 @@
       ],
       "Send us a message": [
         "მოგვწერეთ"
+      ],
+      "Set access level": [
+        "წვდომის დონის დაყენება"
       ],
       "Share": [
         "გაზიარება"
@@ -492,11 +501,18 @@
       "Cannot create alias (${ error }).": [
         "ფსევდონიმის შექმნის შეცდომა (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
       "Could not confirm this invite at the moment": [
         "ამჯამად ამ მოსაწვევის დადასტურება შეუძლებელია"
       ],
       "Could not leave vault.": [
         "საცავის დატოვების შეცდომა."
+      ],
+      "Could not load recommendations at the moment.": [
+        "ამჟამად რეკომენდაციების ჩატვირთვა შეუძლებელია."
       ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
@@ -758,6 +774,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
+      ],
+      "${ count } invites successfully sent": [
+        "წარმატებით გაგზავნილია ${ count } მოსაწვევი"
       ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
@@ -1503,6 +1522,15 @@
       "Logins": [
         "შესვლები"
       ],
+      "Make all admins": [
+        "ყველას მონიშვნა ადმინისტრატორად"
+      ],
+      "Make all editors": [
+        "ყველას მონიშვნა რედაქტორად"
+      ],
+      "Make all viewers": [
+        "ყველას მონიშვნა დამთვარელიერებლად"
+      ],
       "Members": [
         "წევრები"
       ],
@@ -1878,6 +1906,9 @@
       "Fill & copy password": [
         "შევსება და პაროლის კოპირება"
       ],
+      "Get Started": [
+        "დაიწყეთ"
+      ],
       "Get the mobile apps": [
         "მობილური აპების დაყენება"
       ],
@@ -1905,6 +1936,9 @@
       "Member limit": [
         "წევრების ზღვარი"
       ],
+      "Members": [
+        "წევრები"
+      ],
       "Move all items ?": [
         "გადავიტანო ყველა ელემენტი?"
       ],
@@ -1929,6 +1963,9 @@
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
       ],
+      "Review and share": [
+        "მიმოხილვა და გაზიარება"
+      ],
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
       ],
@@ -1937,6 +1974,9 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Suggestions": [
+        "შეთავაზებები"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "გადავერთო ${ PASS_APP_NAME }-ზე?"
@@ -1961,6 +2001,9 @@
       ],
       "Use my email": [
         "ჩემი ელფოსტის გამოყენება"
+      ],
+      "Vault": [
+        "საცავი"
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
@@ -2014,11 +2057,20 @@
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
+      "At least one email address is required": [
+        "აუცილებელია სულ ცოტა ერთი ელფოსტის მისამართი"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "საცავის '${ vaultName }' შექმნა შეუძლებელია"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "მოსაწვევი ვერ გავაგზავნე შემდეგ მისამართებზე :"
+      ],
+      "Duplicate email addresses.": [
+        "დუბლირებული ელფოსტის მისამართები."
       ],
       "Empty note": [
         "ცარიელი შენიშვნა"
@@ -2028,6 +2080,9 @@
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Invalid email addresses.": [
+        "არასწორი ელფოსტის მისამართები."
       ],
       "Maximum length is ${ maxLength } character": [
         "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
@@ -2050,6 +2105,9 @@
       ],
       "No password manager selected": [
         "პაროლების მმართველი არჩეული არაა"
+      ],
+      "No results": [
+        "შედეგების გარეშე"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "დაშვებულია, მხოლოდ, ალფარცხვითი სიმბოლოები, წერტილები, ტირეები და ქვედა ტირეები"
