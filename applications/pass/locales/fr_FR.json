@@ -818,9 +818,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Les mots de passe générés seront conservés pendant un jour."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenez un nombre illimité d'alias, profitez de fonctionnalités exceptionnelles et soutenez-nous en vous abonnant à Pass Plus."
       ],
@@ -942,9 +939,6 @@
       ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Les mots de passe datant de plus d'un jour sont automatiquement supprimés de l'historique."
       ],
       "Permanently deleting selected items": [
         "Suppression permanente des éléments sélectionnés"
@@ -1326,6 +1320,15 @@
       ],
       "Logins": [
         "Identifiants"
+      ],
+      "Make all admins": [
+        "Définir tous comme administrateur"
+      ],
+      "Make all editors": [
+        "Définir tous comme éditeur"
+      ],
+      "Make all viewers": [
+        "Définir tous comme lecteur"
       ],
       "Members": [
         "Membres"
@@ -1826,6 +1829,9 @@
       ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Invalid email addresses.": [
+        "Les adresses électroniques ne sont pas valides."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",
