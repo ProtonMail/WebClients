@@ -25,6 +25,9 @@ export function logError(error: unknown) {
     console.warn(error);
 }
 
+const hasSentryMessage = (error: unknown): error is Error & { sentryMessage: string } =>
+    error instanceof Error && 'sentryMessage' in error && typeof error.sentryMessage === 'string';
+
 /**
  * sendErrorReport reports error to console and Sentry if its not ignored error.
  *
@@ -36,5 +39,15 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
     }
 
     console.warn(error);
-    traceError(error, isEnrichedError(error) ? error.context : undefined);
+
+    let errorForReporting = error as Error;
+
+    if (hasSentryMessage(error)) {
+        errorForReporting = new Error(error.sentryMessage);
+        errorForReporting.name = error.name;
+        errorForReporting.stack = error.stack;
+    }
+
+    const context = isEnrichedError(error) ? error.context : undefined;
+    traceError(errorForReporting, context);
 }
