@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { ImportProvider } from '@proton/activation/src/interface';
 import useApiEnvironmentConfig from '@proton/components/hooks/useApiEnvironmentConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 
 import { getOAuthAuthorizationUrl, getOAuthRedirectURL, getProviderNumber } from './useOAuthPopup.helpers';
@@ -73,6 +74,10 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
         const uid = generateProtonWebUID();
         stateId.current = uid;
 
+        if (canInvokeInboxDesktopIPC) {
+            window.ipcInboxMessageBroker!.send('oauthPopupOpened', 'oauthPopupStarted');
+        }
+
         const authWindow = window.open(
             `${authorizationUrl}&state=${uid}`,
             'oauthPopup',
@@ -91,6 +96,10 @@ const useOAuthPopup = ({ errorMessage }: Props) => {
             */
             interval = window.setInterval(() => {
                 if (authWindow.closed) {
+                    if (canInvokeInboxDesktopIPC) {
+                        window.ipcInboxMessageBroker!.send('oauthPopupOpened', 'oauthPopupFinished');
+                    }
+
                     window.clearInterval(interval);
                     return;
                 }
