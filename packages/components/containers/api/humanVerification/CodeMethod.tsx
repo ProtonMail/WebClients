@@ -2,7 +2,7 @@ import { MutableRefObject, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Button, Card, Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -10,7 +10,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
-import { Icon, LearnMore } from '../../../components';
+import { Icon } from '../../../components';
 import useNotifications from '../../../hooks/useNotifications';
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
@@ -145,7 +145,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
-                        <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
+                        <Href href={getKnowledgeBaseUrl('/human-verification')}>{c('Link').t`Learn more`}</Href>
                     </Text>
                     <Card bordered={false} rounded={true} className="mb-6 flex gap-2">
                         <div className="shrink-0">
@@ -178,7 +178,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your email will only be used for this one-time verification.`} </span>
-                        <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
+                        <Href href={getKnowledgeBaseUrl('/human-verification')}>{c('Link').t`Learn more`}</Href>
                     </Text>
                     <EmailMethodForm
                         api={api}
