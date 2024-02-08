@@ -1,6 +1,3 @@
-export const VAULT_CONTENT_FORMAT_VERSION = 1;
-export const LABEL_CONTENT_FORMAT_VERSION = 1;
-export const ITEM_CONTENT_FORMAT_VERSION = 1;
 export const MAX_BATCH_PER_REQUEST = 100;
 export const ALIAS_OPTIONS_MAX_AGE = 10 * 60;
 export const ALIAS_DETAILS_MAX_AGE = 30;

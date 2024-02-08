@@ -138,6 +138,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
+                    passkeys: [],
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>

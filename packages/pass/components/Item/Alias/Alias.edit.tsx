@@ -28,9 +28,8 @@ const FORM_ID = 'edit-alias';
 export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
-    const aliasEmail = revision.aliasEmail!;
     const { metadata, ...uneditable } = item;
-    const { name, itemUuid } = metadata;
+    const aliasEmail = revision.aliasEmail!;
 
     /** To ensure proper sequencing in handling alias options and details. we use an awaiter.
      * If alias options or details are cached, the execution order of 'onAliasOptionsLoaded'
@@ -49,32 +48,23 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
     const mailboxesForAlias = useRef<AliasMailbox[]>([]);
 
     const note = useDeobfuscatedValue(metadata.note);
-    const initialValues: EditAliasFormValues = { name, note, mailboxes: [] };
     const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
     const form = useFormik<EditAliasFormValues>({
-        initialValues,
-        initialErrors: validateEditAliasForm(initialValues),
+        initialValues: { name: metadata.name, note, mailboxes: [] },
         onSubmit: ({ name, note, mailboxes }) => {
             onSubmit({
                 ...uneditable,
-                shareId: vault.shareId,
+                extraData: { aliasOwner, mailboxes, aliasEmail },
                 itemId,
                 lastRevision,
-                metadata: {
-                    name,
-                    note: obfuscate(note),
-                    itemUuid,
-                },
-                extraData: {
-                    aliasOwner,
-                    mailboxes,
-                    aliasEmail: aliasEmail!,
-                },
+                metadata: { ...metadata, name, note: obfuscate(note) },
+                shareId: vault.shareId,
             });
         },
         validate: validateEditAliasForm,
         validateOnChange: true,
+        validateOnMount: true,
     });
 
     const aliasOptions = useAliasOptions({

@@ -1,12 +1,12 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-
 import {
     createRandomKey,
     createRandomVaultKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
-} from '../../utils/testing';
+} from '@proton/pass/lib/crypto/utils/testing';
+import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+
 import { createInviteKeys } from './create-invite-keys';
 import { reencryptInviteKeys } from './reencrypt-invite-keys';
 

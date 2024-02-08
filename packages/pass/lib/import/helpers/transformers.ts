@@ -56,6 +56,7 @@ export const importLoginItem = (options: {
                 password: options.password || '',
                 urls: urls.filter((url) => url.origin !== 'null').map(prop('href')),
                 totpUri: getTOTPvalue(options.totp),
+                passkeys: [] /** FIXME: support importing passkeys in the future */,
             },
             extraFields:
                 options.extraFields?.map((field) =>

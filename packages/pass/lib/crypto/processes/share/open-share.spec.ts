@@ -1,8 +1,13 @@
-import { CONTENT_FORMAT_VERSION, type ShareGetResponse, ShareRole, ShareType } from '@proton/pass/types';
+import { createVault } from '@proton/pass/lib/crypto/processes/vault/create-vault';
+import { openVaultKey } from '@proton/pass/lib/crypto/processes/vault/open-vault-key';
+import {
+    createRandomKey,
+    randomContents,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '@proton/pass/lib/crypto/utils/testing';
+import { ContentFormatVersion, type ShareGetResponse, ShareRole, ShareType } from '@proton/pass/types';
 
-import { createRandomKey, randomContents, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../utils/testing';
-import { createVault } from '../vault/create-vault';
-import { openVaultKey } from '../vault/open-vault-key';
 import { openShare } from './open-share';
 
 describe('openShare crypto process', () => {
@@ -34,7 +39,7 @@ describe('openShare crypto process', () => {
         const encryptedShare: ShareGetResponse = {
             AddressID: addressId,
             Content: vault.Content,
-            ContentFormatVersion: CONTENT_FORMAT_VERSION,
+            ContentFormatVersion: ContentFormatVersion.Share,
             ContentKeyRotation: 1,
             CreateTime: createTime,
             NewUserInvitesReady: 0,
@@ -57,7 +62,7 @@ describe('openShare crypto process', () => {
         /* check share properties */
         expect(share.addressId).toEqual(addressId);
         expect(share.content).toStrictEqual(content);
-        expect(share.contentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+        expect(share.contentFormatVersion).toEqual(ContentFormatVersion.Share);
         expect(share.contentKeyRotation).toEqual(1);
         expect(share.permission).toEqual(permission);
         expect(share.shareId).toEqual(shareId);

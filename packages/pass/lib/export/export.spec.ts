@@ -3,7 +3,7 @@ import JSZip from 'jszip';
 import { CryptoProxy } from '@proton/crypto';
 import { decodeBase64 } from '@proton/crypto/lib/utils';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
-import { CONTENT_FORMAT_VERSION, ItemState } from '@proton/pass/types';
+import { ContentFormatVersion, ItemState } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -36,7 +36,7 @@ const EXPORT_TEST_PAYLOAD: ExportData = {
                         platformSpecific: {},
                         extraFields: [],
                     },
-                    contentFormatVersion: CONTENT_FORMAT_VERSION,
+                    contentFormatVersion: ContentFormatVersion.Item,
                     pinned: false,
                     aliasEmail: null,
                     createTime: getEpoch(),

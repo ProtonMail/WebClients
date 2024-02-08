@@ -1,10 +1,10 @@
+import { decryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
+import { randomContents } from '@proton/pass/lib/crypto/utils/testing';
 import type { ItemKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoItemError } from '../../utils/errors';
-import { randomContents } from '../../utils/testing';
 import { updateItem } from './update-item';
 
 describe('updateItem crypto process', () => {
@@ -20,7 +20,7 @@ describe('updateItem crypto process', () => {
 
         const update = await updateItem({ content, itemKey, lastRevision: 3 });
 
-        expect(update.ContentFormatVersion).toEqual(CONTENT_FORMAT_VERSION);
+        expect(update.ContentFormatVersion).toEqual(ContentFormatVersion.Item);
         expect(update.KeyRotation).toEqual(itemKey.rotation);
         expect(update.LastRevision).toEqual(3);
 
