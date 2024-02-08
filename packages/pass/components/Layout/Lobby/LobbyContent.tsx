@@ -19,9 +19,10 @@ type Props = {
     onLogout: (options: { soft: boolean }) => void;
     onRegister: () => void;
     renderError: () => ReactNode;
+    renderFooter?: () => ReactNode;
 };
 
-export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError }) => {
+export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister, renderError, renderFooter }) => {
     const [timeoutError, setTimeoutError] = useState(false);
     const stale = clientStale(status);
     const busy = clientBusy(status);
@@ -120,6 +121,8 @@ export const LobbyContent: FC<Props> = ({ status, onLogin, onLogout, onRegister,
                     </Button>
                 )}
             </div>
+
+            {renderFooter?.()}
         </div>
     );
 };

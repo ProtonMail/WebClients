@@ -32,6 +32,7 @@ import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
 import { i18n } from '../lib/i18n';
+import { logStore } from '../lib/logger';
 import { onboarding } from '../lib/onboarding';
 import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
@@ -105,6 +106,7 @@ export const App = () => (
                     onTelemetry={telemetry.push}
                     openSettings={openSettings}
                     prepareImport={prepareImport}
+                    getLogs={logStore.read}
                 >
                     <CompatibilityCheck>
                         <Icons />

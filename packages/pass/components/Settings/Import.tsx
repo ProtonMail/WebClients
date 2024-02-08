@@ -74,7 +74,7 @@ export const Import: FC = () => {
                     .t`To migrate data from another password manager, go to the password manager, export your data, then upload it to ${PASS_APP_NAME}. Once your data has been imported, delete the exported file.`}
             >
                 <FormikProvider value={form}>
-                    <Form className="modal-two-dialog-container">
+                    <Form>
                         <ImportForm form={form} dropzone={dropzone} busy={busy} />
                         {form.values.provider && (
                             <Button

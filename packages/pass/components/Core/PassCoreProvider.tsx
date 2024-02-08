@@ -32,6 +32,8 @@ export type PassCoreContextValue = {
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
     getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
+    /** Resolves the locally stored app logs */
+    getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */
     getRatingURL?: () => string;
     /** defines how a client handles external links.

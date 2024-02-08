@@ -67,7 +67,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             i18n: createI18nService(),
             import: createImportService(),
             injection: createInjectionService(),
-            logger: createLoggerService(),
+            logger: createLoggerService(storage.local),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             settings: createSettingsService(),

@@ -1,16 +1,8 @@
 import { type FC } from 'react';
 
-import { ApplicationLogs } from 'proton-pass-extension/lib/components/Settings/ApplicationLogs';
 import { Behaviors } from 'proton-pass-extension/lib/components/Settings/Behaviors';
 
+import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Locale } from '@proton/pass/components/Settings/Locale';
 
-export const General: FC = () => {
-    return (
-        <>
-            <Locale />
-            <Behaviors />
-            <ApplicationLogs />
-        </>
-    );
-};
+export const General: FC = () => [<Locale />, <Behaviors />, <ApplicationLogs style={{ '--h-custom': '18.75rem' }} />];

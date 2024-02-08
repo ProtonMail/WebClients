@@ -87,7 +87,7 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         },
 
         detach() {
-            logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
+            logger.info(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             listeners.removeAll();
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());

@@ -1,4 +1,4 @@
-import type { MaybeNull, MaybePromise, Storage } from '@proton/pass/types';
+import type { AnyStorage, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Maybe } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
@@ -28,7 +28,7 @@ export type TelemetryAlarmHandles = {
 };
 
 export type TelemetryServiceOptions = {
-    storage: Storage<TelemetryStorageData>;
+    storage: AnyStorage<TelemetryStorageData>;
     alarm: TelemetryAlarmHandles;
     getEnabled: () => boolean;
     getUserTier: () => Maybe<string>;
@@ -112,7 +112,7 @@ export const createCoreTelemetryService = ({ storage, getEnabled, getUserTier, a
     const push = async (event: TelemetryEvent): Promise<boolean> => {
         try {
             if (getEnabled()) {
-                logger.debug(`[Telemetry] Adding ${event.Event} to current bundle`);
+                logger.info(`[Telemetry] Adding ${event.Event} to current bundle`);
 
                 const bundle = await resolveBundle();
                 bundle.events.push(merge(event, { Dimensions: { user_tier: getUserTier() } }));

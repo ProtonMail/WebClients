@@ -64,7 +64,7 @@ const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
 };
 
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
-    const { config, openSettings } = usePassCore();
+    const { openSettings } = usePassCore();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
@@ -79,31 +79,31 @@ export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
 
     return (
-        <>
-            <Tabs
-                className="w-full"
-                contentClassName="p-0"
-                navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
-                onChange={handleOnChange}
-                tabs={tabs}
-                value={activeTab}
-            />
-            <div className="mt-auto">
-                <hr />
-                <span className="block text-sm color-weak text-center">
-                    {PASS_APP_NAME} v{config.APP_VERSION}
-                </span>
-            </div>
-        </>
+        <Tabs
+            className="w-full shrink-0"
+            contentClassName="p-0"
+            navContainerClassName="pass-settings--tabs mb-2 pt-4 sticky top-0"
+            onChange={handleOnChange}
+            tabs={tabs}
+            value={activeTab}
+        />
     );
 };
 
 export const Settings: FC<RouteChildrenProps> = (props) => {
+    const { config } = usePassCore();
     return (
-        <div className="pass-settings flex flex-column w-full p-4 pt-0 h-full overflow-auto">
-            <LockConfirmContextProvider>
+        <LockConfirmContextProvider>
+            <div className="flex flex-column gap-2 flex-nowrap justify-space-between w-full h-full px-4 overflow-auto">
                 <SettingsTabs {...props} />
-            </LockConfirmContextProvider>
-        </div>
+
+                <div className="justify-end shrink-0 pb-3">
+                    <hr className="mb-2" />
+                    <span className="text-xs color-weak">
+                        {PASS_APP_NAME} v{config.APP_VERSION}
+                    </span>
+                </div>
+            </div>
+        </LockConfirmContextProvider>
     );
 };

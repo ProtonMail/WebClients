@@ -16,6 +16,7 @@ import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -197,6 +198,18 @@ const SettingsApp: FC = () => {
                         style={{ '--min-h-custom': '100vh' }}
                     >
                         <Switch>
+                            <Route
+                                exact
+                                path={'/logs'}
+                                render={() => (
+                                    <div className="max-h-full">
+                                        <ApplicationLogs
+                                            opened
+                                            style={{ '--h-custom': 'max(calc(100vh - 130px), 18.75rem)' }}
+                                        />
+                                    </div>
+                                )}
+                            />
                             <Route
                                 render={({ location: { pathname } }) => (
                                     <LockConfirmContextProvider>

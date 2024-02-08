@@ -49,10 +49,11 @@ const onShareEvent = (shareId: string) =>
         const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
-        logger.debug(`[ServerEvents::Share::${logId(shareId)}] event ${logId(eventId)}`);
-
         /* dispatch only if there was a change */
-        if (currentEventId !== eventId) yield put(shareEvent({ ...event, shareId }));
+        if (currentEventId !== eventId) {
+            logger.info(`[ServerEvents::Share::${logId(shareId)}] event ${logId(eventId)}`);
+            yield put(shareEvent({ ...event, shareId }));
+        }
 
         if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
             const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(UpdatedShare, { eventId });

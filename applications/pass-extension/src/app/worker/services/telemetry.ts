@@ -3,7 +3,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { TelemetryStorageData } from '@proton/pass/lib/telemetry/service';
 import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
 import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
-import type { Storage } from '@proton/pass/types';
+import type { ExtensionStorage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -13,7 +13,7 @@ import store from '../store';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 
-export const createTelemetryService = (storage: Storage<TelemetryStorageData>) => {
+export const createTelemetryService = (storage: ExtensionStorage<TelemetryStorageData>) => {
     const { push, send, start, stop } = createCoreTelemetryService({
         alarm: {
             reset: () => browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop),
