@@ -25,7 +25,9 @@
 		background-size: 16px;
 	}
 
-	transition: 0.15s easing(ease-out-quint), background-position 0s;
+	transition:
+		0.15s easing(ease-out-quint),
+		background-position 0s;
 	background-color: transparent;
 	min-inline-size: rem(36);
 	align-content: flex-end;
@@ -93,6 +95,16 @@
 
 	&--loading {
 		background-color: var(--background-weak);
+	}
+
+	&--uploading {
+		.message-attachmentSecondaryAction-size {
+			visibility: hidden;
+		}
+
+		.message-attachmentSecondaryAction-download {
+			visibility: visible;
+		}
 	}
 }
 
