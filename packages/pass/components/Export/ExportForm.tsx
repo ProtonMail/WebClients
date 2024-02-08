@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
@@ -7,11 +8,14 @@ import { Button } from '@proton/atoms/Button';
 import { Checkbox } from '@proton/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import type { ExportFormValues } from '@proton/pass/lib/export/types';
+import { selectNonOwnedVaults } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type ExporterProps = { form: FormikContextType<ExportFormValues>; loading: boolean };
 
 export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
+    const hasNonOwnedVaults = useSelector(selectNonOwnedVaults).length > 0;
+
     return (
         <FormikProvider value={form}>
             <Form className="modal-two-dialog-container">
@@ -26,6 +30,13 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                             .t`Export is encrypted using PGP and requires a strong passphrase.`}</span>
                     </span>
                 </Checkbox>
+
+                {hasNonOwnedVaults && (
+                    <em className="block text-sm color-weak mb-2">
+                        {c('Info')
+                            .t`The export file will not contain the data of shared vaults where you are not the owner`}
+                    </em>
+                )}
 
                 {form.values.encrypted ? (
                     <Field
