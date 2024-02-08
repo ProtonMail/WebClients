@@ -30,7 +30,7 @@ const toCsv = <T>(data: T[]) => Papa.unparse(data);
 const convertCSVUser = (
     csvUser: ImportedCSVUser,
     rowNumber: number,
-    { multipleAddresses, includeStorage }: CsvConfig
+    { multipleAddresses, includeStorage, includeVpnAccess }: CsvConfig
 ) => {
     const { Name, EmailAddresses, Password, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
 
@@ -71,7 +71,7 @@ const convertCSVUser = (
     const vpnAccess = (() => {
         const vpnAccessNumber = +VPNAccess;
 
-        if (isNaN(vpnAccessNumber)) {
+        if (!includeVpnAccess || isNaN(vpnAccessNumber)) {
             return 0;
         }
         return vpnAccessNumber;
