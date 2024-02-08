@@ -23,7 +23,7 @@ import {
 } from '../../../components';
 import { useNotifications } from '../../../hooks';
 
-export interface ContactImageProps {
+export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {
     url?: string;
     onSubmit: (image: string) => void;
 }
@@ -34,9 +34,7 @@ enum ImageState {
     Ok,
 }
 
-type Props = ContactImageProps & ModalProps;
-
-const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) => {
+const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: ContactImageProps) => {
     const [imageUrl, setImageUrl] = useState(initialUrl);
     const [isPristine, setIsPristine] = useState(true);
     const { createNotification } = useNotifications();

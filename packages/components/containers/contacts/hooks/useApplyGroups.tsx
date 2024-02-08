@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalTwo } from '@proton/components/components';
+import { useModalTwoStatic } from '@proton/components/components';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -16,7 +16,7 @@ import {
     useMailSettings,
     useNotifications,
 } from '../../../hooks';
-import ContactGroupLimitReachedModal, { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';
+import ContactGroupLimitReachedModal from '../modals/ContactGroupLimitReachedModal';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 /**
@@ -60,10 +60,8 @@ const useApplyGroups = (
     const userContactEmails = useContactEmails()[0] || [];
     const [groups = []] = useContactGroups();
 
-    const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] = useModalTwo<
-        ContactGroupLimitReachedProps,
-        void
-    >(ContactGroupLimitReachedModal, false);
+    const [contactGroupLimitReachedModal, handleShowContactGroupLimitReachedModal] =
+        useModalTwoStatic(ContactGroupLimitReachedModal);
 
     const applyGroups = useCallback(
         async (contactEmails: ContactEmail[], changes: { [groupID: string]: boolean }, preventNotification = false) => {

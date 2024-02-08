@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
@@ -13,8 +15,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { isCustomFolder } from 'proton-mail/helpers/labels';
 
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
+import type { MoveScheduledModalProps } from '../components/message/modals/MoveScheduledModal';
+import type { MoveToSpamModalProps, MoveToSpamModalResolveProps } from '../components/message/modals/MoveToSpamModal';
+import type { Conversation } from '../models/conversation';
+import type { Element } from '../models/element';
 
 const { SPAM, TRASH, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
@@ -150,7 +154,7 @@ const searchForLabelsAndOpenModal = async (
     isMessage: boolean,
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
-    handleShowModal: (ownProps: unknown) => Promise<unknown>,
+    handleShowModal: (ownProps: MoveScheduledModalProps) => Promise<void>,
     setContainFocus?: (contains: boolean) => void
 ) => {
     if (!forbiddenLabels.includes(folderID)) {
@@ -177,8 +181,8 @@ export const searchForScheduled = async (
     isMessage: boolean,
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
-    handleShowModal: (ownProps: unknown) => Promise<unknown>,
-    setContainFocus?: (contains: boolean) => void
+    handleShowModal: (ownProps: MoveScheduledModalProps) => Promise<void>,
+    setContainFocus?: Dispatch<SetStateAction<boolean>>
 ) => {
     await searchForLabelsAndOpenModal(
         [TRASH],
@@ -201,7 +205,7 @@ export const searchForSnoozed = async (
     isMessage: boolean,
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
-    handleShowModal: (ownProps: unknown) => Promise<unknown>,
+    handleShowModal: (ownProps: MoveScheduledModalProps) => Promise<void>,
     setContainFocus?: (contains: boolean) => void,
     folders: Folder[] = []
 ) => {
@@ -227,10 +231,7 @@ export const askToUnsubscribe = async (
     isMessage: boolean,
     elements: Element[],
     api: Api,
-    handleShowSpamModal: (ownProps: {
-        isMessage: boolean;
-        elements: Element[];
-    }) => Promise<{ unsubscribe: boolean; remember: boolean }>,
+    handleShowSpamModal: (ownProps: MoveToSpamModalProps) => Promise<MoveToSpamModalResolveProps>,
     mailSettings: MailSettings
 ) => {
     if (folderID === SPAM) {

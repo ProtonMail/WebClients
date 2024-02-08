@@ -7,6 +7,7 @@ import {
     Cell,
     Form,
     Icon,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -15,7 +16,7 @@ import {
     TableBody,
     TableCell,
     TableRow,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components/components';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
@@ -27,7 +28,7 @@ import { GatewayUser } from './GatewayUser';
 import { getCountryFlagAndName } from './getCountryFlagAndName';
 import { getFormattedLoad, getSuffix, getTotalAdded } from './helpers';
 
-interface Props {
+interface Props extends ModalProps<typeof Form> {
     gateway: Gateway;
     language: string | readonly string[];
     countries: readonly string[];
@@ -43,8 +44,6 @@ interface Props {
     singleServer?: boolean;
     isDeleted: (logical: GatewayLogical) => boolean;
     onSubmitDone: (deletedLogicalIds: readonly string[], addedQuantities: Record<string, number>) => Promise<void>;
-    onResolve: () => void;
-    onReject: () => void;
     onUpsell: () => void;
 }
 
@@ -64,12 +63,10 @@ const GatewayServersModal = ({
     singleServer = false,
     isDeleted,
     onSubmitDone,
-    onReject,
-    onResolve,
     onUpsell,
     ...rest
 }: Props) => {
-    const [addServersModal, showAddServersModal] = useModalTwo(GatewayAddServersModal);
+    const [addServersModal, showAddServersModal] = useModalTwoStatic(GatewayAddServersModal);
     const [deleted, setDeleted] = useState<Record<string, boolean>>({});
     const [added, setAdded] = useState<Record<string, number>>({});
     const [loading, setLoading] = useState(false);
@@ -169,7 +166,7 @@ const GatewayServersModal = ({
         const idsToDelete = Object.keys(deleted).filter((id) => deleted[id]);
 
         if (getTotalAdded(added) < 1 && idsToDelete.length < 1) {
-            onReject();
+            rest.onClose?.();
 
             return;
         }
@@ -177,7 +174,7 @@ const GatewayServersModal = ({
         try {
             setLoading(true);
             await onSubmitDone(idsToDelete, added);
-            onResolve();
+            rest.onClose?.();
         } finally {
             setLoading(false);
         }
@@ -185,7 +182,7 @@ const GatewayServersModal = ({
 
     return (
         <>
-            <ModalTwo size="xlarge" {...rest} as={Form} onSubmit={handleSubmit} onClose={onReject}>
+            <ModalTwo size="xlarge" {...rest} as={Form} onSubmit={handleSubmit}>
                 <ModalTwoHeader title={c('Title').t`Edit servers`} />
                 <ModalTwoContent>
                     <Table className="my-2">
@@ -359,7 +356,7 @@ const GatewayServersModal = ({
                                 className="color-primary"
                                 onClick={() => {
                                     onUpsell();
-                                    onReject();
+                                    rest.onClose?.();
                                 }}
                             >
                                 <Icon name="plus-circle-filled" className="mr-2" />
@@ -370,7 +367,7 @@ const GatewayServersModal = ({
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     {showCancelButton ? (
-                        <Button color="weak" onClick={onReject}>
+                        <Button color="weak" onClick={rest.onClose}>
                             {c('Action').t`Cancel`}
                         </Button>
                     ) : (

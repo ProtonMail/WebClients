@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Form,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -22,7 +23,7 @@ import { getInitialModel } from './helpers';
 import { useAddedQuantities } from './useAddedQuantities';
 import { useSpecificCountryCount } from './useSpecificCountryCount';
 
-interface Props {
+interface Props extends ModalProps<typeof Form> {
     countries: readonly string[];
     deletedInCountries: Record<string, number>;
     ownedCount: number;
@@ -33,8 +34,6 @@ interface Props {
     singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (server: GatewayModel) => Promise<void>;
-    onResolve: () => void;
-    onReject: () => void;
     onUpsell: () => void;
 }
 
@@ -52,8 +51,6 @@ const GatewayModal = ({
     users,
     language,
     onSubmitDone,
-    onReject,
-    onResolve,
     onUpsell,
     isEditing = false,
     singleServer = false,
@@ -77,8 +74,7 @@ const GatewayModal = ({
         [step, needUpsell, singleServer, addedCount]
     );
 
-    const changeModel = <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) =>
-        setModel((model: GatewayDto) => ({ ...model, [key]: key === 'features' ? Number(value) : value }));
+    const changeModel = (diff: Partial<GatewayDto>) => setModel((model: GatewayDto) => ({ ...model, ...diff }));
 
     const stepBack = () => {
         if (step === STEP.MEMBERS) {
@@ -93,7 +89,7 @@ const GatewayModal = ({
             return;
         }
 
-        onReject();
+        rest.onClose?.();
     };
 
     const handleSubmit = async () => {
@@ -143,20 +139,14 @@ const GatewayModal = ({
         try {
             setLoading(true);
             await onSubmitDone(dtoBody);
-            onResolve();
+            rest.onClose?.();
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <ModalTwo
-            size={step === STEP.MEMBERS ? 'xlarge' : 'large'}
-            as={Form}
-            onSubmit={handleSubmit}
-            onClose={onReject}
-            {...rest}
-        >
+        <ModalTwo size={step === STEP.MEMBERS ? 'xlarge' : 'large'} as={Form} onSubmit={handleSubmit} {...rest}>
             <ModalTwoHeader
                 title={(() => {
                     if (step === STEP.NAME) {
@@ -185,7 +175,7 @@ const GatewayModal = ({
                         specificCountryCount={specificCountryCount}
                         language={language}
                         onUpsell={() => {
-                            onReject();
+                            rest.onClose?.();
                             onUpsell();
                         }}
                         loading={loading}

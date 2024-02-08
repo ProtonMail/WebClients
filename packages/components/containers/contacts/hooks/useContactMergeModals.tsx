@@ -1,34 +1,25 @@
-import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
-import ContactMergeDetailsModal, { ContactMergeDetailsModalProps } from '../merge/ContactMergeDetailsModal';
-import ContactMergeModal, { ContactMergeModalProps, ContactMergeProps } from '../merge/ContactMergeModal';
+import { useModalTwoStatic } from '../../../components/modalTwo/useModalTwo';
+import ContactMergeDetailsModal from '../merge/ContactMergeDetailsModal';
+import ContactMergeModal, { ContactMergeProps } from '../merge/ContactMergeModal';
 import ContactMergePreviewModal, { ContactMergePreviewModalProps } from '../merge/ContactMergePreviewModal';
 
 export const useContactMergeModals = () => {
-    const [contactMergeModal, handleShowContactMergeModal] = useModalTwo<ContactMergeModalProps, void>(
-        ContactMergeModal,
-        false
-    );
+    const [contactMergeModal, handleShowContactMergeModal] = useModalTwoStatic(ContactMergeModal);
 
-    const [contactMergePreviewModal, handleShowContactMergePreviewModal] = useModalTwo<
-        ContactMergePreviewModalProps,
-        void
-    >(ContactMergePreviewModal, false);
+    const [contactMergePreviewModal, handleShowContactMergePreviewModal] = useModalTwoStatic(ContactMergePreviewModal);
 
-    const [contactMergeDetailsModal, handleShowContactMergeDetailsModal] = useModalTwo<
-        ContactMergeDetailsModalProps,
-        void
-    >(ContactMergeDetailsModal, false);
+    const [contactMergeDetailsModal, handleShowContactMergeDetailsModal] = useModalTwoStatic(ContactMergeDetailsModal);
 
     const handleMergeDetails = (contactID: string) => {
-        void handleShowContactMergeDetailsModal({ contactID });
+        handleShowContactMergeDetailsModal({ contactID });
     };
 
     const handleMergePreview = (props: ContactMergePreviewModalProps) => {
-        void handleShowContactMergePreviewModal(props);
+        handleShowContactMergePreviewModal(props);
     };
 
     const handleMerge = (props: ContactMergeProps) => {
-        void handleShowContactMergeModal({
+        handleShowContactMergeModal({
             ...props,
             onMergeDetails: handleMergeDetails,
             onMergePreview: handleMergePreview,

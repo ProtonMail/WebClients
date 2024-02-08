@@ -69,7 +69,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
                     <UploadFileButton onClick={fileClick} />
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="my-2" />
-                    <CreateNewFolderButton onClick={showCreateFolderModal} />
+                    <CreateNewFolderButton onClick={() => showCreateFolderModal({})} />
                 </DropdownMenu>
             </Dropdown>
         </>

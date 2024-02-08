@@ -132,7 +132,7 @@ export default function useUploadConflict(
             conflictStrategyRef.current[CONFLICT_STRATEGY_ALL_ID] = TransferConflictStrategy.Skip;
             cancelUploads(isTransferActive);
         };
-        void showConflictModal({ apply, cancelAll, ...params });
+        showConflictModal({ apply, cancelAll, ...params });
     };
 
     // Modals are openned on this one place only to not have race condition

@@ -14,7 +14,7 @@ import {
     ModalTwoHeader,
     Row,
     Tooltip,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import { useLoading } from '@proton/hooks';
@@ -30,6 +30,7 @@ import SignatureAlert from '../SignatureAlert';
 import ModalContentLoader from './ModalContentLoader';
 
 const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
+
 export interface Props {
     shareId: string;
     linkId: string;
@@ -330,8 +331,8 @@ function getTitle(isFile?: boolean) {
 }
 
 export const useDetailsModal = () => {
-    return useModalTwo<Props, unknown>(DetailsModal, false);
+    return useModalTwoStatic(DetailsModal);
 };
 export const useRevisionDetailsModal = () => {
-    return useModalTwo<RevisionDetailsModalProps, unknown>(RevisionDetailsModal, false);
+    return useModalTwoStatic(RevisionDetailsModal);
 };

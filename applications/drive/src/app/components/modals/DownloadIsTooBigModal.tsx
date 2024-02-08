@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { BasicModal, ModalStateProps, PrimaryButton, useModalTwo } from '@proton/components';
+import { BasicModal, ModalStateProps, PrimaryButton, useModalTwoStatic } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = {
@@ -54,5 +54,5 @@ export default function DownloadIsTooBigModal({
 }
 
 export const useDownloadIsTooBigModal = () => {
-    return useModalTwo<Props, void>(DownloadIsTooBigModal, false);
+    return useModalTwoStatic(DownloadIsTooBigModal);
 };

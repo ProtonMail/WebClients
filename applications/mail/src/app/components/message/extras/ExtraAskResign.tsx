@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import { Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
@@ -76,6 +77,8 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                     submit={c('Action').t`Trust`}
                     onResign={onResignContact}
                     contacts={[{ contactID }]}
+                    onResolve={noop}
+                    onReject={noop}
                     {...contactResignModalProps}
                 >
                     {c('Info')

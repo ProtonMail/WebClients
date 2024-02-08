@@ -19,6 +19,7 @@ interface Props extends ModalProps {
     toUnlabel: string[];
     onCloseCustomAction?: () => void;
 }
+
 const SelectAllLabelModal = ({
     onResolve,
     onReject,
