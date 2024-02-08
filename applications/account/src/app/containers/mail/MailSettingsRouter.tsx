@@ -21,6 +21,7 @@ import {
     MessagesGeneralSection,
     MessagesOtherSection,
     MessagesSection,
+    MobileAppSettingsSection,
     OtherMailPreferencesSection,
     PmMeSection,
     PrivateMainAreaLoading,
@@ -30,6 +31,7 @@ import {
     SpamFiltersSection,
     UserKeysSection,
     useAddresses,
+    useIsInboxElectronApp,
 } from '@proton/components';
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -47,6 +49,7 @@ const MailSettingsRouter = ({
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
     const onceRef = useRef<boolean>(false);
+    const { isElectronDisabled } = useIsInboxElectronApp();
 
     const {
         routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, desktop, backup, privacy },
@@ -68,6 +71,14 @@ const MailSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 )}
             </Route>
+            {getIsSectionAvailable(desktop) && (
+                <Route path={getSectionPath(path, desktop)}>
+                    <PrivateMainSettingsArea config={desktop}>
+                        <MobileAppSettingsSection />
+                        {!isElectronDisabled && <InboxDesktopSettingsSection />}
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea config={identity}>
                     <IdentitySection />
@@ -109,13 +120,6 @@ const MailSettingsRouter = ({
                     <UserKeysSection />
                 </PrivateMainSettingsArea>
             </Route>
-            {getIsSectionAvailable(desktop) && (
-                <Route path={getSectionPath(path, desktop)}>
-                    <PrivateMainSettingsArea config={desktop}>
-                        <InboxDesktopSettingsSection />
-                    </PrivateMainSettingsArea>
-                </Route>
-            )}
             <Route path={getSectionPath(path, imap)}>
                 <PrivateMainSettingsArea config={imap}>
                     <ProtonMailBridgeSection />
