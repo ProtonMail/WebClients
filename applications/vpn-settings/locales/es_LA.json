@@ -428,6 +428,9 @@
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
+      "Select country": [
+        "Seleccionar país"
+      ],
       "Select file": [
         "Seleccionar archivo"
       ],
@@ -1961,6 +1964,9 @@
       "Code wrong or not valid anymore": [
         "Código incorrecto o inválido"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "No se pudieron cargar las facturas. Intente más tarde."
+      ],
       "Domain not available, try again later": [
         "Dominio no disponible, inténtelo más tarde"
       ],
@@ -2152,9 +2158,6 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperación incorrecta. Vuelva a intentarlo o use otro método de recuperación."
-      ],
-      "You have no invoices.": [
-        "No tiene facturas."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ha utilizado todas las direcciones de su plan. Mejore su plan para añadir una dirección nueva."
@@ -3063,9 +3066,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NO olvide esta contraseña. Si la olvida, no podrá administrar su organización."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NO olvide esta contraseña. Si la olvida, no podrá iniciar sesión ni descifrar sus mensajes."
-      ],
       "Domain ownership failed verification.": [
         "Error al verificar la propiedad del dominio."
       ],
@@ -3245,6 +3245,9 @@
       ],
       "inactive": [
         "inactiva"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Aumente la seguridad de su cuenta al verificar su dirección de correo."
@@ -3941,6 +3944,9 @@
         "Tiene ${ availableCount } servidor dedicado disponible.",
         "Tiene ${ availableCount } servidores dedicados disponibles."
       ],
+      "You have no invoices.": [
+        "No tiene facturas."
+      ],
       "You have no saved payment methods.": [
         "No tiene ningún método de pago guardado."
       ],
@@ -4022,9 +4028,6 @@
       "Your next billing date is ${ renewalTime }.": [
         "Su próxima fecha de facturación es el ${ renewalTime }."
       ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La contraseña de la organización se puede compartir con otros usuarios a los que desee otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a su organización en caso de que pierda el acceso a su cuenta. Guarde esta contraseña y manténgala a salvo."
-      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Su organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con su proveedor de SSO."
       ],
@@ -4097,6 +4100,9 @@
       ],
       "Credit": [
         "Crédito"
+      ],
+      "Currency conversion": [
+        "Conversión de divisa"
       ],
       "Donation": [
         "Donación"
@@ -4527,6 +4533,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Verification code": [
         "Código de verificación"
@@ -5307,8 +5316,8 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
       ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ trialPlanName } con funciones premium, elija su suscripción y opciones de pago."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Su prueba termina el ${ formattedPeriodEndDate }"
@@ -5383,7 +5392,7 @@
         "Le permite responder automáticamente (autorrespuestas) a los mensajes que recibe"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Reenvía correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
+        "Reenvíe correos automáticamente enviados a su cuenta de ${ MAIL_APP_NAME } a cualquier otra dirección de correo."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
@@ -5913,6 +5922,46 @@
       ],
       "New credit/debit card": [
         "Tarjeta de crédito/débito nueva"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "País de facturación"
+      ],
+      "Card number": [
+        "Número de tarjeta"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Tax Country": [
+        "País de impuestos"
+      ],
+      "Timeout exceeded": [
+        "Tiempo de espera agotado"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Número de tarjeta inválido"
+      ],
+      "Invalid expiration date": [
+        "Fecha de expiración inválida"
+      ],
+      "Invalid securiry code": [
+        "Código de seguridad inválido"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Hubo un problema. Intente de nuevo más tarde."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "No podemos autenticar su método de pago. Elija un método de pago diferente o intente de nuevo."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Su tarjeta fue rechazada, pruebe otra tarjeta o póngase en contacto con su banco para autorizar el cargo."
       ]
     },
     "Permission": {
@@ -6702,6 +6751,12 @@
       "For all ${ BRAND_NAME } services": [
         "Para todos los servicios de ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para cargar o sincronizar archivos, libere espacio o ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "mejore para obtener más almacenamiento"
       ],
@@ -6718,26 +6773,20 @@
       "Your ${ appStorage } is full": [
         "El ${ appStorage } está lleno."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El ${ storage } está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Su ${ storage } está ${ percentage }% lleno. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "El ${ storage } está un ${ percentage }% lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Su ${ storage } está lleno. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "El ${ storage } está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "El ${ storage } está lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El almacenamiento está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Su almacenamiento está ${ percentage }% lleno. ${ cta }."
       ],
       "Your storage is full": [
         "El almacenamiento está lleno."
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Su almacenamiento está lleno. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Perderá acceso a ${ gb } de almacenamiento y al soporte prioritario."
@@ -7553,9 +7602,6 @@
       ],
       "Set organization name": [
         "Establecer nombre de la organización"
-      ],
-      "Set organization password": [
-        "Definir contraseña de la organización"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticación de dos factores"

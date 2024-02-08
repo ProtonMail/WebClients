@@ -17,6 +17,9 @@
       "Add new item": [
         "Tilføj nyt element"
       ],
+      "Admin panel": [
+        "Admin-panel"
+      ],
       "Advanced": [
         "Avanceret"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Opret login"
+      ],
+      "Create new items": [
+        "Opret nye elementer"
       ],
       "Create note": [
         "Opret note"
@@ -194,6 +200,9 @@
       "Importing": [
         "Importerer"
       ],
+      "Install extension": [
+        "Installér udvidelse"
+      ],
       "Invite others": [
         "Invitér andre"
       ],
@@ -263,6 +272,9 @@
       "Pin item": [
         "Fastgør element"
       ],
+      "Recent": [
+        "Seneste"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -277,6 +289,9 @@
       ],
       "Remove access": [
         "Fjern adgang"
+      ],
+      "Remove member": [
+        "Fjern medlem"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -418,11 +433,18 @@
       "Auto-lock could not be disabled": [
         "Autolås kunne ikke deaktiveres"
       ],
+      "Cannot send invitation at the moment": [
+        "Kan ikke sende invitation i øjeblikket",
+        "Kan ikke sende invitationer i øjeblikket"
+      ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekræfte denne invitation i øjeblikket"
       ],
       "Could not leave vault.": [
         "Kunne ikke forlade boks."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunne ikke indlæse anbefalinger i øjeblikket."
       ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
@@ -670,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } invitationer sendt"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -730,6 +755,9 @@
       "Auto-lock successfully disabled": [
         "Autolås deaktiveret"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Hent dine eksisterende adgangskoder ind i ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Indbygget 2FA-godkendelse"
       ],
@@ -787,8 +815,8 @@
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Genererede adgangskoder vil blive gemt i en dag."
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Få mest muligt ud af Pass ved at oprette en boks til hvert team eller projekt."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
@@ -809,11 +837,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For at få den bedste oplevelse ud af ${ PASS_APP_NAME }, bedes du give de nødvendige udvidelsestilladelser"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Installer ${ PASS_APP_NAME } til ${ browser.title } for hurtigt at autoudfylde dine logins."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installer ${ PASS_APP_NAME } til ${ browser.title } for hurtigt at autoudfylde dine logins. "
+      ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
       "Invitation sent": [
         "Invitation sendt"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Inviter specifikke personer, og indstil de rigtige tilladelser."
       ],
       "Invite successfully removed": [
         "Invitation fjernet"
@@ -906,9 +943,6 @@
       "Pass Plus trial": [
         "Pass Plus prøveversion"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
-      ],
       "Permanently deleting selected items": [
         "De valgte elementer slettes permanent"
       ],
@@ -953,6 +987,9 @@
       ],
       "Select destination vault": [
         "Vælg destinationsboks"
+      ],
+      "Select vault to share": [
+        "Vælg boks til deling"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vælg, hvor du vil gemme din(e) importerede boks(e)."
@@ -1287,6 +1324,15 @@
       "Logins": [
         "Logins"
       ],
+      "Make all admins": [
+        "Gør alle til administratorer"
+      ],
+      "Make all editors": [
+        "Gør alle til redaktører"
+      ],
+      "Make all viewers": [
+        "Gør alle til seere"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -1615,6 +1661,9 @@
       "Confirm PIN code": [
         "Bekræft pinkode"
       ],
+      "Create a vault": [
+        "Opret en boks"
+      ],
       "Create PIN code": [
         "Opret pinkode"
       ],
@@ -1633,6 +1682,9 @@
       "Enter your PIN": [
         "Indtast din pinkode"
       ],
+      "Get Started": [
+        "Kom i gang"
+      ],
       "Grant permissions": [
         "Giv tilladelser"
       ],
@@ -1642,6 +1694,12 @@
       "Import to vault(s)": [
         "Importér til boks(e)"
       ],
+      "Import your data": [
+        "Importér dine data"
+      ],
+      "Install extension": [
+        "Installér udvidelse"
+      ],
       "Leave vault ?": [
         "Forlad boks?"
       ],
@@ -1650,6 +1708,9 @@
       ],
       "Member limit": [
         "Medlemsgrænse"
+      ],
+      "Members": [
+        "Medlemmer"
       ],
       "Move all items ?": [
         "Flyt alle elementer ?"
@@ -1681,8 +1742,14 @@
       "Settings": [
         "Indstillinger"
       ],
+      "Share vaults with your team": [
+        "Del bokse med dit team"
+      ],
       "Share with": [
         "Del med"
+      ],
+      "Suggestions": [
+        "Forslag"
       ],
       "Transfer ownership": [
         "Overfør ejerskab"
@@ -1692,6 +1759,9 @@
       ],
       "Update available": [
         "Opdatering tilgængelig"
+      ],
+      "Vault": [
+        "Boks"
       ],
       "Vault shared with you": [
         "Boks delt med dig"
@@ -1742,11 +1812,20 @@
       "An error occured while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
       ],
+      "At least one email address is required": [
+        "Mindst én e-mailadresse er påkrævet"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunne ikke sende invitationer til følgende adresser :"
+      ],
+      "Duplicate email addresses.": [
+        "Dubletter af e-mailadresser."
       ],
       "Empty note": [
         "Tom note"
@@ -1756,6 +1835,9 @@
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
+      ],
+      "Invalid email addresses.": [
+        "Ugyldige e-mailadresser."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal længde er ${ maxLength } tegn",
@@ -1778,6 +1860,9 @@
       ],
       "No password manager selected": [
         "Ingen adgangskodeadministrator valgt"
+      ],
+      "No results": [
+        "Ingen resultater"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"

@@ -4018,9 +4018,6 @@
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
       ],
-      "You have no invoices.": [
-        "您沒有任何帳單。"
-      ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
@@ -6149,9 +6146,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "千萬別忘記此密碼。否則，您將無法登入或解密您的郵件。"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
       ],
@@ -7675,9 +7669,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急復原代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "您的組織中所有電郵均使用組織金鑰作端對端加密受到保護。此指紋可用來驗證您的帳號中所有系統管理員均擁有相同的金鑰。"
@@ -9650,23 +9641,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9700,6 +9674,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -10148,9 +10139,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
@@ -12237,26 +12225,8 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的${ storage }已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "您的${ storage }已${ percentage }滿%。要上載或同步檔案，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "您的${ storage }已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "您的${ storage }已滿。要上載或同步檔案，釋放空間或${ upgrade }。"
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的儲存已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
       "Your storage is full": [
         "您的儲存空間已滿"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"
@@ -13567,9 +13537,6 @@
       ],
       "Set organization name": [
         "設定組織名稱"
-      ],
-      "Set organization password": [
-        "設定組織密碼"
       ],
       "Set up a recovery method": [
         "設定復原方法"

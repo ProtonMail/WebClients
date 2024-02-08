@@ -439,6 +439,9 @@
         "У цяперашні час немагчыма адправіць запрашэнні",
         "У цяперашні час немагчыма адправіць запрашэнні"
       ],
+      "Cannot send invitations at the moment": [
+        "У цяперашні час немагчыма адправіць запрашэнні"
+      ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
       ],
@@ -837,8 +840,11 @@
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Згенерыраваныя паролі будуць захоўвацца на працягу аднаго дня."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Атрымайце максімум пераваг ад Pass, стварыўшы сховішча для кожнай каманды або праекта."
@@ -972,8 +978,11 @@
       "Pass Plus trial": [
         "Пробны перыяд Pass Plus"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Паролі старэйшыя за 1 дзень аўтаматычна выдаляюцца з гісторыі."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
       ],
       "Permanently deleting selected items": [
         "Незваротнае выдаленне выбраных элементаў"
@@ -1918,6 +1927,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
+      ],
+      "Please contact us for investigating the issue": [
+        "Звяжыцеся з намі для вырашэння праблемы"
       ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
