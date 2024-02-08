@@ -41,7 +41,6 @@ export interface ResetCacheResult {
     token?: string;
     resetResponse?: ValidateResetTokenResponse;
     mnemonicData?: MnemonicData;
-    hasTrustedDeviceRecovery: boolean;
     ktActivation: KeyTransparencyActivation;
     setupVPN: boolean;
     resetSelfAudit: ResetSelfAudit;

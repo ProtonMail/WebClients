@@ -8,14 +8,11 @@ import { ModalProps, Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
-    /**
-     * Remove when TrustedDeviceRecovery feature is removed
-     */
-    trustedDeviceRecovery: boolean | undefined;
+    deviceRecoveryEnabled: boolean | undefined;
     onVoid: () => Promise<void>;
 }
 
-const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onVoid, onClose, ...rest }: Props) => {
+const VoidRecoveryFilesModal = ({ deviceRecoveryEnabled, onVoid, onClose, ...rest }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -42,7 +39,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onVoid, onClose, ...res
             ]}
         >
             <p className="m-0">
-                {trustedDeviceRecovery
+                {deviceRecoveryEnabled
                     ? c('Info')
                           .t`You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.`
                     : c('Info').t`You won’t be able to recover locked data using your downloaded recovery files.`}

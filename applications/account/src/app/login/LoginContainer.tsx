@@ -104,7 +104,6 @@ const LoginContainer = ({
 
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const ktActivation = useKTActivation();
 
     const normalApi = useApi();
@@ -231,7 +230,6 @@ const LoginContainer = ({
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember}
-                                    hasTrustedDeviceRecovery={hasTrustedDeviceRecovery}
                                     authType={authType}
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);
@@ -241,7 +239,6 @@ const LoginContainer = ({
                                             const validateFlow = createFlow();
                                             const result = await handleNextLogin({
                                                 api: silentApi,
-                                                hasTrustedDeviceRecovery,
                                                 appName: APP_NAME,
                                                 toApp,
                                                 ignoreUnlock: false,

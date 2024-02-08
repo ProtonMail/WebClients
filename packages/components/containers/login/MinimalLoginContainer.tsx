@@ -345,7 +345,6 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                                 password,
                                 api: silentApi,
                                 ignoreUnlock,
-                                hasTrustedDeviceRecovery: false,
                                 persistent: false,
                                 setupVPN: false,
                                 ktActivation: KeyTransparencyActivation.DISABLED,
