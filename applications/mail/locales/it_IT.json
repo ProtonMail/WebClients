@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Cancella tutta la formattazione"
       ],
+      "Clear application data": [
+        "Cancella i dati dell'applicazione"
+      ],
       "Clear browser data": [
         "Cancella i dati del browser"
       ],
@@ -907,6 +910,9 @@
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
+      ],
+      "Select country": [
+        "Seleziona il paese"
       ],
       "Select date and time": [
         "Seleziona la data e l'ora"
@@ -5212,6 +5218,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
+      "Clear app data": [
+        "Cancella i dati dell'app"
+      ],
       "Clear data": [
         "Cancella dati"
       ],
@@ -5756,6 +5765,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Rimuove tutti i dati associati con questa app, inclusi i messaggi scaricati"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Segnalare un messaggio come tentativo di phishing invierà il messaggio a noi, così che potremo analizzarlo e migliorare i nostri filtri. Questo significa che potremo vedere tutti i contenuti del messaggio."
       ],
@@ -6035,6 +6047,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Questa chiave pubblica sarà automaticamente usata per crittografare l'email inviata a questo indirizzo."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Questo rimuove tutti i dati associati con questa app, inclusi i messaggi scaricati. L'app verrà riavviata e dovrai effettuare nuovamente l'accesso per utilizzare l'app."
       ],
       "This sender's public key has not been trusted yet.": [
         "La chiave pubblica di questo mittente non è ancora stata considerata attendibile."
@@ -6461,6 +6476,9 @@
       "Expand / contract composer": [
         "Espandi / comprimi il compositore"
       ],
+      "Filter": [
+        "Filtra"
+      ],
       "Forward": [
         "Inoltra"
       ],
@@ -6818,6 +6836,9 @@
       ],
       "Frequency": [
         "Frequenza"
+      ],
+      "From": [
+        "Da"
       ],
       "From:": [
         "Da:"
@@ -7890,6 +7911,14 @@
         "Tu"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Paese di fatturazione"
+      ],
+      "Tax Country": [
+        "Paese di tassazione"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Impossibile usare la chiave per la crittografia"
@@ -8847,8 +8876,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Per continuare a caricare e sincronizzare i file, libera spazio o effettua l'upgrade per ottenere più spazio di archiviazione."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per inviare e ricevere le email, libera spazio o ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Per inviare e ricevere le email, libera spazio o effettua l'upgrade per più spazio di archiviazione."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Per caricare o sincronizzare i file, libera spazio o ${ upgrade }"
       ],
       "upgrade for more storage": [
         "effettua l'upgrade per ottenere più spazio di archiviazione"
@@ -8859,26 +8894,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } pieno"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } pieno al ${ percentage }%. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } pieno al ${ percentage }%. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } pieno al ${ percentage }%. Per caricare o sincronizzare i file, libera spazio o ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } pieno. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } pieno. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } pieno. Per caricare o sincronizzare i file, libera spazio o ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spazio di archiviazione pieno al ${ percentage }%. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Spazio di archiviazione pieno al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Spazio di archiviazione pieno"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spazio di archiviazione pieno. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Spazio di archiviazione pieno. ${ cta }."
       ]
     },
     "Success": {

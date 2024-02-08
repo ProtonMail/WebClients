@@ -520,6 +520,9 @@
       "Import from Outlook": [
         "Importovat z Outlooku"
       ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozici je důležitá aktualizace. Chcete-li aplikaci nadále používat, aktualizujte ji na nejnovější verzi. ${ downloadUpdate }"
+      ],
       "In the morning": [
         "Ráno"
       ],
@@ -874,6 +877,9 @@
       "Save": [
         "Uložit"
       ],
+      "Save and copy alias": [
+        "Uložit a kopírovat alias"
+      ],
       "Saving${ ellipsis }": [
         "Ukládání${ ellipsis }"
       ],
@@ -1050,6 +1056,9 @@
       ],
       "Toggle Contact app": [
         "Zobrazení aplikace kontaktů"
+      ],
+      "Toggle security center app": [
+        "Přepínání aplikace centra zabezpečení"
       ],
       "Toggle settings": [
         "Otevřít/zavřít nastavení"
@@ -4620,6 +4629,9 @@
       ],
       "Search": [
         "Hledat"
+      ],
+      "Security Center": [
+        "Bezpečnostní centrum"
       ]
     },
     "Hint": {
@@ -6859,6 +6871,9 @@
       "Add image URL": [
         "Přidat odkaz obrázku"
       ],
+      "Add title": [
+        "Přidat titulek"
+      ],
       "Add to group": [
         "Přidat do skupiny"
       ],
@@ -7296,6 +7311,9 @@
       ],
       "Wonderful": [
         "Úžasné"
+      ],
+      "Your alias": [
+        "Tvůj alias"
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
@@ -8143,6 +8161,9 @@
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
       ],
+      "This key is used to encrypt messages to this contact": [
+        "Tento klíč se používá k šifrování zpráv tomuto kontaktu."
+      ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
       ]
@@ -8408,14 +8429,43 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Všechny aliasy"
+      ],
+      "Create alias": [
+        "Vytvořit alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "například Amazon, eBay"
+      ],
+      "Get an alias": [
+        "Získat alias"
+      ],
       "Hide-my-email aliases": [
         "Aliasů hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "ide-my-email alias vám umožní přihlásit se k online službám, aniž byste museli sdílet svou e-mailovou adresu. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nový alias"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Otevřít ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Vaše digitální identita je chráněna"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Vyzkoušejte ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+        "Když budete požádáni o zadání e-mailové adresy, zadejte místo ní tento alias. Přidejte jméno a poznámku, abyste měli přehled o tom, kde ji používáte."
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Zobrazit logy"
       ]
     },
     "Select files": {
@@ -9096,26 +9146,8 @@
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání emailů uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je z ${ percentage }% zaplněno. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Vaše ${ storage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše úložiště je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání e-mailů, uvolněte místo nebo ${ upgrade }."
-      ],
       "Your storage is full": [
         "Vaše úložiště je plné"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ upgrade }."
       ]
     },
     "Success": {
@@ -9259,6 +9291,9 @@
       ],
       "Alias copied to clipboard": [
         "Alias byl zkopírován do schránky"
+      ],
+      "Alias saved and copied": [
+        "Alias bylvytvořen a zkopírován"
       ],
       "Bug reported": [
         "Chyba nahlášena"

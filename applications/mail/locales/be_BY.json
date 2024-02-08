@@ -169,6 +169,9 @@
       "Clear all formatting": [
         "Ачысціць усё фарматаванне"
       ],
+      "Clear application data": [
+        "Ачысціць даныя праграмы"
+      ],
       "Clear browser data": [
         "Ачысціць даныя браўзера"
       ],
@@ -915,6 +918,9 @@
       ],
       "Select all messages": [
         "Выбраць усе паведамленні"
+      ],
+      "Select country": [
+        "Выберыце краіну"
       ],
       "Select date and time": [
         "Выберыце дату і час"
@@ -3134,7 +3140,7 @@
         "Разблакіруйце неабмежаваную колькасць папак, метак і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Палепшыць свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }. Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту са спецыялізаванай падтрымкай 24/7."
+        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з экспертнаю падтрымкаю 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -3155,7 +3161,7 @@
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
       ],
       "Your account and data recovery methods are set.": [
-        "Спосаб аднаўлення вашага ўліковага запісу зададзены."
+        "Спосабы аднаўлення вашага ўліковага запісу зададзены."
       ]
     },
     "description": {
@@ -4511,7 +4517,7 @@
         "Даведайцеся, як наш ${ strongText } вас абараняе"
       ],
       "Discover privacy features": [
-        "Даведайцеся пра функцыі прыватнасці"
+        "Пазнаёмцеся з функцыямі прыватнасці"
       ],
       "Double your free storage to 1 GB when you complete the following:": [
         "Падвойце бясплатнае сховішча да 1 ГБ, выканаўшы наступныя дзеянні:"
@@ -5398,6 +5404,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Праверка кантакту ${ progress } з ${ max }..."
       ],
+      "Clear app data": [
+        "Ачыстка даных праграмы"
+      ],
       "Clear data": [
         "Ачысціць даныя"
       ],
@@ -5962,6 +5971,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Выдаленне ўсіх даны асацыяваных з гэтай праграмай, уключаючы спампаваныя паведамленні"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Адпраўляючы скаргу пра спробу фішынгу, вы адправіце гэта паведамленне нам, каб мы маглі прааналізаваць яго і палепшыць нашы фільтры. Гэта азначае, што мы зможам цалкам убачыць змесціва гэтага паведамлення."
       ],
@@ -6249,6 +6261,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Гэта прывядзе да выдалення ўсіх даных праграмы, якія звязаны з гэтай праграмай, уключаючы спампаваныя паведамленні. Праграма перазапусціцца і вам неабходна будзе ўвайсці ў яе яшчэ раз."
       ],
       "This sender's public key has not been trusted yet.": [
         "Публічны ключ адпраўніка яшчэ не быў давераным."
@@ -6708,6 +6723,9 @@
       "Expand / contract composer": [
         "Разгарнуць / сціснуць рэдактар"
       ],
+      "Filter": [
+        "Фільтр"
+      ],
       "Forward": [
         "Пераслаць"
       ],
@@ -7065,6 +7083,9 @@
       ],
       "Frequency": [
         "Перыядычнасць"
+      ],
+      "From": [
+        "Ад"
       ],
       "From:": [
         "Ад:"
@@ -8161,6 +8182,14 @@
         "Вы"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Краіна выстаўлення рахунка"
+      ],
+      "Tax Country": [
+        "Падаткаабкладанне краіны"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можа быць выкарыстаны для шыфравання"
@@ -8475,7 +8504,7 @@
         "Адкрыць ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Абарона вашага сеткавага пасведчання"
+        "Абараніце вашу сеткавую ідэнтычнасць"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
@@ -9172,8 +9201,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей запампоўваць і сінхранізаваць файлы, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Вызваліце месца або ${ upgrade }, адпраўляць і атрымліваць лісты"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Калі вы хочаце і далей адпраўляць і прымаць лісты, вызваліце месца або перайдзіце на тарыфны план больш высокага ўзроўню, каб атрымаць больш сховішча."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
       ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
@@ -9184,26 +9219,20 @@
       "Your ${ appStorage } is full": [
         "Ваша ${ appStorage } запоўнена"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваша ${ storage } запоўнена. ${ cta }"
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Ваша ${ storage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша сховішча запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваша сховішча запоўнена на ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Ваша сховішча запоўнена"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Ваша сховішча запоўнена. ${ cta }"
       ]
     },
     "Success": {
@@ -10063,7 +10092,7 @@
         "Перамяшчэнне адкладзенага паведамлення"
       ],
       "Need more aliases?": [
-        "Неабходна больш псеўданімаў?"
+        "Патрабуецца больш псеўданімаў?"
       ],
       "New message": [
         "Новае паведамленне"
