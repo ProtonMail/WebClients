@@ -10,6 +10,7 @@ import {
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
@@ -160,6 +161,7 @@ const MailQuickSettings = () => {
     return (
         <DrawerAppScrollContainer>
             <DrawerAllSettingsView />
+            <DrawerDownloadApps />
 
             <DrawerAppSection>
                 <QuickSettingsSectionRow
