@@ -1,11 +1,10 @@
+import { encryptData, generateKey, getSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
+import { validateItemContentSize } from '@proton/pass/lib/crypto/utils/validators';
 import type { ItemCreateRequest, VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
+import { ContentFormatVersion, PassEncryptionTag } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-
-import { encryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
-import { PassCryptoItemError } from '../../utils/errors';
-import { validateItemContentSize } from '../../utils/validators';
 
 type CreateItemProcessParams = {
     content: Uint8Array;
@@ -24,7 +23,7 @@ export const createItem = async ({ content, vaultKey }: CreateItemProcessParams)
 
     return {
         Content: pipe(uint8ArrayToBase64String, validateItemContentSize)(encryptedItemContent),
-        ContentFormatVersion: CONTENT_FORMAT_VERSION,
+        ContentFormatVersion: ContentFormatVersion.Item,
         ItemKey: uint8ArrayToBase64String(encryptedItemKey),
         KeyRotation: vaultKey.rotation,
     };

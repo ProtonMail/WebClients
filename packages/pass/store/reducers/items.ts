@@ -53,7 +53,7 @@ import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { IndexedByShareIdAndItemId, ItemType } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
+import { ContentFormatVersion, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn, or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -131,7 +131,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         pinned: false,
                         revisionTime: createTime,
                         lastUseTime: null,
-                        contentFormatVersion: CONTENT_FORMAT_VERSION,
+                        contentFormatVersion: ContentFormatVersion.Item,
                     },
                 },
             });
