@@ -262,6 +262,9 @@
       "Download apps": [
         "Stiahnuť aplikácie"
       ],
+      "Download logs": [
+        "Záznamy sťahovania"
+      ],
       "Drive Locked": [
         "Disk uzamknutý"
       ],
@@ -3399,6 +3402,18 @@
         "${ groupCounts } nájdených skupín",
         "${ groupCounts } nájdených skupín"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } šifrovaný súbor",
+        "${ nbFile } šifrované súbory",
+        "${ nbFile } šifrovaných súborov",
+        "${ nbFile } šifrovaných súborov"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } šifrovaný súbor...",
+        "${ nbFile } šifrované súbory...",
+        "${ nbFile } šifrovaných súborov...",
+        "${ nbFile } šifrovaných súborov..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pozastavené",
         "${ pausedCount } pozastavené",
@@ -3497,6 +3512,9 @@
         "Všetky (${ totalFoldersCount } štítky)",
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
+      ],
+      "All encrypted files": [
+        "Všetky šifrované súbory"
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
@@ -3696,11 +3714,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Sťahovanie pozastavené kvôli problému s pripojením; obnoví sa automaticky"
       ],
+      "Download ready": [
+        "Sťahovanie pripravené"
+      ],
       "Downloaded": [
         "Stiahnuté"
       ],
       "Downloading": [
         "Sťahovanie"
+      ],
+      "Downloading all encrypted files": [
+        "Sťahovanie všetkých šifrovaných súborov"
       ],
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
@@ -3863,6 +3887,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Založte si medzitým svoj vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexovanie ${ esProgress } z ${ totalProgressToShow } položiek"
@@ -4155,6 +4182,18 @@
       "Search Enabled": [
         "Vyhľadávanie povolené"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } súbor bezpečne stiahnutý",
+        "${ nbFile } súbory bezpečne stiahnuté",
+        "${ nbFile } súborov bezpečne stiahnutých",
+        "${ nbFile } súborov bezpečne stiahnutých"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Všetky šifrované súbory boli bezpečne stiahnuté"
+      ],
+      "Securely downloaded all files": [
+        "Všetky súbory boli bezpečne stiahnuté"
+      ],
       "Select a folder to move to.": [
         "Vyberte priečinok na presun."
       ],
@@ -4196,6 +4235,9 @@
       ],
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Založte si vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Podpis nemožno overiť kvôli chybe siete, skúste znovu neskôr, prosím."
@@ -4262,6 +4304,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento súbor mohol byť vymazaný, presunutý alebo zneprístupnený. Skúste kontaktovať vlastníka súboru."
+      ],
+      "This item already exists in your library": [
+        "Táto položka už vo vašej knižnici existuje"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
@@ -4511,6 +4556,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
+      ],
+      "Your download is in progress": [
+        "Sťahovanie prebieha"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."

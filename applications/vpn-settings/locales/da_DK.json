@@ -2138,9 +2138,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
       ],
-      "You have no invoices.": [
-        "Du har ingen fakturaer."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har brugt alle adresser i dit abonnement. Opgradér abonnementet for at tilføje en ny adresse."
       ],
@@ -3041,9 +3038,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Du må IKKE glemme denne adgangskode. Hvis du glemmer den, kan du ikke logge ind eller dekryptere dine beskeder."
       ],
       "Domain ownership failed verification.": [
         "Verifikation af domæneejerskab mislykkedes."
@@ -3991,9 +3985,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din næste faktureringsdato er ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Dit organisationsadgangskode kan deles med andre brugere, som du ønsker at give administrative privilegier. Det er også en nød-gendannelseskode til at få adgang til din organisation, såfremt du mister adgangen til din konto. Gem og opbevar denne adgangskode sikkert."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
@@ -5252,9 +5243,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din prøveperiode slutter ${ formattedPeriodEndDate }"
@@ -6524,26 +6512,8 @@
       "Your ${ appStorage } is full": [
         "Dit ${ appStorage } er fuldt"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Din ${ storage } er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Din ${ storage } er ${ percentage } % fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Din ${ storage } er fuld. Hvis du vil sende eller modtage e-mails, skal du frigøre plads eller ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Din ${ storage } er fuld. For at uploade eller synkronisere filer skal du frigøre plads eller ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Din lagerplads er ${ percentage } % fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
-      ],
       "Your storage is full": [
         "Dit lager er fuldt"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Din lagerplads er fuld. For at sende eller modtage e-mails skal du frigøre plads eller ${ upgrade }."
       ]
     },
     "Subscription": {
@@ -7338,9 +7308,6 @@
       ],
       "Set organization name": [
         "Angiv organisationsnavn"
-      ],
-      "Set organization password": [
-        "Angiv organisationsadgangskode"
       ],
       "Set up two-factor authentication": [
         "Opsæt to-faktor-godkendelse"

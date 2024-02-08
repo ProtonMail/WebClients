@@ -3604,9 +3604,6 @@
       "You already added this holidays calendar": [
         "Már hozzáadta ezt a munkaszüneti naptárat"
       ],
-      "You have no invoices.": [
-        "Nincs számlája."
-      ],
       "You have reached the contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
       ],
@@ -5467,9 +5464,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem fog tudni sem bejelentkezni, sem pedig az üzeneteit visszafejteni."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Biztos, hogy az aktuálisat leszámítva, minden munkafolyamatot visszavon?"
       ],
@@ -6828,9 +6822,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A szervezeti jelszó más felhasználókkal való megosztásával, számukra is adminisztrátori jogköröket biztosíthat. Ez egy vészhelyzeti helyreállító kódként is használható, abban az esetben is elérje a szervezetét, ha saját a fiókja elérését elvesztené. Tárolja ezt a jelszót biztonságban."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Szervezete e-mailjei végpontok közti titkosítása a szervezeti kulccsal történik. Ezzel az ujjlenyomattal ellenőrizhető, hogy a fiókhoz tartozó összes adminisztrátor birtokolja ugyanazt a kulcsot."
@@ -8722,20 +8713,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
@@ -8769,6 +8746,20 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -9148,9 +9139,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Próbaideje véget ér: ${ formattedPeriodEndDate }"
@@ -11944,9 +11932,6 @@
       ],
       "Set organization name": [
         "Szervezet nevének beállítása"
-      ],
-      "Set organization password": [
-        "Szervezeti jelszó beállítása"
       ],
       "Set up a recovery method": [
         "Helyreállítási módszer hozzáadása"
