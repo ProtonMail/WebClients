@@ -5,6 +5,8 @@ import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { clientErrored } from '@proton/pass/lib/client';
@@ -14,6 +16,7 @@ import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const Lobby: FC = () => {
+    const { openSettings } = usePassCore();
     const { state, logout } = usePopupContext();
     const errored = clientErrored(state.status);
 
@@ -43,6 +46,21 @@ export const Lobby: FC = () => {
                             .t`Something went wrong while starting ${PASS_APP_NAME}. Please try refreshing or reloading the extension`}
                     />
                 )}
+                renderFooter={() =>
+                    errored ? (
+                        <div className="absolute bottom-0 right-0 mb-2 mr-2">
+                            <Button
+                                color="weak"
+                                shape="underline"
+                                size="small"
+                                className="text-sm color-weak"
+                                onClick={() => openSettings?.('logs')}
+                            >
+                                {c('Action').t`View app logs`}
+                            </Button>
+                        </div>
+                    ) : null
+                }
             />
         </LobbyLayout>
     );
