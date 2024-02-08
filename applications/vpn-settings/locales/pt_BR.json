@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Ativar"
+      ],
       "activate": [
         "ativar"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
+      ],
+      "Change keys": [
+        "Mudar chaves"
       ],
       "Change mailbox password": [
         "Alterar senha da caixa de correio"
@@ -2070,10 +2076,10 @@
         "Atualize para um plano de negócios com mais de 1 usuário para gerenciar vários usuários."
       ],
       "Please upload an xml file": [
-        "Por favor, faça upload de um arquivo xml"
+        "Envie um arquivo xml"
       ],
       "Please upload only 1 file": [
-        "Por favor, faça upload de somente um arquivo"
+        "Envie somente um arquivo"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -2140,9 +2146,6 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação errada. Tente novamente ou use outro método de autenticação."
-      ],
-      "You have no invoices.": [
-        "Você não tem faturas."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Você usou todos os endereços do seu plano. Faça o upgrade do seu plano para adicionar um novo endereço."
@@ -3043,13 +3046,10 @@
         "Logotipo do Discover ProtectBuy"
       ],
       "DNS TXT record": [
-        "registro DNS TXT"
+        "Registro DNS TXT"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO esqueça essa senha. Se você a esquecer, você não será capaz de gerenciar sua organização."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NÃO esqueça esta senha. Se você esquecê-la, você não poderá acessar sua conta ou descriptografar suas mensagens."
       ],
       "Domain ownership failed verification.": [
         "Falha na verificação da propriedade do domínio."
@@ -3474,7 +3474,7 @@
         "Revogar certificado ${ name }"
       ],
       "SAML configuration saved": [
-        "configuração do SAML salva"
+        "Configuração do SAML salva"
       ],
       "Save ${ percentage }": [
         "Economize ${ percentage }"
@@ -4010,9 +4010,6 @@
       "Your next billing date is ${ renewalTime }.": [
         "Sua próxima data de cobrança é ${ renewalTime }."
       ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A senha de sua organização pode ser compartilhada com outros usuários aos quais você deseja dar privilégios administrativos. É também um código de recuperação de emergência para obter acesso à sua organização caso você perca o acesso à sua conta. Salve esta senha e a mantenha segura."
-      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
       ],
@@ -4143,6 +4140,9 @@
       ],
       "Addresses": [
         "Endereços"
+      ],
+      "Administrators": [
+        "Administradores"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -5280,9 +5280,6 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
@@ -5737,6 +5734,9 @@
       ],
       "Creating your account": [
         "Criando sua conta"
+      ],
+      "Current plan": [
+        "Plano atual"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Por apenas mais **${ relativePrice } por mês**, você tem acesso ao gerenciador de senhas premium de ${ BRAND_NAME }!"
@@ -6587,26 +6587,8 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Seu ${ storage } está ${ percentage }% cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Seu ${ storage } está ${ percentage }% cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Seu ${ storage } está cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Seu ${ storage } está cheio. Para fazer upload ou sincronizar arquivos, libere espaço ou ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Seu armazenamento está ${ percentage }% cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
-      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Seu armazenamento está cheio. Para enviar ou receber e-mails, libere espaço ou ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Você perderá o acesso ao armazenamento de ${ gb } e ao suporte prioritário."
@@ -7108,6 +7090,9 @@
       "Change role": [
         "Alterar cargo"
       ],
+      "Confirm": [
+        "Confirmar"
+      ],
       "Confirm address": [
         "Confirmar endereço"
       ],
@@ -7416,9 +7401,6 @@
       ],
       "Set organization name": [
         "Definir nome da organização"
-      ],
-      "Set organization password": [
-        "Defina a senha da organização"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticação de dois fatores"
