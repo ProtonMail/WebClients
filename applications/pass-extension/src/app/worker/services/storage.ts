@@ -1,29 +1,12 @@
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/lib/extension/storage';
-import type {
-    GetItems,
-    LocalStoreData,
-    LocalStoreKeys,
-    RemoveItems,
-    SessionStoreData,
-    SessionStoreKeys,
-    SetItems,
-    Storage,
-    StorageInterface,
-    StorageKeys,
-} from '@proton/pass/types';
+import type { ExtensionStorage, LocalStoreData, SessionStoreData } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
 
-export interface ExtensionStorage<T, K extends StorageKeys<T>> extends Storage<T> {
-    getItems: GetItems<T, K[]>;
-    setItems: SetItems<T>;
-    removeItems: RemoveItems<T>;
-}
-
 export const createStorageService = () => {
-    const localStorage = browserLocalStorage as StorageInterface<LocalStoreData>;
-    const sessionStorage = browserSessionStorage as StorageInterface<SessionStoreData>;
+    const localStorage = browserLocalStorage;
+    const sessionStorage = browserSessionStorage;
 
     const state: StorageState = { storageFull: false };
 
@@ -49,7 +32,7 @@ export const createStorageService = () => {
                     throw err;
                 })) as T;
 
-    const local: ExtensionStorage<LocalStoreData, LocalStoreKeys> = {
+    const local: ExtensionStorage<LocalStoreData> = {
         getItem: (key) => localStorage.getItem(key).catch(() => null),
         getItems: (keys) => localStorage.getItems(keys).catch(() => ({})),
         setItem: handleStorageError(localStorage.setItem),
@@ -59,7 +42,7 @@ export const createStorageService = () => {
         clear: () => localStorage.clear().catch(noop),
     };
 
-    const session: ExtensionStorage<SessionStoreData, SessionStoreKeys> = {
+    const session: ExtensionStorage<SessionStoreData> = {
         getItem: (key) =>
             sessionStorage
                 .getItem(key)

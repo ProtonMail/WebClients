@@ -1,35 +1,19 @@
-import { WorkerMessageType } from '@proton/pass/types';
+import { type LogStorageData, createLogStore } from '@proton/pass/lib/logger/store';
+import { type ExtensionStorage, WorkerMessageType } from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
+import { registerLoggerEffect } from '@proton/pass/utils/logger';
 
 import WorkerMessageBroker from '../channel';
 
-const LOG_BUFFER_MAX_LENGTH = 200;
+export const createLoggerService = (storage: ExtensionStorage<LogStorageData>) => {
+    const { push, read } = createLogStore(storage);
 
-export const createLoggerService = () => {
-    const buffer: string[] = [];
+    registerLoggerEffect(push);
 
-    const pushLog = (message: string): boolean => {
-        buffer.unshift(`${new Date().toUTCString()} ${message}`);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_EVENT, withPayloadLens('log', push));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_REQUEST, async () => ({ logs: await read() }));
 
-        if (buffer.length > LOG_BUFFER_MAX_LENGTH) {
-            buffer.pop();
-        }
-
-        return true;
-    };
-
-    WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_EVENT, withPayloadLens('log', pushLog));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.LOG_REQUEST, () => ({ logs: buffer }));
-
-    logger.setLogOptions({
-        onLog: (log, originalLog) => {
-            pushLog(log);
-            return ENV === 'development' && originalLog(log);
-        },
-    });
-
-    return { pushLog };
+    return { push, read };
 };
 
 export type LoggerService = ReturnType<typeof createLoggerService>;
