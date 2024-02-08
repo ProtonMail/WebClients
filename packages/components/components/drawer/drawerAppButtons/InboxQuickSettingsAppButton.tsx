@@ -10,7 +10,9 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { Optional } from '@proton/shared/lib/interfaces';
 
 // Required to avoid showing desktop app spotlight on other apps
-const MailQuickSettingsAppButton = ({ onClick }: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
+const InboxQuickSettingsAppButton = ({
+    onClick,
+}: Optional<Omit<Props, 'tooltipText' | 'buttonContent'>, 'onClick'>) => {
     useDesktopSpotlight();
     const { toggleDrawerApp } = useDrawer();
 
@@ -38,4 +40,4 @@ const MailQuickSettingsAppButton = ({ onClick }: Optional<Omit<Props, 'tooltipTe
     );
 };
 
-export default MailQuickSettingsAppButton;
+export default InboxQuickSettingsAppButton;
