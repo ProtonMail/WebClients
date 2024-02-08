@@ -2141,9 +2141,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ],
-      "You have no invoices.": [
-        "Keine Rechnungen vorhanden."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Alle Adressen in deinem Abonnement werden bereits verwendet. Bitte wechseln dein Abonnement, um eine neue Adresse hinzuzufügen."
       ],
@@ -3047,9 +3044,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Vergiss dieses Passwort NICHT. Wenn du es vergisst, kannst du deine Organisation nicht mehr verwalten."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Vergiss dieses Passwort NICHT. Solltest du es vergessen, kannst du dich weder anmelden noch deine Nachrichten entschlüsseln."
       ],
       "Domain ownership failed verification.": [
         "Die Überprüfung der Domaininhaberschaft schlug fehl."
@@ -4006,9 +4000,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Dein Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn du diesen Administrationsberechtigungen erteilen möchtest. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf deine Organisation zu erhalten, wenn du den Zugriff auf dein Konto verlierst. Bitte speichere dieses Passwort sicher ab."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
@@ -5276,9 +5267,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Deine Testversion endet am ${ formattedPeriodEndDate }"
@@ -6575,26 +6563,8 @@
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Dein ${ storage } ist zu ${ percentage }% voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Dein ${ storage } ist zu ${ percentage }% voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Dein ${ storage } ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Dein ${ storage } ist voll. Um Dateien hochzuladen oder zu synchronisieren, räume etwas Speicherplatz frei oder ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Dein Speicherplatz ist zu ${ percentage }% voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
-      ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Dein Speicherplatz ist voll. Um E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du verlierst den Zugang zu ${ gb } Speicherplatz und vorrangigem Support."
@@ -7404,9 +7374,6 @@
       ],
       "Set organization name": [
         "Name der Organisation festlegen"
-      ],
-      "Set organization password": [
-        "Passwort der Organisation festlegen"
       ],
       "Set up two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung einrichten"
