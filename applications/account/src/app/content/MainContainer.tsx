@@ -40,7 +40,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { getHasPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled, UserModel } from '@proton/shared/lib/interfaces';
 import {
     getIsPublicUserWithoutProtonAddress,
     getIsSSOVPNOnlyAccount,
@@ -167,7 +167,10 @@ const MainContainer = () => {
         addresses,
         organization,
         subscription,
-        isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
+        isReferralProgramEnabled:
+            referralProgramFeature?.feature?.Value &&
+            userSettings.Referral?.Eligible &&
+            user?.ChargebeeUser !== ChargebeeEnabled.CHARGEBEE_FORCED,
         isSmtpTokenEnabled,
         isDataRecoveryAvailable,
         isSessionRecoveryAvailable,
