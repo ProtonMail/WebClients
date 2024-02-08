@@ -779,7 +779,7 @@
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
       "${ count } invites successfully sent": [
-        "${ count } invitaciones enviadas con éxito"
+        "${ count } invitaciones enviadas"
       ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
@@ -941,8 +941,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar su acceso"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Las contraseñas generadas se guardarán durante un día."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
+        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
       ],
       "Generating alias...": [
         "Generando alias..."
@@ -1072,8 +1073,9 @@
       "Password copied": [
         "La contraseña fue copiada."
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Las contraseñas generadas hace más de 1 día se borrarán del historial."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
+        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas se eliminarán automáticamente del historial."
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
