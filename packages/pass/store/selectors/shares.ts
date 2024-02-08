@@ -27,6 +27,7 @@ export const selectAllVaults = createSelector([selectAllShares], (shares) =>
 
 export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
 export const selectOwnVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isOwnVault));
+export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(invert(isOwnVault)));
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
     vaults.filter(and(isWritableVault, isOwnVault))
 );
