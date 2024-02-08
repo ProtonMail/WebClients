@@ -16,7 +16,7 @@ type ModalStateReturnTuple = [
     openModal: (newValue: boolean) => void,
     renderModal: boolean,
 ];
-export interface ModalStateReturnObj {
+interface ModalStateReturnObj {
     modalProps: ModalStateReturnTuple[0];
     openModal: ModalStateReturnTuple[1];
     render: ModalStateReturnTuple[2];

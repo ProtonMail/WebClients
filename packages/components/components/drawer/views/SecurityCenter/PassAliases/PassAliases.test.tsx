@@ -30,7 +30,6 @@ jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
                 create: jest.fn(),
                 getAliasOptions: jest.fn(),
                 getAllByShareId: async () => [],
-                getAliasCount: async () => 0,
             },
             hydrate: async () => undefined,
             ready: async () => true,
@@ -56,7 +55,7 @@ describe('PassAliases', () => {
 
     it('renders the aliases list when there are aliases', async () => {
         jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
-            hasAliasesInVault: true,
+            hasAliases: true,
             hasUsedProtonPassApp: false,
             loading: false,
             passAliasesVaultName: 'Test Vault',
@@ -76,8 +75,6 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
-            totalAliasesCount: 1,
         }));
 
         render(<PassAliases />);
@@ -90,7 +87,7 @@ describe('PassAliases', () => {
 
     it('renders the "No aliases" message when there are no aliases', () => {
         jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
-            hasAliasesInVault: false,
+            hasAliases: false,
             hasUsedProtonPassApp: false,
             loading: false,
             passAliasesVaultName: 'Test Vault',
@@ -98,8 +95,6 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
-            totalAliasesCount: 0,
         }));
 
         render(<PassAliases />);
@@ -116,7 +111,7 @@ describe('PassAliases', () => {
 
     it('opens the create alias modal when the "Get an alias" button is clicked', async () => {
         jest.spyOn(passAliasesProvider, 'usePassAliasesContext').mockImplementation(() => ({
-            hasAliasesInVault: false,
+            hasAliases: false,
             hasUsedProtonPassApp: false,
             loading: false,
             passAliasesVaultName: 'Test Vault',
@@ -124,8 +119,6 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
-            totalAliasesCount: 0,
         }));
 
         render(<PassAliases />);
