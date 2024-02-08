@@ -12,7 +12,7 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     useFormErrors,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
@@ -104,5 +104,5 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Pro
 
 export default CreateFolderModal;
 export const useCreateFolderModal = () => {
-    return useModalTwo<Props | void, void>(CreateFolderModal, false);
+    return useModalTwoStatic(CreateFolderModal);
 };

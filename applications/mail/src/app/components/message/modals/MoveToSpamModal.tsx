@@ -11,9 +11,11 @@ export interface MoveToSpamModalResolveProps {
     unsubscribe: boolean;
     remember: boolean;
 }
-interface Props extends ModalProps {
+export interface MoveToSpamModalProps {
     isMessage: boolean;
     elements: Element[];
+}
+interface Props extends MoveToSpamModalProps, ModalProps {
     onResolve: ({ unsubscribe, remember }: MoveToSpamModalResolveProps) => void;
     onReject: () => void;
 }

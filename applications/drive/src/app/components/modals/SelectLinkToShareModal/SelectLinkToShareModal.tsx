@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useModalTwo } from '@proton/components';
+import { ModalStateProps, ModalTwo, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
 import { DecryptedLink, useTreeForModals } from '../../../store';
@@ -74,5 +74,5 @@ const SelectedFileToShareModal = ({
 
 export default SelectedFileToShareModal;
 export const useFileSharingModal = () => {
-    return useModalTwo<Props, void>(SelectedFileToShareModal, false);
+    return useModalTwoStatic(SelectedFileToShareModal);
 };
