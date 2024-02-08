@@ -246,6 +246,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             step: SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION,
             disablePlanSelection: true,
             metrics: {
+                /**
+                 * The `vpn` in `vpn-um-get-more` is unimportant.
+                 * The intention is to observe the user journey, not the specific plan the journey is for.
+                 * However changing this would require a new metric schema version.
+                 */
                 source: 'vpn-um-get-more',
             },
         });
