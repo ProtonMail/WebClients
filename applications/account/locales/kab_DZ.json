@@ -3346,9 +3346,6 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Yir tangalt n usenqed. Ttxil-k, nɣel tangalt n usenqed akken iwata sakin ɛreḍ tikelt-nniḍen. Ayagi yezmer ad yeṭṭef alamma d 24 n isragen akken ibeddilen ad ddun."
       ],
-      "You have no invoices.": [
-        "Ur tesɛiḍ ara tafaturt."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tesqedceḍ meṛṛa tansiwin yellan deg ujerred-ik. Leqqem ajerred-ik akken ad ternuḍ tansa tamaynut."
       ],
@@ -4991,9 +4988,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ur Sruḥuy ara awal-agi uffir. Ma tesruḥeṭ, ur tettizmireḍ ara ad tkecmed neɣ tzemkeḍ iznan-ik."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Ur Tettu ARA awal-agi uffir. Ma tettuḍ-t, ur tettizmireḍ ara ad tkecmed neɣ ad tzemkeḍ iznan-ik."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Tebɣiḍ ad tekkseḍ akk tiɣimiyin yezrin tagi?"
       ],
@@ -5939,9 +5933,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Awal uffir n tuddsa-ik yezmer ad yettwabḍu d iseqdacen-nniḍen wid tebɣiḍ ad tmuddeḍ tisirag n unedbal. Daɣen, d tangalt ara yeǧǧen tiririt n unekcum ar tuddsa-ik ticki tesruḥeḍ anekcum ar umiḍan. Ma ulac aɣilif, sekles awal-agi uffir udiɣ ḥrez-it deg umḍiq aɣelsan."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Imaylen n tuddsa-k•m ttummestnen s uwgelhen seg yixef ɣer yixef s useqdec n tsarut n tuddsa. Adsil-a umḍin izmer ad yettwaseqdec i usenqed dakken akk inedbalen n umiḍan-ik•im yiwet n tsarut i sɛan."
@@ -7727,23 +7718,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7771,6 +7745,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8030,9 +8021,6 @@
       ]
     },
     "new_plans: Info": {
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "I ukemmel n useqdec n ${ MAIL_APP_NAME }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
-      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
       ]
@@ -10449,9 +10437,6 @@
       ],
       "Set organization name": [
         "Sbadu isem n tuddsa"
-      ],
-      "Set organization password": [
-        "Sbadu awal uffir n tuddsa"
       ],
       "Set up a recovery method": [
         "Sbadu tarrayt n tririt"

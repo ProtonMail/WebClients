@@ -824,6 +824,9 @@
       "Select calendar view": [
         "Seleziona la vista calendario"
       ],
+      "Select country": [
+        "Seleziona il paese"
+      ],
       "Select files": [
         "Seleziona i file"
       ],
@@ -3737,6 +3740,9 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Impossibile caricare le fatture. Riprova più tardi."
+      ],
       "Could not save preference": [
         "Impossibile salvare la preferenza"
       ],
@@ -4128,9 +4134,6 @@
       ],
       "You already added this holidays calendar": [
         "Hai già aggiunto questo calendario dei giorni festivi"
-      ],
-      "You have no invoices.": [
-        "Non hai fatture."
       ],
       "You have reached the contacts limit for your account": [
         "Hai raggiunto il limite di contatti per il tuo account"
@@ -6329,9 +6332,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NON dimenticare questa password. Se la dimentichi, non sarai più in grado di gestire la tua organizzazione."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Non dimenticare questa password. Se la dovessi dimenticare, non potrai più accedere o decrittografare i tuoi messaggi."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vuoi revocare tutte le sessioni diverse da quella attuale?"
       ],
@@ -6627,6 +6627,9 @@
       ],
       "inactive": [
         "non attivo"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
@@ -7803,6 +7806,9 @@
       "You have no calendars to export.": [
         "Non hai calendari da esportare."
       ],
+      "You have no invoices.": [
+        "Non hai fatture."
+      ],
       "You have no saved payment methods.": [
         "Non hai metodi di pagamento salvati."
       ],
@@ -7926,9 +7932,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La password dell'organizzazione può essere condivisa con altri utenti a cui desideri concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La tua organizzazione usa single sign-on (SSO). Clicca su \"Accedi\" per continuare con il tuo fornitore SSO."
@@ -8070,6 +8073,9 @@
       "Credit": [
         "Credito"
       ],
+      "Currency conversion": [
+        "Conversione della valuta"
+      ],
       "Donation": [
         "Donazione"
       ],
@@ -8170,6 +8176,9 @@
       ],
       "Expand / contract composer": [
         "Espandi / comprimi il compositore"
+      ],
+      "Filter": [
+        "Filtra"
       ],
       "Forward": [
         "Inoltra"
@@ -9206,6 +9215,9 @@
       "Username": [
         "Nome utente"
       ],
+      "VAT": [
+        "IVA"
+      ],
       "Verification code": [
         "Codice di verifica"
       ],
@@ -9958,23 +9970,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -10008,6 +10003,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -10479,8 +10491,8 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
       ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ trialPlanName } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "La tua prova termina ${ formattedPeriodEndDate }"
@@ -11354,6 +11366,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Continua con il tuo account ${ BRAND_NAME }"
       ],
+      "Let's talk": [
+        "Parliamo"
+      ],
       "Limited time offer": [
         "Offerta a tempo limitato"
       ],
@@ -11563,6 +11578,14 @@
         "Proteggi il tuo account"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Per le aziende"
+      ],
+      "For invididuals": [
+        "Per gli individui"
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Tutti gli amministratori avranno accesso alla chiave."
@@ -11643,6 +11666,46 @@
       ],
       "New credit/debit card": [
         "Nuova carta di credito/debito"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Paese di fatturazione"
+      ],
+      "Card number": [
+        "Numero della carta"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Tax Country": [
+        "Paese di tassazione"
+      ],
+      "Timeout exceeded": [
+        "Limite di tempo superato"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Numero della carta non valido"
+      ],
+      "Invalid expiration date": [
+        "Data di scadenza non valida"
+      ],
+      "Invalid securiry code": [
+        "Codice di sicurezza non valido"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Si è verificato un errore. Riprova più tardi."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Non riusciamo ad autenticare il tuo metodo di pagamento. Scegli un metodo diverso o riprova."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
       ]
     },
     "Permission": {
@@ -12745,6 +12808,12 @@
       "Get more storage": [
         "Ottieni più spazio di archiviazione"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Per inviare e ricevere le email, libera spazio o ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Per caricare o sincronizzare i file, libera spazio o ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Prova ${ app } al massimo del suo potenziale"
       ],
@@ -12770,26 +12839,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } pieno"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } pieno al ${ percentage }%. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } pieno al ${ percentage }%. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } pieno al ${ percentage }%. Per caricare o sincronizzare i file, libera spazio o ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } pieno. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } pieno. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } pieno. Per caricare o sincronizzare i file, libera spazio o ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spazio di archiviazione pieno al ${ percentage }%. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Spazio di archiviazione pieno al ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Spazio di archiviazione pieno"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spazio di archiviazione pieno. Per inviare e ricevere le email, libera spazio o ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Spazio di archiviazione pieno. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Perderai l'accesso allo spazio di archiviazione di ${ gb } e al supporto prioritario."
@@ -14147,9 +14210,6 @@
       ],
       "Set organization name": [
         "Imposta il nome dell'organizzazione"
-      ],
-      "Set organization password": [
-        "Imposta la password dell'organizzazione"
       ],
       "Set up a recovery method": [
         "Configura un metodo di recupero"
