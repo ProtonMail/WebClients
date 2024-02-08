@@ -288,7 +288,7 @@ describe('parseMultiUserCsv', () => {
             ].join('\n');
             const file = getFile(fileContent);
 
-            const result = await parseMultiUserCsv([file]);
+            const result = await parseMultiUserCsv([file], { includeStorage: true });
             const user = result.users[0];
 
             expect(result.errors.length).toBe(0);
@@ -566,8 +566,8 @@ describe('parseMultiUserCsv', () => {
             });
         });
 
-        describe('totalStorage', () => {
-            it('returns no errors if set to a valid number', async () => {
+        describe('includeStorage', () => {
+            it('defaults includeStorage to false', async () => {
                 const totalStorage = '123';
                 const fileContent = [
                     defaultCsvFields,
@@ -579,48 +579,82 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(123 * GIGA);
-            });
-
-            it('uses default if value is not a valid number', async () => {
-                const totalStorage = 'not a number';
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
                 expect(user.totalStorage).toBe(0);
             });
 
-            it('defaults to 0', async () => {
-                const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
-                const file = getFile(fileContent);
+            describe('when false', () => {
+                it('always returns default total storage of 0', async () => {
+                    const totalStorage = '123';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeStorage: false });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(0);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
             });
 
-            it('allows decimal values', async () => {
-                const totalStorage = 1.5;
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
-                ].join('\n');
-                const file = getFile(fileContent);
+            describe('when true', () => {
+                it('returns no errors if set to a valid number', async () => {
+                    const totalStorage = '123';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(1.5 * GIGA);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(123 * GIGA);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const totalStorage = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
+
+                it('defaults totalStorage to 0', async () => {
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
+
+                it('allows decimal values', async () => {
+                    const totalStorage = 1.5;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(1.5 * GIGA);
+                });
             });
         });
 

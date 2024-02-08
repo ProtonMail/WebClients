@@ -27,7 +27,11 @@ const parseCsv = async <T>(file: File, config: Omit<ParseLocalConfig<T>, 'comple
 
 const toCsv = <T>(data: T[]) => Papa.unparse(data);
 
-const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, { multipleAddresses }: CsvConfig) => {
+const convertCSVUser = (
+    csvUser: ImportedCSVUser,
+    rowNumber: number,
+    { multipleAddresses, includeStorage }: CsvConfig
+) => {
     const { Name, EmailAddresses, Password, TotalStorage, VPNAccess = 0, PrivateSubUser = 0 } = csvUser;
 
     if (!EmailAddresses || typeof EmailAddresses !== 'string') {
@@ -58,7 +62,7 @@ const convertCSVUser = (csvUser: ImportedCSVUser, rowNumber: number, { multipleA
 
     const totalStorage = (() => {
         const totalStorageNumber = +TotalStorage;
-        if (isNaN(totalStorageNumber)) {
+        if (!includeStorage || isNaN(totalStorageNumber)) {
             return 0;
         }
         return totalStorageNumber * GIGA;
