@@ -1,141 +1,211 @@
-import { render } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
 
-import { changeRenewState } from '@proton/shared/lib/api/payments';
+import { getModelState } from '@proton/account/test';
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
+import { organization, vpnServersCount } from '@proton/components/containers/payments/subscription/__mocks__/data';
+import { useVPNServersCount } from '@proton/components/hooks';
+import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
+import { APPS, FREE_SUBSCRIPTION, PLANS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Renew, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
-import {
-    componentWrapper as _componentWrapper,
-    apiMock,
-    hookWrapper,
-    withApi,
-    withConfig,
-    withEventManager,
-    withNotifications,
-} from '@proton/testing';
-import { subscriptionMock } from '@proton/testing/data';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { PLANS_MAP, subscriptionMock } from '@proton/testing/data';
+import { apiMock } from '@proton/testing/lib/api';
 
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 jest.mock('@proton/components/components/portal/Portal');
 
+jest.mock('@proton/components/hooks/useVPNServersCount');
+const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
+mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
+
 const user: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
-const providers = [withConfig(), withApi(), withEventManager(), withNotifications()];
-const wrapper = hookWrapper(...providers);
-const componentWrapper = _componentWrapper(...providers);
+const vpnSubscription: SubscriptionModel = {
+    ...subscriptionMock,
+    Plans: [
+        {
+            ...subscriptionMock.Plans[0],
+            Name: PLANS.VPN,
+        },
+    ],
+};
 
-it('should return modals and cancelSubscription', () => {
-    const { result } = renderHook(
-        () => useCancelSubscriptionFlow({ subscription: subscriptionMock as SubscriptionModel, user }),
-        { wrapper }
-    );
+const mailSubscription: SubscriptionModel = {
+    ...subscriptionMock,
+    Plans: [
+        {
+            ...subscriptionMock.Plans[0],
+            Name: PLANS.MAIL_PRO,
+        },
+    ],
+};
 
-    expect(result.current.cancelSubscription).toBeDefined();
-    expect(result.current.cancelSubscriptionModals).toBeDefined();
+type HookRef = { hook?: ReturnType<typeof useCancelSubscriptionFlow> };
+const Component = ({ hookRef }: { hookRef: HookRef }) => {
+    const result = useCancelSubscriptionFlow({ app: APPS.PROTONMAIL });
+
+    hookRef.hook = result;
+
+    return result.cancelSubscriptionModals;
+};
+
+const setup = ({
+    preloadedState,
+}: {
+    preloadedState: NonNullable<Parameters<typeof renderWithProviders>[1]>['preloadedState'];
+}) => {
+    const hookRef: HookRef = {};
+    const result = renderWithProviders(<Component hookRef={hookRef} />, {
+        preloadedState: preloadedState,
+    });
+    return { hookRef, result };
+};
+
+describe('cancel subscription', () => {
+    it('should return subscription kept if free subscription', async () => {
+        const { hookRef } = setup({
+            preloadedState: {
+                subscription: getModelState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
+                user: getModelState(user),
+                organization: getModelState(organization),
+            },
+        });
+
+        await expect(hookRef.hook?.cancelSubscription()).resolves.toEqual({
+            status: 'kept',
+        });
+    });
+
+    it('should return subscription kept if user closes the modal', async () => {
+        const {
+            hookRef,
+            result: { getByTestId },
+        } = setup({
+            preloadedState: {
+                subscription: getModelState(vpnSubscription),
+                user: getModelState(user),
+                organization: getModelState(organization),
+            },
+        });
+
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        await wait(0);
+
+        await userEvent.click(getByTestId('keepSubscription'));
+
+        await expect(cancelSubscriptionPromise).resolves.toEqual({
+            status: 'kept',
+        });
+    });
+
+    it('should return subscription kept if user closes the feedback modal', async () => {
+        const {
+            hookRef,
+            result: { getByTestId },
+        } = setup({
+            preloadedState: {
+                subscription: getModelState(vpnSubscription),
+                user: getModelState(user),
+                organization: getModelState(organization),
+            },
+        });
+
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        await wait(0);
+
+        await userEvent.click(getByTestId('cancelSubscription'));
+        await wait(0);
+        // Simulate user clicking the element to close the feedback modal
+        await userEvent.click(getByTestId('cancelFeedback'));
+
+        await expect(cancelSubscriptionPromise).resolves.toEqual({
+            status: 'kept',
+        });
+    });
+
+    it('should send the API request for subscription cancellation and return the result', async () => {
+        const {
+            hookRef,
+            result: { getByTestId, container, getByText },
+        } = setup({
+            preloadedState: {
+                subscription: getModelState(vpnSubscription),
+                user: getModelState(user),
+                organization: getModelState(organization),
+            },
+        });
+
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        await wait(0);
+
+        await userEvent.click(getByTestId('cancelSubscription'));
+        await wait(0);
+
+        await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
+        await userEvent.click(getByText('I use a different Proton account'));
+        await userEvent.click(getByTestId('submitFeedback'));
+
+        await wait(0);
+
+        expect(apiMock).toHaveBeenCalledWith(
+            changeRenewState({
+                RenewalState: Renew.Disabled,
+                CancellationFeedback: {
+                    Reason: 'DIFFERENT_ACCOUNT',
+                    Feedback: '',
+                    ReasonDetails: '',
+                    Context: 'mail',
+                },
+            })
+        );
+
+        await expect(cancelSubscriptionPromise).resolves.toEqual({
+            status: 'cancelled',
+        });
+    });
 });
 
-it('should return subscription kept if no subscription', async () => {
-    const { result } = renderHook(() => useCancelSubscriptionFlow({ subscription: undefined as any, user }), {
-        wrapper,
-    });
+describe('downgrade subscription', () => {
+    it('should downgrade a mail subscription', async () => {
+        const {
+            hookRef,
+            result: { getByTestId, container, getByText },
+        } = setup({
+            preloadedState: {
+                subscription: getModelState(mailSubscription),
+                user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.Mail }),
+                organization: getModelState(organization),
+                plans: getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
+            },
+        });
 
-    await expect(result.current.cancelSubscription()).resolves.toEqual({
-        status: 'kept',
-    });
-});
+        const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
+        await wait(0);
+        await userEvent.click(getByTestId('highlight-downgrade-to-free'));
+        await wait(0);
+        await userEvent.type(container.querySelector('#confirm-text')!, organization.Name);
+        await userEvent.click(getByTestId('confirm-member-delete'));
+        await wait(0);
+        await userEvent.click(getByTestId('confirm-downgrade-btn'));
+        await wait(0);
+        await userEvent.click(getByTestId('highlight-downgrade-to-free'));
+        await wait(0);
+        await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
+        await userEvent.click(getByText('I use a different Proton account'));
+        await userEvent.click(getByTestId('submitFeedback'));
 
-it('should return subscription kept if no user', async () => {
-    const { result } = renderHook(
-        () =>
-            useCancelSubscriptionFlow({ subscription: subscriptionMock as SubscriptionModel, user: undefined as any }),
-        { wrapper }
-    );
-
-    await expect(result.current.cancelSubscription()).resolves.toEqual({
-        status: 'kept',
-    });
-});
-
-it('should return subscription kept if user closes the modal', async () => {
-    const { result } = renderHook(
-        () => useCancelSubscriptionFlow({ subscription: subscriptionMock as SubscriptionModel, user }),
-        { wrapper }
-    );
-
-    const cancelSubscriptionPromise = result.current.cancelSubscription();
-
-    const { getByTestId } = render(result.current.cancelSubscriptionModals);
-
-    getByTestId('keepSubscription').click();
-
-    await expect(cancelSubscriptionPromise).resolves.toEqual({
-        status: 'kept',
-    });
-});
-
-it('should return subscription kept if user closes the feedback modal', async () => {
-    const { result } = renderHook(
-        () => useCancelSubscriptionFlow({ subscription: subscriptionMock as SubscriptionModel, user }),
-        { wrapper }
-    );
-
-    const cancelSubscriptionPromise = result.current.cancelSubscription();
-
-    // Render the modal components returned by the hook
-    const { getByTestId, rerender } = render(result.current.cancelSubscriptionModals, {
-        wrapper: componentWrapper as any,
-    });
-    getByTestId('cancelSubscription').click();
-    await wait(0);
-    rerender(result.current.cancelSubscriptionModals);
-
-    // Simulate user clicking the element to close the feedback modal
-    getByTestId('cancelFeedback').click();
-
-    await expect(cancelSubscriptionPromise).resolves.toEqual({
-        status: 'kept',
-    });
-});
-
-it('should send the API request for subscription cancellation and return the result', async () => {
-    const { result } = renderHook(
-        () => useCancelSubscriptionFlow({ subscription: subscriptionMock as SubscriptionModel, user }),
-        { wrapper }
-    );
-
-    const cancelSubscriptionPromise = result.current.cancelSubscription();
-
-    const { getByTestId, rerender, container, getByText } = render(result.current.cancelSubscriptionModals, {
-        wrapper: componentWrapper as any,
-    });
-    getByTestId('cancelSubscription').click();
-    await wait(0);
-    rerender(result.current.cancelSubscriptionModals);
-
-    await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-    await userEvent.click(getByText('I use a different Proton account'));
-    getByTestId('submitFeedback').click();
-
-    await wait(0);
-    rerender(result.current.cancelSubscriptionModals);
-
-    expect(apiMock).toHaveBeenCalledWith(
-        changeRenewState({
-            RenewalState: Renew.Disabled,
-            CancellationFeedback: {
+        expect(apiMock).toHaveBeenCalledWith(
+            deleteSubscription({
                 Reason: 'DIFFERENT_ACCOUNT',
                 Feedback: '',
                 ReasonDetails: '',
                 Context: 'mail',
-            },
-        })
-    );
-
-    await expect(cancelSubscriptionPromise).resolves.toEqual({
-        status: 'cancelled',
+            })
+        );
+        await expect(cancelSubscriptionPromise).resolves.toEqual({ status: 'downgraded' });
     });
 });
