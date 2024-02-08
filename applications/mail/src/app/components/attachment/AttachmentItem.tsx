@@ -116,6 +116,7 @@ const AttachmentItem = ({
                 className={clsx([
                     'message-attachmentList-item flex border flex-nowrap pm_button p-0 rounded',
                     loading && 'message-attachmentList-item--loading',
+                    progressionHappening && 'message-attachmentList-item--uploading',
                 ])}
             >
                 <span className="relative flex flex-1 rounded message-attachmentPrimaryAction interactive-pseudo">
@@ -127,7 +128,7 @@ const AttachmentItem = ({
                         aria-hidden="true"
                     >
                         {progressionHappening ? (
-                            <CircularProgress progress={value} size={5} className="mr-2" />
+                            <CircularProgress progress={value} size={20} className="mr-2" />
                         ) : (
                             <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={5} className="mr-2" />
                         )}
