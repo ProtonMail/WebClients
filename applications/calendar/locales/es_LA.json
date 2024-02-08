@@ -510,6 +510,9 @@
       "Select calendar view": [
         "Seleccionar vista de calendario"
       ],
+      "Select country": [
+        "Seleccionar país"
+      ],
       "Select time zone": [
         "Seleccionar zona horaria"
       ],
@@ -5639,6 +5642,14 @@
         "Expandir lista de participantes"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de facturación"
+      ],
+      "Tax Country": [
+        "País de impuestos"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clave no puede usarse para el cifrado"
@@ -6378,6 +6389,12 @@
       "contact your administrator": [
         "contacte con su administrador"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar o recibir correos, libere espacio o ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para cargar o sincronizar archivos, libere espacio o ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "mejore para obtener más almacenamiento"
       ],
@@ -6387,26 +6404,20 @@
       "Your ${ appStorage } is full": [
         "El ${ appStorage } está lleno."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El ${ storage } está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Su ${ storage } está ${ percentage }% lleno. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "El ${ storage } está un ${ percentage }% lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Su ${ storage } está lleno. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "El ${ storage } está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "El ${ storage } está lleno. Para cargar o sincronizar archivos, libere espacio o ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El almacenamiento está un ${ percentage }% lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Su almacenamiento está ${ percentage }% lleno. ${ cta }."
       ],
       "Your storage is full": [
         "El almacenamiento está lleno."
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "El almacenamiento está lleno. Para enviar o recibir correos, libere espacio o ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Su almacenamiento está lleno. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
