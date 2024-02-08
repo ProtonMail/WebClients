@@ -516,6 +516,9 @@
       "Select calendar view": [
         "Выбраць выгляд календара"
       ],
+      "Select country": [
+        "Выберыце краіну"
+      ],
       "Select time zone": [
         "Выберыце часавы пояс"
       ],
@@ -2251,7 +2254,7 @@
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Палепшыць свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }. Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту са спецыялізаванай падтрымкай 24/7."
+        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з экспертнаю падтрымкаю 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -2266,7 +2269,7 @@
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
       ],
       "Your account and data recovery methods are set.": [
-        "Спосаб аднаўлення вашага ўліковага запісу зададзены."
+        "Спосабы аднаўлення вашага ўліковага запісу зададзены."
       ]
     },
     "description": {
@@ -5856,6 +5859,14 @@
         "Разгарнуць спіс удзельнікаў"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Краіна выстаўлення рахунка"
+      ],
+      "Tax Country": [
+        "Падаткаабкладанне краіны"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можа быць выкарыстаны для шыфравання"
@@ -6076,7 +6087,7 @@
         "Адкрыць ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Абарона вашага сеткавага пасведчання"
+        "Абараніце вашу сеткавую ідэнтычнасць"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
@@ -6637,6 +6648,12 @@
       "contact your administrator": [
         "звязацца з адміністратарам"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Вызваліце месца або ${ upgrade }, адпраўляць і атрымліваць лісты"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
+      ],
       "upgrade for more storage": [
         "палепшыце тарыфны план, каб атрымаць больш сховішча"
       ],
@@ -6646,26 +6663,20 @@
       "Your ${ appStorage } is full": [
         "Ваша ${ appStorage } запоўнена"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ваша ${ storage } запоўнена на ${ percentage }%. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена на ${ percentage }%. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ваша ${ storage } запоўнена. ${ cta }"
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Ваша ${ storage } запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ваша ${ storage } запоўнена. Каб запампоўваць або сінхранізаваць файлы, вызваліце месца або ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша сховішча запоўнена на ${ percentage }%. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ваша сховішча запоўнена на ${ percentage }%. ${ cta }."
       ],
       "Your storage is full": [
         "Ваша сховішча запоўнена"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ваша сховішча запоўнена. Каб адпраўляць або прымаць лісты, вызваліце месца або ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Ваша сховішча запоўнена. ${ cta }"
       ]
     },
     "Subscribe to calendar modal": {
@@ -7188,7 +7199,7 @@
         "Мінікаляндар"
       ],
       "Need more aliases?": [
-        "Неабходна больш псеўданімаў?"
+        "Патрабуецца больш псеўданімаў?"
       ],
       "Night theme": [
         "Начная тэма"
@@ -7240,6 +7251,9 @@
       ],
       "Reshare your calendars": [
         "Паўторнае абагуленне календароў"
+      ],
+      "Save": [
+        "Захаваць"
       ],
       "Save changes": [
         "Захаваць змены"
