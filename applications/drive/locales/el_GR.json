@@ -5181,8 +5181,14 @@
       "Adobe Portable Document Format (PDF)": [
         "Adobe Portable Document Format (PDF)"
       ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook format"
+      ],
       "Android Package": [
         "Πακέτο Android"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animated Portable Network Graphics"
       ],
       "Apple Installer Package": [
         "Πακέτο Apple Installer"
@@ -5193,11 +5199,17 @@
       "Audio file": [
         "Αρχείο ήχου"
       ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 Image File Format (AVIF)"
+      ],
       "AVI video": [
         "Βίντεο AVI"
       ],
       "Binary data": [
         "Binary data"
+      ],
+      "Bourne shell script": [
+        "Bourne shell script"
       ],
       "BZip archive": [
         "Αρχείο BZip"
@@ -5205,14 +5217,23 @@
       "BZip2 archive": [
         "Αρχείο BZip2"
       ],
+      "C-Shell script": [
+        "C-Shell script"
+      ],
       "Cascading Style Sheets (CSS)": [
         "Cascading Style Sheets (CSS)"
       ],
       "Comma-separated values (CSV)": [
         "Comma-separated values (CSV)"
       ],
+      "Electronic publication (EPUB)": [
+        "Ηλεκτρονική έκδοση (EPUB)"
+      ],
       "Flash Video": [
         "Βίντεο Flash"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
       ],
       "GZip Compressed Archive": [
         "Συμπιεσμένο Αρχείο GZip"
@@ -5226,6 +5247,9 @@
       "iCalendar format": [
         "μορφή iCalendar"
       ],
+      "Icon format": [
+        "Μορφή εικονιδίου"
+      ],
       "Image": [
         "Εικόνα"
       ],
@@ -5238,14 +5262,26 @@
       "MP3 audio": [
         "Ήχος MP3"
       ],
+      "MPEG transport stream": [
+        "MPEG transport stream"
+      ],
       "MPEG Video": [
         "Βίντεο MPEG"
+      ],
+      "MS Embedded OpenType fonts": [
+        "MS Embedded OpenType γραμματοσυρές"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "Musical Instrument Digital Interface (MIDI)"
       ],
       "OGG audio": [
         "Ήχος OGG"
       ],
       "OGG video": [
         "Βίντεο OGG"
+      ],
+      "OpenDocument presentation document": [
+        "Έγγραφο παρουσίασης OpenDocument"
       ],
       "OpenDocument spreadsheet document": [
         "Έγγραφο υπολογιστικού φύλλου OpenDocument"
@@ -5259,14 +5295,23 @@
       "Opus audio": [
         "Ήχος Opus"
       ],
+      "Portable Network Graphics": [
+        "Portable Network Graphics"
+      ],
       "RAR archive": [
         "Αρχείο RAR"
       ],
       "Rich Text Format (RTF)": [
         "Rich Text Format (RTF)"
       ],
+      "Scalable Vector Graphics (SVG)": [
+        "Scalable Vector Graphics (SVG)"
+      ],
       "Small web format (SWF)": [
         "Small web format (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "Tagged Image File Format (TIFF)"
       ],
       "Tape Archive (TAR)": [
         "Αρχείο Tape (TAR)"
@@ -5283,6 +5328,12 @@
       "Video file": [
         "Αρχείο βίντεο"
       ],
+      "Waveform Audio Format": [
+        "Waveform Audio Format"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "Web Open Font Format (WOFF)"
+      ],
       "WEBM audio": [
         "Ήχος WEBM"
       ],
@@ -5291,6 +5342,9 @@
       ],
       "WEBP image": [
         "Εικόνα WEBP"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap Graphics"
       ],
       "ZIP archive": [
         "Αρχείο ZIP"
@@ -6392,26 +6446,8 @@
       "Your ${ appStorage } is full": [
         "Ο ${ appStorage } είναι γεμάτος"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ο ${ storage } σας είναι ${ percentage }% πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Ο ${ storage } σας είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ο ${ storage } σας είναι πλήρης. Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
-      ],
       "Your storage is full": [
         "Ο αποθηκευτικός σας χώρος είναι πλήρης"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ο αποθηκευτικός σας χώρος είναι πλήρης. Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }."
       ]
     },
     "Success": {

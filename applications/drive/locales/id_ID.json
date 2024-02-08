@@ -565,6 +565,9 @@
       "Save": [
         "Simpan"
       ],
+      "Save and copy alias": [
+        "Simpan dan salin alias"
+      ],
       "Search": [
         "Pencarian"
       ],
@@ -2112,6 +2115,12 @@
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
       ],
+      "An error occurred while loading alias options": [
+        "Terdapat kesalahan pada saat memuat daftar opsi alias"
+      ],
+      "An error occurred while saving alias": [
+        "Terdapat kesalahan pada saat menyimpan alias"
+      ],
       "Authentication canceled.": [
         "Autentikasi dibatalkan."
       ],
@@ -2189,6 +2198,9 @@
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
+      ],
+      "Forward address is required": [
+        "Alamat penerusan dibutuhkan"
       ],
       "Image upload failed": [
         "Pengunggahan gambar gagal"
@@ -5842,6 +5854,9 @@
       "Create alias": [
         "Buat alias"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "mis. Amazon, eBay, Etsy"
+      ],
       "Get an alias": [
         "Dapatkan alias"
       ],
@@ -5853,6 +5868,9 @@
       ],
       "Open ${ PASS_APP_NAME }": [
         "Buka ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Lindungi identitas online Anda"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
@@ -6303,26 +6321,8 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } Anda ${ percentage }% penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } Anda penuh. Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } Anda penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ruang penyimpanan Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
       "Your storage is full": [
         "Ruang penyimpanan Anda penuh"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ruang penyimpanan Anda penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
       ]
     },
     "Success": {
@@ -6694,6 +6694,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
+      "Get advanced protection": [
+        "Dapatkan perlindungan tingkat lanjut"
+      ],
       "Groups": [
         "Grup"
       ],
@@ -6957,6 +6960,9 @@
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB Anda"
+      ],
+      "Your account is protected": [
+        "Akun Anda terlindung"
       ],
       "Your changes are not synced yet": [
         "Perubahan Anda belum disinkronkan"
