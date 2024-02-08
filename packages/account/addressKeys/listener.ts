@@ -7,19 +7,32 @@ import { addressesThunk, selectAddresses } from '../addresses';
 import { selectUserKeys } from '../userKeys';
 import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selectAddressKeys } from './index';
 
-const keyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | undefined = []) => {
+const addressKeyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | undefined = []) => {
     return (
         a.length === b.length &&
         a.every((value, index) => {
             const otherKey = b[index];
-            if (!otherKey) {
-                return false;
-            }
-            return (
+            if (
+                otherKey &&
+                value.ID === otherKey.ID &&
+                value.Primary === otherKey.Primary &&
+                value.Active === otherKey.Active &&
+                value.Flags === otherKey.Flags &&
+                value.Version === otherKey.Version &&
+                value.Fingerprint === otherKey.Fingerprint &&
+                value.Fingerprints?.length === otherKey.Fingerprints?.length &&
+                value.Activation === otherKey.Activation &&
                 value.PrivateKey === otherKey.PrivateKey &&
                 value.Token === otherKey.Token &&
-                value.Signature === otherKey.Signature
-            );
+                value.Signature === otherKey.Signature &&
+                value.AddressForwardingID === otherKey.AddressForwardingID
+            ) {
+                return (
+                    !value.Fingerprints ||
+                    value.Fingerprints.every((fingerprint, fpIndex) => fingerprint === otherKey.Fingerprints[fpIndex])
+                );
+            }
+            return false;
         })
     );
 };
@@ -41,7 +54,7 @@ const getAddressesWithChangedKeys = (
             return acc;
         }, {});
         return b.filter((address) => {
-            return !keyEqualityComparator(address.Keys, currentAddressesMap[address.ID]?.Keys);
+            return !addressKeyEqualityComparator(address.Keys, currentAddressesMap[address.ID]?.Keys);
         });
     })();
     return result.filter((address) => currentAddressKeys[address.ID]);
