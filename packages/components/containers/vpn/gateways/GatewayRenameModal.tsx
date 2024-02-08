@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import {
     Form,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -15,30 +16,20 @@ import {
 import { GatewayDto } from './GatewayDto';
 import { GatewayNameField } from './GatewayNameField';
 
-interface Props {
+interface Props extends ModalProps<typeof Form> {
     currentName: string;
     showCancelButton?: boolean;
     onSubmitDone: (server: { Name: string }) => Promise<void>;
-    onResolve: () => void;
-    onReject: () => void;
 }
 
-const GatewayRenameModal = ({
-    currentName,
-    showCancelButton = false,
-    onSubmitDone,
-    onReject,
-    onResolve,
-    ...rest
-}: Props) => {
+const GatewayRenameModal = ({ currentName, showCancelButton = false, onSubmitDone, ...rest }: Props) => {
     const { validator, onFormSubmit } = useFormErrors();
     const [model, setModel] = useState({
         name: '',
     } as GatewayDto);
     const [loading, setLoading] = useState(false);
 
-    const changeModel = <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) =>
-        setModel((model: GatewayDto) => ({ ...model, [key]: value }));
+    const changeModel = (diff: Partial<GatewayDto>) => setModel((model: GatewayDto) => ({ ...model, ...diff }));
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
@@ -52,21 +43,21 @@ const GatewayRenameModal = ({
         try {
             setLoading(true);
             await onSubmitDone(dtoBody);
-            onResolve();
+            rest.onClose?.();
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <ModalTwo size="large" {...rest} as={Form} onSubmit={handleSubmit} onClose={onReject}>
+        <ModalTwo size="large" {...rest} as={Form} onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Edit Gateway ${currentName}`} />
             <ModalTwoContent>
                 <GatewayNameField model={model} changeModel={changeModel} validator={validator} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 {showCancelButton ? (
-                    <Button color="weak" onClick={onReject}>
+                    <Button color="weak" onClick={rest.onClose}>
                         {c('Action').t`Cancel`}
                     </Button>
                 ) : (
