@@ -287,12 +287,14 @@ const MainContainer = () => {
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
     }
 
-    if (getIsSSOVPNOnlyAccount(user) && appFromPathname !== APPS.PROTONVPN_SETTINGS) {
-        return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
-    }
-
-    if (getIsPublicUserWithoutProtonAddress(user) && appFromPathname !== APPS.PROTONPASS) {
-        return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
+    if (getIsSSOVPNOnlyAccount(user)) {
+        if (appFromPathname !== APPS.PROTONVPN_SETTINGS) {
+            return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
+        }
+    } else if (getIsPublicUserWithoutProtonAddress(user)) {
+        if (appFromPathname !== APPS.PROTONPASS) {
+            return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
+        }
     }
 
     return (
