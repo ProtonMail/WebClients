@@ -8,7 +8,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { logger } from '@proton/pass/utils/logger';
+import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import createStore from '@proton/shared/lib/helpers/store';
@@ -54,16 +54,13 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
                 },
             });
 
-            logger.setLogOptions({
-                onLog: (log, originalLog) => {
-                    void sendMessage(
-                        resolveMessageFactory(endpoint)({
-                            type: WorkerMessageType.LOG_EVENT,
-                            payload: { log },
-                        })
-                    );
-                    return ENV === 'development' && originalLog(log);
-                },
+            registerLoggerEffect((log) => {
+                void sendMessage(
+                    resolveMessageFactory(endpoint)({
+                        type: WorkerMessageType.LOG_EVENT,
+                        payload: { log },
+                    })
+                );
             });
 
             logger.info('[Context::Extension] tabId resolved & port opened');

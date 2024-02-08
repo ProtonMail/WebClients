@@ -33,9 +33,11 @@ function* onUserEvent(
     const userId = getAuthStore().getUserID()!;
 
     /* dispatch only if there was a change */
-    if (currentEventId !== event.EventID) yield put(userEvent(event));
+    if (currentEventId !== event.EventID) {
+        yield put(userEvent(event));
+        logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
+    }
 
-    logger.debug(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
 
     if (event.UserSettings && telemetry) {
