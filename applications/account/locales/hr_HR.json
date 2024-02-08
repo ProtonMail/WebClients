@@ -2716,9 +2716,6 @@
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Pogrešan kôd za provjeru. Provjerite jeste li ispravno kopirali kôd za provjeru i pokušajte ponovo. Može potrajati do 24 sata kako bi promjene stupile na snagu."
       ],
-      "You have no invoices.": [
-        "Nemate faktura."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Iskoristili ste sve adrese u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novu adresu."
       ],
@@ -4452,9 +4449,6 @@
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
       ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Lozinka vaše organizacije može se dijeliti s drugim korisnicima kojima želite dati administratorske privilegije. To je i kôd za hitnu obnovu kako biste dobili pristup nad vašoj organizaciji u slučaju da izgubite pristup svom računu. Spremite ovu lozinku i čuvajte je na sigurnom."
-      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Adrese e-pošte vaše organizacije zaštićene su end-to-end šifriranjem pomoću ključa organizacije. Ovaj jedinstveni ključ može se upotrijebiti za provjeru imaju li svi administratori na vašem računu isti ključ."
       ],
@@ -5883,14 +5877,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5906,6 +5892,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7851,9 +7845,6 @@
       ],
       "Set organization name": [
         "Postavite naziv organizacije"
-      ],
-      "Set organization password": [
-        "Postavite lozinku za organizaciju"
       ],
       "Set up a recovery method": [
         "Postavite način oporavka"

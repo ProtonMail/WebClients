@@ -4105,9 +4105,6 @@
       "You already added this holidays calendar": [
         "Anda sudah menambahkan kalender liburan ini"
       ],
-      "You have no invoices.": [
-        "Anda tidak memiliki tagihan apa pun."
-      ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
       ],
@@ -6260,9 +6257,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "JANGAN lupakan kata sandi ini. Apabila Anda sampai lupa, Anda tidak akan dapat masuk ke akun Anda atau mendekripsi isi pesan Anda."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
       ],
@@ -7834,9 +7828,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
@@ -9840,23 +9831,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -9890,6 +9864,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -10338,9 +10329,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
@@ -11201,6 +11189,9 @@
       "All premium ${ BRAND_NAME } services.": [
         "Seluruh layanan premium ${ BRAND_NAME }."
       ],
+      "Based in Switzerland, GDPR compliant": [
+        "Berbasis di Swiss dan tunduk terhadap GDPR"
+      ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }** — hanya menambah ${ relativePrice } per bulan."
       ],
@@ -11291,6 +11282,9 @@
       "One easy subscription.": [
         "Dalam satu langganan mudah."
       ],
+      "Open source and audited": [
+        "Open source dan teraudit"
+      ],
       "Open-source and audited": [
         "Open-source dan teraudit"
       ],
@@ -11314,6 +11308,9 @@
       ],
       "Save your recovery kit to continue": [
         "Simpan kit pemulihan Anda untuk melanjutkan"
+      ],
+      "Setting up your organization": [
+        "Menyiapkan organisasi Anda"
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Memasukkan diri Anda ke ${ PASS_APP_NAME }"
@@ -12537,26 +12534,8 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } Anda ${ percentage }% penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } Anda penuh. Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } Anda penuh. Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ruang penyimpanan Anda ${ percentage }% penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
-      ],
       "Your storage is full": [
         "Ruang penyimpanan Anda penuh"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ruang penyimpanan Anda penuh. Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Anda akan kehilangan akses penyimpanan ${ gb } dan dukungan prioritas."
@@ -13885,9 +13864,6 @@
       ],
       "Set organization name": [
         "Atur nama organisasi"
-      ],
-      "Set organization password": [
-        "Atur kata sandi organisasi"
       ],
       "Set up a recovery method": [
         "Siapkan metode pemulihan"
