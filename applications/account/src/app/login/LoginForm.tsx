@@ -64,7 +64,6 @@ interface Props {
     externalSSOToken?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
-    hasTrustedDeviceRecovery: boolean;
     paths: Paths;
     authType: AuthType;
     onChangeAuthType: (authType: AuthType) => void;
@@ -80,7 +79,6 @@ const LoginForm = ({
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
-    hasTrustedDeviceRecovery,
     externalSSO,
     externalSSOToken,
     paths,
@@ -125,16 +123,6 @@ const LoginForm = ({
     }, [loading]);
 
     const { validator, onFormSubmit } = useFormErrors();
-
-    const learnMore = (
-        <Href
-            className="color-inherit inline-block"
-            key="learn-more"
-            href={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
-        >
-            {c('Info').t`Learn more`}
-        </Href>
-    );
 
     const keepMeSignedInLearnMoreLink = (
         <Href
@@ -401,31 +389,14 @@ const LoginForm = ({
                             onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
 
-                        {hasTrustedDeviceRecovery ? (
-                            <div className="flex-1">
-                                <Label htmlFor="staySignedIn" className="flex items-center">
-                                    {c('Label').t`Keep me signed in`}
-                                </Label>
-                                <div className="color-weak">
-                                    {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
-                                </div>
+                        <div className="flex-1">
+                            <Label htmlFor="staySignedIn" className="flex items-center">
+                                {c('Label').t`Keep me signed in`}
+                            </Label>
+                            <div className="color-weak">
+                                {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
                             </div>
-                        ) : (
-                            <div className="flex-1">
-                                <Label htmlFor="staySignedIn" className="flex items-center">
-                                    <span className="pr-2">{c('Label').t`Keep me signed in`}</span>
-                                    <span className="flex">
-                                        <Info
-                                            title={c('Info').t`You'll stay signed in even after you close the browser.`}
-                                        />
-                                    </span>
-                                </Label>
-                                <div className="color-weak">
-                                    {c('Info')
-                                        .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
-                                </div>
-                            </div>
-                        )}
+                        </div>
                     </div>
                 )}
                 <Button
