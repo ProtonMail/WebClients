@@ -2137,9 +2137,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Неправильная фраза для восстановления пароля. Попробуйте снова или используйте другой метод восстановления."
       ],
-      "You have no invoices.": [
-        "У вас нет счетов."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Улучшите ваш тариф прежде, чем добавлять новые адреса."
       ],
@@ -3070,9 +3067,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете управлять настройками своей организациии."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "НЕ забудьте этот пароль. Если вы его забудете, то не сможете авторизоваться или расшифровать свои сообщения."
       ],
       "Domain ownership failed verification.": [
         "Проверка владения доменом не удалась."
@@ -4027,9 +4021,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Your next billing date is ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он также является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к своей учётной записи. Пожалуйста, сохраните данный пароль и храните его в безопасности."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
@@ -5316,9 +5307,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
@@ -7355,9 +7343,6 @@
       ],
       "Set organization name": [
         "Задать название организации"
-      ],
-      "Set organization password": [
-        "Задать пароль организации"
       ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"

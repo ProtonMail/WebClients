@@ -2150,9 +2150,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
       ],
-      "You have no invoices.": [
-        "Du har inga fakturor."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Du har använt alla adresser i ditt paket. Uppgradera ditt paket för att lägga till en ny adress."
       ],
@@ -3051,9 +3048,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Glöm INTE detta lösenord. Om du glömmer det kommer du inte att kunna logga in eller dekryptera dina meddelanden."
       ],
       "Domain ownership failed verification.": [
         "Verifiering av domänens äganderätt misslyckades."
@@ -4007,9 +4001,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Ditt organisationslösenord kan delas med andra användare som du vill ge administrativa privilegier. Det är också en nödåterställningskod för att få åtkomst till din organisation om du förlorar åtkomsten till ditt konto. Spara detta lösenord och förvara det säkert."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -5286,9 +5277,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din provperiod slutar den ${ formattedPeriodEndDate }"
@@ -6700,6 +6688,12 @@
       "For all ${ BRAND_NAME } services": [
         "För alla ${ BRAND_NAME }-tjänster"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
       ],
@@ -6716,26 +6710,20 @@
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ditt ${ storage } är fullt. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Ditt ${ storage } är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt lagringsutrymme är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
       ],
       "Your storage is full": [
         "Ditt lagringsutrymme är fullt"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Ditt lagringsutrymme fullt. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du kommer förlora åtkomst till ${ gb } lagringsutrymme och prioriterad support."
@@ -7551,9 +7539,6 @@
       ],
       "Set organization name": [
         "Ställ in organisationsnamn"
-      ],
-      "Set organization password": [
-        "Ställ in organisationslösenord"
       ],
       "Set up two-factor authentication": [
         "Ställ in tvåfaktorsautentisering"

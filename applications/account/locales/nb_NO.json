@@ -4117,9 +4117,6 @@
       "You already added this holidays calendar": [
         "Du har allerede lagt til denne helligdagskalenderen"
       ],
-      "You have no invoices.": [
-        "Du har ingen fakturaer."
-      ],
       "You have reached the contacts limit for your account": [
         "Du har nådd kontaktgrensen for kontoen din"
       ],
@@ -6314,9 +6311,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ikke glem dette passordet. Hvis du glemmer det vil du ikke være i stand til å håndtere organisasjonen."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "IKKE glem dette passordet. Hvis du glemmer det, vil du ikke kunne logge på eller dekryptere meldingene dine."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Ønsker du å oppheve alle andre økter utenom den gjeldende?"
       ],
@@ -7911,9 +7905,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Din neste faktureringsdato er ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Ditt organisasjonspassord kan deles med andre brukere du ønsker å gi administrative rettigheter. Det er også en kode for å få tilgang til organisasjonen din i tilfelle du mister tilgang til kontoen din. Vennligst lagre dette passordet og oppbevar det trygt."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
@@ -9934,23 +9925,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsett gjennomgangen"
@@ -9984,6 +9958,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -10451,9 +10442,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ MAIL_APP_NAME } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Prøveversjonen utløper ${ formattedPeriodEndDate }"
@@ -12645,26 +12633,8 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Din ${ storage } er ${ percentage }% full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Din ${ storage } er ${ percentage }% full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Din ${ storage } er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Din ${ storage } er full. For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Lagringsplassen din er ${ percentage }% full. For å sende eller motta e-post, frigjør plas eller ${ upgrade }."
-      ],
       "Your storage is full": [
         "Lagringsplassen din er full"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Lagringsplassen din er full. For å sende eller motta e-post, frigjør plass eller ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
@@ -14010,9 +13980,6 @@
       ],
       "Set organization name": [
         "Angi organisasjonsnavn"
-      ],
-      "Set organization password": [
-        "Angi organisasjonspassord"
       ],
       "Set up a recovery method": [
         "Angi en gjenopprettingsmetode"

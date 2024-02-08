@@ -263,6 +263,9 @@
       "Pin item": [
         "Fixar item"
       ],
+      "Recent": [
+        "Recente"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -730,6 +733,9 @@
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Traga suas senhas existentes para ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Autenticador 2FA integrado"
       ],
@@ -787,8 +793,8 @@
       "For security reasons, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "As senhas geradas serão armazenadas por um dia."
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Tire o máximo proveito do Pass criando um cofre para cada equipe ou projeto."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenha aliases ilimitados, aproveite os recursos exclusivos e nos suporte assinando o Pass Plus."
@@ -809,11 +815,17 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obter a melhor experiência com o ${ PASS_APP_NAME }, conceda as permissões de extensão necessárias"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instale ${ PASS_APP_NAME } para ${ browser.title } para um ágil preenchimento automático dos seus logins."
+      ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
       "Invitation sent": [
         "Convite enviado"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Convide pessoas específicas e defina as permissões adequadas."
       ],
       "Invite successfully removed": [
         "Convite removido com sucesso"
@@ -906,9 +918,6 @@
       "Pass Plus trial": [
         "Avaliação do Proton Pass Plus"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "As senhas com mais de 1 dia serão automaticamente excluídas do histórico."
-      ],
       "Permanently deleting selected items": [
         "Excluindo permanentemente itens selecionados"
       ],
@@ -953,6 +962,9 @@
       ],
       "Select destination vault": [
         "Selecione o cofre de destino"
+      ],
+      "Select vault to share": [
+        "Selecione cofre para compartilhar"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecione onde quer salvar seus cofres importados."
@@ -1615,6 +1627,9 @@
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
+      "Create a vault": [
+        "Criar um cofre"
+      ],
       "Create PIN code": [
         "Criar código PIN"
       ],
@@ -1633,6 +1648,9 @@
       "Enter your PIN": [
         "Digite o seu PIN"
       ],
+      "Get Started": [
+        "Começar"
+      ],
       "Grant permissions": [
         "Conceder permissões"
       ],
@@ -1642,6 +1660,12 @@
       "Import to vault(s)": [
         "Importar para cofre(s)"
       ],
+      "Import your data": [
+        "Importe seus dados"
+      ],
+      "Install extension": [
+        "Instalar extensão"
+      ],
       "Leave vault ?": [
         "Deixar cofre ?"
       ],
@@ -1650,6 +1674,9 @@
       ],
       "Member limit": [
         "Limite de membros"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Move all items ?": [
         "Mover todos os itens?"
@@ -1684,6 +1711,9 @@
       "Share with": [
         "Compartilhar com"
       ],
+      "Suggestions": [
+        "Sugestões"
+      ],
       "Transfer ownership": [
         "Transferir a propriedade"
       ],
@@ -1692,6 +1722,9 @@
       ],
       "Update available": [
         "Atualização disponível"
+      ],
+      "Vault": [
+        "Cofre"
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"
@@ -1778,6 +1811,9 @@
       ],
       "No password manager selected": [
         "Nenhum gerenciador de senhas selecionado"
+      ],
+      "No results": [
+        "Sem resultados"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Somente caracteres alfanuméricos, pontos, hifens e sublinhados são permitidos"

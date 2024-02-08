@@ -2076,9 +2076,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperació incorrecta. Torneu-ho a provar o utilitzeu un altre mètode de recuperació."
       ],
-      "You have no invoices.": [
-        "No teniu cap factura."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Heu utilitzat totes les adreces del vostre pla. Milloreu-lo per a afegir adreces."
       ],
@@ -2926,9 +2923,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NO oblideu aquesta contrasenya. Si l'oblideu, no podreu iniciar la sessió ni desxifrar els vostres missatges."
       ],
       "Done": [
         "Fet"
@@ -3787,9 +3781,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La pròxima data de facturació és ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La contrasenya de la seva organització es pot compartir amb altres usuaris als quals voleu atorgar privilegis administratius. També és un codi de recuperació d'emergència per accedir a la seva organització en cas que perdi l'accés al seu compte. Guardeu aquesta contrasenya i mantingui segura."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
@@ -5027,9 +5018,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "El període de prova acaba el ${ formattedPeriodEndDate }."
@@ -7011,9 +6999,6 @@
       ],
       "Set organization name": [
         "Estableix el nom de l’organització"
-      ],
-      "Set organization password": [
-        "Estableix la contrasenya de l'organització"
       ],
       "Set up two-factor authentication": [
         "Configura l'autenticació de dos factors"

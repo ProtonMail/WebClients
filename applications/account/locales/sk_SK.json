@@ -4144,9 +4144,6 @@
       "You already added this holidays calendar": [
         "Tento kalendár sviatkov ste už pridali"
       ],
-      "You have no invoices.": [
-        "Nemáte žiadne faktúry."
-      ],
       "You have reached the contacts limit for your account": [
         "Dosiahli ste limit kontaktov pre svoj účet"
       ],
@@ -6350,6 +6347,9 @@
       "Credits earned": [
         "Získané kredity"
       ],
+      "Current plan": [
+        "Aktuálny plán"
+      ],
       "Custom": [
         "Vlastné"
       ],
@@ -6403,9 +6403,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NEZABUDNITE toto heslo. Ak ho zabudnete, nebudete sa môcť prihlásiť ani dešifrovať svoje správy."
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušiť všetky ostatné relácie okrem tejto?"
@@ -6973,6 +6970,9 @@
       ],
       "per month": [
         "mesačne"
+      ],
+      "per month, billed at ${ price }": [
+        "mesačne, účtované ${ price }"
       ],
       "per month, billed every 12 months": [
         "mesačne, účtované každých 12 mesiacov"
@@ -7993,9 +7993,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Heslo organizácie je možné zdieľať so všetkými používateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do vašej organizácie v prípade, že stratíte prístup k vašemu účtu. Heslo uložte a držte ho v bezpečí."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
@@ -10027,23 +10024,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovať na rekapituláciu"
@@ -10077,6 +10057,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -10576,9 +10573,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Skúšobná verzia končí ${ formattedPeriodEndDate }"
@@ -11379,6 +11373,9 @@
       "Create another account instead": [
         "Vytvoriť namiesto toho ďalší účet"
       ],
+      "Download PDF ${ size }": [
+        "Stiahnuť PDF ${ size }"
+      ],
       "Keep this plan": [
         "Ponechať tento plán"
       ],
@@ -11517,6 +11514,12 @@
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email aliasy chránia váš email pred únikom údajov"
       ],
+      "I understand that if I lose my recovery details, I may permanently lose access to my account.": [
+        "Beriem na vedomie, že ak stratím svoje údaje na obnovenie, môžem natrvalo stratiť prístup k svojmu účtu."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
+        "Ak stratíte prístup k svojmu ${ BRAND_NAME } účtu, vaša **sada na obnovenie** vám umožní prihlásiť sa a obnoviť vaše údaje."
+      ],
       "Includes:": [
         "Obsahuje:"
       ],
@@ -11528,6 +11531,9 @@
       ],
       "Install app and extension": [
         "Inštalovať aplikáciu a rozširenie"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Je to jediný spôsob, ako úplne obnoviť svoj účet, takže ho majte niekde v bezpečí."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Pridajte sa k viac ako 100 miliónom ľudí, ktorí si zvolili ${ BRAND_NAME }, aby zostali v bezpečí online"
@@ -14108,9 +14114,6 @@
       "Set organization name": [
         "Nastaviť názov organizácie"
       ],
-      "Set organization password": [
-        "Nastaviť heslo organizácie"
-      ],
       "Set up a recovery method": [
         "Nastavte metódu obnovenia"
       ],
@@ -14676,6 +14679,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO používateľ poskytnutý poskytovateľom identity"
       ]
     },
     "Validation": {

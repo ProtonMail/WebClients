@@ -501,11 +501,21 @@
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "No se puede enviar la invitación por el momento.",
+        "No se pueden enviar las invitaciones por el momento."
+      ],
+      "Cannot send invitations at the moment": [
+        "No se pueden enviar las invitaciones por el momento."
+      ],
       "Could not confirm this invite at the moment": [
         "No se ha podido confirmar esta invitación por el momento."
       ],
       "Could not leave vault.": [
         "No se ha podido dejar la caja fuerte."
+      ],
+      "Could not load recommendations at the moment.": [
+        "No se han podido cargar las recomendaciones por el momento."
       ],
       "Could not open created vault": [
         "No se ha podido abrir la caja fuerte creada."
@@ -768,6 +778,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } invitaciones enviadas"
+      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
@@ -928,8 +941,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar tu acceso."
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Las contraseñas generadas se guardarán durante un día."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
+        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
       ],
       "Generating alias...": [
         "Generando alias..."
@@ -1059,8 +1073,9 @@
       "Password copied": [
         "La contraseña ha sido copiada."
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Las contraseñas generadas hace más de 1 día se borrarán del historial."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
+        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas se eliminarán automáticamente del historial."
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
@@ -2047,11 +2062,20 @@
       "An error occured while exporting your data": [
         "Se ha producido un error al exportar tus datos."
       ],
+      "At least one email address is required": [
+        "Al menos se requiere una dirección de correo electrónico."
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "No se ha podido crear la caja fuerte \"${ vaultName }\"."
+      ],
+      "Could not send invitations to the following addresses :": [
+        "No se han podido enviar las invitaciones a las siguientes direcciones:"
+      ],
+      "Duplicate email addresses.": [
+        "Direcciones de correo duplicadas"
       ],
       "Empty note": [
         "Nota vacía"
@@ -2061,6 +2085,9 @@
       ],
       "Invalid alias prefix": [
         "Prefijo del alias no válido"
+      ],
+      "Invalid email addresses.": [
+        "Las direcciones de correo no son válidas."
       ],
       "Maximum length is ${ maxLength } character": [
         "El número máximo de caracteres es ${ maxLength }.",
@@ -2095,6 +2122,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
+      ],
+      "Please contact us for investigating the issue": [
+        "Contacta con nosotros para investigar el problema"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifica tu dirección de correo electrónico para poder utilizar alias de correo electrónico."

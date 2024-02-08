@@ -2145,9 +2145,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Zlá obnovovacia fráza. Skúste to znovu, alebo použite inú metódu obnovenia."
       ],
-      "You have no invoices.": [
-        "Nemáte žiadne faktúry."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Limit počtu adries vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať novú adresu."
       ],
@@ -3043,6 +3040,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
       ],
+      "Current plan": [
+        "Aktuálny plán"
+      ],
       "Custom email domains": [
         "Vlastné emailové domény"
       ],
@@ -3072,9 +3072,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NEZABUDNITE toto heslo. Ak ho zabudnete, nebudete sa môcť prihlásiť ani dešifrovať svoje správy."
       ],
       "Domain ownership failed verification.": [
         "Zlyhalo overenie vlastníctva domény."
@@ -3378,6 +3375,9 @@
       ],
       "per month": [
         "mesačne"
+      ],
+      "per month, billed at ${ price }": [
+        "mesačne, účtované ${ price }"
       ],
       "per month, billed every 12 months": [
         "mesačne, účtované každých 12 mesiacov"
@@ -4017,9 +4017,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Heslo organizácie je možné zdieľať so všetkými používateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do vašej organizácie v prípade, že stratíte prístup k vašemu účtu. Heslo uložte a držte ho v bezpečí."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
@@ -5300,9 +5297,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Skúšobná verzia končí ${ formattedPeriodEndDate }"
@@ -7423,9 +7417,6 @@
       "Set organization name": [
         "Nastaviť názov organizácie"
       ],
-      "Set organization password": [
-        "Nastaviť heslo organizácie"
-      ],
       "Set up two-factor authentication": [
         "Nastavenie dvojstupňového overenia"
       ],
@@ -7645,6 +7636,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO používateľ poskytnutý poskytovateľom identity"
       ]
     },
     "Validation": {

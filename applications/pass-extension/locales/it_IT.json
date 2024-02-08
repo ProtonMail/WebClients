@@ -309,7 +309,7 @@
         "Fissa l'elemento"
       ],
       "Recent": [
-        "Recenti"
+        "Recente"
       ],
       "Refresh the page": [
         "Aggiorna la pagina"
@@ -941,8 +941,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Per motivi di sicurezza, il tuo accesso deve essere confermato"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Le password generate saranno conservate per un periodo di un giorno."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane."
       ],
       "Generating alias...": [
         "Generazione dell'alias in corso"
@@ -1072,8 +1073,9 @@
       "Password copied": [
         "Password copiata"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane vengono eliminate automaticamente dalla cronologia."
       ],
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
