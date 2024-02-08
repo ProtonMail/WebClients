@@ -109,6 +109,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             addresses: getModelState([]),
             addressKeys: {},
             contacts: getModelState([]),
+            calendars: getModelState([]),
             categories: getModelState([]),
             contactEmails: getModelState([]),
             userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
