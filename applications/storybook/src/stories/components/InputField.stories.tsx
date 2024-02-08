@@ -40,7 +40,7 @@ export const Basic = () => (
     />
 );
 
-const toggles = ['dense', 'bigger', 'unstyled', 'disabled'] as const;
+const toggles = ['dense', 'bigger', 'unstyled', 'disabled', 'readOnly'] as const;
 
 const adornmentIds = ['none', 'text', 'select', 'icon', 'icons', 'icon button'] as const;
 
@@ -188,12 +188,23 @@ export const Intermediate = () => {
             <div className="mb-4">
                 <InputFieldTwo label="Assistive Text" assistiveText="Your legal surname/s (separated by spaces)" />
             </div>
-            <InputFieldTwo
-                disabled
-                label="Disabled"
-                placeholder={placeholder}
-                assistiveText="Your legal surname/s (separated by spaces)"
-            />
+            <div className="mb-4">
+                <InputFieldTwo
+                    disabled
+                    label="Disabled"
+                    placeholder={placeholder}
+                    assistiveText="Your legal surname/s (separated by spaces)"
+                />
+            </div>
+            <div className="mb-4">
+                <InputFieldTwo
+                    readOnly
+                    label="Readonly field"
+                    value="This is a value"
+                    placeholder={placeholder}
+                    assistiveText="Your legal surname/s (separated by spaces)"
+                />
+            </div>
         </>
     );
 };
