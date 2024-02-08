@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation';
 import { Button } from '@proton/atoms/Button';
-import { PrimaryButton } from '@proton/components/components';
+import { PrimaryButton, useModalTwoStatic } from '@proton/components/components';
 import DrawerView, { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useContactModals } from '@proton/components/containers';
 import { useContactMergeModals } from '@proton/components/containers/contacts/hooks/useContactMergeModals';
 import ContactImportModal from '@proton/components/containers/contacts/import/ContactImportModal';
@@ -43,7 +42,8 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
 
     const [tab, setTab] = useState<SelectedDrawerOption>(options[0]);
 
-    const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
+    const [importModal, onImport] = useModalTwoStatic(ContactImportModal);
+    const onOpenImportModal = () => onImport({});
     const { modals: mergeModals, onMerge } = useContactMergeModals();
 
     const { onFocusSearchInput } = useDrawerContactFocus(searchInputRef, tab);
@@ -87,7 +87,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                         onDetails={handleDetails}
                         onEdit={onEdit}
                         onDelete={onDelete}
-                        onImport={onImport}
+                        onImport={onOpenImportModal}
                         onMerge={onMerge}
                         onGroupDetails={onGroupDetails}
                         onGroupEdit={onGroupEdit}
@@ -102,7 +102,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 return (
                     <ContactsWidgetGroupsContainer
                         onCompose={onCompose}
-                        onImport={onImport}
+                        onImport={onOpenImportModal}
                         customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
                         onDetails={onGroupDetails}
                         onEdit={onGroupEdit}
@@ -112,7 +112,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                     />
                 );
             case CONTACT_TAB.SETTINGS:
-                return <ContactsWidgetSettingsContainer onImport={onImport} onExport={onExport} />;
+                return <ContactsWidgetSettingsContainer onImport={onOpenImportModal} onExport={onExport} />;
         }
     };
 
@@ -125,7 +125,7 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                         key="footer-button-1"
                         onClick={() => onEdit({})}
                     >{c('Action').t`Add contact`}</PrimaryButton>,
-                    <Button key="footer-button-2" onClick={() => onImport()}>{c('Action').t`Import contacts`}</Button>,
+                    <Button key="footer-button-2" onClick={onOpenImportModal}>{c('Action').t`Import contacts`}</Button>,
                 ];
             case CONTACT_TAB.CONTACT_GROUP:
                 return [

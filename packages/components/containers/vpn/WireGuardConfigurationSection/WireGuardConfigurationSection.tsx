@@ -24,8 +24,8 @@ import {
     Summary,
     TextArea,
     Toggle,
+    useModalTwoStatic,
 } from '../../../components';
-import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
 import { getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {
@@ -46,7 +46,7 @@ import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNC
 import { getFlagSvg } from '../flag';
 import { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 import { KeyPair } from './KeyPair';
-import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
+import WireGuardCreationModal from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
 import {
@@ -229,10 +229,7 @@ const WireGuardConfigurationSection = () => {
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
     const [logical, setLogical] = useState<Logical | undefined>();
-    const [creationModal, handleShowCreationModal] = useModalTwo<WireGuardCreationModalProps, void>(
-        WireGuardCreationModal,
-        false
-    );
+    const [creationModal, handleShowCreationModal] = useModalTwoStatic(WireGuardCreationModal);
     const [creating, setCreating] = useState<boolean>(false);
     const [removing, setRemoving] = useState<Record<string, boolean>>({});
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);

@@ -33,7 +33,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
     const contactGroupsMap = useMemo(() => toMap(contactGroups), [contactGroups]);
 
     if (!isLoading && !vCardContact && vCardContact === undefined) {
-        return null;
+        return <>{null}</>;
     }
 
     return (

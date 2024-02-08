@@ -13,7 +13,7 @@ import {
     ModalTwoHeader,
     Row,
     useFormErrors,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -94,5 +94,5 @@ const RenameDeviceModal = ({ device, onClose, ...modalProps }: Props & ModalStat
 
 export default RenameDeviceModal;
 export const useRenameDeviceModal = () => {
-    return useModalTwo<Props, void>(RenameDeviceModal, false);
+    return useModalTwoStatic(RenameDeviceModal);
 };

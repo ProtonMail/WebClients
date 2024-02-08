@@ -5,7 +5,7 @@ export * from './ModalContent';
 export { default as ModalTwoFooter } from './ModalFooter';
 export { default as ModalTwoHeader } from './ModalHeader';
 export { default as useModalState } from './useModalState';
-export { useModalTwo } from './useModalTwo';
+export { useModalTwo, useModalTwoStatic } from './useModalTwo';
 export * from './useModalState';
 
 export { default as BasicModal } from './BasicModal';

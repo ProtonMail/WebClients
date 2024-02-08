@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalTwo, useActiveBreakpoint, useModalTwo } from '@proton/components';
+import { ModalTwo, useActiveBreakpoint, useModalTwoStatic } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
 import { DecryptedLink, useActions, useTreeForModals } from '../../../store';
@@ -30,7 +30,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
     const { viewportWidth } = useActiveBreakpoint();
-    const [createFolderModal, showCreateFolderModal] = useModalTwo(CreateFolderModal);
+    const [createFolderModal, showCreateFolderModal] = useModalTwoStatic(CreateFolderModal);
 
     const moveLinksToFolder = async (parentFolderId: string) => {
         await moveLinks(new AbortController().signal, {
@@ -64,7 +64,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
             return;
         }
 
-        void showCreateFolderModal({
+        showCreateFolderModal({
             folder: { shareId: shareId, linkId: targetLinkId },
             onCreateDone: async (newFolderId: string) => {
                 expand(targetLinkId);
@@ -129,8 +129,8 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
 };
 
 export default MoveToFolderModal;
-export const useMoveToFolderModal = (): [JSX.Element | null, ({ shareId, selectedItems }: Props) => void] => {
-    const [moveToFolderModal, showMoveToFolderModal] = useModalTwo<Props, void>(MoveToFolderModal, false);
+export const useMoveToFolderModal = () => {
+    const [moveToFolderModal, showMoveToFolderModal] = useModalTwoStatic(MoveToFolderModal);
 
     const handleShowMoveToFolderModal = ({ shareId, selectedItems }: Props) => {
         if (!shareId || !selectedItems.length) {
@@ -139,5 +139,5 @@ export const useMoveToFolderModal = (): [JSX.Element | null, ({ shareId, selecte
         void showMoveToFolderModal({ shareId, selectedItems });
     };
 
-    return [moveToFolderModal, handleShowMoveToFolderModal];
+    return [moveToFolderModal, handleShowMoveToFolderModal] as const;
 };

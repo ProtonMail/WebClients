@@ -15,7 +15,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownActions, useModalState, useModalTwo } from '../../components';
+import { DropdownActions, useModalState, useModalTwoStatic } from '../../components';
 import {
     useActiveBreakpoint,
     useAddressFlags,
@@ -56,7 +56,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
     const getAddressKeys = useGetAddressKeys();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [forwardModal, showModal] = useModalTwo(ForwardModal);
+    const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
 
     const handleDeleteForwarding = async () => {
@@ -76,7 +76,7 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
         user.hasPaidMail && {
             text: c('email_forwarding_2023: Action').t`Edit conditions`,
             onClick: () => {
-                void showModal({ forward });
+                showForwardModal({ forward });
             },
         },
         user.hasPaidMail &&

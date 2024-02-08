@@ -3,7 +3,14 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import {
+    Form,
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components/components';
 
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 import { GatewayDto } from './GatewayDto';
@@ -12,7 +19,7 @@ import { getInitialModel } from './helpers';
 import { useAddedQuantities } from './useAddedQuantities';
 import { useSpecificCountryCount } from './useSpecificCountryCount';
 
-interface Props {
+interface Props extends ModalStateProps {
     countries: readonly string[];
     deletedInCountries: Record<string, number>;
     ownedCount: number;
@@ -22,8 +29,6 @@ interface Props {
     singleServer?: boolean;
     showCancelButton?: boolean;
     onSubmitDone: (quantities: Record<string, number>) => void;
-    onResolve: () => void;
-    onReject: () => void;
     onUpsell: () => void;
 }
 
@@ -35,8 +40,6 @@ const GatewayAddServersModal = ({
     users,
     language,
     onSubmitDone,
-    onReject,
-    onResolve,
     onUpsell,
     singleServer = false,
     showCancelButton = false,
@@ -55,16 +58,15 @@ const GatewayAddServersModal = ({
         [totalCountExceeded, specificCountryCount]
     );
 
-    const changeModel = <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) =>
-        setModel((model: GatewayDto) => ({ ...model, [key]: key === 'features' ? Number(value) : value }));
+    const changeModel = (diff: Partial<GatewayDto>) => setModel((model) => ({ ...model, ...diff }));
 
     const handleSubmit = async () => {
         onSubmitDone(model.quantities || {});
-        onResolve();
+        rest.onClose?.();
     };
 
     return (
-        <ModalTwo size="large" as={Form} onSubmit={handleSubmit} onClose={onReject} {...rest}>
+        <ModalTwo size="large" as={Form} onSubmit={handleSubmit} {...rest}>
             <ModalTwoHeader title={c('Title').t`Add servers`} />
             <ModalTwoContent>
                 <GatewayCountrySelection
@@ -77,7 +79,7 @@ const GatewayAddServersModal = ({
                     specificCountryCount={specificCountryCount}
                     language={language}
                     onUpsell={() => {
-                        onReject();
+                        rest.onClose?.();
                         onUpsell();
                     }}
                     model={model}
@@ -86,7 +88,7 @@ const GatewayAddServersModal = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 {showCancelButton ? (
-                    <Button color="weak" onClick={onReject}>
+                    <Button color="weak" onClick={rest.onClose}>
                         {c('Action').t`Cancel`}
                     </Button>
                 ) : (
