@@ -10,7 +10,6 @@ import {
     DrawerSidebar,
     ErrorBoundary,
     PrivateMainArea,
-    QuickSettingsAppButton,
     useCalendarUserSettings,
     useCalendars,
     useFlag,
@@ -76,6 +75,7 @@ import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useOnCompose } from '../ComposeProvider';
+import MailQuickSettingsAppButton from './MailQuickSettingsAppButton';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 
@@ -527,7 +527,7 @@ const MailboxContainer = ({
                     toolbar={toolbar(true)}
                     settingsButton={
                         <SpotlightEmailForwarding>
-                            <QuickSettingsAppButton />
+                            <MailQuickSettingsAppButton />
                         </SpotlightEmailForwarding>
                     }
                 />
