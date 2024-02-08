@@ -2149,9 +2149,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frază de recuperare greșită. Încercați din nou sau utilizați o altă metodă de recuperare."
       ],
-      "You have no invoices.": [
-        "Nu aveți facturi."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Ați folosit toate adresele din plan. Treceți la un plan cu plată superior pentru a adăuga o adresă nouă."
       ],
@@ -3077,9 +3074,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea conecta sau decripta mesajele."
       ],
       "Domain ownership failed verification.": [
         "Verificarea deținerii domeniului a eșuat."
@@ -4050,9 +4044,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Data următoarei facturi este ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
@@ -5346,9 +5337,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Perioada de probare se termină ${ formattedPeriodEndDate }"
@@ -6693,26 +6681,8 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } este ocupat ${ percentage }%. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } este plin. Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spațiul de stocare este ${ percentage }% ocupat. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
-      ],
       "Your storage is full": [
         "Spațiu de stocare plin"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Spațiul de stocare este plin. Pentru a trimite sau primi mesaje, eliberați spațiu sau ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Veți pierde accesul la spațiul de ${ gb } și la asistența prioritară."
@@ -7538,9 +7508,6 @@
       ],
       "Set organization name": [
         "Setare nume organizație"
-      ],
-      "Set organization password": [
-        "Setare parolă organizație"
       ],
       "Set up two-factor authentication": [
         "Setare autentificare cu doi factori"

@@ -1863,9 +1863,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "गलत पुनर्प्राप्ति वाक्यांश। पुन: प्रयास करें या किसी अन्य पुनर्प्राप्ति विधि का उपयोग करें।"
       ],
-      "You have no invoices.": [
-        "आपका कोई चालान नहीं है।"
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "आपने अपनी योजना में सभी पतों का उपयोग किया है। कृपया एक नया पता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
@@ -2552,9 +2549,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "इस पासवर्ड को न भूलें। अगर आप इसे भूल जाते है, तो आप साइन-इन या अपने मैसेज को डिक्रिप्ट नहीं कर पाएंगे।"
-      ],
       "Done": [
         "हो गया"
       ],
@@ -3240,9 +3234,6 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "आपके मौजूदा संदेश, कैलेंडर या संपर्क लॉक कर दिए जाएंगे। इस डेटा को पुनर्प्राप्त करने के लिए, आपको अपने पुनर्प्राप्ति वाक्यांश या अपने ${ oldPassword } की आवश्यकता होगी।"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "आपके संगठन का पासवर्ड अन्य उपयोगकर्ताओं के साथ साझा किया जा सकता है जिन्हें आप प्रशासनिक विशेषाधिकार देना चाहते हैं। यदि आप अपने खाते तक पहुँच खोते हैं तो यह आपके संगठन तक पहुँच प्राप्त करने के लिए एक आपातकालीन पुनर्प्राप्ति कोड भी है। कृपया इस पासवर्ड को सहेजें और इसे सुरक्षित रखें।"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "आपके भुगतान विवरण TLS एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं।"
@@ -4266,9 +4257,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
@@ -5752,9 +5740,6 @@
       ],
       "Set organization name": [
         "संगठन का नाम सेट करें"
-      ],
-      "Set organization password": [
-        "संगठन पासवर्ड सेट करें"
       ],
       "Set up two-factor authentication": [
         "दो-कारक प्रमाणीकरण सेट करें"
