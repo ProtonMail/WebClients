@@ -501,6 +501,9 @@
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dihasilkan (${ error })."
       ],
+      "Cannot send invitations at the moment": [
+        "Undangan tidak dapat dikirim untuk saat ini"
+      ],
       "Could not confirm this invite at the moment": [
         "Undangan ini tidak dapat dikonfirmasi untuk saat ini"
       ],
@@ -923,9 +926,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Kata sandi yang dihasilkan akan disimpan dalam kurun waktu satu hari."
-      ],
       "Generating alias...": [
         "Menghasilkan alias..."
       ],
@@ -1051,9 +1051,6 @@
       ],
       "Password copied": [
         "Kata sandi disalin"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
       ],
       "Pending access to the shared data": [
         "Akses ditunda ke data terbagi"
@@ -2084,6 +2081,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Berkas ekspor yang terenkripsi PGP memerlukan frasa sandi"
+      ],
+      "Please contact us for investigating the issue": [
+        "Silakan hubungi kami untuk menyelidiki masalah"
       ],
       "Please verify your email address in order to use email aliases": [
         "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"

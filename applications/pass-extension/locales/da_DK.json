@@ -308,6 +308,9 @@
       "Pin item": [
         "Fastgør element"
       ],
+      "Recent": [
+        "Seneste"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Fjern adgang"
+      ],
+      "Remove member": [
+        "Fjern medlem"
       ],
       "Request a feature": [
         "Anmod om en funktion"
@@ -495,11 +501,18 @@
       "Cannot create alias (${ error }).": [
         "Kan ikke oprette alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kan ikke sende invitation i øjeblikket",
+        "Kan ikke sende invitationer i øjeblikket"
+      ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekræfte denne invitation i øjeblikket"
       ],
       "Could not leave vault.": [
         "Kunne ikke forlade boks."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Kunne ikke indlæse anbefalinger i øjeblikket."
       ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
@@ -762,6 +775,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } invitationer sendt"
+      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -922,9 +938,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Genererede adgangskoder vil blive gemt i en dag."
-      ],
       "Generating alias...": [
         "Genererer alias..."
       ],
@@ -1052,9 +1065,6 @@
       ],
       "Password copied": [
         "Adgangskode kopieret"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
@@ -1506,6 +1516,15 @@
       "Logins": [
         "Logins"
       ],
+      "Make all admins": [
+        "Gør alle til administratorer"
+      ],
+      "Make all editors": [
+        "Gør alle til redaktører"
+      ],
+      "Make all viewers": [
+        "Gør alle til seere"
+      ],
       "Members": [
         "Medlemmer"
       ],
@@ -1881,6 +1900,9 @@
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
       ],
+      "Get Started": [
+        "Kom i gang"
+      ],
       "Get the mobile apps": [
         "Hent mobil-apps"
       ],
@@ -1907,6 +1929,9 @@
       ],
       "Member limit": [
         "Medlemsgrænse"
+      ],
+      "Members": [
+        "Medlemmer"
       ],
       "Move all items ?": [
         "Flyt alle elementer ?"
@@ -1944,6 +1969,9 @@
       "Share with": [
         "Del med"
       ],
+      "Suggestions": [
+        "Forslag"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Skifter du til ${ PASS_APP_NAME }?"
       ],
@@ -1967,6 +1995,9 @@
       ],
       "Use my email": [
         "Brug min e-mail"
+      ],
+      "Vault": [
+        "Boks"
       ],
       "Vault shared with you": [
         "Boks delt med dig"
@@ -2020,11 +2051,20 @@
       "An error occured while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
       ],
+      "At least one email address is required": [
+        "Mindst én e-mailadresse er påkrævet"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Kunne ikke oprette boksen \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Kunne ikke sende invitationer til følgende adresser :"
+      ],
+      "Duplicate email addresses.": [
+        "Dubletter af e-mailadresser."
       ],
       "Empty note": [
         "Tom note"
@@ -2034,6 +2074,9 @@
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
+      ],
+      "Invalid email addresses.": [
+        "Ugyldige e-mailadresser."
       ],
       "Maximum length is ${ maxLength } character": [
         "Maksimal længde er ${ maxLength } tegn",
@@ -2056,6 +2099,9 @@
       ],
       "No password manager selected": [
         "Ingen adgangskodeadministrator valgt"
+      ],
+      "No results": [
+        "Ingen resultater"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
