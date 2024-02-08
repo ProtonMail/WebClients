@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Rensa all formatering"
       ],
+      "Clear application data": [
+        "Rensa applikationsdata"
+      ],
       "Clear browser data": [
         "Rensa webbläsardata"
       ],
@@ -5205,6 +5208,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
       ],
+      "Clear app data": [
+        "Rensa appdata"
+      ],
       "Clear data": [
         "Rensa data"
       ],
@@ -5749,6 +5755,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Tar bort all data associerad med denna app, inklusive nedladdade meddelanden"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Att rapportera ett meddelande som ett nätfiskeförsök kommer skicka meddelandet till oss så att vi kan analysera det och förbättra våra filter. Detta innebär att vi kommer kunna se innehållet i meddelandet i sin helhet."
       ],
@@ -6028,6 +6037,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Detta tar bort all data associerad med denna app, inklusive nedladdade meddelanden. Appen startas om och du måste logga in igen för att använda appen."
       ],
       "This sender's public key has not been trusted yet.": [
         "Avsändarens publika nyckal har inte blivit betrodd ännu."
@@ -6453,6 +6465,9 @@
       ],
       "Expand / contract composer": [
         "Expandera/dra ihop skrivfönster"
+      ],
+      "Filter": [
+        "Filter"
       ],
       "Forward": [
         "Vidarebefordra"
@@ -8835,8 +8850,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Om du vill fortsätta ladda upp och synkronisera filer, frigör utrymme eller uppgradera för mer lagringsutrymme."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "För att skicka eller ta emot e-post, frigör utrymme eller uppgradera för mer lagringsutrymme."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }"
       ],
       "upgrade for more storage": [
         "uppgradera för mer lagringsutrymme"
@@ -8847,26 +8868,20 @@
       "Your ${ appStorage } is full": [
         "Ditt ${ appStorage } är fullt"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ditt ${ storage } är ${ percentage } % fullt. ${ cta }."
       ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är ${ percentage } % fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ditt ${ storage } är fullt. ${ cta }."
       ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Ditt ${ storage } är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Ditt ${ storage } är fullt. För att ladda upp eller synkronisera filer, frigör utrymme eller ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt lagringsutrymme är ${ percentage } % fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ditt lagringsutrymme är ${ percentage } % fullt. ${ cta }."
       ],
       "Your storage is full": [
         "Ditt lagringsutrymme är fullt"
       ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Ditt lagringsutrymme är fullt. För att skicka eller ta emot e-post, frigör utrymme eller ${ upgrade }."
+      "Your storage is full. ${ cta }.": [
+        "Ditt lagringsutrymme fullt. ${ cta }."
       ]
     },
     "Success": {

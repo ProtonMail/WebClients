@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Effacer toute la mise en forme"
       ],
+      "Clear application data": [
+        "Effacer les données de l'application"
+      ],
       "Clear browser data": [
         "Effacer les données du navigateur"
       ],
@@ -907,6 +910,9 @@
       ],
       "Select all messages": [
         "Sélectionner tous les messages"
+      ],
+      "Select country": [
+        "Sélectionnez un pays"
       ],
       "Select date and time": [
         "Sélectionner la date et l'heure"
@@ -5191,6 +5197,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts en cours : ${ progress } de ${ max }"
       ],
+      "Clear app data": [
+        "Effacer les données de l'application"
+      ],
       "Clear data": [
         "Effacer les données"
       ],
@@ -6436,6 +6445,9 @@
       ],
       "Expand / contract composer": [
         "Développer/Réduire l'éditeur"
+      ],
+      "Filter": [
+        "Filtre"
       ],
       "Forward": [
         "Transférer"
@@ -7869,6 +7881,14 @@
         "Vous"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Pays de facturation"
+      ],
+      "Tax Country": [
+        "Pays d'imposition"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clé ne peut pas être utilisée pour le chiffrement."
@@ -8152,6 +8172,9 @@
       ],
       "Create alias": [
         "Créer un alias"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "par exemple Amazon, eBay ou Etsy"
       ],
       "Get an alias": [
         "Obtenir un alias"
@@ -8826,26 +8849,8 @@
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein à ${ percentage } %. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Votre ${ storage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre espace de stockage est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
       ]
     },
     "Success": {
