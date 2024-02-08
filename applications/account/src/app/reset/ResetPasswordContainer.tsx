@@ -10,7 +10,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useLocalState,
     useMyCountry,
     useNotifications,
@@ -74,7 +73,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
     const [persistent] = useLocalState(false, defaultPersistentKey);
-    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const ktActivation = useKTActivation();
     const resetSelfAudit = useResetSelfAudit();
 
@@ -99,7 +97,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
             username: username ?? '',
             type: 'internal',
             Methods: [],
-            hasTrustedDeviceRecovery,
             ktActivation,
             resetSelfAudit,
         };
@@ -181,7 +178,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                     username: username ?? '',
                     Methods: [],
                     type: 'internal',
-                    hasTrustedDeviceRecovery,
                     ktActivation,
                     resetSelfAudit,
                 };
@@ -232,7 +228,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                             type: 'internal',
                             Methods: [],
                             persistent,
-                            hasTrustedDeviceRecovery,
                             ktActivation,
                             resetSelfAudit,
                         },
@@ -306,7 +301,6 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
                                     const result = await handleRequestRecoveryMethods({
                                         setupVPN,
                                         appName: APP_NAME,
-                                        hasTrustedDeviceRecovery,
                                         ktActivation,
                                         username,
                                         persistent,
