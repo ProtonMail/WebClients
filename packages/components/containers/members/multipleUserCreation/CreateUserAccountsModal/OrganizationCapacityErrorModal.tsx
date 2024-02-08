@@ -27,7 +27,9 @@ const OrganizationCapacityErrorModal = ({ error, onCancel, onContinue, app, ...r
     });
 
     const link = addUpsellPath('/dashboard', upsellRef);
-    const upgradeLink = <SettingsLink path={link}>{c('Link').t`Upgrade your plan`}</SettingsLink>;
+    const upgradeLink = (
+        <SettingsLink path={link} key="upgrade-plan-key">{c('Link').t`Upgrade your plan`}</SettingsLink>
+    );
     const cta = (() => {
         if (error.type === ORGANIZATION_CAPACITY_ERROR_TYPE.MEMBER) {
             // translator: Full sentence "Upgrade your plan to add more users, or remove some user accounts to free up space."
