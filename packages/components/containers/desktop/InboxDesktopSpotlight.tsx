@@ -2,10 +2,8 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { Spotlight } from '@proton/components';
-import InboxDesktopLogo from '@proton/components/components/logo/InboxDesktopLogo';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { InboxDesktopLogo, Spotlight } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     show: boolean;
@@ -19,7 +17,7 @@ const InboxDestktopSpotlight = ({ children, show, onDisplayed, onClose }: Props)
 
     return (
         <Spotlight
-            originalPlacement="bottom-end"
+            originalPlacement="left-start"
             show={show}
             onDisplayed={onDisplayed}
             onClose={(e) => {
@@ -34,15 +32,15 @@ const InboxDestktopSpotlight = ({ children, show, onDisplayed, onClose }: Props)
                     </div>
 
                     <div>
-                        <div className="text-bold text-lg m-auto">{c('Spotlight').t`Enhance your productivity`}</div>
-                        {c('Spotlight').t`TODO`}
-                        <br />
-                        <Href href={getKnowledgeBaseUrl('/mail-desktop-app')}>{c('Info').t`Learn more`}</Href>
+                        <div className="text-bold text-lg m-auto">{c('Spotlight').t`Get the desktop app`}</div>
+                        {c('Spotlight').t`Conveniently launch ${MAIL_APP_NAME} right from your desktop.`}
                     </div>
                 </div>
             }
         >
-            <div ref={ref}>{children}</div>
+            <div ref={ref} className="w-full">
+                {children}
+            </div>
         </Spotlight>
     );
 };
