@@ -19,6 +19,7 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
+    getHasPassB2BPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getPrimaryPlan,
@@ -136,13 +137,17 @@ const ActionButtons = ({
         source: 'plans',
     } as const;
 
-    const handleCustomizeSubscription = () =>
+    const hasPassB2B = getHasPassB2BPlan(subscription);
+
+    const handleCustomizeSubscription = () => {
+        const step = hasPassB2B ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
+
         openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            step,
             disablePlanSelection: true,
             metrics,
         });
-
+    };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -156,7 +161,7 @@ const ActionButtons = ({
             metrics,
         });
 
-    const showEditBillingDetails = user.isPaid && user.canPay && !hasMaximumCycle(subscription);
+    const showEditBillingDetails = user.isPaid && user.canPay && !hasMaximumCycle(subscription) && !hasPassB2B;
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
     const showExploreOtherPlans = user.canPay;
 
