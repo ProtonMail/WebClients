@@ -251,30 +251,6 @@ const CalendarSearchView = ({
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
-                {hasResults && (
-                    <div>
-                        <Button
-                            color="weak"
-                            shape="ghost"
-                            size="small"
-                            className="mx-2"
-                            disabled={!isPreviousEnabled}
-                            onClick={previous}
-                        >
-                            {c('Action').t`Previous`}
-                        </Button>
-                        <Button
-                            color="weak"
-                            shape="ghost"
-                            size="small"
-                            className="mx-2"
-                            disabled={!isNextEnabled}
-                            onClick={next}
-                        >
-                            {c('Action').t`Next`}
-                        </Button>
-                    </div>
-                )}
             </div>
 
             {hasResults ? (
@@ -303,6 +279,23 @@ const CalendarSearchView = ({
                             />,
                         ];
                     }, [])}
+
+                    {(isPreviousEnabled || isNextEnabled) && (
+                        <div className="p-4 lg:pl-8">
+                            <Button
+                                color="weak"
+                                shape="outline"
+                                className="ml-1 lg:ml-2 mr-2"
+                                disabled={!isPreviousEnabled}
+                                onClick={previous}
+                            >
+                                {c('Action').t`Previous`}
+                            </Button>
+                            <Button color="weak" shape="outline" disabled={!isNextEnabled} onClick={next}>
+                                {c('Action').t`Next`}
+                            </Button>
+                        </div>
+                    )}
                 </div>
             ) : (
                 <div className="flex flex-column w-full h-full">
