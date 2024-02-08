@@ -1,9 +1,9 @@
-import { INVOICE_STATE } from '@proton/shared/lib/constants';
+import { INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 export interface Invoice {
     ID: string;
-    Type: number;
+    Type: INVOICE_TYPE;
     State: INVOICE_STATE;
     Currency: Currency;
     AmountDue: number;
