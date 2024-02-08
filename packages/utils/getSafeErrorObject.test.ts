@@ -1,4 +1,4 @@
-import { getSafeArray, getSafeErrorObject, getSafeObject, getSafeValue } from './getSafeErrorObject';
+import { getSafeArray, getSafeErrorObject, getSafeObject, getSafeValue, isError } from './getSafeErrorObject';
 
 describe('getSafeValue', () => {
     const error = new Error('blah');
@@ -39,10 +39,20 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with context`, () => {
+    it(`should accept errors with Drive context`, () => {
         const value = new Error('blah');
         (value as any).context = { something: true };
-        const expected = { name: 'Error', message: 'blah', context: { something: true } };
+        (value as any).isEnrichedError = true;
+        (value as any).sentryMessage = 'oh no';
+
+        const expected = {
+            name: 'Error',
+            message: 'blah',
+
+            context: { something: true },
+            isEnrichedError: true,
+            sentryMessage: 'oh no',
+        };
 
         const result = getSafeValue(value);
 
@@ -50,7 +60,7 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with nested errors in context`, () => {
+    it(`should accept errors with nested errors in Drive context`, () => {
         const value = new Error('blah');
         (value as any).context = { e: new Error('oh no') };
         const expected = {
@@ -95,5 +105,14 @@ describe('getSafeArray', () => {
         it(`should accept '${testCase.name}'`, () => {
             expect(getSafeArray(testCase.value)).toStrictEqual(testCase.expected);
         });
+    });
+});
+
+describe('isError', () => {
+    it('should return true for Error', () => {
+        expect(isError(new Error('oh no'))).toBe(true);
+    });
+    it('should return true for Error-like', () => {
+        expect(isError({ name: 'Error', message: 'oh no' })).toBe(true);
     });
 });

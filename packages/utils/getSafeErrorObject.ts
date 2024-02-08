@@ -1,6 +1,16 @@
 /* eslint @typescript-eslint/no-use-before-define: 0 */
 
-const isError = (e: any): e is Error => e instanceof Error || (e && typeof e.message === 'string');
+/**
+ * Returns `true` if the passed parameter is an `Error`.
+ */
+export const isError = (e: unknown): e is Error =>
+    e instanceof Error ||
+    (!!e &&
+        typeof e === 'object' &&
+        'name' in e &&
+        typeof e.name === 'string' &&
+        'message' in e &&
+        typeof e.message === 'string');
 
 type SafeValue = string | number | boolean | undefined | null | SafeObject | SafeValue[];
 type SafeObject = { [key: string]: SafeValue };
@@ -8,8 +18,11 @@ export type SafeErrorObject = {
     name: string;
     message: string;
     stack?: string;
+
     // Used by Drive errors
+    isEnrichedError?: boolean;
     context?: SafeObject;
+    sentryMessage?: string;
 };
 
 /**
@@ -72,7 +85,7 @@ export function getSafeObject(obj: any): SafeObject | undefined {
 }
 
 /**
- * Returns a safe Error-like object that can be transfered through `postMessage`.
+ * Returns a safe Error-like object that can be transferred through `postMessage`.
  * Mainly needed because Safari <= 16 errors when cloning Error objects.
  */
 export function getSafeErrorObject(error: Error): SafeErrorObject {
@@ -82,6 +95,8 @@ export function getSafeErrorObject(error: Error): SafeErrorObject {
         stack: error.stack,
 
         // Used by Drive errors to provide additional data to Sentry
+        isEnrichedError: (error as any).isEnrichedError,
         context: getSafeObject((error as any).context),
+        sentryMessage: (error as any).sentryMessage,
     };
 }
