@@ -1,9 +1,9 @@
+import { decryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import type { ItemRevisionContentsResponse, OpenedItem, VaultKey } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import { decryptData } from '../../utils/crypto-helpers';
-import { PassCryptoItemError } from '../../utils/errors';
 import { openItemKey } from './open-item-key';
 
 type OpenItemKeyProcessParams = {

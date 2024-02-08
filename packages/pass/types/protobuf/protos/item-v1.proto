@@ -7,11 +7,23 @@ package proton_pass_item_v1;
 message ItemNote {
 }
 
+message Passkey {
+	string key_id = 1;
+	bytes content = 2;
+	string domain = 3;
+	string rp_id = 4;
+	string rp_name = 5;
+	string user_name = 6;
+	string user_display_name = 7;
+	bytes user_id = 8;
+}
+
 message ItemLogin {
 	string username = 1;
 	string password = 2;
 	repeated string urls = 3;
 	string totp_uri = 4;
+	repeated Passkey passkeys = 5;
 }
 
 message ItemAlias {

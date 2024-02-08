@@ -15,8 +15,17 @@ import type { ExtraHiddenField, ExtraTotp, PlatformSpecific } from '../protobuf/
 import type { MaybeNull } from '../utils';
 
 type Obfuscate<T, K extends keyof T> = Omit<T, K> & { [Obf in K]: XorObfuscation };
+
 type Deobfuscate<T> = {
-    [K in keyof T]: T[K] extends XorObfuscation ? string : T[K] extends {} ? Deobfuscate<T[K]> : T[K];
+    [K in keyof T]: T[K] extends XorObfuscation
+        ? string
+        : T[K] extends ArrayBuffer
+          ? T[K]
+          : T[K] extends (infer U)[]
+            ? Deobfuscate<U>[]
+            : T[K] extends {}
+              ? Deobfuscate<T[K]>
+              : T[K];
 };
 
 type ExtraFieldContent<T extends ExtraFieldType> = {
