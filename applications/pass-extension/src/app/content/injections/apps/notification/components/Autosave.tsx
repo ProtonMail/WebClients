@@ -85,8 +85,8 @@ export const Autosave: FC<Props> = ({ settings, submission, visible, onClose }) 
                     ? partialMerge(submission.autosave.data.item.data, {
                           metadata: { name },
                           content: {
-                              username: obfuscate(username),
                               password: obfuscate(password),
+                              username: obfuscate(username),
                               urls: Array.from(
                                   new Set(submission.autosave.data.item.data.content.urls.concat(valid ? [url] : []))
                               ),
@@ -101,10 +101,11 @@ export const Autosave: FC<Props> = ({ settings, submission, visible, onClose }) 
                               itemUuid: uniqueId(),
                           },
                           content: {
-                              username: obfuscate(username),
+                              passkeys: [],
                               password: obfuscate(password),
-                              urls: valid ? [url] : [],
                               totpUri: obfuscate(''),
+                              urls: valid ? [url] : [],
+                              username: obfuscate(username),
                           },
                           extraFields: [],
                       };

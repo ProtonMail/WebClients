@@ -1,6 +1,6 @@
+import { PassCryptoItemError } from '@proton/pass/lib/crypto/utils/errors';
 import type { ItemMoveSingleToShareRequest, VaultKey } from '@proton/pass/types';
 
-import { PassCryptoItemError } from '../../utils/errors';
 import { createItem } from './create-item';
 
 type MoveItemProcessParams = {
