@@ -193,47 +193,6 @@ export type TaxCountrySelectorProps = HookResult & {
     className?: string;
 };
 
-const useCountriesWhitelist = () => {
-    const countries = [
-        'AU',
-        'AT',
-        'BE',
-        'BG',
-        'HR',
-        'CY',
-        'CZ',
-        'DK',
-        'EE',
-        'FI',
-        'FR',
-        'DE',
-        'GR',
-        'HU',
-        'IE',
-        'IT',
-        'LV',
-        'LI',
-        'LT',
-        'LU',
-        'MT',
-        'NL',
-        'NO',
-        'PL',
-        'PT',
-        'RO',
-        'SK',
-        'SI',
-        'ES',
-        'SE',
-        'CH',
-        'GB',
-    ];
-
-    const isCountryAllowed = (countryCode: string) => countries.includes(countryCode);
-
-    return { isCountryAllowed };
-};
-
 const TaxCountrySelector = ({
     selectedCountryCode,
     setSelectedCountry,
@@ -245,10 +204,6 @@ const TaxCountrySelector = ({
     const { getCountryByCode } = useCountries();
     const selectedCountry = getCountryByCode(selectedCountryCode);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const { isCountryAllowed } = useCountriesWhitelist();
-    const title = isCountryAllowed(selectedCountryCode)
-        ? c('Payments').t`Tax Country`
-        : c('Payments').t`Billing Country`;
 
     const showStateCode = countriesWithStates.includes(selectedCountryCode);
     const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
@@ -269,7 +224,7 @@ const TaxCountrySelector = ({
     return (
         <div className={clsx('field-two-container', className)}>
             <div className="pt-1 mb-1">
-                <span className="text-bold">{title}</span>
+                <span className="text-bold">{c('Payments').t`Billing Country`}</span>
                 {collapsed && (
                     <>
                         <span className="text-bold mr-2">:</span>
