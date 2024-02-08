@@ -14,7 +14,6 @@ import CustomizeCalendarImportModal from './CustomizeCalendarImportModal';
 import { DerivedCalendarType } from './useCustomizeCalendarImportModal';
 
 const modalProps: ModalStateProps = {
-    key: 'modalProps',
     open: true,
     onClose: () => {},
     onExit: () => {},
