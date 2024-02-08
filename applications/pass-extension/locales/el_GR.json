@@ -501,6 +501,10 @@
       "Cannot create alias (${ error }).": [
         "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
+        "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
+      ],
       "Could not confirm this invite at the moment": [
         "Δεν ήταν δυνατή η επιβεβαίωση αυτής της πρόσκλησης αυτή τη στιγμή"
       ],
@@ -771,6 +775,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
+      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -931,9 +938,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Οι δημιουργημένοι κωδικοί πρόσβασης θα αποθηκευτούν για περίοδο μίας ημέρας."
-      ],
       "Generating alias...": [
         "Δημιουργία ψευδωνύμου..."
       ],
@@ -1061,9 +1065,6 @@
       ],
       "Password copied": [
         "Ο κωδικός πρόσβασης αντιγράφηκε"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
