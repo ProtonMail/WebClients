@@ -433,6 +433,10 @@
       "Auto-lock could not be disabled": [
         "Δεν ήταν δυνατή η απενεργοποίηση του αυτόματου κλειδώματος"
       ],
+      "Cannot send invitation at the moment": [
+        "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
+        "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
+      ],
       "Could not confirm this invite at the moment": [
         "Δεν ήταν δυνατή η επιβεβαίωση αυτής της πρόσκλησης αυτή τη στιγμή"
       ],
@@ -688,6 +692,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } προσκλήσεις στάλθηκαν με επιτυχία"
+      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -748,6 +755,9 @@
       "Auto-lock successfully disabled": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Φέρτε τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
       ],
@@ -805,8 +815,8 @@
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Οι δημιουργημένοι κωδικοί πρόσβασης θα αποθηκευτούν για περίοδο μίας ημέρας."
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Αξιοποιήστε στο έπακρο το Pass δημιουργώντας μια κρύπτη για κάθε ομάδα ή έργο."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Λάβετε απεριόριστα ψευδώνυμα, απολαύστε αποκλειστικές λειτουργίες και υποστηρίξτε μας με την εγγραφή σας στο Pass Plus."
@@ -827,11 +837,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα επέκτασης"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας. "
+      ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
       "Invitation sent": [
         "Η πρόσκληση στάλθηκε"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Προσκαλέστε συγκεκριμένα άτομα και ορίστε τα σωστά δικαιώματα."
       ],
       "Invite successfully removed": [
         "Η πρόσκληση καταργήθηκε με επιτυχία"
@@ -924,9 +943,6 @@
       "Pass Plus trial": [
         "Δοκιμή Pass Plus"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
-      ],
       "Permanently deleting selected items": [
         "Οριστική διαγραφή επιλεγμένων στοιχείων"
       ],
@@ -971,6 +987,9 @@
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
+      ],
+      "Select vault to share": [
+        "Επιλογή κρύπτης για κοινή χρήση"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Επιλέξτε πού θέλετε να αποθηκεύονται η/οι κρύπτη(ες) που έχετε εισαγάγει."
