@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateReturnObj, useModalStateObject } from '@proton/components/components';
+import { useModalStateObject } from '@proton/components/components';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
 import { useNotifications, useSubscription } from '@proton/components/hooks';
 import useAsyncError from '@proton/hooks/useAsyncError';
@@ -10,13 +10,14 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import type { AliasOptions } from '@proton/pass/types';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { hasFree, hasMailPlus, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 
 import { fetchPassBridgeInfos, filterPassAliases } from './PassAliases.helpers';
-import { FAILED_TO_INIT_PASS_BRIDGE_ERROR, PASS_ALIASES_COUNT_LIMIT } from './constant';
+import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import type { CreateModalFormState, PassAliasesVault } from './interface';
 
 /**
@@ -26,26 +27,7 @@ import type { CreateModalFormState, PassAliasesVault } from './interface';
  */
 let memoisedPassAliasesItems: PassBridgeAliasItem[] = [];
 
-interface PasAliasesProviderReturnedValues {
-    /** Fetch needed options to be able to create a new alias request */
-    getAliasOptions: () => Promise<AliasOptions>;
-    /** If user has aliases saved in the currently decrypted vault */
-    hasAliasesInVault: boolean;
-    /** Return the total aliases count a user has across all his vaults */
-    totalAliasesCount: number;
-    /** User had already a vault or not */
-    hasUsedProtonPassApp: boolean;
-    /** False when PassBridge finished to init and pass aliases values and count are done */
-    loading: boolean;
-    /** Has user reached pass aliases creation limit  */
-    hasReachedAliasesLimit: boolean;
-    submitNewAlias: (formValues: CreateModalFormState) => Promise<void>;
-    passAliasesVaultName: string;
-    passAliasesItems: PassBridgeAliasItem[];
-    passAliasesUpsellModal: ModalStateReturnObj;
-}
-
-const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
+const usePassAliasesSetup = () => {
     const PassBridge = usePassBridge();
     const passAliasesUpsellModal = useModalStateObject();
     const isMounted = useIsMounted();
@@ -54,7 +36,6 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
     const [passAliasVault, setPassAliasVault] = useState<PassAliasesVault>();
     const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>(memoisedPassAliasesItems);
     const [userHadVault, setUserHadVault] = useState(false);
-    const [totalAliasesCount, setTotalAliasesCount] = useState(0);
     const { createNotification } = useNotifications();
     const throwError = useAsyncError();
     const hasUnlimitedAliasesPlan: boolean = (() => {
@@ -87,10 +68,8 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
             // Refetch aliases and set new state
             const nextAliases = await PassBridge.alias.getAllByShareId(passAliasVault.shareId);
             const filteredAliases = filterPassAliases(nextAliases);
-            const nextTotalAliasesCount = await PassBridge.alias.getAliasCount();
 
             if (isMounted()) {
-                setTotalAliasesCount(nextTotalAliasesCount);
                 setPassAliasesItems(filteredAliases);
                 memoisedPassAliasesItems = filteredAliases;
             }
@@ -101,13 +80,20 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
                 expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
             });
         } catch (e: any) {
-            console.error(e);
-            traceInitiativeError('drawer-security-center', e);
-            createNotification({
-                text: c('Error').t`An error occurred while saving alias`,
-                type: 'error',
-                expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-            });
+            const error = getApiError(e);
+            if (!hasUnlimitedAliasesPlan && error.code === API_CUSTOM_ERROR_CODES.CANT_CREATE_PASS_ALIAS) {
+                setTimeout(() => {
+                    passAliasesUpsellModal.openModal(true);
+                }, NOTIFICATION_DEFAULT_EXPIRATION_TIME);
+            } else {
+                console.error(e);
+                traceInitiativeError('drawer-security-center', e);
+                createNotification({
+                    text: c('Error').t`An error occurred while saving alias`,
+                    type: 'error',
+                    expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                });
+            }
         }
     };
 
@@ -127,11 +113,9 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         const initPassBridge = async () => {
             await PassBridge.ready();
             const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
-            const aliasesCount = await PassBridge.alias.getAliasCount();
             const filteredAliases = filterPassAliases(aliases);
 
             if (isMounted()) {
-                setTotalAliasesCount(aliasesCount);
                 setPassAliasVault(vault);
                 setPassAliasesItems(filteredAliases);
                 memoisedPassAliasesItems = filteredAliases;
@@ -152,15 +136,13 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
 
     return {
         getAliasOptions,
-        hasAliasesInVault: !!passAliasesItems.length,
-        totalAliasesCount,
+        hasAliases: !!passAliasesItems.length,
         hasUsedProtonPassApp: userHadVault,
         loading,
         submitNewAlias,
         passAliasesVaultName: passAliasVault?.content.name || '',
         passAliasesItems,
         passAliasesUpsellModal,
-        hasReachedAliasesLimit: !hasUnlimitedAliasesPlan && totalAliasesCount >= PASS_ALIASES_COUNT_LIMIT,
     };
 };
 
