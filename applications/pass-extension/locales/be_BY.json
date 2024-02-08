@@ -507,6 +507,9 @@
         "У цяперашні час немагчыма адправіць запрашэнні",
         "У цяперашні час немагчыма адправіць запрашэнні"
       ],
+      "Cannot send invitations at the moment": [
+        "У цяперашні час немагчыма адправіць запрашэнні"
+      ],
       "Could not confirm this invite at the moment": [
         "У дадзены момант немагчыма пацвердзіць запрашэнне"
       ],
@@ -918,7 +921,7 @@
         "Выдаленне \"${ payload.content.name }\""
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Даследуйце ўсе функцыі ${ PASS_APP_NAME } паглядзеўшы відэа на YouTube"
+        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } паглядзеўшы відэа на YouTube"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -962,8 +965,11 @@
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Згенерыраваныя паролі будуць захоўвацца на працягу аднаго дня."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
       ],
       "Generating alias...": [
         "Генерацыя псеўданіма..."
@@ -1097,8 +1103,11 @@
       "Password copied": [
         "Пароль скапіяваны"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Паролі старэйшыя за 1 дзень аўтаматычна выдаляюцца з гісторыі."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
@@ -2159,6 +2168,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
+      ],
+      "Please contact us for investigating the issue": [
+        "Звяжыцеся з намі для вырашэння праблемы"
       ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."

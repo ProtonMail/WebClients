@@ -428,6 +428,9 @@
       "Select ${ planTitle }": [
         "Sélectionner ${ planTitle }"
       ],
+      "Select country": [
+        "Sélectionnez un pays"
+      ],
       "Select file": [
         "Sélectionner un fichier"
       ],
@@ -2153,9 +2156,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "La phrase de récupération n'est pas correcte. Réessayez ou utilisez une autre méthode de récupération."
       ],
-      "You have no invoices.": [
-        "Vous n'avez aucune facture."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Toutes les adresses de votre abonnement sont utilisées. Nous vous invitons à mettre à jour votre abonnement pour ajouter une nouvelle adresse."
       ],
@@ -3063,9 +3063,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus gérer votre organisation."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus vous connecter ou déchiffrer vos messages."
-      ],
       "Domain ownership failed verification.": [
         "La propriété du domaine n'a pas pu être vérifiée."
       ],
@@ -3941,6 +3938,9 @@
         "${ availableCount } serveur dédié est disponible.",
         "${ availableCount } serveurs dédiés sont disponibles."
       ],
+      "You have no invoices.": [
+        "Vous n'avez aucune facture."
+      ],
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun moyen de paiement enregistré."
       ],
@@ -4022,9 +4022,6 @@
       "Your next billing date is ${ renewalTime }.": [
         "Votre prochaine date de facturation est le ${ renewalTime }."
       ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Le mot de passe de votre organisation peut être partagé avec d'autres utilisateurs à qui vous souhaitez donner des droits administrateur. Il s'agit aussi d'un code de récupération d'urgence pour accéder à votre organisation dans le cas où vous perdriez l'accès à votre compte. Nous vous invitons à enregistrer ce mot de passe et à le conserver en lieu sûr."
-      ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
       ],
@@ -4097,6 +4094,9 @@
       ],
       "Credit": [
         "Crédit"
+      ],
+      "Currency conversion": [
+        "Conversion de devise"
       ],
       "Donation": [
         "Don"
@@ -4527,6 +4527,9 @@
       ],
       "Value": [
         "Valeur"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "Verification code": [
         "Code de vérification"
@@ -5301,9 +5304,6 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
       ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
@@ -5761,6 +5761,9 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } par mois"
       ],
+      "/month /user": [
+        "/mois /utilisateur"
+      ],
       "Creating your account": [
         "Création de votre compte"
       ],
@@ -5886,6 +5889,37 @@
       ],
       "New credit/debit card": [
         "Nouvelle carte de paiement"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Pays de facturation"
+      ],
+      "Card number": [
+        "Numéro de la carte"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Tax Country": [
+        "Pays d'imposition"
+      ],
+      "Timeout exceeded": [
+        "Le délai est dépassé."
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Le numéro de carte n’est pas valide."
+      ],
+      "Invalid expiration date": [
+        "La date d'expiration n’est pas valide."
+      ],
+      "Invalid securiry code": [
+        "Le code de sécurité n'est pas valide."
       ]
     },
     "Permission": {
@@ -6691,26 +6725,8 @@
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein à ${ percentage } %. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Votre ${ storage } est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Votre ${ storage } est plein. Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre espace de stockage est plein à ${ percentage } %. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
-      ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Votre espace de stockage est plein. Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Vous n'aurez plus accès à ${ gb } d'espace de stockage et à l'assistance prioritaire."
@@ -7526,9 +7542,6 @@
       ],
       "Set organization name": [
         "Définir le nom de l'organisation"
-      ],
-      "Set organization password": [
-        "Définir le mot de passe de l'organisation"
       ],
       "Set up two-factor authentication": [
         "Configurer l'authentification à deux facteurs"

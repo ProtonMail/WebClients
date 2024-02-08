@@ -2141,9 +2141,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Kurtarma ifadesi yanlış. Yeniden deneyin ya da başka bir kurtarma yöntemi kullanın."
       ],
-      "You have no invoices.": [
-        "Herhangi bir faturanız yok."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Tarifenizdeki tüm adresleri kullandınız. Yeni bir adres eklemek için lütfen tarifenizi yükseltin."
       ],
@@ -3047,9 +3044,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
       ],
       "Domain ownership failed verification.": [
         "Etki alanının sahipliği doğrulanamadı."
@@ -4006,9 +4000,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Sonraki fatura zamanınız ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Kuruluş parolanızı, yönetici yetkileri vermek istediğiniz diğer kullanıcılarla paylaşabilirsiniz. Ayrıca kuruluş parolanız, hesabınıza erişimi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için kullanacağınız acil durum kurtarma kodudur. Lütfen bu parolayı kaydedip güvenli bir yerde saklayın."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
@@ -5276,9 +5267,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
@@ -6575,26 +6563,8 @@
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Kullandığınız ${ storage } %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Kullandığınız ${ storage } %${ percentage } oranında dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Kullandığınız ${ storage } dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Kullandığınız ${ storage } dolu. Dosyaları yüklemek ya da eşitlemek için boş yer açın ya da ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Depolama alanınız %${ percentage } oranında dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
-      ],
       "Your storage is full": [
         "Depolama alanınız dolu"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Depolama alanınız dolu. E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "${ gb } depolama alanına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
@@ -7404,9 +7374,6 @@
       ],
       "Set organization name": [
         "Kuruluş adını ayarla"
-      ],
-      "Set organization password": [
-        "Kuruluş parolasını ayarla"
       ],
       "Set up two-factor authentication": [
         "İki adımlı doğrulamayı ayarla"

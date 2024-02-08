@@ -2104,9 +2104,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "錯誤的恢復短語。重試或使用其它復原方法。"
       ],
-      "You have no invoices.": [
-        "您沒有任何帳單。"
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
       ],
@@ -2968,9 +2965,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "千萬別忘記此密碼。否則，您將無法登入或解密您的郵件。"
       ],
       "Domain ownership not verified.": [
         "網域所有權未驗證。"
@@ -3862,9 +3856,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "您的下一個結算日期為${ renewalTime }。"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急復原代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "您的付款詳情是受 TLS 加密及瑞士隱私法律保護。"
@@ -5092,9 +5083,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
@@ -6337,26 +6325,8 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的${ storage }已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "您的${ storage }已${ percentage }滿%。要上載或同步檔案，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "您的${ storage }已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "您的${ storage }已滿。要上載或同步檔案，釋放空間或${ upgrade }。"
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的儲存已${ percentage }%滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
-      ],
       "Your storage is full": [
         "您的儲存空間已滿"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "您的儲存已滿，要傳送或接收電子郵件，釋放空間或${ upgrade }。"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "您將失去存取${ gb }儲存和優先支援。"
@@ -7135,9 +7105,6 @@
       ],
       "Set organization name": [
         "設定組織名稱"
-      ],
-      "Set organization password": [
-        "設定組織密碼"
       ],
       "Set up two-factor authentication": [
         "設立兩步驟驗證"

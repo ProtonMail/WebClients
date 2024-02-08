@@ -1972,9 +1972,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
       ],
-      "You have no invoices.": [
-        "Não tem faturas."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Usou todos os endereços do seu plano. Subscreva um plano superior para adicionar um endereço."
       ],
@@ -2839,9 +2836,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NÃO se esqueça desta palavra-passe. Se se esquecer dela, não conseguirá iniciar sessão ou desencriptar as suas mensagens."
       ],
       "Done": [
         "Concluído"
@@ -3732,9 +3726,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "A data do próximo pagamento é ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A palavra-passe da organização pode ser partilhada com outros utilizadores a quem quer atribuir privilégios de administração. É também um código de recuperação de emergência para obter acesso à sua organização caso perca o acesso à sua conta. Guarde esta palavra-passe num local seguro."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
@@ -4937,9 +4928,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "A sua avaliação termina em ${ formattedPeriodEndDate }."
@@ -6859,9 +6847,6 @@
       ],
       "Set organization name": [
         "Definir nome da organização"
-      ],
-      "Set organization password": [
-        "Definir a palavra-passe da organização"
       ],
       "Set up two-factor authentication": [
         "Definir autenticação em dois passos"

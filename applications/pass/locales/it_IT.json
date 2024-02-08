@@ -273,7 +273,7 @@
         "Fissa l'elemento"
       ],
       "Recent": [
-        "Recenti"
+        "Recente"
       ],
       "Refresh the page": [
         "Aggiorna la pagina"
@@ -818,8 +818,9 @@
       "For security reasons, your access needs to be confirmed": [
         "Per motivi di sicurezza, il tuo accesso deve essere confermato"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Le password generate saranno conservate per un periodo di un giorno."
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Ottieni il massimo da Pass creando una cassaforte per ogni team o progetto."
@@ -949,8 +950,9 @@
       "Pass Plus trial": [
         "Prova di Pass Plus"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane vengono eliminate automaticamente dalla cronologia."
       ],
       "Permanently deleting selected items": [
         "Eliminazione definitiva degli elementi selezionati"
