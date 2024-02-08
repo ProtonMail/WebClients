@@ -44,11 +44,12 @@ describe('Import Keeper CSV', () => {
         expect(loginItem2FA.metadata.name).toEqual('login with 2fa');
         expect(loginItem2FA.metadata.note).toEqual('');
         expect(loginItem2FA.content).toEqual({
-            username: '2fa@example.com',
+            passkeys: [],
             password: 'pass',
-            urls: ['https://example.com/'],
             totpUri:
                 'otpauth://totp/account.proton.me:2fa-manually-entered-string%40example.com?issuer=account.proton.me&secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30',
+            urls: ['https://example.com/'],
+            username: '2fa@example.com',
         });
         expect(loginItem2FA.trashed).toEqual(false);
         expect(loginItem2FA.extraFields).toEqual([]);
@@ -62,10 +63,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemBrokenUrl.metadata.name).toEqual('login with broken url');
         expect(loginItemBrokenUrl.metadata.note).toEqual('');
         expect(loginItemBrokenUrl.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: 'pass',
-            urls: [],
             totpUri: '',
+            urls: [],
+            username: 'john',
         });
         expect(loginItemBrokenUrl.trashed).toEqual(false);
         expect(loginItemBrokenUrl.extraFields).toEqual([]);
@@ -79,10 +81,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCommaQuotes.metadata.name).toEqual('login with comma, quotes "');
         expect(loginItemCommaQuotes.metadata.note).toEqual('notes with commas, quotes "');
         expect(loginItemCommaQuotes.content).toEqual({
-            username: 'username with comma, quotes "',
+            passkeys: [],
             password: 'password with comma, quotes "',
-            urls: ['https://example.com/'],
             totpUri: '',
+            urls: ['https://example.com/'],
+            username: 'username with comma, quotes "',
         });
         expect(loginItemCommaQuotes.trashed).toEqual(false);
         expect(loginItemCommaQuotes.extraFields).toEqual([]);
@@ -96,10 +99,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemCustomFields.metadata.name).toEqual('login with custom fields');
         expect(loginItemCustomFields.metadata.note).toEqual('');
         expect(loginItemCustomFields.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: 'pass',
-            urls: ['https://example.com/'],
             totpUri: '',
+            urls: ['https://example.com/'],
+            username: 'john',
         });
         expect(loginItemCustomFields.trashed).toEqual(false);
         expect(loginItemCustomFields.extraFields).toEqual([
@@ -149,10 +153,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleLines.metadata.name).toEqual('login with multiple lines');
         expect(loginItemMultipleLines.metadata.note).toEqual('notes with\nmultiple\nlines');
         expect(loginItemMultipleLines.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: 'pass',
-            urls: ['https://example.com/'],
             totpUri: '',
+            urls: ['https://example.com/'],
+            username: 'john',
         });
         expect(loginItemMultipleLines.trashed).toEqual(false);
         expect(loginItemMultipleLines.extraFields).toEqual([]);
@@ -166,10 +171,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemMultipleUrls.metadata.name).toEqual('login with multiple urls');
         expect(loginItemMultipleUrls.metadata.note).toEqual('');
         expect(loginItemMultipleUrls.content).toEqual({
-            username: '',
+            passkeys: [],
             password: '',
-            urls: ['https://example.com/'],
             totpUri: '',
+            urls: ['https://example.com/'],
+            username: '',
         });
         expect(loginItemMultipleUrls.trashed).toEqual(false);
         expect(loginItemMultipleUrls.extraFields).toEqual([
@@ -198,10 +204,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemPaymentCard.metadata.name).toEqual('paymentcard');
         expect(loginItemPaymentCard.metadata.note).toEqual('foo');
         expect(loginItemPaymentCard.content).toEqual({
-            username: '',
+            passkeys: [],
             password: 'b5pIs[ISaru7@)44rn,xT',
-            urls: ['https://example.com/'],
             totpUri: '',
+            urls: ['https://example.com/'],
+            username: '',
         });
         expect(loginItemPaymentCard.trashed).toEqual(false);
         expect(loginItemPaymentCard.extraFields).toEqual([
@@ -242,10 +249,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemSshKey.metadata.name).toEqual('ssh key item');
         expect(loginItemSshKey.metadata.note).toEqual('foo');
         expect(loginItemSshKey.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: 'pass',
-            urls: [],
             totpUri: '',
+            urls: [],
+            username: 'john',
         });
         expect(loginItemSshKey.trashed).toEqual(false);
         expect(loginItemSshKey.extraFields).toEqual([
@@ -272,10 +280,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemSecondVault.metadata.name).toEqual('login of folder1');
         expect(loginItemSecondVault.metadata.note).toEqual('');
         expect(loginItemSecondVault.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: '',
-            urls: [],
             totpUri: '',
+            urls: [],
+            username: 'john',
         });
         expect(loginItemSecondVault.trashed).toEqual(false);
         expect(loginItemSecondVault.extraFields).toEqual([]);
@@ -294,10 +303,11 @@ describe('Import Keeper CSV', () => {
         expect(loginItemSecondVault.metadata.name).toEqual('login of subfolder1');
         expect(loginItemSecondVault.metadata.note).toEqual('');
         expect(loginItemSecondVault.content).toEqual({
-            username: 'john',
+            passkeys: [],
             password: '',
-            urls: [],
             totpUri: '',
+            urls: [],
+            username: 'john',
         });
         expect(loginItemSecondVault.trashed).toEqual(false);
         expect(loginItemSecondVault.extraFields).toEqual([]);
