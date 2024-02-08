@@ -1657,9 +1657,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "عبارت بازیابی اشتباه است. دوباره امتحان کنید یا از شیوه دیگری برای بازیابی استفاده کنید."
       ],
-      "You have no invoices.": [
-        "شما هیچ صورت‌حسابی ندارید."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "شما از همه نشانی‌ها در طرح خود استفاده کرده‌اید. لطفا برای افزودن نشانی جدید طرح خود را ارتقا دهید."
       ],
@@ -2481,9 +2478,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "فایل‌های شما رمزگذاری شده و سپس ذخیره می‌شوند"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "گذرواژه سازمان شما با سایر کاربرانی که می‌خواهید امتیازات مدیریتی بدهید، به اشتراک گذاشته می‌شود. این همچنین یک کد بازیابی اضطراری است تا در صورت عدم دسترسی به حساب خود، به سازمان خود دسترسی پیدا کنید. لطفا این گذرواژه را ذخیره کرده و ایمن نگه دارید."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "جزئیات پرداخت‌ شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت شده‌اند."
@@ -3344,9 +3338,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "در غیراینصورت دسترسی به حساب شما محدود خواهد شد و درنهایت غیرفعال خواهد شد."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "برای ادامه به استفاده از ${ MAIL_APP_NAME } با امکانات ویژه، اشتراک و روش پرداخت خود را انتخاب کنید."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "دورهٔ آزمایشی شما در ${ formattedPeriodEndDate } به پایان می‌رسد"
@@ -4406,9 +4397,6 @@
       ],
       "Set organization name": [
         "تنظیم نام سازمان"
-      ],
-      "Set organization password": [
-        "تنظیم گذرواژه سازمان"
       ],
       "Set up two-factor authentication": [
         "تنظیم احراز هویت دو مرحله‌ای"
