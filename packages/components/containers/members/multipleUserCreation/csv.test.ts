@@ -288,7 +288,11 @@ describe('parseMultiUserCsv', () => {
             ].join('\n');
             const file = getFile(fileContent);
 
-            const result = await parseMultiUserCsv([file]);
+            const result = await parseMultiUserCsv([file], {
+                includeStorage: true,
+                includeVpnAccess: true,
+                includePrivateSubUser: true,
+            });
             const user = result.users[0];
 
             expect(result.errors.length).toBe(0);
@@ -465,7 +469,9 @@ describe('parseMultiUserCsv', () => {
                         ].join('\n');
                         const file = getFile(fileContent);
 
-                        const result = await parseMultiUserCsv([file], { multipleAddresses: true });
+                        const result = await parseMultiUserCsv([file], {
+                            multipleAddresses: true,
+                        });
                         const user = result.users[0];
 
                         expect(result.errors.length).toBe(0);
@@ -566,8 +572,8 @@ describe('parseMultiUserCsv', () => {
             });
         });
 
-        describe('totalStorage', () => {
-            it('returns no errors if set to a valid number', async () => {
+        describe('includeStorage', () => {
+            it('defaults includeStorage to false', async () => {
                 const totalStorage = '123';
                 const fileContent = [
                     defaultCsvFields,
@@ -579,53 +585,87 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(123 * GIGA);
-            });
-
-            it('uses default if value is not a valid number', async () => {
-                const totalStorage = 'not a number';
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
                 expect(user.totalStorage).toBe(0);
             });
 
-            it('defaults to 0', async () => {
-                const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
-                const file = getFile(fileContent);
+            describe('when false', () => {
+                it('always returns default total storage of 0', async () => {
+                    const totalStorage = '123';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeStorage: false });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(0);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
             });
 
-            it('allows decimal values', async () => {
-                const totalStorage = 1.5;
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
-                ].join('\n');
-                const file = getFile(fileContent);
+            describe('when true', () => {
+                it('returns no errors if set to a valid number', async () => {
+                    const totalStorage = '123';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.totalStorage).toBe(1.5 * GIGA);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(123 * GIGA);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const totalStorage = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
+
+                it('defaults totalStorage to 0', async () => {
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(0);
+                });
+
+                it('allows decimal values', async () => {
+                    const totalStorage = 1.5;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,${totalStorage},1,0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.totalStorage).toBe(1.5 * GIGA);
+                });
             });
         });
 
-        describe('vpnAccess', () => {
-            it('returns no errors if set to 0', async () => {
+        describe('includeVpnAccess', () => {
+            it('defaults to false', async () => {
                 const vpnAccess = 0;
                 const fileContent = [
                     defaultCsvFields,
@@ -640,65 +680,84 @@ describe('parseMultiUserCsv', () => {
                 expect(user.vpnAccess).toBe(false);
             });
 
-            it('returns no errors if set to 1', async () => {
-                const vpnAccess = 1;
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
-                ].join('\n');
-                const file = getFile(fileContent);
+            describe('when false', () => {
+                it('always sets vpnAccess to false', async () => {
+                    const vpnAccess = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeVpnAccess: false });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.vpnAccess).toBe(true);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(false);
+                });
             });
 
-            it('uses default if value is not a valid number', async () => {
-                const vpnAccess = 'not a number';
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
-                ].join('\n');
-                const file = getFile(fileContent);
+            describe('when true', () => {
+                it('returns no errors if set to 0', async () => {
+                    const vpnAccess = 0;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.vpnAccess).toBe(false);
-            });
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(false);
+                });
 
-            it('defaults to false', async () => {
-                const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
-                const file = getFile(fileContent);
+                it('returns no errors if set to 1', async () => {
+                    const vpnAccess = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.vpnAccess).toBe(false);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(true);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const vpnAccess = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,${vpnAccess},0`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeVpnAccess: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(false);
+                });
+
+                it('defaults vpnAccess to false', async () => {
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includeStorage: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.vpnAccess).toBe(false);
+                });
             });
         });
 
         describe('privateSubUser', () => {
-            it('returns no errors if set to 0', async () => {
-                const privateSubUser = 0;
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(false);
-            });
-
-            it('returns no errors if set to 1', async () => {
+            it('defaults to false', async () => {
                 const privateSubUser = 1;
                 const fileContent = [
                     defaultCsvFields,
@@ -710,33 +769,82 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(true);
-            });
-
-            it('uses default if value is not a valid number', async () => {
-                const privateSubUser = 'not a number';
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
                 expect(user.privateSubUser).toBe(false);
             });
 
-            it('defaults to false', async () => {
-                const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
-                const file = getFile(fileContent);
+            describe('when false', () => {
+                it('always sets privateSubUser to false', async () => {
+                    const privateSubUser = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(false);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+            });
+
+            describe('when true', () => {
+                it('returns no errors if set to 0', async () => {
+                    const privateSubUser = 0;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+
+                it('returns no errors if set to 1', async () => {
+                    const privateSubUser = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(true);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const privateSubUser = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+
+                it('defaults privateSubUser to false', async () => {
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
             });
         });
     });
