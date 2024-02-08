@@ -288,7 +288,11 @@ describe('parseMultiUserCsv', () => {
             ].join('\n');
             const file = getFile(fileContent);
 
-            const result = await parseMultiUserCsv([file], { includeStorage: true, includeVpnAccess: true });
+            const result = await parseMultiUserCsv([file], {
+                includeStorage: true,
+                includeVpnAccess: true,
+                includePrivateSubUser: true,
+            });
             const user = result.users[0];
 
             expect(result.errors.length).toBe(0);
@@ -753,22 +757,7 @@ describe('parseMultiUserCsv', () => {
         });
 
         describe('privateSubUser', () => {
-            it('returns no errors if set to 0', async () => {
-                const privateSubUser = 0;
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(false);
-            });
-
-            it('returns no errors if set to 1', async () => {
+            it('defaults to false', async () => {
                 const privateSubUser = 1;
                 const fileContent = [
                     defaultCsvFields,
@@ -780,33 +769,82 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(true);
-            });
-
-            it('uses default if value is not a valid number', async () => {
-                const privateSubUser = 'not a number';
-                const fileContent = [
-                    defaultCsvFields,
-                    `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
-                ].join('\n');
-                const file = getFile(fileContent);
-
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
-
-                expect(result.errors.length).toBe(0);
                 expect(user.privateSubUser).toBe(false);
             });
 
-            it('defaults to false', async () => {
-                const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
-                const file = getFile(fileContent);
+            describe('when false', () => {
+                it('always sets privateSubUser to false', async () => {
+                    const privateSubUser = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
 
-                const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
+                    const result = await parseMultiUserCsv([file]);
+                    const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.privateSubUser).toBe(false);
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+            });
+
+            describe('when true', () => {
+                it('returns no errors if set to 0', async () => {
+                    const privateSubUser = 0;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+
+                it('returns no errors if set to 1', async () => {
+                    const privateSubUser = 1;
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(true);
+                });
+
+                it('uses default if value is not a valid number', async () => {
+                    const privateSubUser = 'not a number';
+                    const fileContent = [
+                        defaultCsvFields,
+                        `Alice,alice@mydomain.com,alice_password,1073741824,1,${privateSubUser}`,
+                    ].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
+
+                it('defaults privateSubUser to false', async () => {
+                    const fileContent = ['EmailAddresses,Password', `alice@mydomain.com,alice_password`].join('\n');
+                    const file = getFile(fileContent);
+
+                    const result = await parseMultiUserCsv([file], { includePrivateSubUser: true });
+                    const user = result.users[0];
+
+                    expect(result.errors.length).toBe(0);
+                    expect(user.privateSubUser).toBe(false);
+                });
             });
         });
     });
