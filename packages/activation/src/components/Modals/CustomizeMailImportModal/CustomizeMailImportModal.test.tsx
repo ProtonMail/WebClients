@@ -40,9 +40,7 @@ const providerFolderWithError: ApiMailImporterFolder[] = [
 ];
 
 const getModalProps = (): ModalStateProps => {
-    const key = new Date();
     return {
-        key: key.getTime().toString(),
         open: true,
         onClose: () => {},
         onExit: () => {},
