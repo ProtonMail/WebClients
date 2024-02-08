@@ -45,7 +45,6 @@ export interface AuthCacheResult {
     username: string;
     persistent: boolean;
     loginPassword: string;
-    hasTrustedDeviceRecovery: boolean;
     ignoreUnlock: boolean;
     addressGeneration?: AddressGeneration;
     setupVPN: boolean;
