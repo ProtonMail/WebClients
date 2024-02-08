@@ -11,7 +11,7 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MailUpsellButton, Tabs, UpsellModal, useModalState, useModalTwo } from '../../components';
+import { MailUpsellButton, Tabs, UpsellModal, useModalState, useModalTwoStatic } from '../../components';
 import { useAddresses, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
 import { useFlag } from '../unleash';
@@ -42,7 +42,7 @@ const ForwardSection = () => {
     }, [incomingAddressForwardings, outgoingAddressForwardings, addresses]);
     const [activeTab, setActiveTab] = useState(0);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
-    const [forwardModal, showModal] = useModalTwo(ForwardModal);
+    const [forwardModal, showForwardModal] = useModalTwoStatic(ForwardModal);
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
@@ -73,8 +73,9 @@ const ForwardSection = () => {
                 {isEmailForwardingEnabled ? (
                     <div className="mb-4">
                         {user.hasPaidMail ? (
-                            <Button color="norm" onClick={() => showModal(true)}>{c('email_forwarding_2023: Action')
-                                .t`Add forwarding rule`}</Button>
+                            <Button color="norm" onClick={() => showForwardModal({})}>
+                                {c('email_forwarding_2023: Action').t`Add forwarding rule`}
+                            </Button>
                         ) : (
                             <MailUpsellButton
                                 onClick={() => handleUpsellModalDisplay(true)}

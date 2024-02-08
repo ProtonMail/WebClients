@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, ModalTwo, useConfirmActionModal, useModalTwo } from '@proton/components';
+import { ModalStateProps, ModalTwo, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
 
 import { useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
@@ -144,5 +144,5 @@ export function ShareLinkModal({
 
 export default ShareLinkModal;
 export const useLinkSharingModal = () => {
-    return useModalTwo<Props, void>(ShareLinkModal, false);
+    return useModalTwoStatic(ShareLinkModal);
 };
