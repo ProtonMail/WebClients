@@ -4153,9 +4153,6 @@
       "You already added this holidays calendar": [
         "Posiadasz już kalendarz świąt"
       ],
-      "You have no invoices.": [
-        "Nie masz faktur."
-      ],
       "You have reached the contacts limit for your account": [
         "Osiągnięto limit kontaktów na koncie"
       ],
@@ -6443,9 +6440,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz w stanie zarządzać organizacją."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł zalogować się ani odszyfrować wiadomości."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Czy chcesz unieważnić wszystkie sesje oprócz obecnej?"
       ],
@@ -8065,9 +8059,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Twoja następna data rozliczeniowa to ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Hasło organizacji może być udostępnione innym użytkownikom, którym chcesz nadać uprawnienia administratora. Jest to również kod odzyskiwania awaryjnego, w przypadku utraty dostępu do głównego konta. Zapisz to hasło w bezpiecznym miejscu."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
@@ -10128,23 +10119,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -10178,6 +10152,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -10686,9 +10677,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
@@ -12989,26 +12977,8 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "${ storage } jest pełna. Zwolnij część miejsca lub ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Przestrzeń dyskowa jest w ${ percentage }% pełna. Zwolnij część miejsca lub ${ upgrade }."
-      ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Przestrzeń dyskowa jest pełna. Zwolnij część miejsca lub ${ upgrade }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Po obniżeniu planu stracisz dostęp do ${ gb } przestrzeni dyskowej i priorytetowego wsparcia."
@@ -14412,9 +14382,6 @@
       ],
       "Set organization name": [
         "Ustaw nazwę organizacji"
-      ],
-      "Set organization password": [
-        "Ustaw hasło organizacji"
       ],
       "Set up a recovery method": [
         "Ustaw metodę odzyskiwania"

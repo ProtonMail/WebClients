@@ -466,6 +466,9 @@
       "Failed to move items": [
         "Přesun položek selhal"
       ],
+      "Failed to move items to trash": [
+        "Nepodařilo se přesunout do koše"
+      ],
       "Failed to pin item": [
         "Připnutí položky selhalo"
       ],
@@ -702,6 +705,9 @@
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
       ],
+      "All items successfully moved": [
+        "Všechny položky úspěšně přesunuty"
+      ],
       "All trashed items permanently deleted": [
         "Všechny položky z koše trvale smazány"
       ],
@@ -767,9 +773,6 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
-      ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Vygenerovaná hesla budou uložena po dobu jednoho dne."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získejte neomezený počet aliasů, využívejte exkluzivní funkce a podpořte nás předplacením Proton Pass Plus."
@@ -887,9 +890,6 @@
       ],
       "Pass Plus trial": [
         "Zkušební verze Pass Plus"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Hesla starší než 1 den jsou automaticky smazána z historie."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"

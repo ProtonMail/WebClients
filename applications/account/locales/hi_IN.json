@@ -3535,9 +3535,6 @@
       "You already added this holidays calendar": [
         "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
       ],
-      "You have no invoices.": [
-        "आपका कोई चालान नहीं है।"
-      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "आप कैलेंडर की ऊपरी सीमा पे पहुंच गए है। कुछ कैलेंडर आयात नहीं किए जा सके।"
       ],
@@ -5394,9 +5391,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "इस पासवर्ड को न भूलें। यदि आप इसे भूल जाते हैं, तो आप अपने संगठन का प्रबंधन नहीं कर पाएंगे।"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "इस पासवर्ड को न भूलें। अगर आप इसे भूल जाते है, तो आप साइन-इन या अपने मैसेज को डिक्रिप्ट नहीं कर पाएंगे।"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "क्या आप वर्तमान के अलावा अन्य सभी सत्रों को रद्द करना चाहते हैं?"
       ],
@@ -6676,9 +6670,6 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "आयात पूर्ण होने के बाद आपकी लॉगिन जानकारी सहेजी नहीं जाएगी।"
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "आपके संगठन का पासवर्ड अन्य उपयोगकर्ताओं के साथ साझा किया जा सकता है जिन्हें आप प्रशासनिक विशेषाधिकार देना चाहते हैं। यदि आप अपने खाते तक पहुँच खोते हैं तो यह आपके संगठन तक पहुँच प्राप्त करने के लिए एक आपातकालीन पुनर्प्राप्ति कोड भी है। कृपया इस पासवर्ड को सहेजें और इसे सुरक्षित रखें।"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "संगठन कुंजी का उपयोग करके आपके संगठन के ईमेल एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित हैं। इस फिंगरप्रिंट का उपयोग यह सत्यापित करने के लिए किया जा सकता है कि आपके खाते के सभी व्यवस्थापकों के पास एक ही कुंजी है।"
@@ -8479,23 +8470,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -8529,6 +8503,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -8901,9 +8892,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
@@ -11503,9 +11491,6 @@
       ],
       "Set organization name": [
         "संगठन का नाम सेट करें"
-      ],
-      "Set organization password": [
-        "संगठन पासवर्ड सेट करें"
       ],
       "Set up a recovery method": [
         "रिकवरी तरीका सेट करें"

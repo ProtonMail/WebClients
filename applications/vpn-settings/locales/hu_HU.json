@@ -1893,9 +1893,6 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hibás helyreállító jelmondat. Próbálja meg újra vagy próbáljon másik helyreállítási módszert."
       ],
-      "You have no invoices.": [
-        "Nincs számlája."
-      ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Valamennyi, az előfizetéséhez rendelkezésére álló címet elhasználta. Több cím létrehozásához váltson nagyobb csomagra."
       ],
@@ -2562,9 +2559,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
-      ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem fog tudni sem bejelentkezni, sem pedig az üzeneteit visszafejteni."
       ],
       "Done": [
         "Kész"
@@ -3306,9 +3300,6 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha ez a szolgáltatásunk biztosításához szükséges."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "A szervezeti jelszó más felhasználókkal való megosztásával, számukra is adminisztrátori jogköröket biztosíthat. Ez egy vészhelyzeti helyreállító kódként is használható, abban az esetben is elérje a szervezetét, ha saját a fiókja elérését elvesztené. Tárolja ezt a jelszót biztonságban."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -4357,9 +4348,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Próbaideje véget ér: ${ formattedPeriodEndDate }"
@@ -6006,9 +5994,6 @@
       ],
       "Set organization name": [
         "Szervezet nevének beállítása"
-      ],
-      "Set organization password": [
-        "Szervezeti jelszó beállítása"
       ],
       "Set up two-factor authentication": [
         "Kétlépcsős hitelesítés beállítása"

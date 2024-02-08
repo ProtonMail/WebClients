@@ -812,6 +812,9 @@
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
+      "Select a calendar to export": [
+        "Vybrat kalendář k exportu"
+      ],
       "Select calendar view": [
         "Vybrat zobrazení kalendáře"
       ],
@@ -4144,9 +4147,6 @@
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
       ],
-      "You have no invoices.": [
-        "Nemáte žádné faktury."
-      ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
       ],
@@ -6425,9 +6425,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
       ],
@@ -7018,6 +7015,9 @@
       ],
       "per month": [
         "měsíčně"
+      ],
+      "per month, billed at ${ price }": [
+        "měsíčně, účtováno ${ price }"
       ],
       "per month, billed every 12 months": [
         "za měsíc, účtováno každých 12 měsíců"
@@ -8041,9 +8041,6 @@
       ],
       "Your next billing date is ${ renewalTime }.": [
         "Datum příští platby je ${ renewalTime }."
-      ],
-      "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
@@ -10098,23 +10095,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10148,6 +10128,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -10653,9 +10650,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Zkušební verze končí ${ formattedPeriodEndDate }"
@@ -12863,26 +12857,8 @@
       "Your ${ appStorage } is full": [
         "Vaše ${ appStorage } je plné"
       ],
-      "Your ${ storage } is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání emailů uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your ${ storage } is ${ percentage }% full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je z ${ percentage }% zaplněno. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your ${ storage } is full. To send or receive emails, free up space or ${ upgrade }": [
-        "Vaše ${ storage } je plné. Pro odesílání nebo přijímání e-mailů uvolněte místo nebo ${ upgrade }"
-      ],
-      "Your ${ storage } is full. To upload or sync files, free up space or ${ upgrade }.": [
-        "Vaše ${ storage } je plné. Chcete-li nahrát nebo synchronizovat soubory, uvolněte místo nebo ${ upgrade }."
-      ],
-      "Your storage is ${ percentage }% full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše úložiště je z ${ percentage }% zaplněno. Pro odesílání nebo přijímání e-mailů, uvolněte místo nebo ${ upgrade }."
-      ],
       "Your storage is full": [
         "Vaše úložiště je plné"
-      ],
-      "Your storage is full. To send or receive emails, free up space or ${ upgrade }.": [
-        "Vaše úložiště je plné. Chcete-li odesílat nebo přijímat e-maily, uvolněte místo nebo ${ upgrade }."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
         "Ztratíte přístup k dalšímu úložišti, e-mailovým adresám, aliasům, kalendářům a také k prioritní podpoře."
@@ -14268,9 +14244,6 @@
       ],
       "Set organization name": [
         "Nastavit název organizace"
-      ],
-      "Set organization password": [
-        "Nastavit heslo organizace"
       ],
       "Set up a recovery method": [
         "Nastavit metodu obnovení"
