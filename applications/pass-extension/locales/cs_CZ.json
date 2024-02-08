@@ -540,6 +540,9 @@
       "Failed to move items": [
         "Přesun položek selhal"
       ],
+      "Failed to move items to trash": [
+        "Nepodařilo se přesunout do koše"
+      ],
       "Failed to pin item": [
         "Připnutí položky selhalo"
       ],
@@ -809,6 +812,9 @@
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
       ],
+      "All items successfully moved": [
+        "Všechny položky úspěšně přesunuty"
+      ],
       "All trashed items permanently deleted": [
         "Všechny položky z koše trvale smazány"
       ],
@@ -901,9 +907,6 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
-      ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Vygenerovaná hesla budou uložena po dobu jednoho dne."
       ],
       "Generating alias...": [
         "Generování aliasu..."
@@ -1033,9 +1036,6 @@
       ],
       "Password copied": [
         "Heslo zkopírováno"
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Hesla starší než 1 den jsou automaticky smazána z historie."
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"

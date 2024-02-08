@@ -941,9 +941,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Les mots de passe générés seront conservés pendant un jour."
-      ],
       "Generating alias...": [
         "Génération de l'alias en cours"
       ],
@@ -1071,9 +1068,6 @@
       ],
       "Password copied": [
         "Le mot de passe a été copié."
-      ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Les mots de passe datant de plus d'un jour sont automatiquement supprimés de l'historique."
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
@@ -1524,6 +1518,15 @@
       ],
       "Logins": [
         "Identifiants"
+      ],
+      "Make all admins": [
+        "Définir tous comme administrateur"
+      ],
+      "Make all editors": [
+        "Définir tous comme éditeur"
+      ],
+      "Make all viewers": [
+        "Définir tous comme lecteur"
       ],
       "Members": [
         "Membres"
@@ -2071,6 +2074,9 @@
       ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Invalid email addresses.": [
+        "Les adresses électroniques ne sont pas valides."
       ],
       "Maximum length is ${ maxLength } character": [
         "${ maxLength } caractère maximum",

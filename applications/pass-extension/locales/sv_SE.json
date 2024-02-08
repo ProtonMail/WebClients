@@ -938,9 +938,6 @@
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
-      "Generated passwords will be stored for a period of one day.": [
-        "Genererade lösenord kommer att lagras under en period av en dag."
-      ],
       "Generating alias...": [
         "Genererar alias..."
       ],
@@ -1066,8 +1063,9 @@
       "Password copied": [
         "Lösenord kopierat"
       ],
-      "Passwords older than 1 day are automatically deleted from history.": [
-        "Lösenord äldre än 1 dag tas automatiskt bort från historik."
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
