@@ -112,7 +112,7 @@ export const createCoreTelemetryService = ({ storage, getEnabled, getUserTier, a
     const push = async (event: TelemetryEvent): Promise<boolean> => {
         try {
             if (getEnabled()) {
-                logger.debug(`[Telemetry] Adding ${event.Event} to current bundle`);
+                logger.info(`[Telemetry] Adding ${event.Event} to current bundle`);
 
                 const bundle = await resolveBundle();
                 bundle.events.push(merge(event, { Dimensions: { user_tier: getUserTier() } }));

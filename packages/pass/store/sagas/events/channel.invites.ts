@@ -36,6 +36,8 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
 
     if (noop) return;
 
+    logger.info(`[ServerEvents::Invites] ${event.Invites.length} new invite(s) received`);
+
     const invites: MaybeNull<Invite>[] = yield Promise.all(
         event.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {
             /* if invite already decrypted early return */
