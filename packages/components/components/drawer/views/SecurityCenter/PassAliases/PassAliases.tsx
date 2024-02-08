@@ -32,6 +32,7 @@ const PassAliases = () => {
         passAliasesItems,
         passAliasesUpsellModal,
         hasReachedAliasesLimit,
+        hadInitialisedPreviously,
     } = usePassAliasesContext();
     const authentication = useAuthentication();
 
@@ -50,7 +51,7 @@ const PassAliases = () => {
         return getAppHref(`?${search.toString()}`, APPS.PROTONPASS, authentication?.getLocalID?.());
     }, []);
 
-    if (loading) {
+    if (loading && !hadInitialisedPreviously) {
         return (
             <DrawerAppSection>
                 <Loader size="medium" className="color-primary m-auto" />
@@ -86,6 +87,7 @@ const PassAliases = () => {
                         }}
                         color="norm"
                         fullWidth
+                        loading={loading}
                     >
                         {!hasAliases ? c('Security Center').t`Create an alias` : c('Security Center').t`New alias`}
                     </Button>

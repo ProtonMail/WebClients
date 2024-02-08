@@ -26,7 +26,7 @@ import type { CreateModalFormState, PassAliasesVault } from './interface';
  * In the long term we should have pass relying on the event loop.
  * However we decided to not go this way because implementation time
  */
-let memoisedPassAliasesItems: PassBridgeAliasItem[] = [];
+let memoisedPassAliasesItems: PassBridgeAliasItem[] | null = null;
 
 interface PasAliasesProviderReturnedValues {
     /** Fetch needed options to be able to create a new alias request */
@@ -37,6 +37,8 @@ interface PasAliasesProviderReturnedValues {
     hasUsedProtonPassApp: boolean;
     /** False when PassBridge finished to init and pass aliases values and count are done */
     loading: boolean;
+    /** User already opened pass aliases drawer in the current session (not hard refreshed) */
+    hadInitialisedPreviously: boolean;
     /** Has user reached pass aliases creation limit  */
     hasReachedAliasesLimit: boolean;
     submitNewAlias: (formValues: CreateModalFormState) => Promise<void>;
@@ -54,9 +56,9 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
     const passAliasesUpsellModal = useModalStateObject();
     const isMounted = useIsMounted();
     const [subscription] = useSubscription();
-    const [loading, setLoading] = useState<boolean>(memoisedPassAliasesItems.length ? false : true);
+    const [loading, setLoading] = useState<boolean>(true);
     const [passAliasVault, setPassAliasVault] = useState<PassAliasesVault>();
-    const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>(memoisedPassAliasesItems);
+    const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>(memoisedPassAliasesItems || []);
     const [totalVaultAliasesCount, setTotalVaultAliasesCount] = useState<number>(0);
     const [userHadVault, setUserHadVault] = useState(false);
     const { createNotification } = useNotifications();
@@ -165,6 +167,7 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         hasAliases: !!passAliasesItems.length,
         hasUsedProtonPassApp: userHadVault,
         loading,
+        hadInitialisedPreviously: Array.isArray(memoisedPassAliasesItems),
         submitNewAlias,
         passAliasesVaultName: passAliasVault?.content.name || '',
         passAliasesItems,
