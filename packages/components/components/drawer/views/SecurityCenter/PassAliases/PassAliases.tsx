@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
-import PassAliasesUpsellModal from '@proton/components/components/upsell/modal/types/PassAliasesUpsellModal';
 import { ErrorBoundary, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useAuthentication } from '@proton/components/hooks';
@@ -20,7 +19,8 @@ import HasNoAliases from './HasNoAliases';
 import { PassAliasesProvider, usePassAliasesContext } from './PassAliasesProvider';
 import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import CreatePassAliasesForm from './modals/CreatePassAliasesForm/CreatePassAliasesForm';
-import TryProtonPass from './modals/TryProtonPass/TryProtonPass';
+import PassAliasesUpsellModal from './modals/PassAliasesUpsellModal';
+import TryProtonPass from './modals/TryProtonPass';
 
 const PassAliases = () => {
     const createAliasModal = useModalStateObject();
