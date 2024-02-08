@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -5,12 +7,12 @@ import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader }
 import { FreeSubscription, isFreeSubscription } from '@proton/shared/lib/constants';
 import { External, Subscription } from '@proton/shared/lib/interfaces';
 
-interface Props extends ModalProps {
+interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;
     onClose: NonNullable<ModalProps['onClose']>;
 }
 
-function getSubscritionManagerName(externalCode: External.Android | External.iOS): string {
+function getSubscriptionManagerName(externalCode: External): string {
     if (externalCode === External.Android) {
         return 'Google Play';
     } else if (externalCode === External.iOS) {
@@ -46,17 +48,22 @@ export const InAppText = ({ subscription }: { subscription: Subscription | undef
     );
 };
 
-const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
-    if (isFreeSubscription(subscription)) {
-        rest.onClose();
-        return null;
-    }
-    if (subscription.External !== External.iOS && subscription.External !== External.Android) {
-        rest.onClose();
+const InAppPurchaseModal = ({ subscription, ...rest }: InAppPurchaseModalProps) => {
+    const shouldClose =
+        isFreeSubscription(subscription) ||
+        (subscription.External !== External.iOS && subscription.External !== External.Android);
+
+    useEffect(() => {
+        if (shouldClose) {
+            rest.onClose();
+        }
+    }, [shouldClose]);
+
+    if (shouldClose) {
         return null;
     }
 
-    const subscriptionManager = getSubscritionManagerName(subscription.External);
+    const subscriptionManager = getSubscriptionManagerName(subscription.External);
 
     // translator: subscriptionManager currently can be "Google Play" or "Apple App Store"
     const title = c('Subscription change warning').t`Manage your subscription on ${subscriptionManager}`;

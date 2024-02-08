@@ -5,13 +5,13 @@ import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, ModalProps, Prompt } from '../../components';
 
-interface Props extends ModalProps {
+export interface DowngradeModalProps extends ModalProps {
     hasMail: boolean;
     hasVpn: boolean;
     onConfirm: () => void;
 }
 
-const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props) => {
+const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: DowngradeModalProps) => {
     const hasBundle = hasMail && hasVpn;
 
     return (

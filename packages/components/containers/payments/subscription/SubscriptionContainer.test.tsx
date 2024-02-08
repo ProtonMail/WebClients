@@ -1,5 +1,6 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     defaultSubscriptionCache,
     mockUserVPNServersCountApi,
@@ -39,6 +40,7 @@ jest.mock('@proton/components/hooks/useSubscription', () => ({
     __esModule: true,
     default: jest.fn(() => [{}, false]),
     useSubscription: jest.fn(() => [{}, false]),
+    useGetSubscription: jest.fn(() => [{}, false]),
 }));
 
 jest.mock('@proton/components/hooks/useFeature', () => ({
@@ -106,14 +108,14 @@ describe('SubscriptionContainer', () => {
     });
 
     it('should render', () => {
-        const { container } = render(<ContextSubscriptionContainer {...props} />);
+        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
         expect(container).not.toBeEmptyDOMElement();
     });
 
     it('should redirect user without supported addons directly to checkout step', async () => {
         props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
 
-        const { container } = render(<ContextSubscriptionContainer {...props} />);
+        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
         await waitFor(() => {
             expect(container).toHaveTextContent('Review subscription and pay');
         });
@@ -133,7 +135,7 @@ describe('SubscriptionContainer', () => {
             [PLANS.MAIL_PRO]: 1,
         };
 
-        const { container } = render(<ContextSubscriptionContainer {...props} />);
+        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         await waitFor(() => {
             expect(container).toHaveTextContent('Customize your plan');
@@ -144,7 +146,7 @@ describe('SubscriptionContainer', () => {
         props.step = SUBSCRIPTION_STEPS.CUSTOMIZATION;
         props.planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER]: 329 }; // user with 330 users in the organization
 
-        const { findByTestId, container } = render(<ContextSubscriptionContainer {...props} />);
+        const { findByTestId, container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
         const continueButton = await findByTestId('continue-to-review');
 
         apiMock.mockClear();
@@ -162,7 +164,7 @@ describe('SubscriptionContainer', () => {
         props.step = SUBSCRIPTION_STEPS.CHECKOUT;
         props.planIDs = { mail2022: 1 };
 
-        const { container } = render(<ContextSubscriptionContainer {...props} />);
+        const { container } = renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         let form: HTMLFormElement | null = null;
         await waitFor(() => {

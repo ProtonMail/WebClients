@@ -3,7 +3,8 @@ import { c, msgid } from 'ttag';
 import { Button, Card } from '@proton/atoms';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { APP_NAMES, BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
+import { ProductParam } from '@proton/shared/lib/apps/product';
+import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { FreePlanDefault, PlansMap, UserModel } from '@proton/shared/lib/interfaces';
@@ -22,14 +23,19 @@ import { ShortPlan } from '../features/interface';
 import { getFreePlan } from '../features/plan';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
 
-interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onConfirm: () => void;
+export interface HighlightPlanDowngradeModalOwnProps {
     shortPlan: ShortPlan;
     periodEnd: number;
     plansMap: PlansMap;
     user: UserModel;
-    app: APP_NAMES;
+    app: ProductParam;
     freePlan: FreePlanDefault;
+}
+
+interface HighlightPlanDowngradeModalProps
+    extends Omit<ModalProps<typeof Form>, 'onSubmit'>,
+        HighlightPlanDowngradeModalOwnProps {
+    onConfirm: () => void;
 }
 
 const HighlightPlanDowngradeModal = ({
@@ -42,7 +48,7 @@ const HighlightPlanDowngradeModal = ({
     shortPlan,
     periodEnd,
     ...rest
-}: Props) => {
+}: HighlightPlanDowngradeModalProps) => {
     const storageSplitEnabled = useFlag('SplitStorage');
     const downgradedShortPlan = getFreePlan(freePlan);
     const downgradedPlanName = `${downgradedShortPlan.title}`;
@@ -73,7 +79,7 @@ const HighlightPlanDowngradeModal = ({
     const shortPlanFeatures = shortPlan?.features?.filter((feature) => !feature.hideInDowngrade) || [];
 
     return (
-        <Modal as={Form} onClose={onClose} size="xlarge" {...rest}>
+        <Modal as={Form} onClose={onClose} size="xlarge" data-testid="highlight-downgrade-modal" {...rest}>
             <ModalHeader title={c('Title').t`Downgrade to ${downgradedPlanName}?`} />
             <ModalContent>
                 {(() => {
@@ -160,7 +166,7 @@ const HighlightPlanDowngradeModal = ({
                         onConfirm();
                         onClose?.();
                     }}
-                    data-testid="downgrade-to-free"
+                    data-testid="highlight-downgrade-to-free"
                 >
                     {downgradeButtonString}
                 </Button>

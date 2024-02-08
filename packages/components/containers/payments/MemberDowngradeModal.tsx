@@ -81,7 +81,7 @@ const MemberDowngradeModal = ({ organization, onConfirm, onClose, ...rest }: Pro
             </ModalContent>
             <ModalFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <Button type="submit" color="danger">
+                <Button type="submit" color="danger" data-testid="confirm-member-delete">
                     {c('Action').t`Delete`}
                 </Button>
             </ModalFooter>

@@ -6,15 +6,13 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Prompt, PromptProps } from '../../../components';
 
-interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'> {
+export type NewVisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
+
+interface Props extends Omit<PromptProps, 'children' | 'title' | 'buttons'>, NewVisionaryWarningModalOwnProps {
     onConfirm: () => void;
 }
 
-export const NewVisionaryWarningModal = ({
-    onConfirm,
-    type,
-    ...rest
-}: Props & { type: 'downgrade' | 'switch' | 'delete' }) => {
+export const NewVisionaryWarningModal = ({ onConfirm, type, ...rest }: Props) => {
     const visionary = 'Visionary';
     const plan = 'visionary';
     return (
@@ -92,7 +90,8 @@ export const NewVisionaryWarningModal = ({
     );
 };
 
-export const DiscountWarningModal = ({ onConfirm, type, ...rest }: Props & { type: 'downgrade' | 'delete' }) => {
+export type DiscountWarningProps = Props & { type: 'downgrade' | 'delete' };
+export const DiscountWarningModal = ({ onConfirm, type, ...rest }: DiscountWarningProps) => {
     return (
         <Prompt
             title={(() => {
