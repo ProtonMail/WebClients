@@ -78,7 +78,7 @@ export const Import: FC = () => {
                         <ImportForm form={form} dropzone={dropzone} busy={busy} />
                         {form.values.provider && (
                             <Button
-                                className="mt-2"
+                                className="w-full mt-2"
                                 type="submit"
                                 disabled={busy || !form.isValid}
                                 loading={busy}
