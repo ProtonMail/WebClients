@@ -28,6 +28,7 @@ import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
@@ -44,6 +45,8 @@ import { store } from './Store/store';
 import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
 import * as config from './config';
+
+sentry({ config });
 
 const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
 
