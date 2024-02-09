@@ -22,7 +22,7 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
+import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
