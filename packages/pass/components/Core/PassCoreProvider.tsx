@@ -57,6 +57,8 @@ export type PassCoreContextValue = {
     promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */
     setCurrentTabUrl?: (url: ParsedUrl) => void;
+    /** Writes text to the clipboard */
+    writeToClipboard: (text: string) => Promise<void>;
 };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
