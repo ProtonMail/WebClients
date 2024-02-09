@@ -52,7 +52,7 @@ export const getMailAppRoutes = ({
             desktop: {
                 text: c('Title').t`Get the apps`,
                 to: '/get-the-apps',
-                icon: 'pass-laptop',
+                icon: 'arrow-down-line',
                 notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
                 subsections: [
                     { id: 'proton-mail-mobile-apps', text: c('Title').t`Download the mobile apps` },
