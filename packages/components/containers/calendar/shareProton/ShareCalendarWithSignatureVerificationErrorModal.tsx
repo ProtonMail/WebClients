@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
-    LearnMore,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
@@ -40,7 +39,7 @@ const ShareCalendarWithSignatureVerificationErrors = ({ senderEmail, onCancel, .
                     {c('Signature verification error when joining calendar')
                         .jt`You have enabled address verification for ${boldSenderEmail}. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${boldSenderEmail} for a new invite.`}
                 </p>
-                <LearnMore url={getKnowledgeBaseUrl('/key-pinning')} />
+                <Href href={getKnowledgeBaseUrl('/key-pinning')}>{c('Link').t`Learn more`}</Href>
             </ModalContent>
             <ModalFooter className="justify-end">
                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
