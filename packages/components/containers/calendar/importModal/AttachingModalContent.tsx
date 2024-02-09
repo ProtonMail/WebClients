@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
@@ -11,7 +12,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Alert, AttachedFile, Dropzone, FileInput, Label, LearnMore, Row } from '../../../components';
+import { Alert, AttachedFile, Dropzone, FileInput, Label, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {
@@ -42,7 +43,7 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
             {c('Description')
                 .t`You can import events in iCal format (ICS file). The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_EVENTS_STRING} events. If your file is bigger, please split it into smaller files.`}
             <div>
-                <LearnMore url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)} />
+                <Href href={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Link').t`Learn more`}</Href>
             </div>
         </div>
     );
