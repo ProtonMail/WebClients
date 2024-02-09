@@ -52,7 +52,7 @@ function* onUserEvent(
         if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
-    /* if the subscription/invoice changes, refetch the user Plan */
+    /* if the subscription/invoice changes, refetch the user Plan and check Organization */
     if (event.Subscription || event.Invoices) {
         yield put(withRevalidate(getUserAccessIntent(userId)));
     }

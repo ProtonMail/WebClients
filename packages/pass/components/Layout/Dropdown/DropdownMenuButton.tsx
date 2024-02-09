@@ -64,6 +64,7 @@ const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }
 type DropdownMenuButtonLabelProps = {
     label: ReactNode;
     labelClassname?: string;
+    labelHCustom?: string;
     icon?: IconName | ReactElement;
     extra?: ReactNode;
     ellipsis?: boolean;
@@ -77,11 +78,12 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     extra,
     ellipsis = true,
     danger = false,
+    labelHCustom = '1.25rem',
 }) => {
     return (
         <div
             className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom"
-            style={{ '--max-h-custom': '1.25rem' }}
+            style={{ '--max-h-custom': labelHCustom }}
         >
             <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
@@ -124,6 +126,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     danger,
     label,
     labelClassname,
+    labelHCustom,
     extra,
     ellipsis = true,
     style,
@@ -145,6 +148,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     danger={danger}
                     label={label}
                     labelClassname={clsx('text-left', labelClassname)}
+                    labelHCustom={labelHCustom}
                     extra={
                         <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraPadding)}>
                             {isSelected && (
