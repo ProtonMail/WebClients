@@ -13,6 +13,7 @@ import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import noop from '@proton/utils/noop';
 
@@ -147,6 +148,7 @@ interface Arguments {
     getAddressKeys: GetAddressKeys;
     getCanonicalEmailsMap: GetCanonicalEmailsMap;
     sendIcs: SendIcs;
+    getCalendarEventRaw: GetCalendarEventRaw;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
@@ -167,6 +169,7 @@ const getSaveEventActions = async ({
     getAddressKeys,
     getCanonicalEmailsMap,
     sendIcs,
+    getCalendarEventRaw,
     reencryptSharedEvent,
     onSendPrefsErrors,
     handleSyncActions,
@@ -463,6 +466,7 @@ const getSaveEventActions = async ({
         isAttendee,
         isBreakingChange,
         sendIcs,
+        getCalendarEventRaw,
         handleSyncActions,
         reencryptSharedEvent,
         onEquivalentAttendees: handleEquivalentAttendees,

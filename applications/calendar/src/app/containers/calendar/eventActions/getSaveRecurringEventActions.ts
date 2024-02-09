@@ -1,7 +1,10 @@
 import { useGetCalendarKeys } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
-import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
-import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
+import {
+    getHasDefaultNotifications,
+    getIsAutoAddedInvite,
+    getIsPersonalSingleEdit,
+} from '@proton/shared/lib/calendar/apiModels';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
@@ -12,6 +15,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
 import unary from '@proton/utils/unary';
 
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
@@ -67,6 +71,7 @@ interface SaveRecurringArguments {
     isBreakingChange: boolean;
     inviteActions: InviteActions;
     sendIcs: SendIcs;
+    getCalendarEventRaw: GetCalendarEventRaw;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
@@ -103,6 +108,7 @@ const getSaveRecurringEventActions = async ({
     isAttendee,
     isBreakingChange,
     sendIcs,
+    getCalendarEventRaw,
     handleSyncActions,
     onSendPrefsErrors,
     onEquivalentAttendees,
@@ -382,21 +388,21 @@ const getSaveRecurringEventActions = async ({
 
     if (type === RECURRING_TYPES.ALL) {
         const isSwitchCalendar = originalCalendarID !== newCalendarID;
-        // Any single edits in the recurrence chain.
-        const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
-        // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
-        const deleteOperations = isAttendee ? [] : singleEditRecurrences.map(unary(getDeleteSyncOperation));
         const newRecurrentVevent = updateAllRecurrence({
             component: newVeventComponent,
             originalComponent: originalVeventComponent,
             mode: updateAllPossibilities,
-            isSingleEdit,
             isAttendee,
         });
         const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
             newRecurrentVevent,
             originalVeventComponent
         );
+        // Any single edits in the recurrence chain.
+        const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
+        // As an attendee, we do not want to delete single edits as we want to keep in sync with the organizer's event
+        const deleteOperations = isAttendee ? [] : singleEditRecurrences.map(unary(getDeleteSyncOperation));
+
         if (selfAttendeeToken && invitePartstat) {
             // the attendee changes answer
             const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
@@ -473,24 +479,43 @@ const getSaveRecurringEventActions = async ({
                     'Cannot add participants and change calendar simultaneously. Please change the calendar first'
                 );
             }
-            const sharedSessionKey = await getBase64SharedSessionKey({
+            const requestInviteActions = { ...updatedInviteActions };
+            const requestIcsPromise = getBase64SharedSessionKey({
                 calendarEvent: originalEvent,
                 getCalendarKeys,
                 getAddressKeys,
+            }).then((sharedSessionKey) => {
+                if (sharedSessionKey) {
+                    requestInviteActions.sharedEventID = originalEvent.SharedEventID;
+                    requestInviteActions.sharedSessionKey = sharedSessionKey;
+                }
+                return sendIcs({
+                    inviteActions: requestInviteActions,
+                    vevent: updatedVeventComponent,
+                });
             });
-            if (sharedSessionKey) {
-                updatedInviteActions.sharedEventID = originalEvent.SharedEventID;
-                updatedInviteActions.sharedSessionKey = sharedSessionKey;
-            }
-            const {
-                veventComponent: cleanVeventComponent,
-                inviteActions: cleanInviteActions,
-                sendPreferencesMap,
-            } = await sendIcs({
-                inviteActions: updatedInviteActions,
-                vevent: updatedVeventComponent,
-                cancelVevent: originalVeventComponent,
-            });
+            const cancelIcsPromises = singleEditRecurrences
+                .filter((event) => !getIsPersonalSingleEdit(event))
+                .map(async (event) => {
+                    const { veventComponent } = await getCalendarEventRaw(event);
+                    const cancelInviteActions = {
+                        ...updatedInviteActions,
+                        type: INVITE_ACTION_TYPES.CANCEL_INVITATION,
+                        sharedEventID: event.SharedEventID,
+                    };
+                    return sendIcs({
+                        inviteActions: cancelInviteActions,
+                        cancelVevent: veventComponent,
+                        // Do not re-check send preferences errors for single edits as they were checked for the main event already,
+                        // and it's currently not possible to have a different list of attendees in the single edits
+                        // TODO: Move send preference error check outside of sendIcs
+                        noCheckSendPrefs: true,
+                    });
+                });
+
+            const [{ veventComponent: cleanVeventComponent, inviteActions: cleanInviteActions, sendPreferencesMap }] =
+                await Promise.all([requestIcsPromise, ...cancelIcsPromises]);
+
             if (cleanVeventComponent) {
                 updatedVeventComponent = cleanVeventComponent;
                 updatedInviteActions = cleanInviteActions;
@@ -541,7 +566,7 @@ const getSaveRecurringEventActions = async ({
                     calendarID: newCalendarID,
                     addressID: newAddressID,
                     memberID: newMemberID,
-                    operations: isAttendee ? [updateOperation] : [...deleteOperations, updateOperation],
+                    operations: [...deleteOperations, updateOperation],
                 },
             ],
             inviteActions: updatedInviteActions,
