@@ -5,10 +5,10 @@ import InboxDesktopBeta from '@proton/styles/assets/img/icons/inbox-desktop-app-
 import InboxDesktop from '@proton/styles/assets/img/icons/inbox-desktop-app.svg';
 
 interface Props {
-    enviornment?: 'default' | 'beta';
+    environment?: 'default' | 'beta';
 }
 
-const InboxDesktopLogo = ({ enviornment: variant = 'default' }: Props) => {
+const InboxDesktopLogo = ({ environment: variant = 'default' }: Props) => {
     return (
         <img
             src={variant === 'default' ? InboxDesktop : InboxDesktopBeta}
