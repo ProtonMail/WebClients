@@ -317,13 +317,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         maxMembers
                     )}
                     {user.canPay && selfMember?.Subscriber === MEMBER_SUBSCRIBER.PAYER && (
-                        <Button
-                            className="ml-2"
-                            shape="outline"
-                            color="norm"
-                            size="small"
-                            onClick={handleGetMoreLicense}
-                        >
+                        <Button shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
                             {c('Action').t`Get more licenses`}
                         </Button>
                     )}
@@ -340,7 +334,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         <SettingsSectionWide>
             {organizationModals.info}
             {organizationModals.modals}
-            <SettingsParagraph large className="flex items-baseline mb-6">
+            <SettingsParagraph large className="flex items-baseline mb-6 gap-2">
                 {settingsParagraphContent}
             </SettingsParagraph>
             <Block className="flex items-start">
