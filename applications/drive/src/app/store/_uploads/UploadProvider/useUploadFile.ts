@@ -476,11 +476,13 @@ export default function useUploadFile() {
                             token: link.Token,
                             url: link.BareURL,
                         })),
-                        thumbnailLinks: ThumbnailLinks?.map((link, index) => ({
-                            index,
-                            token: link.Token,
-                            url: link.BareURL,
-                        })),
+                        thumbnailLinks: thumbnailBlocks
+                            ? ThumbnailLinks?.map((link, index) => ({
+                                  index: thumbnailBlocks[index].index,
+                                  token: link.Token,
+                                  url: link.BareURL,
+                              }))
+                            : undefined,
                     };
                 },
                 finalize: queuedFunction(
