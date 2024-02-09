@@ -10,7 +10,6 @@ import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
-import { SUPPORTED_IMPORT_FILE_TYPES } from '@proton/pass/hooks/useImportForm';
 import { extractFileExtension } from '@proton/pass/lib/import/reader';
 import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import type { MaybeNull } from '@proton/pass/types';
@@ -137,7 +136,9 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                 />
                             ) : (
                                 <FileInput
-                                    accept={SUPPORTED_IMPORT_FILE_TYPES.map((ext) => `.${ext}`).join(',')}
+                                    accept={PROVIDER_INFO_MAP[form.values.provider].fileExtension
+                                        .replace(/(\w+)/g, '.$1')
+                                        .replace(/\s/g, '')}
                                     onChange={dropzone.onAttach}
                                     disabled={busy}
                                     shape="solid"
