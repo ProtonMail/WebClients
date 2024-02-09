@@ -74,7 +74,7 @@ const FormFieldWrapper = ({
 const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
     const { formValues, setFormValues, blurred, setBlurred, hasErrors, errors, submitted, setSubmitted } =
         useCreateModalForm();
-    const { submitNewAlias, getAliasOptions, passAliasesVaultName: vaultName } = usePassAliasesContext();
+    const { submitNewAlias, getAliasOptions } = usePassAliasesContext();
     const { createNotification } = useNotifications();
     const [mailboxes, setMailboxes] = useState<AliasOptions['mailboxes']>([]);
     const [aliasSuffix, setAliasSuffix] = useState<string>();
@@ -150,7 +150,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                 <h1 className="text-center text-bold">{c('Security Center').t`Create alias`}</h1>
                 <p className="text-center color-weak">
                     {c('Security Center')
-                        .t`When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.`}
+                        .t`When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.`}
                 </p>
                 {loadingData && (
                     <div className="flex items-center min-h-custom" style={{ '--min-h-custom': '25em' }}>
@@ -172,7 +172,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                 label={c('Label').t`Title`}
                                 value={formValues.name}
                                 className="text-bold rounded-none"
-                                placeholder={c('Label').t`Add title`}
+                                placeholder={c('Label').t`e.g., Amazon, eBay, Etsy`}
                                 autoFocus
                                 unstyled
                                 onBlur={() => setBlurred({ ...blurred, name: true })}
@@ -186,20 +186,6 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                     });
                                 }}
                                 error={getFieldError('name')}
-                                keepAssistiveText
-                                assistiveText={
-                                    <span className="inline-flex flex-nowrap items-center max-w-full">
-                                        <Icon
-                                            name="brand-proton-pass"
-                                            className="shrink-0"
-                                            alt={c('Info').t`The vault your alias will be stored in.`}
-                                            title={c('Info').t`The vault your alias will be stored in.`}
-                                        />
-                                        <span className="m-0 ml-2 text-ellipsis" title={vaultName}>
-                                            {vaultName}
-                                        </span>
-                                    </span>
-                                }
                             />
                         </FormFieldWrapper>
 
@@ -245,7 +231,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                     autoGrow
                                     unstyled
                                     className="rounded-none p-0 resize-none"
-                                    placeholder={c('Security Center').t`e.g., Amazon, eBay, Etsy`}
+                                    placeholder={c('Security Center').t`Used on amazon for shopping, etc.`}
                                     onBlur={() => setBlurred({ ...blurred, note: true })}
                                     onValue={(note: string) => {
                                         setFormValues({ ...formValues, note });
@@ -259,7 +245,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
             <ModalTwoFooter>
                 <Button type="button" onClick={modalProps.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button type="submit" color="norm" loading={loadingSubmit} onClick={handleSubmit}>{c('Action')
-                    .t`Save and copy alias`}</Button>
+                    .t`Create and copy alias`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
