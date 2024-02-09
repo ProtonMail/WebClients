@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -133,8 +133,8 @@ const ActionButtons = ({
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
      */
     const metrics = {
-        source: 'plans' as 'plans',
-    };
+        source: 'plans',
+    } as const;
 
     const handleCustomizeSubscription = () =>
         openSubscriptionModal({
@@ -142,6 +142,7 @@ const ActionButtons = ({
             disablePlanSelection: true,
             metrics,
         });
+
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -155,11 +156,15 @@ const ActionButtons = ({
             metrics,
         });
 
+    const showEditBillingDetails = user.isPaid && user.canPay && !hasMaximumCycle(subscription);
+    const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
+    const showExploreOtherPlans = user.canPay;
+
     return (
         <>
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
-                user.isPaid && user.canPay && !hasMaximumCycle(subscription) ? (
+                showEditBillingDetails ? (
                     <Button
                         onClick={handleEditPayment}
                         className="mb-2"
@@ -170,7 +175,7 @@ const ActionButtons = ({
                     >{c('Action').t`Edit billing details`}</Button>
                 ) : null
             }
-            {user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription) ? (
+            {showCustomizePlan ? (
                 <Button
                     onClick={handleCustomizeSubscription}
                     className="mb-2"
@@ -181,7 +186,7 @@ const ActionButtons = ({
                     fullWidth
                 >{c('Action').t`Customize plan`}</Button>
             ) : null}
-            {user.canPay ? (
+            {showExploreOtherPlans ? (
                 <Button
                     onClick={handleExplorePlans}
                     size="large"
