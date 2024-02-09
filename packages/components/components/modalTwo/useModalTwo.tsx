@@ -70,7 +70,7 @@ export function useModalTwoPromise<PassedProps = undefined, ReturnValue = void>(
                 : PassedProps & ModalTwoPromiseHandlers<ReturnValue> & ModalStateProps
         ) => ReactNode
     ) => ReactNode,
-    (props: PassedProps) => Promise<ReturnValue>,
+    PassedProps extends undefined ? () => Promise<ReturnValue> : (props: PassedProps) => Promise<ReturnValue>,
 ];
 
 export function useModalTwoPromise<PassedProps, ReturnValue = void>(
