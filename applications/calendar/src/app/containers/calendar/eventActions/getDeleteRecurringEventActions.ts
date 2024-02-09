@@ -248,6 +248,7 @@ export const getDeleteRecurringEventActions = async ({
                         inviteActions,
                         cancelVevent,
                         // When deleting all, do not check single edits send preferences. Otherwise, single edits containing prefs errors will block the UI
+                        // TODO: Move send preference error check outside of sendIcs
                         noCheckSendPrefs: getHasRecurrenceId(cancelVevent),
                     })
                 )

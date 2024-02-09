@@ -1305,6 +1305,7 @@ const InteractiveCalendarView = ({
                 getAddressKeys,
                 getCanonicalEmailsMap,
                 sendIcs: handleSendIcs,
+                getCalendarEventRaw,
                 reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
