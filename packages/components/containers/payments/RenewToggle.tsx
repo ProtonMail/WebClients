@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -49,7 +49,7 @@ export interface UseRenewToggleOptions {
 
 export interface UseRenewToggleResult {
     onChange: () => Promise<Autopay | null>;
-    disableRenewModal: JSX.Element | null;
+    disableRenewModal: ReactNode | null;
     renewState: Autopay;
     setRenewState: (newState: Autopay) => void;
 }
