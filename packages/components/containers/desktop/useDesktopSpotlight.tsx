@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { differenceInDays, fromUnixTime } from 'date-fns';
 
-import { useDrawer, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
+import { useDrawer, useFeature, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -13,6 +13,7 @@ const useDesktopSpotlight = () => {
     const { setShowDrawerSidebar, setAppInView } = useDrawer();
     const [{ isDone }] = useWelcomeFlags();
     const userAccountHasMoreThanOneDay = differenceInDays(new Date(), fromUnixTime(user.CreateTime)) > 1;
+    const { feature } = useFeature(FeatureCode.SpotlightInboxDesktop);
 
     /**
      * Display conditions:
@@ -29,6 +30,13 @@ const useDesktopSpotlight = () => {
             setShowDrawerSidebar(true);
         }
     }, [show]);
+
+    // We mark the spotlight as closed if the user is using the desktop app
+    useEffect(() => {
+        if (isElectronApp && feature?.Value) {
+            onDisplayed();
+        }
+    }, [isElectronApp, feature]);
 
     return {
         show,
