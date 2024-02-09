@@ -10,7 +10,6 @@ import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/sessionForkBlob';
-import { type getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -18,6 +17,7 @@ import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from './session';
+import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/sessionForkValidation';
 
 export type RequestForkOptions = { app: APP_NAMES; host?: string; localID?: number; type?: FORK_TYPE };
 export type RequestForkResult = { state: string; url: string };
@@ -129,4 +129,24 @@ export const getAccountForkResponsePayload = (type: AccountForkResponse, error?:
     })();
 
     return { payload };
+};
+
+export const getConsumeForkParameters = () => {
+    const sliceIndex = window.location.hash.lastIndexOf('#') + 1;
+    const hashParams = new URLSearchParams(window.location.hash.slice(sliceIndex));
+    const selector = hashParams.get('selector') || '';
+    const state = hashParams.get('state') || '';
+    const base64StringKey = hashParams.get('sk') || '';
+    const type = hashParams.get('t') || '';
+    const persistent = hashParams.get('p') || '';
+    const trusted = hashParams.get('tr') || '';
+
+    return {
+        state: state.slice(0, 100),
+        selector,
+        key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
+        type: getValidatedForkType(type),
+        persistent: persistent === '1',
+        trusted: trusted === '1',
+    };
 };
