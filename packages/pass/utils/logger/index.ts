@@ -15,7 +15,7 @@ export const registerLoggerEffect = (effect: (message: string) => void) => {
 
         return function (message: string) {
             effect(message);
-            if (ENV !== 'development') originalMethod(message);
+            if (ENV === 'development') originalMethod(message);
         };
     };
 

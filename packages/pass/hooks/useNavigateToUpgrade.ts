@@ -8,7 +8,16 @@ export const useNavigateToUpgrade = (options: { path?: string; upsellRef: Upsell
     const { onLink, config, endpoint } = usePassCore();
     const searchParams = new URLSearchParams();
 
-    const refPrefix = UpsellRefPrefix[endpoint === 'web' ? 'Web' : 'Extension'];
+    const refPrefix: UpsellRefPrefix = (() => {
+        switch (endpoint) {
+            case 'desktop':
+                return UpsellRefPrefix.Desktop;
+            case 'web':
+                return UpsellRefPrefix.Web;
+            default:
+                return UpsellRefPrefix.Extension;
+        }
+    })();
     if (options.upsellRef) searchParams.append('ref', `${refPrefix}_${options.upsellRef}`);
 
     const localID = authStore?.getLocalID();
