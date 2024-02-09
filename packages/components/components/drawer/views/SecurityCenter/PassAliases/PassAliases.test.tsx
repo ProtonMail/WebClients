@@ -76,6 +76,7 @@ describe('PassAliases', () => {
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesLimit: false,
+            hadInitialisedPreviously: false,
         }));
 
         render(<PassAliases />);
@@ -97,6 +98,7 @@ describe('PassAliases', () => {
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesLimit: false,
+            hadInitialisedPreviously: false,
         }));
 
         render(<PassAliases />);
@@ -122,6 +124,7 @@ describe('PassAliases', () => {
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
             hasReachedAliasesLimit: false,
+            hadInitialisedPreviously: false,
         }));
 
         render(<PassAliases />);
