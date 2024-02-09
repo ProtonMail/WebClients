@@ -33,6 +33,7 @@ import {
 import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB } from '../../lib/database';
@@ -135,6 +136,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 onboarding.init().catch(noop);
                 client.current.setStatus(AppStatus.BOOTING);
                 store.dispatch(bootIntent());
+                setSentryUID(authStore.getUID());
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
@@ -153,6 +155,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 store.dispatch(stateDestroy());
 
                 history.replace('/');
+                setSentryUID(undefined);
             },
 
             onForkConsumed: async ({ UID, AccessToken, LocalID }, state) => {
