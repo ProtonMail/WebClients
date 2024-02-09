@@ -1,4 +1,4 @@
-import { ComponentType, useCallback, useRef, useState } from 'react';
+import { ComponentType, ReactNode, useCallback, useRef, useState } from 'react';
 
 import noop from '@proton/utils/noop';
 
@@ -28,67 +28,119 @@ export const useModalTwoStatic = <
     return [render ? <Modal {...props} /> : null, handleShowModal] as const;
 };
 
-export interface ModalTwoPromiseHandlers<Value> {
-    onResolve: (() => void) | ((value: Value) => void);
+export interface ModalTwoPromiseHandlers<ReturnValue> {
+    onResolve: (value: ReturnValue) => void;
     onReject: (reason?: any) => void;
+}
+
+type Return<PassedProps, ReturnValue> = [
+    (cb: (props: PassedProps & ModalTwoPromiseHandlers<ReturnValue> & ModalStateProps) => ReactNode) => ReactNode,
+    (props: PassedProps) => Promise<ReturnValue>,
+];
+
+type PromiseRef<ReturnValue> = ModalTwoPromiseHandlers<ReturnValue> & {
+    promise: Promise<ReturnValue>;
+};
+
+const getPromiseRef = <ReturnValue,>(): PromiseRef<ReturnValue> => {
+    let onResolve: (value: ReturnValue) => void = noop;
+    let onReject: (reason?: any) => void = noop;
+    const promise = new Promise<ReturnValue>((_resolve, _reject) => {
+        onResolve = _resolve;
+        onReject = _reject;
+    });
+    return {
+        promise,
+        onResolve,
+        onReject,
+    };
+};
+
+export function useModalTwoPromise<PassedProps, ReturnValue = void>(
+    initialState: PassedProps | (() => PassedProps)
+): Return<PassedProps, ReturnValue>;
+
+export function useModalTwoPromise<PassedProps = undefined, ReturnValue = void>(
+    initialState?: PassedProps | undefined
+): [
+    (
+        cb: (
+            props: PassedProps extends undefined
+                ? ModalTwoPromiseHandlers<ReturnValue> & ModalStateProps
+                : PassedProps & ModalTwoPromiseHandlers<ReturnValue> & ModalStateProps
+        ) => ReactNode
+    ) => ReactNode,
+    (props: PassedProps) => Promise<ReturnValue>,
+];
+
+export function useModalTwoPromise<PassedProps, ReturnValue = void>(
+    initialState: PassedProps | (() => PassedProps)
+): Return<PassedProps, ReturnValue> {
+    const [modalStateProps, setOpen, render] = useModalState();
+    const [passedProps, setPassedProps] = useState(initialState);
+    type PromiseRefValue = PromiseRef<ReturnValue>;
+    const promiseRef = useRef<PromiseRefValue>();
+
+    const handleShowModal = useCallback((passedProps: PassedProps) => {
+        promiseRef.current?.onReject();
+        promiseRef.current = getPromiseRef<ReturnValue>();
+
+        setPassedProps(passedProps);
+        setOpen(true);
+
+        return promiseRef.current.promise;
+    }, []);
+
+    const handleResolve: PromiseRefValue['onResolve'] = useCallback(
+        (value) => {
+            promiseRef.current?.onResolve(value);
+            promiseRef.current = undefined;
+            modalStateProps.onClose();
+        },
+        [modalStateProps.onClose]
+    );
+
+    const handleReject: PromiseRefValue['onReject'] = useCallback(
+        (reason) => {
+            promiseRef.current?.onReject(reason);
+            promiseRef.current = undefined;
+            modalStateProps.onClose();
+        },
+        [modalStateProps.onClose]
+    );
+
+    const renderProps = {
+        ...modalStateProps,
+        ...passedProps,
+        onResolve: handleResolve,
+        onReject: handleReject,
+    };
+
+    return [
+        (cb) => {
+            if (!render) {
+                return null;
+            }
+            return cb(renderProps);
+        },
+        handleShowModal,
+    ] as const;
 }
 
 type RequiredModalTwoProps<Value> = ModalTwoPromiseHandlers<Value> & PartialModalStateProps;
 
 export const useModalTwo = <
-    OwnProps extends RequiredModalTwoProps<Value>,
-    Value = void,
+    OwnProps extends RequiredModalTwoProps<ReturnValue>,
+    ReturnValue = void,
     PassedProps = Omit<OwnProps, keyof PartialModalStateProps | 'onResolve' | 'onReject'> & PartialModalStateProps,
 >(
-    Modal: ComponentType<OwnProps & RequiredModalTwoProps<Value>>
+    Modal: ComponentType<OwnProps & RequiredModalTwoProps<ReturnValue>>
 ) => {
-    const [modalStateProps, setOpen, render] = useModalState();
-    const [ownProps, setOwnProps] = useState<PassedProps | undefined>(undefined);
-    const promiseRef = useRef<{
-        promise: Promise<Value>;
-        resolve: (value?: Value) => void;
-        reject: (reason?: any) => void;
-    }>();
-
-    const handleShowModal = useCallback((ownProps: PassedProps) => {
-        promiseRef.current?.reject();
-
-        let resolve: (value?: Value) => void = noop;
-        let reject: (reason?: any) => void = noop;
-        const promise = new Promise<Value>((res, rej) => {
-            resolve = res as any;
-            reject = rej;
-        });
-        promiseRef.current = { promise, resolve, reject };
-
-        setOwnProps(ownProps);
-        setOpen(true);
-
-        return promise;
-    }, []);
-
-    const handleResolve: OwnProps['onResolve'] = (value) => {
-        promiseRef.current?.resolve(value);
-        promiseRef.current = undefined;
-        modalStateProps.onClose();
-    };
-
-    const handleReject: OwnProps['onReject'] = (reason) => {
-        promiseRef.current?.reject(reason);
-        promiseRef.current = undefined;
-        modalStateProps.onClose();
-    };
-
-    const promiseHandlers: Pick<OwnProps, 'onResolve' | 'onReject'> = {
-        onResolve: handleResolve,
-        onReject: handleReject,
-    };
-
-    const props = {
-        ...modalStateProps,
-        ...ownProps,
-        ...promiseHandlers,
-    } as unknown as OwnProps;
-
-    return [render ? <Modal {...props} /> : null, handleShowModal] as const;
+    const [renderCallback, handleShowModal] = useModalTwoPromise<PassedProps, ReturnValue>();
+    return [
+        renderCallback((props: any) => {
+            return <Modal {...props} />;
+        }),
+        handleShowModal,
+    ] as const;
 };
