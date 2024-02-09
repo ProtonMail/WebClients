@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -19,6 +19,7 @@ import {
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
+    getHasPassB2BPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getPrimaryPlan,
@@ -133,15 +134,20 @@ const ActionButtons = ({
      * Since all the components here are used in the same context, we can use the same metrics source for all of them.
      */
     const metrics = {
-        source: 'plans' as 'plans',
-    };
+        source: 'plans',
+    } as const;
 
-    const handleCustomizeSubscription = () =>
+    const hasPassB2B = getHasPassB2BPlan(subscription);
+
+    const handleCustomizeSubscription = () => {
+        const step = hasPassB2B ? SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
+
         openSubscriptionModal({
-            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            step,
             disablePlanSelection: true,
             metrics,
         });
+    };
     const handleExplorePlans = () => {
         openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -155,11 +161,15 @@ const ActionButtons = ({
             metrics,
         });
 
+    const showEditBillingDetails = user.isPaid && user.canPay && !hasMaximumCycle(subscription) && !hasPassB2B;
+    const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
+    const showExploreOtherPlans = user.canPay;
+
     return (
         <>
             {
                 // translator: Edit billing details is a button when you want to edit the billing details of your current plan, in the dashboard.
-                user.isPaid && user.canPay && !hasMaximumCycle(subscription) ? (
+                showEditBillingDetails ? (
                     <Button
                         onClick={handleEditPayment}
                         className="mb-2"
@@ -170,7 +180,7 @@ const ActionButtons = ({
                     >{c('Action').t`Edit billing details`}</Button>
                 ) : null
             }
-            {user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription) ? (
+            {showCustomizePlan ? (
                 <Button
                     onClick={handleCustomizeSubscription}
                     className="mb-2"
@@ -181,7 +191,7 @@ const ActionButtons = ({
                     fullWidth
                 >{c('Action').t`Customize plan`}</Button>
             ) : null}
-            {user.canPay ? (
+            {showExploreOtherPlans ? (
                 <Button
                     onClick={handleExplorePlans}
                     size="large"
