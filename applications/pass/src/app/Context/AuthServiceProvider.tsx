@@ -1,19 +1,27 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components/hooks';
+import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
+import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
+import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession, isValidSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
+import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -22,8 +30,9 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import noop from '@proton/utils/noop';
 
 import { deletePassDB } from '../../lib/database';
@@ -67,6 +76,9 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
     const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
+
+    const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean; LocalID?: number }>({ upgrade: false });
+    const closeUpselling = () => setUpgradeState({ upgrade: false });
 
     const authService = useMemo(() => {
         const auth = createAuthService({
@@ -143,8 +155,18 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
                 history.replace('/');
             },
 
-            onForkConsumed: async (_, state) => {
+            onForkConsumed: async ({ UID, AccessToken, LocalID }, state) => {
                 history.replace({ hash: '' }); /** removes selector from hash */
+
+                if (isElectronApp) {
+                    const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
+                    if (plan.Type !== PlanType.plus || Boolean(plan.TrialEnd)) {
+                        setUpgradeState({ upgrade: true, LocalID });
+                        throw new Error(
+                            c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} desktop app`
+                        );
+                    }
+                }
 
                 try {
                     const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
@@ -291,5 +313,24 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useVisibleEffect((visible) => probe[visible ? 'start' : 'cancel']());
 
-    return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
+    return (
+        <AuthServiceContext.Provider value={authService}>
+            <BulkSelectProvider>
+                {children}
+                {upgradeState.upgrade && (
+                    <UpsellingModal
+                        upsellType="early-access"
+                        open={upgradeState.upgrade}
+                        onClose={closeUpselling}
+                        closable={false}
+                        upsellRef={UpsellRef.EARLY_ACCESS}
+                        extraActions={({ onClose }) => [
+                            <Button pill shape="solid" color="weak" onClick={onClose} key="not-now">{c('Action')
+                                .t`Not now`}</Button>,
+                        ]}
+                    />
+                )}
+            </BulkSelectProvider>
+        </AuthServiceContext.Provider>
+    );
 };
