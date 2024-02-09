@@ -168,7 +168,7 @@ const InvoicesSection = () => {
                                             cells={[
                                                 invoice.ID,
                                                 <InvoiceAmount key={key} invoice={invoice} />,
-                                                <InvoiceType key={key} invoice={invoice} user={user} />,
+                                                <InvoiceType key={key} invoice={invoice} />,
                                                 <InvoiceState key={key} invoice={invoice} />,
                                                 <Time key={key} sameDayFormat={false}>
                                                     {invoice.CreateTime}

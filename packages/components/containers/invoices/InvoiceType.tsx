@@ -1,11 +1,14 @@
 import { c } from 'ttag';
 
 import { INVOICE_TYPE } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Invoice } from './interface';
 
-const getType = (type: INVOICE_TYPE, chargebeeUser?: ChargebeeEnabled) => {
+const CREDIT_NOTE_PREFIX = 'CN';
+
+const getType = (invoice: Invoice) => {
+    const type: INVOICE_TYPE = invoice.Type;
+
     switch (type) {
         case INVOICE_TYPE.OTHER:
             return c('Invoice type display as badge').t`Other`;
@@ -14,9 +17,12 @@ const getType = (type: INVOICE_TYPE, chargebeeUser?: ChargebeeEnabled) => {
         case INVOICE_TYPE.CANCELLATION:
             return c('Invoice type display as badge').t`Cancellation`;
         case INVOICE_TYPE.CREDIT:
-            if (chargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED) {
+            if (invoice.ID.startsWith(CREDIT_NOTE_PREFIX)) {
+                // Credit Note is a system generated note that might occur as a middle step e.g. in currency conversion
                 return c('Invoice type display as badge').t`Credit note`;
             }
+
+            // "Credit" is when user buys credit explicitly, e.g. with Top Up
             return c('Invoice type display as badge').t`Credit`;
         case INVOICE_TYPE.DONATION:
             return c('Invoice type display as badge').t`Donation`;
@@ -39,11 +45,10 @@ const getType = (type: INVOICE_TYPE, chargebeeUser?: ChargebeeEnabled) => {
 
 interface Props {
     invoice: Invoice;
-    user?: UserModel;
 }
 
-const InvoiceType = ({ invoice, user }: Props) => {
-    return <>{getType(invoice.Type, user?.ChargebeeUser)}</>;
+const InvoiceType = ({ invoice }: Props) => {
+    return <>{getType(invoice)}</>;
 };
 
 export default InvoiceType;
