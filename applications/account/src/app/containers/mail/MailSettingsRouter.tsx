@@ -71,14 +71,12 @@ const MailSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 )}
             </Route>
-            {getIsSectionAvailable(desktop) && (
-                <Route path={getSectionPath(path, desktop)}>
-                    <PrivateMainSettingsArea config={desktop}>
-                        <MobileAppSettingsSection />
-                        {!isElectronDisabled && <InboxDesktopSettingsSection />}
-                    </PrivateMainSettingsArea>
-                </Route>
-            )}
+            <Route path={getSectionPath(path, desktop)}>
+                <PrivateMainSettingsArea config={desktop}>
+                    <MobileAppSettingsSection />
+                    {!isElectronDisabled && <InboxDesktopSettingsSection />}
+                </PrivateMainSettingsArea>
+            </Route>
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea config={identity}>
                     <IdentitySection />

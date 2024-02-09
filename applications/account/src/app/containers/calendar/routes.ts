@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ThemeColor } from '@proton/colors/types';
 import { SectionConfig } from '@proton/components';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
 import { APPS, APP_NAMES, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
@@ -8,11 +9,27 @@ import { APPS, APP_NAMES, CALENDAR_APP_NAME } from '@proton/shared/lib/constants
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = ({ app }: { app: APP_NAMES }) => {
+export const getCalendarAppRoutes = ({
+    app,
+    isNotifInboxDesktopAppOn,
+}: {
+    app: APP_NAMES;
+    isNotifInboxDesktopAppOn: boolean;
+}) => {
     return <const>{
         available: app === APPS.PROTONCALENDAR,
         header: CALENDAR_APP_NAME,
         routes: {
+            desktop: <SectionConfig>{
+                text: c('Title').t`Get the apps`,
+                to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
+                icon: 'pass-laptop',
+                notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
+                subsections: [
+                    { id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP, text: c('Title').t`Download the mobile apps` },
+                    { id: CALENDAR_SETTINGS_SECTION_ID.DESKTOP_APP, text: c('Title').t`Download the desktop app` },
+                ],
+            },
             general: <SectionConfig>{
                 text: c('Link').t`General`,
                 to: CALENDAR_SETTINGS_ROUTE.GENERAL,

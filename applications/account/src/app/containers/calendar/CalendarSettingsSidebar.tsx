@@ -14,6 +14,18 @@ const CalendarSettingsSidebar = ({ header, routes, prefix }: Props) => {
             <SidebarListItem className="navigation-link-header-group">
                 <h3>{header}</h3>
             </SidebarListItem>
+            {getIsSectionAvailable(routes.desktop) && (
+                <SettingsListItem
+                    to={getSectionPath(prefix, routes.desktop)}
+                    icon={routes.desktop.icon}
+                    notification={routes.desktop.notification}
+                    key={routes.desktop.to}
+                >
+                    <span className="text-ellipsis" title={routes.desktop.text}>
+                        {routes.desktop.text}
+                    </span>
+                </SettingsListItem>
+            )}
             {getIsSectionAvailable(routes.general) && (
                 <SettingsListItem
                     to={getSectionPath(prefix, routes.general)}
