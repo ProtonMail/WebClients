@@ -7,11 +7,14 @@ import {
     CalendarLayoutSection,
     CalendarSubpage,
     CalendarTimeSection,
+    InboxDesktopSettingsSection,
+    MobileAppSettingsSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
     useAddresses,
     useCalendarUserSettings,
     useCalendars,
+    useIsInboxElectronApp,
     useSubscribedCalendars,
 } from '@proton/components';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
@@ -47,6 +50,8 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [calendars, loadingCalendars] = useCalendars();
+
+    const { isElectronDisabled } = useIsInboxElectronApp();
 
     const {
         allCalendarIDs,
@@ -95,7 +100,7 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
     }
 
     const {
-        routes: { general, calendars: calendarsRoute, interops: interopsRoute },
+        routes: { general, calendars: calendarsRoute, interops: interopsRoute, desktop },
     } = calendarAppRoutes;
 
     return (
@@ -105,6 +110,12 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
+                </PrivateMainSettingsArea>
+            </Route>
+            <Route path={getSectionPath(path, desktop)}>
+                <PrivateMainSettingsArea config={desktop}>
+                    <MobileAppSettingsSection />
+                    {!isElectronDisabled && <InboxDesktopSettingsSection />}
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, calendarsRoute)} exact>

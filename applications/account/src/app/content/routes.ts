@@ -79,7 +79,7 @@ export const getRoutes = ({
             isEmailForwardingEnabled,
             isNotifInboxDesktopAppOn,
         }),
-        calendar: getCalendarAppRoutes({ app }),
+        calendar: getCalendarAppRoutes({ app, isNotifInboxDesktopAppOn }),
         drive: getDriveAppRoutes({ app }),
         pass: getPassAppRoutes({ app }),
         organization: getOrganizationAppRoutes({
