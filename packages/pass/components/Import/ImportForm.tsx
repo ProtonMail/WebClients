@@ -41,7 +41,10 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
         [form.values]
     );
 
-    const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => form.setFieldValue('provider', provider);
+    const onSelectProvider = (provider: MaybeNull<ImportProvider>) => () => {
+        if (provider) dropzone.setSupportedFileTypes(PROVIDER_INFO_MAP[provider].fileExtension.split(', '));
+        void form.setFieldValue('provider', provider);
+    };
 
     return (
         <>
