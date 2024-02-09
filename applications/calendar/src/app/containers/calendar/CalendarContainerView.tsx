@@ -15,6 +15,7 @@ import {
     FeatureCode,
     FloatingButton,
     Icon,
+    InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
     MainLogo,
@@ -39,6 +40,7 @@ import {
     useSpotlightOnFeature,
     useSpotlightShow,
     useToggle,
+    useUser,
     useWelcomeFlags,
 } from '@proton/components';
 import { Spotlight } from '@proton/components/components';
@@ -155,6 +157,7 @@ const CalendarContainerView = ({
     const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
     const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
+    const [user] = useUser();
 
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
@@ -395,6 +398,7 @@ const CalendarContainerView = ({
     const top = !isDrawerApp && (
         <>
             {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONCALENDAR} />
         </>
     );

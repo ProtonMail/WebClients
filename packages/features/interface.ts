@@ -57,6 +57,8 @@ export enum FeatureCode {
     EmailForwardingSpotlight = 'EmailForwardingSpotlight',
     HolidaysCalendars = 'HolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
+    InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
+    InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     MailActionsChunkSize = 'MailActionsChunkSize',
     MailDisableE2EE = 'MailDisableE2EE',
