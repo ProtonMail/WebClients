@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { when } from 'jest-when';
 
 import { queryMigrateLegacyShares } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/crypto/encrypt';
@@ -6,6 +7,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { useDebouncedRequest } from '../_api';
+import useShare from './useShare';
 import useShareActions from './useShareActions';
 
 jest.mock('@proton/components', () => ({
@@ -13,41 +15,34 @@ jest.mock('@proton/components', () => ({
 }));
 
 jest.mock('../_api');
-jest.mock('./useShare', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({
-        getShare: jest.fn().mockImplementation((_, shareId) => ({
-            rootLinkId: 'rootLinkId',
-            shareId,
-        })),
-        getShareCreatorKeys: jest.fn().mockResolvedValue({
-            privateKey: 'privateKey',
-        }),
-        getShareSessionKey: jest.fn().mockImplementation(async (_, shareId) => {
-            if (shareId === 'corrupted') {
-                throw Error();
-            }
-            return 'sessionKey';
-        }),
+const mockedDebounceRequest = jest.fn().mockResolvedValue(true);
+jest.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
+
+jest.mock('./useShare');
+const mockedGetShareSessionKey = jest.fn().mockResolvedValue('sessionKey');
+jest.mocked(useShare).mockReturnValue({
+    ...jest.requireActual('./useShare'),
+    getShare: jest.fn().mockImplementation((_, shareId) => ({
+        rootLinkId: 'rootLinkId',
+        shareId,
     })),
-}));
+    getShareCreatorKeys: jest.fn().mockResolvedValue({
+        privateKey: 'privateKey',
+    }),
+    getShareSessionKey: mockedGetShareSessionKey,
+});
+
 jest.mock('../_links', () => ({
     useLink: jest.fn(() => ({
         getLinkPrivateKey: jest.fn().mockResolvedValue('privateKey'),
     })),
 }));
 
-jest.mock('@proton/shared/lib/api/drive/share', () => ({
-    queryMigrateLegacyShares: jest.fn(),
-    queryUnmigratedShares: jest.fn(),
-}));
+jest.mock('@proton/shared/lib/api/drive/share');
+const mockedQueryLegacyShares = jest.mocked(queryMigrateLegacyShares);
 
 jest.mock('@proton/shared/lib/calendar/crypto/encrypt');
-
-const mockedQueryLegacyShares = jest.mocked(queryMigrateLegacyShares);
-const mockedDebounceRequest = jest.fn().mockResolvedValue(true);
 const mockedGetEncryptedSessionKey = jest.mocked(getEncryptedSessionKey);
-jest.mocked(useDebouncedRequest).mockReturnValue(mockedDebounceRequest);
 
 describe('useShareActions', () => {
     afterEach(() => {
@@ -143,6 +138,9 @@ describe('useShareActions', () => {
             shareIds.push('string' + i);
         }
         mockedDebounceRequest.mockResolvedValueOnce({ ShareIDs: ['shareId', 'corrupted'] });
+        when(mockedGetShareSessionKey)
+            .calledWith(new AbortController().signal, 'corrupted')
+            .mockRejectedValue(undefined);
         mockedGetEncryptedSessionKey.mockResolvedValue(PassphraseNodeKeyPacket);
         const { result } = renderHook(() => useShareActions());
         await result.current.migrateShares();
