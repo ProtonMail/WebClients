@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
-import type { ApiOptions } from '@proton/pass/types';
+import { type ApiOptions, type MaybeNull, PlanType } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -11,6 +11,7 @@ import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     logger.info(`[User] syncing feature flags`);
@@ -33,6 +34,15 @@ export const getUserSettings = async (): Promise<UserSettings> => {
     return (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
 };
 
+export const getUserOrganization = async (): Promise<MaybeNull<Organization>> => {
+    try {
+        logger.info(`[User] Syncing organization info`);
+        return (await api<{ Organization: Organization }>({ url: 'core/v4/organizations' })).Organization;
+    } catch (error) {
+        return null;
+    }
+};
+
 export type UserData = {
     access: SafeUserAccessState;
     addresses: Record<string, Address>;
@@ -40,6 +50,7 @@ export type UserData = {
     features: FeatureFlagState;
     user: User;
     userSettings: UserSettings;
+    organization: MaybeNull<Organization>;
 };
 
 /** Resolves all necessary user data to build up the user state */
@@ -52,6 +63,7 @@ export const getUserData = async (): Promise<UserData> => {
         getUserAccess(),
         getFeatureFlags(),
     ]);
+    const organization = access.plan?.Type === PlanType.business ? await getUserOrganization() : null;
 
     return {
         access,
@@ -60,5 +72,6 @@ export const getUserData = async (): Promise<UserData> => {
         features,
         user,
         userSettings,
+        organization,
     };
 };

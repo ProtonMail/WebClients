@@ -13,7 +13,7 @@ import {
     stopEventPolling,
     syncLocalSettings,
 } from '@proton/pass/store/actions';
-import type { SafeUserState } from '@proton/pass/store/reducers';
+import type { SafeUserState, UserState } from '@proton/pass/store/reducers';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -30,10 +30,10 @@ type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State 
 );
 
 function* resolveUserState() {
-    const { access, addresses, eventId, features, user, userSettings }: UserData = yield getUserData();
+    const { access, addresses, eventId, features, user, userSettings, organization }: UserData = yield getUserData();
     yield put(syncLocalSettings({ locale: userSettings.Locale }));
 
-    const userState: SafeUserState = {
+    const userState: UserState = {
         ...access,
         addresses,
         eventId,
@@ -43,6 +43,7 @@ function* resolveUserState() {
             Email: { Status: userSettings.Email.Status },
             Telemetry: userSettings.Telemetry,
         },
+        organization: organization,
     };
 
     return userState;
