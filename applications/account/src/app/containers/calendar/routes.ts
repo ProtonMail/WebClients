@@ -23,7 +23,7 @@ export const getCalendarAppRoutes = ({
             desktop: <SectionConfig>{
                 text: c('Title').t`Get the apps`,
                 to: CALENDAR_SETTINGS_ROUTE.GET_APPS,
-                icon: 'pass-laptop',
+                icon: 'arrow-down-line',
                 notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
                 subsections: [
                     { id: CALENDAR_SETTINGS_SECTION_ID.MOBILE_APP, text: c('Title').t`Download the mobile apps` },
