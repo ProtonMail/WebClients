@@ -27,7 +27,15 @@ import type { TabId } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
 export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
-export type ClientEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown' | 'web';
+export type ClientEndpoint =
+    | 'popup'
+    | 'contentscript'
+    | 'background'
+    | 'page'
+    | 'notification'
+    | 'dropdown'
+    | 'web'
+    | 'desktop';
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
     sender: ClientEndpoint;
