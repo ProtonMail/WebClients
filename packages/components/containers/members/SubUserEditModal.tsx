@@ -100,7 +100,7 @@ const SubUserEditModal = ({
 
     const hasVPN = Boolean(organization?.MaxVPN);
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
-    const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
+    const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER && !member.SSO;
     const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
     const errorHandler = useErrorHandler();
 
