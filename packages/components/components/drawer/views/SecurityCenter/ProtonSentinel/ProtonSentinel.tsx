@@ -17,16 +17,6 @@ import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-s
 import { DrawerAppSection } from '../../shared';
 import ProtonSentinelUpsellModal from './modal/ProtonSentinelUpsellModal';
 
-const learnMoreLink = (
-    <ButtonLike
-        as="a"
-        shape="underline"
-        color="norm"
-        key="learn-more"
-        href={getKnowledgeBaseUrl('/proton-sentinel')}
-    >{c('Link').t`Learn more`}</ButtonLike>
-);
-
 const ProtonSentinel = () => {
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -66,6 +56,17 @@ const ProtonSentinel = () => {
         }
     };
 
+    const learnMoreLink = (
+        <ButtonLike
+            as="a"
+            shape="underline"
+            color="norm"
+            key="learn-more"
+            href={getKnowledgeBaseUrl('/proton-sentinel')}
+            target="_blank"
+        >{c('Link').t`Learn more`}</ButtonLike>
+    );
+
     return (
         <>
             <DrawerAppSection>
@@ -73,9 +74,9 @@ const ProtonSentinel = () => {
                     <div className="shrink-0 flex">
                         <img src={ProtonSentinelLogo} alt="" />
                     </div>
-                    <h2 className="flex-1 text-rg">
+                    <h3 className="flex-1 text-rg">
                         <label htmlFor="proton-sentinel-toggle">{PROTON_SENTINEL_NAME}</label>
-                    </h2>
+                    </h3>
                     <Toggle
                         id="proton-sentinel-toggle"
                         loading={loadingSentinel}

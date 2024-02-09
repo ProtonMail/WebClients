@@ -17,7 +17,7 @@ import {
     useDebounceInput,
     useModalState,
 } from '../../../../components';
-import { useApi, useEventManager, useFilters, useNotifications, useUserSettings } from '../../../../hooks';
+import { useApi, useEventManager, useFilters, useNotifications } from '../../../../hooks';
 import { FILTER_VERSION } from '../../constants';
 import { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
 import { convertModel, sieveTemplates } from '../../utils';
@@ -58,7 +58,6 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [filters = []] = useFilters();
-    const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
@@ -181,7 +180,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
                         loading={loading}
                         isSieveFilter
                     />
-                    <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
+                    <SieveForm model={model} onChange={setModel} />
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <FooterAdvancedFilterModal errors={errors} onClose={handleClose} loading={loading} />
