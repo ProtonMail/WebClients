@@ -3,7 +3,7 @@
  * specifies the keys we're consuming
  * in the extension sagas for now */
 import type { Invoice } from '@proton/components/containers/invoices/interface';
-import type { Address, Subscription, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, Subscription, User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export enum ChannelType {
     USER = 'user',
@@ -31,6 +31,7 @@ export type UserEvent = {
     Addresses?: AddressEvent[];
     Subscription?: Subscription;
     Invoices?: Invoice;
+    Organization?: Organization;
 };
 
 export type AddressEvent = {
