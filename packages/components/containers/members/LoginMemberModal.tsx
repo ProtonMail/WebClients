@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { getOrganizationTokenThunk } from '@proton/account';
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, Href } from '@proton/atoms';
 import { useAuthentication } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -23,7 +23,7 @@ import { User } from '@proton/shared/lib/interfaces';
 import { Member } from '@proton/shared/lib/interfaces/Member';
 import noop from '@proton/utils/noop';
 
-import { LearnMore, Prompt, PromptProps } from '../../components';
+import { Prompt, PromptProps } from '../../components';
 import { AuthModal } from '../password';
 
 interface Props extends Omit<PromptProps, 'title' | 'children' | 'buttons'> {
@@ -111,7 +111,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
             <div className="mb-4 text-break">{c('Info').jt`You are signed in to the account ${memberAddress}.`}</div>
             <div>
                 {c('Info').t`You can now access and manage the account as an administrator.`}{' '}
-                <LearnMore url={getKnowledgeBaseUrl('/manage-public-users-organization')} />
+                <Href href={getKnowledgeBaseUrl('/manage-public-users-organization')}>{c('Link').t`Learn more`}</Href>
             </div>
         </Prompt>
     );

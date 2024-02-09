@@ -1,18 +1,19 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import { c } from 'ttag';
+
+import { Href } from '@proton/atoms/Href';
 import clsx from '@proton/utils/clsx';
 
-import { LearnMore, LearnMoreProps } from '../../components';
-
 interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {
+    inlineLearnMore?: boolean;
     learnMoreUrl?: string;
-    learnMoreProps?: Omit<LearnMoreProps, 'url'>;
     large?: boolean;
 }
 
 const SettingsParagraph = ({
     learnMoreUrl,
-    learnMoreProps,
+    inlineLearnMore = false,
     className,
     children,
     large,
@@ -20,8 +21,8 @@ const SettingsParagraph = ({
 }: SettingsParagraphProps) => {
     const learnMoreElement = learnMoreUrl ? (
         <>
-            <br />
-            <LearnMore url={learnMoreUrl} {...learnMoreProps} />
+            {inlineLearnMore ? ' ' : <br />}
+            <Href href={learnMoreUrl} className={className}>{c('Link').t`Learn more`}</Href>
         </>
     ) : null;
 

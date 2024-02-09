@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Copy, Icon, LearnMore, PrimaryButton } from '../../components';
+import { Copy, Icon, PrimaryButton } from '../../components';
 import { useApi, useNotifications, useUserVPN } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
@@ -35,7 +35,9 @@ const OpenVPNCredentialsSection = (props: Props) => {
         createNotification({ text: c('Notification').t`OpenVPN / IKEv2 credentials regenerated` });
     };
 
-    const learnMore = <LearnMore key="learn-more" url="https://protonvpn.com/support/vpn-login/" />;
+    const learnMore = (
+        <Href key="learn-more" href="https://protonvpn.com/support/vpn-login/">{c('Link').t`Learn more`}</Href>
+    );
 
     return (
         <SettingsSectionWide>
