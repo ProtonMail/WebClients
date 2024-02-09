@@ -4,9 +4,11 @@ import { useLocation } from 'react-router-dom';
 import {
     Breakpoints,
     DrawerApp,
+    InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     PrivateAppContainer,
     TopBanners,
+    useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -34,6 +36,8 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
+    const [user] = useUser();
+
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
             type: ComposeTypes.newMessage,
@@ -49,6 +53,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const top = (
         <>
             {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
+            {isElectronApp && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONMAIL} />
         </>
     );

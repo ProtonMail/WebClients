@@ -20,3 +20,14 @@ export type IPCInboxMessageType = IPCInboxMessage['type'];
 export type IPCInboxMessageBroker = {
     send: <T extends IPCInboxMessageType>(type: T, payload: Extract<IPCInboxMessage, { type: T }>['payload']) => void;
 };
+
+export interface InboxDesktopFreeTrialDates {
+    trialStartDate?: Date;
+    trialEndDate?: Date;
+}
+
+export interface InboxDesktopFreeTrialReminders {
+    first: boolean;
+    second: boolean;
+    third: boolean;
+}
