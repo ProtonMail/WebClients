@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Loader, useModalStateObject } from '@proton/components/components';
-import PassAliasesUpsellModal from '@proton/components/components/upsell/modal/types/PassAliasesUpsellModal';
-import { ErrorBoundary, GenericError, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { ErrorBoundary, NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
+import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useAuthentication } from '@proton/components/hooks';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -19,13 +19,21 @@ import HasNoAliases from './HasNoAliases';
 import { PassAliasesProvider, usePassAliasesContext } from './PassAliasesProvider';
 import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import CreatePassAliasesForm from './modals/CreatePassAliasesForm/CreatePassAliasesForm';
-import TryProtonPass from './modals/TryProtonPass/TryProtonPass';
+import PassAliasesUpsellModal from './modals/PassAliasesUpsellModal';
+import TryProtonPass from './modals/TryProtonPass';
 
 const PassAliases = () => {
     const createAliasModal = useModalStateObject();
     const tryProtonPassModal = useModalStateObject();
-    const { hasAliases, hasUsedProtonPassApp, loading, passAliasesItems, passAliasesUpsellModal } =
-        usePassAliasesContext();
+    const {
+        hasAliases,
+        hasUsedProtonPassApp,
+        loading,
+        passAliasesItems,
+        passAliasesUpsellModal,
+        hasReachedAliasesLimit,
+        hadInitialisedPreviously,
+    } = usePassAliasesContext();
     const authentication = useAuthentication();
 
     const passAliasesURL = useMemo(() => {
@@ -43,7 +51,7 @@ const PassAliases = () => {
         return getAppHref(`?${search.toString()}`, APPS.PROTONPASS, authentication?.getLocalID?.());
     }, []);
 
-    if (loading) {
+    if (loading && !hadInitialisedPreviously) {
         return (
             <DrawerAppSection>
                 <Loader size="medium" className="color-primary m-auto" />
@@ -69,8 +77,19 @@ const PassAliases = () => {
                             target="_blank"
                         >{c('Security Center').t`All aliases`}</ButtonLike>
                     )}
-                    <Button onClick={() => createAliasModal.openModal(true)} color="norm" fullWidth>
-                        {!hasAliases ? c('Security Center').t`Get an alias` : c('Security Center').t`New alias`}
+                    <Button
+                        onClick={() => {
+                            if (hasReachedAliasesLimit) {
+                                passAliasesUpsellModal.openModal(true);
+                            } else {
+                                createAliasModal.openModal(true);
+                            }
+                        }}
+                        color="norm"
+                        fullWidth
+                        loading={loading}
+                    >
+                        {!hasAliases ? c('Security Center').t`Create an alias` : c('Security Center').t`New alias`}
                     </Button>
                 </div>
             </DrawerAppSection>
@@ -101,9 +120,14 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e) => (
                 <>
-                    <GenericError />
-                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR && (
-                        <p className="text-center self-stretch">{c('Error').t`Aliases could not be loaded`}</p>
+                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR ? (
+                        <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
+                            <div className="text-weak text-sm">
+                                {c('Error message').t`Please refresh the page or try again later.`}
+                            </div>
+                        </GenericErrorDisplay>
+                    ) : (
+                        <GenericErrorDisplay />
                     )}
                 </>
             )}

@@ -2,8 +2,7 @@
 
 .drawer-sidebar {
 	min-inline-size: rem(46);
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: hidden auto;
 
 	&-button {
 		block-size: rem(36);
@@ -50,7 +49,8 @@
 		}
 	}
 
-	&--hide-on-tablet {
+	&--hide-on-tablet,
+	&--drawer-app-opened {
 		@include media('<=#{em($breakpoint-for-drawer, 16)}') {
 			display: none;
 		}

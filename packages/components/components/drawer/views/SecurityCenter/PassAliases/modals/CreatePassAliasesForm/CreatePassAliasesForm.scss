@@ -6,6 +6,7 @@
 	 */
 	.input-element {
 		padding: 0;
+		background-color: transparent;
 	}
 
 	.field-two {
@@ -15,6 +16,44 @@
 
 			&-container {
 				gap: 0;
+				font-size: em(12);
+				margin-block-end: 0;
+			}
+		}
+
+		&-hint {
+			font-size: em(12);
+			display: flex;
+		}
+
+		&-input-container .textarea {
+			display: flex;
+			min-block-size: 0;
+
+			&[rows='1'] {
+				block-size: rem(22);
+			}
+
+			&[rows='2'] {
+				block-size: rem(44);
+			}
+
+			&[rows='3'] {
+				block-size: rem(66);
+			}
+
+			&[rows='4'] {
+				block-size: rem(88);
+			}
+
+			&[rows='5'] {
+				block-size: rem(110);
+			}
+
+			// row="1" and nothing inside
+			&:placeholder-shown {
+				block-size: rem(22);
+				overflow: hidden;
 			}
 		}
 
@@ -24,6 +63,8 @@
 
 		// no reserved height for error message
 		&-assist {
+			margin-block-start: em(2);
+
 			&::before {
 				content: none;
 			}

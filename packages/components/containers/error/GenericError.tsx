@@ -20,9 +20,10 @@ interface Props {
     children?: ReactNode;
     big?: boolean;
     isNetworkError?: boolean;
+    title?: string;
 }
 
-const GenericErrorDisplay = ({ children, className, big, isNetworkError }: Props) => {
+export const GenericErrorDisplay = ({ children, className, big, isNetworkError, title }: Props) => {
     const display: 'default' | 'with-refresh' | 'custom' = (() => {
         if (children) {
             return 'custom';
@@ -36,7 +37,7 @@ const GenericErrorDisplay = ({ children, className, big, isNetworkError }: Props
         <div className={clsx('m-auto', big ? 'p-1' : 'p-2', className)}>
             {big && <ElectronDraggeableHeader />}
             <IllustrationPlaceholder
-                title={c('Error message').t`Something went wrong`}
+                title={title ?? c('Error message').t`Something went wrong`}
                 titleSize={big ? 'big' : 'regular'}
                 url={isNetworkError ? networkErrorImg : errorImg}
             >
