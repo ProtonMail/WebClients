@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { HOUR } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import LearnMore from '../../components/link/LearnMore';
 import useApiServerTime from '../../hooks/useApiServerTime';
 import TopBanner from './TopBanner';
 
@@ -46,7 +46,7 @@ const TimeOutOfSyncTopBanner = () => {
         return null;
     }
 
-    const learnMore = <LearnMore url={getKnowledgeBaseUrl('/device-time-warning')} />;
+    const learnMore = <Href href={getKnowledgeBaseUrl('/device-time-warning')}>{c('Link').t`Learn more`}</Href>;
 
     return (
         <TopBanner onClose={() => setIgnore(true)} className="bg-warning">
