@@ -11,7 +11,7 @@ import { FreeTrialActions } from './FreeTrialActions';
 import { UpsellFeatures } from './UpsellFeatures';
 
 type UpsellModalContent = { description?: string; title: string; upgradeLabel: string };
-export type UpsellType = 'free-trial' | 'pass-plus';
+export type UpsellType = 'free-trial' | 'pass-plus' | 'early-access';
 
 export type Props = Omit<AdapativeModalProps, 'actions'> & {
     extraActions?: (props: AdapativeModalProps) => ReactNode[];
@@ -32,6 +32,11 @@ const getContent = (type: UpsellType): UpsellModalContent =>
             description: c('Info')
                 .t`Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.`,
             upgradeLabel: c('Action').t`Upgrade`,
+        },
+        'early-access': {
+            title: c('Info').t`Upgrade Now to Unlock Premium Features`,
+            description: undefined,
+            upgradeLabel: c('Action').t`Upgrade now`,
         },
     })[type];
 

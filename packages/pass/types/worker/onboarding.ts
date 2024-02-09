@@ -9,6 +9,7 @@ export enum OnboardingMessage {
     PENDING_SHARE_ACCESS /* new user waiting for admin confirm */,
     BLACK_FRIDAY_OFFER,
     B2B_ONBOARDING,
+    EARLY_ACCESS,
 }
 
 export type OnboardingAcknowledgment = {

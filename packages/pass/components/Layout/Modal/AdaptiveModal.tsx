@@ -40,7 +40,7 @@ export const AdaptiveModal: FC<PropsWithChildren<AdapativeModalProps>> = ({
     const { endpoint } = usePassCore();
     useBulkLock([props.open ?? false]);
 
-    return type === 'overlay' || endpoint === 'web' ? (
+    return type === 'overlay' || endpoint === 'web' || endpoint === 'desktop' ? (
         <PassModal {...props} size={size} className="text-center">
             {closable && <ModalTwoHeader closeButtonProps={{ pill: true, icon: true }} />}
             <ModalTwoContent className={clsx(!closable && 'pt-4')}>{children}</ModalTwoContent>

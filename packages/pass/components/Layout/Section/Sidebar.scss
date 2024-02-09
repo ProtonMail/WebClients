@@ -1,4 +1,8 @@
 #pass-sidebar {
 	max-inline-size: var(--pass-sidebar-size);
 	inline-size: var(--pass-sidebar-size);
+
+	.logo-container {
+		-webkit-app-region: drag;
+	}
 }

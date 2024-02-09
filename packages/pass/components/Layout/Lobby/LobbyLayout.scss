@@ -1,8 +1,16 @@
 @import '~@proton/styles/scss/lib';
 @import '~@proton/pass/styles/lobby';
 
-.pass-lobby--content::before {
-	content: '';
-	display: block;
-	block-size: rem(100);
+.pass-lobby {
+	-webkit-app-region: drag;
+
+	&--content::before {
+		content: '';
+		display: block;
+		block-size: rem(100);
+	}
+
+	&--content {
+		-webkit-app-region: no-drag;
+	}
 }
