@@ -38,6 +38,7 @@ export type ImportFormContext = {
         hovered: boolean;
         onDrop: DropzoneProps['onDrop'];
         onAttach: FileInputProps['onChange'];
+        setSupportedFileTypes: (fileTypes: string[]) => void;
     };
 };
 
@@ -91,6 +92,7 @@ export const useImportForm = ({
 
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
+    const [supportedFileTypes, setSupportedFileTypes] = useState<string[]>([]);
     const formRef = useRef<FormikContextType<ImportFormValues>>();
 
     const result = useSelector(selectLatestImport);
@@ -150,7 +152,7 @@ export const useImportForm = ({
 
     const onAddFiles = (files: File[]) => {
         try {
-            const file = createFileValidator(SUPPORTED_IMPORT_FILE_TYPES)(files);
+            const file = createFileValidator(supportedFileTypes)(files);
             void form.setValues((values) => ({ ...values, file }));
         } catch (e: any) {
             form.setErrors({ file: e.message });
@@ -166,7 +168,7 @@ export const useImportForm = ({
 
     return {
         busy,
-        dropzone: { hovered: dropzoneHovered, onAttach, onDrop },
+        dropzone: { hovered: dropzoneHovered, onAttach, onDrop, setSupportedFileTypes },
         form,
         result,
     };
