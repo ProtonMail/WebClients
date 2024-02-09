@@ -7,7 +7,7 @@ import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
@@ -24,6 +24,7 @@ export type UserState = {
     features: MaybeNull<FeatureFlagState>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
+    organization: MaybeNull<Organization>;
 } & UserAccessState;
 
 export type SafeUserState = RequiredNonNull<UserState>;
@@ -37,13 +38,14 @@ const initialState: UserState = {
     user: null,
     userSettings: null,
     waitingNewUserInvites: 0,
+    organization: null,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 
-        const { Addresses = [], User, EventID, UserSettings } = action.payload;
+        const { Addresses = [], User, EventID, UserSettings, Organization } = action.payload;
         const user = User ?? state.user;
         const eventId = EventID ?? null;
 
@@ -57,12 +59,15 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
             state.addresses
         );
 
+        const organization = Organization ?? state.organization;
+
         return {
             ...state,
             user,
             eventId,
             addresses,
             userSettings,
+            organization,
         };
     }
 
