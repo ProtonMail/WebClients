@@ -28,5 +28,8 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
                 Logger.error(`Unknown IPC message type: ${type}`);
                 break;
         }
+        if (type === "openExternal") {
+            ipcRenderer.send("openExternal", payload);
+        }
     },
 });
