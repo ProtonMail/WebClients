@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { type GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
-import { withCache } from '@proton/pass/store/actions/with-cache';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 
 export const passwordSave = createAction('password::save', (payload: PasswordHistoryEntry) => withCache({ payload }));

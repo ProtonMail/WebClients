@@ -1,8 +1,8 @@
 import type { Action, Reducer } from 'redux';
 
 import { requestInvalidate, requestProgress } from '@proton/pass/store/actions';
-import type { RequestType } from '@proton/pass/store/actions/with-request';
-import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
+import type { RequestType } from '@proton/pass/store/actions/enhancers/request';
+import { isActionWithRequest } from '@proton/pass/store/actions/enhancers/request';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
