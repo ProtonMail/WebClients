@@ -1,3 +1,5 @@
+import { store } from 'proton-pass-web/app/Store/store';
+
 import {
     createB2BRule,
     createBlackFridayRule,
@@ -6,8 +8,6 @@ import {
     createTrialRule,
 } from '@proton/pass/lib/onboarding/rules';
 import { createOnboardingService } from '@proton/pass/lib/onboarding/service';
-
-import { store } from '../app/Store/store';
 
 export const onboarding = createOnboardingService({
     storage: localStorage,

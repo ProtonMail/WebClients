@@ -2,6 +2,11 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import { deletePassDB, getDBCache, writeDBCache } from 'proton-pass-web/lib/database';
+import { i18n } from 'proton-pass-web/lib/i18n';
+import { settings } from 'proton-pass-web/lib/settings';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
+
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
@@ -25,10 +30,6 @@ import { AppStatus, OnboardingMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
-import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
-import { i18n } from '../../lib/i18n';
-import { settings } from '../../lib/settings';
-import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClientRef } from '../Context/ClientProvider';
 import { type ServiceWorkerMessageHandler, useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
