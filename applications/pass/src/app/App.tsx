@@ -1,5 +1,11 @@
 import { Route, Router } from 'react-router-dom';
 
+import { PASS_CONFIG } from 'proton-pass-web/lib/core';
+import { i18n } from 'proton-pass-web/lib/i18n';
+import { logStore } from 'proton-pass-web/lib/logger';
+import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
+
 import {
     CompatibilityCheck,
     ErrorBoundary,
@@ -31,11 +37,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
-import { PASS_CONFIG } from '../lib/core';
-import { i18n } from '../lib/i18n';
-import { logStore } from '../lib/logger';
-import { onboarding } from '../lib/onboarding';
-import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerProvider';
