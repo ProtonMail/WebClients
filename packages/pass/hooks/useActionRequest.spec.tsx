@@ -4,10 +4,10 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { type UnknownAction, configureStore, createAction } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { withRequest } from '@proton/pass/store/actions/enhancers/request';
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import request from '@proton/pass/store/reducers/request';
 
-import withRequest from '../store/actions/with-request';
 import { useActionRequest } from './useActionRequest';
 
 const requestId = 'test::id';
