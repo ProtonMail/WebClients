@@ -28,6 +28,7 @@ interface Props {
     isRecipient?: boolean;
     isExpanded?: boolean;
     customDataTestId?: string;
+    hasHeading?: boolean;
 }
 
 const RecipientItemSingle = ({
@@ -48,6 +49,7 @@ const RecipientItemSingle = ({
     isRecipient = false,
     isExpanded = false,
     customDataTestId,
+    hasHeading = false,
 }: Props) => {
     const [uid] = useState(generateUID('dropdown-recipient'));
 
@@ -112,6 +114,7 @@ const RecipientItemSingle = ({
             isRecipient={isRecipient}
             recipientOrGroup={{ recipient }}
             customDataTestId={customDataTestId}
+            hasHeading={hasHeading}
         />
     );
 };
