@@ -56,7 +56,7 @@ export interface OperationsData {
  */
 export interface Operations {
     buyCredit: () => Promise<unknown>;
-    payInvoice: () => Promise<unknown>;
+    payInvoice: (invoiceId: string) => Promise<unknown>;
     subscribe: (operationsDataParam?: OperationsSubscriptionData) => Promise<unknown>;
     savePaymentMethod: () => Promise<unknown>;
 }
@@ -77,12 +77,8 @@ function getOperations(
         buyCredit: async () => {
             return api(buyCredit(params)).then(wrappedAfterOperation);
         },
-        payInvoice: async () => {
-            if (!operationsData?.invoice) {
-                throw new Error('The operations data for invoice must be provided in the facade');
-            }
-
-            return api(payInvoice(operationsData.invoice.invoiceId, params)).then(wrappedAfterOperation);
+        payInvoice: async (invoiceId: string) => {
+            return api(payInvoice(invoiceId, params)).then(wrappedAfterOperation);
         },
         subscribe: async (operationsDataParam?: OperationsSubscriptionData) => {
             if (!operationsData?.subscription && !operationsDataParam) {
@@ -132,7 +128,6 @@ function getOperations(
  */
 const usePaymentContext = () => {
     const subscriptionData = useRef<OperationsSubscriptionData>();
-    const invoiceData = useRef<OperationsInvoiceData>();
 
     return {
         setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {
@@ -141,16 +136,9 @@ const usePaymentContext = () => {
         getSubscriptionData: () => {
             return subscriptionData.current;
         },
-        setInvoiceData: (data: OperationsInvoiceData | undefined) => {
-            invoiceData.current = data;
-        },
-        getInvoiceData: () => {
-            return invoiceData.current;
-        },
         getOperationsData: (): OperationsData => {
             return {
                 subscription: subscriptionData.current,
-                invoice: invoiceData.current,
             };
         },
     };
