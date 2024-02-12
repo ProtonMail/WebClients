@@ -2,12 +2,11 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/constants';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { aliasDetailsRequest, aliasOptionsRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
-import withCallback from '@proton/pass/store/actions/with-callback';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
