@@ -41,6 +41,7 @@ import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
+import SignupButton from './SignupButton';
 
 export interface LoginFormRef {
     getIsLoading: () => void;
@@ -134,11 +135,7 @@ const LoginForm = ({
         </Href>
     );
 
-    const signUp = paths.signup && (
-        <Link key="signup" className="link link-focus text-nowrap" to={paths.signup}>
-            {c('Link').t`Create account`}
-        </Link>
-    );
+    const signUp = <SignupButton paths={paths} />;
 
     const updateErrorMessage = (error: any) => {
         setErrorMsg(getApiErrorMessage(error) || c('Error').t`Unknown error`);

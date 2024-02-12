@@ -3,7 +3,8 @@ export type IPCInboxMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogout'; payload: undefined }
     | { type: 'clearAppData'; payload: undefined }
-    | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' };
+    | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
+    | { type: 'openExternal'; payload: string };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
