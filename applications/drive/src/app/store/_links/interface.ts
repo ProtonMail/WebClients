@@ -1,6 +1,7 @@
 import { VERIFICATION_STATUS } from '@proton/crypto';
 
 import type { Photo } from '../_photos';
+import { ThumbnailType } from '../_uploads/media';
 
 /**
  * Link should not be used directly. It is general set of attributes
@@ -34,6 +35,7 @@ interface Link {
     // to re-fetch shared links. So better to keep it around.
     trashedByParent?: boolean;
     hasThumbnail: boolean;
+    hasHdThumbnail?: boolean;
     isShared: boolean;
     // Note that shareId is ID of the share, that is pointer of what is shared
     // with someone else. Link can be part of many shares; for example part of
@@ -50,12 +52,18 @@ interface Link {
         size: number;
         // Address used for signature checks of blocks and xattributes.
         signatureAddress: string;
-        // Thumbnail URL is not part of all requests, because that would be
+        // Thumbnails URL is not part of all requests, because that would be
         // too heavy for API. For example, events do not include it.
         thumbnail?: {
             bareUrl: string;
             token: string;
         };
+        thumbnails?: {
+            id: string;
+            size: number;
+            type: ThumbnailType;
+            hash: string;
+        }[];
         photo?: Photo;
     };
     signatureAddress?: string; // Addresss used for key signatures.
