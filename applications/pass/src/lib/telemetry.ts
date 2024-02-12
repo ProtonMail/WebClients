@@ -1,8 +1,8 @@
+import { store } from 'proton-pass-web/app/Store/store';
+
 import { type TelemetryAlarmHandles, createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
 import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
-
-import { store } from '../app/Store/store';
 
 export const telemetry = createCoreTelemetryService({
     alarm: ((): TelemetryAlarmHandles => {
