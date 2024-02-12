@@ -154,6 +154,7 @@ const HeaderExpanded = ({
             onContactDetails={onContactDetails}
             onContactEdit={onContactEdit}
             customDataTestId="recipients:sender"
+            hasHeading
         />
     );
 
@@ -197,6 +198,7 @@ const HeaderExpanded = ({
         >
             {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
             {viewportWidth['<=small'] && messageLoaded && (
+                // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
                 <div className="flex items-center justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
@@ -213,6 +215,7 @@ const HeaderExpanded = ({
                     </span>
                 </div>
             )}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div className="flex flex-nowrap items-center message-header-from-container" onClick={handleClick}>
                 <span className="flex flex-1 flex-nowrap mr-2">
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
