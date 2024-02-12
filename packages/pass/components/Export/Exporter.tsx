@@ -8,7 +8,7 @@ import { ConfirmPasswordModal } from '@proton/pass/components/Confirmation/Confi
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExportForm } from '@proton/pass/components/Export/ExportForm';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
-import type { ExportFormValues } from '@proton/pass/lib/export/types';
+import { type ExportFormValues, ExportFormat } from '@proton/pass/lib/export/types';
 import { validateExportForm } from '@proton/pass/lib/validation/export';
 import type { MaybePromise } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
@@ -26,7 +26,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const initialValues: ExportFormValues = { encrypted: false, passphrase: '' };
+    const initialValues: ExportFormValues = { format: ExportFormat.DEFAULT, passphrase: '' };
     const [loading, setLoading] = useState(false);
 
     const passwordConfirmModal = useAsyncModalHandles<string>();
