@@ -118,7 +118,7 @@ const getExtensionCoreProps = (
         onTelemetry: (event) =>
             sendMessage(messageFactory({ type: WorkerMessageType.TELEMETRY_EVENT, payload: { event } })).catch(noop),
 
-        writeToClipboard: navigator.clipboard.writeText,
+        writeToClipboard: (value) => navigator.clipboard.writeText(value),
     };
 };
 
