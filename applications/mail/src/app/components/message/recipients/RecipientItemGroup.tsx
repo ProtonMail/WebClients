@@ -33,6 +33,7 @@ interface Props {
     showDropdown?: boolean;
     isOutside?: boolean;
     customDataTestId?: string;
+    hasHeading?: boolean;
 }
 
 const RecipientItemGroup = ({
@@ -42,6 +43,7 @@ const RecipientItemGroup = ({
     showDropdown,
     isOutside,
     customDataTestId,
+    hasHeading = false,
 }: Props) => {
     const { getGroupLabel, getRecipientLabel } = useRecipientLabel();
     const { createModal } = useModals();
@@ -153,6 +155,7 @@ const RecipientItemGroup = ({
                 </Dropdown>
             }
             isOutside={isOutside}
+            hasHeading={hasHeading}
             recipientOrGroup={{ group }}
             customDataTestId={customDataTestId}
         />

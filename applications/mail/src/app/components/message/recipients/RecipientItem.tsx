@@ -31,6 +31,7 @@ interface Props {
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
     customDataTestId?: string;
+    hasHeading?: boolean;
 }
 
 const RecipientItem = ({
@@ -50,6 +51,7 @@ const RecipientItem = ({
     onContactDetails,
     onContactEdit,
     customDataTestId,
+    hasHeading = false,
 }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
 
@@ -67,6 +69,7 @@ const RecipientItem = ({
                 globalIcon={globalIcon}
                 showDropdown={showDropdown}
                 customDataTestId={customDataTestId}
+                hasHeading={hasHeading}
             />
         );
     }
@@ -90,6 +93,7 @@ const RecipientItem = ({
                     onContactDetails={onContactDetails}
                     onContactEdit={onContactEdit}
                     customDataTestId={customDataTestId}
+                    hasHeading={hasHeading}
                 />
             );
         }
@@ -110,6 +114,7 @@ const RecipientItem = ({
             title={c('Label').t`Undisclosed Recipients`}
             showDropdown={showDropdown}
             isOutside={isOutside}
+            hasHeading={hasHeading}
         />
     );
 };
