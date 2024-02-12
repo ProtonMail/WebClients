@@ -169,6 +169,7 @@ const getModalContent = (
         return {
             title: c('Title').t`Organizer cannot be notified`,
             warningText: c('Info').t`The organizer cannot be notified that you want to change your answer:`,
+            close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
         };
     }
     if (originalInviteActions.type === DECLINE_INVITATION) {
