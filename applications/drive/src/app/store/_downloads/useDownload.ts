@@ -8,6 +8,7 @@ import {
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
 
+import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -237,24 +238,37 @@ export default function useDownload() {
     };
 
     const getPreviewThumbnail = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const { activeRevision, cachedThumbnailUrl } = await getLink(abortSignal, shareId, linkId);
+        const { hasThumbnail, hasHdThumbnail, activeRevision, cachedThumbnailUrl } = await getLink(
+            abortSignal,
+            shareId,
+            linkId
+        );
         if (!activeRevision?.id) {
             throw new Error(c('Error').t`The original file has missing active revision`);
         }
 
+        if (!hasThumbnail) {
+            return;
+        }
         const res = (await debouncedRequest(
-            queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.HD_PREVIEW),
+            queryFileRevisionThumbnail(
+                shareId,
+                linkId,
+                activeRevision.id,
+                hasHdThumbnail ? ThumbnailType.HD_PREVIEW : ThumbnailType.PREVIEW
+            ),
             abortSignal
         ).catch((err) => {
-            if (err.data.Code === 2501) {
-                if (cachedThumbnailUrl) {
-                    return;
-                }
-                return debouncedRequest(
-                    queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.PREVIEW)
-                );
+            // We don't want to log the error if we can't find the HD_PREVIEW for photos, we just fallback to normal one
+            if (err.data.Code !== 2501 && !hasThumbnail) {
+                logError(err);
             }
-            return err;
+            if (cachedThumbnailUrl) {
+                return;
+            }
+            return debouncedRequest(
+                queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.PREVIEW)
+            );
         })) as DriveFileRevisionThumbnailResult;
         if (!res && cachedThumbnailUrl) {
             return getThumbnailFromBlobUrl(cachedThumbnailUrl);
