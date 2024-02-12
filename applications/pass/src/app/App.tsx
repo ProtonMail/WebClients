@@ -111,7 +111,7 @@ export const App = () => (
                     openSettings={openSettings}
                     prepareImport={prepareImport}
                     getLogs={logStore.read}
-                    writeToClipboard={navigator.clipboard.writeText}
+                    writeToClipboard={(value) => navigator.clipboard.writeText(value)}
                 >
                     <CompatibilityCheck>
                         <Icons />
