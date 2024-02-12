@@ -1,23 +1,25 @@
+import path from 'path';
 import webpack from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
 
 const result = (env: any): webpack.Configuration => {
-    const result = getConfig(env);
+    const config = getConfig(env);
     const version = env.version;
 
-    result.plugins?.push(
+    config.plugins?.push(
         new webpack.DefinePlugin({
             ENV: JSON.stringify(process.env.NODE_ENV ?? 'development'),
             BUILD_TARGET: JSON.stringify('web'),
         })
     );
 
-    if (result.devServer) result.devServer.headers = { 'Service-Worker-Allowed': '/' };
+    if (config.resolve) config.resolve.alias = { 'proton-pass-web': path.resolve(__dirname, 'src/') };
+    if (config.devServer) config.devServer.headers = { 'Service-Worker-Allowed': '/' };
 
-    if (result.output) {
-        const chunkFilename = result.output.chunkFilename;
-        result.output.chunkFilename = (pathData, assetInfo) => {
+    if (config.output) {
+        const chunkFilename = config.output.chunkFilename;
+        config.output.chunkFilename = (pathData, assetInfo) => {
             const chunkName = pathData?.chunk?.name;
             if (chunkName && chunkName.startsWith('pass.service-worker')) return `[name].js?v=${version}`;
             if (typeof chunkFilename === 'function') return chunkFilename(pathData, assetInfo);
@@ -25,7 +27,7 @@ const result = (env: any): webpack.Configuration => {
         };
     }
 
-    return result;
+    return config;
 };
 
 export default result;
