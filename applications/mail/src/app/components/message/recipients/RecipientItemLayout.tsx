@@ -40,6 +40,7 @@ interface Props {
     isRecipient?: boolean;
     recipientOrGroup?: RecipientOrGroup;
     customDataTestId?: string;
+    hasHeading?: boolean;
 }
 
 const RecipientItemLayout = ({
@@ -62,6 +63,7 @@ const RecipientItemLayout = ({
     isRecipient = false,
     recipientOrGroup,
     customDataTestId,
+    hasHeading = false,
 }: Props) => {
     // When displaying messages sent as Encrypted Outside, this component is used
     // almost in isolation, specifically without the usual mail app (and authenticated
@@ -119,6 +121,7 @@ const RecipientItemLayout = ({
 
     // had to use span instead of button, otherwise ellipsis can't work
     return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role
         <span
             className={clsx([
                 'inline-flex items-center flex-nowrap message-recipient-item max-w-full cursor-pointer',
@@ -133,22 +136,25 @@ const RecipientItemLayout = ({
             title={title}
             data-testid={customDataTestId ? customDataTestId : `recipient:details-dropdown-${title}`}
         >
-            <span
-                className={clsx(['flex items-center flex-nowrap max-w-full', isLoading && 'flex-1'])}
-            >
+            <span className={clsx(['flex items-center flex-nowrap max-w-full', isLoading && 'flex-1'])}>
                 <span
                     className={clsx([
                         'inline-flex flex-1 flex-nowrap relative',
                         !isOutside && showDropdown && 'message-recipient-item-label-address',
                     ])}
                 >
-                    <span className="inline-block text-ellipsis max-w-full">
-                        {labelHasIcon && (
-                            <span className="inline-block align-sub" data-testid="recipient:action-icon">
-                                {itemActionIcon}
-                            </span>
-                        )}
-                        {icon}
+                    {labelHasIcon && (
+                        <span className="inline-block align-sub shrink-0" data-testid="recipient:action-icon">
+                            {itemActionIcon}
+                        </span>
+                    )}
+                    {icon}
+                    {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
+                    <span
+                        className="inline-block text-ellipsis max-w-full"
+                        role={hasHeading ? 'heading' : undefined}
+                        aria-level={hasHeading ? 2 : undefined}
+                    >
                         <span
                             className={clsx([
                                 'message-recipient-item-label',
