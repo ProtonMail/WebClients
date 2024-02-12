@@ -1,18 +1,17 @@
-import type { Action, UnknownAction } from 'redux';
+import type { Action } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
 import type { ClientEndpoint } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { type WithMeta, withMetaFactory } from './meta';
+
 export type Notification = CreateNotificationOptions & { endpoint?: ClientEndpoint; loading?: boolean };
-export type WithNotification<T = UnknownAction> = T & { meta: { notification: Notification } };
+export type NotificationMeta = { notification: Notification };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });
 
-/* type guard utility */
-export const isActionWithNotification = <T extends Action>(action?: T): action is WithNotification<T> =>
-    (action as any)?.meta?.notification !== undefined;
+export type WithNotification<A = Action> = WithMeta<NotificationMeta, A>;
 
 const parseNotification = (notification: NotificationOptions): Notification => {
     switch (notification.type) {
@@ -35,12 +34,8 @@ const parseNotification = (notification: NotificationOptions): Notification => {
     }
 };
 
-const withNotification =
-    (options: NotificationOptions) =>
-    <T extends object>(action: T): WithNotification<T> => {
-        const notification = parseNotification(options);
+export const withNotification = (options: NotificationOptions) =>
+    withMetaFactory<Notification>(parseNotification(options));
 
-        return merge(action, { meta: { notification } });
-    };
-
-export default withNotification;
+export const isActionWithNotification = <T extends Action>(action?: T): action is WithNotification<T> =>
+    (action as any)?.meta?.notification !== undefined;

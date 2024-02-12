@@ -1,9 +1,9 @@
 import type { Action } from 'redux';
 import { takeEvery } from 'redux-saga/effects';
 
-import type { WithNotification } from '@proton/pass/store/actions/with-notification';
-import { isActionWithNotification } from '@proton/pass/store/actions/with-notification';
-import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
+import type { WithNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { isActionWithNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { isActionWithRequest } from '@proton/pass/store/actions/enhancers/request';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNotification<Action>) {

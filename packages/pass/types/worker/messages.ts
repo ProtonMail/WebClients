@@ -5,7 +5,7 @@ import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
 import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
-import type { Notification } from '@proton/pass/store/actions/with-notification';
+import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';

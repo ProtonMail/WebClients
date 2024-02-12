@@ -2,6 +2,9 @@ import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import {
     inviteAcceptRequest,
     inviteCreateRequest,
@@ -12,9 +15,6 @@ import {
     newUserInvitePromoteRequest,
     newUserInviteRemoveRequest,
 } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { InviteState } from '@proton/pass/store/reducers';
 import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {

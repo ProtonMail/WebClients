@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import { withCache } from '@proton/pass/store/actions/with-cache';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import type { ShareEventResponse } from '@proton/pass/store/sagas/events/channel.share';
 import type { UserEvent } from '@proton/pass/types/api';
 

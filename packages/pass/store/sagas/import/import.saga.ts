@@ -17,7 +17,7 @@ import {
     vaultCreationIntent,
     vaultCreationSuccess,
 } from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
+import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

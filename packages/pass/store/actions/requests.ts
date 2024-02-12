@@ -1,4 +1,4 @@
-import { type EndpointOptions } from './with-receiver';
+import { type EndpointOptions } from './enhancers/endpoint';
 
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';

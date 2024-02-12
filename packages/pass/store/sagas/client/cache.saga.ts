@@ -6,7 +6,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { cacheCancel, stateDestroy } from '@proton/pass/store/actions';
-import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with-cache';
+import { type WithCache, isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';

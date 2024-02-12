@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { RequestType } from '@proton/pass/store/actions/with-request';
+import type { RequestType } from '@proton/pass/store/actions/enhancers/request';
 import type { RequestEntry, RequestState } from '@proton/pass/store/reducers/request';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 

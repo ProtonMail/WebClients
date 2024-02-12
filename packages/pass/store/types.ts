@@ -5,7 +5,7 @@ import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
 import type * as actions from './actions';
-import type { Notification } from './actions/with-notification';
+import type { Notification } from './actions/enhancers/notification';
 import type { FeatureFlagState, rootReducer } from './reducers';
 import type { ProxiedSettings } from './reducers/settings';
 

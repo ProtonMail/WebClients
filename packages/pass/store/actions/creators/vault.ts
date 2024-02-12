@@ -1,6 +1,16 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import type { ActionCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { withCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import {
+    withRequest,
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/enhancers/request';
 import {
     vaultCreateRequest,
     vaultDeleteRequest,
@@ -8,15 +18,6 @@ import {
     vaultMoveAllItemsRequest,
     vaultTransferOwnerRequest,
 } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
-import withCallback from '@proton/pass/store/actions/with-callback';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, {
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/actions/with-request';
 import type { BatchItemRevisions, ItemMoveDTO, ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';

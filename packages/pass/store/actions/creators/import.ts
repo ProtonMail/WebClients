@@ -2,14 +2,15 @@ import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
 import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
-import { itemsImportRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, {
+import { itemsImportRequest } from '@proton/pass/store/actions//requests';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import {
+    withRequest,
     withRequestFailure,
     withRequestProgress,
     withRequestSuccess,
-} from '@proton/pass/store/actions/with-request';
+} from '@proton/pass/store/actions/enhancers/request';
 import type { ImportEntry } from '@proton/pass/store/reducers';
 import type { ClientEndpoint, ItemRevision } from '@proton/pass/types';
 

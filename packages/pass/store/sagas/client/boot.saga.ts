@@ -12,7 +12,7 @@ import {
     stopEventPolling,
     syncLocalSettings,
 } from '@proton/pass/store/actions';
-import { isCachingAction } from '@proton/pass/store/actions/with-cache';
+import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';

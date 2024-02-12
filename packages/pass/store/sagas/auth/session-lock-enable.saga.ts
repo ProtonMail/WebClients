@@ -6,7 +6,7 @@ import {
     sessionLockEnableIntent,
     sessionLockEnableSuccess,
 } from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
+import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import { selectHasRegisteredLock } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
