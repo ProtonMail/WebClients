@@ -2,6 +2,16 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import { withCache, withThrottledCache } from '@proton/pass/store/actions/enhancers/cache';
+import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { withSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import {
+    withRequest,
+    withRequestFailure,
+    withRequestProgress,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/enhancers/request';
 import {
     itemPinRequest,
     itemUnpinRequest,
@@ -10,16 +20,6 @@ import {
     itemsBulkRestoreRequest,
     itemsBulkTrashRequest,
 } from '@proton/pass/store/actions/requests';
-import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
-import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
-import withCallback from '@proton/pass/store/actions/with-callback';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, {
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/actions/with-request';
-import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
 import type {
@@ -43,7 +43,7 @@ export const itemCreationIntent = createOptimisticAction(
     (
         payload: ItemCreateIntent,
         callback?: ActionCallback<ReturnType<typeof itemCreationSuccess> | ReturnType<typeof itemCreationFailure>>
-    ) => pipe(withSynchronousClientAction, withCallback(callback))({ payload }),
+    ) => pipe(withSynchronousAction, withCallback(callback))({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 
@@ -86,7 +86,7 @@ export const itemEditIntent = createOptimisticAction(
     (
         payload: ItemEditIntent,
         callback?: ActionCallback<ReturnType<typeof itemEditSuccess> | ReturnType<typeof itemEditFailure>>
-    ) => pipe(withSynchronousClientAction, withCallback(callback))({ payload }),
+    ) => pipe(withSynchronousAction, withCallback(callback))({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 
@@ -130,8 +130,7 @@ export const itemEditSync = createAction('item::edit::sync', (payload: { item: I
 
 export const itemMoveIntent = createOptimisticAction(
     'item::move::intent',
-    (payload: { item: ItemRevision; shareId: string; optimisticId: string }) =>
-        withSynchronousClientAction({ payload }),
+    (payload: { item: ItemRevision; shareId: string; optimisticId: string }) => withSynchronousAction({ payload }),
     ({ payload }) => getItemActionId(payload)
 );
 

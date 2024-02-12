@@ -2,7 +2,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
 import { reportBugFailure, reportBugIntent, reportBugSuccess } from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
+import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { reportBug } from '@proton/shared/lib/api/reports';
 
