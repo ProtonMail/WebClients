@@ -2,7 +2,9 @@ import React, { Suspense, lazy } from 'react';
 
 import { Loader } from '@proton/components/components';
 
-const PassAliases = lazy(() => import('./PassAliases'));
+const PassAliases = lazy(
+    () => import(/* webpackChunkName: "SecurityCenterPassAliases", webpackPreload: true */ './PassAliases')
+);
 
 /** Lazy load PassAliases main component */
 const PassAliasesContainer = () => {
