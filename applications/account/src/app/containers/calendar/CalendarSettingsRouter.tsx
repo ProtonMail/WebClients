@@ -51,7 +51,7 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
 
     const [calendars, loadingCalendars] = useCalendars();
 
-    const { isElectronDisabled } = useIsInboxElectronApp();
+    const { isElectronEnabled } = useIsInboxElectronApp();
 
     const {
         allCalendarIDs,
@@ -115,7 +115,7 @@ const CalendarSettingsRouter = ({ user, subscription, loadingFeatures, calendarA
             <Route path={getSectionPath(path, desktop)}>
                 <PrivateMainSettingsArea config={desktop}>
                     <MobileAppSettingsSection />
-                    {!isElectronDisabled && <InboxDesktopSettingsSection />}
+                    {isElectronEnabled && <InboxDesktopSettingsSection />}
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, calendarsRoute)} exact>

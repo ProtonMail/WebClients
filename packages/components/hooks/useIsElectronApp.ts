@@ -17,6 +17,7 @@ const useIsElectronApp = (flag: string) => {
     return {
         isElectron: isElectronApp,
         isElectronDisabled,
+        isElectronEnabled: !isElectronDisabled,
         isElectronOnMac: isElectronOnMac,
         isElectronOnWindows: isElectronOnWindows,
         isSupportedElectronApp,

@@ -1,10 +1,23 @@
 import useIsElectronApp from './useIsElectronApp';
 
 const useIsInboxElectronApp = () => {
-    const { isElectron, isElectronDisabled, isElectronOnMac, isElectronOnWindows, isSupportedElectronApp } =
-        useIsElectronApp('DisableElectronMail');
+    const {
+        isElectron,
+        isElectronDisabled,
+        isElectronOnMac,
+        isElectronOnWindows,
+        isSupportedElectronApp,
+        isElectronEnabled,
+    } = useIsElectronApp('DisableElectronMail');
 
-    return { isElectron, isElectronDisabled, isElectronOnMac, isElectronOnWindows, isSupportedElectronApp };
+    return {
+        isElectron,
+        isElectronDisabled,
+        isElectronOnMac,
+        isElectronOnWindows,
+        isSupportedElectronApp,
+        isElectronEnabled,
+    };
 };
 
 export default useIsInboxElectronApp;

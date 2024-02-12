@@ -49,7 +49,7 @@ const MailSettingsRouter = ({
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
     const onceRef = useRef<boolean>(false);
-    const { isElectronDisabled } = useIsInboxElectronApp();
+    const { isElectronEnabled } = useIsInboxElectronApp();
 
     const {
         routes: { general, identity, folder, filter, autoReply, domainNames, keys, imap, desktop, backup, privacy },
@@ -74,7 +74,7 @@ const MailSettingsRouter = ({
             <Route path={getSectionPath(path, desktop)}>
                 <PrivateMainSettingsArea config={desktop}>
                     <MobileAppSettingsSection />
-                    {!isElectronDisabled && <InboxDesktopSettingsSection />}
+                    {isElectronEnabled && <InboxDesktopSettingsSection />}
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, identity)}>
