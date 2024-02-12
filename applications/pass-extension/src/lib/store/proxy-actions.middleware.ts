@@ -2,8 +2,8 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import { type Middleware, isAction } from 'redux';
 
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
-import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/with-receiver';
-import { isClientSynchronousAction } from '@proton/pass/store/actions/with-synchronous-client-action';
+import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
+import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { ClientEndpoint, TabId, WorkerMessageWithSender } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -28,7 +28,7 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
     return () => (next) => {
         ExtensionContext.get().port.onMessage.addListener((message: WorkerMessageWithSender) => {
             if (message.sender === 'background' && message.type === WorkerMessageType.STORE_DISPATCH) {
-                const unprocessedAction = !isClientSynchronousAction(message.payload.action);
+                const unprocessedAction = !isSynchronousAction(message.payload.action);
                 const acceptAction = acceptActionWithReceiver(message.payload.action, endpoint, tabId);
 
                 if (unprocessedAction && acceptAction) next(message.payload.action);
@@ -39,7 +39,7 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
             if (isAction(action)) {
                 /* if action should be processed immediately on the client
                  * reducers, forward it before broadcasting to the worker */
-                if (isClientSynchronousAction(action)) next(action);
+                if (isSynchronousAction(action)) next(action);
 
                 /* hydrate the action with the current client's sender data */
                 const message = messageFactory({ type: WorkerMessageType.STORE_DISPATCH, payload: { action } });
