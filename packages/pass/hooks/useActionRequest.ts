@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import type { Action } from 'redux';
 
-import type { RequestOptions } from '@proton/pass/store/actions/with-request';
-import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
+import type { RequestOptions } from '@proton/pass/store/actions/enhancers/request';
+import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import type { RequestEntry } from '@proton/pass/store/reducers';
 
 import { type UseActionRequestEffectOptions, useActionRequestEffect } from './useActionRequestEffect';

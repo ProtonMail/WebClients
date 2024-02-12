@@ -1,8 +1,8 @@
 import { createAction } from '@reduxjs/toolkit';
 
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 

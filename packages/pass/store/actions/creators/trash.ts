@@ -1,14 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, {
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import {
+    withRequest,
     withRequestFailure,
     withRequestProgress,
     withRequestSuccess,
-} from '@proton/pass/store/actions/with-request';
+} from '@proton/pass/store/actions/enhancers/request';
+import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
 import type { BatchItemRevisionIDs } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 

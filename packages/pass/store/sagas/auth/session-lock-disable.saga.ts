@@ -5,7 +5,7 @@ import {
     sessionLockDisableIntent,
     sessionLockDisableSuccess,
 } from '@proton/pass/store/actions';
-import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
+import type { WithSenderAction } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* disableSessionLockWorker(

@@ -24,7 +24,7 @@ import {
     stateSync,
     stopEventPolling,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/actions/with-request';
+import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { selectLocale, selectOnboardingEnabled } from '@proton/pass/store/selectors';
 import { AppStatus, OnboardingMessage } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

@@ -1,7 +1,7 @@
 import { type PrepareAction } from '@reduxjs/toolkit';
 import type { Action } from 'redux';
 
-import { merge } from '@proton/pass/utils/object/merge';
+import { type WithMeta, withMetaFactory } from './meta';
 
 export type RequestType = 'start' | 'failure' | 'success' | 'progress';
 
@@ -28,17 +28,13 @@ export type RequestProgress<T, D = T> =
     | { type: 'done'; result: T }
     | { type: 'error'; error: unknown };
 
-export type WithRequest<Action extends object, Type extends RequestType, Data = undefined> = Action & {
-    meta: { request: RequestOptions<Type, Data> };
-};
+export type WithRequest<A extends object, Type extends RequestType, Data = undefined> = WithMeta<
+    { request: RequestOptions<Type, Data> },
+    A
+>;
 
-export const isActionWithRequest = <T extends Action>(action?: T): action is WithRequest<T, RequestType> =>
-    (action as any)?.meta?.request !== undefined;
-
-const withRequest =
-    <Type extends RequestType, Data = undefined>(request: RequestOptions<Type, Data>) =>
-    <Action extends object>(action: Action): WithRequest<Action, Type, Data> =>
-        merge(action, { meta: { request } });
+export const withRequest = <Type extends RequestType, Data = undefined>(request: RequestOptions<Type, Data>) =>
+    withMetaFactory<{ request: RequestOptions<Type, Data> }>({ request });
 
 const withRequestResult =
     <Type extends 'success' | 'failure'>(type: Type) =>
@@ -69,4 +65,5 @@ export const withRevalidate = <T extends WithRequest<Action, 'start'>>(action: T
     return action;
 };
 
-export default withRequest;
+export const isActionWithRequest = <T extends Action>(action?: T): action is WithRequest<T, RequestType> =>
+    (action as any)?.meta?.request !== undefined;

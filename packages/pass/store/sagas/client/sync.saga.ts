@@ -10,7 +10,7 @@ import {
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
-import { withRevalidate } from '@proton/pass/store/actions/with-request';
+import { withRevalidate } from '@proton/pass/store/actions/enhancers/request';
 import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';

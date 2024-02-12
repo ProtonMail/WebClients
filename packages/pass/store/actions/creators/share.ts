@@ -2,15 +2,15 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import {
     shareAccessOptionsRequest,
     shareEditMemberRoleRequest,
     shareLeaveRequest,
     shareRemoveMemberRequest,
 } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {

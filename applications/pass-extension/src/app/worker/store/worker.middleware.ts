@@ -1,7 +1,7 @@
 import { type Middleware, isAction } from 'redux';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers/callback';
 import type { State } from '@proton/pass/store/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
