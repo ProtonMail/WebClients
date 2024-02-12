@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { isFreeSubscription } from '@proton/shared/lib/constants';
 import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
-import { External } from '@proton/shared/lib/interfaces';
+import { BillingPlatform } from '@proton/shared/lib/interfaces';
 
 import { Loader, useModalTwoStatic } from '../../components';
 import { useModalState } from '../../components/modalTwo';
@@ -29,7 +29,7 @@ const CreditsSection = () => {
     // the upcoming subscription.
     if (
         !isFreeSubscription(subscription) &&
-        subscription.External !== External.Chargebee &&
+        subscription?.BillingPlatform !== BillingPlatform.Chargebee &&
         subscription?.UpcomingSubscription
     ) {
         upcomingSubscriptionPrice =

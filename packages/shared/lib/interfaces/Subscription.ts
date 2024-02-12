@@ -82,6 +82,11 @@ export enum External {
     Chargebee = 3,
 }
 
+export enum BillingPlatform {
+    Proton = 0,
+    Chargebee = 1,
+}
+
 export interface SubscriptionPlan
     extends Omit<Plan, 'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'> {
     // TODO: improve
@@ -109,6 +114,10 @@ export interface Subscription {
      * That's a V5 property. It's not available for V4.
      */
     IsTrial?: boolean;
+    /**
+     * V5 property. Potentially isn't available in V4.
+     */
+    BillingPlatform?: BillingPlatform;
 }
 
 export interface SubscriptionModel extends Subscription {
