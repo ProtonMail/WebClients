@@ -1,12 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { type CacheMeta, withCache, withCacheOptions } from '@proton/pass/store/actions/enhancers/cache';
+import { type EndpointOptions, withReceiver } from '@proton/pass/store/actions/enhancers/endpoint';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import { type CacheOptions, withCache, withCacheOptions } from '@proton/pass/store/actions/with-cache';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
-import { withReceiver } from '@proton/pass/store/actions/with-receiver';
-import withRequest, { withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SyncType, SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus, Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -20,7 +19,7 @@ export const stateHydrate = createAction('state::hydrate', (state: any, options?
     options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
 );
 
-export const cacheRequest = createAction('cache::request', (options: Omit<CacheOptions, 'cache'>) =>
+export const cacheRequest = createAction('cache::request', (options: Omit<CacheMeta, 'cache'>) =>
     withCacheOptions(options)({ payload: {} })
 );
 export const cacheCancel = createAction('cache::cancel');
