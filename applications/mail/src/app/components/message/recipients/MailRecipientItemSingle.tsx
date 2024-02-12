@@ -42,6 +42,7 @@ interface Props {
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
     customDataTestId?: string;
+    hasHeading?: boolean;
 }
 
 const MailRecipientItemSingle = ({
@@ -60,6 +61,7 @@ const MailRecipientItemSingle = ({
     onContactDetails,
     onContactEdit,
     customDataTestId,
+    hasHeading = false,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const history = useHistory();
@@ -236,6 +238,7 @@ const MailRecipientItemSingle = ({
                 isRecipient={isRecipient}
                 isExpanded={isExpanded}
                 customDataTestId={customDataTestId}
+                hasHeading={hasHeading}
             />
             {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}
             {blockSenderModal}
