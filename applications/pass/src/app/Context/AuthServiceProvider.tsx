@@ -2,6 +2,10 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
+import { deletePassDB } from 'proton-pass-web/lib/database';
+import { onboarding } from 'proton-pass-web/lib/onboarding';
+import { settings } from 'proton-pass-web/lib/settings';
+import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -36,10 +40,6 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
-import { deletePassDB } from '../../lib/database';
-import { onboarding } from '../../lib/onboarding';
-import { settings } from '../../lib/settings';
-import { telemetry } from '../../lib/telemetry';
 import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
