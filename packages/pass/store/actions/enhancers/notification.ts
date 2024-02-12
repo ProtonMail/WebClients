@@ -35,7 +35,7 @@ const parseNotification = (notification: NotificationOptions): Notification => {
 };
 
 export const withNotification = (options: NotificationOptions) =>
-    withMetaFactory<Notification>(parseNotification(options));
+    withMetaFactory<NotificationMeta>({ notification: parseNotification(options) });
 
 export const isActionWithNotification = <T extends Action>(action?: T): action is WithNotification<T> =>
     (action as any)?.meta?.notification !== undefined;
