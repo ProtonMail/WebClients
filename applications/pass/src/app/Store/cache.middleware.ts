@@ -1,8 +1,8 @@
 import { type Middleware, isAction } from 'redux';
 
 import { authStore } from '@proton/pass/lib/auth/store';
-import { isCachingAction } from '@proton/pass/store/actions/with-cache';
-import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
+import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/enhancers/callback';
 import type { State } from '@proton/pass/store/types';
 
 import { ServiceWorkerClientID, ServiceWorkerEnabled } from '../ServiceWorker/ServiceWorkerProvider';

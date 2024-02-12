@@ -6,7 +6,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { Notification } from '@proton/pass/store/actions/with-notification';
+import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 
 import { usePassConfig } from './usePassConfig';
