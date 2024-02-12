@@ -75,7 +75,7 @@ export const queryRequestUpload = (data: {
             Token: string;
         };
     }[];
-    ThumbnailList?: Thumbnail[];
+    ThumbnailList?: Omit<Thumbnail, 'ThumbnailID'>[];
     AddressID: string;
     ShareID: string;
     LinkID: string;

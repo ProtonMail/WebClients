@@ -15,6 +15,7 @@ import type { Photo } from '../_photos';
 import type { DriveFileRevision } from '../_revisions';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type { Share, ShareURL, ShareWithKey } from '../_shares';
+import { ThumbnailType } from '../_uploads/media';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
@@ -49,6 +50,12 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                             token: link.FileProperties.ActiveRevision.ThumbnailURLInfo.Token,
                         }
                       : undefined,
+                  thumbnails: link.FileProperties.ActiveRevision.Thumbnails.map((Thumbnail) => ({
+                      id: Thumbnail.ThumbnailID,
+                      type: Thumbnail.Type,
+                      hash: Thumbnail.Hash,
+                      size: Thumbnail.Size,
+                  })),
                   photo: link.FileProperties.ActiveRevision.Photo
                       ? {
                             linkId: link.FileProperties.ActiveRevision.Photo.LinkID,
@@ -63,7 +70,10 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         createTime: link.CreateTime,
         metaDataModifyTime: link.ModifyTime,
         trashed: link.Trashed,
-        hasThumbnail: link.FileProperties?.ActiveRevision?.Thumbnail === 1,
+        hasThumbnail: !!link.FileProperties?.ActiveRevision?.Thumbnails.length,
+        hasHdThumbnail: !!link.FileProperties?.ActiveRevision?.Thumbnails?.find(
+            (Thumbnail) => Thumbnail.Type === ThumbnailType.HD_PREVIEW
+        ),
         isShared: !!link.Shared,
         shareId: link.ShareIDs?.length > 0 ? link.ShareIDs[0] : undefined,
         rootShareId: shareId,
