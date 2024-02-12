@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { readProtonPassCsvData } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
@@ -68,10 +70,18 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         case ImportProvider.PROTONPASS: {
-            return readProtonPassData({
-                data: await file.arrayBuffer(),
-                userId: payload.userId,
-            });
+            switch (fileExtension) {
+                case 'csv':
+                    return readProtonPassCsvData(await file.text());
+                case 'pgp':
+                case 'zip':
+                    return readProtonPassData({
+                        data: await file.arrayBuffer(),
+                        userId: payload.userId,
+                    });
+                default:
+                    throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
+            }
         }
 
         case ImportProvider.DASHLANE: {
