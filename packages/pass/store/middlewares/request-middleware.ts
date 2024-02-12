@@ -1,11 +1,10 @@
 import { type Middleware, isAction } from 'redux';
 
-import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
+import { requestInvalidate } from '@proton/pass/store/actions';
+import { isActionWithRequest } from '@proton/pass/store/actions/enhancers/request';
+import { type RequestState } from '@proton/pass/store/reducers';
 import { selectRequest } from '@proton/pass/store/selectors';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-
-import { requestInvalidate } from '../actions';
-import { type RequestState } from '../reducers';
 
 export const requestMiddleware: Middleware<{}, { request: RequestState }> =
     ({ getState, dispatch }) =>

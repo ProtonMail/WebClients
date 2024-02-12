@@ -2,17 +2,19 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { type SessionLock } from '@proton/pass/lib/auth/session-lock';
-import { withCache } from '@proton/pass/store/actions/with-cache';
-import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
-import withCallback from '@proton/pass/store/actions/with-callback';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { type ActionCallback, withCallback } from '@proton/pass/store/actions/enhancers/callback';
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
+import {
+    sessionLockDisableRequest,
+    sessionLockEnableRequest,
+    sessionUnlockRequest,
+} from '@proton/pass/store/actions/requests';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-
-import { sessionLockDisableRequest, sessionLockEnableRequest, sessionUnlockRequest } from '../requests';
 
 export const signoutIntent = createAction('auth::signout::intent', (payload: { soft: boolean }) => ({ payload }));
 export const signoutSuccess = createAction('auth::signout::success', (payload: { soft: boolean }) => ({ payload }));

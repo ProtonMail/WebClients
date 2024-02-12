@@ -1,9 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
+import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { reportBugRequest } from '@proton/pass/store/actions/requests';
-import withNotification from '@proton/pass/store/actions/with-notification';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import { type ClientEndpoint } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
