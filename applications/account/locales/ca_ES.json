@@ -50,6 +50,9 @@
       "activate": [
         "activar"
       ],
+      "Activate": [
+        "Activa"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Change keys": [
+        "Canvia les claus"
       ],
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
@@ -503,9 +509,6 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
-      "Give feedback": [
-        "Feu-nos comentaris"
-      ],
       "Go to label": [
         "Ves a l'etiqueta"
       ],
@@ -632,10 +635,10 @@
       "No": [
         "No"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6611,9 +6614,6 @@
       "Not yet available in our Android mobile app.": [
         "Encara no està disponible a la nostra aplicació mòbil per a Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Ja disponible en beta, l'aplicació d'escriptori us permet llançar ${ MAIL_APP_NAME } còmodament des de l'escriptori i mantenir-vos centrats sense distraccions del navegador."
       ],
@@ -7528,6 +7528,9 @@
       "You have no calendars to export.": [
         "No teniu cap calendari per exportar."
       ],
+      "You have no invoices.": [
+        "No teniu cap factura."
+      ],
       "You have no saved payment methods.": [
         "No té mètodes de pagament guardats."
       ],
@@ -7581,9 +7584,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "No podreu recuperar les dades bloquejades amb els fitxers de recuperació descarregats. Això també desactivarà la recuperació mitjançant dispositius de confiança."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "La vostra sessió seguirà iniciada fins i tot després de tancar el navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "El vostre compte de ${ BRAND_NAME } està associat amb ${ externalEmailAddress }."
@@ -7786,6 +7786,12 @@
       "Credit": [
         "Crèdit"
       ],
+      "Credit note": [
+        "Nota de crèdit"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
       "Donation": [
         "Donatiu"
       ],
@@ -7886,6 +7892,9 @@
       ],
       "Expand / contract composer": [
         "Amplia / contrau l'editor"
+      ],
+      "Filter": [
+        "Filtre"
       ],
       "Forward": [
         "Reenvia"
@@ -8141,6 +8150,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "Administrators": [
+        "Administradores"
       ],
       "ALL": [
         "TOT"
@@ -8739,6 +8751,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "La frase consta de 12 paraules úniques en un ordre específic"
       ],
+      "Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.": [
+        "Afegiu els següents tres registres CNAME. Nota: tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
+      ],
       "Please select files to upload": [
         "Seleccioneu els fitxers que voleu carregar"
       ],
@@ -8909,6 +8924,9 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -9619,6 +9637,9 @@
       "Inbox": [
         "Safata d'entrada"
       ],
+      "Pass vaults": [
+        "Caixes fortes de Pass"
+      ],
       "Spam": [
         "Correu brossa"
       ]
@@ -9643,6 +9664,23 @@
       ],
       "Medium VPN speed": [
         "Velocitat VPN mitjana"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: action": {
@@ -9678,23 +9716,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -10159,6 +10180,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "El període de prova acaba el ${ formattedPeriodEndDate }."
@@ -10908,6 +10932,14 @@
         "Vós"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configureu la vostra organització"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Començar a utilitzar ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Descobriu les característiques de ${ appName }"
@@ -10970,6 +11002,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Continueu amb el vostre compte de ${ BRAND_NAME }"
       ],
+      "Let's talk": [
+        "Parlem-ne"
+      ],
       "Limited time offer": [
         "Oferta per temps limitat"
       ],
@@ -11005,6 +11040,9 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mes"
       ],
+      "/month /user": [
+        "/mes /usuari"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Tots els serveis prèmium de ${ BRAND_NAME }."
       ],
@@ -11016,6 +11054,9 @@
       ],
       "Creating your account": [
         "S'està creant el compte"
+      ],
+      "Current plan": [
+        "Pla actual"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descobriu ${ PASS_APP_NAME },${ br }el nostre nou gestor de contrasenyes xifrat d'extrem a extrem."
@@ -11098,6 +11139,9 @@
       "Save your recovery kit to continue": [
         "Deseu el vostre kit de recuperació per continuar"
       ],
+      "Setting up your organization": [
+        "S'està configurant la vostra organització."
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciant sessió a ${ PASS_APP_NAME }"
       ],
@@ -11155,12 +11199,50 @@
         "Protegiu el vostre compte"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Per a empreses"
+      ],
+      "For invididuals": [
+        "Per a particulars"
+      ]
+    },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permís denegat. Els privilegis d'administrador s'han restringit."
+      ],
+      "The organization key must be activated first.": [
+        "S'ha d'activar primer la clau d'organització."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Número de la targeta"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "El número de la targeta no es vàlid."
+      ],
+      "Invalid expiration date": [
+        "Data de caducitat no vàlida"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
     "Permission": {
@@ -11942,6 +12024,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Organization name": [
+        "Nom de l'organització"
+      ],
       "Password": [
         "Contrasenya"
       ],
@@ -12205,7 +12290,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } d'emmagatzematge"
+        "emmagatzematge de ${ app }"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
@@ -12980,6 +13065,9 @@
       "Composing": [
         "Redacció"
       ],
+      "Confirm": [
+        "Confirma"
+      ],
       "Confirm address": [
         "Confirmar adreça"
       ],
@@ -13382,6 +13470,9 @@
       ],
       "Organization filters": [
         "Filtres de l'organització"
+      ],
+      "Organization key": [
+        "Clau de l'organització"
       ],
       "Organization name": [
         "Nom de l'organització"
@@ -14251,6 +14342,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Heu de ${ activateLink } la clau de l'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
       ],
       "You will lose any customization you made so far.": [
         "Perdràs qualsevol personalització que hagis fet fins ara."

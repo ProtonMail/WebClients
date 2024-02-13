@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Activa"
+      ],
       "activate": [
         "activar"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Change keys": [
+        "Canvia les claus"
       ],
       "Change mailbox password": [
         "Canviar contrasenya de la bústia de correu"
@@ -244,9 +250,6 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
-      ],
-      "Give feedback": [
-        "Feu-nos comentaris"
       ],
       "Got it": [
         "D'acord"
@@ -3155,9 +3158,6 @@
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Nombre de servidors dedicats a l'organització"
       ],
@@ -3701,6 +3701,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Podeu utilitzar les credencials següents per connectar-vos a un servidor ${ VPN_APP_NAME } utilitzant una aplicació VPN de codi obert de tercers, com ara Tunnelblick per a macOS o OpenVPN per a GNU/Linux."
       ],
+      "You have no invoices.": [
+        "No teniu cap factura."
+      ],
       "You have no saved payment methods.": [
         "No té mètodes de pagament guardats."
       ],
@@ -3733,9 +3736,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "La vostra sessió seguirà iniciada fins i tot després de tancar el navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "El vostre compte de ${ BRAND_NAME } actualment està suspès. Passats 28 dies, els correus electrònics deixaran de lliurar-se a la vostra safata d'entrada, els enllaços compartits de Drive es bloquejaran i no podreu carregar-hi fitxers nous. Per a restablir el servei normal, pagueu les factures vençudes."
@@ -3855,6 +3855,12 @@
       "Credit": [
         "Crèdit"
       ],
+      "Credit note": [
+        "Nota de crèdit"
+      ],
+      "Currency conversion": [
+        "Conversió de moneda"
+      ],
       "Donation": [
         "Donatiu"
       ],
@@ -3912,6 +3918,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "Administrators": [
+        "Administradores"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -4254,6 +4263,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -5019,6 +5031,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ trialPlanName } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
@@ -5421,6 +5436,14 @@
         "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge disponible."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configureu la vostra organització"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Començar a utilitzar ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Mantén aquest pla"
@@ -5433,6 +5456,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Parlem-ne"
+      ],
       "Limited time offer": [
         "Oferta per temps limitat"
       ],
@@ -5444,8 +5470,14 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mes"
       ],
+      "/month /user": [
+        "/mes /usuari"
+      ],
       "Creating your account": [
         "S'està creant el compte"
+      ],
+      "Current plan": [
+        "Pla actual"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
@@ -5483,12 +5515,42 @@
         "Totes els serveis de ${ BRAND_NAME } Plus. ${ br } Una subscripció senzilla."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permís denegat. Els privilegis d'administrador s'han restringit."
+      ],
+      "The organization key must be activated first.": [
+        "S'ha d'activar primer la clau d'organització."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Targeta de crèdit/dèbit"
       ],
       "New credit/debit card": [
         "Nova targeta de crèdit/dèbit"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Número de la targeta"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "El número de la targeta no es vàlid."
+      ],
+      "Invalid expiration date": [
+        "Data de caducitat no vàlida"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
       ]
     },
     "Permission": {
@@ -6223,7 +6285,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } d'emmagatzematge"
+        "emmagatzematge de ${ app }"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Si degradeu perdreu els beneficis següents. Segur que voleu continuar?"
@@ -6714,6 +6776,9 @@
       ],
       "Change role": [
         "Canvia privilegis"
+      ],
+      "Confirm": [
+        "Confirma"
       ],
       "Confirm address": [
         "Confirmar adreça"
@@ -7342,6 +7407,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Heu de ${ activateLink } la clau de l'organització abans d'afegir una adreça de correu electrònic a un membre no privat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"

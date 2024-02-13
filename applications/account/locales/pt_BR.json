@@ -509,9 +509,6 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
-      "Give feedback": [
-        "Dar feedback"
-      ],
       "Go to label": [
         "Ir para marcador"
       ],
@@ -638,11 +635,11 @@
       "No": [
         "Não"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
@@ -823,6 +820,9 @@
       ],
       "Select calendar view": [
         "Selecionar visualização do calendário"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select files": [
         "Selecionar arquivos"
@@ -3737,6 +3737,9 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Não foi possível carregar faturas. Tente novamente mais tarde."
+      ],
       "Could not save preference": [
         "Não foi possível salvar as preferências"
       ],
@@ -6098,6 +6101,9 @@
       "Are you sure you want to discard your import?": [
         "Você tem certeza de que quer descartar sua importação?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Tem certeza de que quer dar privilégios administrativos a este usuário?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Você tem certeza que deseja excluir permanentemente todos os seus registros?"
       ],
@@ -6616,6 +6622,9 @@
       "inactive": [
         "inativo"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Melhore a sua segurança da conta ao verificar seu endereço de e-mail."
       ],
@@ -6826,9 +6835,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Ainda não está disponível em nosso aplicativo móvel para Android."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Não é o seu dispositivo? Use uma janela de navegação privada para fazer login e fechá-la quando terminar. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Disponível agora no beta, o app desktop te deixa iniciar convenientemente o ${ MAIL_APP_NAME } direto do seu desktop, te deixando focado sem distrações do browser"
@@ -7791,6 +7797,9 @@
       "You have no calendars to export.": [
         "Você não tem calendários para exportar."
       ],
+      "You have no invoices.": [
+        "Você não tem faturas."
+      ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
       ],
@@ -7844,9 +7853,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Você não poderá recuperar dados bloqueados usando os arquivos de recuperação baixados. Isso também desativará a recuperação de dispositivos confiáveis."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
@@ -8155,6 +8161,9 @@
       ],
       "Expand / contract composer": [
         "Expandir / reduzir editor"
+      ],
+      "Filter": [
+        "Filtro"
       ],
       "Forward": [
         "Encaminhar"
@@ -9191,6 +9200,9 @@
       "Username": [
         "Nome de usuário"
       ],
+      "VAT": [
+        "IVA"
+      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -9899,6 +9911,9 @@
       "Back to inbox": [
         "Voltar à caixa de entrada"
       ],
+      "Back to vaults": [
+        "Voltar para cofres"
+      ],
       "Block": [
         "Endereços bloqueados"
       ],
@@ -9934,6 +9949,23 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9967,23 +9999,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -10301,6 +10316,9 @@
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "Cofres compartilhados ilimitados com permissões de acesso"
+      ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
       ],
@@ -10452,6 +10470,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ trialPlanName } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
@@ -10484,6 +10505,9 @@
       ],
       "terms and conditions": [
         "termos de condições"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "O nome da organização será visível aos seus usuários enquanto eles estiverem conectados."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Para começar, escolha um nome de exibição. É isso que as pessoas verão quando você enviar um e-mail, convidá-las para um evento ou compartilhar um arquivo."
@@ -11227,6 +11251,14 @@
         "Você"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configure a sua organização"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Começar a usar o ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Descubra os recursos do ${ appName }"
@@ -11257,6 +11289,9 @@
       ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
+      ],
+      "Request trial": [
+        "Solicitar avaliação"
       ],
       "Start using ${ appName }": [
         "Começar a usar o ${ appName }"
@@ -11326,6 +11361,9 @@
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
+      ],
+      "/month /user": [
+        "/mês /usuário"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
@@ -11423,6 +11461,9 @@
       "One easy subscription.": [
         "Uma assinatura fácil."
       ],
+      "Open source and audited": [
+        "Código aberto e auditado"
+      ],
       "Open-source and audited": [
         "Código aberto e auditado"
       ],
@@ -11446,6 +11487,9 @@
       ],
       "Save your recovery kit to continue": [
         "Salve o seu kit de recuperação para continuar"
+      ],
+      "Setting up your organization": [
+        "Configurando a sua organização"
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sessão em ${ PASS_APP_NAME }"
@@ -11512,12 +11556,63 @@
         "Para indivíduos"
       ]
     },
+    "passwordless": {
+      "Change organization key": [
+        "Alterar a chave da organização"
+      ],
+      "Organization key does not exist.": [
+        "A chave da organização não existe."
+      ],
+      "Organization key restored": [
+        "Chave de organização restaurada"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "Reset organization key": [
+        "Redefinir a chave da organização"
+      ],
+      "The organization key must be activated first.": [
+        "A chave da organização deve ser ativada primeiro."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "País de Faturamento"
+      ],
+      "Card number": [
+        "Número do cartão"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "Tempo limite excedido"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "O número do cartão não é válido."
+      ],
+      "Invalid expiration date": [
+        "A data de validade não é válida."
+      ],
+      "Invalid securiry code": [
+        "O código de segurança não é válido."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
       ]
     },
     "Permission": {
@@ -11836,6 +11931,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrador em sua organização precisa de acesso à chave da organização.",
+        "${ n } administradores em sua organização precisam de acesso à chave da organização."
+      ],
       "Changing organization keys": [
         "Alterando chaves da organização"
       ],
@@ -12316,6 +12415,9 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Organization name": [
+        "Nome da organização"
+      ],
       "Password": [
         "Senha"
       ],
@@ -12616,6 +12718,12 @@
       "Get more storage": [
         "Obter mais armazenamento"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Experimente ${ app } em todo o seu potencial"
       ],
@@ -12641,8 +12749,20 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Seu ${ storage } está cheio. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
+      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Seu armazenamento está cheio. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Você perderá o acesso ao armazenamento de ${ gb } e ao suporte prioritário."
@@ -14758,6 +14878,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detectamos um problema com a configuração do seu DNS. Certifique-se de que seus registros concordem com as instruções abaixo. Se o problema persistir, teremos que desativar o DKIM."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Você deve ter ${ activateLink } a chave da organização antes de adicionar um endereço de e-mail a um membro não privado."
       ],
       "You will lose any customization you made so far.": [
         "Você perderá qualquer personalização que tenha feito até agora."

@@ -503,9 +503,6 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Give feedback": [
-        "피드백 보내기"
-      ],
       "Go to label": [
         "라벨로 이동"
       ],
@@ -632,10 +629,10 @@
       "No": [
         "아니오"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6752,9 +6749,6 @@
       "Not yet available in our Android mobile app.": [
         "아직 Android 모바일 앱에서 지원하지 않습니다."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "내 기기가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하고 완료되었을 때 닫으세요. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "이제 베타로 사용 가능한 데스크탑 앱으로 브라우저로 이동할 필요 없이 간단히 ${ MAIL_APP_NAME } 바로 가기로 실행하고, 항상 집중할 수 있어요."
       ],
@@ -7697,6 +7691,9 @@
       "You have no calendars to export.": [
         "내보낼 캘린더가 없습니다."
       ],
+      "You have no invoices.": [
+        "청구서가 없습니다."
+      ],
       "You have no saved payment methods.": [
         "저장된 결제 수단이 없습니다."
       ],
@@ -7750,9 +7747,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "다운로드한 복구 파일을 사용하여 잠긴 데이터를 복구할 수 없습니다. 이는 신뢰할 수 있는 기기 복구 사용에도 비활성화될 수 있습니다."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "브라우저를 닫아도 로그인 상태가 유지됩니다."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "사용자의 ${ BRAND_NAME } 계정이 ${ externalEmailAddress } 와 연결되어 있습니다."
@@ -9822,6 +9816,23 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "미리보려면 계속하기"
@@ -9855,23 +9866,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -10320,6 +10314,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
@@ -11098,6 +11095,14 @@
         "당신"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "조직 설정"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 사용 시작"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "${ appName } 기능 살펴보기"
@@ -11315,6 +11320,9 @@
       "Save your recovery kit to continue": [
         "계속하려면 복구 키트를 저장해주세요"
       ],
+      "Setting up your organization": [
+        "조직을 설정하세요"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 로그인 중"
       ],
@@ -11372,12 +11380,28 @@
         "계정 보호"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "권한이 거부되었으며 관리자 권한이 제한되었습니다."
+      ],
+      "The organization key must be activated first.": [
+        "조직 키가 먼저 활성화되어야 합니다."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "신용/체크카드"
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "유효하지 않은 카드 번호"
+      ],
+      "Invalid expiration date": [
+        "올바르지 않은 만료 기한"
       ]
     },
     "Permission": {
@@ -12159,6 +12183,9 @@
       ],
       "Email address": [
         "이메일 주소"
+      ],
+      "Organization name": [
+        "조직명"
       ],
       "Password": [
         "비밀번호"

@@ -629,10 +629,10 @@
       "No": [
         "Нет"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6912,9 +6912,6 @@
       "Not yet available in our Android mobile app.": [
         "Пока ещё не доступно в нашем мобильном приложении для Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Приложение для настольных компьютеров, доступное сейчас в бета-версии, позволяет удобно запускать ${ MAIL_APP_NAME } прямо с вашего компьютера и не отвлекаться на браузер."
       ],
@@ -7887,6 +7884,9 @@
       "You have no calendars to export.": [
         "У вас нет календарей для экспорта."
       ],
+      "You have no invoices.": [
+        "У вас нет счетов."
+      ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
@@ -7940,9 +7940,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Вы не сможете восстановить заблокированные данные с помощью загруженных файлов восстановления. При этом также будет отключено восстановление доверенных устройств."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Вы сохраните авторизацию даже после закрытия браузера."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваша учетная запись ${ BRAND_NAME } связана с ${ externalEmailAddress }."
@@ -10040,6 +10037,23 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -10073,23 +10087,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -10583,6 +10580,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
@@ -11364,6 +11364,14 @@
         "Вы"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Настройка организации"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Начните использовать ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Посмотрите на возможности ${ appName }"
@@ -11572,6 +11580,9 @@
       "Save your recovery kit to continue": [
         "Сохраните свой набор для восстановления, чтобы продолжить."
       ],
+      "Setting up your organization": [
+        "Настройка вашей организации"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Вход в ${ PASS_APP_NAME }"
       ],
@@ -11629,12 +11640,31 @@
         "Обезопасьте ваш аккаунт"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Отказано в доступе, права администратора ограничены."
+      ],
+      "The organization key must be activated first.": [
+        "Сначала должен быть активирован ключ организации."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Неверный номер карты"
+      ],
+      "Invalid expiration date": [
+        "Неверный срок годности"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
       ]
     },
     "Permission": {
@@ -12378,6 +12408,9 @@
       ],
       "Email address": [
         "Адрес электронной почты"
+      ],
+      "Organization name": [
+        "Название организации"
       ],
       "Password": [
         "Пароль"

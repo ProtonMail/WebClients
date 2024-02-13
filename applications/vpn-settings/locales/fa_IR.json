@@ -2167,9 +2167,6 @@
       "No results found": [
         "نتیجه‌ای یافت نشد"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "از دستگاه شخص دیگری استفاده می‌کنید؟ برای ورود به سیستم یک پنجرهٔ مرور خصوصی ایجاد کرده و پس از اتمام کار آن را ببندید. ${ learnMore }"
-      ],
       "of": [
         "از"
       ],
@@ -2446,6 +2443,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
       ],
+      "You have no invoices.": [
+        "شما هیچ صورت‌حسابی ندارید."
+      ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
       ],
@@ -2463,9 +2463,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "به زودی برای تایید پرداخت به PayPal هدایت می‌شوید."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "حتی پس از بستن مرورگر نیز در سیستم باقی خواهید ماند."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورت‌حساب به تعویق افتاده دارد. دسترسی شما به زودی محدود خواهد شد. ${ payInvoiceLink }"
@@ -3339,6 +3336,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "در غیراینصورت دسترسی به حساب شما محدود خواهد شد و درنهایت غیرفعال خواهد شد."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "برای ادامه به استفاده از ${ trialPlanName } با امکانات ویژه، اشتراک و روش پرداخت خود را انتخاب کنید."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "دورهٔ آزمایشی شما در ${ formattedPeriodEndDate } به پایان می‌رسد"
       ]
@@ -3570,6 +3570,14 @@
         "پیکربندی‌های سرور استاندارد"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "سازمان خود را راه اندازی کنید"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "شروع به استفاده از ${ PASS_APP_NAME } کنید"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "شروع به استفاده از ${ appName } کنید"
@@ -3583,12 +3591,31 @@
         "درحال تایید پرداخت شما"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "دسترسی رد شد، امتیازات مدیر محدود شده است."
+      ],
+      "The organization key must be activated first.": [
+        "کلید سازمان باید ابتدا فعال شود."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "کارت اعتباری/دبیت"
       ],
       "New credit/debit card": [
         "کارت اعتباری/نقدی جدید"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "شماره کارت نامعتبر است"
+      ],
+      "Invalid expiration date": [
+        "تاریخ انقضا نامعتبر است"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "کارت شما پذیرفته نشد. لطفا کارت دیگری را امتحان کنید یا با بانک خود تماس بگیرید تا مبلغ را اجازه دهند."
       ]
     },
     "Placeholder": {

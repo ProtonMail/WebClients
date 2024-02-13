@@ -185,6 +185,9 @@
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Com exporto les meves dades de ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Com utilitzar ${ PASS_APP_NAME }"
+      ],
       "Import": [
         "Importa"
       ],
@@ -271,6 +274,9 @@
       ],
       "Pin item": [
         "Ancora l'element"
+      ],
+      "Recent": [
+        "Recents"
       ],
       "Refresh the page": [
         "Refresca la pàgina"
@@ -844,6 +850,9 @@
       ],
       "Item successfully moved": [
         "S'ha mogut l'element"
+      ],
+      "Item successfully unpinned": [
+        "S'ha desancorat l'element."
       ],
       "Leaving vault...": [
         "Deixant la caixa forta..."
@@ -1661,6 +1670,9 @@
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
       ],
+      "Get Started": [
+        "Comença"
+      ],
       "Get the mobile apps": [
         "Obteniu les aplicacions mòbils"
       ],
@@ -1687,6 +1699,9 @@
       ],
       "Member limit": [
         "Límit de nombre de membres"
+      ],
+      "Members": [
+        "Membres"
       ],
       "Move all items ?": [
         "Mou tots els elements ?"
@@ -1718,6 +1733,9 @@
       "Share with": [
         "Comparteix amb"
       ],
+      "Suggestions": [
+        "Suggeriments"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Voleu canviar a ${ PASS_APP_NAME }?"
       ],
@@ -1741,6 +1759,9 @@
       ],
       "Use my email": [
         "Utilitza el meu correu electrònic"
+      ],
+      "Vault": [
+        "Caixa forta"
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
@@ -1827,6 +1848,9 @@
       ],
       "No password manager selected": [
         "No s'ha seleccionat cap gestor de contrasenyes"
+      ],
+      "No results": [
+        "Sense resultats"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"

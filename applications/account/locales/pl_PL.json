@@ -509,9 +509,6 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
-      "Give feedback": [
-        "Wyślij opinię"
-      ],
       "Go to label": [
         "Przejdź do etykiety"
       ],
@@ -638,11 +635,11 @@
       "No": [
         "Nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -823,6 +820,9 @@
       ],
       "Select calendar view": [
         "Wybierz widok kalendarza"
+      ],
+      "Select country": [
+        "Wybierz kraj"
       ],
       "Select files": [
         "Wybierz pliki"
@@ -3757,6 +3757,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nie można załadować faktur. Spróbuj ponownie później."
+      ],
       "Could not save preference": [
         "Nie można zapisać ustawień"
       ],
@@ -3924,6 +3927,9 @@
       ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
       ],
       "Password is required": [
         "Hasło jest wymagane"
@@ -6602,6 +6608,9 @@
       "For members of organizations using single sign-on (SAML SSO)": [
         "Logowanie SSO (SAML) dla użytkowników organizacji"
       ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Dla użytkowników przenoszących usługi na ${ MAIL_APP_NAME } od innego dostawcy poczty e-mail. Aby zapewnić płynną migrację, przejdź do zakładki ${ boldAddresses }, a następnie dodaj wszystkie aktywne adresy e-mail, przed zmianą rekordu MX."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
@@ -6736,6 +6745,9 @@
       ],
       "inactive": [
         "nieaktywna"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
@@ -6949,9 +6961,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Funkcja nie jest dostępna w aplikacji mobilnej na Androida."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Aplikacja desktopowa jest dostępna w wersji beta. Aplikacja pozwala uruchamiać ${ MAIL_APP_NAME } bezpośrednio z pulpitu bez potrzeby otwierania przeglądarki internetowej."
@@ -7862,6 +7871,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Zalogowano jako ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Zużywasz więcej miejsca niż, jest dostępne w planie ${ downgradedPlanName }. Usuń nadmiarowe dane, żeby móc zmniejszyć plan."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
       ],
@@ -7934,6 +7946,9 @@
       "You have no calendars to export.": [
         "Nie masz kalendarzy do wyeksportowania."
       ],
+      "You have no invoices.": [
+        "Nie masz faktur."
+      ],
       "You have no saved payment methods.": [
         "Nie masz zapisanych metod płatności."
       ],
@@ -7987,9 +8002,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania. Ta czynność spowoduje również wyłączenie odzyskiwania zaufanego urządzenia."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }."
@@ -8204,6 +8216,9 @@
       "Credit": [
         "Środki"
       ],
+      "Currency conversion": [
+        "Kurs waluty"
+      ],
       "Donation": [
         "Darowizna"
       ],
@@ -8304,6 +8319,9 @@
       ],
       "Expand / contract composer": [
         "Otwórz / zamknij pełny ekran"
+      ],
+      "Filter": [
+        "Filtruj"
       ],
       "Forward": [
         "Przekaż dalej"
@@ -9348,6 +9366,9 @@
       "Username": [
         "Nazwa użytkownika"
       ],
+      "VAT": [
+        "podatku VAT"
+      ],
       "Verification code": [
         "Kod weryfikacyjny"
       ],
@@ -10119,6 +10140,23 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -10152,23 +10190,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -10481,6 +10502,9 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "Logowanie SSO (wkrótce)"
+      ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
       ],
@@ -10677,6 +10701,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
@@ -11506,6 +11533,9 @@
       "Or ${ createANewAccount }": [
         "Lub ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Wersja próbna"
+      ],
       "Start using ${ appName }": [
         "Zacznij korzystać z ${ appName }"
       ],
@@ -11587,6 +11617,9 @@
       "/month /user, billed biennially": [
         "/ użytkownika miesięcznie, płatne co 2 lata"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "Zaawansowana ochrona, która wykracza poza standardy"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium."
       ],
@@ -11632,6 +11665,12 @@
       "End-to-end encryption": [
         "Szyfrowanie end-to-end"
       ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Podstawowa ochrona i bezpieczna współpraca nieograniczonej liczby użytkowników"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Wszystko, co w planie ${ planTitle }, plus..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
       ],
@@ -11643,6 +11682,9 @@
       ],
       "Free forever": [
         "Darmowy na zawsze"
+      ],
+      "From the team that knows encryption": [
+        "Od zespołu, który zna się na szyfrowaniu"
       ],
       "Get ${ appName } for ${ browserName }": [
         "Pobierz ${ appName } do przeglądarki ${ browserName }"
@@ -11683,8 +11725,14 @@
       "Launching ${ PASS_APP_NAME }": [
         "Uruchamianie ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Oferta ograniczona czasowo: Uzyskaj plan ${ title } za ${ price } / użytkownika miesięcznie!"
+      ],
       "One easy subscription.": [
         "Jedna prosta subskrypcja"
+      ],
+      "Open source and audited": [
+        "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
       ],
       "Open-source and audited": [
         "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
@@ -11770,6 +11818,14 @@
         "Zabezpiecz konto"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Dla biznesów"
+      ],
+      "For invididuals": [
+        "Dla Ciebie"
+      ]
+    },
     "passwordless": {
       "All administrators will get access to the key.": [
         "Wszyscy administratorzy uzyskają dostęp do klucza."
@@ -11779,6 +11835,9 @@
       ],
       "Change organization key": [
         "Zmień klucz organizacji"
+      ],
+      "Organization key activated": [
+        "Klucz organizacji został aktywowany"
       ],
       "Organization key does not exist.": [
         "Klucz organizacji nie istnieje."
@@ -11797,6 +11856,9 @@
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Zweryfikowaliśmy autentyczność nadawcy i zaproszenia."
       ]
     },
     "Payment method option": {
@@ -11805,6 +11867,34 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Kraj rozliczeniowy"
+      ],
+      "Card number": [
+        "Numer karty"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/RR"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Numer karty jest nieprawidłowy"
+      ],
+      "Invalid expiration date": [
+        "Data wygaśnięcia jest nieprawidłowa"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Coś poszło nie tak. Spróbuj ponownie później."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
       ]
     },
     "Permission": {
@@ -12930,7 +13020,7 @@
         "Przestrzeń dyskowa ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% pełna"
+        "${ storage } jest w ${ percentage }% pełna"
       ],
       "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
         "**${ humanUsedSpace }** z ${ humanMaxSpace }"
@@ -12949,6 +13039,12 @@
       ],
       "Get more storage": [
         "Uzyskaj więcej przestrzeni dyskowej"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
       ],
       "Try out ${ app } to its full potential": [
         "Wypróbuj pełny potencjał ${ app }"
@@ -12977,8 +13073,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } jest pełna. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
+      ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Po obniżeniu planu stracisz dostęp do ${ gb } przestrzeni dyskowej i priorytetowego wsparcia."

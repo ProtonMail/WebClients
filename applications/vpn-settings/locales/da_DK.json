@@ -248,9 +248,6 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
-      "Give feedback": [
-        "Giv feedback"
-      ],
       "Got it": [
         "Forstået"
       ],
@@ -3011,6 +3008,9 @@
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
       ],
+      "Current plan": [
+        "Nuværende abonnement"
+      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
@@ -3059,6 +3059,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
+      ],
+      "Downgrade": [
+        "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
@@ -3306,9 +3309,6 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerede servere i organisationen"
       ],
@@ -3353,6 +3353,9 @@
       ],
       "per month": [
         "Pr. måned"
+      ],
+      "per month, billed at ${ price }": [
+        "per måned, faktureret til ${ price }"
       ],
       "per month, billed every 12 months": [
         "Pr. måned, faktureres hver 12. måned"
@@ -3875,6 +3878,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Du bruger mere opbevaringsplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
@@ -3904,6 +3910,9 @@
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikeret server tilgængelig.",
         "Du har ${ availableCount } dedikerede servere tilgængelig."
+      ],
+      "You have no invoices.": [
+        "Du har ingen fakturaer."
       ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
@@ -3937,9 +3946,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du vil forblive logget på selv efter du lukker browseren."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Din ${ BRAND_NAME }-konto er i øjeblikket suspenderet. Efter 28 dage vil e-mails ikke længere blive leveret til din indbakke, dine Drive-delingslinks vil blive blokeret, og du vil ikke længere kunne uploade nye filer. For at genoptage normal service skal du betale alle forfaldne fakturaer."
@@ -5244,6 +5250,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
@@ -5658,6 +5667,14 @@
         "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Konfigurer din organisation"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynd at bruge ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Behold dette abonnement"
@@ -5726,12 +5743,31 @@
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnøglen skal først aktiveres."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit/debetkort"
       ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
       ]
     },
     "Permission": {
@@ -6505,6 +6541,10 @@
       ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Du har stadig **${ daysRemaining }** dag tilbage på dit **${ currentPlanName }**-abonnement.",
+        "Du har stadig **${ daysRemaining }** dage tilbage på dit **${ currentPlanName }**-abonnement"
       ],
       "Your ${ appStorage } is almost full": [
         "Dit ${ appStorage } er næsten fuldt"

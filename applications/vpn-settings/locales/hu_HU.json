@@ -2764,9 +2764,6 @@
       "No results found": [
         "Nincs találat"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nem saját eszköze? Használjon privát ablakot a bejelentkezéshez és zárja be amikor készen van. ${ learnMore }"
-      ],
       "of": [
         "/"
       ],
@@ -3235,6 +3232,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
       ],
+      "You have no invoices.": [
+        "Nincs számlája."
+      ],
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
       ],
@@ -3261,9 +3261,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Bejelentkezve marad, a böngésző bezárása után is."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A ${ BRAND_NAME } fiókja jelenleg fel van függesztve. 28 nap múlva az e-mailek nem fognak megérkezni a fiókjába, a Drive megosztások kikapcsolásra kerülnek, és nem lesz lehetősége új fájlokat feltölteni. A szolgáltatások rendes folytatásához rendezzen minden fennálló számlát."
@@ -4349,6 +4346,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
@@ -4653,6 +4653,14 @@
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } használatának megkezdése"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
@@ -4686,12 +4694,31 @@
         "Fizetés ellenőrzése"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
+      ],
+      "The organization key must be activated first.": [
+        "Először a szervezeti kulcs aktiválása szükséges."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Bankkártya/hitelkártya"
       ],
       "New credit/debit card": [
         "Új bankkártya"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Érvénytelen kártyaszám"
+      ],
+      "Invalid expiration date": [
+        "Érvénytelen lejárati dátum"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kártya elutasítva. Kérjük, próbálja meg egy másik kártyával, vagy lépjen kapcsolatba a bankjával a terhelés engedélyezéséhez."
       ]
     },
     "Placeholder": {

@@ -3077,9 +3077,6 @@
       "No results found": [
         "Nenhum resultado"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Não é o seu dispositivo? Utilize uma janela de navegação privada para iniciar sessão e feche-a quando terminar. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -3646,6 +3643,9 @@
         "Tem ${ availableCount } servidor dedicado disponível.",
         "Tem ${ availableCount } servidores dedicados disponíveis."
       ],
+      "You have no invoices.": [
+        "Não tem faturas."
+      ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento guardados."
       ],
@@ -3678,9 +3678,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Manterá a sessão iniciada mesmo após fechar o navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
@@ -4231,13 +4228,13 @@
         "Comunicados do ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim da ${ BRAND_NAME } for Business"
+        "Newsletter da ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Anúncios importantes da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim da ${ BRAND_NAME }"
+        "Newsletter da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções da ${ BRAND_NAME }"
@@ -4929,6 +4926,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
@@ -5316,6 +5316,14 @@
         "O seu plano inclui um máximo de mais ${ humanReadableAvailableSpace } de armazenamento."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Defina a sua organização"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Começar a utilizar o ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Começar a utilizar o ${ appName }"
@@ -5375,12 +5383,31 @@
         "Todos os serviços ${ BRAND_NAME } Plus.${ br }Uma subscrição fácil."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "The organization key must be activated first.": [
+        "Tem de ativar a chave da organização primeiro."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "O número de cartão é inválido."
+      ],
+      "Invalid expiration date": [
+        "A data de expiração é inválida."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
     "Placeholder": {
@@ -6060,7 +6087,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Conservar ${ currentPlanName }"
+        "Manter ${ currentPlanName }"
       ]
     },
     "storage_split: info": {
