@@ -13,7 +13,7 @@ import {
     stopEventPolling,
     syncLocalSettings,
 } from '@proton/pass/store/actions';
-import type { SafeUserState } from '@proton/pass/store/reducers';
+import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -30,14 +30,15 @@ type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State 
 );
 
 function* resolveUserState() {
-    const { access, addresses, eventId, features, user, userSettings }: UserData = yield getUserData();
+    const { access, addresses, eventId, features, user, userSettings, organization }: UserData = yield getUserData();
     yield put(syncLocalSettings({ locale: userSettings.Locale }));
 
-    const userState: SafeUserState = {
+    const userState: HydratedUserState = {
         ...access,
         addresses,
         eventId,
         features,
+        organization,
         user,
         userSettings: {
             Email: { Status: userSettings.Email.Status },
@@ -61,7 +62,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             .then(sanitizeCache)
             .catch((err) => (config.allowFailure ? undefined : throwError(err)));
 
-        const userState: SafeUserState = cache?.state.user ?? (yield call(resolveUserState));
+        const userState: HydratedUserState = cache?.state.user ?? (yield call(resolveUserState));
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
