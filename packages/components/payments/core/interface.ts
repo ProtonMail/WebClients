@@ -314,7 +314,6 @@ export type PaymentMethodFlows =
     | 'signup-pass'
     | 'signup-vpn'
     | 'credit'
-    | 'donation'
     | 'subscription'
     | 'add-card'
     | 'add-paypal';
