@@ -1,9 +1,5 @@
 ## Release 5.0.36 — Feb 21st, 2024
 
-### New features
-
--   You can now create email aliases to hide your real email address directly in Proton Mail! Navigate to our new Security Center on the right handside pane to create new aliases when you signup for services online. You can also see your last used aliases and copy them from here.
-
 ### Improvements
 
 -   Improved performance on the "Move to Archive" and "Move to Trash" actions
