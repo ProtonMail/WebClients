@@ -8,11 +8,11 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { AdminPanelBtn } from '@proton/pass/components/Menu/B2B/AdminPanelBtn';
+import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
+import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { OnboardingButton } from '@proton/pass/components/Onboarding/Menu/OnboardingButton';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
@@ -90,8 +90,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
 
                 {onboarding.enabled && <OnboardingButton />}
-
-                {b2bAdmin && <AdminPanelBtn />}
+                {b2bAdmin && <AdminPanelButton />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
