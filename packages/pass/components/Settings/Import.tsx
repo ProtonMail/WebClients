@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportProgress } from '@proton/pass/components/Import/ImportProgress';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
@@ -20,13 +21,13 @@ import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { SettingsPanel } from './SettingsPanel';
 import { getItemsText } from './helper';
 
 export const Import: FC = () => {
     const store = useStore();
+    const { endpoint } = usePassCore();
     const { createNotification } = useNotifications();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
     const beforeSubmitResolver = useRef<(value: UseImportFormBeforeSubmitValue) => void>();
@@ -155,7 +156,7 @@ export const Import: FC = () => {
                             </div>
                         )}
 
-                        {!isElectronApp && (
+                        {endpoint === 'page' && (
                             <div className="mt-2">
                                 {c('Info')
                                     .t`To review your imported data, click on the Pass icon in your browser toolbar.`}
