@@ -267,9 +267,6 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Give feedback": [
-        "Geri bildirimde bulunun"
-      ],
       "Go to label": [
         "Etikete git"
       ],
@@ -2168,6 +2165,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "İki adımlı doğrulama ek bir güvenlik katmanı ekleyerek yetkisiz erişimi önler."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Etkinlikleri kategoriye ya da enerji düzeylerine göre renklendirerek verimliliği artırın ve zamanınızı izleyin. Ücretli bir tarifeye geçerek bunun gibi başka pek çok özelliği edinin."
       ],
@@ -2177,11 +2177,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler siliniyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında bu pencereyi kapatabilirsiniz."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Hesapları için daha yüksek koruma isteyen kullanıcılara yönelik olarak tasarlanmıştır."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
@@ -2192,11 +2198,20 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Veri kaybını önlemek için bir veri kurtarma yöntemi belirleyin."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Bu işlem birkaç dakika sürebilir. Bu arada takvimi her zamanki gibi kullanmayı sürdürebilirsiniz."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "${ PROTON_SENTINEL_NAME }, 7/24 size özel uzman desteği olan, yapay zeka temelli son teknoloji güvenlik çözümümüzü kullanmak için tarifenizi yükseltin."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
@@ -2206,6 +2221,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Hesap ve veri kurtarma yöntemleriniz ayarlandı ve iki adımlı doğrulama kullanıma alındı."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Hesabınızı ve verilerinizi kurtarma yöntemleri ayarlandı."
       ]
     },
     "description": {
@@ -2398,11 +2419,26 @@
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
+      "Alias is not valid": [
+        "Takma ad geçersiz"
+      ],
+      "Alias is required": [
+        "Takma adın yazılması zorunludur"
+      ],
       "Alias options could not be resolved": [
         "Takma ad seçenekleri çözümlenemedi"
       ],
+      "Aliases could not be loaded": [
+        "Takma adlar yüklenemedi"
+      ],
       "Already a member of this calendar": [
         "Zaten bu takvimin üyesi"
+      ],
+      "An error occurred while loading alias options": [
+        "Takma ad seçenekleri yüklenirken bir sorun çıktı"
+      ],
+      "An error occurred while saving alias": [
+        "Takma ad kaydedilirken bir sorun çıktı"
       ],
       "Answer failed to be sent": [
         "Yanıt gönderilemedi"
@@ -2499,6 +2535,9 @@
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
+      "Forward address is required": [
+        "İletilecek adresin yazılması zorunludur"
+      ],
       "Image upload failed": [
         "Görsel yüklenemedi"
       ],
@@ -2556,6 +2595,9 @@
       ],
       "Missing signature": [
         "İmza eksik"
+      ],
+      "Name is required": [
+        "Adın yazılması zorunludur"
       ],
       "Name required": [
         "Ad zorunludur"
@@ -3313,6 +3355,9 @@
       ],
       "Search": [
         "Ara"
+      ],
+      "Security Center": [
+        "Güvenlik merkezi"
       ]
     },
     "Hint": {
@@ -3888,9 +3933,6 @@
       "Existent, added and removed participants will be notified.": [
         "Var olan, eklenen ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
-      ],
       "Frequency modifications will be lost.": [
         "Yinelenme değişiklikleri kaybolacak."
       ],
@@ -3916,8 +3958,8 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
+      "Important note": [
+        "Önemli not"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
@@ -4183,6 +4225,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
+      ],
+      "Warning": [
+        "Uyarı"
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
@@ -4794,6 +4839,9 @@
       ],
       "Wonderful": [
         "Çok iyi"
+      ],
+      "Your alias": [
+        "Takma adınız"
       ],
       "Your calendar URL": [
         "Takvim adresiniz"
@@ -5756,14 +5804,45 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tüm takma adlar"
+      ],
+      "Create alias": [
+        "Takma ad oluştur"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email takma adları, e-posta adresinizi paylaşmadan çevrim içi hesaplar açmanızı sağlar. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Yeni takma ad"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını aç"
       ],
+      "Protect your online identity": [
+        "Çevrim içi kimliğinizi koruyun"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Günlükleri görüntüle"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Hesapları için daha yüksek düzeyde koruma isteyen kullanıcılar için tasarlanmış, yapay zeka destekli son teknoloji güvenlik çözümümüz. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **kullanımda** ve hesabınızı koruyor."
       ]
     },
     "Select files": {
@@ -6306,6 +6385,12 @@
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
+      "Alias copied to clipboard": [
+        "Takma ad panoya kopyalandı"
+      ],
+      "Alias saved and copied": [
+        "Takma ad kaydedildi ve kopyalandı"
+      ],
       "All events deleted": [
         "Tüm etkinlikler silindi"
       ],
@@ -6703,6 +6788,9 @@
       "Email settings": [
         "E-posta ayarları"
       ],
+      "Enable 2FA": [
+        "İki adımlı doğrulama kullanılsın"
+      ],
       "Encrypted event": [
         "Şifrelenmiş etkinlik"
       ],
@@ -6723,6 +6811,9 @@
       ],
       "Feedback": [
         "Geri bildirim"
+      ],
+      "Get advanced protection": [
+        "Gelişmiş koruma edinin"
       ],
       "Groups": [
         "Gruplar"
@@ -6760,6 +6851,9 @@
       ],
       "Minicalendar": [
         "Mini takvim"
+      ],
+      "Need more aliases?": [
+        "Daha fazla takma ad mı gerekiyor?"
       ],
       "Night theme": [
         "Gece teması"
@@ -6812,8 +6906,14 @@
       "Reshare your calendars": [
         "Takvimlerinizi yeniden paylaşın"
       ],
+      "Save": [
+        "Kaydet"
+      ],
       "Save changes": [
         "Değişiklikleri kaydet"
+      ],
+      "Security center": [
+        "Güvenlik merkezi"
       ],
       "Select a day in the month": [
         "Ayın bir gününü seçin"
@@ -6925,6 +7025,9 @@
       ],
       "You have invited participants with equivalent emails": [
         "Katılımcıları eşdeğer e-postalarla davet ettiniz"
+      ],
+      "Your account is protected": [
+        "Hesabınız korunuyor"
       ],
       "Your calendar link": [
         "Takvim bağlantınız"

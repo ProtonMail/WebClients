@@ -270,9 +270,6 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
-      "Give feedback": [
-        "Dajte nám spätnú väzbu"
-      ],
       "Go to label": [
         "Prejsť na štítok"
       ],
@@ -326,6 +323,9 @@
       ],
       "Import from Outlook": [
         "Importovať z Outlooku"
+      ],
+      "Important update available. To continue to use the app, please update to the latest version. ${ downloadUpdate }": [
+        "K dispozícii je dôležitá aktualizácia. Ak chcete aplikáciu naďalej používať, aktualizujte ju na najnovšiu verziu. ${ downloadUpdate }"
       ],
       "Join calendar": [
         "Pripojiť ku kalendáru"
@@ -2440,6 +2440,9 @@
       "Already a member of this calendar": [
         "Ste už členom tohto kalendára"
       ],
+      "An error occurred while saving alias": [
+        "Pri ukladaní aliasu došlo k chybe"
+      ],
       "Answer failed to be sent": [
         "Odpoveď sa nepodarilo odoslať"
       ],
@@ -2610,6 +2613,9 @@
       ],
       "No emails found to import - the account does not have an inbox": [
         "Neboli nájdené žiadne emaily na import - účet nemá priečinok Doručená pošta"
+      ],
+      "No external key retrieved for user is valid for sending": [
+        "Žiadny externý kľúč získaný pre užívateľov nie je platný pre odoslanie"
       ],
       "No valid address found": [
         "Nebola nájdená žiadna platná adresa"
@@ -4013,9 +4019,6 @@
       "Existent, added and removed participants will be notified.": [
         "Existujúci, pridaní a odobraní účastníci budú oboznámení."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Frekvencia úprav bude stratená."
       ],
@@ -4043,8 +4046,8 @@
       "Import mailbox": [
         "Importovať poštovú schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
+      "Important note": [
+        "Dôležitá poznámka"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
@@ -4312,6 +4315,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Warning": [
+        "Varovanie"
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovať."

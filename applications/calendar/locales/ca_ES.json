@@ -226,7 +226,7 @@
         "Baixa"
       ],
       "Download now": [
-        "Descarrega ara"
+        "Descarrega"
       ],
       "Edit": [
         "Edita"
@@ -266,9 +266,6 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
-      ],
-      "Give feedback": [
-        "Feu-nos comentaris"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -3874,9 +3871,6 @@
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, els afegits i els esborrats seran notificats."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Es perdran les modificacions de freqüència."
       ],
@@ -3901,9 +3895,6 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -4169,6 +4160,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
+      ],
+      "Warning": [
+        "Advertència"
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -4780,6 +4774,9 @@
       ],
       "Wonderful": [
         "Meravellosa"
+      ],
+      "Your alias": [
+        "El vostre àlies"
       ],
       "Your calendar URL": [
         "URL del vostre calendari"
@@ -5730,14 +5727,28 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tots els àlies"
+      ],
+      "Create alias": [
+        "Crea un àlies"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
+      "New alias": [
+        "Nou àlies"
+      ],
       "Open ${ PASS_APP_NAME }": [
-        "Obrir ${ PASS_APP_NAME }"
+        "Obri ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Mostra els registres"
       ]
     },
     "Select files": {
@@ -6235,7 +6246,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } d'emmagatzematge"
+        "emmagatzematge de ${ app }"
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -6662,6 +6673,9 @@
       "Email settings": [
         "Configuració del correu"
       ],
+      "Enable 2FA": [
+        "Activa l'autenticació 2FA"
+      ],
       "Encrypted event": [
         "Esdeveniment xifrat"
       ],
@@ -6770,6 +6784,9 @@
       ],
       "Reshare your calendars": [
         "Compartiu de nou els vostres calendaris."
+      ],
+      "Save": [
+        "Desa"
       ],
       "Save changes": [
         "Desa els canvis"

@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
+      "Create and copy alias": [
+        "Skapa och kopiera alias"
+      ],
       "Create calendar": [
         "Skapa kalender"
       ],
@@ -266,9 +269,6 @@
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
-      ],
-      "Give feedback": [
-        "Ge feedback"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -489,9 +489,6 @@
       "Save": [
         "Spara"
       ],
-      "Save and copy alias": [
-        "Spara och kopiera alias"
-      ],
       "Search": [
         "Sök"
       ],
@@ -509,6 +506,9 @@
       ],
       "Select calendar view": [
         "Välj kalendervy"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Select time zone": [
         "Välj tidszon"
@@ -3935,9 +3935,6 @@
       "Existent, added and removed participants will be notified.": [
         "Befintliga, tillagda och borttagna deltagare kommer att meddelas."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Frekvensändringar kommer att gå förlorade."
       ],
@@ -3962,9 +3959,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig notering"
@@ -4188,9 +4182,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
-      ],
-      "The vault your alias will be stored in.": [
-        "Valvet dina alias kommer att lagras i."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
@@ -4520,9 +4511,6 @@
       "Add image URL": [
         "Lägga till bild-URL"
       ],
-      "Add title": [
-        "Lägg till rubrik"
-      ],
       "Add to group": [
         "Lägg till i grupp"
       ],
@@ -4609,6 +4597,9 @@
       ],
       "Don't ask again": [
         "Fråga inte igen"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "t.ex. Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-post"
@@ -5627,6 +5618,11 @@
         "Expandera deltagarlista"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nyckeln kan inte användas för kryptering"
@@ -5819,14 +5815,11 @@
       "Create alias": [
         "Skapa alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "t.ex., Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Skapa ett alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generera alias i farten och hantera enkelt dina alias och lösenord."
-      ],
-      "Get an alias": [
-        "Skaffa ett alias"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
@@ -5846,8 +5839,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "När du tillfrågas om din e-postadress, ge detta alias istället. Lägg till ett namn och en anteckning för att hålla reda på var du använder det."
+      "Used on amazon for shopping, etc.": [
+        "Används på Amazon för shopping etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "När du tillfrågas om din e-postadress, ge detta alias istället. Lägg till en rubrik och anteckning för att hålla reda på var du använder den."
       ]
     },
     "Security Center - Action": {
