@@ -17,6 +17,9 @@
       "Add new item": [
         "Neuen Eintrag hinzufügen"
       ],
+      "Admin panel": [
+        "Administrationskonsole"
+      ],
       "Advanced": [
         "Erweitert"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Login erstellen"
+      ],
+      "Create new items": [
+        "Neues Element erstellen"
       ],
       "Create note": [
         "Notiz erstellen"
@@ -194,6 +200,9 @@
       "Importing": [
         "Wird importiert"
       ],
+      "Install extension": [
+        "Erweiterung installieren"
+      ],
       "Invite others": [
         "Jemanden einladen"
       ],
@@ -248,6 +257,9 @@
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
+      "Not now": [
+        "Nicht jetzt"
+      ],
       "OK": [
         "OK"
       ],
@@ -263,6 +275,9 @@
       "Pin item": [
         "Eintrag anheften"
       ],
+      "Recent": [
+        "Kürzlich"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -277,6 +292,9 @@
       ],
       "Remove access": [
         "Zugriff entfernen"
+      ],
+      "Remove member": [
+        "Mitglied entfernen"
       ],
       "Request a feature": [
         "Funktion vorschlagen"
@@ -418,11 +436,21 @@
       "Auto-lock could not be disabled": [
         "Automatisches Sperren konnte nicht deaktiviert werden."
       ],
+      "Cannot send invitation at the moment": [
+        "Einladung kann aktuell nicht versendet werden",
+        "Einladungen können derzeit nicht versendet werden"
+      ],
+      "Cannot send invitations at the moment": [
+        "Kann derzeit keine Einladungen versenden"
+      ],
       "Could not confirm this invite at the moment": [
         "Fehler beim Bestätigen der Einladung."
       ],
       "Could not leave vault.": [
         "Fehler beim Verlassen des Tresors."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Die Empfehlungen können im Moment nicht geladen werden."
       ],
       "Could not open created vault": [
         "Erstellter Tresor konnte nicht geöffnet werden."
@@ -670,6 +698,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
+      "${ count } invites successfully sent": [
+        "${ count } Einladung erfolgreich gesendet"
+      ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
@@ -730,6 +761,9 @@
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Bring deine bestehenden Passwörter in ${ BRAND_NAME }"
+      ],
       "Built in 2FA authenticator": [
         "Integrierter 2FA-Authenticator"
       ],
@@ -787,6 +821,13 @@
       "For security reasons, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Generierte Passwörter werden für ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche gespeichert",
+        "Die generierten Passwörter werden für einen Zeitraum von ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen gespeichert."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Hole das Beste aus Pass heraus, indem du einen Tresor für jedes Team oder Projekt erstellst."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Erhalte unbegrenzte Aliasse, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
       ],
@@ -806,11 +847,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Um ${ PASS_APP_NAME } optimal nutzen zu können, erteile bitte die notwendigen Erweiterungsrechte."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Installiere ${ PASS_APP_NAME } für ${ browser.title }, um deine Logins schnell automatisch auszufüllen."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Installiere ${ PASS_APP_NAME } für ${ browser.title }, um deine Logins schnell automatisch auszufüllen. "
+      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
       "Invitation sent": [
         "Einladung gesendet"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Lade bestimmte Personen ein und lege die richtigen Berechtigungen fest."
       ],
       "Invite successfully removed": [
         "Einladung erfolgreich gelöscht."
@@ -903,6 +953,10 @@
       "Pass Plus trial": [
         "Pass Plus-Testversion"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Woche sind, werden automatisch aus dem Verlauf gelöscht.",
+        "Kennwörter, die älter als ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } Wochen sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
       "Permanently deleting selected items": [
         "Ausgewählte Einträge dauerhaft löschen"
       ],
@@ -930,6 +984,9 @@
       "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
+      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
@@ -947,6 +1004,9 @@
       ],
       "Select destination vault": [
         "Zieltresor auswählen:"
+      ],
+      "Select vault to share": [
+        "Zu teilenden Tresor auswählen"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
@@ -996,6 +1056,9 @@
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Die Exportdatei enthält keine Daten von gemeinsamen Tresoren, bei denen du nicht der Eigentümer bist."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
         "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
@@ -1026,6 +1089,9 @@
       ],
       "Unpinning item...": [
         "Eintrag wird losgelöst..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Upgrade jetzt zum Freischalten von Premiumfunktionen"
       ],
       "Use vaults to share this item with others.": [
         "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
@@ -1149,6 +1215,9 @@
       "Alphabetical": [
         "Alphabetisch"
       ],
+      "Application logs": [
+        "Anwendungsprotokolle"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } automatisch sperren"
       ],
@@ -1193,6 +1262,9 @@
       ],
       "Display": [
         "Darstellung"
+      ],
+      "Download logs": [
+        "Protokolle herunterladen"
       ],
       "Empty trash": [
         "Papierkorb leeren"
@@ -1280,6 +1352,15 @@
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "Make all admins": [
+        "Mach alle zu Administratoren"
+      ],
+      "Make all editors": [
+        "Mach alle zu Bearbeitern"
+      ],
+      "Make all viewers": [
+        "Mach alle zu Betrachtern"
       ],
       "Members": [
         "Mitglieder"
@@ -1452,6 +1533,9 @@
       "View details": [
         "Details anzeigen"
       ],
+      "View logs": [
+        "Protokolle anzeigen"
+      ],
       "Websites": [
         "Websites"
       ],
@@ -1609,6 +1693,9 @@
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
+      "Create a vault": [
+        "Tresor erstellen"
+      ],
       "Create PIN code": [
         "PIN-Code erstellen"
       ],
@@ -1627,6 +1714,9 @@
       "Enter your PIN": [
         "PIN eingeben"
       ],
+      "Get Started": [
+        "Erste Schritte"
+      ],
       "Grant permissions": [
         "Berechtigungen erteilen"
       ],
@@ -1636,6 +1726,12 @@
       "Import to vault(s)": [
         "In Tresor(e) importieren"
       ],
+      "Import your data": [
+        "Importiere deine Daten"
+      ],
+      "Install extension": [
+        "Erweiterung installieren"
+      ],
       "Leave vault ?": [
         "Tresor verlassen?"
       ],
@@ -1644,6 +1740,9 @@
       ],
       "Member limit": [
         "Mitgliederlimit"
+      ],
+      "Members": [
+        "Mitglieder"
       ],
       "Move all items ?": [
         "Alle Einträge verschieben?"
@@ -1675,8 +1774,14 @@
       "Settings": [
         "Einstellungen"
       ],
+      "Share vaults with your team": [
+        "Teile Tresore mit deinem Team"
+      ],
       "Share with": [
         "Teilen mit"
+      ],
+      "Suggestions": [
+        "Vorschläge"
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
@@ -1686,6 +1791,12 @@
       ],
       "Update available": [
         "Update verfügbar"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Upgrade zum Freischalten von Premiumfunktionen"
+      ],
+      "Vault": [
+        "Tresor"
       ],
       "Vault shared with you": [
         "Mit dir geteilter Tresor"
@@ -1736,11 +1847,20 @@
       "An error occured while exporting your data": [
         "Beim Exportieren deiner Daten ist ein Fehler aufgetreten."
       ],
+      "At least one email address is required": [
+        "Mindestens eine E-Mail Adresse ist erforderlich"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Mailboxen für diesen Alias können derzeit nicht abgerufen werden."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Tresor \"${ vaultName }\" konnte nicht erstellt werden."
+      ],
+      "Could not send invitations to the following addresses :": [
+        "An folgende Adressen konnten keine Einladungen gesendet werden:"
+      ],
+      "Duplicate email addresses.": [
+        "Doppelte E-Mail-Adressen"
       ],
       "Empty note": [
         "Leere Notiz"
@@ -1750,6 +1870,9 @@
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
+      ],
+      "Invalid email addresses.": [
+        "Ungültige E-Mail-Adressen."
       ],
       "Maximum length is ${ maxLength } character": [
         "Die maximale Länge beträgt ${ maxLength } Zeichen.",
@@ -1773,6 +1896,9 @@
       "No password manager selected": [
         "Kein Passwort-Manager ausgewählt."
       ],
+      "No results": [
+        "Keine Ergebnisse"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Nur alphanumerische Zeichen, Punkte, Bindestriche und Unterstriche sind erlaubt."
       ],
@@ -1781,6 +1907,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-verschlüsselte Exportdatei erfordert Passphrase"
+      ],
+      "Please contact us for investigating the issue": [
+        "Bitte kontaktiere uns, um das Problem zu untersuchen"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."
