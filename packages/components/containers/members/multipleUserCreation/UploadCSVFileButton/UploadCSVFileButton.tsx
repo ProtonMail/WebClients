@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { ButtonProps, InlineLinkButton } from '@proton/atoms';
 import { useModals, useNotifications } from '@proton/components';
+import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { FileInput } from '../../../../components';
@@ -60,8 +61,11 @@ const UploadCSVFileButton = ({
                 const requiredPasswordErrors = errors.filter(
                     (error) => error.type === CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED
                 );
+                const passwordMinLengthErrors = errors.filter(
+                    (error) => error.type === CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH
+                );
 
-                if (requiredEmailErrors.length || requiredPasswordErrors.length) {
+                if (requiredEmailErrors.length || requiredPasswordErrors.length | passwordMinLengthErrors.length) {
                     return createModal(
                         <CsvFormatErrorModal>
                             {requiredEmailErrors.length > 0 ? (
@@ -82,6 +86,22 @@ const UploadCSVFileButton = ({
                                         requiredPasswordErrors.length
                                     )}{' '}
                                     {requiredPasswordErrors.map((error) => error.rowNumber).join(', ')}
+                                </p>
+                            ) : null}
+
+                            {passwordMinLengthErrors.length > 0 ? (
+                                <p className="my-0">
+                                    {c('Info').ngettext(
+                                        msgid`Please use a password more than ${MIN_PASSWORD_LENGTH} character.`,
+                                        `Please use a password more than ${MIN_PASSWORD_LENGTH} characters.`,
+                                        MIN_PASSWORD_LENGTH
+                                    )}{' '}
+                                    {c('Info').ngettext(
+                                        msgid`Affected user is on row`,
+                                        `Affected users are on rows`,
+                                        passwordMinLengthErrors.length
+                                    )}{' '}
+                                    {passwordMinLengthErrors.map((error) => error.rowNumber).join(', ')}
                                 </p>
                             ) : null}
                         </CsvFormatErrorModal>
