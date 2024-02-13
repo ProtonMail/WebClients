@@ -8,15 +8,14 @@ import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { AdminPanelButton } from '@proton/pass/components/Menu/B2B/AdminPanelButton';
+import { OnboardingButton } from '@proton/pass/components/Menu/B2B/OnboardingButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { OnboardingButton } from '@proton/pass/components/Onboarding/Menu/OnboardingButton';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { AccountPath } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
@@ -43,7 +42,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const vaultActions = useVaultActions();
 
     const { filters, matchTrash } = useNavigation();
-    const navigateToOrganization = useNavigateToAccount(AccountPath.USERS);
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -92,16 +90,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 )}
 
                 {onboarding.enabled && <OnboardingButton />}
-
-                {b2bAdmin && (
-                    <DropdownMenuButton
-                        onClick={navigateToOrganization}
-                        label={c('Action').t`Admin panel`}
-                        icon="users"
-                        parentClassName="mx-3"
-                        className="rounded"
-                    />
-                )}
+                {b2bAdmin && <AdminPanelButton />}
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
