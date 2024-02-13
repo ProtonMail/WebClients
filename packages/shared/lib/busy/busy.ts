@@ -142,10 +142,15 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         clearReload();
         reloadTimeoutId = window.setTimeout(() => {
             // If the user turns out to be busy here for some reason, abort the reload, and await a new visibilitychange event
-            // In the case of the electron app, we also check if the app is focused, we abort reloading if that's the case
-            if (domIsBusy() || getIsBusy() || (isElectronApp && document.hasFocus())) {
+            if (domIsBusy() || getIsBusy()) {
                 return;
             }
+
+            // In the case of the electron app, we also check if the app is focused, we abort reloading if that's the case
+            if (isElectronApp && document.hasFocus()) {
+                return;
+            }
+
             window.location.reload();
         }, THIRTY_MINUTES);
     };
