@@ -50,7 +50,7 @@ describe('PassCrypto', () => {
             ],
         } as User;
 
-        exposePassCrypto(createPassCrypto({ initCryptoEndpoint: false }));
+        exposePassCrypto(createPassCrypto());
     });
 
     afterAll(async () => releaseCryptoProxy());

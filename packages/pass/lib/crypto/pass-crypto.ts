@@ -1,5 +1,4 @@
 import { CryptoProxy } from '@proton/crypto';
-import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type {
     PassCryptoManagerContext,
@@ -40,14 +39,7 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
     }
 }
 
-type PassCryptoOptions = { initCryptoEndpoint: boolean };
-
-export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker => {
-    if (options.initCryptoEndpoint && process.env.NODE_ENV !== 'test') {
-        CryptoApi.init({});
-        CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
-    }
-
+export const createPassCrypto = (): PassCryptoWorker => {
     const context: PassCryptoManagerContext = {
         user: undefined,
         userKeys: [],
@@ -84,7 +76,7 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
             address.Keys,
             context.user,
             context.userKeys,
-            authStore.getPassword()
+            authStore.getPassword()!
         );
 
         return primaryAddressKey;

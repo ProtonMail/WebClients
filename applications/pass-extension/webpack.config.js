@@ -103,7 +103,7 @@ module.exports = {
     optimization: {
         ...getOptimizations({ isProduction: production }),
         runtimeChunk: false,
-        splitChunks: undefined,
+        splitChunks: false,
         usedExports: true,
     },
     resolve: {

@@ -26,7 +26,7 @@ import type { PassBridge, PassBridgeAliasItem, PassBridgeInitOptions } from './t
 export const createPassBridge = (api: Api): PassBridge => {
     exposeApi(api as PassApi);
 
-    const PassCrypto = exposePassCrypto(createPassCrypto({ initCryptoEndpoint: false }));
+    const PassCrypto = exposePassCrypto(createPassCrypto());
 
     return {
         ready: () => waitUntil(() => PassCrypto.ready, 250).then(() => true),

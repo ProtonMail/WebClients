@@ -17,11 +17,13 @@ if (BUILD_TARGET === 'chrome') {
      * chunks loaded through `importScripts` for the chromium build
      * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10*/
     const globalScope = self as any as ServiceWorkerGlobalScope;
-    const getLocaleAsset = (locale: string) => browser.runtime.getURL(`chunk.locales/${locale}-json.js`);
-    const chunks = Object.keys(config.LOCALES).map(getLocaleAsset);
+
+    const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
+    const cryptoChunks = ['chunk.crypto-worker-api.js'];
+    const chunks = localeChunks.concat(cryptoChunks);
 
     globalScope.oninstall = async () => {
-        importScripts(...chunks);
+        importScripts(...chunks.map((path) => browser.runtime.getURL(path)));
         /* In order to alleviate MV3 service worker potentially ending up
          * in a broken state after an update or a manual refresh, force the
          * incoming service worker to skip its waiting state
