@@ -92,7 +92,7 @@ export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
 
             <hr className="border-weak mt-0 mb-2 shrink-0" />
 
-            <Button shape="underline" size="small" onClick={() => downloadLogs(logs)}>
+            <Button shape="underline" size="small" onClick={async () => downloadLogs(await getLogs().catch(() => []))}>
                 <div className="flex items-center gap-2 text-sm">
                     <Icon name="arrow-down-to-square" />
                     <span>{c('Label').t`Download logs`}</span>
