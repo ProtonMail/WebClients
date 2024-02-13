@@ -159,7 +159,14 @@ export const handleNewPassword = async ({
         }
     }
 
-    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api });
+    const { clientKey } = await persistSession({
+        ...authResponse,
+        persistent,
+        trusted,
+        User: user,
+        keyPassword,
+        api,
+    });
 
     await preAuthKTCommit(user.ID);
     await resetSelfAudit(user, keyPassword, addresses);
@@ -173,6 +180,7 @@ export const handleNewPassword = async ({
             User: user,
             loginPassword: password,
             keyPassword,
+            clientKey,
             flow: 'reset',
         },
     };
@@ -215,7 +223,14 @@ export const handleNewPasswordMnemonic = async ({
 
     const trusted = false;
     const user = await api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    await persistSession({ ...authResponse, persistent, trusted, User: user, keyPassword, api });
+    const { clientKey } = await persistSession({
+        ...authResponse,
+        persistent,
+        trusted,
+        User: user,
+        keyPassword,
+        api,
+    });
 
     return {
         to: STEPS.DONE,
@@ -226,6 +241,7 @@ export const handleNewPasswordMnemonic = async ({
             User: user,
             loginPassword: password,
             keyPassword,
+            clientKey,
             flow: 'reset',
         },
     };
