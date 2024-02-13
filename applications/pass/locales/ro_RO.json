@@ -17,6 +17,9 @@
       "Add new item": [
         "Adăugare articol"
       ],
+      "Admin panel": [
+        "Panou administrare"
+      ],
       "Advanced": [
         "Avansat"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Creare autentificare"
+      ],
+      "Create new items": [
+        "Creați un articol"
       ],
       "Create note": [
         "Creare notă"
@@ -194,6 +200,9 @@
       "Importing": [
         "Se importă"
       ],
+      "Install extension": [
+        "Instalare extensie"
+      ],
       "Invite others": [
         "Invitare alții"
       ],
@@ -248,6 +257,9 @@
       "Move to trash": [
         "Mutare în «Gunoi»"
       ],
+      "Not now": [
+        "Nu acum"
+      ],
       "OK": [
         "OK"
       ],
@@ -263,6 +275,9 @@
       "Pin item": [
         "Fixare"
       ],
+      "Recent": [
+        "Recente"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -277,6 +292,9 @@
       ],
       "Remove access": [
         "Eliminare acces"
+      ],
+      "Remove member": [
+        "Eliminare membru"
       ],
       "Request a feature": [
         "Solicitare funcție"
@@ -418,11 +436,22 @@
       "Auto-lock could not be disabled": [
         "Autoblocarea nu poate fi dezactivată."
       ],
+      "Cannot send invitation at the moment": [
+        "Invitația nu poate fi trimisă momentan.",
+        "Invitațiile nu se pot trimite momentan.",
+        "Invitațiile nu se pot trimite momentan."
+      ],
+      "Cannot send invitations at the moment": [
+        "Momentan nu se pot trimite invitații."
+      ],
       "Could not confirm this invite at the moment": [
         "Nu s-a putut confirma această invitație momentan."
       ],
       "Could not leave vault.": [
         "Nu s-a putut părăsi seiful."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Recomandările nu s-au putut încărca momentan."
       ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
@@ -677,6 +706,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
+      "${ count } invites successfully sent": [
+        "Invitații trimise: ${ count }"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -740,6 +772,9 @@
       "Auto-lock successfully disabled": [
         "Blocare automată s-a dezactivat."
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Aduceți-vă parolele actuale în ${ BRAND_NAME }."
+      ],
       "Built in 2FA authenticator": [
         "Autentificator A2F încorporat."
       ],
@@ -797,6 +832,14 @@
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Obțineți maximum din Proton Pass creând un seif pentru fiecare echipă sau proiect."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obțineți pseudonime nelimitate, bucurați-vă de funcții exclusive și sprijiniți-ne abonându-vă la Pass Plus."
       ],
@@ -817,11 +860,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pentru a obține cea mai bună experiență cu ${ PASS_APP_NAME }, acordați permisiunile de extensie necesare."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Instalați ${ PASS_APP_NAME } pentru ${ browser.title } pentru a vă completa automat datele de autentificare pe site-uri."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Instalați ${ PASS_APP_NAME } pentru ${ browser.title } pentru a vă completa automat datele de autentificare pe site-uri."
+      ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
       "Invitation sent": [
         "Invitația a fost trimisă."
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Invitați anumite persoane și setați-le permisiunile dorite."
       ],
       "Invite successfully removed": [
         "Invitația a fost eliminată."
@@ -915,6 +967,11 @@
       "Pass Plus trial": [
         "Încercare Proton Pass Plus"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
+      ],
       "Permanently deleting selected items": [
         "Articolele selectate se șterg permanent."
       ],
@@ -959,6 +1016,9 @@
       ],
       "Select destination vault": [
         "Selectare seif destinație"
+      ],
+      "Select vault to share": [
+        "Selectați seiful de partajat"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selectați unde doriți să fie salvate seifurile importate."
@@ -1007,6 +1067,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1165,6 +1228,9 @@
       "Alphabetical": [
         "Alfabetic"
       ],
+      "Application logs": [
+        "Jurnale aplicație"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Autoblocare ${ PASS_APP_NAME }"
       ],
@@ -1209,6 +1275,9 @@
       ],
       "Display": [
         "Afișare"
+      ],
+      "Download logs": [
+        "Descărcare jurnale"
       ],
       "Empty trash": [
         "Golire «Gunoi»"
@@ -1296,6 +1365,15 @@
       ],
       "Logins": [
         "Conectări"
+      ],
+      "Make all admins": [
+        "Setare toți ca administratori"
+      ],
+      "Make all editors": [
+        "Setare toți acces editare"
+      ],
+      "Make all viewers": [
+        "Setare toți acces citire"
       ],
       "Members": [
         "Membri"
@@ -1468,6 +1546,9 @@
       "View details": [
         "Detalii"
       ],
+      "View logs": [
+        "Afișare jurnale"
+      ],
       "Websites": [
         "Pagini web"
       ],
@@ -1627,6 +1708,9 @@
       "Confirm PIN code": [
         "Confirmare cod PIN"
       ],
+      "Create a vault": [
+        "Creați un seif"
+      ],
       "Create PIN code": [
         "Creare cod PIN"
       ],
@@ -1645,6 +1729,9 @@
       "Enter your PIN": [
         "Introduceți codul PIN"
       ],
+      "Get Started": [
+        "Începeți"
+      ],
       "Grant permissions": [
         "Acordare permisiuni"
       ],
@@ -1654,6 +1741,12 @@
       "Import to vault(s)": [
         "Importare în seif(uri)"
       ],
+      "Import your data": [
+        "Importați-vă datele"
+      ],
+      "Install extension": [
+        "Instalați extensia"
+      ],
       "Leave vault ?": [
         "Părăsiți seiful ?"
       ],
@@ -1662,6 +1755,9 @@
       ],
       "Member limit": [
         "Limită membri"
+      ],
+      "Members": [
+        "Membri"
       ],
       "Move all items ?": [
         "Se mută toate articolele?"
@@ -1693,8 +1789,14 @@
       "Settings": [
         "Setări"
       ],
+      "Share vaults with your team": [
+        "Partajați seifuri cu echipa proprie"
+      ],
       "Share with": [
         "Partajare cu"
+      ],
+      "Suggestions": [
+        "Sugestii"
       ],
       "Transfer ownership": [
         "Transfer proprietar"
@@ -1704,6 +1806,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "Vault": [
+        "Seif"
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."
@@ -1754,11 +1859,20 @@
       "An error occured while exporting your data": [
         "A apărut o eroare în timpul exportului de date."
       ],
+      "At least one email address is required": [
+        "Este necesară cel puțin o adresă de e-mail."
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nu s-a putut crea seiful „${ vaultName }”."
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Nu s-au putut trimite invitații la următoare adrese:"
+      ],
+      "Duplicate email addresses.": [
+        "Adrese de e-mail duplicate."
       ],
       "Empty note": [
         "Notă goală."
@@ -1768,6 +1882,9 @@
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
+      ],
+      "Invalid email addresses.": [
+        "Adrese de e-mail nevalide."
       ],
       "Maximum length is ${ maxLength } character": [
         "Lungimea maximă este de ${ maxLength } caracter.",
@@ -1792,6 +1909,9 @@
       "No password manager selected": [
         "Nu a fost selectat niciun manager de parole."
       ],
+      "No results": [
+        "Nu sunt rezultate"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
@@ -1800,6 +1920,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Fișierul criptat PGP exportat necesită o frază de acces."
+      ],
+      "Please contact us for investigating the issue": [
+        "Contactați-ne pentru a investiga problema."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."
