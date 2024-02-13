@@ -5828,7 +5828,7 @@ __metadata:
   resolution: "@proton/account@workspace:packages/account"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.56.0"
@@ -5853,7 +5853,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/utils": "workspace:packages/utils"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
@@ -5937,7 +5937,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.56.0"
@@ -6190,7 +6190,7 @@ __metadata:
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
   languageName: unknown
   linkType: soft
 
@@ -6262,7 +6262,7 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.56.0"
@@ -6374,7 +6374,7 @@ __metadata:
     "@proton/shared": "workspace:packages/shared"
     "@proton/srp": "workspace:packages/srp"
     "@proton/styles": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -6458,7 +6458,7 @@ __metadata:
     "@proton/mail": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     react: "npm:^18.2.0"
     react-redux: "npm:^9.1.0"
   languageName: unknown
@@ -6469,7 +6469,7 @@ __metadata:
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:
     "@proton/redux-shared-store": "workspace:^"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
     eslint: "npm:^8.56.0"
@@ -6914,9 +6914,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "@reduxjs/toolkit@npm:2.1.0"
+"@reduxjs/toolkit@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@reduxjs/toolkit@npm:2.2.0"
   dependencies:
     immer: "npm:^10.0.3"
     redux: "npm:^5.0.1"
@@ -6930,7 +6930,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 10c0/4ea9e9ea8cc2cab1c997127dc332c165cebc55bf8e95812ba4dc40d48dd87d5ee4bf3316b9eab49b5cce056eda6bdcb4b2a7dc3a15f056f64f76134f148f9f10
+  checksum: 10c0/60930b4cf0e3971cce97c58ce613dff759f58dd316ea0f42714bf99efc241cbeeffdc97719a71407850f434a880d1ffc8378be9403279e88cd2969d829e98374
   languageName: node
   linkType: hard
 
@@ -9577,17 +9577,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/http-cache-semantics@npm:*":
+"@types/http-cache-semantics@npm:*, @types/http-cache-semantics@npm:^4.0.1":
   version: 4.0.4
   resolution: "@types/http-cache-semantics@npm:4.0.4"
   checksum: 10c0/51b72568b4b2863e0fe8d6ce8aad72a784b7510d72dc866215642da51d84945a9459fa89f49ec48f1e9a1752e6a78e85a4cda0ded06b1c73e727610c925f9ce6
-  languageName: node
-  linkType: hard
-
-"@types/http-cache-semantics@npm:^4.0.1":
-  version: 4.0.3
-  resolution: "@types/http-cache-semantics@npm:4.0.3"
-  checksum: 10c0/46e8e4d9ff8d032f0a12d08fb7250fc67ede0d566f9a5b3d92384098fb46a3892d3ec377600a1d73ea8a67a979b882f7b9ff5e29524fb76b8e1c44a0dbe04ecf
   languageName: node
   linkType: hard
 
@@ -14875,7 +14868,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cli-table3@npm:^0.6.0":
+"cli-table3@npm:^0.6.0, cli-table3@npm:^0.6.1":
   version: 0.6.3
   resolution: "cli-table3@npm:0.6.3"
   dependencies:
@@ -14885,19 +14878,6 @@ __metadata:
     "@colors/colors":
       optional: true
   checksum: 10c0/39e580cb346c2eaf1bd8f4ff055ae644e902b8303c164a1b8894c0dc95941f92e001db51f49649011be987e708d9fa3183ccc2289a4d376a057769664048cc0c
-  languageName: node
-  linkType: hard
-
-"cli-table3@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "cli-table3@npm:0.6.1"
-  dependencies:
-    colors: "npm:1.4.0"
-    string-width: "npm:^4.2.0"
-  dependenciesMeta:
-    colors:
-      optional: true
-  checksum: 10c0/19ab1bb14bd11b3ca3557ce5ad37ef73e489ea814b99f803171e6ac0a3f2ae5fffb6dbc8864e33cdcf2a3644ebc31b488b8e624fd74af44a1c77cc365c143db4
   languageName: node
   linkType: hard
 
@@ -18934,21 +18914,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esquery@npm:^1.4.0":
+"esquery@npm:^1.4.0, esquery@npm:^1.4.2":
   version: 1.5.0
   resolution: "esquery@npm:1.5.0"
   dependencies:
     estraverse: "npm:^5.1.0"
   checksum: 10c0/a084bd049d954cc88ac69df30534043fb2aee5555b56246493f42f27d1e168f00d9e5d4192e46f10290d312dc30dc7d58994d61a609c579c1219d636996f9213
-  languageName: node
-  linkType: hard
-
-"esquery@npm:^1.4.2":
-  version: 1.4.2
-  resolution: "esquery@npm:1.4.2"
-  dependencies:
-    estraverse: "npm:^5.1.0"
-  checksum: 10c0/b4109b3d8301e79bf0be10bbafe4ac9c5469274e61b07a16e7174e99efe815081bc18ac2e6d951d06df95004ac5772751db5d5b14483e51aefa96b018726117d
   languageName: node
   linkType: hard
 
@@ -21264,16 +21235,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^13.19.0":
-  version: 13.19.0
-  resolution: "globals@npm:13.19.0"
-  dependencies:
-    type-fest: "npm:^0.20.2"
-  checksum: 10c0/d2bb3164ed9f5ec82b91e96d6a5ffc1cca3cb10f6c41df9687cd7712ba82f5534ed028b11c5717d71c938403bf8ffc97bb06f5f2eab8c1b91e6273b08b33b5e6
-  languageName: node
-  linkType: hard
-
-"globals@npm:^13.6.0, globals@npm:^13.9.0":
+"globals@npm:^13.19.0, globals@npm:^13.6.0, globals@npm:^13.9.0":
   version: 13.24.0
   resolution: "globals@npm:13.24.0"
   dependencies:
@@ -27509,16 +27471,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-abi@npm:^3.3.0":
-  version: 3.30.0
-  resolution: "node-abi@npm:3.30.0"
-  dependencies:
-    semver: "npm:^7.3.5"
-  checksum: 10c0/8e519f97d04c290337991c5eabc055c659c12ea8514d37b787c71d896b87f119f1cf4c9b59cff2bce825601f5d1565840d9e643f9f80716054ad92dd5cd881d9
-  languageName: node
-  linkType: hard
-
-"node-abi@npm:^3.45.0":
+"node-abi@npm:^3.3.0, node-abi@npm:^3.45.0":
   version: 3.54.0
   resolution: "node-abi@npm:3.54.0"
   dependencies:
@@ -30747,7 +30700,7 @@ __metadata:
     "@proton/testing": "workspace:packages/testing"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/tidy-url": "npm:^1.10.1"
-    "@reduxjs/toolkit": "npm:^2.1.0"
+    "@reduxjs/toolkit": "npm:^2.2.0"
     "@testing-library/dom": "npm:^9.3.4"
     "@testing-library/jest-dom": "npm:^6.4.2"
     "@testing-library/react": "npm:^14.2.1"
@@ -33823,16 +33776,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.2.0":
-  version: 7.8.0
-  resolution: "rxjs@npm:7.8.0"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: 10c0/c48833638ae5d339332f8b792e716c3c662950ba95ba04e9e97a8cfd4628d8f009129672793c6c067c872a4dab5757231d41d7256a2114a5fabbf30d8a5b9d67
-  languageName: node
-  linkType: hard
-
-"rxjs@npm:^7.8.0":
+"rxjs@npm:^7.2.0, rxjs@npm:^7.8.0":
   version: 7.8.1
   resolution: "rxjs@npm:7.8.1"
   dependencies:
@@ -34183,7 +34127,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4":
+"semver@npm:7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -34203,7 +34147,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.1.3, semver@npm:^7.2.1":
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.1.3, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.6.0
   resolution: "semver@npm:7.6.0"
   dependencies:
