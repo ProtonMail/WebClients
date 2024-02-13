@@ -2615,6 +2615,11 @@
         "ユーザー名"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "ドメイン名登録事業者のコントロールパネルで、ドメインにこの記録を追加します。"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "メール"
@@ -2822,6 +2827,12 @@
       "By leaving now, changes may not be saved": [
         "変更が保存されていません"
       ],
+      "Can’t access your recovery email?": [
+        "回復用電子メールアドレスにアクセスできませんか？"
+      ],
+      "Can’t access your recovery phone?": [
+        "回復用携帯電話にアクセスできませんか？"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
@@ -2884,6 +2895,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
+      ],
+      "Don’t know your recovery phrase?": [
+        "回復フレーズを知りませんか？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
@@ -2956,6 +2970,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "今すぐパスワードを変更するには、回復フレーズを入力してください。"
       ],
       "Expired": [
         "有効期限切れ"
@@ -3121,9 +3138,6 @@
       ],
       "No results found": [
         "該当する項目がありません"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
@@ -3452,6 +3466,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
       ],
+      "To proceed, we must verify the request.": [
+        "続行するには、リクエストを検証しなければなりません。"
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロードおよびインストールして、サーバーに接続してください。"
       ],
@@ -3596,6 +3613,9 @@
       "Welcome": [
         "ようこそ"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "${ boldValue }にリセットコードを送ります。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
       ],
@@ -3668,6 +3688,9 @@
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
+      "You have no invoices.": [
+        "請求書はありません。"
+      ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
@@ -3700,9 +3723,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "ブラウザを閉じてもサインインを維持します。"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "あなたの ${ BRAND_NAME } アカウントは、現在停止されています。28 日が経過すると、メールが受信トレイに届かなくなり、Drive の共有リンクがブロックされ、新しいファイルをアップロードできなくなります。通常のサービスを再開するには、未払いの請求をお支払いください。"
@@ -4041,6 +4061,9 @@
       ],
       "Interval": [
         "間隔"
+      ],
+      "Issuer ID": [
+        "発行者ID"
       ],
       "Keep me signed in": [
         "サインインしたままにする"
@@ -4954,6 +4977,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
@@ -5351,6 +5377,14 @@
         "現在のプランでは、最大${ humanReadableAvailableSpace } のストレージを作成できます。"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "組織のための設定"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を使ってみる"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "このプランを維持してください"
@@ -5419,12 +5453,28 @@
         "すべての ${ BRAND_NAME } Plus サービス。${ br }1 つの簡単なサブスクリプション。"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "アクセスが拒否されました。管理者権限は制限されています。"
+      ],
+      "The organization key must be activated first.": [
+        "組織の鍵を最初に有効にする必要があります。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "無効なカード番号です"
+      ],
+      "Invalid expiration date": [
+        "無効な有効期限です"
       ]
     },
     "Permission": {
@@ -5450,6 +5500,9 @@
       ],
       "Confirm": [
         "確認"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "例:https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "メールアドレス"
@@ -7050,11 +7103,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "この URL をコピーして、ACS（Assertion Consumer Service）の URL フィールドに貼り付けてください。"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "このURLをコピーして、ユーザー情報ロバイダーのエンティティIDフィールドに貼り付ける。"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "ユーザー情報プロバイダーからのエンドポイントURL（例：https://idp.example.com/sso/saml）"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "認証アサーションに署名するための、ユーザー情報プロバイダの公開鍵。ユーザー情報プロバイダから証明書ハッシュを取得する。"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "SAML SSO での認証を許可するドメインを指定する。"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "新しいサブスクリプション サイクルは ${ formattedTime } に始まります"
@@ -7064,6 +7132,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "通常、ユーザー情報プロバイダの名前を含む URL。"
       ],
       "Verified email address": [
         "検証済みのメールアドレス"

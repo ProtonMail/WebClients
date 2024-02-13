@@ -248,9 +248,6 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
-      "Give feedback": [
-        "Geef feedback"
-      ],
       "Got it": [
         "Begrepen"
       ],
@@ -2903,6 +2900,12 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
+      "Can’t access your recovery email?": [
+        "Geen toegang tot uw herstel mail?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Geen toegang tot u herstel telefoon?"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -2967,6 +2970,9 @@
       ],
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
+      ],
+      "Don’t know your recovery phrase?": [
+        "U weet uw herstelzin niet?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
@@ -3039,6 +3045,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Vul uw herstelzin in om het wachtwoord nu te wijzigen."
       ],
       "Expired": [
         "Verlopen"
@@ -3201,9 +3210,6 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Aantal toegewijde servers in uw organisatie"
@@ -3547,6 +3553,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
+      "To proceed, we must verify the request.": [
+        "Om door te gaan moeten we het verzoek valideren."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
       ],
@@ -3691,6 +3700,9 @@
       "Welcome": [
         "Welkom"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "We zullen een reset code sturen naar ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
       ],
@@ -3774,6 +3786,9 @@
         "U heeft ${ availableCount } toegewijde server beschikbaar.",
         "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
+      "You have no invoices.": [
+        "U heeft geen facturen."
+      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
@@ -3806,9 +3821,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -5085,6 +5097,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
@@ -5481,6 +5496,14 @@
         "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } extra opslag."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begin met ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Dit abonnement behouden"
@@ -5543,12 +5566,31 @@
         "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ongeldig kaartnummer"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
       ]
     },
     "Permission": {
