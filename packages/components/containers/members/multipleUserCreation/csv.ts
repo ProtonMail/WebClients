@@ -1,6 +1,6 @@
 import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
 
-import { GIGA } from '@proton/shared/lib/constants';
+import { GIGA, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
@@ -40,6 +40,10 @@ const convertCSVUser = (
 
     if (!Password || typeof Password !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
+    }
+
+    if (Password.length < MIN_PASSWORD_LENGTH) {
+        throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH);
     }
 
     const emailAddresses = (() => {
