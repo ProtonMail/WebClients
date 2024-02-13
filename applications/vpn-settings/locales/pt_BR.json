@@ -254,9 +254,6 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
-      "Give feedback": [
-        "Dar feedback"
-      ],
       "Got it": [
         "Entendi"
       ],
@@ -427,6 +424,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecionar ${ planTitle }"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select file": [
         "Selecionar arquivo"
@@ -1961,6 +1961,9 @@
       "Code wrong or not valid anymore": [
         "Código errado ou não é mais válido"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Não foi possível carregar faturas. Tente novamente mais tarde."
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -2920,6 +2923,9 @@
       "Are you sure you want to discard your changes?": [
         "Você tem certeza que deseja descartar suas alterações?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Tem certeza de que quer dar privilégios administrativos a este usuário?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Tem certeza de que deseja remover os privilégios administrativos deste usuário?"
       ],
@@ -2993,7 +2999,7 @@
         "Copie e cole este URL no campo URL AAC (Afirmação de Atendimento ao Consumidor) do seu provedor de identidade"
       ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
-        "Copie e cole este URL no campo ID do seu provedor de identidade"
+        "Copie e cole esta URL no campo de ID da entidade do seu provedor de identidade"
       ],
       "Copy the suggested password to clipboard": [
         "Copiar a senha sugerida para a área de transferência"
@@ -3231,6 +3237,9 @@
       "inactive": [
         "inativo"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Melhore a sua segurança da conta ao verificar seu endereço de e-mail."
       ],
@@ -3320,9 +3329,6 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Não é o seu dispositivo? Use uma janela de navegação privada para fazer login e fechá-la quando terminar. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
@@ -3929,6 +3935,9 @@
         "Você tem ${ availableCount } servidor dedicado disponível.",
         "Você tem ${ availableCount } servidores dedicados disponíveis."
       ],
+      "You have no invoices.": [
+        "Você não tem faturas."
+      ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
       ],
@@ -3961,9 +3970,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
@@ -4512,6 +4518,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -5150,6 +5159,9 @@
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "Cofres compartilhados ilimitados com permissões de acesso"
+      ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
       ],
@@ -5279,6 +5291,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ trialPlanName } com recursos premium, escolha sua assinatura e opções de pagamento."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Sua avaliação termina em ${ formattedPeriodEndDate }"
@@ -5709,6 +5724,14 @@
         "Seu plano inclui no máximo ${ humanReadableAvailableSpace } a mais de armazenamento."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Configure a sua organização"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Começar a usar o ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Manter esse plano"
@@ -5731,6 +5754,9 @@
     "pass_signup_2023: Info": {
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
+      ],
+      "/month /user": [
+        "/mês /usuário"
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -5780,12 +5806,63 @@
         "Todos os serviços Plus da ${ BRAND_NAME }.${ br }assinatura facilitada."
       ]
     },
+    "passwordless": {
+      "Change organization key": [
+        "Alterar a chave da organização"
+      ],
+      "Organization key does not exist.": [
+        "A chave da organização não existe."
+      ],
+      "Organization key restored": [
+        "Chave de organização restaurada"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "Reset organization key": [
+        "Redefinir a chave da organização"
+      ],
+      "The organization key must be activated first.": [
+        "A chave da organização deve ser ativada primeiro."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "País de Faturamento"
+      ],
+      "Card number": [
+        "Número do cartão"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "Tempo limite excedido"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "O número do cartão não é válido."
+      ],
+      "Invalid expiration date": [
+        "A data de validade não é válida."
+      ],
+      "Invalid securiry code": [
+        "O código de segurança não é válido."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
       ]
     },
     "Permission": {
@@ -5976,6 +6053,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrador em sua organização precisa de acesso à chave da organização.",
+        "${ n } administradores em sua organização precisam de acesso à chave da organização."
+      ],
       "Changing organization keys": [
         "Alterando chaves da organização"
       ],
@@ -6571,6 +6652,12 @@
       "For all ${ BRAND_NAME } services": [
         "Para todos os serviços da ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
       ],
@@ -6587,8 +6674,20 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Seu ${ storage } está cheio. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
+      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Seu armazenamento está cheio. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Você perderá o acesso ao armazenamento de ${ gb } e ao suporte prioritário."
@@ -7792,6 +7891,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Infelizmente, não estamos on-line no momento. Preencha o formulário abaixo para descrever seu problema. Nós investigaremos e entraremos em contato quando estivermos de volta."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Você deve ter ${ activateLink } a chave da organização antes de adicionar um endereço de e-mail a um membro não privado."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"

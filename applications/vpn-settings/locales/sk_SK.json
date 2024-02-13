@@ -248,9 +248,6 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
-      "Give feedback": [
-        "Dajte nám spätnú väzbu"
-      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -2058,6 +2055,9 @@
       "Payments are currently not available, please try again later": [
         "Platby sú momentálne nedostupné, skúste to prosím neskôr"
       ],
+      "Please configure a custom domain before adding addresses.": [
+        "Pred pridaním adries nastavte vlastnú doménu."
+      ],
       "Please configure a custom domain before adding users to your organization.": [
         "Pred pridaním používateľov do svojej organizácie nakonfigurujte vlastnú doménu."
       ],
@@ -3091,6 +3091,9 @@
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nič nevidíte? Nezabudnite vypnúť blokovanie automaticky otváraných okien."
       ],
+      "Downgrade": [
+        "Znížiť"
+      ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
       ],
@@ -3327,9 +3330,6 @@
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nie je to vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -3893,13 +3893,16 @@
         "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupnej používateľskej licencie.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ste prihlásení do účtu ${ memberAddress }."
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Využívate viac úložiska než je zahrnuté v pláne ${ downgradedPlanName }. Vymažte alebo odstráňte údaje, aby ste mohli plán znížiť, prosím."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
@@ -3937,6 +3940,9 @@
         "Máte dostupných ${ availableCount } dedikovaných serverov.",
         "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
+      "You have no invoices.": [
+        "Nemáte žiadne faktúry."
+      ],
       "You have no saved payment methods.": [
         "Nemáte uložené žiadne spôsoby platby."
       ],
@@ -3969,9 +3975,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Vaše prihlásenie zostane zachované aj po zatvorení prehliadača."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -5173,6 +5176,12 @@
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
       ],
+      "Up to ${ n } user": [
+        "Až ${ n } užívateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
       ],
@@ -5297,6 +5306,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ trialPlanName } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Skúšobná verzia končí ${ formattedPeriodEndDate }"
@@ -5429,6 +5441,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Počas pracovných dní získate podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Jedno VPN pripojenie umožňuje v jednom okamihu pripojiť sa k ${ VPN_APP_NAME } iba jednému zariadeniu. Ak chcete napríklad pripojiť telefón a notebook k ${ VPN_APP_NAME } súčasne, potrebujete dve pripojenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
@@ -5719,6 +5734,14 @@
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Nastavenie organizácie"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začnite používať ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Ponechať tento plán"
@@ -5787,12 +5810,31 @@
         "Všetky ${ BRAND_NAME } Plus služby.${ br }Jedno jednoduché predplatné."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Prístup zamietnutý, oprávnenia správcu boli obmedzené."
+      ],
+      "The organization key must be activated first.": [
+        "Najprv musí byť aktivovaný kľúč organizácie."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Platobná karta"
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Neplatné číslo karty"
+      ],
+      "Invalid expiration date": [
+        "Neplatný koniec platnosti"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
       ]
     },
     "Permission": {
@@ -6600,8 +6642,17 @@
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Znížením predplatného prídete o nasledujúce benefity. Naozaj chcete pokračovať?"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Stále vám zostáva **${ daysRemaining }** deň vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostávajú **${ daysRemaining }** dni vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**."
+      ],
       "Your storage is full": [
         "Vaše úložisko je plné"
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Stratíte prístup k ďalšiemu úložisku, emailovým adresám, aliasom, kalendárom a tiež k prioritnej podpore."
       ]
     },
     "Subscription": {
@@ -6633,6 +6684,12 @@
         "${ n } kalendáre na používateľa",
         "${ n } kalendárov na používateľa",
         "${ n } kalendárov na používateľa"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } VPN pripojenie zdarma na používateľa",
+        "${ n } VPN pripojenia zdarma na používateľa",
+        "${ n } VPN pripojení zdarma na používateľa",
+        "${ n } VPN pripojení zdarma na používateľa"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } vysoko rýchlostné VPN pripojenie",
@@ -7456,6 +7513,12 @@
       "Subscription": [
         "Predplatné"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } používateľský účet bol úspešne vytvorený",
+        "${ n } používateľské účty boli úspešne vytvorené",
+        "${ n } používateľských účtov bolo úspešne vytvorených",
+        "${ n } používateľských účtov bolo úspešne vytvorených"
+      ],
       "Summary": [
         "Zhrnutie"
       ],
@@ -7576,6 +7639,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automaticky prepínať medzi preferovanými motívmi počas dňa a noci, synchronizovane s motívmi vášho systému"
+      ],
+      "Feature in early access": [
+        "Funkcia v predbežnom prístupe"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ak ste zakúpili darčekový kód alebo ste ho obdržali od našej podpory, môžete ho sem vložiť."

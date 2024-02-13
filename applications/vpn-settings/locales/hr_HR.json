@@ -2354,6 +2354,9 @@
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
+      "You have no invoices.": [
+        "Nemate faktura."
+      ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
       ],
@@ -3106,6 +3109,14 @@
         "Postavke standardnog poslužitelja"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Postavite vašu organizaciju"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Započnite koristiti ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Započnite koristiti ${ appName }"
@@ -3130,9 +3141,28 @@
         "mjesečno"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Pristup odbijen, administratorske ovlasti su ograničene."
+      ],
+      "The organization key must be activated first.": [
+        "Prvo se mora aktivirati organizacijski ključ."
+      ]
+    },
     "Payment method option": {
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
       ]
     },
     "Placeholder": {

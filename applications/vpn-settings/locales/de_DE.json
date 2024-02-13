@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
+      "Activate": [
+        "Aktivieren"
+      ],
       "activate": [
         "aktivieren"
       ],
@@ -248,9 +251,6 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
-      "Give feedback": [
-        "Feedback geben"
-      ],
       "Got it": [
         "Verstanden"
       ],
@@ -421,6 +421,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
+      ],
+      "Select country": [
+        "Land wählen"
       ],
       "Select file": [
         "Datei auswählen"
@@ -1955,6 +1958,9 @@
       "Code wrong or not valid anymore": [
         "Code falsch oder inzwischen verfallen"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
+      ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
@@ -2116,6 +2122,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Um nicht-private Benutzerkonten zu erstellen und auf ihre Konten zuzugreifen, musst du deine Administratorrechte wiederherstellen."
       ],
       "Try again later": [
         "Später erneut versuchen"
@@ -3315,9 +3324,6 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Anzahl der dedizierten Server in der Organisation"
       ],
@@ -3920,6 +3926,9 @@
         "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
         "Dir stehen ${ availableCount } dedizierte Server zur Verfügung."
       ],
+      "You have no invoices.": [
+        "Keine Rechnungen vorhanden."
+      ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
@@ -3952,9 +3961,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du bleibst angemeldet, auch wenn du den Browser schließt."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Dein ${ BRAND_NAME }-Konto ist derzeit gesperrt. Nach 28 Tagen werden keine E-Mails mehr an deinen Posteingang zugestellt, deine Drive-Freigabelinks werden blockiert, und du kannst keine neuen Dateien mehr hochladen. Um dein Konto wieder normal nutzen zu können, bezahle bitte alle überfälligen Rechnungen."
@@ -4131,6 +4137,9 @@
       ],
       "Addresses": [
         "E-Mail-Adressen"
+      ],
+      "Administrators": [
+        "Administratoren"
       ],
       "Allow recovery by email": [
         "Wiederherstellung per E-Mail zulassen"
@@ -4500,6 +4509,9 @@
       ],
       "Value": [
         "Wert"
+      ],
+      "VAT": [
+        "MwSt"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -4925,6 +4937,9 @@
       "Autofill credit cards (coming soon)": [
         "Kreditkarten automatisch ausfüllen (bald verfügbar)"
       ],
+      "Automatic email forwarding": [
+        "Automatische E-Mail-Weiterleitung"
+      ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
@@ -4956,7 +4971,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Eigene Aufschubzeit"
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
@@ -5096,6 +5111,9 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "SSO-Integration (demnächst verfügbar)"
+      ],
       "Start protecting your organization": [
         "Schütze deine Organisation"
       ],
@@ -5173,7 +5191,7 @@
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
+        "Schiebe die Nachricht auf und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -5267,6 +5285,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Deine Testversion endet am ${ formattedPeriodEndDate }"
@@ -5688,6 +5709,14 @@
         "Dein Abonnement beinhaltet maximal ${ humanReadableAvailableSpace } weiteren Speicherplatz."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Organisation einrichten"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Beginnen, ${ PASS_APP_NAME } zu verwenden"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Dieses Abonnement beibehalten"
@@ -5700,6 +5729,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Lass uns reden"
+      ],
       "Limited time offer": [
         "Zeitlich befristetes Angebot"
       ],
@@ -5714,6 +5746,9 @@
       "Creating your account": [
         "Dein Konto wird erstellt"
       ],
+      "Current plan": [
+        "Aktuelles Abonnement"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
       ],
@@ -5725,6 +5760,9 @@
       ],
       "Free forever": [
         "Dauerhaft kostenlos"
+      ],
+      "Get in touch with our sales team": [
+        "Wende dich an unser Vertriebsteam"
       ],
       "Includes:": [
         "Enthält:"
@@ -5756,12 +5794,39 @@
         "Alle ${ BRAND_NAME } Plus-Dienste.${ br }Ein einfaches Abonnement."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "The organization key must be activated first.": [
+        "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Rechnungsland"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ungültige Kartennummer"
+      ],
+      "Invalid expiration date": [
+        "Ungültiges Ablaufdatum"
+      ],
+      "Invalid securiry code": [
+        "Ungültiger Sicherheitscode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
       ]
     },
     "Permission": {
@@ -5952,6 +6017,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } Administrator in deiner Organisation benötigt Zugriff auf den Organisationsschlüssel.",
+        "${ n } Administratoren in deiner Organisation benötigten Zugriff auf den Organisationsschlüssel."
+      ],
       "Changing organization keys": [
         "Schüssel der Organisation ändern"
       ],
@@ -6548,7 +6617,7 @@
         "Für alle ${ BRAND_NAME }-Dienste"
       ],
       "upgrade for more storage": [
-        "upgrade für zusätzlichen Speicherplatz."
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu."
@@ -6563,8 +6632,20 @@
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dein ${ storage } ist zu ${ percentage }% voll. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dein ${ storage } ist voll. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dein Speicherplatz ist zu ${ percentage }% voll. ${ cta }."
+      ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dein Speicherplatz ist voll. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du verlierst den Zugang zu ${ gb } Speicherplatz und vorrangigem Support."
@@ -7065,6 +7146,9 @@
       ],
       "Change role": [
         "Rolle ändern"
+      ],
+      "Confirm": [
+        "Bestätigen"
       ],
       "Confirm address": [
         "Adresse bestätigen"

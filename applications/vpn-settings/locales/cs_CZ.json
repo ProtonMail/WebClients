@@ -248,9 +248,6 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
-      "Give feedback": [
-        "Zaslat zpětnou vazbu"
-      ],
       "Got it": [
         "Rozumím"
       ],
@@ -3342,9 +3339,6 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
@@ -3957,6 +3951,9 @@
         "Máte k dispozici ${ availableCount } dedikovaných serverů.",
         "Máte k dispozici ${ availableCount } dedikovaných serverů."
       ],
+      "You have no invoices.": [
+        "Nemáte žádné faktury."
+      ],
       "You have no saved payment methods.": [
         "Nemáte uloženy žádné platební metody."
       ],
@@ -3989,9 +3986,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Zůstanete přihlášeni i po uzavření prohlížeče."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálně pozastaven. Po 28 dnech vám již nebudou do schránky doručovány e-maily, odkazy na sdílení na Disku budou zablokovány a nebudete moci nahrávat nové soubory. Chcete-li obnovit normální provoz, zaplaťte všechny faktury po splatnosti."
@@ -5336,6 +5330,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
@@ -5781,6 +5778,14 @@
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Nastavení organizace"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začněte používat ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Ponechat tento tarif"
@@ -5849,12 +5854,31 @@
         "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Neplatné číslo karty"
+      ],
+      "Invalid expiration date": [
+        "Neplatné datum expirace"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
     "Permission": {
