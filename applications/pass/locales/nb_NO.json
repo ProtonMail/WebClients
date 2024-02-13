@@ -257,6 +257,9 @@
       "Move to trash": [
         "Flytt til papirkurven"
       ],
+      "Not now": [
+        "Ikke nå"
+      ],
       "OK": [
         "OK"
       ],
@@ -437,6 +440,9 @@
         "Kan ikke sende invitasjon for øyeblikket",
         "Kan ikke sende invitasjoner for øyeblikket"
       ],
+      "Cannot send invitations at the moment": [
+        "Kan ikke sende invitasjoner for øyeblikket"
+      ],
       "Could not confirm this invite at the moment": [
         "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
       ],
@@ -563,6 +569,9 @@
       ],
       "PIN codes do not match": [
         "PIN-kodene samsvarer ikke"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-skrivebordsappen"
       ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
@@ -815,6 +824,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Få mest mulig ut av Pass ved å opprette et hvelv for hvert team eller prosjekt."
       ],
@@ -943,6 +956,10 @@
       "Pass Plus trial": [
         "Pass Plus-prøveversjon"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
+      ],
       "Permanently deleting selected items": [
         "Sletter valgte elementer permanent"
       ],
@@ -969,6 +986,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
@@ -1039,6 +1059,9 @@
       "Thank you, the problem has been reported": [
         "Takk, problemet er rapportert"
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Eksportfilen vil ikke inneholde data fra delte hvelv der du ikke er eieren."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kan ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
@@ -1069,6 +1092,9 @@
       ],
       "Unpinning item...": [
         "Løser element..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
       "Use vaults to share this item with others.": [
         "Bruk hvelv for å dele dette elementet med andre."
@@ -1192,6 +1218,9 @@
       "Alphabetical": [
         "Alfabetisk"
       ],
+      "Application logs": [
+        "Applikasjonslogger"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Autolås ${ PASS_APP_NAME }"
       ],
@@ -1236,6 +1265,9 @@
       ],
       "Display": [
         "Vis"
+      ],
+      "Download logs": [
+        "Last ned logger"
       ],
       "Empty trash": [
         "Tøm papirkurven"
@@ -1504,6 +1536,9 @@
       "View details": [
         "Vis detaljer"
       ],
+      "View logs": [
+        "Se logger"
+      ],
       "Websites": [
         "Nettsteder"
       ],
@@ -1760,6 +1795,9 @@
       "Update available": [
         "Oppdatering tilgjengelig"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Oppgrader for å låse opp premiumfunksjoner"
+      ],
       "Vault": [
         "Hvelv"
       ],
@@ -1872,6 +1910,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
+      ],
+      "Please contact us for investigating the issue": [
+        "Vennligst kontakt oss for å undersøke problemet."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."

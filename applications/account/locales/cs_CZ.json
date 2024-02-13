@@ -503,9 +503,6 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
-      "Give feedback": [
-        "Zaslat zpětnou vazbu"
-      ],
       "Go to label": [
         "Přejít na štítek"
       ],
@@ -632,11 +629,11 @@
       "No": [
         "Ne"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -6935,9 +6932,6 @@
       "Not yet available in our Android mobile app.": [
         "V naší mobilní aplikaci pro Android zatím není k dispozici."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Nyní k dispozici v beta verzi, aplikaci ${ MAIL_APP_NAME } pro PC spustíte pohodlně z vaší plochy a nebudete tak rozptylováni internetovým prohlížečem."
       ],
@@ -7916,6 +7910,9 @@
       "You have no calendars to export.": [
         "Nemáte žádné kalendáře k exportu."
       ],
+      "You have no invoices.": [
+        "Nemáte žádné faktury."
+      ],
       "You have no saved payment methods.": [
         "Nemáte uloženy žádné platební metody."
       ],
@@ -7969,9 +7966,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data. Toto také zamezí obnově důvěryhodného zařízení."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Zůstanete přihlášeni i po uzavření prohlížeče."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Váš účet ${ BRAND_NAME } je přidružen k adrese ${ externalEmailAddress }."
@@ -10095,6 +10089,23 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10128,23 +10139,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -10650,6 +10644,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ trialPlanName } s prémiovými funkcemi si vyberte předplatné a platební metodu."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Zkušební verze končí ${ formattedPeriodEndDate }"
@@ -11452,6 +11449,14 @@
         "Vy"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Nastavení organizace"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začněte používat ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Podívejte se na funkce ${ appName }"
@@ -11660,6 +11665,9 @@
       "Save your recovery kit to continue": [
         "Chcete-li pokračovat, uložte sadu pro obnovu"
       ],
+      "Setting up your organization": [
+        "Nastavení vaší organizace"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Přihlášení do ${ PASS_APP_NAME }"
       ],
@@ -11717,12 +11725,31 @@
         "Zabezpečte svůj účet"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Přístup odepřen, oprávnění správce byla omezena."
+      ],
+      "The organization key must be activated first.": [
+        "Nejprve musí být aktivován klíč organizace."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Neplatné číslo karty"
+      ],
+      "Invalid expiration date": [
+        "Neplatné datum expirace"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
       ]
     },
     "Permission": {
@@ -12552,6 +12579,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Organization name": [
+        "Název organizace"
       ],
       "Password": [
         "Heslo"

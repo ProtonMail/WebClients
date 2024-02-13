@@ -509,9 +509,6 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
-      "Give feedback": [
-        "Denos su opinión"
-      ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
@@ -638,10 +635,10 @@
       "No": [
         "No"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6842,9 +6839,6 @@
       "Not yet available in our Android mobile app.": [
         "Aún no disponible en nuestra app para Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "¿No es su dispositivo? Use una ventana de navegación privada para iniciar sesión y ciérrela cuando haya terminado. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Ahora disponible en versión beta, la app de escritorio le permite iniciar ${ MAIL_APP_NAME } cómodamente desde su escritorio y concentrarse sin distracciones del navegador."
       ],
@@ -7860,9 +7854,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "No podrá recuperar datos bloqueados usando sus archivos de recuperación descargados. Esto también desactivará la recuperación del dispositivo de confianza."
       ],
-      "You'll stay signed in even after you close the browser.": [
-        "Seguirá conectado incluso después de cerrar el navegador."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }."
       ],
@@ -8069,6 +8060,9 @@
       ],
       "Credit": [
         "Crédito"
+      ],
+      "Credit note": [
+        "Nota de crédito"
       ],
       "Currency conversion": [
         "Conversión de divisa"
@@ -9964,6 +9958,23 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuar a la revisión"
@@ -9997,23 +10008,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -11716,9 +11710,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "Tax Country": [
-        "País de impuestos"
       ],
       "Timeout exceeded": [
         "Tiempo de espera agotado"

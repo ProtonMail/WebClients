@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Oppgrader nå for å dele med flere"
       ],
+      "View app logs": [
+        "Se applogger"
+      ],
       "Write us on Reddit": [
         "Skriv til oss på Reddit"
       ],
@@ -503,6 +506,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitasjon for øyeblikket",
+        "Kan ikke sende invitasjoner for øyeblikket"
+      ],
+      "Cannot send invitations at the moment": [
         "Kan ikke sende invitasjoner for øyeblikket"
       ],
       "Could not confirm this invite at the moment": [
@@ -938,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker."
+      ],
       "Generating alias...": [
         "Genererer alias..."
       ],
@@ -1066,6 +1076,10 @@
       "Password copied": [
         "Passord kopiert"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
+      ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
       ],
@@ -1098,6 +1112,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
@@ -1174,6 +1191,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Autofyll-rullegardinmenyen åpnes automatisk når du klikker eller fokuserer på feltet."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Eksportfilen vil ikke inneholde data fra delte hvelv der du ikke er eieren."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kan ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
@@ -1213,6 +1233,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Oppgrader ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
       "Use vaults to share this item with others.": [
         "Bruk hvelv for å dele dette elementet med andre."
@@ -1993,6 +2016,9 @@
       "Update available": [
         "Oppdatering tilgjengelig"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Oppgrader for å låse opp premiumfunksjoner"
+      ],
       "Use my email": [
         "Bruk min e-post"
       ],
@@ -2111,6 +2137,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-kryptert eksportfil krever passfrase."
+      ],
+      "Please contact us for investigating the issue": [
+        "Vennligst kontakt oss for å undersøke problemet."
       ],
       "Please verify your email address in order to use email aliases": [
         "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."

@@ -322,9 +322,6 @@
       "Get verification code": [
         "取得驗證碼"
       ],
-      "Give feedback": [
-        "意見回饋"
-      ],
       "Go to Drive": [
         "到 Drive"
       ],
@@ -3493,6 +3490,9 @@
       "Downloading": [
         "正在下載"
       ],
+      "Downloading all encrypted files": [
+        "正在下載所有加密的檔案"
+      ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
       ],
@@ -3598,9 +3598,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
-      ],
       "from the version history?": [
         "來自版本歷史紀錄？"
       ],
@@ -3642,9 +3639,6 @@
       ],
       "Import mailbox": [
         "匯入信箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3921,6 +3915,9 @@
       ],
       "Restoring Photos... Please keep the tab open": [
         "復原照片中...請保持分頁開啟。"
+      ],
+      "Retry now": [
+        "立即重試"
       ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
@@ -4275,6 +4272,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
+      ],
+      "Your download is in progress": [
+        "正在下載"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -4949,6 +4949,9 @@
       ]
     },
     "Mimetype": {
+      "AAC audio": [
+        "AAC 音訊"
+      ],
       "Adobe Portable Document Format (PDF)": [
         "Adobe 可攜式文件格式 (PDF)"
       ],
@@ -4988,6 +4991,9 @@
       "Flash Video": [
         "Flash 影片"
       ],
+      "Graphics Interchange Format (GIF)": [
+        "圖形交換格式(GIF)"
+      ],
       "GZip Compressed Archive": [
         "GZip 壓縮封存檔"
       ],
@@ -5006,11 +5012,32 @@
       "JPEG images": [
         "JPEG 圖片"
       ],
+      "MP3 audio": [
+        "MP3 音訊"
+      ],
+      "MPEG Video": [
+        "MPEG 影片"
+      ],
+      "OGG audio": [
+        "OGG 音訊"
+      ],
+      "OGG video": [
+        "OGG 影片"
+      ],
       "OpenDocument presentation document": [
         "OpenDocument 簡報文件"
       ],
       "OpenDocument text document": [
         "OpenDocument 文字文件"
+      ],
+      "OpenType font": [
+        "OpenType 字型"
+      ],
+      "Opus audio": [
+        "Opus 音訊"
+      ],
+      "Portable Network Graphics": [
+        "可攜式網路圖形 (PNG)"
       ],
       "RAR archive": [
         "RAR 存檔"
@@ -5021,8 +5048,17 @@
       "Text": [
         "文字"
       ],
+      "TrueType Font": [
+        "TrueType 字型"
+      ],
       "Video file": [
         "影片檔"
+      ],
+      "WEBM video": [
+        "WEBM 影片"
+      ],
+      "WEBP image": [
+        "WebP 圖片"
       ],
       "ZIP archive": [
         "ZIP 存檔"

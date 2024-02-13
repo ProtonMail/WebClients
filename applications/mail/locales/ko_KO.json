@@ -433,9 +433,6 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Give feedback": [
-        "피드백 보내기"
-      ],
       "Go to label": [
         "라벨로 이동"
       ],
@@ -1041,6 +1038,9 @@
       ],
       "Toggle Contact app": [
         "연락처 앱 열기/닫기"
+      ],
+      "Toggle security center app": [
+        "보안 센터 앱 열기/닫기"
       ],
       "Toggle settings": [
         "설정 켜기/끄기"
@@ -3010,6 +3010,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink }는 설정에서 상세히 가능합니다."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA는 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
       ],
@@ -3019,11 +3022,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 삭제중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계되었습니다."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별명과 500 GB 스토리지 공간을 받으세요."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -3046,6 +3055,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "계정 접근 불가 상황을 막기 위해선 복구 방법을 설정하십시오."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google 및 Outlook에서 콘텐츠를 불러오려면, ${ easySwitchLink }"
       ],
@@ -3064,6 +3079,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "업그레이드하여 무제한 폴더, 라벨과 더 많은 프리미엄 기능들을 잠금 해제하세요."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "지정 24시간 추가적인 지원이 포함된 최첨단 AI 방식의 보안 솔루션인 ${ PROTON_SENTINEL_NAME }을 활성화 하려면 계정을 업그레이드 하세요."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
@@ -3078,6 +3096,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "병합하거나 유지하고 싶지 않은 연락처를 삭제하도록 표시할 수 있습니다. 삭제는 병합 버튼을 클릭한 후에만 이루어집니다."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "사용자의 계정과 데이터 복구 방법이 설정되어 있으며, 2FA가 활성화 상태입니다."
+      ],
+      "Your account and data recovery methods are set.": [
+        "사용자의 계정과 데이터 복구 방법이 설정된 상태입니다."
       ]
     },
     "description": {
@@ -3266,7 +3290,7 @@
         "기본 주소 키 찾을 수 없음"
       ],
       "Alias is not valid": [
-        "유효하지 않은 별칭"
+        "유효하지 않은 별명입니다"
       ],
       "Alias is required": [
         "별칭이 필요합니다."
@@ -3276,6 +3300,9 @@
       ],
       "Aliases could not be loaded": [
         "별명을 불러올 수 없습니다."
+      ],
+      "An error occurred while loading alias options": [
+        "별명 옵션 로드 중 오류가 발생했습니다."
       ],
       "An error occurred while saving alias": [
         "별명 저장 중 오류가 발생했습니다."
@@ -3387,6 +3414,9 @@
       ],
       "Folder name cannot be empty.": [
         "폴더 이름은 비워둘 수 없습니다."
+      ],
+      "Forward address is required": [
+        "전달 주소가 필요합니다."
       ],
       "Image upload failed": [
         "이미지 업로드 실패"
@@ -6469,9 +6499,6 @@
       "Add image URL": [
         "이미지 URL 추가"
       ],
-      "Add title": [
-        "제목 추가"
-      ],
       "Add to group": [
         "그룹에 추가"
       ],
@@ -7991,17 +8018,23 @@
       "Create alias": [
         "별칭 만들기"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "예: Amazon, eBay, Etsy"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "언제 어디서나 별명을 생성하고, 쉽게 별명 및 비밀번호를 관리하세요."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hiide-my-email 별명은 이메일 주소 공유 없이도 로그인할 수 있도록 해줍니다. ${ learnMoreLink }"
       ],
       "New alias": [
         "새 별칭"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 열기"
+      ],
+      "Protect your online identity": [
+        "나의 온라인 신원 보호"
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
@@ -8010,6 +8043,14 @@
     "Security Center - Action": {
       "View logs": [
         "로그 보기"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "계정에 대한 강화된 보호를 원하는 사용자를 위해 설계된 최첨단 AI 기반 보안 솔루션입니다. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel이 **활성화** 상태이며 계정이 보호 중입니다."
       ]
     },
     "Select files": {
@@ -8529,6 +8570,9 @@
       "Change setting": [
         "설정 변경"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "hiide-my-email 별명을 생성하고 여기에서 추적하세요."
+      ],
       "Email tracking protection": [
         "이메일 트래킹 보호"
       ],
@@ -8706,6 +8750,9 @@
       ],
       "Alias copied to clipboard": [
         "별칭이 클립보드에 복사됨"
+      ],
+      "Alias saved and copied": [
+        "별명이 복사 및 붙여놓기 되었습니다."
       ],
       "Bug reported": [
         "버그 신고됨"
@@ -9226,6 +9273,9 @@
       "Forward": [
         "앞으로"
       ],
+      "Get advanced protection": [
+        "향상된 보호 얻기"
+      ],
       "Groups": [
         "그룹"
       ],
@@ -9330,6 +9380,12 @@
       ],
       "Move all messages": [
         "모든 메시지 이동"
+      ],
+      "Move all messages to archive": [
+        "모든 메시지를 보관함으로 이동"
+      ],
+      "Move all messages to trash": [
+        "모든 메시지를 휴지통으로 이동"
       ],
       "Move to": [
         "이동하기"
@@ -9579,6 +9635,9 @@
       ],
       "What's new": [
         "변경 사항"
+      ],
+      "Your account is protected": [
+        "계정이 보호됩니다."
       ],
       "Your changes are not synced yet": [
         "변경 사항이 동기화되지 않았습니다."

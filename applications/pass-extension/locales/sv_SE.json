@@ -938,6 +938,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
+      ],
       "Generating alias...": [
         "Genererar alias..."
       ],
@@ -1005,6 +1009,9 @@
       ],
       "Item successfully moved": [
         "Objekt flyttades"
+      ],
+      "Item successfully pinned": [
+        "Lyckades fästa objekt"
       ],
       "Item successfully unpinned": [
         "Objekt lossat"
@@ -1100,6 +1107,9 @@
       "Please enter your current PIN code to continue": [
         "Ange din nuvarande PIN-kod för att fortsätta"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
       ],
@@ -1175,6 +1185,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Rullgardinsmenyn för automatisk ifyllnad kommer öppnas automatiskt när du klickar eller fokuserar på fältet."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Den exporterade filen kommer inte innehålla data från delade valv där du inte är ägaren"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
         "Följande ${ result.ignored.length } objekt kunde inte importeras:"
@@ -1214,6 +1227,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Uppgradera ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Uppgradera nu för att låsa upp premiumfunktioner"
       ],
       "Use vaults to share this item with others.": [
         "Använd valv för att dela detta objekt med andra."
@@ -1993,6 +2009,9 @@
       ],
       "Update available": [
         "Uppdatering tillgänglig"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Uppgradera för att låsa upp premiumfunktioner"
       ],
       "Use my email": [
         "Använd min e-post"

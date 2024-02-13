@@ -253,6 +253,9 @@
       "Download apps": [
         "アプリをダウンロード"
       ],
+      "Download logs": [
+        "ログをダウンロードする"
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -312,6 +315,9 @@
       ],
       "Get started": [
         "利用開始"
+      ],
+      "Get Started": [
+        "始めましょう"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -393,6 +399,9 @@
       ],
       "Mark for deletion": [
         "削除マーク"
+      ],
+      "Maximize": [
+        "最大化"
       ],
       "Maximize transfers": [
         "転送一覧を最大化"
@@ -3212,6 +3221,9 @@
       "All (${ totalFoldersCount } label)": [
         "すべて (${ totalFoldersCount } 件のラベル)"
       ],
+      "All encrypted files": [
+        "すべての暗号化されたファイル"
+      ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
       ],
@@ -3401,11 +3413,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "接続に問題が発生したためダウンロードが一時停止されました。問題が解消すると自動的に再開します。"
       ],
+      "Download ready": [
+        "ダウンロード準備完了"
+      ],
       "Downloaded": [
         "ダウンロード完了"
       ],
       "Downloading": [
         "ダウンロード中"
+      ],
+      "Downloading all encrypted files": [
+        "すべての暗号化されたファイルをダウンロードする"
       ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
@@ -3512,9 +3530,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "from the version history?": [
         "を完全に削除してよろしいですか？"
       ],
@@ -3557,11 +3572,11 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "それまでの間、ご自身の ${ DRIVE_APP_NAME } アカウントにサインアップし、エンドツーエンドの暗号化でデータを保護し、安全に共有してください。"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow }件のうち${ esProgress }件目のアイテムをインデックス中"
@@ -3833,11 +3848,20 @@
       "Restoring Photos... Please keep the tab open": [
         "写真を復元中... タブを開いたままにしてください"
       ],
+      "Retry now": [
+        "リトライ"
+      ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索を使用することができません。"
       ],
       "Search Enabled": [
         "検索機能がオンです"
+      ],
+      "Securely downloaded all encrypted files": [
+        "すべての暗号化されたファイルを安全にダウンロード"
+      ],
+      "Securely downloaded all files": [
+        "すべてのファイルを安全にダウンロードしました"
       ],
       "Select a folder to move to.": [
         "移動先のフォルダーを選択します。"
@@ -3881,6 +3905,9 @@
       "Shared link not found": [
         "共有リンクが見つかりません"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "自分の ${ DRIVE_APP_NAME } アカウントにサインアップし、エンドツーエンドの暗号化でデータを保護し、安全に共有します。"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "ネットワークエラーのため、署名の検証ができません。後ほど再度お試しください。"
       ],
@@ -3889,6 +3916,9 @@
       ],
       "Signature issue": [
         "署名の問題"
+      ],
+      "Skipped": [
+        "スキップ"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "ダウンロードに失敗したファイルがあります。再度ダウンロードしてください。"
@@ -3937,6 +3967,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "このファイルは削除/移動/アクセス不可にされた可能性があります。ファイルのオーナーに確認してください。"
+      ],
+      "This item already exists in your library": [
+        "このアイテムはすでにライブラリに存在します"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
@@ -4019,6 +4052,9 @@
       "Trash is empty": [
         "ゴミ箱が空です"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "${ DRIVE_APP_NAME } をお試しください: 永久無料"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
       ],
@@ -4070,6 +4106,9 @@
       "Want to sync files faster?": [
         "ファイルをより速く同期したいですか?"
       ],
+      "Warning": [
+        "警告"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "無料ストレージが 2 倍になりました！"
       ],
@@ -4102,6 +4141,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "は${ formattedRevisionDate }のバージョンに復元されます。他のバージョンもすべて保存されたままになります。"
+      ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "${ DRIVE_APP_NAME } を使用すると、データはエンドツーエンドの暗号化によって保護されます。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい確認コードを受け取るか、他の検証方法を使用しますか？"
@@ -4171,6 +4213,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "データは ${ importedEmailAddressStrong } から ${ BRAND_NAME } アカウントにインポートできる状態です。"
+      ],
+      "Your download is in progress": [
+        "ダウンロードが進行中です"
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -4849,14 +4894,32 @@
       "AAC audio": [
         "AAC 音声"
       ],
+      "AbiWord document": [
+        "AbiWord ドキュメント"
+      ],
       "Adobe Portable Document Format (PDF)": [
         "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle 電子書籍フォーマット"
       ],
       "Android Package": [
         "Android パッケージ"
       ],
+      "Animated Portable Network Graphics": [
+        "アニメーション化されたポータブル ネットワーク グラフィックス"
+      ],
+      "Apple Installer Package": [
+        "Apple インストーラー パッケージ"
+      ],
+      "Archive document": [
+        "文書をアーカイブする"
+      ],
       "Audio file": [
         "音声ファイル"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "AV1 画像ファイル形式 (AVIF)"
       ],
       "AVI video": [
         "AVI 動画"
@@ -4864,11 +4927,26 @@
       "Binary data": [
         "バイナリデータ"
       ],
+      "Bourne shell script": [
+        "ボーンシェルスクリプト"
+      ],
       "BZip archive": [
         "BZip アーカイブ"
       ],
       "BZip2 archive": [
         "BZip2 アーカイブ"
+      ],
+      "C-Shell script": [
+        "Cシェルスクリプト"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "カスケード スタイル シート (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "カンマ区切り値 (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "電子出版 (EPUB)"
       ],
       "Flash Video": [
         "Flash 動画"
@@ -4879,8 +4957,17 @@
       "GZip Compressed Archive": [
         "GZip 圧縮アーカイブ"
       ],
+      "HyperText Markup Language (HTML)": [
+        "ハイパーテキスト マークアップ言語 (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "ハイパーテキスト プリプロセッサ (個人ホームページ)"
+      ],
       "iCalendar format": [
         "iCalendar 形式"
+      ],
+      "Icon format": [
+        "アイコンフォーマット"
       ],
       "Image": [
         "画像"
@@ -4894,11 +4981,17 @@
       "MP3 audio": [
         "MP3 音声"
       ],
+      "MPEG transport stream": [
+        "MPEGトランスポートストリーム"
+      ],
       "MPEG Video": [
         "MPEG 動画"
       ],
       "MS Embedded OpenType fonts": [
         "Microsoft Embedded OpenType フォント"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "楽器デジタルインターフェース (MIDI)"
       ],
       "OGG audio": [
         "OGG 音声"
@@ -4921,11 +5014,23 @@
       "Opus audio": [
         "Opus 音声"
       ],
+      "Portable Network Graphics": [
+        "ポータブルネットワークグラフィックス"
+      ],
       "RAR archive": [
         "RAR アーカイブ"
       ],
       "Rich Text Format (RTF)": [
         "Rich Text Format (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "スケーラブル ベクター グラフィックス (SVG)"
+      ],
+      "Small web format (SWF)": [
+        "小規模 Web フォーマット (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "タグ付き画像ファイル形式 (TIFF)"
       ],
       "Tape Archive (TAR)": [
         "Tape Archive (TAR)"
@@ -4942,6 +5047,9 @@
       "Video file": [
         "動画ファイル"
       ],
+      "Waveform Audio Format": [
+        "波形オーディオフォーマット"
+      ],
       "Web Open Font Format (WOFF)": [
         "Web Open Font Format (WOFF)"
       ],
@@ -4953,6 +5061,9 @@
       ],
       "WEBP image": [
         "WEBP 画像"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 ビットマップ グラフィックス"
       ],
       "ZIP archive": [
         "ZIP アーカイブ"
@@ -5216,6 +5327,9 @@
       ],
       "Move ${ n } file": [
         "${ n } 件のファイルの移動"
+      ],
+      "Move ${ n } folder": [
+        "${ n } フォルダを移動する"
       ],
       "Move ${ n } item": [
         "${ n } 件のアイテムの移動"
@@ -5500,6 +5614,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "エイリアスを作成"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -5508,6 +5625,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "ログを表示"
       ]
     },
     "Select files": {
@@ -6275,6 +6397,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults }件見つかりました"
       ],
+      "Get advanced protection": [
+        "高度な保護を入手"
+      ],
       "Groups": [
         "グループ"
       ],
@@ -6409,6 +6534,9 @@
       ],
       "Searching…": [
         "検索中…"
+      ],
+      "Security center": [
+        "セキュリティセンター"
       ],
       "Select action to take on contact group": [
         "この連絡先グループで行うアクションを選択"
@@ -6664,6 +6792,9 @@
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"

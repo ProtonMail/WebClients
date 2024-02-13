@@ -181,6 +181,9 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
+      "Create and copy alias": [
+        "Buat dan salin alias"
+      ],
       "Create link": [
         "Buat tautan"
       ],
@@ -322,11 +325,8 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
-      "Give feedback": [
-        "Beri tanggapan"
-      ],
       "Go to Drive": [
-        "Tuju Drive"
+        "Pergi ke Drive"
       ],
       "Go to label": [
         "Tuju label"
@@ -335,7 +335,7 @@
         "Ke panel ${ index }"
       ],
       "Go to parent": [
-        "Tuju induk"
+        "Pergi ke induk"
       ],
       "Got it": [
         "Dimengerti"
@@ -565,9 +565,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save and copy alias": [
-        "Simpan dan salin alias"
-      ],
       "Search": [
         "Pencarian"
       ],
@@ -588,6 +585,9 @@
       ],
       "Select all": [
         "Pilih semua"
+      ],
+      "Select country": [
+        "Pilih negara"
       ],
       "Send feedback": [
         "Kirim tanggapan"
@@ -656,7 +656,7 @@
         "Kirim laporan"
       ],
       "Switch or add account": [
-        "Ubah atau tambahkan akun"
+        "Ubah atau tambah akun"
       ],
       "Toggle Calendar app": [
         "Tampilkan/sembunyikan aplikasi Calendar"
@@ -740,7 +740,7 @@
         "Lihat"
       ],
       "View invoice": [
-        "Lihat tagihan"
+        "Lihat faktur"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Anda tidak dapat mengirim berkas vCard ke lebih dari ${ maxAttachments } kontak"
@@ -1940,21 +1940,30 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Tagihan jatuh tempo"
+        "Faktur yang menunggak"
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Dirancang untuk para pengguna yang menginginkan keamanan lebih bagi akun mereka."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
@@ -1965,8 +1974,17 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Tentukan metode pemulihan untuk mencegah hilangnya data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Tentukan metode pemulihan untuk mencegah hilangnya akses menuju akun Anda."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
@@ -1976,6 +1994,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Metode pemulihan akun dan data Anda telah diatur dan 2FA telah diaktifkan."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Metode pemulihan akun dan data Anda telah diatur."
       ]
     },
     "description": {
@@ -2114,6 +2138,9 @@
       ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
+      ],
+      "Aliases could not be loaded": [
+        "Alias tidak dapat dimuat"
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
@@ -3648,9 +3675,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
-      ],
       "from the version history?": [
         "dari riwayat versi secara permanen?"
       ],
@@ -3692,9 +3716,6 @@
       ],
       "Import mailbox": [
         "Impor kotak surat"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
       ],
       "Important note": [
         "Catatan penting"
@@ -4303,7 +4324,7 @@
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Anda juga dapat menggabungkan kalender yang diimpor dengan kalender ${ BRAND_NAME } yang telah ada."
@@ -4476,9 +4497,6 @@
       "Add image URL": [
         "Tambah URL gambar"
       ],
-      "Add title": [
-        "Tambah judul"
-      ],
       "Add to group": [
         "Tambah ke grup"
       ],
@@ -4601,6 +4619,9 @@
       ],
       "Duplicate found": [
         "Duplikat ditemukan"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "mis. Amazon, eBay, Etsy"
       ],
       "Email": [
         "Surel"
@@ -4961,7 +4982,7 @@
         "Lebih lanjut"
       ],
       "Pay invoice": [
-        "Bayar tagihan"
+        "Bayar faktur"
       ],
       "Photos": [
         "Foto"
@@ -5687,6 +5708,11 @@
         "Anda"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Negara Penagihan"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
@@ -5854,14 +5880,17 @@
       "Create alias": [
         "Buat alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "mis. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Buat alias"
       ],
-      "Get an alias": [
-        "Dapatkan alias"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Buat alias dengan cepat dan kelola alias dan kata sandi Anda dengan mudah."
       ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Alias hide-my-email memungkinkan Anda untuk mendaftar ke berbagai layanan online tanpa membagikan alamat email asli Anda. ${ learnMoreLink }"
       ],
       "New alias": [
         "Alias ​​baru"
@@ -5874,11 +5903,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Pada saat Anda diminta untuk mengisi alamat email, gunakan alias ini. Setelahnya, berikan judul dan keterangan agar Anda dapat melacak di mana alias ini digunakan."
       ]
     },
     "Security Center - Action": {
       "View logs": [
         "Tampilkan catatan"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
       ]
     },
     "Select files": {
@@ -6141,7 +6181,7 @@
         "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
-        "Akses dini Premium"
+        "Akses dini premium"
       ],
       "Secure cloud storage": [
         "Penyimpanan awan aman"
@@ -6309,8 +6349,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
       ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
@@ -6321,8 +6367,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda ${ percentage }% penuh. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda penuh. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
+      ],
       "Your storage is full": [
         "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. ${ cta }."
       ]
     },
     "Success": {
@@ -6334,6 +6392,12 @@
       ],
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
+      ],
+      "Alias copied to clipboard": [
+        "Alias disalin ke papan klip"
+      ],
+      "Alias saved and copied": [
+        "Alias disimpan dan disalin"
       ],
       "Bug reported": [
         "Bug berhasil dilaporkan"
@@ -7100,7 +7164,7 @@
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
+        "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
@@ -7133,7 +7197,7 @@
         "Kontak gagal dimuat."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
+        "Tanggal dan waktu pada perangkat Anda tidak sesuai tanggal dan waktu saat ini. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Proses dekripsi konten terenkripsi gagal."

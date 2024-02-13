@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Criar novo grupo de contato"
       ],
+      "Create and copy alias": [
+        "Criar e copiar alias"
+      ],
       "Create link": [
         "Criar link"
       ],
@@ -324,9 +327,6 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
-      ],
-      "Give feedback": [
-        "Dar feedback"
       ],
       "Go to Drive": [
         "Ir para o Drive"
@@ -588,6 +588,9 @@
       ],
       "Select all": [
         "Selecionar tudo"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Send feedback": [
         "Enviar comentários"
@@ -3748,9 +3751,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "do histórico de versões?"
       ],
@@ -3793,9 +3793,6 @@
       ],
       "Import mailbox": [
         "Importar Caixa de Entrada"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
       ],
       "Important note": [
         "Observação importante"
@@ -4199,9 +4196,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
       ],
-      "The vault your alias will be stored in.": [
-        "O cofre em que seu alias será guardado."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Há arquivos que ainda precisam ser transferidos. Fechar o gerenciador de transferência encerrará todas as operações."
       ],
@@ -4592,9 +4586,6 @@
       "Add image URL": [
         "Adicionar a URL da imagem"
       ],
-      "Add title": [
-        "Adicionar título"
-      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
@@ -4718,6 +4709,9 @@
       ],
       "Duplicate found": [
         "Duplicado encontrado"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "p. ex., Amazon, eBay, Mercado Livre"
       ],
       "Email": [
         "E-mail"
@@ -5772,6 +5766,11 @@
         "Você"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de Faturamento"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Não é possível usar a chave para criptografar."
@@ -5942,14 +5941,11 @@
       "Create alias": [
         "Criar alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "p. ex., Amazon, eBay, Mercado Livre"
+      "Create an alias": [
+        "Criar um alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Gere aliases na hora, e gerencie seus aliases e senhas facilmente."
-      ],
-      "Get an alias": [
-        "Obter um alias"
       ],
       "Hide-my-email aliases": [
         "Aliases do hide-my-email"
@@ -5969,8 +5965,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Adicione um nome e uma nota para manter um registro de onde você o utiliza."
+      "Used on amazon for shopping, etc.": [
+        "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Adicione um nome e uma nota para manter um registro de onde você o usa."
       ]
     },
     "Security Center - Action": {
@@ -6431,8 +6430,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, libere espaço ou atualize para obter mais armazenamento."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -6443,8 +6448,20 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Seu ${ storage } está cheio. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
+      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Seu armazenamento está cheio. ${ cta }."
       ]
     },
     "Success": {

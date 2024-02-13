@@ -5772,6 +5772,9 @@
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
       ],
+      "Warning": [
+        "警告"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "申し訳ございません。スパム判定を誤ってしまった可能性があります。このメールを迷惑メールから除外しますか？"
       ],
@@ -7659,6 +7662,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "エイリアスを作成"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -7667,6 +7673,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "ログを表示"
       ]
     },
     "Select files": {
@@ -8800,6 +8811,9 @@
       "Forward": [
         "転送"
       ],
+      "Get advanced protection": [
+        "高度な保護を入手"
+      ],
       "Groups": [
         "グループ"
       ],
@@ -9000,6 +9014,9 @@
       ],
       "Schedule send": [
         "送信予約"
+      ],
+      "Security center": [
+        "セキュリティセンター"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -9272,6 +9289,9 @@
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"

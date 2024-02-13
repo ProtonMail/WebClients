@@ -436,9 +436,6 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
-      "Give feedback": [
-        "უკუკავშირი"
-      ],
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
@@ -868,9 +865,6 @@
       ],
       "Save": [
         "შენახვა"
-      ],
-      "Save and copy alias": [
-        "შენახვა და ფსევდონიმის კოპირება"
       ],
       "Saving${ ellipsis }": [
         "შენახვა${ ellipsis }"
@@ -3043,11 +3037,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების წაშლა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "შექმნილია მომხმარებლებისთვის, რომლების თავიანთი ანგარიშებისთვის გაძლიერებულ უსაფრთხოებას ეძებენ."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე დიდი არაა და არ შეიცავს ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
@@ -3094,6 +3094,9 @@
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "აწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის საქაღალდეები, ჭდეები და მეტი ფასიანი ფუნქცია."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
@@ -5916,9 +5919,6 @@
       "The sender has requested a read receipt.": [
         "გამომგზავნმა მოითხოვა წაკითხვის ანგარიშის გადაგზავნა."
       ],
-      "The vault your alias will be stored in.": [
-        "საცავი, რომელშიც თქვენი ფსევდონიმი იქნება შენახული."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება.",
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება."
@@ -6623,9 +6623,6 @@
       ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
-      ],
-      "Add title": [
-        "სათაურის დამატება"
       ],
       "Add to group": [
         "ჯგუფში ჩამატება"
@@ -8165,14 +8162,14 @@
       "Create alias": [
         "ფსევდონიმის შექმნა"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "მაგ Amazon, eBay, Etsy"
-      ],
-      "Get an alias": [
-        "ფსევდონიმის მიღება"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
       ],
       "New alias": [
         "ახალი ფსევდონიმი"
@@ -8193,6 +8190,9 @@
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
       ]

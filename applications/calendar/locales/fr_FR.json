@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
       ],
+      "Create and copy alias": [
+        "Créer et copier l'alias"
+      ],
       "Create calendar": [
         "Créer un calendrier"
       ],
@@ -266,9 +269,6 @@
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
-      ],
-      "Give feedback": [
-        "Donnez-nous votre avis"
       ],
       "Go to label": [
         "Afficher le label"
@@ -488,9 +488,6 @@
       ],
       "Save": [
         "Enregistrer"
-      ],
-      "Save and copy alias": [
-        "Enregistrer et copier l'alias"
       ],
       "Search": [
         "Rechercher"
@@ -2174,6 +2171,9 @@
       ]
     },
     "Description": {
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
+      ],
       "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
         "Gagnez en efficacité et organisez votre emploi du temps en classant les événements par catégorie ou selon vos priorités. Profitez de cette fonctionnalité et de bien d'autres avec un abonnement payant."
       ],
@@ -2183,11 +2183,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Suppression des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Conçu pour les utilisateurs recherchant une protection accrue de leurs comptes."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
@@ -2198,6 +2204,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Définissez une méthode de récupération pour éviter la perte de données."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
+      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Cette opération peut prendre quelques minutes. Pendant ce temps, vous pouvez continuer à utiliser Proton Calendar comme d'habitude."
       ],
@@ -2205,7 +2217,7 @@
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mettez à niveau votre compte pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe pilotée par IA avec un support d'experts dédié 24h/24 et 7j/7."
+        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe pilotée par IA avec un support d'experts dédié 24h/24 et 7j/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -2215,6 +2227,9 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Vos méthodes de récupération de compte et de données sont définies et l'authentification A2F est activée."
       ],
       "Your account and data recovery methods are set.": [
         "Vos méthodes de récupération de compte et de données sont définies."
@@ -2414,7 +2429,7 @@
         "L'alias n'est pas valide."
       ],
       "Alias is required": [
-        "L'alias est nécessaire."
+        "L'alias est requis."
       ],
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
@@ -2426,10 +2441,10 @@
         "Vous êtes déjà membre de ce calendrier."
       ],
       "An error occurred while loading alias options": [
-        "Une erreur s’est produite lors du chargement des options d'alias."
+        "Une erreur s’est produite lors du chargement des options de l'alias."
       ],
       "An error occurred while saving alias": [
-        "Une erreur est survenue lors de la sauvegarde de l'alias."
+        "Une erreur s'est produite lors de la sauvegarde de l'alias"
       ],
       "Answer failed to be sent": [
         "La réponse n'a pas pu être envoyée."
@@ -2527,7 +2542,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "L'adresse de transfert est nécessaire."
+        "L'adresse e-mail de transfert est nécessaire."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -3924,9 +3939,6 @@
       "Existent, added and removed participants will be notified.": [
         "Les participants existants, ajoutés et retirés seront informés."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Les modifications de fréquence seront perdues."
       ],
@@ -3951,9 +3963,6 @@
       ],
       "Import mailbox": [
         "Importer une messagerie"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
       ],
       "Important note": [
         "Remarque importante"
@@ -4177,9 +4186,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
-      ],
-      "The vault your alias will be stored in.": [
-        "Il s'agit du coffre-fort dans lequel votre alias sera stocké."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
@@ -4506,9 +4512,6 @@
       "Add image URL": [
         "Ajouter l'URL de l'image"
       ],
-      "Add title": [
-        "Ajoutee un titre"
-      ],
       "Add to group": [
         "Ajouter au groupe"
       ],
@@ -4595,6 +4598,9 @@
       ],
       "Don't ask again": [
         "Ne plus demander"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "par exemple Amazon, eBay ou Etsy"
       ],
       "Email": [
         "Adresse e-mail"
@@ -4844,7 +4850,7 @@
         "Merveilleux"
       ],
       "Your alias": [
-        "Votre alias"
+        "Vos alias"
       ],
       "Your calendar URL": [
         "URL de votre calendrier"
@@ -5624,9 +5630,6 @@
     "Payments": {
       "Billing Country": [
         "Pays de facturation"
-      ],
-      "Tax Country": [
-        "Pays d'imposition"
       ]
     },
     "PGP key encryption warning": {
@@ -5821,14 +5824,17 @@
       "Create alias": [
         "Créer un alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "par exemple Amazon, eBay ou Etsy"
+      "Create an alias": [
+        "Créer un alias"
       ],
-      "Get an alias": [
-        "Obtenir un alias"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Créer rapidement des alias à la volée et gérer facilement vos alias et mots de passe."
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Les alias hide-my-email vous permettent de vous inscrire à des sites ou newsletters sans partager votre adresse e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nouvel alias"
@@ -5842,8 +5848,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Essayez ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Ajoutez un nom et une note pour suivre l'endroit où vous l'utilisez."
+      "Used on amazon for shopping, etc.": [
+        "Utilisé sur Amazon pour vos achats, etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Ajoutez un titre et une note pour suivre l'endroit où vous l'utilisez."
       ]
     },
     "Security Center - Action": {
@@ -5853,7 +5862,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Notre solution de sécurité de pointe pilotée par IA est conçue pour les utilisateurs qui recherchent une protection renforcée pour leurs comptes. ${ learnMoreLink }"
+        "Notre solution de sécurité de pointe pilotée par IA a été conçue pour les utilisateurs recherchant une protection accrue de leurs comptes. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel est **actif** et protège votre compte."
@@ -6362,6 +6371,12 @@
       "contact your administrator": [
         "contacter votre administrateur"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+      ],
       "upgrade for more storage": [
         "changer d'abonnement pour augmenter votre espace de stockage"
       ],
@@ -6371,8 +6386,20 @@
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Votre ${ storage } est plein. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+      ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Votre espace de stockage est plein. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -6867,7 +6894,7 @@
         "Mini calendrier"
       ],
       "Need more aliases?": [
-        "Besoin de plus d'alias ?"
+        "Besoin d'alias supplémentaires ?"
       ],
       "Night theme": [
         "Thème nuit"
@@ -7041,7 +7068,7 @@
         "Vous avez invité des participants avec des adresses e-mail identiques."
       ],
       "Your account is protected": [
-        "Votre compte est protégé."
+        "Votre compte est protégé"
       ],
       "Your calendar link": [
         "Lien de votre calendrier"

@@ -17,6 +17,9 @@
       "Add new item": [
         "Yeni öge ekle"
       ],
+      "Admin panel": [
+        "Yönetim panosu"
+      ],
       "Advanced": [
         "Gelişmiş"
       ],
@@ -103,6 +106,9 @@
       ],
       "Create login": [
         "Oturum açma kaydı oluştur"
+      ],
+      "Create new items": [
+        "Yeni ögeler oluştur"
       ],
       "Create note": [
         "Not oluştur"
@@ -194,6 +200,9 @@
       "Importing": [
         "İçe aktarılıyor"
       ],
+      "Install extension": [
+        "Eklentiyi kur"
+      ],
       "Invite others": [
         "Başkalarını davet edin"
       ],
@@ -248,6 +257,9 @@
       "Move to trash": [
         "Çöpe at"
       ],
+      "Not now": [
+        "Şimdi değil"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -263,6 +275,9 @@
       "Pin item": [
         "Ögeyi sabitle"
       ],
+      "Recent": [
+        "Son"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -277,6 +292,9 @@
       ],
       "Remove access": [
         "Erişimi kaldır"
+      ],
+      "Remove member": [
+        "Üyeyi kaldır"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -418,11 +436,21 @@
       "Auto-lock could not be disabled": [
         "Otomatik kilitleme kapatılamadı"
       ],
+      "Cannot send invitation at the moment": [
+        "Davetiye şu anda gönderilemiyor",
+        "Davetiyeler şu anda gönderilemiyor"
+      ],
+      "Cannot send invitations at the moment": [
+        "Şu anda davetiye gönderilemiyor"
+      ],
       "Could not confirm this invite at the moment": [
         "Bu davet şu anda onaylanamıyor"
       ],
       "Could not leave vault.": [
         "Kasa bırakılamadı."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Öneriler şu anda yüklenemiyor."
       ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
@@ -670,6 +698,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } davetiye gönderildi"
+      ],
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
@@ -730,6 +761,9 @@
       "Auto-lock successfully disabled": [
         "Otomatik kilitleme kapatıldı"
       ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "Var olan parolalarınızı ${ BRAND_NAME } üzerine aktarın."
+      ],
       "Built in 2FA authenticator": [
         "Hazır iki adımlı kimlik doğrulayıcı"
       ],
@@ -787,6 +821,13 @@
       "For security reasons, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak.",
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Her ekip veya proje için bir kasa oluşturarak Pass uygulamasından en iyi şekilde yararlanın."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
       ],
@@ -806,11 +847,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "Oturum açma kayıtlarınızı hızla otomatik olarak doldurmak için ${ browser.title } için ${ PASS_APP_NAME } kurun."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Oturum açma kayıtlarınızı hızla otomatik olarak doldurmak için ${ browser.title } için ${ PASS_APP_NAME } kurun. "
+      ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
       "Invitation sent": [
         "Davet gönderildi"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Belirli kişileri davet edin ve doğru izinleri ayarlayın."
       ],
       "Invite successfully removed": [
         "Davet silindi"
@@ -903,6 +953,10 @@
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
       "Permanently deleting selected items": [
         "Seçilmiş ögeler kalıcı olarak siliniyor"
       ],
@@ -947,6 +1001,9 @@
       ],
       "Select destination vault": [
         "Hedef kasayı seçin"
+      ],
+      "Select vault to share": [
+        "Paylaşılacak kasayı seçin"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "İçe aktarılan kasaların kaydedileceği yeri seçin."
@@ -995,6 +1052,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Dışa aktarma dosyasında, sizinle paylaşılmış ve sahibi olmadığınız kasaların verileri bulunmayacak"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
@@ -1149,6 +1209,9 @@
       "Alphabetical": [
         "Alfabetik"
       ],
+      "Application logs": [
+        "Uygulama günlükleri"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } otomatik kilitleme"
       ],
@@ -1193,6 +1256,9 @@
       ],
       "Display": [
         "Görünüm"
+      ],
+      "Download logs": [
+        "Günlükleri indir"
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
@@ -1280,6 +1346,15 @@
       ],
       "Logins": [
         "Oturum açma kayıtları"
+      ],
+      "Make all admins": [
+        "Tümünü yönetici yap"
+      ],
+      "Make all editors": [
+        "Tümünü düzenleyici yap"
+      ],
+      "Make all viewers": [
+        "Tümünü izleyici yap"
       ],
       "Members": [
         "Üyeler"
@@ -1452,6 +1527,9 @@
       "View details": [
         "Bilgileri görüntüle"
       ],
+      "View logs": [
+        "Günlükleri görüntüle"
+      ],
       "Websites": [
         "Siteler"
       ],
@@ -1609,6 +1687,9 @@
       "Confirm PIN code": [
         "PIN kodu onayı"
       ],
+      "Create a vault": [
+        "Bir kasa oluşturun"
+      ],
       "Create PIN code": [
         "PIN kodu oluştur"
       ],
@@ -1627,6 +1708,9 @@
       "Enter your PIN": [
         "PIN kodunuzu yazın"
       ],
+      "Get Started": [
+        "Başlayalım"
+      ],
       "Grant permissions": [
         "İzinleri ver"
       ],
@@ -1636,6 +1720,12 @@
       "Import to vault(s)": [
         "Kasaların içine aktar"
       ],
+      "Import your data": [
+        "Verinizi içe aktarın"
+      ],
+      "Install extension": [
+        "Eklentiyi kur"
+      ],
       "Leave vault ?": [
         "Kasa bırakılsın mı?"
       ],
@@ -1644,6 +1734,9 @@
       ],
       "Member limit": [
         "Üye sayısı sınırı"
+      ],
+      "Members": [
+        "Üyeler"
       ],
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"
@@ -1675,8 +1768,14 @@
       "Settings": [
         "Ayarlar"
       ],
+      "Share vaults with your team": [
+        "Kasaları ekibinizle paylaşın"
+      ],
       "Share with": [
         "Şununla paylaş"
+      ],
+      "Suggestions": [
+        "Öneriler"
       ],
       "Transfer ownership": [
         "Sahipliği aktar"
@@ -1686,6 +1785,9 @@
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
+      ],
+      "Vault": [
+        "Kasa"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
@@ -1736,11 +1838,20 @@
       "An error occured while exporting your data": [
         "Verileriniz dışa aktarılırken bir sorun çıktı"
       ],
+      "At least one email address is required": [
+        "En az bir e-posta adresi gereklidir"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Şu adreslere davetiye gönderilemedi :"
+      ],
+      "Duplicate email addresses.": [
+        "E-posta adresleri yineleniyor."
       ],
       "Empty note": [
         "Boş not"
@@ -1750,6 +1861,9 @@
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
+      ],
+      "Invalid email addresses.": [
+        "E-posta adresleri geçersiz."
       ],
       "Maximum length is ${ maxLength } character": [
         "En fazla uzunluk ${ maxLength } karakter",
@@ -1773,6 +1887,9 @@
       "No password manager selected": [
         "Herhangi bir parola yöneticisi seçilmemiş"
       ],
+      "No results": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
       ],
@@ -1781,6 +1898,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
+      ],
+      "Please contact us for investigating the issue": [
+        "Sorunu inceleyebilmemiz için lütfen bizimle görüşün"
       ],
       "Please verify your email address in order to use email aliases": [
         "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"

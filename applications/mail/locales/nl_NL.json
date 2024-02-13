@@ -433,9 +433,6 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
-      "Give feedback": [
-        "Geef feedback"
-      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -4811,9 +4808,33 @@
         "${ currentProgress } van ${ totalProgress }",
         "${ currentProgress } van ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } gesprek wordt gelabeld als:",
+        "${ elementsCount } gesprekken wordt gelabeld als:"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount }gesprek wordt verplaatst",
+        "${ elementsCount }gesprekken worden verplaatst"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount }gesprek zal niet gelabeld zijn van:",
+        "${ elementsCount }gesprekken zal niet gelabeld zijn van:"
+      ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } berichten worden gelabeld als:",
         "${ elementsCount } berichten worden gelabeld als:"
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } bericht wordt als gelezen gemarkeerd.",
+        "${ elementsCount } berichten worden gemarkeerd als gelezen."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount }gesprek wordt verplaatst",
+        "${ elementsCount }berichten worden verplaatst"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount }bericht wordt ongelabeld van:",
+        "${ elementsCount }berichten wordt ongelabeld van:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ingesloten afbeelding",
@@ -6132,6 +6153,10 @@
       "You selected **${ elementsCount } conversation**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
         "U selecteerde **${ elementsCount } gesprekken**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Je selecteert** ${ elementsCount }bericht**in${ location }",
+        "Je selecteert**${ elementsCount }berichten**in${ location }"
       ],
       "You selected **${ elementsCount } message**.": [
         "U selecteerde **${ elementsCount } gesprek**.",
@@ -7574,6 +7599,12 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Berichten automatisch doorsturen"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Email berichten van oplichters permanent blokkeren. ${ kbLinkSender }"
+      ],
       "Block unsavory senders": [
         "Blokkeer ongewenste afzenders"
       ],
@@ -7585,6 +7616,9 @@
       ],
       "For your eyes only": [
         "Alleen voor uw ogen"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Gmail berichten automatisch doorsturen naar inbox."
       ],
       "Next": [
         "Volgende"
@@ -8272,6 +8306,9 @@
     "Snooze message": {
       "Snooze Message": [
         "Bericht snoozen"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Wanneer moet het bericht terugkeren in uw inbox?"
       ]
     },
     "Sort option": {

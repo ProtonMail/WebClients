@@ -257,6 +257,9 @@
       "Move to trash": [
         "Siirrä roskakoriin"
       ],
+      "Not now": [
+        "Ei nyt"
+      ],
       "OK": [
         "OK"
       ],
@@ -435,6 +438,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Kutsua ei voi lähettää juuri nyt",
+        "Kutsuja ei voi lähettää juuri nyt"
+      ],
+      "Cannot send invitations at the moment": [
         "Kutsuja ei voi lähettää juuri nyt"
       ],
       "Could not confirm this invite at the moment": [
@@ -815,6 +821,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Ota kaikki hyöty irti Passista luomalla kullekin tiimille tai projektille oma holvi."
       ],
@@ -943,6 +953,10 @@
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikko sitten poistetaan automaattisesti historiasta.",
+        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa sitten poistetaan automaattisesti historiasta."
+      ],
       "Permanently deleting selected items": [
         "Valittuja kohteita poistetaan pysyvästi"
       ],
@@ -1038,6 +1052,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Vientitiedosto ei sisällä tietoja jaetuista holveista, joita et omista"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
@@ -1192,6 +1209,9 @@
       "Alphabetical": [
         "Aakkosellisesti"
       ],
+      "Application logs": [
+        "Sovelluksen lokitiedot"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Lukitse ${ PASS_APP_NAME } automaattisesti"
       ],
@@ -1236,6 +1256,9 @@
       ],
       "Display": [
         "Ulkoasu"
+      ],
+      "Download logs": [
+        "Lataa lokitiedot"
       ],
       "Empty trash": [
         "Tyhjennä roskakori"
@@ -1503,6 +1526,9 @@
       ],
       "View details": [
         "Näytä tiedot"
+      ],
+      "View logs": [
+        "Näytä lokitiedot"
       ],
       "Websites": [
         "Verkkosivustot"
@@ -1872,6 +1898,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
+      ],
+      "Please contact us for investigating the issue": [
+        "Ota meihin yhteyttä ongelman tutkimiseksi"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"

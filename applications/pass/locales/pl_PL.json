@@ -257,6 +257,9 @@
       "Move to trash": [
         "Przenieś do Kosza"
       ],
+      "Not now": [
+        "Nie teraz"
+      ],
       "OK": [
         "OK"
       ],
@@ -837,8 +840,14 @@
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
-        "Wykorzystaj w pełni Pass, tworząc sejf dla każdego zespołu lub projektu."
+        "Wykorzystaj w pełni Proton Pass, tworząc sejf dla każdego zespołu lub projektu."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Ulepsz plan do wersji Pass Plus, aby uzyskać nieograniczoną liczbę aliasów, dodatkowe funkcje i wesprzeć nas."
@@ -862,7 +871,10 @@
         "Przyznaj niezbędne uprawnienia dla rozszerzenia ${ PASS_APP_NAME }, aby uzyskać najlepsze wrażenia z jego korzystania"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
-        "Zainstaluj ${ PASS_APP_NAME } dla ${ browser.title }, aby szybko automatycznie uzupełniać swoje dane logowania."
+        "Zainstaluj ${ PASS_APP_NAME } na przeglądarkę ${ browser.title }, aby automatycznie uzupełniać dane logowania."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "Zainstaluj ${ PASS_APP_NAME } na przeglądarkę ${ browser.title }, aby automatycznie uzupełniać dane logowania."
       ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
@@ -871,7 +883,7 @@
         "Zaproszenie zostało wysłane"
       ],
       "Invite specific people and set the right permissions.": [
-        "Zaproś wybrane osoby i ustaw odpowiednie uprawnienia."
+        "Zaproś użytkowników i ustaw uprawnienia."
       ],
       "Invite successfully removed": [
         "Zaproszenie zostało usunięte"
@@ -966,6 +978,12 @@
       "Pass Plus trial": [
         "Wersja próbna planu Pass Plus"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia zostaną automatycznie usunięte z historii."
+      ],
       "Permanently deleting selected items": [
         "Trwałe usuwanie zaznaczonych elementów"
       ],
@@ -992,6 +1010,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Kliknij Enter, aby skopiować"
@@ -1062,6 +1083,9 @@
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Plik eksportu danych nie będzie zawierał danych udostępnionych sejfów, które są własnością innych użytkowników"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
@@ -1094,6 +1118,9 @@
       ],
       "Unpinning item...": [
         "Odpinanie elementu..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
       ],
       "Use vaults to share this item with others.": [
         "Aby udostępnić element, udostępnij cały sejf."
@@ -1223,6 +1250,9 @@
       "Alphabetical": [
         "Alfabetycznie"
       ],
+      "Application logs": [
+        "Logi aplikacji"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Automatyczna blokada ${ PASS_APP_NAME }"
       ],
@@ -1267,6 +1297,9 @@
       ],
       "Display": [
         "Wyświetlanie"
+      ],
+      "Download logs": [
+        "Pobierz logi"
       ],
       "Empty trash": [
         "Opróżnij Kosz"
@@ -1454,6 +1487,9 @@
       "Select your password manager": [
         "Wybierz menadżer haseł"
       ],
+      "Selected": [
+        "Wybrano"
+      ],
       "Session locking": [
         "Blokowanie sesji"
       ],
@@ -1531,6 +1567,9 @@
       ],
       "View details": [
         "Pokaż szczegóły"
+      ],
+      "View logs": [
+        "Pokaż logi"
       ],
       "Websites": [
         "Strony internetowe"
@@ -1792,6 +1831,9 @@
       "Update available": [
         "Dostępna jest aktualizacja"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
+      ],
       "Vault": [
         "Sejf"
       ],
@@ -1845,7 +1887,7 @@
         "Wystąpił błąd podczas eksportowania danych"
       ],
       "At least one email address is required": [
-        "Wymagany jest co najmniej jeden adres e-mail"
+        "Co najmniej jeden adres e-mail jest wymagany"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
@@ -1906,6 +1948,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
+      ],
+      "Please contact us for investigating the issue": [
+        "Skontaktuj się z nami, aby zbadać problem"
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"

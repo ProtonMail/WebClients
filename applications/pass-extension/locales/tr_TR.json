@@ -308,6 +308,9 @@
       "Pin item": [
         "Ögeyi sabitle"
       ],
+      "Recent": [
+        "Son"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Erişimi kaldır"
+      ],
+      "Remove member": [
+        "Üyeyi kaldır"
       ],
       "Request a feature": [
         "Bir özellik istiyorum"
@@ -422,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
       ],
+      "View app logs": [
+        "Uygulama günlüklerini görüntüle"
+      ],
       "Write us on Reddit": [
         "Bize Reddit üzerinden yazın"
       ],
@@ -495,11 +504,21 @@
       "Cannot create alias (${ error }).": [
         "Takma ad oluşturulamadı (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Davetiye şu anda gönderilemiyor",
+        "Davetiyeler şu anda gönderilemiyor"
+      ],
+      "Cannot send invitations at the moment": [
+        "Şu anda davetiye gönderilemiyor"
+      ],
       "Could not confirm this invite at the moment": [
         "Bu davet şu anda onaylanamıyor"
       ],
       "Could not leave vault.": [
         "Kasa bırakılamadı."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Öneriler şu anda yüklenemiyor."
       ],
       "Could not open created vault": [
         "Oluşturulan kasa açılamadı"
@@ -762,6 +781,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } davetiye gönderildi"
+      ],
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
@@ -922,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak.",
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak."
+      ],
       "Generating alias...": [
         "Takma ad üretiliyor..."
       ],
@@ -1050,6 +1076,10 @@
       "Password copied": [
         "Parola kopyalandı"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
@@ -1157,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Alana tıkladığınızda ya da üzerine geldiğinizde otomatik doldurma penceresi açılır."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Dışa aktarma dosyasında, sizinle paylaşılmış ve sahibi olmadığınız kasaların verileri bulunmayacak"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
@@ -1499,6 +1532,15 @@
       ],
       "Logins": [
         "Oturum açma kayıtları"
+      ],
+      "Make all admins": [
+        "Tümünü yönetici yap"
+      ],
+      "Make all editors": [
+        "Tümünü düzenleyici yap"
+      ],
+      "Make all viewers": [
+        "Tümünü izleyici yap"
       ],
       "Members": [
         "Üyeler"
@@ -1875,6 +1917,9 @@
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
       ],
+      "Get Started": [
+        "Başlayalım"
+      ],
       "Get the mobile apps": [
         "Mobil uygulamaları edinin"
       ],
@@ -1901,6 +1946,9 @@
       ],
       "Member limit": [
         "Üye sayısı sınırı"
+      ],
+      "Members": [
+        "Üyeler"
       ],
       "Move all items ?": [
         "Tüm ögeler taşınsın mı?"
@@ -1938,6 +1986,9 @@
       "Share with": [
         "Şununla paylaş"
       ],
+      "Suggestions": [
+        "Öneriler"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
       ],
@@ -1961,6 +2012,9 @@
       ],
       "Use my email": [
         "E-postamı kullan"
+      ],
+      "Vault": [
+        "Kasa"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
@@ -2014,11 +2068,20 @@
       "An error occured while exporting your data": [
         "Verileriniz dışa aktarılırken bir sorun çıktı"
       ],
+      "At least one email address is required": [
+        "En az bir e-posta adresi gereklidir"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Şu adreslere davetiye gönderilemedi :"
+      ],
+      "Duplicate email addresses.": [
+        "E-posta adresleri yineleniyor."
       ],
       "Empty note": [
         "Boş not"
@@ -2028,6 +2091,9 @@
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
+      ],
+      "Invalid email addresses.": [
+        "E-posta adresleri geçersiz."
       ],
       "Maximum length is ${ maxLength } character": [
         "En fazla uzunluk ${ maxLength } karakter",
@@ -2051,6 +2117,9 @@
       "No password manager selected": [
         "Herhangi bir parola yöneticisi seçilmemiş"
       ],
+      "No results": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
       ],
@@ -2059,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
+      ],
+      "Please contact us for investigating the issue": [
+        "Sorunu inceleyebilmemiz için lütfen bizimle görüşün"
       ],
       "Please verify your email address in order to use email aliases": [
         "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"

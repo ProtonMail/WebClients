@@ -509,9 +509,6 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
-      "Give feedback": [
-        "Пакінуць водгук"
-      ],
       "Go to label": [
         "Перайсці да меткі"
       ],
@@ -638,10 +635,10 @@
       "No": [
         "Не"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6974,9 +6971,6 @@
       "Not yet available in our Android mobile app.": [
         "Пакуль недаступна ў нашай мабільнай праграме для Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Гэта не ваша прылада? Скарыстайцеся акном прыватнага браўзера для ўваходу і закрыйце яго пасля завяршэння працы. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Цяпер даступна ў бэта-версіі. Настольная праграма дазваляе зручна запускаць ${ MAIL_APP_NAME } наўпрост з вашага працоўнага стала і не рабіць лішніх дзеянняў праз браўзер."
       ],
@@ -8018,9 +8012,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "У вас не будзе магчымасці аднавіць заблакіраваныя даныя з дапамогай спампаваных файлаў аднаўлення. Гэта таксама адключыць аднаўленне даверанай прылады."
       ],
-      "You'll stay signed in even after you close the browser.": [
-        "Ваша прысутнасць у сістэме захаваецца нават калі вы закрыеце браўзер."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш уліковы запіс ${ BRAND_NAME } звязаны з ${ externalEmailAddress }."
       ],
@@ -8233,6 +8224,9 @@
       ],
       "Credit": [
         "Крэдыт"
+      ],
+      "Credit note": [
+        "Крэдытная нататка"
       ],
       "Currency conversion": [
         "Канвертацыя валюты"
@@ -10158,6 +10152,23 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -10191,23 +10202,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11657,7 +11651,7 @@
         "Усе прэміяльныя сэрвісы ${ BRAND_NAME }."
       ],
       "Based in Switzerland, GDPR compliant": [
-        "Знаходзіцца ў Швейцарыі, адпавядае патрабаванням GDPR"
+        "Знаходзіцца ў Швейцарыі і адпавядае патрабаванням GDPR"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Вы можаце палепшыць свой тарыфны план да **${ upsellPlanTitle }** і атрымаць скідку ў памеры ${ discount }. Гэта ўсяго на ${ relativePrice } больш, чым вы плаціце цяпер."
@@ -11876,10 +11870,10 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Усе адміністратары атрымаюць доступ да гэтага ключа."
+        "Усе адміністратары атрымаюць доступ да ключа."
       ],
       "Are you sure you want to change your organization key?": [
-        "Вы сапраўды хочаце змяніць ваш ключ арганізацыі?"
+        "Вы сапраўды хочаце змяніць свой ключ арганізацыі?"
       ],
       "Change organization key": [
         "Змяніць ключ арганізацыі"
@@ -11891,7 +11885,7 @@
         "Ключы арганізацыі актываваныя"
       ],
       "Organization key does not exist.": [
-        "Ключы арганізацыі не існуе."
+        "Ключ арганізацыі не існуе."
       ],
       "Organization key must be activated to give admin privileges": [
         "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
@@ -11969,9 +11963,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "Tax Country": [
-        "Падаткаабкладанне краіны"
-      ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ]
@@ -11981,7 +11972,7 @@
         "Памылковы нумар карткі"
       ],
       "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
+        "Памылковая дата заканчэння тэрміну дзеяння карткі"
       ],
       "Invalid securiry code": [
         "Памылковы код бяспекі"
@@ -11993,7 +11984,7 @@
         "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паспрабуйце яшчэ раз."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі трансакцыі."
+        "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
     "Permission": {

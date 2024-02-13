@@ -439,9 +439,6 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
-      "Give feedback": [
-        "Oferiți feedback"
-      ],
       "Go to label": [
         "Accesare etichetă"
       ],
@@ -1049,6 +1046,9 @@
       ],
       "Toggle Contact app": [
         "Comutare la aplicație Contacte"
+      ],
+      "Toggle security center app": [
+        "Comutare centru de securitate"
       ],
       "Toggle settings": [
         "Comutare setări"
@@ -3040,6 +3040,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } în setări."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Ștergeți automat mesajele mai vechi de 30 de zile din folderul «Gunoi» și «Nedorite». Bucurați-vă de aceste opțiuni și altele dacă vă modernizați contul."
       ],
@@ -3049,11 +3052,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se șterg contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Conceput pentru utilizatorii care doresc o protecție sporită pentru conturile lor."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se criptează și se importă contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
@@ -3078,6 +3087,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Setați o metodă de recuperare a datelor pentru a preveni pierderea lor."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pentru a vă importa contactele din Google sau Outlook, ${ easySwitchLink }."
       ],
@@ -3096,6 +3111,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Deblocați foldere și etichete nelimitate și multe alte funcții premium când modernizați contul."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Treceți la alt tip de cont cu plată pentru a activa ${ PROTON_SENTINEL_NAME }, soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, cu asistență specializată dedicată 24/7."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
@@ -3110,6 +3128,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Metodele de recuperare a contului și datelor sunt setate și A2F este activată."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Metodele de recuperare a contului și datelor sunt setate."
       ]
     },
     "description": {
@@ -3299,8 +3323,23 @@
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
+      "Alias is not valid": [
+        "Aliasul nu este valid."
+      ],
+      "Alias is required": [
+        "Aliasul este obligatoriu."
+      ],
       "Alias options could not be resolved": [
         "Opțiunile pentru alias nu au putu fi rezolvate."
+      ],
+      "Aliases could not be loaded": [
+        "Aliasurile nu au putut fi salvate."
+      ],
+      "An error occurred while loading alias options": [
+        "A apărut o eroare în timpul încărcării opțiunilor aliasurilor."
+      ],
+      "An error occurred while saving alias": [
+        "A apărut o eroare în timpul salvării aliasului."
       ],
       "Attachments are limited to 25 MB": [
         "Atașamentele sunt limitate la 25 MiB."
@@ -3416,6 +3455,9 @@
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
       ],
+      "Forward address is required": [
+        "Adresa de redirecționare este obligatorie."
+      ],
       "Image upload failed": [
         "Eșuare încărcare imagine"
       ],
@@ -3471,6 +3513,9 @@
       ],
       "Missing signature": [
         "Semnătură lipsă"
+      ],
+      "Name is required": [
+        "Numele este obligatoriu."
       ],
       "Network error: Please check your connection and try again.": [
         "Eroare rețea: verificați conexiunea și reîncercați."
@@ -4542,6 +4587,9 @@
       ],
       "Search": [
         "Căutare"
+      ],
+      "Security Center": [
+        "Centru de securitate"
       ]
     },
     "Hint": {
@@ -5527,6 +5575,9 @@
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
       ],
+      "Important note": [
+        "Notă importantă"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
@@ -6203,6 +6254,9 @@
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
       ],
+      "Warning": [
+        "Avertizare"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ne cerem scuze. S-ar putea să fi fost o greşeală din partea noastră. Puteți confirma că doriți să marcați acest e-mail ca fiind legitim?"
       ],
@@ -6875,6 +6929,9 @@
       "Frequency": [
         "Frecvența"
       ],
+      "From": [
+        "De la"
+      ],
       "From:": [
         "De la:"
       ],
@@ -7132,6 +7189,9 @@
       ],
       "Wonderful": [
         "Minunată"
+      ],
+      "Your alias": [
+        "Aliasuri personale"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -8237,14 +8297,45 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Toate aliasurile"
+      ],
+      "Create alias": [
+        "Creare alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Aliasurile hide-my-email vă permit să vă înscrieți pe site-uri online fără a vă partaja adresa reală de e-mail. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Alias nou"
       ],
       "Open ${ PASS_APP_NAME }": [
         "Deschidere ${ PASS_APP_NAME }"
       ],
+      "Protect your online identity": [
+        "Protejați-vă identitatea online"
+      ],
       "Try ${ PASS_APP_NAME }": [
         "Încercați ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Afișare jurnale"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Soluția noastră de securitate de ultimă oră, bazată pe inteligență artificială, concepută pentru utilizatorii care doresc o protecție sporită pentru conturile lor. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel este **activ** și vă protejează contul."
       ]
     },
     "Select files": {
@@ -8810,6 +8901,9 @@
       "Change setting": [
         "Modificare setări"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Creați aliasuri hide-my-email și urmăriți-le aici."
+      ],
       "Email tracking protection": [
         "Protejare e-mail împotriva urmăririi"
       ],
@@ -9028,6 +9122,12 @@
       ],
       "Address verification disabled": [
         "Verificare adresă dezactivată"
+      ],
+      "Alias copied to clipboard": [
+        "Alias copiat în memorie"
+      ],
+      "Alias saved and copied": [
+        "Alias salvat și copiat"
       ],
       "Bug reported": [
         "Eroare raportată"
@@ -9551,6 +9651,9 @@
       "Email settings": [
         "Setări e-mail"
       ],
+      "Enable 2FA": [
+        "Activare A2F"
+      ],
       "Enable message content search": [
         "Activați căutarea conținutului mesajului"
       ],
@@ -9580,6 +9683,9 @@
       ],
       "Forward": [
         "Redirecționare"
+      ],
+      "Get advanced protection": [
+        "Obțineți protecție avansată"
       ],
       "Groups": [
         "Grupuri"
@@ -9715,6 +9821,9 @@
       "Moving a snoozed message": [
         "Se mută un mesaj amânat"
       ],
+      "Need more aliases?": [
+        "Doriți mai multe aliasuri?"
+      ],
       "New message": [
         "Mesaj nou"
       ],
@@ -9798,6 +9907,9 @@
       ],
       "Schedule send": [
         "Trimitere programată"
+      ],
+      "Security center": [
+        "Centru de securitate"
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -9940,6 +10052,9 @@
       ],
       "What's new": [
         "Ce este nou"
+      ],
+      "Your account is protected": [
+        "Contul este protejat"
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"

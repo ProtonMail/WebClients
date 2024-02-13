@@ -112,6 +112,9 @@
       "Clear query": [
         "सवाल साफ करें"
       ],
+      "Clear selection": [
+        "चयन साफ़ करें"
+      ],
       "Click here.": [
         "यहां दबाएं।"
       ],
@@ -1988,6 +1991,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" पहले से मौजूद है"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } को अपडेट किया गया है। कृपया पृष्ठ को पुनश्चर्या करें।"
+      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
@@ -2052,6 +2058,9 @@
       ],
       "Enter 6 digits": [
         "6 अंक दर्ज करें"
+      ],
+      "Error decrypting a computer": [
+        "कंप्यूटर को डिक्रिप्ट करने में त्रुटि"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "फाइल \"${ item.name }\" \"${ error }\" त्रुटि के कारण अपलोड नहीं किया जा सकता है"
@@ -2140,6 +2149,9 @@
       "Passwords do not match": [
         "पासवर्ड्स समान नहीं हैं"
       ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "तस्वीर अपलोड अस्थायी रूप से अक्षम किया गया है। कृपया बाद में पुन: प्रयास करें"
+      ],
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
       ],
@@ -2173,6 +2185,9 @@
       ],
       "Some contacts could not be deleted": [
         "कुछ संपर्क हटाए नहीं जा सके"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "कुछ फ़ाइलें असमर्थित हैं इसलिए वे तस्वीरें में नहीं शामिल किए गए"
       ],
       "Some groups could not be deleted": [
         "कुछ समूहों को हटाया नहीं जा सका"
@@ -2314,6 +2329,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "एन्क्रिप्शन विफल"
+      ],
+      "Missing FN property": [
+        "एफएन संपत्ति की कमी"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard संस्करण < 3.0 सपोर्ट नहीं किया जाता"
@@ -3099,6 +3117,14 @@
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } एनक्रिप्टेड फ़ाइल",
+        "${ nbFile } एनक्रिप्टेड फ़ाइल।"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } एनक्रिप्टेड फ़ाइल...",
+        "${ nbFile } एनक्रिप्टेड फ़ाइले..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } रोका गया",
         "${ pausedCount } रोके गए"
@@ -3126,6 +3152,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } छोड़ा गए",
+        "${ skippedCount } छोड़े गए"
       ],
       "${ speed }/s": [
         "${ speed }/सेकेंड"
@@ -3164,6 +3194,9 @@
         "सभी (${ totalFoldersCount } लेबल)",
         "सभी (${ totalFoldersCount } लेबल)"
       ],
+      "All encrypted files": [
+        "सभी एन्क्रिप्टेड फ़ाइलें"
+      ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
       ],
@@ -3172,6 +3205,9 @@
       ],
       "An active recovery file": [
         "एक सक्रिय पुनर्प्राप्ति फ़ाइल"
+      ],
+      "An issue occurred during the restore process.": [
+        "पुनर्स्थापन प्रक्रिया के दौरान एक समस्या आई।"
       ],
       "and": [
         "और"
@@ -3349,6 +3385,12 @@
       "Downloading": [
         "डाउनलोड हो रहा है"
       ],
+      "Downloading all encrypted files": [
+        "सभी एन्क्रिप्टेड फ़ाइलें डाउनलोड हो रही है"
+      ],
+      "Drop files here": [
+        "फ़ाइलें यहाँ छोड़ें"
+      ],
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
       ],
@@ -3378,6 +3420,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "आप जिस ईमेल खाते से आयात करना चाहते हैं, उसके क्रेडेंशियल दर्ज करें।"
+      ],
+      "Enter the device name to confirm removal.": [
+        "हटाने की पुष्टि के लिए डिवाइस का नाम दर्ज करें।"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "वह सत्यापन कोड दर्ज करें जो ${ destinationText } को भेजा गया था।"
@@ -3443,11 +3488,14 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "सबसे बेहतर प्रदर्शन के लिए मेमरी पे भारी काम स्ट्रीम करने से बचे या अपने अपलोड को छोटे हिस्सो में बांट दें।"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "दूसरे खाते से आने वाले ईमेल आपके सुरक्षित ${ MAIL_APP_NAME } इनबॉक्स पे फॉरवर्ड करें।"
-      ],
       "from the version history?": [
         "को संस्करण इतिहास से मिटाएं?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "फ़ोन से तस्वीरों को प्रतिकृति करने के लिए ऐप डाउनलोड करें।"
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "अपने कंप्यूटर से फ़ाइलों को समकालिक करने के लिए डेस्कटॉप ऐप करे।"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME } को अच्छे से जानें और अपना 500 एमबी का स्टोरेज बोनस पाएं। आज ही करें।"
@@ -3483,11 +3531,11 @@
       "Import mailbox": [
         "मेलबॉक्स आयात करें"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "किसी दूसरे सेवा से अपने ईमेल, कैलेंडर, और संपर्क ${ BRAND_NAME } पे आयात करें।"
-      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "तब तक, अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और एंड टू एंड एन्क्रिप्शन के साथ अपने डेटा की सुरक्षा करें और इसे सुरक्षित रूप से साझा करें।"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow } में से ${ esProgress } चीज़े लिस्ट कर रहे"
@@ -3515,6 +3563,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "कचरे में जो चीज़े है वो आपके हमेशा के लिए मिटाएं जाने तक यहीं रहेगी"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "कूड़ेदान में ले जाए गए मद हटाए जाने तक यहीं रहेंगे"
       ],
       "It’s easy and secure": [
         "यह आसान और सुरक्षित है"
@@ -3643,6 +3694,9 @@
       "Only the people with the link and the password can access this folder.": [
         "केवल लिंक वाले लोग और पासवर्ड इस फ़ोल्डर तक पहुंच सकते हैं।"
       ],
+      "Or use the \"+ New\" button": [
+        "या '+ नया' बटन का उपयोग करें"
+      ],
       "Paused": [
         "रुका हुआ"
       ],
@@ -3654,6 +3708,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME चालू रचनाजगह मोड इस्तेमाल करके अपनेआप संदेश भेजता है।"
+      ],
+      "Photos have been successfully recovered.": [
+        "तस्वीरें सफलतापूर्वक पुनर्प्राप्त की गई हैं।"
       ],
       "Please enter the password to decrypt and view content.": [
         "डिक्रिप्ट करने और सामग्री देखने के लिए कृपया पासवर्ड दर्ज करें।"
@@ -3719,6 +3776,9 @@
       "Queued": [
         "कतार में"
       ],
+      "Ready to add some photos?": [
+        "क्या आप कुछ तस्वीरें छोड़ना चाहेंगे?"
+      ],
       "recommended browser": [
         "अच्छे ब्राउज़र"
       ],
@@ -3746,6 +3806,9 @@
       "Restored files ${ formattedDate }": [
         "फाइलें वापिस लाए गए ${ formattedDate }"
       ],
+      "Restoring Photos... Please keep the tab open": [
+        "तस्वीरें बहाल की जा रही हैं.... कृपया टैब खोले रखें"
+      ],
       "Retry now": [
         "पुन:प्रयास करें"
       ],
@@ -3755,11 +3818,30 @@
       "Search Enabled": [
         "खोज सक्षम"
       ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } फ़ाइल सुरक्षित रूप से डाउनलोड की गईं",
+        "${ nbFile } फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
+      ],
+      "Securely downloaded all encrypted files": [
+        "सभी एन्क्रिप्टेड फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
+      ],
+      "Securely downloaded all files": [
+        "सभी फ़ाइलें सुरक्षित रूप से डाउनलोड की गईं"
+      ],
+      "Select a folder to move to.": [
+        "स्थानांतरित करने के लिए फ़ोल्डर चुनें।"
+      ],
       "Select a service provider to start": [
         "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
       ],
+      "Select all items for": [
+        "के लिए सभी मदें चुनें"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "अपलोड की गई फ़ाइल या फ़ोल्डर का चयन करें और उसका लिंक बनाएं।"
+      ],
+      "Select item": [
+        "मद चुनें"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "इस ईमेल पते पर ईमेल भेजते समय आप जिस ईमेल प्रारूप का उपयोग करना चाहते हैं उसे डिफ़ॉल्ट रूप से चुनें।"
@@ -3788,6 +3870,9 @@
       "Shared link not found": [
         "शेयर किया लिंक नहीं मिला"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "अपना खुद का ${ DRIVE_APP_NAME } खाता बनाएं और एंड टू एंड एन्क्रिप्शन के साथ अपने डेटा की सुरक्षा करें और इसे सुरक्षित रूप से साझा करें।"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "हस्ताक्षर नेटवर्क में गड़बड़ की वजह से सत्यापित नहीं हो सका, बाद में वापस कोशिश करें।"
       ],
@@ -3812,6 +3897,9 @@
       "Something went wrong, please try again later.": [
         "कुछ गलत हो गया है, कृपया बाद में दोबारा प्रयास करें।"
       ],
+      "Something went wrong...": [
+        "कुछ गलत हो गया..."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।"
       ],
@@ -3820,6 +3908,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "एप्लिकेशन को निर्यात किए जाने से पहले आपके संपर्कों को स्थानीय रूप से डिक्रिप्ट करना होगा। प्रक्रिया के अंत में, एक VCF फ़ाइल जनरेट होगी और आप इसे डाउनलोड करने में सक्षम होंगे।"
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "डाउनलोड गणना में डाउनलोड और उन समय को शामिल करते है जब फ़ाइलें पूर्वावलोकन की जाती हैं।"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "एन्क्रिप्शन और हस्ताक्षर की वजह से एन्क्रिप्ट किया डाटा थोड़ा ज़्यादा बड़ा है, जो आपके डाटा को सुरक्षित रखता है।"
@@ -3841,6 +3932,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "ये फाइल मिटा, हटा, या आपके लिए मौजूद नहीं बना दी गई है। फाइल के मालिक से बात करने की कोशिश करें।"
+      ],
+      "This item already exists in your library": [
+        "यह मद पहले से ही आपकी संग्रहण में मौजूद है"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "यह लिंक एक ऐसी वेबसाइट की ओर ले जाता है जो पासवर्ड और क्रेडिट कार्ड विवरण जैसी आपकी जानकारी चुराने का प्रयास कर सकती है।"
@@ -3867,6 +3961,9 @@
         "ये लिंक को मिटा देगा और जिस भी व्यक्ति के पास ये लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।",
         "ये लिंकों को मिटा देगा और जिस भी व्यक्ति के पास इनमें से कोई लिंक है उसके लिए आपके फाइल या फोल्डर तक का पहुंच हटा देगा।"
       ],
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "यह ${ DRIVE_APP_NAME } से सिंक की गई डिवाइस ${ deviceName } को हटा देगा और कंप्यूटर में जोड़े गए फ़ोल्डरों को सिंक करना बंद कर देगा।"
+      ],
       "This will replace the existing file with the folder": [
         "यह मौजूदा फ़ाइल को फ़ोल्डर के साथ बदल देगा।"
       ],
@@ -3875,6 +3972,9 @@
       ],
       "This will upload a new version of the file": [
         "ये फाइल का एक नया संस्करण अपलोड करेगा"
+      ],
+      "This will upload a new version of the folder": [
+        "यह फ़ोल्डर का एक नई संस्करण अपलोड करेगा"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "खोज पूरा निजी करने के लिए ${ DRIVE_APP_NAME } को आपके फाइलों के नाम डिवाइस में रखने पड़ेगे।"
@@ -3918,8 +4018,14 @@
       "Trash is empty": [
         "कचरा खाली है"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "आज़माएं ${ DRIVE_APP_NAME }: हमेशा के लिए मुफ्त"
+      ],
       "Try searching by file name, date, or type.": [
         "फाइल नाम, तारीख, या प्रकार खोज के देखे।"
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "दुर्भाग्यवश, ऐसा लगता है कि फ़ाइल या इसके कुछ डेटा को डिक्रिप्ट नहीं किया जा सकता है।"
       ],
       "Unknown date": [
         "अज्ञात तारीख"
@@ -3960,8 +4066,14 @@
       "Version is restored": [
         "संस्करण वापस लाया गया"
       ],
+      "Want to sync files faster?": [
+        "फ़ाइलों को तेज़ी से समकालिक करना चाहते हैं?"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "ये तो बस शुरुआत है, हमने अभी-अभी आपका मुफ्त स्टोरेज दोगुना कर दिया है!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "हम तकनीकी समस्याओं का सामना कर रहे हैं। नई तस्वीरों को अपलोड करना अस्थायी रूप से अक्षम किया गया है।"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "हम ये सत्यापित नहीं कर सके कि ${ emailAddress } ने ${ fileName } अपलोड किया।"
@@ -3989,6 +4101,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "${ formattedRevisionDate } संस्करण से पुनः स्थापित किया जाएगा। अन्य सभी संस्करण अब भी सुरक्षित रहेंगे।"
+      ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "${ DRIVE_APP_NAME } के साथ आपके डेटा को एंड-टू-एंड एन्क्रिप्शन द्वारा सुरक्षित रखा जाता है।"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "क्या आप एक नया सत्यापन कोड प्राप्त करना चाहेंगे या वैकल्पिक सत्यापन विधि का उपयोग करना चाहेंगे?"
@@ -4026,6 +4141,10 @@
       "You cannot undo this action.": [
         "आप इस क्रिया को पूर्ववत नहीं कर सकते।"
       ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "आपके पास ${ expiresInDays } दिन बचे हैं अपना 500 एमबी का शुरुआती बोनस लेने के लिए और ",
+        "आपके पास ${ expiresInDays } दिन बचे हैं अपना 500 एमबी का शुरुआती बोनस लेने के लिए और"
+      ],
       "You will lose all unsaved changes.": [
         "आप सभी सहेजे गए परिवर्तनों को खो देंगे।"
       ],
@@ -4055,6 +4174,9 @@
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "आपका डाटा ${ importedEmailAddressStrong } से आपके ${ BRAND_NAME } खाते पे आयात करने के लिए तैयार है।"
+      ],
+      "Your download is in progress": [
+        "आपका डाउनलोड प्रक्रिया में है"
       ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
@@ -4722,14 +4844,44 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP ऑडियो/वीडियो कंटेनर"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 ऑडियो/वीडियो कंटेनर"
+      ],
       "7-zip archive": [
-        "७ज़िप संग्रहण"
+        "7-zip संग्रहण"
       ],
       "AAC audio": [
         "एएसी ऑडियो"
       ],
+      "AbiWord document": [
+        "अबिवर्ड दस्तावेज़"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "एडोब पोर्टेबल दस्तावेज़ प्रारूप (पीडीएफ)"
+      ],
+      "Amazon Kindle eBook format": [
+        "अमेज़ॅन किंडल ईबुक प्रारूप"
+      ],
+      "Android Package": [
+        "एंड्रॉइड पैकेज"
+      ],
+      "Animated Portable Network Graphics": [
+        "एनिमेटेड पोर्टेबल नेटवर्क ग्राफ़िक्स"
+      ],
+      "Apple Installer Package": [
+        "एप्पल इंस्टॉलर पैकेज"
+      ],
+      "Archive document": [
+        "पुरालेख दस्तावेज़"
+      ],
       "Audio file": [
         "ऑडियो फाइल"
+      ],
+      "AV1 Image File Format (AVIF)": [
+        "एवी1 छवि फ़ाइल प्रारूप (एवीआईएफ़)"
       ],
       "AVI video": [
         "एवीआई वीडियो"
@@ -4737,35 +4889,86 @@
       "Binary data": [
         "बाइनरी डेटा"
       ],
+      "Bourne shell script": [
+        "बॉर्न शैल स्क्रिप्ट"
+      ],
       "BZip archive": [
-        "बीज़िप संग्रहण"
+        "BZip संग्रहण"
       ],
       "BZip2 archive": [
-        "बीज़िप२ संग्रहण"
+        "BZip2 संग्रहण"
       ],
       "C-Shell script": [
         "सी-शेल स्क्रिप्ट"
       ],
+      "Cascading Style Sheets (CSS)": [
+        "कैस्केडिंग स्टाइल शीट्स (सीएसएस)"
+      ],
+      "Comma-separated values (CSV)": [
+        "कॉमा-सेपरैटड वैल्यूज़ (सीएसवी)"
+      ],
+      "Electronic publication (EPUB)": [
+        "इलेक्ट्रॉनिक प्रकाशन (ईपीयूबी)"
+      ],
+      "Flash Video": [
+        "फ़्लैश वीडियो"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "ग्राफ़िक्स इंटरचेंज फ़ॉर्मेट (जीआईएफ)"
+      ],
+      "GZip Compressed Archive": [
+        "GZip संपीडित पुरालेख"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "हाइपरटेक्स्ट मार्कअप लैंग्वेज (एचटीएमएल)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "हाइपरटेक्स्ट प्रीप्रोसेसर (पर्सनल होम पेज)"
+      ],
       "iCalendar format": [
         "iCalendar फॉर्मेट"
       ],
+      "Icon format": [
+        "चिह्न प्रारूप"
+      ],
       "Image": [
         "तस्वीर"
+      ],
+      "Java Archive (JAR)": [
+        "Java पुरालेख (JAR)"
       ],
       "JPEG images": [
         "जेपीईजी छवियां"
       ],
       "MP3 audio": [
-        "एमपी3 ऑडियो"
+        "MP3 ऑडियो"
+      ],
+      "MPEG transport stream": [
+        "एमपीईजी ट्रांसपोर्ट स्ट्रीम"
       ],
       "MPEG Video": [
-        "एमपीईजी वीडियो"
+        "MPEG वीडियो"
+      ],
+      "MS Embedded OpenType fonts": [
+        "एमएस एंबेडेड ओपनटाइप फ़ॉन्ट"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "म्यूज़िकल इंस्ट्रूमेंट डिजिटल इंटरफेस (मिडी)"
       ],
       "OGG audio": [
-        "ओजीजी ऑडियो"
+        "OGG ऑडियो"
       ],
       "OGG video": [
-        "ओजीजी वीडियो"
+        "OGG वीडियो"
+      ],
+      "OpenDocument presentation document": [
+        "ॲापन डॉक्यूमेंट प्रस्तुति दस्तावेज़"
+      ],
+      "OpenDocument spreadsheet document": [
+        "ॲापन स्प्रेडशीट दस्तावेज़"
+      ],
+      "OpenDocument text document": [
+        "ॲापन टेक्स्ट दस्तावेज़"
       ],
       "OpenType font": [
         "ओपन टाइप फ़ॉन्ट"
@@ -4773,8 +4976,29 @@
       "Opus audio": [
         "ओपस ऑडियो"
       ],
+      "Portable Network Graphics": [
+        "पोर्टेबल नेटवर्क ग्राफ़िक्स"
+      ],
       "RAR archive": [
-        "आरएआर संग्रहण"
+        "RAR संग्रहण"
+      ],
+      "Rich Text Format (RTF)": [
+        "रिच टेक्स्ट प्रारूप (आरटीएफ)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "स्केलेबल वेक्टर ग्राफ़िक्स (एसवीजी)"
+      ],
+      "Small web format (SWF)": [
+        "स्मॉल वेब प्रारूप (SWF)"
+      ],
+      "Tagged Image File Format (TIFF)": [
+        "टैग्ड इमेज फ़ाइल प्रारूप (टिफ़)"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape पुरालेख (TAR)"
+      ],
+      "Text": [
+        "पाठ"
       ],
       "TrueType Font": [
         "ट्रू टाइप फ़ॉन्ट"
@@ -4785,6 +5009,12 @@
       "Video file": [
         "वीडियो फाइल"
       ],
+      "Waveform Audio Format": [
+        "वेवफॉर्म ऑडियो प्रारूप"
+      ],
+      "Web Open Font Format (WOFF)": [
+        "वेब ओपन फ़ॉन्ट प्रारूप (डब्ल्यूओएफएफ)"
+      ],
       "WEBM audio": [
         "वेबएम ऑडियो"
       ],
@@ -4794,8 +5024,11 @@
       "WEBP image": [
         "वेबपी छवि"
       ],
+      "Windows OS/2 Bitmap Graphics": [
+        "विंडोज़ ओएस/२ बिटमैप ग्राफ़िक्स"
+      ],
       "ZIP archive": [
-        "ज़िप संग्रहण"
+        "ZIP संग्रहण"
       ]
     },
     "Modal title": {
@@ -5058,6 +5291,10 @@
       "Move ${ n } file": [
         "${ n } फाइल ले जाए",
         "${ n } फाइलें ले जाए"
+      ],
+      "Move ${ n } folder": [
+        "${ n } फोल्डर को ले जाएँ",
+        "${ n } फोल्डर को ले जाएँ"
       ],
       "Move ${ n } item": [
         "${ n } चीज़ ले जाए",
@@ -5646,6 +5883,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "अधिक स्टोरेज प्राप्त करें"
+      ],
       "Release notes": [
         "रिलीज नोट्स"
       ],
@@ -5668,6 +5908,10 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } संपर्क एक जैसा है।",
         "${ countMergeableContacts } संपर्क एक जैसे है।"
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } बचे हैं",
+        "${ countOfUnrecoveredLinksLeft } बचे हैं"
       ],
       "Address copied to clipboard": [
         "पता क्लिपबोर्ड पर कॉपी किया गया"

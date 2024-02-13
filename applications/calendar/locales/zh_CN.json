@@ -151,7 +151,7 @@
         "复制地址"
       ],
       "Copy email address": [
-        "复制电子邮件地址"
+        "复制邮箱地址"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -322,7 +322,7 @@
         "加载图片"
       ],
       "Make this participant optional": [
-        "可选择包含此参与者"
+        "将此参与者标为非必须出席"
       ],
       "Make this participant required": [
         "必须包含此参与者"
@@ -660,7 +660,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 个自定义域"
+        "${ domains } 个自有域名"
       ],
       "${ ips } server": [
         "${ ips } 个服务器"
@@ -2117,6 +2117,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
@@ -2129,14 +2132,22 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "这可能需要几分钟的时间。同时，您可以像往常一样继续使用日历。"
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+        "您可以导入 iCal 格式的日程（.ics 文件）。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2341,10 +2352,10 @@
         "解密失败：无法解密此日程的内容。"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历"
+        "至少取消选择 ${ calendarsToFixCount } 份日历"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历或"
+        "至少取消选择 ${ calendarsToFixCount } 份日历或"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -2404,7 +2415,7 @@
         "重复周期不能为空"
       ],
       "Invalid email address": [
-        "无效的邮件地址"
+        "邮箱地址无效"
       ],
       "Invalid link to the event": [
         "无效的日程链接"
@@ -2437,7 +2448,7 @@
         "姓氏太长。"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
+        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -3492,7 +3503,7 @@
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
@@ -3701,9 +3712,6 @@
       "Existent, added and removed participants will be notified.": [
         "现有、添加和移除的参与者将收到通知"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
-      ],
       "Frequency modifications will be lost.": [
         "频率修改将丢失"
       ],
@@ -3727,9 +3735,6 @@
       ],
       "Import mailbox": [
         "导入收件箱"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
@@ -4969,10 +4974,10 @@
     },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 个日历"
+        "${ n } 份日历"
       ],
       "${ n } calendar per user": [
-        "每位用户 ${ n } 个日历"
+        "每位用户 ${ n } 份日历"
       ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -5041,11 +5046,14 @@
     "new_plans: tooltip": {
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "与同事、亲友轻松分享日程安排"
       ]
     },
     "new_plans: Upsell attribute": {
       "Create up to ${ n } calendar": [
-        "创建最多 ${ n } 个日历"
+        "最多可创建 ${ n } 份日历"
       ]
     },
     "Notification": {
@@ -5403,6 +5411,9 @@
       ],
       "Search for name or email": [
         "搜索名称或邮箱地址"
+      ],
+      "Search parent folder": [
+        "搜索上层文件夹"
       ],
       "Select": [
         "选择"
@@ -6804,7 +6815,7 @@
         "若要访问此共享日历，请启用此地址，或请求 ${ boldCalendarOwnerEmail } 向活动地址发送邀请链接。"
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "因为邀请邮件地址 (${ boldInvitedAddress }) 无效，您无法加入此日历。"
+        "您的受邀邮箱地址（${ boldInvitedAddress }）已停用，因此无法加入此日历。"
       ]
     },
     "Weekly recurring event, frequency": {

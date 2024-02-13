@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Skapa en ny kontaktgrupp"
       ],
+      "Create and copy alias": [
+        "Skapa och kopiera alias"
+      ],
       "Create link": [
         "Skapa länk"
       ],
@@ -324,9 +327,6 @@
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
-      ],
-      "Give feedback": [
-        "Ge feedback"
       ],
       "Go to Drive": [
         "Gå till Drive"
@@ -568,9 +568,6 @@
       "Save": [
         "Spara"
       ],
-      "Save and copy alias": [
-        "Spara och kopiera alias"
-      ],
       "Search": [
         "Sök"
       ],
@@ -591,6 +588,9 @@
       ],
       "Select all": [
         "Markera alla"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Send feedback": [
         "Skicka feedback"
@@ -3751,9 +3751,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "från versionshistoriken?"
       ],
@@ -3796,9 +3793,6 @@
       ],
       "Import mailbox": [
         "Importera brevlåda"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig notering"
@@ -4202,9 +4196,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
       ],
-      "The vault your alias will be stored in.": [
-        "Valvet dina alias kommer att lagras i."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det finns fortfarande filer som behöver överföras. Att stänga överföringshanteraren avbryter alla åtgärder."
       ],
@@ -4598,9 +4589,6 @@
       "Add image URL": [
         "Lägga till bild-URL"
       ],
-      "Add title": [
-        "Lägg till rubrik"
-      ],
       "Add to group": [
         "Lägg till i grupp"
       ],
@@ -4724,6 +4712,9 @@
       ],
       "Duplicate found": [
         "Duplikat hittades"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "t.ex. Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-post"
@@ -5166,6 +5157,15 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP-ljud/videobehållare"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2-ljud/videobehållare"
+      ],
+      "7-zip archive": [
+        "7-zip-arkiv"
+      ],
       "AAC audio": [
         "AAC-ljud"
       ],
@@ -5175,8 +5175,14 @@
       "Adobe Portable Document Format (PDF)": [
         "Adobe Portable Document Format (PDF)"
       ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook-format"
+      ],
       "Android Package": [
         "Android-paket"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animated Portable Network Graphics"
       ],
       "Apple Installer Package": [
         "Apple installationspaket"
@@ -5220,6 +5226,9 @@
       "Cascading Style Sheets (CSS)": [
         "Cascading Style Sheets (CSS)"
       ],
+      "Comma-separated values (CSV)": [
+        "Kommaseparerade värden (CSV)"
+      ],
       "Electronic publication (EPUB)": [
         "Electronic publication (EPUB)"
       ],
@@ -5234,6 +5243,9 @@
       ],
       "HyperText Markup Language (HTML)": [
         "HyperText Markup Language (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Hypertext Preprocessor (personlig webbplats)"
       ],
       "iCalendar format": [
         "iCalendar-format"
@@ -5283,6 +5295,9 @@
       "MP3 audio": [
         "MP3-ljud"
       ],
+      "MPEG transport stream": [
+        "MPEG-transportström"
+      ],
       "MPEG Video": [
         "MPEG-video"
       ],
@@ -5316,6 +5331,9 @@
       "Opus audio": [
         "Opus-ljud"
       ],
+      "Portable Network Graphics": [
+        "Portable Network Graphics"
+      ],
       "Python": [
         "Python"
       ],
@@ -5325,11 +5343,17 @@
       "Rich Text Format (RTF)": [
         "Rich Text Format (RTF)"
       ],
+      "Scalable Vector Graphics (SVG)": [
+        "Scalable Vector Graphics (SVG)"
+      ],
       "Small web format (SWF)": [
         "Small web format (SWF)"
       ],
       "Tagged Image File Format (TIFF)": [
         "Tagged Image File Format (TIFF)"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape Archive (TAR)"
       ],
       "Text": [
         "Text"
@@ -5360,6 +5384,9 @@
       ],
       "WEBP image": [
         "WEBP-bild"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap Graphics"
       ],
       "XHTML": [
         "XHTML"
@@ -5799,6 +5826,11 @@
         "Du"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nyckeln kan inte användas för kryptering"
@@ -5969,14 +6001,11 @@
       "Create alias": [
         "Skapa alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "t.ex., Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Skapa ett alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generera alias i farten och hantera enkelt dina alias och lösenord."
-      ],
-      "Get an alias": [
-        "Skaffa ett alias"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
@@ -5996,8 +6025,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "När du tillfrågas om din e-postadress, ge detta alias istället. Lägg till ett namn och en anteckning för att hålla reda på var du använder det."
+      "Used on amazon for shopping, etc.": [
+        "Används på Amazon för shopping etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "När du tillfrågas om din e-postadress, ge detta alias istället. Lägg till en rubrik och anteckning för att hålla reda på var du använder den."
       ]
     },
     "Security Center - Action": {

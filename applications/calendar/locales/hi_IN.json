@@ -2370,7 +2370,7 @@
         "इवेंट नहीं मिला"
       ],
       "Failed to get event": [
-        "कार्यक्रम प्राप्त करने में विफलता हुई।"
+        "कार्यक्रम प्राप्त करने में विफलता हुई"
       ],
       "Failed to get original occurrence in series": [
         "सीरीज़ से असली घटना लाने में असफल"
@@ -2391,7 +2391,7 @@
         "गलत यूज़रनेम"
       ],
       "Intended recipient does not support calendar sharing": [
-        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता।"
+        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता"
       ],
       "Interval cannot be empty": [
         "अंतराल खाली नहीं हो सकता"
@@ -2663,6 +2663,9 @@
       "Encryption failed": [
         "एन्क्रिप्शन विफल"
       ],
+      "Missing FN property": [
+        "एफएन संपत्ति की कमी"
+      ],
       "vCard versions < 3.0 not supported": [
         "vCard संस्करण < 3.0 सपोर्ट नहीं किया जाता"
       ]
@@ -2828,7 +2831,7 @@
     },
     "esCalendar": {
       "No result": [
-        "कोई परिणाम नहीं।"
+        "कोई परिणाम नहीं"
       ],
       "Results": [
         "परिणाम"
@@ -2848,6 +2851,10 @@
     "Event info in search view; event duration": {
       "All day": [
         "पूरे दिन"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "पूरे दिन, ${ plusDaysToEnd } दिन तक",
+        "पूरे दिन, ${ plusDaysToEnd } दिनों तक"
       ]
     },
     "Event info. Organizer name": {
@@ -3612,7 +3619,7 @@
         "परिवर्तन निरस्त करे?"
       ],
       "Display events for calendar ${ Name }": [
-        "${ Name } के लिए कार्यक्रम प्रदर्शित करें।"
+        "${ Name } के लिए कार्यक्रम प्रदर्शित करें"
       ],
       "Duplicate key updated": [
         "डुप्लिकेट कुंजी अपडेट की गई"
@@ -3660,9 +3667,6 @@
       "Existent, added and removed participants will be notified.": [
         "मौजूदा, जोड़े गए और हटाए गए प्रतिभागियों को सूचित किया जाएगा।"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "दूसरे खाते से आने वाले ईमेल आपके सुरक्षित ${ MAIL_APP_NAME } इनबॉक्स पे फॉरवर्ड करें।"
-      ],
       "Frequency modifications will be lost.": [
         "'कितने बार' में बदलाव गुम हो जाएगा।"
       ],
@@ -3687,9 +3691,6 @@
       ],
       "Import mailbox": [
         "मेलबॉक्स आयात करें"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "किसी दूसरे सेवा से अपने ईमेल, कैलेंडर, और संपर्क ${ BRAND_NAME } पे आयात करें।"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
@@ -4093,6 +4094,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "आपका सिस्टम समय क्षेत्र ${ timezone } में बदल गया है। अपने समय क्षेत्र पसंद को अपडेट करें?"
+      ]
+    },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "आप या तो अपने खोज क्वेरी को अपडेट कर सकते हैं या खोज को बंद करके कैलेंडर दृश्य में वापस जा सकते हैं"
       ]
     },
     "Info message": {
@@ -5815,6 +5821,9 @@
       ],
       "Search for events": [
         "इवेंट खोजें"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "अनुकूलित कार्यक्रम रंगों के साथ, आप अपने क्रियाकर्मों को रंग कोड कर सकते हैं और अपने दिन को जीत सकते हैं।"
       ]
     },
     "Storage": {
@@ -6132,7 +6141,7 @@
         "प्रतिभागियों को जोड़ें"
       ],
       "Add some color to your day": [
-        "अपने दिन में कुछ रंग भर दें।"
+        "अपने दिन में कुछ रंग भर दें"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } समूह में जोड़ें",
@@ -6451,7 +6460,7 @@
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
       ],
       "We're setting up Calendar search": [
-        "हम कैलेंडर खोज को व्यवस्थित कर रहे हैं।"
+        "हम कैलेंडर खोज को व्यवस्थित कर रहे हैं"
       ],
       "We've locked some calendars to protect your data": [
         "आपका डाटा सुरक्षित रखने के लिए हमने आपके कुछ कैलेंडर लॉक कर दिए"
@@ -6582,7 +6591,7 @@
     },
     "View event button tooltip": {
       "Navigate to event": [
-        "कार्यक्रम पे जाए।"
+        "कार्यक्रम पे जाए"
       ],
       "Open in a new tab": [
         "नए टैब में खोलें"

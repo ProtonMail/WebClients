@@ -174,6 +174,9 @@
       "Create a new contact group": [
         "Стварыць новую групу кантактаў"
       ],
+      "Create and copy alias": [
+        "Стварыць і скапіяваць псеўданім"
+      ],
       "Create calendar": [
         "Стварыць каляндар"
       ],
@@ -272,9 +275,6 @@
       ],
       "Get verification code": [
         "Атрымаць праверачны код"
-      ],
-      "Give feedback": [
-        "Пакінуць водгук"
       ],
       "Go to label": [
         "Перайсці да меткі"
@@ -494,9 +494,6 @@
       ],
       "Save": [
         "Захаваць"
-      ],
-      "Save and copy alias": [
-        "Захаваць і скапіяваць псеўданім"
       ],
       "Search": [
         "Пошук"
@@ -2254,7 +2251,7 @@
         "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з экспертнаю падтрымкаю 24/7."
+        "Палепшыце свой уліковы запіс, каб актываваць ${ PROTON_SENTINEL_NAME }, наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту з падтрымкай ад экспертаў 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
@@ -4076,9 +4073,6 @@
       "Existent, added and removed participants will be notified.": [
         "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Змяненні перыядычнасці будуць страчаны."
       ],
@@ -4105,9 +4099,6 @@
       ],
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
       ],
       "Important note": [
         "Важная заўвага"
@@ -4333,9 +4324,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
-      ],
-      "The vault your alias will be stored in.": [
-        "Сховішча, у якім будзе захоўвацца ваш псеўданім."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
@@ -4668,9 +4656,6 @@
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
       ],
-      "Add title": [
-        "Дадаць загаловак"
-      ],
       "Add to group": [
         "Дадаць у групу"
       ],
@@ -4757,6 +4742,9 @@
       ],
       "Don't ask again": [
         "Больш не пытаць"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "напрыклад, Amazon, eBay, Etsy"
       ],
       "Email": [
         "Электронная пошта"
@@ -5862,9 +5850,6 @@
     "Payments": {
       "Billing Country": [
         "Краіна выстаўлення рахунка"
-      ],
-      "Tax Country": [
-        "Падаткаабкладанне краіны"
       ]
     },
     "PGP key encryption warning": {
@@ -6065,20 +6050,17 @@
       "Create alias": [
         "Стварыць псеўданім"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "напрыклад, Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Стварыць псеўданім"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Генерыруйце імгненныя псеўданімы і без намаганняў кіруйце імі разам з паролямі."
       ],
-      "Get an alias": [
-        "Атрымаць псеўданім"
-      ],
       "Hide-my-email aliases": [
-        "Псеўданімаў Hide-my-email"
+        "Псеўданімы Hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Псеўданімы Hide-my-email дазваляюць вам рэгістравацца для атрымання пэўнай паслугі без абагулення свайго адраса электроннай пошты. ${ learnMoreLink }"
+        "Псеўданімы Hide-my-email дазваляюць вам рэгістравацца для атрымання пэўнай паслугі без раскрыцця свайго адраса электроннай пошты. ${ learnMoreLink }"
       ],
       "New alias": [
         "Новы псеўданім"
@@ -6087,13 +6069,16 @@
         "Адкрыць ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Абараніце вашу сеткавую ідэнтычнасць"
+        "Абараніце сваю сеткавую ідэнтычнасць"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Паспрабуйце ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Замест свайго сапраўднага паштовага адраса паведаміце ім гэты псеўданім. Дадайце назву і нататку, каб разумець дзе яго неабходна выкарыстоўваць."
+      "Used on amazon for shopping, etc.": [
+        "Выкарыстоўвайце на Amazon для пакупак і г.д."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Замест свайго сапраўднага паштовага адраса паведаміце гэты псеўданім. Дадайце загаловак і нататку, каб разумець дзе яго неабходна выкарыстоўваць."
       ]
     },
     "Security Center - Action": {
@@ -6103,10 +6088,10 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
+        "Наша перадавое рашэнне па бяспецы на базе штучнага інтэлекту распрацавана для карыстальнікаў, якія шукаюць дадатковую абарону для сваіх уліковых запісаў. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
-        "Sentinel у цяперашні час **актыўны** і ахоўвае ваш уліковы запіс."
+        "Sentinel цяпер **актыўны** і ахоўвае ваш уліковы запіс."
       ]
     },
     "Select files": {
@@ -6983,7 +6968,7 @@
         "Аднаўленне ўліковага запісу"
       ],
       "Account security": [
-        "бяспеку ўліковага запісу"
+        "Бяспека ўліковага запісу"
       ],
       "Add another notification to remind you of this event": [
         "Дадаць іншае апавяшчэнне, каб нагадаць вам пра гэту падзею"

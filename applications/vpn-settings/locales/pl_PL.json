@@ -254,9 +254,6 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
-      "Give feedback": [
-        "Wyślij opinię"
-      ],
       "Got it": [
         "Ok"
       ],
@@ -427,6 +424,9 @@
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
+      ],
+      "Select country": [
+        "Wybierz kraj"
       ],
       "Select file": [
         "Wybierz plik"
@@ -1971,6 +1971,9 @@
       "Code wrong or not valid anymore": [
         "Kod jest nieprawidłowy lub stracił ważność"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nie można załadować faktur. Spróbuj ponownie później."
+      ],
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
@@ -2042,6 +2045,9 @@
       ],
       "Organization key is not decrypted": [
         "Klucz organizacji nie został odszyfrowany"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Musisz aktywować klucz organizacji, aby utworzyć służbowych użytkowników"
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
@@ -3288,6 +3294,9 @@
       "inactive": [
         "nieaktywna"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
@@ -3377,9 +3386,6 @@
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
@@ -3966,6 +3972,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Zalogowano jako ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Zużywasz więcej miejsca niż, jest dostępne w planie ${ downgradedPlanName }. Usuń nadmiarowe dane, żeby móc zmniejszyć plan."
+      ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
       ],
@@ -4002,6 +4011,9 @@
         "Masz ${ availableCount } dostępnych dedykowanych serwerów",
         "Masz ${ availableCount } dostępnych dedykowanych serwerów"
       ],
+      "You have no invoices.": [
+        "Nie masz faktur."
+      ],
       "You have no saved payment methods.": [
         "Nie masz zapisanych metod płatności."
       ],
@@ -4034,9 +4046,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Konto ${ BRAND_NAME } zostało zawieszone. Za 28 dni wiadomości nie będą dostarczane do skrzynki odbiorczej. Linki dysku zostaną zablokowane, a możliwość przesyłania nowych plików zostanie wstrzymana. Aby wznowić działanie usługi, ureguluj zobowiązania."
@@ -4155,6 +4164,9 @@
       ],
       "Credit": [
         "Środki"
+      ],
+      "Currency conversion": [
+        "Kurs waluty"
       ],
       "Donation": [
         "Darowizna"
@@ -4591,6 +4603,9 @@
       ],
       "Value": [
         "Wartość"
+      ],
+      "VAT": [
+        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -5226,6 +5241,9 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "Logowanie SSO (wkrótce)"
+      ],
       "Start protecting your organization": [
         "Chroń swoją organizację"
       ],
@@ -5401,6 +5419,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ trialPlanName } z funkcjami premium."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
@@ -5933,6 +5954,9 @@
       "Change organization key": [
         "Zmień klucz organizacji"
       ],
+      "Organization key activated": [
+        "Klucz organizacji został aktywowany"
+      ],
       "Organization key does not exist.": [
         "Klucz organizacji nie istnieje."
       ],
@@ -5950,6 +5974,9 @@
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Zweryfikowaliśmy autentyczność nadawcy i zaproszenia."
       ]
     },
     "Payment method option": {
@@ -5958,6 +5985,34 @@
       ],
       "New credit/debit card": [
         "Nowa karta płatnicza"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Kraj rozliczeniowy"
+      ],
+      "Card number": [
+        "Numer karty"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/RR"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Numer karty jest nieprawidłowy"
+      ],
+      "Invalid expiration date": [
+        "Data wygaśnięcia jest nieprawidłowa"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Coś poszło nie tak. Spróbuj ponownie później."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
       ]
     },
     "Permission": {
@@ -6774,7 +6829,7 @@
         "Przestrzeń dyskowa ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% pełna"
+        "${ storage } jest w ${ percentage }% pełna"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Obniżając plan, utracisz następujące bonusy. Czy na pewno chcesz kontynuować?"
@@ -6784,6 +6839,12 @@
       ],
       "For all ${ BRAND_NAME } services": [
         "Do wykorzystania we wszystkich usługach ${ BRAND_NAME }"
+      ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
       ],
       "upgrade for more storage": [
         "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
@@ -6803,8 +6864,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } jest pełna. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
+      ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Po obniżeniu planu stracisz dostęp do ${ gb } przestrzeni dyskowej i priorytetowego wsparcia."

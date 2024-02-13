@@ -341,7 +341,7 @@
         "Descarregar ${ attachmentName }"
       ],
       "Download now": [
-        "Descarrega ara"
+        "Descarrega"
       ],
       "Downloading": [
         "S'està descarregant"
@@ -435,9 +435,6 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
-      ],
-      "Give feedback": [
-        "Feu-nos comentaris"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -6026,6 +6023,9 @@
       "Version ${ appVersion }": [
         "Versió ${ appVersion }"
       ],
+      "Warning": [
+        "Advertència"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ens disculpem. Això podria haver estat un error per part nostra. Podeu confirmar que voleu marcar aquest correu electrònic com a legítim?"
       ],
@@ -6308,6 +6308,9 @@
       ],
       "Expand / contract composer": [
         "Amplia / contrau l'editor"
+      ],
+      "Filter": [
+        "Filtre"
       ],
       "Forward": [
         "Reenvia"
@@ -6664,6 +6667,9 @@
       "Frequency": [
         "Freqüència"
       ],
+      "From": [
+        "De"
+      ],
       "From:": [
         "De:"
       ],
@@ -6921,6 +6927,9 @@
       ],
       "Wonderful": [
         "Meravellosa"
+      ],
+      "Your alias": [
+        "El vostre àlies"
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
@@ -7998,14 +8007,28 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tots els àlies"
+      ],
+      "Create alias": [
+        "Crea un àlies"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
+      "New alias": [
+        "Nou àlies"
+      ],
       "Open ${ PASS_APP_NAME }": [
-        "Obrir ${ PASS_APP_NAME }"
+        "Obri ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Mostra els registres"
       ]
     },
     "Select files": {
@@ -8617,7 +8640,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } d'emmagatzematge"
+        "emmagatzematge de ${ app }"
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -9213,6 +9236,9 @@
       "Email settings": [
         "Configuració del correu"
       ],
+      "Enable 2FA": [
+        "Activa l'autenticació 2FA"
+      ],
       "Enable message content search": [
         "Activar la cerca de contingut dels missatges"
       ],
@@ -9302,10 +9328,10 @@
         "Marca el correu electrònic com a legítim"
       ],
       "Mark messages as read": [
-        "Marcar els missatges com a llegits"
+        "Marca els missatges com a llegits"
       ],
       "Mark messages as unread": [
-        "Marcar els missatges com a no llegits"
+        "Marca els missatges com a no llegits"
       ],
       "Merge contacts": [
         "Combinar contactes"

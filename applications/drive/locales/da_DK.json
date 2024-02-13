@@ -325,9 +325,6 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
-      "Give feedback": [
-        "Giv feedback"
-      ],
       "Go to Drive": [
         "Gå til Drive"
       ],
@@ -1962,6 +1959,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -1982,6 +1982,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Dine konto- og datagendannelsesmetoder er indstillet, og 2FA er aktiveret."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Dine konto- og datagendannelsesmetoder er indstillet."
       ]
     },
     "description": {
@@ -2112,8 +2118,23 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias is not valid": [
+        "Alias er ikke gyldigt"
+      ],
+      "Alias is required": [
+        "Alias er påkrævet"
+      ],
       "Alias options could not be resolved": [
         "Alias-indstillinger kunne ikke hentes"
+      ],
+      "Aliases could not be loaded": [
+        "Aliasser kunne ikke indlæses"
+      ],
+      "An error occurred while loading alias options": [
+        "Der opstod en fejl under indlæsning af alias-indstillinger"
+      ],
+      "An error occurred while saving alias": [
+        "En fejl opstod under lagring af alias"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -2195,6 +2216,9 @@
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
       ],
+      "Forward address is required": [
+        "Adresse til videresendelse er påkrævet."
+      ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
       ],
@@ -2237,6 +2261,9 @@
       ],
       "Missing signature": [
         "Manglende signatur"
+      ],
+      "Name is required": [
+        "Navn er påkrævet"
       ],
       "No calendars found to import": [
         "Ingen kalendere fundet til import"
@@ -2928,6 +2955,9 @@
     "Header": {
       "Contacts": [
         "Kontakter"
+      ],
+      "Security Center": [
+        "Sikkerhedscenter"
       ]
     },
     "Hint": {
@@ -3700,9 +3730,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
-      ],
       "from the version history?": [
         "fra versionshistorikken"
       ],
@@ -3746,8 +3773,8 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
+      "Important note": [
+        "Vigtig note"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -4301,6 +4328,9 @@
       ],
       "Want to sync files faster?": [
         "Vil du synkronisere filer hurtigere?"
+      ],
+      "Warning": [
+        "Advarsel"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Godt gået, du har lige fordoblet din gratis lagerplads!"
@@ -4950,6 +4980,9 @@
       "Yes, I want to permanently delete my old files": [
         "Ja, jeg vil slette mine gamle filer permanent"
       ],
+      "Your alias": [
+        "Dit alias"
+      ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
       ]
@@ -5097,8 +5130,38 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "7-zip-arkiv"
+      ],
+      "AAC audio": [
+        "AAC-lyd"
+      ],
+      "Archive document": [
+        "Arkiv-dokument"
+      ],
       "Audio file": [
         "Lydfil"
+      ],
+      "AVI video": [
+        "AVI-video"
+      ],
+      "Binary data": [
+        "Binær data"
+      ],
+      "Bourne shell script": [
+        "Bourne shell-script"
+      ],
+      "BZip archive": [
+        "BZip-arkiv"
+      ],
+      "BZip2 archive": [
+        "BZip2-arkiv"
+      ],
+      "C-Shell script": [
+        "C-Shell-script"
+      ],
+      "GZip Compressed Archive": [
+        "GZip-komprimeret arkiv"
       ],
       "iCalendar format": [
         "iCalendar-format"
@@ -5109,11 +5172,47 @@
       "Image": [
         "Billede"
       ],
+      "Java Archive (JAR)": [
+        "Java-arkiv (JAR)"
+      ],
+      "MP3 audio": [
+        "MP3-lyd"
+      ],
+      "MPEG Video": [
+        "MPEG-video"
+      ],
+      "OGG audio": [
+        "OGG-lyd"
+      ],
+      "OGG video": [
+        "OGG-video"
+      ],
+      "RAR archive": [
+        "RAR-arkiv"
+      ],
+      "Tape Archive (TAR)": [
+        "Tape-arkiv (TAR)"
+      ],
+      "Text": [
+        "Tekst"
+      ],
       "Unknown file": [
         "Ukendt fil"
       ],
       "Video file": [
         "Videofil"
+      ],
+      "WEBM audio": [
+        "WEBM-lyd"
+      ],
+      "WEBM video": [
+        "WEBM-video"
+      ],
+      "WEBP image": [
+        "WEBP-billede"
+      ],
+      "ZIP archive": [
+        "ZIP-arkiv"
       ]
     },
     "Modal title": {
@@ -5705,11 +5804,29 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alle aliasser"
+      ],
+      "Create alias": [
+        "Opret alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasser"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email aliasser giver dig mulighed for at tilmelde dig ting online uden at dele din e-mailadresse. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nyt alias"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Åbn ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Beskyt din online-identitet"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
@@ -6188,6 +6305,12 @@
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
+      "Alias copied to clipboard": [
+        "Alias kopieret til udklipsholder"
+      ],
+      "Alias saved and copied": [
+        "Alias gemt og kopieret"
+      ],
       "Bug reported": [
         "Fejl anmeldt"
       ],
@@ -6532,6 +6655,9 @@
       "Empty trash": [
         "Tøm Papirkurv"
       ],
+      "Enable 2FA": [
+        "Aktivér 2FA"
+      ],
       "Enable drive search": [
         "Aktivér søgning på drev"
       ],
@@ -6559,6 +6685,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "Fandt ${ searchView.numberOfResults } resultat",
         "Fandt ${ searchView.numberOfResults } resultater"
+      ],
+      "Get advanced protection": [
+        "Få avanceret beskyttelse"
       ],
       "Groups": [
         "Grupper"
@@ -6617,6 +6746,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Need more aliases?": [
+        "Brug for flere aliasser?"
       ],
       "Night theme": [
         "Nattetema"
@@ -6695,6 +6827,9 @@
       ],
       "Searching…": [
         "Søger…"
+      ],
+      "Security center": [
+        "Sikkerhedscenter"
       ],
       "Select action to take on contact group": [
         "Vælg handling for kontaktgruppe"
@@ -6818,6 +6953,9 @@
       ],
       "Your 500 MB bonus": [
         "Din 500 MB bonus"
+      ],
+      "Your account is protected": [
+        "Din konto er beskyttet"
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"

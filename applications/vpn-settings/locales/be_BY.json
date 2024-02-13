@@ -254,9 +254,6 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
-      "Give feedback": [
-        "Пакінуць водгук"
-      ],
       "Got it": [
         "Зразумела"
       ],
@@ -3399,9 +3396,6 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Гэта не ваша прылада? Скарыстайцеся акном прыватнага браўзера для ўваходу і закрыйце яго пасля завяршэння працы. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -4062,9 +4056,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
       ],
-      "You'll stay signed in even after you close the browser.": [
-        "Ваша прысутнасць у сістэме захаваецца нават калі вы закрыеце браўзер."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш уліковы запіс ${ BRAND_NAME } у цяперашні час прыпынены. На 29 дзень, лісты больш не будуць трапляць у паштовую скрыню, а абагуленыя спасылкі на воблачным дыску будуць заблакіраваны, і вы не зможаце запампоўваць новыя файлы. Для ўзнаўлення звычайнага абслугоўвання, аплаціце ўсе неаплачаныя рахункі."
       ],
@@ -4182,6 +4173,9 @@
       ],
       "Credit": [
         "Крэдыт"
+      ],
+      "Credit note": [
+        "Крэдытная нататка"
       ],
       "Currency conversion": [
         "Канвертацыя валюты"
@@ -5982,10 +5976,10 @@
     },
     "passwordless": {
       "All administrators will get access to the key.": [
-        "Усе адміністратары атрымаюць доступ да гэтага ключа."
+        "Усе адміністратары атрымаюць доступ да ключа."
       ],
       "Are you sure you want to change your organization key?": [
-        "Вы сапраўды хочаце змяніць ваш ключ арганізацыі?"
+        "Вы сапраўды хочаце змяніць свой ключ арганізацыі?"
       ],
       "Change organization key": [
         "Змяніць ключ арганізацыі"
@@ -5997,7 +5991,7 @@
         "Ключы арганізацыі актываваныя"
       ],
       "Organization key does not exist.": [
-        "Ключы арганізацыі не існуе."
+        "Ключ арганізацыі не існуе."
       ],
       "Organization key must be activated to give admin privileges": [
         "Ключ арганізацыі павінен быць актываваны, каб даць прывілеі адміністратара"
@@ -6075,9 +6069,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "Tax Country": [
-        "Падаткаабкладанне краіны"
-      ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
       ]
@@ -6087,7 +6078,7 @@
         "Памылковы нумар карткі"
       ],
       "Invalid expiration date": [
-        "Памылковая дата завяршэння тэрміну дзеяння"
+        "Памылковая дата заканчэння тэрміну дзеяння карткі"
       ],
       "Invalid securiry code": [
         "Памылковы код бяспекі"
@@ -6099,7 +6090,7 @@
         "Мы не можам аўтэнтыфікаваць ваш спосаб аплаты. Выберыце іншы спосаб аплаты або паспрабуйце яшчэ раз."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
-        "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі трансакцыі."
+        "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
       ]
     },
     "Permission": {

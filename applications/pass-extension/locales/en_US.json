@@ -11,7 +11,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run. ${ infoText }"
+        "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosave, Autosuggest) should not be run. ${ infoText }"
       ]
     },
     "Error": {
@@ -60,6 +60,12 @@
       ],
       "Need help ?": [
         "Need help?"
+      ],
+      "Total imported items : ": [
+        "Total imported items: "
+      ],
+      "Total items : ": [
+        "Total items: "
       ]
     },
     "Title": {
@@ -74,6 +80,9 @@
       ],
       "Permanently remove all items ?": [
         "Permanently remove all items?"
+      ],
+      "The extension is now ready to use.": [
+        "The extension is now ready to use"
       ]
     },
     "Validation": {
@@ -87,6 +96,12 @@
     "Warning": {
       "An error occured while exporting your data": [
         "An error occurred while exporting your data"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Could not send invitations to the following addresses:"
+      ],
+      "Please contact us for investigating the issue": [
+        "Please contact us to investigate the issue"
       ],
       "Trash alias ?": [
         "Trash alias?"
