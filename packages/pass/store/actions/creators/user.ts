@@ -3,7 +3,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
-import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, HydratedAccessState } from '@proton/pass/store/reducers';
 import type { MaybeNull } from '@proton/pass/types';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -29,10 +29,8 @@ export const getUserAccessIntent = createAction('user::access::get::intent', (us
 export const getUserAccessSuccess = createAction(
     'user::access::get::success',
     withRequestSuccess(
-        (payload: SafeUserAccessState & { organization: MaybeNull<Organization> }) => withCache({ payload }),
-        {
-            maxAge: UNIX_HOUR / 2,
-        }
+        (payload: HydratedAccessState & { organization: MaybeNull<Organization> }) => withCache({ payload }),
+        { maxAge: UNIX_HOUR / 2 }
     )
 );
 
