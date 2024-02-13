@@ -15,7 +15,7 @@ const RemoveButton = ({ device, showRemoveDeviceModal, close }: Props) => {
         <ContextMenuButton
             name={c('Action').t`Remove`}
             icon="trash"
-            testId="context-menu-rename"
+            testId="context-menu-remove"
             action={() => showRemoveDeviceModal({ device })}
             close={close}
         />
