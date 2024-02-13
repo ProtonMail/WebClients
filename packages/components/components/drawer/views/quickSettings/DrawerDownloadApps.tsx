@@ -25,7 +25,7 @@ const DrawerDownloadApps = () => {
         <InboxDestktopSpotlight show={show} onDisplayed={onDisplayed} onClose={onClose}>
             <ButtonLike
                 as={SettingsLink}
-                path="/protonmail-for-desktop"
+                path="/get-the-apps"
                 app={APP_NAME}
                 data-testid="drawer-quick-settings:download-apps-button"
                 shape="outline"
