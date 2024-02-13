@@ -47,10 +47,10 @@ export const createSettingsService = () => {
         WorkerMessageType.PAUSE_WEBSITE,
         withPayload(async ({ criteria, hostname }) => {
             store.dispatch(updatePauseListItem({ criteria, hostname }));
-            await service.sync(selectProxiedSettings(store.getState()));
             return true;
         })
     );
+
     return { onInstall, ...service };
 };
 
