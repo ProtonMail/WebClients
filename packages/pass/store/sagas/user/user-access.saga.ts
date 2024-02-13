@@ -1,24 +1,26 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { getUserAccess, getUserOrganization } from '@proton/pass/lib/user/user.requests';
 import { getUserAccessFailure, getUserAccessIntent, getUserAccessSuccess } from '@proton/pass/store/actions';
-import type { SafeUserAccessState } from '@proton/pass/store/reducers';
+import type { HydratedAccessState } from '@proton/pass/store/reducers';
+import { selectUser } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { MaybeNull} from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { PlanType, SessionLockStatus } from '@proton/pass/types';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization, User } from '@proton/shared/lib/interfaces';
 
 function* syncPlan({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
     try {
         const loggedIn = getAuthStore().hasSession();
         const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
-        if (!loggedIn || locked) throw new Error('Cannot fetch user plan');
+        const user: MaybeNull<User> = yield select(selectUser);
+        if (!loggedIn || locked || !user) throw new Error('Cannot fetch user plan');
 
-        const access: SafeUserAccessState = yield getUserAccess();
-        // we get organisation only for B2B users;
-        const organization: MaybeNull<Organization> = yield access.plan?.Type === PlanType.business
-            ? getUserOrganization()
-            : null;
+        const access: HydratedAccessState = yield getUserAccess();
+
+        /* Resolve organisation data only for B2B admins */
+        const b2bAdmin = access.plan?.Type === PlanType.business;
+        const organization: MaybeNull<Organization> = b2bAdmin ? yield getUserOrganization() : null;
 
         yield put(getUserAccessSuccess(meta.request.id, { ...access, organization: organization }));
     } catch (error) {
