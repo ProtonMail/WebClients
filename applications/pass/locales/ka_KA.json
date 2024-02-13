@@ -257,6 +257,9 @@
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
       ],
+      "Not now": [
+        "არა ახლა"
+      ],
       "OK": [
         "დიახ"
       ],
@@ -435,6 +438,9 @@
       ],
       "Cannot send invitation at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
+      "Cannot send invitations at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი"
       ],
       "Could not confirm this invite at the moment": [
@@ -815,6 +821,13 @@
       "For security reasons, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "მიიღეთ Pass-ის ფუნქციების უმრავლესობა თითოეული გუნდისთვის ან პროექტისთვის საკუთარი საცავის შექმნით."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
       ],
@@ -833,6 +846,12 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "იმისათვის, რომ ${ PASS_APP_NAME }-სგან სრული სიამოვნება მიიღოთ, გაფართოებას საჭირო წვდომები მიეცით"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "დააყენეთ ${ PASS_APP_NAME } ${ browser.title }-სთვის, რომ შესვლის დეტალები ავტომატურად შეივსოს."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "დააყენეთ ${ PASS_APP_NAME } ${ browser.title }-სთვის, რომ შესვლის დეტალები ავტომატურად შეივსოს. "
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -934,6 +953,10 @@
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
+      ],
       "Permanently deleting selected items": [
         "მონიშნული ელემენტების სამუდამოდ წაშლა"
       ],
@@ -1029,6 +1052,9 @@
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "გატანილი ფაილი არ შეიცავს იმ გაზიარებული საცავების მონაცემებს, სადაც თქვენ მფლობელი არ ბრძანდებით"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -1183,6 +1209,9 @@
       "Alphabetical": [
         "ანბანით"
       ],
+      "Application logs": [
+        "აპლიკაციის ჟურნალი"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ავტომატური დაბლოკვა"
       ],
@@ -1227,6 +1256,9 @@
       ],
       "Display": [
         "ჩვენება"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
       ],
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
@@ -1494,6 +1526,9 @@
       ],
       "View details": [
         "დეტალების ხილვა"
+      ],
+      "View logs": [
+        "ჟურნალის ნახვა"
       ],
       "Websites": [
         "ვებსაიტები"
@@ -1863,6 +1898,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
+      ],
+      "Please contact us for investigating the issue": [
+        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
