@@ -67,7 +67,7 @@ const PayPalView = ({
     const allowedPaymentTypes: PaymentMethodFlows[] = ['signup', 'signup-pass', 'subscription', 'invoice', 'credit'];
     const isAllowedPaymentType = type && allowedPaymentTypes.includes(type);
 
-    const allowedOtherTypes: PaymentMethodFlows[] = ['donation', 'human-verification'];
+    const allowedOtherTypes: PaymentMethodFlows[] = ['donation'];
     const isAllowedOtherType = type && allowedOtherTypes.includes(type);
 
     return (

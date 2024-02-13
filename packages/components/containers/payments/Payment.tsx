@@ -144,7 +144,7 @@ export const PaymentsNoApi = ({
         }
     }, [loading, allMethods.length]);
 
-    if (['donation', 'human-verification'].includes(type) && amount < MIN_DONATION_AMOUNT) {
+    if (['donation'].includes(type) && amount < MIN_DONATION_AMOUNT) {
         const price = (
             <Price key="price" currency={currency}>
                 {MIN_DONATION_AMOUNT}
