@@ -325,9 +325,6 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
-      "Give feedback": [
-        "Feu-nos comentaris"
-      ],
       "Go to Drive": [
         "Ves a Drive"
       ],
@@ -3686,9 +3683,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per obtenir els millors resultats, eviteu retransmissions i activitats que consumeixin molta memòria o dividiu la càrrega en lots més petits."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "de l'historial de versions?"
       ],
@@ -3731,9 +3725,6 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -4092,7 +4083,7 @@
         "Alguna cosa ha anat malament. Intenteu-ho de nou més tard."
       ],
       "Something went wrong...": [
-        "S'ha produït un error..."
+        "Alguna cosa ha anat malament..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "La subscripció està finalitzant: Reactiveu-la abans de ${ byDate } per a mantenir els beneficis de ${ planName }. ${ reactivateLink }"
@@ -4268,6 +4259,9 @@
       ],
       "Want to sync files faster?": [
         "Voleu sincronitzar fitxers més ràpidament?"
+      ],
+      "Warning": [
+        "Advertència"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Molt bé, acabeu de doblar el vostre emmagatzematge gratuït!"
@@ -4910,6 +4904,9 @@
       ],
       "Yes, I want to permanently delete my old files": [
         "Sí, vull eliminar permanentment els meus fitxers antics."
+      ],
+      "Your alias": [
+        "El vostre àlies"
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
@@ -5753,14 +5750,28 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Tots els àlies"
+      ],
+      "Create alias": [
+        "Crea un àlies"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
+      "New alias": [
+        "Nou àlies"
+      ],
       "Open ${ PASS_APP_NAME }": [
-        "Obrir ${ PASS_APP_NAME }"
+        "Obri ${ PASS_APP_NAME }"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Proveu ${ PASS_APP_NAME }"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "Mostra els registres"
       ]
     },
     "Select files": {
@@ -6197,7 +6208,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } d'emmagatzematge"
+        "emmagatzematge de ${ app }"
       ],
       "Your storage is full": [
         "L'emmagatzematge és ple."
@@ -6558,6 +6569,9 @@
       ],
       "Empty trash": [
         "Buida la paperera"
+      ],
+      "Enable 2FA": [
+        "Activa l'autenticació 2FA"
       ],
       "Enable drive search": [
         "Habilita la cerca de la unitat"
