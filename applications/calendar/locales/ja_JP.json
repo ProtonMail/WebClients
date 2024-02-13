@@ -3721,9 +3721,6 @@
       "Existent, added and removed participants will be notified.": [
         "既存の参加者、追加や削除を行った参加者にはメールが送られます。"
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
-      ],
       "Frequency modifications will be lost.": [
         "間隔の設定は失われます"
       ],
@@ -3747,9 +3744,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
@@ -4011,6 +4005,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
+      ],
+      "Warning": [
+        "警告"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -5508,6 +5505,9 @@
       ]
     },
     "Security Center": {
+      "Create alias": [
+        "エイリアスを作成"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -5516,6 +5516,11 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をお試しください"
+      ]
+    },
+    "Security Center - Action": {
+      "View logs": [
+        "ログを表示"
       ]
     },
     "Select files": {
@@ -6406,6 +6411,9 @@
       "Feedback": [
         "フィードバック"
       ],
+      "Get advanced protection": [
+        "高度な保護を入手"
+      ],
       "Groups": [
         "グループ"
       ],
@@ -6493,8 +6501,14 @@
       "Reshare your calendars": [
         "カレンダーを再び共有"
       ],
+      "Save": [
+        "保存"
+      ],
       "Save changes": [
         "変更を保存"
+      ],
+      "Security center": [
+        "セキュリティセンター"
       ],
       "Select a day in the month": [
         "日付を選択"
@@ -6755,6 +6769,9 @@
       ],
       "Contacts could not be merged": [
         "連絡先を統合できませんでした"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "パスワードを覚えていない場合は、鍵を再度有効にすることはできません。 わたしたちはアラートバナーを解除するお手伝いはできますが、その鍵で暗号化されたすべてのデータへのアクセスを永久に失うことになります。"
