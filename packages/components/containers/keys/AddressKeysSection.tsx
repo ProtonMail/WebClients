@@ -47,7 +47,7 @@ import useDisplayKeys from './shared/useDisplayKeys';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
@@ -242,19 +242,24 @@ const AddressKeysSection = () => {
         if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
-        await importKeysProcess({
-            api,
-            address: Address,
-            addressKeys: addressKeys,
-            addresses: Addresses,
-            userKeys,
-            keyImportRecords,
-            keyPassword: authentication.getPassword(),
-            onImport: cb,
-            keyTransparencyVerify,
-        });
-        await keyTransparencyCommit(userKeys);
-        return call();
+        try {
+            stop();
+            await importKeysProcess({
+                api,
+                address: Address,
+                addressKeys: addressKeys,
+                addresses: Addresses,
+                userKeys,
+                keyImportRecords,
+                keyPassword: authentication.getPassword(),
+                onImport: cb,
+                keyTransparencyVerify,
+            });
+            await keyTransparencyCommit(userKeys);
+            return await call();
+        } finally {
+            start();
+        }
     };
 
     const handleExportPrivate = (ID: string) => {
@@ -371,19 +376,24 @@ const AddressKeysSection = () => {
                         if (!userKeys || !Addresses || !addressesKeys) {
                             throw new Error('Missing dependencies');
                         }
-                        await reactivateKeysProcess({
-                            api,
-                            user: User,
-                            userKeys,
-                            addresses: Addresses,
-                            addressesKeys,
-                            keyReactivationRecords,
-                            keyPassword: authentication.getPassword(),
-                            onReactivation,
-                            keyTransparencyVerify,
-                        });
-                        await keyTransparencyCommit(userKeys).catch(noop);
-                        return call();
+                        try {
+                            stop();
+                            await reactivateKeysProcess({
+                                api,
+                                user: User,
+                                userKeys,
+                                addresses: Addresses,
+                                addressesKeys,
+                                keyReactivationRecords,
+                                keyPassword: authentication.getPassword(),
+                                onReactivation,
+                                keyTransparencyVerify,
+                            });
+                            await keyTransparencyCommit(userKeys).catch(noop);
+                            return await call();
+                        } finally {
+                            start();
+                        }
                     }}
                     {...reactivateKeyProps}
                 />
