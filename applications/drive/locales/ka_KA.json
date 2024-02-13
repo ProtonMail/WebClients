@@ -325,9 +325,6 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
-      "Give feedback": [
-        "უკუკავშირი"
-      ],
       "Go to Drive": [
         "Drive-ზე გადასვლა"
       ],
@@ -567,9 +564,6 @@
       ],
       "Save": [
         "შენახვა"
-      ],
-      "Save and copy alias": [
-        "შენახვა და ფსევდონიმის კოპირება"
       ],
       "Search": [
         "ძებნა"
@@ -1962,11 +1956,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების წაშლა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "შექმნილია მომხმარებლებისთვის, რომლების თავიანთი ანგარიშებისთვის გაძლიერებულ უსაფრთხოებას ეძებენ."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების დაშიფვრა და შემოტანა... ამას რამდენიმე წუთი შეიძლება დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე დიდი არაა და არ შეიცავს ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "როგორც ჩანს კონტაქტების სია, რომლის შემოტანასაც ცდილობთ, ჯგუფებსაც შეიცავს. გადახედეთ, გნებავთ თუ არა ამ ჯგუფების შემოტანა."
@@ -1985,6 +1985,9 @@
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
+      ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "ასწიეთ თქვენი სატარიფო გეგმა, რომ გაააქტიუროთ ${ PROTON_SENTINEL_NAME }, ჩვენი უახლესი AI-ზე დაფუძნებული უსაფრთხოების გადაწყვეტილება თავისი საკუთარი 24/7 პროფესიონალური მხარდაჭერით."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
@@ -3742,9 +3745,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
-      ],
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
       ],
@@ -3787,9 +3787,6 @@
       ],
       "Import mailbox": [
         "საფოსტო ყუთის შემოტანა"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
       ],
       "Important note": [
         "მნიშვნელოვანი შენიშვნა"
@@ -4193,9 +4190,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
-      "The vault your alias will be stored in.": [
-        "საცავი, რომელშიც თქვენი ფსევდონიმი იქნება შენახული."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
       ],
@@ -4585,9 +4579,6 @@
       ],
       "Add image URL": [
         "გამოსახულების URL-ის დამატება"
-      ],
-      "Add title": [
-        "სათაურის დამატება"
       ],
       "Add to group": [
         "ჯგუფში ჩამატება"
@@ -5936,14 +5927,14 @@
       "Create alias": [
         "ფსევდონიმის შექმნა"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "მაგ Amazon, eBay, Etsy"
-      ],
-      "Get an alias": [
-        "ფსევდონიმის მიღება"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-ის ფსევდონიმები"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email ფსევდონიმები საშუალებას გაძლევთ, დარეგისტრირდეთ ინტერნეტ-რესურსებზე თქვენი ნამდვილი ელფოსტის მისამართის გაზიარების გარეშე. ${ learnMoreLink }"
       ],
       "New alias": [
         "ახალი ფსევდონიმი"
@@ -5964,6 +5955,9 @@
       ]
     },
     "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "ჩვენი უკანასკნელი სიტყვა - AI-ზე დაშენებული უსაფრთხოების გადაწყვეტილება მომხმარებლები, რომლებსაც თავიანთი ანგარიშებისთვის გაძლიერებული უსაფრთხოება სჭირდებათ. ${ learnMoreLink }"
+      ],
       "Sentinel is **active** and safeguarding your account.": [
         "Sentinel **აქტიურია** და იცავს თქვენს ანგარიშს."
       ]
