@@ -1,6 +1,6 @@
 import Papa, { ParseLocalConfig, ParseResult } from 'papaparse';
 
-import { GIGA } from '@proton/shared/lib/constants';
+import { GIGA, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
@@ -40,6 +40,10 @@ const convertCSVUser = (
 
     if (!Password || typeof Password !== 'string') {
         throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
+    }
+
+    if (Password.length < MIN_PASSWORD_LENGTH) {
+        throw new CsvConversionError(CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH);
     }
 
     const emailAddresses = (() => {
@@ -255,7 +259,7 @@ export function getSampleCSV(
                       '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
               }
             : { EmailAddress: '# Enter the email address you want to set up for this user' }),
-        Password: '# Add a password for their account',
+        Password: '# Add a password with a minimum of 8 characters for their account',
         ...(includeStorage ? { TotalStorage: '# Amount of storage the user will have in GiB' } : {}),
         ...(includeVpnAccess
             ? {
