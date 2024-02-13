@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
+      "Create and copy alias": [
+        "Crea e copia l'alias"
+      ],
       "Create calendar": [
         "Crea calendario"
       ],
@@ -266,9 +269,6 @@
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
-      ],
-      "Give feedback": [
-        "Dai una valutazione"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -488,9 +488,6 @@
       ],
       "Save": [
         "Salva"
-      ],
-      "Save and copy alias": [
-        "Salva e copia l'alias"
       ],
       "Search": [
         "Cerca"
@@ -3942,9 +3939,6 @@
       "Existent, added and removed participants will be notified.": [
         "I partecipanti esistenti, aggiunti e rimossi saranno notificati."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Le modifiche di frequenza andranno perse."
       ],
@@ -3969,9 +3963,6 @@
       ],
       "Import mailbox": [
         "Importa casella di posta"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -4195,9 +4186,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
-      ],
-      "The vault your alias will be stored in.": [
-        "La cassaforte in cui verrà salvato il tuo alias."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
@@ -4527,9 +4515,6 @@
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
-      "Add title": [
-        "Aggiungi un nome"
-      ],
       "Add to group": [
         "Aggiungi a un gruppo"
       ],
@@ -4616,6 +4601,9 @@
       ],
       "Don't ask again": [
         "Non chiederlo più"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "Es. Amazon, eBay, Zalando"
       ],
       "Email": [
         "Email"
@@ -5645,9 +5633,6 @@
     "Payments": {
       "Billing Country": [
         "Paese di fatturazione"
-      ],
-      "Tax Country": [
-        "Paese di tassazione"
       ]
     },
     "PGP key encryption warning": {
@@ -5842,14 +5827,11 @@
       "Create alias": [
         "Crea un alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "Es. Amazon, eBay, Zalando"
+      "Create an alias": [
+        "Crea un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Gestisci facilmente i tuoi alias e le tue password e generane nuovi al volo."
-      ],
-      "Get an alias": [
-        "Ottieni un alias"
       ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
@@ -5869,7 +5851,10 @@
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+      "Used on amazon for shopping, etc.": [
+        "Utilizzato su Amazon per shopping, ecc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Quando ti viene chiesto il tuo indirizzo email, fornisci invece questo alias. Aggiungi un nome e una nota per tenere traccia di dove lo usi."
       ]
     },

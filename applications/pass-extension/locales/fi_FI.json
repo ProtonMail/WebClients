@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Jaa useammalle henkilölle päivittämällä tilauksesi"
       ],
+      "View app logs": [
+        "Näytä sovelluksen lokit"
+      ],
       "Write us on Reddit": [
         "Kirjoita meille Redditissä"
       ],
@@ -503,6 +506,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Kutsua ei voi lähettää juuri nyt",
+        "Kutsuja ei voi lähettää juuri nyt"
+      ],
+      "Cannot send invitations at the moment": [
         "Kutsuja ei voi lähettää juuri nyt"
       ],
       "Could not confirm this invite at the moment": [
@@ -938,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan."
+      ],
       "Generating alias...": [
         "Luodaan aliasta..."
       ],
@@ -1066,6 +1076,10 @@
       "Password copied": [
         "Salasana kopioitiin"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikko sitten poistetaan automaattisesti historiasta.",
+        "Salasanat, jotka on luotu yli ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa sitten poistetaan automaattisesti historiasta."
+      ],
       "Pending access to the shared data": [
         "Odotetaan pääsyä jaettuihin tietoihin"
       ],
@@ -1173,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun kenttää klikataan tai se kohdistetaan."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Vientitiedosto ei sisällä tietoja jaetuista holveista, joita et omista"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
@@ -2111,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
+      ],
+      "Please contact us for investigating the issue": [
+        "Ota meihin yhteyttä ongelman tutkimiseksi"
       ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"

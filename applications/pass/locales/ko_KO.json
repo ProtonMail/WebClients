@@ -107,6 +107,9 @@
       "Create login": [
         "로그인 생성"
       ],
+      "Create new items": [
+        "새 항목 생성"
+      ],
       "Create note": [
         "메모 생성"
       ],
@@ -197,6 +200,9 @@
       "Importing": [
         "가져오는 중"
       ],
+      "Install extension": [
+        "확장 설치"
+      ],
       "Invite others": [
         "다른 사용자 초대"
       ],
@@ -251,6 +257,9 @@
       "Move to trash": [
         "휴지통으로 이동"
       ],
+      "Not now": [
+        "다음에"
+      ],
       "OK": [
         "확인"
       ],
@@ -283,6 +292,9 @@
       ],
       "Remove access": [
         "접근 제거"
+      ],
+      "Remove member": [
+        "구성원 추방"
       ],
       "Request a feature": [
         "기능 요청"
@@ -424,11 +436,17 @@
       "Auto-lock could not be disabled": [
         "자동 잠금을 비활성화 할 수 없습니다."
       ],
+      "Cannot send invitations at the moment": [
+        "현재 초대 전송할 수 없습니다."
+      ],
       "Could not confirm this invite at the moment": [
         "현재 초대를 수락할 수 없습니다."
       ],
       "Could not leave vault.": [
         "금고를 떠날 수 없습니다."
+      ],
+      "Could not load recommendations at the moment.": [
+        "추천 항목을 불러올 수 없습니다."
       ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
@@ -669,6 +687,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
+      "${ count } invites successfully sent": [
+        "초대 ${ count }개를 잘 보냈습니다"
+      ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
       ],
@@ -725,6 +746,9 @@
       ],
       "Auto-lock successfully disabled": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "기존의 비밀번호를 ${ BRAND_NAME }으로 가져오십시오."
       ],
       "Built in 2FA authenticator": [
         "내장형 2FA 인증기"
@@ -783,6 +807,9 @@
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
       ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "각 팀이나 프로젝트를 위한 금고를 만들어 Pass를 최대한 활용하세요."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus를 구독하여 무제한 별명을 사용하고, 독점 기능과 Proton 지원을 사용해 보세요."
       ],
@@ -801,11 +828,20 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "${ PASS_APP_NAME }의 최고의 경험을 누리기 위하여, 필요한 확장 권한을 허용해 주세요."
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요. "
+      ],
       "Internet connection lost": [
         "인터넷 연결 없음"
       ],
       "Invitation sent": [
         "초대장을 보냈습니다"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "특정 사람들을 초대하고 올바른 권한을 설정하세요."
       ],
       "Invite successfully removed": [
         "초대장을 성공적으로 삭제했습니다."
@@ -942,6 +978,9 @@
       "Select destination vault": [
         "대상 금고 선택"
       ],
+      "Select vault to share": [
+        "공유하려면 금고 선택"
+      ],
       "Select where you want your imported vault(s) to be saved.": [
         "불러온 금고가 저장될 위치를 선택하세요."
       ],
@@ -989,6 +1028,9 @@
       ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
@@ -1133,6 +1175,9 @@
       "Alphabetical": [
         "알파벳 순"
       ],
+      "Application logs": [
+        "어플리케이션 로그"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 자동 잠금"
       ],
@@ -1177,6 +1222,9 @@
       ],
       "Display": [
         "표시"
+      ],
+      "Download logs": [
+        "로그 다운로드"
       ],
       "Empty trash": [
         "휴지통 비우기"
@@ -1264,6 +1312,15 @@
       ],
       "Logins": [
         "로그인"
+      ],
+      "Make all admins": [
+        "전체 구성원을 관리자로 선택"
+      ],
+      "Make all editors": [
+        "전체 구성원을 편집자로 선택"
+      ],
+      "Make all viewers": [
+        "전체 구성원을 뷰어로 선택"
       ],
       "Members": [
         "구성원"
@@ -1435,6 +1492,9 @@
       ],
       "View details": [
         "세부사항 보기"
+      ],
+      "View logs": [
+        "로그 보기"
       ],
       "Websites": [
         "웹 사이트"
@@ -1621,6 +1681,9 @@
       "Import to vault(s)": [
         "금고로 가져오기"
       ],
+      "Import your data": [
+        "나의 데이터 불러오기"
+      ],
       "Install extension": [
         "확장 프로그램 설치"
       ],
@@ -1666,8 +1729,14 @@
       "Settings": [
         "설정"
       ],
+      "Share vaults with your team": [
+        "내 팀과 금고 공유"
+      ],
       "Share with": [
         "공유 대상:"
+      ],
+      "Suggestions": [
+        "제안"
       ],
       "Transfer ownership": [
         "소유권 이전"
@@ -1730,11 +1799,20 @@
       "An error occured while exporting your data": [
         "데이터를 내보내는데 오류가 발생했습니다."
       ],
+      "At least one email address is required": [
+        "적어도 하나의 이메일 주소가 필요합니다"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "현재 별명에서 메일함으로 가져올 수 없습니다."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "다음의 주소에 초대장을 보낼수 없었습니다 :"
+      ],
+      "Duplicate email addresses.": [
+        "중복된 이메일 주소들입니다."
       ],
       "Empty note": [
         "빈 메모"
@@ -1744,6 +1822,9 @@
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
+      ],
+      "Invalid email addresses.": [
+        "유효하지 않은 이메일 주소들입니다."
       ],
       "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."
@@ -1777,6 +1858,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
+      ],
+      "Please contact us for investigating the issue": [
+        "문제 조사를 위해 연락을 부탁드립니다."
       ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."

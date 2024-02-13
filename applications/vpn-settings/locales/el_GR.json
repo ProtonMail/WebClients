@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
       "activate": [
         "ενεργοποιήστε"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Change keys": [
+        "Αλλαγή κλειδιών"
       ],
       "Change mailbox password": [
         "Αλλαγή κωδικού γραμματοκιβωτίου"
@@ -247,9 +253,6 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
-      ],
-      "Give feedback": [
-        "Αφήστε την κριτική σας"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -1955,6 +1958,9 @@
       "Code wrong or not valid anymore": [
         "Κωδικός λανθασμένος ή μη έγκυρος πλέον"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -3315,9 +3321,6 @@
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -3920,6 +3923,9 @@
         "Έχετε ${ availableCount } διαθέσιμο αποκλειστικό διακομιστή.",
         "Έχετε ${ availableCount } διαθέσιμους αποκλειστικούς διακομιστές."
       ],
+      "You have no invoices.": [
+        "Δεν έχετε τιμολόγια."
+      ],
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
       ],
@@ -3952,9 +3958,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
@@ -4074,6 +4077,9 @@
       "Credit": [
         "Πίστωση"
       ],
+      "Currency conversion": [
+        "Μετατροπή Νομίσματος"
+      ],
       "Donation": [
         "Δωρεά"
       ],
@@ -4131,6 +4137,9 @@
       ],
       "Addresses": [
         "Διευθύνσεις"
+      ],
+      "Administrators": [
+        "Διαχειριστές"
       ],
       "Allow recovery by email": [
         "Άδεια ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
@@ -4500,6 +4509,9 @@
       ],
       "Value": [
         "Τιμή"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -5268,6 +5280,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ trialPlanName } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
@@ -5688,6 +5703,14 @@
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Ρυθμίστε τον οργανισμό σας"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Έναρξη χρήσης του ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Διατηρήστε αυτό το πλάνο"
@@ -5711,8 +5734,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } ανά μήνα"
       ],
+      "/month /user": [
+        "/μήνα /χρήστη"
+      ],
+      "/month /user, billed annually": [
+        "/μήνας /χρήστης, χρεώνεται ετησίως"
+      ],
+      "/month /user, billed biennially": [
+        "/μήνας /χρήστης, χρεώνεται ανά διετία"
+      ],
       "Creating your account": [
         "Γίνεται δημιουργία του λογαριασμού σας"
+      ],
+      "Current plan": [
+        "Τρέχον πλάνο"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
@@ -5725,6 +5760,9 @@
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
+      ],
+      "Get in touch with our sales team": [
+        "Επικοινωνήστε με την ομάδα πωλήσεών μας"
       ],
       "Includes:": [
         "Περιλαμβάνει:"
@@ -5756,12 +5794,60 @@
         "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
       ]
     },
+    "passwordless": {
+      "Change organization key": [
+        "Αλλαγή κλειδιού οργανισμού"
+      ],
+      "Organization key activated": [
+        "Το κλειδί οργανισμού ενεργοποιήθηκε"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Reset organization key": [
+        "Επαναφορά κλειδιού οργανισμού"
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Αριθμός κάρτας"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "ΜΜ/ΕΕ"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Μη έγκυρος αριθμός κάρτας"
+      ],
+      "Invalid expiration date": [
+        "Μη έγκυρη ημερομηνία λήξης"
+      ],
+      "Invalid securiry code": [
+        "Μη έγκυρος κωδικός ασφαλείας"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Δεν είμαστε σε θέση να επαληθεύσουμε τον τρόπο πληρωμής σας. Παρακαλούμε επιλέξτε διαφορετικό τρόπο πληρωμής ή προσπαθήστε ξανά."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
     "Permission": {
@@ -7062,6 +7148,9 @@
       ],
       "Change role": [
         "Αλλαγή ρόλου"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
       ],
       "Confirm address": [
         "Επιβεβαιώση διεύθυνσης"

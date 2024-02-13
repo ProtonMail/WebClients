@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Crear un grupo de contactos nuevo"
       ],
+      "Create and copy alias": [
+        "Crear y copiar alias"
+      ],
       "Create calendar": [
         "Crear calendario"
       ],
@@ -266,9 +269,6 @@
       ],
       "Get verification code": [
         "Obtener código de verificación"
-      ],
-      "Give feedback": [
-        "Denos su opinión"
       ],
       "Go to label": [
         "Ir a la etiqueta"
@@ -488,9 +488,6 @@
       ],
       "Save": [
         "Guardar"
-      ],
-      "Save and copy alias": [
-        "Guardar y copiar alias"
       ],
       "Search": [
         "Buscar"
@@ -3942,9 +3939,6 @@
       "Existent, added and removed participants will be notified.": [
         "Se notificarán a los participantes existentes, añadidos y borrados."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Redirija correos entrantes desde otra cuenta a su buzón seguro de ${ MAIL_APP_NAME }."
-      ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
       ],
@@ -3969,9 +3963,6 @@
       ],
       "Import mailbox": [
         "Importar buzón"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importe sus correos, calendarios y contactos desde otro servicio a ${ BRAND_NAME }."
       ],
       "Important note": [
         "Nota importante"
@@ -4195,9 +4186,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
-      ],
-      "The vault your alias will be stored in.": [
-        "La bóveda donde se guardará su alias."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
@@ -4527,9 +4515,6 @@
       "Add image URL": [
         "Añadir URL de imagen"
       ],
-      "Add title": [
-        "Añadir un nombre"
-      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -4616,6 +4601,9 @@
       ],
       "Don't ask again": [
         "No volver a preguntar"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "p. ej., Amazon, eBay, Mercado Libre"
       ],
       "Email": [
         "Correo"
@@ -5645,9 +5633,6 @@
     "Payments": {
       "Billing Country": [
         "País de facturación"
-      ],
-      "Tax Country": [
-        "País de impuestos"
       ]
     },
     "PGP key encryption warning": {
@@ -5842,14 +5827,11 @@
       "Create alias": [
         "Crear un alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "p. ej., Amazon, eBay, Mercado Libre"
+      "Create an alias": [
+        "Crear un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Genere alias rápidamente, y administre fácilmente sus alias y contraseñas."
-      ],
-      "Get an alias": [
-        "Obtener un alias"
       ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
@@ -5869,8 +5851,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Pruebe ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Cuando se le pregunte por su dirección de correo, brinde este alias en su lugar. Añada un nombre y una nota para monitorear donde lo use."
+      "Used on amazon for shopping, etc.": [
+        "Usado para compras en Amazon, etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Cuando se le pregunte por su dirección de correo, brinde este alias en su lugar. Añada un título y una nota para monitorear donde lo use."
       ]
     },
     "Security Center - Action": {

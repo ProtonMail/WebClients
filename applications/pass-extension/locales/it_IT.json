@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Effettua l'upgrade ora per condividere con più persone"
       ],
+      "View app logs": [
+        "Visualizza i log dell'app"
+      ],
       "Write us on Reddit": [
         "Scrivici su Reddit"
       ],
@@ -1110,6 +1113,9 @@
       "Please enter your current PIN code to continue": [
         "Inserisci il tuo PIN attuale per continuare"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Effettua l'upgrade per avere l'accesso anticipato all'app web di ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Premi Invio per copiare"
       ],
@@ -1185,6 +1191,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Il menu di compilazione automatica si aprirà automaticamente quando clicchi o selezioni il campo."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Il file di esportazione non conterrà i dati delle casseforti condivise di cui non sei il proprietario"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
         "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
@@ -1224,6 +1233,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Effettua l'upgrade di ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Effettua ora l'upgrade per sbloccare le funzionalità premium"
       ],
       "Use vaults to share this item with others.": [
         "Usa le casseforti per poter condividere questo elemento con altri."
@@ -1504,16 +1516,16 @@
         "Lingua"
       ],
       "Last 2 weeks": [
-        "Ultime 2 settimane"
+        "Ultimi 14 giorni"
       ],
       "Last autofill": [
         "Ultima compilazione automatica"
       ],
       "Last month": [
-        "Mese precedente"
+        "Ultimi 30 giorni"
       ],
       "Last week": [
-        "Ultima settimana"
+        "Ultimi 7 giorni"
       ],
       "Latest import": [
         "Ultima importazione"
@@ -1543,7 +1555,7 @@
         "Modificato"
       ],
       "More than a month": [
-        "Più di 1 mese"
+        "Oltre gli ultimi 30 giorni"
       ],
       "Most recent": [
         "Più recenti"
@@ -1957,7 +1969,7 @@
         "Password"
       ],
       "Pending access to the shared data": [
-        "Accesso ai dati condivisi in attesa"
+        "In attesa dell'accesso ai dati condivisi"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -2003,6 +2015,9 @@
       ],
       "Update available": [
         "Aggiornamento disponibile"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Effettua l'upgrade per sbloccare le funzionalità premium"
       ],
       "Use my email": [
         "Usa la mia email"

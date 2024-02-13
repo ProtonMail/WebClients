@@ -254,9 +254,6 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
-      "Give feedback": [
-        "Ge feedback"
-      ],
       "Got it": [
         "Förstått"
       ],
@@ -427,6 +424,9 @@
       ],
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Select file": [
         "Välj fil"
@@ -1958,6 +1958,9 @@
       "Code wrong or not valid anymore": [
         "Kod fel eller inte giltig längre"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Kunde inte ladda fakturor. Försök igen senare."
+      ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
       ],
@@ -3226,6 +3229,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
@@ -3315,9 +3321,6 @@
       ],
       "No results found": [
         "Inga resultat hittades"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Inte din enhet? Använd ett privat surffönster för att logga in och stäng det när du är klar. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
@@ -3921,6 +3924,9 @@
         "Du har ${ availableCount } dedikerad server tillgänglig.",
         "Du har ${ availableCount } dedikerade servrar tillgängliga."
       ],
+      "You have no invoices.": [
+        "Du har inga fakturor."
+      ],
       "You have no saved payment methods.": [
         "Du har inga sparade betalningsmetoder."
       ],
@@ -3953,9 +3959,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du förblir inloggad även efter att du stänger webbläsaren."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ditt ${ BRAND_NAME }-konto är för närvarande avstängt. Efter 28 dagar kommer e-post inte längre att levereras till din inkorg, dina delade länkar från Drive kommer att blockeras och du kommer inte att kunna ladda upp nya filer. För att återuppta tjänsten som vanligt, betala eventuella förfallna fakturor."
@@ -4074,6 +4077,9 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Currency conversion": [
+        "Valutaomvandling"
       ],
       "Donation": [
         "Donation"
@@ -4495,6 +4501,9 @@
       ],
       "Value": [
         "Värde"
+      ],
+      "VAT": [
+        "VAT"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -5278,6 +5287,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
@@ -5899,6 +5911,43 @@
       ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
+      "Timeout exceeded": [
+        "Timeout överskriden"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ogiltigt kortnummer"
+      ],
+      "Invalid expiration date": [
+        "Ogiltigt förfallodatum"
+      ],
+      "Invalid securiry code": [
+        "Ogiltig säkerhetskod"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Något gick fel. Försök igen senare."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Vi kan inte autentisera din betalningsmetod. Välj en annan betalningsmetod eller försök igen."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
     "Permission": {

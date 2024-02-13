@@ -463,11 +463,17 @@
       "Cannot create alias (${ error }).": [
         "エイリアスを作成できません (${ error })。"
       ],
+      "Cannot send invitations at the moment": [
+        "現在招待を送ることができません"
+      ],
       "Could not confirm this invite at the moment": [
         "現時点ではこの招待を確認できませんでした"
       ],
       "Could not leave vault.": [
         "フォルダーから退出できません"
+      ],
+      "Could not load recommendations at the moment.": [
+        "現時点では推奨事項を読み込めませんでした。"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
@@ -523,11 +529,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動できませんでした"
       ],
+      "Failed to pin item": [
+        "アイテムを固定できませんでした"
+      ],
       "Failed to remove user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
       ],
       "Failed to transfer this vault's ownership.": [
         "このフォルダーの所有権の移行に失敗しました。"
+      ],
+      "Failed to unpin item": [
+        "アイテムの固定を解除できませんでした"
       ],
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
@@ -981,6 +993,9 @@
       "Pinning item...": [
         "アイテムを固定中..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
+      ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "現在のロックの登録を解除するには、PINコードを確認してください。\n${ PASS_APP_NAME } はロックされなくなります。"
       ],
@@ -1001,6 +1016,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "プライバシーは私たちにとって大きな懸念事項です。 ${ PASS_APP_NAME } が異なる理由をご覧ください。"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
       ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
@@ -1810,6 +1828,9 @@
       "Pin the extension": [
         "拡張機能をピン留めする"
       ],
+      "Pinned (${ items.length })": [
+        "ピン留め (${ items.length })"
+      ],
       "Review and share": [
         "レビューして共有"
       ],
@@ -1921,6 +1942,9 @@
       ],
       "Empty note": [
         "空のメモ"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"

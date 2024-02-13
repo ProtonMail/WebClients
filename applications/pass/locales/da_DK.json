@@ -257,6 +257,9 @@
       "Move to trash": [
         "Flyt til papirkurv"
       ],
+      "Not now": [
+        "Ikke nu"
+      ],
       "OK": [
         "Ok"
       ],
@@ -435,6 +438,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitation i øjeblikket",
+        "Kan ikke sende invitationer i øjeblikket"
+      ],
+      "Cannot send invitations at the moment": [
         "Kan ikke sende invitationer i øjeblikket"
       ],
       "Could not confirm this invite at the moment": [
@@ -815,6 +821,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
+        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Få mest muligt ud af Pass ved at oprette en boks til hvert team eller projekt."
       ],
@@ -943,6 +953,10 @@
       "Pass Plus trial": [
         "Pass Plus prøveversion"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
+        "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger slettes automatisk fra historikken."
+      ],
       "Permanently deleting selected items": [
         "De valgte elementer slettes permanent"
       ],
@@ -1038,6 +1052,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Eksportfilen vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1192,6 +1209,9 @@
       "Alphabetical": [
         "Alfabetisk"
       ],
+      "Application logs": [
+        "Applikationslogs"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Autolås ${ PASS_APP_NAME }"
       ],
@@ -1236,6 +1256,9 @@
       ],
       "Display": [
         "Visning"
+      ],
+      "Download logs": [
+        "Hent logfiler"
       ],
       "Empty trash": [
         "Tøm papirkurv"
@@ -1503,6 +1526,9 @@
       ],
       "View details": [
         "Vis detaljer"
+      ],
+      "View logs": [
+        "Vis logfiler"
       ],
       "Websites": [
         "Websider"
@@ -1872,6 +1898,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
+      ],
+      "Please contact us for investigating the issue": [
+        "Kontakt os, så vi kan undersøge problemet"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."

@@ -626,11 +626,11 @@
       "No": [
         "Ні"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "Гаразд"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
@@ -6503,9 +6503,6 @@
       "Not yet available in our Android mobile app.": [
         "Наразі недоступний у нашій мобільній програмі для Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Користуєтеся чужим пристроєм? Використовуйте вікно приватного перегляду, щоб увійти та завершити сеанс, коли все готово. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Доступний у бета-версії настільний застосунок дозволяє зручно запускати ${ MAIL_APP_NAME } просто з робочого столу і зосереджуватися без відволікань на браузер."
       ],
@@ -7457,6 +7454,9 @@
       "You have no calendars to export.": [
         "У вас немає календарів, які можна експортувати."
       ],
+      "You have no invoices.": [
+        "У вас немає рахунків."
+      ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
       ],
@@ -7510,9 +7510,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення. Це також вимкне відновлення довірених пристроїв."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Сеанс буде активним навіть після закриття браузера."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }."
@@ -9542,6 +9539,23 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -9575,23 +9589,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -10076,6 +10073,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміумфункціями, оберіть тарифний план та спосіб оплати."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробний період завершується ${ formattedPeriodEndDate }"
@@ -10812,6 +10812,14 @@
         "Ви"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Налаштуйте свою організацію"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Почати використовувати ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Перегляньте функції ${ appName }"
@@ -10993,6 +11001,9 @@
       "Save your recovery kit to continue": [
         "Збережіть комплект для відновлення, щоб продовжити"
       ],
+      "Setting up your organization": [
+        "Налаштування вашої організації"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Вхід у ${ PASS_APP_NAME }"
       ],
@@ -11047,12 +11058,31 @@
         "Захистіть свій обліковий запис"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Доступ заборонено. Права адміністратора було обмежено."
+      ],
+      "The organization key must be activated first.": [
+        "Спочатку необхідно активувати ключ організації."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банківська картка"
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Недійсний номер картки"
+      ],
+      "Invalid expiration date": [
+        "Недійсний термін дії картки"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ваша картка була відхилена. Будь ласка, спробуйте скористатися іншою картою або зверніться у свій банк для авторизації платежу."
       ]
     },
     "Personal calendar section description": {
@@ -11652,6 +11682,9 @@
       ],
       "Email address": [
         "Адреса е-пошти"
+      ],
+      "Organization name": [
+        "Назва організації"
       ],
       "Password": [
         "Пароль"
