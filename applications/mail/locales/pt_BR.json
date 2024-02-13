@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Limpar toda a formatação"
       ],
+      "Clear application data": [
+        "Limpar cache do aplicativo"
+      ],
       "Clear browser data": [
         "Limpar dados do navegador"
       ],
@@ -259,6 +262,9 @@
       ],
       "Create a new label": [
         "Criar um novo marcador"
+      ],
+      "Create and copy alias": [
+        "Criar e copiar alias"
       ],
       "Create folder": [
         "Criar pasta"
@@ -435,9 +441,6 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
-      ],
-      "Give feedback": [
-        "Dar feedback"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -904,6 +907,9 @@
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
+      ],
+      "Select country": [
+        "Selecionar país"
       ],
       "Select date and time": [
         "Selecione data e hora"
@@ -5209,6 +5215,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
       ],
+      "Clear app data": [
+        "Limpar dados do aplicativo"
+      ],
       "Clear data": [
         "Limpar dados"
       ],
@@ -5753,6 +5762,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Remove todos os dados associados com esse aplicativo, incluindo mensagens baixadas"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing enviará a mensagem para nós, para podermos analisá-la e aprimorar nossos filtros. Isso significa que conseguiremos ver todo o conteúdo da mensagem."
       ],
@@ -5922,9 +5934,6 @@
       "The sender has requested a read receipt.": [
         "O remetente solicitou uma confirmação de leitura."
       ],
-      "The vault your alias will be stored in.": [
-        "O cofre em que seu alias será guardado."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar a mensagem para ${ contactAddresses } ou editar o contato.",
         "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente os contatos para poder enviar a mensagem para ${ contactAddresses } ou editar os contatos."
@@ -6032,6 +6041,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será automaticamente usada para criptografar e-mails enviados para este endereço."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Isso removerá todos os dados associados com esse aplicativo, incluindo mensagens baixadas. O aplicativo irá reiniciar e você precisará iniciar a sessão novamente para usá-lo."
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente não é confiável."
@@ -6455,6 +6467,9 @@
       "Expand / contract composer": [
         "Expandir / reduzir editor"
       ],
+      "Filter": [
+        "Filtro"
+      ],
       "Forward": [
         "Encaminhar"
       ],
@@ -6630,9 +6645,6 @@
       "Add image URL": [
         "Adicionar a URL da imagem"
       ],
-      "Add title": [
-        "Adicionar título"
-      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
@@ -6767,6 +6779,9 @@
       ],
       "Don't show this again": [
         "Não mostrar isso novamente"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "p. ex., Amazon, eBay, Mercado Livre"
       ],
       "Email": [
         "E-mail"
@@ -7887,6 +7902,11 @@
         "Você"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de Faturamento"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Não é possível usar a chave para criptografar."
@@ -8171,14 +8191,11 @@
       "Create alias": [
         "Criar alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "p. ex., Amazon, eBay, Mercado Livre"
+      "Create an alias": [
+        "Criar um alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Gere aliases na hora, e gerencie seus aliases e senhas facilmente."
-      ],
-      "Get an alias": [
-        "Obter um alias"
       ],
       "Hide-my-email aliases": [
         "Aliases do hide-my-email"
@@ -8198,8 +8215,11 @@
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Adicione um nome e uma nota para manter um registro de onde você o utiliza."
+      "Used on amazon for shopping, etc.": [
+        "Usado na Amazon para compras, etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Quando solicitarem seu endereço de e-mail, dê este alias no lugar. Adicione um nome e uma nota para manter um registro de onde você o usa."
       ]
     },
     "Security Center - Action": {
@@ -8844,8 +8864,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Para continuar carregando e sincronizando arquivos, libere espaço ou atualize para obter mais armazenamento."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Para enviar ou receber e-mails, libere espaço ou ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Para enviar ou receber e-mails, libere espaço ou atualize para obter mais armazenamento."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Para enviar ou sincronizar arquivos, libere espaço ou ${ upgrade }"
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -8856,8 +8882,20 @@
       "Your ${ appStorage } is full": [
         "O ${ appStorage } está cheio."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Seu ${ storage } está ${ percentage }% cheio. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Seu ${ storage } está cheio. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Seu armazenamento está ${ percentage }% cheio. ${ cta }."
+      ],
       "Your storage is full": [
         "Seu armazenamento está cheio"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Seu armazenamento está cheio. ${ cta }."
       ]
     },
     "Success": {

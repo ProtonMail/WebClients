@@ -395,13 +395,13 @@
         "导出联系人"
       ],
       "External encryption": [
-        "外部加密"
+        "对外加密"
       ],
       "Fewer search options": [
         "收起搜索选项"
       ],
       "Filter on...": [
-        "筛选..."
+        "按此邮件创建筛选规则..."
       ],
       "Fit to window": [
         "适应窗口大小"
@@ -509,10 +509,10 @@
         "添加 ${ totalChecked } 位联系人"
       ],
       "Insert contact": [
-        "插入联系人"
+        "添加联系人"
       ],
       "Insert contacts": [
-        "插入联系人"
+        "添加联系人"
       ],
       "Insert image": [
         "插入图片"
@@ -1203,7 +1203,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 个自定义域"
+        "${ domains } 个自有域名"
       ],
       "${ ips } server": [
         "${ ips } 个服务器"
@@ -1645,7 +1645,7 @@
         "${ participantName } 暂时接受您的邀请。"
       ],
       "(Attendance optional)": [
-        "（出席可选）"
+        "（非必须出席）"
       ],
       "Adding occurrences to an event is not supported for the moment": [
         "暂不支持增加事件的重复次数"
@@ -2967,6 +2967,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
@@ -2987,6 +2990,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
@@ -3010,10 +3016,15 @@
         "您想何时发送邮件？"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+        "您可以导入 iCal 格式的日程（.ics 文件）。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3215,10 +3226,10 @@
         "解密失败：此邮件内容解密失败"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历"
+        "至少取消选择 ${ calendarsToFixCount } 份日历"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历或"
+        "至少取消选择 ${ calendarsToFixCount } 份日历或"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -3260,7 +3271,7 @@
         "加密附件失败，请重试。"
       ],
       "Filter with this name already exists": [
-        "这个名称已经用过了"
+        "此名称与现有筛选规则重复"
       ],
       "First name is too long": [
         "名字太长。"
@@ -3278,7 +3289,7 @@
         "用户名不正确"
       ],
       "Invalid email address": [
-        "无效的邮件地址"
+        "邮箱地址无效"
       ],
       "Invalid expiration time": [
         "有效期不正确"
@@ -3305,7 +3316,7 @@
         "最多只能有 ${ attachmentsCountLimit } 个附件"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
+        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Message needs to be sent first": [
         "需要先发送邮件"
@@ -3530,7 +3541,7 @@
         "请输入名称（必填）"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "由于最近重置了密码，无法解密您的邮件。如果您记得之前的密码，您可以${ reActivateKeyLink }以访问您的邮件。${ learnMoreLink }"
+        "您近期重置过密码，因此无法解密以前的邮件。如果您回忆起曾经使用的密码，${ reActivateKeyLink }即可阅读以前的邮件。${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
         "无法解密您的邮件，这可能是由于您重置了密码。${ learnMoreLink }"
@@ -4685,7 +4696,7 @@
         "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
@@ -4817,7 +4828,7 @@
         "背景颜色"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "基本的导航和操作快捷键始终可以使用，不受开关控制。"
+        "以下的基本导航和操作快捷键始终可以使用，不受开关控制。"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
@@ -5054,7 +5065,7 @@
         "何为 Hide My Email 邮箱别名"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
-        "我确定要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
+        "我需要将此邮件发给非 ${ MAIL_APP_NAME } 邮箱。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -5351,7 +5362,7 @@
         "您举报的邮件会被上传，以便我们分析并改进过滤机制。这意味着我们将得知此邮件的所有内容。"
       ],
       "Request read receipt": [
-        "请求已读回执"
+        "请对方发送回执"
       ],
       "Restore": [
         "还原"
@@ -5405,7 +5416,7 @@
         "请选择要导入的日历。每份日历导入后将在您的账户中对应生成一份新日历，具体日历数量受您账户等级的限制。"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "向 ${ boldText } 邮箱发送加密且需要密码才能打开的邮件。"
+        "向${ boldText } 的邮箱发送加密邮件，对方需要输入密码才能阅读。"
       ],
       "Sender has been blocked.": [
         "发件人已被屏蔽。"
@@ -5873,13 +5884,13 @@
         "导入完成后我们不会留存您的账号和密码。"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "您的消息将在 ${ numberOfDays } 天后过期。"
+        "您的邮件将在 ${ numberOfDays } 天后过期。"
       ],
       "Your message will expire today.": [
-        "您的消息将在今天过期。"
+        "您的邮件将在今天过期。"
       ],
       "Your message will expire tomorrow.": [
-        "您的消息将在明天过期。"
+        "您的邮件将在明天过期。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
@@ -5890,7 +5901,7 @@
         "找到 ${ filteredList.length } 条命令。"
       ],
       "Optional": [
-        "可选"
+        "非必填"
       ],
       "Selected color:": [
         "所选颜色"
@@ -6170,7 +6181,7 @@
         "始终标记发件人的邮件"
       ],
       "Always move sender's emails": [
-        "始终移除发件人的邮件"
+        "以后自动移动此人的邮件"
       ],
       "AND": [
         "且"
@@ -6188,7 +6199,7 @@
         "应用密码"
       ],
       "Apply filter to existing emails": [
-        "为已有电子邮件应用过滤器"
+        "对现有邮件执行此规则"
       ],
       "Attach screenshot(s)": [
         "截图"
@@ -7106,10 +7117,10 @@
     },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 个日历"
+        "${ n } 份日历"
       ],
       "${ n } calendar per user": [
-        "每位用户 ${ n } 个日历"
+        "每位用户 ${ n } 份日历"
       ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -7178,11 +7189,14 @@
     "new_plans: tooltip": {
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "与同事、亲友轻松分享日程安排"
       ]
     },
     "new_plans: Upsell attribute": {
       "Create up to ${ n } calendar": [
-        "创建最多 ${ n } 个日历"
+        "最多可创建 ${ n } 份日历"
       ]
     },
     "Notification": {
@@ -7442,7 +7456,10 @@
         "搜索邮件"
       ],
       "Search name, email or group": [
-        "搜索名称、电子邮件或群组"
+        "搜索名称、群组或邮箱地址"
+      ],
+      "Search parent folder": [
+        "搜索上层文件夹"
       ],
       "Select": [
         "选择"
@@ -8511,6 +8528,12 @@
       "(active)": [
         "（当前）"
       ],
+      "A filter name is required": [
+        "筛选规则的名称必须填写"
+      ],
+      "A filter with this name already exists": [
+        "此名称与现有筛选规则重复"
+      ],
       "Account recovery": [
         "账户恢复"
       ],
@@ -8713,13 +8736,16 @@
         "导出联系人"
       ],
       "External encryption": [
-        "外部加密"
+        "对外加密"
       ],
       "Feedback": [
         "用户反馈"
       ],
+      "Filter name cannot contain only spaces": [
+        "筛选规则的名称不能只有空格"
+      ],
       "Filter on...": [
-        "筛选..."
+        "按此邮件创建筛选规则..."
       ],
       "Folder options": [
         "文件夹选项"
@@ -8752,7 +8778,7 @@
         "导入失败"
       ],
       "Insert contacts": [
-        "插入联系人"
+        "添加联系人"
       ],
       "Invalid verification code": [
         "验证码无效"
