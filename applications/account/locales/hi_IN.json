@@ -566,10 +566,10 @@
       "No": [
         "नहीं"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3242,7 +3242,7 @@
         "गलत यूज़रनेम"
       ],
       "Intended recipient does not support calendar sharing": [
-        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता।"
+        "इस प्राप्तकर्ता के साथ कैलेंडर साझा नहीं किया जा सकता"
       ],
       "Invalid ${ name } code": [
         "अमान्य ${ name } कोड"
@@ -3599,6 +3599,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "एन्क्रिप्शन विफल"
+      ],
+      "Missing FN property": [
+        "एफएन संपत्ति की कमी"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard संस्करण < 3.0 सपोर्ट नहीं किया जाता"
@@ -5802,9 +5805,6 @@
       "Not a valid URL": [
         "मान्य URL नहीं है"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "आपका उपकरण नहीं है? साइन इन करने के लिए एक निजी ब्राउज़िंग विंडो का उपयोग करें और हो जाने पर इसे बंद कर दें। ${ learnMore }"
-      ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
         "आपके द्वारा असाइन करने का प्रयास किए जाने वाले समर्पित सर्वरों की संख्या (${ addedCount }) आपके प्लान में अभी भी उपलब्ध (${ remainingCount }) से अधिक है क्योंकि आपके पास ${ ownedCount } है और आप पहले से ही ${ usedCount } का उपयोग करते हैं।"
       ],
@@ -6577,6 +6577,9 @@
       "You have no calendars to export.": [
         "आपके पास निर्यात करने को कैलेंडर नहीं।"
       ],
+      "You have no invoices.": [
+        "आपका कोई चालान नहीं है।"
+      ],
       "You have no saved payment methods.": [
         "आपके पास कोई भुगतान विधि नहीं है।"
       ],
@@ -6618,9 +6621,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "आप अपने डाउनलोड किए रिकवरी फाइलों से लॉक किया डाटा रिकवर नहीं कर सकेंगे।"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "ब्राउज़र बंद करने के बाद भी आप साइन इन रहेंगे।"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "आपका ${ BRAND_NAME } खाता ${ externalEmailAddress } से जुड़ा है।"
@@ -8470,6 +8470,23 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -8503,23 +8520,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -8892,6 +8892,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
@@ -9521,6 +9524,14 @@
         "आप"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } इस्तेमाल करें"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Continue": [
         "जारी रखें"
@@ -9592,12 +9603,28 @@
         "आपके संगठन के पास ${ free } तक पहुंच है। यदि आप प्रीमियम ${ appName } सुविधाओं का उपयोग करना चाहते हैं, तो कृपया अपने संगठन के व्यवस्थापक से अपग्रेड करने के लिए कहें।"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
+      ],
+      "The organization key must be activated first.": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "क्रेडिट/डेबिट कार्ड"
       ],
       "New credit/debit card": [
         "नया क्रेडिट/डेबिट कार्ड"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "अमान्य कार्ड नंबर"
+      ],
+      "Invalid expiration date": [
+        "अमान्य एक्सपायर तारीख"
       ]
     },
     "Personal calendar section description": {
@@ -10118,6 +10145,9 @@
       ],
       "Email address": [
         "ईमेल पता"
+      ],
+      "Organization name": [
+        "संगठन नाम"
       ],
       "Password": [
         "पासवर्ड"

@@ -454,10 +454,10 @@
       "No": [
         "Ne"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -4410,6 +4410,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vi niste postavili metodu za oporavak, stoga je oporavak računa nemogućen u slučaju da zaboravite lozinku. Želite nastaviti bez načina za oporavak?"
       ],
+      "You have no invoices.": [
+        "Nemate faktura."
+      ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
       ],
@@ -5877,6 +5880,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -5892,14 +5903,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6380,6 +6383,14 @@
         "Vi"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Postavite vašu organizaciju"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Započnite koristiti ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Continue": [
         "Nastavi"
@@ -6435,9 +6446,28 @@
         "Stvorite svoj ${ BRAND_NAME } račun"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Pristup odbijen, administratorske ovlasti su ograničene."
+      ],
+      "The organization key must be activated first.": [
+        "Prvo se mora aktivirati organizacijski ključ."
+      ]
+    },
     "Payment method option": {
       "New credit/debit card": [
         "Nova kreditna/debitna kartica"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Netočan broj kartice"
+      ],
+      "Invalid expiration date": [
+        "Nevažeći datum isteka"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Vaša kartica je odbijena. Molimo pokušajte s drugom karticom ili kontaktirajte vašu banku da autorizira ovu naplatu."
       ]
     },
     "PGP key warning": {
@@ -6819,6 +6849,9 @@
       ],
       "Email address": [
         "Adresa e-pošte"
+      ],
+      "Organization name": [
+        "Naziv organizacije"
       ],
       "Password": [
         "Lozinka"
