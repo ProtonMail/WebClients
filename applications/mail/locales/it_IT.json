@@ -263,6 +263,9 @@
       "Create a new label": [
         "Crea una nuova etichetta"
       ],
+      "Create and copy alias": [
+        "Crea e copia l'alias"
+      ],
       "Create folder": [
         "Crea cartella"
       ],
@@ -438,9 +441,6 @@
       ],
       "Get verification code": [
         "Ottieni il codice di verifica"
-      ],
-      "Give feedback": [
-        "Dai una valutazione"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -871,9 +871,6 @@
       ],
       "Save": [
         "Salva"
-      ],
-      "Save and copy alias": [
-        "Salva e copia l'alias"
       ],
       "Saving${ ellipsis }": [
         "Salvataggio${ ellipsis }"
@@ -5937,9 +5934,6 @@
       "The sender has requested a read receipt.": [
         "Il mittente ha richiesto una conferma di lettura."
       ],
-      "The vault your alias will be stored in.": [
-        "La cassaforte in cui verrà salvato il tuo alias."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "La verifica di ${ contactNames } non è riuscita: il contatto non è firmato correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password. Devi firmare nuovamente il contatto per poter inviare un messaggio a ${ contactAddresses } o modificare il contatto.",
         "La verifica di ${ contactNames } non è riuscita: i contatti non sono firmati correttamente.\nQuesto potrebbe essere causato da una reimpostazione della password.\nDevi firmare nuovamente i contatti per poter inviare un messaggio a ${ contactAddresses } o modificare i contatti."
@@ -6654,9 +6648,6 @@
       "Add image URL": [
         "Aggiungi URL immagine"
       ],
-      "Add title": [
-        "Aggiungi un nome"
-      ],
       "Add to group": [
         "Aggiungi a un gruppo"
       ],
@@ -6791,6 +6782,9 @@
       ],
       "Don't show this again": [
         "Non mostrare più"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "Es. Amazon, eBay, Zalando"
       ],
       "Email": [
         "Email"
@@ -7914,9 +7908,6 @@
     "Payments": {
       "Billing Country": [
         "Paese di fatturazione"
-      ],
-      "Tax Country": [
-        "Paese di tassazione"
       ]
     },
     "PGP key encryption warning": {
@@ -8203,14 +8194,11 @@
       "Create alias": [
         "Crea un alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "Es. Amazon, eBay, Zalando"
+      "Create an alias": [
+        "Crea un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Gestisci facilmente i tuoi alias e le tue password e generane nuovi al volo."
-      ],
-      "Get an alias": [
-        "Ottieni un alias"
       ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
@@ -8230,7 +8218,10 @@
       "Try ${ PASS_APP_NAME }": [
         "Prova ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+      "Used on amazon for shopping, etc.": [
+        "Utilizzato su Amazon per shopping, ecc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Quando ti viene chiesto il tuo indirizzo email, fornisci invece questo alias. Aggiungi un nome e una nota per tenere traccia di dove lo usi."
       ]
     },
