@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -17,27 +19,22 @@ const SignupButton = ({ paths }: Props) => {
         return null;
     }
 
-    const handleSignupDesktop = () => {
-        if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker?.send('openExternal', `${window.location.origin}/mail/signup`);
-        }
-    };
-
     if (isElectronApp) {
+        const handleSignupDesktop = () => {
+            if (canInvokeInboxDesktopIPC) {
+                window.ipcInboxMessageBroker?.send('openExternal', getAppHref(paths.signup, APPS.PROTONACCOUNT));
+            }
+        };
+
         return (
-            <Button
-                key="desktop-signup"
-                shape="underline"
-                className="link link-focus text-nowrap"
-                onClick={handleSignupDesktop}
-            >
+            <Button shape="underline" className="link link-focus text-nowrap" onClick={handleSignupDesktop}>
                 {c('Link').t`Create account`}
             </Button>
         );
     }
 
     return (
-        <Link key="signup" className="link link-focus text-nowrap" to={paths.signup}>
+        <Link className="link link-focus text-nowrap" to={paths.signup}>
             {c('Link').t`Create account`}
         </Link>
     );
