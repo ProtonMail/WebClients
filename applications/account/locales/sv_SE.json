@@ -509,9 +509,6 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
-      "Give feedback": [
-        "Ge feedback"
-      ],
       "Go to label": [
         "Gå till etikett"
       ],
@@ -638,11 +635,11 @@
       "No": [
         "Nej"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -823,6 +820,9 @@
       ],
       "Select calendar view": [
         "Välj kalendervy"
+      ],
+      "Select country": [
+        "Välj land"
       ],
       "Select files": [
         "Välj filer"
@@ -3730,6 +3730,9 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Kunde inte ladda fakturor. Försök igen senare."
+      ],
       "Could not save preference": [
         "Kunde inte spara preferens"
       ],
@@ -6615,6 +6618,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inklusive ${ formattedTaxRate } % ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Öka ditt kontosäkerhet genom att verifiera din e-postadress."
       ],
@@ -6825,9 +6831,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Ännu inte tillgängligt i vår mobilapp för Android."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Inte din enhet? Använd ett privat surffönster för att logga in och stäng det när du är klar. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Nu tillgänglig i betaversion, med appen för stationär dator kan du enkelt starta ${ MAIL_APP_NAME } direkt från din stationära dator och behålla fokus utan att störa webbläsaren."
@@ -7790,6 +7793,9 @@
       "You have no calendars to export.": [
         "Du har inga kalendrar att exportera."
       ],
+      "You have no invoices.": [
+        "Du har inga fakturor."
+      ],
       "You have no saved payment methods.": [
         "Du har inga sparade betalningsmetoder."
       ],
@@ -7843,9 +7849,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Du kommer inte att kunna återställa låsta data med dina nedladdade återställningsfiler. Detta kommer också inaktivera återställning med betrodd enhet."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du förblir inloggad även efter att du stänger webbläsaren."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ditt ${ BRAND_NAME }-konto är associerad med ${ externalEmailAddress }."
@@ -8053,6 +8056,9 @@
       ],
       "Credit": [
         "Kredit"
+      ],
+      "Currency conversion": [
+        "Valutaomvandling"
       ],
       "Donation": [
         "Donation"
@@ -9193,6 +9199,9 @@
       "Username": [
         "Användarnamn"
       ],
+      "VAT": [
+        "VAT"
+      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -9937,6 +9946,23 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsätt att utvärdera"
@@ -9970,23 +9996,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -10466,6 +10475,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ trialPlanName } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din provperiod slutar den ${ formattedPeriodEndDate }"
@@ -11500,6 +11512,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Lanserar ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Tidsbegränsat erbjudande: Få ${ title } för ${ price } per användare månadsvis!"
+      ],
       "One easy subscription.": [
         "En enkel prenumeration."
       ],
@@ -11675,6 +11690,43 @@
       ],
       "New credit/debit card": [
         "Nytt kredit-/betalkort"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
+      "Timeout exceeded": [
+        "Timeout överskriden"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ogiltigt kortnummer"
+      ],
+      "Invalid expiration date": [
+        "Ogiltigt förfallodatum"
+      ],
+      "Invalid securiry code": [
+        "Ogiltig säkerhetskod"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Något gick fel. Försök igen senare."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Vi kan inte autentisera din betalningsmetod. Välj en annan betalningsmetod eller försök igen."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
       ]
     },
     "Permission": {

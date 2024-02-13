@@ -50,6 +50,9 @@
       "activate": [
         "aktivieren"
       ],
+      "Activate": [
+        "Aktivieren"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
       ],
@@ -503,9 +506,6 @@
       "Get verification code": [
         "Verifizierungscode anfordern"
       ],
-      "Give feedback": [
-        "Feedback geben"
-      ],
       "Go to label": [
         "Zu Kategorie wechseln"
       ],
@@ -632,11 +632,11 @@
       "No": [
         "Nein"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -817,6 +817,9 @@
       ],
       "Select calendar view": [
         "Kalenderansicht wählen"
+      ],
+      "Select country": [
+        "Land wählen"
       ],
       "Select files": [
         "Dateien auswählen"
@@ -3731,6 +3734,9 @@
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Rechnungen konnten nicht geladen werden. Bitte versuche es später erneut."
+      ],
       "Could not save preference": [
         "Einstellung konnte nicht gespeichert werden."
       ],
@@ -3879,7 +3885,7 @@
         "Keine E-Mails zum Importieren vorhanden — das Konto verfügt über keinen Posteingang"
       ],
       "No external key retrieved for user is valid for sending": [
-        "Der für den Benutzer abgerufene externe Schlüssel ist für den Versand ungültig."
+        "Keiner der für den Benutzer abgerufenen externen Schlüssel ist für den Versand gültig."
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
@@ -4068,6 +4074,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Um nicht-private Benutzerkonten zu erstellen und auf ihre Konten zuzugreifen, musst du deine Administratorrechte wiederherstellen."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -6818,9 +6827,6 @@
       "Not yet available in our Android mobile app.": [
         "In unserer mobilen Android-App noch nicht verfügbar."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nicht dein Gerät? Verwende ein privates Browser-Fenster, um dich anzumelden, und schließe es, wenn du fertig bist. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Jetzt in der Beta-Version verfügbar, ermöglicht die Desktop-App das bequeme Starten von \\${ MAIL_APP_NAME } direkt vom Desktop aus und hilft dir, dich ohne Ablenkungen durch den Browser zu konzentrieren."
       ],
@@ -7779,6 +7785,9 @@
       "You have no calendars to export.": [
         "Du hast keine Kalender zum Exportieren."
       ],
+      "You have no invoices.": [
+        "Keine Rechnungen vorhanden."
+      ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
@@ -7832,9 +7841,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch werden auch vertrauenswürdige Informationen zur Wiederherstellung des Geräts ungültig."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du bleibst angemeldet, auch wenn du den Browser schließt."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft."
@@ -8144,6 +8150,9 @@
       "Expand / contract composer": [
         "Verfassen-Fenster vergrößern/verkleinern"
       ],
+      "Filter": [
+        "Filter"
+      ],
       "Forward": [
         "Weiterleiten"
       ],
@@ -8398,6 +8407,9 @@
       ],
       "Addresses": [
         "E-Mail-Adressen"
+      ],
+      "Administrators": [
+        "Administratoren"
       ],
       "ALL": [
         "ALLE"
@@ -9176,6 +9188,9 @@
       "Username": [
         "Benutzername"
       ],
+      "VAT": [
+        "MwSt"
+      ],
       "Verification code": [
         "Verifizierungscode"
       ],
@@ -9884,6 +9899,9 @@
       "Back to inbox": [
         "Zurück zum Posteingang"
       ],
+      "Back to vaults": [
+        "Zurück zu den Tresoren"
+      ],
       "Block": [
         "Gesperrt"
       ],
@@ -9892,6 +9910,9 @@
       ],
       "Inbox": [
         "Posteingang"
+      ],
+      "Pass vaults": [
+        "Pass-Tresore"
       ],
       "Spam": [
         "Spam"
@@ -9917,6 +9938,23 @@
       ],
       "Medium VPN speed": [
         "Mittlere VPN-Geschwindigkeit"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: action": {
@@ -9952,23 +9990,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -10073,6 +10094,9 @@
       "Autofill credit cards (coming soon)": [
         "Kreditkarten automatisch ausfüllen (bald verfügbar)"
       ],
+      "Automatic email forwarding": [
+        "Automatische E-Mail-Weiterleitung"
+      ],
       "Available on all platforms": [
         "Verfügbar auf allen Plattformen"
       ],
@@ -10104,7 +10128,7 @@
         "Benutzerdefinierte Felder"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Eigene Aufschubzeit"
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
@@ -10244,6 +10268,9 @@
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
+      "SSO integration (coming soon)": [
+        "SSO-Integration (demnächst verfügbar)"
+      ],
       "Start protecting your organization": [
         "Schütze deine Organisation"
       ],
@@ -10321,7 +10348,7 @@
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
+        "Schiebe die Nachricht auf und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -10436,6 +10463,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Um ${ trialPlanName } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Deine Testversion endet am ${ formattedPeriodEndDate }"
@@ -11203,6 +11233,14 @@
         "Du"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Organisation einrichten"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Beginnen, ${ PASS_APP_NAME } zu verwenden"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Sieh dir die Funktionen von ${ appName } an"
@@ -11233,6 +11271,9 @@
       ],
       "Or ${ createANewAccount }": [
         "Oder ${ createANewAccount }"
+      ],
+      "Request trial": [
+        "Testversion anfordern"
       ],
       "Start using ${ appName }": [
         "Beginne, ${ appName } zu verwenden"
@@ -11267,6 +11308,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Mit ${ BRAND_NAME }-Konto fortfahren"
+      ],
+      "Let's talk": [
+        "Lass uns reden"
       ],
       "Limited time offer": [
         "Zeitlich befristetes Angebot"
@@ -11303,8 +11347,14 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pro Monat"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "Fortschrittlicher Schutz, der über die Branchenstandards hinausgeht"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Alle Premium-Dienste von ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Sitz in der Schweiz, DSGVO-konform"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Aber du kannst ${ discount } Rabatt erhalten, wenn du auf **${ upsellPlanTitle }** upgradest — es kostet nur ${ relativePrice } extra pro Monat."
@@ -11323,6 +11373,9 @@
       ],
       "Creating your account": [
         "Dein Konto wird erstellt"
+      ],
+      "Current plan": [
+        "Aktuelles Abonnement"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Entdecke ${ PASS_APP_NAME },${ br }unseren neuen verschlüsselten Passwortmanager"
@@ -11345,6 +11398,12 @@
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
       ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Unverzichtbarer Schutz und sichere Zusammenarbeit für unbegrenzte Benutzer"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Alles aus ${ planTitle }, plus..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
       ],
@@ -11357,11 +11416,17 @@
       "Free forever": [
         "Dauerhaft kostenlos"
       ],
+      "From the team that knows encryption": [
+        "Von dem Team, das sich mit Verschlüsselung auskennt"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Hol dir ${ appName } für ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Hol dir bald ${ appName } für ${ browserName }"
+      ],
+      "Get in touch with our sales team": [
+        "Wende dich an unser Vertriebsteam"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-Aliasse schützen deine E-Mails vor Datenpannen"
@@ -11396,6 +11461,9 @@
       "One easy subscription.": [
         "Ein einfaches Abonnement."
       ],
+      "Open source and audited": [
+        "Quelloffen und unabhängig geprüft"
+      ],
       "Open-source and audited": [
         "Quelloffen und unabhängig geprüft"
       ],
@@ -11420,11 +11488,17 @@
       "Save your recovery kit to continue": [
         "Lade dein Wiederherstellungs-Kit herunter, um fortzufahren."
       ],
+      "Setting up your organization": [
+        "Deine Organisation wird eingerichtet"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Anmelden bei ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Spezielles Einführungsangebot: Hol dir ${ title } für ${ price } für immer!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Maßgeschneiderte Lösungen für größere Organisationen mit benutzerdefinierten Anforderungen."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Das von dir gewählte Angebot ist für ${ currentPlanTitle }-Abonnenten nicht verfügbar."
@@ -11477,12 +11551,47 @@
         "Sichere dein Konto"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Für Unternehmen"
+      ],
+      "For invididuals": [
+        "Für Einzelpersonen"
+      ]
+    },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Berechtigung verweigert, Administrationsprivilegien wurden eingeschränkt."
+      ],
+      "The organization key must be activated first.": [
+        "Der Organisationsschlüssel muss zuerst aktiviert werden."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit-/Debitkarte"
       ],
       "New credit/debit card": [
         "Neue Kredit-/Debitkarte"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Rechnungsland"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ungültige Kartennummer"
+      ],
+      "Invalid expiration date": [
+        "Ungültiges Ablaufdatum"
+      ],
+      "Invalid securiry code": [
+        "Ungültiger Sicherheitscode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Etwas ist schiefgelaufen. Bitte versuche es später erneut."
       ]
     },
     "Permission": {
@@ -11801,6 +11910,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } Administrator in deiner Organisation benötigt Zugriff auf den Organisationsschlüssel.",
+        "${ n } Administratoren in deiner Organisation benötigten Zugriff auf den Organisationsschlüssel."
+      ],
       "Changing organization keys": [
         "Schüssel der Organisation ändern"
       ],
@@ -12281,6 +12394,9 @@
       "Email address": [
         "E‐Mail‐Adresse"
       ],
+      "Organization name": [
+        "Name der Organisation"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -12585,7 +12701,7 @@
         "Probiere ${ app } in vollem Umfang aus"
       ],
       "upgrade for more storage": [
-        "upgrade für zusätzlichen Speicherplatz."
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Upgrade dein Abonnement, um dein Konto weiterhin ohne Unterbrechungen nutzen zu können."
@@ -12606,8 +12722,20 @@
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dein ${ storage } ist zu ${ percentage }% voll. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dein ${ storage } ist voll. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dein Speicherplatz ist zu ${ percentage }% voll. ${ cta }."
+      ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dein Speicherplatz ist voll. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du verlierst den Zugang zu ${ gb } Speicherplatz und vorrangigem Support."
@@ -13394,6 +13522,9 @@
       ],
       "Composing": [
         "Verfassen"
+      ],
+      "Confirm": [
+        "Bestätigen"
       ],
       "Confirm address": [
         "Adresse bestätigen"

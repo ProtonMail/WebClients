@@ -50,6 +50,9 @@
       "activate": [
         "kullanıma al"
       ],
+      "Activate": [
+        "Kullanıma al"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Aboneliği iptal et"
+      ],
+      "Change keys": [
+        "Anahtarları değiştir"
       ],
       "Change mailbox password": [
         "Posta kutusu parolasını değiştir"
@@ -503,9 +509,6 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Give feedback": [
-        "Geri bildirimde bulunun"
-      ],
       "Go to label": [
         "Etikete git"
       ],
@@ -632,10 +635,10 @@
       "No": [
         "Hayır"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3731,6 +3734,9 @@
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Faturalar yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
       "Could not save preference": [
         "Ayar kaydedilemedi"
       ],
@@ -3892,6 +3898,9 @@
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Korunmayan kullanıcılar oluşturmak için kuruluş anahtarı kullanıma alınmalıdır"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -4068,6 +4077,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için yönetici yetkilerinizi geri yüklemelisiniz."
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
@@ -6089,6 +6101,9 @@
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Bu kullanıcıya yönetici yetkileri vermek istediğinize emin misiniz?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Tüm günlük kayıtlarınızı silmek istediğinize emin misiniz?"
       ],
@@ -6607,6 +6622,9 @@
       "inactive": [
         "etkin değil"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
@@ -6817,9 +6835,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Henüz Android mobil uygulamamızda kullanılamıyor."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Kullandığınız aygıt sizin değil mi? Arkanızda bir iz bırakmamak için özel/gizli pencere kullanın. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Beta sürümü yayınlanmış olan ${ MAIL_APP_NAME } bilgisayar uygulamasını kullanarak, tarayıcıda dikkatinizi dağıtabilecek şeylerden etkilenmeden odaklanabilirsiniz."
@@ -7776,6 +7791,9 @@
       "You have no calendars to export.": [
         "Dışa aktarılabilecek bir takviminiz yok."
       ],
+      "You have no invoices.": [
+        "Herhangi bir faturanız yok."
+      ],
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
       ],
@@ -7829,9 +7847,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "İndirdiğiniz kurtarma dosyalarını kullanarak kilitlenmiş verileri kurtaramazsınız. Ayrıca bu işlem güvenilir aygıt kurtarmayı da geçersiz kılar."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Oturumunuz tarayıcıyı kapattıktan sonra bile açık kalır."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilendirilmiş."
@@ -8039,6 +8054,12 @@
       ],
       "Credit": [
         "Kredi"
+      ],
+      "Credit note": [
+        "Kredi notu"
+      ],
+      "Currency conversion": [
+        "Para birimi dönüştürme"
       ],
       "Donation": [
         "Bağış"
@@ -8395,6 +8416,9 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "Administrators": [
+        "Yöneticiler"
       ],
       "ALL": [
         "TÜMÜ"
@@ -9173,6 +9197,9 @@
       "Username": [
         "Kullanıcı adı"
       ],
+      "VAT": [
+        "KDV"
+      ],
       "Verification code": [
         "Doğrulama kodu"
       ],
@@ -9881,6 +9908,9 @@
       "Back to inbox": [
         "Gelen kutusuna dön"
       ],
+      "Back to vaults": [
+        "Kasalara dön"
+      ],
       "Block": [
         "Engellenen"
       ],
@@ -9889,6 +9919,9 @@
       ],
       "Inbox": [
         "Gelen kutusu"
+      ],
+      "Pass vaults": [
+        "Parola kasaları"
       ],
       "Spam": [
         "İstenmeyen"
@@ -9914,6 +9947,23 @@
       ],
       "Medium VPN speed": [
         "Orta VPN hızı"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: action": {
@@ -9949,23 +9999,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -10069,6 +10102,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Otomatik kredi kartı doldurma (yakında)"
+      ],
+      "Automatic email forwarding": [
+        "Otomatik e-posta iletme"
       ],
       "Available on all platforms": [
         "Tüm platformlarda kullanılabilir"
@@ -10207,6 +10243,9 @@
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
       ],
+      "Require 2FA for organization": [
+        "Kuruluş için iki adımlı doğrulama gereksin"
+      ],
       "Router support": [
         "Yöneltici desteği"
       ],
@@ -10240,6 +10279,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Tek oturum açma bütünleştirmesi (yakında)"
       ],
       "Start protecting your organization": [
         "Kuruluşunuzu korumaya başlayın"
@@ -10282,6 +10324,9 @@
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
@@ -10434,6 +10479,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
@@ -10466,6 +10514,9 @@
       ],
       "terms and conditions": [
         "hüküm ve koşullar"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Oturum açan kullanıcılarınızın göreceği kuruluş adı."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Başlamak için görüntülenecek bir ad yazın. Bu ad, e-posta ve etkinlik davetleri ile dosya paylaşımı gönderdiğiniz kişilere görüntülenir."
@@ -10532,6 +10583,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } hesabınıza gönderilen e-postaları otomatik olarak başka bir e-posta adresine iletin."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
@@ -11200,6 +11254,20 @@
         "Siz"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Parolalarınızı, takma adlarınızı ve diğer kayıtları yönetmek için kasanıza gidin."
+      ],
+      "Set up your organization": [
+        "Kuruluşunuzu ayarlayın"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Kullanıcılara ${ PASS_APP_NAME } erişim izni vermek için kullanıcı eklemeye başlayın."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kullanmaya başlayın"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "${ appName } özelliklerine bakın"
@@ -11230,6 +11298,9 @@
       ],
       "Or ${ createANewAccount }": [
         "Ya da ${ createANewAccount }un"
+      ],
+      "Request trial": [
+        "Deneme isteğinde bulun"
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
@@ -11264,6 +11335,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızla ilerleyin"
+      ],
+      "Let's talk": [
+        "Hadi konuşalım."
       ],
       "Limited time offer": [
         "Sınırlı süreli teklif"
@@ -11300,8 +11374,23 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } aylık"
       ],
+      "/month /user": [
+        "/ay /kullanıcı"
+      ],
+      "/month /user, billed annually": [
+        "/ay /kullanıcı, yıllık faturalanır"
+      ],
+      "/month /user, billed biennially": [
+        "/ay /kullanıcı, iki yılda bir faturalanır"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Endüstri standartlarının ötesine geçen gelişmiş koruma"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Tüm ücretli ${ BRAND_NAME } hizmetleri."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "İsviçre merkezli, GDPR uyumlu"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ancak **${ upsellPlanTitle }** tarifesine yükselterek, aylık yalnızca ${ relativePrice } ek ödeme ile ${ discount } indirimden yararlanabilirsiniz."
@@ -11320,6 +11409,9 @@
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
+      ],
+      "Current plan": [
+        "Geçerli tarife"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "${ PASS_APP_NAME },${ br }yeni şifrelenmiş parola yöneticimiz"
@@ -11342,6 +11434,15 @@
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "**${ username }** için görüntülenecek adı yazın. Bu ad, izinlerini değiştirdiğinizde ya da onlarla veri paylaştığınızda kullanıcılarınıza görüntülenir."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Sınırsız kullanıcılar için temel koruma ve güvenli iş birliği"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "${ planTitle } tarifesindeki her şeye ek olarak"
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
       ],
@@ -11354,11 +11455,20 @@
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
+      "From the team that knows encryption": [
+        "Şifrelemenin kitabını yazan ekipten"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "${ browserName } için ${ appName } edinin"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Yakında ${ browserName } için ${ appName } yayınlanacak"
+      ],
+      "Get in touch with our sales team": [
+        "Satış ekibimizle görüşün"
+      ],
+      "Get the security and features your business needs": [
+        "Kuruluşunuza uygun güvenlik ve özellik düzeyini seçin"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email takma adları, e-postanızı verilerinizin ele geçirilmesinden korur"
@@ -11387,11 +11497,20 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "${ BRAND_NAME } hizmetlerine güvenen 50.000 üzerindeki kuruluşa katılın"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulaması başlatılıyor"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Sınırlı süreli teklif: Kullanıcı başına aylık ${ price } karşılığında ${ title } alın!"
+      ],
       "One easy subscription.": [
         "Tek bir kolay abonelik."
+      ],
+      "Open source and audited": [
+        "Açık kaynaklı ve denetlenmiş"
       ],
       "Open-source and audited": [
         "Açık kaynaklı ve denetlenmiş"
@@ -11417,11 +11536,17 @@
       "Save your recovery kit to continue": [
         "İlerlemek için kurtarma paketinizi kaydedin"
       ],
+      "Setting up your organization": [
+        "Kuruluşunuz ayarlanıyor"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasında oturum açılıyor"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Özel açılış teklifi: Sonsuza dek ${ title } için ${ price } ödeyin!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Özel gereksinimleri olan daha büyük kuruluşlar için isteğe göre hazırlanmış çözümler."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Seçtiğiniz teklif, ${ currentPlanTitle } abonelerine sunulmuyor."
@@ -11474,12 +11599,128 @@
         "Hesabınızı koruyun"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Kuruluşlar için"
+      ],
+      "For invididuals": [
+        "Bireyler için"
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Tüm yöneticiler anahtara erişebilecek."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Kuruluş anahtarınızı değiştirmek istediğinize emin misiniz?"
+      ],
+      "Change organization key": [
+        "Kuruluş anahtarını değiştir"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Korunmayan kullanıcılar, kurulum anahtarlarına sahip olduklarında yöneticiliğe yükseltilebilir"
+      ],
+      "Organization key activated": [
+        "Kuruluş anahtarı kullanıma alındı"
+      ],
+      "Organization key does not exist.": [
+        "Kuruluş anahtarı bulunamadı."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Yönetici yetkileri vermek için kuruluş anahtarı kullanıma alınmalıdır"
+      ],
+      "Organization key restored": [
+        "Kuruluş anahtarı geri yüklendi"
+      ],
+      "Organization key updated": [
+        "Kuruluş anahtarı güncellendi"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "İzin verilmedi, yönetici yetkileri kısıtlandı."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Korunan kullanıcılar ilk kez oturum açtıklarında yöneticiliğe yükseltilebilir"
+      ],
+      "Reset organization key": [
+        "Kuruluş anahtarını sıfırla"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Şu yöneticiler kuruluş anahtarına erişebilecek."
+      ],
+      "The organization key must be activated first.": [
+        "Önce kuruluş anahtarı kullanıma alınmalıdır."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Bu işlem, şu anda erişimi olmayan yöneticilere en son kuruluş anahtarını gönderir."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Korunmayan kullanıcı hesapları oluşturmak ve bu hesaplara erişmek için kuruluş anahtarınızı kullanıma almalısınız."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Hesabınıza yönetici yetkilerini atamak için kuruluş anahtarını kullanıma alın."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Yönetici yetkilerini geri yüklemek için bir veri kurtarma yöntemi kullanın ya da kuruluş anahtarını sıfırlayın."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Yönetici yetkilerini geri yüklemek için bir veri kurtarma yöntemi kullanın, başka bir yöneticiye başvurun ya da kuruluş anahtarını sıfırlayın."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Bu göndericinin adres anahtarının güvenli olduğunu doğrulayamadık. Bazen gönderici bilgilerinin güncellenmesi gecikebilir. Bir süre sonra yeniden deneyin. Bu davetiyenin veya göndericinin geçerliliğine güvenmiyorsanız, ${ BRAND_NAME } müşteri destek ekibi ile görüşün."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Bu göndericinin ve davetin gerçekliğini doğruladık."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Tarafından **${ organizationName }** kuruluşunun yöneticisi yapıldınız."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Yeni bir kuruluş anahtarı oluşturmadan önce tüm kullanıcıları korunan olarak güncellemeniz gerekir"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredi ya da banka kartı"
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Kart numarası"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "AA/YY"
+      ],
+      "Timeout exceeded": [
+        "Zaman aşımı süresi aşıldı"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Kart numarası geçersiz"
+      ],
+      "Invalid expiration date": [
+        "Son kullanma tarihi geçersiz"
+      ],
+      "Invalid securiry code": [
+        "Güvenlik kodu geçersiz"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Ödeme yönteminizi doğrulayamıyoruz. Lütfen başka bir ödeme yöntemi seçin ya da yeniden deneyin."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
       ]
     },
     "Permission": {
@@ -11798,6 +12039,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor.",
+        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor."
+      ],
       "Changing organization keys": [
         "Kuruluş anahtarlarını değiştirme"
       ],
@@ -12277,6 +12522,9 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Organization name": [
+        "Kuruluş adı"
       ],
       "Password": [
         "Parola"
@@ -12796,6 +13044,9 @@
       ],
       "Address updated": [
         "Adres güncellendi"
+      ],
+      "Administrator privileges restored": [
+        "Yönetici yetkileri geri yüklendi"
       ],
       "Auto-reply disabled": [
         "Otomatik yanıt özelliği açıldı"
@@ -13392,6 +13643,9 @@
       "Composing": [
         "İleti oluşturma"
       ],
+      "Confirm": [
+        "Onayla"
+      ],
       "Confirm address": [
         "E-posta adresini onaylayın"
       ],
@@ -13812,6 +14066,9 @@
       ],
       "Organization filters": [
         "Kuruluş süzgeçleri"
+      ],
+      "Organization key": [
+        "Kuruluş anahtarı"
       ],
       "Organization name": [
         "Kuruluş adı"
@@ -14706,6 +14963,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS yapılandırmanızda bir sorun bulduk. Lütfen kayıtlarınızın aşağıdaki yönergelere uygun olduğundan emin olun. Sorun sürerse, DKIM imzalamayı kapatmamız gerekecek."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Korunmayan bir üyeye e-posta adresi eklemeden önce kuruluş anahtarını ${ activateLink }manız gerekir."
       ],
       "You will lose any customization you made so far.": [
         "Şu ana kadar yaptığınız tüm özelleştirmeler silinecek."

@@ -626,11 +626,11 @@
       "No": [
         "Não"
       ],
-      "OK": [
-        "Aceitar"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
@@ -6491,9 +6491,6 @@
       "Not yet available in our Android mobile app.": [
         "Ainda não está disponível na nossa aplicação móvel para Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Não é o seu dispositivo? Utilize uma janela de navegação privada para iniciar sessão e feche-a quando terminar. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados na organização"
       ],
@@ -7425,6 +7422,9 @@
       "You have no calendars to export.": [
         "Não tem calendários para exportar."
       ],
+      "You have no invoices.": [
+        "Não tem faturas."
+      ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento guardados."
       ],
@@ -7478,9 +7478,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Não será possível recuperar dados bloqueados utilizando os seus ficheiros de recuperação transferidos. Isto também irá desativar a recuperação de dispositivos fiáveis."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Manterá a sessão iniciada mesmo após fechar o navegador."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "A sua conta da ${ BRAND_NAME } está associada com ${ externalEmailAddress }."
@@ -8886,13 +8883,13 @@
         "Comunicados do ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim da ${ BRAND_NAME } for Business"
+        "Newsletter da ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Anúncios importantes da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim da ${ BRAND_NAME }"
+        "Newsletter da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções da ${ BRAND_NAME }"
@@ -9509,6 +9506,23 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9542,23 +9556,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10009,6 +10006,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ trialPlanName } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "A sua avaliação termina em ${ formattedPeriodEndDate }."
@@ -10723,6 +10723,14 @@
         "Você"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Defina a sua organização"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Começar a utilizar o ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Descubra as funcionalidades do ${ appName }"
@@ -10904,6 +10912,9 @@
       "Save your recovery kit to continue": [
         "Guarde o seu kit de recuperação para continuar"
       ],
+      "Setting up your organization": [
+        "A configurar a sua organização"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Inicio de sessão no ${ PASS_APP_NAME }"
       ],
@@ -10958,12 +10969,31 @@
         "Proteja a sua conta"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permissão negada. Os privilégios de administrador foram restringidos."
+      ],
+      "The organization key must be activated first.": [
+        "Tem de ativar a chave da organização primeiro."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Cartão de crédito/débito"
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "O número de cartão é inválido."
+      ],
+      "Invalid expiration date": [
+        "A data de expiração é inválida."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "O seu cartão foi recusado. Por favor, tente com outro cartão ou contacte o seu banco para autorizar esta compra."
       ]
     },
     "Personal calendar section description": {
@@ -11676,6 +11706,9 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Organization name": [
+        "Nome da organização"
+      ],
       "Password": [
         "Palavra-passe"
       ],
@@ -11934,7 +11967,7 @@
     },
     "storage_split: action": {
       "Keep ${ currentPlanName }": [
-        "Conservar ${ currentPlanName }"
+        "Manter ${ currentPlanName }"
       ]
     },
     "storage_split: info": {
