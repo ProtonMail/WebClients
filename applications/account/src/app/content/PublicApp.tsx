@@ -376,7 +376,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
         setForkState(newForkState);
         setActiveSessions(sessions);
 
-        if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
+        if (newForkState.type === SSOType.Proton && newForkState.payload.forkType === FORK_TYPE.SIGNUP) {
             const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState), productParam);
             history.replace(paths.signup);
             return;
