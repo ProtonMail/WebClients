@@ -21,10 +21,9 @@ import { AddressGeneration } from '@proton/components/containers/login/interface
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import mutatePassword from '@proton/shared/lib/authentication/mutate';
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
-import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { User } from '@proton/shared/lib/interfaces';
 import {
@@ -202,7 +201,9 @@ const SetupAddressContainer = () => {
             }
 
             const hash = location.hash.slice(1);
-            const blob = hash ? await getDecryptedSetupBlob(silentApi, hash).catch(noop) : undefined;
+            const blob = hash
+                ? await getDecryptedSetupBlob(authentication.getClientKey(), hash).catch(noop)
+                : undefined;
 
             history.replace({ ...location, hash: '' });
 
@@ -275,18 +276,7 @@ const SetupAddressContainer = () => {
                             });
 
                             const user = await getUser();
-                            authentication.setPassword(keyPassword);
-                            const localID = authentication.getLocalID();
-                            await persistSessionWithPassword({
-                                api: silentApi,
-                                keyPassword,
-                                User: user,
-                                UID: authentication.getUID(),
-                                LocalID: localID,
-                                persistent: authentication.getPersistent(),
-                                trusted: authentication.getTrusted(),
-                            });
-                            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
+                            await mutatePassword({ authentication, keyPassword, User: user, api: silentApi });
 
                             await preAuthKTCommit(user.ID);
 

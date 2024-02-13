@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 import { mockUseConfig } from '@proton/testing/lib/mockUseConfig';
 import { mockUseLocation } from '@proton/testing/lib/mockUseLocation';
 
@@ -11,6 +12,7 @@ describe('CalendarLimitReachedModal', () => {
     beforeEach(() => {
         mockUseLocation();
         mockUseConfig();
+        mockUseAuthentication({ mode: '' } as any);
     });
 
     describe('when user is free', () => {

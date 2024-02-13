@@ -1,5 +1,7 @@
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
+import { generateClientKey, getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -7,11 +9,8 @@ import { getLocalKey, getLocalSessions, revoke, setLocalKey } from '../api/auth'
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
-import { isSSOMode } from '../constants';
 import { withUIDHeaders } from '../fetch/headers';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
-import { getKey } from './cryptoHelper';
 import { InvalidPersistentSessionError } from './error';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import {
@@ -29,6 +28,7 @@ export type ResumedSessionResult = {
     User: tsUser;
     persistent: boolean;
     trusted: boolean;
+    clientKey: string;
 };
 
 export const logRemoval = (e: any = {}, UID: string, context: string) => {
@@ -55,52 +55,48 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
         blob: persistedSessionBlobString,
         persistent,
         trusted,
+        payloadVersion,
     } = persistedSession;
 
-    // User with password
-    if (persistedSessionBlobString) {
-        try {
-            const [ClientKey, persistedUser] = await Promise.all([
-                api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
-                api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
-            ]);
-            const rawKey = base64StringToUint8Array(ClientKey);
-            const key = await getKey(rawKey);
-            const { keyPassword } = await getDecryptedPersistedSessionBlob(key, persistedSessionBlobString);
-            if (persistedUserID !== persistedUser.ID) {
-                throw InactiveSessionError();
-            }
-            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser, persistent, trusted };
-        } catch (e: any) {
-            if (getIs401Error(e)) {
-                logRemoval(e, persistedUID, 'resume 401');
-                await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
-                removePersistedSession(localID, persistedUID);
-                throw new InvalidPersistentSessionError('Session invalid');
-            }
-            if (e instanceof InvalidPersistentSessionError) {
-                logRemoval(e, persistedUID, 'invalid blob');
-                await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
-                removePersistedSession(localID, persistedUID);
-                throw e;
-            }
-            throw e;
-        }
-    }
-
     try {
-        // User without password
-        const { User } = await api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser()));
-        if (persistedUserID !== User.ID) {
+        const [ClientKey, latestUser] = await Promise.all([
+            api<LocalKeyResponse>(withUIDHeaders(persistedUID, getLocalKey())).then(({ ClientKey }) => ClientKey),
+            api<{ User: tsUser }>(withUIDHeaders(persistedUID, getUser())).then(({ User }) => User),
+        ]);
+        if (persistedUserID !== latestUser.ID) {
             throw InactiveSessionError();
         }
-        return { UID: persistedUID, LocalID: localID, User, persistent, trusted };
+        let keyPassword: undefined | string;
+        if (persistedSessionBlobString && ClientKey) {
+            const key = await getClientKey(ClientKey);
+            const decryptedBlob = await getDecryptedPersistedSessionBlob(
+                key,
+                persistedSessionBlobString,
+                payloadVersion
+            );
+            keyPassword = decryptedBlob.keyPassword;
+        }
+        return {
+            UID: persistedUID,
+            LocalID: localID,
+            keyPassword,
+            User: latestUser,
+            persistent,
+            trusted,
+            clientKey: ClientKey,
+        };
     } catch (e: any) {
         if (getIs401Error(e)) {
-            logRemoval(e, persistedUID, 'resume 401 - 2');
+            logRemoval(e, persistedUID, 'resume 401');
             await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
             removePersistedSession(localID, persistedUID);
             throw new InvalidPersistentSessionError('Session invalid');
+        }
+        if (e instanceof InvalidPersistentSessionError) {
+            logRemoval(e, persistedUID, 'invalid blob');
+            await api(withUIDHeaders(persistedUID, revoke())).catch(noop);
+            removePersistedSession(localID, persistedUID);
+            throw e;
         }
         throw e;
     }
@@ -108,69 +104,38 @@ export const resumeSession = async (api: Api, localID: number): Promise<ResumedS
 
 interface PersistSessionWithPasswordArgs {
     api: Api;
-    keyPassword: string;
+    keyPassword: string | undefined;
     User: tsUser;
     UID: string;
     LocalID: number;
     persistent: boolean;
     trusted: boolean;
-}
-
-export const persistSessionWithPassword = async ({
-    api,
-    keyPassword,
-    User,
-    UID,
-    LocalID,
-    persistent,
-    trusted,
-}: PersistSessionWithPasswordArgs) => {
-    const rawKey = crypto.getRandomValues(new Uint8Array(32));
-    const key = await getKey(rawKey);
-    const base64StringKey = uint8ArrayToBase64String(rawKey);
-    await api<LocalKeyResponse>(setLocalKey(base64StringKey));
-    await setPersistedSessionWithBlob(LocalID, key, {
-        UID,
-        UserID: User.ID,
-        keyPassword,
-        isSubUser: !!User.OrganizationPrivateKey,
-        persistent,
-        trusted,
-    });
-};
-
-interface PersistLoginArgs {
-    api: Api;
-    User: tsUser;
-    keyPassword?: string;
-    persistent: boolean;
-    trusted: boolean;
-    AccessToken: string;
-    RefreshToken: string;
-    UID: string;
-    LocalID: number;
+    mode?: 'sso' | 'standalone';
 }
 
 export const persistSession = async ({
     api,
-    keyPassword,
+    keyPassword = '',
     User,
     UID,
     LocalID,
     persistent,
     trusted,
-}: PersistLoginArgs) => {
-    if (isSSOMode) {
-        await persistSessionWithPassword({
-            api,
+    mode = appMode,
+}: PersistSessionWithPasswordArgs) => {
+    const { serializedData, key } = await generateClientKey();
+    await api<LocalKeyResponse>(setLocalKey(serializedData));
+    if (mode === 'sso') {
+        await setPersistedSessionWithBlob(LocalID, key, {
             UID,
-            User,
-            LocalID,
-            keyPassword: keyPassword || '',
+            UserID: User.ID,
+            keyPassword,
+            isSubUser: !!User.OrganizationPrivateKey,
             persistent,
             trusted,
         });
     }
+    return { clientKey: serializedData };
 };
 
 export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => {

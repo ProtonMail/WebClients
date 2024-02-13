@@ -88,6 +88,8 @@ interface SESSION {
         UID: string;
         keyPassword?: string;
         User: tsUser;
+        localID: number;
+        clientKey: string;
         persistent: boolean;
         trusted: boolean;
         tag?: Environment;
