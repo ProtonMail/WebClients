@@ -33,7 +33,7 @@
         "Précédent"
       ],
       "Bulk delete items from trash": [
-        "Supprimer un groupe d'éléments dans la corbeille"
+        "Supprimer un groupe d'éléments de la corbeille"
       ],
       "Bulk move items to another vault": [
         "Déplacer le groupe d'éléments vers un autre coffre-fort"
@@ -165,7 +165,7 @@
         "Commentaires"
       ],
       "Fill password": [
-        "Saisir le mot de passe"
+        "Remplir le mot de passe"
       ],
       "Filter vault items": [
         "Filtrer les éléments du coffre-fort"
@@ -256,6 +256,9 @@
       ],
       "Move to trash": [
         "Déplacer dans le dossier Corbeille"
+      ],
+      "Not now": [
+        "Plus tard"
       ],
       "OK": [
         "OK"
@@ -434,8 +437,8 @@
         "Le verrouillage automatique n’a pu être désactivé."
       ],
       "Cannot send invitation at the moment": [
-        "L'envoi de l'invitation est impossible pour le moment.",
-        "L'envoi des invitations est impossible pour le moment."
+        "L'envoi de l'invitation est impossible pour le moment",
+        "L'envoi des invitations est impossible pour le moment"
       ],
       "Cannot send invitations at the moment": [
         "L'envoi des invitations est impossible pour le moment."
@@ -508,10 +511,10 @@
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
       ],
       "Failed to move items": [
-        "Le déplacement des éléments n'a pas abouti."
+        "Les éléments n'ont pas été déplacés."
       ],
       "Failed to move items to trash": [
-        "Le déplacement des éléments vers la corbeille n'a pas abouti."
+        "Les éléments n'ont pas été déplacés vers la corbeille."
       ],
       "Failed to pin item": [
         "L'élément n'a pas pu être épinglé."
@@ -520,7 +523,7 @@
         "L'accès de l'utilisateur n'a pas pu être retiré."
       ],
       "Failed to restore items from trash": [
-        "La restauration des éléments depuis la corbeille n'a pas abouti."
+        "Les éléments n'ont pas été restaurés de la corbeille."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
@@ -566,6 +569,9 @@
       ],
       "PIN codes do not match": [
         "Les codes PIN ne correspondent pas."
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application web de ${ PASS_APP_NAME }."
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -696,7 +702,7 @@
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
       "${ count } invites successfully sent": [
-        "${ count } invitations ont été envoyées."
+        "${ count } invitations ont été envoyées"
       ],
       "${ memberCount } member": [
         "${ memberCount } membre",
@@ -732,7 +738,7 @@
         "Administrateur"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Une fois vos données importées, vous pouvez supprimer en toute sécurité le fichier CSV contenant vos mots de passe."
+        "Une fois vos données importées, pour des raisons de sécurité, vous devriez supprimer le fichier CSV contenant vos mots de passe."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
@@ -813,10 +819,17 @@
         "Remplir le fichier CSV avec vos données"
       ],
       "Follow those steps to import your data with a generic CSV :": [
-        "Suiviez ces étapes pour importer vos data au format générique CSV :"
+        "Suiviez ces étapes pour importer vos données au format CSV générique :"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine.",
+        "Les mots de passe générés seront stockés pendant ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaines."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "Tirez le meilleur parti de Pass en créant un coffre-fort pour chaque équipe ou projet."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Obtenez un nombre illimité d'alias, profitez de fonctionnalités exceptionnelles et soutenez-nous en vous abonnant à Pass Plus."
@@ -848,6 +861,9 @@
       ],
       "Invitation sent": [
         "L'invitation a été envoyée."
+      ],
+      "Invite specific people and set the right permissions.": [
+        "Invitez des personnes spécifiques et définissez les autorisations adéquates."
       ],
       "Invite successfully removed": [
         "L'invitation a été retirée."
@@ -920,7 +936,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving items": [
-        "Déplacement d'éléments"
+        "Déplacement des éléments"
       ],
       "Moving items to trash": [
         "Déplacement des éléments vers la corbeille"
@@ -939,6 +955,10 @@
       ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Les mots de passe datant de plus de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaine sont automatiquement supprimés de l'historique.",
+        "Les mots de passe datant de plus de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semaines sont automatiquement supprimés de l'historique."
       ],
       "Permanently deleting selected items": [
         "Suppression permanente des éléments sélectionnés"
@@ -966,6 +986,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Saisissez votre code PIN pour continuer."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application web de ${ PASS_APP_NAME }."
       ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
@@ -1036,6 +1059,9 @@
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Le fichier exporté ne contiendra pas les données des coffres-forts partagés dont vous n’êtes pas le propriétaire."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
         "${ result.ignored.length } éléments n'ont pas pu être importés :"
@@ -1066,6 +1092,9 @@
       ],
       "Unpinning item...": [
         "Retrait de l'épingle de l'élément..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Passez à la version supérieure dès maintenant pour profiter des fonctionnalités premium."
       ],
       "Use vaults to share this item with others.": [
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
@@ -1189,6 +1218,9 @@
       "Alphabetical": [
         "Ordre alphabétique"
       ],
+      "Application logs": [
+        "Journaux de l'application"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Verrouillage automatique de ${ PASS_APP_NAME }"
       ],
@@ -1233,6 +1265,9 @@
       ],
       "Display": [
         "Affichage"
+      ],
+      "Download logs": [
+        "Télécharger les journaux"
       ],
       "Empty trash": [
         "Vider la corbeille"
@@ -1322,13 +1357,13 @@
         "Identifiants"
       ],
       "Make all admins": [
-        "Définir tous comme administrateur"
+        "Les définir comme administrateur"
       ],
       "Make all editors": [
-        "Définir tous comme éditeur"
+        "Les définir comme éditeur"
       ],
       "Make all viewers": [
-        "Définir tous comme lecteur"
+        "Les définir comme lecteur"
       ],
       "Members": [
         "Membres"
@@ -1500,6 +1535,9 @@
       ],
       "View details": [
         "Afficher les informations"
+      ],
+      "View logs": [
+        "Afficher les journaux"
       ],
       "Websites": [
         "Sites internet"
@@ -1740,7 +1778,7 @@
         "Paramètres"
       ],
       "Share vaults with your team": [
-        "Partagez vos coffres-forts avec votre équipe"
+        "Partager vos coffres-forts avec votre équipe"
       ],
       "Share with": [
         "Partager avec"
@@ -1756,6 +1794,9 @@
       ],
       "Update available": [
         "Mise à jour disponible"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Passez à la version supérieure pour profiter des fonctionnalités premium."
       ],
       "Vault": [
         "Coffre-fort"
@@ -1818,8 +1859,11 @@
       "Could not create vault \"${ vaultName }\"": [
         "Impossible de créer le coffre-fort « ${ vaultName } »"
       ],
+      "Could not send invitations to the following addresses :": [
+        "Les invitations n'ont pu être envoyées aux adresses suivantes :"
+      ],
       "Duplicate email addresses.": [
-        "Adresses e-mail en double"
+        "Adresses e-mail en double."
       ],
       "Empty note": [
         "Note vide"
