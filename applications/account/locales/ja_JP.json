@@ -629,11 +629,11 @@
       "No": [
         "いいえ"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -5972,6 +5972,12 @@
       "Cancel anytime": [
         "いつでもキャンセル可能"
       ],
+      "Can’t access your recovery email?": [
+        "回復用電子メールアドレスにアクセスできませんか？"
+      ],
+      "Can’t access your recovery phone?": [
+        "回復用携帯電話にアクセスできませんか？"
+      ],
       "Center": [
         "中央揃え"
       ],
@@ -6098,6 +6104,9 @@
       "Done! We sent a code to ${ destination }.": [
         "完了! ${ destination } にコードを送信しました!"
       ],
+      "Don’t know your recovery phrase?": [
+        "回復フレーズを知りませんか？"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "何も表示されませんか？ポップアップブロックをオフにすることを忘れないでください。"
       ],
@@ -6202,6 +6211,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "今すぐパスワードを変更するには、回復フレーズを入力してください。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "イベントの招待状と RSVP はこの言語で送信されます。"
@@ -6559,9 +6571,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Android モバイル アプリではまだ利用できません。"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "現在ベータ版として利用できるデスクトップ アプリを使用すると、デスクトップから ${ MAIL_APP_NAME } を簡単に起動でき、ブラウザに邪魔されることなく集中力を維持できます。"
@@ -7136,6 +7145,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "アカウント復旧方法を選択し、リクエストを確認してください。"
       ],
+      "To proceed, we must verify the request.": [
+        "続行するには、リクエストを検証しなければなりません。"
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロードおよびインストールして、サーバーに接続してください。"
       ],
@@ -7355,6 +7367,9 @@
       "Welcome": [
         "ようこそ"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "${ boldValue }にリセットコードを送ります。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
       ],
@@ -7478,6 +7493,9 @@
       "You have no calendars to export.": [
         "エクスポートするカレンダーがありません。"
       ],
+      "You have no invoices.": [
+        "請求書はありません。"
+      ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
@@ -7531,9 +7549,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "ダウンロードした回復ファイルを使用してロックされたデータを回復することはできません。 これにより、信頼されたデバイスの回復も無効になります。"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "ブラウザを閉じてもサインインを維持します。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "あなたの ${ BRAND_NAME } アカウントは、${ externalEmailAddress } に関連付けられています。"
@@ -9560,6 +9575,23 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -9593,23 +9625,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -10052,6 +10067,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ trialPlanName } を使い続けるには、サブスクリプションと支払方法を選択してください。"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "トライアルは ${ formattedPeriodEndDate } に終了します"
@@ -10788,6 +10806,14 @@
         "あなた"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "組織のための設定"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を使ってみる"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "${ appName } の機能をチェックしてください"
@@ -10993,6 +11019,9 @@
       "Save your recovery kit to continue": [
         "続行するにはリカバリ キットを保存してください"
       ],
+      "Setting up your organization": [
+        "組織の設定"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } にログインしています"
       ],
@@ -11050,12 +11079,28 @@
         "アカウントの保護"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "アクセスが拒否されました。管理者権限は制限されています。"
+      ],
+      "The organization key must be activated first.": [
+        "組織の鍵を最初に有効にする必要があります。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "クレジット/デビット カード"
       ],
       "New credit/debit card": [
         "新しいクレジットカード/デビットカード"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "無効なカード番号です"
+      ],
+      "Invalid expiration date": [
+        "無効な有効期限です"
       ]
     },
     "Permission": {
@@ -11801,6 +11846,9 @@
       ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Organization name": [
+        "組織名"
       ],
       "Password": [
         "パスワード"

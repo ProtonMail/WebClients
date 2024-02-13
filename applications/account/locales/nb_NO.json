@@ -50,6 +50,9 @@
       "activate": [
         "aktiver"
       ],
+      "Activate": [
+        "Aktiver"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Avbryt abonnement"
+      ],
+      "Change keys": [
+        "Endre nøkler"
       ],
       "Change mailbox password": [
         "Endre postbokspassord"
@@ -503,9 +509,6 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
-      "Give feedback": [
-        "Gi tilbakemelding"
-      ],
       "Go to label": [
         "Gå til etikett"
       ],
@@ -632,10 +635,10 @@
       "No": [
         "Nei"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -817,6 +820,9 @@
       ],
       "Select calendar view": [
         "Velg kalendervisning"
+      ],
+      "Select country": [
+        "Velg land"
       ],
       "Select files": [
         "Velg filer"
@@ -3731,6 +3737,9 @@
       "Contact signature not verified": [
         "Kontaktsignaturen er ikke bekreftet"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Kunne ikke laste inn fakturaer. Vennligst prøv igjen senere."
+      ],
       "Could not save preference": [
         "Kunne ikke lagre preferanse"
       ],
@@ -3892,6 +3901,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisasjonsnøkkelen må være aktivert for å opprette ikke-private brukere"
       ],
       "Password is required": [
         "Passord kreves"
@@ -4068,6 +4080,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
       ],
       "Trusted keys are not valid for sending": [
         "Klarerte nøkler er ikke gyldige for sending."
@@ -6089,6 +6104,9 @@
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Er du sikker på at du vil gi administrative rettigheter til denne brukeren?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Er du sikker på at du vil slette alle loggene dine permanent?"
       ],
@@ -6607,6 +6625,9 @@
       "inactive": [
         "inaktiv"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Øk kontosikkerheten ved å verifisere e-postadressen din."
       ],
@@ -6817,9 +6838,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Ikke tilgjengelig enda i vår Android mobilapp."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Ikke din enhet? Bruk et privat nettleservidu for å logge på og lukke det etter endt økt. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Nå tilgjengelig i testversjonen, lar skrivebordsappen deg enkelt starte ${ MAIL_APP_NAME } rett fra skrivebordet ditt og holde fokus uten nettleserforstyrrelser."
@@ -7782,6 +7800,9 @@
       "You have no calendars to export.": [
         "Du har ingen kalendere å eksportere."
       ],
+      "You have no invoices.": [
+        "Du har ingen fakturaer."
+      ],
       "You have no saved payment methods.": [
         "Du har ingen lagrede betalingsmåter."
       ],
@@ -7835,9 +7856,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Du vil ikke kunne gjenopprette låste data ved hjelp av de nedlastede gjenopprettingsfilene. Dette vil også deaktivere gjenoppretting av klarert enhet."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du vil forbli pålogget til og med etter du lukker nettleseren."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Din ${ BRAND_NAME }-konto er tilknyttet ${ externalEmailAddress }."
@@ -8046,6 +8064,12 @@
       "Credit": [
         "Kreditt"
       ],
+      "Credit note": [
+        "Kreditnota"
+      ],
+      "Currency conversion": [
+        "Valutakonvertering"
+      ],
       "Donation": [
         "Donasjon"
       ],
@@ -8146,6 +8170,9 @@
       ],
       "Expand / contract composer": [
         "Utvid / krymp skrivevindu"
+      ],
+      "Filter": [
+        "Filter"
       ],
       "Forward": [
         "Videresend"
@@ -8401,6 +8428,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Administrators": [
+        "Administratorer"
       ],
       "ALL": [
         "ALLE"
@@ -9179,6 +9209,9 @@
       "Username": [
         "Brukernavn"
       ],
+      "VAT": [
+        "MVA"
+      ],
       "Verification code": [
         "Verifiseringskode"
       ],
@@ -9890,6 +9923,9 @@
       "Back to inbox": [
         "Tilbake til innboks"
       ],
+      "Back to vaults": [
+        "Tilbake til hvelv"
+      ],
       "Block": [
         "Blokkér"
       ],
@@ -9898,6 +9934,9 @@
       ],
       "Inbox": [
         "Innboks"
+      ],
+      "Pass vaults": [
+        "Pass-hvelv"
       ],
       "Spam": [
         "Søppelpost"
@@ -9923,6 +9962,23 @@
       ],
       "Medium VPN speed": [
         "Middels VPN-hastighet"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: action": {
@@ -9958,23 +10014,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -10078,6 +10117,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Automatisk utfylling av kredittkort (kommer snart)"
+      ],
+      "Automatic email forwarding": [
+        "Automatisk videresending av e-post"
       ],
       "Available on all platforms": [
         "Tilgjengelig på alle plattformer"
@@ -10216,6 +10258,9 @@
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
       ],
+      "Require 2FA for organization": [
+        "Krev 2FA for organisasjonen"
+      ],
       "Router support": [
         "Ruterstøtte"
       ],
@@ -10249,6 +10294,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Delt tunnelering (Android og Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integrasjon (kommer snart)"
       ],
       "Start protecting your organization": [
         "Begynn å beskytte organisasjonen"
@@ -10291,6 +10339,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrensede meldinger per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Ubegrenset delte hvelv med tilgangstillatelser"
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
@@ -10443,6 +10494,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ trialPlanName } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Prøveversjonen utløper ${ formattedPeriodEndDate }"
       ]
@@ -10475,6 +10529,9 @@
       ],
       "terms and conditions": [
         "vilkår og betingelser"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Organisasjonsnavnet vil være synlig for brukerne mens de er logget på."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Velg et visningsnavn for å komme i gang. Dette er hva folk vil se når du sender en e-post, inviterer dem til et arrangement eller deler en fil."
@@ -10541,6 +10598,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Lar deg sette opp automatiske svar (autosvar) for dine innkommende meldinger"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Videresend automatisk e-postmeldinger sendt til ${ MAIL_APP_NAME }-kontoen din til en hvilken som helst annen e-postadresse."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massesending av salgsfremmende eller programmatisk e-post støttes for øyeblikket ikke. Vi anbefaler at du bruker en dedikert e-postleverandør for dette brukstilfellet."
@@ -11230,6 +11290,20 @@
         "Deg"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Gå til hvelvet ditt for å administrere passord, aliaser og mer."
+      ],
+      "Set up your organization": [
+        "Konfigurer organisasjonen din"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Begynn å legge til brukere for å gi dem tilgang til ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynn å bruke ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Sjekk ut ${ appName }-funksjoner"
@@ -11260,6 +11334,9 @@
       ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
+      ],
+      "Request trial": [
+        "Be om prøveversjon"
       ],
       "Start using ${ appName }": [
         "Begynn å bruke ${ appName }"
@@ -11294,6 +11371,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Fortsett med din ${ BRAND_NAME }-konto"
+      ],
+      "Let's talk": [
+        "La oss snakke"
       ],
       "Limited time offer": [
         "Tidsbegrenset tilbud"
@@ -11330,8 +11410,23 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per måned"
       ],
+      "/month /user": [
+        "/måned /bruker"
+      ],
+      "/month /user, billed annually": [
+        "/måned /bruker, faktureres årlig"
+      ],
+      "/month /user, billed biennially": [
+        "/måned /bruker, faktureres annethvert år"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Avansert beskyttelse som går utover industristandarder"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Alle ${ BRAND_NAME }-premiumtjenester."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Basert i Sveits, GDPR-kompatibel"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan få ${ discount } av ved å oppgradere til **${ upsellPlanTitle }** - det er bare ${ relativePrice } ekstra per måned."
@@ -11350,6 +11445,9 @@
       ],
       "Creating your account": [
         "Oppretter kontoen din"
+      ],
+      "Current plan": [
+        "Gjeldende plan"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Oppdag ${ PASS_APP_NAME },${ br }vår nye krypterte passordhåndterer"
@@ -11372,6 +11470,15 @@
       "End-to-end encryption": [
         "Ende-til-ende kryptering"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Angi et visningsnavn for **${ username }**. Dette er hva brukerne vil se når du endrer tillatelsene deres eller deler data med dem."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Essensiell beskyttelse og sikkert samarbeid for ubegrensede brukere."
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Alt fra ${ planTitle }, pluss..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "For bare **${ relativePrice } mer per måned**, får du tilgang til ${ BRAND_NAME }s premium passordbehandler!"
       ],
@@ -11384,11 +11491,20 @@
       "Free forever": [
         "Gratis for alltid"
       ],
+      "From the team that knows encryption": [
+        "Fra teamet som kan kryptering"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Få ${ appName } for ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Få snart ${ appName } for ${ browserName }"
+      ],
+      "Get in touch with our sales team": [
+        "Kom i kontakt med salgsavdelingen"
+      ],
+      "Get the security and features your business needs": [
+        "Få sikkerheten og funksjonene bedriften din trenger"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliaser beskytter din e-post fra datainnbrudd"
@@ -11417,11 +11533,20 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Bli med over 100 millioner mennesker som har valgt ${ BRAND_NAME } for å være trygg på nettet"
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Bli med over 50 000 organisasjoner som stoler på ${ BRAND_NAME }."
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Starter ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Begrenset tidstilbud: Få ${ title } for ${ price } per bruker månedlig!"
+      ],
       "One easy subscription.": [
         "Ett enkelt abonnement."
+      ],
+      "Open source and audited": [
+        "Åpen kildekode og overvåket"
       ],
       "Open-source and audited": [
         "Åpen kildekode og overvåket"
@@ -11447,11 +11572,17 @@
       "Save your recovery kit to continue": [
         "Lagre gjenopprettingssettet for å fortsette"
       ],
+      "Setting up your organization": [
+        "Setter opp organisasjonen din"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logger på ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Spesielt oppstartstilbud: få ${ title } for ${ price } for alltid!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Tilbudet du valgte er ikke tilgjengelig for ${ currentPlanTitle }-abonnenter."
@@ -11504,12 +11635,131 @@
         "Sikre kontoen din"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "For virksomheter"
+      ],
+      "For invididuals": [
+        "For enkeltpersoner"
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Alle administratorer vil få tilgang til nøkkelen."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Er du sikker på at du vil endre organisasjonsnøkkelen?"
+      ],
+      "Change organization key": [
+        "Endre organisasjonsnøkkel"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ikke-private brukere kan forfremmes til administrator når de har installasjonsnøkler."
+      ],
+      "Organization key activated": [
+        "Organisasjonsnøkkel aktivert"
+      ],
+      "Organization key does not exist.": [
+        "Organisasjonsnøkkel eksisterer ikke."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisasjonsnøkkelen må aktiveres for å gi administratorrettigheter."
+      ],
+      "Organization key restored": [
+        "Organisasjonsnøkkel gjenopprettet"
+      ],
+      "Organization key updated": [
+        "Organisasjonsnøkkel oppdatert"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tillatelse nektet, administratorrettigheter er begrenset."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Private brukere kan bli forfremmet til administrator når de har logget på for første gang."
+      ],
+      "Reset organization key": [
+        "Tilbakestill organisasjonsnøkkel"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Følgende administratorer får tilgang til organisasjonsnøkkelen."
+      ],
+      "The organization key must be activated first.": [
+        "Organisasjonsnøkkelen må aktiveres først."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Dette sender den nyeste organisasjonsnøkkelen til administratorene som for øyeblikket ikke har tilgang til den."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du aktivere organisasjonsnøkkelen din."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "For å aktivere administratorrettigheter på kontoen din, aktiver organisasjonsnøkkelen."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Bruk en datagjenopprettingsmetode eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Bruk en datagjenopprettingsmetode, kontakt en annen administrator, eller tilbakestill organisasjonsnøkkelen for å gjenopprette administratorrettigheter."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Vi kan ikke bekrefte sikkerheten til denne avsenderens adressenøkkel. Noen ganger er det en forsinkelse i oppdateringen av avsenderens informasjon. Prøv igjen senere. Hvis du ikke stoler på gyldigheten av denne invitasjonen eller avsenderen, kan du kontakte kundestøtte for ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Vi har bekreftet ektheten til denne avsenderen og invitasjonen."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Du har blitt gjort til administrator for organisasjonen **${ organizationName }** av"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Du må privatisere alle brukere før genererering av en ny organisasjonsnøkkel."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du trenger tilgang til organisasjonsnøkkelen for å utføre denne operasjonen."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kreditt-/debetkort"
       ],
       "New credit/debit card": [
         "Nytt kreditt-/debetkort"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/ÅÅ"
+      ],
+      "Timeout exceeded": [
+        "Tidsavbrudd overskredet"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ugyldig kortnummer"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig utløpsdato"
+      ],
+      "Invalid securiry code": [
+        "Ugyldig sikkerhetskode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Noe gikk galt. Prøv på nytt senere."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Vi kan ikke godkjenne betalingsmåten din. Vennligst velg en annen betalingsmåte, eller prøv på nytt."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kortet ditt ble avslått. Vennligst forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
       ]
     },
     "Permission": {
@@ -11828,6 +12078,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrator i organisasjonen din trenger tilgang til organisasjonsnøkkelen.",
+        "${ n } administratorer i organisasjonen trenger tilgang til organisasjonsnøkkelen."
+      ],
       "Changing organization keys": [
         "Endring av organisasjonsnøkler"
       ],
@@ -12308,6 +12562,9 @@
       "Email address": [
         "E-postadresse"
       ],
+      "Organization name": [
+        "Organisasjonsnavn"
+      ],
       "Password": [
         "Passord"
       ],
@@ -12608,6 +12865,12 @@
       "Get more storage": [
         "Få mer lagringskapasitet"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjøre plass eller ${ upgrade }."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
+      ],
       "Try out ${ app } to its full potential": [
         "Prøv ut ${ app } til sitt fulle potensial"
       ],
@@ -12633,8 +12896,20 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Din ${ storage } er ${ percentage }% full. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Din ${ storage } er full. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Din lagring er ${ percentage }% full. ${ cta }."
+      ],
       "Your storage is full": [
         "Lagringsplassen din er full"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Din lagring er full. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Du mister tilgangen til ${ gb } lagring og prioritert støtte."
@@ -12826,6 +13101,9 @@
       ],
       "Address updated": [
         "Adresse oppdatert"
+      ],
+      "Administrator privileges restored": [
+        "Administratorrettigheter gjenopprettet"
       ],
       "Auto-reply disabled": [
         "Autosvar deaktivert"
@@ -13419,6 +13697,9 @@
       "Composing": [
         "Skriving"
       ],
+      "Confirm": [
+        "Bekreft"
+      ],
       "Confirm address": [
         "Bekreft adresse"
       ],
@@ -13839,6 +14120,9 @@
       ],
       "Organization filters": [
         "Organisasjonfiltre"
+      ],
+      "Organization key": [
+        "Organisasjonsnøkkel"
       ],
       "Organization name": [
         "Organisasjonsnavn"
@@ -14759,6 +15043,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi oppdaget et problem med DNS-konfigurasjonen din. Vennligst sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Du må ${ activateLink } organisasjonsnøkkelen før du kan legge til en e-postadresse til et ikke-privat medlem."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."

@@ -503,9 +503,6 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
-      "Give feedback": [
-        "Giv feedback"
-      ],
       "Go to label": [
         "Gå til etikette"
       ],
@@ -632,10 +629,10 @@
       "No": [
         "Nej"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -811,6 +808,9 @@
       ],
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
+      ],
+      "Select a calendar to export": [
+        "Vælg en kalender at eksportere"
       ],
       "Select calendar view": [
         "Vælg kalendervisning"
@@ -6244,6 +6244,9 @@
       "Credits earned": [
         "Kreditter optjent"
       ],
+      "Current plan": [
+        "Nuværende abonnement"
+      ],
       "Custom": [
         "Brugerdefineret"
       ],
@@ -6320,6 +6323,9 @@
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
+      ],
+      "Downgrade": [
+        "Nedgrader"
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
@@ -6806,9 +6812,6 @@
       "Not yet available in our Android mobile app.": [
         "Endnu ikke tilgængelig i vores Android-mobilapp."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Skrivebordsappen er nu tilgængelig i beta og giver dig mulighed for nemt at starte ${ MAIL_APP_NAME } direkte fra dit skrivebord og holde fokus uden at blive distraheret af browseren."
       ],
@@ -6881,6 +6884,9 @@
       ],
       "per month": [
         "Pr. måned"
+      ],
+      "per month, billed at ${ price }": [
+        "per måned, faktureret til ${ price }"
       ],
       "per month, billed every 12 months": [
         "Pr. måned, faktureres hver 12. måned"
@@ -7694,6 +7700,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
       ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "Du bruger mere opbevaringsplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
+      ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Du kan også flette importerede kalendere med eksisterende ${ BRAND_NAME }-kalendere."
       ],
@@ -7758,6 +7767,9 @@
       "You have no calendars to export.": [
         "Du har ingen kalendere at eksportere."
       ],
+      "You have no invoices.": [
+        "Du har ingen fakturaer."
+      ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
       ],
@@ -7811,9 +7823,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Du vil ikke være i stand til at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette vil også deaktivere gendannelse af betroede enheder."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Du vil forblive logget på selv efter du lukker browseren."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }."
@@ -9898,6 +9907,23 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -9931,23 +9957,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -10415,6 +10424,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ trialPlanName } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Din prøveperiode slutter ${ formattedPeriodEndDate }"
@@ -11176,6 +11188,14 @@
         "Dig"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Konfigurer din organisation"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynd at bruge ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Se funktionerne i ${ appName }"
@@ -11393,6 +11413,9 @@
       "Save your recovery kit to continue": [
         "Gem dit gendannelseskit for at fortsætte"
       ],
+      "Setting up your organization": [
+        "Konfigurerer din organisation"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logger ind på ${ PASS_APP_NAME }"
       ],
@@ -11450,12 +11473,31 @@
         "Beskyt din konto"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
+      ],
+      "The organization key must be activated first.": [
+        "Organisationsnøglen skal først aktiveres."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Kredit/debetkort"
       ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ugyldigt kortnummer"
+      ],
+      "Invalid expiration date": [
+        "Ugyldig udløbsdato"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Dit kort blev afvist. Prøv venligst et andet kort eller kontakt din bank for at godkende opkrævningen."
       ]
     },
     "Permission": {
@@ -12254,6 +12296,9 @@
       "Email address": [
         "E-mailadresse"
       ],
+      "Organization name": [
+        "Organisationsnavn"
+      ],
       "Password": [
         "Adgangskode"
       ],
@@ -12525,8 +12570,14 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage } % fuldt"
       ],
+      "**${ humanUsedSpace }** of ${ humanMaxSpace }": [
+        "**${ humanUsedSpace }** ud af ${ humanMaxSpace }"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Ved at nedgradere mister du følgende fordele. Er du sikker på, at du vil fortsætte?"
+      ],
+      "Consider upgrading your plan to continue to use your account without interruptions.": [
+        "Overvej at opgradere dit abonnement for at forsætte med at bruge din konto uden forstyrrelser."
       ],
       "contact your administrator": [
         "kontakt din administrator"
@@ -12534,11 +12585,21 @@
       "Get more storage": [
         "Få mere lagerplads"
       ],
+      "Try out ${ app } to its full potential": [
+        "Prøv det fulde potentiale af ${ app }"
+      ],
       "upgrade for more storage": [
         "opgrader for at få mere lagerplads"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Opgrader din plan for at fortsætte med at bruge din konto uden afbrydelser."
+      ],
+      "Upgrade your plan to increase your storage.": [
+        "Opgrader dit abonnement for at øge din opbevaringsplads."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Du har stadig **${ daysRemaining }** dag tilbage på dit **${ currentPlanName }**-abonnement.",
+        "Du har stadig **${ daysRemaining }** dage tilbage på dit **${ currentPlanName }**-abonnement"
       ],
       "Your ${ appStorage } is almost full": [
         "Dit ${ appStorage } er næsten fuldt"
@@ -14068,6 +14129,9 @@
       ],
       "Your SMTP token": [
         "Dit SMTP-token"
+      ],
+      "Your storage": [
+        "Din opbevaringsplads"
       ],
       "Your subscriptions": [
         "Dine abonnementer"

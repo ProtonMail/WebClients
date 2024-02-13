@@ -509,9 +509,6 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
-      "Give feedback": [
-        "Donnez-nous votre avis"
-      ],
       "Go to label": [
         "Afficher le label"
       ],
@@ -638,10 +635,10 @@
       "No": [
         "Non"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3740,6 +3737,9 @@
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Les factures n'ont pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Could not save preference": [
         "La préférence n'a pas pu être enregistrée."
       ],
@@ -6343,7 +6343,7 @@
         "C'est fait, nous avons envoyé un code à ${ destination }."
       ],
       "Don’t know your recovery phrase?": [
-        "Vous ne savez pas ce que c'est que votre phrase de récupération ?"
+        "Vous ne vous souvenez plus de votre phrase de récupération ?"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
@@ -6625,6 +6625,9 @@
       "inactive": [
         "inactive"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
       ],
@@ -6835,9 +6838,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Pas encore disponible sur notre application mobile pour Android."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Désormais disponible en version bêta, l'application de bureau vous permet de lancer ${ MAIL_APP_NAME } directement depuis votre bureau. Vous n'avez plus besoin d'utiliser votre navigateur."
@@ -7435,7 +7435,7 @@
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
       ],
       "To proceed, we must verify the request.": [
-        "Pour procéder, nous devons vérifier la requête."
+        "Pour continuer, nous devons d'abord vérifier la requête."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
@@ -7854,9 +7854,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Vous ne pourrez pas récupérer les données verrouillées en utilisant les fichiers de récupération que vous avez téléchargés. Cela désactivera aussi la récupération des appareils de confiance."
       ],
-      "You'll stay signed in even after you close the browser.": [
-        "Vous resterez connecté même après avoir fermé le navigateur."
-      ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Votre compte ${ BRAND_NAME } est associé avec ${ externalEmailAddress }."
       ],
@@ -8063,6 +8060,9 @@
       ],
       "Credit": [
         "Crédit"
+      ],
+      "Credit note": [
+        "Avoir"
       ],
       "Currency conversion": [
         "Conversion de devise"
@@ -9958,6 +9958,23 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuer et vérifier"
@@ -9991,23 +10008,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -10252,6 +10252,9 @@
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
       ],
+      "Require 2FA for organization": [
+        "A2F requis pour organisation"
+      ],
       "Router support": [
         "Prise en charge des routeurs"
       ],
@@ -10285,6 +10288,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Intégration de l'authentification unique SSO (bientôt disponible)"
       ],
       "Start protecting your organization": [
         "Commencez à protéger votre organisation"
@@ -10482,6 +10488,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ trialPlanName } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
@@ -10583,6 +10592,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Configurez des réponses automatiques pour vos messages entrants."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Transférez automatiquement les messages envoyés à votre compte ${ MAIL_APP_NAME } vers toute autre adresse e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'envoi en masse de messages promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
@@ -11252,6 +11264,9 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Utilisez votre coffre-fort pour gérer vos mots de passe, alias et bien plus encore."
+      ],
       "Set up your organization": [
         "Configurez votre organisation"
       ],
@@ -11371,8 +11386,20 @@
       "/month /user": [
         "/mois /utilisateur"
       ],
+      "/month /user, billed annually": [
+        "/mois /utilsateur, facturation annuelle"
+      ],
+      "/month /user, billed biennially": [
+        "/mois /utilsateur, facturation tous les 2 ans"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Une protection avancée qui dépasse les standards de l'industrie"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Tous les services premium de ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Basé en Suisse et en conformité avec le RGPD"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Vous pouvez quand même profiter de -${ discount } en passant à **${ upsellPlanTitle }** pour seulement ${ relativePrice } en plus par mois."
@@ -11419,6 +11446,12 @@
       "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
         "Entrez un nom d'affichage pour **${ username }**. C'est ce que vos utilisateurs verront lorsque vous modifierez leurs permissions ou partagerez des données avec eux."
       ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Protection indispensable et collaboration sécurisée pour un nombre illimité d'utilisateurs"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Tout ce qui est inclus dans l${ planTitle } et plus encore..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
       ],
@@ -11431,11 +11464,20 @@
       "Free forever": [
         "Gratuit pour toujours"
       ],
+      "From the team that knows encryption": [
+        "Une création de l'équipe experte en chiffrement"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Obtenez ${ appName } pour ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Obtenez prochainement ${ appName } pour ${ browserName }"
+      ],
+      "Get in touch with our sales team": [
+        "Contactez notre équipe commerciale"
+      ],
+      "Get the security and features your business needs": [
+        "Bénéficiez de la sécurité et des fonctionnalités dont votre activité a besoin."
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Les alias « hide-my-email » protègent votre adresse e-mail contre les fuites de données."
@@ -11464,8 +11506,14 @@
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
       ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Rejoignez plus de 50 000 organisations qui font confiance à ${ BRAND_NAME }"
+      ],
       "Launching ${ PASS_APP_NAME }": [
         "Lancement de ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Offre à durée limitée : obtenez ${ title } à ${ price } par utilisateur par mois !"
       ],
       "One easy subscription.": [
         "Un seul abonnement."
@@ -11578,6 +11626,9 @@
       "Change organization key": [
         "Changer la clé de l’organisation"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Les utilisateurs non privés peuvent être promus comme administrateur lorsqu'ils disposent de clés de configuration."
+      ],
       "Organization key activated": [
         "La clé de l'organisation a été activée."
       ],
@@ -11660,9 +11711,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Tax Country": [
-        "Pays d'imposition"
-      ],
       "Timeout exceeded": [
         "Le délai est dépassé."
       ]
@@ -11676,6 +11724,15 @@
       ],
       "Invalid securiry code": [
         "Le code de sécurité n'est pas valide."
+      ],
+      "Something went wrong. Please try again later.": [
+        "Une erreur s'est produite. Veuillez réessayer plus tard."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Nous n'avons pas pu authentifier votre moyen de paiement. Veuillez choisir un moyen différent ou réessayer."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
       ]
     },
     "Permission": {
@@ -12781,6 +12838,12 @@
       "Get more storage": [
         "Obtenir plus d'espace de stockage"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
+      ],
       "Try out ${ app } to its full potential": [
         "Explorez tout le potentiel de ${ app }"
       ],
@@ -12806,8 +12869,20 @@
       "Your ${ appStorage } is full": [
         "Votre ${ appStorage } est plein."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Votre ${ storage } est plein. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+      ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Votre espace de stockage est plein. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Vous n'aurez plus accès à ${ gb } d'espace de stockage et à l'assistance prioritaire."
@@ -13422,7 +13497,7 @@
         "4. Sélectionnez le serveur auquel se connecter"
       ],
       "A filter name is required": [
-        "Le nom du filtre est requis."
+        "Un nom de filtre est requis"
       ],
       "A filter with this name already exists": [
         "Un filtre portant ce nom existe déjà."
@@ -13854,7 +13929,7 @@
         "${ failedUsers.length } comptes utilisateur n'ont pas pu être créés."
       ],
       "Filter name cannot contain only spaces": [
-        "Le nom du filtre ne doit pas contenir uniquement des espaces."
+        "Le nom du filtre ne doit pas contenir uniquement des espaces"
       ],
       "Filters": [
         "Filtres"
@@ -14258,10 +14333,10 @@
         "Thème"
       ],
       "This field cannot be empty": [
-        "Ce champ ne doit pas être vide."
+        "Ce champ ne doit pas être vide"
       ],
       "This field cannot contain only spaces": [
-        "Ce champ ne doit pas contenir uniquement des espaces."
+        "Ce champ ne doit pas contenir uniquement des espaces"
       ],
       "Time zone": [
         "Fuseau horaire"

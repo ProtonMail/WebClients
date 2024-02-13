@@ -503,9 +503,6 @@
       "Get verification code": [
         "取得驗證碼"
       ],
-      "Give feedback": [
-        "意見回饋"
-      ],
       "Go to label": [
         "跳至標籤"
       ],
@@ -632,11 +629,11 @@
       "No": [
         "否"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -6623,9 +6620,6 @@
       "Not yet available in our Android mobile app.": [
         "尚不支援 Android 應用程式。"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "軟體現處於測試版本。桌面版 ${ MAIL_APP_NAME } 可以在沒有瀏覽器的干擾下從電腦啟動。"
       ],
@@ -7547,6 +7541,9 @@
       "You have no calendars to export.": [
         "您未有行事曆可匯出。"
       ],
+      "You have no invoices.": [
+        "您沒有任何帳單。"
+      ],
       "You have no saved payment methods.": [
         "您尚未儲存任何繳款方式。"
       ],
@@ -7600,9 +7597,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "您將無法使用已下載的還原檔案還原已鎖定的資料。這樣也會停用從信任的裝置還原。"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "即使關閉瀏覽器，您仍會維持登入狀態。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。"
@@ -9641,6 +9635,23 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9674,23 +9685,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -10139,6 +10133,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ trialPlanName }，請選擇您的訂購授權與繳款選項。"
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "您的滿意體驗期結束於 ${ formattedPeriodEndDate }"
@@ -10887,6 +10884,14 @@
         "您"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "設定您的組織"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "開始使用 ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "查看${ appName }功能"
@@ -11086,6 +11091,9 @@
       "Save your recovery kit to continue": [
         "儲存您的復原包並繼續"
       ],
+      "Setting up your organization": [
+        "設定您的組織"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "登入至${ PASS_APP_NAME }"
       ],
@@ -11143,12 +11151,31 @@
         "安全您的帳號"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "權限被拒，系統管理員權限受限。"
+      ],
+      "The organization key must be activated first.": [
+        "必須先啟用組織金鑰。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "信用卡/簽帳金融卡"
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "卡號無效"
+      ],
+      "Invalid expiration date": [
+        "到期日無效"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
       ]
     },
     "Permission": {
@@ -11924,6 +11951,9 @@
       ],
       "Email address": [
         "電子郵件位址"
+      ],
+      "Organization name": [
+        "組織名稱"
       ],
       "Password": [
         "密碼"
