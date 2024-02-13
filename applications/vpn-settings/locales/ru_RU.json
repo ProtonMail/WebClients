@@ -3332,9 +3332,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
       ],
@@ -3941,6 +3938,9 @@
         "У вас есть ${ availableCount } доступных выделенных серверов.",
         "У вас есть ${ availableCount } доступных выделенных серверов."
       ],
+      "You have no invoices.": [
+        "У вас нет счетов."
+      ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
@@ -3973,9 +3973,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Вы сохраните авторизацию даже после закрытия браузера."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш аккаунт ${ BRAND_NAME } в настоящее время приостановлен. По истечении 28 дней электронные письма больше не будут доставляться в ваш почтовый ящик, ссылки на общий доступ к Drive будут заблокированы, и вы не сможете загружать новые файлы. Чтобы возобновить нормальное обслуживание, пожалуйста, оплатите все просроченные счета."
@@ -5308,6 +5305,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ trialPlanName } с платными функциями, выберите подписку и способ оплаты."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
@@ -5732,6 +5732,14 @@
         "Ваш тариф включает ещё максимум ${ humanReadableAvailableSpace } хранилища."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Настройка организации"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Начните использовать ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Сохранить этот тариф"
@@ -5800,12 +5808,31 @@
         "Все сервисы ${ BRAND_NAME } Plus.${ br }Или одна лёгкая подписка."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Отказано в доступе, права администратора ограничены."
+      ],
+      "The organization key must be activated first.": [
+        "Сначала должен быть активирован ключ организации."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Кредитная/дебетовая карта"
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Неверный номер карты"
+      ],
+      "Invalid expiration date": [
+        "Неверный срок годности"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ваша карта отклонена. Пожалуйста, попробуйте другую карту или свяжитесь с вашим банком для авторизации транзакции."
       ]
     },
     "Permission": {

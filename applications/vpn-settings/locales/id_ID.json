@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Aktifkan"
+      ],
       "activate": [
         "aktifkan"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Batalkan langganan"
+      ],
+      "Change keys": [
+        "Ubah kunci"
       ],
       "Change mailbox password": [
         "Ubah kata sandi kotak surat"
@@ -183,7 +189,7 @@
         "Sunting Gateway"
       ],
       "Edit invoice details": [
-        "Sunting detail faktur"
+        "Sunting rincian faktur"
       ],
       "Edit name": [
         "Sunting nama"
@@ -248,9 +254,6 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
-      "Give feedback": [
-        "Beri tanggapan"
-      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -291,7 +294,7 @@
         "Jadikan admin"
       ],
       "Mark as default": [
-        "Tandai sebagai standar"
+        "Tandai sebagai bawaan"
       ],
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
@@ -422,6 +425,9 @@
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
+      "Select country": [
+        "Pilih negara"
+      ],
       "Select file": [
         "Pilih berkas"
       ],
@@ -483,7 +489,7 @@
         "Ganti akun"
       ],
       "Switch or add account": [
-        "Ubah atau tambahkan akun"
+        "Ubah atau tambah akun"
       ],
       "Top up": [
         "Isi ulang"
@@ -549,7 +555,7 @@
         "Lihat"
       ],
       "View invoice": [
-        "Lihat tagihan"
+        "Lihat faktur"
       ],
       "View plans details": [
         "Lihat rincian paket"
@@ -1838,7 +1844,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Tagihan jatuh tempo"
+        "Faktur yang menunggak"
       ]
     },
     "Description": {
@@ -1946,6 +1952,9 @@
       ],
       "Code wrong or not valid anymore": [
         "Kode salah atau sudah tidak valid"
+      ],
+      "Coudn't load invoices. Please try again later.": [
+        "Faktur tidak dapat dimuat. Silakan coba lagi nanti."
       ],
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
@@ -3175,7 +3184,7 @@
         "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk memperoleh diskon Anda."
+        "Apabila Anda memiliki kode hadiah, masukkan kode Anda pada kolom di bawah ini untuk menerapkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
@@ -3203,6 +3212,9 @@
       ],
       "inactive": [
         "tidak aktif"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Meliputi ${ taxName } ${ formattedTaxRate }%: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Tingkatkan keamanan akun Anda dengan memverifikasi alamat surel Anda."
@@ -3294,9 +3306,6 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Sedang tidak berada pada perangkat Anda? Masuklah dengan mode penjelajahan privat dan tutup browser Anda setelah selesai. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Jumlah server khusus pada organisasi"
       ],
@@ -3367,7 +3376,7 @@
         "Silakan periksa kembali berkas Anda atau hubungi layanan dukungan untuk informasi lebih lanjut."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
-        "Silakan periksa kembali berkas Anda atau gunakan ${ csvTemplateButton } kami."
+        "Silakan periksa berkas Anda atau gunakan ${ csvTemplateButton } kami."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
@@ -3643,7 +3652,7 @@
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Untuk menerima pembaruan dengan pengembangan terkini pada produk ${ BRAND_NAME }, Anda dapat berlangganan ke surel dan ${ blogLink } kami dari waktu ke waktu."
+        "Untuk mengikuti pengembangan terkini seputar produk ${ BRAND_NAME }, Anda dapat berlangganan ke milis kami serta ${ blogLink } dari waktu ke waktu."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -3820,7 +3829,7 @@
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Pada saat paket langganan Anda diperbarui, kami akan terlebih dahulu menerapkan segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
+        "Pada saat langganan Anda diperbarui, kami akan terlebih dahulu mendebet segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
       ],
       "Whole organization": [
         "Seluruh organisasi"
@@ -3847,7 +3856,7 @@
         "Anda telah memiliki akun gratis"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Anda sedang menggunakan ${ ipCount } dari ${ ipAddresses } server khusus yang Anda miliki."
@@ -3885,6 +3894,9 @@
       "You have ${ availableCount } dedicated server available.": [
         "Anda memiliki ${ availableCount } server khusus yang tersedia."
       ],
+      "You have no invoices.": [
+        "Anda tidak memiliki faktur apa pun."
+      ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
@@ -3917,9 +3929,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Anda akan tetap masuk bahkan setelah Anda menutup browser."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, surel tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
@@ -4038,6 +4047,12 @@
       ],
       "Credit": [
         "Saldo"
+      ],
+      "Credit note": [
+        "Catatan saldo"
+      ],
+      "Currency conversion": [
+        "Konversi mata uang"
       ],
       "Donation": [
         "Donasi"
@@ -4212,7 +4227,7 @@
         "Buat kata sandi"
       ],
       "Credits used": [
-        "Saldo digunakan"
+        "Saldo yang digunakan"
       ],
       "Current display name": [
         "Nama tampilan saat ini"
@@ -4466,6 +4481,9 @@
       "Value": [
         "Nilai"
       ],
+      "VAT": [
+        "PPN"
+      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -4554,10 +4572,10 @@
     },
     "Link": {
       "Add a gift code": [
-        "Tambahkan kode hadiah"
+        "Tambah kode hadiah"
       ],
       "Add gift code": [
-        "Tambahkan kode hadiah"
+        "Tambah kode hadiah"
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
@@ -4596,7 +4614,7 @@
         "Belum diaktifkan"
       ],
       "Pay invoice": [
-        "Bayar tagihan"
+        "Bayar faktur"
       ],
       "Paypal without credit card": [
         "PayPal tanpa kartu kredit"
@@ -4629,7 +4647,7 @@
         "Lihat panduan"
       ],
       "visit our blog": [
-        "kunjungi blog kami"
+        "mengunjungi blog kami"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Apa bedanya protokol UDP dan TCP?"
@@ -4875,6 +4893,9 @@
       "Autofill credit cards (coming soon)": [
         "Pengisian rincian kartu kredit secara otomatis (segera hadir)"
       ],
+      "Automatic email forwarding": [
+        "Penerusan email otomatis"
+      ],
       "Available on all platforms": [
         "Tersedia di semua platform"
       ],
@@ -4990,7 +5011,7 @@
         "Kebijakan tanpa log"
       ],
       "Organize items with multiple vaults": [
-        "Kelola item yang memiliki berbagai brankas"
+        "Kelola item dengan berbagai brankas"
       ],
       "Password-protected Emails": [
         "Surel yang terlindung oleh kata sandi"
@@ -5009,6 +5030,9 @@
       ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Require 2FA for organization": [
+        "2FA wajib bagi organisasi"
       ],
       "Router support": [
         "Dukungan router"
@@ -5042,6 +5066,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integrasi SOO (segera hadir)"
       ],
       "Start protecting your organization": [
         "Mulai lindungi organisasi Anda"
@@ -5213,6 +5240,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Untuk lanjut menggunakan ${ trialPlanName } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
@@ -5285,6 +5315,9 @@
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Memungkinkan Anda untuk menyiapkan pesan balasan otomatis (auto-reply) bagi seluruh pesan yang Anda terima"
       ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Terusken email yang terkirim pada akun ${ MAIL_APP_NAME } Anda ke alamat email lainnya secara otomatis."
+      ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Pengiriman surel secara massal atau terprogram saat ini tidak didukung. Kami menyarankan Anda untuk menggunakan layanan surel yang secara khusus diperuntukkan bagi keperluan tersebut."
       ],
@@ -5319,7 +5352,7 @@
         "Putuskan sesi pengguna secara paksa apabila kredensial akun mereka telah terindikasi bocor"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis Cloud saat ini tidak didukung."
+        "Dukungan IMAP terbatas hanya pada aplikasi desktop (mis. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis cloud saat ini tidak didukung."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
@@ -5628,6 +5661,17 @@
         "Paket Anda meliputi hingga ${ humanReadableAvailableSpace } kapasitas penyimpanan tambahan."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Tuju brankas Anda untuk mengelola kata sandi, alias, dan berbagai item lainnya yang Anda miliki."
+      ],
+      "Set up your organization": [
+        "Atur organisasi Anda"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Mulai gunakan ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Pertahankan paket ini"
@@ -5640,6 +5684,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Mari berbincang"
+      ],
       "Limited time offer": [
         "Penawaran waktu terbatas"
       ],
@@ -5651,8 +5698,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per bulan"
       ],
+      "/month /user": [
+        "/bulan /pengguna"
+      ],
+      "/month /user, billed annually": [
+        "/bulan /pengguna, ditagihkan per tahun"
+      ],
+      "/month /user, billed biennially": [
+        "/bulan /pengguna, ditagihkan per dua tahun"
+      ],
       "Creating your account": [
         "Membuat akun Anda"
+      ],
+      "Current plan": [
+        "Paket saat ini"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses pengatur sandi premium ${ BRAND_NAME }!"
@@ -5665,6 +5724,9 @@
       ],
       "Free forever": [
         "Gratis untuk selamanya"
+      ],
+      "Get in touch with our sales team": [
+        "Hubungi tim penjualan kami"
       ],
       "Includes:": [
         "Meliputi:"
@@ -5706,6 +5768,9 @@
       "Change organization key": [
         "Ubah kunci organisasi"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Pengguna non-privat dapat dipromosikan sebagai admin pada saat mereka memiliki kunci setup"
+      ],
       "Organization key activated": [
         "Kunci organisasi diaktifkan"
       ],
@@ -5739,6 +5804,9 @@
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
         "Tindakan ini akan mengirimkan kunci organisasi versi terbaru kepada para administrator yang saat ini belum memiliki akses."
       ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Untuk membuat akun pengguna non-privat dan mengakses akun ini, Anda perlu untuk mengaktifkan kunci organisasi Anda."
+      ],
       "To enable administrator rights on your account, activate the organization key.": [
         "Untuk mengaktifkan hak administrator pada akun Anda, aktifkan kunci organisasi terlebih dahulu."
       ],
@@ -5766,6 +5834,43 @@
         "Kartu kredit/debit baru"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Negara Penagihan"
+      ],
+      "Card number": [
+        "Nomor kartu"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "BB/TT"
+      ],
+      "Timeout exceeded": [
+        "Batas waktu terlampaui"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Nomor kartu tidak valid"
+      ],
+      "Invalid expiration date": [
+        "Tanggal kedaluwarsa tidak valid"
+      ],
+      "Invalid securiry code": [
+        "Kode keamanan tidak valid"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Terdapat suatu kesalahan. Silakan coba lagi nanti."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Kami tidak dapat mengautentikasi metode pembayaran Anda. Silakan coba metode pembayaran lainnya atau coba lagi."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kartu Anda ditolak. Silakan coba kartu lainnya atau kontak bank Anda untuk mengautorisir pembayaran."
+      ]
+    },
     "Permission": {
       "No permission": [
         "Tidak ada izin"
@@ -5788,7 +5893,7 @@
         "Cara menghubungi Anda"
       ],
       "Add gift code": [
-        "Tambahkan kode hadiah"
+        "Tambah kode hadiah"
       ],
       "Address": [
         "Alamat"
@@ -6342,7 +6447,7 @@
         "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
-        "Akses dini Premium"
+        "Akses dini premium"
       ],
       "Secure cloud storage": [
         "Penyimpanan awan aman"
@@ -6528,6 +6633,12 @@
       "For all ${ BRAND_NAME } services": [
         "Untuk seluruh layanan ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
       ],
@@ -6540,8 +6651,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda ${ percentage }% penuh. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda penuh. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
+      ],
       "Your storage is full": [
         "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Anda akan kehilangan akses penyimpanan ${ gb } dan dukungan prioritas."
@@ -6725,7 +6848,7 @@
         "Surel diperbarui"
       ],
       "Gift code applied": [
-        "Kode hadiah berhasil digunakan"
+        "Kode hadiah diterapkan"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
         "Jika Anda memasukkan surel pemulihan yang valid, kami akan mengirimkan surel dengan nama pengguna Anda di menit berikutnya."
@@ -6737,10 +6860,10 @@
         "Undangan dikirim"
       ],
       "Invoice customized": [
-        "Tagihan berhasil disesuaikan"
+        "Faktur disesuaikan"
       ],
       "Invoice paid": [
-        "Tagihan dibayar"
+        "Faktur dibayar"
       ],
       "Keys updated": [
         "Kunci berhasil diperbarui"
@@ -7142,7 +7265,7 @@
         "Sunting Gateway ${ currentName }"
       ],
       "Edit invoice details": [
-        "Sunting detail faktur"
+        "Sunting rincian faktur"
       ],
       "Edit servers": [
         "Sunting server"
@@ -7163,7 +7286,7 @@
         "Surel"
       ],
       "Email subscriptions": [
-        "Surel berlangganan"
+        "Langganan email"
       ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
@@ -7217,7 +7340,7 @@
         "Kode verifikasi tidak valid"
       ],
       "Invoices": [
-        "Tagihan"
+        "Faktur"
       ],
       "Language": [
         "Bahasa"
@@ -7259,7 +7382,7 @@
         "Kata sandi"
       ],
       "Pay invoice": [
-        "Bayar tagihan"
+        "Bayar faktur"
       ],
       "Payment failed": [
         "Pembayaran gagal"
@@ -7464,7 +7587,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        "Tagihan ${ MAIL_APP_NAME }"
+        "Faktur ${ MAIL_APP_NAME }"
       ]
     },
     "Title header for members table": {
@@ -7711,7 +7834,7 @@
         "Laporan yang masuk tidak dienkripsi secara end-to-end. Mohon untuk tidak mengirimkan informasi sensitif apa pun."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
+        "Tanggal dan waktu pada perangkat Anda tidak sesuai tanggal dan waktu saat ini. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."

@@ -248,9 +248,6 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
-      "Give feedback": [
-        "უკუკავშირი"
-      ],
       "Got it": [
         "გავიგე"
       ],
@@ -3315,9 +3312,6 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "არაა თქვენი მოწყობილობა? გახსენით ბრაუზერის კონფიდენციალური ფანჯარა და შედით მისი საშუალებით. დახურეთ ის, როცა მუშაობას დაასრულებთ. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "გამოყოფილი სერვერების რაოდენობა ორგანიზაციაში"
       ],
@@ -3920,6 +3914,9 @@
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი.",
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი."
       ],
+      "You have no invoices.": [
+        "ინვოისები არ გაქვთ."
+      ],
       "You have no saved payment methods.": [
         "თქვენ არ გაქვთ გადახდის შენახული მეთოდები."
       ],
@@ -3952,9 +3949,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "შესული დარჩებით ბრაუზერის ფანჯრის დახურვის შემდეგაც კი."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ამჟამად შეჩერებულია. 28 დღის შემდეგ ელფოსტებს ვეღარ მიიღებთ, დისკიდან გაზიარებული ბმულები დაიბლოკება და ახალ ფაილებს ვეღარ ატვირთავათ. ჩვენი სერვისების მოხმარების გასაგრძელებლად საჭიროა, გადაიხადოთ ყველა ვადაგადაცილებული ინვოისი."
@@ -5268,6 +5262,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
@@ -5688,6 +5685,14 @@
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "ორგანიზაციის მორგება"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "ამ გეგმის დატოვება"
@@ -5756,12 +5761,31 @@
         "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "The organization key must be activated first.": [
+        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "ბარათის არასწორი ნომერი"
+      ],
+      "Invalid expiration date": [
+        "არასწორი ვადა"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
       ]
     },
     "Permission": {
