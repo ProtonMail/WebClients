@@ -25,8 +25,7 @@ export const registerLoggerEffect = (effect: (message: string) => void) => {
 log.setLevel(
     (() => {
         if (typeof BUILD_TARGET === 'undefined' || typeof ENV === 'undefined') return 'SILENT';
-        if (BUILD_TARGET !== 'web') return 'INFO';
-        return ENV === 'development' ? 'INFO' : 'SILENT';
+        return ENV === 'development' ? 'DEBUG' : 'INFO';
     })(),
     false
 );
