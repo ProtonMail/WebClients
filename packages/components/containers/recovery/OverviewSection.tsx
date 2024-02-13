@@ -29,7 +29,7 @@ interface Props {
 }
 
 const OverviewSection = ({ ids }: Props) => {
-    const { call } = useEventManager();
+    const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const api = useApi();
     const [User] = useUser();
@@ -67,19 +67,24 @@ const OverviewSection = ({ ids }: Props) => {
                         if (!userKeys || !Addresses || !addressesKeys) {
                             throw new Error('Missing keys');
                         }
-                        await reactivateKeysProcess({
-                            api,
-                            user: User,
-                            userKeys,
-                            addresses: Addresses,
-                            addressesKeys,
-                            keyReactivationRecords,
-                            keyPassword: authentication.getPassword(),
-                            onReactivation,
-                            keyTransparencyVerify,
-                        });
-                        await keyTransparencyCommit(userKeys).catch(noop);
-                        return call();
+                        try {
+                            stop();
+                            await reactivateKeysProcess({
+                                api,
+                                user: User,
+                                userKeys,
+                                addresses: Addresses,
+                                addressesKeys,
+                                keyReactivationRecords,
+                                keyPassword: authentication.getPassword(),
+                                onReactivation,
+                                keyTransparencyVerify,
+                            });
+                            await keyTransparencyCommit(userKeys).catch(noop);
+                            return await call();
+                        } finally {
+                            start();
+                        }
                     }}
                     {...reactivateKeyProps}
                 />
