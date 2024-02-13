@@ -2741,9 +2741,6 @@
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "आपका उपकरण नहीं है? साइन इन करने के लिए एक निजी ब्राउज़िंग विंडो का उपयोग करें और हो जाने पर इसे बंद कर दें। ${ learnMore }"
-      ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
         "आपके द्वारा असाइन करने का प्रयास किए जाने वाले समर्पित सर्वरों की संख्या (${ addedCount }) आपके प्लान में अभी भी उपलब्ध (${ remainingCount }) से अधिक है क्योंकि आपके पास ${ ownedCount } है और आप पहले से ही ${ usedCount } का उपयोग करते हैं।"
       ],
@@ -3178,6 +3175,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
+      "You have no invoices.": [
+        "आपका कोई चालान नहीं है।"
+      ],
       "You have no saved payment methods.": [
         "आपके पास कोई भुगतान विधि नहीं है।"
       ],
@@ -3201,9 +3201,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "ब्राउज़र बंद करने के बाद भी आप साइन इन रहेंगे।"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "आपका ${ BRAND_NAME } खाता वर्तमान में निलंबित है। 28 दिनों के बाद, ईमेल आपके इनबॉक्स में वितरित नहीं किए जाएंगे, आपके ड्राइव साझाकरण लिंक ब्लॉक कर दिए जाएंगे, और आप नई फ़ाइलें अपलोड नहीं कर पाएंगे। सामान्य सेवा फिर से शुरू करने के लिए, कृपया किसी अतिदेय चालान का भुगतान करें।"
@@ -4258,6 +4255,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
       ]
@@ -4553,6 +4553,14 @@
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "अपना संगठन स्थापित करें"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } इस्तेमाल करें"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "यह योजना रखें"
@@ -4580,12 +4588,28 @@
         "आपका भुगतान सत्यापित कर रहे"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "अनुमति से इनकार कर दिया, व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिया गया है।"
+      ],
+      "The organization key must be activated first.": [
+        "संगठन कुंजी को पहले सक्रिय किया जाना चाहिए।"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "क्रेडिट/डेबिट कार्ड"
       ],
       "New credit/debit card": [
         "नया क्रेडिट/डेबिट कार्ड"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "अमान्य कार्ड नंबर"
+      ],
+      "Invalid expiration date": [
+        "अमान्य एक्सपायर तारीख"
       ]
     },
     "Placeholder": {

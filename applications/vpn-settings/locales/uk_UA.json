@@ -3208,9 +3208,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Користуєтеся чужим пристроєм? Використовуйте вікно приватного перегляду, щоб увійти та завершити сеанс, коли все готово. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
       ],
@@ -3817,6 +3814,9 @@
         "Вам доступно ${ availableCount } виділених серверів.",
         "Вам доступно ${ availableCount } виділених серверів."
       ],
+      "You have no invoices.": [
+        "У вас немає рахунків."
+      ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
       ],
@@ -3849,9 +3849,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Сеанс буде активним навіть після закриття браузера."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Ваш обліковий запис ${ BRAND_NAME } наразі призупинено. За 28 днів електронні листи перестануть надходити до вашої поштової скриньки, посилання на спільний доступ до Drive будуть заблоковані, і ви не зможете завантажувати нові файли. Щоб відновити звичайну роботу, будь ласка, сплатіть несплачені рахунки."
@@ -5173,6 +5170,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ trialPlanName } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
@@ -5558,6 +5558,14 @@
         "Ваш тарифний план включає максимум ще ${ humanReadableAvailableSpace } сховища."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Налаштуйте свою організацію"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Почати використовувати ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
@@ -5614,12 +5622,31 @@
         "Всі сервіси ${ BRAND_NAME } Plus.${ br }Одна проста передплата."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Доступ заборонено. Права адміністратора було обмежено."
+      ],
+      "The organization key must be activated first.": [
+        "Спочатку необхідно активувати ключ організації."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Банківська картка"
       ],
       "New credit/debit card": [
         "Нова кредитна/платіжна картка"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Недійсний номер картки"
+      ],
+      "Invalid expiration date": [
+        "Недійсний термін дії картки"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Ваша картка була відхилена. Будь ласка, спробуйте скористатися іншою картою або зверніться у свій банк для авторизації платежу."
       ]
     },
     "Placeholder": {

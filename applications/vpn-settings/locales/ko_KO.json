@@ -248,9 +248,6 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Give feedback": [
-        "피드백 보내기"
-      ],
       "Got it": [
         "알겠습니다"
       ],
@@ -3285,9 +3282,6 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "내 기기가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하고 완료되었을 때 닫으세요. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -3879,6 +3873,9 @@
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount }개 전용 서버를 사용할 수 있습니다."
       ],
+      "You have no invoices.": [
+        "청구서가 없습니다."
+      ],
       "You have no saved payment methods.": [
         "저장된 결제 수단이 없습니다."
       ],
@@ -3911,9 +3908,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "브라우저를 닫아도 로그인 상태가 유지됩니다."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
@@ -5207,6 +5201,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
@@ -5643,6 +5640,14 @@
         "사용자의 플랜은 최대 ${ humanReadableAvailableSpace } 개 스토리지를 포함합니다."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "조직 설정"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 사용 시작"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "이 플랜 유지"
@@ -5711,12 +5716,28 @@
         "모든 ${ BRAND_NAME } Plus 서비스. ${ br }쉬운 구독."
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "권한이 거부되었으며 관리자 권한이 제한되었습니다."
+      ],
+      "The organization key must be activated first.": [
+        "조직 키가 먼저 활성화되어야 합니다."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "신용/체크카드"
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "유효하지 않은 카드 번호"
+      ],
+      "Invalid expiration date": [
+        "올바르지 않은 만료 기한"
       ]
     },
     "Permission": {
