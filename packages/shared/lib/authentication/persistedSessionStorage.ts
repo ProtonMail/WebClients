@@ -1,3 +1,4 @@
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
@@ -24,6 +25,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             isSubUser: parsedValue.isSubUser || false,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
             trusted: parsedValue.trusted || false,
+            payloadVersion: parsedValue.payloadVersion || 1,
         };
     } catch (e: any) {
         return undefined;
@@ -75,16 +77,21 @@ export const getPersistedSessionBlob = (blob: string): PersistedSessionBlob | un
 
 export const getDecryptedPersistedSessionBlob = async (
     key: CryptoKey,
-    persistedSessionBlobString: string
+    blob: string,
+    payloadVersion: PersistedSession['payloadVersion']
 ): Promise<PersistedSessionBlob> => {
-    const blob = await getDecryptedBlob(key, persistedSessionBlobString).catch(() => {
+    const decryptedBlob = await getDecryptedBlob(
+        key,
+        blob,
+        payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+    ).catch(() => {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted blob');
     });
-    const persistedSessionBlob = getPersistedSessionBlob(blob);
-    if (!persistedSessionBlob) {
+    const parsedBlob = getPersistedSessionBlob(decryptedBlob);
+    if (!parsedBlob) {
         throw new InvalidPersistentSessionError('Failed to parse persisted blob');
     }
-    return persistedSessionBlob;
+    return parsedBlob;
 };
 
 export const setPersistedSessionWithBlob = async (
@@ -99,13 +106,20 @@ export const setPersistedSessionWithBlob = async (
         trusted: boolean;
     }
 ) => {
+    const payloadVersion =
+        1 as PersistedSession['payloadVersion']; /* Update to 2 when all clients understand it (safe for rollback) */
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
         isSubUser: data.isSubUser,
-        blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword: data.keyPassword })),
         persistent: data.persistent,
         trusted: data.trusted,
+        payloadVersion,
+        blob: await getEncryptedBlob(
+            key,
+            JSON.stringify({ keyPassword: data.keyPassword }),
+            payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+        ),
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };

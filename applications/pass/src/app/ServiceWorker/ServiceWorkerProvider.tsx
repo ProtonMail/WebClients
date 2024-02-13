@@ -3,8 +3,8 @@ import { type FC, createContext, useContext, useEffect, useMemo, useRef } from '
 
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { PUBLIC_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type ServiceWorkerMessageType, type WithOrigin } from './channel';

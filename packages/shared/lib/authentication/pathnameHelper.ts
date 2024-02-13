@@ -1,5 +1,5 @@
-import { PUBLIC_PATH } from '../constants';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
+import { PUBLIC_PATH } from '../webpack.constants';
 import { getValidatedLocalID } from './sessionForkValidation';
 
 export const getLocalIDPath = (u?: number) => (u === undefined ? undefined : `u/${u}`);

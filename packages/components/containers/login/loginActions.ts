@@ -93,13 +93,21 @@ const finalizeLogin = async ({
         const user = cache.data.user || (await syncUser(cache));
         const trusted = false;
 
-        await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
+        const { clientKey } = await persistSession({
+            ...authResponse,
+            User: user,
+            keyPassword,
+            api,
+            persistent,
+            trusted,
+        });
 
         return {
             to: AuthStep.DONE,
             session: {
                 ...authResponse,
                 keyPassword,
+                clientKey,
                 loginPassword,
                 persistent,
                 trusted,
@@ -168,7 +176,7 @@ const finalizeLogin = async ({
         }
     }
 
-    await persistSession({
+    const { clientKey } = await persistSession({
         ...authResponse,
         User: user,
         keyPassword,
@@ -185,6 +193,7 @@ const finalizeLogin = async ({
             ...authResponse,
             keyPassword,
             loginPassword,
+            clientKey,
             persistent,
             trusted,
             User: user,

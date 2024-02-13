@@ -1,15 +1,15 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import type { Api } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
-import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
+import { generateClientKey, getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
 import type { AuthStore } from './store';
@@ -25,7 +25,10 @@ export type AuthSession = {
     UserID: string;
 };
 
-export type PersistedAuthSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
+export type PersistedAuthSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & {
+    blob: string;
+    payloadVersion: 2 | 1;
+};
 export type PersistedAuthSessionBlob = Pick<AuthSession, 'keyPassword' | 'sessionLockToken'>;
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
@@ -55,11 +58,22 @@ export const isValidPersistedSession = (data: any): data is PersistedAuthSession
 export const encryptPersistedSessionWithKey = async (
     { keyPassword, sessionLockToken, ...session }: AuthSession,
     sessionKey: CryptoKey
-): Promise<string> =>
-    JSON.stringify({
+): Promise<string> => {
+    let payloadVersion = 1 as PersistedAuthSession['payloadVersion'];
+    const value: PersistedAuthSession = {
         ...session,
-        blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword, sessionLockToken })),
-    });
+        payloadVersion,
+        blob: await getEncryptedBlob(
+            sessionKey,
+            JSON.stringify({
+                keyPassword,
+                sessionLockToken,
+            }),
+            payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+        ),
+    };
+    return JSON.stringify(value);
+};
 
 /** Ensures that an AuthSession contains the latest tokens in
  * case they were refreshed during the sequence preceding this call */
@@ -79,25 +93,21 @@ export const encryptPersistedSession = async ({ api, authStore }: EncryptSession
     const session = authStore.getSession();
     if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
 
-    const rawKey = crypto.getRandomValues(new Uint8Array(32));
-    const sessionKey = await getKey(rawKey);
-    const base64StringKey = uint8ArrayToBase64String(rawKey);
+    const { serializedData, key } = await generateClientKey();
 
-    await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(base64StringKey)));
-    return encryptPersistedSessionWithKey(mergeSessionTokens(session, authStore), sessionKey);
+    await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(serializedData)));
+    return encryptPersistedSessionWithKey(mergeSessionTokens(session, authStore), key);
 };
 
 /** Retrieves the current local key to decrypt the persisted session */
 export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
     const { ClientKey } = await api<LocalKeyResponse>(getLocalKey());
-    const rawKey = base64StringToUint8Array(ClientKey);
-
-    return getKey(rawKey);
+    return getClientKey(ClientKey);
 };
 
-const decryptPersistedSessionBlob = async (key: CryptoKey, blob: string): Promise<string> => {
+const decryptPersistedSessionBlob = async (key: CryptoKey, blob: string, payloadVersion: number): Promise<string> => {
     try {
-        return await getDecryptedBlob(key, blob);
+        return await getDecryptedBlob(key, blob, payloadVersion === 2 ? stringToUtf8Array('session') : undefined);
     } catch (_) {
         throw new InvalidPersistentSessionError('Failed to decrypt persisted session blob');
     }
@@ -115,8 +125,12 @@ const parsePersistedSessionBlob = (blob: string): PersistedAuthSessionBlob => {
     }
 };
 
-export const decryptPersistedSession = async (key: CryptoKey, blob: string): Promise<PersistedAuthSessionBlob> => {
-    const decryptedBlob = await decryptPersistedSessionBlob(key, blob);
+export const decryptPersistedSession = async (
+    key: CryptoKey,
+    blob: string,
+    payloadVersion: number
+): Promise<PersistedAuthSessionBlob> => {
+    const decryptedBlob = await decryptPersistedSessionBlob(key, blob, payloadVersion);
     const persistedSessionBlob = parsePersistedSessionBlob(decryptedBlob);
     return persistedSessionBlob;
 };
@@ -137,7 +151,10 @@ export const resumeSession = async ({
     authStore,
     persistedSession,
     onSessionInvalid,
-}: ResumeSessionOptions): Promise<{ session: AuthSession; sessionKey: CryptoKey }> => {
+}: ResumeSessionOptions): Promise<{
+    session: AuthSession;
+    sessionKey: CryptoKey;
+}> => {
     try {
         const [sessionKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
@@ -145,8 +162,8 @@ export const resumeSession = async ({
         ]);
 
         if (persistedSession.UserID !== User.ID) throw InactiveSessionError();
-        const { blob, ...session } = persistedSession;
-        const { keyPassword, sessionLockToken } = await decryptPersistedSession(sessionKey, blob);
+        const { blob, payloadVersion, ...session } = persistedSession;
+        const { keyPassword, sessionLockToken } = await decryptPersistedSession(sessionKey, blob, payloadVersion);
 
         return {
             sessionKey,

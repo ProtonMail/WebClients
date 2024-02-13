@@ -12,10 +12,7 @@ import { authMember } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import {
-    maybeResumeSessionByUser,
-    persistSessionWithPassword,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -65,7 +62,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
 
             const token = await dispatch(getOrganizationTokenThunk());
 
-            await persistSessionWithPassword({
+            await persistSession({
                 api: memberApi,
                 keyPassword: token,
                 User,

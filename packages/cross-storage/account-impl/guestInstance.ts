@@ -1,5 +1,6 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, isSSOMode } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import { appMode } from '@proton/shared/lib/webpack.constants';
 
 import create from '../lib/guest';
 import {
@@ -61,7 +62,7 @@ const createHandlers = ({ postAndGetMessage }: CrossStorageInstance) => {
 };
 
 export const setupGuestCrossStorage = () => {
-    if (!isSSOMode) {
+    if (appMode !== 'sso') {
         return;
     }
     instance = createHandlers(createProtonInstance(getAppHref('/storage.html', APPS.PROTONACCOUNT)));

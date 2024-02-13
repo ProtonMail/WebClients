@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 
 import { useConfig } from '../../hooks';
@@ -19,8 +20,8 @@ const CompatibilityCheck = ({ children }: Props) => {
     useEffect(() => {
         const run = async () => {
             const key = await getKey(new Uint8Array(16));
-            const data = await encryptData(key, new Uint8Array(16));
-            return decryptData(key, data);
+            const data = await encryptData(key, new Uint8Array(16), stringToUtf8Array('compatbility-check'));
+            return decryptData(key, data, stringToUtf8Array('compatbility-check'));
         };
         run().catch(() => {
             setIncompatibilities([

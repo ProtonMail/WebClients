@@ -581,6 +581,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
         UID: setupData.authResponse.UID,
         user: setupData.user,
         localID: setupData.authResponse.LocalID,
+        clientKey: setupData.clientKey,
         keyPassword: setupData.keyPassword,
         persistent: cache.persistent,
         trusted: cache.trusted,

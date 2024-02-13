@@ -20,6 +20,7 @@ import {
     generateSharedCalendars,
     generateSubscribedCalendars,
 } from '@proton/testing/lib/builders';
+import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
 import { IconName } from '../../../components';
 import CalendarsSettingsSection, { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
@@ -92,6 +93,7 @@ const renderComponent = ({
     };
 
     const subscription = {} as Subscription;
+    mockUseAuthentication({ mode: '' } as any);
 
     render(
         <Router history={memoryHistory}>

@@ -14,9 +14,11 @@ import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { ApiEnvironmentConfig, CachedOrganizationKey, Organization, ProtonConfig } from '@proton/shared/lib/interfaces';
 import { DecryptedKey, MailSettings, SubscriptionModel, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { apiMock, mockCache } from '@proton/testing';
+import { apiMock } from '@proton/testing/lib/api';
+import { mockCache } from '@proton/testing/lib/cache';
 
 import ApiContext from '../../api/apiContext';
+import AuthenticationProvider from '../../authentication/Provider';
 import { CacheProvider } from '../../cache';
 import { ConfigProvider } from '../../config';
 import EventManagerContext from '../../eventManager/context';
@@ -83,9 +85,11 @@ const TestProvider = ({ children }: { children: ReactNode }) => {
                 <CacheProvider cache={mockCache}>
                     <NotificationsContext.Provider value={notificationManager}>
                         <EventManagerContext.Provider value={eventManager}>
-                            <Router history={history}>
-                                <ContactProvider>{children}</ContactProvider>
-                            </Router>
+                            <AuthenticationProvider store={{} as any}>
+                                <Router history={history}>
+                                    <ContactProvider>{children}</ContactProvider>
+                                </Router>
+                            </AuthenticationProvider>
                         </EventManagerContext.Provider>
                     </NotificationsContext.Provider>
                 </CacheProvider>

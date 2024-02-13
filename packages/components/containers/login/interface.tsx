@@ -72,6 +72,7 @@ export interface AuthSession {
     appIntent?: AppIntent;
     persistent: boolean;
     trusted: boolean;
+    clientKey: string;
 }
 
 export type AuthActionResponse =

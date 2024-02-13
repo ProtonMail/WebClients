@@ -23,12 +23,12 @@ import ForceRefreshContext from '@proton/components/containers/forceRefresh/cont
 import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import useApi from '@proton/components/hooks/useApi';
+import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { initMainHost } from '@proton/cross-storage/lib';
 import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
@@ -41,15 +41,7 @@ import {
     LocalSessionPersisted,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
-import {
-    APPS,
-    CLIENT_TYPES,
-    PLANS,
-    SETUP_ADDRESS_PATH,
-    SSO_PATHS,
-    UNPAID_STATE,
-    isSSOMode,
-} from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES, PLANS, SETUP_ADDRESS_PATH, SSO_PATHS, UNPAID_STATE } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -169,6 +161,7 @@ interface Props {
 const BasePublicApp = ({ onLogin }: Props) => {
     const api = useApi();
     const history = useHistory();
+    const authentication = useAuthentication();
     const location = useLocationWithoutLocale<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -258,7 +251,17 @@ const BasePublicApp = ({ onLogin }: Props) => {
     };
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { loginPassword, keyPassword, UID, LocalID, User: user, persistent, trusted, appIntent } = args;
+        const {
+            loginPassword,
+            keyPassword,
+            clientKey,
+            UID,
+            LocalID,
+            User: user,
+            persistent,
+            trusted,
+            appIntent,
+        } = args;
 
         const toApp = getToApp(appIntent?.app || maybePreAppIntent, user);
 
@@ -282,9 +285,10 @@ const BasePublicApp = ({ onLogin }: Props) => {
         })();
 
         if (getRequiresAddressSetup(toApp, user) && !localRedirect?.path.includes(SETUP_ADDRESS_PATH)) {
-            const blob = loginPassword
-                ? await getEncryptedSetupBlob(getUIDApi(UID, api), loginPassword).catch(noop)
-                : undefined;
+            const blob =
+                loginPassword && clientKey
+                    ? await getEncryptedSetupBlob(clientKey, loginPassword).catch(noop)
+                    : undefined;
             const params = new URLSearchParams();
             params.set('to', toApp);
             params.set('from', 'switch');
@@ -356,7 +360,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
             }
         }
 
-        if (url.hostname === window.location.hostname || !isSSOMode) {
+        if (url.hostname === window.location.hostname || authentication.mode !== 'sso') {
             return onLogin({
                 ...args,
                 path: getPathFromLocation(url),
@@ -372,7 +376,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
         setForkState(newForkState);
         setActiveSessions(sessions);
 
-        if (newForkState.type === SSOType.Proton && newForkState.payload.type === FORK_TYPE.SIGNUP) {
+        if (newForkState.type === SSOType.Proton && newForkState.payload.forkType === FORK_TYPE.SIGNUP) {
             const paths = getPaths(location.localePrefix, newForkState, getPreAppIntent(newForkState), productParam);
             history.replace(paths.signup);
             return;

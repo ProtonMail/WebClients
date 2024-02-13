@@ -14,8 +14,8 @@ import { usePermissionsGranted } from './usePermissionsGranted';
 /* depending on where we execute this : we may or may not
  * have access to the tabs API - Firefox content-scripts have
  * very limited support for the tabs API */
-export const useRequestFork = () => async (type?: FORK_TYPE, replace?: boolean) => {
-    const { url } = requestFork({ host: SSO_URL, type, app: APPS.PROTONEXTENSION });
+export const useRequestFork = () => async (forkType?: FORK_TYPE, replace?: boolean) => {
+    const { url } = requestFork({ host: SSO_URL, forkType, app: APPS.PROTONEXTENSION });
 
     if (replace) return window.location.replace(url);
     return browser.tabs ? browser.tabs.create({ url }).catch(noop) : window.open(url, '_BLANK');
@@ -30,9 +30,9 @@ export const useRequestForkWithPermissions = (options?: { autoClose?: boolean; r
     const accountFork = useRequestFork();
     const permissionsGranted = usePermissionsGranted();
 
-    return async (type?: FORK_TYPE) => {
+    return async (forkType?: FORK_TYPE) => {
         if (permissionsGranted || (await promptForPermissions())) {
-            return accountFork(type, options?.replace).finally(async () => {
+            return accountFork(forkType, options?.replace).finally(async () => {
                 if (options?.autoClose) window.close();
             });
         }
