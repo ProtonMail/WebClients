@@ -19,7 +19,7 @@ const SignupButton = ({ paths }: Props) => {
 
     const handleSignupDesktop = () => {
         if (canInvokeInboxDesktopIPC) {
-            window.ipcInboxMessageBroker?.send('openExternal', 'https://account.proton.me/mail/signup');
+            window.ipcInboxMessageBroker?.send('openExternal', `${window.location.origin}/mail/signup`);
         }
     };
 
