@@ -1,6 +1,5 @@
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { isSSOMode } from '@proton/shared/lib/constants';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import { Api, User } from '@proton/shared/lib/interfaces';
 import { isSubUser } from '@proton/shared/lib/user/helpers';
@@ -21,14 +20,14 @@ const mutatePassword = async ({
         return;
     }
     const localID = authentication.getLocalID?.();
-    if (!isSSOMode || localID === undefined) {
+    if (authentication.mode !== 'sso' || localID === undefined) {
         authentication.setPassword(keyPassword);
         return;
     }
     try {
         authentication.setPassword(keyPassword);
 
-        await persistSessionWithPassword({
+        const { clientKey } = await persistSession({
             api,
             keyPassword,
             User,
@@ -36,7 +35,11 @@ const mutatePassword = async ({
             LocalID: localID,
             persistent: authentication.getPersistent(),
             trusted: authentication.getTrusted(),
+            mode: authentication.mode,
         });
+
+        authentication.setClientKey(clientKey);
+
         sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
     } catch (e: any) {
         sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: false });

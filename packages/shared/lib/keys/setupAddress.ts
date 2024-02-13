@@ -1,16 +1,14 @@
 import { c } from 'ttag';
 
 import { AddressGeneration } from '@proton/components/containers/login/interface';
-import { getLocalKey } from '@proton/shared/lib/api/auth';
+import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';
-import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
-import { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import { ADDRESS_TYPE, APP_NAMES, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getEmailParts, removePlusAliasLocalPart } from '@proton/shared/lib/helpers/email';
-import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { isPrivate } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
@@ -340,21 +338,17 @@ interface SetupBlob {
     loginPassword: string;
 }
 
-export const getEncryptedSetupBlob = async (api: Api, loginPassword: string) => {
-    const ClientKey = await api<LocalKeyResponse>(getLocalKey()).then(({ ClientKey }) => ClientKey);
-    const rawKey = base64StringToUint8Array(ClientKey);
-    const key = await getKey(rawKey);
+export const getEncryptedSetupBlob = async (clientKey: string, loginPassword: string) => {
+    const key = await getClientKey(clientKey);
     const setupBlob: SetupBlob = {
         loginPassword,
     };
-    return getEncryptedBlob(key, JSON.stringify(setupBlob));
+    return getEncryptedBlob(key, JSON.stringify(setupBlob), stringToUtf8Array('setup'));
 };
 
-export const getDecryptedSetupBlob = async (api: Api, blob: string): Promise<SetupBlob | undefined> => {
-    const ClientKey = await api<LocalKeyResponse>(getLocalKey()).then(({ ClientKey }) => ClientKey);
-    const rawKey = base64StringToUint8Array(ClientKey);
-    const key = await getKey(rawKey);
-    const result = await getDecryptedBlob(key, blob);
+export const getDecryptedSetupBlob = async (clientKey: string, blob: string): Promise<SetupBlob | undefined> => {
+    const key = await getClientKey(clientKey);
+    const result = await getDecryptedBlob(key, blob, stringToUtf8Array('setup'));
     try {
         const json = JSON.parse(result);
         if (!json?.loginPassword) {

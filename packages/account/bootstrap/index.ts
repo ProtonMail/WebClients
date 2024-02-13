@@ -61,8 +61,8 @@ class InvalidSessionError extends Error {
     }
 }
 
-export const maybeConsumeFork = async ({ api }: { api: Api }) => {
-    const { state, selector, key, persistent, trusted } = getConsumeForkParameters();
+export const maybeConsumeFork = async ({ api, mode }: Pick<Parameters<typeof consumeFork>[0], 'api' | 'mode'>) => {
+    const { state, selector, key, persistent, trusted, version } = getConsumeForkParameters();
     if (!state && !selector && !key) {
         return null;
     }
@@ -70,7 +70,7 @@ export const maybeConsumeFork = async ({ api }: { api: Api }) => {
         return null;
     }
     try {
-        const result = await consumeFork({ selector, api, state, key, persistent, trusted });
+        const result = await consumeFork({ selector, api, state, key, persistent, trusted, version, mode });
         return result;
     } catch (e: any) {
         removeHashParameters();
@@ -84,7 +84,11 @@ const handleUID = (UID: string | undefined) => {
 };
 
 export const createAuthentication = (args?: Partial<Parameters<typeof createAuthenticationStore>[0]>) => {
-    return createAuthenticationStore({ store: createSecureSessionStorage(), onUID: handleUID, ...args });
+    return createAuthenticationStore({
+        store: createSecureSessionStorage(),
+        onUID: handleUID,
+        ...args,
+    });
 };
 
 export const removeLoaderClassName = () => {
@@ -141,7 +145,7 @@ export const loadSession = async ({
     try {
         if (localID === undefined) {
             if (pathname.startsWith(SSO_PATHS.FORK)) {
-                const result = await maybeConsumeFork({ api });
+                const result = await maybeConsumeFork({ api, mode: authentication.mode });
                 if (result) {
                     authentication.login(result);
                     api.UID = authentication.UID;
