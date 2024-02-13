@@ -164,6 +164,72 @@ export const getMemberKeyPayload = async ({
     };
 };
 
+export const getMemberEditPayload = ({
+    verifyOutboundPublicKeys,
+    member,
+    role,
+    api,
+}: {
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    member: EnhancedMember;
+    role: MEMBER_ROLE | null;
+    api: Api;
+}): ThunkAction<
+    Promise<
+        | { action: 'confirm-demote'; payload: null }
+        | {
+              action: 'confirm-promote';
+              payload: MemberKeyPayload;
+          }
+        | {
+              action: 'pass-through';
+              payload: MemberKeyPayload | null;
+          }
+    >,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const organizationKey = await dispatch(organizationKeyThunk());
+        const passwordlessMode = getIsPasswordless(organizationKey?.Key);
+
+        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+            return {
+                action: 'confirm-demote',
+                payload: null,
+            };
+        }
+
+        if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
+            const payload = await getMemberKeyPayload({
+                organizationKey,
+                verifyOutboundPublicKeys,
+                api,
+                member,
+                memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
+            });
+
+            if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
+                return {
+                    action: 'confirm-promote',
+                    payload,
+                };
+            }
+
+            return {
+                action: 'pass-through',
+                payload,
+            };
+        }
+
+        return {
+            action: 'pass-through',
+            payload: null,
+        };
+    };
+};
+
 export const getMemberKeyPayloads = ({
     verifyOutboundPublicKeys,
     members,

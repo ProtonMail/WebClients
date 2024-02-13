@@ -6,7 +6,7 @@ import {
     MemberKeyPayload,
     editMember,
     getMemberAddresses,
-    getMemberKeyPayload,
+    getMemberEditPayload,
     getPrivateAdminError,
 } from '@proton/account';
 import { Button, Card } from '@proton/atoms';
@@ -108,7 +108,13 @@ const SubUserEditModal = ({
         updateModel({ ...model, ...partial });
     };
 
-    const handleSubmit = async ({ role }: { role: MEMBER_ROLE | null }) => {
+    const handleSubmit = async ({
+        role,
+        memberKeyPacketPayload,
+    }: {
+        role: MEMBER_ROLE | null;
+        memberKeyPacketPayload: MemberKeyPayload | null;
+    }) => {
         const result = await dispatch(
             editMember({
                 member,
@@ -120,7 +126,7 @@ const SubUserEditModal = ({
                         canMakePrivate && model.private && model.private !== initialModel.private ? true : undefined,
                     role: role !== null ? role : undefined,
                 },
-                memberKeyPacketPayload: memberKeyPacketPayload.current,
+                memberKeyPacketPayload,
                 api: silentApi,
             })
         );
@@ -144,9 +150,12 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmDemotionModalProps.onClose();
-                                void withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_MEMBER })).catch(
-                                    errorHandler
-                                );
+                                void withLoading(
+                                    handleSubmit({
+                                        role: MEMBER_ROLE.ORGANIZATION_MEMBER,
+                                        memberKeyPacketPayload: memberKeyPacketPayload.current,
+                                    })
+                                ).catch(errorHandler);
                             }}
                         >{c('Action').t`Remove`}</Button>,
                         <Button
@@ -172,7 +181,12 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmPromotionModalProps.onClose();
-                                withLoading(handleSubmit({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(errorHandler);
+                                withLoading(
+                                    handleSubmit({
+                                        role: MEMBER_ROLE.ORGANIZATION_ADMIN,
+                                        memberKeyPacketPayload: memberKeyPacketPayload.current,
+                                    })
+                                ).catch(errorHandler);
                             }}
                         >{c('Action').t`Make admin`}</Button>,
                         <Button
@@ -209,6 +223,7 @@ const SubUserEditModal = ({
                 onSubmit={(event: FormEvent<HTMLFormElement>) => {
                     event.preventDefault();
                     event.stopPropagation();
+
                     if (!onFormSubmit(event.currentTarget)) {
                         return;
                     }
@@ -225,28 +240,24 @@ const SubUserEditModal = ({
 
                     const run = async () => {
                         memberKeyPacketPayload.current = null;
-
-                        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+                        const { payload, action } = await dispatch(
+                            getMemberEditPayload({
+                                verifyOutboundPublicKeys,
+                                role,
+                                member,
+                                api: silentApi,
+                            })
+                        );
+                        memberKeyPacketPayload.current = payload;
+                        if (action === 'confirm-demote') {
                             setConfirmDemotionModal(true);
                             return;
                         }
-
-                        if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
-                            memberKeyPacketPayload.current = await getMemberKeyPayload({
-                                organizationKey,
-                                verifyOutboundPublicKeys,
-                                api: silentApi,
-                                member,
-                                memberAddresses: await dispatch(getMemberAddresses({ member, retry: true })),
-                            });
-
-                            if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
-                                setConfirmPromotionModal(true);
-                                return;
-                            }
+                        if (action === 'confirm-promote') {
+                            setConfirmPromotionModal(true);
+                            return;
                         }
-
-                        await handleSubmit({ role });
+                        await handleSubmit({ role, memberKeyPacketPayload: payload });
                     };
 
                     withLoading(run()).catch(errorHandler);
