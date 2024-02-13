@@ -33,7 +33,7 @@ import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, VPNServersCountData, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -282,6 +282,8 @@ const AccountStepPayment = ({
 
     const isB2BPlan = getIsB2BAudienceFromPlan(options.plan.Name);
 
+    const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
+
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">
@@ -342,6 +344,7 @@ const AccountStepPayment = ({
                             disabled={loadingSignup || loadingPaymentDetails}
                             noMaxWidth
                             hideFirstLabel
+                            hasSomeVpnPlan={hasSomeVpnPlan}
                         />
                     ) : (
                         <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
@@ -361,19 +364,21 @@ const AccountStepPayment = ({
                                         onClick={() => process(paymentFacade.paypal)}
                                         pill
                                     />
-                                    <PayPalButton
-                                        id="paypal-credit"
-                                        shape="ghost"
-                                        color="norm"
-                                        pill
-                                        paypal={paymentFacade.paypalCredit}
-                                        disabled={loadingSignup}
-                                        amount={paymentFacade.amount}
-                                        currency={paymentFacade.currency}
-                                        onClick={() => process(paymentFacade.paypalCredit)}
-                                    >
-                                        {c('Link').t`Paypal without credit card`}
-                                    </PayPalButton>
+                                    {!hasSomeVpnPlan && (
+                                        <PayPalButton
+                                            id="paypal-credit"
+                                            shape="ghost"
+                                            color="norm"
+                                            pill
+                                            paypal={paymentFacade.paypalCredit}
+                                            disabled={loadingSignup}
+                                            amount={paymentFacade.amount}
+                                            currency={paymentFacade.currency}
+                                            onClick={() => process(paymentFacade.paypalCredit)}
+                                        >
+                                            {c('Link').t`Paypal without credit card`}
+                                        </PayPalButton>
+                                    )}
                                 </div>
                             );
                         }
