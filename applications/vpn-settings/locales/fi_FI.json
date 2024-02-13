@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
+      "Activate": [
+        "Ota käyttöön"
+      ],
       "activate": [
         "ota käyttöön"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Change keys": [
+        "Muuta avaimia"
       ],
       "Change mailbox password": [
         "Vaihda postilaatikon salasana"
@@ -247,9 +253,6 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
-      ],
-      "Give feedback": [
-        "Anna palautetta"
       ],
       "Got it": [
         "Selvä"
@@ -1955,6 +1958,9 @@
       "Code wrong or not valid anymore": [
         "Koodi on virheellinen tai erääntynyt"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
@@ -2914,6 +2920,9 @@
       "Are you sure you want to discard your changes?": [
         "Haluatko varmasti hylätä muutokset?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Haluatko varmasti antaa tälle käyttäjälle ylläpitäjän oikeudet?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
@@ -3314,9 +3323,6 @@
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Eikö laite ole sinun? Käytä selaimesi yksityistä selaustilaa ja sulje se kun lopetat. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Organisaation kohdistettujen palvelinten määrä"
@@ -3920,6 +3926,9 @@
         "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
         "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
       ],
+      "You have no invoices.": [
+        "Sinulla ei ole laskuja."
+      ],
       "You have no saved payment methods.": [
         "Sinulla ei ole tallennettuja maksutapoja."
       ],
@@ -3952,9 +3961,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Pysyt kirjautuneena myös selaimen sulun jälkeen."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME }-tilisi on jäädytetty, ja 28 päivän kuluttua postilaatikkosi ei enää vastaanota viestejä ja Drive-jakolinkit sekä uusien tiedostojen tallennus estetään. Palauttaaksesi tilisi normaalin toiminnan, maksa maksamattomat laskut."
@@ -4074,6 +4080,9 @@
       "Credit": [
         "Krediitit"
       ],
+      "Currency conversion": [
+        "Valuutan muuntaminen"
+      ],
       "Donation": [
         "Lahjoitus"
       ],
@@ -4131,6 +4140,9 @@
       ],
       "Addresses": [
         "Osoitteet"
+      ],
+      "Administrators": [
+        "Ylläpitäjät"
       ],
       "Allow recovery by email": [
         "Salli palautus sähköpostitse"
@@ -4500,6 +4512,9 @@
       ],
       "Value": [
         "Arvo"
+      ],
+      "VAT": [
+        "ALV"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -4925,6 +4940,9 @@
       "Autofill credit cards (coming soon)": [
         "Maksukorttien automaattitäyttö (tulossa pian)"
       ],
+      "Automatic email forwarding": [
+        "Automaattinen sähköpostin välitys"
+      ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
       ],
@@ -5062,6 +5080,9 @@
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
       ],
+      "Require 2FA for organization": [
+        "Vaadi organisaatiolle 2FA"
+      ],
       "Router support": [
         "Reititintuki"
       ],
@@ -5095,6 +5116,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integraatio (tulossa pian)"
       ],
       "Start protecting your organization": [
         "Aloita organisaatiosi suojaaminen"
@@ -5267,6 +5291,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
@@ -5688,6 +5715,17 @@
         "Tilauksesi sisältää enintään ${ humanReadableAvailableSpace } lisätallennustilaa."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Siirry holviin hallitaksesi salasanojasi, aliaksiasi ja muuta."
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Aloita ${ PASS_APP_NAME } -sovelluksen käyttö"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Pidä tämä tilaus"
@@ -5713,6 +5751,9 @@
       ],
       "Creating your account": [
         "Tiliäsi luodaan"
+      ],
+      "Current plan": [
+        "Nykyinen tilaus"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
@@ -5756,12 +5797,81 @@
         "Kaikki ${ BRAND_NAME }in Plus-palvelut.${ br }Yksi helppo tilaus."
       ]
     },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Kaikki ylläpitäjät saavat käyttöoikeuden avaimeen."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Haluatko varmasti muuttaa organisaation avainta?"
+      ],
+      "Change organization key": [
+        "Muuta organisaation avainta"
+      ],
+      "Organization key activated": [
+        "Organisaation avain aktivoitiin"
+      ],
+      "Organization key does not exist.": [
+        "Organisaation avainta ei ole olemassa."
+      ],
+      "Organization key restored": [
+        "Organisaation avain palautettiin"
+      ],
+      "Organization key updated": [
+        "Organisaation avain päivitettiin"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+      ],
+      "Reset organization key": [
+        "Nollaa organisaation avain"
+      ],
+      "The organization key must be activated first.": [
+        "Organisaation avain on ensin aktivoitava."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Maksukortti"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Kortin numero"
+      ],
+      "CVC": [
+        "Turvakoodi"
+      ],
+      "MM/YY": [
+        "KK/VV"
+      ],
+      "Timeout exceeded": [
+        "Aikakatkaisu ylitettiin"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Virheellinen kortin numero"
+      ],
+      "Invalid expiration date": [
+        "Virheellinen voimassaolon päättymisaika"
+      ],
+      "Invalid securiry code": [
+        "Virheellinen turvakoodi"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
       ]
     },
     "Permission": {
@@ -6736,6 +6846,9 @@
       "Address added": [
         "Osoite lisättiin"
       ],
+      "Administrator privileges restored": [
+        "Ylläpitäjän oikeudet palautettiin"
+      ],
       "Bug reported": [
         "Vikailmoitus lähetettiin"
       ],
@@ -7065,6 +7178,9 @@
       ],
       "Change role": [
         "Muuta roolia"
+      ],
+      "Confirm": [
+        "Vahvista"
       ],
       "Confirm address": [
         "Vahvista sähköpostiosoite"
