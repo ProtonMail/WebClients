@@ -67,9 +67,6 @@ const PayPalView = ({
     const allowedPaymentTypes: PaymentMethodFlows[] = ['signup', 'signup-pass', 'subscription', 'invoice', 'credit'];
     const isAllowedPaymentType = type && allowedPaymentTypes.includes(type);
 
-    const allowedOtherTypes: PaymentMethodFlows[] = ['donation'];
-    const isAllowedOtherType = type && allowedOtherTypes.includes(type);
-
     return (
         <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
             {isAllowedPaymentType ? (
@@ -82,7 +79,6 @@ const PayPalView = ({
                     <div>{clickHere}</div>
                 </>
             ) : null}
-            {isAllowedOtherType ? <PayPalInfoMessage /> : null}
         </div>
     );
 };
