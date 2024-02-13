@@ -529,6 +529,20 @@ describe('parseMultiUserCsv', () => {
                 expect(result.errors[0].type).toBe(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED);
             });
 
+            it('adds error if no password is defined', async () => {
+                const password = '1234567';
+                const fileContent = [defaultCsvFields, `Alice,alice@mydomain.com,${password},1073741824,1,0`].join(
+                    '\n'
+                );
+                const file = getFile(fileContent);
+
+                const result = await parseMultiUserCsv([file]);
+
+                expect(result.errors.length).toBe(1);
+                expect(result.errors[0].rowNumber).toBe(1);
+                expect(result.errors[0].type).toBe(CSV_CONVERSION_ERROR_TYPE.PASSWORD_LESS_THAN_MIN_LENGTH);
+            });
+
             it('returns no errors if password is a string', async () => {
                 const password = 'alice_password';
                 const fileContent = [defaultCsvFields, `Alice,alice@mydomain.com,${password},1073741824,1,0`].join(
@@ -543,7 +557,7 @@ describe('parseMultiUserCsv', () => {
                 expect(user.password).toBe('alice_password');
             });
 
-            it('is considered to be defined if set to falsy 0 value', async () => {
+            it('does not throw PASSWORD_REQUIRED error if set to falsy 0 value', async () => {
                 const password = 0;
                 const fileContent = [defaultCsvFields, `Alice,alice@mydomain.com,${password},1073741824,1,0`].join(
                     '\n'
@@ -551,14 +565,14 @@ describe('parseMultiUserCsv', () => {
                 const file = getFile(fileContent);
 
                 const result = await parseMultiUserCsv([file]);
-                const user = result.users[0];
 
-                expect(result.errors.length).toBe(0);
-                expect(user.password).toBe(`0`);
+                expect(
+                    result.errors.map(({ type }) => type).includes(CSV_CONVERSION_ERROR_TYPE.PASSWORD_REQUIRED)
+                ).toBe(false);
             });
 
             it('casts to a string', async () => {
-                const password = 123;
+                const password = 12345678;
                 const fileContent = [defaultCsvFields, `Alice,alice@mydomain.com,${password},1073741824,1,0`].join(
                     '\n'
                 );
@@ -568,7 +582,7 @@ describe('parseMultiUserCsv', () => {
                 const user = result.users[0];
 
                 expect(result.errors.length).toBe(0);
-                expect(user.password).toBe(`123`);
+                expect(user.password).toBe(`12345678`);
             });
         });
 

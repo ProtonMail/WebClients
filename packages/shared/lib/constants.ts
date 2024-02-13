@@ -1161,3 +1161,5 @@ export const COMPOSER_TOOLBAR_ICON_SIZE = 3.5;
  */
 export const DEFAULT_MAIL_PAGE_SIZE = 50;
 export const MAX_MESSAGES_FETCH_CHUNK_SIZE = 50;
+
+export const MIN_PASSWORD_LENGTH = 8;
