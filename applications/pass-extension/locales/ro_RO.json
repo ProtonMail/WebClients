@@ -308,6 +308,9 @@
       "Pin item": [
         "Fixare"
       ],
+      "Recent": [
+        "Recente"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -328,6 +331,9 @@
       ],
       "Remove access": [
         "Eliminare acces"
+      ],
+      "Remove member": [
+        "Eliminare membru"
       ],
       "Request a feature": [
         "Solicitare funcție"
@@ -422,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Schimbați planul acum pentru a partaja cu mai mulți oameni"
       ],
+      "View app logs": [
+        "Afișare jurnal aplicație"
+      ],
       "Write us on Reddit": [
         "Scrieți-ne pe Reddit"
       ],
@@ -495,11 +504,22 @@
       "Cannot create alias (${ error }).": [
         "Nu se poate crea aliasul. ${ error }."
       ],
+      "Cannot send invitation at the moment": [
+        "Invitația nu poate fi trimisă momentan.",
+        "Invitațiile nu se pot trimite momentan.",
+        "Invitațiile nu se pot trimite momentan."
+      ],
+      "Cannot send invitations at the moment": [
+        "Momentan nu se pot trimite invitații."
+      ],
       "Could not confirm this invite at the moment": [
         "Nu s-a putut confirma această invitație momentan."
       ],
       "Could not leave vault.": [
         "Nu s-a putut părăsi seiful."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Recomandările nu s-au putut încărca momentan."
       ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
@@ -769,6 +789,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
+      "${ count } invites successfully sent": [
+        "Invitații trimise: ${ count }"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -933,6 +956,11 @@
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
+      ],
       "Generating alias...": [
         "Se generează aliasul…"
       ],
@@ -1063,6 +1091,11 @@
       "Password copied": [
         "Parola a fost copiată."
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
+      ],
       "Pending access to the shared data": [
         "Se așteaptă accesul la datele partajate."
       ],
@@ -1170,6 +1203,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Meniul derulant de autocompletare se va deschide automat când se dă clic sau se focalizează pe un câmp."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1516,6 +1552,15 @@
       ],
       "Logins": [
         "Conectări"
+      ],
+      "Make all admins": [
+        "Setare toți ca administratori"
+      ],
+      "Make all editors": [
+        "Setare toți acces editare"
+      ],
+      "Make all viewers": [
+        "Setare toți acces citire"
       ],
       "Members": [
         "Membri"
@@ -1894,6 +1939,9 @@
       "Fill & copy password": [
         "Completare și copiere parolă"
       ],
+      "Get Started": [
+        "Începeți"
+      ],
       "Get the mobile apps": [
         "Obțineți aplicația pentru mobil"
       ],
@@ -1920,6 +1968,9 @@
       ],
       "Member limit": [
         "Limită membri"
+      ],
+      "Members": [
+        "Membri"
       ],
       "Move all items ?": [
         "Se mută toate articolele?"
@@ -1957,6 +2008,9 @@
       "Share with": [
         "Partajare cu"
       ],
+      "Suggestions": [
+        "Sugestii"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Comutați la ${ PASS_APP_NAME }?"
       ],
@@ -1980,6 +2034,9 @@
       ],
       "Use my email": [
         "Utilizare e-mail"
+      ],
+      "Vault": [
+        "Seif"
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."
@@ -2033,11 +2090,20 @@
       "An error occured while exporting your data": [
         "A apărut o eroare în timpul exportului de date."
       ],
+      "At least one email address is required": [
+        "Este necesară cel puțin o adresă de e-mail."
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Nu s-a putut crea seiful „${ vaultName }”."
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Nu s-au putut trimite invitații la următoare adrese:"
+      ],
+      "Duplicate email addresses.": [
+        "Adrese de e-mail duplicate."
       ],
       "Empty note": [
         "Notă goală."
@@ -2047,6 +2113,9 @@
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
+      ],
+      "Invalid email addresses.": [
+        "Adrese de e-mail nevalide."
       ],
       "Maximum length is ${ maxLength } character": [
         "Lungimea maximă este de ${ maxLength } caracter.",
@@ -2071,6 +2140,9 @@
       "No password manager selected": [
         "Nu a fost selectat niciun manager de parole."
       ],
+      "No results": [
+        "Nu sunt rezultate"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Sunt permise doar caractere alfanumerice, puncte, cratime și de subliniere."
       ],
@@ -2079,6 +2151,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Fișierul criptat PGP exportat necesită o frază de acces."
+      ],
+      "Please contact us for investigating the issue": [
+        "Contactați-ne pentru a investiga problema."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."

@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Fjern all formattering"
       ],
+      "Clear application data": [
+        "Tøm applikasjonsdata"
+      ],
       "Clear browser data": [
         "Tøm nettleserdata"
       ],
@@ -259,6 +262,9 @@
       ],
       "Create a new label": [
         "Opprett en ny etikett"
+      ],
+      "Create and copy alias": [
+        "Opprett og kopier alias"
       ],
       "Create folder": [
         "Opprett mappe"
@@ -435,9 +441,6 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
-      ],
-      "Give feedback": [
-        "Gi tilbakemelding"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -869,9 +872,6 @@
       "Save": [
         "Lagre"
       ],
-      "Save and copy alias": [
-        "Lagre og kopier alias"
-      ],
       "Saving${ ellipsis }": [
         "Lagrer${ ellipsis }"
       ],
@@ -907,6 +907,9 @@
       ],
       "Select all messages": [
         "Velg alle meldinger"
+      ],
+      "Select country": [
+        "Velg land"
       ],
       "Select date and time": [
         "Velg dato og klokkeslett"
@@ -5212,6 +5215,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Sjekker kontakt ${ progress } av ${ max }..."
       ],
+      "Clear app data": [
+        "Fjern appdata"
+      ],
       "Clear data": [
         "Tøm data"
       ],
@@ -5756,6 +5762,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Fjerner alle data knyttet til denne appen, inkludert nedlastede meldinger."
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Hvis du rapporterer en melding som et forsøk på nettfisking, sendes meldingen til oss, slik at vi kan analysere den og forbedre filtrene våre. Dette betyr at vi vil kunne se innholdet i meldingen i sin helhet."
       ],
@@ -5925,9 +5934,6 @@
       "The sender has requested a read receipt.": [
         "Avsenderen har bedt om lesebekreftelse."
       ],
-      "The vault your alias will be stored in.": [
-        "Hvelvet som aliaset ditt vil bli lagret i."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Bekreftelsen av ${ contactNames } har mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
         "Bekreftelsen av ${ contactNames } har mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
@@ -6035,6 +6041,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøkkelen brukes automatisk til å kryptere e-post som sendes til denne adressen."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Dette fjerner alle data knyttet til denne appen, inkludert nedlastede meldinger. Appen starter på nytt, og du må logge på igjen for å bruke appen."
       ],
       "This sender's public key has not been trusted yet.": [
         "Denne avsenderens offentlige nøkkel er ikke klarert enda."
@@ -6458,6 +6467,9 @@
       "Expand / contract composer": [
         "Utvid / krymp skrivevindu"
       ],
+      "Filter": [
+        "Filter"
+      ],
       "Forward": [
         "Videresend"
       ],
@@ -6633,9 +6645,6 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
-      "Add title": [
-        "Legg til tittel"
-      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -6771,6 +6780,9 @@
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "f.eks. Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-post"
       ],
@@ -6815,6 +6827,9 @@
       ],
       "Frequency": [
         "Frekvens"
+      ],
+      "From": [
+        "Fra"
       ],
       "From:": [
         "Fra:"
@@ -7887,6 +7902,11 @@
         "Deg"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøkkel kan ikke brukes til kryptering"
@@ -8171,14 +8191,11 @@
       "Create alias": [
         "Opprett alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "f.eks. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Opprett et alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generer aliaser på farten, og administrer enkelt aliaser og passord."
-      ],
-      "Get an alias": [
-        "Få et alias"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliaser"
@@ -8198,7 +8215,10 @@
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+      "Used on amazon for shopping, etc.": [
+        "Brukt på Amazon for shopping, og så videre."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Legg til et navn og et notat for å holde oversikt over hvor du bruker det."
       ]
     },
@@ -8844,8 +8864,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjøre plass eller ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
       ],
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"
@@ -8856,8 +8882,20 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Din ${ storage } er ${ percentage }% full. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Din ${ storage } er full. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Din lagring er ${ percentage }% full. ${ cta }."
+      ],
       "Your storage is full": [
         "Lagringsplassen din er full"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Din lagring er full. ${ cta }."
       ]
     },
     "Success": {

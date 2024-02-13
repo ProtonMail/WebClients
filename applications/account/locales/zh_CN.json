@@ -576,10 +576,10 @@
       "No": [
         "否"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -1027,7 +1027,7 @@
     },
     "Addon": {
       "${ domains } custom domain": [
-        "${ domains } 个自定义域"
+        "${ domains } 个自有域名"
       ],
       "${ ips } server": [
         "${ ips } 个服务器"
@@ -2896,6 +2896,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密并导入联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "如需导入 CSV 或 VCF 文件，请确保文件大小不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 且联系人数量不超过 ${ MAX_IMPORT_CONTACTS_STRING } 个。若您的文件超出限制，请先拆分成较小的文件。${ learnMoreLink }。"
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "邀请好友注册 ${ BRAND_NAME }，最高可得 ${ credits } 余额奖励。"
       ],
@@ -2903,7 +2906,10 @@
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
-        "使用多个电子邮件地址分隔您生活的不同方面，并在升级时解锁更多高级功能。"
+        "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "如需导入 Google 或 Outlook 中的联系人，请${ easySwitchLink }。"
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "要删除 ${ MAIL_APP_NAME } 页脚，请升级并解锁更多高级功能。"
@@ -2912,7 +2918,7 @@
         "实时跟踪已发出的邀请动态。"
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
-        "通过升级解锁较短的电子邮件地址和其他高级功能。"
+        "升级账户即可解锁更短的邮箱地址以及更多高级功能。"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "升级账户即可使用无限量的筛选规则为您自动整理邮箱，还有更多功能等您体验。"
@@ -2927,7 +2933,12 @@
         "您可以继续邀请朋友，但不能再赚取更多奖励。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+        "您可以导入 iCal 格式的日程（.ics 文件）。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 导入助手"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3351,10 +3362,10 @@
         "设置保存失败"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历"
+        "至少取消选择 ${ calendarsToFixCount } 份日历"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "至少取消选择 ${ calendarsToFixCount } 个日历或"
+        "至少取消选择 ${ calendarsToFixCount } 份日历或"
       ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
@@ -3393,7 +3404,7 @@
         "未能获取已登录的账户，请${ refresh }或稍后再试。"
       ],
       "Filter with this name already exists": [
-        "这个名称已经用过了"
+        "此名称与现有筛选规则重复"
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
@@ -3429,7 +3440,7 @@
         "域名无效"
       ],
       "Invalid email address": [
-        "无效的邮件地址"
+        "邮箱地址无效"
       ],
       "Invalid expiration date": [
         "有效期不正确"
@@ -3456,7 +3467,7 @@
         "标签名称不能为空。"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
+        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
       ],
       "Missing key packet": [
         "缺少密钥数据包"
@@ -4220,7 +4231,7 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } 个 VPN 连接"
+        "${ MaxVPN } 台设备可同时接入 VPN"
       ],
       "Access to all countries": [
         "解说全部线路"
@@ -4445,7 +4456,7 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "定制筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
+        "筛选规则能自动帮您完成某些操作，例如给邮件加标签或将邮件存档。"
       ],
       "Allow:": [
         "白名单："
@@ -5150,7 +5161,7 @@
         "还有 ${ remainingAddresses.length } 个"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
+        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
@@ -5198,7 +5209,7 @@
         "1. 邀请好友注册 ${ BRAND_NAME }"
       ],
       "10 email addresses": [
-        "10 个电子邮件地址"
+        "10 个邮箱地址"
       ],
       "2. They try ${ planName }": [
         "2. 体验 ${ planName }"
@@ -5426,7 +5437,7 @@
         "根据您的时区"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "基本的导航和操作快捷键始终可以使用，不受开关控制。"
+        "以下的基本导航和操作快捷键始终可以使用，不受开关控制。"
       ],
       "Basic, Plus or Visionary subscription required": [
         "需要 Basic、Plus 或 Visionary 订阅方案"
@@ -5627,7 +5638,7 @@
         "邮箱地址"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "免费提供10个自定义电子邮件域名的电子邮件托管服务。添加额外的域名费用为${ price }。"
+        "免费为 10 个自有域名提供邮件托管服务，额外增加的域名按 ${ price } 收费。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "自有域名必须是您已经持有的域名，${ BRAND_NAME } 目前不提供注册域名的服务。通过任何域名提供商注册的域名都可以用于收发邮件。"
@@ -5840,7 +5851,7 @@
         "未启用"
       ],
       "Increase your account security by verifying your email address.": [
-        "通过验证您的电子邮件地址来提高您的账户安全性。"
+        "验证您的邮箱地址，提升账户安全性。"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -6022,9 +6033,6 @@
       "Not yet available in our Android mobile app.": [
         "尚未在我们的 Android 移动应用程序中提供。"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "不是您的私人设备？尝试使用隐私窗口并且在不需要时将它关闭。 ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
@@ -6050,7 +6058,7 @@
         "开放源代码"
       ],
       "Optional": [
-        "可选的"
+        "非必填"
       ],
       "Or select a particular server:": [
         "或选择特定的服务器："
@@ -6101,10 +6109,10 @@
         "电话号码"
       ],
       "Please add a password for the user on row": [
-        "请按行添加用户密码"
+        "请为这几行对应的用户添加密码："
       ],
       "Please add an email address for the user on row": [
-        "请按行添加用户电子邮件地址"
+        "请为这几行对应的用户添加邮箱地址："
       ],
       "Please authenticate your card in the verification tab.": [
         "请在验证页面完成银行卡核验。"
@@ -6134,7 +6142,7 @@
         "请注意，如果删除这个域名，且其下所有地址都将被停用。"
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "请注意，${ nameDeleted }删除后，所有由其触发的自动任务都不会被处理。"
+        "请注意，删除筛选规则${ nameDeleted }后，其触发的所有操作都将停止执行。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
@@ -6374,7 +6382,7 @@
         "概览"
       ],
       "Support for 1 custom email domain": [
-        "支持 1 个自定义电子邮件域"
+        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
@@ -6626,7 +6634,7 @@
         "除非您手动退出账户或更改密码，账户将保持登录状态，直到 60 天无操作后自动退出。"
       ],
       "Unlimited folders, labels, and filters": [
-        "无限的文件夹、标签和过滤器"
+        "文件夹、标签、筛选规则不限量"
       ],
       "Unlimited messages": [
         "无限量发送邮件"
@@ -6644,7 +6652,7 @@
         "未验证"
       ],
       "Unverified email address.": [
-        "未经验证的电子邮件地址。"
+        "邮箱地址未验证。"
       ],
       "Update recovery file": [
         "更新恢复文件"
@@ -6848,7 +6856,7 @@
         "您可以在${ importProgressLink } 查看导入进度"
       ],
       "You can edit this once to ensure the correct email address for verification.": [
-        "您可以编辑一次以确保用于验证的电子邮件地址正确。"
+        "您可以修改一次地址，以确保使用正确的邮箱验证。"
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
@@ -6860,10 +6868,10 @@
         "您一次可以导入一种数据类型。"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "您最多可以保留 ${ MAX_CALENDARS_FREE } 个日历。在取消 ${ MAIL_SHORT_APP_NAME } 订阅之前，请先删除共享日历链接以及与您共享日历的所有 ${ BRAND_NAME } 用户。"
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "您最多可以保留 ${ MAX_CALENDARS_FREE } 个日历。在取消订阅之前，请删除共享日历链接以及您与之共享日历的所有 ${ BRAND_NAME } 用户。"
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。降级前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
       ],
       "You can now access and manage the account as an administrator.": [
         "作为机构管理员，您可以对账户执行管理操作。"
@@ -6897,6 +6905,9 @@
       ],
       "You have no calendars to export.": [
         "您没有要导出的日历。"
+      ],
+      "You have no invoices.": [
+        "您目前没有账单。"
       ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
@@ -6942,9 +6953,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "即使您关闭浏览器也不会退出账户。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。"
@@ -7527,7 +7535,7 @@
         "应用密码"
       ],
       "Apply filter to existing emails": [
-        "为已有电子邮件应用过滤器"
+        "对现有邮件执行此规则"
       ],
       "Attach public key": [
         "附上公钥"
@@ -7960,6 +7968,9 @@
       ],
       "Name": [
         "姓名"
+      ],
+      "Name and address": [
+        "姓名与地址"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP（端口转发）"
@@ -8611,7 +8622,7 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。要对该日历新建链接，请先从下方列表中删除一个。"
+        "每份日历最多可创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。如需继续创建链接，请先从此日历的以下现有链接中删除一个。"
       ]
     },
     "Maximum shared calendar members reached alert": {
@@ -8641,7 +8652,7 @@
     },
     "Message": {
       "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "所有过滤器操作将应用于 ${ MAIL_APP_NAME } 账户中的所有邮件。 不会发送自动回复电子邮件。"
+        "规则指定的各项操作将对您 ${ MAIL_APP_NAME } 账户中的所有邮件执行，但自动回复不会发送。"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "将域名与 ${ BRAND_NAME } 关联即可使用您自己的域名设立邮箱地址（如 you@yourcompany.com）。我们将全程指导您完成设置。"
@@ -8888,6 +8899,23 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -8923,29 +8951,12 @@
         "开通 ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: feature": {
       "${ n } calendar": [
-        "${ n } 个日历"
+        "${ n } 份日历"
       ],
       "${ n } calendar per user": [
-        "每位用户 ${ n } 个日历"
+        "每位用户 ${ n } 份日历"
       ],
       "${ n } custom email domain": [
         "${ n } 个自有域名"
@@ -8984,7 +8995,7 @@
         "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
-        "${ PROTON_SENTINEL_NAME }程序"
+        "${ PROTON_SENTINEL_NAME } 计划"
       ],
       "${ size } attachment size": [
         "附件可达 ${ size }"
@@ -9035,7 +9046,7 @@
         "联系人群组管理"
       ],
       "Custom domains for email aliases": [
-        "用于电子邮件别名的自定义域名"
+        "用于邮箱别名的自有域名"
       ],
       "Custom email domains": [
         "自有域名"
@@ -9045,6 +9056,12 @@
       ],
       "Custom snooze time": [
         "自由调整免打扰时间"
+      ],
+      "Data breach monitoring": [
+        "数据泄露监控"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "数据泄露监控（即将推出）"
       ],
       "Dedicated servers and IP": [
         "专用服务器和IP"
@@ -9072,6 +9089,9 @@
       ],
       "End-to-end encryption": [
         "端到端加密"
+      ],
+      "Fast P2P/BitTorrent downloads": [
+        "通过 P2P/BitTorrent 高速下载"
       ],
       "Free VPN on a single device": [
         "单台设备免费 VPN"
@@ -9206,7 +9226,7 @@
         "最多 ${ n } 名用户"
       ],
       "Up to ${ totalStorageSize } storage": [
-        "升级容量至 ${ totalStorageSize }"
+        "最高 ${ totalStorageSize } 存储空间"
       ],
       "Up to 15 email addresses": [
         "最多 15 个邮箱地址"
@@ -9336,6 +9356,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "否则，您的账户功能将受到限制，直至最后被停用。"
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ trialPlanName } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "您的体验期将于 ${ formattedPeriodEndDate } 结束"
       ]
@@ -9444,6 +9467,9 @@
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "通过多台服务器中转流量，增强 VPN 安全性."
       ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "与同事、亲友轻松分享日程安排"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
       ],
@@ -9528,8 +9554,14 @@
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能"
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 共用同一存储空间"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。管理员可为机构内各用户分配不同大小的存储空间。"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "所有用户的 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 和 ${ PASS_APP_NAME } 服务共用同一存储空间。"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "支持 BitTorrent 等文件共享协议"
@@ -9590,7 +9622,7 @@
         "10 个自有域名更显游刃有余"
       ],
       "Create up to ${ n } calendar": [
-        "创建最多 ${ n } 个日历"
+        "最多可创建 ${ n } 份日历"
       ],
       "Multi-platform support": [
         "多平台支持"
@@ -9975,6 +10007,14 @@
         "你"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "填写机构信息"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "开始使用 ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "开通 ${ appName } 高级功能"
@@ -10069,6 +10109,9 @@
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
       ],
+      "Setting up your organization": [
+        "设置您的组织"
+      ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "新品特惠：${ price } 终身优惠价开通 ${ title }！"
       ],
@@ -10093,12 +10136,31 @@
         "创建 ${ BRAND_NAME } 账户"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "权限被拒绝, 管理员权限受到限制。"
+      ],
+      "The organization key must be activated first.": [
+        "必须先激活机构密钥。"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "信用卡/借记卡"
       ],
       "New credit/debit card": [
         "添加信用卡/借记卡"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "卡号无效"
+      ],
+      "Invalid expiration date": [
+        "有效期不正确"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "您的卡已被拒绝。请尝试其他卡或与您的银行联系以授权收费."
       ]
     },
     "Personal calendar section description": {
@@ -10189,6 +10251,9 @@
       ],
       "Search for a user or address": [
         "搜索用户或地址"
+      ],
+      "Search parent folder": [
+        "搜索上层文件夹"
       ],
       "Search users": [
         "搜索用户"
@@ -10594,6 +10659,16 @@
         "请求重置密码"
       ]
     },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "您可以随时在${ accountAndPasswordSectionLink }设置中查看申请状态。"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "账户与密码"
+      ]
+    },
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "请求重置密码?"
@@ -10613,6 +10688,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "要禁用密码重置，您必须设置恢复方法。"
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "为了增强您的账户和数据的安全性，您可以在网页客户端的账户设置中申请重置密码。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -10750,6 +10828,9 @@
       ],
       "Email address": [
         "邮箱地址"
+      ],
+      "Organization name": [
+        "组织名称"
       ],
       "Username": [
         "用户名"
@@ -11000,12 +11081,23 @@
         "保持计划 ${ currentPlanName }"
       ]
     },
+    "storage_split: feature": {
+      "Up to ${ totalStorageSize } Drive storage": [
+        "最高 ${ totalStorageSize } 网盘容量"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "最高 ${ totalStorageSize } 邮箱容量"
+      ]
+    },
     "storage_split: info": {
       "${ app } storage": [
         "${ app } 存储空间"
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "账户降级后您将失去下列权益。确定要继续吗？"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "用于所有 ${ BRAND_NAME } 服务"
       ],
       "Get more storage": [
         "获得更多存储空间"
@@ -11072,7 +11164,7 @@
         "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } 个日历"
+        "${ UsedCalendars } 份日历"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "自有域名数量：${ UsedDomains } / ${ MaxDomains }"
@@ -11084,7 +11176,7 @@
         "1 个邮箱地址"
       ],
       "1 VPN connection": [
-        "1 个 VPN 连接"
+        "1 台设备可接入 VPN"
       ],
       "Access to streaming services globally": [
         "畅享全球流媒体服务"
@@ -11195,7 +11287,7 @@
         "邮箱地址已复制到剪贴板"
       ],
       "Email address updated": [
-        "电子邮件地址已更新"
+        "邮箱地址已更改"
       ],
       "Email updated": [
         "邮箱已更改"
@@ -11540,11 +11632,17 @@
       "4. Select a server to connect to": [
         "4. 选择需要连接的服务器"
       ],
+      "A filter name is required": [
+        "筛选规则的名称必须填写"
+      ],
+      "A filter with this name already exists": [
+        "此名称与现有筛选规则重复"
+      ],
       "Accessibility": [
         "无障碍"
       ],
       "Account and password": [
-        "账户和密钥"
+        "账户与密码"
       ],
       "Account keys": [
         "账户密钥"
@@ -11760,7 +11858,7 @@
         "货币"
       ],
       "Custom filters": [
-        "定制筛选规则"
+        "筛选规则"
       ],
       "Customize and confirm": [
         "自定义并确认"
@@ -11800,6 +11898,9 @@
       ],
       "Delete calendar": [
         "删除日历"
+      ],
+      "Delete filter?": [
+        "删除筛选规则？"
       ],
       "Delete key permanently?": [
         "永久删除密钥？"
@@ -11912,8 +12013,11 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "创建 ${ failedUsers.length } 位用户失败。"
       ],
+      "Filter name cannot contain only spaces": [
+        "筛选规则的名称不能只有空格"
+      ],
       "Filters": [
-        "筛选规则"
+        "邮件筛选"
       ],
       "Find email or username": [
         "查找邮箱或用户名"
@@ -11967,7 +12071,7 @@
         "身份验证"
       ],
       "Identity and addresses": [
-        "身份和地址"
+        "身份与地址"
       ],
       "Import": [
         "导入"
@@ -12018,7 +12122,7 @@
         "标签"
       ],
       "Language and time": [
-        "语言和时间"
+        "语言与时间"
       ],
       "Layout": [
         "布局"
@@ -12085,6 +12189,9 @@
       ],
       "Password": [
         "密码"
+      ],
+      "Password reset settings": [
+        "密码重置选项"
       ],
       "Pay invoice": [
         "支付账单"
@@ -12772,7 +12879,7 @@
         "${ n } 台服务器"
       ],
       "${ n } VPN connection": [
-        "${ n } 个VPN连接"
+        "${ n } 台设备可同时接入 VPN"
       ],
       "${ numberOfServers } across ${ numberOfCountries } country": [
         "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"

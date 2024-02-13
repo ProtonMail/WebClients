@@ -184,6 +184,9 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
+      "Create and copy alias": [
+        "Utwórz i skopiuj alias"
+      ],
       "Create link": [
         "Utwórz link"
       ],
@@ -330,9 +333,6 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
-      ],
-      "Give feedback": [
-        "Wyślij opinię"
       ],
       "Go to Drive": [
         "Przejdź do dysku"
@@ -574,9 +574,6 @@
       "Save": [
         "Zapisz"
       ],
-      "Save and copy alias": [
-        "Zapisz i skopiuj alias"
-      ],
       "Search": [
         "Szukaj"
       ],
@@ -597,6 +594,9 @@
       ],
       "Select all": [
         "Zaznacz wszystkie"
+      ],
+      "Select country": [
+        "Wybierz kraj"
       ],
       "Send feedback": [
         "Wyślij opinię"
@@ -2005,7 +2005,7 @@
         "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Uaktualnij swoje konto, aby aktywować ${ PROTON_SENTINEL_NAME }, nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
+        "Ulepsz konto, aby włączyć program ${ PROTON_SENTINEL_NAME } — nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji z dedykowanym wsparciem ekspertów 24/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -3490,10 +3490,10 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
       "${ selectedCount } selected": [
-        "${ selectedCount } zaznaczony",
-        "${ selectedCount } zaznaczone",
-        "${ selectedCount } zaznaczonych",
-        "${ selectedCount } zaznaczonych"
+        "${ selectedCount }",
+        "${ selectedCount }",
+        "${ selectedCount }",
+        "${ selectedCount }"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } zaznaczony folder",
@@ -3879,9 +3879,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "z historii wersji?"
       ],
@@ -3926,9 +3923,6 @@
       ],
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
       ],
       "Important note": [
         "Uwaga"
@@ -4338,9 +4332,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Właściciel adresu wyłączył szyfrowanie end-to-end. Aby móc wysyłać wiadomości zaszyfrowane na ten adres, właściciel musi ponownie włączyć szyfrowanie end-to-end."
       ],
-      "The vault your alias will be stored in.": [
-        "Sejf, w którym zostanie zapisany alias."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Masz pliki, które muszą zostać przesłane. Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych operacji."
       ],
@@ -4743,9 +4734,6 @@
       "Add image URL": [
         "Dodaj adres URL zdjęcia"
       ],
-      "Add title": [
-        "Dodaj tytuł"
-      ],
       "Add to group": [
         "Dodaj do grupy"
       ],
@@ -4871,6 +4859,9 @@
       ],
       "Duplicate found": [
         "Duplikat został znaleziony"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "np. Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-mail"
@@ -6032,6 +6023,11 @@
         "Ty"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Kraj rozliczeniowy"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klucz nie może zostać użyty do szyfrowania"
@@ -6208,20 +6204,17 @@
       "Create alias": [
         "Utwórz alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "np. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Utwórz alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generuj aliasy na bieżąco, i łatwo zarządzaj swoimi aliasami i hasłami."
-      ],
-      "Get an alias": [
-        "Uzyskaj alias"
+        "Generuj aliasy \"w locie\" i zarządzaj aliasami oraz hasłami."
       ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Aliasy hide-my-email pozwalają rejestrować się w Internecie bez udostępniania swojego adresu e-mail. ${ learnMoreLink }"
+        "Aliasy hide-my-email pozwalają zakładać konta online bez udostępniania adresu e-mail. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nowy alias"
@@ -6230,13 +6223,10 @@
         "Otwórz ${ PASS_APP_NAME }"
       ],
       "Protect your online identity": [
-        "Chroń swoją tożsamość w sieci"
+        "Chroń swoją tożsamość online"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Wypróbuj ${ PASS_APP_NAME }"
-      ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Gdy zostaniesz poproszony o podanie adresu e-mail, zamiast tego podaj alias. Dodaj nazwę i notatkę, aby śledzić, gdzie go używasz."
       ]
     },
     "Security Center - Action": {
@@ -6246,7 +6236,7 @@
     },
     "Security Center - Info": {
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
-        "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji, przeznaczone dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
+        "Nasze najnowocześniejsze rozwiązanie bezpieczeństwa oparte na sztucznej inteligencji zaprojektowane dla użytkowników poszukujących zwiększonej ochrony swoich kont. ${ learnMoreLink }"
       ],
       "Sentinel is **active** and safeguarding your account.": [
         "Proton Sentinel jest **włączony** i chroni Twoje konto."
@@ -6723,7 +6713,7 @@
         "Przestrzeń dyskowa ${ app }"
       ],
       "${ storage } ${ percentage }% full": [
-        "${ storage } ${ percentage }% pełna"
+        "${ storage } jest w ${ percentage }% pełna"
       ],
       "contact your administrator": [
         "skontaktuj się z administratorem"
@@ -6731,8 +6721,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Aby kontynuować przesyłanie i synchronizację plików, zwolnij część miejsca lub ulepsz konto, aby uzyskać więcej przestrzeni dyskowej."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Zwolnij część miejsca lub ulepsz konto, aby uzyskać większą przestrzeń dyskową."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Zwolnij część miejsca lub ${ upgrade }"
       ],
       "upgrade for more storage": [
         "ulepsz konto, aby uzyskać większą przestrzeń dyskową"
@@ -6743,8 +6739,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } jest pełna"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } jest w ${ percentage }% pełna. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } jest pełna. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Przestrzeń dyskowa jest w ${ percentage }% pełna. ${ cta }."
+      ],
       "Your storage is full": [
         "Przestrzeń dyskowa jest pełna"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Przestrzeń dyskowa jest pełna. ${ cta }."
       ]
     },
     "Success": {

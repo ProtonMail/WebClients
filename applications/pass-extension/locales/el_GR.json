@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
       ],
+      "View app logs": [
+        "Προβολή αρχείων καταγραφής εφαρμογών"
+      ],
       "Write us on Reddit": [
         "Γράψτε μας στο Reddit"
       ],
@@ -503,6 +506,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
+        "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
+      ],
+      "Cannot send invitations at the moment": [
         "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
       ],
       "Could not confirm this invite at the moment": [
@@ -938,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Οι κωδικοί πρόσβασης που δημιουργούνται θα αποθηκευτούν για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδας.",
+        "Οι κωδικοί πρόσβασης που δημιουργούνται θα αποθηκευτούν για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων"
+      ],
       "Generating alias...": [
         "Δημιουργία ψευδωνύμου..."
       ],
@@ -1066,6 +1076,10 @@
       "Password copied": [
         "Ο κωδικός πρόσβασης αντιγράφηκε"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
+        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων διαγράφονται αυτόματα από το ιστορικό."
+      ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
@@ -1173,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα όταν κάνετε κλικ ή εστιάσετε στο πεδίο."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Το αρχείο εξαγωγής δε θα περιέχει τα δεδομένα κοινόχρηστων κρυπτών όπου δεν είστε ο κάτοχος"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
@@ -2111,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
+      ],
+      "Please contact us for investigating the issue": [
+        "Επικοινωνήστε μαζί μας για τη διερεύνηση του ζητήματος"
       ],
       "Please verify your email address in order to use email aliases": [
         "Παρακαλούμε επαληθεύστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να χρησιμοποιήσετε ψευδώνυμα διευθύνσεων ηλεκτρονικού ταχυδρομείου"

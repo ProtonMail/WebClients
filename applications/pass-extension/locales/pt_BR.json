@@ -332,6 +332,9 @@
       "Remove access": [
         "Remover o acesso"
       ],
+      "Remove member": [
+        "Remover membro"
+      ],
       "Request a feature": [
         "Solicitar um recurso"
       ],
@@ -425,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Faça upgrade agora para compartilhar com mais pessoas"
       ],
+      "View app logs": [
+        "Ver registros de aplicativos"
+      ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
       ],
@@ -498,11 +504,21 @@
       "Cannot create alias (${ error }).": [
         "Não é possível criar o alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Não é possível enviar o convite no momento",
+        "Não é possível enviar convites no momento"
+      ],
+      "Cannot send invitations at the moment": [
+        "Não é possível enviar convites no momento"
+      ],
       "Could not confirm this invite at the moment": [
         "Não foi possível confirmar esse convite no momento."
       ],
       "Could not leave vault.": [
         "Não foi possível deixar o cofre."
+      ],
+      "Could not load recommendations at the moment.": [
+        "Não foi possível carregar as recomendações no momento."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -765,6 +781,9 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
+      "${ count } invites successfully sent": [
+        "${ count } convites enviados com sucesso"
+      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
@@ -925,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Por motivos de segurança, é necessário confirmar seu acesso"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas.",
+        "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
+      ],
       "Generating alias...": [
         "Gerando alias..."
       ],
@@ -1053,6 +1076,10 @@
       "Password copied": [
         "Senha copiada"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Senhas anteriores a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas são automaticamente excluídas do histórico.",
+        "Senhas mais antigas que ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas são automaticamente excluídas do histórico."
+      ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
       ],
@@ -1160,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "O menu suspenso de preenchimento automático será aberto automaticamente quando você clicar ou focar no campo."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "O arquivo de exportação não conterá os dados de cofres compartilhados dos quais você não é o proprietário"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
@@ -1502,6 +1532,15 @@
       ],
       "Logins": [
         "Inícios de sessão"
+      ],
+      "Make all admins": [
+        "Tornar todos os administradores"
+      ],
+      "Make all editors": [
+        "Faça todos os editores"
+      ],
+      "Make all viewers": [
+        "Faça com que todos os espectadores"
       ],
       "Members": [
         "Membros"
@@ -2029,11 +2068,20 @@
       "An error occured while exporting your data": [
         "Ocorreu um erro ao exportar seus dados"
       ],
+      "At least one email address is required": [
+        "É necessário pelo menos um endereço de e-mail"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Não é possível recuperar caixas de correio para este alias no momento"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "Não foi possível criar o cofre \"${ vaultName }\""
+      ],
+      "Could not send invitations to the following addresses :": [
+        "Não foi possível enviar convites para os seguintes endereços:"
+      ],
+      "Duplicate email addresses.": [
+        "Endereços de e-mail duplicados."
       ],
       "Empty note": [
         "Nota vazia"
@@ -2043,6 +2091,9 @@
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."
+      ],
+      "Invalid email addresses.": [
+        "Endereços de e-mail inválidos."
       ],
       "Maximum length is ${ maxLength } character": [
         "O comprimento máximo é ${ maxLength } carácter",
@@ -2077,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
+      ],
+      "Please contact us for investigating the issue": [
+        "Entre em contato conosco para investigar o problema"
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"

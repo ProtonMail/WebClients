@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
+      "Activate": [
+        "Activare"
+      ],
       "activate": [
         "activare"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Change keys": [
+        "Modificare cheie"
       ],
       "Change mailbox password": [
         "Schimbare parolă mesaje"
@@ -247,9 +253,6 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
-      ],
-      "Give feedback": [
-        "Oferiți feedback"
       ],
       "Got it": [
         "Am înțeles"
@@ -1963,6 +1966,9 @@
       "Code wrong or not valid anymore": [
         "Cod greşit sau nu mai e valid."
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Nu s-au putut încărca facturile. Mai reîncercați."
+      ],
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
@@ -2034,6 +2040,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Cheia organizației trebuie activată pentru a crea utilizatori neprivați."
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
@@ -2124,6 +2133,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Acest câmp necesită un minimum de ${ minimumLength } caractere."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
       ],
       "Try again later": [
         "Reîncercați mai târziu"
@@ -2942,6 +2954,9 @@
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Sigur doriți să oferiți drepturi administrative acestui utilizator?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
       ],
@@ -3255,6 +3270,9 @@
       "inactive": [
         "inactivă"
       ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
@@ -3344,9 +3362,6 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nu este dispozitivul dvs.? Folosiți o fereastră de navigare privată pentru a vă conecta și închideți-o când ați terminat. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Număr servere dedicate din organizație"
@@ -3964,6 +3979,9 @@
         "Aveți ${ availableCount } servere dedicate disponibile.",
         "Aveți ${ availableCount } de servere dedicate disponibile."
       ],
+      "You have no invoices.": [
+        "Nu aveți facturi."
+      ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
       ],
@@ -3996,9 +4014,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
@@ -4118,6 +4133,12 @@
       "Credit": [
         "Credit"
       ],
+      "Credit note": [
+        "Notă de credit"
+      ],
+      "Currency conversion": [
+        "Conversie valutară"
+      ],
       "Donation": [
         "Donație"
       ],
@@ -4178,6 +4199,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "Administrators": [
+        "Administratori"
       ],
       "Allow recovery by email": [
         "Permitere recuperare prin e-mail"
@@ -4547,6 +4571,9 @@
       ],
       "Value": [
         "Valoare"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -4990,6 +5017,9 @@
       "Autofill credit cards (coming soon)": [
         "Autocompletare carduri de credit (în curând)"
       ],
+      "Automatic email forwarding": [
+        "Redirecționare automată mesaje"
+      ],
       "Available on all platforms": [
         "Disponibil în toate planurile"
       ],
@@ -5129,6 +5159,9 @@
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
       ],
+      "Require 2FA for organization": [
+        "Este necesară A2F pentru organizație"
+      ],
       "Router support": [
         "Suport ruter"
       ],
@@ -5163,6 +5196,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integrare SSO (în curând)"
       ],
       "Start protecting your organization": [
         "Începeți să vă protejați organizația"
@@ -5205,6 +5241,9 @@
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Seifuri partajate nelimitate cu permisiuni de acces"
       ],
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
@@ -5338,6 +5377,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ trialPlanName } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
@@ -5409,6 +5451,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Vă permite să configurați răspunsuri automate pentru mesajele primite când nu puteți răspunde."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Redirecționați automat mesajele trimise spre contul ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
@@ -5784,6 +5829,20 @@
         "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Accesați seifurile pentru a vă gestiona parolele, aliasurile și alte date."
+      ],
+      "Set up your organization": [
+        "Setați organizația"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Începeți să adăugați utilizatori pentru a le oferi acces la ${ PASS_APP_NAME }."
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Începeți să utilizați ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "Păstrez planul"
@@ -5796,6 +5855,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Să discutăm"
+      ],
       "Limited time offer": [
         "Ofertă limitată"
       ],
@@ -5807,8 +5869,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pe lună"
       ],
+      "/month /user": [
+        "/lună /utilizator"
+      ],
+      "/month /user, billed annually": [
+        "/lună /utizator, facturat anual"
+      ],
+      "/month /user, billed biennially": [
+        "/lună /utizator, facturat la doi ani"
+      ],
       "Creating your account": [
         "Se creează contul"
+      ],
+      "Current plan": [
+        "Plan actual"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
@@ -5821,6 +5895,9 @@
       ],
       "Free forever": [
         "Gratuit întotdeauna"
+      ],
+      "Get in touch with our sales team": [
+        "Luați legătura cu echipa noastră de vânzări"
       ],
       "Includes:": [
         "Include:"
@@ -5852,12 +5929,120 @@
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
       ]
     },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Toți administratorii vor primi acces la cheie."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Sigur doriți să modificați cheia organizației?"
+      ],
+      "Change organization key": [
+        "Modificare cheie organizație"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Utilizatorii neprivați pot fi promovați la funcția de administrator atunci când au chei de configurare."
+      ],
+      "Organization key activated": [
+        "Cheie organizație activată"
+      ],
+      "Organization key does not exist.": [
+        "Cheia organizației nu există."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Cheia organizației trebuie activată pentru a acorda drepturi administrative."
+      ],
+      "Organization key restored": [
+        "Cheia organizației s-a restaurat"
+      ],
+      "Organization key updated": [
+        "Cheia organizației s-a actualizat"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Permisiune refuzată, drepturile de administrator au fost restricționate."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Utilizatorii privați pot fi promovați la funcția de administrator atunci când s-au conectat pentru prima dată."
+      ],
+      "Reset organization key": [
+        "Resetare cheie organizație"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Următorii administratori vor primi acces la cheia organizației."
+      ],
+      "The organization key must be activated first.": [
+        "Cheia organizației trebuie mai întâi activată."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Aceasta va trimite cea mai recentă cheie a organizației către administratorii care în prezent nu au acces la ea."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Pentru a crea conturi de utilizator neprivate și a le accesa, va trebui să activați cheia organizației."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Pentru a activa drepturile de administrator în cont, activați cheia organizației."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Utilizați o metodă de recuperare a datelor sau resetați cheia organizației pentru a restabili privilegiile de administrator."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Utilizați o metodă de recuperare a datelor, contactați un alt administrator sau resetați cheia organizației pentru a restabili privilegiile de administrator."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nu s-a putut verifica securitatea cheii adresei a acestui expeditor. Uneori există o întârziere în actualizarea informațiilor expeditorului. Încercați mai târziu. Dacă nu aveți încredere în validitatea acestei invitații sau a expeditorului, contactați serviciul de asistență pentru clienți ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "S-a verificat autenticitatea acestui expeditor și a invitației."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Vi s-au acord drepturi de administrare a organizației **${ organizationName }** de către"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Trebuie să faceți privați toți utilizatorii înainte de a genera o cheie nouă pentru organizație."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Aveți nevoie de accesul la cheia organizației pentru a efectua această operație."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Card de credit/debit"
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Număr card"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "LL/AA"
+      ],
+      "Timeout exceeded": [
+        "Limită de timp depășită"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Număr de card nevalid."
+      ],
+      "Invalid expiration date": [
+        "Data expirării nu este validă."
+      ],
+      "Invalid securiry code": [
+        "Cod de securitate nevalid"
+      ],
+      "Something went wrong. Please try again later.": [
+        "A apărut o problemă. Reîncercați mai târziu."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Nu se poate autentifica metoda de plată. Alegeți o altă metodă de plată sau reîncercați."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
       ]
     },
     "Permission": {
@@ -6050,6 +6235,11 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrator din organizație are nevoie de acces la cheia organizației.",
+        "${ n } administratori din organizație au nevoie de acces la cheia organizației.",
+        "${ n } de administratori din organizație au nevoie de acces la cheia organizației."
+      ],
       "Changing organization keys": [
         "Schimbarea cheilor organizației"
       ],
@@ -6867,6 +7057,9 @@
       "Address added": [
         "Adresă adăugată"
       ],
+      "Administrator privileges restored": [
+        "Privilegiile de administrator s-au restaurat."
+      ],
       "Bug reported": [
         "Eroare raportată"
       ],
@@ -7196,6 +7389,9 @@
       ],
       "Change role": [
         "Schimbare rol"
+      ],
+      "Confirm": [
+        "Confirmare"
       ],
       "Confirm address": [
         "Confirmare adresă"
@@ -7926,6 +8122,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Din păcate, nu suntem online în acest moment. Completați formularul de mai jos pentru a descrie problema, iar noi o vom analiza și vă vom contacta când vom fi din nou online."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Trebuie să efectuați o ${ activateLink } a cheii organizației înainte de a adăuga o adresă de e-mail unui membru neprivat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
