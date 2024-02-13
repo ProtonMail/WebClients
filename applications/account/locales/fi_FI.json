@@ -50,6 +50,9 @@
       "activate": [
         "ota käyttöön"
       ],
+      "Activate": [
+        "Ota käyttöön"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Change keys": [
+        "Muuta avaimia"
       ],
       "Change mailbox password": [
         "Vaihda postilaatikon salasana"
@@ -503,9 +509,6 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
-      "Give feedback": [
-        "Anna palautetta"
-      ],
       "Go to label": [
         "Siirry tunnisteeseen"
       ],
@@ -632,10 +635,10 @@
       "No": [
         "En"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3731,6 +3734,9 @@
       "Contact signature not verified": [
         "Yhteystiedon allekirjoitusta ei ole vahvistettu"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Laskuja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
       "Could not save preference": [
         "Asetusta ei voitu tallentaa"
       ],
@@ -6089,6 +6095,9 @@
       "Are you sure you want to discard your import?": [
         "Haluatko varmasti hylätä tuontisi?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Haluatko varmasti antaa tälle käyttäjälle ylläpitäjän oikeudet?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Haluatko varmasti poistaa kaikki lokitiedot pysyvästi?"
       ],
@@ -6817,9 +6826,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Ei vielä käytettävissä Android-sovelluksessamme."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Eikö laite ole sinun? Käytä selaimesi yksityistä selaustilaa ja sulje se kun lopetat. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "${ MAIL_APP_NAME } -työpöytäsovellus on nyt saatavilla beta-versiona, voit käynnistää sen kätevästi suoraan työpöydältäsi ja pysyä keskittyneenä ilman selaimen häiriötekijöitä."
@@ -7779,6 +7785,9 @@
       "You have no calendars to export.": [
         "Sinulla ei ole vietäviä kelentereita."
       ],
+      "You have no invoices.": [
+        "Sinulla ei ole laskuja."
+      ],
       "You have no saved payment methods.": [
         "Sinulla ei ole tallennettuja maksutapoja."
       ],
@@ -7832,9 +7841,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Et voi palauttaa lukittuja tietoja ladatuilla palautustiedoillasi. Tämä poistaa myös luotetun laitteen palautuksen käytöstä."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Pysyt kirjautuneena myös selaimen sulun jälkeen."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "${ BRAND_NAME }-tilisi liittyy osoitteeseen ${ externalEmailAddress }."
@@ -8042,6 +8048,9 @@
       ],
       "Credit": [
         "Krediitit"
+      ],
+      "Currency conversion": [
+        "Valuutan muuntaminen"
       ],
       "Donation": [
         "Lahjoitus"
@@ -8398,6 +8407,9 @@
       ],
       "Addresses": [
         "Osoitteet"
+      ],
+      "Administrators": [
+        "Ylläpitäjät"
       ],
       "ALL": [
         "KAIKKI"
@@ -9176,6 +9188,9 @@
       "Username": [
         "Käyttäjätunnus"
       ],
+      "VAT": [
+        "ALV"
+      ],
       "Verification code": [
         "Vahvistuskoodi"
       ],
@@ -9884,6 +9899,9 @@
       "Back to inbox": [
         "Palaa postilaatikkoon"
       ],
+      "Back to vaults": [
+        "Takaisin holveihin"
+      ],
       "Block": [
         "Estä"
       ],
@@ -9892,6 +9910,9 @@
       ],
       "Inbox": [
         "Postilaatikko"
+      ],
+      "Pass vaults": [
+        "Pass-holvit"
       ],
       "Spam": [
         "Roskaposti"
@@ -9917,6 +9938,23 @@
       ],
       "Medium VPN speed": [
         "Keskitasoinen VPN-nopeus"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: action": {
@@ -9952,23 +9990,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -10072,6 +10093,9 @@
       ],
       "Autofill credit cards (coming soon)": [
         "Maksukorttien automaattitäyttö (tulossa pian)"
+      ],
+      "Automatic email forwarding": [
+        "Automaattinen sähköpostin välitys"
       ],
       "Available on all platforms": [
         "Saatavilla kaikilla alustoilla"
@@ -10210,6 +10234,9 @@
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
       ],
+      "Require 2FA for organization": [
+        "Vaadi organisaatiolle 2FA"
+      ],
       "Router support": [
         "Reititintuki"
       ],
@@ -10243,6 +10270,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integraatio (tulossa pian)"
       ],
       "Start protecting your organization": [
         "Aloita organisaatiosi suojaaminen"
@@ -10437,6 +10467,9 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
       ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ trialPlanName }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
@@ -10469,6 +10502,9 @@
       ],
       "terms and conditions": [
         "käyttöehtomme"
+      ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Yrityksen nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Aloita valitsemalla näyttönimi. Tämä näkyy sähköpostiviestien, tapahtumakutsujen ja tiedostojakojen vastaanottajille."
@@ -11203,6 +11239,17 @@
         "Sinä"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Siirry holviin hallitaksesi salasanojasi, aliaksiasi ja muuta."
+      ],
+      "Set up your organization": [
+        "Määritä organisaatiosi"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Aloita ${ PASS_APP_NAME } -sovelluksen käyttö"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Tutustu ${ appName }in ominaisuuksiin"
@@ -11233,6 +11280,9 @@
       ],
       "Or ${ createANewAccount }": [
         "Tai ${ createANewAccount }"
+      ],
+      "Request trial": [
+        "Pyydä kokeiluversiota"
       ],
       "Start using ${ appName }": [
         "Aloita ${ appName } -sovelluksen käyttö"
@@ -11324,6 +11374,9 @@
       "Creating your account": [
         "Tiliäsi luodaan"
       ],
+      "Current plan": [
+        "Nykyinen tilaus"
+      ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Tutustu ${ PASS_APP_NAME },${ br } uuteen salattuun salasanahallintaamme"
       ],
@@ -11344,6 +11397,9 @@
       ],
       "End-to-end encryption": [
         "Päästä päähän -salaus"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Kaikki ${ planTitle } -tilaukseen kuuluva, ja..."
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
@@ -11420,6 +11476,9 @@
       "Save your recovery kit to continue": [
         "Jatka tallentamalla palautuspakettisi"
       ],
+      "Setting up your organization": [
+        "Määritetään organisaatiotasi"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Kirjaudutaan ${ PASS_APP_NAME }"
       ],
@@ -11477,12 +11536,89 @@
         "Suojaa tilisi"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Yrityksille"
+      ],
+      "For invididuals": [
+        "Yksityishenkilöille"
+      ]
+    },
+    "passwordless": {
+      "All administrators will get access to the key.": [
+        "Kaikki ylläpitäjät saavat käyttöoikeuden avaimeen."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Haluatko varmasti muuttaa organisaation avainta?"
+      ],
+      "Change organization key": [
+        "Muuta organisaation avainta"
+      ],
+      "Organization key activated": [
+        "Organisaation avain aktivoitiin"
+      ],
+      "Organization key does not exist.": [
+        "Organisaation avainta ei ole olemassa."
+      ],
+      "Organization key restored": [
+        "Organisaation avain palautettiin"
+      ],
+      "Organization key updated": [
+        "Organisaation avain päivitettiin"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
+      ],
+      "Reset organization key": [
+        "Nollaa organisaation avain"
+      ],
+      "The organization key must be activated first.": [
+        "Organisaation avain on ensin aktivoitava."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Maksukortti"
       ],
       "New credit/debit card": [
         "Uusi maksukortti"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Kortin numero"
+      ],
+      "CVC": [
+        "Turvakoodi"
+      ],
+      "MM/YY": [
+        "KK/VV"
+      ],
+      "Timeout exceeded": [
+        "Aikakatkaisu ylitettiin"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Virheellinen kortin numero"
+      ],
+      "Invalid expiration date": [
+        "Virheellinen voimassaolon päättymisaika"
+      ],
+      "Invalid securiry code": [
+        "Virheellinen turvakoodi"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Jokin meni pieleen. Yritä myöhemmin uudelleen."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Maksutapasi todentaminen ei onnistunut. Valitse toinen maksutapa tai yritä uudelleen."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Korttiasi ei hyväksytty. Kokeile toista korttia tai ota yhteyttä pankkiisi veloituksen hyväksymiseksi."
       ]
     },
     "Permission": {
@@ -12281,6 +12417,9 @@
       "Email address": [
         "Sähköpostiosoite"
       ],
+      "Organization name": [
+        "Organisaation nimi"
+      ],
       "Password": [
         "Salasana"
       ],
@@ -12799,6 +12938,9 @@
       ],
       "Address updated": [
         "Osoite vaihdettiin"
+      ],
+      "Administrator privileges restored": [
+        "Ylläpitäjän oikeudet palautettiin"
       ],
       "Auto-reply disabled": [
         "Automaattivastaus poistettiin käytöstä"
@@ -13395,6 +13537,9 @@
       "Composing": [
         "Kirjoitus"
       ],
+      "Confirm": [
+        "Vahvista"
+      ],
       "Confirm address": [
         "Vahvista sähköpostiosoite"
       ],
@@ -13815,6 +13960,9 @@
       ],
       "Organization filters": [
         "Organisaation suodattimet"
+      ],
+      "Organization key": [
+        "Organisaation avain"
       ],
       "Organization name": [
         "Organisaation nimi"

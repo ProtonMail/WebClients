@@ -581,10 +581,10 @@
       "No": [
         "Nem"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5899,9 +5899,6 @@
       "Not yet available in our Android mobile app.": [
         "Még nem elérhető az Android alkalmazásunkban."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nem saját eszköze? Használjon privát ablakot a bejelentkezéshez és zárja be amikor készen van. ${ learnMore }"
-      ],
       "of": [
         "/"
       ],
@@ -6720,6 +6717,9 @@
       "You have no calendars to export.": [
         "Önnek nincs exportálható naptára."
       ],
+      "You have no invoices.": [
+        "Nincs számlája."
+      ],
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
       ],
@@ -6764,9 +6764,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Bejelentkezve marad, a böngésző bezárása után is."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "A ${ BRAND_NAME } fiókja ${ externalEmailAddress } címhez kapcsolódik."
@@ -8713,6 +8710,20 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
@@ -8746,20 +8757,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -9139,6 +9136,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ trialPlanName } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Próbaideje véget ér: ${ formattedPeriodEndDate }"
@@ -9783,6 +9783,14 @@
         "Ön"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Állítsa be a szervezet adatait"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } használatának megkezdése"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Continue": [
         "Folytatás"
@@ -9862,12 +9870,31 @@
         "${ BRAND_NAME } fiók létrehozása"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
+      ],
+      "The organization key must be activated first.": [
+        "Először a szervezeti kulcs aktiválása szükséges."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Bankkártya/hitelkártya"
       ],
       "New credit/debit card": [
         "Új bankkártya"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Érvénytelen kártyaszám"
+      ],
+      "Invalid expiration date": [
+        "Érvénytelen lejárati dátum"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kártya elutasítva. Kérjük, próbálja meg egy másik kártyával, vagy lépjen kapcsolatba a bankjával a terhelés engedélyezéséhez."
       ]
     },
     "Personal calendar section description": {
@@ -10493,6 +10520,9 @@
       ],
       "Email address": [
         "E-mail cím"
+      ],
+      "Organization name": [
+        "Szervezet neve"
       ],
       "Password": [
         "Jelszó"

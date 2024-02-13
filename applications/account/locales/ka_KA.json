@@ -503,9 +503,6 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
-      "Give feedback": [
-        "უკუკავშირი"
-      ],
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
@@ -632,10 +629,10 @@
       "No": [
         "არა"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -6818,9 +6815,6 @@
       "Not yet available in our Android mobile app.": [
         "ჩვენს Android-ის მობილურ აპში ჯერ ხელმისაწვდომი არაა."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "არაა თქვენი მოწყობილობა? გახსენით ბრაუზერის კონფიდენციალური ფანჯარა და შედით მისი საშუალებით. დახურეთ ის, როცა მუშაობას დაასრულებთ. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "ახლა ხელმისაწვდომია ბეტა ვერსიაში. კომპიუტერის აპი საშუალებას გაძლევთ, ${ MAIL_APP_NAME } სამუშაო მაგიდიდან გაუშვათ და იმუშაოთ ბრაუზერში ისე, რომ ხელი არაფერმა შეგიშალოთ."
       ],
@@ -7776,6 +7770,9 @@
       "You have no calendars to export.": [
         "გასატანი კალენდრები არ გაგაჩნიათ."
       ],
+      "You have no invoices.": [
+        "ინვოისები არ გაქვთ."
+      ],
       "You have no saved payment methods.": [
         "თქვენ არ გაქვთ გადახდის შენახული მეთოდები."
       ],
@@ -7829,9 +7826,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "თქვენ არ გექნებათ შესაძლებლობა აღადგინოთ დაბლოკილი მონაცემები აღდგენის გადმოწერილი ფაილებით. ეს ასევე გათიშავს სანდო მოწყობილობების აღდგენასაც"
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "შესული დარჩებით ბრაუზერის ფანჯრის დახურვის შემდეგაც კი."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "თქვენი ${ BRAND_NAME }-ის ანგარიში ${ externalEmailAddress }-სთანაა ასოცირებული."
@@ -9916,6 +9910,23 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "გადახედვაზე გადასვლა"
@@ -9949,23 +9960,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -10433,6 +10427,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "${ trialPlanName }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
@@ -11200,6 +11197,14 @@
         "თქვენ"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "ორგანიზაციის მორგება"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "დაათვალიერეთ ${ appName }-ის ფუნქციები"
@@ -11417,6 +11422,9 @@
       "Save your recovery kit to continue": [
         "გასაგრძელებლად შეინახეთ თქვენი აღდგენის ნაკრები"
       ],
+      "Setting up your organization": [
+        "ორგანიზაციის მორგება"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ში შესვლა"
       ],
@@ -11474,12 +11482,31 @@
         "დაიცავი შენი ანგარიში"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "The organization key must be activated first.": [
+        "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "საკრედიტო/სადებეტო ბარათი"
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "ბარათის არასწორი ნომერი"
+      ],
+      "Invalid expiration date": [
+        "არასწორი ვადა"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
       ]
     },
     "Permission": {
@@ -12277,6 +12304,9 @@
       ],
       "Email address": [
         "ელფოსტის მისამართი"
+      ],
+      "Organization name": [
+        "ორგანიზაციის სახელი"
       ],
       "Password": [
         "პაროლი"

@@ -503,9 +503,6 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
-      "Give feedback": [
-        "Geef feedback"
-      ],
       "Go to label": [
         "Ga naar label"
       ],
@@ -632,11 +629,11 @@
       "No": [
         "Nee"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Open ${ CALENDAR_APP_NAME }-instellingen"
@@ -6116,6 +6113,12 @@
       "Cancel anytime": [
         "Op elk moment opzeggen"
       ],
+      "Can’t access your recovery email?": [
+        "Geen toegang tot uw herstel mail?"
+      ],
+      "Can’t access your recovery phone?": [
+        "Geen toegang tot u herstel telefoon?"
+      ],
       "Center": [
         "Centreren"
       ],
@@ -6246,6 +6249,9 @@
       "Done! We sent a code to ${ destination }.": [
         "Klaar! We hebben een code verzonden naar ${ destination }."
       ],
+      "Don’t know your recovery phrase?": [
+        "U weet uw herstelzin niet?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
       ],
@@ -6353,6 +6359,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "Vul uw herstelzin in om het wachtwoord nu te wijzigen."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Afspraakuitnodigingen en RSVP's zullen worden verstuurd in deze taal."
@@ -6709,9 +6718,6 @@
       ],
       "Not yet available in our Android mobile app.": [
         "Nog niet beschikbaar op onze Android mobiele app."
-      ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Nu beschikbaar in bèta, met het desktop programma kunt u makkelijk ${ MAIL_APP_NAME } starten direct vanaf uw bureaublad en blijf u gefocust zonder door uw browser afgeleid te worden."
@@ -7296,6 +7302,9 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
+      "To proceed, we must verify the request.": [
+        "Om door te gaan moeten we het verzoek valideren."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
       ],
@@ -7515,6 +7524,9 @@
       "Welcome": [
         "Welkom"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "We zullen een reset code sturen naar ${ boldValue }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
       ],
@@ -7650,6 +7662,9 @@
       "You have no calendars to export.": [
         "U heeft geen agenda's om te exporteren."
       ],
+      "You have no invoices.": [
+        "U heeft geen facturen."
+      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
@@ -7703,9 +7718,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hiermee wordt ook de herstelfunctie met behulp van vertrouwde apparaten uitgeschakeld."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Uw ${ BRAND_NAME }-account wordt geassocieerd met ${ externalEmailAddress }."
@@ -9758,6 +9770,23 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Doorgaan naar controle"
@@ -9791,23 +9820,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -10271,6 +10283,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Om ${ trialPlanName } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
@@ -11014,6 +11029,14 @@
         "U"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Stel uw organisatie in"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begin met ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Bekijk ${ appName }-functies"
@@ -11213,6 +11236,9 @@
       "Save your recovery kit to continue": [
         "Sla uw herstelkit op om verder te gaan"
       ],
+      "Setting up your organization": [
+        "Uw organisatie wordt aangemaakt"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Inloggen bij ${ PASS_APP_NAME }"
       ],
@@ -11270,12 +11296,31 @@
         "Beveilig uw account"
       ]
     },
+    "passwordless": {
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ongeldig kaartnummer"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
       ]
     },
     "Permission": {
@@ -12048,6 +12093,9 @@
       ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Organization name": [
+        "Organisatienaam"
       ],
       "Password": [
         "Wachtwoord"

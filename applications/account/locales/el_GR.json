@@ -50,6 +50,9 @@
       "activate": [
         "ενεργοποιήστε"
       ],
+      "Activate": [
+        "Ενεργοποίηση"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Change keys": [
+        "Αλλαγή κλειδιών"
       ],
       "Change mailbox password": [
         "Αλλαγή κωδικού γραμματοκιβωτίου"
@@ -503,9 +509,6 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
-      "Give feedback": [
-        "Αφήστε την κριτική σας"
-      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
@@ -632,11 +635,11 @@
       "No": [
         "Όχι"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -3731,6 +3734,9 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Δεν ήταν δυνατή η φόρτωση των τιμολογίων. Παρακαλούμε προσπαθήστε ξανά αργότερα."
+      ],
       "Could not save preference": [
         "Δεν ήταν δυνατή η αποθήκευση της προτίμησης"
       ],
@@ -6818,9 +6824,6 @@
       "Not yet available in our Android mobile app.": [
         "Δεν είναι ακόμα διαθέσιμο στην εφαρμογή μας για κινητά Android."
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
-      ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
         "Τώρα διαθέσιμη σε έκδοση beta, η εφαρμογή για υπολογιστές σας επιτρέπει να εκκινήσετε εύκολα ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας και να παραμένετε συγκεντρωμένοι χωρίς περισπασμούς του προγράμματος περιήγησης."
       ],
@@ -7779,6 +7782,9 @@
       "You have no calendars to export.": [
         "Δεν έχετε ημερολόγια για εξαγωγή."
       ],
+      "You have no invoices.": [
+        "Δεν έχετε τιμολόγια."
+      ],
       "You have no saved payment methods.": [
         "Δεν έχετε αποθηκευμένους τρόπους πληρωμής."
       ],
@@ -7832,9 +7838,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση αξιόπιστης συσκευής."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Ο ${ BRAND_NAME } Λογαριασμός συσχετίζεται με ${ externalEmailAddress }."
@@ -8042,6 +8045,9 @@
       ],
       "Credit": [
         "Πίστωση"
+      ],
+      "Currency conversion": [
+        "Μετατροπή Νομίσματος"
       ],
       "Donation": [
         "Δωρεά"
@@ -8398,6 +8404,9 @@
       ],
       "Addresses": [
         "Διευθύνσεις"
+      ],
+      "Administrators": [
+        "Διαχειριστές"
       ],
       "ALL": [
         "ΟΛΑ"
@@ -9176,6 +9185,9 @@
       "Username": [
         "Όνομα Χρήστη"
       ],
+      "VAT": [
+        "ΦΠΑ"
+      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
@@ -9884,6 +9896,9 @@
       "Back to inbox": [
         "Πίσω στα Εισερχόμενα"
       ],
+      "Back to vaults": [
+        "Πίσω στις κρύπτες"
+      ],
       "Block": [
         "Αποκλεισμός"
       ],
@@ -9919,6 +9934,23 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9952,23 +9984,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -10436,6 +10451,9 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ trialPlanName } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ trialPlanName } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
@@ -11203,6 +11221,14 @@
         "Εσείς"
       ]
     },
+    "Pass B2B onboarding spotlight": {
+      "Set up your organization": [
+        "Ρυθμίστε τον οργανισμό σας"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Έναρξη χρήσης του ${ PASS_APP_NAME }"
+      ]
+    },
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "Δείτε τις δυνατότητες του ${ appName }"
@@ -11303,6 +11329,15 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } ανά μήνα"
       ],
+      "/month /user": [
+        "/μήνα /χρήστη"
+      ],
+      "/month /user, billed annually": [
+        "/μήνας /χρήστης, χρεώνεται ετησίως"
+      ],
+      "/month /user, billed biennially": [
+        "/μήνας /χρήστης, χρεώνεται ανά διετία"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }."
       ],
@@ -11323,6 +11358,9 @@
       ],
       "Creating your account": [
         "Γίνεται δημιουργία του λογαριασμού σας"
+      ],
+      "Current plan": [
+        "Τρέχον πλάνο"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Ανακαλύψτε το ${ PASS_APP_NAME },${ br }τον νέο μας κρυπτογραφημένο διαχειριστή κωδικών πρόσβασης"
@@ -11363,6 +11401,9 @@
       "Get ${ appName } for ${ browserName } soon": [
         "Λάβετε το ${ appName } για ${ browserName } σύντομα"
       ],
+      "Get in touch with our sales team": [
+        "Επικοινωνήστε με την ομάδα πωλήσεών μας"
+      ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Τα Hide-my-email ψευδώνυμα προστατεύουν το ηλεκτρονικό ταχυδρομείο σας από παραβιάσεις δεδομένων"
       ],
@@ -11389,6 +11430,9 @@
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Ενταχθείτε στους περισσότερους από 100 εκατομμυρίων ανθρώπους που έχουν επιλέξει το ${ BRAND_NAME } για να παραμείνουν ασφαλείς στο διαδίκτυο"
+      ],
+      "Join over 50 000 organizations that trust ${ BRAND_NAME }": [
+        "Γίνετε μέλος περισσότερων από 50.000 οργανισμών που εμπιστεύονται το ${ BRAND_NAME }"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Εκκίνηση του ${ PASS_APP_NAME }"
@@ -11420,11 +11464,17 @@
       "Save your recovery kit to continue": [
         "Αποθηκεύστε το κιτ αποκατάστασης σας για να συνεχίσετε"
       ],
+      "Setting up your organization": [
+        "Ρύθμιση του οργανισμού σας"
+      ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Σύνδεση στο ${ PASS_APP_NAME }"
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Ειδική προσφορά έναρξης: Αποκτήστε ${ title } για ${ price } για πάντα!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Προσαρμοσμένες λύσεις για μεγαλύτερους οργανισμούς με προσαρμοσμένες ανάγκες."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Η προσφορά που επιλέξατε δεν είναι διαθέσιμη για συνδρομητές του ${ currentPlanTitle }."
@@ -11477,12 +11527,65 @@
         "Επαληθεύστε τον λογαριασμό σας"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "Για επιχειρήσεις"
+      ]
+    },
+    "passwordless": {
+      "Change organization key": [
+        "Αλλαγή κλειδιού οργανισμού"
+      ],
+      "Organization key activated": [
+        "Το κλειδί οργανισμού ενεργοποιήθηκε"
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Reset organization key": [
+        "Επαναφορά κλειδιού οργανισμού"
+      ],
+      "The organization key must be activated first.": [
+        "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "Πιστωτική/χρεωστική κάρτα"
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Payments": {
+      "Card number": [
+        "Αριθμός κάρτας"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "ΜΜ/ΕΕ"
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Μη έγκυρος αριθμός κάρτας"
+      ],
+      "Invalid expiration date": [
+        "Μη έγκυρη ημερομηνία λήξης"
+      ],
+      "Invalid securiry code": [
+        "Μη έγκυρος κωδικός ασφαλείας"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε αργότερα."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Δεν είμαστε σε θέση να επαληθεύσουμε τον τρόπο πληρωμής σας. Παρακαλούμε επιλέξτε διαφορετικό τρόπο πληρωμής ή προσπαθήστε ξανά."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Η κάρτα σας απορρίφθηκε. Παρακαλώ δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
       ]
     },
     "Permission": {
@@ -12280,6 +12383,9 @@
       ],
       "Email address": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Organization name": [
+        "Όνομα οργανισμού"
       ],
       "Password": [
         "Κωδικός πρόσβασης"
@@ -13391,6 +13497,9 @@
       ],
       "Composing": [
         "Σύνταξη"
+      ],
+      "Confirm": [
+        "Επιβεβαίωση"
       ],
       "Confirm address": [
         "Επιβεβαιώση διεύθυνσης"
