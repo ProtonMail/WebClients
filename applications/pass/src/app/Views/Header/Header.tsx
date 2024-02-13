@@ -70,7 +70,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                     );
                 })()}
             </CoreHeader>
-            {!matchSettings && <PinnedItemsBar />}
+            {!(matchSettings || matchOnboarding) && <PinnedItemsBar />}
         </>
     );
 };
