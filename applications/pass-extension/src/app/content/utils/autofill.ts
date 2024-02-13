@@ -1,4 +1,3 @@
-/* eslint-disable deprecation/deprecation */
 export type AutofillOptions = { paste?: boolean };
 
 const isFocused = (el: HTMLElement) => el === document.activeElement;
