@@ -1,17 +1,17 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 
-import {
-    LOCAL_ID_KEY,
-    MAILBOX_PASSWORD_KEY,
-    PERSIST_SESSION_KEY,
-    SSO_PATHS,
-    TRUST_SESSION_KEY,
-    UID_KEY,
-    isSSOMode,
-} from '../constants';
+import { SSO_PATHS } from '../constants';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
+import { appMode } from '../webpack.constants';
 import { getBasename, getLocalIDFromPathname, stripLocalBasenameFromPathname } from './pathnameHelper';
 import { getPersistedSession } from './persistedSessionStorage';
+
+const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
+const UID_KEY = 'proton:oauth:UID';
+const LOCAL_ID_KEY = 'proton:localID';
+const PERSIST_SESSION_KEY = 'proton:persistSession';
+const TRUST_SESSION_KEY = 'proton:trustSession';
+const CLIENT_KEY_KEY = 'proton:clientKey';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -85,12 +85,7 @@ interface Arguments {
     onUID?: (UID: string | undefined) => void;
 }
 
-const createAuthenticationStore = ({
-    mode = isSSOMode ? 'sso' : 'standalone',
-    initialAuth,
-    store: { set, get },
-    onUID,
-}: Arguments) => {
+const createAuthenticationStore = ({ mode = appMode, initialAuth, store: { set, get }, onUID }: Arguments) => {
     const setUID = (UID: string | undefined) => {
         set(UID_KEY, UID);
         onUID?.(UID);
@@ -124,6 +119,9 @@ const createAuthenticationStore = ({
     // Keep old default behavior
     const getPersistent = () => get(PERSIST_SESSION_KEY) ?? true;
 
+    const setClientKey = (clientKey: string | undefined) => set(CLIENT_KEY_KEY, clientKey);
+    const getClientKey = () => get(CLIENT_KEY_KEY) ?? undefined;
+
     const setTrusted = (trusted: boolean | undefined) => set(TRUST_SESSION_KEY, trusted);
     const getTrusted = () => get(TRUST_SESSION_KEY) ?? false;
 
@@ -142,6 +140,7 @@ const createAuthenticationStore = ({
         persistent,
         trusted,
         path,
+        clientKey,
     }: {
         UID: string;
         keyPassword?: string;
@@ -149,11 +148,13 @@ const createAuthenticationStore = ({
         persistent: boolean;
         trusted: boolean;
         path?: string;
+        clientKey: string;
     }) => {
         setUID(newUID);
         setPassword(keyPassword);
         setPersistent(persistent);
         setTrusted(trusted);
+        setClientKey(clientKey);
 
         if (newLocalID !== undefined && mode === 'sso') {
             setLocalID(newLocalID);
@@ -172,6 +173,7 @@ const createAuthenticationStore = ({
         setPersistent(undefined);
         setLocalID(undefined);
         setTrusted(undefined);
+        setClientKey(undefined);
         basename = undefined;
     };
 
@@ -185,6 +187,8 @@ const createAuthenticationStore = ({
         getPassword,
         setPersistent,
         getPersistent,
+        setClientKey,
+        getClientKey,
         setTrusted,
         getTrusted,
         logout,

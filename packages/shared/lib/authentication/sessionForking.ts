@@ -183,7 +183,13 @@ export const produceFork = async ({
 }: ProduceForkArguments) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
-    const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
+    const payload = keyPassword
+        ? await getForkEncryptedBlob(
+              await getKey(rawKey),
+              { keyPassword },
+              1 /* Update to 2 when all clients understand it*/
+          )
+        : undefined;
     const childClientID = getClientID(app);
     const { Selector } = await api<PushForkResponse>(
         withUIDHeaders(
@@ -235,6 +241,7 @@ export const getConsumeForkParameters = () => {
     const type = hashParams.get('t') || '';
     const persistent = hashParams.get('p') || '';
     const trusted = hashParams.get('tr') || '';
+    const version = hashParams.get('v') || '';
 
     return {
         state: state.slice(0, 100),
@@ -243,7 +250,8 @@ export const getConsumeForkParameters = () => {
         type: getValidatedForkType(type),
         persistent: persistent === '1',
         trusted: trusted === '1',
-    };
+        version: version === '2' ? 2 : 1,
+    } as const;
 };
 
 export const removeHashParameters = () => {
@@ -257,9 +265,20 @@ interface ConsumeForkArguments {
     key: Uint8Array;
     persistent: boolean;
     trusted: boolean;
+    version: 1 | 2;
+    mode: 'sso' | 'standalone';
 }
 
-export const consumeFork = async ({ selector, api, state, key, persistent, trusted }: ConsumeForkArguments) => {
+export const consumeFork = async ({
+    selector,
+    api,
+    state,
+    key,
+    persistent,
+    trusted,
+    version,
+    mode,
+}: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -292,12 +311,12 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         }
     }
 
-    let keyPassword: string | undefined;
+    let keyPassword = '';
 
     if (Payload) {
         try {
-            const data = await getForkDecryptedBlob(await getKey(key), Payload);
-            keyPassword = data?.keyPassword;
+            const data = await getForkDecryptedBlob(await getKey(key), Payload, version);
+            keyPassword = data?.keyPassword || '';
         } catch (e: any) {
             throw new InvalidForkConsumeError('Failed to decrypt payload');
         }
@@ -316,11 +335,16 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         RefreshToken,
     };
 
-    await persistSession({ api: authApi, ...result });
+    const { clientKey } = await persistSession({
+        api: authApi,
+        ...result,
+        mode,
+    });
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
     return {
         ...result,
         path,
+        clientKey,
     } as const;
 };

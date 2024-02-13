@@ -247,10 +247,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const { key, selector, state } = getConsumeForkParameters();
+        const { key, selector, state, version } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
-        if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector });
+        if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector, version });
         else void authService.init({ forceLock: false });
 
         /* setup listeners on the service worker's broadcasting channel in order to

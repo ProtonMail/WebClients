@@ -296,14 +296,6 @@ export enum SUBSCRIPTION_CANCELLATION_REASONS {
     OTHER = 'OTHER',
 }
 
-export const MAIN_USER_KEY = 'USER_KEYS';
-export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
-export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
-export const UID_KEY = 'proton:oauth:UID';
-export const USER_ID_KEY = 'proton:userID';
-export const LOCAL_ID_KEY = 'proton:localID';
-export const PERSIST_SESSION_KEY = 'proton:persistSession';
-export const TRUST_SESSION_KEY = 'proton:trustSession';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 
@@ -1031,18 +1023,6 @@ export enum LINK_TYPES {
     EMAIL = 'email',
     PHONE = 'phone',
 }
-
-declare const WEBPACK_FEATURE_FLAGS: string;
-// This is a definition coming from webpack. Hide behind typeof for the test env.
-export const FEATURE_FLAGS = typeof WEBPACK_FEATURE_FLAGS === 'undefined' ? '' : WEBPACK_FEATURE_FLAGS;
-
-declare const WEBPACK_APP_MODE: string;
-export const APP_MODE = typeof WEBPACK_APP_MODE === 'undefined' ? '' : WEBPACK_APP_MODE;
-export const isSSOMode = APP_MODE === 'sso';
-export const isStandaloneMode = APP_MODE === 'standalone';
-
-declare const WEBPACK_PUBLIC_PATH: string;
-export const PUBLIC_PATH = typeof WEBPACK_PUBLIC_PATH === 'undefined' ? '' : WEBPACK_PUBLIC_PATH;
 
 interface OpenPGPFile {
     filepath: string;

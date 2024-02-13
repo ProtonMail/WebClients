@@ -58,6 +58,7 @@ export interface SessionData {
     keyPassword?: string;
     persistent: boolean;
     trusted: boolean;
+    clientKey: string;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | undefined;
@@ -157,6 +158,7 @@ export interface SetupData {
     user: User;
     addresses: Address[];
     keyPassword: string | undefined;
+    clientKey: string;
     authResponse: AuthResponse;
     api: Api;
     mnemonicData?: MnemonicData;

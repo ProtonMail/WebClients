@@ -6,6 +6,7 @@ import { createMemoryHistory } from 'history';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { generateSimpleCalendar } from '@proton/testing/lib/builders';
+import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
@@ -59,6 +60,8 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         onDelete: jest.fn(),
         // onExport?: (calendar: Calendar) => void,
     };
+
+    mockUseAuthentication({ mode: '' } as any);
 
     return (
         <ModalsProvider>

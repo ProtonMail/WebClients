@@ -10,6 +10,7 @@ import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
 import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/sessionForkBlob';
+import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/sessionForkValidation';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
@@ -17,7 +18,6 @@ import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from './session';
-import { getValidatedForkType, getValidatedRawKey } from '@proton/shared/lib/authentication/sessionForkValidation';
 
 export type RequestForkOptions = { app: APP_NAMES; host?: string; localID?: number; type?: FORK_TYPE };
 export type RequestForkResult = { state: string; url: string };
@@ -43,7 +43,7 @@ export const requestFork = ({
 
 export type ConsumeForkParameters = ReturnType<typeof getConsumeForkParameters>;
 export type ConsumeForkPayload =
-    | { mode: 'sso'; localState: MaybeNull<string>; state: string; selector: string; key?: Uint8Array }
+    | { mode: 'sso'; localState: MaybeNull<string>; state: string; selector: string; key?: Uint8Array; version: 1 | 2 }
     | { mode: 'secure'; state: string; selector: string; keyPassword: string };
 
 export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeForkPayload };
@@ -78,7 +78,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
             : await (async () => {
                   try {
                       const key = await getKey(payload.key!);
-                      return (await getForkDecryptedBlob(key, Payload))?.keyPassword ?? '';
+                      return (await getForkDecryptedBlob(key, Payload, payload.version))?.keyPassword ?? '';
                   } catch (_) {
                       throw new InvalidForkConsumeError('Failed to decrypt fork payload');
                   }
@@ -140,6 +140,7 @@ export const getConsumeForkParameters = () => {
     const type = hashParams.get('t') || '';
     const persistent = hashParams.get('p') || '';
     const trusted = hashParams.get('tr') || '';
+    const version = hashParams.get('v') || '';
 
     return {
         state: state.slice(0, 100),
@@ -148,5 +149,6 @@ export const getConsumeForkParameters = () => {
         type: getValidatedForkType(type),
         persistent: persistent === '1',
         trusted: trusted === '1',
-    };
+        version: version === '2' ? 2 : 1,
+    } as const;
 };
