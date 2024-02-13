@@ -11,6 +11,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import { END_OF_TRIAL_KEY } from '../../desktop/desktopTypes';
+import { isElectronApp } from '../../helpers/desktop';
+import { setItem } from '../../helpers/storage';
+
 export const createRefreshHandlers = (refresh: (UID: string) => Promise<Response>) => {
     const refreshHandlers: { [key: string]: (date: Date | undefined) => Promise<void> } = {};
 
@@ -77,6 +81,14 @@ export const refresh = (call: () => Promise<Response>, attempts: number, maxAtte
         }
 
         const { status, name } = e;
+
+        // TODO make this this is correct and add code control
+        if (isElectronApp && status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+            console.log('A');
+
+            const timestamp = new Date().getTime().toString();
+            setItem(END_OF_TRIAL_KEY, timestamp);
+        }
 
         if (name === 'OfflineError') {
             if (attempts > OFFLINE_RETRY_ATTEMPTS_MAX) {
