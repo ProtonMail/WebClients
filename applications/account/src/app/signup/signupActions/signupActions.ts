@@ -23,7 +23,7 @@ import {
 } from '@proton/shared/lib/api/user';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { persistSession, persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
     APPS,
     CLIENT_TYPES,
@@ -80,7 +80,7 @@ export const handleDone = ({
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
-    const { authResponse, user, keyPassword } = setupData;
+    const { authResponse, user, keyPassword, clientKey } = setupData;
 
     // Users that creates an account after a logout don't have appIntent, foring forcing it here
     if (isElectronApp) {
@@ -98,6 +98,7 @@ export const handleDone = ({
             User: user,
             loginPassword: password,
             keyPassword: keyPassword,
+            clientKey,
             flow: 'signup',
             appIntent: appIntent,
         },
@@ -228,7 +229,7 @@ export const handleSetPassword = async ({
         config: updatePrivateKeyRoute(updateKeysPayload),
     });
 
-    await persistSessionWithPassword({
+    const { clientKey } = await persistSession({
         api,
         keyPassword,
         User: user,
@@ -249,6 +250,7 @@ export const handleSetPassword = async ({
             },
             setupData: {
                 ...setupData,
+                clientKey,
                 keyPassword,
                 user: updatedUser,
             },
@@ -499,7 +501,14 @@ export const handleSetupUser = async ({
     ]);
 
     const trusted = false;
-    await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
+    const { clientKey } = await persistSession({
+        ...authResponse,
+        User: user,
+        keyPassword,
+        api,
+        persistent,
+        trusted,
+    });
 
     const mnemonicData = await handleSetupMnemonic({
         emailAddress: userEmail,
@@ -515,6 +524,7 @@ export const handleSetupUser = async ({
         setupData: {
             user,
             keyPassword,
+            clientKey,
             addresses,
             authResponse,
             mnemonicData,

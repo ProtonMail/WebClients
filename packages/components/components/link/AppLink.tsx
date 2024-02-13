@@ -2,7 +2,7 @@ import { AnchorHTMLAttributes, Ref, forwardRef } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
 import { getAppHref, getAppHrefBundle } from '@proton/shared/lib/apps/helper';
-import { APPS, APP_NAMES, VPN_HOSTNAME, isSSOMode, isStandaloneMode } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 
 import { useAuthentication, useConfig } from '../../hooks';
@@ -21,7 +21,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
     const targetApp = selfOpening ? APP_NAME : toApp;
 
     if (targetApp && (targetApp !== APP_NAME || selfOpening)) {
-        if (isSSOMode) {
+        if (authentication.mode === 'sso') {
             // If in vpn-level account settings and want to visit the proton vpn app
             if (targetApp === APPS.PROTONVPN_SETTINGS) {
                 const href = `https://${VPN_HOSTNAME}/${stripLeadingAndTrailingSlash(to)}`;
@@ -51,7 +51,7 @@ const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkP
                 </a>
             );
         }
-        if (isStandaloneMode) {
+        if (authentication.mode === 'standalone') {
             return (
                 <Tooltip title="Disabled in standalone mode">
                     <a ref={ref} {...rest} onClick={(e) => e.preventDefault()} href="#">
