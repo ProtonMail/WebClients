@@ -15,6 +15,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     disabled?: boolean;
     isAuthenticated?: boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES;
+    hasSomeVpnPlan: boolean;
 };
 
 const PaymentWrapper = ({
@@ -39,6 +40,7 @@ const PaymentWrapper = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    hasSomeVpnPlan,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -75,6 +77,7 @@ const PaymentWrapper = ({
             iframeHandles={iframeHandles}
             chargebeeCard={chargebeeCard}
             chargebeePaypal={chargebeePaypal}
+            hasSomeVpnPlan={hasSomeVpnPlan}
         />
     );
 };

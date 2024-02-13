@@ -712,7 +712,6 @@ export enum PLAN_SERVICES {
     PASS = 8,
 }
 
-// You don't need more, use `user.isPaid`
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
     Plans: undefined,

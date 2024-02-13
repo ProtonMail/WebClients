@@ -20,6 +20,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -35,7 +36,7 @@ import {
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
-import { useApi, useConfig, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useConfig, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
@@ -63,6 +64,7 @@ const CreditsModal = (props: ModalProps) => {
     const api = useApi();
     const pollEventsMultipleTimes = usePollEvents();
     const chargebeeContext = useChargebeeContext();
+    const [subscription] = useSubscription();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
@@ -234,6 +236,7 @@ const CreditsModal = (props: ModalProps) => {
                     }}
                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                     triggersDisabled={amountLoading}
+                    hasSomeVpnPlan={getHasSomeVpnPlan(subscription)}
                 />
             </ModalTwoContent>
 
