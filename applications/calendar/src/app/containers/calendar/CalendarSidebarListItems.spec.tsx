@@ -15,6 +15,7 @@ import {
 import createCache from '@proton/shared/lib/helpers/cache';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 
@@ -246,6 +247,7 @@ function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
             } as Address,
         ],
     };
+    mockUseAuthentication({} as any);
     return (
         <Router history={memoryHistory}>
             <CacheProvider cache={createCache()}>
