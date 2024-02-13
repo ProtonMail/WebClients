@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { CryptoWorkerPool, WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypto/lib/worker/workerPool';
+import { WorkerPoolInitOptions as CryptoWorkerOptions, CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
 
 import { hasModulesSupport, isIos11, isSafari11 } from './browser';
 
@@ -16,7 +16,8 @@ const isUnsupportedWorker = () => {
  * If workers are not supported by the current browser, the pmcrypto API is imported instead.
  */
 const init = async (options?: CryptoWorkerOptions) => {
-    const isCompat = !hasModulesSupport();
+    const isWorker = typeof window === 'undefined' || typeof document === 'undefined';
+    const isCompat = isWorker || !hasModulesSupport();
 
     // Compat browsers do not support the worker.
     if (isCompat || isUnsupportedWorker()) {
