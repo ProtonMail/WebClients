@@ -347,9 +347,9 @@ export const getEncryptedSetupBlob = async (clientKey: string, loginPassword: st
 };
 
 export const getDecryptedSetupBlob = async (clientKey: string, blob: string): Promise<SetupBlob | undefined> => {
-    const key = await getClientKey(clientKey);
-    const result = await getDecryptedBlob(key, blob, stringToUtf8Array('setup'));
     try {
+        const key = await getClientKey(clientKey);
+        const result = await getDecryptedBlob(key, blob, stringToUtf8Array('setup'));
         const json = JSON.parse(result);
         if (!json?.loginPassword) {
             return undefined;

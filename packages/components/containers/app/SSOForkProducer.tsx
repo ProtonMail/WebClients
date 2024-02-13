@@ -127,7 +127,8 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
         };
 
         const runInternal = async () => {
-            const { app, state, localID, type, plan, independent } = getProduceForkParameters();
+            const { app, state, localID, forkType, payloadType, payloadVersion, plan, independent } =
+                getProduceForkParameters();
             if (!app || !state) {
                 onInvalidFork();
                 return;
@@ -149,13 +150,26 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                             persistent,
                             trusted,
                             independent,
+                            payloadType,
+                            payloadVersion,
                         },
                     });
                     return;
                 }
 
                 onActiveSessions(
-                    { type: SSOType.Proton, payload: { state, app, type, plan, independent } },
+                    {
+                        type: SSOType.Proton,
+                        payload: {
+                            state,
+                            app,
+                            forkType,
+                            plan,
+                            independent,
+                            payloadType,
+                            payloadVersion,
+                        },
+                    },
                     activeSessionsResult
                 );
             };
@@ -180,6 +194,8 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
                         independent,
                         persistent: validatedSession.persistent,
                         trusted: validatedSession.trusted,
+                        payloadType,
+                        payloadVersion,
                     },
                 });
             } catch (e: any) {

@@ -342,7 +342,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                         !getIsEventModified(event.nativeEvent)
                                     ) {
                                         event.preventDefault();
-                                        return requestFork({ fromApp: APP_NAME, type: FORK_TYPE.SWITCH });
+                                        return requestFork({ fromApp: APP_NAME, forkType: FORK_TYPE.SWITCH });
                                     }
                                 }}
                                 data-testid="userdropdown:button:switch-account"

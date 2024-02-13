@@ -27,7 +27,7 @@ export const Lobby: FC = () => {
                         : authService.requestFork({ host, app })
                 }
                 onLogout={() => authService.logout({ soft: true })}
-                onRegister={() => authService.requestFork({ host, app, type: FORK_TYPE.SIGNUP })}
+                onRegister={() => authService.requestFork({ host, app, forkType: FORK_TYPE.SIGNUP })}
                 renderError={() => <></>}
             />
         </LobbyLayout>
