@@ -331,9 +331,6 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
-      "Give feedback": [
-        "Dajte nám spätnú väzbu"
-      ],
       "Go to Drive": [
         "Prejsť na Drive"
       ],
@@ -2133,6 +2130,9 @@
       "Alias options could not be resolved": [
         "Možnosti aliasu sa nepodarilo vyriešiť"
       ],
+      "An error occurred while saving alias": [
+        "Pri ukladaní aliasu došlo k chybe"
+      ],
       "Authentication canceled.": [
         "Prihlásenie zrušené."
       ],
@@ -3834,9 +3834,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
-      ],
       "from the version history?": [
         "z histórie verzií?"
       ],
@@ -3882,14 +3879,14 @@
       "Import mailbox": [
         "Importovať poštovú schránku"
       ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
+      "Important note": [
+        "Dôležitá poznámka"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
       ],
       "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Založte si medzitým svoj vlastný účet ${ DRIVE_APP_NAME } a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
+        "Založte si medzitým svoj vlastný ${ DRIVE_APP_NAME } účet a chráňte svoje údaje end-to-end šifrovaním a bezpečne ich zdieľajte."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexovanie ${ esProgress } z ${ totalProgressToShow } položiek"
@@ -4446,6 +4443,9 @@
       "Want to sync files faster?": [
         "Chcete synchronizovať súbory rýchlejšie?"
       ],
+      "Warning": [
+        "Varovanie"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Výborne, práve ste zdvojnásobili svoje bezplatné úložisko!"
       ],
@@ -4558,7 +4558,7 @@
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
       "Your download is in progress": [
-        "Sťahovanie prebieha"
+        "Prebieha sťahovanie"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
@@ -5263,8 +5263,173 @@
       ]
     },
     "Mimetype": {
+      "3GPP audio/video container": [
+        "3GPP audio/video"
+      ],
+      "3GPP2 audio/video container": [
+        "3GPP2 audio/video"
+      ],
+      "7-zip archive": [
+        "7-zip archív"
+      ],
+      "AAC audio": [
+        "AAC audio"
+      ],
+      "AbiWord document": [
+        "AbiWord dokument"
+      ],
+      "Adobe Portable Document Format (PDF)": [
+        "Adobe Portable Document Format (PDF)"
+      ],
+      "Amazon Kindle eBook format": [
+        "Amazon Kindle eBook formát"
+      ],
+      "Android Package": [
+        "Android balíček"
+      ],
+      "Animated Portable Network Graphics": [
+        "Animovaný Portable Network Graphics (PNG)"
+      ],
+      "Apple Installer Package": [
+        "Apple inštalátor balíčkov"
+      ],
+      "Archive document": [
+        "Archivovať dokument"
+      ],
+      "Audio file": [
+        "Zvukový súbor"
+      ],
+      "AVI video": [
+        "AVI video"
+      ],
+      "Binary data": [
+        "Binárne dáta"
+      ],
+      "Bourne shell script": [
+        "Skript shellu Bourne"
+      ],
+      "BZip archive": [
+        "BZip archív"
+      ],
+      "BZip2 archive": [
+        "BZip2 archív"
+      ],
+      "C-Shell script": [
+        "C-Shell skript"
+      ],
+      "Cascading Style Sheets (CSS)": [
+        "Kaskádové štýly (CSS)"
+      ],
+      "Comma-separated values (CSV)": [
+        "Hodnoty oddelené čiarkami (CSV)"
+      ],
+      "Electronic publication (EPUB)": [
+        "Elektronická publikácia (EPUB)"
+      ],
+      "Flash Video": [
+        "Flash video"
+      ],
+      "Graphics Interchange Format (GIF)": [
+        "Graphics Interchange Format (GIF)"
+      ],
+      "GZip Compressed Archive": [
+        "GZip archív"
+      ],
+      "HyperText Markup Language (HTML)": [
+        "Hypertextový značkovací jazyk (HTML)"
+      ],
+      "Hypertext Preprocessor (Personal Home Page)": [
+        "Hypertextový preprocesor (osobná domovská stránka)"
+      ],
       "iCalendar format": [
         "Formát iCalendar"
+      ],
+      "Icon format": [
+        "Ikona"
+      ],
+      "Image": [
+        "Obrázok"
+      ],
+      "Java Archive (JAR)": [
+        "Java Archive (JAR)"
+      ],
+      "JPEG images": [
+        "JPEG obrázky"
+      ],
+      "MP3 audio": [
+        "MP3 audio"
+      ],
+      "MPEG transport stream": [
+        "MPEG transportný tok"
+      ],
+      "MPEG Video": [
+        "MPEG video"
+      ],
+      "Musical Instrument Digital Interface (MIDI)": [
+        "MIDI (Musical Instrument Digital Interface)"
+      ],
+      "OGG audio": [
+        "OGG audio"
+      ],
+      "OGG video": [
+        "OGG video"
+      ],
+      "OpenDocument presentation document": [
+        "Dokument prezentácie OpenDocument"
+      ],
+      "OpenDocument spreadsheet document": [
+        "Tabulkový dokument OpenDocument"
+      ],
+      "OpenDocument text document": [
+        "Textový dokument OpenDocument"
+      ],
+      "OpenType font": [
+        "OpenType font"
+      ],
+      "Opus audio": [
+        "Opus audio"
+      ],
+      "Portable Network Graphics": [
+        "Portable Network Graphics (PNG)"
+      ],
+      "RAR archive": [
+        "RAR archív"
+      ],
+      "Rich Text Format (RTF)": [
+        "Rich Text Format (RTF)"
+      ],
+      "Scalable Vector Graphics (SVG)": [
+        "Škálovateľná vektorová grafika (SVG)"
+      ],
+      "Tape Archive (TAR)": [
+        "TAR archív"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "TrueType Font": [
+        "TrueType Font"
+      ],
+      "Unknown file": [
+        "Neznámy súbor"
+      ],
+      "Video file": [
+        "Video súbor"
+      ],
+      "WEBM audio": [
+        "WEBM audio"
+      ],
+      "WEBM video": [
+        "WEBM video"
+      ],
+      "WEBP image": [
+        "WEBP obrázok"
+      ],
+      "Windows OS/2 Bitmap Graphics": [
+        "Windows OS/2 Bitmap Graphics"
+      ],
+      "ZIP archive": [
+        "ZIP archív"
       ]
     },
     "Modal title": {
