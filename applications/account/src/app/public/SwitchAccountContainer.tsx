@@ -9,8 +9,10 @@ import {
     Icon,
     Loader,
     OnLoginCallbackArguments,
+    Prompt,
     useApi,
     useErrorHandler,
+    useModalState,
     useModals,
     useNotifications,
 } from '@proton/components';
@@ -76,6 +78,8 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
     const { createModal } = useModals();
+
+    const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
 
     useEffect(() => {
         startUnAuthFlow().catch(noop);
@@ -273,10 +277,27 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                         shape="ghost"
                         fullWidth
                         onClick={() => {
-                            handleSignOutMultiple(localActiveSessions || []);
+                            setOpenSignOutAllPrompt(true);
                         }}
                     >{c('Action').t`Sign out of all accounts`}</Button>
                 </div>
+                {renderOpenSignOutAllPrompt && (
+                    <Prompt
+                        title={c('Title').t`Are you sure?`}
+                        buttons={[
+                            <Button
+                                color="norm"
+                                onClick={() => {
+                                    handleSignOutMultiple(localActiveSessions || []);
+                                }}
+                            >{c('Action').t`Continue`}</Button>,
+                            <Button onClick={() => setOpenSignOutAllPrompt(false)}>{c('Action').t`Cancel`}</Button>,
+                        ]}
+                        {...openSignOutAllPrompt}
+                    >
+                        <p>{c('Info').t`This will sign you out of all accounts currently logged in.`}</p>
+                    </Prompt>
+                )}
             </Content>
         </Main>
     );
