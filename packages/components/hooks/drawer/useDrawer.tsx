@@ -118,7 +118,7 @@ export const DrawerProvider = ({
     children: ReactNode;
     defaultShowDrawerSidear?: boolean;
 }) => {
-    const { getUID, getPersistent, getPassword, getTrusted } = useAuthentication();
+    const authentication = useAuthentication();
     const api = useApi();
     const getUser = useGetUser();
 
@@ -192,10 +192,12 @@ export const DrawerProvider = ({
                                 {
                                     type: DRAWER_EVENTS.SESSION,
                                     payload: {
-                                        UID: getUID(),
-                                        keyPassword: getPassword(),
-                                        persistent: getPersistent(),
-                                        trusted: getTrusted(),
+                                        UID: authentication.getUID(),
+                                        localID: authentication.getLocalID(),
+                                        keyPassword: authentication.getPassword(),
+                                        persistent: authentication.getPersistent(),
+                                        trusted: authentication.getTrusted(),
+                                        clientKey: authentication.getClientKey(),
                                         User: user,
                                         tag: versionCookieAtLoad,
                                     },
@@ -292,8 +294,9 @@ export const DrawerProvider = ({
                 case DRAWER_EVENTS.ABORT_REQUEST:
                     const { id } = event.data.payload;
 
-                    const controller = requestsAbortControllers.find((controller) => controller.id === id)
-                        ?.abortController;
+                    const controller = requestsAbortControllers.find(
+                        (controller) => controller.id === id
+                    )?.abortController;
 
                     if (controller) {
                         controller.abort();

@@ -70,13 +70,17 @@ interface ForkState {
 export const requestFork = ({
     fromApp,
     localID,
-    type,
     reason,
+    forkType,
+    payloadType,
+    payloadVersion,
 }: {
     fromApp: APP_NAMES;
     localID?: number;
-    type?: FORK_TYPE;
+    forkType?: FORK_TYPE;
     reason?: 'signout' | 'session-expired';
+    payloadType?: 'offline';
+    payloadVersion?: 2;
 }) => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
@@ -86,14 +90,20 @@ export const requestFork = ({
     if (localID !== undefined) {
         searchParams.append('u', `${localID}`);
     }
-    if (type !== undefined) {
-        searchParams.append('t', type);
+    if (forkType !== undefined) {
+        searchParams.append('t', forkType);
     }
     if (reason !== undefined) {
         searchParams.append('reason', reason);
     }
+    if (payloadType !== undefined) {
+        searchParams.append('pt', payloadType);
+    }
+    if (payloadVersion !== undefined) {
+        searchParams.append('pv', `${payloadVersion}`);
+    }
 
-    const url = type === FORK_TYPE.SWITCH ? getAppHref('/', fromApp) : window.location.href;
+    const url = forkType === FORK_TYPE.SWITCH ? getAppHref('/', fromApp) : window.location.href;
     const forkStateData: ForkState = { url };
     sessionStorage.setItem(`f${state}`, JSON.stringify(forkStateData));
 
@@ -129,9 +139,11 @@ export const produceOAuthFork = async ({ api, UID, oaSession, clientID }: Produc
 export interface ProduceForkParameters {
     state: string;
     app: APP_NAMES;
-    type?: FORK_TYPE;
     plan?: string;
     independent: boolean;
+    forkType?: FORK_TYPE;
+    payloadType: 'offline' | 'default';
+    payloadVersion: 1 | 2;
 }
 
 export interface ProduceForkParametersFull extends ProduceForkParameters {
@@ -139,22 +151,38 @@ export interface ProduceForkParametersFull extends ProduceForkParameters {
 }
 
 export const getProduceForkParameters = (): Partial<ProduceForkParametersFull> &
-    Required<Pick<ProduceForkParametersFull, 'independent'>> => {
+    Required<Pick<ProduceForkParametersFull, 'independent' | 'payloadType' | 'payloadVersion'>> => {
     const searchParams = new URLSearchParams(window.location.search);
     const app = searchParams.get('app') || '';
     const state = searchParams.get('state') || '';
     const localID = searchParams.get('u') || '';
-    const type = searchParams.get('t') || '';
+    const forkType = searchParams.get('t') || '';
     const plan = searchParams.get('plan') || '';
     const independent = searchParams.get('independent') || '0';
+    const payloadType = (() => {
+        const value = searchParams.get('pt') || '';
+        if (value === 'offline') {
+            return value;
+        }
+        return 'default';
+    })();
+    const payloadVersion = (() => {
+        const value = Number(searchParams.get('pv') || '1');
+        if (value === 1 || value === 2) {
+            return value;
+        }
+        return 1;
+    })();
 
     return {
         state: state.slice(0, 100),
         localID: getValidatedLocalID(localID),
         app: getValidatedApp(app),
-        type: getValidatedForkType(type),
+        forkType: getValidatedForkType(forkType),
         plan,
         independent: independent === '1' || independent === 'true',
+        payloadType,
+        payloadVersion,
     };
 };
 
@@ -166,8 +194,10 @@ interface ProduceForkArguments {
     state: string;
     persistent: boolean;
     trusted: boolean;
-    type?: FORK_TYPE;
     independent: boolean;
+    forkType?: ProduceForkParameters['forkType'];
+    payloadType: ProduceForkParameters['payloadType'];
+    payloadVersion: ProduceForkParameters['payloadVersion'];
 }
 
 export const produceFork = async ({
@@ -176,20 +206,34 @@ export const produceFork = async ({
     keyPassword,
     state,
     app,
-    type,
+    forkType,
     persistent,
     trusted,
     independent,
+    payloadType,
+    payloadVersion,
 }: ProduceForkArguments) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
-    const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
+    const encryptedPayload = await (async () => {
+        const forkData = (() => {
+            if (payloadType === 'default' || payloadType === 'offline') {
+                return { type: 'default', keyPassword: keyPassword || '' } as const;
+            }
+            throw new Error('Unsupported fork payload type');
+        })();
+        return {
+            blob: await getForkEncryptedBlob(await getKey(rawKey), forkData, payloadVersion),
+            payloadType: forkData.type,
+            payloadVersion,
+        };
+    })();
     const childClientID = getClientID(app);
     const { Selector } = await api<PushForkResponse>(
         withUIDHeaders(
             UID,
             pushForkSession({
-                Payload: payload,
+                Payload: encryptedPayload.blob,
                 ChildClientID: childClientID,
                 Independent: independent ? 1 : 0,
             })
@@ -206,8 +250,14 @@ export const produceFork = async ({
     if (trusted) {
         toConsumeParams.append('tr', '1');
     }
-    if (type !== undefined) {
-        toConsumeParams.append('t', type);
+    if (forkType !== undefined) {
+        toConsumeParams.append('t', forkType);
+    }
+    if (encryptedPayload.payloadVersion !== undefined) {
+        toConsumeParams.append('pv', `${encryptedPayload.payloadVersion}`);
+    }
+    if (encryptedPayload.payloadType !== undefined) {
+        toConsumeParams.append('pt', `${encryptedPayload.payloadType}`);
     }
 
     return replaceUrl(getAppHref(`${SSO_PATHS.FORK}#${toConsumeParams.toString()}`, app));
@@ -235,15 +285,19 @@ export const getConsumeForkParameters = () => {
     const type = hashParams.get('t') || '';
     const persistent = hashParams.get('p') || '';
     const trusted = hashParams.get('tr') || '';
+    const payloadVersion = hashParams.get('pv') || '';
+    const payloadType = hashParams.get('pt') || '';
 
     return {
         state: state.slice(0, 100),
         selector,
         key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
-        type: getValidatedForkType(type),
+        forkType: getValidatedForkType(type),
         persistent: persistent === '1',
         trusted: trusted === '1',
-    };
+        payloadVersion: payloadVersion === '2' ? 2 : 1,
+        payloadType: payloadType === 'offline' ? payloadType : 'default',
+    } as const;
 };
 
 export const removeHashParameters = () => {
@@ -257,9 +311,20 @@ interface ConsumeForkArguments {
     key: Uint8Array;
     persistent: boolean;
     trusted: boolean;
+    payloadVersion: 1 | 2;
+    mode: 'sso' | 'standalone';
 }
 
-export const consumeFork = async ({ selector, api, state, key, persistent, trusted }: ConsumeForkArguments) => {
+export const consumeFork = async ({
+    selector,
+    api,
+    state,
+    key,
+    persistent,
+    trusted,
+    payloadVersion,
+    mode,
+}: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -292,12 +357,12 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         }
     }
 
-    let keyPassword: string | undefined;
+    let keyPassword = '';
 
     if (Payload) {
         try {
-            const data = await getForkDecryptedBlob(await getKey(key), Payload);
-            keyPassword = data?.keyPassword;
+            const data = await getForkDecryptedBlob(await getKey(key), Payload, payloadVersion);
+            keyPassword = data?.keyPassword || '';
         } catch (e: any) {
             throw new InvalidForkConsumeError('Failed to decrypt payload');
         }
@@ -316,11 +381,16 @@ export const consumeFork = async ({ selector, api, state, key, persistent, trust
         RefreshToken,
     };
 
-    await persistSession({ api: authApi, ...result });
+    const { clientKey } = await persistSession({
+        api: authApi,
+        ...result,
+        mode,
+    });
     await authApi(setCookies({ UID, RefreshToken, State: getRandomString(24), Persistent: persistent }));
 
     return {
         ...result,
         path,
+        clientKey,
     } as const;
 };
