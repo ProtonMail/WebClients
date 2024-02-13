@@ -2,7 +2,7 @@ import { getModelState } from '@proton/account/test';
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { userDefault } from '@proton/components/hooks/helpers/test';
 import { PLANS } from '@proton/shared/lib/constants';
-import { External, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
+import { BillingPlatform, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withCache } from '@proton/testing/index';
 
 import CreditsSection from './CreditsSection';
@@ -162,9 +162,9 @@ it('should render 0 if the number of available credits is less than price of upc
 });
 
 it('should render credits as-is if subscription is managed by Chargebee', () => {
-    subscription.External = External.Chargebee;
+    subscription.BillingPlatform = BillingPlatform.Chargebee;
     subscription.UpcomingSubscription = upcoming;
-    subscription.UpcomingSubscription!.External = External.Chargebee;
+    subscription.UpcomingSubscription!.BillingPlatform = BillingPlatform.Chargebee;
     user.Credit = 12988;
 
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
