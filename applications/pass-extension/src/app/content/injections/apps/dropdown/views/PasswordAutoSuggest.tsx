@@ -1,4 +1,3 @@
-/* eslint-disable deprecation/deprecation */
 import { type FC, useEffect, useRef, useState } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
