@@ -77,6 +77,7 @@ export const authentication = {
     getLocalID: jest.fn(),
     getPassword: jest.fn(),
     onLogout: jest.fn(),
+    mode: '',
 } as unknown as PrivateAuthenticationStore;
 
 export const config = {

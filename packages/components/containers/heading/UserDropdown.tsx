@@ -48,7 +48,6 @@ import {
     PLAN_NAMES,
     SSO_PATHS,
     UPSELL_COMPONENT,
-    isSSOMode,
 } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -327,7 +326,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
                     )}
 
-                    {isSSOMode && !isElectronApp ? (
+                    {authentication.mode === 'sso' && !isElectronApp ? (
                         <div className="px-4 pb-2">
                             <ButtonLike
                                 as="a"
