@@ -15,7 +15,6 @@ const DrawerAllSettingsView = () => {
             data-testid="drawer-quick-settings:all-settings-button"
             className="w-full"
             color="norm"
-            shape="outline"
         >{c('Title').t`All settings`}</ButtonLike>
     );
 };
