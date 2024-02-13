@@ -246,7 +246,7 @@
         "Выйсці са сховішча"
       ],
       "Lock extension": [
-        "Блакіраванне пашырэння"
+        "Блакіраваць пашырэнне"
       ],
       "Make admin": [
         "Можа адміністраваць"
@@ -427,6 +427,9 @@
       ],
       "Upgrade now to share with more people": [
         "Палепшыце, каб абагуліць з большай колькасцю людзей"
+      ],
+      "View app logs": [
+        "Паглядзець журнал праграмы"
       ],
       "Write us on Reddit": [
         "Напішыце нам у Reddit"
@@ -921,7 +924,7 @@
         "Выдаленне \"${ payload.content.name }\""
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } паглядзеўшы відэа на YouTube"
+        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } з дапамогай відэа на YouTube"
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
@@ -984,7 +987,7 @@
         "Выконваецца імпартаванне:"
       ],
       "Import the CSV file below.": [
-        "Імпартуйце ніжні файл CSV."
+        "Імпартуйце файл CSV ніжэй."
       ],
       "Imported ${ payload.total } item": [
         "Імпартаваны ${ payload.total } элемент",
@@ -1142,6 +1145,9 @@
       "Please enter your current PIN code to continue": [
         "Увядзіце свой бягучы PIN-код для працягу"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
       ],
@@ -1217,6 +1223,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры націску або навядзенні на поле."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Экспартаваны файл не змяшчае даных абагуленых сховішчаў, дзе вы не з'яўляецеся ўладальнікам"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
@@ -1258,6 +1267,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
       "Use vaults to share this item with others.": [
         "Выкарыстанне сховішча для абагулення элементаў з іншымі."
@@ -2013,7 +2025,7 @@
         "Замацавана (${ items.length })"
       ],
       "Review and share": [
-        "Прагляд і абагульненне"
+        "Прагляд і абагуленне"
       ],
       "Secure your data": [
         "Бяспека вашых даных"
@@ -2047,6 +2059,9 @@
       ],
       "Update available": [
         "Даступна абнаўленне"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
@@ -2170,7 +2185,7 @@
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
       "Please contact us for investigating the issue": [
-        "Звяжыцеся з намі для вырашэння праблемы"
+        "Звяжыцеся з намі для даследавання праблемы"
       ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."

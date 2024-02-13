@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
       ],
+      "View app logs": [
+        "აპის ჟურნალის ნახვა"
+      ],
       "Write us on Reddit": [
         "მოგვწერეთ Reddit-ზე"
       ],
@@ -503,6 +506,9 @@
       ],
       "Cannot send invitation at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
+      "Cannot send invitations at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი"
       ],
       "Could not confirm this invite at the moment": [
@@ -938,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
+      ],
       "Generating alias...": [
         "ფსევდონიმის გენერაცია..."
       ],
@@ -1066,6 +1076,10 @@
       "Password copied": [
         "პაროლი დაკოპირდა"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
+      ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
@@ -1173,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "როცა მომხმარებლის სახელის ველს აირჩევთ, მისი შევსების მენიუ გაიხსნება."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "გატანილი ფაილი არ შეიცავს იმ გაზიარებული საცავების მონაცემებს, სადაც თქვენ მფლობელი არ ბრძანდებით"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -2111,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
+      ],
+      "Please contact us for investigating the issue": [
+        "დაგვიკავშირდით ამ პრობლემის გამოსაკვლევად"
       ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
