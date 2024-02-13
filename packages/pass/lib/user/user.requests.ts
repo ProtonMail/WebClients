@@ -1,5 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
-import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, HydratedAccessState } from '@proton/pass/store/reducers';
 import { type ApiOptions, type MaybeNull, PlanType } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
@@ -23,7 +23,7 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     }, {});
 };
 
-export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<SafeUserAccessState> => {
+export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<HydratedAccessState> => {
     logger.info(`[User] Syncing access & plan`);
     const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
     return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
@@ -44,7 +44,7 @@ export const getUserOrganization = async (): Promise<MaybeNull<Organization>> =>
 };
 
 export type UserData = {
-    access: SafeUserAccessState;
+    access: HydratedAccessState;
     addresses: Record<string, Address>;
     eventId: string;
     features: FeatureFlagState;
@@ -63,6 +63,7 @@ export const getUserData = async (): Promise<UserData> => {
         getUserAccess(),
         getFeatureFlags(),
     ]);
+
     const organization = access.plan?.Type === PlanType.business ? await getUserOrganization() : null;
 
     return {

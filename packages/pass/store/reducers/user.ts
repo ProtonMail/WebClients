@@ -22,23 +22,23 @@ export type UserState = {
     addresses: AddressState;
     eventId: MaybeNull<string>;
     features: MaybeNull<FeatureFlagState>;
+    organization: MaybeNull<Organization>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
-    organization: MaybeNull<Organization>;
 } & UserAccessState;
 
-export type SafeUserState = RequiredNonNull<UserState>;
-export type SafeUserAccessState = RequiredNonNull<UserAccessState>;
+export type HydratedUserState = RequiredNonNull<UserState, Exclude<keyof UserState, 'organization'>>;
+export type HydratedAccessState = RequiredNonNull<UserAccessState>;
 
 const initialState: UserState = {
     addresses: {},
     eventId: null,
     features: null,
+    organization: null,
     plan: null,
     user: null,
     userSettings: null,
     waitingNewUserInvites: 0,
-    organization: null,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
@@ -73,15 +73,9 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
 
     /* triggered on each popup wakeup: avoid unnecessary re-renders */
     if (getUserAccessSuccess.match(action)) {
-        const { plan, waitingNewUserInvites } = action.payload;
+        const { organization, plan, waitingNewUserInvites } = action.payload;
         const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
-
-        return didChange
-            ? partialMerge(state, {
-                  plan: action.payload.plan,
-                  waitingNewUserInvites: action.payload.waitingNewUserInvites,
-              })
-            : state;
+        return didChange ? partialMerge(state, { organization, plan, waitingNewUserInvites }) : state;
     }
 
     if (getUserFeaturesSuccess.match(action)) {
