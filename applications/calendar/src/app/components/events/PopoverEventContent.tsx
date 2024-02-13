@@ -274,10 +274,7 @@ const PopoverEventContent = ({
         <>
             {sanitizedLocation ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
-                    <span
-                        className="text-hyphens overflow-auto"
-                        dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
-                    />
+                    <span className="text-break" dangerouslySetInnerHTML={{ __html: sanitizedLocation }} />
                 </IconRow>
             ) : null}
             {!!numberOfParticipants && organizer && (
