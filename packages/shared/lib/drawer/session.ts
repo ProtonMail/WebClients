@@ -6,7 +6,13 @@ import { createTimeoutError } from '../fetch/ApiError';
 import { getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS } from './interfaces';
 
-export const resumeSessionDrawerApp = ({ parentApp, localID }: { parentApp: APP_NAMES; localID: number }) => {
+export const resumeSessionDrawerApp = ({
+    parentApp,
+    localID: parentLocalID,
+}: {
+    parentApp: APP_NAMES;
+    localID: number;
+}) => {
     let timeout: ReturnType<typeof setTimeout> | undefined;
 
     return new Promise<ResumedSessionResult>((resolve, reject) => {
@@ -16,7 +22,7 @@ export const resumeSessionDrawerApp = ({ parentApp, localID }: { parentApp: APP_
             }
 
             if (event.data.type === DRAWER_EVENTS.SESSION) {
-                const { UID, keyPassword, User, persistent, trusted, tag } = event.data.payload;
+                const { UID, keyPassword, User, localID, clientKey, persistent, trusted, tag } = event.data.payload;
                 window.removeEventListener('message', handler);
 
                 if (timeout) {
@@ -29,7 +35,15 @@ export const resumeSessionDrawerApp = ({ parentApp, localID }: { parentApp: APP_
                     updateVersionCookie(tag, undefined);
                     window.location.reload();
                 } else {
-                    resolve({ UID, keyPassword, User, persistent, trusted, LocalID: localID });
+                    resolve({
+                        UID,
+                        keyPassword,
+                        clientKey,
+                        User,
+                        persistent,
+                        trusted,
+                        LocalID: localID ?? parentLocalID,
+                    });
                 }
             }
         };
