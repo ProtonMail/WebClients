@@ -332,6 +332,9 @@
       "Remove access": [
         "접근 제거"
       ],
+      "Remove member": [
+        "구성원 추방"
+      ],
       "Request a feature": [
         "기능 요청"
       ],
@@ -425,6 +428,9 @@
       "Upgrade now to share with more people": [
         "더 많은 사람들과 공유하려면 업그레이드"
       ],
+      "View app logs": [
+        "앱 로그 보기"
+      ],
       "Write us on Reddit": [
         "Reddit에서 작성"
       ],
@@ -498,11 +504,17 @@
       "Cannot create alias (${ error }).": [
         "별명 생성 불가 (${ error })"
       ],
+      "Cannot send invitations at the moment": [
+        "현재 초대 전송할 수 없습니다."
+      ],
       "Could not confirm this invite at the moment": [
         "현재 초대를 수락할 수 없습니다."
       ],
       "Could not leave vault.": [
         "금고를 떠날 수 없습니다."
+      ],
+      "Could not load recommendations at the moment.": [
+        "추천 항목을 불러올 수 없습니다."
       ],
       "Could not open created vault": [
         "생성된 금고를 열 수 없습니다."
@@ -757,6 +769,9 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
+      ],
+      "${ count } invites successfully sent": [
+        "초대 ${ count }개를 잘 보냈습니다"
       ],
       "${ memberCount } member": [
         "${ memberCount }명 회원"
@@ -1148,6 +1163,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "입력 란을 클릭했을 때 자동 완성 드롭다운이 자동으로 열립니다."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
@@ -1479,6 +1497,15 @@
       ],
       "Logins": [
         "로그인"
+      ],
+      "Make all admins": [
+        "전체 구성원을 관리자로 선택"
+      ],
+      "Make all editors": [
+        "전체 구성원을 편집자로 선택"
+      ],
+      "Make all viewers": [
+        "전체 구성원을 뷰어로 선택"
       ],
       "Members": [
         "구성원"
@@ -1919,6 +1946,9 @@
       "Share with": [
         "공유 대상:"
       ],
+      "Suggestions": [
+        "제안"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }으로 전환하나요?"
       ],
@@ -1998,11 +2028,20 @@
       "An error occured while exporting your data": [
         "데이터를 내보내는데 오류가 발생했습니다."
       ],
+      "At least one email address is required": [
+        "적어도 하나의 이메일 주소가 필요합니다"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "현재 별명에서 메일함으로 가져올 수 없습니다."
       ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" 금고를 생성할 수 없음"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "다음의 주소에 초대장을 보낼수 없었습니다 :"
+      ],
+      "Duplicate email addresses.": [
+        "중복된 이메일 주소들입니다."
       ],
       "Empty note": [
         "빈 메모"
@@ -2012,6 +2051,9 @@
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
+      ],
+      "Invalid email addresses.": [
+        "유효하지 않은 이메일 주소들입니다."
       ],
       "Maximum length is ${ maxLength } character": [
         "최대 길이는 ${ maxLength }자 입니다."
@@ -2045,6 +2087,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
+      ],
+      "Please contact us for investigating the issue": [
+        "문제 조사를 위해 연락을 부탁드립니다."
       ],
       "Please verify your email address in order to use email aliases": [
         "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."
