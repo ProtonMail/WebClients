@@ -15,6 +15,7 @@ import {
 import createCache from '@proton/shared/lib/helpers/cache';
 import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { generateOwnedPersonalCalendars, generateSubscribedCalendars } from '@proton/testing/lib/builders';
+import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 import noop from '@proton/utils/noop';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
@@ -184,7 +185,7 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         },
         onCreateCalendar: noop,
     };
-
+    mockUseAuthentication({} as any);
     return (
         <Router history={createMemoryHistory()}>
             <CacheProvider cache={createCache()}>
