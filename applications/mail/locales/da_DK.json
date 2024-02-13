@@ -436,9 +436,6 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
-      "Give feedback": [
-        "Giv feedback"
-      ],
       "Go to label": [
         "Gå til etikette"
       ],
@@ -3040,6 +3037,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
       ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -3094,6 +3094,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Dine konto- og datagendannelsesmetoder er indstillet, og 2FA er aktiveret."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Dine konto- og datagendannelsesmetoder er indstillet."
       ]
     },
     "description": {
@@ -3282,8 +3288,23 @@
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
+      "Alias is not valid": [
+        "Alias er ikke gyldigt"
+      ],
+      "Alias is required": [
+        "Alias er påkrævet"
+      ],
       "Alias options could not be resolved": [
         "Alias-indstillinger kunne ikke hentes"
+      ],
+      "Aliases could not be loaded": [
+        "Aliasser kunne ikke indlæses"
+      ],
+      "An error occurred while loading alias options": [
+        "Der opstod en fejl under indlæsning af alias-indstillinger"
+      ],
+      "An error occurred while saving alias": [
+        "En fejl opstod under lagring af alias"
       ],
       "Attachments are limited to 25 MB": [
         "Vedhæftninger er begrænset til 25 MB"
@@ -3396,6 +3417,9 @@
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
       ],
+      "Forward address is required": [
+        "Adresse til videresendelse er påkrævet."
+      ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
       ],
@@ -3450,6 +3474,9 @@
       ],
       "Missing signature": [
         "Manglende signatur"
+      ],
+      "Name is required": [
+        "Navn er påkrævet"
       ],
       "Network error: Please check your connection and try again.": [
         "Netværksfejl: Tjek din forbindelse og forsøg igen."
@@ -4506,6 +4533,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Security Center": [
+        "Sikkerhedscenter"
       ]
     },
     "Hint": {
@@ -5095,6 +5125,12 @@
       "Are you sure you want to discard your import?": [
         "Er du sikker på, at du vil kassere din import?"
       ],
+      "Are you sure you want to move all messages in this location to archive?": [
+        "Er du sikker på, at du vil flytte alle beskeder på denne placering til arkivet?"
+      ],
+      "Are you sure you want to move all messages in this location to trash?": [
+        "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Er du sikker på, at du vil slette ${ count } samtale permanent?",
         "Er du sikker på, at du vil slette ${ count } samtaler permanent?"
@@ -5418,6 +5454,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
+      ],
+      "Important note": [
+        "Vigtig note"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -6090,6 +6129,9 @@
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
       ],
+      "Warning": [
+        "Advarsel"
+      ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Vi beklager. Dette kan være en fejl fra vores side. Kan du bekræfte, at du ønsker at markere denne e-mail som en legitim én?"
       ],
@@ -6744,6 +6786,9 @@
       "Frequency": [
         "Frekvens"
       ],
+      "From": [
+        "Fra"
+      ],
       "From:": [
         "Fra:"
       ],
@@ -7001,6 +7046,9 @@
       ],
       "Wonderful": [
         "Vidunderlig"
+      ],
+      "Your alias": [
+        "Dit alias"
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -8090,11 +8138,29 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "Alle aliasser"
+      ],
+      "Create alias": [
+        "Opret alias"
+      ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasser"
       ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email aliasser giver dig mulighed for at tilmelde dig ting online uden at dele din e-mailadresse. ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "Nyt alias"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "Åbn ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "Beskyt din online-identitet"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
@@ -8837,6 +8903,12 @@
       "Address verification disabled": [
         "Adressebekræftelse deaktiveret"
       ],
+      "Alias copied to clipboard": [
+        "Alias kopieret til udklipsholder"
+      ],
+      "Alias saved and copied": [
+        "Alias gemt og kopieret"
+      ],
       "Bug reported": [
         "Fejl anmeldt"
       ],
@@ -9341,6 +9413,9 @@
       "Email settings": [
         "E-mail indstillinger"
       ],
+      "Enable 2FA": [
+        "Aktivér 2FA"
+      ],
       "Enable message content search": [
         "Aktiver beskedindholdssøgning"
       ],
@@ -9370,6 +9445,9 @@
       ],
       "Forward": [
         "Videresend"
+      ],
+      "Get advanced protection": [
+        "Få avanceret beskyttelse"
       ],
       "Groups": [
         "Grupper"
@@ -9477,6 +9555,12 @@
       "Move all messages": [
         "Flyt alle beskeder"
       ],
+      "Move all messages to archive": [
+        "Flyt alle beskeder til arkivet"
+      ],
+      "Move all messages to trash": [
+        "Flyt alle beskeder til papirkurven"
+      ],
       "Move to": [
         "Flyt til"
       ],
@@ -9497,6 +9581,9 @@
       ],
       "Moving a snoozed message": [
         "Flytter en udsat besked"
+      ],
+      "Need more aliases?": [
+        "Brug for flere aliasser?"
       ],
       "New message": [
         "Ny besked"
@@ -9581,6 +9668,9 @@
       ],
       "Schedule send": [
         "Planlæg afsendelse"
+      ],
+      "Security center": [
+        "Sikkerhedscenter"
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -9721,6 +9811,9 @@
       ],
       "What's new": [
         "Nyheder"
+      ],
+      "Your account is protected": [
+        "Din konto er beskyttet"
       ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"

@@ -166,6 +166,9 @@
       "Clear all formatting": [
         "Hapus seluruh format"
       ],
+      "Clear application data": [
+        "Bersihkan data aplilkasi"
+      ],
       "Clear browser data": [
         "Hapus data browser"
       ],
@@ -258,6 +261,9 @@
       ],
       "Create a new label": [
         "Buat label baru"
+      ],
+      "Create and copy alias": [
+        "Buat dan salin alias"
       ],
       "Create folder": [
         "Buat folder"
@@ -432,9 +438,6 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
-      ],
-      "Give feedback": [
-        "Beri tanggapan"
       ],
       "Go to label": [
         "Tuju label"
@@ -865,9 +868,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save and copy alias": [
-        "Simpan dan salin alias"
-      ],
       "Saving${ ellipsis }": [
         "Menyimpan${ ellipsis }"
       ],
@@ -903,6 +903,9 @@
       ],
       "Select all messages": [
         "Pilih semua pesan"
+      ],
+      "Select country": [
+        "Pilih negara"
       ],
       "Select date and time": [
         "Pilih tanggal dan jam"
@@ -1025,7 +1028,7 @@
         "Kirim"
       ],
       "Switch or add account": [
-        "Ubah atau tambahkan akun"
+        "Ubah atau tambah akun"
       ],
       "This message contains embedded images.": [
         "Pesan ini mengandung gambar yang tersemat."
@@ -1044,6 +1047,9 @@
       ],
       "Toggle Contact app": [
         "Tampilkan/sembunyikan aplikasi Contact"
+      ],
+      "Toggle security center app": [
+        "Saklar aplikasi pusat keamanan"
       ],
       "Toggle settings": [
         "Aktifkan/nonaktifkan pengaturan"
@@ -1154,7 +1160,7 @@
         "Lihat HTML"
       ],
       "View invoice": [
-        "Lihat tagihan"
+        "Lihat faktur"
       ],
       "View keys": [
         "Lihat kunci"
@@ -2998,7 +3004,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Tagihan jatuh tempo"
+        "Faktur yang menunggak"
       ]
     },
     "Density mode": {
@@ -3013,6 +3019,9 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } di pengaturan."
       ],
+      "2FA adds an extra security layer, preventing unauthorized access.": [
+        "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
+      ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Hapus pesan yang telah dibuang dan ditandai sebagai spam selama lebih dari 30 hari secara otomatis. Nikmati fitur ini dan berbagai kelebihan lainnya dengan meningkatkan paket langganan Anda."
       ],
@@ -3022,11 +3031,17 @@
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
       ],
+      "Designed for users seeking heightened protection for their accounts.": [
+        "Dirancang untuk para pengguna yang menginginkan keamanan lebih bagi akun mereka."
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
+      "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
+        "Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
@@ -3049,6 +3064,12 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
       ],
+      "Set a data recovery method to prevent data loss.": [
+        "Tentukan metode pemulihan untuk mencegah hilangnya data."
+      ],
+      "Set a recovery method to prevent losing access to your account.": [
+        "Tentukan metode pemulihan untuk mencegah hilangnya akses menuju akun Anda."
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
@@ -3067,6 +3088,9 @@
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Dapatkan folder, label, dan lebih banyak fitur premium tidak terbatas ketika Anda tingkatkan."
       ],
+      "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
+        "Tingkatkan akun Anda untuk mengaktifkan ${ PROTON_SENTINEL_NAME }, solusi keamanan mutakhir berbasis AI kami dengan dukungan ahli yang tersedia 24/7."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
@@ -3081,6 +3105,12 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ],
+      "Your account and data recovery methods are set and 2FA is enabled.": [
+        "Metode pemulihan akun dan data Anda telah diatur dan 2FA telah diaktifkan."
+      ],
+      "Your account and data recovery methods are set.": [
+        "Metode pemulihan akun dan data Anda telah diatur."
       ]
     },
     "description": {
@@ -3276,6 +3306,9 @@
       ],
       "Alias options could not be resolved": [
         "Opsi alias tidak dapat diuraikan"
+      ],
+      "Aliases could not be loaded": [
+        "Alias tidak dapat dimuat"
       ],
       "An error occurred while loading alias options": [
         "Terdapat kesalahan pada saat memuat daftar opsi alias"
@@ -4433,7 +4466,7 @@
         "Penyimpanan dibuka"
       ],
       "This feature is currently unavailable": [
-        "Fitur belum tersedia"
+        "Fitur saat ini belum tersedia"
       ],
       "Update your logins": [
         "Perbarui login Anda"
@@ -5066,7 +5099,7 @@
         "Warna latar belakang"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak di pengaturan."
+        "Navigasi dan tindakan dasar akan tetap tersedia terlepas dari apakah pintasan keyboard diaktifkan atau tidak pada pengaturan di bawah ini."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
@@ -5088,6 +5121,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
+      ],
+      "Clear app data": [
+        "Bersihkan data aplikasi"
       ],
       "Clear data": [
         "Bersihkan data"
@@ -5623,6 +5659,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Menghapus seluruh data yang terhubung dengan aplikasi ini, termasuk pesan yang diunduh"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Pesan phising yang dilaporkan akan dikirimkan kepada kami agar kami dapat menganalisis dan meningkatkan filter kami. Artinya, kami dapat membaca seluruh isi pesan tersebut."
       ],
@@ -5663,7 +5702,7 @@
         "Opsi pencarian yang memungkinkan Anda untuk mencari berdasarkan kata kunci pada badan surel secara aman."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        "Apakah pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
+        "Pencarian Anda memakan waktu yang terlalu lama? ${ dropdownButton } atau ${ toggleOffButton } dari sesi pencarian ini."
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Amankan berkas Anda dengan layanan penyimpanan berbasis cloud secara gratis sekarang juga."
@@ -5896,6 +5935,9 @@
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi surel-surel yang dikirim ke alamat ini."
       ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Tindakan ini akan menghapus seluruh data yang terhubung dengan akun ini, termasuk pesan yang diunduh. Aplikasi akan dimulai ulang dan Anda harus masuk kembali untuk dapat menggunakan aplikasi."
+      ],
       "This sender's public key has not been trusted yet.": [
         "Kunci publik pengirim belum dipercaya."
       ],
@@ -5960,43 +6002,43 @@
         "Tingkatkan ke ${ MAIL_APP_NAME } Plus untuk membuka"
       ],
       "Upgrade to add more addresses to your account.": [
-        "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
+        "Tingkatkan akun Anda untuk menambahkan lebih banyak alamat ke dalam akun Anda."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Tingkatkan untuk menghapus pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari secara otomatis."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Tingkatkan jenis akun Anda untuk dapat membuat lebih banyak folder, filter, dan alamat."
+        "Tingkatkan akun Anda untuk membuat lebih banyak folder, filter, dan alamat."
       ],
       "Upgrade to level up your privacy.": [
         "Tingkatkan jenis akun Anda untuk membawa privasi Anda ke tingkatan selanjutnya."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengirim surel dari alamat @pm.me."
+        "Tingkatkan akun Anda untuk mengirim email dari alamat @pm.me."
       ],
       "Upgrade to send emails from your custom email domain.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengirim surel dari domain khusus milik Anda."
+        "Tingkatkan akun Anda untuk mengirim email dari domain khusus milik Anda."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Tingkatkan jenis akun Anda untuk dapat mengirim surel ke grup kontak dengan mudah."
+        "Tingkatkan akun Anda untuk mengirim email ke grup kontak secara mudah."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Tingkatkan jenis akun Anda untuk mendukung internet yang mengutamakan privasi."
+        "Tingkatkan akun Anda untuk mendukung internet yang mengutamakan privasi."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        "Tingkatkan jenis akun Anda agar kami dapat menyediakan privasi bagi semua."
+        "Tingkatkan akun Anda untuk mendukung misi kami dalam menyediakan privasi bagi semua."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Tingkatkan jenis akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
+        "Tingkatkan akun Anda untuk mendukung privasi dan memperoleh lebih banyak fitur."
       ],
       "Upgrade to unlock premium features.": [
-        "Tingkatkan jenis akun Anda untuk dapat menikmati berbagai fitur premium."
+        "Tingkatkan akun Anda untuk mengakses berbagai fitur premium."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with Apple Mail, Outlook or Thunderbird.": [
         "Tingkatkan paket langganan Anda untuk menggunakan ${ MAIL_APP_NAME } dengan Apple Mail, Outlook, atau Thunderbird."
       ],
       "Upgrade to use auto-reply when you're away.": [
-        "Tingkatkan jenis akun Anda untuk dapat membalas pesan yang masuk secara otomatis pada saat Anda sedang berhalangan."
+        "Tingkatkan akun Anda untuk menggunakan fitur balasan otomatis pada saat Anda sedang bepergian."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -6074,7 +6116,7 @@
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Anda saat ini sedang masuk sebagai ${ user.Name } (${ user.Email })."
+        "Anda sedang masuk sebagai ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Anda dapat menyertakan gambar sebagai lampiran atau sebagai sisipan dalam badan surel Anda."
@@ -6300,6 +6342,9 @@
       "Expand / contract composer": [
         "Lebarkan / ciutkan komposer"
       ],
+      "Filter": [
+        "Saring"
+      ],
       "Forward": [
         "Teruskan"
       ],
@@ -6346,7 +6391,7 @@
         "Muat remote content"
       ],
       "Mark as read": [
-        "Tandai sudah dibaca"
+        "Tandai telah dibaca"
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
@@ -6474,9 +6519,6 @@
       ],
       "Add image URL": [
         "Tambah URL gambar"
-      ],
-      "Add title": [
-        "Tambah judul"
       ],
       "Add to group": [
         "Tambah ke grup"
@@ -6612,6 +6654,9 @@
       ],
       "Don't show this again": [
         "Jangan tampilkan lagi"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "mis. Amazon, eBay, Etsy"
       ],
       "Email": [
         "Surel"
@@ -7092,7 +7137,7 @@
         "Kotak keluar"
       ],
       "Pay invoice": [
-        "Bayar tagihan"
+        "Bayar faktur"
       ],
       "Privacy policy": [
         "Kebijakan privasi"
@@ -7720,6 +7765,11 @@
         "Anda"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Negara Penagihan"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
@@ -8000,14 +8050,17 @@
       "Create alias": [
         "Buat alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "mis. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Buat alias"
       ],
-      "Get an alias": [
-        "Dapatkan alias"
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "Buat alias dengan cepat dan kelola alias dan kata sandi Anda dengan mudah."
       ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Alias hide-my-email memungkinkan Anda untuk mendaftar ke berbagai layanan online tanpa membagikan alamat email asli Anda. ${ learnMoreLink }"
       ],
       "New alias": [
         "Alias ​​baru"
@@ -8020,11 +8073,22 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Pada saat Anda diminta untuk mengisi alamat email, gunakan alias ini. Setelahnya, berikan judul dan keterangan agar Anda dapat melacak di mana alias ini digunakan."
       ]
     },
     "Security Center - Action": {
       "View logs": [
         "Tampilkan catatan"
+      ]
+    },
+    "Security Center - Info": {
+      "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
+        "Solusi keamanan mutakhir berbasis AI kami dirancang untuk para pengguna yang menginginkan perlindungan yang lebih bagi akun mereka. ${ learnMoreLink }"
+      ],
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel saat ini sedang **aktif** dan melindungi akun Anda."
       ]
     },
     "Select files": {
@@ -8413,7 +8477,7 @@
         "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
-        "Akses dini Premium"
+        "Akses dini premium"
       ],
       "Secure cloud storage": [
         "Penyimpanan awan aman"
@@ -8544,6 +8608,9 @@
       "Change setting": [
         "Ubah pengaturan"
       ],
+      "Create hide-my-email aliases and keep track of them here.": [
+        "Buat alias hide-my-email dan lihat semuanya di sini."
+      ],
       "Email tracking protection": [
         "Perlindungan pelacak surel"
       ],
@@ -8630,8 +8697,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengunggah dan menyinkronkan berkas, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Untuk dapat mengirim atau menerima email, kosongkan ruang yang ada atau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Untuk dapat lanjut mengirim atau menerima email, kosongkan ruang yang ada atau tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Untuk dapat mengunggah atau menyinkronkan berkas, kosongkan ruang yang ada atau ${ upgrade }"
       ],
       "upgrade for more storage": [
         "tingkatkan akun Anda untuk memperoleh lebih banyak ruang penyimpanan"
@@ -8642,8 +8715,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } Anda penuh"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda ${ percentage }% penuh. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ruang penyimpanan ${ storage } Anda penuh. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ruang penyimpanan Anda ${ percentage }% penuh. ${ cta }."
+      ],
       "Your storage is full": [
         "Ruang penyimpanan Anda penuh"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ruang penyimpanan Anda penuh. ${ cta }."
       ]
     },
     "Success": {
@@ -8718,6 +8803,12 @@
       ],
       "Address verification disabled": [
         "Verifikasi alamat dinonaktifkan"
+      ],
+      "Alias copied to clipboard": [
+        "Alias disalin ke papan klip"
+      ],
+      "Alias saved and copied": [
+        "Alias disimpan dan disalin"
       ],
       "Bug reported": [
         "Bug berhasil dilaporkan"
@@ -9290,7 +9381,7 @@
         "Muat remote content"
       ],
       "Mark as read": [
-        "Tandai sebagai telah dibaca"
+        "Tandai telah dibaca"
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
@@ -9754,7 +9845,7 @@
         "Tanggal Kedaluwarsa bukan dalam format BB/TT"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jika Anda tidak ingat kata sandi Anda, maka Anda tidak mungkin mengaktivasi ulang kunci. Kami dapat membantu Anda untuk mengabaikan spanduk peringatan tapi dalam prosesnya Anda akan kehilangan akses secara permanen ke data terenkripsi dengan kunci tersebut."
+        "Apabila Anda tidak ingat kata sandi Anda, kunci Anda tidak akan dapat diaktifkan ulang. Kami dapat membantu Anda untuk mengabaikan peringatan ini, namun dalam prosesnya Anda akan kehilangan akses menuju data yang terenkripsi dengan kunci ini secara permanen."
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
@@ -9790,7 +9881,7 @@
         "Kontak gagal dimuat."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan server kami. ${ learnMore }"
+        "Tanggal dan waktu pada perangkat Anda tidak sesuai tanggal dan waktu saat ini. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Proses dekripsi konten terenkripsi gagal."
