@@ -41,16 +41,20 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
             />
 
             {isPunnyCoded && (
-                <>
+                <p className="my-2">
                     {isMSBrowser
                         ? c('Info')
                               .t`This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.`
                         : c('Info')
                               .t`This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.`}
-                    <Href href={getKnowledgeBaseUrl('/homograph-attacks')} title="What are homograph attacks?">
+                    <Href
+                        className="ml-1"
+                        href={getKnowledgeBaseUrl('/homograph-attacks')}
+                        title="What are homograph attacks?"
+                    >
                         {c('Info').t`Learn more`}
                     </Href>
-                </>
+                </p>
             )}
 
             {!isOutside && (
