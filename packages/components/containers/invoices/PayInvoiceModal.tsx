@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
@@ -53,7 +54,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         currency,
         onChargeable: (operations) => {
             return withLoading(async () => {
-                await operations.payInvoice();
+                await operations.payInvoice(invoice.ID);
                 await Promise.all([
                     call(), // Update user.Delinquent to hide TopBanner
                     fetchInvoices(),
@@ -72,9 +73,6 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             }
 
             try {
-                paymentFacade.paymentContext.setInvoiceData({
-                    invoiceId: invoice.ID,
-                });
                 await processor.processPaymentToken();
             } catch (e) {
                 const error = getSentryError(e);
@@ -98,17 +96,34 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             }
         });
 
-    const submit =
-        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <StyledPayPalButton
-                type="submit"
-                paypal={paymentFacade.paypal}
-                amount={amount}
-                currency={paymentFacade.currency}
-                loading={loading}
-                data-testid="paypal-button"
-            />
-        ) : (
+    const submit = (() => {
+        if (paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
+            return (
+                <StyledPayPalButton
+                    type="submit"
+                    paypal={paymentFacade.paypal}
+                    amount={amount}
+                    currency={paymentFacade.currency}
+                    loading={loading}
+                    data-testid="paypal-button"
+                />
+            );
+        }
+
+        if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+            return (
+                <div className="flex justify-end">
+                    <div className="w-1/2 mr-1">
+                        <ChargebeePaypalWrapper
+                            chargebeePaypal={paymentFacade.chargebeePaypal}
+                            iframeHandles={paymentFacade.iframeHandles}
+                        />
+                    </div>
+                </div>
+            );
+        }
+
+        return (
             <PrimaryButton
                 loading={loading}
                 disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
@@ -118,6 +133,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                 {c('Action').t`Pay`}
             </PrimaryButton>
         );
+    })();
 
     return (
         <FormModal
