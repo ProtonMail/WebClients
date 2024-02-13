@@ -247,11 +247,14 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const { key, selector, state, version } = getConsumeForkParameters();
+        const { key, selector, state, payloadVersion } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
-        if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector, version });
-        else void authService.init({ forceLock: false });
+        if (matchConsumeFork) {
+            void authService.consumeFork({ mode: 'sso', key, localState, state, selector, payloadVersion });
+        } else {
+            void authService.init({ forceLock: false });
+        }
 
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
