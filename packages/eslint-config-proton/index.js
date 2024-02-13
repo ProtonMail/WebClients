@@ -20,7 +20,6 @@ module.exports = {
         '@typescript-eslint',
         'es',
         'monorepo-cop',
-        'deprecation',
         'no-only-tests',
         'jsx-a11y',
         'custom-rules',
@@ -171,7 +170,6 @@ module.exports = {
             },
         ],
         'es/no-regexp-lookbehind-assertions': 'error',
-        'deprecation/deprecation': 'warn',
         'no-only-tests/no-only-tests': 'error',
         /*
          * jsx-a11y
