@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Ulepsz konto, aby udostępnić elementy użytkownikom"
       ],
+      "View app logs": [
+        "Pokaż logi aplikacji"
+      ],
       "Write us on Reddit": [
         "Napisz do nas na Reddicie"
       ],
@@ -962,6 +965,12 @@
       "For security reasons, your access needs to be confirmed": [
         "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia."
+      ],
       "Generating alias...": [
         "Generowanie aliasu..."
       ],
@@ -1094,6 +1103,12 @@
       "Password copied": [
         "Hasło zostało skopiowane"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia zostaną automatycznie usunięte z historii."
+      ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
       ],
@@ -1126,6 +1141,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Kliknij Enter, aby skopiować"
@@ -1202,6 +1220,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Plik eksportu danych nie będzie zawierał danych udostępnionych sejfów, które są własnością innych użytkowników"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
@@ -1243,6 +1264,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Ulepsz ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
       ],
       "Use vaults to share this item with others.": [
         "Aby udostępnić element, udostępnij cały sejf."
@@ -1660,6 +1684,9 @@
       "Select your password manager": [
         "Wybierz menadżer haseł"
       ],
+      "Selected": [
+        "Wybrano"
+      ],
       "Session locking": [
         "Blokowanie sesji"
       ],
@@ -2030,6 +2057,9 @@
       "Update available": [
         "Dostępna jest aktualizacja"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
+      ],
       "Use my email": [
         "Użyj mojego adresu"
       ],
@@ -2089,7 +2119,7 @@
         "Wystąpił błąd podczas eksportowania danych"
       ],
       "At least one email address is required": [
-        "Wymagany jest co najmniej jeden adres e-mail"
+        "Co najmniej jeden adres e-mail jest wymagany"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
@@ -2150,6 +2180,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
+      ],
+      "Please contact us for investigating the issue": [
+        "Skontaktuj się z nami, aby zbadać problem"
       ],
       "Please verify your email address in order to use email aliases": [
         "Zweryfikuj adres e-mail, aby użyć aliasów"
