@@ -275,6 +275,9 @@
       "Pass for iOS": [
         "Proton Pass 的 iOS 版本"
       ],
+      "Recent": [
+        "最近"
+      ],
       "Refresh the page": [
         "重新整理此頁面"
       ],
@@ -295,6 +298,9 @@
       ],
       "Remove access": [
         "移除存取權限"
+      ],
+      "Remove member": [
+        "移除成員"
       ],
       "Request a feature": [
         "提出新功能建議"
@@ -715,6 +721,9 @@
       "Autosaved on ${ submissionURL }": [
         "於${ submissionURL }自動存取"
       ],
+      "Built in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "可於此保管庫新增、編輯、刪除與匯出項目。"
       ],
@@ -1082,6 +1091,9 @@
       ],
       "A-Z": [
         "A-Z"
+      ],
+      "Account": [
+        "帳號"
       ],
       "Alias": [
         "別名"
@@ -1534,6 +1546,9 @@
       "Full Name": [
         "全名"
       ],
+      "MM/YY": [
+        "月月/年年"
+      ],
       "Other": [
         "其它"
       ],
@@ -1652,6 +1667,9 @@
       "Member limit": [
         "成員限制"
       ],
+      "Members": [
+        "成員"
+      ],
       "Move all items ?": [
         "移動所有項目?"
       ],
@@ -1682,6 +1700,9 @@
       "Share with": [
         "與分享"
       ],
+      "Suggestions": [
+        "建議"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "切換至 ${ PASS_APP_NAME }?"
       ],
@@ -1705,6 +1726,9 @@
       ],
       "Use my email": [
         "使用我的電子信箱"
+      ],
+      "Vault": [
+        "保管庫"
       ],
       "Vault shared with you": [
         "與您分享的保管庫"
@@ -1755,17 +1779,29 @@
       "An error occured while exporting your data": [
         "匯出資料時發生錯誤"
       ],
+      "At least one email address is required": [
+        "最少需要一個電子郵件位址"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "目前無法提取此別名的信箱"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "無法創建保管庫${ vaultName }"
       ],
+      "Could not send invitations to the following addresses :": [
+        "無法發送邀請到以下的電子郵件位 :"
+      ],
+      "Duplicate email addresses.": [
+        "重複的電子郵件位址"
+      ],
       "Empty note": [
         "清空備註"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"
+      ],
+      "Invalid email addresses.": [
+        "無效的電子郵件位址"
       ],
       "Maximum length is ${ maxLength } character": [
         "最長上限為${ maxLength }字元"

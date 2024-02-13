@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
+      "Create and copy alias": [
+        "Erstellen und Alias kopieren"
+      ],
       "Create link": [
         "Link erstellen"
       ],
@@ -324,9 +327,6 @@
       ],
       "Get verification code": [
         "Verifizierungscode anfordern"
-      ],
-      "Give feedback": [
-        "Feedback geben"
       ],
       "Go to Drive": [
         "Zu Drive wechseln"
@@ -568,9 +568,6 @@
       "Save": [
         "Speichern"
       ],
-      "Save and copy alias": [
-        "Alias speichern und kopieren"
-      ],
       "Search": [
         "Suchen"
       ],
@@ -591,6 +588,9 @@
       ],
       "Select all": [
         "Alle auswählen"
+      ],
+      "Select country": [
+        "Land wählen"
       ],
       "Send feedback": [
         "Feedback senden"
@@ -1972,7 +1972,7 @@
         "Achte beim Import von CSV- und VCF-Dateien darauf, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthält. Falls deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
-        "Erhalte unbegrenzte Aliasnamen und 500 GB Speicherplatz mit ${ PLAN_NAMES[PLANS.BUNDLE] }"
+        "Erhalte unbegrenzte Aliasse und 500 GB Speicherplatz mit ${ PLAN_NAMES[PLANS.BUNDLE] }"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Die Kontaktliste, die du importieren möchtest, enthält anscheinend Gruppen. Bitte lege fest, wie diese Gruppen importiert werden sollen."
@@ -2140,7 +2140,7 @@
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
       ],
       "Alias is not valid": [
-        "Der Alias ist nicht gültig"
+        "Alias ist ungültig"
       ],
       "Alias is required": [
         "Alias ist erforderlich"
@@ -2149,7 +2149,7 @@
         "Fehler beim Auflösen der Aliasoptionen."
       ],
       "Aliases could not be loaded": [
-        "Aliase konnten nicht geladen werden"
+        "Aliasse konnten nicht geladen werden"
       ],
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
@@ -2284,7 +2284,7 @@
         "Fehlende Signatur"
       ],
       "Name is required": [
-        "Name wird benötigt"
+        "Name ist erforderlich"
       ],
       "No calendars found to import": [
         "Keine Kalender zum Importieren vorhanden"
@@ -3751,9 +3751,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Die besten Ergebnisse können erzielt werden, indem du Streaming und speicherintensive Aktivitäten vermeidest oder Uploads in kleinere Stapel aufteilst."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
-      ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
       ],
@@ -3796,9 +3793,6 @@
       ],
       "Import mailbox": [
         "Postfach importieren"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
       ],
       "Important note": [
         "Wichtiger Hinweis"
@@ -4202,9 +4196,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
       ],
-      "The vault your alias will be stored in.": [
-        "Der Tresor, in dem dein Alias gespeichert werden soll."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Es gibt noch Dateien, die übertragen werden müssen. Wenn du den Übertragungsmanager schließt, werden alle Vorgänge beendet."
       ],
@@ -4595,9 +4586,6 @@
       "Add image URL": [
         "Bild-URL hinzufügen"
       ],
-      "Add title": [
-        "Titel hinzufügen"
-      ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
@@ -4721,6 +4709,9 @@
       ],
       "Duplicate found": [
         "Duplikat gefunden"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "z. B. Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-Mail-Adresse"
@@ -5462,7 +5453,7 @@
         "Eigene E-Mail-Domains"
       ],
       "Custom snooze time": [
-        "Eigene stumm Zeit"
+        "Eigene Aufschubzeit"
       ],
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
@@ -5497,7 +5488,7 @@
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
+        "Schiebe die Nachricht auf und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -5832,6 +5823,11 @@
         "Du"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Rechnungsland"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
@@ -5997,25 +5993,22 @@
     },
     "Security Center": {
       "All aliases": [
-        "Alle Aliase"
+        "Alle Aliasse"
       ],
       "Create alias": [
         "Alias erstellen"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "z. B. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Alias erstellen"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Generiere Aliase im Handumdrehen und verwalte deine Aliase und Passwörter ganz einfach."
-      ],
-      "Get an alias": [
-        "Einen Alias erhalten"
+        "Generiere Aliasse im Handumdrehen und verwalte deine Aliasse und Passwörter ganz einfach."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Mit Hide-my-email-Aliasnamen kannst du dich online für Dinge anmelden, ohne deine E-Mail-Adresse preiszugeben. ${ learnMoreLink }"
+        "Mit Hide-my-email-Aliassen kannst du dich online für Dinge anmelden, ohne deine E-Mail-Adresse preiszugeben. ${ learnMoreLink }"
       ],
       "New alias": [
         "Neuer Alias"
@@ -6029,8 +6022,11 @@
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ausprobieren"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gib stattdessen diesen Alias an. Füge einen Namen und eine Notiz hinzu, damit du weißt, wo du sie verwendest."
+      "Used on amazon for shopping, etc.": [
+        "Verwendet auf Amazon für Shopping, etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gib stattdessen diesen Alias an. Füge einen Titel und eine Notiz hinzu, damit du weißt, wo du sie verwendest."
       ]
     },
     "Security Center - Action": {
@@ -6489,13 +6485,13 @@
         "wende dich an deinen Administrator."
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder upgrade für zusätzlichen Speicherplatz."
+        "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Um weiterhin E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder upgrade für zusätzlichen Speicherplatz."
+        "Um weiterhin E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
       "upgrade for more storage": [
-        "upgrade für zusätzlichen Speicherplatz."
+        "führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
       "Your ${ appStorage } is almost full": [
         "Dein ${ appStorage }-Speicherplatz ist fast voll."
@@ -6503,8 +6499,20 @@
       "Your ${ appStorage } is full": [
         "Dein ${ appStorage }-Speicherplatz ist voll."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Dein ${ storage } ist zu ${ percentage }% voll. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Dein ${ storage } ist voll. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Dein Speicherplatz ist zu ${ percentage }% voll. ${ cta }."
+      ],
       "Your storage is full": [
         "Dein Speicherplatz ist voll."
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Dein Speicherplatz ist voll. ${ cta }."
       ]
     },
     "Success": {
@@ -6901,7 +6909,7 @@
         "${ searchView.numberOfResults } Ergebnisse gefunden"
       ],
       "Get advanced protection": [
-        "Erhalte erweiterten Schutz"
+        "Erweiterten Schutz erhalten"
       ],
       "Groups": [
         "Gruppen"
@@ -6962,7 +6970,7 @@
         "Name"
       ],
       "Need more aliases?": [
-        "Brauchst du mehr Aliasnamen?"
+        "Brauchst du mehr Aliasse?"
       ],
       "Night theme": [
         "Dunkles Design"

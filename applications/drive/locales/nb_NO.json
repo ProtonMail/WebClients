@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
+      "Create and copy alias": [
+        "Opprett og kopier alias"
+      ],
       "Create link": [
         "Opprett kobling"
       ],
@@ -324,9 +327,6 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
-      ],
-      "Give feedback": [
-        "Gi tilbakemelding"
       ],
       "Go to Drive": [
         "Gå til Drive"
@@ -568,9 +568,6 @@
       "Save": [
         "Lagre"
       ],
-      "Save and copy alias": [
-        "Lagre og kopier alias"
-      ],
       "Search": [
         "Søk"
       ],
@@ -591,6 +588,9 @@
       ],
       "Select all": [
         "Velg alle"
+      ],
+      "Select country": [
+        "Velg land"
       ],
       "Send feedback": [
         "Send tilbakemelding"
@@ -3751,9 +3751,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
       ],
-      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
-        "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
-      ],
       "from the version history?": [
         "fra versjonshistorikken?"
       ],
@@ -3796,9 +3793,6 @@
       ],
       "Import mailbox": [
         "Importer postboks"
-      ],
-      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
-        "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
       ],
       "Important note": [
         "Viktig merknad"
@@ -4202,9 +4196,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
       ],
-      "The vault your alias will be stored in.": [
-        "Hvelvet som aliaset ditt vil bli lagret i."
-      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det er filer som fortsatt må overføres. Å stenge overføringsbehandleren vil avslutte alle operasjoner."
       ],
@@ -4595,9 +4586,6 @@
       "Add image URL": [
         "Legg til bildenettadresse"
       ],
-      "Add title": [
-        "Legg til tittel"
-      ],
       "Add to group": [
         "Legg til gruppe"
       ],
@@ -4721,6 +4709,9 @@
       ],
       "Duplicate found": [
         "Duplikat funnet"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "f.eks. Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-post"
@@ -5832,6 +5823,11 @@
         "Deg"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faktureringsland"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøkkel kan ikke brukes til kryptering"
@@ -6002,14 +5998,11 @@
       "Create alias": [
         "Opprett alias"
       ],
-      "e.g., Amazon, eBay, Etsy": [
-        "f.eks. Amazon, eBay, Etsy"
+      "Create an alias": [
+        "Opprett et alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generer aliaser på farten, og administrer enkelt aliaser og passord."
-      ],
-      "Get an alias": [
-        "Få et alias"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliaser"
@@ -6029,7 +6022,10 @@
       "Try ${ PASS_APP_NAME }": [
         "Prøv ${ PASS_APP_NAME }"
       ],
-      "When asked for your email address, give this alias instead. Add a name and note to keep track of where you use it.": [
+      "Used on amazon for shopping, etc.": [
+        "Brukt på Amazon for shopping, og så videre."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Når du blir bedt om e-postadressen din, gir du dette aliaset i stedet. Legg til et navn og et notat for å holde oversikt over hvor du bruker det."
       ]
     },
@@ -6491,8 +6487,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Hvis du vil fortsette å laste opp og synkronisere filer, frigjør du plass eller oppgraderer for mer lagringsplass."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "For å sende eller motta e-post, frigjøre plass eller ${ upgrade }."
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "For å sende eller motta e-post, frigjør plass eller oppgrader for mer lagringsplass."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "For å laste opp eller synkronisere filer, frigjør plass eller ${ upgrade }."
       ],
       "upgrade for more storage": [
         "oppgrader for mer lagringsplass"
@@ -6503,8 +6505,20 @@
       "Your ${ appStorage } is full": [
         "Din ${ appStorage } er full"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Din ${ storage } er ${ percentage }% full. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Din ${ storage } er full. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Din lagring er ${ percentage }% full. ${ cta }."
+      ],
       "Your storage is full": [
         "Lagringsplassen din er full"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Din lagring er full. ${ cta }."
       ]
     },
     "Success": {

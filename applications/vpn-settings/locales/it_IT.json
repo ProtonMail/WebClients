@@ -254,9 +254,6 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
-      "Give feedback": [
-        "Dai una valutazione"
-      ],
       "Got it": [
         "Ho capito"
       ],
@@ -2438,7 +2435,7 @@
         "Cambia il nome della famiglia"
       ],
       "Delete family group?": [
-        "Vuoi eliminare il gruppo familiare?"
+        "Vuoi eliminare il gruppo famigliare?"
       ],
       "Delete organization?": [
         "Vuoi eliminare l'organizzazione?"
@@ -2572,10 +2569,10 @@
     },
     "fido2: Title": {
       "Delete security key?": [
-        "Eliminare la chiave di sicurezza?"
+        "Vuoi eliminare la chiave di sicurezza?"
       ],
       "Disable 2FA via security key?": [
-        "Disabilitare 2FA tramite chiave di sicurezza?"
+        "Vuoi disabilitare 2FA tramite chiave di sicurezza?"
       ],
       "Name your security key": [
         "Denomina la tua chiave di sicurezza"
@@ -3339,9 +3336,6 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Non è il tuo dispositivo? Usa una finestra di navigazione in incognito per accedere e chiudila quando hai finito. ${ learnMore }"
-      ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
       ],
@@ -3983,9 +3977,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
-      "You'll stay signed in even after you close the browser.": [
-        "Rimarrai connesso anche dopo aver chiuso il browser."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Il tuo account ${ BRAND_NAME } è attualmente sospeso. Trascorsi 28 giorni, le email non verranno più consegnate alla tua posta in arrivo, i tuoi link di condivisione di Drive verranno bloccati e non potrai caricare nuovi file. Per ripristinare il normale servizio, paga tutte le fatture scadute."
       ],
@@ -4026,7 +4017,7 @@
         "I tuoi file verranno crittografati e poi salvati."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
-        "La tua informazione è al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
+        "Le tue informazioni sono al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
       "Your next billing date is ${ renewalTime }.": [
         "La tua prossima data di fatturazione è il ${ renewalTime }."
@@ -4103,6 +4094,9 @@
       ],
       "Credit": [
         "Credito"
+      ],
+      "Credit note": [
+        "Nota di credito"
       ],
       "Currency conversion": [
         "Conversione della valuta"
@@ -4655,7 +4649,7 @@
         "Crea account"
       ],
       "Forgot username?": [
-        "Nome utente dimenticato?"
+        "Hai dimenticato il nome utente?"
       ],
       "Help translate": [
         "Partecipa alla traduzione"
@@ -4700,7 +4694,7 @@
         "Problemi ad accedere?"
       ],
       "Upgrade your plan": [
-        "Aggiorna il tuo piano"
+        "Effettua l'upgrade del piano"
       ],
       "View guide": [
         "Visualizza guida"
@@ -5107,6 +5101,9 @@
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
       ],
+      "Require 2FA for organization": [
+        "Richiedi 2FA per l'organizzazione"
+      ],
       "Router support": [
         "Assistenza router"
       ],
@@ -5140,6 +5137,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Integrazione SSO (in arrivo)"
       ],
       "Start protecting your organization": [
         "Inizia a proteggere la tua organizzazione"
@@ -5182,6 +5182,9 @@
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Casseforti condivise illimitate con autorizzazioni di accesso"
       ],
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
@@ -5340,10 +5343,10 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        "Eliminare l'account?"
+        "Vuoi eliminare l'account?"
       ],
       "Downgrade account?": [
-        "Eseguire il downgrade dell'account?"
+        "Vuoi effettuare il downgrade dell'account?"
       ],
       "Improved plans coming soon!": [
         "Piani migliorati saranno presto disponibili!"
@@ -5352,7 +5355,7 @@
         "Controlla abbonamento e paga"
       ],
       "Switch plans?": [
-        "Cambiare piani?"
+        "Vuoi cambiare il piano?"
       ]
     },
     "new_plans: Title": {
@@ -5803,8 +5806,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mese"
       ],
+      "/month /user": [
+        "/mese /utente"
+      ],
+      "/month /user, billed annually": [
+        "/mese /utente, fatturazione annuale"
+      ],
+      "/month /user, billed biennially": [
+        "/mese /utente, fatturazione biennale"
+      ],
       "Creating your account": [
         "Creazione del tuo account"
+      ],
+      "Current plan": [
+        "Piano attuale"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
@@ -5817,6 +5832,9 @@
       ],
       "Free forever": [
         "Gratis per sempre"
+      ],
+      "Get in touch with our sales team": [
+        "Contatta il nostro team di vendita"
       ],
       "Includes:": [
         "Include:"
@@ -5942,9 +5960,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "Tax Country": [
-        "Paese di tassazione"
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
@@ -6103,7 +6118,7 @@
         "Verifica ora questo indirizzo email di recupero: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Verifica email di recupero?"
+        "Vuoi verificare l'indirizzo email di recupero?"
       ],
       "Verify with email": [
         "Verifica con email"
@@ -6140,7 +6155,7 @@
         "Verifica ora"
       ],
       "Verify recovery phone?": [
-        "Verifica telefono di recupero?"
+        "Vuoi verificare il numero di telefono di recupero?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
         "Verifica ora il numero di telefono di recupero: ${ phone.Value }"
@@ -6391,7 +6406,7 @@
         "Ho capito"
       ],
       "Request password reset": [
-        "Richiedi reimpostazione della password"
+        "Richiedi la reimpostazione della password"
       ],
       "Use recovery method": [
         "Usa un metodo di recupero"
@@ -6423,7 +6438,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Richiedere la reimpostazione della password?"
+        "Vuoi richiedere la reimpostazione della password?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Potrai reimpostare la tua password tra ${ gracePeriodHoursRemaining } ora",
@@ -7274,7 +7289,7 @@
         "Annulla abbonamento"
       ],
       "Cancel subscription?": [
-        "Annulla abbonamento?"
+        "Vuoi annullare l'abbonamento?"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -7375,7 +7390,7 @@
         "Elimina il server (potrai comunque recuperarlo entro ${ days } giorni)"
       ],
       "Delete user?": [
-        "Eliminare utente?"
+        "Vuoi eliminare l'utente?"
       ],
       "Device connected!": [
         "Dispositivo connesso!"
@@ -7568,7 +7583,7 @@
         "Rimuovi dominio"
       ],
       "Remove user?": [
-        "Rimuovere l'utente?"
+        "Vuoi rimuovere l'utente?"
       ],
       "Rename the gateway": [
         "Rinomina il gateway"
@@ -7586,7 +7601,7 @@
         "Reimposta la password"
       ],
       "Reset password?": [
-        "Reimposta la password?"
+        "Vuoi reimpostare la password?"
       ],
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
@@ -7601,7 +7616,7 @@
         "Seleziona un piano"
       ],
       "Send email reminders?": [
-        "Inviare promemoria email?"
+        "Vuoi inviare i promemoria email?"
       ],
       "Set new password": [
         "Imposta nuova password"
@@ -7989,7 +8004,7 @@
         "Eliminando questo numero di telefono, non sarai più in grado di recuperare il tuo account."
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Disabilitando questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } ad esso collegati saranno disabilitati. Sei sicuro di voler disabilitare questo indirizzo?"
+        "Disabilitando questo indirizzo, non potrai più inviare o ricevere email con esso e tutti i prodotti ${ BRAND_NAME } collegati verranno disabilitati. Sei sicuro di voler disabilitare questo indirizzo?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Scegliendo questo metodo di pagamento, il tuo account non potrà essere aggiornato immediatamente. Aggiorneremo il tuo account una volta che il pagamento sarà completato."
