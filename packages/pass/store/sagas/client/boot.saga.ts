@@ -17,13 +17,14 @@ import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 
 import { hydrate } from './hydrate.saga';
 
 function* bootWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
-
+        yield loadCryptoWorker();
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
         const mergeCache = (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true });
