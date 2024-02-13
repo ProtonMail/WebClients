@@ -428,6 +428,9 @@
       "Upgrade now to share with more people": [
         "Opgradér nu for at dele med flere"
       ],
+      "View app logs": [
+        "Se app-logs"
+      ],
       "Write us on Reddit": [
         "Skriv til os på Reddit"
       ],
@@ -503,6 +506,9 @@
       ],
       "Cannot send invitation at the moment": [
         "Kan ikke sende invitation i øjeblikket",
+        "Kan ikke sende invitationer i øjeblikket"
+      ],
+      "Cannot send invitations at the moment": [
         "Kan ikke sende invitationer i øjeblikket"
       ],
       "Could not confirm this invite at the moment": [
@@ -938,6 +944,10 @@
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge.",
+        "Genererede passwords gemmes i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger."
+      ],
       "Generating alias...": [
         "Genererer alias..."
       ],
@@ -1066,6 +1076,10 @@
       "Password copied": [
         "Adgangskode kopieret"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uge slettes automatisk fra historikken.",
+        "Adgangskoder, der er ældre end ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uger slettes automatisk fra historikken."
+      ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
       ],
@@ -1173,6 +1187,9 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Autofyld-menuen åbner automatisk når du trykker eller fokuserer på et felt."
+      ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Eksportfilen vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -2111,6 +2128,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
+      ],
+      "Please contact us for investigating the issue": [
+        "Kontakt os, så vi kan undersøge problemet"
       ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."
