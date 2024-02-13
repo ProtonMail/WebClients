@@ -25,6 +25,7 @@ export enum AuthStep {
     NEW_PASSWORD,
     SETUP,
     DONE,
+    FREE_TRIAL_ENDED,
 }
 
 export interface AuthTypes {
