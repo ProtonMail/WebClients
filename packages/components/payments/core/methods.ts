@@ -191,20 +191,18 @@ export class PaymentMethods {
 
     private isCashAvailable(): boolean {
         const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
-        const isHumanVerification = this.flow === 'human-verification';
 
-        return !isSignup && !isHumanVerification && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
+        return !isSignup && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
     }
 
     private isBitcoinAvailable(): boolean {
         const isSignup = this.flow === 'signup' || this.flow === 'signup-vpn'; // for signup-pass, bitcoin IS available
-        const isHumanVerification = this.flow === 'human-verification';
+
         const isInvoice = this.flow === 'invoice';
 
         return (
             this.statusExtended.VendorStates.Bitcoin &&
             !isSignup &&
-            !isHumanVerification &&
             !isInvoice &&
             this.coupon !== BLACK_FRIDAY.COUPON_CODE &&
             this.amount >= MIN_BITCOIN_AMOUNT &&
