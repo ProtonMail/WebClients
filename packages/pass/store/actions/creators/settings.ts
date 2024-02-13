@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/enhancers/request';
+import { withSettings } from '@proton/pass/store/actions/enhancers/settings';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
@@ -31,6 +32,7 @@ export const settingsEditSuccess = createAction(
     withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, silent?: boolean, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
+            withSettings,
             silent
                 ? identity
                 : withNotification({
@@ -44,7 +46,7 @@ export const settingsEditSuccess = createAction(
 
 export const updatePauseListItem = createAction(
     'settings::pause-list::update',
-    (payload: { hostname: string; criteria: CriteriaMasks }) => withCache({ payload })
+    (payload: { hostname: string; criteria: CriteriaMasks }) => pipe(withSettings, withCache)({ payload })
 );
 
 export const syncLocalSettings = createAction(
