@@ -224,6 +224,9 @@
       "Move to trash": [
         "移至垃圾桶"
       ],
+      "Not now": [
+        "現在不要"
+      ],
       "OK": [
         "好"
       ],
@@ -235,6 +238,9 @@
       ],
       "Pass for iOS": [
         "Proton Pass 的 iOS 版本"
+      ],
+      "Recent": [
+        "最近"
       ],
       "Refresh the page": [
         "重新整理此頁面"
@@ -250,6 +256,9 @@
       ],
       "Remove access": [
         "移除存取權限"
+      ],
+      "Remove member": [
+        "移除成員"
       ],
       "Request a feature": [
         "提出新功能建議"
@@ -622,6 +631,9 @@
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
       ],
+      "Built in 2FA authenticator": [
+        "內建雙重驗證機制"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "可於此保管庫新增、編輯、刪除與匯出項目。"
       ],
@@ -742,6 +754,9 @@
       "Loading ${ PASS_APP_NAME }": [
         "正在載入 ${ PASS_APP_NAME }"
       ],
+      "Logging you out...": [
+        "即將登出帳號..."
+      ],
       "me": [
         "我"
       ],
@@ -792,6 +807,9 @@
       ],
       "Select destination vault": [
         "選取目標保管庫"
+      ],
+      "Select vault to share": [
+        "選擇要共享的保管庫"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -915,6 +933,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "帳號"
+      ],
       "Alias": [
         "別名"
       ],
@@ -932,6 +953,9 @@
       ],
       "Alphabetical": [
         "拼音字母"
+      ],
+      "Application logs": [
+        "應用程式紀錄"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "自動鎖定${ PASS_APP_NAME }"
@@ -977,6 +1001,9 @@
       ],
       "Display": [
         "顯示"
+      ],
+      "Download logs": [
+        "下載記錄檔"
       ],
       "Empty trash": [
         "清空垃圾桶"
@@ -1227,8 +1254,14 @@
       "Vault ID": [
         "保管庫 ID"
       ],
+      "Vaults": [
+        "保管庫"
+      ],
       "View details": [
         "查看詳情資料"
+      ],
+      "View logs": [
+        "檢視記錄檔"
       ],
       "Websites": [
         "網頁"
@@ -1313,6 +1346,9 @@
       "Full Name": [
         "全名"
       ],
+      "MM/YY": [
+        "月月/年年"
+      ],
       "Other": [
         "其它"
       ],
@@ -1374,6 +1410,9 @@
       "Confirm PIN code": [
         "確認個人識別數字代碼"
       ],
+      "Create a vault": [
+        "新增保管庫"
+      ],
       "Create PIN code": [
         "創建個人識別數字代碼"
       ],
@@ -1401,6 +1440,12 @@
       "Import to vault(s)": [
         "匯入至(多個)保管庫"
       ],
+      "Import your data": [
+        "匯入您的資料"
+      ],
+      "Install extension": [
+        "安裝擴充套件"
+      ],
       "Leave vault ?": [
         "離開保管庫 ?"
       ],
@@ -1409,6 +1454,9 @@
       ],
       "Member limit": [
         "成員限制"
+      ],
+      "Members": [
+        "成員"
       ],
       "Move all items ?": [
         "移動所有項目?"
@@ -1437,6 +1485,9 @@
       "Share with": [
         "與分享"
       ],
+      "Suggestions": [
+        "建議"
+      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -1445,6 +1496,9 @@
       ],
       "Update available": [
         "有可用更新"
+      ],
+      "Vault": [
+        "保管庫"
       ],
       "Vault shared with you": [
         "與您分享的保管庫"
@@ -1492,17 +1546,29 @@
       "An error occured while exporting your data": [
         "匯出資料時發生錯誤"
       ],
+      "At least one email address is required": [
+        "最少需要一個電子郵件位址"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "目前無法提取此別名的信箱"
       ],
       "Could not create vault \"${ vaultName }\"": [
         "無法創建保管庫${ vaultName }"
       ],
+      "Could not send invitations to the following addresses :": [
+        "無法發送邀請到以下的電子郵件位 :"
+      ],
+      "Duplicate email addresses.": [
+        "重複的電子郵件位址"
+      ],
       "Empty note": [
         "清空備註"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"
+      ],
+      "Invalid email addresses.": [
+        "無效的電子郵件位址"
       ],
       "Maximum length is ${ maxLength } character": [
         "最長上限為${ maxLength }字元"

@@ -161,6 +161,9 @@
       "Get mobile apps": [
         "モバイルアプリを入手する"
       ],
+      "Get Started": [
+        "始めましょう"
+      ],
       "Help us improve": [
         "改善にご協力ください"
       ],
@@ -175,6 +178,9 @@
       ],
       "Importing": [
         "インポート"
+      ],
+      "Install extension": [
+        "拡張機能をインストールする"
       ],
       "Invite others": [
         "他の人に招待"
@@ -229,6 +235,9 @@
       ],
       "Move to trash": [
         "ごみ箱に移動"
+      ],
+      "Not now": [
+        "後で"
       ],
       "OK": [
         "OK"
@@ -401,11 +410,17 @@
       "Auto-lock could not be disabled": [
         "自動ロックを無効化出来ませんでした"
       ],
+      "Cannot send invitations at the moment": [
+        "現在招待を送ることができません"
+      ],
       "Could not confirm this invite at the moment": [
         "現時点ではこの招待を確認できませんでした"
       ],
       "Could not leave vault.": [
         "フォルダーから退出できません"
+      ],
+      "Could not load recommendations at the moment.": [
+        "現時点では推奨事項を読み込めませんでした。"
       ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
@@ -461,11 +476,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動できませんでした"
       ],
+      "Failed to pin item": [
+        "アイテムを固定できませんでした"
+      ],
       "Failed to remove user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
       ],
       "Failed to transfer this vault's ownership.": [
         "このフォルダーの所有権の移行に失敗しました。"
+      ],
+      "Failed to unpin item": [
+        "アイテムの固定を解除できませんでした"
       ],
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
@@ -754,6 +775,12 @@
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "${ PASS_APP_NAME } を最大限に活用するには、必要な拡張機能の権限を付与してください"
       ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "${ browser.title } に ${ PASS_APP_NAME } をインストールすると、ログインがすぐに自動入力されます。"
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "${ browser.title } に ${ PASS_APP_NAME } をインストールすると、ログインがすぐに自動入力されます。 "
+      ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
@@ -853,6 +880,9 @@
       "Pinning item...": [
         "アイテムを固定中..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
+      ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "現在のロックの登録を解除するには、PINコードを確認してください。\n${ PASS_APP_NAME } はロックされなくなります。"
       ],
@@ -873,6 +903,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "プライバシーは私たちにとって大きな懸念事項です。 ${ PASS_APP_NAME } が異なる理由をご覧ください。"
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "高度なアカウント保護プログラムである ${ PROTON_SENTINEL_LINK } によって保護されています"
       ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
@@ -1065,6 +1098,9 @@
       "Alphabetical": [
         "アルファベット順"
       ],
+      "Application logs": [
+        "アプリケーションのログ"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を自動ロックします"
       ],
@@ -1109,6 +1145,9 @@
       ],
       "Display": [
         "表示"
+      ],
+      "Download logs": [
+        "過去ログのダウンロード"
       ],
       "Empty trash": [
         "ごみ箱を空にする"
@@ -1374,6 +1413,9 @@
       "View details": [
         "詳細の表示"
       ],
+      "View logs": [
+        "ログを表示"
+      ],
       "Websites": [
         "ウェブサイト"
       ],
@@ -1584,6 +1626,9 @@
       "Permanently remove all items ?": [
         "すべてのアイテムを永久に削除しますか？"
       ],
+      "Pinned (${ items.length })": [
+        "ピン留め (${ items.length })"
+      ],
       "Review and share": [
         "レビューして共有"
       ],
@@ -1683,6 +1728,9 @@
       ],
       "Empty note": [
         "空のメモ"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "有効期限が MM/YY の形式ではありません"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"

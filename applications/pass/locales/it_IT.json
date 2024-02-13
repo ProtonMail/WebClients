@@ -257,6 +257,9 @@
       "Move to trash": [
         "Sposta nel cestino"
       ],
+      "Not now": [
+        "Non ora"
+      ],
       "OK": [
         "OK"
       ],
@@ -566,6 +569,9 @@
       ],
       "PIN codes do not match": [
         "I codici PIN non corrispondono"
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Effettua l'upgrade per avere l'accesso anticipato all'app desktop di ${ PASS_APP_NAME }"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -981,6 +987,9 @@
       "Please enter your current PIN code to continue": [
         "Inserisci il tuo PIN attuale per continuare"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Effettua l'upgrade per avere l'accesso anticipato all'app web di ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Premi Invio per copiare"
       ],
@@ -1050,6 +1059,9 @@
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Il file di esportazione non conterrà i dati delle casseforti condivise di cui non sei il proprietario"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
         "Impossibile importare i seguenti ${ result.ignored.length } elementi:"
@@ -1080,6 +1092,9 @@
       ],
       "Unpinning item...": [
         "Annullamento del fissaggio dell'elemento in corso"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Effettua ora l'upgrade per sbloccare le funzionalità premium"
       ],
       "Use vaults to share this item with others.": [
         "Usa le casseforti per poter condividere questo elemento con altri."
@@ -1203,6 +1218,9 @@
       "Alphabetical": [
         "Alfabetico"
       ],
+      "Application logs": [
+        "Log dell'applicazione"
+      ],
       "Auto-lock ${ PASS_APP_NAME }": [
         "Blocco automatico di ${ PASS_APP_NAME }"
       ],
@@ -1247,6 +1265,9 @@
       ],
       "Display": [
         "Mostra"
+      ],
+      "Download logs": [
+        "Scarica i log"
       ],
       "Empty trash": [
         "Svuota il cestino"
@@ -1312,16 +1333,16 @@
         "Lingua"
       ],
       "Last 2 weeks": [
-        "Ultime 2 settimane"
+        "Ultimi 14 giorni"
       ],
       "Last autofill": [
         "Ultima compilazione automatica"
       ],
       "Last month": [
-        "Mese precedente"
+        "Ultimi 30 giorni"
       ],
       "Last week": [
-        "Ultima settimana"
+        "Ultimi 7 giorni"
       ],
       "Latest import": [
         "Ultima importazione"
@@ -1351,7 +1372,7 @@
         "Modificato"
       ],
       "More than a month": [
-        "Più di 1 mese"
+        "Oltre gli ultimi 30 giorni"
       ],
       "Most recent": [
         "Più recenti"
@@ -1514,6 +1535,9 @@
       ],
       "View details": [
         "Visualizza dettagli"
+      ],
+      "View logs": [
+        "Visualizza i log"
       ],
       "Websites": [
         "Siti web"
@@ -1733,7 +1757,7 @@
         "Il nostro regalo di benvenuto per te"
       ],
       "Pending access to the shared data": [
-        "Accesso ai dati condivisi in attesa"
+        "In attesa dell'accesso ai dati condivisi"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -1770,6 +1794,9 @@
       ],
       "Update available": [
         "Aggiornamento disponibile"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Effettua l'upgrade per sbloccare le funzionalità premium"
       ],
       "Vault": [
         "Cassaforte"
