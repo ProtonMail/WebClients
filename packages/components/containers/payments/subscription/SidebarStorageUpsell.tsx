@@ -190,7 +190,7 @@ const SidebarStorageUpsell = ({ app }: Props) => {
                         setIgnoreStorageLimit(true);
                     }}
                 >
-                    <Icon size={12} name="cross-big" />
+                    <Icon size={3} name="cross-big" />
                 </Button>
             </div>
             <div className="text-bold">{data.description}</div>
