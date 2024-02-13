@@ -28,6 +28,7 @@ const InboxDesktopFreeTrialEnded = ({ backToLoginClick }: Props) => {
         return null;
     }
 
+    const webAppMessage = <WebAppLink key="web-app" />;
     return (
         <div className="flex justify-center text-center items-center item-start flex-column gap-6">
             <img src={protonDesktopTrialEnd} alt={c('Free trial desktop').t`ProtonMail desktop app`} />
@@ -44,7 +45,7 @@ const InboxDesktopFreeTrialEnded = ({ backToLoginClick }: Props) => {
                     .t`Back to sign in`}</Button>
             </div>
             <div>
-                <p className="m-0">{c('Free trial desktop').jt`Open ${MAIL_APP_NAME} in the ${(<WebAppLink />)}`}</p>
+                <p className="m-0">{c('Free trial desktop').jt`Open ${MAIL_APP_NAME} in the ${webAppMessage}`}</p>
             </div>
         </div>
     );
