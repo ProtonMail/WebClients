@@ -1,7 +1,8 @@
 import { History } from 'history';
 
 import { AuthenticationStore } from '../authentication/createAuthenticationStore';
-import { APPS, APP_NAMES, isSSOMode, isStandaloneMode } from '../constants';
+import { APPS, APP_NAMES } from '../constants';
+import { appMode } from '../webpack.constants';
 import { getAppHref, getAppHrefBundle } from './helper';
 
 const safeOpenNewTab = (href: string) => {
@@ -27,7 +28,7 @@ export const appLink = ({
     authentication: AuthenticationStore;
 }) => {
     if (toApp && toApp !== app) {
-        if (isSSOMode) {
+        if (appMode === 'sso') {
             const localID = authentication.getLocalID?.();
             const href = getAppHref(to, toApp, localID);
             if (newTab) {
@@ -39,7 +40,7 @@ export const appLink = ({
             const href = getAppHref(to, toApp);
             return safeOpenNewTab(href);
         }
-        if (isStandaloneMode) {
+        if (appMode === 'standalone') {
             return;
         }
         return document.location.assign(getAppHrefBundle(to, toApp));

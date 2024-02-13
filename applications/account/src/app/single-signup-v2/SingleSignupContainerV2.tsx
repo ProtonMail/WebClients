@@ -624,6 +624,7 @@ const SingleSignupContainerV2 = ({
                     localID: resumedSession.LocalID,
                     persistent: resumedSession.persistent,
                     trusted: resumedSession.trusted,
+                    clientKey: resumedSession.clientKey,
                     ...userInfo,
                 };
             }
@@ -836,6 +837,7 @@ const SingleSignupContainerV2 = ({
                 keyPassword: authSession.keyPassword,
                 trusted: authSession.trusted,
                 persistent: authSession.persistent,
+                clientKey: authSession.clientKey,
                 ...userInfo,
             };
 
@@ -898,6 +900,7 @@ const SingleSignupContainerV2 = ({
                 User: cache.session.user,
                 trusted: cache.session.trusted,
                 persistent: cache.session.persistent,
+                clientKey: cache.session.clientKey,
             });
         } catch (error) {
             handleError(error);
