@@ -13,5 +13,5 @@ import { APPS } from '@proton/shared/lib/constants';
 
 export const PASS_CONFIG = { ...config, SSO_URL: getAppHref('/', APPS.PROTONACCOUNT) } as PassConfig;
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
-exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
+exposePassCrypto(createPassCrypto());
 exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));

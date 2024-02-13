@@ -10,5 +10,5 @@ import * as config from '../app/config';
 
 export const PASS_CONFIG = { ...config, APP_NAME: 'proton-pass' } as PassConfig;
 exposeAuthStore(createAuthStore(createSecureSessionStorage()));
-exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
+exposePassCrypto(createPassCrypto());
 exposeApi(createApi({ config: PASS_CONFIG }));
