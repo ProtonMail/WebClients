@@ -16,7 +16,7 @@ import { CardFieldStatus } from '@proton/components/payments/react-extensions/us
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { useLoading } from '@proton/hooks';
-import { MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
+import { MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -143,19 +143,6 @@ export const PaymentsNoApi = ({
             onMethod(result.value);
         }
     }, [loading, allMethods.length]);
-
-    if (['donation'].includes(type) && amount < MIN_DONATION_AMOUNT) {
-        const price = (
-            <Price key="price" currency={currency}>
-                {MIN_DONATION_AMOUNT}
-            </Price>
-        );
-
-        return (
-            <Alert className="mb-4" type="error">{c('Error')
-                .jt`The minimum amount that can be donated is ${price}`}</Alert>
-        );
-    }
 
     if (type === 'credit' && amount < MIN_CREDIT_AMOUNT) {
         const price = (
