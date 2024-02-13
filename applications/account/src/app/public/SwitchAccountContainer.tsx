@@ -13,7 +13,6 @@ import {
     useApi,
     useErrorHandler,
     useModalState,
-    useModals,
     useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -77,9 +76,10 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
     const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
     const [error, setError] = useState(false);
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
 
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
+    const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
+    const [tmpSessions, setTmpSessions] = useState<LocalSessionPersisted[]>([]);
 
     useEffect(() => {
         startUnAuthFlow().catch(noop);
@@ -113,17 +113,17 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
         onSignOut(updatedActiveSessions);
     };
 
-    const handleSignOutMultiple = (sessions: LocalSessionPersisted[]) => {
+    const handleSignOutMultiple = (sessions: LocalSessionPersisted[], type: 'all' | 'single') => {
+        setTmpSessions(sessions);
         if (sessions.some((session) => getHasRecoveryMessage(session.remote.UserID))) {
-            return createModal(
-                <ConfirmSignOutModal
-                    onSignOut={(clearDeviceRecovery: boolean) => {
-                        handleSignOut(sessions, clearDeviceRecovery);
-                    }}
-                />
-            );
+            setConfirmSignoutModal(true);
+            return;
         }
-        handleSignOut(sessions, false);
+        if (type === 'all') {
+            setOpenSignOutAllPrompt(true);
+            return;
+        }
+        return handleSignOut(sessions, false);
     };
 
     const handleClickSession = async (localID: number) => {
@@ -235,7 +235,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                                     title={signOutText}
                                     aria-label={signOutText}
                                     onClick={() => {
-                                        handleSignOutMultiple([session]);
+                                        handleSignOutMultiple([session], 'single');
                                     }}
                                 >
                                     {c('Action').t`Sign out`}
@@ -277,10 +277,18 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                         shape="ghost"
                         fullWidth
                         onClick={() => {
-                            setOpenSignOutAllPrompt(true);
+                            handleSignOutMultiple(localActiveSessions || [], 'all');
                         }}
                     >{c('Action').t`Sign out of all accounts`}</Button>
                 </div>
+                {renderConfirmSignoutModal && (
+                    <ConfirmSignOutModal
+                        onSignOut={(clearData) => {
+                            handleSignOut(tmpSessions, clearData);
+                        }}
+                        {...confirmSignoutModal}
+                    />
+                )}
                 {renderOpenSignOutAllPrompt && (
                     <Prompt
                         title={c('Title').t`Are you sure?`}
@@ -288,10 +296,11 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                             <Button
                                 color="norm"
                                 onClick={() => {
-                                    handleSignOutMultiple(localActiveSessions || []);
+                                    handleSignOut(tmpSessions, false);
+                                    openSignOutAllPrompt.onClose();
                                 }}
                             >{c('Action').t`Continue`}</Button>,
-                            <Button onClick={() => setOpenSignOutAllPrompt(false)}>{c('Action').t`Cancel`}</Button>,
+                            <Button onClick={() => openSignOutAllPrompt.onClose()}>{c('Action').t`Cancel`}</Button>,
                         ]}
                         {...openSignOutAllPrompt}
                     >
