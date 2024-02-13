@@ -50,7 +50,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
 
-    exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
+    exposePassCrypto(createPassCrypto());
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
