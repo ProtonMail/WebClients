@@ -259,7 +259,7 @@ export function getSampleCSV(
                       '# Enter the email address you want to set up for this user. To add more than 1 email address for a user, separate the addresses with commas.',
               }
             : { EmailAddress: '# Enter the email address you want to set up for this user' }),
-        Password: '# Add a password for their account',
+        Password: '# Add a password with a minimum of 8 characters for their account',
         ...(includeStorage ? { TotalStorage: '# Amount of storage the user will have in GiB' } : {}),
         ...(includeVpnAccess
             ? {
