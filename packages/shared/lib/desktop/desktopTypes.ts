@@ -21,6 +21,8 @@ export type IPCInboxMessageBroker = {
     send: <T extends IPCInboxMessageType>(type: T, payload: Extract<IPCInboxMessage, { type: T }>['payload']) => void;
 };
 
+export const END_OF_TRIAL_KEY = 'endOfTrial';
+
 export interface InboxDesktopFreeTrialDates {
     trialStartDate?: Date;
     trialEndDate?: Date;
