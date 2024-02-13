@@ -55,7 +55,7 @@ export const PinLockSetting: FC = () => {
                 <span>
                     {c('Label').t`Auto-lock ${PASS_APP_NAME}`}
                     <span className="block color-weak text-sm">{c('Info')
-                        .t`Access to ${PASS_APP_NAME} will require a PIN code to unlock your session`}</span>
+                        .t`After inactivity, access to ${PASS_APP_NAME} will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.`}</span>
                 </span>
             </Checkbox>
 
