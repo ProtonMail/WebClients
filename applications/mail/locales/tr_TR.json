@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
       ],
+      "Clear application data": [
+        "Uygulama verilerini temizle"
+      ],
       "Clear browser data": [
         "Tarayıcı verilerini temizle"
       ],
@@ -259,6 +262,9 @@
       ],
       "Create a new label": [
         "Yeni bir etiket ekle"
+      ],
+      "Create and copy alias": [
+        "Takma ad ekle ve kopyala"
       ],
       "Create folder": [
         "Klasör ekle"
@@ -901,6 +907,9 @@
       ],
       "Select all messages": [
         "Tüm iletileri seç"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Select date and time": [
         "Tarih ve saat seçin"
@@ -5206,6 +5215,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
       ],
+      "Clear app data": [
+        "Uygulama verilerini temizle"
+      ],
       "Clear data": [
         "Verileri temizle"
       ],
@@ -5750,6 +5762,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Bu uygulama ile ilgili tüm verileri ve indirilmiş iletileri siler."
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Bir iletiyi kimlik avı girişimi olarak bildirdiğinizde, ileti bize gönderilir. Böylece onu inceleyebilir ve süzgeçlerimizi geliştirebiliriz. Bu durum iletinin tüm içeriğini görebileceğimi anlamına gelir."
       ],
@@ -6026,6 +6041,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Bu işlem bu uygulama ile ilgili tüm verileri ve indirilmiş iletileri siler. Uygulama yeniden başlatılacak ve uygulamayı kullanabilmek için yeniden oturum açmanız gerekecek."
       ],
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
@@ -6449,6 +6467,9 @@
       "Expand / contract composer": [
         "Oluşturucuyu genişlet / daralt"
       ],
+      "Filter": [
+        "Süz"
+      ],
       "Forward": [
         "İlet"
       ],
@@ -6758,6 +6779,9 @@
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "örneğin, Amazon, eBay, Etsy"
       ],
       "Email": [
         "E-posta"
@@ -7878,6 +7902,11 @@
         "Siz"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faturalanacak ülke"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
@@ -8162,6 +8191,9 @@
       "Create alias": [
         "Takma ad oluştur"
       ],
+      "Create an alias": [
+        "Takma ad oluştur"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
       ],
@@ -8182,6 +8214,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Amazon alışverişleri için kullanıldı gibi."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "E-posta adresiniz istendiğinde onun yerine bu takma adı verin. Nerede kullandığınızı unutmamak için bir başlık ve not ekleyin."
       ]
     },
     "Security Center - Action": {
@@ -8826,8 +8864,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Dosyaları yüklemeyi ve eşitlemeyi sürdürebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "E-postaları alabilmek ya da gönderebilmek için boş yer açın ya da daha fazla depolama alanı edinmek için tarifenizi yükseltin."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
       ],
       "upgrade for more storage": [
         "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
@@ -8838,8 +8882,20 @@
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } depolama alanınız dolmuş. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
       "Your storage is full": [
         "Depolama alanınız dolu"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ cta }."
       ]
     },
     "Success": {
@@ -9483,6 +9539,9 @@
       "Get advanced protection": [
         "Gelişmiş koruma edinin"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "${ appName[APP_NAME] } uygulamalarını edinin"
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -9958,10 +10017,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
