@@ -635,10 +635,10 @@
       "No": [
         "No"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -817,6 +817,9 @@
       ],
       "Select calendar view": [
         "Tria la vista de calendari"
+      ],
+      "Select country": [
+        "Seleccioneu el país"
       ],
       "Select files": [
         "Selecciona els fitxers"
@@ -5673,6 +5676,9 @@
         "${ n } adreça",
         "${ n } adreces"
       ],
+      "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
+        "${ none }: no posar en quarantena ni rebutjar correus electrònics no autoritzats. Normalment, la gent només utilitza aquesta política per solucionar problemes o fer proves."
+      ],
       "${ number } city": [
         "${ number } ciutat",
         "${ number } ciutats"
@@ -5698,6 +5704,12 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
+      "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
+        "${ quarantine }: demanar a les plataformes destinatàries que marquin els correus electrònics no autoritzats com a correu brossa o els posin en quarantena."
+      ],
+      "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
+        "${ reject }: demanar a les plataformes destinatàries que rebutgin els correus electrònics no autoritzats."
       ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } més",
@@ -5953,6 +5965,9 @@
       "Are you sure you want to discard your import?": [
         "Esteu segur que voleu descartar la vostra importació?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Esteu segur que voleu atorgar privilegis administratius a aquest usuari?"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Estàs segur que vols eliminar tots els teus registres de forma permanent?"
       ],
@@ -6009,6 +6024,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
+      ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
+        "Abans de poder rebre correus electrònics per a les seves adreces de domini personalitzades a ${ MAIL_APP_NAME }, ha d'afegir els dos registres MX següents a la seva consola DNS (ubicada a la plataforma on va adquirir el domini personalitzat). Pot trobar un exemple i alguns consells útils ${ kbLink }."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
@@ -6142,6 +6160,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "DKIM allows ${ BRAND_NAME } to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DKIM permet a ${ BRAND_NAME } signar criptogràficament els teus correus electrònics i evitar que els atacants manipulin el seu correu electrònic. Asseguri's d'afegir els següents registres de CNAME a la seva consola de DNS (ubicada a la plataforma on va adquirir el domini personalitzat)."
+      ],
+      "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
+        "DMARC comprova si els registres SPF i DKIM del remitent procedeixen del seu domini. Això pot evitar que els atacants utilitzin registres SPF i DKIM d'un altre domini per fer-se passar pel seu. La \"p=\" (política) d'aquest registre indica com vol que les plataformes destinatàries gestionin els correus electrònics no autoritzats. Recomanem usar la política \"p=quarantine\" per a la majoria dels dominis. Asseguri's d'afegir el següent registre TXT a la seva consola DNS (ubicada a la plataforma on va adquirir el domini personalitzat)."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "No oblideu aquesta contrasenya. Si l'oblideu, no podreu administrar la vostra organització."
@@ -6291,6 +6315,9 @@
       "For members of organizations using single sign-on (SAML SSO)": [
         "Per a membres d'organitzacions que utilitzen un inici de sessió únic (SAML SSO)"
       ],
+      "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "Per als usuaris que canviïn a ${ MAIL_APP_NAME } des d'un altre servei de correu electrònic, seleccioni la pestanya ${ boldAddresses } i afegeixi totes les adreces de correu electrònic actives abans de canviar el registre MX per assegurar una transició sense problemes."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
@@ -6405,6 +6432,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
+      ],
+      "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
+        "IMPORTANT: Si la seva consola de DNS no permet que els valors de CNAME acabin amb un punt, pot eliminar el darrer punt dels valors de CNAME."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
@@ -6532,6 +6562,9 @@
       ],
       "Logs include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
         "Els registres inclouen els intents d'autentificació per a tots els serveis de ${ BRAND_NAME } que empren les vostres credencials de ${ BRAND_NAME_TWO }."
+      ],
+      "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.": [
+        "Els principals serveis de correu electrònic poden rebutjar o filtrar els seus correus electrònics a correu brossa si SPF/DKIM/DMARC no hi són o no estan configurats correctament."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Assegureu-vos d'${ addARecoveryMethod } perquè pugueu tornar al vostre compte si oblideu la contrasenya."
@@ -9628,6 +9661,9 @@
       "Back to inbox": [
         "Torna a la safata d'entrada"
       ],
+      "Back to vaults": [
+        "Torna a les caixes fortes"
+      ],
       "Block": [
         "Adreces bloquejades"
       ],
@@ -10967,6 +11003,9 @@
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
+      ],
+      "Request trial": [
+        "Sol·liciteu una prova"
       ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
@@ -14168,10 +14207,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
