@@ -8,7 +8,9 @@ import {
     EnhancedMember,
     Organization,
     PartialMemberAddress,
+    UserModel,
 } from '@proton/shared/lib/interfaces';
+import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useConfig } from '../..';
@@ -21,10 +23,12 @@ interface Props {
     onEdit: (member: EnhancedMember) => void;
     onDelete: (member: EnhancedMember) => void;
     onRevoke: (member: EnhancedMember) => Promise<void>;
+    onSetup: (member: EnhancedMember) => void;
     addresses: PartialMemberAddress[] | undefined;
     organization?: Organization;
     disableMemberSignIn?: boolean;
     organizationKey?: CachedOrganizationKey;
+    user: UserModel;
 }
 
 const MemberActions = ({
@@ -33,11 +37,13 @@ const MemberActions = ({
     onEdit,
     onDelete,
     onLogin,
+    onSetup,
     onChangePassword,
     onRevoke,
     addresses = [],
     organization,
     disableMemberSignIn,
+    user,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
@@ -46,6 +52,9 @@ const MemberActions = ({
     const canDelete = !member.Self;
     const canEdit = hasSetupOrganization || hasSetupOrganizationWithKeys;
     const canRevokeSessions = !member.Self && member.Type === MEMBER_TYPE.MANAGED;
+
+    const canSetupMember =
+        getCanGenerateMemberKeysPermissions(user, organizationKey) && getShouldSetupMemberKeys(member);
 
     const canLogin =
         !disableMemberSignIn &&
@@ -76,6 +85,12 @@ const MemberActions = ({
             text: c('Member action').t`Sign in`,
             onClick: () => {
                 onLogin(member);
+            },
+        },
+        canSetupMember && {
+            text: c('Member action').t`Activate user`,
+            onClick: () => {
+                onSetup(member);
             },
         },
         canChangePassword && {

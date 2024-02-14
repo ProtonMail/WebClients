@@ -57,6 +57,7 @@ import {
 import { SettingsParagraph, SettingsSectionWide, useAccountSpotlights } from '../../account';
 import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
 import { AddressModal } from '../../addresses';
+import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments/subscription';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
@@ -126,6 +127,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         useModalState(cleanOption);
     const [subUserDeleteModalProps, setSubUserDeleteModalOpen, renderSubUserDeleteModal] = useModalState(cleanOption);
     const [userRemoveModalProps, setUserRemoveModalOpen, renderUserRemoveModal] = useModalState(cleanOption);
+    const [userSetupModal, setUserSetupModal, renderUserSetupModal] = useModalState(cleanOption);
     const [inviteOrCreateUserModalProps, setInviteOrCreateUserModalOpen, renderInviteOrCreateUserModal] =
         useModalState(cleanOption);
     const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] =
@@ -163,6 +165,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
         await api(removeMember(member.ID));
         await call();
         createNotification({ text: c('Success message').t`User deleted` });
+    };
+
+    const handleSetupUser = (member: EnhancedMember) => {
+        setTmpMemberID(member.ID);
+        setUserSetupModal(true);
     };
 
     const handleDeleteUser = (member: EnhancedMember) => {
@@ -338,6 +345,9 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 {settingsParagraphContent}
             </SettingsParagraph>
             <Block className="flex items-start">
+                {renderUserSetupModal && (
+                    <CreateMissingKeysAddressModal member={tmpMember} addressesToGenerate={[]} {...userSetupModal} />
+                )}
                 {renderAddAddressModal && filteredMembers && (
                     <AddressModal members={filteredMembers} {...addAddressModalProps} />
                 )}
@@ -560,9 +570,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 )}
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <MemberActions
+                                        user={user}
                                         organizationKey={organizationKey}
                                         onEdit={handleEditUser}
                                         onDelete={handleDeleteUser}
+                                        onSetup={handleSetupUser}
                                         onRevoke={handleRevokeUserSessions}
                                         onLogin={handleLoginUser}
                                         onChangePassword={handleChangeMemberPassword}
