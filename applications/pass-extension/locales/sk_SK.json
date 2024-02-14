@@ -308,9 +308,6 @@
       "Pin item": [
         "Pripnúť položku"
       ],
-      "Recent": [
-        "Nedávne"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -427,6 +424,9 @@
       ],
       "Upgrade now to share with more people": [
         "Aktualizujte teraz, aby ste sa mohli podeliť s viacerými ľuďmi"
+      ],
+      "View app logs": [
+        "Zobraziť zázmamy aplikácie"
       ],
       "Write us on Reddit": [
         "Napíšte nám na Reddite"
@@ -845,9 +845,6 @@
       "Access successfully confirmed": [
         "Prístup bol úspešne potvrdený"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "Prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie vašej relácie"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Prístup k heslám na cestách pomocou našich mobilných aplikácií."
       ],
@@ -964,6 +961,12 @@
       ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňa.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov."
       ],
       "Generating alias...": [
         "Generovanie aliasu..."
@@ -1097,6 +1100,12 @@
       "Password copied": [
         "Heslo skopírované"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždeň sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
+      ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
       ],
@@ -1129,6 +1138,9 @@
       ],
       "Please enter your current PIN code to continue": [
         "Pre pokračovanie zadajte váš aktuálny PIN kód"
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
@@ -1205,6 +1217,9 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Rozbaľovacia ponuka automatického vypĺňania sa automaticky otvorí po kliknutí alebo zvolení poľa."
       ],
+      "The export file will not contain the data of shared vaults where you are not the owner": [
+        "Exportovaný súbor nebude obsahovať údaje zdieľaných trezorov, ktorých nie ste vlastníkom."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
         "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
@@ -1246,6 +1261,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgradovať ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Inovujte teraz na odomknutie prémiových funkcií"
       ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
@@ -2036,6 +2054,9 @@
       "Update available": [
         "K dispozícii je aktualizácia"
       ],
+      "Upgrade to Unlock Premium Features": [
+        "Inovujte na odomknutie prémiových funkcií"
+      ],
       "Use my email": [
         "Použiť môj email"
       ],
@@ -2156,6 +2177,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "Šifrovaný exportný súbor PGP vyžaduje prístupovú frázu"
+      ],
+      "Please contact us for investigating the issue": [
+        "Kontaktujte nás pre prešetrenie problému"
       ],
       "Please verify your email address in order to use email aliases": [
         "Ak chcete používať emailové aliasy, overte svoju emailovú adresu, prosím"
