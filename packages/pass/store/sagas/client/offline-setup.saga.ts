@@ -1,0 +1,44 @@
+import { put, takeLeading } from 'redux-saga/effects';
+
+import { CACHE_SALT_LENGTH, OFFLINE_ARGON2_PARAMS, getOfflineKeyDerivation } from '@proton/pass/lib/cache/crypto';
+import { getUserSettings } from '@proton/pass/lib/user/user.requests';
+import { offlineSetupFailure, offlineSetupIntent, offlineSetupSuccess } from '@proton/pass/store/actions';
+import type { RootSagaOptions } from '@proton/pass/store/types';
+import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { SETTINGS_PASSWORD_MODE, type UserSettings } from '@proton/shared/lib/interfaces';
+
+function* offlineSetupWorker(
+    { getAuthService, getAuthStore }: RootSagaOptions,
+    { payload, meta }: ReturnType<typeof offlineSetupIntent>
+) {
+    const auth = getAuthService();
+    const authStore = getAuthStore();
+    const requestId = meta.request.id;
+
+    try {
+        /** Offline mode can only work for users in ONE_PASSWORD_MODE.
+         * Secondary encryption password cannot be verified through SRP */
+        const settings: UserSettings = yield getUserSettings();
+        if (settings.Password.Mode !== SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE) throw new Error();
+
+        const verified: boolean = yield auth.confirmPassword(payload.password);
+        if (!verified) throw new Error();
+
+        const offlineSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
+        const offlineKD: Uint8Array = yield getOfflineKeyDerivation(payload.password, offlineSalt);
+
+        authStore.setOfflineConfig({ salt: uint8ArrayToString(offlineSalt), params: OFFLINE_ARGON2_PARAMS });
+        authStore.setOfflineKD(uint8ArrayToString(offlineKD));
+        yield auth.persistSession();
+
+        yield put(offlineSetupSuccess(requestId));
+    } catch (error: unknown) {
+        authStore.setOfflineConfig(undefined);
+        authStore.setOfflineKD(undefined);
+        yield put(offlineSetupFailure(requestId, error));
+    }
+}
+
+export default function* watcher(options: RootSagaOptions): Generator {
+    yield takeLeading(offlineSetupIntent.match, offlineSetupWorker, options);
+}
