@@ -8490,6 +8490,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Wypróbuj ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Używany w Amazon do zakupów itp."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Użyj aliasu, zamiast swojego adresu e-mail. Dodaj tytuł i notatkę, aby śledzić, gdzie go używasz."
       ]
     },
     "Security Center - Action": {
@@ -9935,6 +9941,9 @@
       "Get advanced protection": [
         "Uzyskaj zaawansowaną ochronę"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Pobierz aplikacje ${ appName[APP_NAME] }"
+      ],
       "Groups": [
         "Grupy"
       ],
@@ -10416,11 +10425,11 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Hasło musi zawierać co najmniej ${ length } znak",
-        "Hasło musi zawierać co najmniej ${ length } znaki",
-        "Hasło musi zawierać co najmniej ${ length } znaków",
-        "Hasło musi zawierać co najmniej ${ length } znaków"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
       ],
       "Try a shorter username (${ n } character max)": [
         "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",

@@ -163,6 +163,9 @@
       "Clear all formatting": [
         "सारा फॉर्मेटिंग साफ करें"
       ],
+      "Clear application data": [
+        "एप्लिकेशन डेटा साफ़ करें"
+      ],
       "Clear browser data": [
         "ब्राउज़र डेटा साफ़ करें"
       ],
@@ -3121,7 +3124,7 @@
         "पता प्राथमिक निजी कुंजी नहीं मिली"
       ],
       "Alias options could not be resolved": [
-        "नकलीनाम ऑप्शन रिज़ॉल्व ना हो सके"
+        "नकली नाम के ऑप्शन रिज़ॉल्व ना हो सके"
       ],
       "Attachments are limited to 25 MB": [
         "अनुलग्नक 25 एमबी तक सीमित हैं"
@@ -3250,6 +3253,9 @@
       ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
+      ],
+      "Item content cannot exceed 40KB": [
+        "आइटम का कंटेंट 40 केबी से ज़्यादा बड़ा नहीं हो सकता"
       ],
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
@@ -8845,10 +8851,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "पासवर्ड में कम से कम ${ length } वर्ण होना चाहिए",
-        "पासवर्ड में कम से कम ${ length } वर्ण होने चाहिए"
-      ],
       "Try a shorter username (${ n } character max)": [
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
         "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
@@ -8885,6 +8887,18 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "यदि आपको अपना पासवर्ड याद नहीं है, तो अपनी कुंजी को फिर से सक्रिय करना असंभव है। हम आपको अलर्ट बैनर को खारिज करने में मदद कर सकते हैं लेकिन प्रक्रिया में आप उस कुंजी के साथ एन्क्रिप्ट किए गए सभी डेटा तक स्थायी रूप से पहुंच खो देंगे।"
       ],
+      "Invalid alias prefix": [
+        "नकली नाम का प्रीफिक्स अमान्य"
+      ],
+      "Missing alias prefix": [
+        "नकली नाम का प्रीफिक्स खाली"
+      ],
+      "Missing alias suffix": [
+        "नकली नाम का सफिक्स खाली"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "सिर्फ अल्फाबेट, नंबर, डॉट, हाइफन, और अंडरस्कोर इस्तेमाल कर सकते है"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "रिपोर्ट एंड-टू-एंड एन्क्रिप्टेड नहीं हैं, कृपया कोई संवेदनशील जानकारी न भेजें।"
       ],
@@ -8893,6 +8907,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "मर्ज किए जाने वाले कुछ संपर्क त्रुटि प्रदर्शित करते हैं। कृपया उनकी व्यक्तिगत रूप से समीक्षा करें"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "नकली नाम का प्रीफिक्स 40 कैरेक्टर से ज़्यादा लंबा नहीं हो सकता"
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "अनुलग्नक के हस्ताक्षर सत्यापन में विफल रहे।\nआप अभी भी इस अटैचमेंट को डाउनलोड कर सकते हैं लेकिन हो सकता है कि इसके साथ छेड़छाड़ की गई हो।",
@@ -8926,7 +8943,7 @@
         "हम मेल सर्वर को सत्यापित नहीं कर सके। यदि आप इस पर भरोसा करते हैं, तो आप इस सत्यापन को छोड़ सकते हैं।"
       ],
       "You must select at least one mailbox": [
-        "आपको कम से कम एक मेलबॉक्स चुनना होगा"
+        "आपको कम-से-कम एक मेलबॉक्स चुनना होगा"
       ],
       "You will lose any customization you made so far.": [
         "आप अब तक किए गए किसी भी अनुकूलन को खो देंगे।"
