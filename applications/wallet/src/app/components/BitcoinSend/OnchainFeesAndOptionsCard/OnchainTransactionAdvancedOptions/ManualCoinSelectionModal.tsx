@@ -81,7 +81,7 @@ export const ManualCoinSelectionModal = ({ modalState, account, selectedUtxos, o
                                                 {outpoint.slice(-10)}
                                             </TableCell>
                                             <TableCell>
-                                                <BitcoinAmount>{Number(utxo.value)}</BitcoinAmount>
+                                                <BitcoinAmount bitcoin={Number(utxo.value)} />
                                             </TableCell>
                                         </TableRow>
                                     );

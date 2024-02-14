@@ -49,9 +49,12 @@ export const BalanceOverview = (props: Props) => {
             <div className="grid-auto-fill mt-4 gap-4" style={{ '--min-grid-template-column-size': '16rem' }}>
                 <div data-testid="balance">
                     <p className="color-weak text-sm m-0">{c('Wallet Dashboard').t`My assets`}</p>
-                    <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} className="my-0.5 text-xl">
-                        {totalBalance}
-                    </BitcoinAmount>
+                    <BitcoinAmount
+                        bitcoin={totalBalance}
+                        unit={bitcoinUnit}
+                        fiat={fiatCurrency}
+                        firstClassName="my-0.5 text-xl"
+                    />
                 </div>
 
                 {dataCount > 1 && (
@@ -63,14 +66,13 @@ export const BalanceOverview = (props: Props) => {
                 <div data-testid="7DaysDifference">
                     <p className="color-weak m-0 text-sm">{c('Wallet Dashboard').t`Last 7 days`}</p>
                     <BitcoinAmount
+                        bitcoin={last7DaysBalanceDifference}
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className={clsx('my-0.5 text-xl')}
+                        firstClassName={clsx('my-0.5 text-xl')}
                         showColor
                         showExplicitSign
-                    >
-                        {last7DaysBalanceDifference}
-                    </BitcoinAmount>
+                    />
                 </div>
 
                 <div>
