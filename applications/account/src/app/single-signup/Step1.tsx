@@ -504,6 +504,7 @@ const Step1 = ({
                     cycle: newCycle,
                     planIDs: newPlanIDs,
                     checkResult,
+                    billingAddress: newBillingAddress,
                 },
                 optimistic: {},
             }));
