@@ -635,10 +635,10 @@
       "No": [
         "Non"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -3903,7 +3903,7 @@
         "La clé de l'organisation n'est pas déchiffrée."
       ],
       "Organization key must be activated to create non-private users": [
-        "La clé de l'organisation oit être activée pour créer des utilisateurs non privés."
+        "La clé de l'organisation doit être activée pour créer des utilisateurs non privés."
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
@@ -12827,7 +12827,7 @@
         "En passant à un abonnement inférieur, vous perdrez les avantages suivants. Voulez-vous vraiment continuer ?"
       ],
       "Consider upgrading your plan to continue to use your account without interruptions.": [
-        "Pensez à changer d'abonnement pour continuer à utiliser votre compte sans interruptions."
+        "Pensez à changer d'abonnement pour continuer à utiliser votre compte sans interruption."
       ],
       "contact your administrator": [
         "contacter votre administrateur"
@@ -12888,7 +12888,7 @@
         "Vous n'aurez plus accès à ${ gb } d'espace de stockage et à l'assistance prioritaire."
       ],
       "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
-        "Vous n'aurez plus accès à espace de stockage supplémentaire, aux adresses e-mail, alias, calendriers et à l'assistance prioritaire."
+        "Vous n'aurez plus accès à votre espace de stockage supplémentaire, à vos adresses e-mail, alias, calendriers, ainsi que l'assistance prioritaire."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
         "Vous n'aurez plus accès l'accès à la vitesse VPN la plus élevée, la protection pour 10 appareils, au streaming haute vitesse, au bloqueur de publicités et à la protection contre les logiciels malveillants et à l'assistance prioritaire."
@@ -14822,10 +14822,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère.",
-        "Le mot de passe doit comporter au moins ${ length } caractères."
-      ],
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
