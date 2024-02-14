@@ -5904,6 +5904,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
       ],
+      "Used on amazon for shopping, etc.": [
+        "Digunakan oleh berbagai layanan mis. Amazon untuk berjualan"
+      ],
       "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Pada saat Anda diminta untuk mengisi alamat email, gunakan alias ini. Setelahnya, berikan judul dan keterangan agar Anda dapat melacak di mana alias ini digunakan."
       ]
@@ -7115,9 +7118,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi harus mengandung minimal ${ length } karakter"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
