@@ -28,7 +28,6 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { endOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -256,14 +255,6 @@ const LoginContainer = ({
                                             }
                                         } catch (e) {
                                             const error = getApiError(e);
-
-                                            if (
-                                                isElectronApp &&
-                                                error.code === API_CUSTOM_ERROR_CODES.INBOX_DESKTOP_TRIAL_END
-                                            ) {
-                                                endOfTrialIPCCall();
-                                                return;
-                                            }
 
                                             // This is required to display and upsell modal while the beta of the desktop app is running
                                             if (
