@@ -6,7 +6,8 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 export const selectCachableState = (state: State) => {
     const whiteListedState = asIfNotOptimistic(state, reducerMap);
 
-    /* keep non-expired request metadata */
+    /** Filter stale request metadata and optimisticIds */
+    whiteListedState.items.byOptimisticId = {};
     whiteListedState.request = objectFilter(
         whiteListedState.request,
         (_, request) => request.status === 'success' && request.expiresAt !== undefined

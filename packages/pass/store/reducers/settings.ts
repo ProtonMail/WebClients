@@ -4,6 +4,8 @@ import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     itemCreationSuccess,
+    offlineDisable,
+    offlineSetupSuccess,
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
     sessionLockSync,
@@ -34,6 +36,7 @@ export type SettingsState = {
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     sessionLockRegistered: boolean;
     sessionLockTTL?: number;
+    offlineEnabled?: boolean;
 };
 
 /* proxied settings will also be copied on local
@@ -114,6 +117,9 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
             },
         });
     }
+
+    if (offlineSetupSuccess.match(action)) return partialMerge<SettingsState>(state, { offlineEnabled: true });
+    if (offlineDisable.match(action)) return { ...state, offlineEnabled: false };
 
     return state;
 };

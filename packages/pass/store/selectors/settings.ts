@@ -24,3 +24,4 @@ export const selectDisallowedDomains = ({ settings }: State): DomainCriterias =>
 export const selectLocale = ({ settings }: State) => settings.locale;
 export const selectPasswordOptions = (state: State) => state.settings.passwordOptions;
 export const selectCreatedItemsCount = ({ settings }: State) => settings.createdItemsCount;
+export const selectOfflineEnabled = ({ settings }: State) => settings.offlineEnabled ?? false;

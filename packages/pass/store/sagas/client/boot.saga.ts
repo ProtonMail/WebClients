@@ -25,6 +25,7 @@ function* bootWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
         yield loadCryptoWorker();
+
         /* merge the existing cache to preserve any state that may have been
          * mutated before the boot sequence (session lock data) */
         const mergeCache = (existing: State, incoming: State) => merge(existing, incoming, { excludeEmpty: true });
