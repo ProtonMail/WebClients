@@ -308,9 +308,6 @@
       "Pin item": [
         "Przypnij element"
       ],
-      "Recent": [
-        "Ostatnie"
-      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -845,14 +842,14 @@
       "Access successfully confirmed": [
         "Dostęp został potwierdzony"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "Dostęp do ${ PASS_APP_NAME } wymaga kodu PIN, aby odblokować sesję"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Dostęp do haseł z aplikacji mobilnej."
       ],
       "Admin": [
         "Administrator"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Będziesz używać kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji. Wylogowanie nastąpi po 3 nieudanych próbach logowania."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
@@ -1683,9 +1680,6 @@
       ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
-      ],
-      "Selected": [
-        "Wybrano"
       ],
       "Session locking": [
         "Blokowanie sesji"
