@@ -81,12 +81,13 @@ describe('Composer expiration', () => {
 
     it('should display expiration banner and open expiration modal when clicking on edit', async () => {
         const expirationDate = addDays(new Date(), 7);
-        const expirationTime = expirationDate.getTime() / 1000;
         const datePlaceholder = format(expirationDate, 'PP', { locale: dateLocale });
 
         const { getByText, getByTestId } = await setup({
             localID: ID,
-            data: { MIMEType: 'text/plain' as MIME_TYPES, ExpirationTime: expirationTime },
+            draftFlags: {
+                expiresIn: expirationDate,
+            },
             messageDocument: { plainText: '' },
         });
 
@@ -97,12 +98,14 @@ describe('Composer expiration', () => {
             fireEvent.click(editButton);
         });
 
-        getByText('Expiring message');
+        getByText('Edit expiration time');
         const dayInput = getByTestId('composer:expiration-days') as HTMLInputElement;
         const hoursInput = getByTestId('composer:expiration-hours') as HTMLInputElement;
 
+        const time = expirationDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+
         // Check if default expiration is in 7 days and at 9 o'clock
         expect(dayInput.value).toEqual(datePlaceholder);
-        expect(hoursInput.value).toEqual('9:00 AM');
+        expect(hoursInput.value).toEqual(time);
     });
 });
