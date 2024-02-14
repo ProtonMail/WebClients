@@ -1113,10 +1113,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
