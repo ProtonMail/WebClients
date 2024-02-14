@@ -308,9 +308,6 @@
       "Pin item": [
         "Anclar elemento"
       ],
-      "Recent": [
-        "Reciente"
-      ],
       "Refresh the page": [
         "Refrescar la página"
       ],
@@ -824,14 +821,14 @@
       "Access successfully confirmed": [
         "El acceso fue confirmado."
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "El acceso a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear su sesión"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Acceda a sus contraseñas sobre la marcha con nuestras apps móviles."
       ],
       "Admin": [
         "Administrador"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Después del tiempo de inactividad, para acceder a ${ PASS_APP_NAME } se requerirá un código PIN para desbloquear su sesión.\nSe cerrará la sesión después de 3 intentos fallidos."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar sus datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."

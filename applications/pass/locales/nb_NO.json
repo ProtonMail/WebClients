@@ -275,9 +275,6 @@
       "Pin item": [
         "Fest element"
       ],
-      "Recent": [
-        "Nylig"
-      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -731,11 +728,11 @@
       "Access successfully confirmed": [
         "Tilgang bekreftet"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "Tilgang til ${ PASS_APP_NAME } krever en PIN-kode for å låse opp økten."
-      ],
       "Admin": [
         "Administrator"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Etter inaktivitet krever tilgang til ${ PASS_APP_NAME } en PIN-kode for å låse opp økten. Du blir logget ut etter 3 mislykkede forsøk."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."

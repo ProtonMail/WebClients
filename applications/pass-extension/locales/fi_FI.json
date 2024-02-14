@@ -308,9 +308,6 @@
       "Pin item": [
         "Kiinnitä kohde"
       ],
-      "Recent": [
-        "Viimeisimmät"
-      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -824,9 +821,6 @@
       "Access successfully confirmed": [
         "Käyttöoikeus vahvistettiin"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "${ PASS_APP_NAME }-istuntosi avaus vaatii PIN-koodin"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
       ],
@@ -1113,6 +1107,9 @@
       "Please enter your current PIN code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
+      ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
@@ -1230,6 +1227,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }-tilauksesi"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
       ],
       "Use vaults to share this item with others.": [
         "Jaa kohde muille holvien avulla."
@@ -2009,6 +2009,9 @@
       ],
       "Update available": [
         "Päivitys saatavilla"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Avaa premium-ominaisuudet päivittämällä tilauksesi"
       ],
       "Use my email": [
         "Käytä sähköpostiosoitettani"

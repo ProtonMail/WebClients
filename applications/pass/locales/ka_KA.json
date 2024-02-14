@@ -275,9 +275,6 @@
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
-      "Recent": [
-        "უახლესი"
-      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -728,9 +725,6 @@
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "${ PASS_APP_NAME }-სთან წვდომას თქვენი სესიის განბლოკვისთვის PIN-კოდი დასჭირდება"
-      ],
       "Admin": [
         "ადმინისტრატორი"
       ],
@@ -984,6 +978,9 @@
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
+      ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
@@ -1086,6 +1083,9 @@
       ],
       "Unpinning item...": [
         "ელემენტის მოხსნა..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
       ],
       "Use vaults to share this item with others.": [
         "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
@@ -1354,7 +1354,7 @@
         "ყველას მონიშვნა რედაქტორად"
       ],
       "Make all viewers": [
-        "ყველას მონიშვნა დამთვარელიერებლად"
+        "ყველას მონიშვნა დამთვალიერებლად"
       ],
       "Members": [
         "წევრები"
@@ -1785,6 +1785,9 @@
       ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა"
       ],
       "Vault": [
         "საცავი"
