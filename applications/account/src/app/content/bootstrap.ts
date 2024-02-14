@@ -7,6 +7,8 @@ import { mailSettingsThunk } from '@proton/mail';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -29,6 +31,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initSafariFontFixClassnames();
 
     const appName = config.APP_NAME;
+
+    if (isElectronApp) {
+        listenFreeTrialSessionExpiration(api);
+    }
 
     const run = async () => {
         const appContainerPromise = getAppContainer();

@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalState } from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { canInvokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import protonDesktop from '@proton/styles/assets/img/illustrations/proton-desktop.svg';
 
 import useInboxFreeTrial from './useInboxFreeTrial';
@@ -28,6 +30,12 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
     const handleClose = () => {
         setModalState(false);
         startFreeTrial();
+    };
+
+    const handleUpgradeClick = () => {
+        if (canInvokeInboxDesktopIPC) {
+            window.ipcInboxMessageBroker?.send('openExternal', getAppHref('/', APPS.PROTONACCOUNT));
+        }
     };
 
     // TODO - Open the upgrade button in the desktop app once MR is merged
@@ -53,8 +61,9 @@ const InboxDesktopFreeTrialOnboardingModal = () => {
                         <hr className="mb-4" />
                         <p className="m-0 color-weak">{c('Free trial desktop')
                             .t`Get unimited acces with paid ${BRAND_NAME} plan`}</p>
-                        <Button color="norm" shape="underline" className="m-0">{c('Free trial desktop')
-                            .t`Upgrade now`}</Button>
+                        <Button color="norm" shape="underline" className="m-0" onClick={handleUpgradeClick}>{c(
+                            'Free trial desktop'
+                        ).t`Upgrade now`}</Button>
                     </ModalTwoFooter>
                 </ModalTwo>
             )}

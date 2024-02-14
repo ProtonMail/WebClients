@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import {
     AbuseModal,
     DesktopAppLoginErrorUpsell,
-    InboxDesktopFreeTrialEnded,
     OnLoginCallback,
     useApi,
     useConfig,
@@ -16,7 +15,6 @@ import {
     useModalState,
 } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
-import useInboxFreeTrialEnded from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrialEnded';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthActionResponse, AuthCacheResult, AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import {
@@ -30,6 +28,7 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { endOfTrialIPCCall } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -121,8 +120,6 @@ const LoginContainer = ({
     const visionaryUpsellEnabled = useFlag('DesktopAppUpsellModal');
     const [displayUpsellDesktop, handleDisplayUpsellDesktop, renderDisplayUpsellDesktop] = useModalState();
 
-    const { hasTrialEnded } = useInboxFreeTrialEnded();
-
     useEffect(() => {
         // Preparing login improvements
         void silentApi(queryAvailableDomains('login'));
@@ -130,12 +127,6 @@ const LoginContainer = ({
             cacheRef.current = undefined;
         };
     }, []);
-
-    useEffect(() => {
-        if (hasTrialEnded) {
-            setStep(AuthStep.FREE_TRIAL_ENDED);
-        }
-    }, [hasTrialEnded]);
 
     const handleCancel = () => {
         createFlow.reset();
@@ -265,6 +256,14 @@ const LoginContainer = ({
                                             }
                                         } catch (e) {
                                             const error = getApiError(e);
+
+                                            if (
+                                                isElectronApp &&
+                                                error.code === API_CUSTOM_ERROR_CODES.INBOX_DESKTOP_TRIAL_END
+                                            ) {
+                                                endOfTrialIPCCall();
+                                                return;
+                                            }
 
                                             // This is required to display and upsell modal while the beta of the desktop app is running
                                             if (
@@ -397,9 +396,6 @@ const LoginContainer = ({
                         ),
                     })}
                 </>
-            )}
-            {step === AuthStep.FREE_TRIAL_ENDED && isElectronApp && (
-                <InboxDesktopFreeTrialEnded backToLoginClick={() => setStep(AuthStep.LOGIN)} />
             )}
         </>
     );
