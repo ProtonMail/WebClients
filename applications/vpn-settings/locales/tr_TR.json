@@ -425,6 +425,9 @@
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
       ],
+      "Select country": [
+        "Ülke seçin"
+      ],
       "Select file": [
         "Dosya seçin"
       ],
@@ -5916,6 +5919,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Faturalanacak ülke"
+      ],
       "Card number": [
         "Kart numarası"
       ],
@@ -6736,6 +6742,12 @@
       "For all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetleri için"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
       ],
@@ -6752,8 +6764,20 @@
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } depolama alanınız dolmuş. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
       "Your storage is full": [
         "Depolama alanınız dolu"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "${ gb } depolama alanına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
@@ -7822,10 +7846,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

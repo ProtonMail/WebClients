@@ -1110,9 +1110,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "パスワードは ${ length } 文字以上必要です"
-      ],
       "Try a shorter username (${ n } character max)": [
         "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]

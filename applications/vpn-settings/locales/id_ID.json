@@ -5112,6 +5112,9 @@
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "Brankas terbagi yang tak terbatas dengan perizinan akses"
+      ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
       ],
@@ -5668,6 +5671,9 @@
       "Set up your organization": [
         "Atur organisasi Anda"
       ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Mulai menambahkan pengguna untuk memberikan mereka akses ke ${ PASS_APP_NAME }."
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Mulai gunakan ${ PASS_APP_NAME }"
       ]
@@ -5809,6 +5815,12 @@
       ],
       "To enable administrator rights on your account, activate the organization key.": [
         "Untuk mengaktifkan hak administrator pada akun Anda, aktifkan kunci organisasi terlebih dahulu."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Gunakan metode pemulihan data atau atur ulang kunci organisasi untuk memulihkan hak administrator."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Gunakan metode pemulihan data, hubungi administrator lain, atau atur ulang kunci organisasi untuk memulihkan hak administrator."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Kami tidak dapat memastikan keamanan kunci alamat pengirim ini. Terkadang, hal ini disebabkan oleh terdapatnya jeda dalam memperbarui informasi pengirim. Silakan coba lagi nanti. Apabila Anda tidak memercayai keabsahan undangan atau pengirim ini, silakan hubungi Layanan Dukungan ${ BRAND_NAME }."
@@ -7713,9 +7725,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi harus mengandung minimal ${ length } karakter"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]

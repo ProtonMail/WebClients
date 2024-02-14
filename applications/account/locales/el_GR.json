@@ -635,11 +635,11 @@
       "No": [
         "Όχι"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -820,6 +820,9 @@
       ],
       "Select calendar view": [
         "Επιλέξτε προβολή ημερολογίου"
+      ],
+      "Select country": [
+        "Επιλογή χώρας"
       ],
       "Select files": [
         "Επιλέξτε αρχεία"
@@ -3899,6 +3902,9 @@
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -4074,6 +4080,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να επαναφέρετε τα δικαιώματα διαχειριστή."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -6095,6 +6104,9 @@
       "Are you sure you want to discard your import?": [
         "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Είστε βέβαιοι ότι θέλετε να δώσετε δικαιώματα διαχειριστή σε αυτόν τον χρήστη;"
+      ],
       "Are you sure you want to permanently delete all your logs?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά όλα τα αρχεία σας καταγραφής;"
       ],
@@ -6612,6 +6624,9 @@
       ],
       "inactive": [
         "ανενεργό"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -8046,6 +8061,9 @@
       "Credit": [
         "Πίστωση"
       ],
+      "Credit note": [
+        "Πιστωτικό Τιμολόγιο"
+      ],
       "Currency conversion": [
         "Μετατροπή Νομίσματος"
       ],
@@ -8149,6 +8167,9 @@
       ],
       "Expand / contract composer": [
         "Ανάπτυξη / σύμπτυξη συντάκτη"
+      ],
+      "Filter": [
+        "Φίλτρο"
       ],
       "Forward": [
         "Προώθηση"
@@ -9908,6 +9929,9 @@
       "Inbox": [
         "Εισερχόμενα"
       ],
+      "Pass vaults": [
+        "Pass κρύπτες"
+      ],
       "Spam": [
         "Ανεπιθύμητα"
       ]
@@ -10088,6 +10112,9 @@
       "Autofill credit cards (coming soon)": [
         "Αυτόματη συμπλήρωση πιστωτικών καρτών (σύντομα διαθέσιμη)"
       ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
       ],
@@ -10225,6 +10252,9 @@
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
+      "Require 2FA for organization": [
+        "Απαιτείται 2FA για οργάνωση"
+      ],
       "Router support": [
         "Υποστήριξη δρομολογητή"
       ],
@@ -10258,6 +10288,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
       ],
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
@@ -10300,6 +10333,9 @@
       ],
       "Unlimited messages per day": [
         "Απεριόριστα μηνύματα ανά ημέρα"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
@@ -10488,6 +10524,9 @@
       "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
+      "The organization name will be visible to your users while they are signed in.": [
+        "Το όνομα του οργανισμού θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
+      ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Για να ξεκινήσετε, επιλέξτε ένα εμφανιζόμενο όνομα. Αυτό θα βλέπουν οι χρήστες όταν στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου, τους προσκαλείτε σε ένα συμβάν ή μοιράζεστε ένα αρχείο."
       ],
@@ -10553,6 +10592,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Σας επιτρέπει να ρυθμίσετε αυτόματες απαντήσεις (αυτόματη απάντηση) για τα εισερχόμενα μηνύματά σας"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Προωθήστε αυτόματα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον λογαριασμό σας ${ MAIL_APP_NAME } σε οποιαδήποτε άλλη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Η μαζική διαφημιστική ή προγραμματική αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου δεν υποστηρίζεται προς το παρόν. Συνιστούμε να χρησιμοποιήσετε έναν αποκλειστικό παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου για αυτήν την περίπτωση χρήσης."
@@ -11222,8 +11264,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Μεταβείτε στην κρύπτη για να διαχειριστείτε τους κωδικούς πρόσβασης, τα ψευδώνυμα και πολλά άλλα."
+      ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Ξεκινήστε να προσθέτετε χρήστες για να τους δώσετε πρόσβαση στο ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Έναρξη χρήσης του ${ PASS_APP_NAME }"
@@ -11260,6 +11308,9 @@
       "Or ${ createANewAccount }": [
         "Ή ${ createANewAccount }"
       ],
+      "Request trial": [
+        "Ζητήστε δοκιμαστική έκδοση"
+      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
       ],
@@ -11293,6 +11344,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "Συνεχίστε με το ${ BRAND_NAME } λογαριασμό σας"
+      ],
+      "Let's talk": [
+        "Ας μιλήσουμε"
       ],
       "Limited time offer": [
         "Προσφορά περιορισμένου χρόνου"
@@ -11338,8 +11392,14 @@
       "/month /user, billed biennially": [
         "/μήνας /χρήστης, χρεώνεται ανά διετία"
       ],
+      "Advanced protection that goes beyond industry standards": [
+        "Προηγμένη προστασία που υπερβαίνει τα βιομηχανικά πρότυπα"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Με έδρα την Ελβετία, συμμορφώνεται με το GDPR"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Αλλά μπορείτε να λάβετε έκπτωση ${ discount } αναβαθμίζοντας σε **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
@@ -11383,6 +11443,15 @@
       "End-to-end encryption": [
         "Διατερματική κρυπτογράφηση"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Εισαγάγετε ένα εμφανιζόμενο όνομα για το **${ username }**. Αυτό θα βλέπουν οι χρήστες σας όταν αλλάζετε τα δικαιώματά τους ή μοιράζεστε δεδομένα μαζί τους."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Βασική προστασία και ασφαλής συνεργασία για απεριόριστους χρήστες"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Τα πάντα από ${ planTitle }, συν..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
       ],
@@ -11395,6 +11464,9 @@
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
+      "From the team that knows encryption": [
+        "Από την ομάδα που γνωρίζει την κρυπτογράφηση"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Λάβετε το ${ appName } για ${ browserName }"
       ],
@@ -11403,6 +11475,9 @@
       ],
       "Get in touch with our sales team": [
         "Επικοινωνήστε με την ομάδα πωλήσεών μας"
+      ],
+      "Get the security and features your business needs": [
+        "Αποκτήστε την ασφάλεια και τις δυνατότητες που χρειάζεται η επιχείρησή σας"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Τα Hide-my-email ψευδώνυμα προστατεύουν το ηλεκτρονικό ταχυδρομείο σας από παραβιάσεις δεδομένων"
@@ -11437,8 +11512,14 @@
       "Launching ${ PASS_APP_NAME }": [
         "Εκκίνηση του ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
+        "Προσφορά περιορισμένου χρόνου: Λάβετε ${ title } για ${ price } ανά χρήστη μηνιαίως!"
+      ],
       "One easy subscription.": [
         "Μία εύκολη συνδρομή."
+      ],
+      "Open source and audited": [
+        "Ανοιχτού κώδικα και ελεγμένο"
       ],
       "Open-source and audited": [
         "Ανοιχτού κώδικα και ελεγμένο"
@@ -11530,23 +11611,83 @@
     "pass_signup_2023: title": {
       "For businesses": [
         "Για επιχειρήσεις"
+      ],
+      "For invididuals": [
+        "Για ιδιώτες"
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Όλοι οι διαχειριστές θα έχουν πρόσβαση στο κλειδί."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Είστε βέβαιοι ότι θέλετε να αλλάξετε το κλειδί του οργανισμού σας;"
+      ],
       "Change organization key": [
         "Αλλαγή κλειδιού οργανισμού"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Οι μη ιδιωτικοί χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν έχουν κλειδιά εγκατάστασης"
       ],
       "Organization key activated": [
         "Το κλειδί οργανισμού ενεργοποιήθηκε"
       ],
+      "Organization key does not exist.": [
+        "Το κλειδί οργανισμού δεν υπάρχει."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για να εκχωρήσει δικαιώματα διαχειριστή"
+      ],
+      "Organization key restored": [
+        "Το κλειδί του οργανισμού έχουν αποκατασταθεί"
+      ],
+      "Organization key updated": [
+        "Ενημερώθηκε το κλειδί οργανισμού"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
       ],
       "Reset organization key": [
         "Επαναφορά κλειδιού οργανισμού"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Οι ακόλουθοι διαχειριστές θα έχουν πρόσβαση στο κλειδί οργανισμού."
+      ],
       "The organization key must be activated first.": [
         "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Αυτό θα στείλει το πιο πρόσφατο κλειδί οργανισμού στους διαχειριστές που αυτήν τη στιγμή δεν έχουν πρόσβαση σε αυτό."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να ενεργοποιήσετε το κλειδί του οργανισμού σας."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Για να ενεργοποιήσετε τα δικαιώματα διαχειριστή στο λογαριασμό σας, ενεργοποιήστε το κλειδί οργανισμού."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης δεδομένων ή επαναφέρετε το κλειδί οργανισμού για να επαναφέρετε δικαιώματα διαχειριστή."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης δεδομένων, επικοινωνήστε με έναν άλλο διαχειριστή ή επαναφέρετε το κλειδί οργανισμού για να επαναφέρετε δικαιώματα διαχειριστή."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Δεν ήταν δυνατή η επαλήθευση της ασφάλειας του κλειδιού διεύθυνσης αυτού του αποστολέα. Μερικές φορές υπάρχει καθυστέρηση στην ενημέρωση των πληροφοριών του αποστολέα. Δοκιμάστε ξανά αργότερα. Εάν δεν εμπιστεύεστε την εγκυρότητα αυτής της πρόσκλησης ή του αποστολέα, επικοινωνήστε με την υποστήριξη πελατών του ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Έχουμε επαληθεύσει την αυθεντικότητα αυτού του αποστολέα και της πρόσκλησης."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Έχετε γίνει διαχειριστής του οργανισμού **${ organizationName }** από"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Πρέπει να ιδιωτικοποιήσετε όλους τους χρήστες πριν δημιουργήσετε ένα νέο κλειδί οργανισμού"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
     "Payment method option": {
@@ -11558,6 +11699,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Χώρα χρέωσης"
+      ],
       "Card number": [
         "Αριθμός κάρτας"
       ],
@@ -11566,6 +11710,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "Timeout exceeded": [
+        "Υπέρβαση χρονικού ορίου"
       ]
     },
     "Payments.Error": {
@@ -11904,6 +12051,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } διαχειριστής στον οργανισμό σας χρειάζεται πρόσβαση στο κλειδί οργανισμού.",
+        "${ n } διαχειριστές στον οργανισμό σας χρειάζονται πρόσβαση στο κλειδί οργανισμού."
+      ],
       "Changing organization keys": [
         "Γίνεται αλλαγή κλειδιών οργανισμού"
       ],
@@ -12687,6 +12838,12 @@
       "Get more storage": [
         "Αποκτήστε περισσότερο χώρο αποθήκευσης"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Δοκιμάστε το ${ app } στο μέγιστο των δυνατοτήτων του"
       ],
@@ -12712,8 +12869,20 @@
       "Your ${ appStorage } is full": [
         "Ο ${ appStorage } είναι γεμάτος"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ο ${ storage } είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ο ${ storage } είναι γεμάτος. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
       "Your storage is full": [
         "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Θα χάσετε την πρόσβαση σε ${ gb } χώρου αποθήκευσης και υποστήριξη προτεραιότητας."
@@ -12905,6 +13074,9 @@
       ],
       "Address updated": [
         "Η διεύθυνση ενημερώθηκε"
+      ],
+      "Administrator privileges restored": [
+        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Auto-reply disabled": [
         "Η αυτόματη απάντηση απενεργοποιήθηκε"
@@ -13922,6 +14094,9 @@
       "Organization filters": [
         "Φίλτρα οργανισμού"
       ],
+      "Organization key": [
+        "Κλειδί οργανισμού"
+      ],
       "Organization name": [
         "Όνομα οργανισμού"
       ],
@@ -14644,10 +14819,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
@@ -14818,6 +14989,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Εντοπίσαμε ένα πρόβλημα με τη ρύθμιση παραμέτρων DNS. Βεβαιωθείτε ότι τα αρχεία σας ταιριάζουν με τις παρακάτω οδηγίες. Εάν το πρόβλημα εξακολουθεί, θα πρέπει να αλλάξουμε την αποσύνδεση DKIM."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Πρέπει να ${ activateLink } το κλειδί οργανισμού πριν προσθέσετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου σε ένα μη ιδιωτικό μέλος."
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."

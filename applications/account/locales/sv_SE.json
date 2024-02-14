@@ -635,11 +635,11 @@
       "No": [
         "Nej"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
@@ -6978,6 +6978,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Försök igen, använd en annan betalningsmetod eller kontakta PayPal för hjälp."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken.",
+        "Använd ett lösenord som är mer än ${ MIN_PASSWORD_LENGTH } tecken."
       ],
       "Please use another browser or download the file.": [
         "Använd en annan webbläsare eller ladda ner filen."
@@ -13601,6 +13605,9 @@
       "Are you sure you want to close?": [
         "Är du säker på att du vill stänga?"
       ],
+      "Are you sure?": [
+        "Är du säker?"
+      ],
       "Authentication security": [
         "Autentiseringssäkerhet"
       ],
@@ -14816,9 +14823,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lösenordet måste innehålla minst ${ length } tecken",
-        "Lösenordet måste innehålla minst ${ length } tecken"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prova ett kortare användarnamn (max ${ n } antal tecken)",
