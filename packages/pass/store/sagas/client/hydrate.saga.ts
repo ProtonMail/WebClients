@@ -1,7 +1,8 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
+import { decryptCache } from '@proton/pass/lib/cache/decrypt';
+import { getCacheKey } from '@proton/pass/lib/cache/keys';
 import { PassCrypto } from '@proton/pass/lib/crypto';
-import { decryptCachedState, sanitizeCache } from '@proton/pass/lib/crypto/utils/cache.decrypt';
 import type { UserData } from '@proton/pass/lib/user/user.requests';
 import { getUserData } from '@proton/pass/lib/user/user.requests';
 import {
@@ -16,7 +17,7 @@ import {
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
+import { type Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -24,10 +25,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 /** `allowFailure` defines how we should treat cache decryption errors.
  * If `true` they will be by-passed - else you can pass a custom error
  * generator function that will be triggered */
-type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State } & (
-    | { allowFailure: true }
-    | { allowFailure: false; onError?: () => Generator }
-);
+type HydrateCacheOptions = {
+    merge: (existing: State, incoming: State) => State;
+    loginPassword?: string;
+} & ({ allowFailure: true } | { allowFailure: false; onError?: () => Generator });
 
 function* resolveUserState(cache: Maybe<PassCache>) {
     if (cache?.state.user) return cache.state.user;
@@ -56,25 +57,31 @@ function* resolveUserState(cache: Maybe<PassCache>) {
 export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
     try {
         const authStore = getAuthStore();
-        const keyPassword = authStore.getPassword() ?? '';
-        const sessionLockToken = authStore.getLockToken();
-        const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
+        const keyPassword = authStore.getPassword();
+        const { loginPassword, allowFailure } = config;
 
-        const cache: Maybe<PassCache> = yield decryptCachedState(encryptedCache, sessionLockToken)
-            .then(sanitizeCache)
-            .catch((err) => (config.allowFailure ? undefined : throwError(err)));
+        const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
+        const cacheKey: Maybe<CryptoKey> = yield getCacheKey(encryptedCache, authStore, loginPassword);
+
+        const cache: Maybe<PassCache> = cacheKey
+            ? yield decryptCache(cacheKey, encryptedCache).catch((err) => (allowFailure ? undefined : throwError(err)))
+            : undefined;
 
         const userState: HydratedUserState = yield call(resolveUserState, cache);
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
 
+        const snapshot = cache?.snapshot;
         const state: State = {
             ...(cache?.state ? config.merge(currentState, cache.state) : currentState),
             user: userState,
         };
 
-        yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot, clear: true });
+        /** If `keyPassword` is not defined then we may be dealing with an offline
+         * state hydration in which case hydrating PassCrypto would throw. In such
+         * cases, wait for network online in order to resume session */
+        if (keyPassword) yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot, clear: true });
         yield put(stateHydrate(state));
 
         return cache?.state !== undefined && cache?.snapshot !== undefined;
