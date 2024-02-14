@@ -47,6 +47,9 @@ type ApiNotificationEvent = {
 };
 type ApiLogoutEvent = {
     type: 'logout';
+    payload: {
+        error: any;
+    };
 };
 type ApiMissingScopeEvent = {
     type: 'missing-scopes';
@@ -248,7 +251,7 @@ const createApi = ({
                 }
 
                 if (e.name === 'InactiveSession') {
-                    notify({ type: 'logout' });
+                    notify({ type: 'logout', payload: { error: e } });
                     throw e;
                 }
 

@@ -1,6 +1,8 @@
-export const InactiveSessionError = () => {
+export const InactiveSessionError = (originalError?: any) => {
     const error = new Error('Inactive session');
     error.name = 'InactiveSession';
+    // @ts-ignore
+    error.originalError = originalError;
     return error;
 };
 

@@ -31,3 +31,4 @@ export const isElectronPass = isElectronApp && /ProtonPass/i.test(ua.ua);
  */
 export const electronAppVersion = ua.ua.match(/((ProtonMail|ProtonPass)\/)(?<version>([0-9][.]).{3})/i)?.groups
     ?.version;
+

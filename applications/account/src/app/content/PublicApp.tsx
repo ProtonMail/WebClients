@@ -8,6 +8,7 @@ import {
     ApiProvider,
     AuthenticationProvider,
     ErrorBoundary,
+    InboxDesktopFreeTrialEnded,
     ModalsChildren,
     NotificationsChildren,
     ProtonApp,
@@ -569,6 +570,11 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                                 })
                                                             }
                                                         />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path="/trial-ended">
+                                                    <UnAuthenticated>
+                                                        <InboxDesktopFreeTrialEnded />
                                                     </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
