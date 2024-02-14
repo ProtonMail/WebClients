@@ -92,8 +92,9 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 onSettingsUpdated: settings.sync,
 
                 setCache: async (encryptedCache) => {
+                    const userID = authStore.getUserID();
                     /** Cache only if the tab is visible to avoid extraneous IDB writes */
-                    if (isDocumentVisible()) return writeDBCache(authStore.getUserID()!, encryptedCache);
+                    if (userID && isDocumentVisible()) return writeDBCache(userID, encryptedCache);
                 },
             })
         );
