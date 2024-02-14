@@ -137,7 +137,7 @@ const SSOForkProducer = ({ loader, type, onActiveSessions, onInvalidFork, onProd
             const handleActiveSessions = async (activeSessionsResult: GetActiveSessionsResult) => {
                 const { session, sessions } = activeSessionsResult;
 
-                if (session && sessions.length === 1 && type === undefined) {
+                if (session && sessions.length === 1 && forkType === undefined) {
                     const { UID, keyPassword, persistent, trusted } = session;
                     await onProduceFork({
                         type: SSOType.Proton,
