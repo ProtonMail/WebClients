@@ -2,15 +2,12 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { getMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
-import {
-    DEFAULT_ENCRYPTION_CONFIG,
-    ENCRYPTION_CONFIGS,
-    ENCRYPTION_TYPES,
-    MEMBER_PRIVATE,
-} from '@proton/shared/lib/constants';
+import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -23,6 +20,7 @@ import {
     missingKeysSelfProcess,
     setupMemberKeys,
 } from '@proton/shared/lib/keys';
+import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 import noop from '@proton/utils/noop';
 
 import {
@@ -42,24 +40,19 @@ import {
 import {
     useApi,
     useAuthentication,
+    useErrorHandler,
     useEventManager,
     useGetAddresses,
+    useGetOrganization,
     useGetOrganizationKey,
     useGetUser,
     useGetUserKeys,
     useNotifications,
 } from '../../../hooks';
 import { useKTVerifier } from '../../keyTransparency';
-import SelectEncryption from '../../keys/addKey/SelectEncryption';
 import MissingKeysStatus from './MissingKeysStatus';
 import { AddressWithStatus, Status } from './interface';
 import { updateAddress } from './state';
-
-enum STEPS {
-    INIT = 0,
-    DONE,
-    ERROR,
-}
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -78,8 +71,11 @@ const getStatus = (text: 'ok' | 'loading' | 'error') => {
     }
 };
 
+const encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG];
+
 const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }: Props) => {
     const api = useApi();
+    const silentApi = getSilentApi(api);
     const authentication = useAuthentication();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -87,10 +83,12 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const [step, setStep] = useState(STEPS.INIT);
+    const getOrganization = useGetOrganization();
     const getOrganizationKey = useGetOrganizationKey();
     const getUserKeys = useGetUserKeys();
     const getAddresses = useGetAddresses();
+    const dispatch = useDispatch();
+    const handleError = useErrorHandler();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
     const [formattedAddresses, setFormattedAddresses] = useState<AddressWithStatus[]>(() =>
         addressesToGenerate.map((address) => ({
@@ -103,22 +101,24 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
 
     const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
 
-    const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
-
     const processMember = async (member: Member) => {
-        const organizationKey = await getOrganizationKey();
-        if (!organizationKey?.privateKey) {
-            createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
-            return;
-        }
         try {
-            const [memberAddresses, addresses, userKeys] = await Promise.all([
-                getAllMemberAddresses(api, member.ID),
+            const [organization, organizationKey, memberAddresses, addresses, userKeys] = await Promise.all([
+                getOrganization(),
+                getOrganizationKey(),
+                dispatch(getMemberAddresses({ member, retry: true })),
                 getAddresses(),
                 getUserKeys(),
             ]);
 
-            const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
+            const error = validateOrganizationKey(getOrganizationKeyInfo(organization, organizationKey, addresses));
+            if (error) {
+                createNotification({ text: error, type: 'error' });
+                return;
+            }
+            if (!organizationKey?.privateKey) {
+                throw new Error('Missing key');
+            }
 
             const handleUpdate = (
                 addressID: string,
@@ -142,13 +142,13 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                     member,
                     memberAddresses,
                     password,
-                    api,
+                    api: silentApi,
                     keyTransparencyVerify,
                 });
                 addressesToGenerate.forEach((address) => handleUpdate(address.ID, { status: 'ok' }));
             } else {
                 await missingKeysMemberProcess({
-                    api,
+                    api: silentApi,
                     encryptionConfig,
                     ownerAddresses: addresses,
                     memberAddressesToGenerate: addressesToGenerate,
@@ -161,34 +161,40 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             }
             await keyTransparencyCommit(userKeys);
             await call();
+            createNotification({ text: c('Info').t`User activated` });
         } catch (e: any) {
-            createNotification({ text: e.message, type: 'error' });
+            handleError(e);
         }
     };
 
     const processSelf = async () => {
-        const [userKeys, addresses] = await Promise.all([getUserKeys(), getAddresses()]);
-        await missingKeysSelfProcess({
-            api,
-            userKeys,
-            addresses,
-            addressesToGenerate,
-            password: authentication.getPassword(),
-            encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-            onUpdate: (addressID, event) => {
-                setFormattedAddresses((oldState) => {
-                    return updateAddress(oldState, addressID, {
-                        status: {
-                            type: getStatus(event.status),
-                            tooltip: event.result,
-                        },
+        try {
+            const [userKeys, addresses] = await Promise.all([getUserKeys(), getAddresses()]);
+            await missingKeysSelfProcess({
+                api: silentApi,
+                userKeys,
+                addresses,
+                addressesToGenerate,
+                password: authentication.getPassword(),
+                encryptionConfig,
+                onUpdate: (addressID, event) => {
+                    setFormattedAddresses((oldState) => {
+                        return updateAddress(oldState, addressID, {
+                            status: {
+                                type: getStatus(event.status),
+                                tooltip: event.result,
+                            },
+                        });
                     });
-                });
-            },
-            keyTransparencyVerify,
-        });
-        await keyTransparencyCommit(userKeys);
-        await call();
+                },
+                keyTransparencyVerify,
+            });
+            await keyTransparencyCommit(userKeys);
+            await call();
+            createNotification({ text: c('Info').t`Keys created` });
+        } catch (e: any) {
+            handleError(e);
+        }
     };
 
     const handleSubmit = () => {
@@ -197,8 +203,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                 ? processSelf()
                 : processMember(member)
         )
-            .then(() => setStep(STEPS.DONE))
-            .catch(() => setStep(STEPS.ERROR));
+            .catch(noop)
+            .then(rest.onClose);
     };
 
     return (
@@ -215,29 +221,24 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
             }}
         >
             <ModalTwoHeader
-                title={
-                    shouldSetupMemberKeys
-                        ? c('Title').t`Activate account and generate keys`
-                        : c('Title').t`Generate missing keys`
-                }
+                title={shouldSetupMemberKeys ? c('Title').t`Activate user` : c('Title').t`Generate missing keys`}
             />
             <ModalTwoContent>
                 <p className="color-weak">
                     {shouldSetupMemberKeys
                         ? c('Info')
-                              .t`Before enabling the account you need to provide a password and create encryption keys for the new addresses.`
+                              .t`Before activating the user, you need to provide a password and create encryption keys for the addresses.`
                         : c('Info')
                               .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}
                 </p>
                 {shouldSetupMemberKeys && (
                     <>
                         <InputFieldTwo
-                            required
                             autoFocus
                             id="password"
                             as={PasswordInputTwo}
                             value={password}
-                            error={validator([passwordLengthValidator(password), requiredValidator(password)])}
+                            error={validator([requiredValidator(password), passwordLengthValidator(password)])}
                             onValue={setPassword}
                             label={c('Label').t`Password`}
                             placeholder={c('Placeholder').t`Password`}
@@ -251,6 +252,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                             value={confirmPassword}
                             onValue={setConfirmPassword}
                             error={validator([
+                                requiredValidator(confirmPassword),
                                 passwordLengthValidator(confirmPassword),
                                 confirmPasswordValidator(confirmPassword, password),
                             ])}
@@ -258,47 +260,35 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }:
                         />
                     </>
                 )}
-                <div className="text-semibold mb-1">{c('Label').t`Key strength`}</div>
-                <SelectEncryption
-                    encryptionType={encryptionType}
-                    setEncryptionType={step === STEPS.INIT ? setEncryptionType : noop}
-                />
-                <Table>
-                    <TableHeader
-                        cells={[c('Header for addresses table').t`Address`, c('Header for addresses table').t`Status`]}
-                    />
-                    <TableBody colSpan={2}>
-                        {formattedAddresses.map((address) => (
-                            <TableRow
-                                key={address.ID}
-                                cells={[
-                                    <span key={0} className="text-ellipsis block pr-4" title={address.Email}>
-                                        {address.Email}
-                                    </span>,
-                                    <MissingKeysStatus key={1} {...address.status} />,
-                                ]}
-                            />
-                        ))}
-                    </TableBody>
-                </Table>
+                {!!formattedAddresses.length && (
+                    <Table>
+                        <TableHeader
+                            cells={[
+                                c('Header for addresses table').t`Address`,
+                                c('Header for addresses table').t`Status`,
+                            ]}
+                        />
+                        <TableBody colSpan={2}>
+                            {formattedAddresses.map((address) => (
+                                <TableRow
+                                    key={address.ID}
+                                    cells={[
+                                        <span key={0} className="text-ellipsis block pr-4" title={address.Email}>
+                                            {address.Email}
+                                        </span>,
+                                        <MissingKeysStatus key={1} {...address.status} />,
+                                    ]}
+                                />
+                            ))}
+                        </TableBody>
+                    </Table>
+                )}
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Close`}</Button>
-                {step === STEPS.INIT && (
-                    <Button color="norm" loading={loading} type="submit">
-                        {c('Action').t`Submit`}
-                    </Button>
-                )}
-                {step === STEPS.ERROR && (
-                    <Button loading={loading} type="button" onClick={rest.onClose}>
-                        {c('Action').t`Close`}
-                    </Button>
-                )}
-                {step === STEPS.DONE && (
-                    <Button loading={loading} type="button" onClick={rest.onClose}>
-                        {c('Action').t`Done`}
-                    </Button>
-                )}
+                <Button color="norm" loading={loading} type="submit">
+                    {c('Action').t`Submit`}
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
