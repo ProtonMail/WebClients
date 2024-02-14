@@ -136,7 +136,7 @@ const getNonProtonUserContentText = ({
                 <h4 className="text-bold">{c('Info').t`Your download is in progress`}</h4>
                 <p className="m-0 mt-1 ">
                     {c('Info')
-                        .t`In the meantime, sign-up for your own ${DRIVE_APP_NAME} account and protected your data with end-to-end encryption and share it securely.`}
+                        .t`In the meantime, sign-up for your own ${DRIVE_APP_NAME} account and protect your data with end-to-end encryption and share it securely.`}
                 </p>
             </>
         );
@@ -154,7 +154,7 @@ const getNonProtonUserContentText = ({
             </h4>
             <p className="m-0 mt-1 ">
                 {c('Info')
-                    .t`Sign-up for your own ${DRIVE_APP_NAME} account and protected your data with end-to-end encryption and share it securely.`}
+                    .t`Sign-up for your own ${DRIVE_APP_NAME} account and protect your data with end-to-end encryption and share it securely.`}
             </p>
         </>
     );
