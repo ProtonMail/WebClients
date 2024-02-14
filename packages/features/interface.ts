@@ -109,6 +109,7 @@ export enum FeatureCode {
     SetExpiration = 'SetExpiration',
     SmtpToken = 'SmtpToken',
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
+    SpotlightInboxDesktop = 'SpotlightInboxDesktop',
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     SpotlightSnooze = 'SpotlightSnooze',
