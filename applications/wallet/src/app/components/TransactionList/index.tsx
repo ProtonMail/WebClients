@@ -135,14 +135,13 @@ export const TransactionList = ({ wallet }: Props) => {
                                             <TableCell>
                                                 <div className="flex flex-column text-right">
                                                     <BitcoinAmount
-                                                        className="text-lg"
+                                                        bitcoin={Number(txValue)}
                                                         fiat="USD"
-                                                        fiatClassName="ml-auto"
+                                                        firstClassName="text-lg"
+                                                        secondClassName="ml-auto"
                                                         showColor
                                                         showExplicitSign
-                                                    >
-                                                        {Number(txValue)}
-                                                    </BitcoinAmount>
+                                                    />
                                                 </div>
                                             </TableCell>
                                         </TableRow>

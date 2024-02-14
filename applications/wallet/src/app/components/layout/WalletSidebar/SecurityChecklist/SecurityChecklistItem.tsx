@@ -29,7 +29,7 @@ export const SecurityChecklistItem = ({ label, done, loading, path }: Props) => 
                 <img
                     src={security}
                     className="w-custom mt-1"
-                    style={{ '--w-custom': '2rem' }}
+                    style={{ '--w-custom': '1.5rem' }}
                     alt={c('Wallet Sidebar').t`Security`}
                 />
                 <span className={clsx('ml-2', done ? 'text-strike color-weak' : 'color-norm')}>{label}</span>
@@ -40,7 +40,7 @@ export const SecurityChecklistItem = ({ label, done, loading, path }: Props) => 
                 <Icon
                     name={done ? 'checkmark-circle-filled' : 'chevron-right'}
                     className={clsx(done ? 'color-success' : 'color-weak')}
-                    size={done ? 8 : 10}
+                    size={4}
                 />
             )}
         </>

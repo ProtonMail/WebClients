@@ -5,11 +5,14 @@ import { c } from 'ttag';
 
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import clsx from '@proton/utils/clsx';
 
-import { IWasmSimpleTransactionArray } from '../../../pkg';
+import { IWasmSimpleTransactionArray, WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
+
+// TODO: change this when wallet settings API is ready
+const fiatCurrency = 'USD';
+const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 interface Props {
     walletId?: number;
@@ -42,14 +45,7 @@ export const TransactionHistoryOverview = ({ walletId, transactions, max = 7 }: 
                                     </Tooltip>
                                 </div>
                                 <div>
-                                    <BitcoinAmount
-                                        className={clsx(
-                                            'text-sm',
-                                            Number(txValue) < 0 ? 'color-danger' : 'color-success'
-                                        )}
-                                    >
-                                        {Number(txValue)}
-                                    </BitcoinAmount>
+                                    <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} bitcoin={Number(txValue)} />
                                 </div>
                             </li>
                         );
