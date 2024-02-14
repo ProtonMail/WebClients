@@ -1,7 +1,8 @@
 import type { Maybe, SessionLockStatus, Store } from '@proton/pass/types';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
-import type { AuthSession } from './session';
+import type { AuthSessionVersion} from './session';
+import { type AuthSession, SESSION_VERSION } from './session';
 
 export type AuthStore = ReturnType<typeof createAuthStore>;
 
@@ -14,6 +15,7 @@ const PASS_LOCK_TTL_KEY = 'pass:lock_ttl';
 const PASS_MAILBOX_PWD_KEY = 'pass:mailbox_pwd';
 const PASS_REFRESH_TIME_KEY = 'pass:refresh_time';
 const PASS_REFRESH_TOKEN_KEY = 'pass:refresh_token';
+const PASS_SESSION_VERSION_KEY = 'pass:session_version';
 const PASS_UID_KEY = 'pass:uid';
 const PASS_USER_ID_KEY = 'pass:user_id';
 
@@ -28,6 +30,7 @@ export const createAuthStore = (store: Store) => {
             AccessToken: authStore.getAccessToken() ?? '',
             keyPassword: authStore.getPassword(),
             LocalID: authStore.getLocalID(),
+            payloadVersion: authStore.getSessionVersion(),
             RefreshTime: authStore.getRefreshTime(),
             RefreshToken: authStore.getRefreshToken() ?? '',
             sessionLockToken: authStore.getLockToken(),
@@ -70,6 +73,9 @@ export const createAuthStore = (store: Store) => {
         getLockTTL: (): Maybe<number> => store.get(PASS_LOCK_TTL_KEY),
         setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_LAST_EXTEND_TIME, extendTime),
         getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_LAST_EXTEND_TIME),
+
+        getSessionVersion: (): AuthSessionVersion => store.get(PASS_SESSION_VERSION_KEY) ?? SESSION_VERSION,
+        setSessionVersion: (version: AuthSessionVersion) => store.set(PASS_SESSION_VERSION_KEY, version),
     };
 
     return authStore;

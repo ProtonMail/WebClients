@@ -17,7 +17,7 @@ import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/header
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { AuthSession } from './session';
+import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
 
 export type RequestForkOptions = {
     app: APP_NAMES;
@@ -25,7 +25,7 @@ export type RequestForkOptions = {
     localID?: number;
     forkType?: FORK_TYPE;
     payloadType?: 'offline';
-    payloadVersion?: 2;
+    payloadVersion?: AuthSessionVersion;
 };
 export type RequestForkResult = { state: string; url: string };
 
@@ -43,13 +43,9 @@ export const requestFork = ({
     searchParams.append('app', app);
     searchParams.append('state', state);
     searchParams.append('independent', '0');
-    if (payloadType === 'offline') {
-        searchParams.append('pt', payloadType);
-    }
-    if (payloadVersion === 2) {
-        searchParams.append('pv', `${payloadVersion}`);
-    }
 
+    if (payloadType === 'offline') searchParams.append('pt', payloadType);
+    if (payloadVersion === 2) searchParams.append('pv', `${payloadVersion}`);
     if (localID !== undefined) searchParams.append('u', `${localID}`);
     if (forkType) searchParams.append('t', forkType);
 
@@ -64,9 +60,16 @@ export type ConsumeForkPayload =
           state: string;
           selector: string;
           key?: Uint8Array;
-          payloadVersion: 1 | 2;
+          payloadVersion: AuthSessionVersion;
       }
-    | { mode: 'secure'; state: string; selector: string; keyPassword: string };
+    | {
+          mode: 'secure';
+          state: string;
+          selector: string;
+          keyPassword: string;
+          /** FIXME: support passing offline key components
+           * when consuming a "secure" extension fork */
+      };
 
 export type ConsumeForkOptions = { api: Api; apiUrl?: string; payload: ConsumeForkPayload };
 
@@ -94,14 +97,23 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
-    const keyPassword =
+    const { keyPassword, payloadVersion } =
         payload.mode === 'secure'
-            ? payload.keyPassword
+            ? {
+                  keyPassword: payload.keyPassword,
+                  payloadVersion: SESSION_VERSION,
+              }
             : await (async () => {
                   try {
-                      const key = await getKey(payload.key!);
-                      return (await getForkDecryptedBlob(key, Payload, payload.payloadVersion))?.keyPassword ?? '';
-                  } catch (_) {
+                      const { payloadVersion, key } = payload;
+                      const clientKey = await getKey(key!);
+                      const decryptedBlob = await getForkDecryptedBlob(clientKey, Payload, payloadVersion);
+
+                      return {
+                          keyPassword: decryptedBlob?.keyPassword ?? '',
+                          payloadVersion,
+                      };
+                  } catch {
                       throw new InvalidForkConsumeError('Failed to decrypt fork payload');
                   }
               })();
@@ -109,6 +121,7 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<AuthSess
     return {
         AccessToken: refresh.AccessToken,
         keyPassword,
+        payloadVersion,
         LocalID,
         RefreshToken: refresh.RefreshToken,
         UID,
