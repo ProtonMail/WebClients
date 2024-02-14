@@ -56,19 +56,21 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                 )}
             >
                 <div className="inline-flex flex-nowrap shrink-0">
-                    <div className="md:hidden shrink-0">{onBack && <BackButton onClick={onBack} />}</div>
+                    <div className={clsx('md:hidden shrink-0', isElectronOnMac && 'pl-14 md:pl-0')}>
+                        {onBack && <BackButton onClick={onBack} />}
+                    </div>
                     {hasDecoration ? (
                         <Href
                             className={clsx(
                                 'shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background',
-                                isElectronOnMac && 'pl-12 lg:pl-6'
+                                isElectronOnMac && 'md:pl-14 lg:pl-8'
                             )}
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
                             {protonLogoBrand}
                         </Href>
                     ) : (
-                        <div className="shrink-0">{protonLogoBrand}</div>
+                        <div className={clsx('shrink-0', isElectronOnMac && 'md:pl-14 lg:pl-8')}>{protonLogoBrand}</div>
                     )}
                 </div>
                 <div>
