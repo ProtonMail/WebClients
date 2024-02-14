@@ -7,12 +7,12 @@ interface Props {
     children: ReactNode;
 }
 
-const AccountPublicAppSetup = ({ loader, children }: Props) => {
+const PublicAppSetup = ({ loader, children }: Props) => {
     const flagsReadyPromise = useFlagsReady();
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        flagsReadyPromise.finally(() => {
+        void flagsReadyPromise.finally(() => {
             setLoaded(true);
         });
     }, []);
@@ -20,4 +20,4 @@ const AccountPublicAppSetup = ({ loader, children }: Props) => {
     return <>{loaded ? children : loader}</>;
 };
 
-export default AccountPublicAppSetup;
+export default PublicAppSetup;
