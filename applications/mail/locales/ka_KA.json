@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "ფორმატირების სრულად მოცილება"
       ],
+      "Clear application data": [
+        "აპლიკაციის მონაცემების გასუფთავება"
+      ],
       "Clear browser data": [
         "ბრაუზერის მონაცემების წაშლა"
       ],
@@ -259,6 +262,9 @@
       ],
       "Create a new label": [
         "ახალი ჭდის შექმნა"
+      ],
+      "Create and copy alias": [
+        "ფსევდონიმის შექმნა და კოპირება"
       ],
       "Create folder": [
         "საქაღალდის შექმნა"
@@ -901,6 +907,9 @@
       ],
       "Select all messages": [
         "ყველა შეტყობინების მონიშვნა"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
       ],
       "Select date and time": [
         "აირჩიეთ თარიღი და დრო"
@@ -5206,6 +5215,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "მოწმდება ${ progress }-ე კონტაქტი ${ max }-დან..."
       ],
+      "Clear app data": [
+        "აპლიკაციის მონაცემთა გასუფთავება"
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
@@ -6449,6 +6461,9 @@
       "Expand / contract composer": [
         "რედაქტორის გაშლა / დაპატარავება"
       ],
+      "Filter": [
+        "ფილტრი"
+      ],
       "Forward": [
         "გადაგზავნა"
       ],
@@ -6758,6 +6773,9 @@
       ],
       "Don't show this again": [
         "აღარ მაჩვენო"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "მაგ Amazon, eBay, Etsy"
       ],
       "Email": [
         "ელფოსტა"
@@ -7878,6 +7896,11 @@
         "თქვენ"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "გადახდის ქვეყანა"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "ამ გასაღების გამოყენება დასაშიფრად შეუძლებელია"
@@ -8162,6 +8185,9 @@
       "Create alias": [
         "ფსევდონიმის შექმნა"
       ],
+      "Create an alias": [
+        "ფსევდონიმის შექმნა"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "დააგენერირეთ ფსევდონიმები მუშაობისას და ადვილად მართეთ თქვენი ფსევდონიმები და პაროლები."
       ],
@@ -8182,6 +8208,9 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "სცადეთ ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "გამოიყენება Amazon-ზე შოპინგისთვის და ა.შ."
       ]
     },
     "Security Center - Action": {
@@ -8838,8 +8867,17 @@
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "თქვენი ${ storage } სავსეა. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
+      ],
       "Your storage is full": [
         "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ cta }."
       ]
     },
     "Success": {
@@ -9483,6 +9521,9 @@
       "Get advanced protection": [
         "დამატებითი უსაფრთხოების მიღება"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "მიიღეთ ${ appName[APP_NAME] } აპები"
+      ],
       "Groups": [
         "ჯგუფები"
       ],
@@ -9958,10 +9999,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
