@@ -1,12 +1,21 @@
 import { SectionConfig, SubSectionConfig } from '@proton/components';
 
 export const getIsSubsectionAvailable = (section: SubSectionConfig) => {
-    return !(section.available === false);
+    return section.available !== false;
 };
 
 export const getIsSectionAvailable = (section: SectionConfig) => {
-    const subsections = Object.values(section.subsections || {});
-    return !(section.available === false || subsections.every((subsection) => !getIsSubsectionAvailable(subsection)));
+    const subsectionsAvailable = (() => {
+        const { subsections = [] } = section;
+
+        if (!subsections.length) {
+            return true;
+        }
+
+        return subsections.some((subsection) => getIsSubsectionAvailable(subsection));
+    })();
+
+    return section.available !== false && subsectionsAvailable;
 };
 
 export const getSectionPath = (path: string, section: SectionConfig) => {

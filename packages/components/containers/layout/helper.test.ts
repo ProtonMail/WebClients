@@ -80,7 +80,7 @@ describe('getIsSectionAvailable', () => {
     });
 
     describe('subsections prop', () => {
-        it('returns false when `subsections` is undefined', () => {
+        it('returns true when `subsections` is undefined', () => {
             const config: SectionConfig = {
                 to: '',
                 icon: 'alias',
@@ -90,7 +90,7 @@ describe('getIsSectionAvailable', () => {
 
             const result = getIsSectionAvailable(config);
 
-            expect(result).toBe(false);
+            expect(result).toBe(true);
         });
 
         it('returns true when all `subsections` are available', () => {
