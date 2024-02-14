@@ -43,6 +43,11 @@ export const getUserOrganization = async (): Promise<MaybeNull<Organization>> =>
     }
 };
 
+export const getUserModel = async (): Promise<User> => api<{ User: User }>(getUser()).then(prop('User'));
+
+export const getUserLatestEventID = async (): Promise<string> =>
+    api<{ EventID: string }>(getLatestID()).then(prop('EventID'));
+
 export type UserData = {
     access: HydratedAccessState;
     addresses: Record<string, Address>;
@@ -56,8 +61,8 @@ export type UserData = {
 /** Resolves all necessary user data to build up the user state */
 export const getUserData = async (): Promise<UserData> => {
     const [user, eventId, userSettings, addresses, access, features] = await Promise.all([
-        api<{ User: User }>(getUser()).then(prop('User')),
-        api<{ EventID: string }>(getLatestID()).then(prop('EventID')),
+        getUserModel(),
+        getUserLatestEventID(),
         getUserSettings(),
         getAllAddresses(api).then((addresses) => toMap(addresses, 'ID')),
         getUserAccess(),
