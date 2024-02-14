@@ -635,10 +635,10 @@
       "No": [
         "Nei"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5996,6 +5996,10 @@
       "Admin account allocation": [
         "Adminkonto tildeling"
       ],
+      "Affected user is on row": [
+        "Berørt bruker er på rad",
+        "Berørte brukere er på radene"
+      ],
       "Align left": [
         "Juster til venstre"
       ],
@@ -6986,6 +6990,10 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn.",
+        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
       "Please use another browser or download the file.": [
         "Vennligst bruk en annen nettleser eller last ned filen."
       ],
@@ -7388,6 +7396,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dette vil erstatte ditt midlertidige passord. Du vil bruke det for å tilgang til din ${ BRAND_NAME }-konto i fremtiden."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Dette vil logge deg ut av alle kontoer som for øyeblikket er logget på."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge deg av alle aktive økter og deaktivere tofaktorautentisering."
@@ -13631,6 +13642,9 @@
       "Are you sure you want to close?": [
         "Er du sikker på at du vil lukke?"
       ],
+      "Are you sure?": [
+        "Er du sikker?"
+      ],
       "Authentication security": [
         "Sikkerhet for autentisering"
       ],
@@ -14846,9 +14860,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Passord må inneholde minst ${ length } tegn",
-        "Passord må inneholde minst ${ length } tegn"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brukernavn (maks ${ n } tegn)",
