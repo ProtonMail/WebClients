@@ -44,3 +44,8 @@ export const updateSAMLConfig = (
     method: 'PUT',
     data,
 });
+
+export const removeSAMLConfig = (uid: string) => ({
+    url: `core/v4/saml/configs/${uid}/delete`,
+    method: 'PUT',
+});
