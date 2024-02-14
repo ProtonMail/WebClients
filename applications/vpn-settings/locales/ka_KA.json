@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
+      "Activate": [
+        "აქტივაცია"
+      ],
       "activate": [
         "აქტივაცია"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
+      ],
+      "Change keys": [
+        "გასაღებების შეცვლა"
       ],
       "Change mailbox password": [
         "საფოსტო ყუთის პაროლის შეცვლა"
@@ -418,6 +424,9 @@
       ],
       "Select ${ planTitle }": [
         "აირჩიეთ ${ planTitle }"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
       ],
       "Select file": [
         "აირჩიეთ ფაილი"
@@ -1951,6 +1960,9 @@
       ],
       "Code wrong or not valid anymore": [
         "კოდი არასწორია ან აღარ მოქმედებს"
+      ],
+      "Coudn't load invoices. Please try again later.": [
+        "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
       "Domain not available, try again later": [
         "დომენი ხელმიუწვდომელია. თავიდან სცადეთ"
@@ -4068,6 +4080,12 @@
       "Credit": [
         "კრედიტი"
       ],
+      "Credit note": [
+        "კრედიტის შენიშვნა"
+      ],
+      "Currency conversion": [
+        "ვალუტის გადაცვლა"
+      ],
       "Donation": [
         "შეწირულობა"
       ],
@@ -4125,6 +4143,9 @@
       ],
       "Addresses": [
         "მისამართები"
+      ],
+      "Administrators": [
+        "ადმინისტრატორები"
       ],
       "Allow recovery by email": [
         "ელფოსტით აღდგენის ჩართვა"
@@ -4494,6 +4515,9 @@
       ],
       "Value": [
         "მნიშვნელობა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -4919,6 +4943,9 @@
       "Autofill credit cards (coming soon)": [
         "საკრედიტო ბარათების ავტომატური შევსება (მალე)"
       ],
+      "Automatic email forwarding": [
+        "ავტომატური ელფოსტის გადაგზავნა"
+      ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
       ],
@@ -5056,6 +5083,9 @@
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
+      "Require 2FA for organization": [
+        "2FA-ის მოთხოვნა ორგანიზაციისთვის"
+      ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
       ],
@@ -5089,6 +5119,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO ინტეგრაცია (მალე)"
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
@@ -5131,6 +5164,9 @@
       ],
       "Unlimited messages per day": [
         "ულიმიტო დღიური გზავნა/დღეში"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "განუსაზღვრელ გაზიარებული საცავები წვდომის შეზღუდვებით"
       ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
@@ -5705,6 +5741,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "ვისაუბროთ"
+      ],
       "Limited time offer": [
         "დროში შეზღუდული შეთავაზება"
       ],
@@ -5716,8 +5755,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } თვეში"
       ],
+      "/month /user": [
+        "/თვე /მომხმარებელი"
+      ],
+      "/month /user, billed annually": [
+        "/თვე /მომხმარებელი, გადახდით წელიწადში ერთხელ"
+      ],
+      "/month /user, billed biennially": [
+        "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
+      ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
+      ],
+      "Current plan": [
+        "მიმდინარე ტარიფი"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
@@ -5730,6 +5781,9 @@
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
+      ],
+      "Get in touch with our sales team": [
+        "დაუკავშირდით ჩვენი გაყიდვების გუნდს"
       ],
       "Includes:": [
         "შეიცავს:"
@@ -5762,8 +5816,29 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "გასაღებთან წვდომას ყველა ადმინისტრატორი მიიღებს."
+      ],
+      "Change organization key": [
+        "ორგანიზაციის გასაღებების შეცვლა"
+      ],
+      "Organization key activated": [
+        "ორგანიზაციის გასაღები გააქტიურდა"
+      ],
+      "Organization key does not exist.": [
+        "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Organization key restored": [
+        "ორგანიზაციის გასაღები აღდგენილია"
+      ],
+      "Organization key updated": [
+        "ორგანიზაციის გასაღები განახლდა"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "Reset organization key": [
+        "ორგანიზაციის გასაღების ჩამოყრა"
       ],
       "The organization key must be activated first.": [
         "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
@@ -5777,12 +5852,35 @@
         "ახალი საკრედიტო/სადებეტო ბარათი"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "გადახდის ქვეყანა"
+      ],
+      "Card number": [
+        "ბარათის ნომერი"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "თთ/წწ"
+      ],
+      "Timeout exceeded": [
+        "მოლოდინის ვადა ამოიწურა"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "ბარათის არასწორი ნომერი"
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
+      ],
+      "Invalid securiry code": [
+        "უსაფრთხოების არასწორი კოდი"
+      ],
+      "Something went wrong. Please try again later.": [
+        "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
@@ -6587,8 +6685,17 @@
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "თქვენი ${ storage } სავსეა. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
+      ],
       "Your storage is full": [
         "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "დაკარგავთ წვდომას ${ gb }-მდე საცავთან და პრიორიტეტულ მხარდაჭერასთან."
@@ -6759,6 +6866,9 @@
       ],
       "Address added": [
         "მისამართი დაემატა"
+      ],
+      "Administrator privileges restored": [
+        "ადმინისტრატორის პრივილეგიები აღდგენილია"
       ],
       "Bug reported": [
         "შეცდომა გადაგზავნილია"
@@ -7089,6 +7199,9 @@
       ],
       "Change role": [
         "როლის შეცვლა"
+      ],
+      "Confirm": [
+        "დასტური"
       ],
       "Confirm address": [
         "დაადასტურეთ მისამართი"
@@ -7651,10 +7764,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
