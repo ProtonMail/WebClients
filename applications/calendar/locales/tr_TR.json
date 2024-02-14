@@ -172,6 +172,9 @@
       "Create a new contact group": [
         "Yeni bir kişi grubu ekle"
       ],
+      "Create and copy alias": [
+        "Takma ad ekle ve kopyala"
+      ],
       "Create calendar": [
         "Takvim ekle"
       ],
@@ -503,6 +506,9 @@
       ],
       "Select calendar view": [
         "Takvim görünümünü seçin"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Select time zone": [
         "Saat dilimini seçin"
@@ -4593,6 +4599,9 @@
       "Don't ask again": [
         "Bir daha sorma"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "örneğin, Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -5618,6 +5627,11 @@
         "Katılımcı listesini genişlet"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Faturalanacak ülke"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
@@ -5810,6 +5824,9 @@
       "Create alias": [
         "Takma ad oluştur"
       ],
+      "Create an alias": [
+        "Takma ad oluştur"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Anında takma adlar oluşturun ve takma adlarınız ile parolalarınızı kolayca yönetin."
       ],
@@ -5830,6 +5847,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını deneyin"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Amazon alışverişleri için kullanıldı gibi."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "E-posta adresiniz istendiğinde onun yerine bu takma adı verin. Nerede kullandığınızı unutmamak için bir başlık ve not ekleyin."
       ]
     },
     "Security Center - Action": {
@@ -6348,6 +6371,12 @@
       "contact your administrator": [
         "yöneticiniz ile görüşün"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "daha fazla depolama alanı edinmek için tarifenizi yükseltin"
       ],
@@ -6357,8 +6386,20 @@
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } depolama alanınız dolmuş. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
       "Your storage is full": [
         "Depolama alanınız dolu"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {
@@ -7133,10 +7174,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
