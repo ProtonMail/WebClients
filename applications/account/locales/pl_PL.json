@@ -635,11 +635,11 @@
       "No": [
         "Nie"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
@@ -4111,6 +4111,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
       ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Aby utworzyć nieprywatne konta użytkowników i uzyskać do nich dostęp, musisz przywrócić swoje uprawnienia administratora."
+      ],
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
       ],
@@ -7112,6 +7115,12 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Spróbuj ponownie, użyj innej metody płatności lub skontaktuj się z firmą PayPal w celu uzyskania pomocy."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak.",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki.",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków.",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków."
+      ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
       ],
@@ -7523,6 +7532,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "To hasło zastąpi tymczasowe hasło i pozwoli Ci uzyskać dostęp do konta ${ BRAND_NAME }."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Ta czynność spowoduje wylogowanie ze wszystkich kont."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Ta czynność spowoduje wylogowanie z każdej aktywnej sesji i wyłączenie uwierzytelniania dwustopniowego."
       ],
@@ -7872,7 +7884,7 @@
         "Zalogowano jako ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Zużywasz więcej miejsca niż, jest dostępne w planie ${ downgradedPlanName }. Usuń nadmiarowe dane, żeby móc zmniejszyć plan."
+        "Używasz więcej przestrzeni dyskowej niż jest dostępna w planie ${ downgradedPlanName }. Aby obniżyć plan, zwolnij część miejsca."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Możesz również scalić importowane kalendarze z obecnymi kalendarzami ${ BRAND_NAME }."
@@ -8215,6 +8227,9 @@
       ],
       "Credit": [
         "Środki"
+      ],
+      "Credit note": [
+        "Nota uznaniowa"
       ],
       "Currency conversion": [
         "Kurs waluty"
@@ -10466,6 +10481,9 @@
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzenia jednocześnie"
       ],
+      "Require 2FA for organization": [
+        "Wymagaj uwierzytelniania dwustopniowego w organizacji"
+      ],
       "Router support": [
         "Wsparcie routerów"
       ],
@@ -10546,6 +10564,9 @@
       ],
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Nieograniczona liczba udostępnionych sejfów z osobnymi uprawnieniami"
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
@@ -10806,6 +10827,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Umożliwia skonfigurowanie autorespondera na przychodzące wiadomości"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Automatyczne przekierowanie wiadomości do swojego konta ${ MAIL_APP_NAME } lub na inny adres e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masowe wysyłanie promocyjnych lub zaprogramowanych wiadomości nie jest obsługiwane. W tym celu zalecamy skorzystanie z dedykowanego dostawcy poczty e-mail."
@@ -11495,8 +11519,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Przejdź do sejfu, aby zarządzać hasłami i aliasami."
+      ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Dodaj użytkowników do ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Zacznij korzystać z ${ PASS_APP_NAME }"
@@ -11623,6 +11653,9 @@
       "All premium ${ BRAND_NAME } services.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium."
       ],
+      "Based in Switzerland, GDPR compliant": [
+        "Ulokowany w Szwajcarii, zgodny z RODO"
+      ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ulepsz plan do wersji **${ upsellPlanTitle }** i uzyskaj ${ discount } zniżki. To tylko ${ relativePrice } miesięcznie więcej."
       ],
@@ -11665,6 +11698,9 @@
       "End-to-end encryption": [
         "Szyfrowanie end-to-end"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Wpisz nazwę wyświetlaną dla **${ username }**. Tę nazwę będą widzieć użytkownicy, gdy zmienisz ich uprawnienia lub udostępnisz im dane."
+      ],
       "Essential protection and secure collaboration for unlimited users": [
         "Podstawowa ochrona i bezpieczna współpraca nieograniczonej liczby użytkowników"
       ],
@@ -11691,6 +11727,12 @@
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Pobierz wkrótce ${ appName } do przeglądarki ${ browserName }"
+      ],
+      "Get in touch with our sales team": [
+        "Skontaktuj się z naszym zespołem sprzedaży"
+      ],
+      "Get the security and features your business needs": [
+        "Skorzystaj z zabezpieczeń i funkcji, których potrzebuje Twoja firma"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Aliasy hide-my-email chronią Twój adres przed wyciekami danych"
@@ -11767,6 +11809,9 @@
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
       ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Rozwiązania dostosowane do potrzeb większych organizacji z indywidualnymi wymaganiami."
+      ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Oferta nie jest dostępna dla subskrybentów planu ${ currentPlanTitle }."
       ],
@@ -11842,6 +11887,9 @@
       "Organization key does not exist.": [
         "Klucz organizacji nie istnieje."
       ],
+      "Organization key must be activated to give admin privileges": [
+        "Klucz organizacji musi zostać aktywowany, aby nadać uprawnienia administratora."
+      ],
       "Organization key restored": [
         "Klucz organizacji został przywrócony"
       ],
@@ -11851,14 +11899,47 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Odmowa dostępu. Uprawnienia administratora zostały ograniczone."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Prywatni użytkownicy mogą zostać awansowani na administratorów przy pierwszym zalogowaniu się."
+      ],
       "Reset organization key": [
         "Resetuj klucz organizacji"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Poniżsi administratorzy uzyskają dostęp do klucza organizacji."
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
       ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "To spowoduje wysłanie najnowszego klucza organizacji do administratorów, którzy obecnie nie mają do niego dostępu."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Aby utworzyć nieprywatne konta użytkowników i uzyskać do nich dostęp, musisz przywrócić swój klucz organizacji."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Aby włączyć uprawnienia administratora na swoim koncie, aktywuj klucz organizacji."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Skorzystaj z metody odzyskiwania danych lub zresetuj klucz organizacji, aby przywrócić uprawnienia administratora."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Skorzystaj z metody odzyskiwania danych, skontaktuj się z innym administratorem lub zresetuj klucz organizacji, aby przywrócić uprawnienia administratora."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nie mogliśmy zweryfikować bezpieczeństwa klucza adresu nadawcy. Czasami występuje opóźnienie w aktualizacji informacji o nadawcy. Spróbuj ponownie później. Jeśli wątpisz w autentyczność tego zaproszenia lub jego nadawcy, skontaktuj się z obsługą klienta ${ BRAND_NAME }."
+      ],
       "We have verified the authenticity of this sender and invitation.": [
         "Zweryfikowaliśmy autentyczność nadawcy i zaproszenia."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Zostałeś mianowany administratorem organizacji **${ organizationName }** przez"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Wszyscy użytkownicy muszą zostać użytkownikami prywatnymi, przed wygenerowaniem nowego klucza organizacji."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Potrzebujesz dostępu do klucza organizacji, aby wykonać tę operację."
       ]
     },
     "Payment method option": {
@@ -11881,6 +11962,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "Timeout exceeded": [
+        "Limit czasu przekroczony"
       ]
     },
     "Payments.Error": {
@@ -11890,8 +11974,14 @@
       "Invalid expiration date": [
         "Data wygaśnięcia jest nieprawidłowa"
       ],
+      "Invalid securiry code": [
+        "Kod zabezpieczający jest nieprawidłowy"
+      ],
       "Something went wrong. Please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Nie możemy zweryfikować metody płatności. Wybierz inną metodę płatności lub spróbuj ponownie."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Karta została odrzucona. Spróbuj użyć innej karty lub skontaktuj się z bankiem, aby autoryzować opłaty."
@@ -13849,6 +13939,9 @@
       "Are you sure you want to close?": [
         "Czy na pewno chcesz zamknąć edytor filtra?"
       ],
+      "Are you sure?": [
+        "Czy na pewno?"
+      ],
       "Authentication security": [
         "Bezpieczeństwo uwierzytelniania"
       ],
@@ -15076,11 +15169,11 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Hasło musi zawierać co najmniej ${ length } znak",
-        "Hasło musi zawierać co najmniej ${ length } znaki",
-        "Hasło musi zawierać co najmniej ${ length } znaków",
-        "Hasło musi zawierać co najmniej ${ length } znaków"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
       ],
       "Try a shorter username (${ n } character max)": [
         "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
@@ -15266,6 +15359,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Wykryliśmy problem z konfiguracją rekordów DNS. Upewnij się, że rekordy pasują do instrukcji. Jeśli ten problem będzie się powtarzał, wyłączymy podpisywanie DKIM."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Musisz ${ activateLink } do klucza organizacji przed dodaniem adresu e-mail nieprywatnego użytkownika."
       ],
       "You will lose any customization you made so far.": [
         "Dotychczasowa personalizacja importu zostanie utracona."
