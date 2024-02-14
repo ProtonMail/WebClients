@@ -40,9 +40,9 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
                                     username: item.username,
                                     password: item.password,
                                     urls: [item.url],
-                                    createTime: item.timeCreated ? msToEpoch(item.timeCreated) : undefined,
+                                    createTime: item.timeCreated ? msToEpoch(Number(item.timeCreated)) : undefined,
                                     modifyTime: item.timePasswordChanged
-                                        ? msToEpoch(item.timePasswordChanged)
+                                        ? msToEpoch(Number(item.timePasswordChanged))
                                         : undefined,
                                 })
                         ),
