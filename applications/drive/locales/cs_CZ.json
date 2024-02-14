@@ -4860,6 +4860,9 @@
       "Duplicate found": [
         "Nalezeny duplicity"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "například Amazon, eBay"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -7420,12 +7423,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } znak",
-        "Heslo musí obsahovat alespoň ${ length } znaky",
-        "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Heslo musí obsahovat alespoň ${ length } znaků"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",

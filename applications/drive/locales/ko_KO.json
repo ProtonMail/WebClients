@@ -181,6 +181,9 @@
       "Create a new contact group": [
         "새 연락처 그룹 만들기"
       ],
+      "Create and copy alias": [
+        "별명 생성 및 복사"
+      ],
       "Create link": [
         "링크 생성"
       ],
@@ -582,6 +585,9 @@
       ],
       "Select all": [
         "전체 선택"
+      ],
+      "Select country": [
+        "국가 선택"
       ],
       "Send feedback": [
         "의견 제출"
@@ -4614,6 +4620,9 @@
       "Duplicate found": [
         "중복 발견"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "예: Amazon, eBay, Etsy"
+      ],
       "Email": [
         "이메일"
       ],
@@ -5642,6 +5651,11 @@
         "당신"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "청구 국가 "
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "암호화에 키를 사용할 수 없어요."
@@ -5809,6 +5823,9 @@
       "Create alias": [
         "별칭 만들기"
       ],
+      "Create an alias": [
+        "별명 생성"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "언제 어디서나 별명을 생성하고, 쉽게 별명 및 비밀번호를 관리하세요."
       ],
@@ -5829,6 +5846,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 체험"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "이메일 주소에 대한 질문이 들어온다면, 별명을 대신 제공하세요. 어디에서 사용하는지 추적하기 위해 이름과 메모를 추가하세요."
       ]
     },
     "Security Center - Action": {
@@ -6272,8 +6295,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "파일을 업로드하고 동기화하려면 저장 공간을 비우거나 저장 공간 확보를 위해 업그레이드 하세요."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "이메일을 주고 받으려면, 저장 공간을 비우거나 저장 공간 확보를 위해 업그레이드 하세요."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
       ],
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
@@ -6284,8 +6313,20 @@
       "Your ${ appStorage } is full": [
         "사용자의 ${ appStorage }이 가득 찼습니다."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "사용자의 ${ storage }가 ${ percentage }% 찼습니다. ${ cta }"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "사용자의 ${ storage } 스토리지가 가득 찼습니다. ${ cta }"
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "사용자의 스토리지가 ${ percentage }% 찼습니다. ${ cta }"
+      ],
       "Your storage is full": [
         "저장공간이 꽉 찼습니다"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "사용자의 스토리지가 가득 찼습니다. ${ cta }"
       ]
     },
     "Success": {
@@ -7020,9 +7061,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "비밀번호는 최소 ${ length } 자 이상이어야 합니다."
-      ],
       "Try a shorter username (${ n } character max)": [
         "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]

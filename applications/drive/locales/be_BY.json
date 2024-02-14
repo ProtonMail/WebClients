@@ -7550,11 +7550,11 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
-        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы",
-        "Пароль павінен змяшчаць прынамсі ${ length } сімвалаў",
-        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
       ],
       "Try a shorter username (${ n } character max)": [
         "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",

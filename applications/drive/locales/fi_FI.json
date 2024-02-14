@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create and copy alias": [
+        "Tallenna ja kopioi alias"
+      ],
       "Create link": [
         "Luo linkki"
       ],
@@ -585,6 +588,9 @@
       ],
       "Select all": [
         "Valitse kaikki"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Send feedback": [
         "Lähetä palautetta"
@@ -4704,6 +4710,9 @@
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "esim. Amazon, eBay, Etsy"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -5757,6 +5766,11 @@
         "Sinä"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Laskutusmaa"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Avainta ei voida käyttää salaukseen"
@@ -5927,6 +5941,9 @@
       "Create alias": [
         "Luo alias"
       ],
+      "Create an alias": [
+        "Luo alias"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
       ],
@@ -5947,6 +5964,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Käytetään Amazonissa ostoksiin jne."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Kun sinua pyydetään antamaan sähköpostiosoitteesi, anna sen sijaan tämä alias. Lisää sille nimi ja muistiinpano, jotta voit seurata, missä käytät sitä."
       ]
     },
     "Security Center - Action": {
@@ -6407,6 +6430,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
       ],
@@ -6421,6 +6447,9 @@
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Tallennustilasi on täynnä. ${ cta }."
       ]
     },
     "Success": {
@@ -7174,10 +7203,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Salasanan täytyy sisältää ainakin ${ length } merkki",
-        "Salasanan täytyy sisältää ainakin ${ length } merkkiä"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"

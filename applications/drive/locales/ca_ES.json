@@ -586,6 +586,9 @@
       "Select all": [
         "Seleccionar-ho tot"
       ],
+      "Select country": [
+        "Seleccioneu el país"
+      ],
       "Send feedback": [
         "Enviar comentaris"
       ],
@@ -3571,6 +3574,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "La descàrrega s'ha posat en pausa a causa d'un problema de connexió. Es reprendrà automàticament"
       ],
+      "Download ready": [
+        "La descàrrega està llesta."
+      ],
       "Downloaded": [
         "Descarregat"
       ],
@@ -3725,6 +3731,9 @@
       ],
       "Import mailbox": [
         "Importar bústia de correu"
+      ],
+      "Important note": [
+        "Nota important"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -4607,6 +4616,9 @@
       ],
       "Download anyway": [
         "Baixa igualment"
+      ],
+      "Downloading": [
+        "S'està descarregant"
       ],
       "Downloading ${ percentageValue }": [
         "S'està descarregant ${ percentageValue } "
@@ -6947,10 +6959,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
