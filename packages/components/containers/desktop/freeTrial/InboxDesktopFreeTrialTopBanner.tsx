@@ -1,15 +1,15 @@
 import { differenceInDays, format, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { TopBanner } from '@proton/components';
 
+import { freeTrialUpgradeClick } from './freeTrialUpgradeClick';
 import useInboxFreeTrial, { FIRST_REMINDER_DAYS, SECOND_REMINDER_DAYS, THIRD_REMINDER_DAYS } from './useInboxFreeTrial';
 
 const UpgradeButton = () => {
     return (
-        <a target="_blank" rel="noopener noreferrer" className="link align-baseline text-left">
-            {c('Action').t`Download now`}
-        </a>
+        <Button shape="underline" onClick={freeTrialUpgradeClick} className="py-0">{c('Action').t`Upgrade Now`}</Button>
     );
 };
 

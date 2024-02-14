@@ -8,7 +8,7 @@ export type IPCInboxMessage =
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
     | { type: 'openExternal'; payload: string }
     | { type: 'changeView'; payload: CHANGE_VIEW_TARGET }
-    | { type: 'trialEnded'; payload: 'trialEnded' | 'resetTrialEnded' };
+    | { type: 'trialEnd'; payload: 'trialEnded' | 'resetTrialEnded' };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
