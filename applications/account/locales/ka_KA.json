@@ -50,6 +50,9 @@
       "activate": [
         "აქტივაცია"
       ],
+      "Activate": [
+        "აქტივაცია"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me-ის აქტივაცია"
       ],
@@ -157,6 +160,9 @@
       ],
       "Cancel subscription": [
         "გამოწერის გაუქმება"
+      ],
+      "Change keys": [
+        "გასაღებების შეცვლა"
       ],
       "Change mailbox password": [
         "საფოსტო ყუთის პაროლის შეცვლა"
@@ -629,10 +635,10 @@
       "No": [
         "არა"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -814,6 +820,9 @@
       ],
       "Select calendar view": [
         "აირჩიეთ კალენდრის ხედი"
+      ],
+      "Select country": [
+        "აირჩიეთ ქვეყანა"
       ],
       "Select files": [
         "ფაილების არჩევა"
@@ -3727,6 +3736,9 @@
       ],
       "Contact signature not verified": [
         "კონტაქტის ხელმოწერა არ შემოწმებულა"
+      ],
+      "Coudn't load invoices. Please try again later.": [
+        "ინვოისების ჩატვირთვა შეუძლებელია. მოგვიანებით სცადეთ."
       ],
       "Could not save preference": [
         "პარამეტრის შენახვა შეუძლებელია"
@@ -8034,6 +8046,12 @@
       "Credit": [
         "კრედიტი"
       ],
+      "Credit note": [
+        "კრედიტის შენიშვნა"
+      ],
+      "Currency conversion": [
+        "ვალუტის გადაცვლა"
+      ],
       "Donation": [
         "შეწირულობა"
       ],
@@ -8134,6 +8152,9 @@
       ],
       "Expand / contract composer": [
         "რედაქტორის გაშლა / დაპატარავება"
+      ],
+      "Filter": [
+        "ფილტრი"
       ],
       "Forward": [
         "გადაგზავნა"
@@ -8389,6 +8410,9 @@
       ],
       "Addresses": [
         "მისამართები"
+      ],
+      "Administrators": [
+        "ადმინისტრატორები"
       ],
       "ALL": [
         "ყველა"
@@ -9167,6 +9191,9 @@
       "Username": [
         "მომხმარებლის სახელი"
       ],
+      "VAT": [
+        "დღგ"
+      ],
       "Verification code": [
         "შემოწმების კოდი"
       ],
@@ -9875,6 +9902,9 @@
       "Back to inbox": [
         "შემოსულებზე დაბრუნება"
       ],
+      "Back to vaults": [
+        "საცავებზე დაბრუნება"
+      ],
       "Block": [
         "დაბლოკილი მისამართები"
       ],
@@ -9883,6 +9913,9 @@
       ],
       "Inbox": [
         "შემომავალი"
+      ],
+      "Pass vaults": [
+        "Pass-ის საცავები"
       ],
       "Spam": [
         "სპამი"
@@ -10064,6 +10097,9 @@
       "Autofill credit cards (coming soon)": [
         "საკრედიტო ბარათების ავტომატური შევსება (მალე)"
       ],
+      "Automatic email forwarding": [
+        "ავტომატური ელფოსტის გადაგზავნა"
+      ],
       "Available on all platforms": [
         "ხელმისაწვდომია ყველა პლატფორმაზე"
       ],
@@ -10201,6 +10237,9 @@
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
       ],
+      "Require 2FA for organization": [
+        "2FA-ის მოთხოვნა ორგანიზაციისთვის"
+      ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
       ],
@@ -10234,6 +10273,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO ინტეგრაცია (მალე)"
       ],
       "Start protecting your organization": [
         "დაიწყეთ თქვენი ორგანიზაციის დაცვა"
@@ -10276,6 +10318,9 @@
       ],
       "Unlimited messages per day": [
         "ულიმიტო დღიური გზავნა/დღეში"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "განუსაზღვრელ გაზიარებული საცავები წვდომის შეზღუდვებით"
       ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
@@ -11236,6 +11281,9 @@
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
       ],
+      "Request trial": [
+        "დროებითი ვერსიის გამოთხოვა"
+      ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
       ],
@@ -11269,6 +11317,9 @@
       ],
       "Continue with your ${ BRAND_NAME } account": [
         "გააგრძელეთ თქვენი ${ BRAND_NAME }-ის ანგარიშით"
+      ],
+      "Let's talk": [
+        "ვისაუბროთ"
       ],
       "Limited time offer": [
         "დროში შეზღუდული შეთავაზება"
@@ -11305,8 +11356,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } თვეში"
       ],
+      "/month /user": [
+        "/თვე /მომხმარებელი"
+      ],
+      "/month /user, billed annually": [
+        "/თვე /მომხმარებელი, გადახდით წელიწადში ერთხელ"
+      ],
+      "/month /user, billed biennially": [
+        "/თვე /მომხმარებელი, გადახდით ორ წელიწადში ერთხელ"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "${ BRAND_NAME }-ის ყველა ფასიანი სერვისი"
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "განთავსებულია შვეიცარიაში. GDPR-სთან თავსებადი"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "მაგრამ შეგიძლიათ მიიღოთ ${ discount } ფასდაკლება ტარიფის **${ upsellPlanTitle }**-ზე აწევით - ის სულ რაღაც ${ relativePrice }-ით მეტია თვეში."
@@ -11325,6 +11388,9 @@
       ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
+      ],
+      "Current plan": [
+        "მიმდინარე ტარიფი"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "აღმოაჩინეთ ${ PASS_APP_NAME },${ br }ჩვენი ახალი დაშიფრული პაროლების მმართველი"
@@ -11347,6 +11413,9 @@
       "End-to-end encryption": [
         "გამჭოლი შიფრაცია"
       ],
+      "Everything from ${ planTitle }, plus...": [
+        "${ planTitle }-ის ყველაფერი, პლუს..."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ წვდომა ${ BRAND_NAME }-ის ფასიან პაროლების მმართველთან!"
       ],
@@ -11359,11 +11428,20 @@
       "Free forever": [
         "სამუდამოდ უფასო"
       ],
+      "From the team that knows encryption": [
+        "გუნდისგან, რომელმაც დაშიფვრა იცის"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "დააყენეთ ${ appName } ${ browserName }-სთვის"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "დააყენეთ ${ appName } ${ browserName }-სთვის, მალე"
+      ],
+      "Get in touch with our sales team": [
+        "დაუკავშირდით ჩვენი გაყიდვების გუნდს"
+      ],
+      "Get the security and features your business needs": [
+        "მიიღეთ უსაფრთხოება და ფუნქციები თქვენი საქმიანი მოთხოვნებისთვის"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email ფსევდონიმები თქვენს ელფოსტას მონაცემების გაჟონვისგან იცავს"
@@ -11397,6 +11475,9 @@
       ],
       "One easy subscription.": [
         "ერთი ადვილი გამოწერა"
+      ],
+      "Open source and audited": [
+        "ღია კოდით, გადამოწმებული"
       ],
       "Open-source and audited": [
         "ღია კოდით, გადამოწმებული"
@@ -11482,9 +11563,38 @@
         "დაიცავი შენი ანგარიში"
       ]
     },
+    "pass_signup_2023: title": {
+      "For businesses": [
+        "ბიზნესებისთვის"
+      ],
+      "For invididuals": [
+        "ინდივიდუალური პირებისთვის"
+      ]
+    },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "გასაღებთან წვდომას ყველა ადმინისტრატორი მიიღებს."
+      ],
+      "Change organization key": [
+        "ორგანიზაციის გასაღებების შეცვლა"
+      ],
+      "Organization key activated": [
+        "ორგანიზაციის გასაღები გააქტიურდა"
+      ],
+      "Organization key does not exist.": [
+        "ორგანიზაციის გასაღები არ არსებობს."
+      ],
+      "Organization key restored": [
+        "ორგანიზაციის გასაღები აღდგენილია"
+      ],
+      "Organization key updated": [
+        "ორგანიზაციის გასაღები განახლდა"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "წვდომა აკრძალულია. ადმინისტრატორის პრივილეგიები შეზღუდულია."
+      ],
+      "Reset organization key": [
+        "ორგანიზაციის გასაღების ჩამოყრა"
       ],
       "The organization key must be activated first.": [
         "ჯერ საჭიროა ორგანიზაციის გასაღების აქტივაცია."
@@ -11498,12 +11608,35 @@
         "ახალი საკრედიტო/სადებეტო ბარათი"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "გადახდის ქვეყანა"
+      ],
+      "Card number": [
+        "ბარათის ნომერი"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "თთ/წწ"
+      ],
+      "Timeout exceeded": [
+        "მოლოდინის ვადა ამოიწურა"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "ბარათის არასწორი ნომერი"
       ],
       "Invalid expiration date": [
         "არასწორი ვადა"
+      ],
+      "Invalid securiry code": [
+        "უსაფრთხოების არასწორი კოდი"
+      ],
+      "Something went wrong. Please try again later.": [
+        "რაღაც არასწორად წავიდა. კიდევ სცადეთ."
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
@@ -12633,8 +12766,17 @@
       "Your ${ appStorage } is full": [
         "თქვენი ${ appStorage } სავსეა"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "თქვენი ${ storage } სავსეა. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "თქვენი საცავი ${ percentage }%-ით სავსეა. ${ cta }."
+      ],
       "Your storage is full": [
         "თქვენი საცავი სავსეა"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "თქვენი საცავი სავსეა. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "დაკარგავთ წვდომას ${ gb }-მდე საცავთან და პრიორიტეტულ მხარდაჭერასთან."
@@ -12826,6 +12968,9 @@
       ],
       "Address updated": [
         "მისამართი განახლებულია"
+      ],
+      "Administrator privileges restored": [
+        "ადმინისტრატორის პრივილეგიები აღდგენილია"
       ],
       "Auto-reply disabled": [
         "ავტომოპასუხე გათიშულია"
@@ -13422,6 +13567,9 @@
       "Composing": [
         "შედგენა"
       ],
+      "Confirm": [
+        "დასტური"
+      ],
       "Confirm address": [
         "დაადასტურეთ მისამართი"
       ],
@@ -13842,6 +13990,9 @@
       ],
       "Organization filters": [
         "ორგანიზაციის ფილტრები"
+      ],
+      "Organization key": [
+        "ორგანიზაციის გასაღები"
       ],
       "Organization name": [
         "ორგანიზაციის სახელი"
@@ -14562,10 +14713,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
       "Try a shorter username (${ n } character max)": [
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
         "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"

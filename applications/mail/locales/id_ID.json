@@ -6095,7 +6095,7 @@
         "Kapan Anda ingin pesan ini terhapus secara otomatis?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Pada saat Anda memberikan alamat email Anda, gunakanlah alamat email samaran sekali pakai yang dihasilkan oleh hide-my-email alih-alih alamat email asli Anda."
+        "Pada saat Anda memberikan alamat email, gunakanlah alamat email samaran sekali pakai yang dihasilkan oleh hide-my-email alih-alih alamat email asli Anda."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
@@ -8074,6 +8074,9 @@
       "Try ${ PASS_APP_NAME }": [
         "Coba ${ PASS_APP_NAME }"
       ],
+      "Used on amazon for shopping, etc.": [
+        "Digunakan oleh berbagai layanan mis. Amazon untuk berjualan"
+      ],
       "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
         "Pada saat Anda diminta untuk mengisi alamat email, gunakan alias ini. Setelahnya, berikan judul dan keterangan agar Anda dapat melacak di mana alias ini digunakan."
       ]
@@ -9332,6 +9335,9 @@
       "Get advanced protection": [
         "Dapatkan perlindungan tingkat lanjut"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Dapatkan aplikasi ${ appName[APP_NAME] }"
+      ],
       "Groups": [
         "Grup"
       ],
@@ -9804,9 +9810,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Kata sandi harus mengandung minimal ${ length } karakter"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]

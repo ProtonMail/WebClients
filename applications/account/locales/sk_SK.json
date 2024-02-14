@@ -629,11 +629,11 @@
       "No": [
         "Nie"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
@@ -14833,12 +14833,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovať aspoň ${ length } znak",
-        "Heslo musí obsahovať aspoň ${ length } znaky",
-        "Heslo musí obsahovať aspoň ${ length } znakov",
-        "Heslo musí obsahovať aspoň ${ length } znakov"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Skúste kratšie používateľské meno (max. ${ n } znak)",
         "Skúste kratšie používateľské meno (max. ${ n } znaky)",

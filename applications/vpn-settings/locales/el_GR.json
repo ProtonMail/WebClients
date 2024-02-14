@@ -425,6 +425,9 @@
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
+      "Select country": [
+        "Επιλογή χώρας"
+      ],
       "Select file": [
         "Επιλέξτε αρχείο"
       ],
@@ -2033,6 +2036,9 @@
       "Organization key is not decrypted": [
         "Το κλειδί οργανισμού δεν είναι αποκρυπτογραφημένο"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για τη δημιουργία μη ιδιωτικών χρηστών"
+      ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
       ],
@@ -2122,6 +2128,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να επαναφέρετε τα δικαιώματα διαχειριστή."
       ],
       "Try again later": [
         "Δοκιμάστε ξανά αργότερα"
@@ -2920,6 +2929,9 @@
       "Are you sure you want to discard your changes?": [
         "Θέλετε σίγουρα να απορρίψετε τις αλλαγές σας;"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Είστε βέβαιοι ότι θέλετε να δώσετε δικαιώματα διαχειριστή σε αυτόν τον χρήστη;"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
       ],
@@ -3230,6 +3242,9 @@
       ],
       "inactive": [
         "ανενεργό"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -4076,6 +4091,9 @@
       ],
       "Credit": [
         "Πίστωση"
+      ],
+      "Credit note": [
+        "Πιστωτικό Τιμολόγιο"
       ],
       "Currency conversion": [
         "Μετατροπή Νομίσματος"
@@ -4937,6 +4955,9 @@
       "Autofill credit cards (coming soon)": [
         "Αυτόματη συμπλήρωση πιστωτικών καρτών (σύντομα διαθέσιμη)"
       ],
+      "Automatic email forwarding": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
       "Available on all platforms": [
         "Διαθέσιμο σε όλες τις πλατφόρμες"
       ],
@@ -5074,6 +5095,9 @@
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
       ],
+      "Require 2FA for organization": [
+        "Απαιτείται 2FA για οργάνωση"
+      ],
       "Router support": [
         "Υποστήριξη δρομολογητή"
       ],
@@ -5107,6 +5131,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Ενσωμάτωση SSO (σύντομα διαθέσιμο)"
       ],
       "Start protecting your organization": [
         "Ξεκινήστε να προστατεύετε τον οργανισμό σας"
@@ -5149,6 +5176,9 @@
       ],
       "Unlimited messages per day": [
         "Απεριόριστα μηνύματα ανά ημέρα"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
@@ -5354,6 +5384,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Σας επιτρέπει να ρυθμίσετε αυτόματες απαντήσεις (αυτόματη απάντηση) για τα εισερχόμενα μηνύματά σας"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Προωθήστε αυτόματα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον λογαριασμό σας ${ MAIL_APP_NAME } σε οποιαδήποτε άλλη διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Η μαζική διαφημιστική ή προγραμματική αποστολή μηνυμάτων ηλεκτρονικού ταχυδρομείου δεν υποστηρίζεται προς το παρόν. Συνιστούμε να χρησιμοποιήσετε έναν αποκλειστικό παροχό υπηρεσιών ηλεκτρονικού ταχυδρομείου για αυτήν την περίπτωση χρήσης."
@@ -5704,8 +5737,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "Μεταβείτε στην κρύπτη για να διαχειριστείτε τους κωδικούς πρόσβασης, τα ψευδώνυμα και πολλά άλλα."
+      ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "Ξεκινήστε να προσθέτετε χρήστες για να τους δώσετε πρόσβαση στο ${ PASS_APP_NAME }."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Έναρξη χρήσης του ${ PASS_APP_NAME }"
@@ -5723,6 +5762,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Ας μιλήσουμε"
+      ],
       "Limited time offer": [
         "Προσφορά περιορισμένου χρόνου"
       ],
@@ -5795,20 +5837,77 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Όλοι οι διαχειριστές θα έχουν πρόσβαση στο κλειδί."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Είστε βέβαιοι ότι θέλετε να αλλάξετε το κλειδί του οργανισμού σας;"
+      ],
       "Change organization key": [
         "Αλλαγή κλειδιού οργανισμού"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Οι μη ιδιωτικοί χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν έχουν κλειδιά εγκατάστασης"
       ],
       "Organization key activated": [
         "Το κλειδί οργανισμού ενεργοποιήθηκε"
       ],
+      "Organization key does not exist.": [
+        "Το κλειδί οργανισμού δεν υπάρχει."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Το κλειδί οργανισμού πρέπει να ενεργοποιηθεί για να εκχωρήσει δικαιώματα διαχειριστή"
+      ],
+      "Organization key restored": [
+        "Το κλειδί του οργανισμού έχουν αποκατασταθεί"
+      ],
+      "Organization key updated": [
+        "Ενημερώθηκε το κλειδί οργανισμού"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Η άδεια απορρίφθηκε, τα δικαιώματα διαχειριστή έχουν περιοριστεί."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Οι ιδιώτες χρήστες μπορούν να προβιβαστούν σε διαχειριστή όταν συνδεθούν για πρώτη φορά"
       ],
       "Reset organization key": [
         "Επαναφορά κλειδιού οργανισμού"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Οι ακόλουθοι διαχειριστές θα έχουν πρόσβαση στο κλειδί οργανισμού."
+      ],
       "The organization key must be activated first.": [
         "Το κλειδί οργανισμού πρέπει πρώτα να ενεργοποιηθεί."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Αυτό θα στείλει το πιο πρόσφατο κλειδί οργανισμού στους διαχειριστές που αυτήν τη στιγμή δεν έχουν πρόσβαση σε αυτό."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Για να δημιουργήσετε μη ιδιωτικούς λογαριασμούς χρηστών και να αποκτήσετε πρόσβαση στους λογαριασμούς τους, θα πρέπει να ενεργοποιήσετε το κλειδί του οργανισμού σας."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Για να ενεργοποιήσετε τα δικαιώματα διαχειριστή στο λογαριασμό σας, ενεργοποιήστε το κλειδί οργανισμού."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης δεδομένων ή επαναφέρετε το κλειδί οργανισμού για να επαναφέρετε δικαιώματα διαχειριστή."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης δεδομένων, επικοινωνήστε με έναν άλλο διαχειριστή ή επαναφέρετε το κλειδί οργανισμού για να επαναφέρετε δικαιώματα διαχειριστή."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Δεν ήταν δυνατή η επαλήθευση της ασφάλειας του κλειδιού διεύθυνσης αυτού του αποστολέα. Μερικές φορές υπάρχει καθυστέρηση στην ενημέρωση των πληροφοριών του αποστολέα. Δοκιμάστε ξανά αργότερα. Εάν δεν εμπιστεύεστε την εγκυρότητα αυτής της πρόσκλησης ή του αποστολέα, επικοινωνήστε με την υποστήριξη πελατών του ${ BRAND_NAME }."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Έχουμε επαληθεύσει την αυθεντικότητα αυτού του αποστολέα και της πρόσκλησης."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Έχετε γίνει διαχειριστής του οργανισμού **${ organizationName }** από"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Πρέπει να ιδιωτικοποιήσετε όλους τους χρήστες πριν δημιουργήσετε ένα νέο κλειδί οργανισμού"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Χρειάζεστε πρόσβαση στο κλειδί οργανισμού για να εκτελέσετε αυτήν τη λειτουργία."
       ]
     },
     "Payment method option": {
@@ -5820,6 +5919,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Χώρα χρέωσης"
+      ],
       "Card number": [
         "Αριθμός κάρτας"
       ],
@@ -5828,6 +5930,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "Timeout exceeded": [
+        "Υπέρβαση χρονικού ορίου"
       ]
     },
     "Payments.Error": {
@@ -6038,6 +6143,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } διαχειριστής στον οργανισμό σας χρειάζεται πρόσβαση στο κλειδί οργανισμού.",
+        "${ n } διαχειριστές στον οργανισμό σας χρειάζονται πρόσβαση στο κλειδί οργανισμού."
+      ],
       "Changing organization keys": [
         "Γίνεται αλλαγή κλειδιών οργανισμού"
       ],
@@ -6633,6 +6742,12 @@
       "For all ${ BRAND_NAME } services": [
         "Για όλες τις υπηρεσίες ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
       ],
@@ -6649,8 +6764,20 @@
       "Your ${ appStorage } is full": [
         "Ο ${ appStorage } είναι γεμάτος"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ο ${ storage } είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ο ${ storage } είναι γεμάτος. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
       "Your storage is full": [
         "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Θα χάσετε την πρόσβαση σε ${ gb } χώρου αποθήκευσης και υποστήριξη προτεραιότητας."
@@ -6821,6 +6948,9 @@
       ],
       "Address added": [
         "Η διεύθυνση προστέθηκε"
+      ],
+      "Administrator privileges restored": [
+        "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
@@ -7713,10 +7843,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
@@ -7846,6 +7972,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Δυστυχώς, δεν είμαστε συνδεδεμένοι αυτή τη στιγμή. Παρακαλούμε συμπληρώστε την παρακάτω φόρμα για να περιγράψετε το πρόβλημά σας και θα το εξετάσουμε και θα επικοινωνήσουμε μαζί σας όταν επιστρέψουμε στο διαδίκτυο."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Πρέπει να ${ activateLink } το κλειδί οργανισμού πριν προσθέσετε μια διεύθυνση ηλεκτρονικού ταχυδρομείου σε ένα μη ιδιωτικό μέλος."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"

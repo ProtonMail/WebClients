@@ -635,10 +635,10 @@
       "No": [
         "Hayır"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -820,6 +820,9 @@
       ],
       "Select calendar view": [
         "Takvim görünümünü seçin"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Select files": [
         "Dosyaları seçin"
@@ -8162,6 +8165,9 @@
       "Expand / contract composer": [
         "Oluşturucuyu genişlet / daralt"
       ],
+      "Filter": [
+        "Süz"
+      ],
       "Forward": [
         "İlet"
       ],
@@ -11690,6 +11696,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Faturalanacak ülke"
+      ],
       "Card number": [
         "Kart numarası"
       ],
@@ -12826,6 +12835,12 @@
       "Get more storage": [
         "Daha fazla depolama alanı edinin"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "E-postalar gönderebilmek ve alabilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Dosyaları yükleyebilmek ya da eşitleyebilmek için depolama alanını boşaltın ya da ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "${ app } uygulamasını tüm özellikleri ile deneyin"
       ],
@@ -12851,8 +12866,20 @@
       "Your ${ appStorage } is full": [
         "Kullandığını ${ appStorage } dolu"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "${ storage } depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "${ storage } depolama alanınız dolmuş. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Depolama alanınız %${ percentage } oranında dolu. ${ cta }."
+      ],
       "Your storage is full": [
         "Depolama alanınız dolu"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Depolama alanınız dolmuş. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "${ gb } depolama alanına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
@@ -14703,7 +14730,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kişilerinizde, güvenilen anahtarları bulunmayan bir ${ MAIL_APP_NAME } kullanıcısından e-posta aldığınızda, güvenilen anahtarlar özelliğini açmak isteyip istemediğiniz sorulur."
+        "Kişilerinizde, güvenilen anahtarları bulunmayan bir ${ MAIL_APP_NAME } kullanıcısından e-posta aldığınızda, güvenilen anahtarlar özelliğini açmak isteyip istemediğinizi soran bir uyarı görüntülenir."
       ]
     },
     "Tooltip sign external messages": {
@@ -14789,10 +14816,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ length } karakter uzunluğunda olmalıdır"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"

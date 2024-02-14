@@ -635,10 +635,10 @@
       "No": [
         "En"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -820,6 +820,9 @@
       ],
       "Select calendar view": [
         "Valitse kalenterinäkymä"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select files": [
         "Valitse tiedostot"
@@ -3899,6 +3902,9 @@
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
+      ],
       "Password is required": [
         "Salasana vaaditaan"
       ],
@@ -4074,6 +4080,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Viesti saattaa sisältää joitakin URL-linkkejä, joita nykyinen selaimesi ei voi avata oikein."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii ylläpitäjänoikeuksiesi palauttamista."
       ],
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
@@ -8153,6 +8162,9 @@
       "Expand / contract composer": [
         "Laajenna/tiivistä viestin kirjoitus"
       ],
+      "Filter": [
+        "Suodata"
+      ],
       "Forward": [
         "Välitä"
       ],
@@ -10316,6 +10328,9 @@
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "Rajattomasti jaettuja holveja käyttöoikeuksilla"
+      ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
       ],
@@ -10571,6 +10586,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Voit määrittää saapuville viesteillesi automaattivaustauksia"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
@@ -11318,6 +11336,9 @@
       "Continue with your ${ BRAND_NAME } account": [
         "Jatka ${ BRAND_NAME }-tililläsi"
       ],
+      "Let's talk": [
+        "Keskustellaan"
+      ],
       "Limited time offer": [
         "Vain rajoitetun ajan"
       ],
@@ -11353,8 +11374,23 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } kuukaudessa"
       ],
+      "/month /user": [
+        "/kuukausi /käyttäjä"
+      ],
+      "/month /user, billed annually": [
+        "/kuukausi /käyttäjä, laskutetaan vuosittain"
+      ],
+      "/month /user, billed biennially": [
+        "/kuukausi /käyttäjä, laskutetaan joka toinen vuosi"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Kehittynyt ja alan standardit ylittävä suojaus"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Kaikki premium ${ BRAND_NAME } -palvelut."
+      ],
+      "Based in Switzerland, GDPR compliant": [
+        "Sveitsissä sijaitseva, GDPR:ää noudattava"
       ],
       "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mutta voit saada ${ discount } allennusta päivittämällä hintaan **${ upsellPlanTitle }** - se on vain ${ relativePrice } lisää kuukaudessa."
@@ -11398,6 +11434,12 @@
       "End-to-end encryption": [
         "Päästä päähän -salaus"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Anna käyttäjälle **${ username }** näyttönimi. Käyttäjät näkevät sen, kun muutat heidän oikeuksiaan tai jaat tietoja heidän kanssaan."
+      ],
+      "Essential protection and secure collaboration for unlimited users": [
+        "Välttämätön suojaus ja turvallinen yhteistoiminta rajoittamattomille käyttäjille"
+      ],
       "Everything from ${ planTitle }, plus...": [
         "Kaikki ${ planTitle } -tilaukseen kuuluva, ja..."
       ],
@@ -11413,11 +11455,20 @@
       "Free forever": [
         "Ikuisesti ilmainen"
       ],
+      "From the team that knows encryption": [
+        "Salauksen tuntevalta tiimiltä"
+      ],
       "Get ${ appName } for ${ browserName }": [
         "Hanki ${ appName } selaimelle ${ browserName }"
       ],
       "Get ${ appName } for ${ browserName } soon": [
         "Hanki ${ appName } selaimelle ${ browserName } pian"
+      ],
+      "Get in touch with our sales team": [
+        "Ota yhteyttä myyntitiimiimme"
+      ],
+      "Get the security and features your business needs": [
+        "Hanki yrityksesi tarvitsema turva ja ominaisuudet"
       ],
       "Hide-my-email aliases protect your email from data breaches": [
         "Hide-my-email-aliakset suojaavat sähköpostiasi tietomurroilta"
@@ -11452,6 +11503,9 @@
       "One easy subscription.": [
         "Yksi helppo tilaus."
       ],
+      "Open source and audited": [
+        "Avoin lähdekoodi ja auditoitu"
+      ],
       "Open-source and audited": [
         "Avoin lähdekoodi ja auditoitu"
       ],
@@ -11484,6 +11538,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Erikoistarjous: Hanki ${ title } hintaan ${ price } ikuisesti!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on yksilöllisiä tarpeita."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Valitsemasi tarjous ei ole saatavilla ${ currentPlanTitle } -tilaajille."
@@ -11554,11 +11611,17 @@
       "Change organization key": [
         "Muuta organisaation avainta"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+      ],
       "Organization key activated": [
         "Organisaation avain aktivoitiin"
       ],
       "Organization key does not exist.": [
         "Organisaation avainta ei ole olemassa."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisaation avain on aktivoitava, jotta voit antaa ylläpitäjän oikeudet"
       ],
       "Organization key restored": [
         "Organisaation avain palautettiin"
@@ -11569,11 +11632,41 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
+      ],
       "Reset organization key": [
         "Nollaa organisaation avain"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Seuraavat ylläpitäjät saavat organisaation avaimen käyttöoikeuden."
+      ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Tämä lähettää uusimman organisaation avaimen niille ylläpitäjille, joilla ei tällä hetkellä ole käyttöoikeutta siihen."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii organisaatioavaimesi aktivoimista."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Ota tilisi ylläpitäjän oikeudet käyttöön aktivoimalla organisaatioavain."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää tai nollaamalla organisaation avain."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää, ottamalla yhteyttä toiseen ylläpitäjään tai nollaamalla organisaation avain."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
       ],
       "You need access to the organization key to perform this operation.": [
         "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
@@ -11588,6 +11681,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Laskutusmaa"
+      ],
       "Card number": [
         "Kortin numero"
       ],
@@ -11937,6 +12033,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus.",
+        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus."
+      ],
       "Changing organization keys": [
         "Muuta organisaation avaimia"
       ],
@@ -12720,6 +12820,9 @@
       "Get more storage": [
         "Hanki lisää tallennustilaa"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+      ],
       "Try out ${ app } to its full potential": [
         "Kokeile ${ app } -sovelluksen kaikkia ominaisuuksia"
       ],
@@ -12747,6 +12850,9 @@
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Tallennustilasi on täynnä. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Menetät oikeuden ${ gb } tallennustilaan ja ensisijaiseen tukeen."
@@ -14686,10 +14792,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Salasanan täytyy sisältää ainakin ${ length } merkki",
-        "Salasanan täytyy sisältää ainakin ${ length } merkkiä"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
@@ -14860,6 +14962,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "DNS-asetuksissasi havaittiin ongelma. Varmista, että tietueesi vastaavat alla olevia ohjeita. Jos ongelma jatkuu, joudutaan DKIM-allekirjoitus poistamaan käytöstä."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Sinun on ${ activateLink } organisaation avain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
       ],
       "You will lose any customization you made so far.": [
         "Menetät kaikki aiemmin tekemäsi mukautukset."

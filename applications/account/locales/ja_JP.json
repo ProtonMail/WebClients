@@ -629,11 +629,11 @@
       "No": [
         "いいえ"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
@@ -9715,6 +9715,9 @@
       "Autofill credit cards (coming soon)": [
         "クレジットカードの自動入力 (近日公開)"
       ],
+      "Automatic email forwarding": [
+        "自動メール転送"
+      ],
       "Available on all platforms": [
         "すべてのプラットフォームで利用可能"
       ],
@@ -10169,6 +10172,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "受信メッセージへの(自動)返信が可能になります"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME }アカウントに送信されたメールを自動的に他のメールアドレスに転送します。"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
@@ -13975,9 +13981,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "パスワードは ${ length } 文字以上必要です"
-      ],
       "Try a shorter username (${ n } character max)": [
         "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]

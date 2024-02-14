@@ -501,6 +501,9 @@
       "Select calendar view": [
         "Tria la vista de calendari"
       ],
+      "Select country": [
+        "Seleccioneu el país"
+      ],
       "Select time zone": [
         "Selecciona el fus horari"
       ],
@@ -3896,6 +3899,9 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
+      "Important note": [
+        "Nota important"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
       ],
@@ -7006,10 +7012,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

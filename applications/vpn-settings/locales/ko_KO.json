@@ -8,6 +8,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
+      "Activate": [
+        "활성화"
+      ],
       "activate": [
         "활성화"
       ],
@@ -55,6 +58,9 @@
       ],
       "Cancel subscription": [
         "구독 취소"
+      ],
+      "Change keys": [
+        "키 변경"
       ],
       "Change mailbox password": [
         "메일함 비밀번호 변경"
@@ -418,6 +424,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
+      ],
+      "Select country": [
+        "국가 선택"
       ],
       "Select file": [
         "파일 선택"
@@ -1944,6 +1953,9 @@
       "Code wrong or not valid anymore": [
         "틀렸거나 더 이상 유효하지 않는 코드"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "청구서 로드 실패. 다시 시도하십시오."
+      ],
       "Domain not available, try again later": [
         "도메인을 사용할 수 없습니다. 나중에 다시 시도해주세요."
       ],
@@ -2015,6 +2027,9 @@
       ],
       "Organization key is not decrypted": [
         "조직 키는 해독되지 않았습니다"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "개인이 아닌 사용자를 생성하려면 조직 키는 활성화 상태여야 합니다."
       ],
       "Passwords do not match": [
         "비밀번호가 일치하지 않습니다"
@@ -2105,6 +2120,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
       ],
       "Try again later": [
         "나중에 다시 시도하세요"
@@ -2883,6 +2901,9 @@
       "Are you sure you want to discard your changes?": [
         "사용자의 변경사항을 취소하시겠습니까?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "정말 이 사용자로 관리자 권한을 이전하시겠습니까?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
       ],
@@ -3191,6 +3212,9 @@
       ],
       "inactive": [
         "비활성화"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
@@ -4027,6 +4051,12 @@
       "Credit": [
         "크레딧"
       ],
+      "Credit note": [
+        "대변전표"
+      ],
+      "Currency conversion": [
+        "화폐 변환"
+      ],
       "Donation": [
         "기부"
       ],
@@ -4081,6 +4111,9 @@
       ],
       "Addresses": [
         "주소"
+      ],
+      "Administrators": [
+        "관리자"
       ],
       "Allow recovery by email": [
         "이메일을 통한 복구 허용"
@@ -4450,6 +4483,9 @@
       ],
       "Value": [
         "값"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "Verification code": [
         "인증 코드"
@@ -4863,6 +4899,9 @@
       "Autofill credit cards (coming soon)": [
         "신용카드 자동 완성 (곧 찾아 옵니다)"
       ],
+      "Automatic email forwarding": [
+        "자동 이메일 전달"
+      ],
       "Available on all platforms": [
         "모든 플랫폼에서 지원"
       ],
@@ -4998,6 +5037,9 @@
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
       ],
+      "Require 2FA for organization": [
+        "조직에 2FA (이중 인증) 요구"
+      ],
       "Router support": [
         "라우터 지원"
       ],
@@ -5030,6 +5072,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "분할 터널링 (Android 및 Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO 통합 (출시 예정)"
       ],
       "Start protecting your organization": [
         "조직 보호를 시작하세요"
@@ -5072,6 +5117,9 @@
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "권한 접근이 포함된 무제한 공유 가능 금고"
       ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
@@ -5275,6 +5323,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "수신 메시지에 대한 자동 응답을 설정할 수 있습니다."
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } 계정으로 전송된 이메일을 다른 이메일 주소로 자동으로 전달하세요."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "대량 홍보나 자동화된 이메일 발송은 현재 지원되지 않습니다. 해당 용도로는 전용 이메일 서비스 제공사업자를 사용하는 것을 권장합니다."
@@ -5641,8 +5692,14 @@
       ]
     },
     "Pass B2B onboarding spotlight": {
+      "Go to your vault to manage your passwords, aliases, and more.": [
+        "비밀번호, 별명 등을 관리하려면 금고로 이동하세요."
+      ],
       "Set up your organization": [
         "조직 설정"
+      ],
+      "Start adding users to give them access to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에 접근할 수 있도록 사용자 추가를 시작하세요."
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 사용 시작"
@@ -5660,6 +5717,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "상담 및 계약 필요"
+      ],
       "Limited time offer": [
         "기간 한정 세일"
       ],
@@ -5671,8 +5731,20 @@
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/월간"
       ],
+      "/month /user": [
+        "/월 /사용자"
+      ],
+      "/month /user, billed annually": [
+        "/월간 /사용자 당, 연간 결제됨"
+      ],
+      "/month /user, billed biennially": [
+        "/월 /사용자, 매년 결제됨"
+      ],
       "Creating your account": [
         "계정을 생성하는 중"
+      ],
+      "Current plan": [
+        "현재 플랜"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
@@ -5685,6 +5757,9 @@
       ],
       "Free forever": [
         "영원히 무료"
+      ],
+      "Get in touch with our sales team": [
+        "자사 세일즈 팀에 문의하세요."
       ],
       "Includes:": [
         "포함:"
@@ -5717,11 +5792,77 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "모든 관리자가 키에 접근할 수 있습니다."
+      ],
+      "Are you sure you want to change your organization key?": [
+        "사용자의 조직 키를 변경하시겠습니까?"
+      ],
+      "Change organization key": [
+        "조직 키 변경"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "비개인 사용자는 키 설정을 하면 관리자로 승격 가능합니다."
+      ],
+      "Organization key activated": [
+        "조직 키 활성화됨"
+      ],
+      "Organization key does not exist.": [
+        "조직 키가 존재하지 없습니다."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "관리자 권한을 부여하기 위해 조직 키는 활성화되어야 합니다."
+      ],
+      "Organization key restored": [
+        "조직 키 복원됨"
+      ],
+      "Organization key updated": [
+        "조직 키 업데이트됨"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "권한이 거부되었으며 관리자 권한이 제한되었습니다."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "개인 사용자는 처음 로그인하면 관리자로 승격할 수 있습니다."
+      ],
+      "Reset organization key": [
+        "조직 키 재설정"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "다음 관리자는 조직 키에 접근할 수 있게 됩니다."
+      ],
       "The organization key must be activated first.": [
         "조직 키가 먼저 활성화되어야 합니다."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "현재 접근할 수 없는 관리자에게 최신 상태의 조직 키가 보내집니다."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "개인이 아닌 사용자 계정을 만들고 계정에 액세스하려면 조직 키를 활성화해야 합니다."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "사용자의 계정에 관리자 권한을 활성화 하려면, 조직 키를 활성화 하십시오."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "관리자 권한 재설정을 위해 데이터 북구 방법을 사용하거나 조직 키를 재설정 하십시오."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "관리자 권한 재설정을 위해 데이터 복구 방법을 사용하거나 타 관리자에게 연락하거나 조직 키를 재설정 하십시오."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "이 전송자의 주소 키에 대한 보안을 검증하는데 실패했습니다. 가끔 전송자 정보를 업데이트하는데 딜레이가 있을 수 있습니다. 잠시 후 다시 시도하세요. 이 초대나 전송자의 유효성을 신뢰하지 않는다면, ${ BRAND_NAME } 고객 지원에 문의하십시오."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "당사에서 이 발신자와 초대장의 진위를 확인했습니다."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "다음 사용자로 부터 조직 **${ organizationName }**의 관리자직이 부여되었습니다:"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "이 작업을 수행하려면 조직 키에 접근해야 합니다."
       ]
     },
     "Payment method option": {
@@ -5732,12 +5873,41 @@
         "신용/체크카드 추가"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "청구 국가 "
+      ],
+      "Card number": [
+        "카드 번호"
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "MM/YY": [
+        "MM/YY (월/년)"
+      ],
+      "Timeout exceeded": [
+        "응답 시간 초과"
+      ]
+    },
     "Payments.Error": {
       "Invalid card number": [
         "유효하지 않은 카드 번호"
       ],
       "Invalid expiration date": [
         "올바르지 않은 만료 기한"
+      ],
+      "Invalid securiry code": [
+        "잘못된 보안 코드"
+      ],
+      "Something went wrong. Please try again later.": [
+        "문제가 발생했습니다. 나중에 다시 시도하세요."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "사용자의 결제 방법을 인증하지 못했습니다. 타 결제 수단을 선택하거나 다시 시도하십시오."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "사용자의 카드가 거절되었습니다. 다른 카드로 시도하거나 은행사에 문의해 주세요."
       ]
     },
     "Permission": {
@@ -6502,6 +6672,12 @@
       "For all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스에서 사용"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "이메일을 수발신 하려면, 공간을 비우거나 ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "파일을 업로드 및 동기화하려면, 공간을 비우거나 ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "추가 저장 공간을 위해 업그레이드 하세요."
       ],
@@ -6514,8 +6690,20 @@
       "Your ${ appStorage } is full": [
         "사용자의 ${ appStorage }이 가득 찼습니다."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "사용자의 ${ storage }가 ${ percentage }% 찼습니다. ${ cta }"
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "사용자의 ${ storage } 스토리지가 가득 찼습니다. ${ cta }"
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "사용자의 스토리지가 ${ percentage }% 찼습니다. ${ cta }"
+      ],
       "Your storage is full": [
         "저장공간이 꽉 찼습니다"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "사용자의 스토리지가 가득 찼습니다. ${ cta }"
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "우선 지원과 ${ gb } 스토리지를 잃게 됩니다."
@@ -6670,6 +6858,9 @@
       ],
       "Address added": [
         "주소 추가됨"
+      ],
+      "Administrator privileges restored": [
+        "관리자 권한 재설정됨"
       ],
       "Bug reported": [
         "버그 신고됨"
@@ -6997,6 +7188,9 @@
       ],
       "Change role": [
         "역할 변경"
+      ],
+      "Confirm": [
+        "확인"
       ],
       "Confirm address": [
         "이메일 주소 확인"
@@ -7555,9 +7749,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "비밀번호는 최소 ${ length } 자 이상이어야 합니다."
-      ],
       "Try a shorter username (${ n } character max)": [
         "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
@@ -7703,6 +7894,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "안타깝게도, 현재 온라인이 아닙니다. 겪고 계신 문제를 설명하기 위해 아래 양식을 작성해 주시면, 다시 온라인에 접속하실 때 살펴보고 연락드리겠습니다."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "비공개 멤버에 이메일 주소를 추가하기 전에 조직 키를 ${ activateLink }해야 합니다."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"

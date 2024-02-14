@@ -4782,6 +4782,9 @@
       "Duplicate found": [
         "S-a găsit o dublură."
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "ex. Amazon, eBay, Etsy"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -7316,11 +7319,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Parola trebuie să conțină cel puțin un caracter",
-        "Parola trebuie să conțină cel puțin ${ length } caractere.",
-        "Parola trebuie să conțină cel puțin ${ length } de caractere."
-      ],
       "Try a shorter username (${ n } character max)": [
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
         "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",

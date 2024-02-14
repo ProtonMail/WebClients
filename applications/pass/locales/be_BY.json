@@ -275,9 +275,6 @@
       "Pin item": [
         "Замацаваць элемент"
       ],
-      "Recent": [
-        "Нядаўнія"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -753,11 +750,11 @@
       "Access successfully confirmed": [
         "Доступ паспяхова пацверджаны"
       ],
-      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
-        "Для доступу да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код, каб разблакіраваць сеанс"
-      ],
       "Admin": [
         "Адміністратар"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Пасля не актыўнасці, каб атрымаць доступ да ${ PASS_APP_NAME } вам спатрэбіцца ўвесці PIN-код для разблакіроўкі сеанса. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
