@@ -22,6 +22,7 @@ import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/component
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
+import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { initMainHost } from '@proton/cross-storage/lib';
@@ -79,7 +80,6 @@ import { extendStore, setupStore } from '../store/store';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
-import AccountPublicAppSetup from './AccountPublicAppSetup';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
 
@@ -534,7 +534,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                     >
                         <UnAuthenticatedApiProvider loader={loader}>
                             <UnleashFlagProvider>
-                                <AccountPublicAppSetup loader={loader}>
+                                <PublicAppSetup loader={loader}>
                                     <PaymentSwitcher loader={loader}>
                                         <ForceRefreshContext.Provider value={refresh}>
                                             <Switch location={location}>
@@ -753,7 +753,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                             </Switch>
                                         </ForceRefreshContext.Provider>
                                     </PaymentSwitcher>
-                                </AccountPublicAppSetup>
+                                </PublicAppSetup>
                             </UnleashFlagProvider>
                         </UnAuthenticatedApiProvider>
                     </AccountPublicApp>
