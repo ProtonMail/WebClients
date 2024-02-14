@@ -2,7 +2,7 @@ import JSZip from 'jszip';
 import { c } from 'ttag';
 
 import { decryptPassExport } from '@proton/pass/lib/export/export';
-import type { ExportData, ExportFormat, ExportedItem } from '@proton/pass/lib/export/types';
+import type { ExportData, ExportedItem } from '@proton/pass/lib/export/types';
 import { ImportProviderError, ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import type { ImportPayload, ImportReaderPayload, ImportVault } from '@proton/pass/lib/import/types';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
@@ -40,7 +40,7 @@ export const decryptProtonPassImport = async (payload: ImportReaderPayload): Pro
     }
 };
 
-export const readProtonPassData = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
+export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
     try {
         const zipFile = await JSZip.loadAsync(payload.data);
         const zipObject = zipFile.file(`${PASS_APP_NAME}/data.json`);
@@ -48,7 +48,7 @@ export const readProtonPassData = async (payload: ProtonPassReaderPayload): Prom
 
         if (exportData === undefined) throw new Error();
 
-        const parsedExport = JSON.parse(exportData) as ExportData<ExportFormat.DEFAULT>;
+        const parsedExport = JSON.parse(exportData) as ExportData;
         const { userId } = parsedExport;
 
         /* when trying to import alias items : make sure the userId between

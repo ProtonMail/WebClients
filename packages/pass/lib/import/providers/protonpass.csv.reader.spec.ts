@@ -4,18 +4,18 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
-import { readProtonPassCsvData } from './protonpass.csv.reader';
+import { readProtonPassCSV } from './protonpass.csv.reader';
 
 describe('Import Proton Pass CSV', () => {
     let payload: ImportPayload;
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/protonpass.csv', 'utf8');
-        payload = await readProtonPassCsvData(sourceData);
+        payload = await readProtonPassCSV(sourceData);
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readProtonPassCsvData('not-a-csv-file')).rejects.toThrow();
+        await expect(readProtonPassCSV('not-a-csv-file')).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
