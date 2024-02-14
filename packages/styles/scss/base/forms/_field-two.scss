@@ -68,8 +68,12 @@
 		cursor: default;
 	}
 
-	&--readonly .input {
-		border-color: var(--background-weak);
+	&--readonly {
+		--field-norm: var(--background-weak);
+		--field-hover: var(--background-strong);
+		--field-background-color: var(--background-weak);
+		--field-hover-background-color: var(--background-weak);
+		--field-focus-background-color: var(--background-weak);
 	}
 
 	&--disabled-only-field {
@@ -151,11 +155,6 @@
 
 		@include media('print') {
 			font-size: 10pt;
-		}
-
-		&[readonly] {
-			border-color: var(--background-weak);
-			background-color: var(--background-weak);
 		}
 
 		.is-drawer-app & {
