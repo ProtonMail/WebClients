@@ -635,10 +635,10 @@
       "No": [
         "No"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -5996,6 +5996,10 @@
       "Admin account allocation": [
         "Cuenta administrador de asignación"
       ],
+      "Affected user is on row": [
+        "El usuario afectado está en la fila",
+        "Los usuarios afectados están en las filas"
+      ],
       "Align left": [
         "Alinear a la izquierda"
       ],
@@ -6983,6 +6987,10 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Intente de nuevo, use un método de pago diferente o contacte con PayPal por asistencia."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracter.",
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracteres."
+      ],
       "Please use another browser or download the file.": [
         "Use otro navegador o descargue el archivo."
       ],
@@ -7385,6 +7393,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará su contraseña temporal. La usará para acceder a su cuenta de ${ BRAND_NAME } en el futuro."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará la sesión de cualquier sesión activa y desactivará la autenticación de dos factores."
@@ -13607,6 +13618,9 @@
       "Are you sure you want to close?": [
         "¿Está seguro de que quiere cerrar?"
       ],
+      "Are you sure?": [
+        "Está segura/o?"
+      ],
       "Authentication security": [
         "Autenticación de seguridad"
       ],
@@ -14822,9 +14836,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter",
-        "La contraseña debe tener al menos ${ length } caracteres"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
       ],
       "Try a shorter username (${ n } character max)": [
         "Intente con un nombre de usuario corto (${ n } caracter máx.)",

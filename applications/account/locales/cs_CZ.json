@@ -629,11 +629,11 @@
       "No": [
         "Ne"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
@@ -14860,12 +14860,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Heslo musí obsahovat alespoň ${ length } znak",
-        "Heslo musí obsahovat alespoň ${ length } znaky",
-        "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Heslo musí obsahovat alespoň ${ length } znaků"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
         "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",

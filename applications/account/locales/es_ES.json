@@ -635,11 +635,11 @@
       "No": [
         "No"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Aceptar"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
@@ -14822,10 +14822,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contraseña debe contener al menos ${ length } caracter.",
-        "La contraseña debe contener al menos ${ length } caracteres."
-      ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"
