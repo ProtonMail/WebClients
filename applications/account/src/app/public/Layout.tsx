@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
+import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
 import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { APPS } from '@proton/shared/lib/constants';
-import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
@@ -35,7 +35,15 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
 
-    const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
+    const theme = useTheme();
+
+    const protonLogoBrand = (
+        <ProtonLogo
+            variant="full"
+            color={isElectronApp && theme.information.dark ? 'invert' : undefined}
+            className={clsx(onBack && 'ml-4 md:ml-0')}
+        />
+    ); // for the future: color="invert" will change color to white
 
     return (
         <div className="flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg">
