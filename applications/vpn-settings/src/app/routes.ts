@@ -238,13 +238,6 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
             to: '/single-sign-on',
             icon: 'key',
             available: hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
-            subsections: [
-                {
-                    text: c('Title').t`SAML authentication`,
-                    id: 'saml-authentication',
-                    beta: true,
-                },
-            ],
         },
     };
 };
