@@ -79,9 +79,11 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                                     <Price className="block w-1/5 color-hint" currency={'USD'}>
                                         {toFiat(Number(amount)).toFixed(2)}
                                     </Price>
-                                    <BitcoinAmount className="w-1/5 text-right" unit={WasmBitcoinUnit.SAT}>
-                                        {Number(amount)}
-                                    </BitcoinAmount>
+                                    <BitcoinAmount
+                                        firstClassName="w-1/5 text-right"
+                                        unit={WasmBitcoinUnit.SAT}
+                                        bitcoin={Number(amount)}
+                                    />
                                 </li>
                             );
                         })
@@ -95,9 +97,7 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(txFees).toFixed(2)}
                         </Price>
-                        <BitcoinAmount className="w-1/5 text-right" unit={WasmBitcoinUnit.SAT}>
-                            {txFees}
-                        </BitcoinAmount>
+                        <BitcoinAmount firstClassName="w-1/5 text-right" unit={WasmBitcoinUnit.SAT} bitcoin={txFees} />
                     </li>
 
                     {/* Total */}
@@ -106,9 +106,11 @@ export const OnchainTransactionDetails = ({ from, tx }: OnchainTransactionDetail
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(Number(totalAmount)).toFixed(2)}
                         </Price>
-                        <BitcoinAmount className="w-1/5 text-right" unit={WasmBitcoinUnit.SAT}>
-                            {Number(totalAmount)}
-                        </BitcoinAmount>
+                        <BitcoinAmount
+                            firstClassName="w-1/5 text-right"
+                            unit={WasmBitcoinUnit.SAT}
+                            bitcoin={Number(totalAmount)}
+                        />
                     </li>
                 </ul>
             </div>

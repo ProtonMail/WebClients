@@ -36,9 +36,12 @@ export const YourAccountsSection = ({ wallet }: Props) => {
                             className="w-full bg-gradient-weak-norm border-weak py-3"
                         >
                             <div className="text-right">
-                                <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} className="text-2xl">
-                                    {account.balance.confirmed ? Number(account.balance.confirmed) : 0}
-                                </BitcoinAmount>
+                                <BitcoinAmount
+                                    bitcoin={account.balance.confirmed ? Number(account.balance.confirmed) : 0}
+                                    unit={bitcoinUnit}
+                                    fiat={fiatCurrency}
+                                    firstClassName="text-2xl"
+                                />
                             </div>
 
                             <div className="mt-4">

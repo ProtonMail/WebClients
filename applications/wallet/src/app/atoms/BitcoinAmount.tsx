@@ -10,14 +10,17 @@ interface Props {
     /**
      * Bitcoin amount in satoshis (1 BTC = 100_000_000 SAT)
      */
-    children: number;
+    bitcoin: number;
     precision?: number;
-
     unit?: WasmBitcoinUnit;
+
     fiat?: string;
 
-    className?: string;
-    fiatClassName?: string;
+    format?: 'fiatFirst' | 'bitcoinFirst';
+
+    firstClassName?: string;
+    secondClassName?: string;
+
     /**
      * Show sign even when amount is positive
      */
@@ -29,47 +32,68 @@ interface Props {
 }
 
 export const BitcoinAmount = ({
+    bitcoin,
     unit = WasmBitcoinUnit.BTC,
-    fiat,
-    children,
     precision = 6,
-    className,
-    fiatClassName,
+
+    fiat,
+
+    format = fiat ? 'fiatFirst' : 'bitcoinFirst',
+
+    firstClassName,
+    secondClassName,
     showExplicitSign,
     showColor,
 }: Props) => {
-    const colorClassName = children < 0 ? 'color-danger' : 'color-success';
+    const colorClassName = bitcoin < 0 ? 'color-danger' : 'color-success';
 
     const amount = useMemo(() => {
         switch (unit) {
             case WasmBitcoinUnit.BTC:
-                return satsToBitcoin(children).toFixed(precision);
+                return satsToBitcoin(bitcoin).toFixed(precision);
             case WasmBitcoinUnit.MBTC:
-                return satsToMBitcoin(children).toFixed(precision - 3);
+                return satsToMBitcoin(bitcoin).toFixed(precision - 3);
             default:
-                return children;
+                return bitcoin;
         }
-    }, [unit, children, precision]);
+    }, [unit, bitcoin, precision]);
 
     const sign = useMemo(() => {
-        if (showExplicitSign && children > 0) {
+        if (showExplicitSign && bitcoin > 0) {
             return '+';
         }
 
         return '';
-    }, [children, showExplicitSign]);
+    }, [bitcoin, showExplicitSign]);
+
+    if (format === 'bitcoinFirst') {
+        return (
+            <>
+                <span
+                    data-testid="first-content"
+                    className={clsx('block', firstClassName, showColor && colorClassName)}
+                >
+                    {sign}
+                    {amount} {getLabelByUnit(unit)}
+                </span>
+                <Price className={clsx('color-hint m-0 text-sm', secondClassName)} currency={fiat} prefix={sign}>
+                    {toFiat(bitcoin).toFixed(2)}
+                </Price>
+            </>
+        );
+    }
 
     return (
         <>
-            <span className={clsx('block', className, showColor && colorClassName)}>
+            <div data-testid="first-content">
+                <Price className={clsx(firstClassName, showColor && colorClassName)} currency={fiat} prefix={sign}>
+                    {toFiat(bitcoin).toFixed(2)}
+                </Price>
+            </div>
+            <span className={clsx('color-hint m-0 text-sm', secondClassName)}>
                 {sign}
                 {amount} {getLabelByUnit(unit)}
             </span>
-            {fiat && (
-                <Price className={clsx('color-hint m-0 text-sm', fiatClassName)} currency={fiat} prefix={sign}>
-                    {toFiat(children).toFixed(2)}
-                </Price>
-            )}
         </>
     );
 };
