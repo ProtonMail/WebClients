@@ -40,7 +40,7 @@ export const decryptProtonPassImport = async (payload: ImportReaderPayload): Pro
     }
 };
 
-export const readProtonPassData = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
+export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promise<ImportPayload> => {
     try {
         const zipFile = await JSZip.loadAsync(payload.data);
         const zipObject = zipFile.file(`${PASS_APP_NAME}/data.json`);
