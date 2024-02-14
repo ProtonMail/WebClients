@@ -83,6 +83,9 @@
       "Close this banner": [
         "Tanca aquest bàner"
       ],
+      "Configure SAML": [
+        "Configura SAML"
+      ],
       "Confirm": [
         "Confirma"
       ],
@@ -412,6 +415,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
+      ],
+      "Select country": [
+        "Seleccioneu el país"
       ],
       "Select file": [
         "Selecciona un fitxer"
@@ -2827,6 +2833,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
+      ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Esteu segur que voleu atorgar privilegis administratius a aquest usuari?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
@@ -7274,10 +7283,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

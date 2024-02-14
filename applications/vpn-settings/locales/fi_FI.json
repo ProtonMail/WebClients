@@ -425,6 +425,9 @@
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
       ],
+      "Select country": [
+        "Valitse maa"
+      ],
       "Select file": [
         "Valitse tiedosto"
       ],
@@ -2033,6 +2036,9 @@
       "Organization key is not decrypted": [
         "Organisaation avaimen salausta ei ole purettu"
       ],
+      "Organization key must be activated to create non-private users": [
+        "Organisaatioavain on aktivoitava ei-yksityisten käyttäjien luomiseksi"
+      ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
       ],
@@ -2122,6 +2128,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii ylläpitäjänoikeuksiesi palauttamista."
       ],
       "Try again later": [
         "Kokeile myöhemmin uudelleen"
@@ -5162,6 +5171,9 @@
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
       ],
+      "Unlimited shared vaults with access permissions": [
+        "Rajattomasti jaettuja holveja käyttöoikeuksilla"
+      ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
       ],
@@ -5366,6 +5378,9 @@
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Voit määrittää saapuville viesteillesi automaattivaustauksia"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "Välitä ${ MAIL_APP_NAME }-tilillesi lähetetyt sähköpostit automaattisesti mihin tahansa muuhun sähköpostiosoitteeseen."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massamainontaa tai ohjelmallista sähköpostin lähetystä ei tällä hetkellä tueta. Suosittelemme käyttämään tähän tarkoitukseen erityisesti tarkoitettua sähköpostipalveluntarjoajaa."
@@ -5738,6 +5753,9 @@
       ]
     },
     "pass_signup_2023: Header": {
+      "Let's talk": [
+        "Keskustellaan"
+      ],
       "Limited time offer": [
         "Vain rajoitetun ajan"
       ],
@@ -5748,6 +5766,15 @@
     "pass_signup_2023: Info": {
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } kuukaudessa"
+      ],
+      "/month /user": [
+        "/kuukausi /käyttäjä"
+      ],
+      "/month /user, billed annually": [
+        "/kuukausi /käyttäjä, laskutetaan vuosittain"
+      ],
+      "/month /user, billed biennially": [
+        "/kuukausi /käyttäjä, laskutetaan joka toinen vuosi"
       ],
       "Creating your account": [
         "Tiliäsi luodaan"
@@ -5766,6 +5793,9 @@
       ],
       "Free forever": [
         "Ikuisesti ilmainen"
+      ],
+      "Get in touch with our sales team": [
+        "Ota yhteyttä myyntitiimiimme"
       ],
       "Includes:": [
         "Sisältää:"
@@ -5807,11 +5837,17 @@
       "Change organization key": [
         "Muuta organisaation avainta"
       ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Ei-yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun heillä on asetusavaimet"
+      ],
       "Organization key activated": [
         "Organisaation avain aktivoitiin"
       ],
       "Organization key does not exist.": [
         "Organisaation avainta ei ole olemassa."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "Organisaation avain on aktivoitava, jotta voit antaa ylläpitäjän oikeudet"
       ],
       "Organization key restored": [
         "Organisaation avain palautettiin"
@@ -5822,11 +5858,41 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Lupa evätty, ylläpito-oikeuksia on rajoitettu."
       ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Yksityiset käyttäjät voidaan ylentää ylläpitäjiksi, kun he ovat kirjautuneet sisään ensimmäisen kerran"
+      ],
       "Reset organization key": [
         "Nollaa organisaation avain"
       ],
+      "The following administrators will get access to the organization key.": [
+        "Seuraavat ylläpitäjät saavat organisaation avaimen käyttöoikeuden."
+      ],
       "The organization key must be activated first.": [
         "Organisaation avain on ensin aktivoitava."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Tämä lähettää uusimman organisaation avaimen niille ylläpitäjille, joilla ei tällä hetkellä ole käyttöoikeutta siihen."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Ei-yksityisten käyttäjätilien luominen ja niiden käyttö vaatii organisaatioavaimesi aktivoimista."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Ota tilisi ylläpitäjän oikeudet käyttöön aktivoimalla organisaatioavain."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää tai nollaamalla organisaation avain."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää, ottamalla yhteyttä toiseen ylläpitäjään tai nollaamalla organisaation avain."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Tämän lähettäjän osoiteavaimen turvallisuutta ei voitu varmistaa. Joskus lähettäjän tietojen päivittäminen voi viivästyä. Yritä myöhemmin uudelleen. Jos et luota tämän kutsun tai lähettäjän aitouteen, ota yhteyttä ${ BRAND_NAME } -asiakastukeen."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Olemme vahvistaneet tämän lähettäjän ja kutsun aitouden."
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uuden organisaation avaimen luontia"
       ],
       "You need access to the organization key to perform this operation.": [
         "Tarvitset organisaation avaimen käyttöoikeuden tämän toiminnon suorittamiseksi."
@@ -5841,6 +5907,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Laskutusmaa"
+      ],
       "Card number": [
         "Kortin numero"
       ],
@@ -6062,6 +6131,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus.",
+        "${ n } organisaatiosi ylläpitäjällä on oltava organisaation avaimen käyttöoikeus."
+      ],
       "Changing organization keys": [
         "Muuta organisaation avaimia"
       ],
@@ -6657,6 +6730,9 @@
       "For all ${ BRAND_NAME } services": [
         "Kaikille ${ BRAND_NAME }-palveluille"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
       ],
@@ -6675,6 +6751,9 @@
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Tallennustilasi on täynnä. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Menetät oikeuden ${ gb } tallennustilaan ja ensisijaiseen tukeen."
@@ -7743,10 +7822,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Salasanan täytyy sisältää ainakin ${ length } merkki",
-        "Salasanan täytyy sisältää ainakin ${ length } merkkiä"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
@@ -7876,6 +7951,9 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Sinun on ${ activateLink } organisaation avain ennen kuin lisäät sähköpostiosoitteen ei-yksityiselle jäsenelle."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
