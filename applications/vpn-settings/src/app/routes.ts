@@ -234,7 +234,7 @@ export const getRoutes = ({ user, subscription, organization }: Arguments) => {
             ],
         },
         sso: <SectionConfig>{
-            text: c('Title').t`Single Sign-On`,
+            text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
             icon: 'key',
             available: hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
