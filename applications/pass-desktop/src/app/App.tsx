@@ -117,7 +117,7 @@ const openSettings = (page?: string) =>
 
 const exportData: PassCoreContextValue['exportData'] = async (options) => {
     const state = store.getState();
-    const data = selectExportData({ config: PASS_CONFIG, encrypted: options.encrypted })(state);
+    const data = selectExportData({ config: PASS_CONFIG, format: options.format })(state);
     return transferableToFile(await createPassExport(data, options));
 };
 

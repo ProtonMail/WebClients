@@ -26,7 +26,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
     const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const initialValues: ExportFormValues = { format: ExportFormat.DEFAULT, passphrase: '' };
+    const initialValues: ExportFormValues = { format: ExportFormat.ZIP, passphrase: '' };
     const [loading, setLoading] = useState(false);
 
     const passwordConfirmModal = useAsyncModalHandles<string>();
