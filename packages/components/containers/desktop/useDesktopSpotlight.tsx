@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { differenceInDays, fromUnixTime } from 'date-fns';
+import { addDays, fromUnixTime } from 'date-fns';
 
 import { useDrawer, useFeature, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -12,7 +12,7 @@ const useDesktopSpotlight = () => {
     const [user] = useUser();
     const { setShowDrawerSidebar, setAppInView } = useDrawer();
     const [{ isDone }] = useWelcomeFlags();
-    const userAccountHasMoreThanOneDay = differenceInDays(new Date(), fromUnixTime(user.CreateTime)) > 1;
+    const userAccountHasMoreThanOneDay = new Date() > addDays(fromUnixTime(user.CreateTime), 1);
     const { feature } = useFeature(FeatureCode.SpotlightInboxDesktop);
 
     /**
