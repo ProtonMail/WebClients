@@ -5,9 +5,11 @@ import { createMemberKeyRoute, setupMemberKeyRoute } from '../api/memberKeys';
 import { MEMBER_PRIVATE } from '../constants';
 import {
     Api,
+    CachedOrganizationKey,
     DecryptedKey,
     EncryptionConfig,
     KeyTransparencyVerify,
+    UserModel,
     Address as tsAddress,
     Key as tsKey,
     Member as tsMember,
@@ -205,8 +207,41 @@ export const setupMemberKeyV2 = async ({
     return { Member, userPrivateKey };
 };
 
+export const getCanGenerateMemberKeys = (member: tsMember | undefined) => {
+    return member?.Private === MEMBER_PRIVATE.READABLE;
+};
+
 export const getShouldSetupMemberKeys = (member: tsMember | undefined) => {
-    return !member?.Self && member?.Keys.length === 0 && member.Private === MEMBER_PRIVATE.READABLE;
+    return !member?.Self && member?.Keys.length === 0 && getCanGenerateMemberKeys(member);
+};
+
+export const getCanGenerateMemberKeysPermissions = (
+    user: UserModel,
+    organizationKey: CachedOrganizationKey | undefined
+) => {
+    return !!organizationKey?.privateKey && user.isAdmin && !user.isSubUser;
+};
+
+export const getCanGenerateMemberAddressKeys = ({
+    user,
+    member,
+    organizationKey,
+    address,
+}: {
+    user: UserModel;
+    member: tsMember | undefined;
+    organizationKey: CachedOrganizationKey | undefined;
+    address: tsAddress;
+}) => {
+    /*
+     * Keys can be generated if the organisation key is decrypted, and you are an admin,
+     * and the member is readable, you're not an admin signed in to a readable member.
+     */
+    return (
+        getCanGenerateMemberKeysPermissions(user, organizationKey) &&
+        getCanGenerateMemberKeys(member) &&
+        !address.HasKeys
+    );
 };
 
 interface SetupMemberKeyArguments extends SetupMemberKeySharedArguments {

@@ -19,6 +19,7 @@ import {
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { getCanGenerateMemberAddressKeys } from '@proton/shared/lib/keys/memberKeys';
 import { getIsNonDefault } from '@proton/shared/lib/mail/addresses';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
@@ -61,24 +62,19 @@ export const getPermissions = ({
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
 }) => {
-    const { isAdmin, canPay, isSubUser } = user;
-    const { ID, Status, HasKeys, Type, Priority, ConfirmationState } = address;
+    const { isAdmin, canPay } = user;
+    const { ID, Status, Type, Priority, ConfirmationState } = address;
 
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
 
     const isSelf = !member || !!member.Self;
-    const isMemberReadable = member?.Private === MEMBER_PRIVATE.READABLE;
     const isDefault = addressIndex === 0;
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
-    /*
-     * Keys can be generated if the organisation key is decrypted, and you are an admin,
-     * and the member is readable, you're not an admin signed in to a readable member.
-     */
-    const canGenerateMember = organizationKey?.privateKey && isAdmin && isMemberReadable && !isSubUser;
+    const canGenerateMemberAddressKeys = getCanGenerateMemberAddressKeys({ user, member, organizationKey, address });
     /*
      * Even though the user in question regarding the permissions here might be
      * the currently logged in user itself (isSelf), it's possible that they don't
@@ -86,8 +82,8 @@ export const getPermissions = ({
      * the case if the currently logged in user is a member of an org of which they
      * are not an admin of.
      */
-    const canGenerateSelf = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE;
-    const canGenerate = !HasKeys && (canGenerateMember || canGenerateSelf);
+    const canGenerateSelfAddressKeys = isSelf && user.Private === MEMBER_PRIVATE.UNREADABLE && !address.HasKeys;
+    const canGenerate = canGenerateMemberAddressKeys || canGenerateSelfAddressKeys;
 
     let canDisable = isEnabled && isAdmin && !isSpecialAddress && !isExternal;
 
