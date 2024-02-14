@@ -9,8 +9,8 @@ import {
     CommanderItemInterface,
     DrawerSidebar,
     ErrorBoundary,
+    InboxQuickSettingsAppButton,
     PrivateMainArea,
-    QuickSettingsAppButton,
     useCalendarUserSettings,
     useCalendars,
     useFlag,
@@ -527,7 +527,7 @@ const MailboxContainer = ({
                     toolbar={toolbar(true)}
                     settingsButton={
                         <SpotlightEmailForwarding>
-                            <QuickSettingsAppButton />
+                            <InboxQuickSettingsAppButton />
                         </SpotlightEmailForwarding>
                     }
                 />
