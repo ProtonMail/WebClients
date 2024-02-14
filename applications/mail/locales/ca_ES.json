@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Esborra tot el format"
       ],
+      "Clear application data": [
+        "Esborra les dades de l'aplicació"
+      ],
       "Clear browser data": [
         "Netejar les dades del navegador"
       ],
@@ -898,6 +901,9 @@
       ],
       "Select all messages": [
         "Seleccionar tots els missatges"
+      ],
+      "Select country": [
+        "Seleccioneu el país"
       ],
       "Select date and time": [
         "Selecciona la data i l'hora"
@@ -5095,6 +5101,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
       ],
+      "Clear app data": [
+        "Neteja les dades de l'aplicació"
+      ],
       "Clear data": [
         "Neteja les dades"
       ],
@@ -5361,6 +5370,9 @@
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
+      ],
+      "Important note": [
+        "Nota important"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -9720,10 +9732,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
         "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"

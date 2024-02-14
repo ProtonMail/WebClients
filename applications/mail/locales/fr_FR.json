@@ -347,7 +347,7 @@
         "Télécharger ${ attachmentName }"
       ],
       "Download now": [
-        "Télécharger"
+        "Télécharger maintenant"
       ],
       "Downloading": [
         "Téléchargement en cours"
@@ -1053,7 +1053,7 @@
         "Afficher les contacts"
       ],
       "Toggle security center app": [
-        "Activer l'application du centre de sécurité"
+        "Activer/Désactiver l'application du centre de sécurité"
       ],
       "Toggle settings": [
         "Afficher ou masquer les paramètres"
@@ -9539,6 +9539,9 @@
       "Get advanced protection": [
         "Obtenir une protection avancée"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Télécharger les applications ${ appName[APP_NAME] }"
+      ],
       "Groups": [
         "Groupes"
       ],
@@ -10014,10 +10017,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère.",
-        "Le mot de passe doit comporter au moins ${ length } caractères."
-      ],
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."

@@ -167,6 +167,9 @@
       "Clear all formatting": [
         "Poista kaikki muotoilut"
       ],
+      "Clear application data": [
+        "Tyhjennä sovelluksen tiedot"
+      ],
       "Clear browser data": [
         "Tyhjennä selaimen välimuisti"
       ],
@@ -259,6 +262,9 @@
       ],
       "Create a new label": [
         "Luo uusi tunniste"
+      ],
+      "Create and copy alias": [
+        "Tallenna ja kopioi alias"
       ],
       "Create folder": [
         "Luo kansio"
@@ -901,6 +907,9 @@
       ],
       "Select all messages": [
         "Valitse kaikki viestit"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select date and time": [
         "Valitse päivämäärä ja aika"
@@ -5206,6 +5215,9 @@
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
       ],
+      "Clear app data": [
+        "Tyhjennä sovellustiedot"
+      ],
       "Clear data": [
         "Tyhjennä tiedot"
       ],
@@ -5750,6 +5762,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
+      "Removes all data associated with this app, including downloaded messages": [
+        "Poistaa kaikki tähän sovellukseen liittyvät tiedot, mukaan lukien ladatut viestit"
+      ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Viestin raportointi tietokalasteluyritykseksi lähettää sen meille, jotta voimme analysoida sen ja parantaa suodattimiamme. Huomioi, että näemme lähettämäsi viestin sisällön."
       ],
@@ -6026,6 +6041,9 @@
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
+      ],
+      "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
+        "Tämä poistaa kaikki tähän sovellukseen liittyvät tiedot, mukaan lukien ladatut viestit. Sovellus käynnistyy uudelleen, ja sinun on kirjauduttava sisään uudelleen, jotta voit käyttää sitä."
       ],
       "This sender's public key has not been trusted yet.": [
         "Tämän lähettäjän julkiseen avaimeen ei ole vielä luotettu."
@@ -6449,6 +6467,9 @@
       "Expand / contract composer": [
         "Laajenna/tiivistä viestin kirjoitus"
       ],
+      "Filter": [
+        "Suodata"
+      ],
       "Forward": [
         "Välitä"
       ],
@@ -6758,6 +6779,9 @@
       ],
       "Don't show this again": [
         "Älä näytä tätä uudelleen"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "esim. Amazon, eBay, Etsy"
       ],
       "Email": [
         "Sähköposti"
@@ -7878,6 +7902,11 @@
         "Sinä"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Laskutusmaa"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Avainta ei voida käyttää salaukseen"
@@ -8162,6 +8191,9 @@
       "Create alias": [
         "Luo alias"
       ],
+      "Create an alias": [
+        "Luo alias"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Luo aliaksia lennossa ja hallitse aliaksia ja salasanoja helposti."
       ],
@@ -8182,6 +8214,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Kokeile ${ PASS_APP_NAME }ia"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Käytetään Amazonissa ostoksiin jne."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Kun sinua pyydetään antamaan sähköpostiosoitteesi, anna sen sijaan tämä alias. Lisää sille nimi ja muistiinpano, jotta voit seurata, missä käytät sitä."
       ]
     },
     "Security Center - Action": {
@@ -8826,6 +8864,9 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Lähettääksesi ja vastaanottaaksesi sähköposteja, vapauta tallennustilaa tai ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
       ],
@@ -8840,6 +8881,9 @@
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Tallennustilasi on täynnä. ${ cta }."
       ]
     },
     "Success": {
@@ -9483,6 +9527,9 @@
       "Get advanced protection": [
         "Hanki edistynyt suojaus"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Hanki ${ appName[APP_NAME] } -sovellukset"
+      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -9958,10 +10005,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Salasanan täytyy sisältää ainakin ${ length } merkki",
-        "Salasanan täytyy sisältää ainakin ${ length } merkkiä"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
         "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"

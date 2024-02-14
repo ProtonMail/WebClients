@@ -9539,6 +9539,9 @@
       "Get advanced protection": [
         "Få avansert beskyttelse"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Få ${ appName[APP_NAME] }-appene"
+      ],
       "Groups": [
         "Grupper"
       ],
@@ -10014,9 +10017,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Passord må inneholde minst ${ length } tegn",
-        "Passord må inneholde minst ${ length } tegn"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brukernavn (maks ${ n } tegn)",
