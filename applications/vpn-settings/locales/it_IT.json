@@ -3431,6 +3431,10 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Riprova, usa un metodo di pagamento differente o contatta PayPal per assistenza."
       ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } carattere.",
+        "Usa una password più lunga di ${ MIN_PASSWORD_LENGTH } caratteri."
+      ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
       ],
@@ -7876,9 +7880,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La password deve contenere almeno ${ length } carattere",
-        "La password deve contenere almeno ${ length } caratteri"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prova un nome utente più corto (massimo ${ n } carattere)",
