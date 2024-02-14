@@ -29,8 +29,10 @@ type HydrateCacheOptions = { merge: (existing: State, incoming: State) => State 
     | { allowFailure: false; onError?: () => Generator }
 );
 
-function* resolveUserState() {
-    const { access, addresses, eventId, features, user, userSettings, organization }: UserData = yield getUserData();
+function* resolveUserState(cache: Maybe<PassCache>) {
+    if (cache?.state.user) return cache.state.user;
+
+    const { access, addresses, eventId, features, organization, user, userSettings }: UserData = yield getUserData();
     yield put(syncLocalSettings({ locale: userSettings.Locale }));
 
     const userState: HydratedUserState = {
@@ -54,7 +56,7 @@ function* resolveUserState() {
 export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }: RootSagaOptions) {
     try {
         const authStore = getAuthStore();
-        const keyPassword = authStore.getPassword();
+        const keyPassword = authStore.getPassword() ?? '';
         const sessionLockToken = authStore.getLockToken();
         const encryptedCache: Partial<EncryptedPassCache> = yield getCache();
 
@@ -62,7 +64,7 @@ export function* hydrate(config: HydrateCacheOptions, { getCache, getAuthStore }
             .then(sanitizeCache)
             .catch((err) => (config.allowFailure ? undefined : throwError(err)));
 
-        const userState: HydratedUserState = cache?.state.user ?? (yield call(resolveUserState));
+        const userState: HydratedUserState = yield call(resolveUserState, cache);
         const user = userState.user;
         const addresses = Object.values(userState.addresses);
         const currentState: State = yield select();
