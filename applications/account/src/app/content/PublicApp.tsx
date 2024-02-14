@@ -8,7 +8,6 @@ import {
     ApiProvider,
     AuthenticationProvider,
     ErrorBoundary,
-    InboxDesktopFreeTrialEnded,
     ModalsChildren,
     NotificationsChildren,
     ProtonApp,
@@ -66,6 +65,7 @@ import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
+import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
