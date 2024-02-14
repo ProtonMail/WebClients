@@ -9542,6 +9542,9 @@
       "Get advanced protection": [
         "Ottieni la protezione avanzata"
       ],
+      "Get the ${ appName[APP_NAME] } apps": [
+        "Ottieni le app ${ appName[APP_NAME] }"
+      ],
       "Groups": [
         "Gruppi"
       ],
@@ -10017,9 +10020,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "La password deve contenere almeno ${ length } carattere",
-        "La password deve contenere almeno ${ length } caratteri"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } carattere",
+        "La password deve contenere almeno ${ MIN_PASSWORD_LENGTH } caratteri"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prova un nome utente più corto (massimo ${ n } carattere)",
