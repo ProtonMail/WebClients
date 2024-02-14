@@ -27,7 +27,7 @@ import {
 } from './fork';
 import {
     type AuthSession,
-    type PersistedAuthSession,
+    type EncryptedAuthSession,
     encryptPersistedSession,
     encryptPersistedSessionWithKey,
     isValidSession,
@@ -60,7 +60,7 @@ export interface AuthServiceConfig {
     getMemorySession?: () => MaybePromise<any>;
     /** The persisted session will be parsed and decrypted to extract the
      * session data. Requires an API call to retrieve the local key. */
-    getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<PersistedAuthSession>>;
+    getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<EncryptedAuthSession>>;
     /**  Implement any service initialization logic in this hook. Should return
      * a boolean flag indicating wether user was authorized or not. */
     onInit: (options: AuthResumeOptions) => Promise<boolean>;
@@ -341,7 +341,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         authStore.setSession(persistedSession);
                         await api.reset();
 
-                        const { session, sessionKey } = await resumeSession({
+                        const { session, clientKey } = await resumeSession({
                             api,
                             authStore,
                             persistedSession,
@@ -356,7 +356,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                          * to ensure the `forceLock` effect propagates to future resumes. */
                         if (session.sessionLockToken && options?.forceLock) {
                             delete session.sessionLockToken;
-                            const encryptedSession = await encryptPersistedSessionWithKey(session, sessionKey);
+                            const encryptedSession = await encryptPersistedSessionWithKey(session, clientKey);
                             await config?.onSessionPersist?.(encryptedSession);
                         }
 

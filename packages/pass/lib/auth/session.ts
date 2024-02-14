@@ -1,6 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import type { Api } from '@proton/pass/types';
+import type { Api, Maybe } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
@@ -14,10 +14,14 @@ import type { User as UserType } from '@proton/shared/lib/interfaces';
 
 import type { AuthStore } from './store';
 
+export type AuthSessionVersion = 1 | 2;
+export const SESSION_VERSION: AuthSessionVersion = 1;
+
 export type AuthSession = {
     AccessToken: string;
     keyPassword: string;
     LocalID?: number;
+    payloadVersion?: AuthSessionVersion;
     RefreshTime?: number;
     RefreshToken: string;
     sessionLockToken?: string;
@@ -25,16 +29,17 @@ export type AuthSession = {
     UserID: string;
 };
 
-export type PersistedAuthSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & {
-    blob: string;
-    payloadVersion: 2 | 1;
-};
-export type PersistedAuthSessionBlob = Pick<AuthSession, 'keyPassword' | 'sessionLockToken'>;
+/** The following values of the `AuthSession` are locally stored in
+ * an encrypted blob using the BE local key for the user's session */
+export type EncryptedSessionKeys = 'keyPassword' | 'sessionLockToken';
+export type DecryptedAuthSessionBlob = Pick<AuthSession, EncryptedSessionKeys>;
+export type EncryptedAuthSession = Omit<AuthSession, EncryptedSessionKeys> & { blob: string };
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'keyPassword',
     'LocalID',
+    'payloadVersion',
     'RefreshToken',
     'sessionLockToken',
     'UID',
@@ -44,7 +49,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
     Boolean(data.AccessToken && data.keyPassword && data.RefreshToken && data.UID && data.UserID);
 
-export const isValidPersistedSession = (data: any): data is PersistedAuthSession =>
+export const isValidPersistedSession = (data: any): data is EncryptedAuthSession =>
     isObject(data) &&
     Boolean('AccessToken' in data && data.AccessToken) &&
     Boolean('RefreshToken' in data && data.RefreshToken) &&
@@ -52,26 +57,26 @@ export const isValidPersistedSession = (data: any): data is PersistedAuthSession
     Boolean('UserID' in data && data.UserID) &&
     Boolean('blob' in data && data.blob);
 
+export const getSessionEncryptionTag = (version?: AuthSessionVersion): Maybe<Uint8Array> =>
+    version === 2 ? stringToUtf8Array('session') : undefined;
+
 /** Given a local session key, encrypts the `AuthSession` before persisting.
  * Only the `keyPassword` & `sessionLockToken` will be encrypted. If you need
  * to re-create a random encryption key, use `encryptPersistedSession` directly. */
 export const encryptPersistedSessionWithKey = async (
-    { keyPassword, sessionLockToken, ...session }: AuthSession,
-    sessionKey: CryptoKey
+    { keyPassword, payloadVersion = SESSION_VERSION, sessionLockToken, ...session }: AuthSession,
+    clientKey: CryptoKey
 ): Promise<string> => {
-    let payloadVersion = 1 as PersistedAuthSession['payloadVersion'];
-    const value: PersistedAuthSession = {
+    const value: EncryptedAuthSession = {
         ...session,
-        payloadVersion,
         blob: await getEncryptedBlob(
-            sessionKey,
-            JSON.stringify({
-                keyPassword,
-                sessionLockToken,
-            }),
-            payloadVersion === 2 ? stringToUtf8Array('session') : undefined
+            clientKey,
+            JSON.stringify({ keyPassword, sessionLockToken }),
+            getSessionEncryptionTag(payloadVersion)
         ),
+        payloadVersion,
     };
+
     return JSON.stringify(value);
 };
 
@@ -85,10 +90,11 @@ export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): 
     UID: authStore.getUID() ?? session.UID,
 });
 
+type EncryptSessionOptions = { api: Api; authStore: AuthStore };
+
 /** Encrypts the `AuthSession` with a new encryption key. Will throw if local
  * key cannot be registered back-end side. Merge session tokens if the call to
  * `setLocalKey` triggered a refresh sequence. */
-type EncryptSessionOptions = { api: Api; authStore: AuthStore };
 export const encryptPersistedSession = async ({ api, authStore }: EncryptSessionOptions): Promise<string> => {
     const session = authStore.getSession();
     if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
@@ -105,40 +111,28 @@ export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
     return getClientKey(ClientKey);
 };
 
-const decryptPersistedSessionBlob = async (key: CryptoKey, blob: string, payloadVersion: number): Promise<string> => {
+export const decryptSessionBlob = async (
+    clientKey: CryptoKey,
+    blob: string,
+    payloadVersion: AuthSessionVersion
+): Promise<DecryptedAuthSessionBlob> => {
     try {
-        return await getDecryptedBlob(key, blob, payloadVersion === 2 ? stringToUtf8Array('session') : undefined);
-    } catch (_) {
-        throw new InvalidPersistentSessionError('Failed to decrypt persisted session blob');
-    }
-};
+        const decryptedBlob = await getDecryptedBlob(clientKey, blob, getSessionEncryptionTag(payloadVersion));
+        const parsedValue = JSON.parse(decryptedBlob);
 
-const parsePersistedSessionBlob = (blob: string): PersistedAuthSessionBlob => {
-    try {
-        const parsedValue = JSON.parse(blob);
         return {
             keyPassword: parsedValue?.keyPassword ?? '',
             sessionLockToken: parsedValue?.sessionLockToken,
         };
-    } catch (_) {
-        throw new InvalidPersistentSessionError('Failed to parse persisted session blob');
+    } catch {
+        throw new InvalidPersistentSessionError('Failed to decrypt persisted session blob');
     }
-};
-
-export const decryptPersistedSession = async (
-    key: CryptoKey,
-    blob: string,
-    payloadVersion: number
-): Promise<PersistedAuthSessionBlob> => {
-    const decryptedBlob = await decryptPersistedSessionBlob(key, blob, payloadVersion);
-    const persistedSessionBlob = parsePersistedSessionBlob(decryptedBlob);
-    return persistedSessionBlob;
 };
 
 type ResumeSessionOptions = {
     api: Api;
     authStore: AuthStore;
-    persistedSession: PersistedAuthSession;
+    persistedSession: EncryptedAuthSession;
     onSessionInvalid?: () => void;
 };
 
@@ -151,25 +145,23 @@ export const resumeSession = async ({
     authStore,
     persistedSession,
     onSessionInvalid,
-}: ResumeSessionOptions): Promise<{
-    session: AuthSession;
-    sessionKey: CryptoKey;
-}> => {
+}: ResumeSessionOptions): Promise<{ session: AuthSession; clientKey: CryptoKey }> => {
     try {
-        const [sessionKey, { User }] = await Promise.all([
+        const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
         ]);
 
         if (persistedSession.UserID !== User.ID) throw InactiveSessionError();
-        const { blob, payloadVersion, ...session } = persistedSession;
-        const { keyPassword, sessionLockToken } = await decryptPersistedSession(sessionKey, blob, payloadVersion);
+        const { blob, ...session } = persistedSession;
+        const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
+        const { keyPassword, sessionLockToken } = await decryptSessionBlob(clientKey, blob, payloadVersion);
 
         return {
-            sessionKey,
+            clientKey,
             session: mergeSessionTokens({ ...session, keyPassword, sessionLockToken }, authStore),
         };
-    } catch (error: any) {
+    } catch (error: unknown) {
         if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
         throw error;
     }

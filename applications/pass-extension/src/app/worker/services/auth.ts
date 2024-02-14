@@ -71,12 +71,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             if (!ps) return null;
 
             const persistedSession = JSON.parse(ps);
-            return isValidPersistedSession(persistedSession)
-                ? {
-                      ...persistedSession,
-                      payloadVersion: persistedSession.payloadVersion || 1,
-                  }
-                : null;
+            return isValidPersistedSession(persistedSession) ? persistedSession : null;
         }),
 
         getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
