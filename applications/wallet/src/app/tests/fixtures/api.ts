@@ -18,8 +18,7 @@ import {
  * Fixtures used to mock api while it is being implemented
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const emptyWallet: Wallet = {
+export const emptyWallet: Wallet = {
     WalletID: 81772,
     UserID: 999,
     Name: 'Bitcoin empty 01',
