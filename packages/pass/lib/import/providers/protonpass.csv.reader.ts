@@ -38,7 +38,8 @@ const processCreditCardItem = (item: ExportedCsvItem): ItemImportIntent<'creditC
         modifyTime: Number(item.modifyTime),
     });
 };
-export const readProtonPassCsvData = async (data: string): Promise<ImportPayload> => {
+
+export const readProtonPassCSV = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 

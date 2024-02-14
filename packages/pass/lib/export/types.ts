@@ -19,33 +19,33 @@ export type ExportedCsvItem = {
 
 export type ExportedVault = VaultShareContent & { items: ExportedItem[] };
 
-export type ExportDataDefault = {
+export type ExportData = {
     encrypted: boolean;
     userId?: string;
     vaults: Record<string, ExportedVault>;
     version: string;
 };
 
-export type ExportData<T extends ExportFormat | undefined = undefined> = T extends ExportFormat.CSV
-    ? string
-    : T extends ExportFormat
-      ? ExportDataDefault
-      : string | ExportDataDefault;
-
-export enum ExportFormat {
-    DEFAULT = 'default',
-    ENCRYPTED = 'encrypted',
-    CSV = 'csv',
-}
-
-export const EXPORT_FORMAT_MAP: Record<ExportFormat, string> = {
-    [ExportFormat.DEFAULT]: 'zip',
-    [ExportFormat.ENCRYPTED]: 'pgp',
-    [ExportFormat.CSV]: 'csv',
+export type ExportCSVItem = {
+    createTime: string;
+    modifyTime: string;
+    name: string;
+    note: string;
+    password: string;
+    totp: string;
+    type: ItemType;
+    url: string;
+    username: string;
 };
 
+export enum ExportFormat {
+    CSV = 'csv',
+    PGP = 'pgp',
+    ZIP = 'zip',
+}
+
 export type ExportOptions =
-    | { format: ExportFormat.ENCRYPTED; passphrase: string }
-    | { format: Exclude<ExportFormat, ExportFormat.ENCRYPTED> };
+    | { format: ExportFormat.PGP; passphrase: string }
+    | { format: Exclude<ExportFormat, ExportFormat.PGP> };
 
 export type ExportFormValues = { format: ExportFormat; passphrase: string };

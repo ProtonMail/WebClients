@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { readProtonPassCsvData } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
+import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -15,7 +15,7 @@ import { readKeePassData } from './providers/keepass.reader';
 import { readKeeperData } from './providers/keeper.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readNordPassData } from './providers/nordpass.reader';
-import { decryptProtonPassImport, readProtonPassData } from './providers/protonpass.reader';
+import { decryptProtonPassImport, readProtonPassZIP } from './providers/protonpass.zip.reader';
 import { readRoboformData } from './providers/roboform.reader';
 import { readSafariData } from './providers/safari.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
@@ -72,10 +72,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         case ImportProvider.PROTONPASS: {
             switch (fileExtension) {
                 case 'csv':
-                    return readProtonPassCsvData(await file.text());
+                    return readProtonPassCSV(await file.text());
                 case 'pgp':
                 case 'zip':
-                    return readProtonPassData({
+                    return readProtonPassZIP({
                         data: await file.arrayBuffer(),
                         userId: payload.userId,
                     });
