@@ -80,6 +80,10 @@
 		@media (prefers-color-scheme: dark) {
 			background: linear-gradient(62.88deg, #32226f 30%, #1d1738 100%);
 			color: var(--text-norm);
+
+			.signup-link {
+				color: var(--text-norm);
+			}
 		}
 	}
 }
