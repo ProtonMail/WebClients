@@ -182,6 +182,9 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
+      "Create and copy alias": [
+        "Δημιουργία και αντιγραφή ψευδωνύμου"
+      ],
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
@@ -585,6 +588,9 @@
       ],
       "Select all": [
         "Επιλογή όλων"
+      ],
+      "Select country": [
+        "Επιλογή χώρας"
       ],
       "Send feedback": [
         "Αποστολή σχολίων"
@@ -4704,6 +4710,9 @@
       "Duplicate found": [
         "Βρέθηκε διπλότυπο"
       ],
+      "e.g., Amazon, eBay, Etsy": [
+        "π.χ., Amazon, eBay, Etsy"
+      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -5757,6 +5766,11 @@
         "Εσείς"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Χώρα χρέωσης"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -5927,6 +5941,9 @@
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
       ],
+      "Create an alias": [
+        "Δημιουργία ψευδωνύμου"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Δημιουργήστε ψευδώνυμα εν κινήσει και διαχειριστείτε εύκολα τα ψευδώνυμα και τους κωδικούς πρόσβασής σας."
       ],
@@ -5947,6 +5964,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Δοκιμάστε το ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Χρησιμοποιείται στο Amazon για ψώνια κ.λπ."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Όταν σας ζητηθεί η διεύθυνση ηλεκτρονικού ταχυδρομείου σας, δώστε αυτό το ψευδώνυμο. Προσθέστε έναν τίτλο και μια σημείωση για να παρακολουθείτε πού τα χρησιμοποιείτε."
       ]
     },
     "Security Center - Action": {
@@ -6407,8 +6430,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Για να συνεχίσετε τη μεταφόρτωση και το συγχρονισμό αρχείων, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Για να στείλετε ή να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου, ελευθερώστε χώρο ή κάντε αναβάθμιση για περισσότερο χώρο αποθήκευσης."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Για να ανεβάσετε ή να συγχρονίσετε αρχεία, ελευθερώστε χώρο ή ${ upgrade }"
       ],
       "upgrade for more storage": [
         "αναβάθμιση για περισσότερο χώρο αποθήκευσης"
@@ -6419,8 +6448,20 @@
       "Your ${ appStorage } is full": [
         "Ο ${ appStorage } είναι γεμάτος"
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Ο ${ storage } είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Ο ${ storage } είναι γεμάτος. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι ${ percentage }% γεμάτος. ${ cta }."
+      ],
       "Your storage is full": [
         "Ο αποθηκευτικός σας χώρος είναι πλήρης"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Ο αποθηκευτικός σας χώρος είναι γεμάτος. ${ cta }."
       ]
     },
     "Success": {
@@ -7174,10 +7215,6 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
-      ],
       "Try a shorter username (${ n } character max)": [
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
         "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
