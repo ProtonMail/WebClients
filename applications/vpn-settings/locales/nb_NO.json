@@ -2893,6 +2893,10 @@
       "Admin account allocation": [
         "Adminkonto tildeling"
       ],
+      "Affected user is on row": [
+        "Berørt bruker er på rad",
+        "Berørte brukere er på radene"
+      ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
       ],
@@ -3430,6 +3434,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Vennligst prøv igjen, bruk en annen betalingsmåte, eller kontakt PayPal for hjelp."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn.",
+        "Vennligst bruk et passord med mer enn ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Please use another browser or download the file.": [
         "Vennligst bruk en annen nettleser eller last ned filen."
@@ -7870,9 +7878,9 @@
       ]
     },
     "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Passord må inneholde minst ${ length } tegn",
-        "Passord må inneholde minst ${ length } tegn"
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
       ],
       "Try a shorter username (${ n } character max)": [
         "Prøv et kortere brukernavn (maks ${ n } tegn)",
