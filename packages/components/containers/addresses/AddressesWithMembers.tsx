@@ -188,6 +188,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                         user={user}
                         members={selectedMembers}
                         memberAddressesMap={memberAddressesMap}
+                        organizationKey={organizationKey}
                     />
                 );
             })()}
