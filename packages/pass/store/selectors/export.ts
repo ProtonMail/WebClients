@@ -1,5 +1,5 @@
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
-import type { ExportData, ExportedVault } from '@proton/pass/lib/export/types';
+import { type ExportData, ExportFormat, type ExportedVault } from '@proton/pass/lib/export/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { selectShare } from '@proton/pass/store/selectors/shares';
@@ -7,10 +7,8 @@ import { selectUser } from '@proton/pass/store/selectors/user';
 import type { State } from '@proton/pass/store/types';
 import type { ShareType } from '@proton/pass/types';
 
-type ExportOptions = { config: PassConfig; encrypted: boolean };
-
 export const selectExportData =
-    ({ config, encrypted }: ExportOptions) =>
+    ({ config, format }: { config: PassConfig; format: ExportFormat }) =>
     (state: State): ExportData => {
         const itemsByShareId = unwrapOptimisticState(state.items.byShareId);
         const user = selectUser(state);
@@ -44,7 +42,7 @@ export const selectExportData =
         );
 
         return {
-            encrypted,
+            encrypted: format === ExportFormat.PGP,
             userId: user?.ID,
             vaults,
             version: config.APP_VERSION,

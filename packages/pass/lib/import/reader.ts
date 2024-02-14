@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
+import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
@@ -13,7 +15,7 @@ import { readKeePassData } from './providers/keepass.reader';
 import { readKeeperData } from './providers/keeper.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readNordPassData } from './providers/nordpass.reader';
-import { decryptProtonPassImport, readProtonPassData } from './providers/protonpass.reader';
+import { decryptProtonPassImport, readProtonPassZIP } from './providers/protonpass.zip.reader';
 import { readRoboformData } from './providers/roboform.reader';
 import { readSafariData } from './providers/safari.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
@@ -68,10 +70,18 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
         }
 
         case ImportProvider.PROTONPASS: {
-            return readProtonPassData({
-                data: await file.arrayBuffer(),
-                userId: payload.userId,
-            });
+            switch (fileExtension) {
+                case 'csv':
+                    return readProtonPassCSV(await file.text());
+                case 'pgp':
+                case 'zip':
+                    return readProtonPassZIP({
+                        data: await file.arrayBuffer(),
+                        userId: payload.userId,
+                    });
+                default:
+                    throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
+            }
         }
 
         case ImportProvider.DASHLANE: {

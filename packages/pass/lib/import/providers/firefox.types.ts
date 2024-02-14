@@ -7,7 +7,7 @@ export type FirefoxItem = {
     httpRealm: Maybe<string>;
     formActionOrigin: Maybe<string>;
     guid: Maybe<string>;
-    timeCreated: Maybe<number>;
-    timeLastUsed: Maybe<number>;
-    timePasswordChanged: Maybe<number>;
+    timeCreated: Maybe<string>;
+    timeLastUsed: Maybe<string>;
+    timePasswordChanged: Maybe<string>;
 };

@@ -12,7 +12,7 @@ export const createExportService = () => {
         WorkerMessageType.EXPORT_REQUEST,
         onContextReady(async (_, { payload: options }) => {
             const state = store.getState();
-            const data = selectExportData({ config, encrypted: options.encrypted })(state);
+            const data = selectExportData({ config, format: options.format })(state);
             const file = await createPassExport(data, options);
 
             return { file };
