@@ -478,7 +478,7 @@ export const useCbIframe = (): CbIframeHandles => {
                     callback(payload.error);
                 }
             }),
-        onUnhandledError: (callback: (error: any) => any) =>
+        onUnhandledError: (callback: (error: any, rawError: any, messagePayload: any) => any) =>
             listenToIframeEvents(iframeRef, (e) => {
                 const payload = parseEvent(e.data);
                 if (isUnhandledErrorMessage(payload)) {
@@ -486,13 +486,13 @@ export const useCbIframe = (): CbIframeHandles => {
                     const reconstructedError = new Error(error.message);
                     reconstructedError.stack = error.stack;
                     reconstructedError.name = error.name;
-                    callback(reconstructedError);
+                    callback(reconstructedError, error, payload);
                 }
             }),
     };
 
     useEffect(() => {
-        return events.onUnhandledError((e) => {
+        return events.onUnhandledError((e, rawError, messagePayload) => {
             const error = getSentryError(e);
             if (error) {
                 const context = {
@@ -502,7 +502,7 @@ export const useCbIframe = (): CbIframeHandles => {
 
                 captureMessage('Payments: Unhandled Chargebee error', {
                     level: 'error',
-                    extra: { error, context },
+                    extra: { error, context, rawError, messagePayload },
                 });
             }
         });
