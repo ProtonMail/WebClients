@@ -31,7 +31,7 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
                 <h3 className="text-bold text-4xl">{appName}</h3>
             </div>
             <div className="flex gap-2">
-                <Href href={appStoreLink}>
+                <Href href={appStoreLink} target="_blank">
                     <img
                         className="h-custom"
                         style={{ '--h-custom': '2.25rem' }}
@@ -39,7 +39,7 @@ const ProductDownloadCard = ({ app, qrCodeLink, appStoreLink, playStoreLink }: P
                         alt={c('Get started checklist instructions').t`${appName} on App Store`}
                     />
                 </Href>
-                <Href href={playStoreLink}>
+                <Href href={playStoreLink} target="_blank">
                     <img
                         className="h-custom"
                         style={{ '--h-custom': '2.25rem' }}
@@ -57,13 +57,13 @@ const MobileAppSecttingsSection = () => {
         <div className="flex gap-6 mt-3">
             <ProductDownloadCard
                 app="proton-mail"
-                qrCodeLink="https://proton.me/mail/download"
+                qrCodeLink="https://proton.me/mailapp"
                 appStoreLink="https://apps.apple.com/app/apple-store/id979659905"
                 playStoreLink="https://play.google.com/store/apps/details?id=ch.protonmail.android"
             />
             <ProductDownloadCard
                 app="proton-calendar"
-                qrCodeLink="https://proton.me/calendar/download"
+                qrCodeLink="https://proton.me/calapp"
                 appStoreLink="https://apps.apple.com/app/apple-store/id1514709943"
                 playStoreLink="https://play.google.com/store/apps/details?id=me.proton.android.calendar"
             />
