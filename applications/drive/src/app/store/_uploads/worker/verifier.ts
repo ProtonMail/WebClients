@@ -17,8 +17,8 @@ export const createVerifier = ({ verificationCode, verifierSessionKey }: Verific
             sessionKeys: verifierSessionKey,
         });
 
-        // The verifier requires a 0-padded data packet, so we can use .at() which
-        // returns `undefined` in case of out-of-bounds positive indices
-        return verificationCode.map((value, index) => value ^ (encryptedData.at(index) || 0));
+        // The verifier requires a 0-padded data packet, so we can
+        // access the array directly and fall back to 0.
+        return verificationCode.map((value, index) => value ^ (encryptedData[index] || 0));
     };
 };
