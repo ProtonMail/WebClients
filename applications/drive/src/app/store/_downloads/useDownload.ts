@@ -237,6 +237,10 @@ export default function useDownload() {
             .then((buffer) => streamToBuffer(buffer));
     };
 
+    /**
+     * getPreviewThumbnail is used to get thumbnail to preview a non-supported picture file format.
+     * It will first try to retrieve the HD thumbnail before fallback on default one
+     */
     const getPreviewThumbnail = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
         const { hasThumbnail, hasHdThumbnail, activeRevision, cachedThumbnailUrl } = await getLink(
             abortSignal,
