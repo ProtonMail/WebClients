@@ -6162,11 +6162,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Sørg for å kopiere passordet ditt og lagre det på et trygt sted."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Før aktivering av brukeren trenger du å angi et passord og opprette krypteringsnøkler for adressene."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Før opprettelse av denne adressen trenger du å angi et passord og opprette krypteringsnøkler for det."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Før aktivering av kontoen trenger du å angi et passord og opprette krypteringsnøkler for de nye adressene."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
@@ -6686,6 +6686,9 @@
       ],
       "Key deletion is irreversible!": [
         "Nøkkelsletting er irreversibel!"
+      ],
+      "Keys created": [
+        "Nøkler opprettet"
       ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
@@ -7567,6 +7570,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Bruk valgt e-postadresse som SMTP-brukernavn i den eksterne tjenesten, og det genererte tokenet som SMTP-passordet."
+      ],
+      "User activated": [
+        "Bruker aktivert"
       ],
       "Users": [
         "Brukere"
@@ -9654,6 +9660,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktiver bruker"
+      ],
       "Change password": [
         "Endre passord"
       ],
@@ -13558,11 +13567,11 @@
       "Activate @pm.me": [
         "Aktiver @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Aktiver konto og generer nøkler"
-      ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
+      ],
+      "Activate user": [
+        "Aktiver bruker"
       ],
       "Add address": [
         "Legg til adresse"
