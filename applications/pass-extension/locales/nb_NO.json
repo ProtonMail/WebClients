@@ -698,6 +698,9 @@
       "Unknown invite": [
         "Ukjent invitasjon"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Ikke støttet ${ PASS_APP_NAME }-filformat"
+      ],
       "Unsupported 1Password file format": [
         "Ikke støttet 1Password-filformat"
       ],
@@ -887,6 +890,9 @@
       "Creating alias...": [
         "Oppretter alias..."
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV tilbyr et praktisk format for å se dataene dine. På grunn av sin enkelhet vil imidlertid noen data ikke bli inkludert (egendefinerte felt, hvelvstruktur ...). For en fullstendig eksport anbefaler vi at du bruker et annet format."
+      ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
       ],
@@ -922,9 +928,6 @@
       ],
       "Enter your PIN code": [
         "Skriv inn din PIN-kode"
-      ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Eksport krypteres ved hjelp av PGP og krever en sterk passfrase."
       ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
@@ -1188,7 +1191,10 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Autofyll-rullegardinmenyen åpnes automatisk når du klikker eller fokuserer på feltet."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Eksportfilen krypteres ved hjelp av PGP og krever en sterk passfrase."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
         "Eksportfilen vil ikke inneholde data fra delte hvelv der du ikke er eieren."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
@@ -1431,6 +1437,9 @@
       "Created": [
         "Opprettet"
       ],
+      "Default (recommended)": [
+        "Standard (anbefalt)"
+      ],
       "Display": [
         "Vis"
       ],
@@ -1452,8 +1461,8 @@
       "Empty trash": [
         "Tøm papirkurven"
       ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Krypter dataeksportfil til ${ PASS_APP_NAME }"
+      "Encrypted (recommended)": [
+        "Kryptert (anbefalt)"
       ],
       "Expiration date": [
         "Utløpsdato"
@@ -1463,6 +1472,9 @@
       ],
       "Field name": [
         "Feltnavn"
+      ],
+      "File format": [
+        "Filformat"
       ],
       "Forwards to": [
         "Videresendes til"
