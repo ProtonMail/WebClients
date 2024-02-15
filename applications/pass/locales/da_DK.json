@@ -803,9 +803,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Eksporten er krypteret med PGP og kræver en stærk adgangssætning."
-      ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
       ],
@@ -1050,9 +1047,6 @@
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Eksportfilen vil ikke indeholde data fra delte bokse, hvor du ikke er ejeren"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
         "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
@@ -1262,9 +1256,6 @@
       ],
       "Empty trash": [
         "Tøm papirkurv"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Kryptér din ${ PASS_APP_NAME } dataeksportfil"
       ],
       "Expiration date": [
         "Udløbsdato"
