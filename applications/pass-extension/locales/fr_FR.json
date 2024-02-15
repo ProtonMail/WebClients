@@ -698,6 +698,9 @@
       "Unknown invite": [
         "Invitation inconnue"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Format de fichier ${ PASS_APP_NAME } non pris en charge"
+      ],
       "Unsupported 1Password file format": [
         "Le format de fichier 1Password n'est pas pris en charge."
       ],
@@ -827,6 +830,9 @@
       "Admin": [
         "Administrateur"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "Après une période d'inactivité, l'accès à ${ PASS_APP_NAME } nécessitera un code PIN pour déverrouiller votre session. Vous serez déconnecté après 3 tentatives n'ayant pas abouti."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Une fois vos données importées, pour des raisons de sécurité, vous devriez supprimer le fichier CSV contenant vos mots de passe."
       ],
@@ -884,6 +890,9 @@
       "Creating alias...": [
         "Création de l'alias en cours"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "Le CSV offre un format pratique pour visualiser vos données. Cependant, en raison de sa simplicité, certaines données ne seront pas incluses (champs personnalisés, structure du coffre-fort...). Pour une exportation complète, nous vous recommandons d’utiliser un format différent."
+      ],
       "Decrypting your data": [
         "Déchiffrement de vos données en cours"
       ],
@@ -919,9 +928,6 @@
       ],
       "Enter your PIN code": [
         "Entrez votre code PIN"
-      ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "L'exportation est chiffrée en PGP et nécessite une phrase secrète forte."
       ],
       "Fill in the CSV with your data": [
         "Remplir le fichier CSV avec vos données"
@@ -1185,8 +1191,11 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "La liste déroulante de remplissage automatique s'ouvrira automatiquement quand vous cliquez sur un champ ou que vous le sélectionnez."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Le fichier exporté ne contiendra pas les données des coffres-forts partagés dont vous n’êtes pas le propriétaire."
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Le fichier exporté sera chiffré en utilisant PGP et nécessite une phrase de mot de passe forte."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Le fichier exporté ne contiendra pas les données des coffres partagés dont vous n’êtes pas le propriétaire"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
@@ -1428,6 +1437,9 @@
       "Created": [
         "Créé"
       ],
+      "Default (recommended)": [
+        "Par défaut"
+      ],
       "Display": [
         "Affichage"
       ],
@@ -1449,8 +1461,8 @@
       "Empty trash": [
         "Vider la corbeille"
       ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Chiffrez votre fichier d'exportation de données ${ PASS_APP_NAME }"
+      "Encrypted (recommended)": [
+        "Chiffré (recommandé)"
       ],
       "Expiration date": [
         "Date d’expiration"
@@ -1460,6 +1472,9 @@
       ],
       "Field name": [
         "Nom du champ"
+      ],
+      "File format": [
+        "Format de fichier"
       ],
       "Forwards to": [
         "Transfert vers"

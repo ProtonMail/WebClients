@@ -920,9 +920,6 @@
       "Enter your PIN code": [
         "PIN-Code eingeben"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Der Export wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
-      ],
       "Fill in the CSV with your data": [
         "Fülle die CSV-Datei mit deinen Daten aus."
       ],
@@ -1185,9 +1182,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Die Auswahlliste zum automatischen Ausfüllen wird automatisch geöffnet, wenn du auf ein Feld klickst oder dieses fokussiert wird."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Die Exportdatei enthält keine Daten von gemeinsamen Tresoren, bei denen du nicht der Eigentümer bist."
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
         "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
@@ -1448,9 +1442,6 @@
       ],
       "Empty trash": [
         "Papierkorb leeren"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Verschlüssle deine ${ PASS_APP_NAME } Datenexportdatei."
       ],
       "Expiration date": [
         "Ablaufdatum"
