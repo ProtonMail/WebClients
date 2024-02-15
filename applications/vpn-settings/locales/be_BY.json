@@ -3015,9 +3015,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перад стварэннем гэтага адраса, вам неабходна ўвесці пароль і стварыць для яго ключы шыфравання."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Перад уключэннем гэтага ўліковы запісу, вам неабходна ўвесці пароль і стварыць ключы шыфравання для новых адрасоў."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага праверачнага кода праверце папку са спамам, а таксама ці правільна азначаны адрас ${ strong }."
       ],
@@ -5985,7 +5982,7 @@
         "Усе адміністратары атрымаюць доступ да ключа."
       ],
       "Are you sure you want to change your organization key?": [
-        "Вы сапраўды хочаце змяніць свой ключ арганізацыі?"
+        "Вы сапраўды хочаце змяніць ключ арганізацыі?"
       ],
       "Change organization key": [
         "Змяніць ключ арганізацыі"
@@ -6009,7 +6006,7 @@
         "Ключ арганізацыі абноўлены"
       ],
       "Permission denied, administrator privileges have been restricted.": [
-        "У доступе адмоўлена, правы адміністратара абмежаваны."
+        "У доступе адмоўлена, прывілеі адміністратара абмежаваны."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
         "Прыватныя карыстальнікі могуць атрымаць правы адміністратара пры першым уваходзе ў сістэму"
@@ -6027,10 +6024,10 @@
         "Гэта правядзе да адпраўкі самага новага ключа арганізацыі адміністратару, які пакуль не мае доступу да яго."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
-        "Вам неабходна актываваць ключы арганізацыі, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+        "Вам неабходна актываваць ключ арганізацыі, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Актывуйце ключы арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
+        "Актывуйце ключ арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
@@ -6051,7 +6048,7 @@
         "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новага ключа арганізацыі"
       ],
       "You need access to the organization key to perform this operation.": [
-        "Вам патрэбны доступ да ключоў арганізацыі, каб выканаць гэту аперацыю."
+        "Вам патрэбны доступ да ключа арганізацыі, каб выканаць гэту аперацыю."
       ]
     },
     "Payment method option": {
@@ -6931,7 +6928,7 @@
         "Для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
-        "Вызваліце месца або ${ upgrade }, адпраўляць і атрымліваць лісты"
+        "Вызваліце месца або ${ upgrade }, каб адпраўляць і атрымліваць лісты"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Вызваліце месца або ${ upgrade }, каб запампоўваць або сінхранізаваць файлы"
@@ -7416,9 +7413,6 @@
       ],
       "Action": [
         "Дзеянне"
-      ],
-      "Activate account and generate keys": [
-        "Актываваць уліковы запіс і згенерыраваць ключы"
       ],
       "Activate organization key": [
         "Актываваць ключ арганізацыі"
