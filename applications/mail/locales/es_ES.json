@@ -1315,6 +1315,11 @@
         "Nuevo correo electrónico"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Descarga la aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicaciones de ${ BRAND_NAME }"
@@ -8778,6 +8783,9 @@
       "Change setting": [
         "Cambiar el ajuste"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Inicia ${ MAIL_APP_NAME } con facilidad directamente desde tu escritorio."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Crea alias de hide-my-email mi correo electrónico y haz un seguimiento de ellos aquí."
       ],
@@ -8786,6 +8794,9 @@
       ],
       "Faster email management": [
         "Gestión del correo electrónico más rápida"
+      ],
+      "Get the desktop app": [
+        "Obtén la aplicación de escritorio"
       ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
@@ -10020,6 +10031,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"

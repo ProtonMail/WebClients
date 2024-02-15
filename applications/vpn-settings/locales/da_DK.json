@@ -1949,6 +1949,9 @@
       "Code wrong or not valid anymore": [
         "Kode forkert eller ikke længere gyldig"
       ],
+      "Coudn't load invoices. Please try again later.": [
+        "Fakturaer kunne ikke indlæses. Prøv venligst igen senere."
+      ],
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
@@ -2020,6 +2023,9 @@
       ],
       "Organization key is not decrypted": [
         "Organisationsnøgle er ikke dekrypteret"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "Organisationsnøgle skal være aktiveret for at oprette ikke private brugere"
       ],
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
@@ -2110,6 +2116,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
       "Try again later": [
         "Prøv igen senere"
@@ -2908,6 +2917,9 @@
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
       ],
+      "Are you sure you want to give administrative privileges to this user?": [
+        "Er du sikker på, at du vil give administrative rettigheder til denne bruger?"
+      ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
       ],
@@ -2934,9 +2946,6 @@
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Før du opretter denne adresse, skal du angive en adgangskode og oprette krypteringsnøgler til den."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Før du aktiverer kontoen, skal du angive en adgangskode og oprette krypteringsnøgler til de nye adresser."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
@@ -3218,6 +3227,9 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inklusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Forøg din kontosikkerhed, ved at verificere din e-mailadresse"
@@ -5744,11 +5756,53 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Alle administratorer vil få afgang til nøglen"
+      ],
+      "Are you sure you want to change your organization key?": [
+        "Er du sikker på at du vil ændre organisationsnøglen?"
+      ],
+      "Change organization key": [
+        "Skift organisationsnøgle"
+      ],
+      "Organization key activated": [
+        "Organisationsnøglen er aktiveret."
+      ],
+      "Organization key does not exist.": [
+        "Organisationsnøglen findes ikke."
+      ],
+      "Organization key restored": [
+        "Organisationsnøglen er genoprettet"
+      ],
+      "Organization key updated": [
+        "Organisationsnøglen er opdateret"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Tilladelse nægtet, administratorrettigheder er blevet begrænset."
       ],
+      "Reset organization key": [
+        "Nulstil organisationsnøglen"
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Følgende administratorer får adgang til organisationsnøglen."
+      ],
       "The organization key must be activated first.": [
         "Organisationsnøglen skal først aktiveres."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Dette vil sende den seneste organisationsnøgle til de administratorer, der ikke har adgang til den i øjeblikket."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "For at anvende administratorrettigheder på din konto, skal organisationsnøglen aktiveres."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Vi har bekræftet ægtheden af afsender og invitation."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "Du er blevet administrator for denne organisation **${ organizationName }** af"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
     "Payment method option": {
@@ -5958,6 +6012,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrator i din organisation skal have adgang til organitationsnøglen",
+        "${ n } administratorer i din organisation skal have adgang til organationsnøglen."
+      ],
       "Changing organization keys": [
         "Skift af organisationsnøgler"
       ],
@@ -6961,9 +7019,6 @@
       ],
       "Action": [
         "Handling"
-      ],
-      "Activate account and generate keys": [
-        "Aktiver konto og generer nøgler"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"

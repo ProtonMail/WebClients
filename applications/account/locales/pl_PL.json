@@ -6275,9 +6275,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Przed utworzeniem adresu, musisz wpisać hasło i utworzyć dla niego klucze szyfrowania."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Przed włączeniem konta, musisz wpisać hasło i utworzyć klucze szyfrowania dla nowych adresów."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
       ],
@@ -6808,6 +6805,9 @@
       ],
       "Key deletion is irreversible!": [
         "Usunięcie klucza jest nieodwracalne!"
+      ],
+      "Keys created": [
+        "Klucze zostały utworzone"
       ],
       "Label all imported messages as": [
         "Oznacz wszystkie zaimportowane wiadomości etykietą"
@@ -9828,6 +9828,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktywuj użytkownika"
+      ],
       "Change password": [
         "Zmień hasło"
       ],
@@ -10829,7 +10832,7 @@
         "Umożliwia skonfigurowanie autorespondera na przychodzące wiadomości"
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Automatyczne przekierowanie wiadomości do swojego konta ${ MAIL_APP_NAME } lub na inny adres e-mail."
+        "Automatyczne przekierowanie wiadomości do konta ${ MAIL_APP_NAME } lub na inny adres e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masowe wysyłanie promocyjnych lub zaprogramowanych wiadomości nie jest obsługiwane. W tym celu zalecamy skorzystanie z dedykowanego dostawcy poczty e-mail."
@@ -11906,7 +11909,7 @@
         "Resetuj klucz organizacji"
       ],
       "The following administrators will get access to the organization key.": [
-        "Poniżsi administratorzy uzyskają dostęp do klucza organizacji."
+        "Następujący administratorzy uzyskają dostęp do klucza organizacji."
       ],
       "The organization key must be activated first.": [
         "Najpierw musisz aktywować klucz organizacji."
@@ -11939,7 +11942,7 @@
         "Wszyscy użytkownicy muszą zostać użytkownikami prywatnymi, przed wygenerowaniem nowego klucza organizacji."
       ],
       "You need access to the organization key to perform this operation.": [
-        "Potrzebujesz dostępu do klucza organizacji, aby wykonać tę operację."
+        "Potrzebujesz dostępu do klucza organizacji, aby wykonać to działanie."
       ]
     },
     "Payment method option": {
@@ -13855,11 +13858,11 @@
       "Activate @pm.me": [
         "Aktywuj adres @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Aktywuj konto i generuj klucze"
-      ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
+      ],
+      "Activate user": [
+        "Aktywuj użytkownika"
       ],
       "Add address": [
         "Dodaj adres"

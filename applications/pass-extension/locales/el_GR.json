@@ -920,9 +920,6 @@
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Η εξαγωγή κρυπτογραφείται χρησιμοποιώντας PGP και απαιτεί μια ισχυρή φράση πρόσβασης."
-      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1185,9 +1182,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα όταν κάνετε κλικ ή εστιάσετε στο πεδίο."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Το αρχείο εξαγωγής δε θα περιέχει τα δεδομένα κοινόχρηστων κρυπτών όπου δεν είστε ο κάτοχος"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
         "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
@@ -1448,9 +1442,6 @@
       ],
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Κρυπτογραφήστε το ${ PASS_APP_NAME } αρχείο εξαγωγής δεδομένων σας"
       ],
       "Expiration date": [
         "Ημερομηνία λήξης"

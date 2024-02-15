@@ -5996,6 +5996,10 @@
       "Admin account allocation": [
         "Asignación de cuenta de administrador"
       ],
+      "Affected user is on row": [
+        "El usuario afectado está en la fila.",
+        "Los usuarios afectados están en las filas."
+      ],
       "Align left": [
         "Alinear a la izquierda"
       ],
@@ -6158,11 +6162,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Asegúrate de copiar tu contraseña y guardarla en un lugar seguro."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Antes de activar el usuario, necesitas proporcionar una contraseña y crear claves de cifrado para las direcciones."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de crear esta dirección necesitas proporcionar una contraseña y crear las claves de cifrado para ella."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de activar la cuenta necesitas proporcionar una contraseña y crear las claves de cifrado para las nuevas direcciones."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -6683,6 +6687,9 @@
       "Key deletion is irreversible!": [
         "¡La eliminación de la clave es irreversible!"
       ],
+      "Keys created": [
+        "Las claves han sido creadas."
+      ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
       ],
@@ -6982,6 +6989,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } carácter.",
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
@@ -7386,6 +7397,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará tu contraseña temporal. La utilizarás para acceder a tu cuenta de ${ BRAND_NAME } en el futuro."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará cualquier sesión activa y desactivará la autenticación de doble factor."
       ],
@@ -7553,6 +7567,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utiliza la dirección de correo electrónico seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
+      ],
+      "User activated": [
+        "El usuario ha sido activado."
       ],
       "Users": [
         "Usuarios"
@@ -9637,6 +9654,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activar el usuario"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -13523,11 +13543,11 @@
       "Activate @pm.me": [
         "Activar @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Activar cuenta y generar claves"
-      ],
       "Activate organization key": [
         "Activar clave de la organización"
+      ],
+      "Activate user": [
+        "Activar el usuario"
       ],
       "Add address": [
         "Añadir dirección"
@@ -13606,6 +13626,9 @@
       ],
       "Are you sure you want to close?": [
         "¿Estás seguro de que quieres cerrarlo?"
+      ],
+      "Are you sure?": [
+        "¿Estás seguro?"
       ],
       "Authentication security": [
         "Autenticación de seguridad"
@@ -14822,6 +14845,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"

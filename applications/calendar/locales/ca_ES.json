@@ -2395,6 +2395,12 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
+      "Alias is not valid": [
+        "L'àlies no és vàlid."
+      ],
+      "Alias is required": [
+        "Cal l'àlies."
+      ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
       ],
@@ -2553,6 +2559,9 @@
       ],
       "Missing signature": [
         "Signatura no trobada"
+      ],
+      "Name is required": [
+        "Cal indicar un nom."
       ],
       "Name required": [
         "Nom requerit"
@@ -3302,6 +3311,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Security Center": [
+        "Centre de seguretat"
       ]
     },
     "Hint": {
@@ -5559,6 +5571,11 @@
         "Desplega la llista de participants"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de facturació"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
@@ -5737,6 +5754,9 @@
         "Tots els àlies"
       ],
       "Create alias": [
+        "Crea un àlies"
+      ],
+      "Create an alias": [
         "Crea un àlies"
       ],
       "Hide-my-email aliases": [
@@ -6282,6 +6302,9 @@
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
+      "Alias saved and copied": [
+        "S'ha desat i copiat l'àlies."
+      ],
       "All events deleted": [
         "Tots els esdeveniments borrats"
       ],
@@ -6740,6 +6763,9 @@
       "Minicalendar": [
         "Minicalendari"
       ],
+      "Need more aliases?": [
+        "Necessiteu més àlies?"
+      ],
       "Night theme": [
         "Tema de nit"
       ],
@@ -6796,6 +6822,9 @@
       ],
       "Save changes": [
         "Desa els canvis"
+      ],
+      "Security center": [
+        "Centre de seguretat"
       ],
       "Select a day in the month": [
         "Seleccioneu un dia del mes."

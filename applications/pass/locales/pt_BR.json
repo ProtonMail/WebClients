@@ -567,6 +567,9 @@
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
       ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "Faça upgrade para ter acesso antecipado ao aplicativo desktop do ${ PASS_APP_NAME }"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -802,9 +805,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
-      ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "A exportação é criptografada usando PGP e requer uma frase de segurança forte."
       ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
@@ -1050,9 +1050,6 @@
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "O arquivo de exportação não conterá os dados de cofres compartilhados dos quais você não é o proprietário"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
         "Não foi possível importar os seguintes ${ result.ignored.length } itens."
@@ -1262,9 +1259,6 @@
       ],
       "Empty trash": [
         "Esvaziar lixeira"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Criptografe o arquivo de exportação dos seus dados do ${ PASS_APP_NAME }"
       ],
       "Expiration date": [
         "Data de expiração"

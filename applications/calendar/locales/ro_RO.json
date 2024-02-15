@@ -173,6 +173,9 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create and copy alias": [
+        "Creare și copiere alias"
+      ],
       "Create calendar": [
         "Creare calendar"
       ],
@@ -506,6 +509,9 @@
       ],
       "Select calendar view": [
         "Selectare tip afișare calendar"
+      ],
+      "Select country": [
+        "Selectare țară"
       ],
       "Select time zone": [
         "Selectare fus orar"
@@ -5731,6 +5737,11 @@
         "Extindere listă participanți"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Țara de facturare"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
@@ -5926,6 +5937,9 @@
       "Create alias": [
         "Creare alias"
       ],
+      "Create an alias": [
+        "Creați un alias"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
       ],
@@ -5946,6 +5960,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Încercați ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Folosit pentru cumpărături pe Amazon etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Când vi se solicită adresa de e-mail, furnizați acest alias. Adăugați-i un nume și o notă pentru a ține evidența unde îl utilizați."
       ]
     },
     "Security Center - Action": {
@@ -6482,6 +6502,12 @@
       "contact your administrator": [
         "contactați-vă administratorul"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "treceți la alt tip de plan pentru mai mult spațiu"
       ],
@@ -6491,8 +6517,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ storage } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Spațiul din ${ storage } este plin. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare este ${ percentage }% plin. ${ cta }."
+      ],
       "Your storage is full": [
         "Spațiu de stocare plin"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Spațiul de stocare este plin. ${ cta }."
       ]
     },
     "Subscribe to calendar modal": {

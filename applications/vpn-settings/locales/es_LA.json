@@ -2960,11 +2960,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Asegúrese de copiar su contraseña y almacenarla en algún lugar seguro."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Antes de activar el usuario, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de crear esta dirección, necesita proporcionar una contraseña y crear claves de cifrado para ella."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de activar esta cuenta, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones nuevas."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
@@ -3273,6 +3273,9 @@
       ],
       "Internet connection restored.": [
         "Conexión a internet restaurada."
+      ],
+      "Keys created": [
+        "Las claves fueron creadas."
       ],
       "Lean more about gateways": [
         "Más información sobre las puertas de enlace"
@@ -3772,6 +3775,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
+      ],
+      "User activated": [
+        "El usuario fue activado."
       ],
       "Users": [
         "Usuarios"
@@ -4732,6 +4738,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activar el usuario"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -7209,11 +7218,11 @@
       "Action": [
         "Acción"
       ],
-      "Activate account and generate keys": [
-        "Activar cuenta y generar claves"
-      ],
       "Activate organization key": [
         "Activar clave de la organización"
+      ],
+      "Activate user": [
+        "Activar el usuario"
       ],
       "Add address": [
         "Añadir dirección"

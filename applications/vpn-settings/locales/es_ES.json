@@ -2893,6 +2893,10 @@
       "Admin account allocation": [
         "Asignación de cuenta de administrador"
       ],
+      "Affected user is on row": [
+        "El usuario afectado está en la fila.",
+        "Los usuarios afectados están en las filas."
+      ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
       ],
@@ -2956,11 +2960,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Asegúrate de copiar tu contraseña y guardarla en un lugar seguro."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Antes de activar el usuario, necesitas proporcionar una contraseña y crear claves de cifrado para las direcciones."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de crear esta dirección necesitas proporcionar una contraseña y crear las claves de cifrado para ella."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de activar la cuenta necesitas proporcionar una contraseña y crear las claves de cifrado para las nuevas direcciones."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -3270,6 +3274,9 @@
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
       ],
+      "Keys created": [
+        "Las claves han sido creadas."
+      ],
       "Lean more about gateways": [
         "Más información sobre puertas de enlace"
       ],
@@ -3427,6 +3434,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Inténtalo de nuevo. Utiliza un método de pago diferente o ponte en contacto con PayPal para obtener ayuda."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } carácter.",
+        "Use una contraseña con más de ${ MIN_PASSWORD_LENGTH } caracteres."
       ],
       "Please use another browser or download the file.": [
         "Usa otro navegador o descarga el archivo."
@@ -3764,6 +3775,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
+      ],
+      "User activated": [
+        "El usuario ha sido activado."
       ],
       "Users": [
         "Usuarios"
@@ -4724,6 +4738,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activar el usuario"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -7201,11 +7218,11 @@
       "Action": [
         "Acción"
       ],
-      "Activate account and generate keys": [
-        "Activar cuenta y generar claves"
-      ],
       "Activate organization key": [
         "Activar clave de la organización"
+      ],
+      "Activate user": [
+        "Activar el usuario"
       ],
       "Add address": [
         "Añadir dirección"
@@ -7846,6 +7863,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe contener al menos ${ MIN_PASSWORD_LENGTH } carácter.",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Prueba con un nombre de usuario más corto (máx. ${ n } carácter)",
         "Prueba con un nombre de usuario más corto (máx. ${ n } caracteres)"

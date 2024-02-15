@@ -6019,9 +6019,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Abans de crear aquesta adreça, hi heu de proporcionar una contrasenya i crear claus de xifratge."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Abans d'habilitar el compte, heu de proporcionar una contrasenya i crear claus de xifratge per a les adreces noves."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -11250,6 +11247,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
+      "Reset organization key": [
+        "Restableix la clau de l'organització"
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau d'organització."
       ]
@@ -11263,6 +11263,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "País de facturació"
+      ],
       "Card number": [
         "Número de la targeta"
       ],
@@ -11271,6 +11274,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "S'ha superat el temps d'espera."
       ]
     },
     "Payments.Error": {
@@ -12954,9 +12960,6 @@
       "Activate @pm.me": [
         "Activa @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Activa el compte i genera les claus"
-      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -13037,6 +13040,9 @@
       ],
       "Are you sure you want to close?": [
         "Segur que voleu tancar?"
+      ],
+      "Are you sure?": [
+        "Esteu segurs?"
       ],
       "Authentication security": [
         "Seguretat de l'autenticació"

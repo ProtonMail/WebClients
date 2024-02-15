@@ -407,6 +407,9 @@
       "Search countries": [
         "Cerca països"
       ],
+      "See DNS TXT record": [
+        "Mostra el registre DNS TXT"
+      ],
       "See how": [
         "Veieu com"
       ],
@@ -2858,9 +2861,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Abans de crear aquesta adreça, hi heu de proporcionar una contrasenya i crear claus de xifratge."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Abans d'habilitar el compte, heu de proporcionar una contrasenya i crear claus de xifratge per a les adreces noves."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
@@ -4072,6 +4072,9 @@
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
       ],
+      "e.g. example.com": [
+        "per ex. exemple.com"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -4228,6 +4231,9 @@
       "Recovery phrase": [
         "Frase de recuperació"
       ],
+      "Reply (ACS) URL": [
+        "URL (ACS) de resposta"
+      ],
       "Require 2FA for administrators": [
         "Requereix l'A2F per als administradors"
       ],
@@ -4242,6 +4248,9 @@
       ],
       "Select your plan": [
         "Seleccioneu el vostre pla"
+      ],
+      "Single sign-on URL": [
+        "URL d'inici de sessió únic"
       ],
       "Start date": [
         "Data d'inici"
@@ -5528,6 +5537,9 @@
       "Permission denied, administrator privileges have been restricted.": [
         "Permís denegat. Els privilegis d'administrador s'han restringit."
       ],
+      "Reset organization key": [
+        "Restableix la clau de l'organització"
+      ],
       "The organization key must be activated first.": [
         "S'ha d'activar primer la clau d'organització."
       ]
@@ -5541,6 +5553,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "País de facturació"
+      ],
       "Card number": [
         "Número de la targeta"
       ],
@@ -5549,6 +5564,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "Timeout exceeded": [
+        "S'ha superat el temps d'espera."
       ]
     },
     "Payments.Error": {
@@ -6705,9 +6723,6 @@
       "Action": [
         "Acció"
       ],
-      "Activate account and generate keys": [
-        "Activa el compte i genera les claus"
-      ],
       "Activate organization key": [
         "Activar la clau d'organització"
       ],
@@ -6911,6 +6926,9 @@
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
       ],
+      "Enter SAML metadata": [
+        "Introduïu les metadades SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
       ],
@@ -7061,6 +7079,9 @@
       ],
       "Revoke certificate": [
         "Revoca el certificat"
+      ],
+      "SAML authentication": [
+        "Autenticació SAML"
       ],
       "Select a plan": [
         "Seleccioneu un pla"
