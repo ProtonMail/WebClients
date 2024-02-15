@@ -2951,9 +2951,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Innan du skapar denna adress måste du ange ett lösenord och skapa krypteringsnycklar för den."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Innan du aktiverar kontot måste du ange ett lösenord och skapa krypteringsnycklar för de nya adresserna."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
@@ -3255,6 +3252,9 @@
       ],
       "Internet connection restored.": [
         "Internetanslutning återställd."
+      ],
+      "Keys created": [
+        "Nycklar skapade"
       ],
       "Lean more about gateways": [
         "Lär dig mer om gateways"
@@ -3757,6 +3757,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Använd följande användaruppgifter när du ansluter till ${ VPN_APP_NAME }-servrar utan applikation. Exempel på användningsfall inkluderar: Tunnelblick på macOS, OpenVPN på GNU/Linux."
+      ],
+      "User activated": [
+        "Användare aktiverad"
       ],
       "Users": [
         "Användare"
@@ -7200,11 +7203,11 @@
       "Action": [
         "Åtgärd"
       ],
-      "Activate account and generate keys": [
-        "Aktivera konto och generera nycklar"
-      ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
+      ],
+      "Activate user": [
+        "Aktivera användare"
       ],
       "Add address": [
         "Lägg till adress"
