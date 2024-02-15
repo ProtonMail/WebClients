@@ -1,4 +1,4 @@
-import { Route, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import { PASS_CONFIG } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
@@ -17,7 +17,6 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
@@ -38,14 +37,13 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
+import { AppGuard } from './AppGuard';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
-import { ClientContext, ClientProvider } from './Context/ClientProvider';
+import { ClientProvider } from './Context/ClientProvider';
 import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { store } from './Store/store';
-import { Lobby } from './Views/Lobby';
-import { Main } from './Views/Main';
 
 sentry({ config: PASS_CONFIG });
 
@@ -121,32 +119,21 @@ export const App = () => (
                                 <ModalsProvider>
                                     <PassExtensionLink>
                                         <ClientProvider>
-                                            <ClientContext.Consumer>
-                                                {({ state: { loggedIn, status } }) => (
-                                                    <ConnectivityProvider subscribe={api.subscribe} status={status}>
-                                                        <Router history={history}>
-                                                            <NavigationProvider>
-                                                                <AuthServiceProvider>
-                                                                    <StoreProvider>
-                                                                        <Localized>
-                                                                            <Route
-                                                                                path="*"
-                                                                                render={() =>
-                                                                                    loggedIn ? <Main /> : <Lobby />
-                                                                                }
-                                                                            />
-                                                                        </Localized>
-                                                                        <Portal>
-                                                                            <ModalsChildren />
-                                                                            <NotificationsChildren />
-                                                                        </Portal>
-                                                                    </StoreProvider>
-                                                                </AuthServiceProvider>
-                                                            </NavigationProvider>
-                                                        </Router>
-                                                    </ConnectivityProvider>
-                                                )}
-                                            </ClientContext.Consumer>
+                                            <Router history={history}>
+                                                <NavigationProvider>
+                                                    <AuthServiceProvider>
+                                                        <StoreProvider>
+                                                            <Localized>
+                                                                <AppGuard />
+                                                            </Localized>
+                                                            <Portal>
+                                                                <ModalsChildren />
+                                                                <NotificationsChildren />
+                                                            </Portal>
+                                                        </StoreProvider>
+                                                    </AuthServiceProvider>
+                                                </NavigationProvider>
+                                            </Router>
                                         </ClientProvider>
                                     </PassExtensionLink>
                                 </ModalsProvider>
