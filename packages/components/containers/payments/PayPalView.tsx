@@ -19,6 +19,7 @@ interface Props {
     prefetchToken?: boolean;
     onClick?: () => void;
     triggersDisabled?: boolean;
+    showPaypalCredit: boolean;
 }
 
 const PayPalView = ({
@@ -30,6 +31,7 @@ const PayPalView = ({
     prefetchToken,
     onClick,
     triggersDisabled,
+    showPaypalCredit,
 }: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
@@ -64,25 +66,18 @@ const PayPalView = ({
         </PayPalButton>
     );
 
-    const allowedPaymentTypes: PaymentMethodFlows[] = ['signup', 'signup-pass', 'subscription', 'invoice', 'credit'];
-    const isAllowedPaymentType = type && allowedPaymentTypes.includes(type);
-
-    const allowedOtherTypes: PaymentMethodFlows[] = ['donation', 'human-verification'];
-    const isAllowedOtherType = type && allowedOtherTypes.includes(type);
-
     return (
         <div className="p-4 border rounded bg-weak mb-4" data-testid="paypal-view">
-            {isAllowedPaymentType ? (
+            <PayPalInfoMessage />
+            {showPaypalCredit ? (
                 <>
-                    <PayPalInfoMessage />
-                    <div className="mb-4">
+                    <div className="mt-4 mb-4">
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
                     </div>
                     <div>{clickHere}</div>
                 </>
             ) : null}
-            {isAllowedOtherType ? <PayPalInfoMessage /> : null}
         </div>
     );
 };
