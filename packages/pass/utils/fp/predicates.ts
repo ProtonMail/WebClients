@@ -29,6 +29,11 @@ export const oneOf =
     (value: T): boolean =>
         args.includes(value);
 
+export const eq =
+    <T extends any>(a: T) =>
+    (b: T): boolean =>
+        a === b;
+
 export const truthy = <T>(value: T | undefined | null | false): value is T => Boolean(value);
 
 export const notIn =

@@ -2,7 +2,7 @@ import type { Action } from 'redux';
 import { select, takeLatest } from 'redux-saga/effects';
 
 import { generateCache } from '@proton/pass/lib/cache/generate';
-import { clientBooted } from '@proton/pass/lib/client';
+import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { cacheCancel, stateDestroy } from '@proton/pass/store/actions';
 import { type WithCache, isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
@@ -23,9 +23,9 @@ function* cacheWorker({ meta, type }: WithCache<Action>, { getAppState, getAuthS
     const sessionLockToken = authStore.getLockToken();
     const offlineKD = authStore.getOfflineKD();
 
-    const booted = clientBooted(getAppState().status);
+    const ready = clientReady(getAppState().status);
 
-    if (loggedIn && booted && PassCrypto.ready) {
+    if (loggedIn && ready && PassCrypto.ready) {
         try {
             const state = (yield select()) as State;
             const cache: EncryptedPassCache = yield generateCache({ keyPassword, offlineKD, sessionLockToken })(state);

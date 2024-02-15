@@ -36,8 +36,8 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
-export const bootIntent = createAction('boot::intent', () =>
-    withRequest({ id: bootRequest(), type: 'start' })({ payload: {} })
+export const bootIntent = createAction('boot::intent', (loginPassword?: string) =>
+    withRequest({ id: bootRequest(), type: 'start' })({ payload: { loginPassword } })
 );
 
 export const bootFailure = createAction('boot::failure', (error: unknown) =>
