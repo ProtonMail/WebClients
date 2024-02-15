@@ -2836,9 +2836,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Перш ніж увімкнути обліковий запис, вам потрібно ввести пароль і створити ключі шифрування для нових адрес."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
@@ -6281,10 +6278,10 @@
         "${ n } календарів на користувача"
       ],
       "${ n } free VPN connection per user": [
-        "${ n } безкоштовне VPN-з'єднання на користувача",
-        "${ n } безкоштовні VPN-з'єднання на користувача",
-        "${ n } безкоштовних VPN-з'єднань на користувача",
-        "${ n } безкоштовних VPN-з'єднань на користувача"
+        "${ n } безплатне VPN-з'єднання на користувача",
+        "${ n } безплатні VPN-з'єднання на користувача",
+        "${ n } безплатних VPN-з'єднань на користувача",
+        "${ n } безплатних VPN-з'єднань на користувача"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } високошвидкісне VPN-з'єднання",
@@ -6681,9 +6678,6 @@
       ],
       "Action": [
         "Дія"
-      ],
-      "Activate account and generate keys": [
-        "Активувати обліковий запис і згенерувати ключі"
       ],
       "Activate organization key": [
         "Активувати ключ організації"

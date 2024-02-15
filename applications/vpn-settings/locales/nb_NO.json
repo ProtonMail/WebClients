@@ -2960,11 +2960,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Sørg for å kopiere passordet ditt og lagre det på et trygt sted."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Før aktivering av brukeren trenger du å angi et passord og opprette krypteringsnøkler for adressene."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Før opprettelse av denne adressen trenger du å angi et passord og opprette krypteringsnøkler for det."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Før aktivering av kontoen trenger du å angi et passord og opprette krypteringsnøkler for de nye adressene."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
@@ -3273,6 +3273,9 @@
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
+      ],
+      "Keys created": [
+        "Nøkler opprettet"
       ],
       "Lean more about gateways": [
         "Lær mer om gatewayer"
@@ -3775,6 +3778,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Bruk følgende påloggingsinformasjon når du kobler til ${ VPN_APP_NAME }-tjenere uten applikasjon. Bruksområder kan inkludere: Tunnelblick på macOS, OpenVPN på GNU/Linux."
+      ],
+      "User activated": [
+        "Bruker aktivert"
       ],
       "Users": [
         "Brukere"
@@ -4738,6 +4744,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktiver bruker"
+      ],
       "Change password": [
         "Endre passord"
       ],
@@ -7233,11 +7242,11 @@
       "Action": [
         "Handling"
       ],
-      "Activate account and generate keys": [
-        "Aktiver konto og generer nøkler"
-      ],
       "Activate organization key": [
         "Aktiver organisasjonsnøkkel"
+      ],
+      "Activate user": [
+        "Aktiver bruker"
       ],
       "Add address": [
         "Legg til adresse"
