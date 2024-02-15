@@ -792,9 +792,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Ekspor terenkripsi menggunakan PGP dan memerlukan frasa sandi yang kuat."
-      ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
@@ -1029,9 +1026,6 @@
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Berkas ekspor yang dihasilkan tidak akan mengandung data dari brankas bersama yang bukan milik Anda"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
       ],
@@ -1231,9 +1225,6 @@
       ],
       "Empty trash": [
         "Kosongkan sampah"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Enkripsi data ekspor ${ PASS_APP_NAME } Anda"
       ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
