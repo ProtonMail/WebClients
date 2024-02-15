@@ -16,11 +16,12 @@ import { CardFieldStatus } from '@proton/components/payments/react-extensions/us
 import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { useLoading } from '@proton/hooks';
-import { MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
+import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
+import { useConfig } from '../../hooks';
 import { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
 import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import { CardModel } from '../../payments/core';
@@ -31,7 +32,6 @@ import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
-import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
 
@@ -66,6 +66,7 @@ export interface Props {
     iframeHandles: CbIframeHandles;
     chargebeeCard: ChargebeeCardProcessorHook;
     chargebeePaypal: ChargebeePaypalProcessorHook;
+    hasSomeVpnPlan: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -114,7 +115,10 @@ export const PaymentsNoApi = ({
     iframeHandles,
     chargebeeCard,
     chargebeePaypal,
+    hasSomeVpnPlan,
 }: NoApiProps) => {
+    const { APP_NAME } = useConfig();
+
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
     const showBitcoinMethod = method === PAYMENT_METHOD_TYPES.BITCOIN;
@@ -143,19 +147,6 @@ export const PaymentsNoApi = ({
             onMethod(result.value);
         }
     }, [loading, allMethods.length]);
-
-    if (['donation', 'human-verification'].includes(type) && amount < MIN_DONATION_AMOUNT) {
-        const price = (
-            <Price key="price" currency={currency}>
-                {MIN_DONATION_AMOUNT}
-            </Price>
-        );
-
-        return (
-            <Alert className="mb-4" type="error">{c('Error')
-                .jt`The minimum amount that can be donated is ${price}`}</Alert>
-        );
-    }
 
     if (type === 'credit' && amount < MIN_CREDIT_AMOUNT) {
         const price = (
@@ -194,6 +185,14 @@ export const PaymentsNoApi = ({
     };
 
     const savedMethod = savedMethodInternal ?? savedMethodExternal;
+
+    const showPaypalView =
+        (method === PAYMENT_METHOD_TYPES.PAYPAL || method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) && !isSingleSignup;
+    const showPaypalCredit =
+        method === PAYMENT_METHOD_TYPES.PAYPAL &&
+        !isSingleSignup &&
+        APP_NAME !== APPS.PROTONVPN_SETTINGS &&
+        !hasSomeVpnPlan;
 
     return (
         <>
@@ -234,8 +233,6 @@ export const PaymentsNoApi = ({
                             <ChargebeeCreditCardWrapper {...sharedCbProps} />
                         </>
                     )}
-                    {/* the paypal button is rendered in another place */}
-                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL && <></>}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {showBitcoinMethod && (
                         <>
@@ -253,7 +250,7 @@ export const PaymentsNoApi = ({
                             )}
                         </>
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSingleSignup && (
+                    {showPaypalView && (
                         <PayPalView
                             paypal={paypal}
                             paypalCredit={paypalCredit}
@@ -264,9 +261,9 @@ export const PaymentsNoApi = ({
                             prefetchToken={paypalPrefetchToken}
                             onClick={onPaypalCreditClick}
                             triggersDisabled={triggersDisabled}
+                            showPaypalCredit={showPaypalCredit}
                         />
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSingleSignup && <PayPalInfoMessage />}
                     {savedMethod && (
                         <>
                             {!hideSavedMethodsDetails && (

@@ -71,6 +71,7 @@ it('should render', () => {
             onClick={onClick}
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
+            showPaypalCredit={true}
         />
     );
     expect(container).not.toBeEmptyDOMElement();
@@ -88,6 +89,7 @@ it('should render the message of paypal credit and "click here" button', () => {
             onClick={onClick}
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
+            showPaypalCredit={true}
         />
     );
 
@@ -109,6 +111,7 @@ it('should disable the "click here" button when triggers are disabled', () => {
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
             triggersDisabled={true}
+            showPaypalCredit={true}
         />
     );
 
@@ -127,6 +130,7 @@ it('should disable the "click here" button when paypal credit is in initial stat
             onClick={onClick}
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
+            showPaypalCredit={true}
         />
     );
 

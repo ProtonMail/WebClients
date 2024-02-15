@@ -313,9 +313,7 @@ export type PaymentMethodFlows =
     | 'signup'
     | 'signup-pass'
     | 'signup-vpn'
-    | 'human-verification'
     | 'credit'
-    | 'donation'
     | 'subscription'
     | 'add-card'
     | 'add-paypal';

@@ -90,6 +90,7 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
+    getIsVpnPlan,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
@@ -991,6 +992,8 @@ const Step1 = ({
         withLoadingSignup(run()).catch(noop);
     };
 
+    const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
+
     return (
         <Layout
             hasDecoration
@@ -1337,6 +1340,7 @@ const Step1 = ({
                                                 disabled={loadingSignup}
                                                 hideFirstLabel
                                                 noMaxWidth
+                                                hasSomeVpnPlan={hasSomeVpnPlan}
                                             />
                                         ) : (
                                             <div className="mb-4">{c('Info')
@@ -1356,18 +1360,20 @@ const Step1 = ({
                                                             loading={loadingSignup}
                                                             onClick={() => process(paymentFacade.paypal)}
                                                         />
-                                                        <PayPalButton
-                                                            id="paypal-credit"
-                                                            shape="ghost"
-                                                            color="norm"
-                                                            paypal={paymentFacade.paypalCredit}
-                                                            disabled={loadingSignup}
-                                                            amount={paymentFacade.amount}
-                                                            currency={paymentFacade.currency}
-                                                            onClick={() => process(paymentFacade.paypalCredit)}
-                                                        >
-                                                            {c('Link').t`Paypal without credit card`}
-                                                        </PayPalButton>
+                                                        {!hasSomeVpnPlan && (
+                                                            <PayPalButton
+                                                                id="paypal-credit"
+                                                                shape="ghost"
+                                                                color="norm"
+                                                                paypal={paymentFacade.paypalCredit}
+                                                                disabled={loadingSignup}
+                                                                amount={paymentFacade.amount}
+                                                                currency={paymentFacade.currency}
+                                                                onClick={() => process(paymentFacade.paypalCredit)}
+                                                            >
+                                                                {c('Link').t`Paypal without credit card`}
+                                                            </PayPalButton>
+                                                        )}
                                                     </div>
                                                 );
                                             }

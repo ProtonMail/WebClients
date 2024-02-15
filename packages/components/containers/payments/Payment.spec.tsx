@@ -9,6 +9,7 @@ import {
     SavedPaymentMethodInternal,
 } from '@proton/components/payments/core';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing/index';
 
 import { PaymentsNoApi } from './Payment';
 
@@ -47,6 +48,8 @@ let options;
 let lastUsedMethod: ViewPaymentMethod;
 
 let allMethods: ViewPaymentMethod[];
+
+const PaymentContext = applyHOCs(withApi(), withConfig(), withCache())(PaymentsNoApi);
 
 beforeEach(() => {
     paymentMethods = [
@@ -150,7 +153,7 @@ describe('Payment', () => {
         const savedMethodInternal = paymentMethods.find(({ ID }) => method === ID) as SavedPaymentMethodInternal;
 
         render(
-            <PaymentsNoApi
+            <PaymentContext
                 api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
@@ -172,6 +175,7 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                hasSomeVpnPlan={false}
             />
         );
     });
@@ -180,7 +184,7 @@ describe('Payment', () => {
         apiMock.mockReturnValue({});
 
         let { container } = render(
-            <PaymentsNoApi
+            <PaymentContext
                 api={apiMock}
                 type="subscription"
                 onMethod={() => {}}
@@ -202,6 +206,7 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                hasSomeVpnPlan={false}
             />
         );
 
@@ -214,7 +219,7 @@ describe('Payment', () => {
         apiMock.mockReturnValue({});
 
         let { container } = render(
-            <PaymentsNoApi
+            <PaymentContext
                 api={apiMock}
                 onMethod={() => {}}
                 type="signup"
@@ -236,6 +241,7 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                hasSomeVpnPlan={false}
             />
         );
 
@@ -282,7 +288,7 @@ describe('Payment', () => {
         let savedMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
         let { container } = render(
-            <PaymentsNoApi
+            <PaymentContext
                 api={apiMock}
                 onMethod={() => {}}
                 type="signup"
@@ -304,6 +310,7 @@ describe('Payment', () => {
                 iframeHandles={{} as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                hasSomeVpnPlan={false}
             />
         );
 
@@ -345,7 +352,7 @@ describe('Payment', () => {
         let savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
         let { container } = render(
-            <PaymentsNoApi
+            <PaymentContext
                 api={apiMock}
                 onMethod={() => {}}
                 type="signup"
@@ -367,6 +374,7 @@ describe('Payment', () => {
                 iframeHandles={null as any}
                 chargebeeCard={null as any}
                 chargebeePaypal={null as any}
+                hasSomeVpnPlan={false}
             />
         );
 

@@ -44,9 +44,11 @@ import {
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
+    getHasSomeVpnPlan,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
+    getIsVpnPlan,
     getLongerCycle,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
@@ -739,6 +741,9 @@ const SubscriptionContainer = ({
         void withLoading(process(paymentFacade.selectedProcessor));
     };
 
+    const hasSomeVpnPlan =
+        getHasSomeVpnPlan(subscription) || getIsVpnPlan(getPlanFromPlanIDs(plansMap, model.planIDs)?.Name);
+
     const content = (
         <>
             {!customTopRef && <div ref={topRef} />}
@@ -942,6 +947,7 @@ const SubscriptionContainer = ({
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                         hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
+                                        hasSomeVpnPlan={hasSomeVpnPlan}
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
@@ -1094,6 +1100,7 @@ const SubscriptionContainer = ({
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     hideFirstLabel={true}
                                     hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
+                                    hasSomeVpnPlan={hasSomeVpnPlan}
                                 />
                             </div>
                             <div className={amountDue || !checkResult ? 'hidden' : undefined}>
