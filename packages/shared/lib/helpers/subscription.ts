@@ -56,6 +56,8 @@ const {
     PASS_BUSINESS,
 } = PLANS;
 
+type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
+
 export const getPlan = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
     const result = (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN && (service === undefined ? true : hasBit(Services, service))
@@ -81,7 +83,7 @@ export const getPlanTitle = (subscription: Subscription | undefined) => {
     return plan?.Title;
 };
 
-export const hasSomePlan = (subscription: Subscription | FreeSubscription | undefined, planName: PLANS) => {
+export const hasSomePlan = (subscription: MaybeFreeSubscription, planName: PLANS) => {
     if (isFreeSubscription(subscription)) {
         return false;
     }
@@ -107,32 +109,28 @@ export const isManagedExternally = (
     return subscription.External === External.Android || subscription.External === External.iOS;
 };
 
-export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
-export const hasNewVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, NEW_VISIONARY);
-export const hasVPN = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN);
-export const hasVPNPassBundle = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
-export const hasMail = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL);
-export const hasMailPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL_PRO);
-export const hasDrive = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE);
-export const hasDrivePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE_PRO);
-export const hasPassPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, PASS_PLUS);
-export const hasEnterprise = (subscription: Subscription | undefined) => hasSomePlan(subscription, ENTERPRISE);
-export const hasBundle = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE);
-export const hasBundlePro = (subscription: Subscription | undefined) => hasSomePlan(subscription, BUNDLE_PRO);
-export const hasMailPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, PLUS);
-export const hasMailProfessional = (subscription: Subscription | undefined) => hasSomePlan(subscription, PROFESSIONAL);
-export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
-export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
-export const hasFamily = (subscription: Subscription | undefined) => hasSomePlan(subscription, FAMILY);
-export const hasVpnPro = (subscription: Subscription | FreeSubscription | undefined) =>
-    hasSomePlan(subscription, VPN_PRO);
-export const hasVpnBusiness = (subscription: Subscription | FreeSubscription | undefined) =>
-    hasSomePlan(subscription, VPN_BUSINESS);
-export const hasPassPro = (subscription: Subscription | FreeSubscription | undefined) =>
-    hasSomePlan(subscription, PASS_PRO);
-export const hasPassBusiness = (subscription: Subscription | FreeSubscription | undefined) =>
-    hasSomePlan(subscription, PASS_BUSINESS);
-export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
+export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
+export const hasNewVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, NEW_VISIONARY);
+export const hasVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
+export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
+export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
+export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
+export const hasDrive = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE);
+export const hasDrivePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, DRIVE_PRO);
+export const hasPassPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PLUS);
+export const hasEnterprise = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, ENTERPRISE);
+export const hasBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE);
+export const hasBundlePro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, BUNDLE_PRO);
+export const hasMailPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PLUS);
+export const hasMailProfessional = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PROFESSIONAL);
+export const hasVpnBasic = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPNBASIC);
+export const hasVpnPlus = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPNPLUS);
+export const hasFamily = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, FAMILY);
+export const hasVpnPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PRO);
+export const hasVpnBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_BUSINESS);
+export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_PRO);
+export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_BUSINESS);
+export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
@@ -164,6 +162,10 @@ export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
+export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
+    return [VPN, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
+};
+
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
     return [VPNBASIC, VPNPLUS, PLUS, PROFESSIONAL, VISIONARY].includes(planName as any);
 };
@@ -172,15 +174,24 @@ export const getIsB2BAudienceFromSubscription = (subscription: Subscription | un
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
-export const getHasVpnB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
 
-export const getHasPassB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
+    return (
+        hasVPN(subscription) ||
+        hasVPNPassBundle(subscription) ||
+        hasVpnPro(subscription) ||
+        hasVpnBusiness(subscription)
+    );
+};
+
+export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
 
-export const getHasVpnOrPassB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getHasVpnOrPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return getHasVpnB2BPlan(subscription) || getHasPassB2BPlan(subscription);
 };
 
@@ -224,7 +235,7 @@ export const getBaseAmount = (
         }, 0);
 };
 
-export const getPlanIDs = (subscription: Subscription | FreeSubscription | undefined | null): PlanIDs => {
+export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs => {
     return (subscription?.Plans || []).reduce<PlanIDs>((acc, { Name, Quantity }) => {
         acc[Name] = (acc[Name] || 0) + Quantity;
         return acc;
