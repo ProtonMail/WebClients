@@ -5996,6 +5996,10 @@
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
       ],
+      "Affected user is on row": [
+        "L'utente condizionato è nella riga",
+        "Gli utenti condizionati sono sulle righe"
+      ],
       "Align left": [
         "Allinea a sinistra"
       ],
@@ -6160,9 +6164,6 @@
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Prima di creare questo indirizzo è necessario fornire una password e creare chiavi di crittografia per essa."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Prima di abilitare l'account è necessario fornire una password e creare chiavi di crittografia per i nuovi indirizzi."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -9647,6 +9648,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Attiva utente"
+      ],
       "Change password": [
         "Cambia la password"
       ],
@@ -13557,11 +13561,11 @@
       "Activate @pm.me": [
         "Attiva @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Attiva account e genera chiavi"
-      ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
+      ],
+      "Activate user": [
+        "Attiva utente"
       ],
       "Add address": [
         "Aggiungi indirizzi"

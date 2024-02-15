@@ -6154,9 +6154,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Innan du skapar denna adress måste du ange ett lösenord och skapa krypteringsnycklar för den."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Innan du aktiverar kontot måste du ange ett lösenord och skapa krypteringsnycklar för de nya adresserna."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
       ],
@@ -6675,6 +6672,9 @@
       ],
       "Key deletion is irreversible!": [
         "Borttagning av nyckel är oåterkalleligt!"
+      ],
+      "Keys created": [
+        "Nycklar skapade"
       ],
       "Label all imported messages as": [
         "Märk alla importerade meddelanden som"
@@ -7553,6 +7553,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Använd den valda e-postadressen som SMTP-användarnamn i den externa tjänsten och den genererade token som SMTP-lösenord."
+      ],
+      "User activated": [
+        "Användare aktiverad"
       ],
       "Users": [
         "Användare"
@@ -13521,11 +13524,11 @@
       "Activate @pm.me": [
         "Aktivera @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Aktivera konto och generera nycklar"
-      ],
       "Activate organization key": [
         "Aktivera organisationsnyckel"
+      ],
+      "Activate user": [
+        "Aktivera användare"
       ],
       "Add address": [
         "Lägg till adress"
