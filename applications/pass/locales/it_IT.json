@@ -615,6 +615,9 @@
       "Unknown invite": [
         "Invito sconosciuto"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Formato del file ${ PASS_APP_NAME } non supportato"
+      ],
       "Unsupported 1Password file format": [
         "Formato del file 1Password non supportato"
       ],
@@ -782,6 +785,9 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV è un formato comodo per visualizzare i tuoi dati. Tuttavia, a causa della sua semplicità, alcuni dati non verranno inclusi (campi personalizzati, struttura della cassaforte...). Per un'esportazione completa, consigliamo di usare un altro formato."
+      ],
       "Decrypting your data": [
         "Decrittografia dei tuoi dati in corso"
       ],
@@ -805,9 +811,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Inserisci il codice di verifica. Digita ${ digit }."
-      ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "L'esportazione è crittografata mediante PGP e richiede una passphrase forte."
       ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
@@ -1053,8 +1056,11 @@
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Il file di esportazione non conterrà i dati delle casseforti condivise di cui non sei il proprietario"
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Il file esportato verrà crittografato con PGP e richiederà una passphrase sicura."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Il file esportato non conterrà i dati delle casseforti condivise di cui non sei il proprietario"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
@@ -1257,6 +1263,9 @@
       "Created": [
         "Creato"
       ],
+      "Default (recommended)": [
+        "Predefinito (consigliato)"
+      ],
       "Display": [
         "Mostra"
       ],
@@ -1266,8 +1275,8 @@
       "Empty trash": [
         "Svuota il cestino"
       ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Cripta il file con i dati esportati da ${ PASS_APP_NAME }"
+      "Encrypted (recommended)": [
+        "Crittografato (consigliato)"
       ],
       "Expiration date": [
         "Data di scadenza"
@@ -1277,6 +1286,9 @@
       ],
       "Field name": [
         "Nome campo"
+      ],
+      "File format": [
+        "Formato del file"
       ],
       "Forwards to": [
         "Inoltra a"

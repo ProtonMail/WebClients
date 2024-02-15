@@ -803,9 +803,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Tuonti salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
-      ],
       "Fill in the CSV with your data": [
         "Täytä CSV omilla tiedoillasi"
       ],
@@ -1050,9 +1047,6 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Vientitiedosto ei sisällä tietoja jaetuista holveista, joita et omista"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
         "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
@@ -1262,9 +1256,6 @@
       ],
       "Empty trash": [
         "Tyhjennä roskakori"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Salaa ${ PASS_APP_NAME } -tietojesi vientitiedosto"
       ],
       "Expiration date": [
         "Voimassaolo päättyy"

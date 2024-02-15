@@ -183,6 +183,9 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create and copy alias": [
+        "Creare și copiere alias"
+      ],
       "Create link": [
         "Creare legătură"
       ],
@@ -588,6 +591,9 @@
       ],
       "Select all": [
         "Selectare toate"
+      ],
+      "Select country": [
+        "Selectare țară"
       ],
       "Send feedback": [
         "Trimitere feedback"
@@ -3862,9 +3868,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Între timp, creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S-au indexat ${ esProgress } articole din ${ totalProgressToShow }"
       ],
@@ -4206,9 +4209,6 @@
       ],
       "Shared link not found": [
         "Legătură partajată negăsită"
-      ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Creați-vă propriul cont ${ DRIVE_APP_NAME } și protejați-vă datele cu criptare bilaterală și partajați-le în siguranță."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Semnătura nu poate fi validată din cauza unei erori de rețea. Reîncercați mai târziu."
@@ -5863,6 +5863,11 @@
         "Dvs."
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "Țara de facturare"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
@@ -6036,6 +6041,9 @@
       "Create alias": [
         "Creare alias"
       ],
+      "Create an alias": [
+        "Creați un alias"
+      ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
         "Generați aliasuri din mers și gestionați-vă ușor aliasurile și parolele."
       ],
@@ -6056,6 +6064,12 @@
       ],
       "Try ${ PASS_APP_NAME }": [
         "Încercați ${ PASS_APP_NAME }"
+      ],
+      "Used on amazon for shopping, etc.": [
+        "Folosit pentru cumpărături pe Amazon etc."
+      ],
+      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
+        "Când vi se solicită adresa de e-mail, furnizați acest alias. Adăugați-i un nume și o notă pentru a ține evidența unde îl utilizați."
       ]
     },
     "Security Center - Action": {
@@ -6533,8 +6547,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
       "upgrade for more storage": [
         "treceți la alt tip de plan pentru mai mult spațiu"
@@ -6545,8 +6565,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ storage } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Spațiul din ${ storage } este plin. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare este ${ percentage }% plin. ${ cta }."
+      ],
       "Your storage is full": [
         "Spațiu de stocare plin"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Spațiul de stocare este plin. ${ cta }."
       ]
     },
     "Success": {

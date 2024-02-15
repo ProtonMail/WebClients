@@ -944,9 +944,6 @@
       "Enter your PIN code": [
         "Wpisz kod PIN"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Plik eksportu danych jest zaszyfrowany za pomocą PGP i wymaga silnego hasła."
-      ],
       "Fill in the CSV with your data": [
         "Wypełnij plik CSV danymi"
       ],
@@ -1217,9 +1214,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Plik eksportu danych nie będzie zawierał danych udostępnionych sejfów, które są własnością innych użytkowników"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
         "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
@@ -1489,9 +1483,6 @@
       "Empty trash": [
         "Opróżnij Kosz"
       ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Zaszyfruj plik eksportu danych ${ PASS_APP_NAME }"
-      ],
       "Expiration date": [
         "Data wygaśnięcia"
       ],
@@ -1500,6 +1491,9 @@
       ],
       "Field name": [
         "Nazwa pola"
+      ],
+      "File format": [
+        "Format pliku"
       ],
       "Forwards to": [
         "Przekaż do"

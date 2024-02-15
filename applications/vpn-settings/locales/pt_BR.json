@@ -2953,9 +2953,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de criar este endereço, você precisa fornecer uma senha e criar chaves de criptografia para ela."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de habilitar a conta, você precisa fornecer uma senha e criar chaves de criptografia para os novos endereços."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
@@ -3263,6 +3260,9 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Keys created": [
+        "Chave criada"
       ],
       "Lean more about gateways": [
         "Saiba mais sobre gateways"
@@ -3762,6 +3762,9 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
       ],
+      "User activated": [
+        "Usuário ativado"
+      ],
       "Users": [
         "Usuários"
       ],
@@ -4088,6 +4091,12 @@
       ],
       "Credit": [
         "Crédito"
+      ],
+      "Credit note": [
+        "Nota de crédito"
+      ],
+      "Currency conversion": [
+        "Conversão de moeda"
       ],
       "Donation": [
         "Doação"
@@ -4946,6 +4955,9 @@
       "Autofill credit cards (coming soon)": [
         "Preenchimento automático de cartões de crédito (em breve)"
       ],
+      "Automatic email forwarding": [
+        "Encaminhamento de e-mail automático"
+      ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
       ],
@@ -5082,6 +5094,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Require 2FA for organization": [
+        "Requer 2FA para a organização"
       ],
       "Router support": [
         "Suporte a roteador"
@@ -5760,6 +5775,12 @@
       ],
       "/month /user": [
         "/mês /usuário"
+      ],
+      "/month /user, billed annually": [
+        "/mês /usuário, faturado anualmente"
+      ],
+      "/month /user, billed biennially": [
+        "/mês /usuário, faturado bienalmente"
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -7111,11 +7132,11 @@
       "Action": [
         "Ação"
       ],
-      "Activate account and generate keys": [
-        "Ativar conta e gerar chaves"
-      ],
       "Activate organization key": [
         "Ativar chave da organização"
+      ],
+      "Activate user": [
+        "Ativar usuário"
       ],
       "Add address": [
         "Adicionar endereço"
@@ -7756,6 +7777,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
         "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
