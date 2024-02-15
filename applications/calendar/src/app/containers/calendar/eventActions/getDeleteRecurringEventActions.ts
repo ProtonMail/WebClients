@@ -1,6 +1,7 @@
 import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
+import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -246,6 +247,8 @@ export const getDeleteRecurringEventActions = async ({
                     sendIcs({
                         inviteActions,
                         cancelVevent,
+                        // When deleting all, do not check single edits send preferences. Otherwise, single edits containing prefs errors will block the UI
+                        noCheckSendPrefs: getHasRecurrenceId(cancelVevent),
                     })
                 )
             );
