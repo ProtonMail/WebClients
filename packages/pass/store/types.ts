@@ -1,6 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { AppState, ClientEndpoint, MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { AppState, AppStatus, ClientEndpoint, MaybeNull, MaybePromise } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
@@ -16,7 +16,10 @@ export type Telemetry = { start: () => void; stop: () => void; push: (event: Tel
 export interface RootSagaOptions {
     /** defines the current client type */
     endpoint: ClientEndpoint;
+
     getAppState: () => AppState;
+    setAppStatus: (status: AppStatus) => void;
+
     getAuthStore: () => AuthStore;
     getAuthService: () => AuthService;
     getSettings: () => MaybePromise<ProxiedSettings>;

@@ -368,13 +368,13 @@ export const createAuthService = (config: AuthServiceConfig) => {
                             config.onNotification?.({ text });
                         }
 
-                        const locked = api.getState().sessionLocked;
-                        const inactive = api.getState().sessionInactive;
+                        const { sessionLocked, sessionInactive, offline } = api.getState();
+                        const sessionFailure = sessionLocked || sessionInactive || offline;
 
                         /** if resume failed for any other reason than a locked or
                          * inactive session, trigger the session resume sequence.
                          * Session errors will be handled by the API listener */
-                        if (!locked && !inactive) config.onSessionFailure?.(options);
+                        if (!sessionFailure) config.onSessionFailure?.(options);
 
                         return false;
                     }
