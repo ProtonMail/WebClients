@@ -410,5 +410,5 @@ export type ChargebeeIframeEvents = {
         callback: (payload: ChargebeeSavedCardAuthorizationSuccess) => any
     ) => RemoveEventListener;
     onCardVeririfcationFailure: (callback: (error: any) => any) => RemoveEventListener;
-    onUnhandledError: (callback: (error: any) => any) => RemoveEventListener;
+    onUnhandledError: (callback: (error: any, rawError: any, messagePayload: any) => any) => RemoveEventListener;
 };
