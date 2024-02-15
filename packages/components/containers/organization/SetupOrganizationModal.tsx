@@ -2,16 +2,23 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { MAX_CHARS_API } from '@proton/account';
+import {
+    MAX_CHARS_API,
+    OrganizationKeyRotationPayload,
+    createPasswordlessOrganizationKeys,
+    getKeyRotationPayload,
+} from '@proton/account';
 import { Button } from '@proton/atoms';
+import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import { createPasswordlessOrganizationKeys, updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { updateOrganizationName } from '@proton/shared/lib/api/organization';
+import { GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getHasVpnOrPassB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import { generatePasswordlessOrganizationKey } from '@proton/shared/lib/keys';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
@@ -28,8 +35,8 @@ import {
 } from '../../components';
 import {
     useApi,
+    useErrorHandler,
     useEventManager,
-    useGetUserKeys,
     useMembers,
     useNotifications,
     useOrganization,
@@ -37,20 +44,23 @@ import {
     useUser,
 } from '../../hooks';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
+import AdministratorList from './AdministratorList';
 
 enum STEPS {
     NAME,
-    PASSWORD,
+    KEY,
     STORAGE,
 }
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
-    const api = useApi();
+    const normalApi = useApi();
+    const silentApi = getSilentApi(normalApi);
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 
-    const getUserKeys = useGetUserKeys();
+    const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
+    const dispatch = useDispatch();
     const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
@@ -58,6 +68,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
     const [subscription] = useSubscription();
+    const [orgKeyCreated, setOrgKeyCreated] = useState(false);
     const hasVpnOrPassB2BPlan = getHasVpnOrPassB2BPlan(subscription);
     const selfMember = members.find(({ Self }) => !!Self);
     const storageRange = getStorageRange(selfMember, organization);
@@ -86,22 +97,33 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         goToSettings('/users-addresses');
     };
 
-    const setupPasswordless = async () => {
-        const userKey = (await getUserKeys())[0]?.privateKey;
-        const { encryptedToken, signature, privateKeyArmored } = await generatePasswordlessOrganizationKey({
-            userKey,
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
-        });
-        await api(
-            createPasswordlessOrganizationKeys({
-                Token: encryptedToken,
-                Signature: signature,
-                PrivateKey: privateKeyArmored,
-                Members: [],
-                AdminInvitations: [],
-                AdminActivations: [],
+    const [keyRotationPayload, setKeyRotationPayload] = useState<null | OrganizationKeyRotationPayload>(null);
+    const errorHandler = useErrorHandler();
+
+    const handlePreStorageStep = async () => {
+        if (hasVpnOrPassB2BPlan) {
+            // If user setting up organization for VPN B2B plan then the storage step must be skipped.
+            return finalizeOrganizationCreation();
+        }
+        setStep(STEPS.STORAGE);
+    };
+
+    const handleOrgKeyCreation = async () => {
+        const result = await dispatch(
+            getKeyRotationPayload({
+                verifyOutboundPublicKeys,
+                api: silentApi,
+                ignorePasswordlessValidation: true,
             })
         );
+        if (result.memberKeyPayloads.length) {
+            setKeyRotationPayload(result);
+            setStep(STEPS.KEY);
+            return;
+        }
+        await silentApi(await dispatch(createPasswordlessOrganizationKeys(result)));
+        setOrgKeyCreated(true);
+        return handlePreStorageStep();
     };
 
     const { title, onSubmit, section } = (() => {
@@ -135,19 +157,39 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
                     // So that other users can get connections allocated.
                     if (hasPaidVpn) {
-                        await api(updateVPN(selfMemberID, VPN_CONNECTIONS));
+                        await silentApi(updateVPN(selfMemberID, VPN_CONNECTIONS));
                     }
-                    await api(updateOrganizationName(model.name));
+                    await silentApi(updateOrganizationName(model.name));
 
-                    if (organization?.RequiresKey) {
-                        await setupPasswordless();
-                    }
-                    if (hasVpnOrPassB2BPlan) {
-                        // If user setting up organization for VPN B2B plan then the storage step must be skipped.
-                        await finalizeOrganizationCreation();
+                    if (organization?.RequiresKey && !orgKeyCreated) {
+                        await handleOrgKeyCreation();
                     } else {
-                        setStep(STEPS.STORAGE);
+                        await handlePreStorageStep();
                     }
+                },
+            };
+        }
+
+        if (step === STEPS.KEY) {
+            const title = c('Title').t`Create organization key`;
+
+            return {
+                title,
+                section: (
+                    <>
+                        <div className="mb-4">
+                            {c('passwordless').t`All administrators will get access to the key.`}
+                        </div>
+
+                        <AdministratorList members={keyRotationPayload?.memberKeyPayloads} expandByDefault={false} />
+                    </>
+                ),
+                async onSubmit() {
+                    if (!orgKeyCreated && keyRotationPayload) {
+                        await silentApi(await dispatch(createPasswordlessOrganizationKeys(keyRotationPayload)));
+                        setOrgKeyCreated(true);
+                    }
+                    await handlePreStorageStep();
                 },
             };
         }
@@ -176,7 +218,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     if (!selfMemberID) {
                         throw new Error('Missing member id');
                     }
-                    await api(updateQuota(selfMemberID, storageValue));
+                    await silentApi(updateQuota(selfMemberID, storageValue));
 
                     await finalizeOrganizationCreation();
                 },
@@ -189,18 +231,15 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const handleClose = loading ? noop : onClose;
 
     const handleBack = () => {
-        if (organization?.RequiresKey && step) {
-            setStep(step - 1);
-            return;
-        }
-
         // Going back when the organization don't requires a key should take user back to the name step
         if (!organization?.RequiresKey && step === STEPS.STORAGE) {
             setStep(STEPS.NAME);
             return;
         }
 
-        setStep(step - 1);
+        if (step > 0) {
+            setStep(step - 1);
+        }
     };
 
     return (
@@ -210,7 +249,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 if (!onFormSubmit()) {
                     return;
                 }
-                void withLoading(onSubmit()).then(reset);
+                void withLoading(onSubmit()).then(reset).catch(errorHandler);
             }}
             onClose={handleClose}
             size="medium"

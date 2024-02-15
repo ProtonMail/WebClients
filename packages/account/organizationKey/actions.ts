@@ -5,9 +5,10 @@ import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/cr
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { activatePasswordlessKey, updateRolePasswordless } from '@proton/shared/lib/api/members';
 import {
+    createPasswordlessOrganizationKeys as createPasswordlessOrganizationKeysConfig,
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
-    updatePasswordlessOrganizationKeys,
+    updatePasswordlessOrganizationKeys as updatePasswordlessOrganizationKeysConfig,
 } from '@proton/shared/lib/api/organization';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
@@ -44,6 +45,8 @@ import { addressesThunk } from '../addresses';
 import { getMemberAddresses, membersThunk } from '../members';
 import { userKeysThunk } from '../userKeys';
 import { type OrganizationKeyState, organizationKeyThunk } from './index';
+
+const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
 
 export const getPrivateAdminError = () => {
     return c('passwordless').t`Private users can be promoted to admin when they've signed in for the first time`;
@@ -164,6 +167,93 @@ export const getMemberKeyPayload = async ({
     };
 };
 
+const getReEncryptedAdminTokens = async ({
+    armoredMessage,
+    decryptionKeys,
+    address,
+    memberKeyPayloads,
+}: {
+    armoredMessage: string;
+    decryptionKeys: PrivateKeyReference[];
+    address: { ID: string; privateKey: PrivateKeyReference };
+    memberKeyPayloads: MemberKeyPayload[];
+}) => {
+    const { sessionKey, message } = await decryptKeyPacket({
+        armoredMessage,
+        decryptionKeys,
+    });
+    const data = {
+        sessionKey,
+        binaryData: message.data,
+    };
+    const signer = {
+        addressID: address.ID,
+        privateKey: address.privateKey,
+    };
+
+    const { privateAdminPromises, publicAdminPromises } = memberKeyPayloads.reduce<{
+        privateAdminPromises: ReturnType<typeof generatePrivateMemberInvitation>[];
+        publicAdminPromises: ReturnType<typeof generatePublicMemberInvitation>[];
+    }>(
+        (acc, memberPayload) => {
+            if (memberPayload.type === 1) {
+                const { member, publicKey, address } = memberPayload;
+                acc.privateAdminPromises.push(
+                    generatePrivateMemberInvitation({
+                        member,
+                        publicKey,
+                        addressID: address.ID,
+                        signer,
+                        data,
+                    })
+                );
+            } else {
+                const { member, privateKey } = memberPayload;
+                acc.publicAdminPromises.push(
+                    generatePublicMemberInvitation({
+                        member,
+                        privateKey,
+                        data,
+                    })
+                );
+            }
+
+            return acc;
+        },
+        { privateAdminPromises: [], publicAdminPromises: [] }
+    );
+
+    const [privateAdminInvitations, publicAdminActivations] = await Promise.all([
+        Promise.all(privateAdminPromises),
+        Promise.all(publicAdminPromises),
+    ]);
+
+    return { privateAdminInvitations, publicAdminActivations };
+};
+
+const getReEncryptedMemberTokens = async ({
+    publicMembersToReEncryptPayload,
+    newOrganizationKey,
+    oldOrganizationKey,
+}: {
+    publicMembersToReEncryptPayload: PublicMembersReEncryptPayload;
+    oldOrganizationKey: CachedOrganizationKey;
+    newOrganizationKey: { privateKey: PrivateKeyReference; privateKeyArmored: string };
+}): Promise<Parameters<typeof updatePasswordlessOrganizationKeysConfig>[0]['Members']> => {
+    if (!publicMembersToReEncryptPayload.length) {
+        return [];
+    }
+    if (!oldOrganizationKey?.privateKey) {
+        throw new Error('Public members received without an existing organization key.');
+    }
+    const publicKey = await CryptoProxy.importPublicKey({ armoredKey: newOrganizationKey.privateKeyArmored });
+    return getReEncryptedPublicMemberTokensPayloadV2({
+        publicMembers: publicMembersToReEncryptPayload,
+        oldOrganizationKey: oldOrganizationKey,
+        newOrganizationKey: { privateKey: newOrganizationKey.privateKey, publicKey },
+    });
+};
+
 export const getMemberEditPayload = ({
     verifyOutboundPublicKeys,
     member,
@@ -234,14 +324,19 @@ export const getMemberKeyPayloads = ({
     verifyOutboundPublicKeys,
     members,
     api,
+    ignorePasswordlessValidation,
 }: {
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     members: EnhancedMember[];
     api: Api;
+    ignorePasswordlessValidation?: boolean;
 }): ThunkAction<Promise<MemberKeyPayload[]>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk());
-        if (!getIsPasswordless(organizationKey?.Key)) {
+        if (!organizationKey) {
+            throw new Error('Org key loading');
+        }
+        if (!getIsPasswordless(organizationKey?.Key) && !ignorePasswordlessValidation) {
             throw new Error('Only used on passwordless organizations');
         }
         return (
@@ -314,14 +409,16 @@ export const getPublicMembersToReEncryptPayload = (): ThunkAction<
 export const getKeyRotationPayload = ({
     verifyOutboundPublicKeys,
     api,
+    ignorePasswordlessValidation,
 }: {
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     api: Api;
+    ignorePasswordlessValidation?: boolean;
 }): ThunkAction<Promise<OrganizationKeyRotationPayload>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const userKeys = await dispatch(userKeysThunk());
         const organizationKey = await dispatch(organizationKeyThunk());
-        if (!getIsPasswordless(organizationKey?.Key)) {
+        if (!getIsPasswordless(organizationKey?.Key) && !ignorePasswordlessValidation) {
             throw new Error('Only used on passwordless organizations');
         }
         const userKey = userKeys[0]?.privateKey;
@@ -347,6 +444,7 @@ export const getKeyRotationPayload = ({
                     api,
                     verifyOutboundPublicKeys,
                     members: otherAdminMembers,
+                    ignorePasswordlessValidation,
                 })
             ),
             dispatch(getPublicMembersToReEncryptPayload()),
@@ -386,55 +484,12 @@ export const setAdminRoles = ({
             throw new Error('Missing primary address key');
         }
 
-        const { sessionKey, message } = await decryptKeyPacket({
+        const { privateAdminInvitations, publicAdminActivations } = await getReEncryptedAdminTokens({
             armoredMessage: organizationKey.Key.Token,
             decryptionKeys: userKeys.map(({ privateKey }) => privateKey),
+            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+            memberKeyPayloads,
         });
-        const data = {
-            sessionKey,
-            binaryData: message.data,
-        };
-        const signer = {
-            addressID: primaryAddress.ID,
-            privateKey: primaryAddressKey.privateKey,
-        };
-
-        const { privateAdminPromises, publicAdminPromises } = memberKeyPayloads.reduce<{
-            privateAdminPromises: ReturnType<typeof generatePrivateMemberInvitation>[];
-            publicAdminPromises: ReturnType<typeof generatePublicMemberInvitation>[];
-        }>(
-            (acc, memberPayload) => {
-                if (memberPayload.type === 1) {
-                    const { member, publicKey, address } = memberPayload;
-                    acc.privateAdminPromises.push(
-                        generatePrivateMemberInvitation({
-                            member,
-                            publicKey,
-                            addressID: address.ID,
-                            signer,
-                            data,
-                        })
-                    );
-                } else {
-                    const { member, privateKey } = memberPayload;
-                    acc.publicAdminPromises.push(
-                        generatePublicMemberInvitation({
-                            member,
-                            privateKey,
-                            data,
-                        })
-                    );
-                }
-
-                return acc;
-            },
-            { privateAdminPromises: [], publicAdminPromises: [] }
-        );
-
-        const [privateAdminInvitations, publicAdminActivations] = await Promise.all([
-            Promise.all(privateAdminPromises),
-            Promise.all(publicAdminPromises),
-        ]);
 
         const privatePromise = Promise.all(
             privateAdminInvitations.map((invitation) => {
@@ -494,7 +549,7 @@ export const rotateOrganizationKeys = ({
             await generateOrganizationKeys({
                 keyPassword,
                 backupPassword: newPassword,
-                encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+                encryptionConfig,
             });
 
         const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
@@ -539,11 +594,64 @@ export const rotateOrganizationKeys = ({
     };
 };
 
+export const createPasswordlessOrganizationKeys = ({
+    publicMembersToReEncryptPayload,
+    memberKeyPayloads,
+}: OrganizationKeyRotationPayload): ThunkAction<
+    Promise<ReturnType<typeof createPasswordlessOrganizationKeysConfig>>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
+    return async (dispatch) => {
+        const userKeys = await dispatch(userKeysThunk());
+        const organizationKey = await dispatch(organizationKeyThunk());
+        if (!organizationKey) {
+            throw new Error('Org key loading');
+        }
+        const userKey = userKeys[0]?.privateKey;
+        if (!userKey) {
+            throw new Error('Missing primary user key');
+        }
+        const [primaryAddress] = await dispatch(addressesThunk());
+        if (!primaryAddress) {
+            throw new Error('Missing primary address');
+        }
+        const [primaryAddressKey] = await dispatch(addressKeysThunk({ thunkArg: primaryAddress.ID }));
+        if (!primaryAddressKey) {
+            throw new Error('Missing primary address key');
+        }
+        const { encryptedToken, signature, privateKey, privateKeyArmored } = await generatePasswordlessOrganizationKey({
+            userKey,
+            encryptionConfig,
+        });
+        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
+            armoredMessage: encryptedToken,
+            decryptionKeys: [userKey],
+            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+            memberKeyPayloads,
+        });
+        const memberTokens = await getReEncryptedMemberTokens({
+            publicMembersToReEncryptPayload,
+            oldOrganizationKey: organizationKey,
+            newOrganizationKey: { privateKey, privateKeyArmored },
+        });
+        return createPasswordlessOrganizationKeysConfig({
+            Token: encryptedToken,
+            Signature: signature,
+            PrivateKey: privateKeyArmored,
+            Members: memberTokens,
+            AdminActivations: publicAdminActivations,
+            AdminInvitations: privateAdminInvitations,
+        });
+    };
+};
+
 export const rotatePasswordlessOrganizationKeys = ({
     publicMembersToReEncryptPayload,
     memberKeyPayloads,
 }: OrganizationKeyRotationPayload): ThunkAction<
-    Promise<ReturnType<typeof updatePasswordlessOrganizationKeys>>,
+    Promise<ReturnType<typeof updatePasswordlessOrganizationKeysConfig>>,
     OrganizationKeyState,
     ProtonThunkArguments,
     UnknownAction
@@ -566,73 +674,22 @@ export const rotatePasswordlessOrganizationKeys = ({
         if (!primaryAddressKey) {
             throw new Error('Missing primary address key');
         }
-
         const { signature, privateKey, privateKeyArmored, encryptedToken } = await generatePasswordlessOrganizationKey({
             userKey,
-            encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
+            encryptionConfig,
         });
-
-        const { sessionKey, message } = await decryptKeyPacket({
+        const { publicAdminActivations, privateAdminInvitations } = await getReEncryptedAdminTokens({
             armoredMessage: encryptedToken,
             decryptionKeys: [userKey],
+            address: { ID: primaryAddress.ID, privateKey: primaryAddressKey.privateKey },
+            memberKeyPayloads,
         });
-        const data = { binaryData: message.data, sessionKey };
-        const signer = {
-            addressID: primaryAddress.ID,
-            privateKey: primaryAddressKey.privateKey,
-        };
-
-        const { privateAdminPromises, publicAdminPromises } = memberKeyPayloads.reduce<{
-            privateAdminPromises: ReturnType<typeof generatePrivateMemberInvitation>[];
-            publicAdminPromises: ReturnType<typeof generatePublicMemberInvitation>[];
-        }>(
-            (acc, memberPayload) => {
-                if (memberPayload.type === 1) {
-                    const { member, publicKey, address } = memberPayload;
-                    acc.privateAdminPromises.push(
-                        generatePrivateMemberInvitation({
-                            member,
-                            publicKey,
-                            addressID: address.ID,
-                            signer,
-                            data,
-                        })
-                    );
-                } else {
-                    const { member, privateKey } = memberPayload;
-                    acc.publicAdminPromises.push(
-                        generatePublicMemberInvitation({
-                            member,
-                            privateKey,
-                            data,
-                        })
-                    );
-                }
-
-                return acc;
-            },
-            { privateAdminPromises: [], publicAdminPromises: [] }
-        );
-
-        const [privateAdminInvitations, publicAdminActivations] = await Promise.all([
-            Promise.all(privateAdminPromises),
-            Promise.all(publicAdminPromises),
-        ]);
-
-        let memberTokens: Parameters<typeof updatePasswordlessOrganizationKeys>[0]['Members'] = [];
-        if (publicMembersToReEncryptPayload.length >= 1) {
-            if (!organizationKey?.privateKey) {
-                throw new Error('Public members received without an existing organization key.');
-            }
-            const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
-            memberTokens = await getReEncryptedPublicMemberTokensPayloadV2({
-                publicMembers: publicMembersToReEncryptPayload,
-                oldOrganizationKey: organizationKey,
-                newOrganizationKey: { privateKey, publicKey },
-            });
-        }
-
-        return updatePasswordlessOrganizationKeys({
+        const memberTokens = await getReEncryptedMemberTokens({
+            publicMembersToReEncryptPayload,
+            oldOrganizationKey: organizationKey,
+            newOrganizationKey: { privateKey, privateKeyArmored },
+        });
+        return updatePasswordlessOrganizationKeysConfig({
             PrivateKey: privateKeyArmored,
             Signature: signature,
             Token: encryptedToken,
