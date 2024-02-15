@@ -905,9 +905,6 @@
       "Enter your PIN code": [
         "PIN 코드를 입력하세요"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "내보내기가 PGP을 사용해 암호화되머 강력한 암호가 필요합니다."
-      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1160,9 +1157,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "입력 란을 클릭했을 때 자동 완성 드롭다운이 자동으로 열립니다."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
       ],
@@ -1413,9 +1407,6 @@
       ],
       "Empty trash": [
         "휴지통 비우기"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "${ PASS_APP_NAME } 데이터 내보내기 파일을 암호화 하세요."
       ],
       "Expiration date": [
         "만료 시간"

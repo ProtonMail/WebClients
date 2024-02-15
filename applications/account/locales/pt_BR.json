@@ -6158,9 +6158,6 @@
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de criar este endereço, você precisa fornecer uma senha e criar chaves de criptografia para ela."
       ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de habilitar a conta, você precisa fornecer uma senha e criar chaves de criptografia para os novos endereços."
-      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
@@ -6679,6 +6676,9 @@
       ],
       "Key deletion is irreversible!": [
         "A exclusão da chave é irreversível."
+      ],
+      "Keys created": [
+        "Chave criada"
       ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
@@ -7554,6 +7554,9 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Use o e-mail selecionado como nome de usuário do SMTP no serviço externo e o token gerado como senha do SMTP."
       ],
+      "User activated": [
+        "Usuário ativado"
+      ],
       "Users": [
         "Usuários"
       ],
@@ -8060,6 +8063,12 @@
       ],
       "Credit": [
         "Crédito"
+      ],
+      "Credit note": [
+        "Nota de crédito"
+      ],
+      "Currency conversion": [
+        "Conversão de moeda"
       ],
       "Donation": [
         "Doação"
@@ -10103,6 +10112,9 @@
       "Autofill credit cards (coming soon)": [
         "Preenchimento automático de cartões de crédito (em breve)"
       ],
+      "Automatic email forwarding": [
+        "Encaminhamento de e-mail automático"
+      ],
       "Available on all platforms": [
         "Disponível em todas plataformas"
       ],
@@ -10239,6 +10251,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Require 2FA for organization": [
+        "Requer 2FA para a organização"
       ],
       "Router support": [
         "Suporte a roteador"
@@ -11368,6 +11383,12 @@
       "/month /user": [
         "/mês /usuário"
       ],
+      "/month /user, billed annually": [
+        "/mês /usuário, faturado anualmente"
+      ],
+      "/month /user, billed biennially": [
+        "/mês /usuário, faturado bienalmente"
+      ],
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
@@ -11412,6 +11433,9 @@
       ],
       "End-to-end encryption": [
         "Criptografia de ponta a ponta"
+      ],
+      "Everything from ${ planTitle }, plus...": [
+        "Tido do ${ planTitle }, plus..."
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Por apenas mais **${ relativePrice } por mês**, você tem acesso ao gerenciador de senhas premium de ${ BRAND_NAME }!"
@@ -13403,11 +13427,11 @@
       "Activate @pm.me": [
         "Ativar @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Ativar conta e gerar chaves"
-      ],
       "Activate organization key": [
         "Ativar chave da organização"
+      ],
+      "Activate user": [
+        "Ativar usuário"
       ],
       "Add address": [
         "Adicionar endereço"
@@ -13486,6 +13510,9 @@
       ],
       "Are you sure you want to close?": [
         "Você tem certeza que deseja fechar?"
+      ],
+      "Are you sure?": [
+        "Você tem certeza?"
       ],
       "Authentication security": [
         "Segurança de autenticação"
@@ -14702,6 +14729,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
         "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"

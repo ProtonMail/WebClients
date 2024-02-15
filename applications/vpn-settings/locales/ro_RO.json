@@ -425,6 +425,9 @@
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
+      "Select country": [
+        "Selectare țară"
+      ],
       "Select file": [
         "Selectare fișier"
       ],
@@ -2983,9 +2986,6 @@
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Înainte de a crea această adresă trebuie să furnizați o parolă și să creați o cheie de criptare pentru ea."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Înainte de a activa acest cont trebuie să furnizați o parolă și să creați chei de criptare pentru adresele noi."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
@@ -6012,6 +6012,9 @@
       ]
     },
     "Payments": {
+      "Billing Country": [
+        "Țara de facturare"
+      ],
       "Card number": [
         "Număr card"
       ],
@@ -6854,6 +6857,12 @@
       "For all ${ BRAND_NAME } services": [
         "Pentru toate serviciile ${ BRAND_NAME }"
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
+      ],
       "upgrade for more storage": [
         "treceți la alt tip de plan pentru mai mult spațiu"
       ],
@@ -6871,8 +6880,20 @@
       "Your ${ appStorage } is full": [
         "${ appStorage } este plin."
       ],
+      "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare din ${ storage } este ${ percentage }% plin. ${ cta }."
+      ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "Spațiul din ${ storage } este plin. ${ cta }."
+      ],
+      "Your storage is ${ percentage }% full. ${ cta }.": [
+        "Spațiul de stocare este ${ percentage }% plin. ${ cta }."
+      ],
       "Your storage is full": [
         "Spațiu de stocare plin"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "Spațiul de stocare este plin. ${ cta }."
       ],
       "You’ll lose access to ${ gb } storage and priority support.": [
         "Veți pierde accesul la spațiul de ${ gb } și la asistența prioritară."
@@ -7308,9 +7329,6 @@
       ],
       "Action": [
         "Acțiune"
-      ],
-      "Activate account and generate keys": [
-        "Activare cont și generare chei"
       ],
       "Activate organization key": [
         "Activare chei organizație"

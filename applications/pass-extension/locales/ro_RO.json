@@ -932,9 +932,6 @@
       "Enter your PIN code": [
         "Introduceți codul PIN"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Exportarea este criptată folosind PGP și necesită o frază complexă."
-      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -1201,9 +1198,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Meniul derulant de autocompletare se va deschide automat când se dă clic sau se focalizează pe un câmp."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
         "Nu s-au putut importa ${ result.ignored.length } articole:",
@@ -1468,9 +1462,6 @@
       ],
       "Empty trash": [
         "Golire «Gunoi»"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Criptare fișier exportat cu date ${ PASS_APP_NAME }"
       ],
       "Expiration date": [
         "Dată expirare"
