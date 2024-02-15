@@ -2691,6 +2691,11 @@
         "Запрошена адреса не існує"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Помилка під час проби змінити відповідь"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Сталася помилка під час читання вашого файлу ${ formattedFilename }. Неправильний формат файлу."
@@ -3811,6 +3816,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Display events for calendar ${ Name }": [
+        "Показувати події для календаря ${ Name }"
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -6740,6 +6748,9 @@
       ],
       "Reshare your calendars": [
         "Повторно поділіться своїми календарями"
+      ],
+      "Save": [
+        "Зберегти"
       ],
       "Save changes": [
         "Зберегти зміни"
