@@ -17,6 +17,7 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
@@ -119,27 +120,29 @@ export const App = () => (
                                     <PassExtensionLink>
                                         <ClientProvider>
                                             <ClientContext.Consumer>
-                                                {({ state: { loggedIn } }) => (
-                                                    <Router history={history}>
-                                                        <NavigationProvider>
-                                                            <AuthServiceProvider>
-                                                                <StoreProvider>
-                                                                    <Localized>
-                                                                        <Route
-                                                                            path="*"
-                                                                            render={() =>
-                                                                                loggedIn ? <Main /> : <Lobby />
-                                                                            }
-                                                                        />
-                                                                    </Localized>
-                                                                    <Portal>
-                                                                        <ModalsChildren />
-                                                                        <NotificationsChildren />
-                                                                    </Portal>
-                                                                </StoreProvider>
-                                                            </AuthServiceProvider>
-                                                        </NavigationProvider>
-                                                    </Router>
+                                                {({ state: { loggedIn, status } }) => (
+                                                    <ConnectivityProvider subscribe={api.subscribe} status={status}>
+                                                        <Router history={history}>
+                                                            <NavigationProvider>
+                                                                <AuthServiceProvider>
+                                                                    <StoreProvider>
+                                                                        <Localized>
+                                                                            <Route
+                                                                                path="*"
+                                                                                render={() =>
+                                                                                    loggedIn ? <Main /> : <Lobby />
+                                                                                }
+                                                                            />
+                                                                        </Localized>
+                                                                        <Portal>
+                                                                            <ModalsChildren />
+                                                                            <NotificationsChildren />
+                                                                        </Portal>
+                                                                    </StoreProvider>
+                                                                </AuthServiceProvider>
+                                                            </NavigationProvider>
+                                                        </Router>
+                                                    </ConnectivityProvider>
                                                 )}
                                             </ClientContext.Consumer>
                                         </ClientProvider>
