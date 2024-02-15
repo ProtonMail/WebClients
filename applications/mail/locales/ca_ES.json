@@ -3282,6 +3282,12 @@
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
+      "Alias is not valid": [
+        "L'àlies no és vàlid."
+      ],
+      "Alias is required": [
+        "Cal l'àlies."
+      ],
       "Alias options could not be resolved": [
         "Les opcions d'àlies no s'han pogut resoldre."
       ],
@@ -3443,6 +3449,9 @@
       ],
       "Missing signature": [
         "Signatura no trobada"
+      ],
+      "Name is required": [
+        "Cal indicar un nom."
       ],
       "Network error: Please check your connection and try again.": [
         "Error de xarxa: comprovi la seva connexió i torneu a intentar."
@@ -4496,6 +4505,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Security Center": [
+        "Centre de seguretat"
       ]
     },
     "Hint": {
@@ -7753,6 +7765,11 @@
         "Vós"
       ]
     },
+    "Payments": {
+      "Billing Country": [
+        "País de facturació"
+      ]
+    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
@@ -8023,6 +8040,9 @@
         "Tots els àlies"
       ],
       "Create alias": [
+        "Crea un àlies"
+      ],
+      "Create an alias": [
         "Crea un àlies"
       ],
       "Hide-my-email aliases": [
@@ -8753,6 +8773,9 @@
       "Address verification disabled": [
         "La verificació de l'adreça deshabilitada"
       ],
+      "Alias saved and copied": [
+        "S'ha desat i copiat l'àlies."
+      ],
       "Bug reported": [
         "Error notificat"
       ],
@@ -9402,6 +9425,9 @@
       "Moving a snoozed message": [
         "S'està movent un missatge posposat."
       ],
+      "Need more aliases?": [
+        "Necessiteu més àlies?"
+      ],
       "New message": [
         "Nou missatge"
       ],
@@ -9485,6 +9511,9 @@
       ],
       "Schedule send": [
         "Programar enviament"
+      ],
+      "Security center": [
+        "Centre de seguretat"
       ],
       "Select a theme": [
         "Seleccioneu un tema"
