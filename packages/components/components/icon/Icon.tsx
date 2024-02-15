@@ -228,6 +228,7 @@ export type IconName =
     | 'lock-pen-filled'
     | 'locks'
     | 'low-dash'
+    | 'magic-wand'
     | 'magnifier'
     | 'mailbox'
     | 'map'
