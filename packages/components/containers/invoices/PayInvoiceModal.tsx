@@ -9,11 +9,12 @@ import { useLoading } from '@proton/hooks';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
+import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
 import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
-import { useApiResult, useEventManager, useNotifications } from '../../hooks';
+import { useApiResult, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { Invoice } from './interface';
@@ -41,6 +42,8 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         () => checkInvoice(invoice.ID),
         []
     );
+    const [subscription] = useSubscription();
+    const hasSomeVpnPlan = getHasSomeVpnPlan(subscription);
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
@@ -184,6 +187,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             {...paymentFacade}
                             onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                             noMaxWidth
+                            hasSomeVpnPlan={hasSomeVpnPlan}
                         />
                     ) : null}
                 </>

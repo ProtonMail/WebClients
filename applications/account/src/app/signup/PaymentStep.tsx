@@ -39,6 +39,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
@@ -79,6 +80,7 @@ const PaymentStep = ({
 
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const hasGuarantee = plan?.Name === PLANS.VPN;
+    const hasSomeVpnPlan = getIsVpnPlan(plan?.Name);
 
     const chargebeeContext = useChargebeeContext();
 
@@ -259,6 +261,7 @@ const PaymentStep = ({
                                 {...paymentFacade}
                                 onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
                                 noMaxWidth
+                                hasSomeVpnPlan={hasSomeVpnPlan}
                             />
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>

@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 
 import { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, PLANS } from '@proton/shared/lib/constants';
 import { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { Api, ChargebeeEnabled, Currency, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useApi, useAuthentication, useModals } from '../../hooks';
+import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
 import {
     ChargeablePaymentParameters,
@@ -104,6 +104,7 @@ export const usePaymentFacade = ({
     chargebeeEnabled: chargebeeEnabledOverride,
     checkResult,
 }: PaymentFacadeProps) => {
+    const { APP_NAME } = useConfig();
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
     const { createModal } = useModals();
@@ -191,7 +192,9 @@ export const usePaymentFacade = ({
                 // even if token fetching fails (for example because of network or Human Verification),
                 // we still want to try to fetch the token for paypal-credit
                 try {
-                    await hook.paypalCredit.fetchPaymentToken();
+                    if (APP_NAME !== APPS.PROTONVPN_SETTINGS) {
+                        await hook.paypalCredit.fetchPaymentToken();
+                    }
                 } catch {}
             }
         }
