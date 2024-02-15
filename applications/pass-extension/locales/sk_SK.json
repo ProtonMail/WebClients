@@ -944,9 +944,6 @@
       "Enter your PIN code": [
         "Zadajte PIN kód"
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Export je šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
-      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV súbor svojimi údajmi"
       ],
@@ -1217,9 +1214,6 @@
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Rozbaľovacia ponuka automatického vypĺňania sa automaticky otvorí po kliknutí alebo zvolení poľa."
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Exportovaný súbor nebude obsahovať údaje zdieľaných trezorov, ktorých nie ste vlastníkom."
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
         "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
@@ -1488,9 +1482,6 @@
       ],
       "Empty trash": [
         "Vyprázdniť kôš"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Zašifrovať exportovaný dátový súbor ${ PASS_APP_NAME }"
       ],
       "Expiration date": [
         "Koniec platnosti "

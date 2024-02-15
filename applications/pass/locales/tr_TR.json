@@ -806,9 +806,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Dışa aktarma PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
-      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1053,9 +1050,6 @@
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Dışa aktarma dosyasında, sizinle paylaşılmış ve sahibi olmadığınız kasaların verileri bulunmayacak"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
         "Şu ${ result.ignored.length } öge içe aktarılamadı:"
@@ -1265,9 +1259,6 @@
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
-      ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "${ PASS_APP_NAME } veri dışa aktarma dosyanızı şifreleyin"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
