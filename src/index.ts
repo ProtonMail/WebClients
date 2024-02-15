@@ -3,6 +3,7 @@ import log from "electron-log/main";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
+import { hasTrialEnded } from "./store/trialStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
@@ -18,6 +19,7 @@ import {
     saveWindowsPosition,
 } from "./utils/helpers";
 import { logURL } from "./utils/logs";
+import { getTrialEndURL } from "./utils/trial";
 import { getSessionID, handleMailToUrls } from "./utils/url";
 import {
     handleCalendarWindow,
@@ -60,6 +62,13 @@ app.whenReady().then(() => {
     });
 
     initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
+
+    if (hasTrialEnded()) {
+        const url = getTrialEndURL();
+        BrowserWindow.getAllWindows().forEach((window) => {
+            window.loadURL(url);
+        });
+    }
 
     // Check updates
     checkForUpdates();

@@ -10,3 +10,7 @@ export const handleIPCBadge = (count: number) => {
         app.setBadgeCount(0);
     }
 };
+
+export const resetBadge = () => {
+    app.setBadgeCount(0);
+};

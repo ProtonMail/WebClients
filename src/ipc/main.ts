@@ -1,23 +1,32 @@
-import { ipcMain } from "electron";
-import log from "electron-log";
+import { BrowserWindow, ipcMain } from "electron";
+import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
-import { handleIPCBadge } from "./badge";
+import { getTrialEndURL } from "../utils/trial";
+import { handleIPCBadge, resetBadge } from "./badge";
 
 export const handleIPCCalls = () => {
     ipcMain.on("updateNotification", (_e, count: number) => {
-        log.info("IPC updateNotification");
         handleIPCBadge(count);
     });
     ipcMain.on("userLogout", () => {
-        log.info("IPC userLogout");
         clearStorage(true, 500);
+        resetBadge();
     });
     ipcMain.on("clearAppData", () => {
-        log.info("IPC clearAppData");
         clearStorage(true, 500);
+        resetBadge();
     });
     ipcMain.on("oauthPopupOpened", (_e, payload) => {
-        log.info("IPC oauthPopupOpened", payload);
         global.oauthProcess = payload === "oauthPopupStarted";
+    });
+    ipcMain.on("trialEnd", (_e, payload) => {
+        saveTrialStatus(payload);
+
+        if (payload === "trialEnded") {
+            const url = getTrialEndURL();
+            clearStorage(true);
+            resetBadge();
+            BrowserWindow.getFocusedWindow()?.loadURL(url);
+        }
     });
 };
