@@ -1,5 +1,4 @@
 import { ipcMain, shell } from "electron";
-import log from "electron-log";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
 import { setTrialEnded, updateView } from "../utils/view/viewManagement";
@@ -21,7 +20,6 @@ export const handleIPCCalls = () => {
         global.oauthProcess = payload === "oauthPopupStarted";
     });
     ipcMain.on("openExternal", (_e, url) => {
-        log.info("IPC openExternal", url);
         shell.openExternal(url);
     });
     ipcMain.on("trialEnd", (_e, payload) => {

@@ -18,6 +18,9 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
             case "oauthPopupOpened":
                 ipcRenderer.send("oauthPopupOpened", payload);
                 break;
+            case "openExternal":
+                ipcRenderer.send("openExternal", payload);
+                break;
             case "trialEnd":
                 ipcRenderer.send("trialEnd", payload);
                 break;
@@ -27,9 +30,6 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
             default:
                 Logger.error(`Unknown IPC message type: ${type}`);
                 break;
-        }
-        if (type === "openExternal") {
-            ipcRenderer.send("openExternal", payload);
         }
     },
 });
