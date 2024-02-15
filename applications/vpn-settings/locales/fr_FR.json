@@ -2893,6 +2893,10 @@
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
+      "Affected user is on row": [
+        "L'utilisateur affecté est sur la ligne.",
+        "Les utilisateurs affectés sont sur les lignes."
+      ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
@@ -2956,11 +2960,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Assurez-vous de copier votre mot de passe et de le garder en lieu sûr."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Avant d'activer l'utilisateur, vous devez fournir un mot de passe et créer les clés de chiffrement associées."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Avant de créer cette adresse, vous devez fournir un mot de passe et créer les clés de chiffrement associées."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Avant d'activer votre compte, vous devez fournir un mot de passe et créer les clés de chiffrement associées."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
@@ -3270,6 +3274,9 @@
       "Internet connection restored.": [
         "La connexion internet est rétablie."
       ],
+      "Keys created": [
+        "Les clés ont été créées"
+      ],
       "Lean more about gateways": [
         "En savoir plus sur les Passerelles"
       ],
@@ -3427,6 +3434,10 @@
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Nous vous invitons à réessayer, à utiliser un autre moyen de paiement ou à contacter PayPal pour obtenir de l'aide."
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Veuillez utiliser un mot de passe de plus de ${ MIN_PASSWORD_LENGTH } caractères."
       ],
       "Please use another browser or download the file.": [
         "Nous vous invitons à utiliser un autre navigateur ou à télécharger le fichier."
@@ -3764,6 +3775,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
+      ],
+      "User activated": [
+        "Utilisateur activé"
       ],
       "Users": [
         "Utilisateurs"
@@ -4724,6 +4738,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Autoriser l'utilisateur"
+      ],
       "Change password": [
         "Changer le mot de passe"
       ],
@@ -7201,11 +7218,11 @@
       "Action": [
         "Action"
       ],
-      "Activate account and generate keys": [
-        "Activer le compte et générer les clés"
-      ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
+      ],
+      "Activate user": [
+        "Activer l'utilisateur"
       ],
       "Add address": [
         "Ajouter une adresse"
@@ -7846,6 +7863,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
