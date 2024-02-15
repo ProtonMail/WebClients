@@ -1,4 +1,4 @@
-@import '~@proton/styles/scss/lib/config';
+@import '~@proton/styles/scss/lib';
 
 .anime-fade-in,
 .anime-fade-in > * {
@@ -12,5 +12,16 @@
 
 	to {
 		opacity: var(--anime-opacity, 1);
+	}
+}
+
+.anime-reveal {
+	transition: max-block-size 0.25s ease-in-out;
+	max-block-size: rem(180);
+	min-block-size: 0;
+	overflow: hidden;
+
+	&--hidden {
+		max-block-size: 0;
 	}
 }
