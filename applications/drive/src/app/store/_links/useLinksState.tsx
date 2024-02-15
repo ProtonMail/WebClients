@@ -118,6 +118,13 @@ export function useLinksStateProvider() {
         [state]
     );
 
+    const removeLinkForMigration = useCallback(
+        (shareId: string, linkId: string) => {
+            setState((state) => deleteLinks(state, shareId, [linkId]));
+        },
+        [state]
+    );
+
     return {
         setLinks,
         lockLinks,
@@ -128,6 +135,7 @@ export function useLinksStateProvider() {
         getChildren,
         getTrashed,
         getSharedByLink,
+        removeLinkForMigration,
     };
 }
 

@@ -7,6 +7,7 @@ import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { useDebouncedRequest } from '../_api';
+import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
 import useShareActions from './useShareActions';
 
@@ -44,6 +45,14 @@ const mockedQueryLegacyShares = jest.mocked(queryMigrateLegacyShares);
 jest.mock('@proton/shared/lib/calendar/crypto/encrypt');
 const mockedGetEncryptedSessionKey = jest.mocked(getEncryptedSessionKey);
 
+const mockedRemoveLinkForMigration = jest.fn();
+jest.mock('../_links/useLinksState');
+
+//@ts-ignore
+jest.mocked(useLinksState).mockImplementation(() => ({
+    removeLinkForMigration: mockedRemoveLinkForMigration,
+}));
+
 describe('useShareActions', () => {
     afterEach(() => {
         jest.clearAllMocks();
@@ -59,6 +68,7 @@ describe('useShareActions', () => {
                 { ShareID: 'shareId', PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket) },
             ],
         });
+        expect(mockedRemoveLinkForMigration).toHaveBeenCalledWith('shareId', 'rootLinkId');
     });
     it('migrateShares with 120 shares', async () => {
         const PassphraseNodeKeyPacket = new Uint8Array([3, 2, 32, 32]);
@@ -89,6 +99,7 @@ describe('useShareActions', () => {
                 PassphraseNodeKeyPacket: uint8ArrayToBase64String(PassphraseNodeKeyPacket),
             })),
         });
+        expect(mockedRemoveLinkForMigration.mock.calls).toEqual(shareIds.map((shareId) => [shareId, 'rootLinkId']));
     });
 
     it('stop migration when server respond 404 for unmigrated endpoint', async () => {
