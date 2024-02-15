@@ -3800,9 +3800,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Enquanto isso, crie sua própria conta ${ DRIVE_APP_NAME }, proteja seus dados com criptografia de ponta a ponta e compartilhe-os com segurança."
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexando itens ${ esProgress } de ${ totalProgressToShow }"
       ],
@@ -4141,9 +4138,6 @@
       ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
-      ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Cadastre-se para criar sua própria conta ${ DRIVE_APP_NAME } e proteja seus dados com criptografia de ponta a ponta e compartilhe-os com segurança."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Não é possível validar a assinatura devido a um erro de rede. Tente novamente mais tarde.."
@@ -7215,6 +7209,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
       "Try a shorter username (${ n } character max)": [
         "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
         "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
