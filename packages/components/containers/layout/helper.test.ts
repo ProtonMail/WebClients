@@ -1,5 +1,5 @@
-import { SubSectionConfig } from '.';
-import { getIsSubsectionAvailable } from './helper';
+import { SectionConfig, SubSectionConfig } from '.';
+import { getIsSectionAvailable, getIsSubsectionAvailable } from './helper';
 
 describe('getIsSubsectionAvailable', () => {
     it('returns true when `available` is undefined', () => {
@@ -32,5 +32,116 @@ describe('getIsSubsectionAvailable', () => {
         const result = getIsSubsectionAvailable(config);
 
         expect(result).toBe(false);
+    });
+});
+
+describe('getIsSectionAvailable', () => {
+    describe('available property', () => {
+        it('returns true when `available` is undefined', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                subsections: [{ id: '' }],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(true);
+        });
+
+        it('returns true when `available` is true', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: true,
+                subsections: [{ id: '' }],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(true);
+        });
+
+        it('returns false when `available` is false', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: false,
+                subsections: [{ id: '' }],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(false);
+        });
+    });
+
+    describe('subsections prop', () => {
+        it('returns false when `subsections` is undefined', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: true,
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(false);
+        });
+
+        it('returns true when all `subsections` are available', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: true,
+                subsections: [
+                    { id: '1', available: true },
+                    { id: '2', available: true },
+                ],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(true);
+        });
+
+        it('returns true when some `subsections` are available', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: true,
+                subsections: [
+                    { id: '1', available: false },
+                    { id: '2', available: true },
+                ],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(true);
+        });
+
+        it('returns false when no `subsections` are available', () => {
+            const config: SectionConfig = {
+                to: '',
+                icon: 'alias',
+                text: '',
+                available: true,
+                subsections: [
+                    { id: '1', available: false },
+                    { id: '2', available: false },
+                ],
+            };
+
+            const result = getIsSectionAvailable(config);
+
+            expect(result).toBe(false);
+        });
     });
 });
