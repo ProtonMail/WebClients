@@ -42,17 +42,22 @@ export const getExpiresOnMessage = (expirationDate: Date) => {
 };
 
 const getDeletedOnText = (value: string) => {
-    //translator: Full sentence for reference: "This message will be automatically deleted on 12:30 PM"
+    //translator: Full sentence for reference: "This message will be automatically deleted on Saturday, May 4th 2024 1:37 PM"
     return c('Info').t`This message will be automatically deleted on ${value}`;
+};
+
+const getDeletedAtText = (value: string) => {
+    //translator: Full sentence for reference: "This message will be automatically deleted at 1:37 PM"
+    return c('Info').t`This message will be automatically deleted at ${value}`;
 };
 
 export const getAutoDeleteOnMessage = (expirationDate: Date) => {
     const shortDateMessage = format(expirationDate, 'p');
 
     if (isToday(expirationDate)) {
-        return getDeletedOnText(shortDateMessage);
+        return getDeletedAtText(shortDateMessage);
     } else if (isTomorrow(expirationDate)) {
-        return getDeletedOnText(shortDateMessage);
+        return getDeletedAtText(shortDateMessage);
     } else {
         return getDeletedOnText(formatFullDate(expirationDate));
     }
