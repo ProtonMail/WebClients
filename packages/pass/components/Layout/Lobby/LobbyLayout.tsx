@@ -10,7 +10,7 @@ type Props = { overlay: boolean };
 export const LobbyLayout: FC<PropsWithChildren<Props>> = ({ overlay, children }) => {
     return (
         <div
-            className="pass-lobby relative p-7 anime-fade-in"
+            className="pass-lobby overflow-auto relative p-7 anime-fade-in"
             style={{ '--anime-duration': '450ms', '--anime-delay': '100ms' }}
         >
             <div
@@ -29,7 +29,7 @@ export const LobbyLayout: FC<PropsWithChildren<Props>> = ({ overlay, children })
             </div>
 
             <div
-                className="pass-lobby--content flex flex-column h-full w-custom mx-auto text-center gap-2"
+                className="pass-lobby--content flex flex-nowrap flex-column h-full w-custom mx-auto text-center gap-2"
                 style={{ '--w-custom': '18.75rem' }}
             >
                 {children}
