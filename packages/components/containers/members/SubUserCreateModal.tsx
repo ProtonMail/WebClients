@@ -134,11 +134,13 @@ const SubUserCreateModal = ({
         setModel({ ...model, [key]: value });
 
     const getNormalizedAddress = () => {
+        const address = model.address.trim();
+
         if (model.domain) {
-            return { Local: model.address, Domain: model.domain };
+            return { Local: address, Domain: model.domain };
         }
 
-        const [Local, Domain] = getEmailParts(model.address);
+        const [Local, Domain] = getEmailParts(address);
 
         return { Local, Domain };
     };
