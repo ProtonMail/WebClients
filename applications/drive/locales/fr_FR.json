@@ -3800,8 +3800,8 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
       ],
-      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "En attendant, inscrivez-vous à votre propre compte ${ DRIVE_APP_NAME } et protégez vos données avec un cryptage de bout en bout et partagez-les en toute sécurité."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexation de ${ esProgress } sur ${ totalProgressToShow }"
@@ -4142,8 +4142,8 @@
       "Shared link not found": [
         "Le lien partagé n'a pas été trouvé."
       ],
-      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
-        "Créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protect your data with end-to-end encryption and share it securely.": [
+        "Inscrivez-vous à votre compte ${ DRIVE_APP_NAME } et protégez vos données avec un cryptage de bout en bout et partagez-les en toute sécurité."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
@@ -5185,7 +5185,7 @@
         "Package d'installation Apple"
       ],
       "Archive document": [
-        "Document d'archive"
+        "Archive de documents"
       ],
       "Audio file": [
         "Fichier audio"
@@ -7215,6 +7215,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
