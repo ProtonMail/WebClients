@@ -17,6 +17,7 @@ import chunk from '@proton/utils/chunk';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../_api';
 import { useLink } from '../_links';
+import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
 
 /**
@@ -26,6 +27,7 @@ export default function useShareActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
+    const { removeLinkForMigration } = useLinksState();
     const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
 
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
@@ -161,7 +163,12 @@ export default function useShareActions() {
                     for (const shareId of shareIdsBatch) {
                         const share = await getShare(abortSignal, shareId);
                         const [linkPrivateKey, shareSessionKey] = await Promise.all([
-                            getLinkPrivateKey(abortSignal, share.shareId, share.rootLinkId, true),
+                            getLinkPrivateKey(abortSignal, share.shareId, share.rootLinkId, true).then(
+                                (linkPrivateKey) => {
+                                    removeLinkForMigration(share.shareId, share.rootLinkId);
+                                    return linkPrivateKey;
+                                }
+                            ),
                             getShareSessionKey(abortSignal, share.shareId).catch(() => {
                                 unreadableShareIDs.push(share.shareId);
                             }),
