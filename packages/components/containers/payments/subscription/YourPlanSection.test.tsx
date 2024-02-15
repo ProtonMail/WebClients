@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor, within } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
     useAddresses,
     useCache,
@@ -162,7 +163,7 @@ describe('YourPlanSection', () => {
             mockUseOrganization.mockReturnValue([organization]);
             mockUseSubscription.mockReturnValue([subscriptionBusiness]);
 
-            const { getByTestId } = render(<YourPlanSection app={APPS.PROTONMAIL} />);
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />);
 
             const dashboardPanelsContainer = getByTestId('dashboard-panels-container');
 

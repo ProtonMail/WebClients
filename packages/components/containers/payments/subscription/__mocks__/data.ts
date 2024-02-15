@@ -610,6 +610,7 @@ export const subscriptionBusiness = {
 } as Subscription;
 
 export const organization = {
+    Name: 'test',
     UsedDomains: 1,
     MaxDomains: 3,
     UsedSpace: 987359925,

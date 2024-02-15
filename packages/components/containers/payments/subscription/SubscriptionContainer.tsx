@@ -3,6 +3,7 @@ import { FormEvent, ReactNode, RefObject, useEffect, useMemo, useRef, useState }
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
@@ -16,7 +17,7 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import { subscribe as apiSubscribe, deleteSubscription, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { subscribe as apiSubscribe, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -33,7 +34,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
     getPlanFromCheckout,
     getPlanFromPlanIDs,
@@ -50,11 +50,8 @@ import {
     getLongerCycle,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
-    hasMigrationDiscount,
     hasNewVisionary,
     hasPassPlus,
-    hasVPN,
-    hasVPNPassBundle,
 } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
@@ -64,7 +61,6 @@ import {
     Organization,
     Plan,
     PlanIDs,
-    Renew,
     SubscriptionCheckResponse,
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
@@ -81,22 +77,19 @@ import {
     useConfig,
     useEventManager,
     useGetCalendars,
-    useModals,
     useNotifications,
     useUser,
     useVPNServersCount,
 } from '../../../hooks';
 import GenericError from '../../error/GenericError';
 import InclusiveVatText from '../InclusiveVatText';
-import LossLoyaltyModal from '../LossLoyaltyModal';
-import MemberDowngradeModal from '../MemberDowngradeModal';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import { ValidatedBitcoinToken, isValidatedBitcoinToken } from '../useBitcoin';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
-import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
+import { NewVisionaryWarningModal, NewVisionaryWarningModalOwnProps } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
 import SubscriptionCycleSelector, {
     SubscriptionItemView,
@@ -188,7 +181,6 @@ const SubscriptionContainer = ({
     planIDs: maybePlanIDs,
     onSubscribed,
     onUnsubscribed,
-    onCancel,
     onCheck,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
@@ -228,13 +220,12 @@ const SubscriptionContainer = ({
     const [user] = useUser();
     const { call } = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
-    const { createModal } = useModals();
+    const [visionaryWarningModal, showNewVisionaryWarningModal] =
+        useModalTwoPromise<NewVisionaryWarningModalOwnProps>();
+    const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
-    const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
-        subscription,
-        user,
-    });
     const plansMap = toMap(plans, 'Name');
+    const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
     const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
     const { APP_NAME } = useConfig();
@@ -377,71 +368,12 @@ const SubscriptionContainer = ({
             : 0;
     const currency = checkResult?.Currency || DEFAULT_CURRENCY;
 
-    const handleUnsubscribe = async () => {
-        if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
-            if (subscription.Renew === Renew.Disabled) {
-                onUnsubscribed?.();
-                return;
-            }
-
-            await cancelSubscription();
-            onUnsubscribed?.();
-            return;
-        }
-
-        // Start promise early
-        const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
-            hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: false,
-            api,
-            getCalendars,
-        });
-
-        if (hasMigrationDiscount(subscription)) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<DiscountWarningModal type="downgrade" onClose={reject} onConfirm={resolve} />);
-            });
-        }
-
-        if (await shouldCalendarPreventDowngradePromise) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={reject} />);
-            });
-        }
-
-        if (hasBonuses(organization)) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
-            });
-        }
-
-        if (organization.UsedMembers > 1) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<MemberDowngradeModal organization={organization} onConfirm={resolve} onClose={reject} />);
-            });
-        }
-
-        await api(deleteSubscription({}));
-        await call();
-
-        onUnsubscribed?.();
-        createNotification({ text: c('Success').t`You have successfully unsubscribed` });
-    };
-
     const handlePlanWarnings = async (planIDs: PlanIDs) => {
         const newPlanName = Object.keys(planIDs).find((planName) =>
             plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
         );
         if (hasNewVisionary(subscription) && PLANS.NEW_VISIONARY !== newPlanName) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(
-                    <NewVisionaryWarningModal
-                        type={!newPlanName ? 'downgrade' : 'switch'}
-                        onClose={reject}
-                        onConfirm={resolve}
-                    />
-                );
-            });
+            await showNewVisionaryWarningModal({ type: !newPlanName ? 'downgrade' : 'switch' });
         }
     };
 
@@ -477,14 +409,19 @@ const SubscriptionContainer = ({
         operationsOrValidToken: Operations | ValidatedBitcoinToken,
         context: OperationsSubscriptionData
     ) => {
+        if (!hasPlanIDs(context.Plans)) {
+            const result = await cancelSubscription();
+            if (result?.status === 'kept') {
+                return;
+            }
+            onUnsubscribed?.();
+            return;
+        }
+
         try {
             await handlePlanWarnings(context.Plans);
         } catch (e) {
             return;
-        }
-
-        if (!hasPlanIDs(context.Plans)) {
-            return handleUnsubscribe();
         }
 
         const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
@@ -495,13 +432,7 @@ const SubscriptionContainer = ({
         });
 
         if (await shouldCalendarPreventSubscriptionChangePromise) {
-            return new Promise<void>((resolve, reject) => {
-                const handleClose = () => {
-                    onCancel?.();
-                    reject();
-                };
-                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={handleClose} />);
-            });
+            return showCalendarDowngradeModal();
         }
 
         // When user has an error during checkout, we need to return him to the exact same step
@@ -565,7 +496,7 @@ const SubscriptionContainer = ({
                 promise.then(() => pollEventsMultipleTimes()).catch(noop);
             }
 
-            return promise;
+            return promise.catch(noop);
         },
         flow: 'subscription',
     });
@@ -1007,7 +938,7 @@ const SubscriptionContainer = ({
                                                 Cycle: model.cycle,
                                                 product: app,
                                                 taxBillingAddress: model.taxBillingAddress,
-                                            });
+                                            }).catch(noop);
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                         hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
@@ -1158,7 +1089,7 @@ const SubscriptionContainer = ({
                                             Cycle: model.cycle,
                                             product: app,
                                             taxBillingAddress: model.taxBillingAddress,
-                                        });
+                                        }).catch(noop);
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     hideFirstLabel={true}
@@ -1286,6 +1217,19 @@ const SubscriptionContainer = ({
 
     return (
         <>
+            {visionaryWarningModal((props) => {
+                return <NewVisionaryWarningModal {...props} onConfirm={props.onResolve} onClose={props.onReject} />;
+            })}
+            {calendarDowngradeModal((props) => {
+                return (
+                    <CalendarDowngradeModal
+                        isDowngrade={false}
+                        {...props}
+                        onConfirm={props.onResolve}
+                        onClose={props.onReject}
+                    />
+                );
+            })}
             {cancelSubscriptionModals}
             {render({
                 onSubmit,

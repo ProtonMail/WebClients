@@ -1,21 +1,17 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { useSubscription, useUser } from '../../../../hooks';
 import { SettingsParagraph, SettingsSection } from '../../../account';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
-export const CancelSubscriptionSection = () => {
-    const [subscription, loadingSubscription] = useSubscription();
-    const [user] = useUser();
-
-    const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
-        subscription,
-        user,
+export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
+    const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
+        app,
     });
 
-    if (!subscription) {
+    if (loadingCancelSubscription) {
         return null;
     }
 
@@ -32,7 +28,7 @@ export const CancelSubscriptionSection = () => {
                     data-testid="CancelSubsriptionButton"
                     color="danger"
                     shape="outline"
-                    disabled={loadingSubscription}
+                    disabled={loadingCancelSubscription}
                 >
                     {c('Action').t`Cancel subscription`}
                 </Button>
