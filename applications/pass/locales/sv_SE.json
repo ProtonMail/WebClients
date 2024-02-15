@@ -800,9 +800,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Ange verifieringskod. Siffra ${ digit }."
       ],
-      "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Export är krypterad med PGP och kräver en stark lösenfras."
-      ],
       "Fill in the CSV with your data": [
         "Fyll i CSV med dina data"
       ],
@@ -1041,9 +1038,6 @@
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
       ],
-      "The export file will not contain the data of shared vaults where you are not the owner": [
-        "Den exporterade filen kommer inte innehålla data från delade valv där du inte är ägaren"
-      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
         "Följande ${ result.ignored.length } objekt kunde inte importeras:"
@@ -1245,6 +1239,9 @@
       "Created": [
         "Skapad"
       ],
+      "Default (recommended)": [
+        "Standard (rekommenderad)"
+      ],
       "Display": [
         "Visa"
       ],
@@ -1254,8 +1251,8 @@
       "Empty trash": [
         "Töm papperskorg"
       ],
-      "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Kryptera din dataexportfil för ${ PASS_APP_NAME }"
+      "Encrypted (recommended)": [
+        "Krypterad (rekommenderad)"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -1265,6 +1262,9 @@
       ],
       "Field name": [
         "Fältnamn"
+      ],
+      "File format": [
+        "Filformat"
       ],
       "Forwards to": [
         "Vidarebefordras till"
