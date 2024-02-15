@@ -8,19 +8,20 @@
 import type { FC } from 'react';
 
 import type { FieldProps } from 'formik';
+import type { PolymorphicPropsWithoutRef } from 'packages/react-polymorphic-types';
 
 import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 
-type PasswordFieldProps = FieldProps & InputFieldOwnProps;
+type PasswordFieldProps = FieldProps & PolymorphicPropsWithoutRef<InputFieldOwnProps, typeof PasswordInputTwo>;
 
 export const PasswordField: FC<PasswordFieldProps> = (fieldProps) => {
     const { field, form, ...rest } = fieldProps;
     const { error } = useFieldControl(fieldProps);
 
     return (
-        <div className="flex flex-nowrap items-end mb-3">
+        <div className="flex flex-nowrap items-end mb-3 w-full">
             <InputFieldTwo dense as={PasswordInputTwo} error={error} {...field} {...rest} />
         </div>
     );

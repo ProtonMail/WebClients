@@ -1,12 +1,16 @@
 import { type FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
 import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
 import { EarlyAccess } from 'proton-pass-web/app/Upsell/EarlyAccess';
+import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { Hamburger } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -19,6 +23,8 @@ import { OnboardingProvider } from '@proton/pass/components/Onboarding/Onboardin
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { authStore } from '@proton/pass/lib/auth/store';
+import { clientOfflineUnlocked } from '@proton/pass/lib/client';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { Header } from './Header/Header';
@@ -29,7 +35,29 @@ import { Menu } from './Sidebar/Menu';
 
 const MainSwitch: FC = () => {
     const client = useClient();
+    const auth = useAuthService();
+    const offlineUnlocked = clientOfflineUnlocked(client.state.status);
     const { state: expanded, toggle } = useToggle();
+
+    const connectivityBar = useConnectivityBar((online) => ({
+        className: offlineUnlocked ? 'bg-weak border-top' : 'bg-danger',
+        hidden: online && !offlineUnlocked,
+        text: offlineUnlocked ? (
+            <div className="flex items-center gap-2">
+                <span>{c('Info').t`Offline mode`}</span>
+                {ENV === 'development' && (
+                    <Button
+                        className="text-sm"
+                        onClick={() => auth.resumeSession(authStore.getLocalID(), { retryable: false })}
+                        shape="underline"
+                        size="small"
+                    >
+                        ({c('Info').t`Reconnect`})
+                    </Button>
+                )}
+            </div>
+        ) : undefined,
+    }));
 
     return (
         <div className="content-container flex flex-1 shrink-0 flex-column">
@@ -73,6 +101,7 @@ const MainSwitch: FC = () => {
                     )}
                 </Route>
             </div>
+            {connectivityBar}
         </div>
     );
 };
