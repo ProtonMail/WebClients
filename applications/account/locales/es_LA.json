@@ -6162,11 +6162,11 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Asegúrese de copiar su contraseña y almacenarla en algún lugar seguro."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Antes de activar el usuario, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Antes de crear esta dirección, necesita proporcionar una contraseña y crear claves de cifrado para ella."
-      ],
-      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de activar esta cuenta, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones nuevas."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
@@ -6686,6 +6686,9 @@
       ],
       "Key deletion is irreversible!": [
         "¡La eliminación de la clave es irreversible!"
+      ],
+      "Keys created": [
+        "Las claves fueron creadas."
       ],
       "Label all imported messages as": [
         "Etiquetar todos los mensajes importados como"
@@ -7395,7 +7398,7 @@
         "Esto reemplazará su contraseña temporal. La usará para acceder a su cuenta de ${ BRAND_NAME } en el futuro."
       ],
       "This will sign you out of all accounts currently logged in.": [
-        "Esto cerrará la sesión de todas las cuentas que han iniciado sesión."
+        "Esto cerrará la sesión de todas las cuentas con la sesión activa."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Esto cerrará la sesión de cualquier sesión activa y desactivará la autenticación de dos factores."
@@ -7564,6 +7567,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Use la dirección de correo seleccionada como nombre de usuario SMTP en el servicio externo y el token generado como contraseña SMTP."
+      ],
+      "User activated": [
+        "El usuario fue activado."
       ],
       "Users": [
         "Usuarios"
@@ -9648,6 +9654,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Activar el usuario"
+      ],
       "Change password": [
         "Cambiar contraseña"
       ],
@@ -13534,11 +13543,11 @@
       "Activate @pm.me": [
         "Activar @pm.me"
       ],
-      "Activate account and generate keys": [
-        "Activar cuenta y generar claves"
-      ],
       "Activate organization key": [
         "Activar clave de la organización"
+      ],
+      "Activate user": [
+        "Activar el usuario"
       ],
       "Add address": [
         "Añadir dirección"
@@ -13619,7 +13628,7 @@
         "¿Está seguro de que quiere cerrar?"
       ],
       "Are you sure?": [
-        "Está segura/o?"
+        "¿Está seguro?"
       ],
       "Authentication security": [
         "Autenticación de seguridad"
