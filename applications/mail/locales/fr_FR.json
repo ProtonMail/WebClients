@@ -1315,6 +1315,11 @@
         "Nouveau message"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "Téléchargez l'application de bureau ${ MAIL_APP_NAME }"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "applications ${ BRAND_NAME }"
@@ -8775,6 +8780,9 @@
       "Change setting": [
         "Modifier le paramètre"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Démarrez ${ MAIL_APP_NAME } tout simplement depuis votre bureau."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Créez des alias hide-my-email et suivez-les ici."
       ],
@@ -8783,6 +8791,9 @@
       ],
       "Faster email management": [
         "Gestion plus rapide de vos messages"
+      ],
+      "Get the desktop app": [
+        "Téléchargez l'application de bureau"
       ],
       "Get up to ${ credits } in credits.": [
         "Recevez jusqu'à ${ credits } en crédits."
@@ -10017,6 +10028,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
         "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
