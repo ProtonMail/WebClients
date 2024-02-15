@@ -65,6 +65,8 @@ export const getPassCoreProps = (sw: ServiceWorkerContextValue): PassCoreProvide
 
         generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
 
+        getApiState: api.getState,
+
         /** If service worker support is unavailable, use a fallback caching strategy for
          * domain images. When service worker is enabled, utilize abort message passing to
          * correctly abort intercepted fetch requests. */

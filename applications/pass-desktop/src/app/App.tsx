@@ -68,6 +68,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
 
     generateOTP: ({ totpUri }) => generateTOTPCode(totpUri),
 
+    getApiState: api.getState,
+
     getDomainImage: async (domain, signal) => {
         const res = await (async () => {
             const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;

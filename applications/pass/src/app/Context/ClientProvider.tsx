@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientBooted } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -39,7 +39,7 @@ export const ClientProvider: FC<PropsWithChildren> = ({ children }) => {
                     setStatus: (status) =>
                         setState((prev) => {
                             logger.info(`[ClientProvider] Status change : ${prev.status} -> ${status}`);
-                            const loggedIn = clientReady(status);
+                            const loggedIn = clientBooted(status);
                             const localID = authStore.getLocalID();
                             const UID = authStore.getUID();
 

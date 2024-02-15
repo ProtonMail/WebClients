@@ -15,7 +15,7 @@ import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
 import { selectLocale } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -71,14 +71,15 @@ const options: RootSagaOptions = {
 
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
+
     getAppState: withContext((ctx) => ctx.getState()),
+    setAppStatus: withContext((ctx, status) => ctx.setStatus(status)),
 
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
      * clear */
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
-            ctx.setStatus(AppStatus.READY);
             ctx.service.telemetry?.start().catch(noop);
             ctx.service.i18n.setLocale(selectLocale(store.getState())).catch(noop);
 
@@ -101,11 +102,7 @@ const options: RootSagaOptions = {
                     false
                 );
             }
-        } else {
-            ctx.setStatus(AppStatus.ERROR);
-            if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
-            ctx.service.telemetry?.stop();
-        }
+        } else if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
     }),
 
     onFeatureFlagsUpdated: (features) =>
