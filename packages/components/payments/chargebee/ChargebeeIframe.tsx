@@ -39,7 +39,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
+import { useChargebeeContext, useChargebeeKillSwitch } from '../client-extensions/useChargebeeContext';
 import {
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -386,6 +386,7 @@ export const useCbIframe = (): CbIframeHandles => {
     const [iframeConfigured, setIframeConfigured] = useState(false);
 
     const chargebeeContext = useChargebeeContext();
+    const { chargebeeKillSwitch } = useChargebeeKillSwitch();
 
     const markConfigured = <T,>(promise: Promise<T>) =>
         promise.then((result) => {
@@ -478,21 +479,21 @@ export const useCbIframe = (): CbIframeHandles => {
                     callback(payload.error);
                 }
             }),
-        onUnhandledError: (callback: (error: any, rawError: any, messagePayload: any) => any) =>
+        onUnhandledError: (callback: (error: any, rawError: any, messagePayload: any, checkpoints: any[]) => any) =>
             listenToIframeEvents(iframeRef, (e) => {
                 const payload = parseEvent(e.data);
                 if (isUnhandledErrorMessage(payload)) {
                     const error = payload.error;
-                    const reconstructedError = new Error(error.message);
-                    reconstructedError.stack = error.stack;
-                    reconstructedError.name = error.name;
-                    callback(reconstructedError, error, payload);
+                    const reconstructedError = new Error(error?.message);
+                    reconstructedError.stack = error?.stack;
+                    reconstructedError.name = error?.name;
+                    callback(reconstructedError, error, payload, error?.checkpoints);
                 }
             }),
     };
 
     useEffect(() => {
-        return events.onUnhandledError((e, rawError, messagePayload) => {
+        return events.onUnhandledError((e, rawError, messagePayload, checkpoints) => {
             const error = getSentryError(e);
             if (error) {
                 const context = {
@@ -502,8 +503,11 @@ export const useCbIframe = (): CbIframeHandles => {
 
                 captureMessage('Payments: Unhandled Chargebee error', {
                     level: 'error',
-                    extra: { error, context, rawError, messagePayload },
+                    extra: { error, context, rawError, messagePayload, checkpoints },
                 });
+
+                // No params on purpose to make sure we don't trigger Sentry again
+                chargebeeKillSwitch();
             }
         });
     }, []);
