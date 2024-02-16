@@ -13,3 +13,23 @@
 	--pass-sidebar-size: 20em;
 	--border-radius-xl: 0.88rem;
 }
+
+$endpoints: 'extension', 'web', 'desktop';
+
+@each $endpoint in $endpoints {
+	$base: '.pass-#{$endpoint}';
+
+	#{$base} {
+		#{$base}\:hidden {
+			display: none;
+		}
+
+		@each $sub in $endpoints {
+			@if $sub != $endpoint {
+				.pass-#{$sub}\:only {
+					display: none;
+				}
+			}
+		}
+	}
+}
