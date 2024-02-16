@@ -54,6 +54,14 @@ export interface Passkey {
      * @generated from protobuf field: bytes user_id = 8;
      */
     userId: Uint8Array;
+    /**
+     * @generated from protobuf field: uint32 create_time = 9;
+     */
+    createTime: number;
+    /**
+     * @generated from protobuf field: string note = 10;
+     */
+    note: string;
 }
 /**
  * @generated from protobuf message proton_pass_item_v1.ItemLogin
@@ -358,6 +366,8 @@ class Passkey$Type extends MessageType<Passkey> {
             { no: 6, name: 'user_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 7, name: 'user_display_name', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
             { no: 8, name: 'user_id', kind: 'scalar', T: 12 /*ScalarType.BYTES*/ },
+            { no: 9, name: 'create_time', kind: 'scalar', T: 13 /*ScalarType.UINT32*/ },
+            { no: 10, name: 'note', kind: 'scalar', T: 9 /*ScalarType.STRING*/ },
         ]);
     }
     create(value?: PartialMessage<Passkey>): Passkey {
@@ -370,6 +380,8 @@ class Passkey$Type extends MessageType<Passkey> {
         message.userName = '';
         message.userDisplayName = '';
         message.userId = new Uint8Array(0);
+        message.createTime = 0;
+        message.note = '';
         if (value !== undefined) reflectionMergePartial<Passkey>(this, message, value);
         return message;
     }
@@ -403,6 +415,12 @@ class Passkey$Type extends MessageType<Passkey> {
                 case /* bytes user_id */ 8:
                     message.userId = reader.bytes();
                     break;
+                case /* uint32 create_time */ 9:
+                    message.createTime = reader.uint32();
+                    break;
+                case /* string note */ 10:
+                    message.note = reader.string();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === 'throw')
@@ -433,6 +451,10 @@ class Passkey$Type extends MessageType<Passkey> {
         if (message.userDisplayName !== '') writer.tag(7, WireType.LengthDelimited).string(message.userDisplayName);
         /* bytes user_id = 8; */
         if (message.userId.length) writer.tag(8, WireType.LengthDelimited).bytes(message.userId);
+        /* uint32 create_time = 9; */
+        if (message.createTime !== 0) writer.tag(9, WireType.Varint).uint32(message.createTime);
+        /* string note = 10; */
+        if (message.note !== '') writer.tag(10, WireType.LengthDelimited).string(message.note);
         let u = options.writeUnknownFields;
         if (u !== false) (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
         return writer;
