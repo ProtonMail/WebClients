@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -135,7 +135,6 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         <>
             <PlanSelection
                 app={app}
-                filter={app === APPS.PROTONPASS ? [Audience.B2C] : undefined}
                 mode="settings"
                 audience={audience}
                 onChangeAudience={setAudience}
