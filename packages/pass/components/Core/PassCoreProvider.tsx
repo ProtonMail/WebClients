@@ -76,6 +76,9 @@ export const PassCoreProvider: FC<PropsWithChildren<Omit<PassCoreContextValue, '
     useEffect(() => {
         core.i18n.getLocale().then(core.i18n.setLocale).catch(noop);
         core.i18n.subscribe(({ locale }) => setAppLocale(locale));
+
+        const client = ['desktop', 'web'].includes(core.endpoint) ? core.endpoint : 'extension';
+        document.body.classList.add(`pass-${client}`);
     }, []);
 
     return (
