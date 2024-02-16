@@ -37,10 +37,10 @@ export const BulkActions: FC<Props> = (props) => {
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk restore items from trash`}
-                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="clock-rotate-left" />
-                <span className="hidden xl:block">{c('Action').t`Restore`}</span>
+                <Icon name="clock-rotate-left" className="shrink-0" />
+                <span className="text-ellipsis hidden xl:block">{c('Action').t`Restore`}</span>
             </Button>
             <Button
                 color="weak"
@@ -49,10 +49,10 @@ export const BulkActions: FC<Props> = (props) => {
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk delete items from trash`}
-                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="trash-cross" />
-                <span className="hidden xl:block">{c('Action').t`Delete`}</span>
+                <Icon name="trash-cross" className="shrink-0" />
+                <span className="text-ellipsis hidden xl:block">{c('Action').t`Delete`}</span>
             </Button>
         </>
     ) : (
@@ -64,10 +64,10 @@ export const BulkActions: FC<Props> = (props) => {
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk move items to another vault`}
-                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="folder-arrow-in" />
-                <span className="hidden xl:block">{c('Action').t`Move`}</span>
+                <Icon name="folder-arrow-in" className="shrink-0" />
+                <span className="text-ellipsis hidden xl:block">{c('Action').t`Move`}</span>
             </Button>
             <Button
                 color="weak"
@@ -76,10 +76,10 @@ export const BulkActions: FC<Props> = (props) => {
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk move items to trash`}
-                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="trash" />
-                <span className="hidden xl:block">{c('Action').t`Trash`}</span>
+                <Icon name="trash" className="shrink-0" />
+                <span className="text-ellipsis hidden xl:block">{c('Action').t`Trash`}</span>
             </Button>
         </>
     );
