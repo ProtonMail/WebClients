@@ -1,3 +1,5 @@
+import type { MaybeNull } from '@proton/pass/types';
+
 import type { CustomAliasCreateRequest } from '../api';
 import type { ItemType } from '../protobuf';
 import type { IndexedByShareIdAndItemId, Item, ItemRevision } from './items';
@@ -62,3 +64,19 @@ export type ItemMoveDTO = { before: ItemRevision; after: ItemRevision };
 /** This data-structure does not uses lists to avoid
  * iterations when checking for inclusions  */
 export type BulkSelectionDTO = IndexedByShareIdAndItemId<true>;
+
+export type ItemRevisionsIntent = {
+    shareId: string;
+    itemId: string;
+    since: MaybeNull<string>;
+    pageSize: MaybeNull<number>;
+};
+
+export type ItemRevisionsSuccess = {
+    revisions: ItemRevision[];
+    /** Token that was last used */
+    since: MaybeNull<string>;
+    /** Token to use to get next page */
+    next: MaybeNull<string>;
+    total: number;
+};

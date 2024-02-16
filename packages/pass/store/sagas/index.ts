@@ -33,6 +33,7 @@ import itemBulkTrash from './items/item-bulk-trash.saga';
 import itemCreation from './items/item-creation.saga';
 import itemDelete from './items/item-delete.saga';
 import itemEdit from './items/item-edit.saga';
+import itemHistory from './items/item-history.saga';
 import itemMove from './items/item-move.saga';
 import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
@@ -75,6 +76,7 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemCreation,
             itemDelete,
             itemEdit,
+            itemHistory,
             itemMove,
             itemPin,
             itemRestore,

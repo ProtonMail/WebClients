@@ -14,6 +14,7 @@ import type {
     ItemMoveMultipleToShareRequest,
     ItemRevision,
     ItemRevisionContentsResponse,
+    ItemRevisionsIntent,
     ItemType,
     Maybe,
 } from '@proton/pass/types';
@@ -338,3 +339,20 @@ export const unpinItem = async (shareId: string, itemId: string) =>
         url: `pass/v1/share/${shareId}/item/${itemId}/pin`,
         method: 'delete',
     });
+
+export const getItemRevisions = async (
+    { shareId, itemId, pageSize, since }: ItemRevisionsIntent,
+    signal?: AbortSignal
+) => {
+    return (
+        await api({
+            url: `pass/v1/share/${shareId}/item/${itemId}/revision`,
+            params: {
+                ...(pageSize ? { PageSize: pageSize } : {}),
+                ...(since ? { Since: since } : {}),
+            },
+            method: 'get',
+            signal,
+        })
+    ).Revisions!;
+};

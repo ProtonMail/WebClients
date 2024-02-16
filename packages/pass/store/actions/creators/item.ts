@@ -14,6 +14,7 @@ import {
 } from '@proton/pass/store/actions/enhancers/request';
 import {
     itemPinRequest,
+    itemRevisionsRequest,
     itemUnpinRequest,
     itemsBulkDeleteRequest,
     itemsBulkMoveRequest,
@@ -29,6 +30,8 @@ import type {
     ItemCreateIntent,
     ItemEditIntent,
     ItemRevision,
+    ItemRevisionsIntent,
+    ItemRevisionsSuccess,
     SelectedItem,
     UniqueItem,
 } from '@proton/pass/types';
@@ -499,4 +502,31 @@ export const itemUnpinFailure = createAction(
             error,
         })({ payload: {}, error })
     )
+);
+
+export const itemHistoryIntent = createAction('item::history::intent', (payload: ItemRevisionsIntent) =>
+    withRequest({ type: 'start', id: itemRevisionsRequest(payload.shareId, payload.itemId) })({ payload })
+);
+
+export const itemHistorySuccess = createAction(
+    'item::history::success',
+    withRequestSuccess((payload: ItemRevisionsSuccess) => ({ payload }), {
+        data: (payload) => payload,
+    })
+);
+
+export const itemHistoryFailure = createAction(
+    'item::history::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to load item history`,
+            error,
+        })({ payload: {}, error })
+    )
+);
+
+export const itemHistoryAbort = createAction(
+    'item::history::abort',
+    withRequestFailure(() => ({ payload: {} }))
 );
