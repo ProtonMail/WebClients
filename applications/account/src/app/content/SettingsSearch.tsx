@@ -76,7 +76,7 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
                 icon: sectionRoute.icon,
             };
 
-            const subsectionItems: SearchOption[] = sectionRoute.subsections
+            const subsectionItems: SearchOption[] = (sectionRoute.subsections || [])
                 .map((subsection): SearchOption | null => {
                     if (!subsection.text || !getIsSubsectionAvailable(subsection)) {
                         return null;
