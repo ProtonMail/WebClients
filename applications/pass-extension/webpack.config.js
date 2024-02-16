@@ -151,6 +151,7 @@ module.exports = {
             RUNTIME_RELOAD: RUNTIME_RELOAD,
             RESUME_FALLBACK: RESUME_FALLBACK,
             REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
+            OFFLINE_SUPPORTED: false,
             RUNTIME_RELOAD_PORT: RUNTIME_RELOAD_PORT,
             VERSION:
                 ENV === 'production'
