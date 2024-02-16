@@ -190,7 +190,11 @@ export class PaymentMethods {
     }
 
     private isCashAvailable(): boolean {
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
+        const isSignup =
+            this.flow === 'signup' ||
+            this.flow === 'signup-pass' ||
+            this.flow === 'signup-pass-upgrade' ||
+            this.flow === 'signup-vpn';
 
         return !isSignup && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
     }
