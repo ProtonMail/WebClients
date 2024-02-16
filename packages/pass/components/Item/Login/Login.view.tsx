@@ -9,6 +9,7 @@ import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPV
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { ItemViewHistoryStats } from '@proton/pass/components/Item/History/ItemViewHistoryStats';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
@@ -17,10 +18,10 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
-import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
+// TODO: refactor this component to support displaying previous item revision (bonus: with diff highlighting)
 export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
-    const { revision } = itemViewProps;
+    const { revision, handleHistoryClick } = itemViewProps;
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
 
     const {
@@ -100,13 +101,15 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
                 <ExtraFieldsControl extraFields={extraFields} itemId={itemId} shareId={shareId} />
             )}
 
+            <ItemViewHistoryStats
+                lastUseTime={lastUseTime}
+                createTime={createTime}
+                modifyTime={modifyTime}
+                handleHistoryClick={handleHistoryClick}
+            />
+
             <MoreInfoDropdown
                 info={[
-                    {
-                        label: c('Label').t`Last autofill`,
-                        // translator: when this login was last used
-                        values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`Never`],
-                    },
                     {
                         label: c('Label').t`Modified`,
                         values: [
@@ -115,10 +118,8 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
                                 `${revisionNumber} times`,
                                 revisionNumber
                             ),
-                            getFormattedDateFromTimestamp(modifyTime),
                         ],
                     },
-                    { label: c('Label').t`Created`, values: [getFormattedDateFromTimestamp(createTime)] },
                     {
                         label: c('Label').t`Item ID`,
                         // translator: label for item identification number
