@@ -1,5 +1,6 @@
 import noop from '@proton/utils/noop';
 
+import { isElectronApp } from '../helpers/desktop';
 import { traceError } from '../helpers/sentry';
 import { ProtonConfig } from '../interfaces';
 
@@ -144,6 +145,12 @@ export const newVersionUpdater = (config: ProtonConfig) => {
             if (domIsBusy() || getIsBusy()) {
                 return;
             }
+
+            // In the case of the electron app, we also check if the app is focused, we abort reloading if that's the case
+            if (isElectronApp && document.hasFocus()) {
+                return;
+            }
+
             window.location.reload();
         }, THIRTY_MINUTES);
     };
@@ -167,10 +174,23 @@ export const newVersionUpdater = (config: ProtonConfig) => {
         document.addEventListener('visibilitychange', handleVisibilityChange);
     };
 
+    // The 'visibilitychange' event is different on Electron and only triggered when the app is completely hidden
+    // This happens when the reduce the app in the dock or switch to a full screen application
+    // To mitigate this, we check if the app is not focused, if that's the case we schedule a reload
+    const handleElectronFocus = () => {
+        if (!document.hasFocus()) {
+            scheduleReload();
+        }
+    };
+
     const checkForNewVersion = async () => {
         if (await isNewVersionAvailable()) {
             clearVersionCheck();
-            registerVisibilityChangeListener();
+            if (isElectronApp) {
+                handleElectronFocus();
+            } else {
+                registerVisibilityChangeListener();
+            }
         }
     };
 
