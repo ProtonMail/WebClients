@@ -22,6 +22,7 @@ import {
     useConfig,
     useContactEmails,
     useEventManager,
+    useFlag,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -310,6 +311,7 @@ const InteractiveCalendarView = ({
     const config = useConfig();
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
+    const isEditSingleOccurrenceEnabled = useFlag('EditSingleOccurrenceWeb');
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
@@ -1309,6 +1311,7 @@ const InteractiveCalendarView = ({
                 reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
+                isEditSingleOccurrenceEnabled,
             });
             hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
