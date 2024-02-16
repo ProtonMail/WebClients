@@ -89,12 +89,12 @@ export const BulkSelectProvider: FC<PropsWithChildren> = ({ children }) => {
         const handleKeyUp = (event: KeyboardEvent) => {
             if (locked.current) return;
             if (enabled && context.count === 0) context.disable();
-            if (event.key === 'Shift') document.removeEventListener('keyup', handleKeyUp);
+            if (event.ctrlKey || event.metaKey) document.removeEventListener('keyup', handleKeyUp);
         };
 
         const handleKeyDown = (event: KeyboardEvent) => {
             if (locked.current) return;
-            if (!enabled && event.key === 'Shift') context.enable();
+            if (!enabled && (event.ctrlKey || event.metaKey)) context.enable();
         };
 
         document.addEventListener('keydown', handleKeyDown);
