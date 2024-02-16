@@ -504,9 +504,9 @@ function handleError(error: any) {
     try {
         const messageBus = getMessageBus();
         messageBus.sendUnhandledErrorMessage(error);
-    } catch {
+    } catch (err) {
         console.error('Failed to send error message to parent');
-        throw error;
+        throw err;
     }
 }
 
@@ -525,7 +525,7 @@ export async function initialize() {
         });
 
         const rejectInterval = setInterval(() => {
-            promiseReject("Chargebee wasn't initialized");
+            promiseReject(new Error("Chargebee wasn't initialized"));
         }, 60000);
 
         createMessageBus({
