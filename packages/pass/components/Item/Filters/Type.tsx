@@ -59,7 +59,7 @@ export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     return (
         <>
             <DropdownButton
-                className="flex text-sm text-semibold flex-auto grow-0 shrink-0"
+                className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
                 onClick={toggle}
                 ref={anchorRef}
                 color="weak"
@@ -67,8 +67,10 @@ export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
                 size="small"
                 title={c('Action').t`Filter vault items`}
             >
-                <Icon name={selectedOption.icon} className="inline mr-2" />
-                {`${selectedOption.label} (${selectedOption.count})`}
+                <Icon name={selectedOption.icon} className="shrink-0" />
+                <span className="text-ellipsis hidden sm:block">
+                    {`${selectedOption.label}`} <span className="hidden md:inline">({selectedOption.count})</span>
+                </span>
             </DropdownButton>
 
             <Dropdown
