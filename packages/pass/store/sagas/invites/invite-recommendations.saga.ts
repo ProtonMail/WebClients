@@ -2,6 +2,7 @@ import { cancelled, put, takeLatest } from 'redux-saga/effects';
 
 import { getInviteRecommendations } from '@proton/pass/lib/invites/invite.requests';
 import {
+    inviteRecommendationsAbort,
     inviteRecommendationsFailure,
     inviteRecommendationsIntent,
     inviteRecommendationsSuccess,
@@ -34,7 +35,7 @@ function* loadRecommendationsWorker({
         yield put(inviteRecommendationsFailure(request.id, error));
     } finally {
         if (yield cancelled()) {
-            yield put(inviteRecommendationsFailure(request.id, new Error('aborted')));
+            yield put(inviteRecommendationsAbort(request.id));
             ctrl.abort();
         }
     }
