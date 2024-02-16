@@ -17,7 +17,7 @@ export async function getSubscriptionPrices(
     billingAddress?: BillingAddress,
     maybeCoupon?: string
 ) {
-    if (!hasPlanIDs(planIDs)) {
+    if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
     }
 
