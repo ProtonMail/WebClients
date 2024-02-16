@@ -17,7 +17,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, IconName } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
 import {
     getBlackFridayRenewalNoticeText,
     getRenewalNoticeText,
@@ -331,6 +331,12 @@ const Step1 = ({
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
+    const checkout = getCheckout({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: options.checkResult,
+    });
+
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70">
             *
@@ -342,17 +348,18 @@ const Step1 = ({
                       planIDs: options.planIDs,
                       currency: options.currency,
                   })
-                : getRenewalNoticeText({
+                : getCheckoutRenewNoticeText({
+                      cycle: options.cycle,
+                      plansMap: model.plansMap,
+                      planIDs: options.planIDs,
+                      checkout,
+                      currency: options.currency,
+                  }) ||
+                  getRenewalNoticeText({
                       renewCycle: options.cycle,
                   })}
         </div>
     );
-
-    const checkout = getCheckout({
-        planIDs: options.planIDs,
-        plansMap: model.plansMap,
-        checkResult: options.checkResult,
-    });
 
     const audienceTabs = hasPlanSelector ? (
         <AudienceTabs

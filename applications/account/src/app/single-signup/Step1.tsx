@@ -15,6 +15,7 @@ import {
     PayPalButton,
     StyledPayPalButton,
     getBlackFridayRenewalNoticeText,
+    getCheckoutRenewNoticeText,
     getRenewalNoticeText,
 } from '@proton/components/containers';
 import {
@@ -153,7 +154,7 @@ const getPlanInformation = (
         };
     }
 
-    if (selectedPlan.Name === PLANS.VPN) {
+    if (selectedPlan.Name === PLANS.VPN || selectedPlan.Name === PLANS.VPN2024) {
         const plusServers = getPlusServers(vpnServersCountData.paid.servers, vpnServersCountData.paid.countries);
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,
@@ -607,7 +608,8 @@ const Step1 = ({
         return handleCompletion(subscriptionData);
     };
 
-    const hasGuarantee = [PLANS.VPN, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan;
+    const hasGuarantee =
+        [PLANS.VPN, PLANS.VPN2024, PLANS.VPN_PASS_BUNDLE].includes(options.plan.Name as any) || isB2bPlan;
 
     const measurePay = (
         type: TelemetryPayType,
@@ -913,7 +915,14 @@ const Step1 = ({
                           planIDs: options.planIDs,
                           currency: options.currency,
                       })
-                    : getRenewalNoticeText({
+                    : getCheckoutRenewNoticeText({
+                          cycle: options.cycle,
+                          plansMap: model.plansMap,
+                          planIDs: options.planIDs,
+                          checkout: actualCheckout,
+                          currency: options.currency,
+                      }) ||
+                      getRenewalNoticeText({
                           renewCycle: options.cycle,
                       })}
             </div>

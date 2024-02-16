@@ -19,6 +19,7 @@ import {
 } from '../constants';
 import {
     Audience,
+    Cycle,
     External,
     Organization,
     Plan,
@@ -45,6 +46,7 @@ const {
     DRIVE_PRO,
     PASS_PLUS,
     VPN,
+    VPN2024,
     VPN_PASS_BUNDLE,
     ENTERPRISE,
     BUNDLE,
@@ -112,6 +114,7 @@ export const isManagedExternally = (
 export const hasVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VISIONARY);
 export const hasNewVisionary = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, NEW_VISIONARY);
 export const hasVPN = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN);
+export const hasVPN2024 = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN2024);
 export const hasVPNPassBundle = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, MAIL_PRO);
@@ -163,7 +166,7 @@ export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => {
 };
 
 export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    return [VPN, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
+    return [VPN, VPN2024, VPN_PASS_BUNDLE, VPN_PRO, VPN_BUSINESS].includes(planName as any);
 };
 
 export const getIsLegacyPlan = (planName: PLANS | ADDON_NAMES) => {
@@ -181,6 +184,7 @@ export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
     return (
         hasVPN(subscription) ||
+        hasVPN2024(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVpnPro(subscription) ||
         hasVpnBusiness(subscription)
@@ -307,6 +311,14 @@ export const getValidAudience = (audience: string | undefined | null): Audience 
 
 export const getIsCustomCycle = (subscription?: Subscription) => {
     return customCycles.includes(subscription?.Cycle as any);
+};
+
+export const getDowngradedVpn2024Cycle = (cycle: Cycle): CYCLE => {
+    if (cycle === CYCLE.MONTHLY || cycle === CYCLE.YEARLY) {
+        return cycle;
+    }
+    // 15,24,30 all renew at yearly.
+    return CYCLE.YEARLY;
 };
 
 export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;
