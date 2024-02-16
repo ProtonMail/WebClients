@@ -19,7 +19,7 @@ export const BulkView: VFC = () => {
     );
 
     return (
-        <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
+        <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full bg-strong">
             <div className="flex flex-column items-center gap-3 text-center p-2 w-full">
                 {count === 0 ? (
                     <p>{

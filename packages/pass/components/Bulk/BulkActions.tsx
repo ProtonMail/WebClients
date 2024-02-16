@@ -33,24 +33,26 @@ export const BulkActions: FC<Props> = (props) => {
             <Button
                 color="weak"
                 disabled={disabled}
-                icon
                 onClick={() => restoreMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk restore items from trash`}
+                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="clock-rotate-left" />
+                <span className="hidden lg:block">{c('Action').t`Restore`}</span>
             </Button>
             <Button
                 color="weak"
                 disabled={disabled}
-                icon
                 onClick={() => deleteMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk delete items from trash`}
+                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="trash-cross" />
+                <span className="hidden lg:block">{c('Action').t`Delete`}</span>
             </Button>
         </>
     ) : (
@@ -58,24 +60,26 @@ export const BulkActions: FC<Props> = (props) => {
             <Button
                 color="weak"
                 disabled={disabled}
-                icon
                 onClick={() => moveMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk move items to another vault`}
+                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="folder-arrow-in" />
+                <span className="hidden lg:block">{c('Action').t`Move`}</span>
             </Button>
             <Button
                 color="weak"
                 disabled={disabled}
-                icon
                 onClick={() => trashMany(bulkSelectionDTO(selection))}
                 shape="solid"
                 size="small"
                 title={c('Action').t`Bulk move items to trash`}
+                className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="trash" />
+                <span className="hidden lg:block">{c('Action').t`Trash`}</span>
             </Button>
         </>
     );
