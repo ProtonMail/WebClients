@@ -4,14 +4,7 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import {
-    BillingAddress,
-    PAYMENT_METHOD_TYPES,
-    PaymentMethodFlows,
-    PaymentMethodStatusExtended,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
-} from '@proton/components/payments/core';
+import { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
 import { Option, SelectTwo } from '../../components';
@@ -170,30 +163,6 @@ export const useTaxCountry = (props: HookProps): HookResult => {
         setFederalStateCode,
     };
 };
-
-export function showTaxCountry(
-    method: string | undefined,
-    type: PaymentMethodFlows,
-    savedMethod: SavedPaymentMethodInternal | SavedPaymentMethodExternal | undefined
-) {
-    const methodsWithTaxCountry: (string | undefined)[] = [
-        PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
-        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-    ];
-    const flowsWithTaxCountry: PaymentMethodFlows[] = [
-        'signup',
-        'signup-pass',
-        'signup-pass-upgrade',
-        'signup-vpn',
-        'subscription',
-    ];
-
-    const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
-    const isSavedAllowedMethod = savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
-
-    const showTaxCountry = (isNewAllowedMethod || isSavedAllowedMethod) && flowsWithTaxCountry.includes(type);
-    return showTaxCountry;
-}
 
 export type TaxCountrySelectorProps = HookResult & {
     className?: string;
