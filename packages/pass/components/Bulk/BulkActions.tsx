@@ -40,7 +40,7 @@ export const BulkActions: FC<Props> = (props) => {
                 className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="clock-rotate-left" />
-                <span className="hidden lg:block">{c('Action').t`Restore`}</span>
+                <span className="hidden xl:block">{c('Action').t`Restore`}</span>
             </Button>
             <Button
                 color="weak"
@@ -52,7 +52,7 @@ export const BulkActions: FC<Props> = (props) => {
                 className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="trash-cross" />
-                <span className="hidden lg:block">{c('Action').t`Delete`}</span>
+                <span className="hidden xl:block">{c('Action').t`Delete`}</span>
             </Button>
         </>
     ) : (
@@ -67,7 +67,7 @@ export const BulkActions: FC<Props> = (props) => {
                 className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="folder-arrow-in" />
-                <span className="hidden lg:block">{c('Action').t`Move`}</span>
+                <span className="hidden xl:block">{c('Action').t`Move`}</span>
             </Button>
             <Button
                 color="weak"
@@ -79,7 +79,7 @@ export const BulkActions: FC<Props> = (props) => {
                 className="flex gap-2 text-ellipsis flex-auto grow-0 text-sm text-semibold"
             >
                 <Icon name="trash" />
-                <span className="hidden lg:block">{c('Action').t`Trash`}</span>
+                <span className="hidden xl:block">{c('Action').t`Trash`}</span>
             </Button>
         </>
     );
