@@ -33,7 +33,10 @@ function* loadRecommendationsWorker({
     } catch (error) {
         yield put(inviteRecommendationsFailure(request.id, error));
     } finally {
-        if (yield cancelled()) ctrl.abort();
+        if (yield cancelled()) {
+            yield put(inviteRecommendationsFailure(request.id, new Error('aborted')));
+            ctrl.abort();
+        }
     }
 }
 
