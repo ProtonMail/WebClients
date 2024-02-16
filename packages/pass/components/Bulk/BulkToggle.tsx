@@ -40,7 +40,7 @@ export const BulkToggle: FC<Props> = ({ disabled }) => {
                     ) : (
                         <>
                             <Icon name="checkmark-triple" className="inline shrink-0" />
-                            <span className="hidden md:block">{c('Action').t`Multiple select`}</span>
+                            <span className="hidden xl:block">{c('Action').t`Multiple select`}</span>
                         </>
                     )}
                 </Button>

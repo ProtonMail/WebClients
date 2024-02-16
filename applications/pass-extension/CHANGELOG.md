@@ -1,3 +1,13 @@
+### Version 1.13.1
+
+-   Improve file format validation in importer
+-   Improve app logs access and retention
+-   Improve field autofill strategies
+-   Automatically clear PIN input field when invalid
+-   Allow exporting Pass data to CSV
+-   Exclude non-owned vaults from exported data
+-   Increase password history retention time to 2 weeks
+
 ### Version 1.13.0
 
 -   Support bulk invitations
