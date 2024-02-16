@@ -1,4 +1,4 @@
-import { getHasDefaultNotifications } from '@proton/shared/lib/calendar/apiModels';
+import { getHasDefaultNotifications, getIsPersonalSingleEdit } from '@proton/shared/lib/calendar/apiModels';
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
@@ -238,9 +238,9 @@ export const getDeleteRecurringEventActions = async ({
         if (isCancelInvitation && originalVeventComponent) {
             const veventsToDelete = await Promise.all([
                 originalVeventComponent,
-                ...singleEditRecurrences.map((event) =>
-                    getCalendarEventRaw(event).then(({ veventComponent }) => veventComponent)
-                ),
+                ...singleEditRecurrences
+                    .filter((event) => !getIsPersonalSingleEdit(event))
+                    .map((event) => getCalendarEventRaw(event).then(({ veventComponent }) => veventComponent)),
             ]);
             await Promise.all(
                 veventsToDelete.map(async (cancelVevent) =>
