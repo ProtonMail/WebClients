@@ -13,7 +13,7 @@ import {
     getStorageFeature,
     getStorageFeatureB2B,
 } from './drive';
-import { getSentinel, getSupport, getUsersFeature } from './highlights';
+import { getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
 import { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
@@ -27,10 +27,17 @@ import {
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
+    PASS_BIZ_VAULTS,
+    PASS_BIZ_VAULT_SHARING,
     PASS_PLUS_VAULTS,
+    PASS_PRO_VAULTS,
+    PASS_PRO_VAULT_SHARING,
     get2FAAuthenticator,
+    get24x7Support,
     getCustomFields,
+    getDataBreachMonitoring,
     getDevices,
+    getGroupManagement,
     getHideMyEmailAliases,
     getItems,
     getLoginsAndNotes,
@@ -38,6 +45,7 @@ import {
     getProtonPassFeature,
     getRequire2FA,
     getSSOIntegration,
+    getVaultSharing,
     getVaults,
 } from './pass';
 import {
@@ -184,15 +192,52 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getPassProPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.PASS_PRO,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`For next-level password management and identity protection.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getLoginsAndNotes(),
+            getDevices(),
+            getHideMyEmailAliases('unlimited'),
+            getVaults(PASS_PRO_VAULTS),
+            getVaultSharing(PASS_PRO_VAULT_SHARING),
+            get2FAAuthenticator(true),
+            getCustomFields(true),
+            getAdminPanel(),
+            get24x7Support(),
+            getDataBreachMonitoring(true),
+        ],
+    };
+};
+
 export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
     const title = plan?.Title || '';
     return {
         plan: PLANS.PASS_BUSINESS,
         title,
         label: '',
-        description: '',
+        description: c('new_plans: info').t`Advanced protection for teams that goes beyond industry standards.`,
         cta: getCTA(title),
-        features: [getSSOIntegration(), getRequire2FA(), getSentinel(true)],
+        features: [
+            getLoginsAndNotes(),
+            getDevices(),
+            getHideMyEmailAliases('unlimited'),
+            getVaults(PASS_BIZ_VAULTS),
+            getVaultSharing(PASS_BIZ_VAULT_SHARING),
+            get2FAAuthenticator(true),
+            getCustomFields(true),
+            getSentinel(),
+            getAdminPanel(),
+            get24x7Support(),
+            getRequire2FA(),
+            getSSOIntegration(),
+            getGroupManagement(),
+            getDataBreachMonitoring(true),
+        ],
     };
 };
 
@@ -544,6 +589,10 @@ export const getShortPlan = (
             return getVPNProPlan(planData, vpnServers);
         case PLANS.VPN_BUSINESS:
             return getVPNBusinessPlan(planData, vpnServers);
+        case PLANS.PASS_PRO:
+            return getPassProPlan(planData);
+        case PLANS.PASS_BUSINESS:
+            return getPassBusinessPlan(planData);
         default:
             return null;
     }
