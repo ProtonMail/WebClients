@@ -174,7 +174,7 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
 
-export const PASS_PLUS_VAULTS = 20;
+export const PASS_PLUS_VAULTS = 50;
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
