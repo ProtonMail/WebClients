@@ -33,6 +33,7 @@ import itemBulkTrash from '@proton/pass/store/sagas/items/item-bulk-trash.saga';
 import itemCreation from '@proton/pass/store/sagas/items/item-creation.saga';
 import itemDelete from '@proton/pass/store/sagas/items/item-delete.saga';
 import itemEdit from '@proton/pass/store/sagas/items/item-edit.saga';
+import itemHistory from '@proton/pass/store/sagas/items/item-history.saga';
 import itemMove from '@proton/pass/store/sagas/items/item-move.saga';
 import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
@@ -76,6 +77,7 @@ export function* rootSaga(options: RootSagaOptions) {
             itemCreation,
             itemDelete,
             itemEdit,
+            itemHistory,
             itemMove,
             itemPin,
             itemRestore,
