@@ -2,7 +2,6 @@ import { Children, ReactNode, cloneElement, isValidElement, useEffect, useRef } 
 import { useLocation } from 'react-router';
 
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import useAppTitle from '../../hooks/useAppTitle';
@@ -12,14 +11,12 @@ import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 import { SettingsAreaConfig } from './interface';
-import useActiveSection from './useActiveSection';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
     title: string;
     noTitle?: boolean;
     description?: ReactNode;
-    setActiveSection?: (section: string) => void;
     children?: ReactNode;
 }
 
@@ -28,13 +25,11 @@ export const PrivateMainSettingsAreaBase = ({
     title,
     noTitle,
     description,
-    setActiveSection,
     children,
 }: PrivateMainSettingsAreaBaseProps) => {
     const location = useLocation();
 
     const mainAreaRef = useRef<HTMLDivElement>(null);
-    const useIntersectionSection = useRef(false);
 
     useAppTitle(title);
 
@@ -48,7 +43,6 @@ export const PrivateMainSettingsAreaBase = ({
         const { hash } = location;
 
         if (!hash) {
-            useIntersectionSection.current = true;
             return;
         }
 
@@ -64,14 +58,10 @@ export const PrivateMainSettingsAreaBase = ({
             return;
         }
 
-        useIntersectionSection.current = false;
-        setActiveSection?.(hash.slice(1));
-
         const abortScroll = createScrollIntoView(el, mainArea, true);
         let removeListeners: () => void;
 
         const abort = () => {
-            useIntersectionSection.current = true;
             abortScroll();
             removeListeners?.();
         };
@@ -103,20 +93,12 @@ export const PrivateMainSettingsAreaBase = ({
         // Listen to location instead of location.hash since it's possible to click the same #section multiple times and end up with a new entry in history
     }, [location]);
 
-    // Don't always use the observer section observed value since it can not go to sections that are at the bottom or too small.
-    // In those cases it can be overridden by clicking on a specific section
-    const sectionObserver = useActiveSection(
-        useIntersectionSection.current && setActiveSection ? setActiveSection : noop
-    );
-
     const wrappedSections = Children.toArray(children).map((child) => {
         if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
             return null;
         }
 
-        return cloneElement(child, {
-            observer: sectionObserver,
-        });
+        return cloneElement(child);
     });
 
     return (
@@ -137,11 +119,10 @@ export const PrivateMainSettingsAreaBase = ({
 
 interface PrivateMainSettingsAreaProps {
     children: ReactNode;
-    setActiveSection?: (section: string) => void;
     config: SettingsAreaConfig;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, children, config }: PrivateMainSettingsAreaProps) => {
+const PrivateMainSettingsArea = ({ children, config }: PrivateMainSettingsAreaProps) => {
     const { text, title, description, subsections } = config;
 
     const wrappedSections = Children.toArray(children).map((child, i) => {
@@ -170,11 +151,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Private
     });
 
     return (
-        <PrivateMainSettingsAreaBase
-            title={title || text}
-            description={description}
-            setActiveSection={setActiveSection}
-        >
+        <PrivateMainSettingsAreaBase title={title || text} description={description}>
             {wrappedSections}
         </PrivateMainSettingsAreaBase>
     );
