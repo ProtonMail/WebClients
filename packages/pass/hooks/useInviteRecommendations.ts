@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import type { inviteRecommendationsSuccess } from '@proton/pass/store/actions';
-import { inviteRecommendationsIntent } from '@proton/pass/store/actions';
+import { getShareAccessOptionsIntent, inviteRecommendationsIntent } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
 import type { InviteRecommendationsSuccess } from '@proton/pass/types/data/invites.dto';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -12,6 +13,7 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 type Options = { shareId: string; pageSize: number };
 
 export const useInviteRecommendations = (autocomplete: string, { shareId, pageSize }: Options) => {
+    const dispatch = useDispatch();
     /** Keep a unique requestId per mount to allow multiple components
      * to independently request recommendation data */
     const requestId = useMemo(() => uniqueId(), []);
@@ -27,7 +29,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         since: null,
     });
 
-    const { loading, revalidate, dispatch } = useActionRequest({
+    const { loading, ...recommendations } = useActionRequest({
         action: inviteRecommendationsIntent,
         onSuccess: ({ data }: RequestEntryFromAction<ReturnType<typeof inviteRecommendationsSuccess>>) => {
             didLoad.current = true;
@@ -49,14 +51,17 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
     });
 
     useEffect(() => {
-        /** Trigger initial request when component mounts */
-        dispatch({ pageSize, shareId, since: null, startsWith: '' }, requestId);
+        /** Trigger initial recommendation request when component mounts.
+         * Force a revalidation of the share's access options to have fresh
+         * member data when reconciliating suggestions against current members */
+        dispatch(getShareAccessOptionsIntent(shareId));
+        recommendations.dispatch({ pageSize, shareId, since: null, startsWith: '' }, requestId);
     }, []);
 
     useEffect(() => {
         if (didLoad) {
             if (emptyBoundary.current && startsWith.startsWith(emptyBoundary.current)) return;
-            revalidate({ pageSize, shareId, since: null, startsWith }, requestId);
+            recommendations.revalidate({ pageSize, shareId, since: null, startsWith }, requestId);
             setState((prev) => ({ ...prev, since: null }));
         }
     }, [startsWith]);
@@ -65,7 +70,7 @@ export const useInviteRecommendations = (autocomplete: string, { shareId, pageSi
         state: { ...state, loading },
         loadMore: () => {
             if (!loading && state.more && state.next) {
-                revalidate({ pageSize, shareId, since: state.next, startsWith }, requestId);
+                recommendations.revalidate({ pageSize, shareId, since: state.next, startsWith }, requestId);
             }
         },
     };
