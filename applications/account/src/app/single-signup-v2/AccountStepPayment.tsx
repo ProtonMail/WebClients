@@ -142,7 +142,9 @@ const AccountStepPayment = ({
 
     const chargebeeContext = useChargebeeContext();
 
-    const flow: PaymentMethodFlows = 'signup-pass';
+    const isAuthenticated = !!model.session?.UID;
+
+    const flow: PaymentMethodFlows = isAuthenticated ? 'signup-pass-upgrade' : 'signup-pass';
 
     const paymentFacade = usePaymentFacade({
         checkResult: options.checkResult,
@@ -211,8 +213,6 @@ const AccountStepPayment = ({
         plansMap: model.plansMap,
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
     });
-
-    const isAuthenticated = !!model.session?.UID;
 
     const process = (processor: PaymentProcessorHook | undefined) => {
         if (!onValidate() || !validatePayment()) {

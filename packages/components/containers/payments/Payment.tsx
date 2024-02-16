@@ -173,7 +173,7 @@ export const PaymentsNoApi = ({
         return <Loader />;
     }
 
-    const isSignupPass = type === 'signup-pass';
+    const isSignupPass = type === 'signup-pass' || type === 'signup-pass-upgrade';
     const isSignupVpn = type === 'signup-vpn';
     const isSingleSignup = isSignupPass || isSignupVpn;
     const isSignup = type === 'signup' || isSignupPass || isSignupVpn;

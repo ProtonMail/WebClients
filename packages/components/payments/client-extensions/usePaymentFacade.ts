@@ -242,7 +242,13 @@ export const usePaymentFacade = ({
             PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
             PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
         ];
-        const flowsWithTaxCountry: PaymentMethodFlows[] = ['signup', 'signup-pass', 'signup-vpn', 'subscription'];
+        const flowsWithTaxCountry: PaymentMethodFlows[] = [
+            'signup',
+            'signup-pass',
+            'signup-pass-upgrade',
+            'signup-vpn',
+            'subscription',
+        ];
 
         const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
         const isSavedAllowedMethod = !!savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
