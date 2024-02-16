@@ -167,6 +167,11 @@ export interface ParentMessagesProps {
     onChangeRenderMode?: OnChangeRenderModeHandler;
 }
 
+export type Checkpoint = {
+    name: string;
+    data: any;
+};
+
 const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
     const parseEvent = (data: any) => {
         if (typeof data !== 'string') {
@@ -420,11 +425,12 @@ export class MessageBus {
         this.sendMessage({ ...message, correlationId });
     }
 
-    sendUnhandledErrorMessage(errorObj: any) {
+    sendUnhandledErrorMessage(errorObj: any, checkpoints: Checkpoint[]) {
         const error = {
             message: errorObj.message,
             stack: errorObj.stack,
             name: errorObj.name,
+            checkpoints,
         };
 
         const message: UnhandledErrorMessage = {
