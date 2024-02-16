@@ -190,7 +190,7 @@ describe('getNewMethods()', () => {
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
     });
 
-    it.each(['signup', 'signup-pass'] as PaymentMethodFlows[])(
+    it.each(['signup', 'signup-pass', 'signup-pass-upgrade'] as PaymentMethodFlows[])(
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
             const methods = new PaymentMethods(status, [], ChargebeeEnabled.INHOUSE_FORCED, 500, '', flow, undefined);
