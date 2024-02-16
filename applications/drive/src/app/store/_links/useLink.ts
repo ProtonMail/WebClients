@@ -27,7 +27,7 @@ import useLinksState from './useLinksState';
 // Interval should not be too low to not cause spikes on the server but at the
 // same time not too high to not overflow available memory on the device.
 const FAILING_FETCH_BACKOFF_MS = 10 * 60 * 1000; // 10 minutes.
-
+// TODO: Remove all useShareKey occurrence when BE issue with parentLinkId is fixed
 const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string): DecryptedLink => ({
     encryptedName: encryptedLink.name,
     name,
@@ -167,14 +167,19 @@ export function useLinkInner(
      */
     const debouncedFunctionDecorator = <T>(
         cacheKey: string,
-        callback: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<T>
-    ): ((abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<T>) => {
-        const wrapper = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<T> => {
+        callback: (abortSignal: AbortSignal, shareId: string, linkId: string, useShareKey?: boolean) => Promise<T>
+    ): ((abortSignal: AbortSignal, shareId: string, linkId: string, useShareKey?: boolean) => Promise<T>) => {
+        const wrapper = async (
+            abortSignal: AbortSignal,
+            shareId: string,
+            linkId: string,
+            useShareKey?: boolean
+        ): Promise<T> => {
             return debouncedFunction(
                 async (abortSignal: AbortSignal) => {
-                    return callback(abortSignal, shareId, linkId);
+                    return callback(abortSignal, shareId, linkId, useShareKey);
                 },
-                [cacheKey, shareId, linkId],
+                [cacheKey, shareId, linkId, useShareKey],
                 abortSignal
             );
         };
@@ -188,7 +193,6 @@ export function useLinkInner(
             if (cachedLink) {
                 return cachedLink.encrypted;
             }
-
             const link = await fetchLink(abortSignal, shareId, linkId);
             linksState.setLinks(shareId, [{ encrypted: link }]);
             return link;
@@ -204,7 +208,8 @@ export function useLinkInner(
         async (
             abortSignal: AbortSignal,
             shareId: string,
-            linkId: string
+            linkId: string,
+            useShareKey: boolean = false
         ): Promise<{ passphrase: string; passphraseSessionKey: SessionKey }> => {
             const passphrase = linksKeys.getPassphrase(shareId, linkId);
             const sessionKey = linksKeys.getPassphraseSessionKey(shareId, linkId);
@@ -213,10 +218,12 @@ export function useLinkInner(
             }
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
-            const parentPrivateKeyPromise = encryptedLink.parentLinkId
-                ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                  getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
-                : getSharePrivateKey(abortSignal, shareId);
+
+            const parentPrivateKeyPromise =
+                encryptedLink.parentLinkId && !useShareKey
+                    ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                      getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId, useShareKey)
+                    : getSharePrivateKey(abortSignal, shareId);
             const [parentPrivateKey, addressPublicKey] = await Promise.all([
                 parentPrivateKeyPromise,
                 getVerificationKey(encryptedLink.signatureAddress),
@@ -261,14 +268,19 @@ export function useLinkInner(
      */
     const getLinkPrivateKey = debouncedFunctionDecorator(
         'getLinkPrivateKey',
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<PrivateKeyReference> => {
+        async (
+            abortSignal: AbortSignal,
+            shareId: string,
+            linkId: string,
+            useShareKey: boolean = false
+        ): Promise<PrivateKeyReference> => {
             let privateKey = linksKeys.getPrivateKey(shareId, linkId);
             if (privateKey) {
                 return privateKey;
             }
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
-            const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
+            const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId, useShareKey);
 
             try {
                 privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
