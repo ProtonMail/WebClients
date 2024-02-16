@@ -5,7 +5,6 @@ import clsx from '@proton/utils/clsx';
 
 import Dropdown, { DropdownProps } from '../dropdown/Dropdown';
 import { DropdownSizeUnit } from '../dropdown/utils';
-import type { IconName } from '../icon/Icon';
 import Option from '../option/Option';
 import { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';
@@ -19,10 +18,6 @@ export interface Props<V> extends SelectProps<V> {
      * Optionally allows to remove the border around the select. Use for example in inputs
      */
     unstyled?: boolean;
-    /**
-     * Optionally allows different icons as caret
-     */
-    caretIconName?: IconName;
     /**
      * Milliseconds after which to clear the current user input
      * (the input is used for highlighting match based on keyboard input)
@@ -47,7 +42,6 @@ const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit
 const SelectTwo = <V extends any>({
     multiple = false,
     unstyled,
-    caretIconName,
     children,
     value,
     placeholder,
@@ -187,7 +181,6 @@ const SelectTwo = <V extends any>({
         <SelectProvider {...select}>
             <SelectButton
                 unstyled={unstyled}
-                caretIconName={caretIconName}
                 isOpen={isOpen}
                 onOpen={open}
                 onClick={handleAnchorClick}
