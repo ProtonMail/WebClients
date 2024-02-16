@@ -9632,7 +9632,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.5.12":
+"@types/jest-when@npm:^3.5.5":
+  version: 3.5.5
+  resolution: "@types/jest-when@npm:3.5.5"
+  dependencies:
+    "@types/jest": "npm:*"
+  checksum: 10c0/65b4df6204860d71908cf1d5b31e03504628f7efdb275ec3a705d99deb5df3abed419a3387d6cbb7c785e64559f70e3c26f117ad26e3707b4241ae08d3d4467a
+  languageName: node
+  linkType: hard
+
+"@types/jest@npm:*, @types/jest@npm:^29.5.12":
   version: 29.5.12
   resolution: "@types/jest@npm:29.5.12"
   dependencies:
@@ -24472,6 +24481,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jest-when@npm:3.6.0":
+  version: 3.6.0
+  resolution: "jest-when@npm:3.6.0"
+  peerDependencies:
+    jest: ">= 25"
+  checksum: 10c0/0f7d5491305d91a2aa514d913f74a5dda9a45ca7c691d5c44acccf575732bff72a3ef87dd68d0bf8eb15809eff8ae851421c629568ba2d268906e0c204d8ffda
+  languageName: node
+  linkType: hard
+
 "jest-worker@npm:^26.2.1, jest-worker@npm:^26.5.0, jest-worker@npm:^26.6.2":
   version: 26.6.2
   resolution: "jest-worker@npm:26.6.2"
@@ -30624,6 +30642,7 @@ __metadata:
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     jest-junit: "npm:^16.0.0"
+    jest-when: "npm:3.6.0"
     mime-types: "npm:^2.1.35"
     path-browserify: "npm:^1.0.1"
     prettier: "npm:^3.2.5"
@@ -33710,6 +33729,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
+    "@types/jest-when": "npm:^3.5.5"
     husky: "npm:^9.0.10"
     is-ci: "npm:^3.0.1"
     lint-staged: "npm:^15.2.2"

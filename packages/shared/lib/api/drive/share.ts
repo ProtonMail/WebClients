@@ -1,3 +1,5 @@
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
 import { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
@@ -55,4 +57,21 @@ export const queryLatestEvents = (shareID: string) => ({
 export const queryDeleteShare = (shareID: string) => ({
     url: `drive/shares/${shareID}`,
     method: 'delete',
+});
+
+/* Shares migration */
+export const queryUnmigratedShares = () => ({
+    url: 'drive/migrations/shareaccesswithnode/unmigrated',
+    method: 'get',
+    silence: [HTTP_STATUS_CODE.NOT_FOUND],
+});
+
+export const queryMigrateLegacyShares = (data: {
+    PassphraseNodeKeyPackets: { PassphraseNodeKeyPacket: string; ShareID: string }[];
+    UnreadableShareIDs?: string[];
+}) => ({
+    url: 'drive/migrations/shareaccesswithnode',
+    method: 'post',
+    data,
+    silence: [HTTP_STATUS_CODE.NOT_FOUND],
 });
