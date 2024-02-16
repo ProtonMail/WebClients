@@ -4,6 +4,7 @@ import {
     Audience,
     Plan,
     PlanIDs,
+    PlansMap,
     Renew,
     Subscription,
     SubscriptionModel,
@@ -18,24 +19,39 @@ export const getCurrency = (
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
 
+export const getVPNPlanToUse = (_: PlansMap, planIDs: PlanIDs | undefined) => {
+    /*
+    Can enable this when this should be the new default
+    if (plansMap[PLANS.VPN2024]) {
+        return PLANS.VPN2024;
+    }
+     */
+    if (planIDs?.[PLANS.VPN2024]) {
+        return PLANS.VPN2024;
+    }
+    return PLANS.VPN;
+};
+
 export const getDefaultSelectedProductPlans = ({
     appName,
     plan,
     planIDs,
+    plansMap,
 }: {
     appName: ProductParam;
     plan?: string;
     planIDs: PlanIDs;
+    plansMap: PlansMap;
 }) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = PLANS.VPN;
+        defaultB2CPlan = getVPNPlanToUse(plansMap, planIDs);
     } else if (appName === APPS.PROTONDRIVE) {
         defaultB2CPlan = PLANS.DRIVE;
     } else if (appName === APPS.PROTONPASS) {
         defaultB2CPlan = PLANS.PASS_PLUS;
     }
-    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find(
+    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.VPN2024, PLANS.DRIVE].find(
         (planName) => plan === planName || planIDs[planName]
     );
     const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find(

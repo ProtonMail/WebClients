@@ -522,6 +522,7 @@ export const getShortPlan = (
         case PLANS.MAIL:
             return getMailPlan({ plan: planData, freePlan });
         case PLANS.VPN:
+        case PLANS.VPN2024:
             return getVPNPlan(planData, vpnServers);
         case PLANS.VPN_PASS_BUNDLE:
             return getVPNPassPlan(planData, vpnServers);
