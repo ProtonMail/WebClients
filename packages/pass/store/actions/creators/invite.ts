@@ -255,3 +255,8 @@ export const inviteRecommendationsFailure = createAction(
         })({ payload: {} })
     )
 );
+
+export const inviteRecommendationsAbort = createAction(
+    'invite::recommendations::abort',
+    withRequestFailure(() => ({ payload: {} }))
+);

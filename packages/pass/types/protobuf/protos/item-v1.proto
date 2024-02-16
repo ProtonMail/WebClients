@@ -16,6 +16,8 @@ message Passkey {
 	string user_name = 6;
 	string user_display_name = 7;
 	bytes user_id = 8;
+	uint32 create_time = 9;
+	string note = 10;
 }
 
 message ItemLogin {
