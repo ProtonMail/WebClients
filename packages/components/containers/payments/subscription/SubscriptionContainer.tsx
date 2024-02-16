@@ -265,7 +265,7 @@ const SubscriptionContainer = ({
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
-        defaultSelectedProductPlans || getDefaultSelectedProductPlans({ appName: app, planIDs })
+        defaultSelectedProductPlans || getDefaultSelectedProductPlans({ appName: app, planIDs, plansMap })
     );
 
     const [model, setModel] = useState<Model>(() => {

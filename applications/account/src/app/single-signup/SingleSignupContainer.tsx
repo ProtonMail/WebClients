@@ -11,6 +11,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
+import { getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -86,16 +87,19 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const defaults: SignupDefaults = {
-        plan: PLANS.VPN,
-        cycle: CYCLE.TWO_YEARS,
-    };
-
     const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
         const result = getSignupSearchParams(location.pathname, searchParams);
 
-        const validValues = ['free', PLANS.BUNDLE, PLANS.VPN, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE, PLANS.VPN_BUSINESS];
+        const validValues = [
+            'free',
+            PLANS.BUNDLE,
+            PLANS.VPN,
+            PLANS.VPN2024,
+            PLANS.VPN_PRO,
+            PLANS.VPN_PASS_BUNDLE,
+            PLANS.VPN_BUSINESS,
+        ];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
             delete result.preSelectedPlan;
         }
@@ -160,13 +164,20 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 getFreePlan({ api: silentApi, storageSplitEnabled }),
             ]);
 
+            const plansMap = toMap(Plans, 'Name') as PlansMap;
+            const vpnPlanName = getVPNPlanToUse(plansMap, {});
+
+            const defaults: SignupDefaults = {
+                plan: vpnPlanName,
+                cycle: CYCLE.TWO_YEARS,
+            };
+
             const cycle = signupParameters.cycle || defaults.cycle;
             const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
-            const plansMap = toMap(Plans, 'Name') as PlansMap;
             const { plan, planIDs } = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
-                planIDs: [planIDs, !planIDs[PLANS.VPN] ? { [PLANS.VPN]: 1 } : undefined].filter(isTruthy),
+                planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
                 cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 paymentsApi,
                 currency,
@@ -188,7 +199,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             const subscriptionData =
                 subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[PLANS.VPN]?.[CYCLE.TWO_YEARS];
+                subscriptionDataCycleMapping[vpnPlanName]?.[CYCLE.TWO_YEARS];
 
             setModelDiff({
                 domains,
