@@ -28,8 +28,10 @@ enum AccountFlag {
     ChargebeeFreeToPaid = 'ChargebeeFreeToPaid',
 }
 
-// enum CalendarFeatureFlag {}
-// CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
+enum CalendarFeatureFlag {
+    EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
+    // CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb', removed with proton-calendar@5.0.21.0, can be removed from Unleash when FU'd
+}
 
 enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
@@ -47,4 +49,9 @@ enum MailFeatureFlag {
     SplitStorageChecklistReopenedNova = 'SplitStorageChecklistReopenedNova', // TODO remove once the extended checklist storage split is finished
 }
 
-export type FeatureFlag = `${CommonFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}` | `${MailFeatureFlag}`;
+export type FeatureFlag =
+    | `${CommonFeatureFlag}`
+    | `${AccountFlag}`
+    | `${CalendarFeatureFlag}`
+    | `${DriveFeatureFlag}`
+    | `${MailFeatureFlag}`;

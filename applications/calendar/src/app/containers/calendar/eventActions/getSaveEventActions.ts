@@ -22,6 +22,7 @@ import { modelToVeventComponent } from '../../../components/eventModal/eventForm
 import { getCanEditSharedEventData } from '../../../helpers/event';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
+    INVITE_ACTION_TYPES,
     InviteActions,
     OnSendPrefsErrors,
     ReencryptInviteActionData,
@@ -152,6 +153,7 @@ interface Arguments {
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: OnSendPrefsErrors;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
+    isEditSingleOccurrenceEnabled?: boolean;
 }
 
 const getSaveEventActions = async ({
@@ -173,6 +175,7 @@ const getSaveEventActions = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     handleSyncActions,
+    isEditSingleOccurrenceEnabled = false,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
@@ -416,12 +419,17 @@ const getSaveEventActions = async ({
         !!(removedAttendees && removedAttendees.length > 0) ||
         !!hasModifiedRSVPStatus;
 
+    const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
+        correctedInviteActions.type
+    );
+
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
         originalEditEventData,
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
             (canEditOnlyPersonalPart && !isSingleEdit) ||
+            (!isEditSingleOccurrenceEnabled && !isAttendee && (isSendInviteType || hasAttendees)) ||
             hasAttendeesUpdates,
         canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
         // if we have to notify participants or the event has participants and we did no modification of event details
