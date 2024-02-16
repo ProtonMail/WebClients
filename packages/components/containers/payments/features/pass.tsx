@@ -173,8 +173,10 @@ export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeat
 
 export const FREE_PASS_ALIASES = 10;
 export const FREE_VAULTS = 2;
+export const FREE_VAULT_SHARING = 3;
 
 export const PASS_PLUS_VAULTS = 50;
+export const PASS_PLUS_VAULT_SHARING = 10;
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [
@@ -245,15 +247,15 @@ export const getPassFeatures = (): PlanCardFeature[] => {
         {
             name: 'vault-and-item-sharing',
             plans: {
-                [PLANS.FREE]: getVaultSharing(3),
-                [PLANS.BUNDLE]: getVaultSharing(10),
-                [PLANS.MAIL]: getVaultSharing(3),
-                [PLANS.VPN]: getVaultSharing(3),
-                [PLANS.DRIVE]: getVaultSharing(3),
-                [PLANS.PASS_PLUS]: getVaultSharing(10),
-                [PLANS.FAMILY]: getVaultSharing(10),
-                [PLANS.MAIL_PRO]: getVaultSharing(3),
-                [PLANS.BUNDLE_PRO]: getVaultSharing(10),
+                [PLANS.FREE]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.BUNDLE]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.MAIL]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.VPN]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.DRIVE]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.PASS_PLUS]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.FAMILY]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
+                [PLANS.MAIL_PRO]: getVaultSharing(FREE_VAULT_SHARING),
+                [PLANS.BUNDLE_PRO]: getVaultSharing(PASS_PLUS_VAULT_SHARING),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
