@@ -74,6 +74,13 @@ export const getSentinel = (included: boolean = true): PlanCardFeatureDefinition
     };
 };
 
+export const getAdminPanel = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Administration Panel`,
+        included: true,
+    };
+};
+
 export const getHighlightFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault): PlanCardFeature[] => {
     return [
         getUsers(),

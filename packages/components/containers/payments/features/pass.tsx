@@ -41,10 +41,19 @@ export const getLoginsAndNotesText = () => {
     return c('new_plans: feature').t`Unlimited logins and notes`;
 };
 
+export const getGroupManagement = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Group management (coming soon)`,
+        included: true,
+        status: 'coming-soon',
+    };
+};
+
 export const getSSOIntegration = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`SSO integration (coming soon)`,
         included: true,
+        status: 'coming-soon',
     };
 };
 
@@ -54,6 +63,11 @@ export const getRequire2FA = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
+
+export const get24x7Support = (): PlanCardFeatureDefinition => ({
+    included: true,
+    text: c('new_plans: feature').t`24/7 account management support`,
+});
 
 export const getLoginsAndNotes = (): PlanCardFeatureDefinition => {
     return {
@@ -75,6 +89,7 @@ export const getCreditCards = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Autofill credit cards (coming soon)`,
         included: true,
+        status: 'coming-soon',
     };
 };
 
@@ -121,11 +136,13 @@ export const get2FAAuthenticator = (included: boolean = false): PlanCardFeatureD
     };
 };
 
-export const getVaults = (n: number): PlanCardFeatureDefinition => {
+export const getVaults = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
-        tooltip: c('new_plans: tooltip')
-            .t`Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.`,
+        text:
+            n === 'unlimited'
+                ? c('new_plans: feature').t`Unlimited vaults`
+                : c('new_plans: feature').ngettext(msgid`${n} vault`, `${n} vaults`, n),
+        tooltip: c('new_plans: tooltip').t`Like a folder, a vault is a convenient way to organize your items`,
         included: true,
         icon: 'vault',
     };
@@ -143,15 +160,17 @@ export const getUnlimitedVaultSharingText = () => {
     return c('new_plans: feature').t`Unlimited shared vaults with access permissions`;
 };
 
-export const getVaultSharingText = (n: number) => {
-    return c('new_plans: feature').ngettext(
-        msgid`Vault sharing (up to ${n} person)`,
-        `Vault sharing (up to ${n} people)`,
-        n
-    );
+export const getVaultSharingText = (n: number | 'unlimited') => {
+    return n === 'unlimited'
+        ? c('new_plans: feature').t`Unlimited vault sharing`
+        : c('new_plans: feature').ngettext(
+              msgid`Vault sharing (up to ${n} person)`,
+              `Vault sharing (up to ${n} people)`,
+              n
+          );
 };
 
-export const getVaultSharing = (n: number): PlanCardFeatureDefinition => {
+export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     return {
         text: getVaultSharingText(n),
         icon: 'arrow-up-from-square',
@@ -177,6 +196,12 @@ export const FREE_VAULT_SHARING = 3;
 
 export const PASS_PLUS_VAULTS = 50;
 export const PASS_PLUS_VAULT_SHARING = 10;
+
+export const PASS_PRO_VAULTS = 'unlimited';
+export const PASS_PRO_VAULT_SHARING = 'unlimited';
+
+export const PASS_BIZ_VAULTS = 'unlimited';
+export const PASS_BIZ_VAULT_SHARING = 'unlimited';
 
 export const getPassFeatures = (): PlanCardFeature[] => {
     return [

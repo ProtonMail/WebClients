@@ -486,8 +486,7 @@ export const passPlusUpsell = {
         },
         {
             text: '50 vaults',
-            tooltip:
-                'Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.',
+            tooltip: 'Like a folder, a vault is a convenient way to organize your items',
             included: true,
             icon: 'vault',
         },

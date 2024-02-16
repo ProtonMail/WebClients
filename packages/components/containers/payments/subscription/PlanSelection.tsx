@@ -182,6 +182,7 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
+    const isPassSettingsApp = app == APPS.PROTONPASS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
     const renderCycleSelector = isFreeSubscription(subscription);
     const enabledProductB2CPlans = [
@@ -232,6 +233,8 @@ const PlanSelection = ({
         getVPNEnterprisePlan(vpnServers),
     ]);
 
+    const passB2BPlans = filterPlans([plansMap[PLANS.PASS_PRO], plansMap[PLANS.PASS_BUSINESS]]);
+
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
     /**
@@ -241,9 +244,12 @@ const PlanSelection = ({
      * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
     const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
+    const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
+    } else if (isPassB2bPlans) {
+        B2BPlans = passB2BPlans;
     } else {
         B2BPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
