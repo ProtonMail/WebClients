@@ -29,6 +29,8 @@ export interface PlanCardFeature {
         [PLANS.FAMILY]: PlanCardFeatureDefinition | null;
         [PLANS.MAIL_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.BUNDLE_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.PASS_PRO]: PlanCardFeatureDefinition | null;
+        [PLANS.PASS_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_PRO]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_BUSINESS]: PlanCardFeatureDefinition | null;
     };
