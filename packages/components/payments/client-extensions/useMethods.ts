@@ -77,7 +77,8 @@ export function convertMethod(
         };
     }
 
-    const isSignup = flow === 'signup' || flow === 'signup-pass' || flow === 'signup-vpn';
+    const isSignup =
+        flow === 'signup' || flow === 'signup-pass' || flow === 'signup-pass-upgrade' || flow === 'signup-vpn';
 
     if (method.type === PAYMENT_METHOD_TYPES.PAYPAL || method.type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
         return {

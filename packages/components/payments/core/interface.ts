@@ -312,6 +312,7 @@ export type PaymentMethodFlows =
     | 'invoice'
     | 'signup'
     | 'signup-pass'
+    | 'signup-pass-upgrade'
     | 'signup-vpn'
     | 'credit'
     | 'subscription'
