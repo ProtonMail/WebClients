@@ -4,12 +4,10 @@ import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownCaret } from '../dropdown';
-import type { IconName } from '../icon/Icon';
 import { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
     unstyled?: boolean;
-    caretIconName?: IconName;
     loading?: boolean;
     error?: NodeOrBoolean;
     isOpen?: boolean;
@@ -17,7 +15,7 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-    ({ className, unstyled, caretIconName, loading, error, isOpen, onOpen, children, ...rest }, ref) => {
+    ({ className, unstyled, loading, error, isOpen, onOpen, children, ...rest }, ref) => {
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
