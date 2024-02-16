@@ -1,11 +1,14 @@
-import { Ref, useEffect, useImperativeHandle, useRef } from 'react';
+import { Ref, useEffect, useImperativeHandle, useRef, useState } from 'react';
 
 import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Icon } from '@proton/components/components';
+import { useUserSettings } from '@proton/components/hooks';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
+import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
 
 import { useTheme } from '../../../containers/themes';
@@ -44,9 +47,14 @@ interface Props {
 }
 
 const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
-    const dropdownRef = useRef<ToolbarDropdownAction>(null);
-
     const theme = useTheme();
+    const dropdownRef = useRef<ToolbarDropdownAction>(null);
+    const [userSettings] = useUserSettings();
+    const [pickerTranslationsLoading, setPickerTranslationsLoading] = useState(true);
+    const [pickerTranslations, setPickerTranslations] = useState(undefined);
+
+    // fr_FR => need only fr for locale
+    const localeCode = getClosestLocaleCode(userSettings?.Locale, locales).slice(0, 2);
 
     const handleSelect = (emoji: Emoji) => {
         onInsert(emoji);
@@ -59,7 +67,21 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
         };
     });
 
-    return (
+    useEffect(() => {
+        if (localeCode !== 'en') {
+            void import(`@emoji-mart/data/i18n/${localeCode}.json`)
+                .then((i18n) => {
+                    setPickerTranslations(i18n);
+                })
+                .finally(() => {
+                    setPickerTranslationsLoading(false);
+                });
+        } else {
+            setPickerTranslationsLoading(false);
+        }
+    }, [localeCode]);
+
+    return pickerTranslationsLoading === true ? null : (
         <ToolbarDropdown
             ref={dropdownRef}
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
@@ -78,6 +100,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
                 skinTonePosition="none"
                 previewPosition="none"
                 perLine={8}
+                i18n={pickerTranslations}
             />
         </ToolbarDropdown>
     );
