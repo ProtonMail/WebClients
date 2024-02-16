@@ -32,7 +32,6 @@ export const SelectField: FC<SelectFieldProps> = ({
             <InputFieldTwo<typeof SelectTwo>
                 as={SelectTwo}
                 assistContainerClassName="empty:hidden"
-                caretIconName="chevron-down"
                 error={error}
                 labelContainerClassName="expand-click-area color-weak m-0 text-normal text-sm"
                 originalPlacement="bottom"
