@@ -11,6 +11,7 @@ import { getConfiguration, setConfiguration } from './configuration';
 import {
     ChangeRenderModeEvent,
     ChargebeeSubmitEvent,
+    Checkpoint,
     OnChangeRenderModeHandler,
     OnGetBinHandler,
     OnSetPaypalPaymentIntentHandler,
@@ -27,6 +28,11 @@ import paypalTemplateString from './templates/paypal.html?raw';
 // eslint-disable-next-line import/no-unresolved
 import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
+
+const checkpoints: Checkpoint[] = [];
+function addCheckpoint(name: string, data?: any) {
+    checkpoints.push({ name, data });
+}
 
 function getChargebeeFormWrapper(): HTMLElement {
     const chargebeeFormWrapper = document.getElementById('chargebee-form-wrapper');
@@ -89,6 +95,7 @@ async function renderCreditCardForm() {
     const cbInstance = getChargebeeInstance();
 
     await cbInstance.load('components');
+    addCheckpoint('card_loaded_components');
 
     const fontFamily = `'Inter',
     -apple-system,
@@ -163,6 +170,7 @@ async function renderCreditCardForm() {
     trackFocus(cvcSelector, cvc);
 
     await cardComponent.mount();
+    addCheckpoint('card_mounted');
 
     function validateFormWithoutRendering(): FormValidationErrors {
         const errors = [];
@@ -306,6 +314,8 @@ async function renderCreditCardForm() {
     }
 
     function handleSubmit({ paymentIntent, zip, countryCode, correlationId }: ChargebeeSubmitEvent): void {
+        addCheckpoint('card_submit');
+
         const messageBus = getMessageBus();
 
         const errors = enableFormValidation();
@@ -319,6 +329,7 @@ async function renderCreditCardForm() {
         cardComponent
             .authorizeWith3ds(paymentIntent, additionalData, {
                 challenge: (url: string) => {
+                    addCheckpoint('card_3ds_challenge');
                     messageBus.send3dsChallengeMessage(
                         {
                             url,
@@ -328,6 +339,7 @@ async function renderCreditCardForm() {
                 },
             })
             .then((authorizedPaymentIntent: AuthorizedPaymentIntent) => {
+                addCheckpoint('card_success');
                 messageBus.send3dsSuccessMessage(
                     {
                         authorized: true,
@@ -337,6 +349,7 @@ async function renderCreditCardForm() {
                 );
             })
             .catch((error: any) => {
+                addCheckpoint('card_failure');
                 messageBus.send3dsFailedMessage(error, correlationId);
             });
     }
@@ -386,22 +399,27 @@ async function renderPaypal() {
     setTemplate(paypalTemplateString);
 
     const paypalHandler = await getChargebeeInstance().load('paypal');
+    addCheckpoint('paypal_loaded');
 
     const handlePaypalPayment = () => {
         paypalHandler
             .handlePayment({
                 success: (result: AuthorizedPaymentIntent) => {
+                    addCheckpoint('paypal_payment_success');
                     getMessageBus().sendPaypalAuthorizedMessage({
                         paymentIntent: result,
                     });
                 },
                 error: (_: PaymentIntent, error: any) => {
+                    addCheckpoint('paypal_payment_failed');
                     getMessageBus().sendPaypalFailedMessage(error);
                 },
                 click: () => {
+                    addCheckpoint('paypal_clicked');
                     getMessageBus().sendPaypalClickedMessage();
                 },
                 cancel: () => {
+                    addCheckpoint('paypal_cancelled');
                     getMessageBus().sendPaypalCancelledMessage();
                 },
             })
@@ -414,6 +432,7 @@ async function renderPaypal() {
         try {
             const { paymentIntent } = event;
             paypalHandler.setPaymentIntent(paymentIntent);
+            addCheckpoint('paypal_set_payment_intent');
 
             const defaultPaypalButtonHeight = 36;
             const height = event.paypalButtonHeight ?? defaultPaypalButtonHeight;
@@ -448,6 +467,7 @@ async function renderPaypal() {
 async function renderSavedCard() {
     let cbInstance = getChargebeeInstance();
     const threeDSHandler = await cbInstance.load3DSHandler();
+    addCheckpoint('saved_card_loaded');
     const messageBus = getMessageBus();
 
     const onVerifySavedCard: OnVerifySavedCardHandler = async ({ correlationId, paymentIntent }) => {
@@ -457,10 +477,12 @@ async function renderSavedCard() {
         threeDSHandler
             .handleCardPayment(undefined, {
                 challenge: (url: string) => {
+                    addCheckpoint('saved_card_3ds_challenge');
                     messageBus.send3dsRequiredForSavedCardMessage({ url }, correlationId);
                 },
             })
             .then((authorizedPaymentIntent: AuthorizedPaymentIntent) => {
+                addCheckpoint('saved_card_success');
                 messageBus.sendSavedCardVerificationSuccessMessage(
                     {
                         authorized: true,
@@ -470,6 +492,7 @@ async function renderSavedCard() {
                 );
             })
             .catch((error: any) => {
+                addCheckpoint('saved_card_failure');
                 messageBus.sendSavedCardVerificationFailureMessage(error, correlationId);
             });
     };
@@ -479,12 +502,17 @@ async function renderSavedCard() {
 
 async function cbInit() {
     if (getConfiguration().paymentMethodType === 'card') {
+        addCheckpoint('rendering_card');
         await renderCreditCardForm();
     } else if (getConfiguration().paymentMethodType === 'paypal') {
+        addCheckpoint('rendering_paypal');
         await renderPaypal();
     } else if (getConfiguration().paymentMethodType === 'saved-card') {
+        addCheckpoint('rendering_saved_card');
         await renderSavedCard();
     }
+
+    addCheckpoint('rendered');
 }
 
 async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig) {
@@ -495,6 +523,8 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
         domain: configuration.domain,
     });
 
+    addCheckpoint('instance_created');
+
     await cbInit();
 
     return cbInstance;
@@ -503,7 +533,7 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
 function handleError(error: any) {
     try {
         const messageBus = getMessageBus();
-        messageBus.sendUnhandledErrorMessage(error);
+        messageBus.sendUnhandledErrorMessage(error, checkpoints);
     } catch (err) {
         console.error('Failed to send error message to parent');
         throw err;
@@ -512,7 +542,10 @@ function handleError(error: any) {
 
 export async function initialize() {
     try {
+        addCheckpoint('initialize_started');
+
         window.addEventListener('error', (event) => {
+            addCheckpoint('window_error');
             event.preventDefault();
             handleError(event.error);
         });
@@ -530,6 +563,7 @@ export async function initialize() {
 
         createMessageBus({
             onSetConfiguration: async (configuration, sendResponseToParent) => {
+                addCheckpoint('set_configuration_started', configuration);
                 const cbInstance = await setConfigurationAndCreateChargebee(configuration);
                 clearInterval(rejectInterval);
                 promiseResolve(cbInstance);
@@ -539,6 +573,7 @@ export async function initialize() {
                 });
             },
             onGetHeight: (_, sendResponseToParent) => {
+                addCheckpoint('get_height');
                 const extraBottom = 36;
 
                 sendResponseToParent({
@@ -553,6 +588,7 @@ export async function initialize() {
 
         return await cbInstancePromise;
     } catch (error: any) {
+        addCheckpoint('sync_error');
         handleError(error);
     }
 }
