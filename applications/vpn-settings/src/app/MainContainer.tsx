@@ -59,9 +59,10 @@ import {
     OrganizationTwoFAEnforcementSection,
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
-    SamlAuthenticationSection,
+    SsoPage,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
+import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
@@ -303,9 +304,12 @@ const MainContainer: FunctionComponent = () => {
                             )}
                             {getIsSectionAvailable(routes.sso) && (
                                 <Route path={routes.sso.to}>
-                                    <PrivateMainSettingsArea config={routes.sso}>
-                                        <SamlAuthenticationSection />
-                                    </PrivateMainSettingsArea>
+                                    <PrivateMainSettingsAreaBase
+                                        title={routes.sso.title || routes.sso.text}
+                                        description={routes.sso.description}
+                                    >
+                                        <SsoPage />
+                                    </PrivateMainSettingsAreaBase>
                                 </Route>
                             )}
                             {loadingSubscription || loadingOrganization ? (

@@ -16,7 +16,7 @@ export interface SettingsAreaConfig {
     text: string;
     title?: string;
     description?: ReactNode;
-    subsections: SubSectionConfig[];
+    subsections?: SubSectionConfig[];
 }
 
 export interface SectionConfig extends SettingsAreaConfig {

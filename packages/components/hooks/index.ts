@@ -99,6 +99,7 @@ export { default as useStep } from './useStep';
 export { default as useSubscription, useGetSubscription } from './useSubscription';
 export { default as useLastSubscriptionEnd } from './useLastSubscriptionEnd';
 export { default as useRelocalizeText } from './useRelocalizeText';
+export * from './useSAMLConfigs';
 export * from './useSessionRecovery';
 export { default as useToggle } from './useToggle';
 export { default as useTraceUpdate } from './useTraceUpdate';
