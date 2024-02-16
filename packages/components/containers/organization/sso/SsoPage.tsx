@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { useSamlSSO } from '@proton/components/hooks/useSAMLConfigs';
 import { getSAMLStaticInfo } from '@proton/shared/lib/api/samlSSO';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 
+import { SubSettingsSection } from '../..';
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
-import { useApi, useCustomDomains } from '../../../hooks';
+import { useApi, useCustomDomains, useSamlSSO } from '../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -20,8 +20,13 @@ import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
 import { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
 import RemoveSSODomain from './RemoveSSODomain';
+import RemoveSSOSection from './RemoveSSOSection';
 import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
+
+const getSsoConfigForDomain = (ssoConfigs: SSO[], domain: Domain) => {
+    return ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
+};
 
 const ConfigureSamlContent = ({
     domain,
@@ -40,7 +45,7 @@ const ConfigureSamlContent = ({
 }) => {
     const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
 
-    const ssoConfigForDomain = ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
+    const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
 
     return (
         <>
@@ -105,7 +110,27 @@ const ConfigureSamlContent = ({
     );
 };
 
-const SamlAuthenticationSection = () => {
+const RemoveSSOSettingsSection = ({ domain, ssoConfigs }: { domain: Domain; ssoConfigs: SSO[] }) => {
+    const ssoConfigForDomain = getSsoConfigForDomain(ssoConfigs, domain);
+
+    if (!ssoConfigForDomain) {
+        return null;
+    }
+
+    return (
+        <SubSettingsSection
+            id="remove-sso"
+            title={c('Title').t`Remove single sign-on`}
+            className="container-section-sticky-section"
+        >
+            <SettingsSectionWide>
+                <RemoveSSOSection domain={domain} ssoConfig={ssoConfigForDomain} />
+            </SettingsSectionWide>
+        </SubSettingsSection>
+    );
+};
+
+const SsoPage = () => {
     const [customDomains] = useCustomDomains();
     const [ssoConfigs] = useSamlSSO();
     const api = useApi();
@@ -141,34 +166,44 @@ const SamlAuthenticationSection = () => {
                     {...setupSSODomainModalProps}
                 />
             )}
-            <SettingsSectionWide>
-                <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/sso">
-                    {c('Info')
-                        .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
-                </SettingsParagraph>
 
-                {customDomains.length > 0 ? (
-                    <ConfigureSamlContent
-                        domain={customDomains[0]}
-                        ssoConfigs={ssoConfigs}
-                        configureSamlModalProps={configureSamlModalProps}
-                        setConfigureSamlModalOpen={setConfigureSamlModalOpen}
-                        renderConfigureSamlModal={renderConfigureSamlModal}
-                        identityProviderEndpointsContentProps={samlStaticInfo}
-                    />
-                ) : (
-                    <Button
-                        color="norm"
-                        onClick={() => {
-                            setSetupSSODomainModalOpen(true);
-                        }}
-                    >
-                        {c('Action').t`Configure SAML`}
-                    </Button>
-                )}
-            </SettingsSectionWide>
+            <SubSettingsSection
+                id="saml-authentication"
+                title={c('Title').t`SAML authentication`}
+                beta
+                className="container-section-sticky-section"
+            >
+                <SettingsSectionWide>
+                    <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/sso">
+                        {c('Info')
+                            .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
+                    </SettingsParagraph>
+
+                    {customDomains.length > 0 ? (
+                        <ConfigureSamlContent
+                            domain={customDomains[0]}
+                            ssoConfigs={ssoConfigs}
+                            configureSamlModalProps={configureSamlModalProps}
+                            setConfigureSamlModalOpen={setConfigureSamlModalOpen}
+                            renderConfigureSamlModal={renderConfigureSamlModal}
+                            identityProviderEndpointsContentProps={samlStaticInfo}
+                        />
+                    ) : (
+                        <Button
+                            color="norm"
+                            onClick={() => {
+                                setSetupSSODomainModalOpen(true);
+                            }}
+                        >
+                            {c('Action').t`Configure SAML`}
+                        </Button>
+                    )}
+                </SettingsSectionWide>
+            </SubSettingsSection>
+
+            {customDomains.length > 0 && <RemoveSSOSettingsSection domain={customDomains[0]} ssoConfigs={ssoConfigs} />}
         </>
     );
 };
 
-export default SamlAuthenticationSection;
+export default SsoPage;
