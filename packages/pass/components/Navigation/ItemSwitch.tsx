@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { BulkView } from '@proton/pass/components/Bulk/BulkView';
 import { ItemEdit } from '@proton/pass/components/Item/Containers/ItemEdit';
+import { ItemHistory } from '@proton/pass/components/Item/Containers/ItemHistory';
 import { ItemNew } from '@proton/pass/components/Item/Containers/ItemNew';
 import { ItemView } from '@proton/pass/components/Item/Containers/ItemView';
 
@@ -20,6 +21,7 @@ export const ItemSwitch: FC<RouteChildrenProps> = ({ match }) => {
         <Switch>
             <Route exact path={sub('(trash/)?share/:shareId/item/:itemId')} component={ItemView} />
             <Route exact path={sub('share/:shareId/item/:itemId/edit')} component={ItemEdit} />
+            <Route exact path={sub('share/:shareId/item/:itemId/history')} component={ItemHistory} />
             <Route exact path={sub('item/new/:type')} component={ItemNew} />
             <Route component={Autoselect} />
         </Switch>
