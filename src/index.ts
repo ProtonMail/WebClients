@@ -13,7 +13,6 @@ import { isMac, isWindows } from "./utils/helpers";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
 import {
-    getSessionID,
     isAccoutLite,
     isHostAccount,
     isHostAllowed,
@@ -21,14 +20,7 @@ import {
     isHostMail,
     isUpsellURL,
 } from "./utils/urls/urlTests";
-import {
-    getCalendarView,
-    getMailView,
-    getMainWindow,
-    reloadCalendarWithSession,
-    updateView,
-    viewCreationAppStartup,
-} from "./utils/view/viewManagement";
+import { getMailView, getMainWindow, updateView, viewCreationAppStartup } from "./utils/view/viewManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -41,7 +33,7 @@ app.enableSandbox();
 saveAppURL();
 saveAppID();
 
-// Log initialization
+// LoggLogger initialization
 Logger.initialize({ preload: true });
 Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
 
@@ -171,14 +163,6 @@ app.on("web-contents-created", (_ev, contents) => {
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
         }
-
-        const sessionID = getSessionID(url);
-        const calendarView = getCalendarView();
-        const calendarSession = getSessionID(calendarView.webContents.getURL());
-        if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
-            Logger.info("Refresh calendar session", sessionID);
-            reloadCalendarWithSession(sessionID);
-        }
     });
 
     contents.on("will-attach-webview", preventDefault);
@@ -197,14 +181,12 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             Logger.info("Open calendar window");
-            _ev.preventDefault();
             updateView("calendar");
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             Logger.info("Open mail window");
-            _ev.preventDefault();
             updateView("mail");
             return { action: "deny" };
         }
@@ -216,10 +198,8 @@ app.on("web-contents-created", (_ev, contents) => {
                 shell.openExternal(url);
                 return { action: "deny" };
             }
-            updateView("account");
-            return { action: "deny" };
+            return { action: "allow" };
         } else if (isHostAllowed(url)) {
-            Logger.info("Open link in app");
             return { action: "allow" };
         } else if (global.oauthProcess) {
             Logger.info("Open OAuth link in app");
