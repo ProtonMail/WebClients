@@ -1,22 +1,18 @@
+import { BrowserWindow } from "electron";
 import log from "electron-log";
-import { getMailWindow, handleMailWindow } from "./windowManagement";
-
-const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
-export const getSessionID = (url: string) => {
-    const pathName = new URL(url).pathname;
-    return pathName.match(sessionRegex)?.[0];
-};
+import { getMailView, loadMailView } from "../view/viewManagement";
 
 export const handleMailToUrls = (url: string) => {
     log.info("Open mailto url and adding it to path");
 
     if (!url.startsWith("mailto:")) return;
 
-    const mailWindow = getMailWindow();
-    if (!mailWindow) return;
-    handleMailWindow(mailWindow.webContents);
+    const mailView = getMailView();
+    if (!mailView) return;
+    // TODO: check if still useful or rest of code is sufficient
+    loadMailView(BrowserWindow.getFocusedWindow());
 
-    const currentUrlString = mailWindow.webContents.getURL();
+    const currentUrlString = mailView.webContents.getURL();
     try {
         const currentURL = new URL(currentUrlString);
         if (currentURL.hash) {
@@ -25,7 +21,7 @@ export const handleMailToUrls = (url: string) => {
         }
 
         currentURL.hash = `#mailto=${url}`;
-        mailWindow.webContents.loadURL(currentURL.toString());
+        mailView.webContents.loadURL(currentURL.toString());
     } catch (error) {
         log.error("Error while parsing mailto url");
     }

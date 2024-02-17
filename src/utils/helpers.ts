@@ -16,21 +16,10 @@ export const getPlatform = () => {
     }
 };
 
-export const getBasePath = (): string => {
-    const basePath = app.getPath("exe");
-
-    if (basePath.match(/node_modules/)) {
-        return __dirname;
-    } else if (basePath.match(/MacOS/)) {
-        return join(basePath, "..", "..");
-    } else {
-        return join(basePath, "..");
-    }
-};
 
 export const isHostCalendar = (host: string) => {
     try {
-        const urls = getConfig(app.isPackaged).url;
+        const urls = getConfig().url;
         const hostURl = new URL(host);
 
         return urls.calendar === hostURl.origin;
@@ -42,7 +31,7 @@ export const isHostCalendar = (host: string) => {
 
 export const isHostMail = (host: string) => {
     try {
-        const urls = getConfig(app.isPackaged).url;
+        const urls = getConfig().url;
         const hostURl = new URL(host);
 
         return urls.mail === hostURl.origin;
@@ -54,7 +43,7 @@ export const isHostMail = (host: string) => {
 
 export const isHostAccount = (host: string) => {
     try {
-        const urls = getConfig(app.isPackaged).url;
+        const urls = getConfig().url;
         const hostURl = new URL(host);
 
         return urls.account === hostURl.origin;
@@ -88,10 +77,10 @@ export const isUpsellURL = (host: string) => {
     }
 };
 
-export const isHostAllowed = (host: string, isPackaged: boolean) => {
+export const isHostAllowed = (host: string) => {
     try {
         logURL("isHostAllowed", host);
-        const urls = getConfig(isPackaged).url;
+        const urls = getConfig().url;
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {
             finalURL = "https://" + finalURL;
@@ -153,9 +142,6 @@ export const openLogFolder = () => {
     }
 };
 
-export const areAllWindowsClosedOrHidden = () => {
-    return BrowserWindow.getAllWindows().every((window) => !window.isVisible());
-};
 
 export const saveWindowsPosition = (shouldDestroy: boolean) => {
     log.info("Saving windows position");

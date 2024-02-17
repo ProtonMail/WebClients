@@ -1,4 +1,4 @@
-import { BrowserWindow, Notification, app, session, shell } from "electron";
+import { Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
@@ -20,13 +20,8 @@ import {
 } from "./utils/helpers";
 import { logURL } from "./utils/logs";
 import { getTrialEndURL } from "./utils/trial";
-import { getSessionID, handleMailToUrls } from "./utils/url";
-import {
-    handleCalendarWindow,
-    handleMailWindow,
-    initialWindowCreation,
-    refreshCalendarPage,
-} from "./utils/windowManagement";
+import { handleMailToUrls } from "./utils/urls/mailtoLinks";
+import { viewCreatinAppStartup } from "./utils/view/viewManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -61,13 +56,10 @@ app.whenReady().then(() => {
         cache: false,
     });
 
-    initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
-
+    const window = viewCreatinAppStartup(secureSession);
     if (hasTrialEnded()) {
         const url = getTrialEndURL();
-        BrowserWindow.getAllWindows().forEach((window) => {
-            window.loadURL(url);
-        });
+        window.loadURL(url);
     }
 
     // Check updates
@@ -79,13 +71,14 @@ app.whenReady().then(() => {
     // Handle IPC calls coming from the destkop application
     handleIPCCalls();
 
-    app.on("activate", () => {
-        if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
-            log.info("Activate app, all windows hidden");
-            const window = BrowserWindow.getAllWindows()[0];
-            handleMailWindow(window.webContents);
-        }
-    });
+    // TODO: check if still makes sense to have
+    // app.on("activate", () => {
+    //     if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
+    //         log.info("Activate app, all windows hidden");
+    //         // const window = BrowserWindow.getAllWindows()[0];
+    //         // handleMailWindow(window.webContents);
+    //     }
+    // });
 
     // Normally this only works on macOS and is not required for Windows
     app.on("open-url", (_e, url) => {
@@ -96,7 +89,7 @@ app.whenReady().then(() => {
     // Security addition, reject all permissions except notifications
     secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
         const { host, protocol } = new URL(webContents.getURL());
-        if (!isHostAllowed(host, app.isPackaged) || protocol !== "https:") {
+        if (!isHostAllowed(host) || protocol !== "https:") {
             return callback(false);
         }
 
@@ -124,14 +117,8 @@ app.on("web-contents-created", (_ev, contents) => {
 
     contents.on("did-navigate-in-page", (ev, url) => {
         log.info("did-navigate-in-page");
-        if (!isHostAllowed(url, app.isPackaged)) {
+        if (!isHostAllowed(url)) {
             return preventDefault(ev);
-        }
-
-        const sessionID = getSessionID(url);
-        if (isHostMail(url) && sessionID && !isNaN(sessionID as unknown as any)) {
-            log.info("Refresh calendar session", sessionID);
-            refreshCalendarPage(+sessionID);
         }
     });
 
@@ -139,7 +126,7 @@ app.on("web-contents-created", (_ev, contents) => {
 
     contents.on("will-navigate", (details) => {
         log.info("will-navigate");
-        if (!isHostAllowed(details.url, app.isPackaged) && !global.oauthProcess) {
+        if (!isHostAllowed(details.url) && !global.oauthProcess) {
             return preventDefault(details);
         }
 
@@ -151,13 +138,13 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             log.info("Open calendar window");
-            handleCalendarWindow(contents);
+            // handleCalendarWindow(contents);
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             log.info("Open mail window");
-            handleMailWindow(contents);
+            // handleMailWindow(contents);
             return { action: "deny" };
         }
 
@@ -170,7 +157,7 @@ app.on("web-contents-created", (_ev, contents) => {
                 return { action: "deny" };
             }
             return { action: "allow" };
-        } else if (isHostAllowed(url, app.isPackaged)) {
+        } else if (isHostAllowed(url)) {
             logURL("Open internal link", url);
             return { action: "allow" };
         } else if (global.oauthProcess) {

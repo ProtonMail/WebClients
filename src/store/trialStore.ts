@@ -15,7 +15,3 @@ export const saveTrialStatus = (status: TrialStatus) => {
 export const hasTrialEnded = (): boolean => {
     return store.get("trialEnd") === "trialEnded";
 };
-
-export const getTrialStatus = (): TrialStatus | undefined => {
-    return store.get("trialEnd") as TrialStatus | undefined;
-};

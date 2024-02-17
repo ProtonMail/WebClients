@@ -1,4 +1,4 @@
-import log from "electron-log/main";
+import { app } from "electron";
 import { type } from "os";
 import { getAppURL } from "../store/urlStore";
 
@@ -34,9 +34,8 @@ const prodConfig: Config = {
     url: getAppURL(),
 };
 
-export const getConfig = (isPackaged: boolean) => {
-    log.info("getConfig, isPackaged:", isPackaged);
-    return isPackaged ? prodConfig : devConfig;
+export const getConfig = () => {
+    return app.isPackaged ? prodConfig : devConfig;
 };
 
 export const getIco = () => {

@@ -36,7 +36,3 @@ export const generateAppID = async () => {
     return appID;
 };
 
-export const getAppID = () => {
-    const appID = store.get("appID");
-    return appIDSchema.parse(appID);
-};

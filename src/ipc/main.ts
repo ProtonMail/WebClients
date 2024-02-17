@@ -2,6 +2,7 @@ import { BrowserWindow, ipcMain } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
 import { getTrialEndURL } from "../utils/trial";
+import { updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge } from "./badge";
 
 export const handleIPCCalls = () => {
@@ -28,5 +29,8 @@ export const handleIPCCalls = () => {
             resetBadge();
             BrowserWindow.getFocusedWindow()?.loadURL(url);
         }
+    });
+    ipcMain.on("changeView", (_e, target) => {
+        updateView(target);
     });
 };

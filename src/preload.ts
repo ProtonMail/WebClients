@@ -18,6 +18,12 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
             case "oauthPopupOpened":
                 ipcRenderer.send("oauthPopupOpened", payload);
                 break;
+            case "trialEnd":
+                ipcRenderer.send("trialEnd", payload);
+                break;
+            case "changeView":
+                ipcRenderer.send("changeView", payload);
+                break;
             default:
                 log.error(`Unknown IPC message type: ${type}`);
                 break;

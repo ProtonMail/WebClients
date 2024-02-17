@@ -4,9 +4,10 @@ import { getConfig } from "./config";
 import { CERT_PROTON_ME } from "./constants";
 import { isHostAllowed } from "./helpers";
 
-const config = getConfig(app.isPackaged);
+const config = getConfig();
+
 export const checkKeys = (request: Request) => {
-    if (isHostAllowed(request.hostname, app.isPackaged)) {
+    if (isHostAllowed(request.hostname)) {
         // We dont do any verification for dev and testing environments
         if (
             !app.isPackaged ||
