@@ -1,10 +1,13 @@
+export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
+
 // This type must be updated in the Electron application as well
 export type IPCInboxMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogout'; payload: undefined }
     | { type: 'clearAppData'; payload: undefined }
     | { type: 'oauthPopupOpened'; payload: 'oauthPopupStarted' | 'oauthPopupFinished' }
-    | { type: 'openExternal'; payload: string };
+    | { type: 'openExternal'; payload: string }
+    | { type: 'changeView'; payload: CHANGE_VIEW_TARGET };
 export type IPCInboxMessageType = IPCInboxMessage['type'];
 
 /**
