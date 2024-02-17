@@ -1,8 +1,6 @@
 import { BrowserWindowConstructorOptions, Session } from "electron";
 import log from "electron-log";
-import { getWindowState } from "../../store/windowsStore";
 import { getConfig } from "../config";
-import { WINDOW_SIZES } from "../constants";
 import { isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
@@ -26,17 +24,13 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
 };
 
 export const getWindowConfig = (session: Session): BrowserWindowConstructorOptions => {
-    const { x, y, width, height } = getWindowState("MAIL");
-
     return {
         title: config.appTitle,
         icon: "../../../assets/icon.png",
-        x,
-        y,
-        width,
-        height,
-        minHeight: WINDOW_SIZES.MIN_HEIGHT,
-        minWidth: WINDOW_SIZES.MIN_WIDTH,
+        // x,
+        // y,
+        // width,
+        // height,
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: config.devTools,

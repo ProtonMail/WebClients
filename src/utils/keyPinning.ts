@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import { Request, app } from "electron";
+import { CERT_PROTON_ME } from "../constants";
 import { getConfig } from "./config";
-import { CERT_PROTON_ME } from "./constants";
 import { isHostAllowed } from "./helpers";
 
 const config = getConfig();

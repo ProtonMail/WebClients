@@ -1,12 +1,13 @@
 import { Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
+import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
+import { deleteWindowStore } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
-import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import {
     isAccoutLite,
     isHostAccount,
@@ -40,6 +41,9 @@ log.info("App start is mac:", isMac, "is windows: ", isWindows);
 
 // Move uninstaller on macOS
 moveUninstaller();
+
+// Store migrations
+deleteWindowStore(); // Introduced in v0.9.4
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");

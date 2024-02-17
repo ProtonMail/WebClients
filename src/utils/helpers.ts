@@ -1,7 +1,6 @@
 import { BrowserWindow, app, shell } from "electron";
 import log from "electron-log/main";
 import { join } from "path";
-import { setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
 import { logURL } from "./logs";
 
@@ -15,7 +14,6 @@ export const getPlatform = () => {
         return "windows";
     }
 };
-
 
 export const isHostCalendar = (host: string) => {
     try {
@@ -142,7 +140,6 @@ export const openLogFolder = () => {
     }
 };
 
-
 export const saveWindowsPosition = (shouldDestroy: boolean) => {
     log.info("Saving windows position");
     BrowserWindow.getAllWindows().forEach((window) => {
@@ -151,9 +148,9 @@ export const saveWindowsPosition = (shouldDestroy: boolean) => {
             logURL("saveWindowsPosition", url);
             log.info("saveWindowsPosition bounds", window.getBounds());
             if (isHostCalendar(url)) {
-                setWindowState(window.getBounds(), "CALENDAR");
+                // setWindowState(window.getBounds(), "CALENDAR");
             } else if (isHostMail(url)) {
-                setWindowState(window.getBounds(), "MAIL");
+                // setWindowState(window.getBounds(), "MAIL");
             }
         }
 
