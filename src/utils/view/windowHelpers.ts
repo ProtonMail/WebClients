@@ -25,7 +25,7 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     return {};
 };
 
-export const getWindowConfig = (session: Session) => {
+export const getWindowConfig = (session: Session): BrowserWindowConstructorOptions => {
     const { x, y, width, height } = getWindowState("MAIL");
 
     return {

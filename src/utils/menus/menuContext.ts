@@ -1,5 +1,5 @@
 import { BrowserWindow, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
-import { isMac } from "./helpers";
+import { isMac } from "../helpers";
 
 const getContextMenuSpellCheck = (props: ContextMenuParams, window: BrowserWindow) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {

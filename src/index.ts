@@ -19,8 +19,8 @@ import {
     saveWindowsPosition,
 } from "./utils/helpers";
 import { logURL } from "./utils/logs";
-import { getTrialEndURL } from "./utils/trial";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
+import { getTrialEndURL } from "./utils/urls/trial";
 import { viewCreatinAppStartup } from "./utils/view/viewManagement";
 
 if (require("electron-squirrel-startup")) {

@@ -1,12 +1,12 @@
 import { BrowserView, BrowserWindow, Session, app } from "electron";
 import log from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
-import { handleBeforeHandle } from "../beforeUnload";
 import { getConfig } from "../config";
 import { checkKeys } from "../keyPinning";
-import { setApplicationMenu } from "../menu";
-import { createContextMenu } from "../menuContext";
+import { setApplicationMenu } from "../menus/menuApplication";
+import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
+import { handleBeforeHandle } from "./beforeUnload";
 
 const config = getConfig();
 

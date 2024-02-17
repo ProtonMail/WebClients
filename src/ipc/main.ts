@@ -1,7 +1,7 @@
 import { BrowserWindow, ipcMain } from "electron";
 import { saveTrialStatus } from "../store/trialStore";
 import { clearStorage } from "../utils/helpers";
-import { getTrialEndURL } from "../utils/trial";
+import { getTrialEndURL } from "../utils/urls/trial";
 import { updateView } from "../utils/view/viewManagement";
 import { handleIPCBadge, resetBadge } from "./badge";
 
