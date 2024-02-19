@@ -12,6 +12,7 @@ import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentic
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
+import type { AuthServiceConfig } from './service';
 import type { AuthStore } from './store';
 
 export type AuthSessionVersion = 1 | 2;
@@ -129,30 +130,34 @@ export const decryptSessionBlob = async (
     }
 };
 
-type ResumeSessionOptions = {
-    api: Api;
-    authStore: AuthStore;
-    persistedSession: EncryptedAuthSession;
-    onSessionInvalid?: () => void;
-};
-
 /** Session resuming sequence responsible for decrypting the encrypted session
  * blob. ⚠️ Ensure the authentication store has been configured with authentication
  * options in order for requests to succeed. Session tokens may be refreshed during
  * this sequence. Returns the plain-text session alongside its encryption key. */
-export const resumeSession = async ({
-    api,
-    authStore,
-    persistedSession,
-    onSessionInvalid,
-}: ResumeSessionOptions): Promise<{ session: AuthSession; clientKey: CryptoKey }> => {
+export const resumeSession = async (
+    localID: Maybe<number>,
+    config: AuthServiceConfig
+): Promise<{ session: AuthSession; clientKey: CryptoKey }> => {
     try {
+        const { api, authStore } = config;
+
         const [clientKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
         ]);
 
-        if (persistedSession.UserID !== User.ID) throw InactiveSessionError();
+        /** Read the persisted session **AFTER** resolving the persisted session key.
+         * This step is crucial to handle an edge case where the session might be mutated
+         * by another tab. In the web app, local key requests always follow a predictable
+         * order due to a queuing mechanism. By reading the persisted session at this point,
+         * we ensure consistency. If the 'getPersistedSessionKey' call above was queued by
+         * another tab updating the local key and persisted session, this process prevents
+         * a race condition and ensures we decrypt the most recent session blob to avoid
+         * decrypting a stale persisted session. */
+        const persistedSession = await config.getPersistedSession(localID);
+
+        if (!persistedSession || persistedSession.UserID !== User.ID) throw InactiveSessionError();
+
         const { blob, ...session } = persistedSession;
         const payloadVersion = session.payloadVersion ?? SESSION_VERSION;
         const { keyPassword, sessionLockToken } = await decryptSessionBlob(clientKey, blob, payloadVersion);
@@ -162,7 +167,7 @@ export const resumeSession = async ({
             session: mergeSessionTokens({ ...session, keyPassword, sessionLockToken }, authStore),
         };
     } catch (error: unknown) {
-        if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
+        if (error instanceof InvalidPersistentSessionError) config.onSessionInvalid?.();
         throw error;
     }
 };
