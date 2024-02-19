@@ -125,11 +125,13 @@ app.on("window-all-closed", () => {
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
     const window = BrowserWindow.getFocusedWindow();
-    Logger.info("Before quit", window);
     if (isMac) {
         saveWindowBounds(window);
+
+        if (window) {
+            window.destroy();
+        }
     }
-    app.quit();
 });
 
 // Security addition
