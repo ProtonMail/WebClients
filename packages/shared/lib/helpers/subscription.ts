@@ -135,6 +135,30 @@ export const hasPassPro = (subscription: MaybeFreeSubscription) => hasSomePlan(s
 export const hasPassBusiness = (subscription: MaybeFreeSubscription) => hasSomePlan(subscription, PASS_BUSINESS);
 export const hasFree = (subscription: MaybeFreeSubscription) => (subscription?.Plans || []).length === 0;
 
+export const paidPlanList = [
+    hasVisionary,
+    hasNewVisionary,
+    hasVPN,
+    hasVPNPassBundle,
+    hasMail,
+    hasMailPro,
+    hasDrive,
+    hasDrivePro,
+    hasPassPlus,
+    hasEnterprise,
+    hasBundle,
+    hasBundlePro,
+    hasMailPlus,
+    hasMailProfessional,
+    hasVpnBasic,
+    hasVpnPlus,
+    hasFamily,
+    hasVpnBusiness,
+    hasVpnPro,
+    hasPassPro,
+    hasPassBusiness,
+];
+
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
         switch (app) {
