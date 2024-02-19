@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { ModalStateReturnObj, useModalStateObject } from '@proton/components/components';
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/components/containers';
-import { useNotifications, useSubscription } from '@proton/components/hooks';
+import { useNotifications } from '@proton/components/hooks';
 import useAsyncError from '@proton/hooks/useAsyncError';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { usePassBridge } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -15,10 +15,9 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
-import { hasFree, hasMailPlus, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 
 import { fetchPassBridgeInfos, filterPassAliases } from './PassAliases.helpers';
-import { FAILED_TO_INIT_PASS_BRIDGE_ERROR, PASS_ALIASES_COUNT_LIMIT } from './constant';
+import PassAliasesInitError from './PassAliasesInitError';
 import type { CreateModalFormState, PassAliasesVault } from './interface';
 
 /**
@@ -40,7 +39,7 @@ interface PasAliasesProviderReturnedValues {
     /** User already opened pass aliases drawer in the current session (not hard refreshed) */
     hadInitialisedPreviously: boolean;
     /** Has user reached pass aliases creation limit  */
-    hasReachedAliasesLimit: boolean;
+    hasReachedAliasesCountLimit: boolean;
     submitNewAlias: (formValues: CreateModalFormState) => Promise<void>;
     passAliasesVaultName: string;
     /**
@@ -55,21 +54,14 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
     const PassBridge = usePassBridge();
     const passAliasesUpsellModal = useModalStateObject();
     const isMounted = useIsMounted();
-    const [subscription] = useSubscription();
     const [loading, setLoading] = useState<boolean>(true);
     const [passAliasVault, setPassAliasVault] = useState<PassAliasesVault>();
     const [passAliasesItems, setPassAliasesItems] = useState<PassBridgeAliasItem[]>(memoisedPassAliasesItems || []);
     const [totalVaultAliasesCount, setTotalVaultAliasesCount] = useState<number>(0);
+    const [passAliasesCountLimit, setPassAliasesCountLimit] = useState<number>(Number.MAX_SAFE_INTEGER);
     const [userHadVault, setUserHadVault] = useState(false);
     const { createNotification } = useNotifications();
     const throwError = useAsyncError();
-    const hasUnlimitedAliasesPlan: boolean = (() => {
-        if (!subscription) {
-            return false;
-        }
-
-        return !hasVpnPlus(subscription) && !hasMailPlus(subscription) && !hasFree(subscription);
-    })();
 
     const submitNewAlias = async (formValues: CreateModalFormState) => {
         try {
@@ -107,18 +99,26 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
             });
         } catch (e: any) {
             const error = getApiError(e);
-            if (!hasUnlimitedAliasesPlan && error.code === API_CUSTOM_ERROR_CODES.CANT_CREATE_PASS_ALIAS) {
+            if (error.code === API_CUSTOM_ERROR_CODES.CANT_CREATE_MORE_PASS_ALIASES) {
+                // This error should occur only when user reaches aliases limit with multiple vaults.
+                // In the following scenario and API error notification is displayed saying user can't create more aliases.
+                // We display the modal 2 seconds after the error notification is displayed
                 setTimeout(() => {
                     passAliasesUpsellModal.openModal(true);
-                }, NOTIFICATION_DEFAULT_EXPIRATION_TIME);
+                }, 2000);
             } else {
                 console.error(e);
                 traceInitiativeError('drawer-security-center', e);
-                createNotification({
-                    text: c('Error').t`An error occurred while saving alias`,
-                    type: 'error',
-                    expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
-                });
+
+                // Because API displays a notification in case of error,
+                // here we manually display a notification in case no API errors are caught
+                if (!error.code) {
+                    createNotification({
+                        text: c('Error').t`An error occurred while saving your alias`,
+                        type: 'error',
+                        expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
+                    });
+                }
             }
         }
     };
@@ -139,30 +139,31 @@ const usePassAliasesSetup = (): PasAliasesProviderReturnedValues => {
         const initPassBridge = async () => {
             await PassBridge.ready();
             const { vault, aliases, userHadVault } = await fetchPassBridgeInfos(PassBridge);
+            const userAccess = await PassBridge.user.getUserAccess();
             const filteredAliases = filterPassAliases(aliases);
 
             if (isMounted()) {
                 setTotalVaultAliasesCount(aliases.length);
                 setPassAliasVault(vault);
+                setPassAliasesCountLimit(userAccess.plan.AliasLimit ?? Number.MAX_SAFE_INTEGER);
                 setPassAliasesItems(filteredAliases);
                 memoisedPassAliasesItems = filteredAliases;
                 setUserHadVault(userHadVault);
                 setLoading(false);
             }
         };
-        void initPassBridge().catch((e) => {
+        void initPassBridge().catch((error) => {
             createNotification({
                 text: c('Error').t`Aliases could not be loaded`,
                 type: 'error',
             });
-            traceInitiativeError('drawer-security-center', e);
 
-            throwError(new Error(FAILED_TO_INIT_PASS_BRIDGE_ERROR));
+            throwError(new PassAliasesInitError(error));
         });
     }, []);
 
     return {
-        hasReachedAliasesLimit: totalVaultAliasesCount >= PASS_ALIASES_COUNT_LIMIT,
+        hasReachedAliasesCountLimit: totalVaultAliasesCount >= passAliasesCountLimit,
         getAliasOptions,
         hasAliases: !!passAliasesItems.length,
         hasUsedProtonPassApp: userHadVault,
