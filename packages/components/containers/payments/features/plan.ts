@@ -27,9 +27,11 @@ import {
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
+    FREE_VAULT_SHARING,
     PASS_BIZ_VAULTS,
     PASS_BIZ_VAULT_SHARING,
     PASS_PLUS_VAULTS,
+    PASS_PLUS_VAULT_SHARING,
     PASS_PRO_VAULTS,
     PASS_PRO_VAULT_SHARING,
     get2FAAuthenticator,
@@ -184,6 +186,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getDevices(),
             getHideMyEmailAliases('unlimited'),
             getVaults(PASS_PLUS_VAULTS),
+            getVaultSharing(PASS_PLUS_VAULT_SHARING),
             get2FAAuthenticator(true),
             getCustomFields(true),
             getSentinel(),
@@ -261,7 +264,13 @@ export const getFreePassPlan = (): ShortPlan => {
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getLoginsAndNotes(), getDevices(), getVaults(FREE_VAULTS), getHideMyEmailAliases(FREE_PASS_ALIASES)],
+        features: [
+            getLoginsAndNotes(),
+            getDevices(),
+            getVaults(FREE_VAULTS),
+            getVaultSharing(FREE_VAULT_SHARING),
+            getHideMyEmailAliases(FREE_PASS_ALIASES),
+        ],
     };
 };
 
