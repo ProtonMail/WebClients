@@ -9,20 +9,19 @@ import { deleteWindowStore } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
+import { isMac, isWindows } from "./utils/helpers";
+import { logURL } from "./utils/logs";
+import { handleMailToUrls } from "./utils/urls/mailtoLinks";
+import { getTrialEndURL } from "./utils/urls/trial";
 import {
+    getSessionID,
     isAccoutLite,
     isHostAccount,
     isHostAllowed,
     isHostCalendar,
     isHostMail,
-    isMac,
     isUpsellURL,
-    isWindows,
-} from "./utils/helpers";
-import { logURL } from "./utils/logs";
-import { handleMailToUrls } from "./utils/urls/mailtoLinks";
-import { getTrialEndURL } from "./utils/urls/trial";
-import { getSessionID } from "./utils/urls/urlTests";
+} from "./utils/urls/urlTests";
 import {
     getCalendarView,
     reloadCalendarWithSession,
