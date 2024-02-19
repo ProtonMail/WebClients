@@ -6,7 +6,7 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 export const requestLockFactory = () =>
     asyncLock(
         async (event: FetchEvent, signal: AbortSignal) => {
-            await wait(randomIntFromInterval(500, 1_000));
+            await wait(randomIntFromInterval(250, 1_000));
             return fetch(event.request, { signal });
         },
         { key: (event) => getUID(event)! }
@@ -15,7 +15,7 @@ export const requestLockFactory = () =>
 export const requestQueueFactory = () =>
     asyncQueue(
         async (event: FetchEvent, signal: AbortSignal) => {
-            await wait(randomIntFromInterval(100, 1_000));
+            await wait(randomIntFromInterval(250, 1_000));
             return fetch(event.request, { signal });
         },
         { key: (event) => getUID(event)! }
