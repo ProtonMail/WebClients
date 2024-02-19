@@ -5,9 +5,15 @@ import noop from '@proton/utils/noop';
 
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
 import { handleImage, matchImageRoute } from './image';
-import { handleLock, matchLockRoute } from './lock';
 import { handlePolling, matchPollingRoute } from './polling';
-import { handleRefresh, matchRefreshRoute } from './refresh';
+import {
+    handleLock,
+    handleRefresh,
+    handleSetLocalKey,
+    matchLockRoute,
+    matchRefreshRoute,
+    matchSetLocalKeyRoute,
+} from './session';
 
 export default null;
 declare let self: ServiceWorkerGlobalScope;
@@ -27,6 +33,7 @@ self.addEventListener('fetch', (event) => {
     const { pathname } = new URL(event.request.url);
 
     if (matchLockRoute(pathname)) return handleLock(event);
+    if (matchSetLocalKeyRoute(pathname)) return handleSetLocalKey(event);
     if (matchRefreshRoute(pathname)) return handleRefresh(event);
     if (matchPollingRoute(pathname)) return handlePolling(event);
     if (matchImageRoute(pathname)) return handleImage(event);
