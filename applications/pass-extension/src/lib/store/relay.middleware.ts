@@ -8,21 +8,18 @@ import type { ClientEndpoint, TabId, WorkerMessageWithSender } from '@proton/pas
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-/*
- * This middleware eats all actions coming through on purpose and sends them
- * to the worker for re-emission. This is to guarantee the same order of event
- * occurrence throughout worker, popup and content.
- *
- * It also listens for actions being emitted by the worker to re-integrate into
- * its local pipeline.
- */
-
 type ProxyActionsMiddlewareOptions = {
     endpoint: ClientEndpoint;
     tabId: TabId;
 };
 
-export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewareOptions): Middleware => {
+/** This middleware eats all actions coming through on purpose and sends them
+ * to the worker for re-emission. This is to guarantee the same order of event
+ * occurrence throughout worker, popup and content.
+ *
+ * It also listens for actions being emitted by the worker to re-integrate into
+ * its local pipeline. */
+export const relayMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewareOptions): Middleware => {
     const messageFactory = resolveMessageFactory(endpoint);
 
     return () => (next) => {
