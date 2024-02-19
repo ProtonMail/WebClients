@@ -169,90 +169,95 @@ export interface ParentMessagesProps {
 }
 
 const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
-    const parseEvent = (data: any) => {
-        if (typeof data !== 'string') {
-            return data;
+    try {
+        const parseEvent = (data: any) => {
+            if (typeof data !== 'string') {
+                return data;
+            }
+
+            let props;
+            try {
+                props = JSON.parse(data);
+            } catch (error) {
+                props = {};
+            }
+            return props;
+        };
+
+        const event = parseEvent(e.data);
+
+        if (isSetConfigurationEvent(event)) {
+            messageBus.onSetConfiguration(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'set-configuration-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isChargebeeSubmitEvent(event)) {
+            messageBus.onSubmit(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'chargebee-submit-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isSetPaypalPaymentIntentEvent(event)) {
+            messageBus.onSetPaypalPaymentIntent(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'set-paypal-payment-intent-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isGetHeightEvent(event)) {
+            messageBus.onGetHeight(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'get-height-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isGetBinEvent(event)) {
+            messageBus.onGetBin(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'get-bin-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isValidateFormEvent(event)) {
+            messageBus.onValidateForm(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'validate-form-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isVerifySavedCardEvent(event)) {
+            messageBus.onVerifySavedCard(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'chargebee-verify-saved-card-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isChangeRenderModeEvent(event)) {
+            messageBus.onChangeRenderMode(event, (result) => {
+                messageBus.sendMessage({
+                    type: 'change-render-mode-response',
+                    correlationId: event.correlationId,
+                    ...result,
+                });
+            });
+        } else if (isChargebeeEvent(event)) {
+            // ignore chargebee event
+        } else {
+            // ignore unknown event
         }
-
-        let props;
-        try {
-            props = JSON.parse(data);
-        } catch (error) {
-            props = {};
-        }
-        return props;
-    };
-
-    const event = parseEvent(e.data);
-
-    if (isSetConfigurationEvent(event)) {
-        messageBus.onSetConfiguration(event, (result) => {
-            messageBus.sendMessage({
-                type: 'set-configuration-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isChargebeeSubmitEvent(event)) {
-        messageBus.onSubmit(event, (result) => {
-            messageBus.sendMessage({
-                type: 'chargebee-submit-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isSetPaypalPaymentIntentEvent(event)) {
-        messageBus.onSetPaypalPaymentIntent(event, (result) => {
-            messageBus.sendMessage({
-                type: 'set-paypal-payment-intent-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isGetHeightEvent(event)) {
-        messageBus.onGetHeight(event, (result) => {
-            messageBus.sendMessage({
-                type: 'get-height-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isGetBinEvent(event)) {
-        messageBus.onGetBin(event, (result) => {
-            messageBus.sendMessage({
-                type: 'get-bin-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isValidateFormEvent(event)) {
-        messageBus.onValidateForm(event, (result) => {
-            messageBus.sendMessage({
-                type: 'validate-form-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isVerifySavedCardEvent(event)) {
-        messageBus.onVerifySavedCard(event, (result) => {
-            messageBus.sendMessage({
-                type: 'chargebee-verify-saved-card-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isChangeRenderModeEvent(event)) {
-        messageBus.onChangeRenderMode(event, (result) => {
-            messageBus.sendMessage({
-                type: 'change-render-mode-response',
-                correlationId: event.correlationId,
-                ...result,
-            });
-        });
-    } else if (isChargebeeEvent(event)) {
-        // ignore chargebee event
-    } else {
-        // ignore unknown event
+    } catch (error) {
+        messageBus.sendUnhandledErrorMessage(error);
+        console.error('Failed to handle message from parent', error);
     }
 };
 
@@ -422,20 +427,25 @@ export class MessageBus {
     }
 
     sendUnhandledErrorMessage(errorObj: any) {
-        const error = {
-            message: errorObj.message,
-            stack: errorObj.stack,
-            name: errorObj.name,
-            checkpoints: getCheckpoints(),
-        };
+        try {
+            const error = {
+                message: errorObj.message,
+                stack: errorObj.stack,
+                name: errorObj.name,
+                checkpoints: getCheckpoints(),
+            };
 
-        const message: UnhandledErrorMessage = {
-            type: unhandledError,
-            status: 'failure',
-            error,
-        };
+            const message: UnhandledErrorMessage = {
+                type: unhandledError,
+                status: 'failure',
+                error,
+            };
 
-        this.sendMessage(message);
+            this.sendMessage(message);
+        } catch (error) {
+            console.error('Failed to send error message to parent');
+            throw error;
+        }
     }
 
     sendMessage(message: {
