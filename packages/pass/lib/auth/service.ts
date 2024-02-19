@@ -338,15 +338,13 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         /** Partially configure the auth store before resume sequence. `keyPassword`
                          * and `sessionLockToken` are still encrypted at this point */
                         config.onAuthorize?.();
+
+                        /** Partially configure the auth store before resume sequence. `keyPassword`
+                         * and `sessionLockToken` are still encrypted at this point */
                         authStore.setSession(persistedSession);
                         await api.reset();
 
-                        const { session, clientKey } = await resumeSession({
-                            api,
-                            authStore,
-                            persistedSession,
-                            onSessionInvalid: config.onSessionInvalid,
-                        });
+                        const { session, clientKey } = await resumeSession(localID, config);
 
                         logger.info(`[AuthService] Session successfuly resumed`);
 
