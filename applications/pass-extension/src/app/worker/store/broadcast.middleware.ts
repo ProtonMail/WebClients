@@ -7,12 +7,10 @@ import { WorkerMessageType } from '@proton/pass/types';
 
 import WorkerMessageBroker from '../channel';
 
-/**
- * Redux middleware for service-worker action flow :
+/** Redux middleware for service-worker action flow :
  * - proxies every action through the extension's message channel
- * - forwards actions to saga middleware
- */
-export const workerMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
+ * - forwards actions to saga middleware */
+export const broadcastMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
     if (isAction(action)) {
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({

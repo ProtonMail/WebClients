@@ -19,7 +19,7 @@ import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { workerMiddleware } from './worker.middleware';
+import { broadcastMiddleware } from './broadcast.middleware';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -28,7 +28,7 @@ const store = configureStore({
     middleware: (middlewares) =>
         middlewares({ serializableCheck: false, thunk: false }).concat(
             requestMiddleware,
-            workerMiddleware,
+            broadcastMiddleware,
             sagaMiddleware
         ),
     enhancers: (enhancers) =>

@@ -5,7 +5,7 @@ import { requestMiddleware } from '@proton/pass/store/middlewares/request-middle
 import reducer from '@proton/pass/store/reducers';
 import type { ClientEndpoint, TabId } from '@proton/pass/types';
 
-import { proxyActionsMiddleware } from './proxy-actions.middleware';
+import { relayMiddleware } from './relay.middleware';
 
 export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
     const store = configureStore({
@@ -13,7 +13,7 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
         middleware: (mw) =>
             mw({ serializableCheck: false, thunk: false }).concat(
                 requestMiddleware,
-                proxyActionsMiddleware({ endpoint, tabId })
+                relayMiddleware({ endpoint, tabId })
             ),
         enhancers: (e) =>
             e().concat(
