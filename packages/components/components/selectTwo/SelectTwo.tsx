@@ -35,6 +35,12 @@ export interface Props<V> extends SelectProps<V> {
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
     getSearchableValue?: (value: V) => string;
     placeholder?: string;
+    /**
+     * Hides caret at the right of the input
+     * suggesting user to click on the input to display the dropdown
+     * example of usage: when there's only one option
+     */
+    noDropdownCaret?: boolean;
 }
 
 const defaultSize = { width: DropdownSizeUnit.Anchor, maxWidth: DropdownSizeUnit.Viewport } as const;
@@ -57,6 +63,7 @@ const SelectTwo = <V extends any>({
     onValue,
     getSearchableValue,
     renderSelected,
+    noDropdownCaret,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -185,6 +192,7 @@ const SelectTwo = <V extends any>({
                 onOpen={open}
                 onClick={handleAnchorClick}
                 onKeyDown={handleKeydown}
+                noCaret={noDropdownCaret}
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 {...rest}

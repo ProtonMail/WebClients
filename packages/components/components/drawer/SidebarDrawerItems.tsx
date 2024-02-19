@@ -11,7 +11,7 @@ import useDrawer from '../../hooks/drawer/useDrawer';
 import { IconName } from '../icon/Icon';
 import SidebarListItemContent from '../sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '../sidebar/SidebarListItemContentIcon';
-import { selectAccountSecurityIssuesCount } from './views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
+import { selectHasAccountSecurityIssue } from './views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
 
 interface SidebarDrawerItemProps {
@@ -38,7 +38,7 @@ const SecurityCenterDrawerItem = ({
     toggleHeaderDropdown: () => void;
     toggleDrawerApp: (args: OpenDrawerArgs) => () => void;
 }) => {
-    const issuesCount = baseUseSelector(selectAccountSecurityIssuesCount);
+    const hasAccountSecurityWarning = baseUseSelector(selectHasAccountSecurityIssue);
 
     return (
         <SidebarDrawerItem
@@ -49,7 +49,7 @@ const SecurityCenterDrawerItem = ({
             icon="shield"
             name={c('Header').t`Security Center`}
             right={
-                issuesCount ? (
+                hasAccountSecurityWarning ? (
                     <NotificationDot color={ThemeColor.Warning} alt={c('Info').t`Attention required`} />
                 ) : undefined
             }

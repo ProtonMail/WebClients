@@ -41,7 +41,7 @@ export const startAccountSecurityListener = (startListening: SharedStartListenin
 
             const nextAccountSecurity: AccountSecuritySlice['accountSecurity'] = {
                 loading: false,
-                accountRecoverySet: recoveryByEmail || recoveryByPhone,
+                accountRecoverySet: recoveryByEmail || recoveryByPhone || hasRecoveryPhrase,
                 dataRecoverySet: hasRecoveryPhrase || hasCurrentRecoveryFile,
                 twoFactorAuthSet: hasTOTPEnabled || hasFIDO2Enabled,
             };

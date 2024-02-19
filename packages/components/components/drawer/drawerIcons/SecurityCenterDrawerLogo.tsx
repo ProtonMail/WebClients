@@ -2,53 +2,25 @@ import React from 'react';
 
 const SecurityCenterDrawerLogo = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-            <path
-                fill="url(#securitya)"
-                d="M1 10.881v-7.16a1 1 0 0 1 .684-.949L9.368.211a2 2 0 0 1 1.264 0l7.684 2.561a1 1 0 0 1 .684.949v7.16a7 7 0 0 1-3.6 6.12l-4.429 2.46a2 2 0 0 1-1.942 0L4.6 17A7 7 0 0 1 1 10.88Z"
-            />
-            <mask
-                id="securityb"
-                width="18"
-                height="20"
-                x="1"
-                y="0"
-                maskUnits="userSpaceOnUse"
-                style={{ maskType: 'alpha' }}
-            >
-                <path
-                    fill="red"
-                    d="M1 10.881v-7.16a1 1 0 0 1 .684-.949L9.368.211a2 2 0 0 1 1.264 0l7.684 2.561a1 1 0 0 1 .684.949v7.16a7 7 0 0 1-3.6 6.12l-4.429 2.46a2 2 0 0 1-1.942 0L4.6 17A7 7 0 0 1 1 10.88Z"
-                />
-            </mask>
-            <g mask="url(#securityb)">
-                <path
-                    fill="url(#securityc)"
-                    d="M1 10.881v-7.16a1 1 0 0 1 .684-.949L10 0v20l-5.4-3A7 7 0 0 1 1 10.881Z"
-                />
-            </g>
-            <path
-                stroke="#636361"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeOpacity=".2"
-                strokeWidth="2"
-                d="M2 10.881v-7.16l7.684-2.562a1 1 0 0 1 .632 0L18 3.721v7.16a6 6 0 0 1-3.086 5.245l-4.428 2.46a1 1 0 0 1-.972 0l-4.428-2.46A6 6 0 0 1 2 10.881Z"
-            />
-            <circle cx="7" cy="8" r="1" fill="#fff" />
-            <circle cx="7" cy="11" r="1" fill="#fff" />
-            <rect width="5" height="2" x="9" y="7" fill="#fff" rx="1" />
-            <rect width="5" height="2" x="9" y="10" fill="#fff" rx="1" />
+        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none">
             <defs>
-                <linearGradient id="securitya" x1="7.5" x2="22.035" y1="20" y2="-.402" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#82817F" />
-                    <stop offset="1" stopColor="#D0CFCC" />
-                </linearGradient>
-                <linearGradient id="securityc" x1="4.5" x2="11.052" y1="18" y2="1.819" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#4D4C49" />
-                    <stop offset="1" stopColor="#B3B1AD" />
+                <linearGradient y2="1.01026" x2="0.33901" y1="0.01025" x1="0.33901" id="paint0_linear_32795_102417">
+                    <stop stop-color="#C4B6FE" />
+                    <stop stop-color="#8669FE" offset="1" />
                 </linearGradient>
             </defs>
+            <g>
+                {/* eslint-disable */}
+                <path
+                    fill="#6D4AFF"
+                    d="m0.875,10.9729l0,-7.1604c0,-0.4304 0.27543,-0.8125 0.68377,-0.9487l7.68377,-2.5612c0.20527,-0.0684 0.41887,-0.1026 0.63246,-0.1026l0,19.6038c-0.33463,0 -0.66926,-0.0838 -0.97129,-0.2516l-4.42821,-2.4602c-2.22226,-1.2345 -3.6005,-3.5769 -3.6005,-6.1191z"
+                />
+                <path
+                    fill="url(#paint0_linear_32795_102417)"
+                    d="m18.875,10.9729l0,-7.1604c0,-0.4304 -0.2754,-0.8125 -0.6838,-0.9487l-7.6837,-2.5612c-0.2053,-0.0684 -0.4189,-0.1026 -0.6325,-0.1026l0,19.6038c0.3346,0 0.6693,-0.0838 0.9713,-0.2516l4.4282,-2.4602c2.2223,-1.2345 3.6005,-3.5769 3.6005,-6.1191z"
+                />
+                {/* eslint-enable */}
+            </g>
         </svg>
     );
 };

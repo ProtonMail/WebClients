@@ -51,6 +51,9 @@ export const selectCanDisplayAccountSecuritySection = createSelector(
     (isPrivateUser) => !!isPrivateUser
 );
 
+/**
+ * Return exhaustive key/value list of account security issues elements
+ */
 export const selectAccountSecurityElements = createSelector(
     [selectAccountSecurity, selectTwoFactorAuthDismissed, selectIsPrivateUser],
     (accountSecurity, twoFactorAuthDismissed) => {
@@ -65,19 +68,41 @@ export const selectAccountSecurityElements = createSelector(
     }
 );
 
-export const selectAccountSecurityIssuesCount = createSelector(
+/**
+ * Return of issues in the account security section
+ * Display only the issues that should be considered as an account security warning
+ * Use case: Visual notification on the drawer button for example.
+ */
+export const selectHasAccountSecurityIssue = createSelector(
     [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
     (elements, loading, canDisplayAccountSecurity) => {
         if (loading || !canDisplayAccountSecurity) {
-            return 0;
+            return false;
         }
 
-        const elementsValidForCounter = [
+        const elementsConsideredAsIssue = [elements.accountRecoverySet, elements.dataRecoverySet];
+
+        return elementsConsideredAsIssue.some((value) => !value);
+    }
+);
+
+/**
+ * Returns the count of issues in the account security section
+ * Use case: Allows to know if we should display cards or success message
+ */
+export const selectHasAccountSecurityCardToDisplay = createSelector(
+    [selectAccountSecurityElements, selectAccountSecurityLoading, selectCanDisplayAccountSecuritySection],
+    (elements, loading, canDisplayAccountSecurity) => {
+        if (loading || !canDisplayAccountSecurity) {
+            return false;
+        }
+
+        const securityCardsToDisplay = [
             elements.accountRecoverySet,
             elements.dataRecoverySet,
             elements.twoFactorAuthSetOrDismissed,
         ];
 
-        return elementsValidForCounter.filter((value) => !value).length;
+        return securityCardsToDisplay.some((value) => !value);
     }
 );

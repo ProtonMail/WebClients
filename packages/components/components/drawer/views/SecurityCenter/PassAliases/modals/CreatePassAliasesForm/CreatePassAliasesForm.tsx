@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Href } from '@proton/atoms/Href';
 import { Input } from '@proton/atoms/Input';
 import {
     Form,
@@ -23,7 +24,9 @@ import { useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import passAliasesLogo from '@proton/styles/assets/img/illustrations/pass-aliases-logo.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -140,6 +143,12 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
         void initForm();
     }, []);
 
+    const passLink = (
+        <Href key="pass-aliases-support-link" href={getKnowledgeBaseUrl('/addresses-and-aliases')}>
+            {PASS_APP_NAME}
+        </Href>
+    );
+
     return (
         <ModalTwo size="small" {...modalProps}>
             <ModalTwoHeader />
@@ -149,8 +158,11 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                 </div>
                 <h1 className="text-center text-bold">{c('Security Center').t`Create alias`}</h1>
                 <p className="text-center color-weak">
-                    {c('Security Center')
-                        .t`When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.`}
+                    {
+                        // translator: <passLink> text is "Proton Pass", with a link on it, to a Proton Pass page.
+                        c('Security Center')
+                            .jt`When asked for your email address, give this alias instead. Aliases are provided by ${passLink}.`
+                    }
                 </p>
                 {loadingData && (
                     <div className="flex items-center min-h-custom" style={{ '--min-h-custom': '25em' }}>
@@ -211,6 +223,7 @@ const CreatePassAliasesForm = ({ modalProps, onSubmit }: Props) => {
                                     onBlur={() => setBlurred({ ...blurred, mailbox: true })}
                                     unstyled
                                     className="rounded-none"
+                                    noDropdownCaret={mailboxes.length === 1}
                                     onValue={(aliasMailbox: AliasMailbox) => {
                                         setFormValues({
                                             ...formValues,
