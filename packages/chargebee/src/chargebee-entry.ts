@@ -7,11 +7,11 @@ import {
     PaymentIntent,
 } from '../lib';
 import { createChargebee, getChargebeeInstance } from './chargebee';
+import { addCheckpoint } from './checkpoints';
 import { getConfiguration, setConfiguration } from './configuration';
 import {
     ChangeRenderModeEvent,
     ChargebeeSubmitEvent,
-    Checkpoint,
     OnChangeRenderModeHandler,
     OnGetBinHandler,
     OnSetPaypalPaymentIntentHandler,
@@ -28,11 +28,6 @@ import paypalTemplateString from './templates/paypal.html?raw';
 // eslint-disable-next-line import/no-unresolved
 import warningIcon from './templates/warningicon.html?raw';
 import { trackFocus } from './ui-utils';
-
-const checkpoints: Checkpoint[] = [];
-function addCheckpoint(name: string, data?: any) {
-    checkpoints.push({ name, data });
-}
 
 function getChargebeeFormWrapper(): HTMLElement {
     const chargebeeFormWrapper = document.getElementById('chargebee-form-wrapper');
@@ -533,7 +528,7 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
 function handleError(error: any) {
     try {
         const messageBus = getMessageBus();
-        messageBus.sendUnhandledErrorMessage(error, checkpoints);
+        messageBus.sendUnhandledErrorMessage(error);
     } catch (err) {
         console.error('Failed to send error message to parent');
         throw err;
