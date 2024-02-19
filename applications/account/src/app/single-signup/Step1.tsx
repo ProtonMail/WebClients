@@ -345,6 +345,7 @@ const Step1 = ({
     defaultEmail,
     mode,
     selectedPlan,
+    hasExtendedCycles,
     isB2bPlan,
     background,
     onComplete,
@@ -363,6 +364,7 @@ const Step1 = ({
     defaultEmail?: string;
     mode: 'signup' | 'pricing';
     selectedPlan: Plan;
+    hasExtendedCycles: boolean;
     isB2bPlan: boolean;
     background?: Background;
     upsellShortPlan: ReturnType<typeof getUpsellShortPlan> | undefined;
@@ -762,6 +764,15 @@ const Step1 = ({
     });
 
     const { cycles, upsellCycle } = (() => {
+        if (hasExtendedCycles) {
+            return {
+                upsellCycle: CYCLE.THIRTY,
+                cycles: viewportWidth['>=large']
+                    ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
+                    : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
+            };
+        }
+
         return {
             upsellCycle: CYCLE.TWO_YEARS,
             cycles: viewportWidth['>=large']
