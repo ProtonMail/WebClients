@@ -1,8 +1,8 @@
-import log from "electron-log";
+import Logger from "electron-log";
 import { getMailView, updateView } from "../view/viewManagement";
 
 export const handleMailToUrls = (url: string) => {
-    log.info("Open mailto url and adding it to path");
+    Logger.info("Open mailto url and adding it to path");
 
     if (!url.startsWith("mailto:")) return;
 
@@ -14,13 +14,13 @@ export const handleMailToUrls = (url: string) => {
     try {
         const currentURL = new URL(currentUrlString);
         if (currentURL.hash) {
-            log.info("URL already has a anchor");
+            Logger.info("URL already has a anchor");
             currentURL.hash.replace("#", "");
         }
 
         currentURL.hash = `#mailto=${url}`;
         mailView.webContents.loadURL(currentURL.toString());
     } catch (error) {
-        log.error("Error while parsing mailto url");
+        Logger.error("Error while parsing mailto url");
     }
 };

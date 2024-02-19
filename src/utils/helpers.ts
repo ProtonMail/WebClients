@@ -1,5 +1,5 @@
 import { BrowserWindow, app } from "electron";
-import log from "electron-log/main";
+import Logger from "electron-log";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -13,7 +13,7 @@ export const getPlatform = () => {
 };
 
 export const restartApp = (timeout = 300) => {
-    log.info("Restarting app in", timeout, "ms");
+    Logger.info("Restarting app in", timeout, "ms");
     setTimeout(() => {
         app.relaunch();
         app.exit();
@@ -28,7 +28,7 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
     webContents.session.clearCache();
 
     // Clear logs
-    log.transports.file.getFile().clear();
+    Logger.transports.file.getFile().clear();
 
     if (restart) {
         restartApp(timeout);

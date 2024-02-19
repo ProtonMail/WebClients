@@ -1,5 +1,5 @@
 import { BrowserWindow, Event, app } from "electron";
-import log from "electron-log";
+import Logger from "electron-log";
 import { saveWindowBounds } from "../../store/boundsStore";
 import { isMac, isWindows } from "../helpers";
 import { areAllWindowsClosedOrHidden } from "./windowHelpers";
@@ -12,11 +12,11 @@ export const macOSExitEvent = (window: BrowserWindow, event: Event) => {
     event.preventDefault();
     saveWindowBounds(window);
     if (window.isFullScreen()) {
-        log.info("close, isFullScreen on macOS");
+        Logger.info("close, isFullScreen on macOS");
         window.setFullScreen(false);
 
         window.on("leave-full-screen", () => {
-            log.info("close, leave-full-screen on macOS");
+            Logger.info("close, leave-full-screen on macOS");
             window.hide();
         });
     } else {
@@ -35,7 +35,7 @@ export const windowsExitEvent = (window: BrowserWindow, event: Event) => {
 
     // Close the application if all windows are closed
     if (areAllWindowsClosedOrHidden()) {
-        log.info("close, areAllWindowsClosedOrHidden on Windows");
+        Logger.info("close, areAllWindowsClosedOrHidden on Windows");
         BrowserWindow.getAllWindows().forEach((window) => window.destroy());
         app.quit();
     }

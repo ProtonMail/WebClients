@@ -1,5 +1,5 @@
 import { BrowserWindow, Notification, app, session, shell } from "electron";
-import log from "electron-log/main";
+import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
@@ -42,8 +42,8 @@ saveAppURL();
 saveAppID();
 
 // Log initialization
-log.initialize({ preload: true });
-log.info("App start is mac:", isMac, "is windows: ", isWindows);
+Logger.initialize({ preload: true });
+Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
 
 // Move uninstaller on macOS
 moveUninstaller();
@@ -57,9 +57,9 @@ deleteWindowStore(); // Introduced in v0.9.4
 
 // Detects if the application is default handler for mailto, works on macOS for now
 if (app.isDefaultProtocolClient("mailto")) {
-    log.info("App is default mailto client");
+    Logger.info("App is default mailto client");
 } else {
-    log.info("App is not default mailto client");
+    Logger.info("App is not default mailto client");
 }
 
 app.whenReady().then(() => {
@@ -84,7 +84,7 @@ app.whenReady().then(() => {
 
     app.on("activate", () => {
         if (isMac && areAllWindowsClosedOrHidden()) {
-            log.info("Activate app, all windows hidden");
+            Logger.info("Activate app, all windows hidden");
             window.show();
         }
     });
@@ -106,7 +106,7 @@ app.whenReady().then(() => {
             return callback(true);
         }
 
-        log.info("Permission request rejected", permission);
+        Logger.info("Permission request rejected", permission);
         callback(false);
     });
 });
@@ -120,10 +120,11 @@ app.on("window-all-closed", () => {
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
     const window = BrowserWindow.getFocusedWindow();
-    if (isMac && window) {
+    Logger.info("Before quit", window);
+    if (isMac) {
         saveWindowBounds(window);
-        window.destroy();
     }
+    app.quit();
 });
 
 // Security addition
@@ -133,7 +134,7 @@ app.on("web-contents-created", (_ev, contents) => {
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
-        log.info("did-navigate-in-page");
+        Logger.info("did-navigate-in-page");
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
         }
@@ -142,7 +143,7 @@ app.on("web-contents-created", (_ev, contents) => {
         const calendarView = getCalendarView();
         const calendarSession = getSessionID(calendarView.webContents.getURL());
         if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
-            log.info("Refresh calendar session", sessionID);
+            Logger.info("Refresh calendar session", sessionID);
             reloadCalendarWithSession(sessionID);
         }
     });
@@ -150,7 +151,7 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        log.info("will-navigate");
+        Logger.info("will-navigate");
         if (!isHostAllowed(details.url) && !global.oauthProcess) {
             return preventDefault(details);
         }
@@ -162,20 +163,20 @@ app.on("web-contents-created", (_ev, contents) => {
         const { url } = details;
 
         if (isHostCalendar(url)) {
-            log.info("Open calendar window");
+            Logger.info("Open calendar window");
             updateView("calendar");
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
-            log.info("Open mail window");
+            Logger.info("Open mail window");
             updateView("mail");
             return { action: "deny" };
         }
 
         if (isHostAccount(url)) {
             // Upsell links should be opened in browser to avoid 3D secure issues
-            log.info("Account link");
+            Logger.info("Account link");
             if (isAccoutLite(url) || isUpsellURL(url)) {
                 logURL("Upsell link or lite account, open in browser", url);
                 shell.openExternal(url);

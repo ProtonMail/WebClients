@@ -1,5 +1,5 @@
 import { createHash, randomUUID } from "crypto";
-import log from "electron-log";
+import Logger from "electron-log";
 import Store from "electron-store";
 import { z } from "zod";
 
@@ -32,7 +32,6 @@ export const generateAppID = async () => {
         distribution,
     };
 
-    log.info("AppID generated", appID);
+    Logger.info("AppID generated", appID);
     return appID;
 };
-

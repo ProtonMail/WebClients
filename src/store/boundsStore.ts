@@ -21,10 +21,10 @@ export const getWindowBounds = () => {
     return ensureWindowIsVisible(windowBounds);
 };
 
-export const saveWindowBounds = (mainWindow: BrowserWindow) => {
-    if (!mainWindow || mainWindow.isFullScreen()) {
+export const saveWindowBounds = (window?: BrowserWindow) => {
+    if (!window || window.isFullScreen()) {
         return;
     }
 
-    store.set("windowBounds", mainWindow.getBounds());
+    store.set("windowBounds", window.getBounds());
 };

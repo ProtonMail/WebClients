@@ -1,5 +1,5 @@
 import { BrowserView, BrowserWindow, Session, app } from "electron";
-import log from "electron-log";
+import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getConfig } from "../config";
 import { checkKeys } from "../keyPinning";
@@ -62,9 +62,9 @@ const configureViews = () => {
 };
 
 const loadMailView = (window: BrowserWindow) => {
-    log.info("Loading mail view");
+    Logger.info("Loading mail view");
     if (!mailView) {
-        log.info("mailView not created");
+        Logger.info("mailView not created");
         return;
     }
 
@@ -73,9 +73,9 @@ const loadMailView = (window: BrowserWindow) => {
 };
 
 const loadCalendarView = (window: BrowserWindow) => {
-    log.info("Loading calendar view");
+    Logger.info("Loading calendar view");
     if (!calendarView) {
-        log.info("calendarView not created");
+        Logger.info("calendarView not created");
         return;
     }
 
@@ -84,9 +84,9 @@ const loadCalendarView = (window: BrowserWindow) => {
 };
 
 export const loadAccountView = (window: BrowserWindow) => {
-    log.info("Loading account view");
+    Logger.info("Loading account view");
     if (!accountView) {
-        log.info("accountView not created");
+        Logger.info("accountView not created");
         const congif = getWindowConfig(window.webContents.session);
         accountView = new BrowserView({ ...congif });
     }
@@ -108,13 +108,13 @@ export const updateView = (target: VIEW_TARGET) => {
         return;
     }
 
-    log.info("unsupported view", target);
+    Logger.info("unsupported view", target);
 };
 
 export const reloadCalendarWithSession = (session: string) => {
-    log.info("Reloading calendar with session", session);
+    Logger.info("Reloading calendar with session", session);
     if (!calendarView) {
-        log.error("calendarView not created");
+        Logger.error("calendarView not created");
         const config = getWindowConfig(BrowserWindow.getFocusedWindow().webContents.session);
         calendarView = new BrowserView({ ...config });
     }

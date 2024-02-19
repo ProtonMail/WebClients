@@ -1,4 +1,4 @@
-import log from "electron-log";
+import Logger from "electron-log";
 import { getConfig } from "../config";
 import { logURL } from "../logs";
 
@@ -8,7 +8,7 @@ export const getSessionID = (url: string) => {
         const pathName = new URL(url).pathname;
         return pathName.match(sessionRegex)?.[0];
     } catch (error) {
-        log.error("getSessionID", error);
+        Logger.error("getSessionID", error);
         return false;
     }
 };
@@ -20,7 +20,7 @@ export const isHostCalendar = (host: string) => {
 
         return urls.calendar === hostURl.origin;
     } catch (error) {
-        log.error("isHostCalendar", error);
+        Logger.error("isHostCalendar", error);
         return false;
     }
 };
@@ -32,7 +32,7 @@ export const isHostMail = (host: string) => {
 
         return urls.mail === hostURl.origin;
     } catch (error) {
-        log.error("isHostMail", error);
+        Logger.error("isHostMail", error);
         return false;
     }
 };
@@ -44,7 +44,7 @@ export const isHostAccount = (host: string) => {
 
         return urls.account === hostURl.origin;
     } catch (error) {
-        log.error("isHostAccount", error);
+        Logger.error("isHostAccount", error);
         return false;
     }
 };
@@ -54,7 +54,7 @@ export const isAccoutLite = (host: string) => {
         const hostURl = new URL(host);
         return hostURl.pathname.includes("/lite");
     } catch (error) {
-        log.error("isAccoutLite", error);
+        Logger.error("isAccoutLite", error);
         return false;
     }
 };
@@ -68,7 +68,7 @@ export const isUpsellURL = (host: string) => {
         const coupon = hostURl.searchParams.get("coupon");
         return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
     } catch (error) {
-        log.error("isUpsellURL", error);
+        Logger.error("isUpsellURL", error);
         return false;
     }
 };
@@ -90,7 +90,7 @@ export const isHostAllowed = (host: string) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
-        log.error("isHostAllowed", error);
+        Logger.error("isHostAllowed", error);
         return false;
     }
 };

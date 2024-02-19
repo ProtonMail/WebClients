@@ -1,10 +1,10 @@
 import { contextBridge, ipcRenderer } from "electron";
-import log from "electron-log";
+import Logger from "electron-log";
 import { IPCMessagePayload, IPCMessageType } from "./ipc/ipcConstants";
 
 contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
     send: <T extends IPCMessageType>(type: IPCMessageType, payload: IPCMessagePayload<T>) => {
-        log.info(`Sending IPC message: ${type}`);
+        Logger.info(`Sending IPC message: ${type}`);
         switch (type) {
             case "updateNotification":
                 ipcRenderer.send("updateNotification", payload);
@@ -25,7 +25,7 @@ contextBridge.exposeInMainWorld("ipcInboxMessageBroker", {
                 ipcRenderer.send("changeView", payload);
                 break;
             default:
-                log.error(`Unknown IPC message type: ${type}`);
+                Logger.error(`Unknown IPC message type: ${type}`);
                 break;
         }
     },

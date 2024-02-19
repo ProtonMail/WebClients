@@ -1,5 +1,5 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Session } from "electron";
-import log from "electron-log";
+import Logger from "electron-log";
 import { getWindowBounds } from "../../store/boundsStore";
 import { getConfig } from "../config";
 import { isMac, isWindows } from "../helpers";
@@ -9,7 +9,7 @@ const config = getConfig();
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
-        log.info("getOSSpecificConfig, macOSConfig");
+        Logger.info("getOSSpecificConfig, macOSConfig");
         return {
             frame: false,
             titleBarStyle: "hidden",
@@ -17,10 +17,10 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
             trafficLightPosition: { x: 12, y: 18 },
         };
     } else if (isWindows) {
-        log.info("getOSSpecificConfig, windowOSConfig");
+        Logger.info("getOSSpecificConfig, windowOSConfig");
         return {};
     }
-    log.info("getOSSpecificConfig, empty object");
+    Logger.info("getOSSpecificConfig, empty object");
     return {};
 };
 
