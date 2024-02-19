@@ -319,6 +319,11 @@ export type PaymentMethodFlows =
     | 'add-card'
     | 'add-paypal';
 
+export function isSignupFlow(flow: PaymentMethodFlows): boolean {
+    const signupFlows: PaymentMethodFlows[] = ['signup', 'signup-pass', 'signup-pass-upgrade', 'signup-vpn'];
+    return signupFlows.includes(flow);
+}
+
 export type V5Payments = {
     v: 5;
 };
