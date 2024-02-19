@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
 import { ModalTwo } from '@proton/components/components';
-import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 
 import {
     MnemonicBackup,
@@ -11,30 +10,36 @@ import {
     SetupConfirmation,
     SetupModeSelect,
 } from './steps';
+import { WalletNameAndFiatInput } from './steps/WalletNameAndFiatInput';
 import { WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
 
 interface Props {
+    isFirstSetup?: boolean;
     isOpen: boolean;
     onClose: () => void;
 }
 
-export const WalletSetupModal = ({ isOpen, onClose }: Props) => {
+export const WalletSetupModal = ({ isFirstSetup, isOpen, onClose }: Props) => {
     const {
         currentStep,
         mnemonic,
         passphrase,
+        walletName,
         onSelectSetupMode,
         onMnemonicGenerated,
         onNextStep,
         onSaveNewWallet,
+        onWalletSubmit,
         onMnemonicInput,
     } = useWalletSetupModal({ isOpen, onSetupFinish: onClose });
 
-    const step = useMemo(() => {
+    const modal = useMemo(() => {
         switch (currentStep) {
             case WalletSetupStep.SetupModeChoice:
-                return <SetupModeSelect onModeSelection={(mode) => onSelectSetupMode(mode)} />;
+                return (
+                    <SetupModeSelect isFirstSetup={isFirstSetup} onModeSelection={(mode) => onSelectSetupMode(mode)} />
+                );
             case WalletSetupStep.MnemonicInput:
                 return <MnemonicInput onContinue={onMnemonicInput} />;
             case WalletSetupStep.MnemonicGeneration:
@@ -43,14 +48,35 @@ export const WalletSetupModal = ({ isOpen, onClose }: Props) => {
                 return <MnemonicBackup mnemonic={mnemonic} onContinue={onNextStep} />;
             case WalletSetupStep.PassphraseInput:
                 return <PassphraseInput onContinue={onSaveNewWallet} />;
+            case WalletSetupStep.WalletNameAndFiatInput:
+                return <WalletNameAndFiatInput onContinue={onWalletSubmit} />;
             case WalletSetupStep.Confirmation:
-                return <SetupConfirmation mnemonic={mnemonic} passphrase={passphrase} onOpenWallet={onNextStep} />;
+                return (
+                    <SetupConfirmation
+                        walletName={walletName}
+                        mnemonic={mnemonic}
+                        passphrase={passphrase}
+                        onOpenWallet={onNextStep}
+                    />
+                );
         }
-    }, [currentStep, onMnemonicGenerated, mnemonic, onNextStep, onSaveNewWallet, passphrase, onSelectSetupMode]);
+    }, [
+        isFirstSetup,
+        walletName,
+        currentStep,
+        mnemonic,
+        passphrase,
+        onMnemonicInput,
+        onMnemonicGenerated,
+        onNextStep,
+        onSaveNewWallet,
+        onWalletSubmit,
+        onSelectSetupMode,
+    ]);
 
     return (
         <ModalTwo className="p-0" open={isOpen} onClose={onClose} enableCloseWhenClickOutside>
-            <ModalContent className="p-0 m-0">{step}</ModalContent>
+            {modal}
         </ModalTwo>
     );
 };
