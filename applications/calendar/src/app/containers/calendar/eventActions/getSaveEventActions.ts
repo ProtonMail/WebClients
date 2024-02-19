@@ -385,7 +385,6 @@ const getSaveEventActions = async ({
         newVeventComponent: newEditEventData.veventComponent,
         recurrence: actualEventRecurrence,
         isOrganizer,
-        hasSingleEdits: singleEdits.length >= 1,
     });
     const isBreakingChange = hasModifiedDateTimes || !isRruleEqual;
 
