@@ -206,24 +206,25 @@ const PlanSelection = ({
         return !(plan === FREE_PLAN && allPlans.length === 1);
     }
 
-    const B2CPlans = [
+    function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
+    function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
+    function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
+        return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
+    }
+
+    const IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-    ]
-        .filter(isTruthy)
-        .filter(excludingCurrentPlanWithMaxCycle)
-        .filter(excludingTheOnlyFreePlan);
+    ]);
 
-    const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]
-        .filter(isTruthy)
-        .filter(excludingCurrentPlanWithMaxCycle)
-        .filter(excludingTheOnlyFreePlan);
+    const FamilyPlans = filterPlans([hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]]);
 
-    const vpnB2BPlans = [plansMap[PLANS.VPN_PRO], plansMap[PLANS.VPN_BUSINESS], getVPNEnterprisePlan(vpnServers)]
-        .filter(isTruthy)
-        .filter(excludingCurrentPlanWithMaxCycle)
-        .filter(excludingTheOnlyFreePlan);
+    const vpnB2BPlans = filterPlans([
+        plansMap[PLANS.VPN_PRO],
+        plansMap[PLANS.VPN_BUSINESS],
+        getVPNEnterprisePlan(vpnServers),
+    ]);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
@@ -238,15 +239,12 @@ const PlanSelection = ({
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else {
-        B2BPlans = [
+        B2BPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
             getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) ||
                 plansMap[PLANS.MAIL_PRO],
             plansMap[PLANS.BUNDLE_PRO],
-        ]
-            .filter(isTruthy)
-            .filter(excludingCurrentPlanWithMaxCycle)
-            .filter(excludingTheOnlyFreePlan);
+        ]);
     }
 
     const isSignupMode = mode === 'signup';
@@ -372,15 +370,15 @@ const PlanSelection = ({
     };
 
     const tabs: Tab[] = [
-        B2BPlans.length > 0 && {
+        IndividualPlans.length > 0 && {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
                 <div
                     className="plan-selection plan-selection--b2c mt-4"
-                    style={{ '--plan-selection-number': B2CPlans.length }}
+                    style={{ '--plan-selection-number': IndividualPlans.length }}
                     data-testid="b2c-plan"
                 >
-                    {B2CPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
+                    {IndividualPlans.map((plan) => renderPlanCard(plan, Audience.B2C))}
                 </div>
             ),
             audience: Audience.B2C,
