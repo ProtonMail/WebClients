@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
+import drive5gbSvg from '@proton/styles/assets/img/onboarding/drive-5gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
 import useChecklist from '../onboarding/useChecklist';
@@ -65,8 +65,8 @@ const DriveOnboardingModal = (props: Props) => {
                 <OnboardingContent
                     title={c('Onboarding Title').t`Your welcome bonus`}
                     description={c('Onboarding Info')
-                        .t`Get started using ${DRIVE_APP_NAME} and we'll double your free storage to 1GB!`}
-                    img={<img src={drive1gbSvg} alt={DRIVE_APP_NAME} />}
+                        .t`Get started using ${DRIVE_APP_NAME} and we'll upgrade your storage to 5 GB!`}
+                    img={<img src={drive5gbSvg} alt={DRIVE_APP_NAME} />}
                 />
                 <div>
                     {c('Onboarding Info').ngettext(

@@ -70,8 +70,9 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div>
-                <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
-                <div className="mb-4 color-weak">{c('Info').t`Way to go, you’ve just doubled your free storage!`}</div>
+                <h6 className="text-semibold">{c('Title').t`You’ve got 5 GB of storage`}</h6>
+                <div className="mb-4 color-weak">{c('Info')
+                    .t`Way to go, you've just increased your storage to 5 GB!`}</div>
             </div>
         </div>
     );
@@ -111,22 +112,22 @@ function WelcomeActionsSpotlight({
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div>
-                <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>
-                {/* translator: You have X days left to claim your 500 MB welcome bonus and double your storage */}
+                <h6 className="text-semibold">{c('Title').t`Your 3 GB bonus`}</h6>
+                {/* translator: You have X days left to claim your 3 GB welcome bonus and upgrade your storage */}
                 {c('Info').ngettext(
-                    msgid`You have ${expiresInDays} day left to claim your 500 MB welcome bonus and `,
-                    `You have ${expiresInDays} days left to claim your 500 MB welcome bonus and `,
+                    msgid`You have ${expiresInDays} day left to claim your 3 GB welcome bonus and `,
+                    `You have ${expiresInDays} days left to claim your 3 GB welcome bonus and `,
                     expiresInDays
                 )}
                 <a href={getKnowledgeBaseUrl('/more-storage-proton-drive')} target="_blank">{c('Info')
-                    .t`double your storage`}</a>
+                    .t`upgrade your storage`}</a>
             </div>
         </div>
     ) : (
         <div>
             <h6 className="text-semibold">{c('Title').t`Your welcome actions`}</h6>
             <div className="mb-4 color-weak">
-                {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 500 MB storage bonus! Take action today.`}
+                {c('Info').t`Get to know ${DRIVE_APP_NAME} and earn your 3 GB storage bonus! Take action today.`}
             </div>
             <WelcomeActions
                 completedActions={completedActions}
@@ -181,7 +182,7 @@ function FloatingSpotlight({
             hasClose={hasClose}
         >
             <FloatingButton
-                title={c('Action').t`Your 500 MB bonus`}
+                title={c('Action').t`Your 3 GB bonus`}
                 onClick={onClick}
                 color={color}
                 className="w-custom h-custom"
