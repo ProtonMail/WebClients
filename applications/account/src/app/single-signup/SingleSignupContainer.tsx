@@ -11,7 +11,7 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
+import { getHasExtendedCycles, getVPNPlanToUse } from '@proton/components/containers/payments/subscription/helpers';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -165,11 +165,16 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             ]);
 
             const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const vpnPlanName = getVPNPlanToUse(plansMap, {});
+            const vpnPlanName = getVPNPlanToUse(
+                plansMap,
+                signupParameters.preSelectedPlan ? { [signupParameters.preSelectedPlan]: 1 } : {}
+            );
+
+            const hasExtendedCycles = getHasExtendedCycles(vpnPlanName, signupParameters.coupon);
 
             const defaults: SignupDefaults = {
                 plan: vpnPlanName,
-                cycle: CYCLE.TWO_YEARS,
+                cycle: hasExtendedCycles ? CYCLE.THIRTY : CYCLE.TWO_YEARS,
             };
 
             const cycle = signupParameters.cycle || defaults.cycle;
@@ -178,7 +183,9 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             const subscriptionDataCycleMapping = await getPlanCardSubscriptionData({
                 plansMap,
                 planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
+                cycles: hasExtendedCycles
+                    ? [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY]
+                    : [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
                 paymentsApi,
                 currency,
                 coupon: signupParameters.coupon,
@@ -199,7 +206,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
 
             const subscriptionData =
                 subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                subscriptionDataCycleMapping[vpnPlanName]?.[CYCLE.TWO_YEARS];
+                subscriptionDataCycleMapping[vpnPlanName]?.[hasExtendedCycles ? CYCLE.THIRTY : CYCLE.TWO_YEARS];
 
             setModelDiff({
                 domains,
@@ -292,6 +299,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         className={loading ? 'visibility-hidden' : undefined}
                         loading={loading}
                         selectedPlan={selectedPlan}
+                        hasExtendedCycles={getHasExtendedCycles(selectedPlan.Name as PLANS, signupParameters.coupon)}
                         isB2bPlan={isB2bPlan}
                         background={background}
                         vpnServersCountData={vpnServersCountData}
