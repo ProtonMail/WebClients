@@ -1,3 +1,5 @@
+import { addMinutes, fromUnixTime } from 'date-fns';
+
 import { PRODUCT_BIT, UNPAID_STATE, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
@@ -47,4 +49,18 @@ export const getUserByte = (user: User) => {
     const userID = user?.ID || '';
     const byteCharacters = decodeBase64URL(userID);
     return byteCharacters.charCodeAt(0);
+};
+
+export const getUserAccountAge = (user: User) => {
+    return fromUnixTime(user.CreateTime);
+};
+
+/**
+ * Checks if a user is older than a specified number of minutes.
+ * @param user - The user to check.
+ * @param minutes - The number of minutes to compare against.
+ * @returns `true` if the user is older than the specified number of minutes, `false` otherwise.
+ */
+export const isUserOlderThan = (user: User, minutes: number) => {
+    return new Date() > addMinutes(getUserAccountAge(user), minutes);
 };
