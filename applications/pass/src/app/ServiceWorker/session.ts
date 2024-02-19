@@ -18,8 +18,7 @@ const SESSION_LOCK_ROUTES = globToRegExp('/api/pass/v1/user/session/lock/*');
 
 export const matchRefreshRoute = (pathname: string): boolean => pathname === REFRESH_ROUTE;
 export const matchLockRoute = (pathname: string): boolean => SESSION_LOCK_ROUTES.test(pathname);
-export const matchSetLocalKeyRoute = (pathname: string, method: string): boolean =>
-    method === 'PUT' && pathname === SET_LOCAL_KEY_ROUTE;
+export const matchSetLocalKeyRoute = (pathname: string): boolean => pathname === SET_LOCAL_KEY_ROUTE;
 
 export const handleRefresh = fetchController.register(requestLockFactory());
 export const handleLock = fetchController.register(requestQueueFactory());

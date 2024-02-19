@@ -30,11 +30,11 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    const { url, method } = event.request;
+    const { url } = event.request;
     const { pathname } = new URL(url);
 
     if (matchLockRoute(pathname)) return handleLock(event);
-    if (matchSetLocalKeyRoute(pathname, method)) return handleSetLocalKey(event);
+    if (matchSetLocalKeyRoute(pathname)) return handleSetLocalKey(event);
     if (matchRefreshRoute(pathname)) return handleRefresh(event);
     if (matchPollingRoute(pathname)) return handlePolling(event);
     if (matchImageRoute(pathname)) return handleImage(event);
