@@ -25,7 +25,6 @@ export const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions)
     const saveText = c('Title').t`Save`;
     const saveChangesText = c('Title').t`Save changes`;
 
-
     if (types.length !== 1) {
         if (isSendInviteType) {
             return {
@@ -172,7 +171,7 @@ export const getRecurringWarningText = ({
     if (canEditOnlyPersonalPart) {
         return '';
     }
-    if (isOrganizer && !isBreakingChange && !hasPreviousSingleEdits) {
+    if (isOrganizer && !isBreakingChange) {
         return '';
     }
     return c('Info').t`Previous modifications on this series will be lost.`;
