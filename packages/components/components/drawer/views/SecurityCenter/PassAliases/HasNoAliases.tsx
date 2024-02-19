@@ -2,14 +2,16 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { SettingsLink } from '@proton/components/components';
+import { Href } from '@proton/atoms/Href';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import aliasSampleSvg from '@proton/styles/assets/img/illustrations/pass-aliases-alias-sample.svg';
 
 import { DrawerAppHeadline } from '../../shared';
 
 const HasNoAliases = () => {
     const learnMoreLink = (
-        <SettingsLink key="ttag-aliases-link" path="/addresses-and-aliases">{c('Link').t`Learn more`}</SettingsLink>
+        <Href key="pass-aliases-support" href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link')
+            .t`Learn more`}</Href>
     );
 
     return (

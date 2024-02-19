@@ -16,8 +16,8 @@ import clsx from '@proton/utils/clsx';
 import { DrawerAppSection } from '../../shared';
 import AliasesList from './AliasesList';
 import HasNoAliases from './HasNoAliases';
+import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './PassAliasesInitError';
 import { PassAliasesProvider, usePassAliasesContext } from './PassAliasesProvider';
-import { FAILED_TO_INIT_PASS_BRIDGE_ERROR } from './constant';
 import CreatePassAliasesForm from './modals/CreatePassAliasesForm/CreatePassAliasesForm';
 import PassAliasesUpsellModal from './modals/PassAliasesUpsellModal';
 import TryProtonPass from './modals/TryProtonPass';
@@ -31,7 +31,7 @@ const PassAliases = () => {
         loading,
         passAliasesItems,
         passAliasesUpsellModal,
-        hasReachedAliasesLimit,
+        hasReachedAliasesCountLimit: hasReachedAliasesLimit,
         hadInitialisedPreviously,
     } = usePassAliasesContext();
     const authentication = useAuthentication();
@@ -120,7 +120,7 @@ export default function PassAliasesWrapper() {
             initiative="drawer-security-center"
             renderFunction={(e) => (
                 <>
-                    {e?.message === FAILED_TO_INIT_PASS_BRIDGE_ERROR ? (
+                    {e?.name === FAILED_TO_INIT_PASS_BRIDGE_ERROR ? (
                         <GenericErrorDisplay title={c('Error').t`Aliases could not be loaded`}>
                             <div className="text-weak text-sm">
                                 {c('Error message').t`Please refresh the page or try again later.`}

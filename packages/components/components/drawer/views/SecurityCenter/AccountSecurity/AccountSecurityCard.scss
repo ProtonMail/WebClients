@@ -12,16 +12,15 @@
 	}
 
 	&-icon {
+		fill: var(--signal-info);
+
 		&-container {
 			inline-size: rem(28);
+			background-color: var(--signal-info-minor-2);
 		}
 
-		&-warning {
-			background-color: var(--signal-warning-minor-1);
-		}
-
-		&-danger {
-			background-color: var(--signal-danger-minor-2);
+		&-bubble {
+			transform: translate(50%, -50%);
 		}
 	}
 }

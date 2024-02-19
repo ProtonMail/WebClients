@@ -1,3 +1,4 @@
+import type { HydratedAccessState } from '@proton/pass/store/reducers';
 import type { AliasDetails, AliasMailbox, AliasOptions, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import type { Address, User } from '@proton/shared/lib/interfaces';
@@ -11,6 +12,12 @@ export type PassBridgeInitOptions = {
 export interface PassBridge {
     ready: () => Promise<boolean>;
     hydrate: (options: PassBridgeInitOptions) => Promise<void>;
+    user: {
+        /**
+         * Get the user plan which includes aliases limit
+         */
+        getUserAccess: () => Promise<HydratedAccessState>;
+    };
     vault: {
         /**
          * Resolves the default - oldest, active and owned - vault.
