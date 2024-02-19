@@ -4,6 +4,7 @@ import { ThemeColor } from '@proton/colors';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
 
+import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
 import { FeatureCode } from '../containers/features';
 import getOverallStatus from '../containers/recovery/getOverallStatus';
 import useAddresses from './useAddresses';
@@ -21,6 +22,8 @@ const useRecoveryNotification = (
 ): { path: string; text: string; color: ThemeColor } | undefined => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
+    const isSecurityCenterEnabled = useSecurityCenter();
+    const alreadyDisplayedInSecurityCenter = isSecurityCenterEnabled && isQuickSettings;
 
     const [{ accountRecoveryStatus, dataRecoveryStatus, mnemonicIsSet }, loadingRecoveryStatus] = useRecoveryStatus();
 
@@ -57,7 +60,7 @@ const useRecoveryNotification = (
         };
     }
 
-    if (isRecoveryFileAvailable && hasOutdatedRecoveryFile) {
+    if (isRecoveryFileAvailable && hasOutdatedRecoveryFile && !alreadyDisplayedInSecurityCenter) {
         return {
             path: '/recovery#data',
             text: c('Action').t`Update recovery file`,
@@ -83,7 +86,7 @@ const useRecoveryNotification = (
 
     const mnemonicCanBeSet =
         user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
-    if (isMnemonicAvailable && mnemonicCanBeSet && !isQuickSettings) {
+    if (isMnemonicAvailable && mnemonicCanBeSet && !alreadyDisplayedInSecurityCenter) {
         return {
             path: '/recovery?action=generate-recovery-phrase',
             text: c('Action').t`Set recovery phrase`,
@@ -91,7 +94,7 @@ const useRecoveryNotification = (
         };
     }
 
-    if (!isQuickSettings) {
+    if (!alreadyDisplayedInSecurityCenter) {
         return {
             path: '/recovery',
             text: c('Action').t`Activate recovery`,
