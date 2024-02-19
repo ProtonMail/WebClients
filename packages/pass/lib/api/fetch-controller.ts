@@ -1,6 +1,11 @@
-import type { Maybe } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 
 export type AbortableFetchHandler = (event: FetchEvent, signal: AbortSignal) => Maybe<Promise<Response>>;
+
+export const getUID = (event: FetchEvent): MaybeNull<string> => {
+    const requestHeaders = event.request.headers;
+    return requestHeaders.get('X-Pm-Uid');
+};
 
 /** Fetch event handler factory with custom abort controller management. Allows using
  * service-worker messages to trigger abort controllers for client-side cancellation. */
@@ -17,12 +22,15 @@ const fetchControllerFactory = () => {
         register:
             (handler: AbortableFetchHandler) =>
             (event: FetchEvent): void => {
-                const requestUrl = event.request.url;
-                const controller = new AbortController();
-                controllers.set(requestUrl, controller);
+                if (getUID(event)) {
+                    const requestUrl = event.request.url;
+                    const controller = new AbortController();
+                    controllers.set(requestUrl, controller);
 
-                const res = handler(event, controller.signal);
-                if (res !== undefined) event.respondWith(res.finally(() => controllers.delete(requestUrl)));
+                    const res = handler(event, controller.signal)?.then((res) => res.clone());
+                    if (res !== undefined) event.respondWith(res.finally(() => controllers.delete(requestUrl)));
+                    else controllers.delete(requestUrl);
+                }
             },
     };
 };
