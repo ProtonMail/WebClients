@@ -18,14 +18,14 @@ const InclusiveVatText = ({ tax, currency, className }: Partial<Props>) => {
 
     const formattedTaxRate = withDecimalPrecision(tax.Rate, 4);
     const price = (
-        <Price key="price" currency={currency}>
+        <Price key="price" currency={currency} data-testid="taxAmount">
             {tax.Amount}
         </Price>
     );
     const taxName = tax.Name ?? c('Label').t`VAT`;
 
     return (
-        <div className={className}>
+        <div className={className} data-testid="tax">
             <span>{c('Info').jt`Including ${formattedTaxRate}% ${taxName}: ${price}`}</span>
         </div>
     );
