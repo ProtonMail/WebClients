@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { addDays, fromUnixTime } from 'date-fns';
+import { addMinutes, fromUnixTime } from 'date-fns';
 
 import { useDrawer, useFeature, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
@@ -12,16 +12,16 @@ const useDesktopSpotlight = () => {
     const [user] = useUser();
     const { setShowDrawerSidebar, setAppInView } = useDrawer();
     const [{ isDone }] = useWelcomeFlags();
-    const userAccountHasMoreThanOneDay = new Date() > addDays(fromUnixTime(user.CreateTime), 1);
+
+    const accountIsOlderThan30Minutes = new Date() > addMinutes(fromUnixTime(user.CreateTime), 30);
     const { feature } = useFeature(FeatureCode.SpotlightInboxDesktop);
 
     /**
      * Display conditions:
-     * Free user that has done the welcome flow AND Free user that has created his account more than 1 day ago
-     * OR the user is a paid user and has finished the welcome flow
+     * 30 minutes after account creation for users that didn't log in the desktop app or mobile app
      */
-    const userCondition = user.isPaid ? isDone : isDone && userAccountHasMoreThanOneDay;
-    const displaySpotlight = !isElectronApp && userCondition;
+    // TODO add condition for the mobile apps
+    const displaySpotlight = !isElectronApp && isDone && accountIsOlderThan30Minutes;
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightInboxDesktop, displaySpotlight);
 
     useEffect(() => {
