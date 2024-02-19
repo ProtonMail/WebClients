@@ -474,7 +474,10 @@ const getSaveRecurringEventActions = async ({
         });
 
         let updatedVeventComponent = correctedVevent;
-        let updatedInviteActions = correctedInviteActions;
+        let updatedInviteActions: InviteActions = {
+            ...correctedInviteActions,
+            recurringType: RECURRING_TYPES.ALL,
+        };
         let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
         if (isSendInviteType) {
             if (isSwitchCalendar) {
@@ -496,6 +499,7 @@ const getSaveRecurringEventActions = async ({
                 return sendIcs({
                     inviteActions: requestInviteActions,
                     vevent: updatedVeventComponent,
+                    cancelVevent: originalVeventComponent,
                 });
             });
             const singleEditIcsPromises = [];
@@ -543,8 +547,10 @@ const getSaveRecurringEventActions = async ({
                                 type: INVITE_ACTION_TYPES.SEND_UPDATE,
                                 sharedEventID: event.SharedEventID,
                                 sharedSessionKey,
+                                recurringType: RECURRING_TYPES.ALL,
                             },
                             vevent: updatedSingleEditVevent,
+                            cancelVevent: veventComponent,
                             // Do not re-check send preferences errors for single edits as they were checked for the main event already,
                             // and it's currently not possible to have a different list of attendees in the single edits
                             // TODO: Move send preference error check outside of sendIcs
@@ -562,6 +568,7 @@ const getSaveRecurringEventActions = async ({
                                 ...updatedInviteActions,
                                 type: INVITE_ACTION_TYPES.CANCEL_INVITATION,
                                 sharedEventID: event.SharedEventID,
+                                recurringType: RECURRING_TYPES.ALL,
                             };
                             return sendIcs({
                                 inviteActions: cancelInviteActions,
