@@ -4,6 +4,9 @@ import { IconName, PassLogo } from '@proton/components/components';
 import { getSentinel } from '@proton/components/containers/payments/features/highlights';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
+    FREE_PASS_ALIASES,
+    FREE_VAULT_SHARING,
+    PASS_PLUS_VAULT_SHARING,
     get2FAAuthenticator,
     get2FAAuthenticatorText,
     getDevices,
@@ -143,7 +146,12 @@ export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10), getVaultSharing(3)];
+    return [
+        getLoginsAndNotes(),
+        getDevices(),
+        getHideMyEmailAliases(FREE_PASS_ALIASES),
+        getVaultSharing(FREE_VAULT_SHARING),
+    ];
 };
 
 export const getCustomPassFeatures = () => {
@@ -154,7 +162,7 @@ export const getCustomPassFeatures = () => {
         get2FAAuthenticator(true),
         getItems(),
         getSentinel(),
-        getVaultSharing(10),
+        getVaultSharing(PASS_PLUS_VAULT_SHARING),
     ];
 };
 

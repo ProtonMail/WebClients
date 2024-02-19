@@ -491,6 +491,12 @@ export const passPlusUpsell = {
             icon: 'vault',
         },
         {
+            hideInDowngrade: true,
+            icon: 'arrow-up-from-square',
+            included: true,
+            text: 'Vault sharing (up to 10 people)',
+        },
+        {
             text: 'Integrated 2FA authenticator',
             included: true,
             icon: 'key',
