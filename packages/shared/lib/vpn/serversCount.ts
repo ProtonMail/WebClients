@@ -13,7 +13,7 @@ import type {
 
 export const defaultVPNServersCountData: VPNServersCountData = {
     free: { countries: 3, servers: 150 },
-    paid: { countries: 190, servers: 1900 },
+    paid: { countries: 70, servers: 1900 },
 };
 
 export const getVPNServersCountData = async (api: Api) => {
