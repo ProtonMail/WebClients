@@ -59,20 +59,22 @@ export const ItemHistory: FC = () => {
     return revision === null ? (
         <ItemHistoryPanel
             type={item.data.type}
-            title={c('Title').t`History`}
-            leftActions={[
-                <Button
-                    key="cancel-button"
-                    icon
-                    pill
-                    shape="solid"
-                    color="weak"
-                    onClick={() => selectItem(shareId, itemId)}
-                    title={c('Action').t`Cancel`}
-                >
-                    <Icon name="cross" alt={c('Action').t`Cancel`} />
-                </Button>,
-            ]}
+            title={
+                <div className="flex flex-nowrap items-center gap-4">
+                    <Button
+                        key="cancel-button"
+                        icon
+                        pill
+                        shape="solid"
+                        color="weak"
+                        onClick={() => selectItem(shareId, itemId)}
+                        title={c('Action').t`Cancel`}
+                    >
+                        <Icon name="cross" alt={c('Action').t`Cancel`} />
+                    </Button>
+                    <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{c('Title').t`History`}</h2>
+                </div>
+            }
         >
             {loading && revisions.length === 0 && <CircleLoader size="small" className="ml-2" />}
 
