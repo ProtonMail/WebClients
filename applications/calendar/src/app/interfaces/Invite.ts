@@ -31,6 +31,7 @@ export interface InviteActions {
     removedAttendees?: VcalAttendeeProperty[];
     hasRemovedAllAttendees?: boolean;
     hasModifiedRSVPStatus?: boolean;
+    recurringType?: RECURRING_TYPES;
 }
 
 export interface RecurringActionData {

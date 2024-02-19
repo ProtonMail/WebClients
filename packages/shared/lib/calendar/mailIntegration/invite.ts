@@ -39,7 +39,13 @@ import { getSupportedPlusAlias } from '../../mail/addresses';
 import { MESSAGE_FLAGS } from '../../mail/constants';
 import { RE_PREFIX, formatSubject } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
-import { ICAL_ALARM_ACTION, ICAL_ATTENDEE_STATUS, ICAL_METHOD, NOTIFICATION_TYPE_API } from '../constants';
+import {
+    ICAL_ALARM_ACTION,
+    ICAL_ATTENDEE_STATUS,
+    ICAL_METHOD,
+    NOTIFICATION_TYPE_API,
+    RECURRING_TYPES,
+} from '../constants';
 import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
 import { getSupportedStringValue } from '../icsSurgery/vcal';
@@ -479,71 +485,172 @@ const getWhenText = (vevent: VcalVeventComponent, dateFormatOptions?: Options) =
     const { formattedStart, formattedEnd, isAllDay, isSingleAllDay } = getFormattedDateInfo(vevent, dateFormatOptions);
     if (isAllDay) {
         return isSingleAllDay || !formattedEnd
-            ? c('Email body for invitation (date part)').t`When: ${formattedStart} (all day)`
-            : c('Email body for invitation (date part)').t`When: ${formattedStart} - ${formattedEnd}`;
+            ? c('Email body for invitation (date part)').t`TIME:
+${formattedStart} (all day)`
+            : c('Email body for invitation (date part)').t`TIME:
+${formattedStart} - ${formattedEnd}`;
     }
     return formattedEnd
-        ? c('Email body for invitation (date part)').t`When: ${formattedStart} - ${formattedEnd}`
-        : c('Email body for invitation (date part)').t`When: ${formattedStart}`;
+        ? c('Email body for invitation (date part)').t`TIME:
+${formattedStart} - ${formattedEnd}`
+        : c('Email body for invitation (date part)').t`TIME:
+${formattedStart}`;
 };
 
-const getEmailBodyTexts = (vevent: VcalVeventComponent, dateFormatOptions?: Options) => {
+const buildUpdatedFieldText = (updatedBodyText: string, updatedFieldText: string, field: string) => {
+    // translator: text to display in the message body of an updated event when a certain field has been removed
+    const removedFieldText = c('Email body for invitation (event details part)').t`Removed`;
+
+    // If field is updated and empty, the user removed it.
+    // In that case we want to display a text to let the user know that the field has been removed.
+    const hasRemovedField = updatedFieldText === '';
+
+    if (updatedBodyText === '') {
+        return hasRemovedField ? removedFieldText : updatedFieldText;
+    }
+    return hasRemovedField
+        ? `${updatedBodyText}
+
+${field}:
+${removedFieldText}`
+        : `${updatedBodyText}
+
+${updatedFieldText}`;
+};
+
+const getUpdateEmailBodyText = ({
+    vevent,
+    oldVevent,
+    eventTitle,
+    whenText,
+    locationText,
+    descriptionText,
+}: {
+    vevent: VcalVeventComponent;
+    oldVevent: VcalVeventComponent;
+    eventTitle: string;
+    whenText: string;
+    locationText: string;
+    descriptionText: string;
+}) => {
+    const hasSameTime = !getHasModifiedDateTimes(vevent, oldVevent);
+    const hasSameTitle = getSupportedStringValue(vevent.summary) === getSupportedStringValue(oldVevent.summary);
+    const hasSameLocation = getSupportedStringValue(vevent.location) === getSupportedStringValue(oldVevent.location);
+    const hasSameDescription =
+        getSupportedStringValue(vevent.description) === getSupportedStringValue(oldVevent.description);
+
+    let updatedBodyText = '';
+    if (!hasSameTitle) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, eventTitle, 'TITLE');
+    }
+    if (!hasSameTime) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, whenText, 'TIME');
+    }
+    if (!hasSameLocation) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, locationText, 'LOCATION');
+    }
+    if (!hasSameDescription) {
+        updatedBodyText = buildUpdatedFieldText(updatedBodyText, descriptionText, 'DESCRIPTION');
+    }
+    return updatedBodyText;
+};
+
+const getEmailBodyTexts = (
+    vevent: VcalVeventComponent,
+    oldVevent?: VcalVeventComponent,
+    dateFormatOptions?: Options
+) => {
     const { summary, location, description } = vevent;
     const eventTitle = getDisplayTitle(summary?.value);
     const eventLocation = location?.value;
     const eventDescription = description?.value;
 
     const whenText = getWhenText(vevent, dateFormatOptions);
-    const locationText = eventLocation ? c('Email body for invitation (location part)').t`Where: ${eventLocation}` : '';
+    const locationText = eventLocation
+        ? c('Email body for invitation (location part)').t`LOCATION:
+${eventLocation}`
+        : '';
     const descriptionText = eventDescription
-        ? c('Email body for description (description part)').t`Description: ${eventDescription}`
+        ? c('Email body for description (description part)').t`DESCRIPTION:
+${eventDescription}`
         : '';
     const locationAndDescriptionText =
         locationText && descriptionText
             ? `${locationText}
+
 ${descriptionText}`
             : `${locationText || descriptionText}`;
     const eventDetailsText = locationAndDescriptionText
         ? `${whenText}
+
 ${locationAndDescriptionText}`
         : `${whenText}`;
 
-    return { eventTitle, eventDetailsText };
+    const titleText = `TITLE:
+${eventTitle}`;
+    const updateEventDetailsText = oldVevent
+        ? getUpdateEmailBodyText({
+              vevent,
+              oldVevent,
+              eventTitle: titleText,
+              whenText,
+              locationText,
+              descriptionText,
+          })
+        : undefined;
+
+    return { eventTitle, eventDetailsText, updateEventDetailsText };
 };
 
 export const generateEmailBody = ({
     method,
     vevent,
+    oldVevent,
     isCreateEvent,
     partstat,
     emailAddress,
     options,
+    recurringType,
 }: {
     method: ICAL_METHOD;
     vevent: VcalVeventComponent;
+    oldVevent?: VcalVeventComponent;
     isCreateEvent?: boolean;
     emailAddress?: string;
     partstat?: ICAL_ATTENDEE_STATUS;
     options?: Options;
+    recurringType?: RECURRING_TYPES;
 }) => {
-    const { eventTitle, eventDetailsText } = getEmailBodyTexts(vevent, options);
+    const { eventTitle, eventDetailsText, updateEventDetailsText } = getEmailBodyTexts(vevent, oldVevent, options);
+    const hasUpdatedText = updateEventDetailsText && updateEventDetailsText !== '';
 
     if (method === ICAL_METHOD.REQUEST) {
         if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This occurrence of ${eventTitle} has been updated.`;
+            return hasUpdatedText
+                ? c('Email body for invitation').t`This occurrence was updated. Here's what changed:
+${updateEventDetailsText}`
+                : c('Email body for invitation').t`This occurrence was updated.`;
+        }
+        if (recurringType === RECURRING_TYPES.ALL) {
+            return hasUpdatedText
+                ? c('Email body for invitation').t`All events in this series were updated. Here's what changed:
+${updateEventDetailsText}`
+                : c('Email body for invitation').t`All events in this series were updated.`;
         }
         if (isCreateEvent) {
-            return c('Email body for invitation').t`You are invited to ${eventTitle}
+            return c('Email body for invitation').t`You are invited to ${eventTitle}.
 ${eventDetailsText}`;
         }
-        return c('Email body for invitation').t`${eventTitle} has been updated.
-${eventDetailsText}`;
+        return hasUpdatedText
+            ? c('Email body for invitation').t`This event was updated. Here's what changed:
+${updateEventDetailsText}`
+            : c('Email body for invitation').t`This event was updated.`;
     }
     if (method === ICAL_METHOD.CANCEL) {
         if (getHasRecurrenceId(vevent)) {
-            return c('Email body for invitation').t`This occurrence of ${eventTitle} has been canceled.`;
+            return c('Email body for invitation').t`This occurrence of ${eventTitle} was canceled.`;
         }
-        return c('Email body for invitation').t`${eventTitle} has been canceled.`;
+        return c('Email body for invitation').t`${eventTitle} was canceled.`;
     }
     if (method === ICAL_METHOD.REPLY) {
         if (!partstat || !emailAddress) {
@@ -551,15 +658,15 @@ ${eventDetailsText}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.ACCEPTED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has accepted your invitation to ${eventTitle}`;
+                .t`${emailAddress} accepted your invitation to ${eventTitle}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.TENTATIVE) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has tentatively accepted your invitation to ${eventTitle}`;
+                .t`${emailAddress} tentatively accepted your invitation to ${eventTitle}`;
         }
         if (partstat === ICAL_ATTENDEE_STATUS.DECLINED) {
             return c('Email body for response to invitation')
-                .t`${emailAddress} has declined your invitation to ${eventTitle}`;
+                .t`${emailAddress} declined your invitation to ${eventTitle}`;
         }
         throw new Error('Unanswered partstat');
     }

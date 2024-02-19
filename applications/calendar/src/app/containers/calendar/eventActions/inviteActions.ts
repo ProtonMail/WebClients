@@ -417,6 +417,7 @@ export const getSendIcsAction =
             partstat,
             addedAttendees,
             removedAttendees,
+            recurringType,
         } = inviteActions;
 
         if (type === NONE) {
@@ -596,7 +597,14 @@ export const getSendIcsAction =
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
                     // it's a new invitation
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        // oldVevent needed when creating a single edit
+                        oldVevent: cancelVevent,
+                        isCreateEvent: true,
+                        recurringType,
+                    };
                     await sendIcs({
                         method: ICAL_METHOD.REQUEST,
                         ics: eventInviteIcs,
@@ -622,7 +630,11 @@ export const getSendIcsAction =
                     if ('eventInviteIcs' in eventInvites) {
                         const { pmVevent, eventInviteIcs } = eventInvites;
 
-                        const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                        const params = {
+                            method: ICAL_METHOD.REQUEST,
+                            vevent: pmVevent,
+                            isCreateEvent: true,
+                        };
                         promises.push(
                             sendIcs({
                                 method: ICAL_METHOD.REQUEST,
@@ -688,7 +700,13 @@ export const getSendIcsAction =
                 ) {
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: false };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        isCreateEvent: false,
+                        oldVevent: cancelVevent,
+                        recurringType,
+                    };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,
@@ -717,7 +735,11 @@ export const getSendIcsAction =
                 ) {
                     const { pmVevent, eventInviteIcs } = eventInvites;
 
-                    const params = { method: ICAL_METHOD.REQUEST, vevent: pmVevent, isCreateEvent: true };
+                    const params = {
+                        method: ICAL_METHOD.REQUEST,
+                        vevent: pmVevent,
+                        isCreateEvent: true,
+                    };
                     promises.push(
                         sendIcs({
                             method: ICAL_METHOD.REQUEST,
