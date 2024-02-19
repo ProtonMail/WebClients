@@ -69,7 +69,7 @@ export interface DriveFileBlock {
     Hash: string;
 }
 
-export type Thumbnail = { Size: number; Type: number; Hash: string };
+export type Thumbnail = { ThumbnailID: string; Size: number; Type: number; Hash: string };
 
 export interface DriveFileRevisionPayload {
     ID: string;
@@ -97,6 +97,7 @@ export interface DriveFileRevisionResult {
 }
 
 export interface DriveFileRevisionThumbnailResult {
+    ThumbnailLink: string;
     ThumbnailBareURL: string;
     ThumbnailToken: string;
 }
