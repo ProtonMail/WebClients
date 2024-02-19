@@ -1,5 +1,12 @@
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APPS, DEFAULT_CURRENCY, FreeSubscription, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    COUPON_CODES,
+    DEFAULT_CURRENCY,
+    FreeSubscription,
+    PLANS,
+    isFreeSubscription,
+} from '@proton/shared/lib/constants';
 import {
     Audience,
     Plan,
@@ -30,6 +37,13 @@ export const getVPNPlanToUse = (_: PlansMap, planIDs: PlanIDs | undefined) => {
         return PLANS.VPN2024;
     }
     return PLANS.VPN;
+};
+
+export const getHasExtendedCycles = (planName: PLANS, coupon: string | undefined) => {
+    return (
+        planName === PLANS.VPN2024 &&
+        [COUPON_CODES.MARCHSAVINGS24, COUPON_CODES.HONEYPROTONSAVINGS].includes(coupon as any)
+    );
 };
 
 export const getDefaultSelectedProductPlans = ({
