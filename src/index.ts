@@ -33,7 +33,7 @@ app.enableSandbox();
 saveAppURL();
 saveAppID();
 
-// LoggLogger initialization
+// Log initialization
 Logger.initialize({ preload: true });
 Logger.info("App start is mac:", isMac, "is windows: ", isWindows);
 
