@@ -15,6 +15,7 @@ const getSetupSteps = (mode: WalletSetupMode) =>
 export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     const [mnemonic, setMnemonic] = useState<WasmMnemonic>();
     const [passphrase, setPassphrase] = useState<string>();
+    const [walletName, setWalletName] = useState<string>('');
     const [setupMode, setSetupMode] = useState<WalletSetupMode>();
     const [currentStep, setCurrentStep] = useState<WalletSetupStep>(WalletSetupStep.SetupModeChoice);
 
@@ -55,15 +56,20 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
     const onSaveNewWallet = (passphrase: string) => {
         setPassphrase(passphrase);
 
+        onNextStep();
+    };
+
+    const onWalletSubmit = (name: string, fiatCurrency: string) => {
         // TODO: check and encrypt mnemonic
         const encryptedMnemonic = mnemonic?.asString();
         const hasPassphrase = !!passphrase;
 
         // eslint-disable-next-line no-console
-        console.log(encryptedMnemonic, hasPassphrase);
+        console.log(encryptedMnemonic, hasPassphrase, name, fiatCurrency);
 
         // TODO: API req to create wallet
 
+        setWalletName(name);
         onNextStep();
     };
 
@@ -85,8 +91,10 @@ export const useWalletSetupModal = ({ onSetupFinish, isOpen }: Props) => {
         onMnemonicInput,
         onNextStep,
         setMnemonic,
+        onWalletSubmit,
         onSaveNewWallet,
         clear,
+        walletName,
         currentStep,
         setupMode,
         mnemonic,

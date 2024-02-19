@@ -45,6 +45,9 @@ describe('useWalletSetupModal', () => {
                 expect(result.current.currentStep).toBe(WalletSetupStep.PassphraseInput);
 
                 act(() => result.current.onNextStep());
+                expect(result.current.currentStep).toBe(WalletSetupStep.WalletNameAndFiatInput);
+
+                act(() => result.current.onNextStep());
                 expect(result.current.currentStep).toBe(WalletSetupStep.Confirmation);
 
                 act(() => result.current.onNextStep());
@@ -65,6 +68,9 @@ describe('useWalletSetupModal', () => {
 
                 act(() => result.current.onNextStep());
                 expect(result.current.currentStep).toBe(WalletSetupStep.PassphraseInput);
+
+                act(() => result.current.onNextStep());
+                expect(result.current.currentStep).toBe(WalletSetupStep.WalletNameAndFiatInput);
 
                 act(() => result.current.onNextStep());
                 expect(result.current.currentStep).toBe(WalletSetupStep.Confirmation);

@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { WalletLogo } from '@proton/components/components';
-import { SECOND, WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import { SECOND } from '@proton/shared/lib/constants';
 
 import { WasmMnemonic, WasmWordCount } from '../../../../pkg';
 import { ColorGradientCard } from './ColorGradientCard';
@@ -70,27 +71,29 @@ export const MnemonicGeneration = ({ onGenerated }: Props) => {
     }, [onGenerated]);
 
     return (
-        <div className="p-6 flex flex-column">
-            <span className="block h4 text-bold mx-auto">{c('Wallet setup').t`Welcome to ${WALLET_APP_NAME}`}</span>
+        <ModalContent className="p-0 m-0">
+            <div className="p-6 flex flex-column flex-nowrap">
+                <span className="block h4 text-bold mx-auto">{c('Wallet setup').t`Creating your wallet`}</span>
 
-            <ColorGradientCard width={24}>
-                {new Array(40).fill(null).map((_, index) => (
-                    <Sparkle key={`sparkle_${index}`} />
-                ))}
+                <ColorGradientCard width={24}>
+                    {new Array(40).fill(null).map((_, index) => (
+                        <Sparkle key={`sparkle_${index}`} />
+                    ))}
 
-                <div
-                    className="flex flex-row items-center m-auto upper-layer p-2 rounded"
-                    style={{ backdropFilter: 'blur(10px)' }}
-                >
-                    <WalletLogo variant="glyph-only" className="mr-1" />
-                    <span className="text-semibold text-rg">{c('Wallet setup').t`Creating your wallet...`}</span>
-                </div>
-            </ColorGradientCard>
+                    <div
+                        className="flex flex-row items-center m-auto upper-layer p-2 rounded"
+                        style={{ backdropFilter: 'blur(10px)' }}
+                    >
+                        <WalletLogo variant="glyph-only" className="mr-1" />
+                        <span className="text-semibold text-rg">{c('Wallet setup').t`Generating...`}</span>
+                    </div>
+                </ColorGradientCard>
 
-            <p className="my-0 block text-center color-weak">{c('Wallet setup')
-                .t`Crafting a secure wallet with cryptographic entropy`}</p>
+                <p className="my-0 block text-center color-weak">{c('Wallet setup')
+                    .t`Crafting a secure wallet with cryptographic entropy`}</p>
 
-            <Button disabled className="mt-8">{c('Wallet setup').t`Back up your wallet`}</Button>
-        </div>
+                <Button disabled className="mt-8">{c('Wallet setup').t`Back up your wallet`}</Button>
+            </div>
+        </ModalContent>
     );
 };

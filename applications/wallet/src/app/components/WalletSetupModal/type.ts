@@ -9,5 +9,6 @@ export enum WalletSetupStep {
     MnemonicGeneration = 'MnemonicGeneration',
     PassphraseInput = 'PassphraseInput',
     MnemonicBackup = 'MnemonicBackup',
+    WalletNameAndFiatInput = 'WalletNameAndFiatInput',
     Confirmation = 'Confirmation',
 }
