@@ -525,16 +525,6 @@ async function setConfigurationAndCreateChargebee(configuration: CbIframeConfig)
     return cbInstance;
 }
 
-function handleError(error: any) {
-    try {
-        const messageBus = getMessageBus();
-        messageBus.sendUnhandledErrorMessage(error);
-    } catch (err) {
-        console.error('Failed to send error message to parent');
-        throw err;
-    }
-}
-
 export async function initialize() {
     try {
         addCheckpoint('initialize_started');
@@ -542,7 +532,7 @@ export async function initialize() {
         window.addEventListener('error', (event) => {
             addCheckpoint('window_error');
             event.preventDefault();
-            handleError(event.error);
+            getMessageBus().sendUnhandledErrorMessage(event.error);
         });
 
         let promiseResolve!: (value: unknown) => void;
@@ -584,6 +574,6 @@ export async function initialize() {
         return await cbInstancePromise;
     } catch (error: any) {
         addCheckpoint('sync_error');
-        handleError(error);
+        getMessageBus().sendUnhandledErrorMessage(error);
     }
 }
