@@ -4,7 +4,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 /**
- * DTSTAMP functions as sort of a LAST-MODIFIED timestamp, but only for invite-related modifications
+ * DTSTAMP functions to some extent as a LAST-MODIFIED timestamp, but only for invite-related modifications
  */
 export const withUpdatedDtstamp = (newVevent: VcalVeventComponent, oldVevent?: VcalVeventComponent) => {
     if (!getHasUpdatedInviteData({ newVevent, oldVevent })) {
