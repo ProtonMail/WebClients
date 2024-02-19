@@ -19,7 +19,12 @@ export interface EmailSubscription {
     tooltip?: string;
 }
 
-const getProductUpdatesString = (app: string) => {
+const getProductUpdatesString = (app: string, additionalApp?: string) => {
+    if (additionalApp) {
+        // translator: Reads "Proton Mail and Calendar product updates"
+        return c('Label for news').t`${app} and ${additionalApp} product updates`;
+    }
+
     return c('Label for news').t`${app} product updates`;
 };
 
@@ -77,7 +82,7 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
     {
         id: 'news_product_inbox',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.INBOX_NEWS,
-        title: c('Label for news').t`${MAIL_APP_NAME} and ${CALENDAR_SHORT_APP_NAME} new features`,
+        title: getProductUpdatesString(MAIL_APP_NAME, CALENDAR_SHORT_APP_NAME),
         frequency: c('Frequency of news').t`(1 email per month)`,
     },
     {
