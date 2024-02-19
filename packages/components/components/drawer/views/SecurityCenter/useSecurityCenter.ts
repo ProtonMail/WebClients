@@ -1,5 +1,5 @@
-import { useFlag } from '@proton/components/containers';
-import { useConfig } from '@proton/components/hooks';
+import useFlag from '@proton/components/containers/unleash/useFlag';
+import useConfig from '@proton/components/hooks/useConfig';
 
 /**
  * Is security center enabled

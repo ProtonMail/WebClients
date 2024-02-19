@@ -6,6 +6,7 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, requestAllItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
+import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import type { ItemRevision, Api as PassApi } from '@proton/pass/types';
@@ -32,6 +33,9 @@ export const createPassBridge = (api: Api): PassBridge => {
         ready: () => waitUntil(() => PassCrypto.ready, 250).then(() => true),
         hydrate: async ({ user, addresses, authStore }: PassBridgeInitOptions) => {
             await PassCrypto.hydrate({ user, addresses, keyPassword: authStore.getPassword() });
+        },
+        user: {
+            getUserAccess,
         },
         vault: {
             getDefault: async (hadVaultCallback) => {
@@ -83,7 +87,7 @@ export const createPassBridge = (api: Api): PassBridge => {
             getAliasOptions,
             getAllByShareId: async (shareId) => {
                 const aliases = (await Promise.all(
-                    (await requestAllItemsForShareId(shareId))
+                    (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
                         .filter(pipe(prop('AliasEmail'), truthy))
                         .map((item) => parseItemRevision(shareId, item))
                 )) as ItemRevision<'alias'>[];

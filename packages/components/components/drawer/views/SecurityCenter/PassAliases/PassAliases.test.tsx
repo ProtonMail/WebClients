@@ -6,6 +6,7 @@ import { mocked } from 'jest-mock';
 
 import { useNotifications } from '@proton/components/hooks';
 import { PassBridge } from '@proton/pass/lib/bridge/types';
+import { HydratedAccessState } from '@proton/pass/store/reducers';
 import { mockNotifications } from '@proton/testing/index';
 
 import PassAliases from './PassAliases';
@@ -24,6 +25,17 @@ jest.mock('@proton/pass/lib/bridge/PassBridgeProvider', () => ({
                             name: 'Test Vault',
                         },
                     } as any;
+                },
+            },
+            user: {
+                getUserAccess: () => {
+                    return new Promise((res) => {
+                        res({
+                            plan: {
+                                AliasLimit: 10,
+                            },
+                        } as HydratedAccessState);
+                    });
                 },
             },
             alias: {
@@ -75,7 +87,7 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
+            hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,
         }));
 
@@ -97,7 +109,7 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
+            hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,
         }));
 
@@ -123,7 +135,7 @@ describe('PassAliases', () => {
             getAliasOptions: jest.fn(),
             submitNewAlias: jest.fn(),
             passAliasesUpsellModal: {} as any,
-            hasReachedAliasesLimit: false,
+            hasReachedAliasesCountLimit: false,
             hadInitialisedPreviously: false,
         }));
 

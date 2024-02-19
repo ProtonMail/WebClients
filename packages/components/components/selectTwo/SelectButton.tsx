@@ -12,10 +12,11 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     error?: NodeOrBoolean;
     isOpen?: boolean;
     onOpen?: () => void;
+    noCaret?: boolean;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-    ({ className, unstyled, loading, error, isOpen, onOpen, children, ...rest }, ref) => {
+    ({ className, unstyled, loading, error, isOpen, onOpen, children, noCaret, ...rest }, ref) => {
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
@@ -48,11 +49,14 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
             >
                 <span className="flex-1 text-ellipsis text-left">{children}</span>
 
-                {loading ? (
-                    <CircleLoader className="shrink-0 ml-1" />
-                ) : (
-                    <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
-                )}
+                {
+                    // eslint-disable-next-line no-nested-ternary
+                    loading ? (
+                        <CircleLoader className="shrink-0 ml-1" />
+                    ) : noCaret ? null : (
+                        <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
+                    )
+                }
             </button>
         );
     }
