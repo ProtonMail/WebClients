@@ -30,6 +30,7 @@ import {
     threeDsChallengeMessageType,
     unhandledError,
 } from '../lib';
+import { getCheckpoints } from './checkpoints';
 
 function isChargebeeEvent(event: any): boolean {
     return !!event?.cbEvent;
@@ -166,11 +167,6 @@ export interface ParentMessagesProps {
     onVerifySavedCard?: OnVerifySavedCardHandler;
     onChangeRenderMode?: OnChangeRenderModeHandler;
 }
-
-export type Checkpoint = {
-    name: string;
-    data: any;
-};
 
 const getEventListener = (messageBus: MessageBus) => (e: MessageEvent) => {
     const parseEvent = (data: any) => {
@@ -425,12 +421,12 @@ export class MessageBus {
         this.sendMessage({ ...message, correlationId });
     }
 
-    sendUnhandledErrorMessage(errorObj: any, checkpoints: Checkpoint[]) {
+    sendUnhandledErrorMessage(errorObj: any) {
         const error = {
             message: errorObj.message,
             stack: errorObj.stack,
             name: errorObj.name,
-            checkpoints,
+            checkpoints: getCheckpoints(),
         };
 
         const message: UnhandledErrorMessage = {
