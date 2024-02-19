@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
+import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
@@ -39,7 +39,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
             }
             {...itemViewProps}
         >
-            <TextAreaReadonly>{note}</TextAreaReadonly>
+            <NoteContent revision={itemViewProps.revision} />
         </ItemViewPanel>
     );
 };

@@ -7,27 +7,26 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components/index';
-import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
-import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
+import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
+import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCardContent';
 import { HistoryItem } from '@proton/pass/components/Item/History/HistoryItem';
 import { RevisionsListItem } from '@proton/pass/components/Item/History/RevisionsListItem';
-import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
-import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
+import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
+import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
-import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useItemHistory } from '@proton/pass/hooks/useItemHistory';
 import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevision, ItemType, MaybeNull, SelectedItem, ShareType } from '@proton/pass/types';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-// TODO: replace below with new component reusing the ItemView components to view previous item revision
-const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
-    login: LoginView,
-    note: NoteView,
-    alias: AliasView,
-    creditCard: CreditCardView,
+const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
+    login: LoginContent,
+    note: NoteContent,
+    alias: AliasContent,
+    creditCard: CreditCardContent,
 };
 
 const pageSize = 20;
@@ -54,7 +53,7 @@ export const ItemHistory: FC = () => {
      * (when the amount of revisions returned is equal to the pageSize), so we check here if we already loaded all revisions */
     const canLoadMore = state.revisions.length < item.revision && state.next !== null;
 
-    const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as FC<ItemViewProps>;
+    const ItemTypeContentComponent = itemTypeContentMap[item.data.type] as FC<ItemContentProps>;
 
     return revision === null ? (
         <ItemHistoryPanel
@@ -108,8 +107,26 @@ export const ItemHistory: FC = () => {
             )}
         </ItemHistoryPanel>
     ) : (
-        // TODO: replace below with new component to view previous item revision
-        // @ts-ignore
-        <ItemTypeViewComponent revision={revision} vault={vault} />
+        <ItemHistoryPanel
+            type={item.data.type}
+            title={
+                <div className="flex flex-nowrap items-center gap-4">
+                    <Button
+                        key="cancel-button"
+                        icon
+                        pill
+                        shape="solid"
+                        color="weak"
+                        onClick={() => selectItem(shareId, itemId)}
+                        title={c('Action').t`Cancel`}
+                    >
+                        <Icon name="cross" alt={c('Action').t`Cancel`} />
+                    </Button>
+                    <h2 className="text-2xl text-bold text-ellipsis mb-0-5">{revision.data.metadata.name}</h2>
+                </div>
+            }
+        >
+            <ItemTypeContentComponent revision={revision} />
+        </ItemHistoryPanel>
     );
 };
