@@ -1,5 +1,6 @@
-import { BrowserWindowConstructorOptions, Session } from "electron";
+import { BrowserWindow, BrowserWindowConstructorOptions, Session } from "electron";
 import log from "electron-log";
+import { getWindowBounds } from "../../store/boundsStore";
 import { getConfig } from "../config";
 import { isMac, isWindows } from "../helpers";
 
@@ -24,13 +25,15 @@ const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
 };
 
 export const getWindowConfig = (session: Session): BrowserWindowConstructorOptions => {
+    const { x, y, width, height } = getWindowBounds();
+
     return {
         title: config.appTitle,
         icon: "../../../assets/icon.png",
-        // x,
-        // y,
-        // width,
-        // height,
+        x,
+        y,
+        width,
+        height,
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: config.devTools,
@@ -44,4 +47,8 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
             sandbox: true,
         },
     };
+};
+
+export const areAllWindowsClosedOrHidden = () => {
+    return BrowserWindow.getAllWindows().every((window) => !window.isVisible());
 };

@@ -1,8 +1,9 @@
-import { Notification, app, session, shell } from "electron";
+import { BrowserWindow, Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
+import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
 import { deleteWindowStore } from "./store/storeMigrations";
 import { hasTrialEnded } from "./store/trialStore";
@@ -17,12 +18,18 @@ import {
     isMac,
     isUpsellURL,
     isWindows,
-    saveWindowsPosition,
 } from "./utils/helpers";
 import { logURL } from "./utils/logs";
 import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { getTrialEndURL } from "./utils/urls/trial";
-import { viewCreatinAppStartup } from "./utils/view/viewManagement";
+import { getSessionID } from "./utils/urls/urlTests";
+import {
+    getCalendarView,
+    reloadCalendarWithSession,
+    updateView,
+    viewCreationAppStartup,
+} from "./utils/view/viewManagement";
+import { areAllWindowsClosedOrHidden } from "./utils/view/windowHelpers";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -44,6 +51,7 @@ moveUninstaller();
 
 // Store migrations
 deleteWindowStore(); // Introduced in v0.9.4
+// End of store migrations
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");
@@ -60,7 +68,7 @@ app.whenReady().then(() => {
         cache: false,
     });
 
-    const window = viewCreatinAppStartup(secureSession);
+    const window = viewCreationAppStartup(secureSession);
     if (hasTrialEnded()) {
         const url = getTrialEndURL();
         window.loadURL(url);
@@ -75,14 +83,12 @@ app.whenReady().then(() => {
     // Handle IPC calls coming from the destkop application
     handleIPCCalls();
 
-    // TODO: check if still makes sense to have
-    // app.on("activate", () => {
-    //     if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
-    //         log.info("Activate app, all windows hidden");
-    //         // const window = BrowserWindow.getAllWindows()[0];
-    //         // handleMailWindow(window.webContents);
-    //     }
-    // });
+    app.on("activate", () => {
+        if (isMac && areAllWindowsClosedOrHidden()) {
+            log.info("Activate app, all windows hidden");
+            window.show();
+        }
+    });
 
     // Normally this only works on macOS and is not required for Windows
     app.on("open-url", (_e, url) => {
@@ -106,10 +112,18 @@ app.whenReady().then(() => {
     });
 });
 
+app.on("window-all-closed", () => {
+    if (!isMac) {
+        app.quit();
+    }
+});
+
 // Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
-    if (isMac) {
-        saveWindowsPosition(true);
+    const window = BrowserWindow.getFocusedWindow();
+    if (isMac && window) {
+        saveWindowBounds(window);
+        window.destroy();
     }
 });
 
@@ -123,6 +137,14 @@ app.on("web-contents-created", (_ev, contents) => {
         log.info("did-navigate-in-page");
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
+        }
+
+        const sessionID = getSessionID(url);
+        const calendarView = getCalendarView();
+        const calendarSession = getSessionID(calendarView.webContents.getURL());
+        if (isHostMail(url) && sessionID && !calendarSession && !isNaN(sessionID as unknown as any)) {
+            log.info("Refresh calendar session", sessionID);
+            reloadCalendarWithSession(sessionID);
         }
     });
 
@@ -142,13 +164,13 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             log.info("Open calendar window");
-            // handleCalendarWindow(contents);
+            updateView("calendar");
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             log.info("Open mail window");
-            // handleMailWindow(contents);
+            updateView("mail");
             return { action: "deny" };
         }
 
@@ -160,7 +182,8 @@ app.on("web-contents-created", (_ev, contents) => {
                 shell.openExternal(url);
                 return { action: "deny" };
             }
-            return { action: "allow" };
+            updateView("account");
+            return { action: "deny" };
         } else if (isHostAllowed(url)) {
             logURL("Open internal link", url);
             return { action: "allow" };

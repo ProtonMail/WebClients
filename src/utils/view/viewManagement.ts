@@ -7,28 +7,35 @@ import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./beforeUnload";
+import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 
 const config = getConfig();
 
 let mailView: undefined | BrowserView = undefined;
 let calendarView: undefined | BrowserView = undefined;
+let accountView: undefined | BrowserView = undefined;
 
-export const viewCreatinAppStartup = (session: Session) => {
+export const viewCreationAppStartup = (session: Session) => {
     const window = createBrowserWindow(session);
     createViews(session);
     configureViews();
     loadMailView(window);
 
+    window.on("close", (ev) => {
+        macOSExitEvent(window, ev);
+        windowsExitEvent(window, ev);
+    });
+
     return window;
 };
 
-export const createViews = (session: Session) => {
+const createViews = (session: Session) => {
     const config = getWindowConfig(session);
     mailView = new BrowserView({ ...config });
     calendarView = new BrowserView({ ...config });
 };
 
-export const createBrowserWindow = (session: Session) => {
+const createBrowserWindow = (session: Session) => {
     const window = new BrowserWindow({ ...getWindowConfig(session) });
 
     setApplicationMenu(app.isPackaged);
@@ -46,7 +53,7 @@ export const createBrowserWindow = (session: Session) => {
     return window;
 };
 
-export const configureViews = () => {
+const configureViews = () => {
     mailView.setAutoResize({ width: true, height: true });
     mailView.webContents.loadURL(config.url.mail);
 
@@ -54,7 +61,7 @@ export const configureViews = () => {
     calendarView.webContents.loadURL(config.url.calendar);
 };
 
-export const loadMailView = (window: BrowserWindow) => {
+const loadMailView = (window: BrowserWindow) => {
     log.info("Loading mail view");
     if (!mailView) {
         log.info("mailView not created");
@@ -65,7 +72,7 @@ export const loadMailView = (window: BrowserWindow) => {
     window.setBrowserView(mailView);
 };
 
-export const loadCalendarView = (window: BrowserWindow) => {
+const loadCalendarView = (window: BrowserWindow) => {
     log.info("Loading calendar view");
     if (!calendarView) {
         log.info("calendarView not created");
@@ -76,16 +83,43 @@ export const loadCalendarView = (window: BrowserWindow) => {
     window.setBrowserView(calendarView);
 };
 
+export const loadAccountView = (window: BrowserWindow) => {
+    log.info("Loading account view");
+    if (!accountView) {
+        log.info("accountView not created");
+        const congif = getWindowConfig(window.webContents.session);
+        accountView = new BrowserView({ ...congif });
+    }
+
+    accountView.setBounds({ x: 0, y: 0, width: window.getBounds().width, height: window.getBounds().height });
+    window.setBrowserView(accountView);
+};
+
 export const updateView = (target: VIEW_TARGET) => {
+    const window = BrowserWindow.getFocusedWindow();
     if (target === "mail") {
-        loadMailView(BrowserWindow.getFocusedWindow());
+        loadMailView(window);
         return;
     } else if (target === "calendar") {
-        loadCalendarView(BrowserWindow.getFocusedWindow());
+        loadCalendarView(window);
+        return;
+    } else if (target === "account") {
+        loadAccountView(window);
         return;
     }
 
     log.info("unsupported view", target);
+};
+
+export const reloadCalendarWithSession = (session: string) => {
+    log.info("Reloading calendar with session", session);
+    if (!calendarView) {
+        log.error("calendarView not created");
+        const config = getWindowConfig(BrowserWindow.getFocusedWindow().webContents.session);
+        calendarView = new BrowserView({ ...config });
+    }
+
+    calendarView.webContents.loadURL(`${config.url.calendar}/u/${session}`);
 };
 
 export const getMailView = () => mailView;

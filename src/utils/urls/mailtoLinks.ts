@@ -1,6 +1,5 @@
-import { BrowserWindow } from "electron";
 import log from "electron-log";
-import { getMailView, loadMailView } from "../view/viewManagement";
+import { getMailView, updateView } from "../view/viewManagement";
 
 export const handleMailToUrls = (url: string) => {
     log.info("Open mailto url and adding it to path");
@@ -9,8 +8,7 @@ export const handleMailToUrls = (url: string) => {
 
     const mailView = getMailView();
     if (!mailView) return;
-    // TODO: check if still useful or rest of code is sufficient
-    loadMailView(BrowserWindow.getFocusedWindow());
+    updateView("mail");
 
     const currentUrlString = mailView.webContents.getURL();
     try {

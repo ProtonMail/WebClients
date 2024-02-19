@@ -1,6 +1,5 @@
-import { BrowserWindow, app, shell } from "electron";
+import { BrowserWindow, app } from "electron";
 import log from "electron-log/main";
-import { join } from "path";
 import { getConfig } from "./config";
 import { logURL } from "./logs";
 
@@ -97,10 +96,6 @@ export const isHostAllowed = (host: string) => {
     }
 };
 
-export const getWindow = () => {
-    return BrowserWindow.getFocusedWindow() ?? BrowserWindow.getAllWindows()[0];
-};
-
 export const restartApp = (timeout = 300) => {
     log.info("Restarting app in", timeout, "ms");
     setTimeout(() => {
@@ -110,7 +105,7 @@ export const restartApp = (timeout = 300) => {
 };
 
 export const clearStorage = (restart: boolean, timeout?: number) => {
-    const { webContents } = getWindow();
+    const webContents = BrowserWindow.getFocusedWindow().webContents;
     webContents.session.flushStorageData();
     webContents.session.clearStorageData();
     webContents.session.clearAuthCache();
@@ -122,41 +117,4 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
     if (restart) {
         restartApp(timeout);
     }
-};
-
-export const openLogFolder = () => {
-    try {
-        const home = app.getPath("home");
-        if (isMac) {
-            log.info("openLogFolder macOS");
-            shell.openPath(join(home, "/Library/Logs/Proton Mail"));
-        } else if (isWindows) {
-            log.info("openLogFolder Windows");
-            shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
-        }
-        log.info("openLogFolder, not macOS or Windows");
-    } catch (error) {
-        log.error("openLogFolder", error);
-    }
-};
-
-export const saveWindowsPosition = (shouldDestroy: boolean) => {
-    log.info("Saving windows position");
-    BrowserWindow.getAllWindows().forEach((window) => {
-        if (window.isVisible()) {
-            const url = window.webContents.getURL();
-            logURL("saveWindowsPosition", url);
-            log.info("saveWindowsPosition bounds", window.getBounds());
-            if (isHostCalendar(url)) {
-                // setWindowState(window.getBounds(), "CALENDAR");
-            } else if (isHostMail(url)) {
-                // setWindowState(window.getBounds(), "MAIL");
-            }
-        }
-
-        if (shouldDestroy) {
-            log.info("Destroying window after window position save");
-            window.destroy();
-        }
-    });
 };
