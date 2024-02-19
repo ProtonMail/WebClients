@@ -135,26 +135,27 @@ describe('getRecurringWarningText()', () => {
         });
     });
 
-    test('Organizer gets no warning when editing series with single deletions if the change is non-breaking and there are no single edits', () => {
+    test('Organizer gets no warning when editing series with either single deletions or single edits if the change is non-breaking', () => {
         const inviteActions = {
             type: INVITE_ACTION_TYPES.SEND_UPDATE,
         };
         const combinations = [];
-        for (let i = 0; i < 2 ** 2; i++) {
-            const hasPreviousSingleEdits = !!(1 & i);
-            const isBreakingChange = !!(2 & i);
+        for (let i = 0; i < 2 ** 3; i++) {
+            const hasPreviousSingleDeletes = !!(1 & i);
+            const hasPreviousSingleEdits = !!(2 & i);
+            const isBreakingChange = !!(4 & i);
 
-            combinations.push({ hasPreviousSingleEdits, isBreakingChange });
+            combinations.push({ hasPreviousSingleDeletes, hasPreviousSingleEdits, isBreakingChange });
         }
-        combinations.forEach(({ hasPreviousSingleEdits, isBreakingChange }) => {
+        combinations.forEach(({ hasPreviousSingleDeletes, hasPreviousSingleEdits, isBreakingChange }) => {
             const result =
-                !isBreakingChange && !hasPreviousSingleEdits
-                    ? ''
-                    : 'Previous modifications on this series will be lost.';
+                (hasPreviousSingleEdits || hasPreviousSingleDeletes) && isBreakingChange
+                    ? 'Previous modifications on this series will be lost.'
+                    : '';
             expect(
                 getRecurringWarningText({
                     inviteActions,
-                    hasPreviousSingleDeletes: true,
+                    hasPreviousSingleDeletes,
                     hasPreviousSingleEdits,
                     isOrganizer: true,
                     isBreakingChange,
@@ -164,28 +165,33 @@ describe('getRecurringWarningText()', () => {
         });
     });
 
-    test('Organizer gets a warning when editing series with single edits', () => {
+    test('User gets a warning when editing series with single edits or single deletes', () => {
         const inviteActions = {
-            type: INVITE_ACTION_TYPES.SEND_INVITATION,
+            type: INVITE_ACTION_TYPES.NONE,
         };
         const combinations = [];
-        for (let i = 0; i < 2 ** 2; i++) {
+        for (let i = 0; i < 2 ** 3; i++) {
             const hasPreviousSingleDeletes = !!(1 & i);
-            const isBreakingChange = !!(2 & i);
+            const hasPreviousSingleEdits = !!(2 & i);
+            const isBreakingChange = !!(4 & i);
 
-            combinations.push({ hasPreviousSingleDeletes, isBreakingChange });
+            combinations.push({ hasPreviousSingleDeletes, hasPreviousSingleEdits, isBreakingChange });
         }
-        combinations.forEach(({ hasPreviousSingleDeletes, isBreakingChange }) => {
+        combinations.forEach(({ hasPreviousSingleDeletes, hasPreviousSingleEdits, isBreakingChange }) => {
+            const result =
+                hasPreviousSingleDeletes || hasPreviousSingleEdits
+                    ? 'Previous modifications on this series will be lost.'
+                    : '';
             expect(
                 getRecurringWarningText({
                     inviteActions,
                     hasPreviousSingleDeletes,
-                    hasPreviousSingleEdits: true,
-                    isOrganizer: true,
+                    hasPreviousSingleEdits,
+                    isOrganizer: false,
                     isBreakingChange,
                     canEditOnlyPersonalPart: false,
                 })
-            ).toEqual('Previous modifications on this series will be lost.');
+            ).toEqual(result);
         });
     });
 });

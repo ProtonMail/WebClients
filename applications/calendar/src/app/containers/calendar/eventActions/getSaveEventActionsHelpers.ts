@@ -1,5 +1,6 @@
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
+import { getSupportedStringValue } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getInviteVeventWithUpdatedParstats } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
@@ -202,4 +203,41 @@ export const getUpdateInviteOperationWithIntermediateEvent = async ({
         isAttendee: false,
         addedAttendeesPublicKeysMap,
     });
+};
+
+export const getUpdateSingleEditMergeVevent = (newVevent: VcalVeventComponent, oldVevent: VcalVeventComponent) => {
+    const result: Partial<VcalVeventComponent> = {};
+
+    if (getSupportedStringValue(newVevent.summary) !== getSupportedStringValue(oldVevent.summary)) {
+        result.summary = newVevent.summary || { value: '' };
+    }
+    if (getSupportedStringValue(newVevent.location) !== getSupportedStringValue(oldVevent.location)) {
+        result.location = newVevent.location || { value: '' };
+    }
+    if (getSupportedStringValue(newVevent.description) !== getSupportedStringValue(oldVevent.description)) {
+        result.description = newVevent.description || { value: '' };
+    }
+    return result;
+};
+
+export const getHasMergeUpdate = (vevent: VcalVeventComponent, mergeVevent: Partial<VcalVeventComponent>) => {
+    if (
+        mergeVevent.summary &&
+        getSupportedStringValue(vevent.summary) !== getSupportedStringValue(mergeVevent.summary)
+    ) {
+        return true;
+    }
+    if (
+        mergeVevent.location &&
+        getSupportedStringValue(vevent.location) !== getSupportedStringValue(mergeVevent.location)
+    ) {
+        return true;
+    }
+    if (
+        mergeVevent.description &&
+        getSupportedStringValue(vevent.description) !== getSupportedStringValue(mergeVevent.description)
+    ) {
+        return true;
+    }
+    return false;
 };
