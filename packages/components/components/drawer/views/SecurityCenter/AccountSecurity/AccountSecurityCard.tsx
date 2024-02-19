@@ -3,26 +3,34 @@ import React, { ComponentProps } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, SettingsLink } from '@proton/components/components';
+import { Icon, IconName, SettingsLink } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 import './AccountSecurityCard.scss';
 
 interface Props {
-    state: 'warning' | 'critical';
+    critical?: Boolean;
     title: string;
     path: ComponentProps<typeof SettingsLink>['path'];
     description?: string;
+    icon: IconName;
     isDismissible?: boolean;
     className?: string;
     onDismiss?: () => void;
 }
 
-const AccountSecurityCard = ({ state, title, description, isDismissible, path, className, onDismiss }: Props) => {
-    const iconColorClass = state === 'warning' ? 'color-warning' : 'color-danger';
-    const iconBgColorClass = state === 'warning' ? 'security-card-icon-warning' : 'security-card-icon-danger';
+const AccountSecurityCard = ({
+    critical,
+    title,
+    description,
+    icon,
+    isDismissible,
+    path,
+    className,
+    onDismiss,
+}: Props) => {
     // Translator: "Warning" and "Important note" are alternatives for some icons (for blind users)
-    const iconAltText = state === 'warning' ? c('Info').t`Warning` : c('Info').t`Important note`;
+    const iconAltText = critical ? c('Info').t`Warning` : c('Info').t`Important note`;
 
     return (
         <div className="group-hover-opacity-container security-card-container relative">
@@ -34,8 +42,14 @@ const AccountSecurityCard = ({ state, title, description, isDismissible, path, c
                 path={path}
             >
                 <span className="flex flex-nowrap items-start">
-                    <span className={clsx('ratio-square rounded flex security-card-icon-container', iconBgColorClass)}>
-                        <Icon name="exclamation-filled" className={clsx('m-auto', iconColorClass)} alt={iconAltText} />
+                    <span className="ratio-square rounded flex security-card-icon-container relative">
+                        <Icon name={icon} className="m-auto security-card-icon" alt={iconAltText} />
+                        {critical && (
+                            <Icon
+                                name="exclamation-circle-filled"
+                                className="color-warning absolute top-0 right-0 security-card-icon-bubble"
+                            />
+                        )}
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
                         <span className="block">{title}</span>

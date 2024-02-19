@@ -250,14 +250,14 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
     ).Revision!;
 
 export const requestAllItemsForShareId = async (
-    shareId: string,
+    options: { shareId: string; OnlyAlias?: boolean },
     onBatch?: (progress: number) => void
 ): Promise<ItemRevisionContentsResponse[]> => {
     const pageIterator = async (count: number, Since?: string): Promise<ItemRevisionContentsResponse[]> => {
         const { Items } = await api({
-            url: `pass/v1/share/${shareId}/item`,
+            url: `pass/v1/share/${options.shareId}/item`,
             method: 'get',
-            params: Since ? { Since } : {},
+            params: Since ? { Since, OnlyAlias: options.OnlyAlias } : {},
         });
 
         const nextCount = count + (Items?.RevisionsData.length ?? 0);
@@ -277,7 +277,7 @@ export async function requestItemsForShareId(
     shareId: string,
     onBatch?: (progress: number) => void
 ): Promise<ItemRevision[]> {
-    const encryptedItems = await requestAllItemsForShareId(shareId, onBatch);
+    const encryptedItems = await requestAllItemsForShareId({ shareId }, onBatch);
     const items = await Promise.all(encryptedItems.map((item) => parseItemRevision(shareId, item).catch(() => null)));
     return items.filter(truthy);
 }
