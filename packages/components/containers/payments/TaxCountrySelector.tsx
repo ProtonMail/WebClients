@@ -198,7 +198,7 @@ const TaxCountrySelector = ({
 
     return (
         <div className={clsx('field-two-container', className)}>
-            <div className="pt-1 mb-1">
+            <div className="pt-1 mb-1" data-testid="billing-country">
                 <span className="text-bold">{c('Payments').t`Billing Country`}</span>
                 {collapsed && (
                     <>
