@@ -97,17 +97,22 @@ app.whenReady().then(() => {
 
     // Security addition, reject all permissions except notifications
     secureSession.setPermissionRequestHandler((webContents, permission, callback) => {
-        const { host, protocol } = new URL(webContents.getURL());
-        if (!isHostAllowed(host) || protocol !== "https:") {
-            return callback(false);
-        }
+        try {
+            const { host, protocol } = new URL(webContents.getURL());
+            if (!isHostAllowed(host) || protocol !== "https:") {
+                return callback(false);
+            }
 
-        if (ALLOWED_PERMISSIONS.includes(permission)) {
-            return callback(true);
-        }
+            if (ALLOWED_PERMISSIONS.includes(permission)) {
+                return callback(true);
+            }
 
-        Logger.info("Permission request rejected", permission);
-        callback(false);
+            Logger.info("Permission request rejected", permission);
+            callback(false);
+        } catch (error) {
+            Logger.error("Permission request error", error);
+            callback(false);
+        }
     });
 });
 
