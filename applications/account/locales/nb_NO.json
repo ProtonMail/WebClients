@@ -4045,9 +4045,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimumsbeløpet av kreditt som kan legges til er ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minimumsbeløpet som kan doneres er ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minimumsbetalingen vi aksepterer er ${ price }."
       ],
@@ -9321,6 +9318,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "${ app } og ${ additionalApp } produktoppdateringer"
+      ],
       "${ app } product updates": [
         "${ app } produktoppdateringer"
       ],
@@ -9347,9 +9347,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } velkommen e-post"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funksjoner"
       ]
     },
     "Label in domain modal": {
@@ -13762,6 +13759,9 @@
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
+      ],
+      "Create organization key": [
+        "Opprett organisasjonsnøkkel"
       ],
       "Create public link": [
         "Opprett offentlig kobling"
