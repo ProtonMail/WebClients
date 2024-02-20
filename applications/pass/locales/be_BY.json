@@ -242,6 +242,9 @@
       "More options": [
         "Дадатковыя параметры"
       ],
+      "Move": [
+        "Перамясціць"
+      ],
       "Move all items": [
         "Перамяшчэнне ўсіх элементаў"
       ],
@@ -256,6 +259,9 @@
       ],
       "Move to trash": [
         "Перамясціць у сметніцу"
+      ],
+      "Multiple select": [
+        "Выбар некалькіх элементаў"
       ],
       "Not now": [
         "Не зараз"
@@ -298,6 +304,9 @@
       ],
       "Resend invitation": [
         "Паўторна адправіць запрашэнне"
+      ],
+      "Restore": [
+        "Аднавіць"
       ],
       "Restore item": [
         "Аднавіць элемент"
@@ -355,6 +364,9 @@
       ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
+      ],
+      "Trash": [
+        "Сметніца"
       ],
       "Unpin item": [
         "Адмацаваць элемент"
@@ -619,6 +631,9 @@
       "Unknown invite": [
         "Невядомае запрашэнне"
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Фармат файла ${ PASS_APP_NAME } не падтрымліваецца"
+      ],
       "Unsupported 1Password file format": [
         "Фармат файла 1Password не падтрымліваецца"
       ],
@@ -806,6 +821,9 @@
       ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, структура сховішча і г.д.), бо дадзены фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
       ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
@@ -1083,6 +1101,12 @@
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і патрабуе надзейнай парольнай фразы."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Экспартаваны файл не змяшчае даных абагуленых сховішчаў, дзе вы не з'яўляецеся ўладальнікам"
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
         "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
@@ -1292,6 +1316,9 @@
       "Created": [
         "Створана"
       ],
+      "Default (recommended)": [
+        "Прадвызначана (рэкамендуецца)"
+      ],
       "Display": [
         "Адлюстроўваць"
       ],
@@ -1301,6 +1328,9 @@
       "Empty trash": [
         "Ачысціць сметніцу"
       ],
+      "Encrypted (recommended)": [
+        "Зашыфраваны (рэкамендуецца)"
+      ],
       "Expiration date": [
         "Тэрмін дзеяння"
       ],
@@ -1309,6 +1339,9 @@
       ],
       "Field name": [
         "Назва поля"
+      ],
+      "File format": [
+        "Фармат файла"
       ],
       "Forwards to": [
         "Пераслаць на"

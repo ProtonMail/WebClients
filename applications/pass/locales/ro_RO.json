@@ -242,6 +242,9 @@
       "More options": [
         "Mai multe opțiuni"
       ],
+      "Move": [
+        "Mutare"
+      ],
       "Move all items": [
         "Mutare toate articolele"
       ],
@@ -298,6 +301,9 @@
       ],
       "Resend invitation": [
         "Retrimitere invitație"
+      ],
+      "Restore": [
+        "Restaurare"
       ],
       "Restore item": [
         "Restabilire articol"
@@ -617,6 +623,9 @@
       "Unknown invite": [
         "Invitație necunoscută."
       ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
+      ],
       "Unsupported 1Password file format": [
         "Format de fișier 1Password neacceptat."
       ],
@@ -742,6 +751,9 @@
       "Admin": [
         "Administrator"
       ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "După inactivitate, accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea. După 3 încercări nereușite se va deconecta din cont."
+      ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
@@ -792,6 +804,9 @@
       ],
       "Copied to clipboard": [
         "Copiat în memorie"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV oferă un format convenabil pentru a vă vizualiza datele. Cu toate acestea, datorită simplității sale, unele date nu vor fi incluse (câmpuri personale, structura seifului...). Pentru o exportare completă, vă recomandăm să utilizați un alt format."
       ],
       "Decrypting your data": [
         "Se decriptează datele"
@@ -1065,6 +1080,12 @@
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
       ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Fișierul exportat va fi criptat folosind PGP și necesită o frază de acces puternică."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "Fișierul exportat nu va conține datele seifurilor partajate în care nu sunteți proprietar."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
         "Nu s-au putut importa ${ result.ignored.length } articole:",
@@ -1270,6 +1291,9 @@
       "Created": [
         "Creat la"
       ],
+      "Default (recommended)": [
+        "Implicit (recomandat)"
+      ],
       "Display": [
         "Afișare"
       ],
@@ -1279,6 +1303,9 @@
       "Empty trash": [
         "Golire «Gunoi»"
       ],
+      "Encrypted (recommended)": [
+        "Criptat (recomandat)"
+      ],
       "Expiration date": [
         "Dată expirare"
       ],
@@ -1287,6 +1314,9 @@
       ],
       "Field name": [
         "Nume câmp"
+      ],
+      "File format": [
+        "Format fișier"
       ],
       "Forwards to": [
         "Redirecționare către"
