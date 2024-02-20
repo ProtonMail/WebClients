@@ -1,7 +1,7 @@
-import { BrowserWindow, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
+import { BrowserView, BrowserWindow, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
 import { isMac } from "../helpers";
 
-const getContextMenuSpellCheck = (props: ContextMenuParams, window: BrowserWindow) => {
+const getContextMenuSpellCheck = (props: ContextMenuParams, view: BrowserView) => {
     if (!props.dictionarySuggestions || props.dictionarySuggestions.length === 0) {
         return [];
     }
@@ -10,14 +10,14 @@ const getContextMenuSpellCheck = (props: ContextMenuParams, window: BrowserWindo
     props.dictionarySuggestions.forEach((suggestion) => {
         template.push({
             label: suggestion,
-            click: () => window.webContents.replaceMisspelling(suggestion),
+            click: () => view.webContents.replaceMisspelling(suggestion),
         });
     });
 
     template.push({ type: "separator" });
     template.push({
         label: "Add to dictionary",
-        click: () => window.webContents.session.addWordToSpellCheckerDictionary(props.misspelledWord),
+        click: () => view.webContents.session.addWordToSpellCheckerDictionary(props.misspelledWord),
     });
     template.push({ type: "separator" });
 
@@ -87,8 +87,8 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
     return template;
 };
 
-export const createContextMenu = (props: ContextMenuParams, window: BrowserWindow) => {
-    const spellCheckTemplate = getContextMenuSpellCheck(props, window);
+export const createContextMenu = (props: ContextMenuParams, view: BrowserView) => {
+    const spellCheckTemplate = getContextMenuSpellCheck(props, view);
     const flagsTemplate = getContextEditFlags(props);
     const context = getContextMenu(props, spellCheckTemplate.length > 0 || flagsTemplate.length > 0);
 

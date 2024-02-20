@@ -2,13 +2,13 @@ import { BrowserView, BrowserWindow, Rectangle, Session, app } from "electron";
 import Logger from "electron-log";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getConfig } from "../config";
+import { isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./beforeUnload";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
-import { isWindows } from "../helpers";
 
 const config = getConfig();
 
@@ -34,17 +34,33 @@ const createViews = (session: Session) => {
     const config = getWindowConfig(session);
     mailView = new BrowserView({ ...config });
     calendarView = new BrowserView({ ...config });
+
+    handleBeforeHandle(mailView);
+    handleBeforeHandle(calendarView);
+
+    mailView.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, mailView).popup();
+    });
+
+    calendarView.webContents.on("context-menu", (_e, props) => {
+        createContextMenu(props, calendarView).popup();
+    });
+
+    mailView.webContents.session.setCertificateVerifyProc((request, callback) => {
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
+    });
+
+    calendarView.webContents.session.setCertificateVerifyProc((request, callback) => {
+        const callbackValue = checkKeys(request);
+        callback(callbackValue);
+    });
 };
 
 const createBrowserWindow = (session: Session) => {
     const window = new BrowserWindow({ ...getWindowConfig(session) });
 
     setApplicationMenu(app.isPackaged);
-    handleBeforeHandle(window);
-
-    window.webContents.on("context-menu", (_e, props) => {
-        createContextMenu(props, window).popup();
-    });
 
     window.webContents.session.setCertificateVerifyProc((request, callback) => {
         const callbackValue = checkKeys(request);
@@ -65,15 +81,15 @@ const configureViews = () => {
 const adjustBoundsForWindows = (bounds: Rectangle) => {
     const padding = { top: 16, right: 8, bottom: 16, left: 8 };
     if (isWindows) {
-      return {
-        x: bounds.x + padding.left,
-        y: bounds.y + padding.top,
-        width: bounds.width - padding.left - padding.right,
-        height: bounds.height - padding.top - padding.bottom,
-      };
+        return {
+            x: bounds.x + padding.left,
+            y: bounds.y + padding.top,
+            width: bounds.width - padding.left - padding.right,
+            height: bounds.height - padding.top - padding.bottom,
+        };
     }
     return bounds;
-  };
+};
 
 const loadMailView = (window: BrowserWindow) => {
     Logger.info("Loading mail view");
@@ -82,10 +98,10 @@ const loadMailView = (window: BrowserWindow) => {
         return;
     }
 
-    const bounds = adjustBoundsForWindows(window.getBounds())
+    const bounds = adjustBoundsForWindows(window.getBounds());
     mailView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     window.setBrowserView(mailView);
-    mailView.webContents.toggleDevTools()
+    mailView.webContents.toggleDevTools();
 };
 
 const loadCalendarView = (window: BrowserWindow) => {
@@ -95,7 +111,7 @@ const loadCalendarView = (window: BrowserWindow) => {
         return;
     }
 
-    const bounds = adjustBoundsForWindows(window.getBounds())
+    const bounds = adjustBoundsForWindows(window.getBounds());
     calendarView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     window.setBrowserView(calendarView);
 };
@@ -108,7 +124,7 @@ export const loadAccountView = (window: BrowserWindow) => {
         accountView = new BrowserView({ ...congif });
     }
 
-    const bounds = adjustBoundsForWindows(window.getBounds())
+    const bounds = adjustBoundsForWindows(window.getBounds());
     accountView.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
     window.setBrowserView(accountView);
 };

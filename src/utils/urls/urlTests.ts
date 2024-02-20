@@ -2,7 +2,7 @@ import Logger from "electron-log";
 import { getConfig } from "../config";
 
 const sessionRegex = /(?!:\/u\/)(\d+)(?!:\/)/g;
-export const getSessionID = (url: string) => {
+export const getSessionID = (url?: string) => {
     try {
         const pathName = new URL(url).pathname;
         return pathName.match(sessionRegex)?.[0];

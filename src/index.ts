@@ -23,6 +23,7 @@ import {
 } from "./utils/urls/urlTests";
 import {
     getCalendarView,
+    getMailView,
     reloadCalendarWithSession,
     updateView,
     viewCreationAppStartup,
@@ -67,9 +68,10 @@ app.whenReady().then(() => {
     });
 
     const window = viewCreationAppStartup(secureSession);
-    if (hasTrialEnded()) {
+    const mailView = getMailView();
+    if (hasTrialEnded() && mailView) {
         const url = getTrialEndURL();
-        window.loadURL(url);
+        mailView.webContents?.loadURL(url);
     }
 
     // Check updates
