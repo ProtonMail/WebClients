@@ -1113,6 +1113,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"

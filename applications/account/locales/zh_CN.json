@@ -3640,9 +3640,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "充值金额不能低于 ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "捐款金额不应低于 ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "支付金额不能低于 ${ price }"
       ],
@@ -5611,7 +5608,7 @@
         "即刻下载您所需的应用，随时随地保护隐私。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
+        "您可以下载 PGP 密钥用于其他兼容 PGP 的服务。"
       ],
       "Drop file here to upload": [
         "拖至此处即可上传"
@@ -6330,6 +6327,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。此功能仅供具备自有域名的 ${ BRAND_NAME } 商务用户使用。"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
       ],
@@ -6358,7 +6358,7 @@
         "该用户的存储空间使用量"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "将密码和文件存储在安全的地方，导入您的密钥时还会用到它们。"
+        "请妥善保管此文件及密码，以供将来导入密钥使用。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
@@ -6514,7 +6514,7 @@
         "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "将下载含有您私钥的文件，请使用密码加密保护这个文件。"
+        "您的私钥将以文件形式下载，请设置密码加密其内容。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "完成此操作后您就可以在 ${ BRAND_NAME } 中使用 PayPal 支付了。我们将在新标签页中为您打开 PayPal，如果您使用了弹窗屏蔽插件，请关闭后再继续。"
@@ -6550,7 +6550,7 @@
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
       ],
       "to continue to ${ product }": [
-        "继续使用 ${ product }"
+        "即可使用 ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
@@ -8246,7 +8246,7 @@
         "验证码"
       ],
       "Verify keys with Key Transparency": [
-        "使用Key Transparency验证密钥"
+        "通过密钥透明化系统验证密钥"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
@@ -8347,9 +8347,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 欢迎信"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "${ MAIL_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 的新功能"
       ]
     },
     "Label in domain modal": {
@@ -9004,7 +9001,7 @@
         "每位用户 ${ size } 存储空间"
       ],
       "1 user": [
-        "1名用户"
+        "1 位用户"
       ],
       "24/7 support": [
         "全天候支持"
@@ -9220,7 +9217,7 @@
         "流量与带宽不限"
       ],
       "Up to ${ n } user": [
-        "最多 ${ n } 名用户"
+        "最多 ${ n } 位用户"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最高 ${ totalStorageSize } 存储空间"
@@ -10887,7 +10884,7 @@
         "3 TB"
       ],
       "6 users": [
-        "6 名用户"
+        "6 位用户"
       ],
       "64 countries": [
         "64 个国家"
@@ -12543,6 +12540,9 @@
       ],
       "Fingerprint": [
         "指纹"
+      ],
+      "Key type": [
+        "密钥类型"
       ],
       "Status": [
         "状态"

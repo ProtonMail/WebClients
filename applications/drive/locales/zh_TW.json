@@ -583,6 +583,9 @@
       "Select all": [
         "全選"
       ],
+      "Select country": [
+        "選擇國家"
+      ],
       "Send feedback": [
         "傳送意見回饋"
       ],
@@ -738,9 +741,6 @@
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
-      ],
-      "Your 500 MB bonus": [
-        "您的 500 MB 獎勵"
       ],
       "Zoom in": [
         "放大"
@@ -2089,8 +2089,20 @@
       "Address primary private key not found": [
         "找不到電子郵件位址主要私密金鑰"
       ],
+      "Alias is not valid": [
+        "別名無效"
+      ],
+      "Alias is required": [
+        "別名為必填"
+      ],
       "Alias options could not be resolved": [
         "別名選項無法解析處理"
+      ],
+      "Aliases could not be loaded": [
+        "無法載入別名"
+      ],
+      "An error occurred while loading alias options": [
+        "載入別名選項時發生錯誤"
       ],
       "Authentication canceled.": [
         "驗證已取消。"
@@ -2170,6 +2182,9 @@
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
       ],
+      "Forward address is required": [
+        "轉寄電郵地址為必填"
+      ],
       "Image upload failed": [
         "影像上載失敗"
       ],
@@ -2211,6 +2226,9 @@
       ],
       "Missing signature": [
         "簽章遺失"
+      ],
+      "Name is required": [
+        "名稱為必填"
       ],
       "No calendars found to import": [
         "沒有找到行事曆可以匯入"
@@ -3295,6 +3313,9 @@
       "All (${ totalFoldersCount } label)": [
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
+      "All encrypted files": [
+        "全部加密的檔案"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -3460,9 +3481,6 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此資料夾由 ${ emailAddress } 安全上載。"
       ],
-      "double your storage": [
-        "加倍您的儲存空間"
-      ],
       "Download ${ name } app": [
         "下載 ${ name } app"
       ],
@@ -3483,6 +3501,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "由於連線問題，下載已暫停；將伺機自動恢復"
+      ],
+      "Download ready": [
+        "準備下載"
       ],
       "Downloaded": [
         "已下載"
@@ -3607,9 +3628,6 @@
       "Get the desktop app to sync files from your computer.": [
         "取得電腦應用程式以從電腦同步檔案。"
       ],
-      "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "請先前往「我的檔案」，並上載一些檔案。"
       ],
@@ -3639,6 +3657,9 @@
       ],
       "Import mailbox": [
         "匯入信箱"
+      ],
+      "Important note": [
+        "重要提示"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -4168,8 +4189,8 @@
       "Want to sync files faster?": [
         "想更快同步?"
       ],
-      "Way to go, you’ve just doubled your free storage!": [
-        "成功了，您的免費儲存空間加倍了！"
+      "Warning": [
+        "警告"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
         "我們遇到技術問題。暫時停用上傳新照片的功能。"
@@ -4234,14 +4255,14 @@
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
+      "You can now return to the application to continue": [
+        "您現在可以返回應用程式並繼續"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
       "You cannot undo this action.": [
         "此操作無法復原。"
-      ],
-      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
-        "您還有${ expiresInDays }天的時間領取您的 500 MB 歡迎獎勵，以及 "
       ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
@@ -4515,6 +4536,9 @@
       ],
       "Duplicate found": [
         "發現重複項目"
+      ],
+      "e.g., Amazon, eBay, Etsy": [
+        "如 Amazon, eBay, Etsy"
       ],
       "Email": [
         "電郵"
@@ -4807,6 +4831,9 @@
       "Yes, I want to permanently delete my old files": [
         "是的，我想要永久刪除我的舊檔案"
       ],
+      "Your alias": [
+        "你的別名"
+      ],
       "Your password (admin)": [
         "您的密碼（管理員）"
       ]
@@ -4949,6 +4976,9 @@
       ]
     },
     "Mimetype": {
+      "7-zip archive": [
+        "7-zip 封存檔"
+      ],
       "AAC audio": [
         "AAC 音訊"
       ],
@@ -5398,9 +5428,6 @@
       "Create a share link": [
         "創建共享連結"
       ],
-      "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "開始使用 ${ DRIVE_APP_NAME }，我們會將您的免費儲存空間加倍至 1GB！"
-      ],
       "Set a recovery method": [
         "設定備援方法"
       ],
@@ -5624,11 +5651,26 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "全部別名"
+      ],
+      "Create alias": [
+        "創建別名"
+      ],
+      "Create an alias": [
+        "建立一個別名"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
+      "New alias": [
+        "新增别名"
+      ],
       "Open ${ PASS_APP_NAME }": [
         "開啟 ${ PASS_APP_NAME }"
+      ],
+      "Protect your online identity": [
+        "保護你的線上身分"
       ],
       "Try ${ PASS_APP_NAME }": [
         "嘗試${ PASS_APP_NAME }"
@@ -6068,8 +6110,14 @@
       "Your ${ appStorage } is full": [
         "您的${ appStorage }已滿"
       ],
+      "Your ${ storage } is full. ${ cta }.": [
+        "您的${ storage }已滿${ cta }。"
+      ],
       "Your storage is full": [
         "您的儲存空間已滿"
+      ],
+      "Your storage is full. ${ cta }.": [
+        "您的儲存已滿${ cta }。"
       ]
     },
     "Success": {
@@ -6081,6 +6129,9 @@
       ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
+      ],
+      "Alias copied to clipboard": [
+        "已複製別名到剪貼簿"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -6411,6 +6462,9 @@
       "Empty trash": [
         "清空垃圾桶"
       ],
+      "Enable 2FA": [
+        "啟用2FA"
+      ],
       "Enable drive search": [
         "啟用磁碟搜尋"
       ],
@@ -6437,6 +6491,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "找到 ${ searchView.numberOfResults } 個結果"
+      ],
+      "Get advanced protection": [
+        "取得進階保護"
       ],
       "Groups": [
         "群組"
@@ -6494,6 +6551,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Need more aliases?": [
+        "需要更多別名?"
       ],
       "Night theme": [
         "夜間布景主題"
@@ -6572,6 +6632,9 @@
       ],
       "Searching…": [
         "正在搜尋…"
+      ],
+      "Security center": [
+        "安全中心"
       ],
       "Select action to take on contact group": [
         "選擇針對聯絡人群組的動作"
@@ -6693,9 +6756,6 @@
       "You have no folders yet": [
         "您尚未創建任何資料夾"
       ],
-      "Your 500 MB bonus": [
-        "您的 500 MB 獎勵"
-      ],
       "Your changes are not synced yet": [
         "您的變更尚未同步"
       ],
@@ -6704,9 +6764,6 @@
       ],
       "Your welcome actions": [
         "您的歡迎動作"
-      ],
-      "You’ve got 1 GB of storage": [
-        "您已獲得 1 GB 的儲存空間"
       ]
     },
     "Today icon tooltip in mini calendar": {

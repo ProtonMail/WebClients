@@ -15,6 +15,11 @@
         "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
       ]
     },
+    "Error": {
+      "Coudn't load invoices. Please try again later.": [
+        "Couldn't load invoices. Please try again later."
+      ]
+    },
     "familyOffer_2023:Action": {
       "Invite member to your family": [
         "Invite a user"
@@ -26,6 +31,9 @@
       ]
     },
     "Info": {
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization."
+      ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/month)"
       ],
@@ -37,6 +45,13 @@
       ],
       "Lean more about gateways": [
         "Learn more about Gateways"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Once single sign-on is disabled for your organization:"
+      ],
+      "Please use a password more than ${ MIN_PASSWORD_LENGTH } character.": [
+        "Please use a password longer than ${ MIN_PASSWORD_LENGTH } character.",
+        "Please use a password longer than ${ MIN_PASSWORD_LENGTH } characters."
       ],
       "Tor": [
         "Tor"

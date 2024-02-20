@@ -1,0 +1,1914 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ko_KO"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "추가"
+      ],
+      "Add current URL": [
+        "현재 URL 추가"
+      ],
+      "Add more": [
+        "더 추가하기"
+      ],
+      "Add new item": [
+        "새 항목 추가"
+      ],
+      "Admin panel": [
+        "관리자 패널"
+      ],
+      "Advanced": [
+        "고급"
+      ],
+      "Advanced options": [
+        "고급 옵션"
+      ],
+      "Authenticate": [
+        "인증"
+      ],
+      "Back": [
+        "이전"
+      ],
+      "Bulk delete items from trash": [
+        "휴지통에서 항목 대량 복원"
+      ],
+      "Bulk move items to another vault": [
+        "다른 금고로 항목을 대량 이동"
+      ],
+      "Bulk move items to trash": [
+        "휴지통으로 항목을 대량 이동"
+      ],
+      "Bulk restore items from trash": [
+        "휴지통에서 대량 복원"
+      ],
+      "Bulk select items": [
+        "대량의 선택된 항목"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Change": [
+        "변경"
+      ],
+      "Choose a file or drag it here": [
+        "파일을 선택하거나 드래그하세요"
+      ],
+      "Clear": [
+        "비우기"
+      ],
+      "Clear search": [
+        "검색 지우기"
+      ],
+      "Close": [
+        "닫기"
+      ],
+      "Close advanced options": [
+        "고급 옵션 표시"
+      ],
+      "Close navigation": [
+        "탐색 종료"
+      ],
+      "Confirm": [
+        "확인"
+      ],
+      "Confirm access": [
+        "접근 허용"
+      ],
+      "Continue": [
+        "계속"
+      ],
+      "Copy and close": [
+        "복사 및 닫기"
+      ],
+      "Copy to clipboard": [
+        "클립보드로 복사"
+      ],
+      "Create": [
+        "생성"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정 생성하기"
+      ],
+      "Create a new vault": [
+        "새 금고 생성"
+      ],
+      "Create a new vault to share": [
+        "공유할 새 금고 생성"
+      ],
+      "Create alias": [
+        "별명 생성"
+      ],
+      "Create card": [
+        "카드 생성"
+      ],
+      "Create login": [
+        "로그인 생성"
+      ],
+      "Create new items": [
+        "새 항목 생성"
+      ],
+      "Create note": [
+        "메모 생성"
+      ],
+      "Create vault": [
+        "금고 생성"
+      ],
+      "Creating vault": [
+        "금고 생성 중"
+      ],
+      "Customize": [
+        "맞춤화"
+      ],
+      "Delete": [
+        "삭제"
+      ],
+      "Delete alias": [
+        "별명 삭제"
+      ],
+      "Delete all": [
+        "전체 삭제"
+      ],
+      "Delete password": [
+        "비밀번호 삭제"
+      ],
+      "Delete permanently": [
+        "영구적으로 삭제"
+      ],
+      "Delete vault": [
+        "금고 삭제"
+      ],
+      "Deselect": [
+        "선택 해제"
+      ],
+      "Discard": [
+        "저장 안함"
+      ],
+      "Dismiss": [
+        "무시"
+      ],
+      "Download this CSV template": [
+        "CSV 양식 다운로드"
+      ],
+      "Edit": [
+        "편집"
+      ],
+      "Edit vault": [
+        "금고 편집"
+      ],
+      "Export": [
+        "내보내기"
+      ],
+      "Feedback": [
+        "피드백"
+      ],
+      "Fill password": [
+        "비밀번호 채우기"
+      ],
+      "Filter vault items": [
+        "금고 항목 필터링"
+      ],
+      "Generate alias": [
+        "별명 생성"
+      ],
+      "Generate password": [
+        "비밀번호 생성"
+      ],
+      "Generated passwords": [
+        "생성된 비밀번호"
+      ],
+      "Get mobile apps": [
+        "모바일 앱 다운로드"
+      ],
+      "Get Started": [
+        "시작하기"
+      ],
+      "Help us improve": [
+        "저희를 도와주세요"
+      ],
+      "Hide": [
+        "숨기기"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "어떻게 ${ PROVIDER_INFO_MAP[form.values.provider].title }에서 데이터를 내보낼 수 있죠?"
+      ],
+      "Import": [
+        "불러오기"
+      ],
+      "Importing": [
+        "가져오는 중"
+      ],
+      "Install extension": [
+        "확장 설치"
+      ],
+      "Invite others": [
+        "다른 사용자 초대"
+      ],
+      "Join shared vault": [
+        "공유 금고 참가"
+      ],
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "Leave": [
+        "나가기"
+      ],
+      "Leave vault": [
+        "금고 떠나기"
+      ],
+      "Lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 잠금"
+      ],
+      "Make admin": [
+        "관리자 생성"
+      ],
+      "Make editor": [
+        "편집기 생성"
+      ],
+      "Make viewer": [
+        "뷰어 생성"
+      ],
+      "Manage access": [
+        "접근 관리"
+      ],
+      "Manually sync your data": [
+        "수동으로 데이터를 동기화"
+      ],
+      "More info: ${ safeTitle }": [
+        "추가 정보: ${ safeTitle }"
+      ],
+      "More options": [
+        "더 많은 옵션"
+      ],
+      "Move": [
+        "이동"
+      ],
+      "Move all items": [
+        "모든 항목 이동"
+      ],
+      "Move to a shared vault": [
+        "공유된 금고로 이동"
+      ],
+      "Move to another vault": [
+        "다른 금고로 이동"
+      ],
+      "Move to Trash": [
+        "휴지통으로 이동"
+      ],
+      "Move to trash": [
+        "휴지통으로 이동"
+      ],
+      "Multiple select": [
+        "다중 선택"
+      ],
+      "Not now": [
+        "다음에"
+      ],
+      "OK": [
+        "확인"
+      ],
+      "Open navigation": [
+        "탐색 열기"
+      ],
+      "Pass for Android": [
+        "Android용 Pass"
+      ],
+      "Pass for iOS": [
+        "iOS용 Pass"
+      ],
+      "Pin item": [
+        "항목 고정"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
+      ],
+      "Regenerate": [
+        "재생성"
+      ],
+      "Reject": [
+        "거절"
+      ],
+      "Reject invitation": [
+        "초대 거절"
+      ],
+      "Remove access": [
+        "접근 제거"
+      ],
+      "Remove member": [
+        "구성원 추방"
+      ],
+      "Request a feature": [
+        "기능 요청"
+      ],
+      "Resend invitation": [
+        "초대장 재전송"
+      ],
+      "Restore": [
+        "복원"
+      ],
+      "Restore item": [
+        "항목 복구"
+      ],
+      "Retry": [
+        "재시도"
+      ],
+      "Save": [
+        "저장"
+      ],
+      "Saving": [
+        "저장 중"
+      ],
+      "See members": [
+        "회원 보기"
+      ],
+      "Send invite": [
+        "초대장 보내기"
+      ],
+      "Send us a message": [
+        "메세지 보내기"
+      ],
+      "Set access level": [
+        "접근 수준 설정"
+      ],
+      "Share": [
+        "공유"
+      ],
+      "Share this vault": [
+        "이 금고 공유"
+      ],
+      "Share vault": [
+        "금고 공유"
+      ],
+      "Show": [
+        "보기"
+      ],
+      "Sign back in": [
+        "다시 로그인하세요"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "${ BRAND_NAME }에 로그인"
+      ],
+      "Sign out": [
+        "로그아웃"
+      ],
+      "Sort vault items": [
+        "금고 항목 정렬"
+      ],
+      "Submit": [
+        "제출"
+      ],
+      "Submitting report...": [
+        "보고서 제출 중..."
+      ],
+      "Transfer ownership": [
+        "소유권 이전"
+      ],
+      "Trash": [
+        "휴지통"
+      ],
+      "Unpin item": [
+        "항목 고정 해제"
+      ],
+      "Update vault": [
+        "금고 업데이트"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ],
+      "Upgrade now to share with more people": [
+        "더 많은 사람들과 공유하려면 업그레이드"
+      ],
+      "Write us on Reddit": [
+        "Reddit에서 작성"
+      ],
+      "Write us on Twitter": [
+        "Twitter에서 작성"
+      ],
+      "Your password manager not here? Request it.": [
+        "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "알뜰하게 할인 받으세요. 오직 ${ relativePrice } 당 개월만 추가하여 Pass Plus를 1년 동안 사용하세요."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "혜택 얻기"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "블랙 프라이데이 오퍼"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "상세 정보"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "접기"
+      ],
+      "Expand": [
+        "펼치기"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "별명 옵션을 해결할 수 없습니다."
+      ],
+      "Authentication error": [
+        "인증 오류"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "인증 실패. 이 내보내기 작업을 완료하기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
+      ],
+      "Auto-lock could not be activated": [
+        "자동 잠금을 활성화 할 수 없습니다."
+      ],
+      "Auto-lock could not be disabled": [
+        "자동 잠금을 비활성화 할 수 없습니다."
+      ],
+      "Cannot send invitations at the moment": [
+        "현재 초대 전송할 수 없습니다."
+      ],
+      "Could not confirm this invite at the moment": [
+        "현재 초대를 수락할 수 없습니다."
+      ],
+      "Could not leave vault.": [
+        "금고를 떠날 수 없습니다."
+      ],
+      "Could not load recommendations at the moment.": [
+        "추천 항목을 불러올 수 없습니다."
+      ],
+      "Could not open created vault": [
+        "생성된 금고를 열 수 없습니다."
+      ],
+      "Could not open invited vault": [
+        "초대된 금고를 열 수 없습니다."
+      ],
+      "Could not open updated vault": [
+        "업데이트된 금고를 열 수 없습니다."
+      ],
+      "Could not resolve share members": [
+        "회원에게 공유를 해결할 수 없음"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV 파일이 예상 헤더를 누락합니다: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "${ PASS_APP_NAME }의 내보낸 파일을 복호화 하는데 실패함. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "항목 삭제 실패"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
+      ],
+      "Editing item failed": [
+        "항목 수정 실패"
+      ],
+      "Empty CSV file": [
+        "빈 CSV 파일"
+      ],
+      "Emptying trash failed": [
+        "휴지통 비우기 실패"
+      ],
+      "Encrypted JSON not supported": [
+        "암호화된 JSON이 지원되지 않습니다."
+      ],
+      "Error reporting problem": [
+        "문제 보고 실패"
+      ],
+      "Failed removing the invite.": [
+        "초대 삭제 실패."
+      ],
+      "Failed resending invite.": [
+        "초대 재전송 실패."
+      ],
+      "Failed to delete selected items": [
+        "선택한 항목을 지우기 실패했습니다."
+      ],
+      "Failed to edit user's access.": [
+        "사용자 접근 수정 실패."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
+      ],
+      "Failed to move items": [
+        "항목 이동 실패"
+      ],
+      "Failed to move items to trash": [
+        "항목을 휴지통으로 이동하지 못했습니다."
+      ],
+      "Failed to pin item": [
+        "항목 고정 실패"
+      ],
+      "Failed to remove user's access.": [
+        "사용자 접근 삭제 실패."
+      ],
+      "Failed to restore items from trash": [
+        "휴지통 내의 항목 복구 실패"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "금고 소유권 이전 실패."
+      ],
+      "Failed to unpin item": [
+        "항목 고정 해제 실패"
+      ],
+      "File could not be parsed": [
+        "파일을 분석할 수 없음."
+      ],
+      "File does not match expected format": [
+        "파일이 형식과 일치되지 않습니다."
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "\"${ vaultData.name }\" 금고로 불러오기 실패: ${ description }"
+      ],
+      "Importing items failed": [
+        "항목 불러오기 실패"
+      ],
+      "Invalid password manager": [
+        "유효하지 않은 비밀번호 관리자"
+      ],
+      "Invitation could not be accepted": [
+        "초대를 수락할 수 없습니다"
+      ],
+      "Invitation could not be rejected": [
+        "초대를 거절할 수 없습니다"
+      ],
+      "Item content cannot exceed 40KB": [
+        "항목 콘텐츠가 40KB를 초과할 수 없습니다."
+      ],
+      "Item creation failed": [
+        "항목 생성 실패"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "항목 필드에 예상치 못한 쉼표, 따옴표 또는 여러 줄이 포함된 경우 LastPass가 손상된 CSV 파일을 내보낼 수 있습니다."
+      ],
+      "Moving item failed": [
+        "항목 이동 실패"
+      ],
+      "Passphrase is incorrect": [
+        "비밀번호가 올바르지 않습니다."
+      ],
+      "PIN codes do not match": [
+        "PIN 코드가 일치하지 않습니다."
+      ],
+      "Please upgrade to have early access to ${ PASS_APP_NAME } desktop app": [
+        "${ PASS_APP_NAME } 데스크탑 앱 얼리 엑세스 특전을 얻기 위해선 업그레이드 하세요."
+      ],
+      "Request timed out": [
+        "요청 시간이 초과되었습니다."
+      ],
+      "Requesting alias options failed": [
+        "별명 옵션 요청 실패"
+      ],
+      "Restoring item failed": [
+        "항목 복구 실패"
+      ],
+      "Restoring trashed items failed": [
+        "휴지통 내 항목 복구 실패"
+      ],
+      "Settings update failed": [
+        "설정 업데이트 실패"
+      ],
+      "Signature verification failed": [
+        "서명 검증 실패"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "일부 금고가 비밀번호 리셋으로 더 이상 접근할 수 없습니다. 다시 접근하려면 계정을 재활성화 하세요. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
+      "The file you are trying to import is empty": [
+        "불러오기를 시도 중인 파일이 비어 있습니다."
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "너무 많은 시도 실패. 다시 로그인 하세요."
+      ],
+      "Trashing item failed": [
+        "항목을 휴지통으로 이동하는데 실패"
+      ],
+      "Unable to boot": [
+        "부팅할 수 없음"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "해당 항목으로 OTP 코드를 생성할 수 없습니다"
+      ],
+      "Unable to sync": [
+        "동기화할 수 없음"
+      ],
+      "Unknown invite": [
+        "알 수 없는 초대"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "지원되지 않는 ${ PASS_APP_NAME } 파일 포맷"
+      ],
+      "Unsupported 1Password file format": [
+        "지원되지 않는 1Password 파일 포맷"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "\"${ payload.content.name }\" 금고를 업데이트하는데 실패했습니다."
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "\"${ payload.content.name }\" 금고 생성을 실패했습니다."
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "금고 \"${ vaultData.name }\" 을(를) 생성할 수 없습니다."
+      ],
+      "Vault name does not match": [
+        "금고 이름이 맞지 않습니다."
+      ],
+      "Wrong PIN code. Try again.": [
+        "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "타 ${ PASS_APP_NAME } 클라이언트로 인해 사용자의 PIN 코드가 삭제되었습니다."
+      ]
+    },
+    "Error message": {
+      "Oops, something went wrong": [
+        "이런, 문제가 발생했습니다"
+      ],
+      "Please refresh the page or try again later.": [
+        "페이지를 새로고침 하거나 다시 시도하세요."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" 항목이 무시되었습니다."
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
+      ],
+      "${ count } invites successfully sent": [
+        "초대 ${ count }개를 잘 보냈습니다"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "새로운 버전의 ${ PASS_APP_NAME }가 사용 가능합니다. 새로운 기능과 버그 수정을 누리기 위해 업데이트 하세요."
+      ],
+      "Access successfully confirmed": [
+        "접근을 성공적으로 수락했습니다."
+      ],
+      "Admin": [
+        "관리자"
+      ],
+      "After inactivity, access to ${ PASS_APP_NAME } will require a PIN code to unlock your session. You'll be logged out after 3 failed attempts.": [
+        "비활성화 후, ${ PASS_APP_NAME }에 액세스하려면 세션의 잠금을 해제해야 하고 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
+      ],
+      "All items successfully moved": [
+        "전체 항목을 성공적으로 이동했습니다."
+      ],
+      "All trashed items permanently deleted": [
+        "모든 항목을 성공적으로 삭제했습니다."
+      ],
+      "All trashed items successfully restored": [
+        "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
+      ],
+      "An item previously shared with you was removed": [
+        "사용자가 이전에 공유한 항목이 삭제되었습니다."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "\"${ fromVaultName }\" 에서 \"${ toVaultName }\"(으)로 모든 항목을 이동하시겠습니까?"
+      ],
+      "Auto-lock successfully disabled": [
+        "자동 잠금이 성공적으로 비활성화 되었습니다."
+      ],
+      "Bring your existing passwords into ${ BRAND_NAME }.": [
+        "기존의 비밀번호를 ${ BRAND_NAME }으로 가져오십시오."
+      ],
+      "Built in 2FA authenticator": [
+        "내장형 2FA 인증기"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "이 금고의 접근을 허용 및 삭제할 수 있습니다."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "이 금고의 접근을 허용 및 취소할 수 있습니다."
+      ],
+      "Can view items in this vault.": [
+        "이 금고에서 항목을 확인 가능합니다."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "축하합니다! 접근이 수락되었습니다."
+      ],
+      "Copied to clipboard": [
+        "클립보드에 복사됨"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, vault structure...). For a complete export, we recommend using a different format.": [
+        "CSV는 데이터를 볼 수 있는 편리한 형식을 제공합니다. 그러나 단순성으로 인해 일부 데이터는 포함되지 않게 됩니다(사용자 지정 필드, 금고 구조 등...). 완전한 내보내기를 위해, 다른 형식을 사용하는 것이 좋습니다."
+      ],
+      "Decrypting your data": [
+        "데이터 복호화 중"
+      ],
+      "Deleted items will be moved here first": [
+        "삭제된 항목이 여기에 표시됩니다."
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" 삭세 중"
+      ],
+      "Drop file here to upload": [
+        "업로드할 파일을 여기에 놓습니다"
+      ],
+      "Drop to import": [
+        "드래그해서 불러오기"
+      ],
+      "Editor": [
+        "편집자"
+      ],
+      "Emptying trash...": [
+        "휴지통 비우는 중..."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit } 자리."
+      ],
+      "Fill in the CSV with your data": [
+        "사용자의 데이터인 CSV를 채워 넣으십시오"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "생성된 CSV로 데이터를 불러오려면 다음 단계를 따르세요:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "보안 상의 이유로, 접근이 수락되어야 합니다."
+      ],
+      "Get the most out of Pass by creating a vault for each team or project.": [
+        "각 팀이나 프로젝트를 위한 금고를 만들어 Pass를 최대한 활용하세요."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Pass Plus를 구독하여 무제한 별명을 사용하고, 독점 기능과 Proton 지원을 사용해 보세요."
+      ],
+      "Import in progress:": [
+        "처리가 진행 중입니다:"
+      ],
+      "Import the CSV file below.": [
+        "아래에 CSV 파일을 불어오십시오."
+      ],
+      "Imported on ${ date }": [
+        "${ date }에 들여옴"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "${ PASS_APP_NAME }의 최고의 경험을 누리기 위하여, 필요한 확장 권한을 허용해 주세요."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
+        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요."
+      ],
+      "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins. ": [
+        "빠르게 로그인 정보를 자동으로 채우려면 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요. "
+      ],
+      "Internet connection lost": [
+        "인터넷 연결 없음"
+      ],
+      "Invitation sent": [
+        "초대장을 보냈습니다"
+      ],
+      "Invite specific people and set the right permissions.": [
+        "특정 사람들을 초대하고 올바른 권한을 설정하세요."
+      ],
+      "Invite successfully removed": [
+        "초대장을 성공적으로 삭제했습니다."
+      ],
+      "Invite successfully resent": [
+        "초대장을 성공적으로 보냄"
+      ],
+      "Invite successfully sent": [
+        "초대를 성공적으로 보냈습니다."
+      ],
+      "invites you to access items in": [
+        "님이 항목 공유를 초대합니다:"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "이미 ${ PASS_APP_NAME }에 로그인 된 것 같습니다. 만약 다른 계정으로 로그인을 시도하는 중이라면, 확장 프로그램에서 로그아웃 하세요."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "항목 \"${ payload.item.data.metadata.name }\" 이(가) 생성되었습니다."
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "항목 \"${ payload.item.data.metadata.name }\" 이(가) 업데이트 되었습니다."
+      ],
+      "Item moved to trash": [
+        "항목을 휴지통으로 이동했습니다."
+      ],
+      "Item permanently deleted": [
+        "항목을 완전히 삭제했습니다."
+      ],
+      "Item restored": [
+        "항목이 복구되었습니다"
+      ],
+      "Item successfully moved": [
+        "항목을 성공적으로 이동했습니다."
+      ],
+      "Item successfully pinned": [
+        "항목을 성공적으로 고정했습니다."
+      ],
+      "Item successfully unpinned": [
+        "항목을 성공적으로 고정 해제했습니다."
+      ],
+      "Leaving vault...": [
+        "금고 나가는 중..."
+      ],
+      "Let's get you started by creating your first item": [
+        "첫 항목 생성을 시작해 보세요"
+      ],
+      "Loading": [
+        "로딩 중"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 로딩 중"
+      ],
+      "Locking your session...": [
+        "세션을 잠그는 중..."
+      ],
+      "Logging you out...": [
+        "사용자를 로그아웃하는 중..."
+      ],
+      "me": [
+        "나"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "비밀번호 그 이상을 보호하다, ${ PASS_APP_NAME }는 이메일 별명을 통해 비밀번호와 개인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }의 같은 기술로, 데이터가 종단간 암호화되며 오직 당신만 접근 가능합니다."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving items": [
+        "항목 이동 중"
+      ],
+      "Moving items to trash": [
+        "항목을 휴지통으로 이동 중"
+      ],
+      "Never": [
+        "안 함"
+      ],
+      "None": [
+        "없음"
+      ],
+      "Owner": [
+        "소유자"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "소유권 이전 완료. 이 금고에 대한 소유권이 더 이상 없습니다."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus 체험"
+      ],
+      "Permanently deleting selected items": [
+        "선택 항목을 영구적으로 삭제하는 중"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN 코드가 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
+      ],
+      "Pinning item...": [
+        "항목 고정 중..."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 ${ BRAND_NAME } 비밀번호를 입력하세요."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "현재 잠금을 해제하기 위해서는 PIN 코드를 확인하세요.\n${ PASS_APP_NAME }가 잠금되지 않습니다."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "이 설정을 수정하기 위해 PIN 코드를 입력해 주세요."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "자동 잠금 설정 등록을 완료하려면 PIN 코드를 확인하세요."
+      ],
+      "Please consider leaving a review.": [
+        "리뷰 쓰는 것을 고려해 보세요."
+      ],
+      "Please enter your current PIN code to continue": [
+        "계속하려면 현재 PIN을 입력하세요."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } 웹 앱 얼리 엑세스 특전을 얻기 위해선 업그레이드 하세요."
+      ],
+      "Press Enter to copy": [
+        "복사하기 위해 엔터 키를 누르세요"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "프라이버시는 우리에게 큰 관심사입니다. 왜 ${ PASS_APP_NAME }가 다른지 알아보세요."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
+      ],
+      "Restoring items from trash": [
+        "휴지통에서 항목 복구 중"
+      ],
+      "Restoring trashed items...": [
+        "휴지통 내 항목 복구 중..."
+      ],
+      "Select destination vault": [
+        "대상 금고 선택"
+      ],
+      "Select vault to share": [
+        "공유하려면 금고 선택"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "불러온 금고가 저장될 위치를 선택하세요."
+      ],
+      "Selected items permanently deleted": [
+        "선택한 항목을 영구적으로 지웠습니다."
+      ],
+      "Selected items successfully moved to trash": [
+        "선택된 항목이 성공적으로 휴지통에 이동되었습니다."
+      ],
+      "Selected items successfully restored from trash": [
+        "휴지통에서 선택된 항목을 성공적으로 복구했습니다."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
+      ],
+      "Session timed out": [
+        "세션 시간 초과됨"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "쉽게 데이터를 잠금하도록 PIN 코드를 설정하세요"
+      ],
+      "Settings successfully updated": [
+        "설정이 성공적으로 업데이트되었습니다."
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "최대 10명 까지 로그인을 공유하고, 메모를 보호하세요."
+      ],
+      "Signing you in": [
+        "로그인 중"
+      ],
+      "Successfully exported all your items": [
+        "모든 항목을 성공적으로 내보냈습니다."
+      ],
+      "Successfully left the vault": [
+        "금고를 성공적으로 나갔습니다."
+      ],
+      "Successfully synced all vaults": [
+        "모든 금고를 성공적으로 동기화 했습니다."
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "다른 큼고로 전환하거나 이 금고 내에 항목을 생성하세요."
+      ],
+      "Syncing your vaults…": [
+        "금고를 동기화 하는 중..."
+      ],
+      "Thank you, the problem has been reported": [
+        "감사합니다, 문제가 보고되었습니다."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "내보낸 파일이 PGP를 통해 암호화되며 강력한 암호가 필요합니다."
+      ],
+      "The exported file will not contain the data of shared vaults where you are not the owner": [
+        "내보내기 파일은 사용자가 소유자가 아닌 공유 금고의 데이터를 포함하지 않습니다."
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
+      ],
+      "The user did not accept the invitation yet.": [
+        "이 초대를 아직 수락하지 않았습니다."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "이 금고는 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "타 비밀번호 관리자에서 데이터를 이전하려면, 현재 사용 중인 비밀번호 관리자에 이동하여 데이터를 불러온 다음 ${ PASS_APP_NAME }에 업로드 하십시오. 데이터를 모두 가져오면 해당 추출된 파일은 삭제하십시오."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "불러온 데이터를 검토하려면, 브라우저 툴바의 Pass 아이콘을 클릭하십시오."
+      ],
+      "Unable to copy to clipboard": [
+        "클립보드에 복사할 수 없습니다."
+      ],
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
+      ],
+      "Unpinning item...": [
+        "항목 고정 해제 중..."
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "프리미엄 기능 잠금해제 하려면 업그레이드"
+      ],
+      "Use vaults to share this item with others.": [
+        "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
+      ],
+      "User's access removed": [
+        "사용자 접근 삭제됨"
+      ],
+      "User's access sucessfuly updated": [
+        "사용자의 접근을 성공적으로 업데이트 했습니다."
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "금고 :${ payload.content.name }\" 이(가) 성공적으로 삭제되었습니다."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 생성되었습니다."
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
+      ],
+      "Viewer": [
+        "보기"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "사용자의 로컬 스토리지로 데이터를 동기화 하는데 문제가 있습니다. ${ PASS_SHORT_APP_NAME }가 원활히 동기화할 수 있도록 저장 공간이 여유 있는지 확인하세요."
+      ],
+      "You are about to create:": [
+        "생성하려고 하는 주소:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "이 별명의 메일함을 변경할 수 없습니다."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고에서 생성됩니다. 모든 금고 간에 항목을 생성하려면 구독을 업그레이드하세요."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "사용자가 생성할 수 있는 최대 별명 수에 도달했습니다. 구독을 업그레이드하여 무제한 별명을 생성하세요."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "최대 수의 금고를 생성했습니다."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "${ maxLength } 문자의 최대 허용 길이에 도달했습니다."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "비활성 기간 후 자동으로 잠기면 PIN을 ${ PASS_APP_NAME }를 잠금해제 하는데 사용할 수 있습니다."
+      ],
+      "You're invited to a vault.": [
+        "금고에 초대되었습니다"
+      ],
+      "Your files will be encrypted and then saved": [
+        "파일이 암호화된 후 저장됩니다"
+      ]
+    },
+    "Label": {
+      "1 hour": [
+        "1시간"
+      ],
+      "1 minute": [
+        "1분"
+      ],
+      "10 minutes": [
+        "10분"
+      ],
+      "15 minutes": [
+        "15분"
+      ],
+      "2FA secret key (TOTP)": [
+        "2FA 시크릿 키 (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA 토큰 (TOTP)"
+      ],
+      "30 minutes": [
+        "30분"
+      ],
+      "30 seconds": [
+        "30초"
+      ],
+      "5 minutes": [
+        "5분"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "계정"
+      ],
+      "Alias": [
+        "별명"
+      ],
+      "Alias address": [
+        "별명 주소"
+      ],
+      "Aliases": [
+        "별칭"
+      ],
+      "All": [
+        "전체"
+      ],
+      "All vaults": [
+        "모든 금고"
+      ],
+      "Alphabetical": [
+        "알파벳 순"
+      ],
+      "Application logs": [
+        "어플리케이션 로그"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 자동 잠금"
+      ],
+      "Auto-lock after": [
+        "자동 잠금 시간"
+      ],
+      "Capital letters (A-Z)": [
+        "대문자 알파벳 (A-Z)"
+      ],
+      "Capitalise": [
+        "대문자"
+      ],
+      "Card": [
+        "카드"
+      ],
+      "Card number": [
+        "카드 번호"
+      ],
+      "Cards": [
+        "카드"
+      ],
+      "Confirm vault name": [
+        "금고 이름 확인"
+      ],
+      "Create a credit card": [
+        "신용 카드 생성"
+      ],
+      "Create a hide-my-email alias": [
+        "hide-my-email 생성"
+      ],
+      "Create a login": [
+        "로그인 생성"
+      ],
+      "Create an encrypted note": [
+        "암호화된 메모 생성"
+      ],
+      "Create new vault": [
+        "새 금고 생성"
+      ],
+      "Created": [
+        "제작"
+      ],
+      "Default (recommended)": [
+        "기본 (권장됨)"
+      ],
+      "Display": [
+        "표시"
+      ],
+      "Download logs": [
+        "로그 다운로드"
+      ],
+      "Empty trash": [
+        "휴지통 비우기"
+      ],
+      "Encrypted (recommended)": [
+        "암호화됨 (권장됨)"
+      ],
+      "Expiration date": [
+        "만료 시간"
+      ],
+      "Export": [
+        "내보내기"
+      ],
+      "Field name": [
+        "필드 이름"
+      ],
+      "File format": [
+        "파일 형식"
+      ],
+      "Forwards to": [
+        "다음으로 전달:"
+      ],
+      "General": [
+        "일반"
+      ],
+      "Generic CSV": [
+        "일반 CSV"
+      ],
+      "Grant": [
+        "허용"
+      ],
+      "Hidden": [
+        "숨김"
+      ],
+      "Hide password": [
+        "비밀번호 숨기기"
+      ],
+      "Import": [
+        "불러오기"
+      ],
+      "Import passwords": [
+        "비밀번호 불러오기"
+      ],
+      "Imported from : ": [
+        "불러온 위치 : "
+      ],
+      "Imported on : ": [
+        "불러온 위치 : "
+      ],
+      "Include numbers": [
+        "숫자 포함"
+      ],
+      "Include numbers (0-9)": [
+        "숫자 포함 (0-9)"
+      ],
+      "Invitations": [
+        "초대"
+      ],
+      "Item ID": [
+        "항목 ID"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "키보드 단축키: ${ shortcut }"
+      ],
+      "Language": [
+        "언어"
+      ],
+      "Last 2 weeks": [
+        "지난 2주"
+      ],
+      "Last autofill": [
+        "마지막 자동 완성"
+      ],
+      "Last month": [
+        "지난 한 달"
+      ],
+      "Last week": [
+        "지난 주"
+      ],
+      "Latest import": [
+        "최근 불러오기"
+      ],
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "Login": [
+        "로그인"
+      ],
+      "Logins": [
+        "로그인"
+      ],
+      "Make all admins": [
+        "전체 구성원을 관리자로 선택"
+      ],
+      "Make all editors": [
+        "전체 구성원을 편집자로 선택"
+      ],
+      "Make all viewers": [
+        "전체 구성원을 뷰어로 선택"
+      ],
+      "Members": [
+        "구성원"
+      ],
+      "Modified": [
+        "수정됨"
+      ],
+      "More than a month": [
+        "1개월 이상"
+      ],
+      "Most recent": [
+        "가장 최근순"
+      ],
+      "Name": [
+        "이름"
+      ],
+      "Name on card": [
+        "카드 소유자 이름"
+      ],
+      "Need help ?": [
+        "도움이 필요한가요 ?"
+      ],
+      "New vault": [
+        "새 금고"
+      ],
+      "New-Old": [
+        "새로 생성된 순"
+      ],
+      "Newest to oldest": [
+        "최신 항목 순"
+      ],
+      "No history": [
+        "기록 없음"
+      ],
+      "Note": [
+        "메모"
+      ],
+      "Notes": [
+        "메모"
+      ],
+      "Old-New": [
+        "오래됨 순"
+      ],
+      "Oldest to newest": [
+        "오래된 항목 순"
+      ],
+      "Passphrase": [
+        "암호"
+      ],
+      "Password": [
+        "암호"
+      ],
+      "Password history": [
+        "비밀번호 변경 기록"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "접두어"
+      ],
+      "Rate us": [
+        "평가해 주세요"
+      ],
+      "Recent": [
+        "최근"
+      ],
+      "Report a problem": [
+        "문제 신고"
+      ],
+      "Restore all items": [
+        "모든 항목 복원하기"
+      ],
+      "Reveal password": [
+        "비밀번호 표시"
+      ],
+      "Security": [
+        "보안"
+      ],
+      "Security code": [
+        "보안 코드"
+      ],
+      "Select an email address": [
+        "이메일 주소 선택"
+      ],
+      "Select preferred language": [
+        "선호하는 언어 선택"
+      ],
+      "Select your password manager": [
+        "비밀 번호 관리자를 선택하세요"
+      ],
+      "Selected": [
+        "선택됨"
+      ],
+      "Session locking": [
+        "세션 잠금"
+      ],
+      "Set PIN code": [
+        "PIN 코드 설정"
+      ],
+      "Show website favicons": [
+        "웹사이트 아이콘 표시"
+      ],
+      "Special characters (!&*)": [
+        "특수 문자 (!&*)"
+      ],
+      "Suffix": [
+        "접미어"
+      ],
+      "Support": [
+        "지원"
+      ],
+      "Text": [
+        "텍스트"
+      ],
+      "Title": [
+        "제목"
+      ],
+      "Today": [
+        "오늘"
+      ],
+      "Total imported items : ": [
+        "총 불러온 항목 : "
+      ],
+      "Total items : ": [
+        "총 항목 : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "휴지통"
+      ],
+      "Type": [
+        "유형"
+      ],
+      "Unnamed Credit Card": [
+        "이름 없는 신용카드"
+      ],
+      "Unnamed item": [
+        "이름 없는 항목"
+      ],
+      "Unnamed note": [
+        "이름 없는 메모"
+      ],
+      "Untitled": [
+        "제목 없음"
+      ],
+      "Update": [
+        "업데이트"
+      ],
+      "Username": [
+        "사용자 이름"
+      ],
+      "Username (alias)": [
+        "사용자 이름 (별명)"
+      ],
+      "Username (new alias)": [
+        "사용자 이름 (새 별명)"
+      ],
+      "Vault": [
+        "금고"
+      ],
+      "Vault ID": [
+        "금고 ID"
+      ],
+      "Vaults": [
+        "금고"
+      ],
+      "View details": [
+        "세부사항 보기"
+      ],
+      "View logs": [
+        "로그 보기"
+      ],
+      "Websites": [
+        "웹 사이트"
+      ],
+      "You are about to create": [
+        "생성하려고 하는 주소:"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "PIN 코드를 입력하세요"
+      ],
+      "Sign in to your account": [
+        "계정에 로그인하세요"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } 잠금 해제"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX }에 오신 것을 환영합니다."
+      ]
+    },
+    "Message": {
+      "You selected ${ semiboldText } in this vault": [
+        "이 금고애서 ${ semiboldText }개 선택했습니다."
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "쉼표"
+      ],
+      "Hyphens": [
+        "하이픈"
+      ],
+      "Memorable Password": [
+        "기억할 수 있는 비밀번호"
+      ],
+      "Numbers": [
+        "숫자"
+      ],
+      "Numbers and Symbols": [
+        "숫자 및 기호"
+      ],
+      "Periods": [
+        "구두점"
+      ],
+      "Random Password": [
+        "무작위 비밀번호"
+      ],
+      "Spaces": [
+        "공백"
+      ],
+      "Underscores": [
+        "밑줄"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "2FA 시크릿 키 생성"
+      ],
+      "Add hidden text": [
+        "숨겨진 텍스트 추가"
+      ],
+      "Add note": [
+        "메모 추가"
+      ],
+      "Add text": [
+        "텍스트 추가"
+      ],
+      "Email address": [
+        "이메일 주소"
+      ],
+      "Enter a note...": [
+        "메모를 입력..."
+      ],
+      "Enter a prefix": [
+        "접두어 입력"
+      ],
+      "Enter email or username": [
+        "이메일 및 사용자 이름 입력"
+      ],
+      "Enter password": [
+        "비밀번호 입력"
+      ],
+      "Full Name": [
+        "성명"
+      ],
+      "MM/YY": [
+        "MM/YY (월/년)"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Password": [
+        "비밀번호"
+      ],
+      "Pick a vault": [
+        "금고 선택"
+      ],
+      "Please describe the problem and include any error messages": [
+        "문제를 설명해 주시고 오류 메시지를 포함해 주십시오"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "삭제를 계속하려면 \"${ vaultName }\" 을(를) 재입력 해주세요."
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ vaultName } 에서 ${ pluralItemType } 검색"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "모든 금고에서 ${ pluralItemType } 검색"
+      ],
+      "Search in ${ vaultName }": [
+        "${ vaultName }에서 검색"
+      ],
+      "Search in all vaults": [
+        "모든 금고에서 검색"
+      ],
+      "Search in Trash": [
+        "휴지통 검색"
+      ],
+      "Select a suffix": [
+        "접미사 선택"
+      ],
+      "Shared vault": [
+        "공유된 금고"
+      ],
+      "Unknown origin": [
+        "알 수 없는 출처"
+      ],
+      "Untitled": [
+        "제목 없음"
+      ],
+      "Used on ${ url }": [
+        "${ url }애서 사용됨"
+      ],
+      "Write your note": [
+        "메모를 작성하세요"
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "자동 잠금 업데이트"
+      ],
+      "Confirm PIN code": [
+        "PIN 코드 확인"
+      ],
+      "Create a vault": [
+        "보관함 만들기"
+      ],
+      "Create PIN code": [
+        "PIN 코드 생성"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "금고 \"${ vaultName }\"을(를) 삭제합니까?"
+      ],
+      "Discard changes?": [
+        "변경 사항을 취소할까요?"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
+      ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
+      ],
+      "Enter your PIN": [
+        "PIN을 입력해 주세요."
+      ],
+      "Get Started": [
+        "시작하기"
+      ],
+      "Grant permissions": [
+        "권한 부여"
+      ],
+      "Import - ${ date }": [
+        "불러오기 - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "금고로 가져오기"
+      ],
+      "Import your data": [
+        "나의 데이터 불러오기"
+      ],
+      "Install extension": [
+        "확장 프로그램 설치"
+      ],
+      "Leave vault ?": [
+        "금고를 떠납니까?"
+      ],
+      "Low disk space": [
+        "디스크 저장공간 부족"
+      ],
+      "Member limit": [
+        "구성원 제한"
+      ],
+      "Members": [
+        "멤버"
+      ],
+      "Move all items ?": [
+        "모든 항목을 이동하시겠어요?"
+      ],
+      "No items selected": [
+        "선택된 항목 없음"
+      ],
+      "Our welcome gift to you": [
+        "당신께 드리는 웰컴 기프트"
+      ],
+      "Pending access to the shared data": [
+        "공유 데이터에 대한 접근 대기 중"
+      ],
+      "Permanently remove all items ?": [
+        "모든 항목을 완전히 삭제합니까?"
+      ],
+      "Pinned (${ items.length })": [
+        "고정됨 (${ items.length })"
+      ],
+      "Review and share": [
+        "검토 및 공유"
+      ],
+      "Secure your data": [
+        "데이터를 보호하세요"
+      ],
+      "Set access level": [
+        "접근 수준 설정"
+      ],
+      "Settings": [
+        "설정"
+      ],
+      "Share vaults with your team": [
+        "내 팀과 금고 공유"
+      ],
+      "Share with": [
+        "공유 대상:"
+      ],
+      "Suggestions": [
+        "제안"
+      ],
+      "Transfer ownership": [
+        "소유권 이전"
+      ],
+      "Trash empty": [
+        "휴지통이 비어있음"
+      ],
+      "Update available": [
+        "사용 가능한 업데이트가 있습니다"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "프리미엄 기능을 잠금해제 하려면 업그레이드"
+      ],
+      "Vault": [
+        "보관함"
+      ],
+      "Vault shared with you": [
+        "나와 공유된 금고"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "왜 ${ PASS_APP_NAME }인가?"
+      ],
+      "Your vault is empty": [
+        "금고가 비어있음"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "URL 복사됨."
+      ],
+      "Field name is required": [
+        "필드의 이름이 필요합니다."
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP 시크릿 및 URI가 잘못되었습니다."
+      ],
+      "OTP secret or URI required": [
+        "OTP 시크릿 및 URI가 필요합니다."
+      ],
+      "Url already exists": [
+        "URL이 이미 존재합니다."
+      ],
+      "URL cannot be empty": [
+        "URL은 필수 정보입니다."
+      ],
+      "Url is invalid": [
+        "URL이 잘못되었습니다."
+      ],
+      "URL is invalid": [
+        "URL이 올바르지 않습니다."
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "문제의 셜명이 필요합니다."
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "별명 \"${ name }\"이(가) 로그인 항목 \"${ relatedLoginName }\"으로 사용 중입니다. \"${ aliasEmail }\"으로 전송되는 이메일에 대한 수신을 중단할 수 있습니다."
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
+      ],
+      "An error occured while exporting your data": [
+        "데이터를 내보내는데 오류가 발생했습니다."
+      ],
+      "At least one email address is required": [
+        "적어도 하나의 이메일 주소가 필요합니다"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "현재 별명에서 메일함으로 가져올 수 없습니다."
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "\"${ vaultName }\" 금고를 생성할 수 없음"
+      ],
+      "Could not send invitations to the following addresses :": [
+        "다음의 주소에 초대장을 보낼수 없었습니다 :"
+      ],
+      "Duplicate email addresses.": [
+        "중복된 이메일 주소들입니다."
+      ],
+      "Empty note": [
+        "빈 메모"
+      ],
+      "Expiration Date is not in the format MM/YY": [
+        "만료 일자가 MM/YY(월/년) 포맷으로 되어 있지 않습니다."
+      ],
+      "Invalid alias prefix": [
+        "잘못된 별명 접두어 입니다."
+      ],
+      "Invalid email addresses.": [
+        "유효하지 않은 이메일 주소들입니다."
+      ],
+      "Missing alias prefix": [
+        "별명 접두사가 없습니다."
+      ],
+      "Missing alias suffix": [
+        "별명 접미어가 없습니다."
+      ],
+      "No items": [
+        "항목 없음"
+      ],
+      "No items in trash matching": [
+        "휴지통에 매칭되는 항목 없음"
+      ],
+      "No items matching": [
+        "매칭되는 항목 없음"
+      ],
+      "No password manager selected": [
+        "선택된 비밀번호 관리자 없음"
+      ],
+      "No results": [
+        "결과 없음"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "영숫자, 점, 하이픈 및 밑줄만 허용됩니다."
+      ],
+      "Passphrase is required": [
+        "비밀번호가 필요합니다."
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP 암호화 내보내기 파일은 비밀번호가 필요합니다."
+      ],
+      "Please contact us for investigating the issue": [
+        "문제 조사를 위해 연락을 부탁드립니다."
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "금고 공유를 사용하려면 이메일 주소를 인증해 주세요."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "이 별명은 40글자 이상을 사용할 수 없습니다."
+      ],
+      "Title is required": [
+        "필수 필드"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "금고의 소유권을 ${ email }으로 이동하시겠어요?"
+      ],
+      "Trash alias ?": [
+        "별명 삭제 ?"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "${ PASS_APP_NAME }에 로그인할 수 없습니다. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "금고 \"${ vaultName }\" 및 포함된 모든 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
+      ],
+      "Vault name is required": [
+        "금고 이름이 필요합니다."
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "현재 구독보다 더 많은 금고를 생성할 수 없습니다."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "이 금고를 접근할 수 있는 최대 사용자 수에 도달했습니다."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "이 금고의 최대 사용자 수에 도달했습니다. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "사용자의 플랜에서 제공하는 최대 금고 수에 도달했습니다."
+      ],
+      "You have unsaved changes.": [
+        "저장되지 않은 변경이 있습니다."
+      ],
+      "You must select at least one mailbox": [
+        "최소 하나 이상의 메일함을 선택해야 합니다."
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
+      ],
+      "Your session could not be authorized.": [
+        "사용자 세션을 승인할 수 없습니다."
+      ],
+      "Your session could not be resumed.": [
+        "사용자 세션을 재게할 수 없습니다."
+      ],
+      "Your session is inactive.": [
+        "비활성 세션입니다."
+      ],
+      "Your session was locked.": [
+        "사용자의 세션이 잠겼습니다."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
+      ]
+    }
+  }
+}

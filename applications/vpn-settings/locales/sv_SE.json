@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Ta bort presentkod"
       ],
+      "Remove single sign-on": [
+        "Ta bort enkel inloggning"
+      ],
       "Rename": [
         "Ändra namn"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Loggar in"
+      ],
+      "Stop using single sign-on": [
+        "Sluta använda enkel inloggning"
       ],
       "Submit": [
         "Skicka"
@@ -2108,9 +2114,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minsta beloppet som kan doneras är ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minsta betalningen vi accepterar är ${ price }"
       ],
@@ -2763,6 +2766,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } och du måste skapa dem manuellt för att lägga tillbaka dem till din organisation"
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
       ],
@@ -2947,6 +2953,9 @@
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Se till att kopiera ditt lösenord och förvara det någonstans säkert."
+      ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Innan du aktiverar användaren måste du ange ett lösenord och skapa krypteringsnycklar för adresserna."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Innan du skapar denna adress måste du ange ett lösenord och skapa krypteringsnycklar för den."
@@ -3322,6 +3331,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Icke SSO-användare (skapade manuellt, inte tillhandahållna av din identitetsleverantör) kan fortfarande logga in på din organisation"
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
@@ -3333,6 +3345,9 @@
       ],
       "old password": [
         "gammalt lösenord"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "När enkel inloggning är inaktiverad för din organisation:"
       ],
       "Once you reset your password:": [
         "När du har återställt ditt lösenord:"
@@ -3526,11 +3541,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
+      "Single sign-on removed": [
+        "Enkel inloggning borttagen"
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Vissa av dina tillgängliga servrar kan endast användas i specifika länder på grund av de senaste borttagningarna"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Ange den domän som tillåts autentisera med SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "SSO-användare (som tillhandahålls av din identitetsleverantör) kommer att tas bort"
       ],
       "Step ${ step }": [
         "Steg ${ step }",
@@ -3577,6 +3598,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Inloggningsuppgifterna från din identitetsleverantör kommer att tas bort."
       ],
       "The following address is invalid.": [
         "Följande adress är ogiltig.",
@@ -3649,6 +3673,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Detta kommer att ta bort ditt konto och all dess data permanent. Du kommer inte att kunna återaktivera detta konto."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Detta kommer ta bort SSO för ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
@@ -4583,9 +4610,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nya funktioner för ${ MAIL_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4708,6 +4732,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktivera användare"
+      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -7321,6 +7348,9 @@
       "Create multiple user accounts": [
         "Skapa flera användarkonton"
       ],
+      "Create organization key": [
+        "Skapa organisationsnyckel"
+      ],
       "Create user accounts": [
         "Skapa användarkonton"
       ],
@@ -7554,6 +7584,12 @@
       "Remove domain": [
         "Ta bort domän"
       ],
+      "Remove single sign-on": [
+        "Ta bort enkel inloggning"
+      ],
+      "Remove single sign-on for your organization?": [
+        "Ta bort enkel inloggning för din organisation?"
+      ],
       "Remove user?": [
         "Ta bort användare?"
       ],
@@ -7626,7 +7662,7 @@
       "Signed in to member account": [
         "Loggade in på medlemskonto"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Enkel inloggning"
       ],
       "Status": [

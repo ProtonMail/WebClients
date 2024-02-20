@@ -1315,6 +1315,11 @@
         "Neue E-Mail"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME }-Desktop-App herunterladen"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME }-Anwendungen"
@@ -3329,9 +3334,6 @@
       ],
       "An error occurred while loading alias options": [
         "Beim Laden der Alias-Optionen ist ein Fehler aufgetreten"
-      ],
-      "An error occurred while saving alias": [
-        "Beim Speichern des Alias ist ein Fehler aufgetreten"
       ],
       "Attachments are limited to 25 MB": [
         "Anhänge sind auf 25 MB beschränkt"
@@ -6002,6 +6004,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Diese Nachricht ist mit dem beigefügten Schlüssel signiert, dem noch nicht vertraut wurde."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Diese Nachricht wird um ${ value } automatisch gelöscht."
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Diese Nachricht wird am ${ value } automatisch gelöscht."
       ],
@@ -8217,9 +8222,6 @@
       ],
       "Used on amazon for shopping, etc.": [
         "Verwendet auf Amazon für Shopping, etc."
-      ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Wenn du nach deiner E-Mail-Adresse gefragt wirst, gib stattdessen diesen Alias an. Füge einen Titel und eine Notiz hinzu, damit du weißt, wo du sie verwendest."
       ]
     },
     "Security Center - Action": {
@@ -8775,6 +8777,9 @@
       "Change setting": [
         "Einstellung ändern"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "Starte ${ MAIL_APP_NAME } ganz bequem von deinem Desktop aus."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "Erstelle Hide-my-email-Aliasse und behalte sie hier im Auge."
       ],
@@ -8783,6 +8788,9 @@
       ],
       "Faster email management": [
         "Schnellere E-Mail-Verwaltung"
+      ],
+      "Get the desktop app": [
+        "Desktop-App herunterladen"
       ],
       "Get up to ${ credits } in credits.": [
         "Erhalte bis zu ${ credits } als Guthaben."
@@ -8864,8 +8872,14 @@
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
         "Um weiterhin Dateien hochzuladen und zu synchronisieren, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."
       ],
+      "To send or receive emails, free up space or ${ upgrade }": [
+        "Um E-Mails zu senden oder zu empfangen, gib Speicherplatz frei oder ${ upgrade }"
+      ],
       "To send or receive emails, free up space or upgrade for more storage.": [
         "Um weiterhin E-Mails zu senden oder zu empfangen, räume etwas Speicherplatz frei oder führe ein Upgrade durch für zusätzlichen Speicherplatz."
+      ],
+      "To upload or sync files, free up space or ${ upgrade }": [
+        "Um Dateien hochzuladen oder zu synchronisieren, gib Platz frei oder ${ upgrade }"
       ],
       "upgrade for more storage": [
         "führe ein Upgrade durch für zusätzlichen Speicherplatz."
@@ -10011,6 +10025,10 @@
       ]
     },
     "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
       "Try a shorter username (${ n } character max)": [
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
         "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"

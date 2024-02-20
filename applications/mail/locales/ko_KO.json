@@ -1306,6 +1306,11 @@
         "새로운 이메일"
       ]
     },
+    "App logo": {
+      "Download ${ MAIL_APP_NAME } desktop application": [
+        "${ MAIL_APP_NAME } 데스크톱 애플리케이션 다운로드"
+      ]
+    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 애플리케이션"
@@ -2635,7 +2640,7 @@
         "네팔"
       ],
       "Netherlands": [
-        "네델란드"
+        "네덜란드"
       ],
       "New Caledonia": [
         "뉴 칼레도니아"
@@ -3312,9 +3317,6 @@
       ],
       "An error occurred while loading alias options": [
         "별명 옵션 로드 중 오류가 발생했습니다."
-      ],
-      "An error occurred while saving alias": [
-        "별명 저장 중 오류가 발생했습니다."
       ],
       "Attachments are limited to 25 MB": [
         "첨부 파일은 최대 25 MB로 제한되어 있습니다"
@@ -5896,6 +5898,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "이 메시지는 아직 신뢰되지 않은 키로 서명됩니다."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "메시지가 ${ value }에 자동으로 삭제됨"
+      ],
       "This message will be automatically deleted on ${ value }": [
         "메시지가 ${ value }에 자동으로 삭제됨"
       ],
@@ -6702,6 +6707,9 @@
       ],
       "Frequency": [
         "빈도"
+      ],
+      "From": [
+        "보낸 사람"
       ],
       "From:": [
         "보낸 사람:"
@@ -8073,9 +8081,6 @@
       ],
       "Used on amazon for shopping, etc.": [
         "쇼핑을 위해 Amazon에서 사용됨, 기타 등등."
-      ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "이메일 주소에 대한 질문이 들어온다면, 별명을 대신 제공하세요. 어디에서 사용하는지 추적하기 위해 이름과 메모를 추가하세요."
       ]
     },
     "Security Center - Action": {
@@ -8608,6 +8613,9 @@
       "Change setting": [
         "설정 변경"
       ],
+      "Conveniently launch ${ MAIL_APP_NAME } right from your desktop.": [
+        "데스크톱에서 바로 ${ MAIL_APP_NAME }을 실행할 수 있습니다."
+      ],
       "Create hide-my-email aliases and keep track of them here.": [
         "hiide-my-email 별명을 생성하고 여기에서 추적하세요."
       ],
@@ -8616,6 +8624,9 @@
       ],
       "Faster email management": [
         "빠른 이메일 관리"
+      ],
+      "Get the desktop app": [
+        "데스크톱 앱 다운로드"
       ],
       "Get up to ${ credits } in credits.": [
         "최대 ${ credits }의 크레딧 받기"
@@ -8808,7 +8819,7 @@
         "별칭이 클립보드에 복사됨"
       ],
       "Alias saved and copied": [
-        "별명이 복사 및 붙여놓기 되었습니다."
+        "별명이 저장 및 복사되었습니다"
       ],
       "Bug reported": [
         "버그 신고됨"

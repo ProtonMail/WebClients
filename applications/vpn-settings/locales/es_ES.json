@@ -359,6 +359,9 @@
       "Remove gift code": [
         "Eliminar código de regalo"
       ],
+      "Remove single sign-on": [
+        "Eliminar el inicio de sesión único"
+      ],
       "Rename": [
         "Renombrar"
       ],
@@ -478,6 +481,9 @@
       ],
       "Signing in": [
         "Iniciando sesión"
+      ],
+      "Stop using single sign-on": [
+        "Dejar de usar el inicio de sesión único"
       ],
       "Submit": [
         "Enviar"
@@ -2111,9 +2117,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "La cantidad mínima de crédito que puede añadirse es de ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "La cantidad mínima que se puede donar es de ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "El pago mínimo que aceptamos es de ${ price }"
       ],
@@ -2771,6 +2774,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
       ],
+      "${ boldSSOUserInformation } and you will have to create them manually to add them back to your organization": [
+        "${ boldSSOUserInformation } y tendrás que crearlos manualmente para añadirlos nuevamente a tu organización."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continúas perderás el acceso a todos los datos cifrados actuales en tu cuenta."
       ],
@@ -3343,6 +3349,9 @@
       "No results found": [
         "No se han encontrado resultados."
       ],
+      "Non-SSO users (created manually, not provided by your Identity Provider) can still log in to your organization": [
+        "Los usuarios sin SSO (creados manualmente, no provistos por tu proveedor de identidad) podrán iniciar sesión en tu organización."
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
@@ -3354,6 +3363,9 @@
       ],
       "old password": [
         "contraseña antigua"
+      ],
+      "Once single sing-on is disabled for your organization:": [
+        "Una vez que el inicio de sesión único esté desactivado para tu organización:"
       ],
       "Once you reset your password:": [
         "Después de restablecer tu contraseña:"
@@ -3544,11 +3556,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como eres un usuario leal, tu cuenta tiene activadas funciones adicionales."
       ],
+      "Single sign-on removed": [
+        "El inicio de sesión único ha sido eliminado."
+      ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Algunos de tus servidores disponibles solo pueden utilizarse en países específicos debido a eliminaciones recientes."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifica el dominio que puede autenticarse con SAML SSO."
+      ],
+      "SSO users (provided by your Identity Provider) will be deleted": [
+        "Los usuarios con SSO (provistos por tu proveedor de identidad) serán eliminados."
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -3595,6 +3613,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
+      ],
+      "The credentials from your Identity Provider will be deleted.": [
+        "Se eliminarán las credenciales de tu proveedor de identidad."
       ],
       "The following address is invalid.": [
         "La siguiente dirección no es válida.",
@@ -3667,6 +3688,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Esto eliminará permanentemente tu cuenta y todos sus datos. No podrás reactivar esta cuenta."
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "Esto eliminará el SSO de ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Esto reemplazará tu contraseña temporal. La utilizarás para acceder a tu cuenta de ${ BRAND_NAME } en el futuro."
@@ -4587,6 +4611,9 @@
       ]
     },
     "Label for news": {
+      "${ app } and ${ additionalApp } product updates": [
+        "Actualizaciones del producto de ${ app } y ${ additionalApp }"
+      ],
       "${ app } product updates": [
         "Actualizaciones del producto ${ app }"
       ],
@@ -4613,9 +4640,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Correos electrónicos de bienvenida ${ BRAND_NAME }"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Funciones nuevas de ${ MAIL_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -7336,6 +7360,9 @@
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
       ],
+      "Create organization key": [
+        "Crear la clave de la organización"
+      ],
       "Create user accounts": [
         "Crear cuentas de usuario"
       ],
@@ -7569,6 +7596,12 @@
       "Remove domain": [
         "Borrar el dominio"
       ],
+      "Remove single sign-on": [
+        "Eliminar el inicio de sesión único"
+      ],
+      "Remove single sign-on for your organization?": [
+        "¿Eliminar el inicio de sesión único de tu organización?"
+      ],
       "Remove user?": [
         "¿Eliminar usuario?"
       ],
@@ -7641,7 +7674,7 @@
       "Signed in to member account": [
         "Sesión Iniciada en la cuenta de usuario"
       ],
-      "Single Sign-On": [
+      "Single sign-on": [
         "Inicio de sesión único"
       ],
       "Status": [

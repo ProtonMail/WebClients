@@ -4038,9 +4038,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Minsta antal krediter som kan läggas till är ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Minsta beloppet som kan doneras är ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Minsta betalningen vi accepterar är ${ price }"
       ],
@@ -6151,6 +6148,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Se till att kopiera ditt lösenord och förvara det någonstans säkert."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Innan du aktiverar användaren måste du ange ett lösenord och skapa krypteringsnycklar för adresserna."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Innan du skapar denna adress måste du ange ett lösenord och skapa krypteringsnycklar för den."
       ],
@@ -7385,6 +7385,9 @@
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Detta kommer att ersätta ditt temporära lösenord. Du kommer att använda det för att komma åt ditt ${ BRAND_NAME }-konto i framtiden."
+      ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Detta kommer logga ut dig på alla konton som du för närvarande är inloggad på."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Detta kommer att logga ut dig från alla aktiva sessioner och inaktivera 2-faktors autentisering."
@@ -9327,9 +9330,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Nya funktioner för ${ MAIL_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9640,6 +9640,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktivera användare"
+      ],
       "Change password": [
         "Ändra lösenord"
       ],
@@ -13719,6 +13722,9 @@
       ],
       "Create multiple user accounts": [
         "Skapa flera användarkonton"
+      ],
+      "Create organization key": [
+        "Skapa organisationsnyckel"
       ],
       "Create public link": [
         "Skapa offentlig länk"

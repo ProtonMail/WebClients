@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Account"
+      ],
       "Account settings": [
         "Accountinstellingen"
       ],
@@ -137,6 +140,9 @@
       "Delete vault": [
         "Kluis verwijderen"
       ],
+      "Deselect": [
+        "Deselecteren"
+      ],
       "Discard": [
         "Verwijderen"
       ],
@@ -230,6 +236,9 @@
       "More options": [
         "Meer opties"
       ],
+      "Move": [
+        "Verplaatsen"
+      ],
       "Move all items": [
         "Alle items verplaatsen"
       ],
@@ -289,6 +298,9 @@
       ],
       "Resend invitation": [
         "Uitnodiging opnieuw verzenden"
+      ],
+      "Restore": [
+        "Herstel"
       ],
       "Restore item": [
         "Item herstellen"
@@ -598,6 +610,9 @@
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Niet-ondersteund ${ PASS_APP_NAME }-bestandsformaat"
       ],
       "Unsupported 1Password file format": [
         "Niet-ondersteund 1Password-bestandsformaat"
@@ -1156,6 +1171,9 @@
       "A-Z": [
         "A-Z"
       ],
+      "Account": [
+        "Account"
+      ],
       "Alias": [
         "Alias"
       ],
@@ -1299,6 +1317,9 @@
       ],
       "Invitations": [
         "Uitnodigingen"
+      ],
+      "Item ID": [
+        "Item ID"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Toetsenbordsneltoets: ${ shortcut }"
@@ -1601,6 +1622,9 @@
       "Full Name": [
         "Volledige naam"
       ],
+      "MM/YY": [
+        "MM/JJ"
+      ],
       "Other": [
         "Anders"
       ],
@@ -1693,6 +1717,9 @@
       "Fill & copy password": [
         "Wachtwoord invullen en kopiëren"
       ],
+      "Get Started": [
+        "Aan de slag"
+      ],
       "Get the mobile apps": [
         "Download de mobiele apps"
       ],
@@ -1719,6 +1746,9 @@
       ],
       "Member limit": [
         "Limiet aantal leden"
+      ],
+      "Members": [
+        "Leden"
       ],
       "Move all items ?": [
         "Alle items verplaatsen?"
@@ -1750,6 +1780,9 @@
       "Share with": [
         "Deel met"
       ],
+      "Suggestions": [
+        "Suggesties"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Stapt u over naar ${ PASS_APP_NAME }?"
       ],
@@ -1773,6 +1806,9 @@
       ],
       "Use my email": [
         "Gebruik mijn e-mail"
+      ],
+      "Vault": [
+        "Kluis"
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
@@ -1859,6 +1895,9 @@
       ],
       "No password manager selected": [
         "Geen wachtwoordbeheerder geselecteerd"
+      ],
+      "No results": [
+        "Geen resultaten"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Alleen alfanumerieke tekens, punten, koppeltekens en underscores zijn toegestaan"

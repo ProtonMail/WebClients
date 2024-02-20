@@ -3110,7 +3110,7 @@
         "Bénéficiez d'un nombre illimité de dossiers, de labels et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Upgrade your account to activate ${ PROTON_SENTINEL_NAME }, our cutting-edge AI-driven security solution with dedicated 24/7 expert support.": [
-        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME }, notre solution de sécurité de pointe pilotée par IA avec un support d'experts dédié 24h/24 et 7j/7."
+        "Mettez à jour votre compte pour activer ${ PROTON_SENTINEL_NAME } ; notre solution de sécurité innovante par IA avec un support d'experts dédié 24h/24 et 7j/7."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
@@ -3324,7 +3324,7 @@
         "L'alias n'est pas valide."
       ],
       "Alias is required": [
-        "L'alias est requis."
+        "Le champ Alias est requis."
       ],
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
@@ -3335,8 +3335,8 @@
       "An error occurred while loading alias options": [
         "Une erreur s’est produite lors du chargement des options de l'alias."
       ],
-      "An error occurred while saving alias": [
-        "Une erreur s'est produite lors de la sauvegarde de l'alias"
+      "An error occurred while saving your alias": [
+        "Une erreur est survenue lors de l'enregistrement de votre alias"
       ],
       "Attachments are limited to 25 MB": [
         "La taille des pièces jointes est limitée à 25 Mo."
@@ -3450,7 +3450,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Forward address is required": [
-        "L'adresse e-mail de transfert est nécessaire."
+        "Le champ adresse e-mail de transfert est requis."
       ],
       "Image upload failed": [
         "L'image n'a pas pu être chargée."
@@ -3508,7 +3508,7 @@
         "Il manque la signature."
       ],
       "Name is required": [
-        "Le nom est nécessaire."
+        "Le champ Nom est requis."
       ],
       "Network error: Please check your connection and try again.": [
         "Erreur réseau : nous vous invitons à vérifier votre connexion et à réessayer."
@@ -5768,7 +5768,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Removes all data associated with this app, including downloaded messages": [
-        "Retire toutes les données associées à cette application, y compris les messages téléchargés."
+        "Supprime toutes les données associées à cette application, y compris les messages téléchargés."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Signaler un message comme une tentative de phishing/hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
@@ -6007,6 +6007,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Ce message est signé avec une clé attachée qui n'a pas encore été approuvée."
       ],
+      "This message will be automatically deleted at ${ value }": [
+        "Ce message sera automatiquement supprimé à ${ value }."
+      ],
       "This message will be automatically deleted on ${ value }": [
         "Ce message sera automatiquement supprimé à ${ value }."
       ],
@@ -6048,7 +6051,7 @@
         "Cette clé publique sera automatiquement utilisée pour chiffrer les messages envoyés à cette adresse."
       ],
       "This removes all data associated with this app, including downloaded messages. The app will restart and you will need to sign in again to use the app.": [
-        "Retire toutes les données associées à cette application, y compris les messages téléchargés. L'application va redémarrer et vous devrez vous connecter à nouveau pour utiliser l'application."
+        "Cette action supprime toutes les données associées à cette application, y compris les messages téléchargés. L'application va redémarrer et vous devrez vous reconnecter pour l'utiliser."
       ],
       "This sender's public key has not been trusted yet.": [
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
@@ -8200,7 +8203,7 @@
         "Créer un alias"
       ],
       "Generate aliases on the fly, and easily manage your aliases and passwords.": [
-        "Créer rapidement des alias à la volée et gérer facilement vos alias et mots de passe."
+        "Créer des alias à la demande et gérer facilement vos alias et mots de passe."
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -8223,8 +8226,8 @@
       "Used on amazon for shopping, etc.": [
         "Utilisé sur Amazon pour vos achats, etc."
       ],
-      "When asked for your email address, give this alias instead. Add a title and note to keep track of where you use it.": [
-        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Ajoutez un titre et une note pour suivre l'endroit où vous l'utilisez."
+      "When asked for your email address, give this alias instead. Aliases are provided by ${ passLink }.": [
+        "Lorsque vous devez renseigner votre adresse e-mail, donnez cet alias à la place. Les alias sont fournis par ${ passLink }."
       ]
     },
     "Security Center - Action": {
@@ -8879,7 +8882,7 @@
         "Pour envoyer ou recevoir des messages, libérez de l'espace ou ${ upgrade }."
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage en supprimant des messages ou changer d'abonnement pour augmenter votre espace de stockage."
+        "Pour envoyer ou recevoir des messages, veuillez libérer de l'espace de stockage ou changer d'abonnement pour augmenter votre espace de stockage."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pour importer ou synchroniser vos fichiers, libérez de l'espace ou ${ upgrade }."
@@ -8894,13 +8897,13 @@
         "Votre ${ appStorage } est plein."
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "Votre ${ storage } est à ${ percentage } % plein. ${ cta }."
+        "Votre ${ storage } est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
         "Votre ${ storage } est plein. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Votre espace de stockage est à ${ percentage } % plein. ${ cta }."
+        "Votre espace de stockage est rempli à ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Votre espace de stockage est plein."
@@ -9008,7 +9011,7 @@
         "L'alias a été copié dans le presse-papiers."
       ],
       "Alias saved and copied": [
-        "L'alias a été copié et enregistré."
+        "L'alias a été enregistré et copié."
       ],
       "Bug reported": [
         "Le bug a été signalé."
@@ -9515,7 +9518,7 @@
         "Paramètres du message"
       ],
       "Enable 2FA": [
-        "Activer l'authentification 2FA"
+        "Activer l'authentification à deux facteurs (2FA)"
       ],
       "Enable message content search": [
         "Activer la recherche dans le contenu dans les messages"
@@ -9858,7 +9861,7 @@
         "Il manque l'objet."
       ],
       "This field cannot be empty": [
-        "Ce champ ne doit pas être vide"
+        "Ce champ ne doit pas être vide."
       ],
       "This field cannot contain only spaces": [
         "Ce champ ne doit pas contenir uniquement des espaces"
@@ -9917,7 +9920,7 @@
         "Nouveautés"
       ],
       "Your account is protected": [
-        "Votre compte est protégé"
+        "Votre compte est protégé."
       ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."

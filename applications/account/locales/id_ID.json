@@ -4027,9 +4027,6 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
-      "The minimum amount that can be donated is ${ price }": [
-        "Nominal sumbangan minimal yang dapat diberikan adalah ${ price }"
-      ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
       ],
@@ -6098,6 +6095,9 @@
       "Be sure to copy your password and store it somewhere safe.": [
         "Pastikan untuk menyalin kata sandi Anda dan menyimpan salinan ini di tempat yang aman."
       ],
+      "Before activating the user, you need to provide a password and create encryption keys for the addresses.": [
+        "Sebelum mengaktifkan pengguna ini, Anda perlu untuk memberikan kata sandi dan membuat kunci enkripsi untuk alamat yang terkait."
+      ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Sebelum membuat alamat ini, Anda harus menentukan kata sandi dan membuat kunci enkripsi."
       ],
@@ -6613,6 +6613,9 @@
       ],
       "Key deletion is irreversible!": [
         "Penghapusan kunci tidak dapat diurungkan!"
+      ],
+      "Keys created": [
+        "Kunci dihasilkan"
       ],
       "Label all imported messages as": [
         "Labeli semua pesan terimpor sebagai"
@@ -7310,6 +7313,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Kata sandi ini akan menggantikan kata sandi sementara Anda. Ke depannya, Anda akan menggunakan kata sandi ini untuk mengakses akun ${ BRAND_NAME } Anda."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Tindakan ini akan mengeluarkan seluruh akun milik Anda yang sedang terhubung masuk."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan autentikasi dua faktor."
       ],
@@ -7477,6 +7483,9 @@
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Gunakan alamat email yang dipilih sebagai nama pengguna SMTP dan token yang dihasilkan sebagai kata sandi SMTP pada layanan eksternal."
+      ],
+      "User activated": [
+        "Pengguna diaktifkan"
       ],
       "Users": [
         "Pengguna"
@@ -9232,9 +9241,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
-      ],
-      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
-        "Fitur baru ${ MAIL_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9537,6 +9543,9 @@
       ]
     },
     "Member action": {
+      "Activate user": [
+        "Aktifkan pengguna"
+      ],
       "Change password": [
         "Ubah kata sandi"
       ],
@@ -13342,6 +13351,9 @@
       "Activate organization key": [
         "Aktifkan kunci organisasi"
       ],
+      "Activate user": [
+        "Aktifkan pengguna"
+      ],
       "Add address": [
         "Tambah alamat"
       ],
@@ -13419,6 +13431,9 @@
       ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
+      ],
+      "Are you sure?": [
+        "Apakah Anda yakin?"
       ],
       "Authentication security": [
         "Keamanan autentikasi"
@@ -13527,6 +13542,9 @@
       ],
       "Create multiple user accounts": [
         "Buat lebih dari satu akun pengguna"
+      ],
+      "Create organization key": [
+        "Buat kunci organisasi"
       ],
       "Create public link": [
         "Buat tautan publik"
