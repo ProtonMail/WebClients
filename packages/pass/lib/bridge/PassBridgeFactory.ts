@@ -44,7 +44,10 @@ export const createPassBridge = (api: Api): PassBridge => {
                     hydrated = true;
                 },
                 user: {
-                    getUserAccess,
+                    getUserAccess: maxAgeMemoize(async () => {
+                        const result = await getUserAccess();
+                        return result;
+                    }),
                 },
                 vault: {
                     getDefault: maxAgeMemoize(async (hadVaultCallback) => {
@@ -95,8 +98,8 @@ export const createPassBridge = (api: Api): PassBridge => {
                             aliasDetails: { aliasEmail, mailboxes: [mailbox] },
                         };
                     },
-                    getAliasOptions,
-                    getAllByShareId: async (shareId) => {
+                    getAliasOptions: maxAgeMemoize(getAliasOptions),
+                    getAllByShareId: maxAgeMemoize(async (shareId) => {
                         const aliases = (await Promise.all(
                             (await requestAllItemsForShareId({ shareId, OnlyAlias: true }))
                                 .filter(pipe(prop('AliasEmail'), truthy))
@@ -111,7 +114,7 @@ export const createPassBridge = (api: Api): PassBridge => {
                                 })
                             )
                         );
-                    },
+                    }),
                 },
             };
 
