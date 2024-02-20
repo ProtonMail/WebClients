@@ -517,45 +517,56 @@ const getSaveRecurringEventActions = async ({
                         if (!getHasMergeUpdate(veventComponent, updateMergeVevent)) {
                             return;
                         }
-                        const updatedSingleEditVevent = {
+                        let updatedSingleEditVevent = {
                             ...veventComponent,
                             ...updateMergeVevent,
                         };
+                        let addedAttendeesPublicKeysMap;
+
+                        if (!getIsPersonalSingleEdit(event)) {
+                            // attendees need to be notified by email
+                            const sharedSessionKey = await getBase64SharedSessionKey({
+                                calendarEvent: originalEvent,
+                                getCalendarKeys,
+                                getAddressKeys,
+                            });
+
+                            const {
+                                veventComponent: finalVevent,
+                                inviteActions: finalInviteActions,
+                                sendPreferencesMap,
+                            } = await sendIcs({
+                                inviteActions: {
+                                    ...updatedInviteActions,
+                                    sharedEventID: event.SharedEventID,
+                                    sharedSessionKey,
+                                    recurringType: RECURRING_TYPES.ALL,
+                                },
+                                vevent: updatedSingleEditVevent,
+                                cancelVevent: veventComponent,
+                                // Do not re-check send preferences errors for single edits as they were checked for the main event already,
+                                // and it's currently not possible to have a different list of attendees in the single edits
+                                // TODO: Move send preference error check outside of sendIcs
+                                noCheckSendPrefs: true,
+                            });
+                            updatedSingleEditVevent = finalVevent;
+                            addedAttendeesPublicKeysMap = getAddedAttendeesPublicKeysMap({
+                                veventComponent: finalVevent,
+                                inviteActions: finalInviteActions,
+                                sendPreferencesMap,
+                            });
+                        }
+
                         const updateSingleEditOperation = getUpdateSyncOperation({
                             veventComponent: updatedSingleEditVevent,
                             calendarEvent: event,
-                            hasDefaultNotifications,
-                            isAttendee,
+                            hasDefaultNotifications: getHasDefaultNotifications(event),
+                            isAttendee: false,
                             isBreakingChange: false,
                             isPersonalSingleEdit: event.IsPersonalSingleEdit,
+                            addedAttendeesPublicKeysMap,
                         });
                         updateSingleEditOperations.push(updateSingleEditOperation);
-
-                        if (getIsPersonalSingleEdit(event)) {
-                            // no need to notify attendees by email since they didn't know about the single edit
-                            return;
-                        }
-                        const sharedSessionKey = await getBase64SharedSessionKey({
-                            calendarEvent: originalEvent,
-                            getCalendarKeys,
-                            getAddressKeys,
-                        });
-
-                        return sendIcs({
-                            inviteActions: {
-                                ...updatedInviteActions,
-                                type: INVITE_ACTION_TYPES.SEND_UPDATE,
-                                sharedEventID: event.SharedEventID,
-                                sharedSessionKey,
-                                recurringType: RECURRING_TYPES.ALL,
-                            },
-                            vevent: updatedSingleEditVevent,
-                            cancelVevent: veventComponent,
-                            // Do not re-check send preferences errors for single edits as they were checked for the main event already,
-                            // and it's currently not possible to have a different list of attendees in the single edits
-                            // TODO: Move send preference error check outside of sendIcs
-                            noCheckSendPrefs: true,
-                        });
                     })
                 );
             } else {
@@ -594,7 +605,7 @@ const getSaveRecurringEventActions = async ({
                 });
             }
         }
-        const updateOperation = getUpdateSyncOperation({
+        const updateOriginalOperation = getUpdateSyncOperation({
             veventComponent: updatedVeventComponent,
             calendarEvent: originalEvent,
             hasDefaultNotifications,
@@ -614,7 +625,7 @@ const getSaveRecurringEventActions = async ({
                         calendarID: newCalendarID,
                         addressID: newAddressID,
                         memberID: newMemberID,
-                        operations: [updateOperation],
+                        operations: [updateOriginalOperation],
                     },
                     {
                         calendarID: originalCalendarID,
@@ -634,7 +645,7 @@ const getSaveRecurringEventActions = async ({
                     calendarID: newCalendarID,
                     addressID: newAddressID,
                     memberID: newMemberID,
-                    operations: [...deleteOperations, ...updateSingleEditOperations, updateOperation],
+                    operations: [...deleteOperations, updateOriginalOperation, ...updateSingleEditOperations],
                 },
             ],
             inviteActions: updatedInviteActions,
