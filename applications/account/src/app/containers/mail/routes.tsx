@@ -31,7 +31,6 @@ export const getMailAppRoutes = ({
     organization,
     isSmtpTokenEnabled,
     isEmailForwardingEnabled,
-    hasUserAccessToInboxDesktop,
     isNotifInboxDesktopAppOn,
 }: {
     app: APP_NAMES;
@@ -40,7 +39,6 @@ export const getMailAppRoutes = ({
     organization?: Organization;
     isSmtpTokenEnabled: boolean;
     isEmailForwardingEnabled: boolean;
-    hasUserAccessToInboxDesktop: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
@@ -51,6 +49,16 @@ export const getMailAppRoutes = ({
         available: app === APPS.PROTONMAIL,
         header: MAIL_APP_NAME,
         routes: {
+            desktop: {
+                text: c('Title').t`Get the apps`,
+                to: '/get-the-apps',
+                icon: 'arrow-down-line',
+                notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
+                subsections: [
+                    { id: 'proton-mail-mobile-apps', text: c('Title').t`Download the mobile apps` },
+                    { id: 'proton-mail-desktop-apps', text: c('Title').t`Download the desktop app` },
+                ],
+            },
             general: {
                 text: c('Title').t`Messages and composing`,
                 to: '/general',
@@ -182,16 +190,6 @@ export const getMailAppRoutes = ({
                         text: c('Title').t`Account keys`,
                         id: 'user',
                     },
-                ],
-            },
-            desktop: {
-                text: c('Title').t`Desktop app`,
-                to: '/protonmail-for-desktop',
-                icon: 'pass-laptop',
-                available: hasUserAccessToInboxDesktop,
-                notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
-                subsections: [
-                    { id: 'protonmail-for-desktop', text: c('Title').t` Get ${MAIL_APP_NAME} for Mac or Windows` },
                 ],
             },
             imap: {

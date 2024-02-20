@@ -361,6 +361,7 @@ export const CALENDAR_SETTINGS_ROUTE = {
     GENERAL: '/general',
     CALENDARS: '/calendars',
     INTEROPS: '/import-export',
+    GET_APPS: '/get-the-apps',
 };
 
 export const CALENDAR_SETTINGS_SECTION_ID = {
@@ -375,4 +376,6 @@ export const CALENDAR_SETTINGS_SECTION_ID = {
     SHARE: 'share',
     SHARE_PRIVATELY: 'share-privately',
     SHARE_PUBLICLY: 'share-publicly',
+    MOBILE_APP: 'mobile-app',
+    DESKTOP_APP: 'desktop-app',
 };
