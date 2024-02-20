@@ -102,7 +102,7 @@ const ItemRowLayout = ({
 
     if (isDelightMailListEnabled) {
         return (
-            <div className="flex flex-nowrap flex-column w-full my-auto">
+            <div className={clsx('flex flex-nowrap flex-column w-full my-auto', showThumbnails && 'mt-1')}>
                 <div className="flex items-center justify-start flex-nowrap flex-row item-titlesender w-full gap-3">
                     <div className="my-auto flex shrink-0" data-testid={unread}>
                         <ItemStar element={element} />
@@ -232,7 +232,7 @@ const ItemRowLayout = ({
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full flex items-center">
             <div className="flex items-center flex-nowrap flex-row item-titlesender">
                 <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }} data-testid={unread}>
                     <ItemStar element={element} />
