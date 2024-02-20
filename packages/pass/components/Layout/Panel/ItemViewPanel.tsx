@@ -44,6 +44,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
     handleDeleteClick,
     handleDismissClick,
     handleEditClick,
+    handleHistoryClick,
     handleInviteClick,
     handleManageClick,
     handleMoveToTrashClick,
@@ -202,6 +203,12 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                         loading={!canTogglePinned}
                                     />
                                 )}
+
+                                <DropdownMenuButton
+                                    onClick={handleHistoryClick}
+                                    label={c('Action').t`View history`}
+                                    icon={'clock-rotate-left'}
+                                />
 
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}
