@@ -24,6 +24,6 @@ export const certificateVerifyProc = (request: Electron.Request, callback: (code
         verificationResult,
     } = request;
 
-    if (verificationResult === 'OK' && isProtonTlsCertificate(data)) return callback(VerificationResult.Accept);
+    if (verificationResult === 'net::OK' && isProtonTlsCertificate(data)) return callback(VerificationResult.Accept);
     return callback(VerificationResult.Reject);
 };
