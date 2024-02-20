@@ -70,7 +70,7 @@ export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
             <ItemViewHistoryStats
                 createTime={createTime}
                 modifyTime={modifyTime}
-                handleHistoryClick={handleHistoryClick}
+                handleHistoryClick={revisionNumber > 1 ? handleHistoryClick : undefined}
             />
 
             <MoreInfoDropdown
